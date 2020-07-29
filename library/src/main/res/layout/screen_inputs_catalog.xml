@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical">
+
+	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="?colorBackground"
+			android:orientation="vertical"
+			android:padding="16dp">
+
+		<TextView
+				style="@style/AppTheme.TextAppearance.Title"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:layout_marginTop="8dp"
+				android:text="Text" />
+
+		<com.telefonica.mistica.input.TextInput
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="8dp"
+				android:layout_marginBottom="8dp"
+				app:inputType="text"
+				app:inputHint="Type Something..." />
+
+		<View style="@style/Widget.UICatalog.Separator" />
+
+		<TextView
+				style="@style/AppTheme.TextAppearance.Title"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:text="Text Area" />
+
+		<com.telefonica.mistica.input.TextInput
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="8dp"
+				android:layout_marginBottom="8dp"
+				app:inputType="textArea"
+				app:inputHint="Type Something..."
+				app:inputCounterEnabled="true"
+				app:inputMaxLength="200" />
+
+		<View style="@style/Widget.UICatalog.Separator" />
+
+		<TextView
+				style="@style/AppTheme.TextAppearance.Title"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:text="Text with error" />
+
+		<com.telefonica.mistica.input.TextInput
+				android:id="@+id/textInputError"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="8dp"
+				android:layout_marginBottom="8dp"
+				app:inputType="text"
+				app:inputHint="Type Something..." />
+
+		<View style="@style/Widget.UICatalog.Separator" />
+
+		<TextView
+				style="@style/AppTheme.TextAppearance.Title"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:text="Text with assertive text" />
+
+		<com.telefonica.mistica.input.TextInput
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="8dp"
+				android:layout_marginBottom="8dp"
+				app:inputType="text"
+				app:inputHint="Type Something..."
+				app:inputHelperText="This is a helper text" />
+
+		<View style="@style/Widget.UICatalog.Separator" />
+
+		<TextView
+				style="@style/AppTheme.TextAppearance.Title"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:text="Password input" />
+
+		<com.telefonica.mistica.input.TextInput
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="8dp"
+				android:layout_marginBottom="8dp"
+				app:inputType="password"
+				app:inputHint="Password" />
+
+		<View style="@style/Widget.UICatalog.Separator" />
+
+		<TextView
+				style="@style/AppTheme.TextAppearance.Title"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:text="Phone" />
+
+		<com.telefonica.mistica.input.TextInput
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="8dp"
+				android:layout_marginBottom="8dp"
+				app:inputType="phone"
+				app:inputHint="Phone number" />
+
+		<View style="@style/Widget.UICatalog.Separator" />
+
+		<TextView
+				style="@style/AppTheme.TextAppearance.Title"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:text="Dropdown" />
+
+		<com.telefonica.mistica.input.DropDownInput
+				android:id="@+id/dropDownInput"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="8dp"
+				android:layout_marginBottom="8dp"
+				app:inputHint="Select something" />
+
+		<View style="@style/Widget.UICatalog.Separator" />
+
+		<TextView
+				style="@style/AppTheme.TextAppearance.Title"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:text="CheckBox" />
+
+		<com.telefonica.mistica.input.CheckBoxInput
+				android:id="@+id/checkboxInput"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="8dp"
+				android:layout_marginBottom="8dp" />
+
+	</LinearLayout>
+
+</ScrollView>

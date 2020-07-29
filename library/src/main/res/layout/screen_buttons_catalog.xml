@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		android:orientation="vertical"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		android:padding="8dp"
+		android:gravity="center_horizontal"
+		>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:gravity="center_horizontal"
+			android:background="?colorBackground"
+			>
+
+			<com.telefonica.mistica.button.Button
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp"
+				android:text="Primary"
+				style="@style/AppTheme.Button.DefaultButton"
+				/>
+
+			<com.telefonica.mistica.button.Button
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp"
+				android:text="Primary Icon"
+				app:icon="@android:drawable/btn_star"
+				style="@style/AppTheme.Button.DefaultButton"
+				/>
+
+			<com.telefonica.mistica.button.ProgressButton
+				android:id="@+id/primary_progress"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp"
+				android:text="Primary Progress"
+				style="@style/AppTheme.Button.DefaultButton"
+				/>
+
+			<com.telefonica.mistica.button.Button
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Primary Disabled"
+				android:layout_marginTop="16dp"
+				android:enabled="false"
+				style="@style/AppTheme.Button.DefaultButton"
+				/>
+
+			<com.telefonica.mistica.button.Button
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp"
+				android:text="Primary Small"
+				style="@style/AppTheme.Button.DefaultButton.Small"
+				/>
+
+			<com.telefonica.mistica.button.Button
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp"
+				android:text="Primary Small Icon"
+				app:icon="@android:drawable/btn_star"
+				style="@style/AppTheme.Button.DefaultButton.Small"
+				/>
+
+			<com.telefonica.mistica.button.ProgressButton
+				android:id="@+id/primary_small_progress"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp"
+				android:text="Primary Small Progress"
+				style="@style/AppTheme.Button.DefaultButton.Small"
+				/>
+
+			<com.telefonica.mistica.button.Button
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Primary Small Disabled"
+				android:layout_marginTop="16dp"
+				android:enabled="false"
+				style="@style/AppTheme.Button.DefaultButton.Small"
+				/>
+
+			<com.telefonica.mistica.button.Button
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp"
+				android:text="Secondary"
+				style="@style/AppTheme.Button.SecondaryButton"
+				/>
+
+			<com.telefonica.mistica.button.Button
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp"
+				android:text="Secondary Icon"
+				app:icon="@android:drawable/btn_star"
+				style="@style/AppTheme.Button.SecondaryButton"
+				/>
+
+			<com.telefonica.mistica.button.ProgressButton
+				android:id="@+id/secondary_progress"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp"
+				android:text="Secondary Progress"
+				style="@style/AppTheme.Button.SecondaryButton"
+				/>
+
+			<com.telefonica.mistica.button.Button
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Secondary Disabled"
+				android:layout_marginTop="16dp"
+				android:enabled="false"
+				style="@style/AppTheme.Button.SecondaryButton"
+				/>
+
+			<com.telefonica.mistica.button.Button
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp"
+				android:text="Secondary Small"
+				style="@style/AppTheme.Button.SecondaryButton.Small"
+				/>
+
+			<com.telefonica.mistica.button.Button
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp"
+				android:text="Secondary Small Icon"
+				app:icon="@android:drawable/btn_star"
+				style="@style/AppTheme.Button.SecondaryButton.Small"
+				/>
+
+			<com.telefonica.mistica.button.ProgressButton
+				android:id="@+id/secondary_small_progress"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp"
+				android:text="Secondary Small Progress"
+				style="@style/AppTheme.Button.SecondaryButton.Small"
+				/>
+
+			<com.telefonica.mistica.button.Button
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Secondary Small Disabled"
+				android:layout_marginTop="16dp"
+				android:enabled="false"
+				style="@style/AppTheme.Button.SecondaryButton.Small"
+				/>
+
+			<com.telefonica.mistica.button.Button
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp"
+				android:text="Danger"
+				style="@style/AppTheme.Button.DangerButton"
+				/>
+
+			<com.telefonica.mistica.button.Button
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp"
+				android:text="Danger Icon"
+				app:icon="@android:drawable/btn_star"
+				style="@style/AppTheme.Button.DangerButton"
+				/>
+
+			<com.telefonica.mistica.button.ProgressButton
+				android:id="@+id/danger_progress"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp"
+				android:text="Danger Progress"
+				style="@style/AppTheme.Button.DangerButton"
+				/>
+
+			<com.telefonica.mistica.button.Button
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Danger Disabled"
+				android:layout_marginTop="16dp"
+				android:enabled="false"
+				style="@style/AppTheme.Button.DangerButton"
+				/>
+
+			<com.telefonica.mistica.button.Button
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp"
+				android:text="Danger Small"
+				style="@style/AppTheme.Button.DangerButton.Small"
+				/>
+
+			<com.telefonica.mistica.button.Button
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp"
+				android:text="Danger Small Icon"
+				app:icon="@android:drawable/btn_star"
+				style="@style/AppTheme.Button.DangerButton.Small"
+				/>
+
+			<com.telefonica.mistica.button.ProgressButton
+				android:id="@+id/danger_small_progress"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp"
+				android:text="Danger Small Progress"
+				style="@style/AppTheme.Button.DangerButton.Small"
+				/>
+
+			<com.telefonica.mistica.button.Button
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Danger Small Disabled"
+				android:layout_marginTop="16dp"
+				android:enabled="false"
+				style="@style/AppTheme.Button.DangerButton.Small"
+				/>
+
+			<com.telefonica.mistica.button.Button
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp"
+				android:text="Link"
+				style="@style/AppTheme.Button.LinkButton"
+				/>
+
+			<com.telefonica.mistica.button.Button
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp"
+				android:text="Link Icon"
+				app:icon="@android:drawable/btn_star"
+				style="@style/AppTheme.Button.LinkButton"
+				app:iconTint="@color/text_button_link_selector"
+				/>
+
+			<com.telefonica.mistica.button.ProgressButton
+				android:id="@+id/link_progress"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp"
+				android:text="Link Progress"
+				style="@style/AppTheme.Button.LinkButton"
+				/>
+
+			<com.telefonica.mistica.button.Button
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Link Disabled"
+				android:layout_marginTop="16dp"
+				android:enabled="false"
+				style="@style/AppTheme.Button.LinkButton"
+				/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:gravity="center_horizontal"
+			android:background="?colorPrimary"
+			>
+
+			<com.telefonica.mistica.button.Button
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp"
+				android:text="Primary"
+				style="@style/AppTheme.Button.PrimaryButtonInverse"
+				/>
+
+			<com.telefonica.mistica.button.Button
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp"
+				android:text="Primary Icon"
+				app:icon="@android:drawable/btn_star"
+				style="@style/AppTheme.Button.PrimaryButtonInverse"
+				app:iconTint="@color/text_button_primary_inverse_selector"
+				/>
+
+			<com.telefonica.mistica.button.ProgressButton
+				android:id="@+id/primary_inverse_progress"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp"
+				android:text="Primary Progress"
+				style="@style/AppTheme.Button.PrimaryButtonInverse"
+				/>
+
+			<com.telefonica.mistica.button.Button
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Primary Disabled"
+				android:layout_marginTop="16dp"
+				android:enabled="false"
+				style="@style/AppTheme.Button.PrimaryButtonInverse"
+				/>
+
+			<com.telefonica.mistica.button.Button
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp"
+				android:text="Primary Small"
+				style="@style/AppTheme.Button.PrimaryButtonInverse.Small"
+				/>
+
+			<com.telefonica.mistica.button.Button
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp"
+				android:text="Primary Small Icon"
+				app:icon="@android:drawable/btn_star"
+				style="@style/AppTheme.Button.PrimaryButtonInverse.Small"
+				app:iconTint="@color/text_button_primary_inverse_selector"
+				/>
+
+			<com.telefonica.mistica.button.ProgressButton
+				android:id="@+id/primary_small_inverse_progress"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp"
+				android:text="Primary Small Progress"
+				style="@style/AppTheme.Button.PrimaryButtonInverse.Small"
+				/>
+
+			<com.telefonica.mistica.button.Button
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Primary Small Disabled"
+				android:layout_marginTop="16dp"
+				android:enabled="false"
+				style="@style/AppTheme.Button.PrimaryButtonInverse.Small"
+				/>
+
+			<com.telefonica.mistica.button.Button
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp"
+				android:text="Secondary"
+				style="@style/AppTheme.Button.SecondaryButtonInverse"
+				/>
+
+			<com.telefonica.mistica.button.Button
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp"
+				android:text="Secondary Icon"
+				app:icon="@android:drawable/btn_star"
+				style="@style/AppTheme.Button.SecondaryButtonInverse"
+				app:iconTint="@color/text_button_secondary_inverse_selector"
+				/>
+
+			<com.telefonica.mistica.button.ProgressButton
+				android:id="@+id/secondary_inverse_progress"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp"
+				android:text="Secondary Progress"
+				style="@style/AppTheme.Button.SecondaryButtonInverse"
+				/>
+
+			<com.telefonica.mistica.button.Button
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Secondary Disabled"
+				android:layout_marginTop="16dp"
+				android:enabled="false"
+				style="@style/AppTheme.Button.SecondaryButtonInverse"
+				/>
+
+			<com.telefonica.mistica.button.Button
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp"
+				android:text="Secondary Small"
+				style="@style/AppTheme.Button.SecondaryButtonInverse.Small"
+				/>
+
+			<com.telefonica.mistica.button.Button
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp"
+				android:text="Secondary Small Icon"
+				app:icon="@android:drawable/btn_star"
+				style="@style/AppTheme.Button.SecondaryButtonInverse.Small"
+				app:iconTint="@color/text_button_secondary_inverse_selector"
+				/>
+
+			<com.telefonica.mistica.button.ProgressButton
+				android:id="@+id/secondary_small_inverse_progress"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp"
+				android:text="Secondary Small Progress"
+				style="@style/AppTheme.Button.SecondaryButtonInverse.Small"
+				/>
+
+			<com.telefonica.mistica.button.Button
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Secondary Small Disabled"
+				android:layout_marginTop="16dp"
+				android:enabled="false"
+				style="@style/AppTheme.Button.SecondaryButtonInverse.Small"
+				/>
+
+			<com.telefonica.mistica.button.Button
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp"
+				android:text="Link"
+				style="@style/AppTheme.Button.LinkButtonInverse"
+				/>
+
+			<com.telefonica.mistica.button.Button
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp"
+				android:text="Link Icon"
+				app:icon="@android:drawable/btn_star"
+				style="@style/AppTheme.Button.LinkButtonInverse"
+				app:iconTint="@color/text_button_link_inverse_selector"
+				/>
+
+			<com.telefonica.mistica.button.ProgressButton
+				android:id="@+id/link_inverse_progress"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp"
+				android:text="Link Progress"
+				style="@style/AppTheme.Button.LinkButtonInverse"
+				/>
+
+			<com.telefonica.mistica.button.Button
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Link Disabled"
+				android:layout_marginTop="16dp"
+				android:enabled="false"
+				style="@style/AppTheme.Button.LinkButtonInverse"
+				/>
+
+		</LinearLayout>
+
+	</LinearLayout>
+
+</ScrollView>

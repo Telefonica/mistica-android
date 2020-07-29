@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<style name="AppTheme.TextAppearance.Caption1" parent="TextAppearance.AppCompat">
+		<item name="android:textSize">12sp</item>
+		<item name="android:fontFamily">@string/font_family_regular</item>
+	</style>
+
+	<style name="AppTheme.TextAppearance.Caption2" parent="TextAppearance.AppCompat">
+		<item name="android:textSize">12sp</item>
+		<item name="android:fontFamily">@string/font_family_medium</item>
+	</style>
+
+	<style name="AppTheme.TextAppearance.Caption3" parent="TextAppearance.AppCompat">
+		<item name="android:textSize">12sp</item>
+		<item name="android:fontFamily">@string/font_family_regular</item>
+		<item name="android:textStyle">bold</item>
+	</style>
+
+	<style name="AppTheme.TextAppearance.Caption4" parent="TextAppearance.AppCompat">
+		<item name="android:textSize">10sp</item>
+		<item name="android:fontFamily">@string/font_family_regular</item>
+	</style>
+
+	<style name="AppTheme.TextAppearance.Sub1" parent="TextAppearance.AppCompat">
+		<item name="android:textSize">14sp</item>
+		<item name="android:fontFamily">@string/font_family_regular</item>
+		<item name="android:textColorLink">?colorTextLink</item>
+	</style>
+
+	<style name="AppTheme.TextAppearance.Sub2" parent="TextAppearance.AppCompat">
+		<item name="android:textSize">14sp</item>
+		<item name="android:fontFamily">@string/font_family_medium</item>
+	</style>
+
+	<style name="AppTheme.TextAppearance.Body1" parent="TextAppearance.AppCompat">
+		<item name="android:textSize">16sp</item>
+		<item name="android:fontFamily">@string/font_family_regular</item>
+	</style>
+
+	<style name="AppTheme.TextAppearance.Body2" parent="TextAppearance.AppCompat">
+		<item name="android:textSize">16sp</item>
+		<item name="android:fontFamily">@string/font_family_medium</item>
+	</style>
+
+	<style name="AppTheme.TextAppearance.Body3" parent="TextAppearance.AppCompat">
+		<item name="android:textSize">16sp</item>
+		<item name="android:textStyle">bold</item>
+	</style>
+
+	<style name="AppTheme.TextAppearance.Title" parent="TextAppearance.AppCompat">
+		<item name="android:textSize">18sp</item>
+		<item name="android:fontFamily">@string/font_family_medium</item>
+	</style>
+
+	<style name="AppTheme.TextAppearance.Title1" parent="TextAppearance.AppCompat">
+		<item name="android:textSize">18sp</item>
+		<item name="android:fontFamily">@string/font_family_light</item>
+	</style>
+
+	<style name="AppTheme.TextAppearance.Title2" parent="TextAppearance.AppCompat">
+		<item name="android:textSize">20sp</item>
+		<item name="android:fontFamily">@string/font_family_medium</item>
+	</style>
+
+	<style name="AppTheme.TextAppearance.Title3" parent="TextAppearance.AppCompat">
+		<item name="android:textSize">20sp</item>
+		<item name="android:fontFamily">@string/font_family_light</item>
+	</style>
+
+	<style name="AppTheme.TextAppearance.Headline1" parent="TextAppearance.AppCompat">
+		<item name="android:textSize">24sp</item>
+		<item name="android:fontFamily">@string/font_family_regular</item>
+	</style>
+
+	<style name="AppTheme.TextAppearance.Headline2" parent="TextAppearance.AppCompat">
+		<item name="android:textSize">24sp</item>
+		<item name="android:fontFamily">@string/font_family_medium</item>
+	</style>
+
+	<style name="AppTheme.TextAppearance.Headline3" parent="TextAppearance.AppCompat">
+		<item name="android:textSize">24sp</item>
+		<item name="android:fontFamily">@string/font_family_light</item>
+	</style>
+
+	<style name="AppTheme.TextAppearance.Display1" parent="TextAppearance.AppCompat">
+		<item name="android:textSize">28sp</item>
+		<item name="android:fontFamily">@string/font_family_regular</item>
+	</style>
+
+	<style name="AppTheme.TextAppearance.Display2" parent="TextAppearance.AppCompat">
+		<item name="android:textSize">28sp</item>
+		<item name="android:fontFamily">@string/font_family_medium</item>
+	</style>
+
+	<style name="AppTheme.TextAppearance.Display3" parent="TextAppearance.AppCompat">
+		<item name="android:textSize">28sp</item>
+		<item name="android:fontFamily">@string/font_family_light</item>
+	</style>
+
+	<style name="AppTheme.TextAppearance.Display4" parent="TextAppearance.AppCompat">
+		<item name="android:textSize">40sp</item>
+		<item name="android:fontFamily">@string/font_family_regular</item>
+	</style>
+
+	<style name="AppTheme.TextAppearance.Display5" parent="TextAppearance.AppCompat">
+		<item name="android:textSize">64sp</item>
+		<item name="android:fontFamily">@string/font_family_light</item>
+	</style>
+
+	<style name="AppTheme.TextAppearance.Display6" parent="TextAppearance.AppCompat">
+		<item name="android:textSize">32sp</item>
+		<item name="android:fontFamily">@string/font_family_light</item>
+	</style>
+
+</resources>

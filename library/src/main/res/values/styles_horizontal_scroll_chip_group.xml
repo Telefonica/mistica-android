@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<style name="AppTheme.Widgets.Chip.Choice" parent="Widget.MaterialComponents.Chip.Choice">
+		<item name="android:textAppearance">@style/AppTheme.TextAppearance.Sub1</item>
+		<item name="android:textColor">@color/chip_text_color</item>
+		<item name="chipMinHeight">32dp</item>
+		<item name="chipStartPadding">16dp</item>
+		<item name="chipEndPadding">16dp</item>
+		<item name="chipBackgroundColor">@color/chip_background_color</item>
+		<item name="rippleColor">?colorControlHighlight</item>
+		<item name="android:minWidth">56dp</item>
+	</style>
+
+	<style name="AppTheme.Widgets.BaseChipGroup" parent="">
+		<item name="android:layout_gravity">start</item>
+		<item name="chipSpacing">8dp</item>
+	</style>
+
+	<style name="AppTheme.Widgets.ChipGroup" parent="AppTheme.Widgets.BaseChipGroup"/>
+
+</resources>

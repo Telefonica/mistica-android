@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.telefonica.mistica.feedback.error.LoadErrorFeedbackView
+		android:id="@+id/load_error_feedback"
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		android:layout_height="match_parent"
+		android:layout_width="match_parent"
+		app:loadErrorFeedbackTitle="Oops. Error Title!"
+		app:loadErrorFeedbackDescription="Something went wrong, this is the description of the failure. Try to retry if you want."
+		app:loadErrorFeedbackButtonText="Try Again!"
+		/>
+

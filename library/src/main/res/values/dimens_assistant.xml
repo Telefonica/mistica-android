@@ -1,0 +1,6 @@
+<resources>
+	<item name="gradient_background_start_point" type="dimen" format="float">0</item>
+	<item name="gradient_background_med_point" type="dimen" format="float">0.5</item>
+	<item name="gradient_background_med_high_point" type="dimen" format="float">0.7</item>
+	<item name="gradient_background_end_point" type="dimen" format="float">1.0</item>
+</resources>

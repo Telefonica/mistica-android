@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<style name="AppTheme.Forms.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+		<item name="android:layout_gravity">center_vertical</item>
+		<item name="boxBackgroundColor">@android:color/transparent</item>
+		<item name="boxStrokeColor">@android:color/transparent</item>
+		<item name="boxStrokeWidth">0dp</item>
+		<item name="boxStrokeWidthFocused">0dp</item>
+		<item name="hintEnabled">true</item>
+		<item name="errorTextColor">?colorTextError</item>
+		<item name="hintTextColor">?textInputLabel</item>
+		<item name="hintTextAppearance">@style/AppTheme.Forms.TextInputLayout.Hint</item>
+		<item name="errorTextAppearance">@style/AppTheme.Forms.TextInputLayout.Error</item>
+		<item name="helperTextTextAppearance">@style/AppTheme.Forms.TextInputLayout.Helper</item>
+		<item name="errorIconDrawable">@null</item>
+	</style>
+
+	<style name="AppTheme.Forms.TextInputLayout.EditText.TextArea" parent="AppTheme.Forms.TextInputLayout.EditText">
+		<item name="android:minLines">4</item>
+		<item name="android:maxLines">4</item>
+		<item name="android:inputType">textMultiLine</item>
+		<item name="android:gravity">start|top</item>
+		<item name="android:layout_height">156dp</item>
+		<item name="android:lineSpacingExtra">8dp</item>
+	</style>
+
+	<style name="AppTheme.Forms.TextInputLayout.Error" parent="TextAppearance.Design.Error">
+		<item name="android:textColor">?colorTextError</item>
+		<item name="colorError">?colorError</item>
+	</style>
+
+	<style name="AppTheme.Forms.TextInputLayout.Hint" parent="TextAppearance.Design.Hint" />
+
+	<style name="AppTheme.Forms.TextInputLayout.Helper" parent="AppTheme.TextAppearance.Caption1" />
+
+	<style name="AppTheme.Forms.TextInputLayout.Password" parent="AppTheme.Forms.TextInputLayout">
+		<item name="passwordToggleEnabled">true</item>
+	</style>
+
+	<style name="AppTheme.Forms.TextInputLayout.Dropdown" parent="AppTheme.Forms.TextInputLayout">
+		<item name="endIconMode">dropdown_menu</item>
+		<item name="android:paddingStart">0dp</item>
+		<item name="android:paddingTop">0dp</item>
+		<item name="android:paddingBottom">0dp</item>
+		<item name="android:paddingEnd">0dp</item>
+	</style>
+
+	<style name="AppTheme.Forms.TextInputLayout.EditText" parent="AppTheme.TextAppearance.Body1">
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">56dp</item>
+		<item name="android:paddingTop">24dp</item>
+		<item name="android:layout_margin">0dp</item>
+		<item name="android:background">@drawable/bg_textinputedittext</item>
+		<item name="android:maxLines">1</item>
+		<item name="android:inputType">textCapSentences</item>
+	</style>
+
+	<style name="AppTheme.Forms.TextInputLayout.EditText.Password" parent="AppTheme.Forms.TextInputLayout.EditText">
+		<item name="android:inputType">textPassword</item>
+	</style>
+
+	<style name="AppTheme.Forms.TextInputLayout.EditText.Phone" parent="AppTheme.Forms.TextInputLayout.EditText">
+		<item name="android:inputType">phone</item>
+	</style>
+
+	<style name="AppTheme.Forms.TextInputLayout.EditText.Email" parent="AppTheme.Forms.TextInputLayout.EditText">
+		<item name="android:inputType">textEmailAddress</item>
+	</style>
+
+	<style name="AppTheme.Forms.TextInputLayout.EditText.Dropdown" parent="AppTheme.Forms.TextInputLayout.EditText">
+		<item name="endIconMode">dropdown_menu</item>
+		<item name="android:paddingLeft">16dp</item>
+		<item name="android:paddingTop">26dp</item>
+		<item name="android:paddingBottom">8dp</item>
+		<item name="android:focusable">false</item>
+		<item name="android:cursorVisible">false</item>
+		<item name="android:editable">false</item>
+		<item name="android:imeOptions">actionNext</item>
+	</style>
+
+	<style name="AppTheme.Forms.CheckBox" parent="Widget.AppCompat.CompoundButton.CheckBox">
+		<item name="android:paddingStart">8dp</item>
+		<item name="android:textAppearance">@style/AppTheme.TextAppearance.Body1</item>
+		<item name="android:textColorHighlight">?colorControlHighlight</item>
+		<item name="android:textColorLink">@color/text_link_selector</item>
+	</style>
+</resources>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+		<TextView
+				android:id="@+id/load_error_feedback_title"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textAppearance="@style/AppTheme.TextAppearance.Body2"
+				android:gravity="center"
+				android:layout_marginBottom="8dp"
+				android:textColor="?colorTextPrimary"
+				android:visibility="gone"
+				/>
+
+		<TextView
+				android:id="@+id/load_error_feedback_description"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:maxLines="3"
+				android:textAppearance="@style/AppTheme.TextAppearance.Sub1"
+				android:gravity="center"
+				android:textColor="?colorTextSecondary"
+				android:text="@string/error_generic"
+				/>
+
+		<com.telefonica.mistica.button.ProgressButton
+				android:id="@+id/load_error_feedback_button"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="24dp"
+				android:text="@string/generic_retry"
+				style="@style/AppTheme.Button.SecondaryButton"
+				/>
+</merge>

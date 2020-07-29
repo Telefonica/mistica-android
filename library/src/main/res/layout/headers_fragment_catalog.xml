@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		xmlns:app="http://schemas.android.com/apk/res-auto">
+
+	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:gravity="center_horizontal"
+			android:orientation="vertical">
+
+		<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="24dp"
+				android:text="Headers Tester"
+				android:textAppearance="@style/AppTheme.TextAppearance.Display1" />
+
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="8dp"
+				android:layout_marginTop="8dp"
+				android:layout_marginRight="8dp"
+				android:orientation="horizontal">
+
+			<CheckBox
+					android:id="@+id/check_inverse"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:text="Inverse Display"
+					android:checked="true"/>
+
+			<CheckBox
+					android:id="@+id/check_top_padding"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:text="Top Padding"
+					android:checked="true"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+
+			<EditText
+					android:id="@+id/input_first_pretitle"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="8dp"
+					android:layout_marginRight="8dp"
+					android:layout_weight="1"
+					android:hint="First Pretitle"
+					android:importantForAutofill="no"
+					android:text="Factura de diciembre"
+					android:inputType="text" />
+
+			<CheckBox
+					android:id="@+id/check_first_pretitle_secondary"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginStart="16dp"
+					android:layout_marginEnd="8dp"
+					android:text="Secondary Color" />
+		</LinearLayout>
+
+		<EditText
+				android:id="@+id/input_title"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="8dp"
+				android:layout_marginEnd="8dp"
+				android:hint="Title"
+				android:text="La última factura de diciembre ya esta disponible"
+				android:importantForAutofill="no"
+				android:inputType="text" />
+
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+
+			<EditText
+					android:id="@+id/input_second_pretitle"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="8dp"
+					android:layout_marginRight="8dp"
+					android:layout_weight="1"
+					android:hint="Second Pretitle"
+					android:text="Cuota mensual (IVA incluido)"
+					android:importantForAutofill="no"
+					android:inputType="text" />
+
+			<CheckBox
+					android:id="@+id/check_second_pretitle_secondary"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginStart="16dp"
+					android:layout_marginEnd="8dp"
+					android:text="Secondary Color" />
+		</LinearLayout>
+
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+
+			<EditText
+					android:id="@+id/input_numeral"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="8dp"
+					android:layout_marginRight="8dp"
+					android:layout_weight="1"
+					android:hint="Numeral"
+					android:text="60,44 €"
+					android:importantForAutofill="no"
+					android:inputType="text" />
+
+			<CheckBox
+					android:id="@+id/check_numeral_danger"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginStart="16dp"
+					android:layout_marginEnd="8dp"
+					android:text="Danger Color" />
+		</LinearLayout>
+
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+
+			<EditText
+					android:id="@+id/input_action_text"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="8dp"
+					android:layout_marginRight="8dp"
+					android:layout_weight="1"
+					android:hint="Action"
+					android:text="Descargar factura"
+					android:importantForAutofill="no"
+					android:inputType="text" />
+
+			<EditText
+					android:id="@+id/input_secondary_action_text"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="8dp"
+					android:layout_marginRight="8dp"
+					android:layout_weight="1"
+					android:hint="Secondary Action"
+					android:text="Pagar factura"
+					android:importantForAutofill="no"
+					android:inputType="text" />
+		</LinearLayout>
+
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+
+			<EditText
+					android:id="@+id/input_subtitle"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="8dp"
+					android:layout_marginRight="8dp"
+					android:layout_weight="1"
+					android:hint="Subtitle"
+					android:text="Y esto es un subtitulo"
+					android:importantForAutofill="no"
+					android:inputType="text" />
+
+			<CheckBox
+					android:id="@+id/check_subtitle_secondary"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginStart="16dp"
+					android:layout_marginEnd="8dp"
+					android:text="Secondary Color" />
+		</LinearLayout>
+
+		<View
+				android:layout_width="match_parent"
+				android:layout_height="16dp"
+				android:background="?colorDivider" />
+
+		<com.telefonica.mistica.header.HeaderView
+				android:id="@+id/header_view"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				/>
+
+		<View
+				android:layout_width="match_parent"
+				android:layout_height="16dp"
+				android:background="?colorDivider" />
+
+		<com.telefonica.mistica.button.Button
+				android:id="@+id/button_update"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_margin="8dp"
+				android:text="Update" />
+
+
+	</LinearLayout>
+</ScrollView>

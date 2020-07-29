@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+	<color name="vivo_color_purple">#660099</color>
+	<color name="vivo_color_purple_dark">#461E5F</color>
+	<color name="vivo_color_purple_light10">#EFE5F4</color>
+	<color name="vivo_color_purple_light20">#E0CCEB</color>
+    <color name="vivo_color_purple_light40">#C199D6</color>
+	<color name="vivo_color_purple_light50">#B27FCC</color>
+    <color name="vivo_color_purple_light80">#8433AD</color>
+
+	<color name="vivo_color_green">#99CC33</color>
+	<color name="vivo_color_green_dark">#33A14A</color>
+    <color name="vivo_color_green_light40">#D6EAAD</color>
+
+	<color name="vivo_color_pepper">#CC1F59</color>
+	<color name="vivo_color_pepper_dark">#B71D63</color>
+	<color name="vivo_color_pepper_light">#F7B1CB</color>
+
+	<color name="vivo_color_orange">#FF7F41</color>
+    <color name="vivo_color_orange_dark">#FA6324</color>
+    <color name="vivo_color_orange_light">#FFD699</color>
+	
+
+	<color name="vivo_color_blue">#00ABDB</color>
+	<color name="vivo_color_blue_30_percent">#4D00AADC</color>
+
+	<color name="vivo_color_grey_0">#000000</color>
+	<color name="vivo_color_grey_1">#666666</color>
+	<color name="vivo_color_grey_2">#999999</color>
+	<color name="vivo_color_grey_2_25_percent">#40999999</color>
+	<color name="vivo_color_grey_3">#DDDDDD</color>
+	<color name="vivo_color_grey_3_85_percent">#CCDDDDDD</color>
+	<color name="vivo_color_grey_4">#EEEEEE</color>
+	<color name="vivo_color_grey_5">#F6F6F6</color>
+
+	<color name="vivo_color_white">#FFFFFF</color>
+	<color name="vivo_color_white_20_percent">#33FFFFFF</color>
+	<color name="vivo_color_white_35_percent">#59FFFFFF</color>
+	<color name="vivo_color_white_50_percent">#7FFFFFFF</color>
+	<color name="vivo_color_white_85_percent">#CCFFFFFF</color>
+
+	<color name="vivo_color_black">#000000</color>
+	<color name="vivo_color_black_5_percent">#0F000000</color>
+	<color name="vivo_color_black_10_percent">#1A000000</color>
+	<color name="vivo_color_black_20_percent">#33000000</color>
+	<color name="vivo_color_black_30_percent">#4D000000</color>
+	<color name="vivo_color_black_40_percent">#66000000</color>
+	<color name="vivo_color_black_50_percent">#80000000</color>
+	<color name="vivo_color_black_70_percent">#B3000000</color>
+	<color name="vivo_color_black_80_percent">#CC000000</color>
+
+	<color name="vivo_gradient_first">#7850A0</color>
+	<color name="vivo_gradient_second">#660099</color>
+	<color name="vivo_gradient_third">#660099</color>
+	<color name="vivo_gradient_fourth">#461E5F</color>
+
+	<color name="vivo_background_brand_first">#660099</color>
+	<color name="vivo_background_brand_second">#660099</color>
+	<color name="vivo_background_brand_third">#660099</color>
+	<color name="vivo_background_brand_fourth">#660099</color>
+
+	<color name="vivo_color_purple_light30_25_percent">#40D1B2E0</color>
+	<color name="vivo_color_purple_light30_40_percent">#40D1B2E0</color>
+	<color name="vivo_color_purple_light50_25_percent">#40B27FCC</color>
+	<color name="vivo_color_purple_dark_80_percent">#CC4F1570</color>
+
+	<color name="vivo_color_pink">#EB3D7D</color>
+
+</resources>

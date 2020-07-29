@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="button_horizontal_padding">16dp</dimen>
+    <dimen name="button_height">48dp</dimen>
+    <dimen name="button_min_width">156dp</dimen>
+    <dimen name="button_vertical_inset">0dp</dimen>
+    <dimen name="button_icon_size">24dp</dimen>
+    <dimen name="button_icon_padding">8dp</dimen>
+    <dimen name="button_corner_radius">4dp</dimen>
+    <dimen name="button_outline_stroke_width">1.5dp</dimen>
+    <dimen name="button_max_animation_translation">32dp</dimen>
+
+    <!-- Small variant -->
+    <dimen name="button_small_height">32dp</dimen>
+    <dimen name="button_small_min_width">104dp</dimen>
+    <dimen name="button_small_icon_size">16dp</dimen>
+
+    <!-- Link variant -->
+    <dimen name="button_link_horizontal_padding">8dp</dimen>
+    <dimen name="negative_button_link_horizontal_padding">-8dp</dimen>
+
+</resources>

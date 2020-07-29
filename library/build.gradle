@@ -1,0 +1,50 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'maven-publish'
+
+android {
+    compileSdkVersion 29
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 29
+    }
+
+    dataBinding {
+        enabled true
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.3.60"
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'com.google.android.material:material:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.constraintlayout:constraintlayout-solver:1.1.3'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'com.airbnb.android:lottie:3.2.2'
+
+    testImplementation 'junit:junit:4.12'
+}
+
+publishing {
+    repositories {
+        maven {
+            credentials {
+                username "TODO"
+                password "TODO"
+            }
+            url "https://nexusng.tuenti.io/repository/maven-release-private/"
+        }
+    }
+    publications {
+        impl(MavenPublication) {
+            artifact 'build/outputs/aar/library-release.aar'
+            groupId 'com.telefonica.mistica'
+            artifactId 'library'
+            version version
+        }
+    }
+}

@@ -1,0 +1,13 @@
+version: '1'
+
+services:
+ builder:
+   image: "${BUILDER_IMAGE}"
+   command: "bash -c 'adb start-server; sleep infinity'"
+   environment:
+     TERM: "xterm" # Needed for gradle
+   volumes:
+     - ".:/source"
+     - "/var/lib/gradle-cache:/root/.gradle"
+     - "/var/lib/maven-cache:/root/.m2"
+     - "/var/lib/gradle-build-cache:/root/.android/build-cache/"

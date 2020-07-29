@@ -1,0 +1,32 @@
+version: 2
+ 
+parameters:
+ BUILDER_IMAGE: "docker.tuenti.io/android/mistica_builder:1"
+ 
+defaults:
+ platform: "docker-large"
+ 
+ plugins:
+     mail:
+       enabled: true
+       recipients:
+ 
+timeout: 60
+workflows:
+ deploy:
+   stages: ["docker_up", "deploy", "docker_down"]
+ image:
+   stages: ["build_image", "push_image"]
+ 
+stages:
+ docker_up:
+   - "docker-compose pull"
+   - "docker-compose up -d builder"
+ deploy:
+   - "docker-compose exec -T builder bash -c \"cd /source; ./gradlew check assemble publish\""
+ docker_down:
+   - "docker-compose down -v"
+ build_image:
+   - "docker build -t ${BUILDER_IMAGE} ."
+ push_image:
+   - "docker push ${BUILDER_IMAGE}"

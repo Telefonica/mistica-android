@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string comment="Reintentar" name="generic_retry">Reintentar</string>
+	<string comment="Oops! Something went wrong." name="error_generic">Algo no ha funcionado.</string>
+</resources>

@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<declare-styleable name="Colors">
+
+		<!-- General -->
+		<attr name="colorBackground" format="color|reference" />
+
+		<attr name="colorTextPrimary" format="color|reference" />
+		<attr name="colorTextSecondary" format="color|reference" />
+		<attr name="colorTextDisabled" format="color|reference" />
+		<attr name="colorTextPrimaryInverse" format="color|reference" />
+		<attr name="colorTextSecondaryInverse" format="color|reference" />
+
+		<attr name="colorTextHint" format="color|reference" />
+		<attr name="colorTextLink" format="color|reference" />
+		<attr name="colorTextLinkPressed" format="color|reference" />
+		<attr name="colorTextLinkDisabled" format="color|reference" />
+		<attr name="colorTextLinkSnackbar" format="color|reference" />
+
+		<attr name="colorTextError" format="color|reference" />
+		<attr name="colorTextDanger" format="color|reference" />
+		<attr name="colorTextNavigationBarPrimary" format="color|reference" />
+
+		<attr name="colorTextAccent" format="color|reference" />
+		<attr name="colorTextAccentDisabled" format="color|reference" />
+
+		<attr name="colorTabSelected" format="color|reference" />
+
+		<attr name="textInputLabel" format="color|reference" />
+
+		<attr name="colorBackgroundAlternative" format="color|reference" />
+
+		<attr name="colorTimeIndicatorWarning" format="color|reference" />
+
+		<!-- Recents -->
+		<attr name="colorSearchOverlay" format="color|reference" />
+
+		<!-- Bubbles -->
+		<attr name="colorBubbleMeBackground" format="color|reference" />
+		<attr name="colorBubbleMeBackgroundPressed" format="color|reference" />
+		<attr name="colorBubbleOtherBackground" format="color|reference" />
+		<attr name="colorBubbleOtherBackgroundPressed" format="color|reference" />
+		<attr name="colorBubbleBackgroundHighlighted" format="color|reference" />
+
+		<attr name="colorPhotoChatBubbleTimestampBackground" format="color|reference" />
+		<attr name="colorChatBgFailedBubble" format="color|reference" />
+
+		<!-- Buttons -->
+		<attr name="colorTextButtonPrimary" format="color|reference" />
+		<attr name="colorTextButtonSecondary" format="color|reference" />
+		<attr name="colorTextButtonSecondaryPressed" format="color|reference" />
+		<attr name="colorTextButtonSecondaryDisabled" format="color|reference" />
+
+		<attr name="colorTextButtonPrimaryInverse" format="color|reference" />
+		<attr name="colorTextButtonPrimaryInversePressed" format="color|reference" />
+		<attr name="colorTextButtonPrimaryInverseDisabled" format="color|reference" />
+
+		<attr name="colorTextButtonSecondaryInverse" format="color|reference" />
+		<attr name="colorTextButtonSecondaryInversePressed" format="color|reference" />
+		<attr name="colorTextButtonSecondaryInverseDisabled" format="color|reference" />
+
+		<attr name="colorButtonPrimaryBackground" format="color|reference" />
+		<attr name="colorButtonPrimaryBackgroundPressed" format="color|reference" />
+		<attr name="colorButtonPrimaryBackgroundDisabled" format="color|reference" />
+
+		<attr name="colorButtonSecondaryBackground" format="color|reference" />
+		<attr name="colorButtonSecondaryBackgroundPressed" format="color|reference" />
+		<attr name="colorButtonSecondaryBackgroundDisabled" format="color|reference" />
+
+		<attr name="colorButtonDangerBackground" format="color|reference" />
+		<attr name="colorButtonDangerBackgroundPressed" format="color|reference" />
+		<attr name="colorButtonDangerBackgroundDisabled" format="color|reference" />
+
+		<attr name="colorButtonPrimaryBackgroundInverse" format="color|reference" />
+		<attr name="colorButtonPrimaryBackgroundPressedInverse" format="color|reference" />
+		<attr name="colorButtonPrimaryBackgroundDisabledInverse" format="color|reference" />
+
+		<attr name="colorButtonSecondaryBorderInverse" format="color|reference" />
+		<attr name="colorButtonSecondaryBorderPressedInverse" format="color|reference" />
+		<attr name="colorButtonSecondaryBorderDisabledInverse" format="color|reference" />
+
+		<attr name="colorLinkButtonBackgroundPressed" format="color|reference" />
+		<attr name="colorLinkButtonBackgroundPressedInverse" format="color|reference" />
+
+		<attr name="colorButtonCircularBorderBackground" format="color|reference" />
+
+		<!-- Call button -->
+		<attr name="colorButtonDanger" format="color|reference" />
+		<attr name="colorButtonDangerDisabled" format="color|reference" />
+		<attr name="colorButtonDangerPressed" format="color|reference" />
+
+		<!-- Call dialog -->
+		<attr name="colorCallDialogWindowBackground" format="color|reference" />
+
+		<!-- Call screen -->
+		<attr name="colorCallScreenOverlayTransparent" format="color|reference" />
+		<attr name="colorCallScreenOverlay" format="color|reference" />
+		<attr name="colorCallScreenCallEndedBackgroundOpacity" format="color|reference" />
+		<attr name="colorCallScreenFilterButtonBackground" format="color|reference" />
+		<attr name="colorCallScreenTextShadow" format="color|reference" />
+		<attr name="colorCallScreenDialerButtonPressed" format="color|reference" />
+		<attr name="colorCallScreenDialerButton" format="color|reference" />
+		<attr name="colorCallScreenWaveformViewLineTransparent" format="color|reference" />
+		<attr name="colorCallScreenWaveformViewLineOpaque" format="color|reference" />
+		<attr name="colorCallScreenFilterSelector" format="color|reference" />
+
+		<!-- Feedbacks -->
+		<attr name="colorFeedbackErrorBackground" format="color|reference" />
+		<attr name="colorFeedbackInfoBackground" format="color|reference" />
+		<attr name="colorToastShadowBackground" format="color|reference" />
+		<attr name="colorBorder" format="color|reference" />
+
+		<!-- Dividers -->
+		<attr name="colorDivider" format="color|reference" />
+		<attr name="colorDividerFat" format="color|reference" />
+		<attr name="colorDividerInverse" format="color|reference" />
+		<attr name="colorDividerAlbumPhotoDropDownMenu" format="color|reference" />
+
+		<!-- View Pager indicators -->
+		<attr name="colorViewPagerItemPrimary" format="color|reference" />
+		<attr name="colorViewPagerItemSecondary" format="color|reference" />
+
+		<!-- Login -->
+		<attr name="colorLoginOverlay" format="color|reference" />
+		<attr name="colorLoginDarkOverlay" format="color|reference" />
+		<attr name="colorLoginTextInput" format="color|reference" />
+		<attr name="colorLoginItem" format="color|reference" />
+		<attr name="colorLoginItemPressed" format="color|reference" />
+		<attr name="colorLoginEditTextAccent" format="color|reference" />
+		<attr name="colorLoginEditTextControlNormal" format="color|reference" />
+		<attr name="colorLoginEditTextControlHighlight" format="color|reference" />
+		<attr name="colorLoginEditTextControlActivated" format="color|reference" />
+		<attr name="colorLoginEditTextText" format="color|reference" />
+
+		<!-- Sign Up -->
+		<attr name="colorSignUpSocialBackground" format="color|reference" />
+		<attr name="colorSignUpSocialLoginItem" format="color|reference" />
+		<attr name="colorSignUpSocialLoginItemPressed" format="color|reference" />
+
+		<!-- Chat -->
+		<attr name="colorMucEventAccentColor" format="color|reference" />
+
+		<!-- Telco Profile -->
+		<attr name="colorProfileOverlayBackground" format="color|reference" />
+		<attr name="colorProfileSwipeBackShadow" format="color|reference" />
+		<attr name="colorProfileCallActionDisabledBackground" format="color|reference" />
+
+		<!--  Own Profile  -->
+		<attr name="colorFingerprintBackground" format="color|reference" />
+		<attr name="colorProfileItemIcon" format="color|reference" />
+
+		<!-- Session Management -->
+		<attr name="colorSessionManagementIcon" format="color|reference" />
+
+		<!-- Photos -->
+		<attr name="colorPhotosBackground" format="color|reference" />
+		<attr name="colorAlbumRowBackground" format="color|reference" />
+
+		<!-- News -->
+		<attr name="colorNewsNotificationBackground" format="color|reference" />
+
+		<!-- Call Dialog -->
+		<attr name="colorOutgoingCallDialogForegroundSignal" format="color|reference" />
+		<attr name="colorOutgoingCallDialogBackgroundSignal" format="color|reference" />
+
+		<!-- Chat Bar -->
+		<attr name="colorCharCounterTextColor" format="color|reference" />
+
+		<!-- Customer Care -->
+		<attr name="colorCustomerCareCategoryPickerDivider" format="color|reference" />
+
+		<!-- Albums -->
+		<attr name="colorAlbumsPlaceholderPlain" format="color|reference" />
+		<attr name="colorAlbumsPlaceholderPlainTransparent" format="color|reference" />
+
+		<!-- Call Screen -->
+		<attr name="colorVoipInCallActionButton" format="color|reference" />
+		<attr name="colorVoipQualityFeedbackBackgroundLightGray" format="color|reference" />
+		<attr name="colorVoipQualityFeedbackBrightCapsuleMin" format="color|reference" />
+		<attr name="colorVoipQualityFeedbackBrightCapsuleMax" format="color|reference" />
+		<attr name="colorVoipQualityFeedbackDarkCapsuleMin" format="color|reference" />
+		<attr name="colorVoipQualityFeedbackDarkCapsuleMax" format="color|reference" />
+		<attr name="colorVoipGradientBackground" format="color|reference" />
+
+		<!-- Tabs -->
+		<attr name="colorMainTabText" format="color|reference" />
+		<attr name="colorMainTabTextSelected" format="color|reference" />
+
+		<!-- Assistant -->
+		<attr name="colorGradientBackgroundFirst" format="color|reference" />
+		<attr name="colorGradientBackgroundSecond" format="color|reference" />
+		<attr name="colorGradientBackgroundThird" format="color|reference" />
+		<attr name="colorGradientBackgroundFourth" format="color|reference" />
+
+		<attr name="colorTextAssistantHint" format="color|reference" />
+
+		<attr name="colorAssistantButtonBackground" format="color|reference" />
+		<attr name="colorAssistantButtonBackgroundPressed" format="color|reference" />
+		<attr name="colorAssistantButtonBackgroundDisabled" format="color|reference" />
+
+		<attr name="colorAssistantButtonNotificationsBackground" format="color|reference" />
+
+		<attr name="colorAssistantButtonBorderBackground" format="color|reference" />
+		<attr name="colorAssistantButtonBorderBackgroundPressed" format="color|reference" />
+		<attr name="colorAssistantButtonBorderBackgroundDisabled" format="color|reference" />
+
+		<attr name="colorAssistantButtonFlowBackground" format="color|reference" />
+		<attr name="colorAssistantButtonFlowBackgroundPressed" format="color|reference" />
+		<attr name="colorAssistantButtonFlowBackgroundDisabled" format="color|reference" />
+
+		<attr name="colorAssistantDivider" format="color|reference" />
+		<attr name="colorAssistantCardShadow" format="color|reference" />
+
+		<attr name="colorAssistantChartPrimaryActive" format="color|reference" />
+		<attr name="colorAssistantChartPrimaryInactive" format="color|reference" />
+		<attr name="colorAssistantChartSecondaryActive" format="color|reference" />
+		<attr name="colorAssistantChartSecondaryInactive" format="color|reference" />
+		<attr name="colorAssistantBadge" format="color|reference" />
+		<attr name="colorAssistantChartCircleBackground" format="color|reference" />
+		<attr name="colorAssistantChartCirclePrimary" format="color|reference" />
+		<attr name="colorAssistantChartCircleWarning" format="color|reference" />
+		<attr name="colorAssistantChartCircleDanger" format="color|reference" />
+
+		<!-- Onboarding Wizard -->
+		<attr name="colorScreenBackground" format="color|reference" />
+
+		<!-- Call -->
+		<attr name="colorTextNewBubbleCallContent" format="color|reference" />
+
+		<!-- Location bubble -->
+		<attr name="colorNewBubbleLocationForwardNormal" format="color|reference" />
+		<attr name="colorNewBubbleLocationForwardPressed" format="color|reference" />
+
+		<!-- Photo -->
+		<attr name="colorNewBubblePhotoTimestampBackground" format="color|reference" />
+
+		<!-- Gif -->
+		<attr name="colorNewBubbleIconBg" format="color|reference" />
+
+		<!-- Video -->
+		<attr name="colorVideoProgressBg" format="color|reference" />
+		<attr name="colorVideoTimeText" format="color|reference" />
+		<attr name="colorVideoViewBg" format="color|reference" />
+		<attr name="colorVideoViewBgWith40Alpha" format="color|reference" />
+		<attr name="colorVideoPlayBgWith30Alpha" format="color|reference" />
+
+		<!-- Date Meta Message -->
+		<attr name="colorDateMessageTextColor" format="color|reference" />
+
+		<!-- Unread Marker -->
+		<attr name="colorUnreadMarkerTextColor" format="color|reference" />
+
+		<!-- Pin Screen -->
+		<attr name="colorPinGradientFirst" format="color|reference" />
+		<attr name="colorPinGradientSecond" format="color|reference" />
+		<attr name="colorPinGradientThird" format="color|reference" />
+		<attr name="colorPinGradientFourth" format="color|reference" />
+		<attr name="colorPinLoadingOverlay" format="color|reference" />
+		<attr name="colorPinBiometricOverlay" format="color|reference" />
+
+		<!-- Explore -->
+		<attr name="colorSkeletonBackground" format="color|reference" />
+		<attr name="colorSkeletonWave" format="color|reference" />
+		<attr name="colorExploreCardPressed" format="color|reference" />
+
+		<!-- Login loading Screen -->
+		<attr name="colorLoginLoadingGradientFirst" format="color|reference" />
+		<attr name="colorLoginLoadingGradientSecond" format="color|reference" />
+		<attr name="colorLoginLoadingGradientThird" format="color|reference" />
+		<attr name="colorLoginLoadingGradientFourth" format="color|reference" />
+
+		<!-- Bottom Bar -->
+		<attr name="colorAppbarText" format="color|reference" />
+		<attr name="colorAppbarTextSelected" format="color|reference" />
+
+		<!-- Support and ticketing  -->
+		<attr name="colorTagBackgroundFirst" format="color|reference" />
+		<attr name="colorTagBackgroundFourth" format="color|reference" />
+		<attr name="colorTagBackgroundSecond" format="color|reference" />
+		<attr name="colorTagBackgroundThird" format="color|reference" />
+
+		<!-- Widget -->
+		<attr name="colorChartBackground" format="color|reference" />
+		<attr name="colorChartPrimary" format="color|reference" />
+		<attr name="colorChartPrimaryDark" format="color|reference" />
+		<attr name="colorChartPrimaryLight" format="color|reference" />
+		<attr name="colorChartWarning" format="color|reference" />
+		<attr name="colorChartWarningLight" format="color|reference" />
+		<attr name="colorChartDanger" format="color|reference" />
+		<attr name="colorChartUnlimited" format="color|reference" />
+		<attr name="colorChartCritical" format="color|reference" />
+
+		<!-- Youtube player -->
+		<attr name="colorYoutubeBackgroundLayer" format="color|reference" />
+
+		<!-- Chips -->
+		<attr name="colorChipGroupBackground" format="color|reference" />
+		<attr name="colorChipTextDefault" format="color|reference" />
+		<attr name="colorChipTextChecked" format="color|reference" />
+		<attr name="colorChipBackgroundDefault" format="color|reference" />
+		<attr name="colorChipBackgroundChecked" format="color|reference" />
+
+		<!-- Badge -->
+		<attr name="colorBadgeBackground" format="color|reference" />
+
+		<!-- Scroll content indicator -->
+		<attr name="scrollContentIndicatorGradientStart" format="color|reference" />
+		<attr name="scrollContentIndicatorGradientEnd" format="color|reference" />
+
+		<!-- Iconography colors -->
+		<attr name="colorIconPrimary" format="color|reference" />
+		<attr name="colorIconPrimaryDark" format="color|reference" />
+		<attr name="colorIconBrand" format="color|reference" />
+		<attr name="colorIconAccent" format="color|reference" />
+		<attr name="colorIconDisabled" format="color|reference" />
+		<attr name="colorIconInverse" format="color|reference" />
+		<attr name="colorIconSecondary" format="color|reference" />
+		<attr name="colorIconWarning" format="color|reference" />
+		<attr name="colorIconDanger" format="color|reference" />
+		<attr name="colorIconCustomPurple" format="color|reference" />
+		<attr name="colorIconCustomMagenta" format="color|reference" />
+
+		<!-- Tag -->
+		<attr name="colorPromoBackground" format="color|reference" />
+
+	</declare-styleable>
+
+	<declare-styleable name="Feedbacks">
+		<!-- Feedbacks -->
+		<attr name="feedbackScreenSuccessWithGradient" format="boolean" />
+		<attr name="feedbackScreenSuccessInverse" format="boolean" />
+		<attr name="feedbackScreenSuccessAnimation" format="reference" />
+		<attr name="feedbackScreenSuccessIcon" format="reference" />
+		<attr name="feedbackScreenErrorAnimation" format="reference" />
+		<attr name="feedbackScreenErrorIcon" format="reference" />
+		<attr name="feedbackScreenInfoAnimation" format="reference" />
+		<attr name="feedbackScreenInfoIcon" format="reference" />
+	</declare-styleable>
+
+</resources>

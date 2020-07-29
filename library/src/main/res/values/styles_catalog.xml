@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<style name="Widget.UICatalog.Separator" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">1dp</item>
+		<item name="android:layout_marginStart">0dp</item>
+		<item name="android:layout_marginTop">0dp</item>
+		<item name="android:layout_marginEnd">0dp</item>
+		<item name="android:layout_marginBottom">16dp</item>
+		<item name="android:background">?colorBorder</item>
+	</style>
+
+</resources>

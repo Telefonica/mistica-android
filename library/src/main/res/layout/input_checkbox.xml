@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.textfield.TextInputLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/text_input_layout"
+		style="@style/AppTheme.Forms.TextInputLayout"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+
+	<androidx.appcompat.widget.AppCompatCheckBox
+			android:id="@+id/checkbox_input"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			style="@style/AppTheme.Forms.CheckBox" />
+
+</com.google.android.material.textfield.TextInputLayout>
