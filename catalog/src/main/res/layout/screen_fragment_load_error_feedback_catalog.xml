@@ -1,10 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.telefonica.mistica.feedback.error.LoadErrorFeedbackView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/load_error_feedback"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:loadErrorFeedbackButtonText="Try Again!"
-    app:loadErrorFeedbackDescription="Something went wrong, this is the description of the failure. Try to retry if you want."
-    app:loadErrorFeedbackTitle="Oops. Error Title!" />
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <com.telefonica.mistica.section.SectionTitleView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:text="Load Error Feedback" />
+
+    <com.telefonica.mistica.feedback.error.LoadErrorFeedbackView
+        android:id="@+id/load_error_feedback"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:loadErrorFeedbackButtonText="Try Again!"
+        app:loadErrorFeedbackDescription="Something went wrong, this is the description of the failure. Try to retry if you want."
+        app:loadErrorFeedbackTitle="Oops. Error Title!" />
+
+</LinearLayout>
+
 

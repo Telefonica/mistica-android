@@ -7,12 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
-import android.widget.CheckBox
-import android.widget.EditText
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.feedback.popover.PopOver
+import com.telefonica.mistica.input.CheckBoxInput
+import com.telefonica.mistica.input.TextInput
 
 class PopOverCatalogFragment : Fragment() {
 
@@ -28,12 +27,11 @@ class PopOverCatalogFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val title: TextView = view.findViewById(R.id.title)
-        val inputTitle: EditText = view.findViewById(R.id.input_popover_title)
-        val inputMessage: EditText = view.findViewById(R.id.input_popover_message)
+        val inputTitle: TextInput = view.findViewById(R.id.input_popover_title)
+        val inputMessage: TextInput = view.findViewById(R.id.input_popover_message)
         val createButton: Button = view.findViewById(R.id.button_create_popover)
         val createButtonOnTop: Button = view.findViewById(R.id.button_create_popover_on_top)
-        val addImage: CheckBox = view.findViewById(R.id.input_popover_checkbox_image)
+        val addImage: CheckBoxInput = view.findViewById(R.id.input_popover_checkbox_image)
 
         createButton.setOnClickListener {
             createPopOverOnView(
@@ -45,7 +43,7 @@ class PopOverCatalogFragment : Fragment() {
         }
         createButtonOnTop.setOnClickListener {
             createPopOverOnView(
-                title,
+                inputTitle,
                 inputTitle,
                 inputMessage,
                 addImage
@@ -55,17 +53,17 @@ class PopOverCatalogFragment : Fragment() {
 
     private fun createPopOverOnView(
         it: View,
-        inputTitle: EditText,
-        inputMessage: EditText,
-        addImage: CheckBox
+        inputTitle: TextInput,
+        inputMessage: TextInput,
+        addImage: CheckBoxInput
     ) {
         it.hideKeyboard()
         val popover = PopOver(activity!!, it)
             .setTitle(inputTitle.text.toString())
             .setDescription(inputMessage.text.toString())
 
-        if (addImage.isChecked) {
-            popover.setImage(android.R.drawable.btn_star)
+        if (addImage.isChecked()) {
+            popover.setImage(R.drawable.ic_popovers)
         }
 
         popover.show(activity!!)

@@ -9,6 +9,7 @@ import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import com.telefonica.mistica.badge.Badge
 import com.telefonica.mistica.catalog.R
+import kotlin.random.Random
 
 class BadgesCatalogFragment : Fragment() {
 
@@ -31,6 +32,16 @@ class BadgesCatalogFragment : Fragment() {
             setOnClickListener {
                 if (!badgeVisible) {
                     Badge.showBadgeIn(imageView)
+                } else {
+                    Badge.removeBadge(imageView)
+                }
+                badgeVisible = !badgeVisible
+            }
+        }
+        findViewById<Button>(R.id.button_add_to_image_view_number).apply {
+            setOnClickListener {
+                if (!badgeVisible) {
+                    Badge.showBadgeIn(imageView, Random(System.currentTimeMillis()).nextInt(1, 11))
                 } else {
                     Badge.removeBadge(imageView)
                 }

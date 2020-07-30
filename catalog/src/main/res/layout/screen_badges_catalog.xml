@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,17 +6,32 @@
     android:orientation="vertical"
     android:padding="16dp">
 
+    <com.telefonica.mistica.section.SectionTitleView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:text="Badges" />
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@android:drawable/btn_star" />
+        android:layout_marginTop="8dp"
+        android:src="@drawable/icn_creditcard" />
 
     <Button
         android:id="@+id/button_add_to_image_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="12dp"
         android:text="Toggle" />
+
+    <Button
+        android:id="@+id/button_add_to_image_view_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Toggle With Number" />
 
 </LinearLayout>

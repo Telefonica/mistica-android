@@ -6,13 +6,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.*
+import android.widget.ArrayAdapter
+import android.widget.Button
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.catalog.ui.activity.FeedbackScreenCatalogActivity
 import com.telefonica.mistica.feedback.screen.view.FeedbackScreenView
 import com.telefonica.mistica.feedback.screen.view.FeedbackScreenView.FeedbackType
+import com.telefonica.mistica.input.CheckBoxInput
+import com.telefonica.mistica.input.DropDownInput
+import com.telefonica.mistica.input.TextInput
 
 class FeedbackScreenCatalogFragment : Fragment() {
 
@@ -28,33 +32,34 @@ class FeedbackScreenCatalogFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val typeSpinner: Spinner = view.findViewById(R.id.spinner_feedback_type)
-        val inputTitle: EditText = view.findViewById(R.id.input_feedback_title)
-        val inputSubtitle: EditText = view.findViewById(R.id.input_feedback_subtitle)
-        val inputFirstButtonText: EditText = view.findViewById(R.id.input_feedback_first_button)
-        val inputSecondButtonText: EditText = view.findViewById(R.id.input_feedback_second_button)
-        val checkBoxSecondButtonAsLink: CheckBox =
+        val typeDropDown: DropDownInput = view.findViewById(R.id.dropdown_feedback_type)
+        val inputTitle: TextInput = view.findViewById(R.id.input_feedback_title)
+        val inputSubtitle: TextInput = view.findViewById(R.id.input_feedback_subtitle)
+        val inputFirstButtonText: TextInput = view.findViewById(R.id.input_feedback_first_button)
+        val inputSecondButtonText: TextInput = view.findViewById(R.id.input_feedback_second_button)
+        val checkBoxSecondButtonAsLink: CheckBoxInput =
             view.findViewById(R.id.check_feedback_second_button_as_link)
-        val checkBoxIsModal: CheckBox = view.findViewById(R.id.check_feedback_is_modal)
         val createButton: Button = view.findViewById(R.id.button_create_feedback)
 
-        typeSpinner.adapter = ArrayAdapter(
-            view.context,
-            android.R.layout.simple_spinner_item,
-            Type.values().map { it.name }).apply {
-            setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        with(typeDropDown.dropDown) {
+            setAdapter(
+                ArrayAdapter(
+                    view.context,
+                    R.layout.dropdown_menu_popup_item,
+                    Type.values().map { it.name })
+            )
+            setText(Type.SUCCESS.name, false)
         }
 
         createButton.setOnClickListener {
             showFeedbackActivity(
-                type = Type.valueOf(typeSpinner.selectedItem as String).type,
+                type = Type.valueOf(typeDropDown.dropDown.text.toString()).type,
                 context = view.context,
-                isModal = checkBoxIsModal.isChecked,
                 title = inputTitle.toNullableString(),
                 subtitle = inputSubtitle.toNullableString(),
                 firstButtonText = inputFirstButtonText.toNullableString(),
                 secondButtonText = inputSecondButtonText.toNullableString(),
-                showSecondButtonAsLink = checkBoxSecondButtonAsLink.isChecked
+                showSecondButtonAsLink = checkBoxSecondButtonAsLink.isChecked()
             )
         }
     }
@@ -62,7 +67,6 @@ class FeedbackScreenCatalogFragment : Fragment() {
     private fun showFeedbackActivity(
         context: Context,
         @FeedbackType type: Int,
-        isModal: Boolean = FeedbackScreenCatalogActivity.IS_MODAL_DEFAULT_VALUE,
         title: String?,
         subtitle: String?,
         @LayoutRes customContentLayout: Int = FeedbackScreenCatalogActivity.INVALID_DEFAULT_VALUE,
@@ -81,12 +85,11 @@ class FeedbackScreenCatalogFragment : Fragment() {
                 FeedbackScreenCatalogActivity.EXTRA_SHOW_SECOND_BUTTON_AS_LINK,
                 showSecondButtonAsLink
             )
-            putExtra(FeedbackScreenCatalogActivity.EXTRA_IS_MODAL, isModal)
             context.startActivity(this)
         }
     }
 
-    private fun EditText.toNullableString(): String? = this.text.toString()
+    private fun TextInput.toNullableString(): String? = this.text.toString()
 
     private enum class Type(@FeedbackType val type: Int) {
         SUCCESS(FeedbackScreenView.TYPE_SUCCESS),

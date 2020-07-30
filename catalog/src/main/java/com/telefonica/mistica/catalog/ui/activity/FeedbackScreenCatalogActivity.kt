@@ -13,7 +13,6 @@ class FeedbackScreenCatalogActivity : AppCompatActivity() {
 
     @FeedbackType
     var type: Int? = null
-    var isModal: Boolean = true
     var title: String? = null
     var subtitle: String? = null
     @LayoutRes
@@ -45,10 +44,6 @@ class FeedbackScreenCatalogActivity : AppCompatActivity() {
             EXTRA_TYPE,
             INVALID_DEFAULT_VALUE
         )
-        isModal = intent.getBooleanExtra(
-            EXTRA_IS_MODAL,
-            IS_MODAL_DEFAULT_VALUE
-        )
         title = intent.getStringExtra(EXTRA_TITLE)
         subtitle = intent.getStringExtra(EXTRA_SUBTITLE)
         customContentLayout = intent.getIntExtra(
@@ -65,11 +60,9 @@ class FeedbackScreenCatalogActivity : AppCompatActivity() {
 
     companion object {
         const val INVALID_DEFAULT_VALUE = -1
-        const val IS_MODAL_DEFAULT_VALUE = true
         const val SHOW_SECOND_BUTTON_AS_LINK_DEFAULT_VALUE = false
 
         const val EXTRA_TYPE = "extra_type"
-        const val EXTRA_IS_MODAL = "extra_modal"
         const val EXTRA_TITLE = "extra_title"
         const val EXTRA_SUBTITLE = "extra_subtitle"
         const val EXTRA_CUSTOM_CONTENT = "extra_custom_content"
