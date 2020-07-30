@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="Primary Icon"
-                app:icon="@android:drawable/ic_dialog_info" />
+                app:icon="@drawable/icn_creditcard" />
 
             <com.telefonica.mistica.button.ProgressButton
                 android:id="@+id/primary_progress"
@@ -69,7 +69,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="Primary Small Icon"
-                app:icon="@android:drawable/ic_dialog_info" />
+                app:icon="@drawable/icn_creditcard" />
 
             <com.telefonica.mistica.button.ProgressButton
                 android:id="@+id/primary_small_progress"
@@ -100,7 +100,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="Secondary Icon"
-                app:icon="@android:drawable/ic_dialog_info" />
+                app:icon="@drawable/icn_creditcard" />
 
             <com.telefonica.mistica.button.ProgressButton
                 android:id="@+id/secondary_progress"
@@ -131,7 +131,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="Secondary Small Icon"
-                app:icon="@android:drawable/ic_dialog_info" />
+                app:icon="@drawable/icn_creditcard" />
 
             <com.telefonica.mistica.button.ProgressButton
                 android:id="@+id/secondary_small_progress"
@@ -162,7 +162,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="Danger Icon"
-                app:icon="@android:drawable/ic_dialog_info" />
+                app:icon="@drawable/icn_creditcard" />
 
             <com.telefonica.mistica.button.ProgressButton
                 android:id="@+id/danger_progress"
@@ -193,7 +193,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="Danger Small Icon"
-                app:icon="@android:drawable/ic_dialog_info" />
+                app:icon="@drawable/icn_creditcard" />
 
             <com.telefonica.mistica.button.ProgressButton
                 android:id="@+id/danger_small_progress"
@@ -224,7 +224,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="Link Icon"
-                app:icon="@android:drawable/ic_dialog_info"
+                app:icon="@drawable/icn_creditcard"
                 app:iconTint="@color/text_button_link_selector" />
 
             <com.telefonica.mistica.button.ProgressButton
@@ -273,7 +273,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="Primary Icon"
-                app:icon="@android:drawable/ic_dialog_info"
+                app:icon="@drawable/icn_creditcard"
                 app:iconTint="@color/text_button_primary_inverse_selector" />
 
             <com.telefonica.mistica.button.ProgressButton
@@ -305,7 +305,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="Primary Small Icon"
-                app:icon="@android:drawable/ic_dialog_info"
+                app:icon="@drawable/icn_creditcard"
                 app:iconTint="@color/text_button_primary_inverse_selector" />
 
             <com.telefonica.mistica.button.ProgressButton
@@ -337,7 +337,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="Secondary Icon"
-                app:icon="@android:drawable/ic_dialog_info"
+                app:icon="@drawable/icn_creditcard"
                 app:iconTint="@color/text_button_secondary_inverse_selector" />
 
             <com.telefonica.mistica.button.ProgressButton
@@ -369,7 +369,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="Secondary Small Icon"
-                app:icon="@android:drawable/ic_dialog_info"
+                app:icon="@drawable/icn_creditcard"
                 app:iconTint="@color/text_button_secondary_inverse_selector" />
 
             <com.telefonica.mistica.button.ProgressButton
@@ -401,7 +401,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="Link Icon"
-                app:icon="@android:drawable/ic_dialog_info"
+                app:icon="@drawable/icn_creditcard"
                 app:iconTint="@color/text_button_link_inverse_selector" />
 
             <com.telefonica.mistica.button.ProgressButton

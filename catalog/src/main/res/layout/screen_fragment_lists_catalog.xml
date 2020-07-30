@@ -4,16 +4,34 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <com.telefonica.mistica.section.SectionTitleView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Full Width List" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="8dp"
         android:layout_weight="0.5" />
+
+    <com.telefonica.mistica.section.SectionTitleView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="Boxed List" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/boxed_list"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="8dp"
         android:layout_weight="0.5" />
 
 </LinearLayout>

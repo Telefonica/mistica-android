@@ -88,7 +88,7 @@ class CatalogMainActivity : AppCompatActivity() {
                 R.drawable.ic_feedbacks,
                 Section.SCROLL_CONTENT_INDICATOR
             ),
-            SectionItem("Tag", R.drawable.ic_tags, Section.TAG),
+            SectionItem("Tags", R.drawable.ic_tags, Section.TAG),
             SectionItem("Lists", R.drawable.ic_lists, Section.LISTS),
             SectionItem("Headers", R.drawable.ic_headers, Section.HEADERS),
             SectionItem("Others", R.drawable.ic_others, Section.OTHERS)

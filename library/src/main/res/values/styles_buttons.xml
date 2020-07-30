@@ -52,6 +52,7 @@
     <style name="AppTheme.Button.DefaultButton">
         <item name="backgroundTint">@color/button_primary_background_selector</item>
         <item name="android:textColor">?colorTextButtonPrimary</item>
+        <item name="iconTint">?colorTextButtonPrimary</item>
         <item name="rippleColor">?colorButtonPrimaryBackgroundPressed</item>
     </style>
 
@@ -65,6 +66,7 @@
     <style name="AppTheme.Button.SecondaryButton" parent="AppTheme.OutlinedButton">
         <item name="android:background">@android:color/transparent</item>
         <item name="android:textColor">@color/text_button_secondary_selector</item>
+        <item name="iconTint">@color/text_button_secondary_selector</item>
         <item name="strokeColor">@color/button_secondary_background_selector</item>
         <item name="strokeWidth">@dimen/button_outline_stroke_width</item>
         <item name="rippleColor">@android:color/transparent</item>
@@ -80,6 +82,7 @@
     <style name="AppTheme.Button.DangerButton">
         <item name="backgroundTint">@color/button_danger_background_selector</item>
         <item name="android:textColor">?colorTextButtonPrimary</item>
+        <item name="iconTint">?colorTextButtonPrimary</item>
         <item name="rippleColor">?colorButtonDangerBackgroundPressed</item>
     </style>
 
@@ -93,12 +96,14 @@
     <style name="AppTheme.Button.LinkButton" parent="AppTheme.LinkButton">
         <item name="backgroundTint">@android:color/transparent</item>
         <item name="android:textColor">@color/text_button_link_selector</item>
+        <item name="iconTint">@color/text_button_link_selector</item>
         <item name="rippleColor">?colorLinkButtonBackgroundPressed</item>
     </style>
 
     <style name="AppTheme.Button.PrimaryButtonInverse">
         <item name="backgroundTint">@color/button_primary_background_inverse_selector</item>
         <item name="android:textColor">@color/text_button_primary_inverse_selector</item>
+        <item name="iconTint">@color/text_button_primary_inverse_selector</item>
         <item name="rippleColor">?colorButtonPrimaryBackgroundPressedInverse</item>
     </style>
 
@@ -112,6 +117,7 @@
     <style name="AppTheme.Button.SecondaryButtonInverse" parent="AppTheme.OutlinedButton">
         <item name="android:background">@android:color/transparent</item>
         <item name="android:textColor">@color/text_button_secondary_inverse_selector</item>
+        <item name="iconTint">@color/text_button_secondary_inverse_selector</item>
         <item name="strokeColor">@color/button_secondary_background_inverse_selector</item>
         <item name="strokeWidth">@dimen/button_outline_stroke_width</item>
         <item name="rippleColor">@android:color/transparent</item>
@@ -127,6 +133,7 @@
     <style name="AppTheme.Button.LinkButtonInverse" parent="AppTheme.LinkButton">
         <item name="backgroundTint">@android:color/transparent</item>
         <item name="android:textColor">@color/text_button_link_inverse_selector</item>
+        <item name="iconTint">@color/text_button_link_inverse_selector</item>
         <item name="rippleColor">?colorLinkButtonBackgroundPressedInverse</item>
     </style>
 

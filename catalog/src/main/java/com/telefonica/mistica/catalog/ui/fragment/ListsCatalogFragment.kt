@@ -190,7 +190,7 @@ class ListsCatalogFragment : Fragment() {
                     }
                 }
             )
-            setAssetResource(if (withAsset) android.R.drawable.btn_star else null)
+            setAssetResource(if (withAsset) R.drawable.ic_lists else null)
             setSmallAsset(withSmallAsset)
             if (withAction) {
                 setActionLayout(R.layout.list_row_chevron_action)

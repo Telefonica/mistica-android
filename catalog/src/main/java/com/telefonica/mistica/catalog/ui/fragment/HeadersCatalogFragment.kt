@@ -5,12 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.CheckBox
-import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.header.HeaderView
+import com.telefonica.mistica.input.CheckBoxInput
+import com.telefonica.mistica.input.TextInput
 
 class HeadersCatalogFragment : Fragment() {
 
@@ -33,16 +33,16 @@ class HeadersCatalogFragment : Fragment() {
 
     private fun updateHeaderView(view: View) {
         with(view.findViewById<HeaderView>(R.id.header_view)) {
-            setInverse(view.findViewById<CheckBox>(R.id.check_inverse).isChecked)
-            setHasTopPadding(view.findViewById<CheckBox>(R.id.check_top_padding).isChecked)
-            setFirstPretitle(view.findViewById<EditText>(R.id.input_first_pretitle).text.toString())
-            setFirstPretitleHasSecondaryColor(view.findViewById<CheckBox>(R.id.check_first_pretitle_secondary).isChecked)
-            setTitle(view.findViewById<EditText>(R.id.input_title).text.toString())
-            setSecondPretitle(view.findViewById<EditText>(R.id.input_second_pretitle).text.toString())
-            setSecondPretitleHasSecondaryColor(view.findViewById<CheckBox>(R.id.check_second_pretitle_secondary).isChecked)
-            setNumeral(view.findViewById<EditText>(R.id.input_numeral).text.toString())
-            setNumeralHasDangerColor(view.findViewById<CheckBox>(R.id.check_numeral_danger).isChecked)
-            setActionButtonText(view.findViewById<EditText>(R.id.input_action_text).text.toString())
+            setInverse(view.findViewById<CheckBoxInput>(R.id.check_inverse).isChecked())
+            setHasTopPadding(view.findViewById<CheckBoxInput>(R.id.check_top_padding).isChecked())
+            setFirstPretitle(view.findViewById<TextInput>(R.id.input_first_pretitle).text.toString())
+            setFirstPretitleHasSecondaryColor(view.findViewById<CheckBoxInput>(R.id.check_first_pretitle_secondary).isChecked())
+            setTitle(view.findViewById<TextInput>(R.id.input_title).text.toString())
+            setSecondPretitle(view.findViewById<TextInput>(R.id.input_second_pretitle).text.toString())
+            setSecondPretitleHasSecondaryColor(view.findViewById<CheckBoxInput>(R.id.check_second_pretitle_secondary).isChecked())
+            setNumeral(view.findViewById<TextInput>(R.id.input_numeral).text.toString())
+            setNumeralHasDangerColor(view.findViewById<CheckBoxInput>(R.id.check_numeral_danger).isChecked())
+            setActionButtonText(view.findViewById<TextInput>(R.id.input_action_text).text.toString())
             setActionButtonOnClick(View.OnClickListener {
                 Toast.makeText(
                     view.context,
@@ -50,7 +50,7 @@ class HeadersCatalogFragment : Fragment() {
                     Toast.LENGTH_SHORT
                 ).show()
             })
-            setSecondaryActionButtonText(view.findViewById<EditText>(R.id.input_secondary_action_text).text.toString())
+            setSecondaryActionButtonText(view.findViewById<TextInput>(R.id.input_secondary_action_text).text)
             setSecondaryActionButtonOnClick(View.OnClickListener {
                 Toast.makeText(
                     view.context,
@@ -58,8 +58,8 @@ class HeadersCatalogFragment : Fragment() {
                     Toast.LENGTH_SHORT
                 ).show()
             })
-            setSubtitle(view.findViewById<EditText>(R.id.input_subtitle).text.toString())
-            setSubtitleHasSecondaryColor(view.findViewById<CheckBox>(R.id.check_subtitle_secondary).isChecked)
+            setSubtitle(view.findViewById<TextInput>(R.id.input_subtitle).text.toString())
+            setSubtitleHasSecondaryColor(view.findViewById<CheckBoxInput>(R.id.check_subtitle_secondary).isChecked())
         }
     }
 }
