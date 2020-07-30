@@ -9,8 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import com.google.android.material.textfield.TextInputEditText
 import com.telefonica.mistica.catalog.R
+import com.telefonica.mistica.input.TextInput
 
 class TagsCatalogFragment : Fragment() {
 
@@ -21,7 +21,7 @@ class TagsCatalogFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val textInput: TextInputEditText = view.findViewById(R.id.textInput)
+        val textInput: TextInput = view.findViewById(R.id.textInput)
         val tagInImage: TextView = view.findViewById(R.id.tag_in_image)
         val tagInline: TextView = view.findViewById(R.id.tag_inline)
 

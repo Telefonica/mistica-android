@@ -55,22 +55,13 @@
 				tools:text="@tools:sample/full_names"
 				android:text="PROMOTION"/>
 
-		<com.google.android.material.textfield.TextInputLayout
-				style="@style/AppTheme.Forms.TextInputLayout"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_gravity="bottom"
-				android:hint="Type Something..."
-				tools:hint="Type Something">
-
-			<com.google.android.material.textfield.TextInputEditText
-					android:id="@+id/textInput"
-					style="@style/AppTheme.Forms.TextInputLayout.EditText"
-					android:inputType="text"
-					android:text="PROMOTION"
-					tools:text="Muncho Murcia!" />
-
-		</com.google.android.material.textfield.TextInputLayout>
+		<com.telefonica.mistica.input.TextInput
+			android:id="@+id/textInput"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			app:inputHint="Type Something..."
+			app:inputText="PROMOTION"
+			app:inputType="text" />
 
 	</LinearLayout>
 
