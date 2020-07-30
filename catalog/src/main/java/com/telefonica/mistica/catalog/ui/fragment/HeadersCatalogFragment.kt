@@ -36,12 +36,18 @@ class HeadersCatalogFragment : Fragment() {
             setInverse(view.findViewById<CheckBoxInput>(R.id.check_inverse).isChecked())
             setHasTopPadding(view.findViewById<CheckBoxInput>(R.id.check_top_padding).isChecked())
             setFirstPretitle(view.findViewById<TextInput>(R.id.input_first_pretitle).text.toString())
-            setFirstPretitleHasSecondaryColor(view.findViewById<CheckBoxInput>(R.id.check_first_pretitle_secondary).isChecked())
+            setFirstPretitleHasSecondaryColor(
+                view.findViewById<CheckBoxInput>(R.id.check_first_pretitle_secondary).isChecked()
+            )
             setTitle(view.findViewById<TextInput>(R.id.input_title).text.toString())
             setSecondPretitle(view.findViewById<TextInput>(R.id.input_second_pretitle).text.toString())
-            setSecondPretitleHasSecondaryColor(view.findViewById<CheckBoxInput>(R.id.check_second_pretitle_secondary).isChecked())
+            setSecondPretitleHasSecondaryColor(
+                view.findViewById<CheckBoxInput>(R.id.check_second_pretitle_secondary).isChecked()
+            )
             setNumeral(view.findViewById<TextInput>(R.id.input_numeral).text.toString())
-            setNumeralHasDangerColor(view.findViewById<CheckBoxInput>(R.id.check_numeral_danger).isChecked())
+            setNumeralHasDangerColor(
+                view.findViewById<CheckBoxInput>(R.id.check_numeral_danger).isChecked()
+            )
             setActionButtonText(view.findViewById<TextInput>(R.id.input_action_text).text.toString())
             setActionButtonOnClick(View.OnClickListener {
                 Toast.makeText(
@@ -59,7 +65,9 @@ class HeadersCatalogFragment : Fragment() {
                 ).show()
             })
             setSubtitle(view.findViewById<TextInput>(R.id.input_subtitle).text.toString())
-            setSubtitleHasSecondaryColor(view.findViewById<CheckBoxInput>(R.id.check_subtitle_secondary).isChecked())
+            setSubtitleHasSecondaryColor(
+                view.findViewById<CheckBoxInput>(R.id.check_subtitle_secondary).isChecked()
+            )
         }
     }
 }

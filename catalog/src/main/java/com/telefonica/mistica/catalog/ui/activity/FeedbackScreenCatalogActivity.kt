@@ -15,6 +15,7 @@ class FeedbackScreenCatalogActivity : AppCompatActivity() {
     var type: Int? = null
     var title: String? = null
     var subtitle: String? = null
+
     @LayoutRes
     var customContentLayout: Int? = null
     var firstButtonText: String? = null
