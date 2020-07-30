@@ -47,7 +47,7 @@ class CatalogMainActivity : AppCompatActivity() {
                 dropDown.setAdapter(
                     ArrayAdapter(
                         context,
-                        R.layout.screen_inputs_dropdown_menu_popup_item_catalog,
+                        R.layout.dropdown_menu_popup_item,
                         styles.map { it.first }
                     )
                 )

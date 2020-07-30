@@ -8,11 +8,11 @@ import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.ArrayAdapter
 import android.widget.Button
-import android.widget.EditText
-import android.widget.Spinner
 import androidx.fragment.app.Fragment
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.feedback.SnackbarBuilder
+import com.telefonica.mistica.input.DropDownInput
+import com.telefonica.mistica.input.TextInput
 
 class SnackBarCatalogFragment : Fragment() {
 
@@ -28,17 +28,20 @@ class SnackBarCatalogFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val inputText: EditText = view.findViewById(R.id.input_snackbar_message)
-        val inputAction: EditText = view.findViewById(R.id.input_snackbar_action)
-        val typeSpinner: Spinner = view.findViewById(R.id.spinner_snackbar_type)
+        val inputText: TextInput = view.findViewById(R.id.input_snackbar_message)
+        val inputAction: TextInput = view.findViewById(R.id.input_snackbar_action)
+        val dropDownInput: DropDownInput = view.findViewById(R.id.dropdown_snackbar_type)
         val createButton: Button = view.findViewById(R.id.button_create_snackbar)
 
-        typeSpinner.adapter = ArrayAdapter(
-            view.context,
-            android.R.layout.simple_spinner_item,
-            SnackBarType.values().map { it.name }
-        ).apply {
-            setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        with(dropDownInput.dropDown) {
+            setAdapter(
+                ArrayAdapter(
+                    view.context,
+                    R.layout.dropdown_menu_popup_item,
+                    SnackBarType.values().map { it.name }
+                )
+            )
+            setText(SnackBarType.INFORMATIVE.toString(), false)
         }
 
         createButton.setOnClickListener {
@@ -49,7 +52,7 @@ class SnackBarCatalogFragment : Fragment() {
                         withAction(actionText, View.OnClickListener { })
                     }
                 }
-                when (SnackBarType.valueOf(typeSpinner.selectedItem as String)) {
+                when (SnackBarType.valueOf(dropDownInput.dropDown.text.toString())) {
                     SnackBarType.INFORMATIVE -> showInformative()
                     SnackBarType.CRITICAL -> showCritical()
                 }

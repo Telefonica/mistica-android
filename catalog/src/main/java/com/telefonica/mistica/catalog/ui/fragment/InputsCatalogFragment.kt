@@ -34,7 +34,7 @@ class InputsCatalogFragment : Fragment() {
 
             val arrayAdapter = ArrayAdapter(
                 context,
-                R.layout.screen_inputs_dropdown_menu_popup_item_catalog,
+                R.layout.dropdown_menu_popup_item,
                 countries
             )
 

@@ -21,6 +21,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:background="?colorBackground"
             android:gravity="center_horizontal"
             android:orientation="vertical">
@@ -35,7 +36,7 @@
                 style="@style/AppTheme.Button.DefaultButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:text="Primary Icon"
                 app:icon="@android:drawable/ic_menu_info_details" />
 
@@ -44,14 +45,14 @@
                 style="@style/AppTheme.Button.DefaultButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:text="Primary Progress" />
 
             <com.telefonica.mistica.button.Button
                 style="@style/AppTheme.Button.DefaultButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:enabled="false"
                 android:text="Primary Disabled" />
 
@@ -59,14 +60,14 @@
                 style="@style/AppTheme.Button.DefaultButton.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:text="Primary Small" />
 
             <com.telefonica.mistica.button.Button
                 style="@style/AppTheme.Button.DefaultButton.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:text="Primary Small Icon"
                 app:icon="@android:drawable/ic_menu_info_details" />
 
@@ -75,14 +76,14 @@
                 style="@style/AppTheme.Button.DefaultButton.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:text="Primary Small Progress" />
 
             <com.telefonica.mistica.button.Button
                 style="@style/AppTheme.Button.DefaultButton.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:enabled="false"
                 android:text="Primary Small Disabled" />
 
@@ -90,14 +91,14 @@
                 style="@style/AppTheme.Button.SecondaryButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:text="Secondary" />
 
             <com.telefonica.mistica.button.Button
                 style="@style/AppTheme.Button.SecondaryButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:text="Secondary Icon"
                 app:icon="@android:drawable/ic_menu_info_details" />
 
@@ -106,14 +107,14 @@
                 style="@style/AppTheme.Button.SecondaryButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:text="Secondary Progress" />
 
             <com.telefonica.mistica.button.Button
                 style="@style/AppTheme.Button.SecondaryButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:enabled="false"
                 android:text="Secondary Disabled" />
 
@@ -121,14 +122,14 @@
                 style="@style/AppTheme.Button.SecondaryButton.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:text="Secondary Small" />
 
             <com.telefonica.mistica.button.Button
                 style="@style/AppTheme.Button.SecondaryButton.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:text="Secondary Small Icon"
                 app:icon="@android:drawable/ic_menu_info_details" />
 
@@ -137,14 +138,14 @@
                 style="@style/AppTheme.Button.SecondaryButton.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:text="Secondary Small Progress" />
 
             <com.telefonica.mistica.button.Button
                 style="@style/AppTheme.Button.SecondaryButton.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:enabled="false"
                 android:text="Secondary Small Disabled" />
 
@@ -152,14 +153,14 @@
                 style="@style/AppTheme.Button.DangerButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:text="Danger" />
 
             <com.telefonica.mistica.button.Button
                 style="@style/AppTheme.Button.DangerButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:text="Danger Icon"
                 app:icon="@android:drawable/ic_menu_info_details" />
 
@@ -168,14 +169,14 @@
                 style="@style/AppTheme.Button.DangerButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:text="Danger Progress" />
 
             <com.telefonica.mistica.button.Button
                 style="@style/AppTheme.Button.DangerButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:enabled="false"
                 android:text="Danger Disabled" />
 
@@ -183,14 +184,14 @@
                 style="@style/AppTheme.Button.DangerButton.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:text="Danger Small" />
 
             <com.telefonica.mistica.button.Button
                 style="@style/AppTheme.Button.DangerButton.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:text="Danger Small Icon"
                 app:icon="@android:drawable/ic_menu_info_details" />
 
@@ -199,14 +200,14 @@
                 style="@style/AppTheme.Button.DangerButton.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:text="Danger Small Progress" />
 
             <com.telefonica.mistica.button.Button
                 style="@style/AppTheme.Button.DangerButton.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:enabled="false"
                 android:text="Danger Small Disabled" />
 
@@ -214,14 +215,14 @@
                 style="@style/AppTheme.Button.LinkButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:text="Link" />
 
             <com.telefonica.mistica.button.Button
                 style="@style/AppTheme.Button.LinkButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:text="Link Icon"
                 app:icon="@android:drawable/ic_menu_info_details"
                 app:iconTint="@color/text_button_link_selector" />
@@ -231,14 +232,14 @@
                 style="@style/AppTheme.Button.LinkButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:text="Link Progress" />
 
             <com.telefonica.mistica.button.Button
                 style="@style/AppTheme.Button.LinkButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:enabled="false"
                 android:text="Link Disabled" />
 
@@ -248,11 +249,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
+            android:layout_marginTop="8dp"
             android:text="Inverse Buttons" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:background="?colorPrimary"
             android:gravity="center_horizontal"
             android:orientation="vertical">
@@ -268,7 +271,7 @@
                 style="@style/AppTheme.Button.PrimaryButtonInverse"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:text="Primary Icon"
                 app:icon="@android:drawable/ic_menu_info_details"
                 app:iconTint="@color/text_button_primary_inverse_selector" />
@@ -278,14 +281,14 @@
                 style="@style/AppTheme.Button.PrimaryButtonInverse"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:text="Primary Progress" />
 
             <com.telefonica.mistica.button.Button
                 style="@style/AppTheme.Button.PrimaryButtonInverse"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:enabled="false"
                 android:text="Primary Disabled" />
 
@@ -293,14 +296,14 @@
                 style="@style/AppTheme.Button.PrimaryButtonInverse.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:text="Primary Small" />
 
             <com.telefonica.mistica.button.Button
                 style="@style/AppTheme.Button.PrimaryButtonInverse.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:text="Primary Small Icon"
                 app:icon="@android:drawable/ic_menu_info_details"
                 app:iconTint="@color/text_button_primary_inverse_selector" />
@@ -310,14 +313,14 @@
                 style="@style/AppTheme.Button.PrimaryButtonInverse.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:text="Primary Small Progress" />
 
             <com.telefonica.mistica.button.Button
                 style="@style/AppTheme.Button.PrimaryButtonInverse.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:enabled="false"
                 android:text="Primary Small Disabled" />
 
@@ -325,14 +328,14 @@
                 style="@style/AppTheme.Button.SecondaryButtonInverse"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:text="Secondary" />
 
             <com.telefonica.mistica.button.Button
                 style="@style/AppTheme.Button.SecondaryButtonInverse"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:text="Secondary Icon"
                 app:icon="@android:drawable/ic_menu_info_details"
                 app:iconTint="@color/text_button_secondary_inverse_selector" />
@@ -342,14 +345,14 @@
                 style="@style/AppTheme.Button.SecondaryButtonInverse"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:text="Secondary Progress" />
 
             <com.telefonica.mistica.button.Button
                 style="@style/AppTheme.Button.SecondaryButtonInverse"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:enabled="false"
                 android:text="Secondary Disabled" />
 
@@ -357,14 +360,14 @@
                 style="@style/AppTheme.Button.SecondaryButtonInverse.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:text="Secondary Small" />
 
             <com.telefonica.mistica.button.Button
                 style="@style/AppTheme.Button.SecondaryButtonInverse.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:text="Secondary Small Icon"
                 app:icon="@android:drawable/ic_menu_info_details"
                 app:iconTint="@color/text_button_secondary_inverse_selector" />
@@ -374,14 +377,14 @@
                 style="@style/AppTheme.Button.SecondaryButtonInverse.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:text="Secondary Small Progress" />
 
             <com.telefonica.mistica.button.Button
                 style="@style/AppTheme.Button.SecondaryButtonInverse.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:enabled="false"
                 android:text="Secondary Small Disabled" />
 
@@ -389,14 +392,14 @@
                 style="@style/AppTheme.Button.LinkButtonInverse"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:text="Link" />
 
             <com.telefonica.mistica.button.Button
                 style="@style/AppTheme.Button.LinkButtonInverse"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:text="Link Icon"
                 app:icon="@android:drawable/ic_menu_info_details"
                 app:iconTint="@color/text_button_link_inverse_selector" />
@@ -406,14 +409,15 @@
                 style="@style/AppTheme.Button.LinkButtonInverse"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:text="Link Progress" />
 
             <com.telefonica.mistica.button.Button
                 style="@style/AppTheme.Button.LinkButtonInverse"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
                 android:enabled="false"
                 android:text="Link Disabled" />
 
