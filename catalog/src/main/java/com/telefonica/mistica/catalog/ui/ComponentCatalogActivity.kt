@@ -1,6 +1,7 @@
 package com.telefonica.mistica.catalog.ui
 
 import android.os.Bundle
+import androidx.annotation.StyleRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.telefonica.mistica.catalog.R
@@ -10,10 +11,12 @@ class ComponentCatalogActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
-        intent.getIntExtra(EXTRA_THEME, NO_THEME_OVERRIDE).let {
-            if (it != NO_THEME_OVERRIDE) {
-                setTheme(it)
-            }
+        @StyleRes
+        val themeOverride: Int? =
+            intent.getIntExtra(EXTRA_THEME, NO_THEME_OVERRIDE).takeIf { it != NO_THEME_OVERRIDE }
+
+        themeOverride?.let {
+            setTheme(it)
         }
 
         super.onCreate(savedInstanceState)
@@ -24,7 +27,7 @@ class ComponentCatalogActivity : AppCompatActivity() {
             Section.BUTTONS -> ButtonsCatalogFragment()
             Section.INPUTS -> InputsCatalogFragment()
             Section.SNACKBARS -> SnackBarCatalogFragment()
-            Section.FEEDBACKS -> FeedbackScreenCatalogFragment()
+            Section.FEEDBACKS -> FeedbackScreenCatalogFragment(themeOverride)
             Section.LOAD_ERROR_FEEDBACK -> LoadErrorFeedbackCatalogFragment()
             Section.POPOVERS -> PopOverCatalogFragment()
             Section.BADGES -> BadgesCatalogFragment()
@@ -45,7 +48,7 @@ class ComponentCatalogActivity : AppCompatActivity() {
         const val EXTRA_SECTION = "extra_section"
         const val EXTRA_THEME = "extra_theme"
 
-        const val NO_THEME_OVERRIDE = -1
+        private const val NO_THEME_OVERRIDE = -1
     }
 }
 

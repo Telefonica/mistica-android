@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Button
 import androidx.annotation.LayoutRes
+import androidx.annotation.StyleRes
 import androidx.fragment.app.Fragment
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.catalog.ui.activity.FeedbackScreenCatalogActivity
@@ -18,7 +19,9 @@ import com.telefonica.mistica.input.CheckBoxInput
 import com.telefonica.mistica.input.DropDownInput
 import com.telefonica.mistica.input.TextInput
 
-class FeedbackScreenCatalogFragment : Fragment() {
+class FeedbackScreenCatalogFragment(
+    @StyleRes private val themeOverride: Int? = null
+) : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -85,6 +88,7 @@ class FeedbackScreenCatalogFragment : Fragment() {
                 FeedbackScreenCatalogActivity.EXTRA_SHOW_SECOND_BUTTON_AS_LINK,
                 showSecondButtonAsLink
             )
+            themeOverride?.let { putExtra(FeedbackScreenCatalogActivity.EXTRA_THEME, it) }
             context.startActivity(this)
         }
     }

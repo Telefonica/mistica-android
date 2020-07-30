@@ -22,6 +22,11 @@ class FeedbackScreenCatalogActivity : AppCompatActivity() {
     var showSecondButtonAsLink: Boolean? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        intent.getIntExtra(EXTRA_THEME, NO_THEME_OVERRIDE)
+            .takeIf { it != NO_THEME_OVERRIDE }
+            ?.let { setTheme(it) }
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.screen_activity_feedback_catalog)
 
@@ -69,5 +74,8 @@ class FeedbackScreenCatalogActivity : AppCompatActivity() {
         const val EXTRA_FIRST_BUTTON_TEXT = "extra_first_button_text"
         const val EXTRA_SECOND_BUTTON_TEXT = "extra_second_button_text"
         const val EXTRA_SHOW_SECOND_BUTTON_AS_LINK = "extra_second_button_as_link"
+        const val EXTRA_THEME = "extra_theme"
+
+        private const val NO_THEME_OVERRIDE = -1
     }
 }
