@@ -8,6 +8,9 @@
         <activity
             android:name="com.telefonica.mistica.catalog.ui.activity.FeedbackScreenCatalogActivity"
             android:exported="false" />
+        <activity
+            android:name="com.telefonica.mistica.catalog.ui.CatalogMainActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
