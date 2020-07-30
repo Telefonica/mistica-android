@@ -80,6 +80,7 @@
 	</style>
 
 	<style name="AppTheme.Forms.CheckBox" parent="Widget.AppCompat.CompoundButton.CheckBox">
+		<item name="android:gravity">top</item>
 		<item name="android:paddingStart">8dp</item>
 		<item name="android:textAppearance">@style/AppTheme.TextAppearance.Body1</item>
 		<item name="android:textColorHighlight">?colorControlHighlight</item>

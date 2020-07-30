@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.annotation.ColorInt
+import androidx.annotation.StringRes
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
@@ -184,6 +185,10 @@ class HeaderView @JvmOverloads constructor(
         configurePaddingAndMargins()
     }
 
+    fun setFirstPretitle(@StringRes textRes: Int?) {
+        textRes?.let { setFirstPretitle(context.getString(it)) }
+    }
+
     fun setFirstPretitleHasSecondaryColor(hasSecondaryColor: Boolean) {
         firstPretitleHasSecondaryColor = hasSecondaryColor
         configureTextsColors()
@@ -194,9 +199,17 @@ class HeaderView @JvmOverloads constructor(
         configurePaddingAndMargins()
     }
 
+    fun setTitle(@StringRes textRes: Int?) {
+        textRes?.let { setTitle(context.getString(it)) }
+    }
+
     fun setSecondPretitle(text: CharSequence?) {
         secondPretitleTextView.setTextAndVisibility(text)
         configurePaddingAndMargins()
+    }
+
+    fun setSecondPretitle(@StringRes textRes: Int?) {
+        textRes?.let { setSecondPretitle(context.getString(it)) }
     }
 
     fun setSecondPretitleHasSecondaryColor(hasSecondaryColor: Boolean) {
@@ -209,6 +222,10 @@ class HeaderView @JvmOverloads constructor(
         configurePaddingAndMargins()
     }
 
+    fun setNumeral(@StringRes textRes: Int?) {
+        textRes?.let { setNumeral(context.getString(it)) }
+    }
+
     fun setNumeralHasDangerColor(hasDangerColor: Boolean) {
         numeralHasDangerColor = hasDangerColor
         configureTextsColors()
@@ -219,9 +236,17 @@ class HeaderView @JvmOverloads constructor(
         configurePaddingAndMargins()
     }
 
+    fun setActionButtonText(@StringRes textRes: Int?) {
+        textRes?.let { setActionButtonText(context.getString(it)) }
+    }
+
     fun setSecondaryActionButtonText(text: CharSequence?) {
         secondaryActionButton.setTextAndVisibility(text)
         configurePaddingAndMargins()
+    }
+
+    fun setSecondaryActionButtonText(@StringRes textRes: Int?) {
+        textRes?.let { setSecondaryActionButtonText(context.getString(it)) }
     }
 
     fun setActionButtonOnClick(onClickListener: OnClickListener?) {
@@ -237,6 +262,10 @@ class HeaderView @JvmOverloads constructor(
     fun setSubtitle(text: CharSequence?) {
         subtitleTextView.setTextAndVisibility(text)
         configurePaddingAndMargins()
+    }
+
+    fun setSubtitle(@StringRes textRes: Int?) {
+        textRes?.let { setSubtitle(context.getString(it)) }
     }
 
     fun setSubtitleHasSecondaryColor(hasSecondaryColor: Boolean) {
@@ -290,7 +319,7 @@ class HeaderView @JvmOverloads constructor(
         actionButton.applyBottomMargin(16)
         secondaryActionButton.applyBottomMargin(16)
         children()
-            .flatMap { if ( it is ViewGroup) it.children() else listOf(it) }
+            .flatMap { if (it is ViewGroup) it.children() else listOf(it) }
             .lastOrNull { it.isVisible() }
             ?.apply { applyBottomMargin(0) }
     }
