@@ -15,10 +15,6 @@ timeout: 60
 workflows:
  deploy:
    stages: ["docker_up", "deploy", "docker_down"]
-   plugins:
-     secrets:
-       users_separated:
-         NEXUS_USER,NEXUS_PASS: NEXUS_RELEASE_AUTH
  image:
    stages: ["build_image", "push_image"]
  

@@ -6,8 +6,6 @@ services:
    command: "bash -c 'adb start-server; sleep infinity'"
    environment:
      TERM: "xterm" # Needed for gradle
-     NEXUS_USER: "${NEXUS_USER}"
-     NEXUS_PASS: "${NEXUS_PASS}"
    volumes:
      - ".:/source"
      - "/var/lib/gradle-cache:/root/.gradle"
