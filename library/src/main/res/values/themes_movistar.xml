@@ -401,4 +401,30 @@
         <item name="colorIconBrand">@color/movistar_color_blue</item>
     </style>
 
+    <!-- Just a copy of the above. As themes do not support multiple inheritance. -->
+    <style name="MisticaTheme.Movistar.Prominent">
+        <!-- General -->
+        <item name="colorPrimary">@color/movistar_prominent_color_blue</item>
+        <item name="colorPrimaryDark">@color/movistar_prominent_color_blue_dark</item>
+        <item name="colorTabSelected">@color/movistar_prominent_color_blue</item>
+
+        <!-- Fonts -->
+        <item name="colorTextPrimaryInverse">@color/movistar_color_white</item>
+
+        <!-- Bottom Bar -->
+        <item name="colorAppbarTextSelected">@color/movistar_prominent_color_blue</item>
+
+        <!-- Pin Screen -->
+        <item name="colorPinGradientFirst">@color/movistar_prominent_color_blue</item>
+        <item name="colorPinGradientSecond">@color/movistar_prominent_color_blue</item>
+        <item name="colorPinGradientThird">@color/movistar_prominent_color_blue</item>
+        <item name="colorPinGradientFourth">@color/movistar_prominent_color_blue</item>
+
+        <!-- Chips -->
+        <item name="colorChipBackgroundDefault">@color/movistar_prominent_color_blue_dark</item>
+
+        <!-- Iconography colors -->
+        <item name="colorIconBrand">@color/movistar_color_blue</item>
+    </style>
+
 </resources>

@@ -5,13 +5,21 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import androidx.annotation.DrawableRes
+import androidx.annotation.StyleRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.telefonica.mistica.catalog.R
+import com.telefonica.mistica.input.DropDownInput
 import com.telefonica.mistica.list.ListRowView
 import com.telefonica.mistica.list.layout.configureWithFullWidthLayout
 
 class CatalogMainActivity : AppCompatActivity() {
+
+    @StyleRes
+    private var themeOverride: Int? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,32 +29,74 @@ class CatalogMainActivity : AppCompatActivity() {
             configureWithFullWidthLayout()
             adapter = SectionAdapter()
         }
+        configureThemeDropDown()
     }
 
-    class SectionAdapter : RecyclerView.Adapter<SectionAdapter.ViewHolder>() {
+    private fun configureThemeDropDown() {
 
-        private val sections: List<Pair<String, Section>> = listOf(
-            "Buttons" to Section.BUTTONS,
-            "Inputs" to Section.INPUTS,
-            "Snackbars" to Section.SNACKBARS,
-            "Feedbacks" to Section.FEEDBACKS,
-            "Load Error Feedback" to Section.LOAD_ERROR_FEEDBACK,
-            "PopOvers" to Section.POPOVERS,
-            "Badges" to Section.BADGES,
-            "Scroll Content indicator" to Section.SCROLL_CONTENT_INDICATOR,
-            "Tag" to Section.TAG,
-            "Lists" to Section.LISTS,
-            "Headers" to Section.HEADERS,
-            "Others" to Section.OTHERS
+        val styles: List<Pair<String, Int>> = listOf(
+            "Movistar" to R.style.MisticaTheme_Movistar,
+            "Movistar Priority" to R.style.MisticaTheme_Movistar_Prominent,
+            "O2" to R.style.MisticaTheme_O2,
+            "O2 Classic" to R.style.MisticaTheme_O2Classic,
+            "Vivo" to R.style.MisticaTheme_Vivo
         )
+
+        findViewById<DropDownInput>(R.id.drop_down_themes)?.apply {
+            post {
+                dropDown.setAdapter(
+                    ArrayAdapter(
+                        context,
+                        R.layout.screen_inputs_dropdown_menu_popup_item_catalog,
+                        styles.map { it.first }
+                    )
+                )
+                dropDown.onItemClickListener =
+                    AdapterView.OnItemClickListener { _, _, position, _ ->
+                        themeOverride = styles[position].second
+                    }
+            }
+        }
+    }
+
+    data class SectionItem(
+        val title: String,
+        @DrawableRes val icon: Int,
+        val sectionToOpen: Section
+    )
+
+    inner class SectionAdapter : RecyclerView.Adapter<SectionAdapter.ViewHolder>() {
 
         inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
             val item: ListRowView = view as ListRowView
         }
 
+        private val sections: List<SectionItem> = listOf(
+            SectionItem("Buttons", R.drawable.ic_buttons, Section.BUTTONS),
+            SectionItem("Inputs", R.drawable.ic_inputs, Section.INPUTS),
+            SectionItem("Snackbars", R.drawable.ic_snackbars, Section.SNACKBARS),
+            SectionItem("Feedbacks", R.drawable.ic_feedbacks, Section.FEEDBACKS),
+            SectionItem(
+                "Load Error Feedback",
+                R.drawable.ic_load_feedback_error,
+                Section.LOAD_ERROR_FEEDBACK
+            ),
+            SectionItem("PopOvers", R.drawable.ic_popovers, Section.POPOVERS),
+            SectionItem("Badges", R.drawable.ic_badges, Section.BADGES),
+            SectionItem(
+                "Scroll Content indicator",
+                R.drawable.ic_feedbacks,
+                Section.SCROLL_CONTENT_INDICATOR
+            ),
+            SectionItem("Tag", R.drawable.ic_tags, Section.TAG),
+            SectionItem("Lists", R.drawable.ic_lists, Section.LISTS),
+            SectionItem("Headers", R.drawable.ic_headers, Section.HEADERS),
+            SectionItem("Others", R.drawable.ic_others, Section.OTHERS)
+        )
+
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
             return ViewHolder(
-                LayoutInflater.from(parent.context)
+                LayoutInflater.from(this@CatalogMainActivity)
                     .inflate(R.layout.list_item_main_catalog, parent, false)
             )
         }
@@ -54,14 +104,19 @@ class CatalogMainActivity : AppCompatActivity() {
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
             val section = sections[position]
             with(holder.item) {
-                setTitle(section.first)
+                setTitle(section.title)
                 setOnClickListener {
-                    Intent(context, ComponentCatalogActivity::class.java)
-                        .putExtra(ComponentCatalogActivity.EXTRA_SECTION, section.second)
-                        .let {
-                            context.startActivity(it)
+                    Intent(this@CatalogMainActivity, ComponentCatalogActivity::class.java)
+                        .putExtra(ComponentCatalogActivity.EXTRA_SECTION, section.sectionToOpen)
+                        .apply {
+                            themeOverride?.let {
+                                putExtra(ComponentCatalogActivity.EXTRA_THEME, it)
+                            }
+                            context.startActivity(this)
                         }
                 }
+                setAssetResource(section.icon)
+                setSmallAsset(true)
             }
         }
 

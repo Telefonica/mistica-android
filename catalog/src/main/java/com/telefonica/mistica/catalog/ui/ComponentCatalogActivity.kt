@@ -9,7 +9,15 @@ import com.telefonica.mistica.catalog.ui.fragment.*
 class ComponentCatalogActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        intent.getIntExtra(EXTRA_THEME, NO_THEME_OVERRIDE).let {
+            if (it != NO_THEME_OVERRIDE) {
+                setTheme(it)
+            }
+        }
+
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.screen_component_catalog)
 
         val fragment: Fragment = when (intent.getSerializableExtra(EXTRA_SECTION)) {
@@ -35,6 +43,9 @@ class ComponentCatalogActivity : AppCompatActivity() {
 
     companion object {
         const val EXTRA_SECTION = "extra_section"
+        const val EXTRA_THEME = "extra_theme"
+
+        const val NO_THEME_OVERRIDE = -1
     }
 }
 
