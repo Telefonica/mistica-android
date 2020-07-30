@@ -10,7 +10,13 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:padding="8dp">
+        android:padding="16dp">
+
+        <com.telefonica.mistica.section.SectionTitleView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:text="Buttons" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -23,7 +29,6 @@
                 style="@style/AppTheme.Button.DefaultButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
                 android:text="Primary" />
 
             <com.telefonica.mistica.button.Button
@@ -32,7 +37,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="Primary Icon"
-                app:icon="@android:drawable/btn_star" />
+                app:icon="@android:drawable/ic_menu_info_details" />
 
             <com.telefonica.mistica.button.ProgressButton
                 android:id="@+id/primary_progress"
@@ -63,7 +68,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="Primary Small Icon"
-                app:icon="@android:drawable/btn_star" />
+                app:icon="@android:drawable/ic_menu_info_details" />
 
             <com.telefonica.mistica.button.ProgressButton
                 android:id="@+id/primary_small_progress"
@@ -94,7 +99,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="Secondary Icon"
-                app:icon="@android:drawable/btn_star" />
+                app:icon="@android:drawable/ic_menu_info_details" />
 
             <com.telefonica.mistica.button.ProgressButton
                 android:id="@+id/secondary_progress"
@@ -125,7 +130,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="Secondary Small Icon"
-                app:icon="@android:drawable/btn_star" />
+                app:icon="@android:drawable/ic_menu_info_details" />
 
             <com.telefonica.mistica.button.ProgressButton
                 android:id="@+id/secondary_small_progress"
@@ -156,7 +161,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="Danger Icon"
-                app:icon="@android:drawable/btn_star" />
+                app:icon="@android:drawable/ic_menu_info_details" />
 
             <com.telefonica.mistica.button.ProgressButton
                 android:id="@+id/danger_progress"
@@ -187,7 +192,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="Danger Small Icon"
-                app:icon="@android:drawable/btn_star" />
+                app:icon="@android:drawable/ic_menu_info_details" />
 
             <com.telefonica.mistica.button.ProgressButton
                 android:id="@+id/danger_small_progress"
@@ -218,7 +223,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="Link Icon"
-                app:icon="@android:drawable/btn_star"
+                app:icon="@android:drawable/ic_menu_info_details"
                 app:iconTint="@color/text_button_link_selector" />
 
             <com.telefonica.mistica.button.ProgressButton
@@ -238,6 +243,12 @@
                 android:text="Link Disabled" />
 
         </LinearLayout>
+
+        <com.telefonica.mistica.section.SectionTitleView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:text="Inverse Buttons" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -259,7 +270,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="Primary Icon"
-                app:icon="@android:drawable/btn_star"
+                app:icon="@android:drawable/ic_menu_info_details"
                 app:iconTint="@color/text_button_primary_inverse_selector" />
 
             <com.telefonica.mistica.button.ProgressButton
@@ -291,7 +302,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="Primary Small Icon"
-                app:icon="@android:drawable/btn_star"
+                app:icon="@android:drawable/ic_menu_info_details"
                 app:iconTint="@color/text_button_primary_inverse_selector" />
 
             <com.telefonica.mistica.button.ProgressButton
@@ -323,7 +334,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="Secondary Icon"
-                app:icon="@android:drawable/btn_star"
+                app:icon="@android:drawable/ic_menu_info_details"
                 app:iconTint="@color/text_button_secondary_inverse_selector" />
 
             <com.telefonica.mistica.button.ProgressButton
@@ -355,7 +366,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="Secondary Small Icon"
-                app:icon="@android:drawable/btn_star"
+                app:icon="@android:drawable/ic_menu_info_details"
                 app:iconTint="@color/text_button_secondary_inverse_selector" />
 
             <com.telefonica.mistica.button.ProgressButton
@@ -387,7 +398,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="Link Icon"
-                app:icon="@android:drawable/btn_star"
+                app:icon="@android:drawable/ic_menu_info_details"
                 app:iconTint="@color/text_button_link_inverse_selector" />
 
             <com.telefonica.mistica.button.ProgressButton
