@@ -7,14 +7,18 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
-import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.badge.Badge
+import com.telefonica.mistica.catalog.R
 
 class BadgesCatalogFragment : Fragment() {
 
     private var badgeVisible: Boolean = false
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         return layoutInflater.inflate(R.layout.screen_badges_catalog, container, false).apply {
             configureButtons()

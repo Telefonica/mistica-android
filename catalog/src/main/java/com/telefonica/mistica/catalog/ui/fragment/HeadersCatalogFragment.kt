@@ -14,7 +14,11 @@ import com.telefonica.mistica.header.HeaderView
 
 class HeadersCatalogFragment : Fragment() {
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         return inflater.inflate(R.layout.headers_fragment_catalog, container, false)
     }
@@ -39,9 +43,21 @@ class HeadersCatalogFragment : Fragment() {
             setNumeral(view.findViewById<EditText>(R.id.input_numeral).text.toString())
             setNumeralHasDangerColor(view.findViewById<CheckBox>(R.id.check_numeral_danger).isChecked)
             setActionButtonText(view.findViewById<EditText>(R.id.input_action_text).text.toString())
-            setActionButtonOnClick(View.OnClickListener { Toast.makeText(view.context, "Action Clicked!", Toast.LENGTH_SHORT).show() })
+            setActionButtonOnClick(View.OnClickListener {
+                Toast.makeText(
+                    view.context,
+                    "Action Clicked!",
+                    Toast.LENGTH_SHORT
+                ).show()
+            })
             setSecondaryActionButtonText(view.findViewById<EditText>(R.id.input_secondary_action_text).text.toString())
-            setSecondaryActionButtonOnClick(View.OnClickListener { Toast.makeText(view.context, "Secondary Action Clicked!", Toast.LENGTH_SHORT).show() })
+            setSecondaryActionButtonOnClick(View.OnClickListener {
+                Toast.makeText(
+                    view.context,
+                    "Secondary Action Clicked!",
+                    Toast.LENGTH_SHORT
+                ).show()
+            })
             setSubtitle(view.findViewById<EditText>(R.id.input_subtitle).text.toString())
             setSubtitleHasSecondaryColor(view.findViewById<CheckBox>(R.id.check_subtitle_secondary).isChecked)
         }

@@ -1,95 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
 <merge xmlns:android="http://schemas.android.com/apk/res/android"
-		xmlns:app="http://schemas.android.com/apk/res-auto"
-		xmlns:tools="http://schemas.android.com/tools">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-	<androidx.constraintlayout.widget.ConstraintLayout
-			android:id="@+id/popover_content"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:layout_below="@+id/popover_pointer_up"
-			android:background="@drawable/popover_background"
-			android:paddingStart="16dp"
-			android:paddingBottom="16dp"
-			android:paddingTop="8dp"
-			android:paddingEnd="8dp"
-			android:layout_marginRight="16dp"
-			android:layout_marginLeft="16dp">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/popover_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/popover_pointer_up"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/popover_background"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="16dp">
 
-		<androidx.constraintlayout.widget.Guideline
-				android:id="@+id/guideline"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal"
-				app:layout_constraintGuide_begin="8dp" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="8dp" />
 
 
-		<TextView
-				android:id="@+id/popover_title"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_marginStart="16dp"
-				android:textAppearance="@style/AppTheme.TextAppearance.Body2"
-				app:layout_constraintStart_toEndOf="@+id/popover_image"
-				app:layout_constraintTop_toTopOf="@id/guideline"
-				app:layout_goneMarginStart="0dp"
-				tools:text="Title"
-				tools:visibility="visible" />
+        <TextView
+            android:id="@+id/popover_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:textAppearance="@style/AppTheme.TextAppearance.Body2"
+            app:layout_constraintStart_toEndOf="@+id/popover_image"
+            app:layout_constraintTop_toTopOf="@id/guideline"
+            app:layout_goneMarginStart="0dp"
+            tools:text="Title"
+            tools:visibility="visible" />
 
-		<TextView
-				android:id="@+id/popover_subtitle"
-				android:layout_width="0dp"
-				android:layout_height="wrap_content"
-				android:layout_marginStart="16dp"
-				android:lineSpacingExtra="6sp"
-				android:textAppearance="@style/AppTheme.TextAppearance.Sub1"
-				app:layout_constraintBottom_toBottomOf="parent"
-				app:layout_constraintEnd_toStartOf="@+id/close_button"
-				app:layout_constraintStart_toEndOf="@+id/popover_image"
-				app:layout_constraintTop_toBottomOf="@+id/popover_title"
-				app:layout_goneMarginStart="0dp"
-				app:layout_goneMarginTop="0dp"
-				tools:text="Fixed: Debes definir una dimensión específica en el cuadro de texto a continuación o cambiar el tamaño de la vista en el editor. " />
+        <TextView
+            android:id="@+id/popover_subtitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:lineSpacingExtra="6sp"
+            android:textAppearance="@style/AppTheme.TextAppearance.Sub1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/close_button"
+            app:layout_constraintStart_toEndOf="@+id/popover_image"
+            app:layout_constraintTop_toBottomOf="@+id/popover_title"
+            app:layout_goneMarginStart="0dp"
+            app:layout_goneMarginTop="0dp"
+            tools:text="Fixed: Debes definir una dimensión específica en el cuadro de texto a continuación o cambiar el tamaño de la vista en el editor. " />
 
-		<ImageView
-				android:id="@+id/close_button"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:src="@drawable/icn_cross_popover"
-				app:layout_constraintEnd_toEndOf="parent"
-				app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/close_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icn_cross_popover"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-		<ImageView
-				android:id="@+id/popover_image"
-				android:layout_width="40dp"
-				android:layout_height="40dp"
-				android:visibility="gone"
-				app:layout_constraintStart_toStartOf="parent"
-				app:layout_constraintTop_toTopOf="@id/guideline"
-				tools:srcCompat="@tools:sample/avatars[12]"
-				tools:visibility="visible" />
+        <ImageView
+            android:id="@+id/popover_image"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/guideline"
+            tools:srcCompat="@tools:sample/avatars[12]"
+            tools:visibility="visible" />
 
-	</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-	<ImageView
-			android:id="@+id/popover_pointer_up"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:background="@drawable/icn_arrow_popover_up"
-			android:layout_alignParentTop="true"
-			android:layout_alignParentStart="true"
-			android:layout_marginLeft="@dimen/popover_arrow_margin_horizontal"
-			android:layout_marginRight="@dimen/popover_arrow_margin_horizontal"
-			android:layout_marginBottom="@dimen/popover_arrow_margin_vertical"/>
+    <ImageView
+        android:id="@+id/popover_pointer_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="@dimen/popover_arrow_margin_horizontal"
+        android:layout_marginRight="@dimen/popover_arrow_margin_horizontal"
+        android:layout_marginBottom="@dimen/popover_arrow_margin_vertical"
+        android:background="@drawable/icn_arrow_popover_up" />
 
-	<ImageView
-			android:id="@+id/popover_pointer_down"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_below="@id/popover_content"
-			android:background="@drawable/icn_arrow_popover_down"
-			android:layout_marginLeft="@dimen/popover_arrow_margin_horizontal"
-			android:layout_marginRight="@dimen/popover_arrow_margin_horizontal"
-			android:layout_marginTop="@dimen/popover_arrow_margin_vertical"/>
+    <ImageView
+        android:id="@+id/popover_pointer_down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/popover_content"
+        android:layout_marginLeft="@dimen/popover_arrow_margin_horizontal"
+        android:layout_marginTop="@dimen/popover_arrow_margin_vertical"
+        android:layout_marginRight="@dimen/popover_arrow_margin_horizontal"
+        android:background="@drawable/icn_arrow_popover_down" />
 
 </merge>

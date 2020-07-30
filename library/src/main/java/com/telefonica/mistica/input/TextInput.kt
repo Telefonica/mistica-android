@@ -13,12 +13,7 @@ import android.view.inputmethod.InputConnection
 import android.widget.TextView
 import androidx.annotation.IntDef
 import androidx.annotation.LayoutRes
-import androidx.databinding.BindingAdapter
-import androidx.databinding.BindingMethod
-import androidx.databinding.BindingMethods
-import androidx.databinding.InverseBindingListener
-import androidx.databinding.InverseBindingMethod
-import androidx.databinding.InverseBindingMethods
+import androidx.databinding.*
 import androidx.databinding.adapters.ListenerUtil
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
@@ -83,7 +78,11 @@ class TextInput @JvmOverloads constructor(
 
     private lateinit var editTextView: TextInputEditText
 
-    override fun handleAttrsAndInflateLayout(attrs: AttributeSet?, defStyleAttr: Int, defStyleRes: Int): TextInputLayout {
+    override fun handleAttrsAndInflateLayout(
+        attrs: AttributeSet?,
+        defStyleAttr: Int,
+        defStyleRes: Int
+    ): TextInputLayout {
 
         var initialText: String? = null
         var initialCounterEnabled: Boolean = false
@@ -91,13 +90,21 @@ class TextInput @JvmOverloads constructor(
         var initialAutofillEnabled: Boolean = true
 
         if (attrs != null) {
-            val styledAttrs = context.theme.obtainStyledAttributes(attrs, R.styleable.TextInput, defStyleAttr, defStyleRes)
+            val styledAttrs = context.theme.obtainStyledAttributes(
+                attrs,
+                R.styleable.TextInput,
+                defStyleAttr,
+                defStyleRes
+            )
             try {
                 type = styledAttrs.getInt(R.styleable.TextInput_inputType, TYPE_TEXT)
                 initialText = styledAttrs.getString(R.styleable.TextInput_inputText)
-                initialCounterEnabled = styledAttrs.getBoolean(R.styleable.TextInput_inputCounterEnabled, false)
-                initialMaxLength = styledAttrs.getInt(R.styleable.TextInput_inputMaxLength, NO_MAX_LENGTH)
-                initialAutofillEnabled = styledAttrs.getBoolean(R.styleable.TextInput_inputAutofillEnabled, true)
+                initialCounterEnabled =
+                    styledAttrs.getBoolean(R.styleable.TextInput_inputCounterEnabled, false)
+                initialMaxLength =
+                    styledAttrs.getInt(R.styleable.TextInput_inputMaxLength, NO_MAX_LENGTH)
+                initialAutofillEnabled =
+                    styledAttrs.getBoolean(R.styleable.TextInput_inputAutofillEnabled, true)
             } finally {
                 styledAttrs.recycle()
             }
@@ -142,7 +149,8 @@ class TextInput @JvmOverloads constructor(
 
     fun setAutofillEnabled(enabled: Boolean) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            editTextView.importantForAutofill = if (enabled) View.IMPORTANT_FOR_AUTOFILL_AUTO else View.IMPORTANT_FOR_AUTOFILL_NO
+            editTextView.importantForAutofill =
+                if (enabled) View.IMPORTANT_FOR_AUTOFILL_AUTO else View.IMPORTANT_FOR_AUTOFILL_NO
         }
     }
 
@@ -155,7 +163,12 @@ class TextInput @JvmOverloads constructor(
     }
 
     fun setTopTextPadding(padding: Int) {
-        editTextView.setPadding(editTextView.paddingLeft, padding, editTextView.paddingRight, editTextView.paddingBottom)
+        editTextView.setPadding(
+            editTextView.paddingLeft,
+            padding,
+            editTextView.paddingRight,
+            editTextView.paddingBottom
+        )
     }
 
     fun setOnEditorActionListener(l: TextView.OnEditorActionListener) {
@@ -227,7 +240,14 @@ class TextInput @JvmOverloads constructor(
                     listener.onChange()
                 }
 
-                override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+                override fun beforeTextChanged(
+                    s: CharSequence?,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
+                }
+
                 override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
             }
             val oldTextWatcher = ListenerUtil.trackListener(input, textWatcher, R.id.textWatcher)

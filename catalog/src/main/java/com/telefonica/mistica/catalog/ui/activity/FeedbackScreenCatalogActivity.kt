@@ -11,11 +11,13 @@ import com.telefonica.mistica.feedback.screen.view.FeedbackScreenView.FeedbackTy
 
 class FeedbackScreenCatalogActivity : AppCompatActivity() {
 
-    @FeedbackType var type: Int? = null
+    @FeedbackType
+    var type: Int? = null
     var isModal: Boolean = true
     var title: String? = null
     var subtitle: String? = null
-    @LayoutRes var customContentLayout: Int? = null
+    @LayoutRes
+    var customContentLayout: Int? = null
     var firstButtonText: String? = null
     var secondButtonText: String? = null
     var showSecondButtonAsLink: Boolean? = null

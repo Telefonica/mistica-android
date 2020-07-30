@@ -64,13 +64,19 @@ open class SnackbarBuilder(view: View?, text: String) {
     }
 
     private fun setBackgroundColor(snackbar: Snackbar, @AttrRes colorRes: Int) {
-        snackbar.view.backgroundTintList = ColorStateList.valueOf(view.context.getThemeColor(colorRes))
+        snackbar.view.backgroundTintList =
+            ColorStateList.valueOf(view.context.getThemeColor(colorRes))
     }
 
     private fun getSpannable(@AttrRes colorRes: Int): Spannable {
         val spannable: Spannable = SpannableString(text)
         val foregroundColorSpan = ForegroundColorSpan(view.context.getThemeColor(colorRes))
-        spannable.setSpan(foregroundColorSpan, 0, spannable.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        spannable.setSpan(
+            foregroundColorSpan,
+            0,
+            spannable.length,
+            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
         return spannable
     }
 

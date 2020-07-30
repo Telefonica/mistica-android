@@ -34,7 +34,15 @@ object GradientBackgroundFactory {
         val shaderFactory: ShaderFactory = object : ShaderFactory() {
             override fun resize(width: Int, height: Int): Shader {
                 val x = width / 2f
-                return LinearGradient(x, 0f, x, height.toFloat(), intColors, positions, TileMode.CLAMP)
+                return LinearGradient(
+                    x,
+                    0f,
+                    x,
+                    height.toFloat(),
+                    intColors,
+                    positions,
+                    TileMode.CLAMP
+                )
             }
         }
         val paint = PaintDrawable()

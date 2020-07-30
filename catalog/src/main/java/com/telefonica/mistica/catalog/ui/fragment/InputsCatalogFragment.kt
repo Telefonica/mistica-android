@@ -18,7 +18,11 @@ import com.telefonica.mistica.input.TextInput
 
 class InputsCatalogFragment : Fragment() {
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         return layoutInflater.inflate(R.layout.screen_inputs_catalog, container, false).apply {
 
@@ -28,7 +32,11 @@ class InputsCatalogFragment : Fragment() {
 
             val countries = arrayOf("Item 1", "Item 2", "Item 3", "Item 4")
 
-            val arrayAdapter = ArrayAdapter(context, R.layout.screen_inputs_dropdown_menu_popup_item_catalog, countries)
+            val arrayAdapter = ArrayAdapter(
+                context,
+                R.layout.screen_inputs_dropdown_menu_popup_item_catalog,
+                countries
+            )
 
             findViewById<DropDownInput>(R.id.dropDownInput)?.apply {
                 dropDown.setAdapter(arrayAdapter)
@@ -42,7 +50,8 @@ class InputsCatalogFragment : Fragment() {
     }
 
     private fun createdSpannableText(): Spannable {
-        val message = "I have read and agree to the promotion's Legal Grounds and Privacy Policy legal warning. (Tap on links to show error)."
+        val message =
+            "I have read and agree to the promotion's Legal Grounds and Privacy Policy legal warning. (Tap on links to show error)."
         val link1 = "Legal Grounds"
         val link2 = "Privacy Policy"
 

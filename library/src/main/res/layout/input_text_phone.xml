@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.textfield.TextInputLayout
-		xmlns:android="http://schemas.android.com/apk/res/android"
-		android:id="@+id/text_input_layout"
-		style="@style/AppTheme.Forms.TextInputLayout"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content">
+<com.google.android.material.textfield.TextInputLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/text_input_layout"
+    style="@style/AppTheme.Forms.TextInputLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
-	<com.google.android.material.textfield.TextInputEditText
-			android:id="@+id/text_input"
-			style="@style/AppTheme.Forms.TextInputLayout.EditText.Phone" />
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/text_input"
+        style="@style/AppTheme.Forms.TextInputLayout.EditText.Phone" />
 
 </com.google.android.material.textfield.TextInputLayout>

@@ -1,161 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-		xmlns:android="http://schemas.android.com/apk/res/android"
-		android:orientation="vertical"
-		android:layout_width="match_parent"
-		android:layout_height="match_parent"
->
-	<LinearLayout
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:orientation="vertical"
-			android:background="?colorBackground"
-			android:padding="8dp"
-	>
-		<TextView
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_margin="8dp"
-				android:text="Caption 1"
-				style="@style/AppTheme.TextAppearance.Caption1"
-		/>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-		<TextView
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_margin="8dp"
-				android:text="Caption 2"
-				style="@style/AppTheme.TextAppearance.Caption2"
-		/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?colorBackground"
+        android:orientation="vertical"
+        android:padding="8dp">
 
-		<TextView
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_margin="8dp"
-				android:text="Caption 3"
-				style="@style/AppTheme.TextAppearance.Caption3"
-		/>
+        <TextView
+            style="@style/AppTheme.TextAppearance.Caption1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Caption 1" />
 
-		<TextView
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_margin="8dp"
-				android:text="Caption 4"
-				style="@style/AppTheme.TextAppearance.Caption4"
-		/>
+        <TextView
+            style="@style/AppTheme.TextAppearance.Caption2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Caption 2" />
 
-		<TextView
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_margin="8dp"
-				android:text="Sub 1"
-				style="@style/AppTheme.TextAppearance.Sub1"
-		/>
+        <TextView
+            style="@style/AppTheme.TextAppearance.Caption3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Caption 3" />
 
-		<TextView
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_margin="8dp"
-				android:text="Sub 2"
-				style="@style/AppTheme.TextAppearance.Sub2"
-		/>
+        <TextView
+            style="@style/AppTheme.TextAppearance.Caption4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Caption 4" />
 
-		<TextView
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_margin="8dp"
-				android:text="Body 1"
-				style="@style/AppTheme.TextAppearance.Body1"
-		/>
+        <TextView
+            style="@style/AppTheme.TextAppearance.Sub1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Sub 1" />
 
-		<TextView
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_margin="8dp"
-				android:text="Body 2"
-				style="@style/AppTheme.TextAppearance.Body2"
-		/>
+        <TextView
+            style="@style/AppTheme.TextAppearance.Sub2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Sub 2" />
 
-		<TextView
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_margin="8dp"
-				android:text="Body 3"
-				style="@style/AppTheme.TextAppearance.Body3"
-		/>
+        <TextView
+            style="@style/AppTheme.TextAppearance.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Body 1" />
 
-		<TextView
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_margin="8dp"
-				android:text="Title"
-				style="@style/AppTheme.TextAppearance.Title"
-		/>
+        <TextView
+            style="@style/AppTheme.TextAppearance.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Body 2" />
 
-		<TextView
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_margin="8dp"
-				android:text="Title 1"
-				style="@style/AppTheme.TextAppearance.Title1"
-		/>
+        <TextView
+            style="@style/AppTheme.TextAppearance.Body3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Body 3" />
 
-		<TextView
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_margin="8dp"
-				android:text="Title 2"
-				style="@style/AppTheme.TextAppearance.Title2"
-		/>
+        <TextView
+            style="@style/AppTheme.TextAppearance.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Title" />
 
-		<TextView
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_margin="8dp"
-				android:text="Title 3"
-				style="@style/AppTheme.TextAppearance.Title3"
-		/>
+        <TextView
+            style="@style/AppTheme.TextAppearance.Title1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Title 1" />
 
-		<TextView
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_margin="8dp"
-				android:text="Headline 1"
-				style="@style/AppTheme.TextAppearance.Headline1"
-		/>
+        <TextView
+            style="@style/AppTheme.TextAppearance.Title2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Title 2" />
 
-		<TextView
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_margin="8dp"
-				android:text="Headline 2"
-				style="@style/AppTheme.TextAppearance.Headline2"
-		/>
+        <TextView
+            style="@style/AppTheme.TextAppearance.Title3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Title 3" />
 
-		<TextView
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_margin="8dp"
-				android:text="Headline 3"
-				style="@style/AppTheme.TextAppearance.Headline3"
-		/>
+        <TextView
+            style="@style/AppTheme.TextAppearance.Headline1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Headline 1" />
 
-		<TextView
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_margin="8dp"
-				android:text="Display"
-				style="@style/AppTheme.TextAppearance.Display1"
-		/>
+        <TextView
+            style="@style/AppTheme.TextAppearance.Headline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Headline 2" />
 
-		<TextView
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_margin="8dp"
-				android:text="Display3"
-				style="@style/AppTheme.TextAppearance.Display3"
-		/>
+        <TextView
+            style="@style/AppTheme.TextAppearance.Headline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Headline 3" />
 
-	</LinearLayout>
+        <TextView
+            style="@style/AppTheme.TextAppearance.Display1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Display" />
+
+        <TextView
+            style="@style/AppTheme.TextAppearance.Display3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Display3" />
+
+    </LinearLayout>
 
 </ScrollView>

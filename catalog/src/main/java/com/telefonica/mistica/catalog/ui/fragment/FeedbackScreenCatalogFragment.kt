@@ -6,11 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.CheckBox
-import android.widget.EditText
-import android.widget.Spinner
+import android.widget.*
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
 import com.telefonica.mistica.catalog.R
@@ -20,7 +16,11 @@ import com.telefonica.mistica.feedback.screen.view.FeedbackScreenView.FeedbackTy
 
 class FeedbackScreenCatalogFragment : Fragment() {
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         return inflater.inflate(R.layout.screen_fragment_feedback_catalog, container, false)
     }
@@ -33,11 +33,15 @@ class FeedbackScreenCatalogFragment : Fragment() {
         val inputSubtitle: EditText = view.findViewById(R.id.input_feedback_subtitle)
         val inputFirstButtonText: EditText = view.findViewById(R.id.input_feedback_first_button)
         val inputSecondButtonText: EditText = view.findViewById(R.id.input_feedback_second_button)
-        val checkBoxSecondButtonAsLink: CheckBox = view.findViewById(R.id.check_feedback_second_button_as_link)
+        val checkBoxSecondButtonAsLink: CheckBox =
+            view.findViewById(R.id.check_feedback_second_button_as_link)
         val checkBoxIsModal: CheckBox = view.findViewById(R.id.check_feedback_is_modal)
         val createButton: Button = view.findViewById(R.id.button_create_feedback)
 
-        typeSpinner.adapter = ArrayAdapter(view.context, android.R.layout.simple_spinner_item, Type.values().map { it.name }).apply {
+        typeSpinner.adapter = ArrayAdapter(
+            view.context,
+            android.R.layout.simple_spinner_item,
+            Type.values().map { it.name }).apply {
             setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         }
 
@@ -73,7 +77,10 @@ class FeedbackScreenCatalogFragment : Fragment() {
             putExtra(FeedbackScreenCatalogActivity.EXTRA_FIRST_BUTTON_TEXT, firstButtonText)
             putExtra(FeedbackScreenCatalogActivity.EXTRA_SECOND_BUTTON_TEXT, secondButtonText)
             putExtra(FeedbackScreenCatalogActivity.EXTRA_CUSTOM_CONTENT, customContentLayout)
-            putExtra(FeedbackScreenCatalogActivity.EXTRA_SHOW_SECOND_BUTTON_AS_LINK, showSecondButtonAsLink)
+            putExtra(
+                FeedbackScreenCatalogActivity.EXTRA_SHOW_SECOND_BUTTON_AS_LINK,
+                showSecondButtonAsLink
+            )
             putExtra(FeedbackScreenCatalogActivity.EXTRA_IS_MODAL, isModal)
             context.startActivity(this)
         }

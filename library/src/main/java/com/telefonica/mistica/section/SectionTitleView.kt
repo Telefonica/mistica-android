@@ -10,4 +10,8 @@ class SectionTitleView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
-) : MaterialTextView(ContextThemeWrapper(context, R.style.AppTheme_SectionTitle), attrs, defStyleAttr)
+) : MaterialTextView(
+    ContextThemeWrapper(context, R.style.AppTheme_SectionTitle),
+    attrs,
+    defStyleAttr
+)

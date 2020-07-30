@@ -25,21 +25,29 @@ open class PopOver(
     val isShown: Boolean
         get() = popOverView != null
 
-    open fun setTitle(@StringRes stringId: Int): PopOver = apply { popOverData = popOverData.copy(title = context.getString(stringId)) }
+    open fun setTitle(@StringRes stringId: Int): PopOver =
+        apply { popOverData = popOverData.copy(title = context.getString(stringId)) }
 
-    open fun setTitle(string: String): PopOver = apply { popOverData = popOverData.copy(title = string) }
+    open fun setTitle(string: String): PopOver =
+        apply { popOverData = popOverData.copy(title = string) }
 
-    open fun setImage(@DrawableRes imageRes: Int): PopOver = apply { popOverData = popOverData.copy(imageRes = imageRes) }
+    open fun setImage(@DrawableRes imageRes: Int): PopOver =
+        apply { popOverData = popOverData.copy(imageRes = imageRes) }
 
-    open fun setDescription(@StringRes stringId: Int): PopOver = apply { popOverData = popOverData.copy(description = context.getString(stringId)) }
+    open fun setDescription(@StringRes stringId: Int): PopOver =
+        apply { popOverData = popOverData.copy(description = context.getString(stringId)) }
 
-    open fun setDescription(string: String): PopOver = apply { popOverData = popOverData.copy(description = string) }
+    open fun setDescription(string: String): PopOver =
+        apply { popOverData = popOverData.copy(description = string) }
 
-    open fun setListener(listener: PopOverClickListener): PopOver = apply { this.listener = listener }
+    open fun setListener(listener: PopOverClickListener): PopOver =
+        apply { this.listener = listener }
 
-    open fun show(activity: Activity): PopOver = apply { show(activity.window.decorView as ViewGroup, targetView) }
+    open fun show(activity: Activity): PopOver =
+        apply { show(activity.window.decorView as ViewGroup, targetView) }
 
-    open fun show(containerView: View): PopOver = apply { show(containerView as ViewGroup, targetView) }
+    open fun show(containerView: View): PopOver =
+        apply { show(containerView as ViewGroup, targetView) }
 
     open fun hide() {
         if (popOverView == null) {
@@ -82,8 +90,16 @@ open class PopOver(
         return popOverView
     }
 
-    private fun setUpToolTipView(targetView: View, popOverData: PopOverData?, popOverRelativeLayout: PopOverRelativeLayout) {
-        popOverView = popOverRelativeLayout.showPopOverForView(popOverData!!, targetView, tooltipPresentationMode)
+    private fun setUpToolTipView(
+        targetView: View,
+        popOverData: PopOverData?,
+        popOverRelativeLayout: PopOverRelativeLayout
+    ) {
+        popOverView = popOverRelativeLayout.showPopOverForView(
+            popOverData!!,
+            targetView,
+            tooltipPresentationMode
+        )
         popOverView?.apply {
             visibility = targetView.visibility
             this.setToolTipListener(object : PopOverClickListener {
@@ -102,7 +118,8 @@ open class PopOver(
 
     private fun buildLayout(container: ViewGroup, context: Context): PopOverRelativeLayout {
         val popOverRelativeLayout = PopOverRelativeLayout(context)
-        popOverRelativeLayout.layoutParams = LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT)
+        popOverRelativeLayout.layoutParams =
+            LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT)
         container.addView(popOverRelativeLayout)
         return popOverRelativeLayout
     }

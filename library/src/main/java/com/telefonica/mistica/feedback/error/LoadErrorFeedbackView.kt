@@ -71,12 +71,26 @@ class LoadErrorFeedbackView @JvmOverloads constructor(
 
         if (attrs != null) {
             val theme = context.theme
-            val styledAttrs = theme.obtainStyledAttributes(attrs, R.styleable.LoadErrorFeedback, defStyleAttr, 0)
-            styledAttrs.getText(R.styleable.LoadErrorFeedback_loadErrorFeedbackTitle)?.let { setTitle(it) }
-            styledAttrs.getText(R.styleable.LoadErrorFeedback_loadErrorFeedbackDescription)?.let { setDescription(it) }
-            styledAttrs.getText(R.styleable.LoadErrorFeedback_loadErrorFeedbackButtonText)?.let { setButtonText(it) }
-            setIsLoading(styledAttrs.getBoolean(R.styleable.LoadErrorFeedback_loadErrorFeedbackIsLoading, false))
-            setIsButtonVisible(styledAttrs.getBoolean(R.styleable.LoadErrorFeedback_loadErrorFeedbackIsButtonVisible, true))
+            val styledAttrs =
+                theme.obtainStyledAttributes(attrs, R.styleable.LoadErrorFeedback, defStyleAttr, 0)
+            styledAttrs.getText(R.styleable.LoadErrorFeedback_loadErrorFeedbackTitle)
+                ?.let { setTitle(it) }
+            styledAttrs.getText(R.styleable.LoadErrorFeedback_loadErrorFeedbackDescription)
+                ?.let { setDescription(it) }
+            styledAttrs.getText(R.styleable.LoadErrorFeedback_loadErrorFeedbackButtonText)
+                ?.let { setButtonText(it) }
+            setIsLoading(
+                styledAttrs.getBoolean(
+                    R.styleable.LoadErrorFeedback_loadErrorFeedbackIsLoading,
+                    false
+                )
+            )
+            setIsButtonVisible(
+                styledAttrs.getBoolean(
+                    R.styleable.LoadErrorFeedback_loadErrorFeedbackIsButtonVisible,
+                    true
+                )
+            )
             styledAttrs.recycle()
         }
     }

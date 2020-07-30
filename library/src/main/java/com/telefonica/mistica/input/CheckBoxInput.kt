@@ -9,12 +9,7 @@ import android.view.LayoutInflater
 import android.widget.CompoundButton
 import androidx.annotation.RequiresApi
 import androidx.appcompat.widget.AppCompatCheckBox
-import androidx.databinding.BindingAdapter
-import androidx.databinding.BindingMethod
-import androidx.databinding.BindingMethods
-import androidx.databinding.InverseBindingListener
-import androidx.databinding.InverseBindingMethod
-import androidx.databinding.InverseBindingMethods
+import androidx.databinding.*
 import com.google.android.material.textfield.TextInputLayout
 import com.telefonica.mistica.R
 
@@ -46,15 +41,25 @@ class CheckBoxInput @JvmOverloads constructor(
 
     private lateinit var checkBox: AppCompatCheckBox
 
-    override fun handleAttrsAndInflateLayout(attrs: AttributeSet?, defStyleAttr: Int, defStyleRes: Int): TextInputLayout {
+    override fun handleAttrsAndInflateLayout(
+        attrs: AttributeSet?,
+        defStyleAttr: Int,
+        defStyleRes: Int
+    ): TextInputLayout {
 
         var initialInputChecked: Boolean = true
         var initialInputText: String? = null
 
         if (attrs != null) {
-            val styledAttrs = context.theme.obtainStyledAttributes(attrs, R.styleable.CheckBoxInput, defStyleAttr, defStyleRes)
+            val styledAttrs = context.theme.obtainStyledAttributes(
+                attrs,
+                R.styleable.CheckBoxInput,
+                defStyleAttr,
+                defStyleRes
+            )
             try {
-                initialInputChecked = styledAttrs.getBoolean(R.styleable.CheckBoxInput_inputChecked, true)
+                initialInputChecked =
+                    styledAttrs.getBoolean(R.styleable.CheckBoxInput_inputChecked, true)
                 initialInputText = styledAttrs.getString(R.styleable.CheckBoxInput_inputCheckText)
             } finally {
                 styledAttrs.recycle()

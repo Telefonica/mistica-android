@@ -1,9 +1,9 @@
 package com.telefonica.mistica.input
 
-import android.widget.AutoCompleteTextView
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
+import android.widget.AutoCompleteTextView
 import com.google.android.material.textfield.TextInputLayout
 import com.telefonica.mistica.R
 
@@ -16,7 +16,11 @@ class DropDownInput @JvmOverloads constructor(
 
     lateinit var dropDown: AutoCompleteTextView
 
-    override fun handleAttrsAndInflateLayout(attrs: AttributeSet?, defStyleAttr: Int, defStyleRes: Int): TextInputLayout {
+    override fun handleAttrsAndInflateLayout(
+        attrs: AttributeSet?,
+        defStyleAttr: Int,
+        defStyleRes: Int
+    ): TextInputLayout {
 
         LayoutInflater.from(context).inflate(R.layout.input_dropdown, this, true)
 

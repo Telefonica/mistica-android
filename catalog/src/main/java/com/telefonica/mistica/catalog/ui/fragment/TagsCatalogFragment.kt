@@ -14,7 +14,11 @@ import com.telefonica.mistica.input.TextInput
 
 class TagsCatalogFragment : Fragment() {
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View =
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View =
         inflater.inflate(R.layout.screen_tags_catalog, container, false)
 
     @SuppressLint("SetTextI18n")
@@ -31,7 +35,12 @@ class TagsCatalogFragment : Fragment() {
 
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
-            override fun onTextChanged(inputText: CharSequence, start: Int, before: Int, count: Int) {
+            override fun onTextChanged(
+                inputText: CharSequence,
+                start: Int,
+                before: Int,
+                count: Int
+            ) {
                 tagInImage.text = inputText
                 tagInline.text = inputText
             }

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-	<style name="AppTheme.Widgets.Tag" parent="Widget.AppCompat.TextView">
-		<item name="android:textAppearance">@style/AppTheme.TextAppearance.Caption3</item>
-		<item name="android:textColor">?colorTextPrimaryInverse</item>
-		<item name="android:background">@drawable/tag_background</item>
-		<item name="android:textAllCaps">true</item>
-		<item name="android:lines">1</item>
-		<item name="android:ellipsize">end</item>
-		<item name="android:gravity">center</item>
-		<item name="android:minWidth">48dp</item>
-	</style>
+    <style name="AppTheme.Widgets.Tag" parent="Widget.AppCompat.TextView">
+        <item name="android:textAppearance">@style/AppTheme.TextAppearance.Caption3</item>
+        <item name="android:textColor">?colorTextPrimaryInverse</item>
+        <item name="android:background">@drawable/tag_background</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:lines">1</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:gravity">center</item>
+        <item name="android:minWidth">48dp</item>
+    </style>
 
 </resources>

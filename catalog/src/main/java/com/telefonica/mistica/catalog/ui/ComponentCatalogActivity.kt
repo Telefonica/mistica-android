@@ -4,20 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.telefonica.mistica.catalog.R
-import com.telefonica.mistica.catalog.ui.fragment.BadgesCatalogFragment
-import com.telefonica.mistica.catalog.ui.fragment.ButtonsCatalogFragment
-import com.telefonica.mistica.catalog.ui.fragment.FeedbackScreenCatalogFragment
-import com.telefonica.mistica.catalog.ui.fragment.HeadersCatalogFragment
-import com.telefonica.mistica.catalog.ui.fragment.InputsCatalogFragment
-import com.telefonica.mistica.catalog.ui.fragment.ListsCatalogFragment
-import com.telefonica.mistica.catalog.ui.fragment.LoadErrorFeedbackCatalogFragment
-import com.telefonica.mistica.catalog.ui.fragment.OthersCatalogFragment
-import com.telefonica.mistica.catalog.ui.fragment.PopOverCatalogFragment
-import com.telefonica.mistica.catalog.ui.fragment.ScrollContentIndicatorCatalogFragment
-import com.telefonica.mistica.catalog.ui.fragment.SnackBarCatalogFragment
-import com.telefonica.mistica.catalog.ui.fragment.TagsCatalogFragment
-import com.telefonica.mistica.catalog.ui.fragment.TextsCatalogFragment
-import java.io.Serializable
+import com.telefonica.mistica.catalog.ui.fragment.*
 
 class ComponentCatalogActivity : AppCompatActivity() {
 

@@ -52,7 +52,11 @@ class ProgressButton : FrameLayout {
         init(attrs)
     }
 
-    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
+    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(
+        context,
+        attrs,
+        defStyleAttr
+    ) {
         buttonNormal = MaterialButton(context, attrs, defStyleAttr)
         buttonLoading = MaterialButton(context, attrs, defStyleAttr)
         buttonBackground = MaterialButton(context, attrs, defStyleAttr)
@@ -62,7 +66,8 @@ class ProgressButton : FrameLayout {
     private fun init(attrs: AttributeSet? = null, defStyleAttr: Int = 0) {
         if (attrs != null) {
             val theme = context.theme
-            val styledAttrs = theme.obtainStyledAttributes(attrs, R.styleable.ProgressButton, defStyleAttr, 0)
+            val styledAttrs =
+                theme.obtainStyledAttributes(attrs, R.styleable.ProgressButton, defStyleAttr, 0)
             try {
                 isLoading = styledAttrs.getBoolean(R.styleable.ProgressButton_isLoading, false)
             } finally {
@@ -120,7 +125,8 @@ class ProgressButton : FrameLayout {
                         buttonLoading.isPressed = true
                     }
                     MotionEvent.ACTION_MOVE -> {
-                        val outsideBounds = event.x < 0 || event.y < 0 || event.x > view.measuredWidth || event.y > view.measuredHeight
+                        val outsideBounds =
+                            event.x < 0 || event.y < 0 || event.x > view.measuredWidth || event.y > view.measuredHeight
                         buttonNormal.isPressed = !outsideBounds
                         buttonLoading.isPressed = !outsideBounds
                     }
@@ -197,16 +203,25 @@ class ProgressButton : FrameLayout {
     private fun switchState() {
         currentAnimation?.cancel()
 
-        val maxTranslation: Float = resources.getDimensionPixelSize(R.dimen.button_max_animation_translation).toFloat()
+        val maxTranslation: Float =
+            resources.getDimensionPixelSize(R.dimen.button_max_animation_translation).toFloat()
 
         currentAnimation = AnimatorSet().apply {
             playTogether(
                 getCurrentTextColorFadeAnim(buttonNormal, !isLoading),
-                getTranslationYAnim(buttonNormal, floatArrayOf(0F, -maxTranslation).reverseIfLoading()),
+                getTranslationYAnim(
+                    buttonNormal,
+                    floatArrayOf(0F, -maxTranslation).reverseIfLoading()
+                ),
                 getCurrentTextColorFadeAnim(buttonLoading, isLoading).apply {
-                    addUpdateListener { progressBar.indeterminateTintList = buttonLoading.textColors }
+                    addUpdateListener {
+                        progressBar.indeterminateTintList = buttonLoading.textColors
+                    }
                 },
-                getTranslationYAnim(buttonLoading, floatArrayOf(maxTranslation, 0F).reverseIfLoading()).apply {
+                getTranslationYAnim(
+                    buttonLoading,
+                    floatArrayOf(maxTranslation, 0F).reverseIfLoading()
+                ).apply {
                     addUpdateListener { progressBar.translationY = buttonLoading.translationY }
                 }
             )
@@ -266,8 +281,14 @@ class ProgressButton : FrameLayout {
 
     private fun setProgressBarHorizontalPosition() {
         val bounds = Rect()
-        buttonLoading.paint.getTextBounds(buttonLoading.text.toString(), 0, buttonLoading.text.length, bounds)
-        val textWidth: Float = bounds.width().toFloat() + buttonLoading.iconSize + buttonLoading.iconPadding
+        buttonLoading.paint.getTextBounds(
+            buttonLoading.text.toString(),
+            0,
+            buttonLoading.text.length,
+            bounds
+        )
+        val textWidth: Float =
+            bounds.width().toFloat() + buttonLoading.iconSize + buttonLoading.iconPadding
         progressBar.x = (buttonLoading.width - textWidth) / 2
     }
 

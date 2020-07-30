@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-	<style name="AppTheme.Widgets.ChipGroup" parent="AppTheme.Widgets.BaseChipGroup">
-		<item name="android:layout_gravity">center</item>
-	</style>
+    <style name="AppTheme.Widgets.ChipGroup" parent="AppTheme.Widgets.BaseChipGroup">
+        <item name="android:layout_gravity">center</item>
+    </style>
 
 </resources>

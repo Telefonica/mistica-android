@@ -1,133 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-	<style name="AppTheme.Button" parent="Widget.MaterialComponents.Button.UnelevatedButton">
-		<item name="android:textAppearance">@style/AppTheme.TextAppearance.Body2</item>
-		<item name="android:minHeight">@dimen/button_height</item>
-		<item name="android:insetTop">@dimen/button_vertical_inset</item>
-		<item name="android:insetBottom">@dimen/button_vertical_inset</item>
-		<item name="android:paddingStart">@dimen/button_horizontal_padding</item>
-		<item name="android:paddingEnd">@dimen/button_horizontal_padding</item>
-		<item name="android:minWidth">@dimen/button_min_width</item>
-		<item name="iconSize">@dimen/button_icon_size</item>
-		<item name="cornerRadius">@dimen/button_corner_radius</item>
-		<item name="iconGravity">textStart</item>
-		<item name="android:maxLines">1</item>
-		<item name="android:ellipsize">end</item>
-		<item name="iconPadding">@dimen/button_icon_padding</item>
-	</style>
+    <style name="AppTheme.Button" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="android:textAppearance">@style/AppTheme.TextAppearance.Body2</item>
+        <item name="android:minHeight">@dimen/button_height</item>
+        <item name="android:insetTop">@dimen/button_vertical_inset</item>
+        <item name="android:insetBottom">@dimen/button_vertical_inset</item>
+        <item name="android:paddingStart">@dimen/button_horizontal_padding</item>
+        <item name="android:paddingEnd">@dimen/button_horizontal_padding</item>
+        <item name="android:minWidth">@dimen/button_min_width</item>
+        <item name="iconSize">@dimen/button_icon_size</item>
+        <item name="cornerRadius">@dimen/button_corner_radius</item>
+        <item name="iconGravity">textStart</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+        <item name="iconPadding">@dimen/button_icon_padding</item>
+    </style>
 
-	<style name="AppTheme.OutlinedButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
-		<item name="android:textAppearance">@style/AppTheme.TextAppearance.Body2</item>
-		<item name="android:minHeight">@dimen/button_height</item>
-		<item name="android:insetTop">@dimen/button_vertical_inset</item>
-		<item name="android:insetBottom">@dimen/button_vertical_inset</item>
-		<item name="android:paddingStart">@dimen/button_horizontal_padding</item>
-		<item name="android:paddingEnd">@dimen/button_horizontal_padding</item>
-		<item name="android:minWidth">@dimen/button_min_width</item>
-		<item name="iconSize">@dimen/button_icon_size</item>
-		<item name="cornerRadius">@dimen/button_corner_radius</item>
-		<item name="iconGravity">textStart</item>
-		<item name="android:maxLines">1</item>
-		<item name="android:ellipsize">end</item>
-		<item name="iconPadding">@dimen/button_icon_padding</item>
-	</style>
+    <style name="AppTheme.OutlinedButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:textAppearance">@style/AppTheme.TextAppearance.Body2</item>
+        <item name="android:minHeight">@dimen/button_height</item>
+        <item name="android:insetTop">@dimen/button_vertical_inset</item>
+        <item name="android:insetBottom">@dimen/button_vertical_inset</item>
+        <item name="android:paddingStart">@dimen/button_horizontal_padding</item>
+        <item name="android:paddingEnd">@dimen/button_horizontal_padding</item>
+        <item name="android:minWidth">@dimen/button_min_width</item>
+        <item name="iconSize">@dimen/button_icon_size</item>
+        <item name="cornerRadius">@dimen/button_corner_radius</item>
+        <item name="iconGravity">textStart</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+        <item name="iconPadding">@dimen/button_icon_padding</item>
+    </style>
 
-	<style name="AppTheme.LinkButton" parent="Widget.MaterialComponents.Button.TextButton">
-		<item name="android:textAppearance">@style/AppTheme.TextAppearance.Sub2</item>
-		<item name="android:paddingStart">@dimen/button_link_horizontal_padding</item>
-		<item name="android:paddingEnd">@dimen/button_link_horizontal_padding</item>
-		<item name="android:minWidth">@dimen/button_small_min_width</item>
-		<item name="android:minHeight">@dimen/button_small_height</item>
-		<item name="android:insetTop">@dimen/button_vertical_inset</item>
-		<item name="android:insetBottom">@dimen/button_vertical_inset</item>
-		<item name="iconSize">@dimen/button_small_icon_size</item>
-		<item name="cornerRadius">@dimen/button_corner_radius</item>
-		<item name="iconGravity">textStart</item>
-		<item name="android:maxLines">1</item>
-		<item name="android:ellipsize">end</item>
-		<item name="iconPadding">@dimen/button_icon_padding</item>
-	</style>
+    <style name="AppTheme.LinkButton" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textAppearance">@style/AppTheme.TextAppearance.Sub2</item>
+        <item name="android:paddingStart">@dimen/button_link_horizontal_padding</item>
+        <item name="android:paddingEnd">@dimen/button_link_horizontal_padding</item>
+        <item name="android:minWidth">@dimen/button_small_min_width</item>
+        <item name="android:minHeight">@dimen/button_small_height</item>
+        <item name="android:insetTop">@dimen/button_vertical_inset</item>
+        <item name="android:insetBottom">@dimen/button_vertical_inset</item>
+        <item name="iconSize">@dimen/button_small_icon_size</item>
+        <item name="cornerRadius">@dimen/button_corner_radius</item>
+        <item name="iconGravity">textStart</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+        <item name="iconPadding">@dimen/button_icon_padding</item>
+    </style>
 
-	<style name="AppTheme.Button.DefaultButton">
-		<item name="backgroundTint">@color/button_primary_background_selector</item>
-		<item name="android:textColor">?colorTextButtonPrimary</item>
-		<item name="rippleColor">?colorButtonPrimaryBackgroundPressed</item>
-	</style>
+    <style name="AppTheme.Button.DefaultButton">
+        <item name="backgroundTint">@color/button_primary_background_selector</item>
+        <item name="android:textColor">?colorTextButtonPrimary</item>
+        <item name="rippleColor">?colorButtonPrimaryBackgroundPressed</item>
+    </style>
 
-	<style name="AppTheme.Button.DefaultButton.Small">
-		<item name="android:textAppearance">@style/AppTheme.TextAppearance.Sub2</item>
-		<item name="android:minWidth">@dimen/button_small_min_width</item>
-		<item name="android:minHeight">@dimen/button_small_height</item>
-		<item name="iconSize">@dimen/button_small_icon_size</item>
-	</style>
+    <style name="AppTheme.Button.DefaultButton.Small">
+        <item name="android:textAppearance">@style/AppTheme.TextAppearance.Sub2</item>
+        <item name="android:minWidth">@dimen/button_small_min_width</item>
+        <item name="android:minHeight">@dimen/button_small_height</item>
+        <item name="iconSize">@dimen/button_small_icon_size</item>
+    </style>
 
-	<style name="AppTheme.Button.SecondaryButton" parent="AppTheme.OutlinedButton">
-		<item name="android:background">@android:color/transparent</item>
-		<item name="android:textColor">@color/text_button_secondary_selector</item>
-		<item name="strokeColor">@color/button_secondary_background_selector</item>
-		<item name="strokeWidth">@dimen/button_outline_stroke_width</item>
-		<item name="rippleColor">@android:color/transparent</item>
-	</style>
+    <style name="AppTheme.Button.SecondaryButton" parent="AppTheme.OutlinedButton">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textColor">@color/text_button_secondary_selector</item>
+        <item name="strokeColor">@color/button_secondary_background_selector</item>
+        <item name="strokeWidth">@dimen/button_outline_stroke_width</item>
+        <item name="rippleColor">@android:color/transparent</item>
+    </style>
 
-	<style name="AppTheme.Button.SecondaryButton.Small">
-		<item name="android:textAppearance">@style/AppTheme.TextAppearance.Sub2</item>
-		<item name="android:minWidth">@dimen/button_small_min_width</item>
-		<item name="android:minHeight">@dimen/button_small_height</item>
-		<item name="iconSize">@dimen/button_small_icon_size</item>
-	</style>
+    <style name="AppTheme.Button.SecondaryButton.Small">
+        <item name="android:textAppearance">@style/AppTheme.TextAppearance.Sub2</item>
+        <item name="android:minWidth">@dimen/button_small_min_width</item>
+        <item name="android:minHeight">@dimen/button_small_height</item>
+        <item name="iconSize">@dimen/button_small_icon_size</item>
+    </style>
 
-	<style name="AppTheme.Button.DangerButton">
-		<item name="backgroundTint">@color/button_danger_background_selector</item>
-		<item name="android:textColor">?colorTextButtonPrimary</item>
-		<item name="rippleColor">?colorButtonDangerBackgroundPressed</item>
-	</style>
+    <style name="AppTheme.Button.DangerButton">
+        <item name="backgroundTint">@color/button_danger_background_selector</item>
+        <item name="android:textColor">?colorTextButtonPrimary</item>
+        <item name="rippleColor">?colorButtonDangerBackgroundPressed</item>
+    </style>
 
-	<style name="AppTheme.Button.DangerButton.Small">
-		<item name="android:textAppearance">@style/AppTheme.TextAppearance.Sub2</item>
-		<item name="android:minWidth">@dimen/button_small_min_width</item>
-		<item name="android:minHeight">@dimen/button_small_height</item>
-		<item name="iconSize">@dimen/button_small_icon_size</item>
-	</style>
+    <style name="AppTheme.Button.DangerButton.Small">
+        <item name="android:textAppearance">@style/AppTheme.TextAppearance.Sub2</item>
+        <item name="android:minWidth">@dimen/button_small_min_width</item>
+        <item name="android:minHeight">@dimen/button_small_height</item>
+        <item name="iconSize">@dimen/button_small_icon_size</item>
+    </style>
 
-	<style name="AppTheme.Button.LinkButton" parent="AppTheme.LinkButton">
-		<item name="backgroundTint">@android:color/transparent</item>
-		<item name="android:textColor">@color/text_button_link_selector</item>
-		<item name="rippleColor">?colorLinkButtonBackgroundPressed</item>
-	</style>
+    <style name="AppTheme.Button.LinkButton" parent="AppTheme.LinkButton">
+        <item name="backgroundTint">@android:color/transparent</item>
+        <item name="android:textColor">@color/text_button_link_selector</item>
+        <item name="rippleColor">?colorLinkButtonBackgroundPressed</item>
+    </style>
 
-	<style name="AppTheme.Button.PrimaryButtonInverse">
-		<item name="backgroundTint">@color/button_primary_background_inverse_selector</item>
-		<item name="android:textColor">@color/text_button_primary_inverse_selector</item>
-		<item name="rippleColor">?colorButtonPrimaryBackgroundPressedInverse</item>
-	</style>
+    <style name="AppTheme.Button.PrimaryButtonInverse">
+        <item name="backgroundTint">@color/button_primary_background_inverse_selector</item>
+        <item name="android:textColor">@color/text_button_primary_inverse_selector</item>
+        <item name="rippleColor">?colorButtonPrimaryBackgroundPressedInverse</item>
+    </style>
 
-	<style name="AppTheme.Button.PrimaryButtonInverse.Small">
-		<item name="android:textAppearance">@style/AppTheme.TextAppearance.Sub2</item>
-		<item name="android:minWidth">@dimen/button_small_min_width</item>
-		<item name="android:minHeight">@dimen/button_small_height</item>
-		<item name="iconSize">@dimen/button_small_icon_size</item>
-	</style>
+    <style name="AppTheme.Button.PrimaryButtonInverse.Small">
+        <item name="android:textAppearance">@style/AppTheme.TextAppearance.Sub2</item>
+        <item name="android:minWidth">@dimen/button_small_min_width</item>
+        <item name="android:minHeight">@dimen/button_small_height</item>
+        <item name="iconSize">@dimen/button_small_icon_size</item>
+    </style>
 
-	<style name="AppTheme.Button.SecondaryButtonInverse" parent="AppTheme.OutlinedButton">
-		<item name="android:background">@android:color/transparent</item>
-		<item name="android:textColor">@color/text_button_secondary_inverse_selector</item>
-		<item name="strokeColor">@color/button_secondary_background_inverse_selector</item>
-		<item name="strokeWidth">@dimen/button_outline_stroke_width</item>
-		<item name="rippleColor">@android:color/transparent</item>
-	</style>
+    <style name="AppTheme.Button.SecondaryButtonInverse" parent="AppTheme.OutlinedButton">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textColor">@color/text_button_secondary_inverse_selector</item>
+        <item name="strokeColor">@color/button_secondary_background_inverse_selector</item>
+        <item name="strokeWidth">@dimen/button_outline_stroke_width</item>
+        <item name="rippleColor">@android:color/transparent</item>
+    </style>
 
-	<style name="AppTheme.Button.SecondaryButtonInverse.Small">
-		<item name="android:textAppearance">@style/AppTheme.TextAppearance.Sub2</item>
-		<item name="android:minWidth">@dimen/button_small_min_width</item>
-		<item name="android:minHeight">@dimen/button_small_height</item>
-		<item name="iconSize">@dimen/button_small_icon_size</item>
-	</style>
+    <style name="AppTheme.Button.SecondaryButtonInverse.Small">
+        <item name="android:textAppearance">@style/AppTheme.TextAppearance.Sub2</item>
+        <item name="android:minWidth">@dimen/button_small_min_width</item>
+        <item name="android:minHeight">@dimen/button_small_height</item>
+        <item name="iconSize">@dimen/button_small_icon_size</item>
+    </style>
 
-	<style name="AppTheme.Button.LinkButtonInverse" parent="AppTheme.LinkButton">
-		<item name="backgroundTint">@android:color/transparent</item>
-		<item name="android:textColor">@color/text_button_link_inverse_selector</item>
-		<item name="rippleColor">?colorLinkButtonBackgroundPressedInverse</item>
-	</style>
+    <style name="AppTheme.Button.LinkButtonInverse" parent="AppTheme.LinkButton">
+        <item name="backgroundTint">@android:color/transparent</item>
+        <item name="android:textColor">@color/text_button_link_inverse_selector</item>
+        <item name="rippleColor">?colorLinkButtonBackgroundPressedInverse</item>
+    </style>
 
 </resources>

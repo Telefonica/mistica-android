@@ -33,7 +33,12 @@ open class DividerItemDecoration @JvmOverloads constructor(
         }
     }
 
-    override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
+    override fun getItemOffsets(
+        outRect: Rect,
+        view: View,
+        parent: RecyclerView,
+        state: RecyclerView.State
+    ) {
         val position = parent.getChildAdapterPosition(view)
         if (hasDivider(parent, position)) {
             outRect.set(0, 0, 0, divider?.intrinsicHeight ?: 0)
@@ -55,8 +60,12 @@ open class DividerItemDecoration @JvmOverloads constructor(
                 continue
             }
             parent.getDecoratedBoundsWithMargins(child, bounds)
-            val left = parent.paddingLeft + adapter.getDividerLeftOffset(position) + Math.round(child.translationX)
-            val right = parent.width - parent.paddingRight - adapter.getDividerRightOffset(position) + Math.round(child.translationX)
+            val left =
+                parent.paddingLeft + adapter.getDividerLeftOffset(position) + Math.round(child.translationX)
+            val right =
+                parent.width - parent.paddingRight - adapter.getDividerRightOffset(position) + Math.round(
+                    child.translationX
+                )
             val bottom = bounds.bottom + Math.round(child.translationY)
             val top = bottom - divider.intrinsicHeight
 

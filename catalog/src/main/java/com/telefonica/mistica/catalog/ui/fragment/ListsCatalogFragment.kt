@@ -16,7 +16,11 @@ import com.telefonica.mistica.list.layout.configureWithFullWidthLayout
 
 class ListsCatalogFragment : Fragment() {
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         return inflater.inflate(R.layout.screen_fragment_lists_catalog, container, false)
     }
@@ -36,7 +40,13 @@ class ListsCatalogFragment : Fragment() {
     @Suppress("MagicNumber")
     class ListAdapter(private val boxed: Boolean) : RecyclerView.Adapter<ListViewHolder>() {
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder =
-            ListViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.screen_fragment_lists_catalog_item, parent, false) as ListRowView)
+            ListViewHolder(
+                LayoutInflater.from(parent.context).inflate(
+                    R.layout.screen_fragment_lists_catalog_item,
+                    parent,
+                    false
+                ) as ListRowView
+            )
 
         override fun getItemCount(): Int = 23
 

@@ -39,10 +39,13 @@ internal data class PopOverData(
 internal object PopOverTheme {
     @DrawableRes
     val topTip: Int = R.drawable.icn_arrow_popover_up
+
     @DrawableRes
     val bottomTip: Int = R.drawable.icn_arrow_popover_down
+
     @DrawableRes
     val closeButton = R.drawable.icn_cross_popover
+
     @AttrRes
     val textColor = R.attr.colorTextPrimary
 }

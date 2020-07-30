@@ -16,7 +16,11 @@ import com.telefonica.mistica.feedback.SnackbarBuilder
 
 class SnackBarCatalogFragment : Fragment() {
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         return layoutInflater.inflate(R.layout.screen_snackbar_catalog, container, false)
     }
@@ -29,7 +33,11 @@ class SnackBarCatalogFragment : Fragment() {
         val typeSpinner: Spinner = view.findViewById(R.id.spinner_snackbar_type)
         val createButton: Button = view.findViewById(R.id.button_create_snackbar)
 
-        typeSpinner.adapter = ArrayAdapter(view.context, android.R.layout.simple_spinner_item, SnackBarType.values().map { it.name }).apply {
+        typeSpinner.adapter = ArrayAdapter(
+            view.context,
+            android.R.layout.simple_spinner_item,
+            SnackBarType.values().map { it.name }
+        ).apply {
             setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         }
 
@@ -50,7 +58,8 @@ class SnackBarCatalogFragment : Fragment() {
     }
 
     private fun View.hideKeyboard() {
-        val inputMethodManager = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        val inputMethodManager =
+            context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         inputMethodManager.hideSoftInputFromWindow(windowToken, 0)
     }
 

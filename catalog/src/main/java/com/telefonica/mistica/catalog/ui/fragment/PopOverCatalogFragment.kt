@@ -16,7 +16,11 @@ import com.telefonica.mistica.feedback.popover.PopOver
 
 class PopOverCatalogFragment : Fragment() {
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         return layoutInflater.inflate(R.layout.screen_popovers_catalog, container, false)
     }
@@ -31,8 +35,22 @@ class PopOverCatalogFragment : Fragment() {
         val createButtonOnTop: Button = view.findViewById(R.id.button_create_popover_on_top)
         val addImage: CheckBox = view.findViewById(R.id.input_popover_checkbox_image)
 
-        createButton.setOnClickListener { createPopOverOnView(it, inputTitle, inputMessage, addImage) }
-        createButtonOnTop.setOnClickListener { createPopOverOnView(title, inputTitle, inputMessage, addImage) }
+        createButton.setOnClickListener {
+            createPopOverOnView(
+                it,
+                inputTitle,
+                inputMessage,
+                addImage
+            )
+        }
+        createButtonOnTop.setOnClickListener {
+            createPopOverOnView(
+                title,
+                inputTitle,
+                inputMessage,
+                addImage
+            )
+        }
     }
 
     private fun createPopOverOnView(
@@ -54,7 +72,8 @@ class PopOverCatalogFragment : Fragment() {
     }
 
     private fun View.hideKeyboard() {
-        val inputMethodManager = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        val inputMethodManager =
+            context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         inputMethodManager.hideSoftInputFromWindow(windowToken, 0)
     }
 }

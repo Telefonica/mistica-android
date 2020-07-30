@@ -26,14 +26,22 @@ internal class PopOverRelativeLayout : RelativeLayout {
 
     constructor(context: Context, attrs: AttributeSet) : super(context, attrs)
 
-    constructor(context: Context, attrs: AttributeSet, defStyle: Int) : super(context, attrs, defStyle)
+    constructor(context: Context, attrs: AttributeSet, defStyle: Int) : super(
+        context,
+        attrs,
+        defStyle
+    )
 
     /**
      * Shows a ToolTipView based on gived PopOverData at the proper location relative to given View.
      *
      * @return the ToolTipView that was created.
      */
-    fun showPopOverForView(popOverData: PopOverData, targetView: View, tooltipPresentation: View?): PopOverView {
+    fun showPopOverForView(
+        popOverData: PopOverData,
+        targetView: View,
+        tooltipPresentation: View?
+    ): PopOverView {
         val toolTipView = setUpPopOver(popOverData, targetView)
         tooltipPresentation?.let { addView(it) }
         addView(toolTipView)

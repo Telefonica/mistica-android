@@ -136,7 +136,8 @@ class HeaderView @JvmOverloads constructor(
         subtitleTextView = findViewById(R.id.header_subtitle)
 
         if (attrs != null) {
-            val styledAttrs = context.theme.obtainStyledAttributes(attrs, R.styleable.HeaderView, defStyleAttr, 0)
+            val styledAttrs =
+                context.theme.obtainStyledAttributes(attrs, R.styleable.HeaderView, defStyleAttr, 0)
 
             isInverse = styledAttrs.getBoolean(R.styleable.HeaderView_headerInverse, false)
             if (isInverse) {
@@ -147,21 +148,31 @@ class HeaderView @JvmOverloads constructor(
             hasTopPadding = styledAttrs.getBoolean(R.styleable.HeaderView_headerHasTopPadding, true)
 
             firstPretitleTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.HeaderView_headerFirstPretitle))
-            firstPretitleHasSecondaryColor = styledAttrs.getBoolean(R.styleable.HeaderView_headerFirstPretitleHasSecondaryColor, false)
+            firstPretitleHasSecondaryColor = styledAttrs.getBoolean(
+                R.styleable.HeaderView_headerFirstPretitleHasSecondaryColor,
+                false
+            )
 
             titleTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.HeaderView_headerTitle))
 
             secondPretitleTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.HeaderView_headerSecondPretitle))
-            secondPretitleHasSecondaryColor = styledAttrs.getBoolean(R.styleable.HeaderView_headerSecondPretitleHasSecondaryColor, false)
+            secondPretitleHasSecondaryColor = styledAttrs.getBoolean(
+                R.styleable.HeaderView_headerSecondPretitleHasSecondaryColor,
+                false
+            )
 
             numeralTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.HeaderView_headerNumeral))
-            numeralHasDangerColor = styledAttrs.getBoolean(R.styleable.HeaderView_headerNumeralHasDangerColor, false)
+            numeralHasDangerColor =
+                styledAttrs.getBoolean(R.styleable.HeaderView_headerNumeralHasDangerColor, false)
 
             actionButton.setTextAndVisibility(styledAttrs.getText(R.styleable.HeaderView_headerActionButtonText))
             secondaryActionButton.setTextAndVisibility(styledAttrs.getText(R.styleable.HeaderView_headerSecondaryActionButtonText))
 
             subtitleTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.HeaderView_headerSubtitle))
-            subtitleHasSecondaryColor = styledAttrs.getBoolean(R.styleable.HeaderView_headerSubtitleHasSecondaryColor, false)
+            subtitleHasSecondaryColor = styledAttrs.getBoolean(
+                R.styleable.HeaderView_headerSubtitleHasSecondaryColor,
+                false
+            )
 
             styledAttrs.recycle()
         }
@@ -276,18 +287,25 @@ class HeaderView @JvmOverloads constructor(
     private fun configureTextsColors() {
         setBackgroundColor(context.getThemeColor(if (isInverse) R.attr.colorPrimary else R.attr.colorBackground))
 
-        @ColorInt val primaryColor: Int = context.getThemeColor(if (isInverse) R.attr.colorTextPrimaryInverse else R.attr.colorTextPrimary)
-        @ColorInt val secondaryColor: Int = context.getThemeColor(if (isInverse) R.attr.colorTextSecondaryInverse else R.attr.colorTextSecondary)
+        @ColorInt val primaryColor: Int =
+            context.getThemeColor(if (isInverse) R.attr.colorTextPrimaryInverse else R.attr.colorTextPrimary)
+        @ColorInt val secondaryColor: Int =
+            context.getThemeColor(if (isInverse) R.attr.colorTextSecondaryInverse else R.attr.colorTextSecondary)
 
         firstPretitleTextView.setTextColor(if (firstPretitleHasSecondaryColor) secondaryColor else primaryColor)
         titleTextView.setTextColor(primaryColor)
         secondPretitleTextView.setTextColor(if (secondPretitleHasSecondaryColor) secondaryColor else primaryColor)
-        numeralTextView.setTextColor(if (numeralHasDangerColor && !isInverse) context.getThemeColor(R.attr.colorTextDanger) else primaryColor)
+        numeralTextView.setTextColor(
+            if (numeralHasDangerColor && !isInverse) context.getThemeColor(
+                R.attr.colorTextDanger
+            ) else primaryColor
+        )
         subtitleTextView.setTextColor(if (subtitleHasSecondaryColor) secondaryColor else primaryColor)
     }
 
     private fun reconfigureButtons() {
-        val actionButton: Button = findViewById(if (isInverse) R.id.header_action_button_inverse else R.id.header_action_button)
+        val actionButton: Button =
+            findViewById(if (isInverse) R.id.header_action_button_inverse else R.id.header_action_button)
         if (this.actionButton != actionButton) {
             actionButton.applyConfigFrom(this.actionButton, actionClickListener)
             this.actionButton.visibility = View.GONE
@@ -298,7 +316,10 @@ class HeaderView @JvmOverloads constructor(
             if (isInverse) R.id.header_secondary_action_button_inverse else R.id.header_secondary_action_button
         )
         if (this.secondaryActionButton != secondaryActionButton) {
-            secondaryActionButton.applyConfigFrom(this.secondaryActionButton, secondaryActionClickListener)
+            secondaryActionButton.applyConfigFrom(
+                this.secondaryActionButton,
+                secondaryActionClickListener
+            )
             this.secondaryActionButton.visibility = View.GONE
             this.secondaryActionButton = secondaryActionButton
         }

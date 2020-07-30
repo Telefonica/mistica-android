@@ -1,101 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<declare-styleable name="SkeletonView">
-		<attr name="cornerRadius" format="dimension"/>
-	</declare-styleable>
+    <declare-styleable name="SkeletonView">
+        <attr name="cornerRadius" format="dimension" />
+    </declare-styleable>
 
-	<declare-styleable name="ProgressButton">
-		<attr name="isLoading" format="boolean"/>
-	</declare-styleable>
+    <declare-styleable name="ProgressButton">
+        <attr name="isLoading" format="boolean" />
+    </declare-styleable>
 
-	<declare-styleable name="FeedbackScreen">
-		<attr name="feedbackType" format="enum">
-			<enum name="success" value="0"/>
-			<enum name="error" value="1"/>
-			<enum name="info" value="2"/>
-		</attr>
-		<attr name="feedbackTitle" format="string"/>
-		<attr name="feedbackSubtitle" format="string"/>
-		<attr name="feedbackCustomContentLayout" format="reference"/>
-		<attr name="feedbackFirstButtonText" format="string"/>
-		<attr name="feedbackSecondButtonText" format="string"/>
-		<attr name="feedbackSecondButtonAsLink" format="boolean"/>
+    <declare-styleable name="FeedbackScreen">
+        <attr name="feedbackType" format="enum">
+            <enum name="success" value="0" />
+            <enum name="error" value="1" />
+            <enum name="info" value="2" />
+        </attr>
+        <attr name="feedbackTitle" format="string" />
+        <attr name="feedbackSubtitle" format="string" />
+        <attr name="feedbackCustomContentLayout" format="reference" />
+        <attr name="feedbackFirstButtonText" format="string" />
+        <attr name="feedbackSecondButtonText" format="string" />
+        <attr name="feedbackSecondButtonAsLink" format="boolean" />
 
-		<attr name="feedbackFirstButtonOnClick" format="string"/>
-		<attr name="feedbackSecondButtonOnClick" format="string"/>
-	</declare-styleable>
+        <attr name="feedbackFirstButtonOnClick" format="string" />
+        <attr name="feedbackSecondButtonOnClick" format="string" />
+    </declare-styleable>
 
-	<declare-styleable name="LoadErrorFeedback">
-		<attr name="loadErrorFeedbackTitle" format="string"/>
-		<attr name="loadErrorFeedbackDescription" format="string"/>
-		<attr name="loadErrorFeedbackButtonText" format="string"/>
-		<attr name="loadErrorFeedbackButtonOnClick" format="string"/>
-		<attr name="loadErrorFeedbackIsLoading" format="boolean"/>
-		<attr name="loadErrorFeedbackIsButtonVisible" format="boolean"/>
-	</declare-styleable>
+    <declare-styleable name="LoadErrorFeedback">
+        <attr name="loadErrorFeedbackTitle" format="string" />
+        <attr name="loadErrorFeedbackDescription" format="string" />
+        <attr name="loadErrorFeedbackButtonText" format="string" />
+        <attr name="loadErrorFeedbackButtonOnClick" format="string" />
+        <attr name="loadErrorFeedbackIsLoading" format="boolean" />
+        <attr name="loadErrorFeedbackIsButtonVisible" format="boolean" />
+    </declare-styleable>
 
-	<declare-styleable name="ListRowView">
-		<attr name="listRowHeadlineLayout" format="integer">
-			<enum name="none" value="-1" />
-		</attr>
-		<attr name="listRowHeadlineVisible" format="boolean"/>
-		<attr name="listRowTitle" format="string"/>
-		<attr name="listRowSubtitle" format="string"/>
-		<attr name="listRowDescription" format="string"/>
-		<attr name="listRowAssetDrawable" format="reference"/>
-		<attr name="listRowIsBoxed" format="boolean"/>
-		<attr name="listRowHasSmallAsset" format="boolean"/>
-		<attr name="listRowActionLayout" format="integer">
-			<enum name="none" value="-1" />
-		</attr>
-		<attr name="listRowBadgeCount" format="integer">
-			<enum name="gone" value="-1" />
-		</attr>
-		<attr name="onClick" format="string"/>
-	</declare-styleable>
+    <declare-styleable name="ListRowView">
+        <attr name="listRowHeadlineLayout" format="integer">
+            <enum name="none" value="-1" />
+        </attr>
+        <attr name="listRowHeadlineVisible" format="boolean" />
+        <attr name="listRowTitle" format="string" />
+        <attr name="listRowSubtitle" format="string" />
+        <attr name="listRowDescription" format="string" />
+        <attr name="listRowAssetDrawable" format="reference" />
+        <attr name="listRowIsBoxed" format="boolean" />
+        <attr name="listRowHasSmallAsset" format="boolean" />
+        <attr name="listRowActionLayout" format="integer">
+            <enum name="none" value="-1" />
+        </attr>
+        <attr name="listRowBadgeCount" format="integer">
+            <enum name="gone" value="-1" />
+        </attr>
+        <attr name="onClick" format="string" />
+    </declare-styleable>
 
-	<declare-styleable name="HeaderView">
-		<attr name="headerHasTopPadding" format="boolean"/>
-		<attr name="headerInverse" format="boolean"/>
-		<attr name="headerFirstPretitle" format="string"/>
-		<attr name="headerFirstPretitleHasSecondaryColor" format="boolean"/>
-		<attr name="headerTitle" format="string"/>
-		<attr name="headerSecondPretitle" format="string"/>
-		<attr name="headerSecondPretitleHasSecondaryColor" format="boolean"/>
-		<attr name="headerNumeral" format="string"/>
-		<attr name="headerNumeralHasDangerColor" format="boolean"/>
-		<attr name="headerActionButtonText" format="string"/>
-		<attr name="headerSecondaryActionButtonText" format="string"/>
-		<attr name="headerActionButtonOnClick" format="string"/>
-		<attr name="headerSecondaryActionButtonOnClick" format="string"/>
-		<attr name="headerSubtitle" format="string"/>
-		<attr name="headerSubtitleHasSecondaryColor" format="boolean"/>
-	</declare-styleable>
+    <declare-styleable name="HeaderView">
+        <attr name="headerHasTopPadding" format="boolean" />
+        <attr name="headerInverse" format="boolean" />
+        <attr name="headerFirstPretitle" format="string" />
+        <attr name="headerFirstPretitleHasSecondaryColor" format="boolean" />
+        <attr name="headerTitle" format="string" />
+        <attr name="headerSecondPretitle" format="string" />
+        <attr name="headerSecondPretitleHasSecondaryColor" format="boolean" />
+        <attr name="headerNumeral" format="string" />
+        <attr name="headerNumeralHasDangerColor" format="boolean" />
+        <attr name="headerActionButtonText" format="string" />
+        <attr name="headerSecondaryActionButtonText" format="string" />
+        <attr name="headerActionButtonOnClick" format="string" />
+        <attr name="headerSecondaryActionButtonOnClick" format="string" />
+        <attr name="headerSubtitle" format="string" />
+        <attr name="headerSubtitleHasSecondaryColor" format="boolean" />
+    </declare-styleable>
 
-	<declare-styleable name="Input">
-		<attr name="inputHint" format="string" />
-		<attr name="inputError" format="string" />
-		<attr name="inputHelperText" format="string" />
-		<attr name="inputEnabled" format="boolean" />
-	</declare-styleable>
+    <declare-styleable name="Input">
+        <attr name="inputHint" format="string" />
+        <attr name="inputError" format="string" />
+        <attr name="inputHelperText" format="string" />
+        <attr name="inputEnabled" format="boolean" />
+    </declare-styleable>
 
-	<declare-styleable name="TextInput">
-		<attr name="inputType" format="integer">
-			<enum name="text" value="0" />
-			<enum name="email" value="1" />
-			<enum name="password" value="2" />
-			<enum name="textArea" value="3" />
-			<enum name="phone" value="4" />
-		</attr>
-		<attr name="inputText" format="string" />
-		<attr name="inputCounterEnabled" format="boolean" />
-		<attr name="inputMaxLength" format="integer" />
-		<attr name="inputAutofillEnabled" format="boolean" />
-	</declare-styleable>
+    <declare-styleable name="TextInput">
+        <attr name="inputType" format="integer">
+            <enum name="text" value="0" />
+            <enum name="email" value="1" />
+            <enum name="password" value="2" />
+            <enum name="textArea" value="3" />
+            <enum name="phone" value="4" />
+        </attr>
+        <attr name="inputText" format="string" />
+        <attr name="inputCounterEnabled" format="boolean" />
+        <attr name="inputMaxLength" format="integer" />
+        <attr name="inputAutofillEnabled" format="boolean" />
+    </declare-styleable>
 
-	<declare-styleable name="CheckBoxInput">
-		<attr name="inputChecked" format="boolean" />
-		<attr name="inputCheckText" format="string" />
-	</declare-styleable>
+    <declare-styleable name="CheckBoxInput">
+        <attr name="inputChecked" format="boolean" />
+        <attr name="inputCheckText" format="string" />
+    </declare-styleable>
 
 </resources>

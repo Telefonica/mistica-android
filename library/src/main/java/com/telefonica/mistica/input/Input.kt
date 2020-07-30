@@ -65,7 +65,12 @@ abstract class Input @JvmOverloads constructor(
         var initialEnabled: Boolean = true
 
         if (attrs != null) {
-            val styledAttrs = context.theme.obtainStyledAttributes(attrs, R.styleable.Input, defStyleAttr, defStyleRes)
+            val styledAttrs = context.theme.obtainStyledAttributes(
+                attrs,
+                R.styleable.Input,
+                defStyleAttr,
+                defStyleRes
+            )
             try {
                 initialHint = styledAttrs.getString(R.styleable.Input_inputHint)
                 initialError = styledAttrs.getString(R.styleable.Input_inputError)

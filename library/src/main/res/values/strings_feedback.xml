@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string comment="Ok" name="dialog_generic_option_ok">OK</string>
+    <string name="dialog_generic_option_ok" comment="Ok">OK</string>
 </resources>

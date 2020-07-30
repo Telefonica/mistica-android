@@ -11,7 +11,6 @@ import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.list.ListRowView
 import com.telefonica.mistica.list.layout.configureWithFullWidthLayout
 
-
 class CatalogMainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,7 +46,10 @@ class CatalogMainActivity : AppCompatActivity() {
         }
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-            return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.list_item_main_catalog, parent, false))
+            return ViewHolder(
+                LayoutInflater.from(parent.context)
+                    .inflate(R.layout.list_item_main_catalog, parent, false)
+            )
         }
 
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {

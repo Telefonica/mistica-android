@@ -109,19 +109,40 @@ class ListRowView @JvmOverloads constructor(
         actionContainer = findViewById(R.id.row_action_container)
 
         if (attrs != null) {
-            val styledAttrs = context.theme.obtainStyledAttributes(attrs, R.styleable.ListRowView, defStyleAttr, 0)
+            val styledAttrs = context.theme.obtainStyledAttributes(
+                attrs,
+                R.styleable.ListRowView,
+                defStyleAttr,
+                0
+            )
             styledAttrs.getText(R.styleable.ListRowView_listRowTitle)?.let { setTitle(it) }
-            styledAttrs.getResourceId(R.styleable.ListRowView_listRowHeadlineLayout, TypedValue.TYPE_NULL)
+            styledAttrs.getResourceId(
+                R.styleable.ListRowView_listRowHeadlineLayout,
+                TypedValue.TYPE_NULL
+            )
                 .takeIf { it != TypedValue.TYPE_NULL }
                 .let { setHeadlineLayout(it ?: HEADLINE_NONE) }
-            setHeadlineVisible(styledAttrs.getBoolean(R.styleable.ListRowView_listRowHeadlineVisible, currentHeadlineLayoutRes != HEADLINE_NONE))
+            setHeadlineVisible(
+                styledAttrs.getBoolean(
+                    R.styleable.ListRowView_listRowHeadlineVisible,
+                    currentHeadlineLayoutRes != HEADLINE_NONE
+                )
+            )
             setSubtitle(styledAttrs.getText(R.styleable.ListRowView_listRowSubtitle))
             setDescription(styledAttrs.getText(R.styleable.ListRowView_listRowDescription))
             setBoxed(styledAttrs.getBoolean(R.styleable.ListRowView_listRowIsBoxed, false))
-            setSmallAsset(styledAttrs.getBoolean(R.styleable.ListRowView_listRowHasSmallAsset, false))
+            setSmallAsset(
+                styledAttrs.getBoolean(
+                    R.styleable.ListRowView_listRowHasSmallAsset,
+                    false
+                )
+            )
             setAssetDrawable(styledAttrs.getDrawable(R.styleable.ListRowView_listRowAssetDrawable))
             setBadgeCount(styledAttrs.getInt(R.styleable.ListRowView_listRowBadgeCount, BADGE_GONE))
-            styledAttrs.getResourceId(R.styleable.ListRowView_listRowActionLayout, TypedValue.TYPE_NULL)
+            styledAttrs.getResourceId(
+                R.styleable.ListRowView_listRowActionLayout,
+                TypedValue.TYPE_NULL
+            )
                 .takeIf { it != TypedValue.TYPE_NULL }
                 .let { setActionLayout(it ?: ACTION_NONE) }
             styledAttrs.recycle()
@@ -153,7 +174,8 @@ class ListRowView @JvmOverloads constructor(
     }
 
     fun setBoxed(boxed: Boolean) {
-        @DrawableRes val backgroundDrawable: Int = if (boxed) R.drawable.boxed_list_row_background else R.drawable.list_row_background
+        @DrawableRes val backgroundDrawable: Int =
+            if (boxed) R.drawable.boxed_list_row_background else R.drawable.list_row_background
         background = ContextCompat.getDrawable(context, backgroundDrawable)
     }
 
@@ -234,7 +256,8 @@ class ListRowView @JvmOverloads constructor(
 
     private fun recalculateTitleBottomConstraints() {
         with(textsContainer.layoutParams as LayoutParams) {
-            bottomToBottom = if (isAnyTextDifferentThanTitleVisible()) ConstraintSet.UNSET else ConstraintSet.PARENT_ID
+            bottomToBottom =
+                if (isAnyTextDifferentThanTitleVisible()) ConstraintSet.UNSET else ConstraintSet.PARENT_ID
             textsContainer.layoutParams = this
         }
     }

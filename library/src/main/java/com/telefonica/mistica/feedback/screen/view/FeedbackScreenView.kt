@@ -67,7 +67,11 @@ class FeedbackScreenView : ConstraintLayout {
         init(context, attrs)
     }
 
-    constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
+    constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(
+        context,
+        attrs,
+        defStyleAttr
+    ) {
         init(context, attrs, defStyleAttr)
     }
 
@@ -132,15 +136,23 @@ class FeedbackScreenView : ConstraintLayout {
 
         if (attrs != null) {
             val theme = context.theme
-            val styledAttrs = theme.obtainStyledAttributes(attrs, R.styleable.FeedbackScreen, defStyleAttr, 0)
+            val styledAttrs =
+                theme.obtainStyledAttributes(attrs, R.styleable.FeedbackScreen, defStyleAttr, 0)
             type = styledAttrs.getInteger(R.styleable.FeedbackScreen_feedbackType, TYPE_INFO)
             styledAttrs.getText(R.styleable.FeedbackScreen_feedbackTitle)?.let { titleText = it }
-            styledAttrs.getText(R.styleable.FeedbackScreen_feedbackSubtitle)?.let { subtitleText = it }
-            customContentLayout = styledAttrs.getResourceId(R.styleable.FeedbackScreen_feedbackCustomContentLayout, TypedValue.TYPE_NULL)
+            styledAttrs.getText(R.styleable.FeedbackScreen_feedbackSubtitle)
+                ?.let { subtitleText = it }
+            customContentLayout = styledAttrs.getResourceId(
+                R.styleable.FeedbackScreen_feedbackCustomContentLayout,
+                TypedValue.TYPE_NULL
+            )
                 .takeIf { it != TypedValue.TYPE_NULL }
-            styledAttrs.getText(R.styleable.FeedbackScreen_feedbackFirstButtonText)?.let { firstButtonText = it }
-            styledAttrs.getText(R.styleable.FeedbackScreen_feedbackSecondButtonText)?.let { secondButtonText = it }
-            secondButtonAsLink = styledAttrs.getBoolean(R.styleable.FeedbackScreen_feedbackSecondButtonAsLink, false)
+            styledAttrs.getText(R.styleable.FeedbackScreen_feedbackFirstButtonText)
+                ?.let { firstButtonText = it }
+            styledAttrs.getText(R.styleable.FeedbackScreen_feedbackSecondButtonText)
+                ?.let { secondButtonText = it }
+            secondButtonAsLink =
+                styledAttrs.getBoolean(R.styleable.FeedbackScreen_feedbackSecondButtonAsLink, false)
             styledAttrs.recycle()
         }
 
@@ -168,8 +180,14 @@ class FeedbackScreenView : ConstraintLayout {
     private fun configureBackground() {
         when (type) {
             TYPE_SUCCESS -> when {
-                getBooleanThemeRes(R.attr.feedbackScreenSuccessWithGradient) -> GradientBackgroundFactory.getBackground(context)
-                getBooleanThemeRes(R.attr.feedbackScreenSuccessInverse) -> ColorDrawable(context.getThemeColor(R.attr.colorPrimary))
+                getBooleanThemeRes(R.attr.feedbackScreenSuccessWithGradient) -> GradientBackgroundFactory.getBackground(
+                    context
+                )
+                getBooleanThemeRes(R.attr.feedbackScreenSuccessInverse) -> ColorDrawable(
+                    context.getThemeColor(
+                        R.attr.colorPrimary
+                    )
+                )
                 else -> ColorDrawable(context.getThemeColor(R.attr.colorBackground))
             }
             else -> ColorDrawable(context.getThemeColor(R.attr.colorBackground))
@@ -180,8 +198,14 @@ class FeedbackScreenView : ConstraintLayout {
 
     private fun configureIcon() {
         when (type) {
-            TYPE_SUCCESS -> configureIcon(R.attr.feedbackScreenSuccessAnimation, R.attr.feedbackScreenSuccessIcon)
-            TYPE_ERROR -> configureIcon(R.attr.feedbackScreenErrorAnimation, R.attr.feedbackScreenErrorIcon)
+            TYPE_SUCCESS -> configureIcon(
+                R.attr.feedbackScreenSuccessAnimation,
+                R.attr.feedbackScreenSuccessIcon
+            )
+            TYPE_ERROR -> configureIcon(
+                R.attr.feedbackScreenErrorAnimation,
+                R.attr.feedbackScreenErrorIcon
+            )
             else -> configureIcon(R.attr.feedbackScreenInfoAnimation, R.attr.feedbackScreenInfoIcon)
         }
     }
@@ -207,9 +231,11 @@ class FeedbackScreenView : ConstraintLayout {
     }
 
     private fun configureTexts() {
-        @ColorInt val titleTextColor: Int = context.getThemeColor(if (isInversePresentation()) R.attr.colorTextPrimaryInverse else R.attr.colorTextPrimary)
+        @ColorInt val titleTextColor: Int =
+            context.getThemeColor(if (isInversePresentation()) R.attr.colorTextPrimaryInverse else R.attr.colorTextPrimary)
         title.setTextColor(titleTextColor)
-        @ColorInt val subtitleTextColor: Int = context.getThemeColor(if (isInversePresentation()) R.attr.colorTextPrimaryInverse else R.attr.colorTextSecondary)
+        @ColorInt val subtitleTextColor: Int =
+            context.getThemeColor(if (isInversePresentation()) R.attr.colorTextPrimaryInverse else R.attr.colorTextSecondary)
         subtitle.setTextColor(subtitleTextColor)
         setFeedbackTitle(titleText)
         setFeedbackSubtitle(subtitleText)
@@ -225,14 +251,16 @@ class FeedbackScreenView : ConstraintLayout {
 
     private fun configureButtons() {
         buttonsContainer.removeAllViews()
-        @LayoutRes val layout: Int = if (isInversePresentation()) R.layout.screen_feedback_buttons_inverse else R.layout.screen_feedback_buttons
+        @LayoutRes val layout: Int =
+            if (isInversePresentation()) R.layout.screen_feedback_buttons_inverse else R.layout.screen_feedback_buttons
         LayoutInflater.from(context).inflate(layout, buttonsContainer, true)
 
         firstButton = findViewById(R.id.first_button)
         setFeedbackFirstButtonText(firstButtonText)
         firstButtonClickListener?.let { setFirstButtonOnClick(it) }
 
-        secondButton = findViewById(if (secondButtonAsLink) R.id.link_button else R.id.second_button)
+        secondButton =
+            findViewById(if (secondButtonAsLink) R.id.link_button else R.id.second_button)
         setFeedbackSecondButtonText(secondButtonText)
         secondButtonClickListener?.let { setSecondButtonOnClick(it) }
     }
@@ -271,7 +299,10 @@ class FeedbackScreenView : ConstraintLayout {
 
         animation.start()
         icon.playAnimation()
-        postDelayed({ performHapticFeedback() }, if (type == TYPE_ERROR) HAPTIC_FEEDBACK_ERROR_DELAY else HAPTIC_FEEDBACK_DEFAULT_DELAY)
+        postDelayed(
+            { performHapticFeedback() },
+            if (type == TYPE_ERROR) HAPTIC_FEEDBACK_ERROR_DELAY else HAPTIC_FEEDBACK_DEFAULT_DELAY
+        )
     }
 
     private fun getTranslationYAnim(view: View): ObjectAnimator {

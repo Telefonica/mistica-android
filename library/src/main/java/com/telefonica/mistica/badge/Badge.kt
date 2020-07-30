@@ -11,6 +11,7 @@ import com.telefonica.mistica.util.getThemeColor
 object Badge {
 
     var contentDescriptions: MutableMap<Int, CharSequence?> = mutableMapOf()
+
     @PluralsRes
     var badgeNotificationsDescriptionResource: Int = R.plurals.badge_notifications_description
 
@@ -25,12 +26,13 @@ object Badge {
     }
 
     @JvmStatic
-    fun showBadgeIn(anchor: View, parent: ViewGroup, count: Int = 0): BadgeDrawable = BadgeDrawable.create(anchor.context).apply {
-        maxCharacterCount = 2
-        backgroundColor = anchor.context.getThemeColor(R.attr.colorBadgeBackground)
-        setupCount(count)
-        addToView(anchor, parent, getContentDescription(anchor, count))
-    }
+    fun showBadgeIn(anchor: View, parent: ViewGroup, count: Int = 0): BadgeDrawable =
+        BadgeDrawable.create(anchor.context).apply {
+            maxCharacterCount = 2
+            backgroundColor = anchor.context.getThemeColor(R.attr.colorBadgeBackground)
+            setupCount(count)
+            addToView(anchor, parent, getContentDescription(anchor, count))
+        }
 
     @JvmStatic
     fun removeBadge(anchor: View) {
@@ -84,7 +86,11 @@ object Badge {
         }
     }
 
-    private fun BadgeDrawable.addToView(anchor: View, parent: ViewGroup, contentDescription: CharSequence?) {
+    private fun BadgeDrawable.addToView(
+        anchor: View,
+        parent: ViewGroup,
+        contentDescription: CharSequence?
+    ) {
         parent.post {
             this.setBoundsFor(anchor, parent)
             val overlay = parent.overlay

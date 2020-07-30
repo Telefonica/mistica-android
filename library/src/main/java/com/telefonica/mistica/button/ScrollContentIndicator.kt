@@ -7,12 +7,7 @@ import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
 import android.view.ViewOutlineProvider
-import android.view.animation.AccelerateInterpolator
-import android.view.animation.AlphaAnimation
-import android.view.animation.Animation
-import android.view.animation.AnimationSet
-import android.view.animation.DecelerateInterpolator
-import android.view.animation.ScaleAnimation
+import android.view.animation.*
 import androidx.appcompat.widget.AppCompatTextView
 import com.telefonica.mistica.R
 import com.telefonica.mistica.util.getThemeColor
@@ -30,12 +25,18 @@ class ScrollContentIndicator @JvmOverloads constructor(
             @Suppress("DEPRECATION")
             setTextAppearance(context, R.style.AppTheme_TextAppearance_Sub2)
         }
-        layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+        layoutParams = ViewGroup.LayoutParams(
+            ViewGroup.LayoutParams.WRAP_CONTENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT
+        )
         gravity = Gravity.CENTER
-        minWidth = context.resources.getDimension(R.dimen.scroll_content_indicator_min_width).toInt()
+        minWidth =
+            context.resources.getDimension(R.dimen.scroll_content_indicator_min_width).toInt()
 
-        val startEndPadding = context.resources.getDimension(R.dimen.scroll_content_start_end_padding).toInt()
-        val topBottomPadding = context.resources.getDimension(R.dimen.scroll_content_top_bottom_padding).toInt()
+        val startEndPadding =
+            context.resources.getDimension(R.dimen.scroll_content_start_end_padding).toInt()
+        val topBottomPadding =
+            context.resources.getDimension(R.dimen.scroll_content_top_bottom_padding).toInt()
         setPadding(startEndPadding, topBottomPadding, startEndPadding, topBottomPadding)
 
         setTextColor(context.getThemeColor(R.attr.colorTextPrimaryInverse))

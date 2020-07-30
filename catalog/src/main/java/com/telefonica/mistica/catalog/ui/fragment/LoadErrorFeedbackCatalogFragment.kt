@@ -10,9 +10,17 @@ import com.telefonica.mistica.feedback.error.LoadErrorFeedbackView
 
 class LoadErrorFeedbackCatalogFragment : Fragment() {
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
-        return inflater.inflate(R.layout.screen_fragment_load_error_feedback_catalog, container, false)
+        return inflater.inflate(
+            R.layout.screen_fragment_load_error_feedback_catalog,
+            container,
+            false
+        )
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

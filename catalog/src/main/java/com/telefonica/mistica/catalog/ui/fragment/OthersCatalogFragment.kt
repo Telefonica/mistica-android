@@ -13,7 +13,11 @@ import com.telefonica.mistica.chips.HorizontalScrollChipGroup
 
 class OthersCatalogFragment : Fragment() {
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         return layoutInflater.inflate(R.layout.screen_others_catalog, container, false).apply {
             configureChips()
@@ -39,7 +43,8 @@ class OthersCatalogFragment : Fragment() {
             this.isChecked = checked
             setOnCheckedChangeListener { _: CompoundButton?, checked: Boolean ->
                 if (checked) {
-                    Toast.makeText(context, "chip with text $text checked", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "chip with text $text checked", Toast.LENGTH_SHORT)
+                        .show()
                 }
             }
             addChip(this)

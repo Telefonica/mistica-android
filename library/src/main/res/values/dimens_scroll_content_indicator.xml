@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<dimen name="scroll_content_indicator_min_width">152dp</dimen>
-	<dimen name="scroll_content_start_end_padding">24dp</dimen>
-	<dimen name="scroll_content_top_bottom_padding">10dp</dimen>
-	<dimen name="scroll_content_elevation">14dp</dimen>
+    <dimen name="scroll_content_indicator_min_width">152dp</dimen>
+    <dimen name="scroll_content_start_end_padding">24dp</dimen>
+    <dimen name="scroll_content_top_bottom_padding">10dp</dimen>
+    <dimen name="scroll_content_elevation">14dp</dimen>
 </resources>

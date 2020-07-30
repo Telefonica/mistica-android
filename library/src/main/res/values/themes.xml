@@ -1,55 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-	<style name="MisticaTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="MisticaTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
 
-		<item name="android:windowBackground">?colorBackground</item>
+        <item name="android:windowBackground">?colorBackground</item>
 
-		<item name="android:textColorPrimary">@color/text_primary_selector</item>
-		<item name="android:textColorPrimaryInverse">?colorTextPrimaryInverse</item>
-		<item name="android:textColorSecondary">?colorTextSecondary</item>
-		<item name="android:textColorSecondaryInverse">?colorTextSecondaryInverse</item>
+        <item name="android:textColorPrimary">@color/text_primary_selector</item>
+        <item name="android:textColorPrimaryInverse">?colorTextPrimaryInverse</item>
+        <item name="android:textColorSecondary">?colorTextSecondary</item>
+        <item name="android:textColorSecondaryInverse">?colorTextSecondaryInverse</item>
 
-		<item name="android:textColorHint">?colorTextHint</item>
+        <item name="android:textColorHint">?colorTextHint</item>
 
-		<item name="android:colorControlActivated">?colorControlActivated</item>
-		<item name="android:colorControlNormal">?colorControlNormal</item>
+        <item name="android:colorControlActivated">?colorControlActivated</item>
+        <item name="android:colorControlNormal">?colorControlNormal</item>
 
-		<item name="android:textAppearance">@style/AppTheme.TextAppearance.Body1</item>
+        <item name="android:textAppearance">@style/AppTheme.TextAppearance.Body1</item>
 
-		<item name="materialButtonStyle">@style/AppTheme.Button.DefaultButton</item>
+        <item name="materialButtonStyle">@style/AppTheme.Button.DefaultButton</item>
 
-		<item name="snackbarStyle">@style/Widget.MaterialComponents.Snackbar</item>
-		<item name="maxActionInlineWidth" tools:ignore="PrivateResource">@dimen/design_snackbar_action_inline_max_width</item>
+        <item name="snackbarStyle">@style/Widget.MaterialComponents.Snackbar</item>
+        <item name="maxActionInlineWidth" tools:ignore="PrivateResource">
+            @dimen/design_snackbar_action_inline_max_width
+        </item>
 
-		<!-- Chips -->
-		<item name="colorChipGroupBackground">?colorPrimary</item>
+        <!-- Chips -->
+        <item name="colorChipGroupBackground">?colorPrimary</item>
 
-		<item name="colorBadgeBackground">?colorError</item>
+        <item name="colorBadgeBackground">?colorError</item>
 
-		<!-- Tag -->
-		<item name="colorPromoBackground">?colorAccent</item>
+        <!-- Tag -->
+        <item name="colorPromoBackground">?colorAccent</item>
 
-		<!-- Iconography colors -->
-		<item name="colorIconPrimary">?colorPrimary</item>
-		<item name="colorIconPrimaryDark">?colorPrimaryDark</item>
-		<item name="colorIconBrand">?colorPrimary</item>
-		<item name="colorIconAccent">?colorAccent</item>
-		<item name="colorIconWarning">?colorPrimary</item>
-		<item name="colorIconDanger">?colorPrimary</item>
-		<item name="colorIconCustomPurple">?colorPrimary</item>
-		<item name="colorIconCustomMagenta">?colorPrimary</item>
-	</style>
+        <!-- Iconography colors -->
+        <item name="colorIconPrimary">?colorPrimary</item>
+        <item name="colorIconPrimaryDark">?colorPrimaryDark</item>
+        <item name="colorIconBrand">?colorPrimary</item>
+        <item name="colorIconAccent">?colorAccent</item>
+        <item name="colorIconWarning">?colorPrimary</item>
+        <item name="colorIconDanger">?colorPrimary</item>
+        <item name="colorIconCustomPurple">?colorPrimary</item>
+        <item name="colorIconCustomMagenta">?colorPrimary</item>
+    </style>
 
-	<style name="MisticaAlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
-		<item name="android:textColorPrimary">?colorTextPrimary</item>
-		<item name="buttonBarNeutralButtonStyle">@style/MisticaAlertDialogTheme.Button</item>
-		<item name="buttonBarNegativeButtonStyle">@style/MisticaAlertDialogTheme.Button</item>
-		<item name="buttonBarPositiveButtonStyle">@style/MisticaAlertDialogTheme.Button</item>
-	</style>
+    <style name="MisticaAlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:textColorPrimary">?colorTextPrimary</item>
+        <item name="buttonBarNeutralButtonStyle">@style/MisticaAlertDialogTheme.Button</item>
+        <item name="buttonBarNegativeButtonStyle">@style/MisticaAlertDialogTheme.Button</item>
+        <item name="buttonBarPositiveButtonStyle">@style/MisticaAlertDialogTheme.Button</item>
+    </style>
 
-	<style name="MisticaAlertDialogTheme.Button" parent="Widget.MaterialComponents.Button.TextButton">
-		<item name="android:textColor">@color/btn_colored_borderless_text_material</item>
-	</style>
+    <style name="MisticaAlertDialogTheme.Button" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">@color/btn_colored_borderless_text_material</item>
+    </style>
 
 </resources>

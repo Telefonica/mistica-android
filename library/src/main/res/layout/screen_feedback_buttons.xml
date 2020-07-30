@@ -3,27 +3,24 @@
 
     <com.telefonica.mistica.button.Button
         android:id="@+id/first_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         style="@style/AppTheme.Button.DefaultButton"
-        />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <com.telefonica.mistica.button.Button
         android:id="@+id/second_button"
+        style="@style/AppTheme.Button.SecondaryButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        style="@style/AppTheme.Button.SecondaryButton"
-        android:visibility="gone"
-        />
+        android:visibility="gone" />
 
     <com.telefonica.mistica.button.Button
         android:id="@+id/link_button"
+        style="@style/AppTheme.Button.LinkButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        style="@style/AppTheme.Button.LinkButton"
-        android:visibility="gone"
-        />
+        android:visibility="gone" />
 
 </merge>

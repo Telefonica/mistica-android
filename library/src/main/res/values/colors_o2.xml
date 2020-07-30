@@ -1,74 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<color name="o2_color_blue_primary">#0019A5</color>
-	<color name="o2_color_blue_primary_dark">#000066</color>
-	<color name="o2_color_blue_primary_light_60">#6C8BAF</color>
-	<color name="o2_color_blue_primary_light_10">#CCD1ED</color>
+    <color name="o2_color_blue_primary">#0019A5</color>
+    <color name="o2_color_blue_primary_dark">#000066</color>
+    <color name="o2_color_blue_primary_light_60">#6C8BAF</color>
+    <color name="o2_color_blue_primary_light_10">#CCD1ED</color>
 
-	<color name="o2_color_blue_mid">#007BB2</color>
-	<color name="o2_color_blue_mid_30_percent">#4D007BB2</color>
-	<color name="o2_color_blue_mid_dark">#006795</color>
+    <color name="o2_color_blue_mid">#007BB2</color>
+    <color name="o2_color_blue_mid_30_percent">#4D007BB2</color>
+    <color name="o2_color_blue_mid_dark">#006795</color>
 
-	<color name="o2_color_blue_light">#41B6E6</color>
-	<color name="o2_color_blue_light_60">#8DD3F0</color>
-	<color name="o2_color_blue_light_30">#C6E9F7</color>
-	<color name="o2_color_blue_light_10">#ECF7FC</color>
+    <color name="o2_color_blue_light">#41B6E6</color>
+    <color name="o2_color_blue_light_60">#8DD3F0</color>
+    <color name="o2_color_blue_light_30">#C6E9F7</color>
+    <color name="o2_color_blue_light_10">#ECF7FC</color>
 
-	<color name="o2_color_teal">#01B7B4</color>
-	<color name="o2_color_teal_light">#B1E4E3</color>
-	<color name="o2_color_teal_dark">#099E9B</color>
-	<color name="o2_color_green">#91C90E</color>
+    <color name="o2_color_teal">#01B7B4</color>
+    <color name="o2_color_teal_light">#B1E4E3</color>
+    <color name="o2_color_teal_dark">#099E9B</color>
+    <color name="o2_color_green">#91C90E</color>
 
-	<color name="o2_color_pepper">#FF374A</color>
-	<color name="o2_color_pepper_dark">#D73044</color>
-	<color name="o2_color_pepper_light">#FFC3C8</color>
+    <color name="o2_color_pepper">#FF374A</color>
+    <color name="o2_color_pepper_dark">#D73044</color>
+    <color name="o2_color_pepper_light">#FFC3C8</color>
 
-	<color name="o2_color_grey_0">#000033</color>
-	<color name="o2_color_grey_1">#707070</color>
-	<color name="o2_color_grey_2">#999999</color>
-	<color name="o2_color_grey_2_25_percent">#40757575</color>
-	<color name="o2_color_grey_3">#DDDDDD</color>
-	<color name="o2_color_grey_3_85_percent">#CCDDDDDD</color>
-	<color name="o2_color_grey_4">#EEEEEE</color>
-	<color name="o2_color_grey_5">#F6F6F6</color>
+    <color name="o2_color_grey_0">#000033</color>
+    <color name="o2_color_grey_1">#707070</color>
+    <color name="o2_color_grey_2">#999999</color>
+    <color name="o2_color_grey_2_25_percent">#40757575</color>
+    <color name="o2_color_grey_3">#DDDDDD</color>
+    <color name="o2_color_grey_3_85_percent">#CCDDDDDD</color>
+    <color name="o2_color_grey_4">#EEEEEE</color>
+    <color name="o2_color_grey_5">#F6F6F6</color>
 
-	<color name="o2_color_white">#FFFFFF</color>
-	<color name="o2_color_white_20_percent">#33FFFFFF</color>
-	<color name="o2_color_white_35_percent">#59FFFFFF</color>
-	<color name="o2_color_white_50_percent">#7FFFFFFF</color>
-	<color name="o2_color_white_85_percent">#CCFFFFFF</color>
+    <color name="o2_color_white">#FFFFFF</color>
+    <color name="o2_color_white_20_percent">#33FFFFFF</color>
+    <color name="o2_color_white_35_percent">#59FFFFFF</color>
+    <color name="o2_color_white_50_percent">#7FFFFFFF</color>
+    <color name="o2_color_white_85_percent">#CCFFFFFF</color>
 
-	<color name="o2_color_black">#000000</color>
-	<color name="o2_color_black_5_percent">#0F000000</color>
-	<color name="o2_color_black_10_percent">#1A000000</color>
-	<color name="o2_color_black_20_percent">#33000000</color>
-	<color name="o2_color_black_30_percent">#4D000000</color>
-	<color name="o2_color_black_40_percent">#66000000</color>
-	<color name="o2_color_black_50_percent">#80000000</color>
-	<color name="o2_color_black_70_percent">#B3000000</color>
-	<color name="o2_color_black_80_percent">#CC000000</color>
+    <color name="o2_color_black">#000000</color>
+    <color name="o2_color_black_5_percent">#0F000000</color>
+    <color name="o2_color_black_10_percent">#1A000000</color>
+    <color name="o2_color_black_20_percent">#33000000</color>
+    <color name="o2_color_black_30_percent">#4D000000</color>
+    <color name="o2_color_black_40_percent">#66000000</color>
+    <color name="o2_color_black_50_percent">#80000000</color>
+    <color name="o2_color_black_70_percent">#B3000000</color>
+    <color name="o2_color_black_80_percent">#CC000000</color>
 
-	<color name="o2_gradient_first">#032B5A</color>
-	<color name="o2_gradient_second">#0B4680</color>
-	<color name="o2_gradient_third">#0D71AD</color>
-	<color name="o2_gradient_fourth">#449ED0</color>
+    <color name="o2_gradient_first">#032B5A</color>
+    <color name="o2_gradient_second">#0B4680</color>
+    <color name="o2_gradient_third">#0D71AD</color>
+    <color name="o2_gradient_fourth">#449ED0</color>
 
-	<color name="o2_background_brand_first">#0019A5</color>
-	<color name="o2_background_brand_second">#0019A5</color>
-	<color name="o2_background_brand_third">#0019A5</color>
-	<color name="o2_background_brand_fourth">#0019A5</color>
+    <color name="o2_background_brand_first">#0019A5</color>
+    <color name="o2_background_brand_second">#0019A5</color>
+    <color name="o2_background_brand_third">#0019A5</color>
+    <color name="o2_background_brand_fourth">#0019A5</color>
 
-	<color name="o2_color_sky_blue_light_60_25_percent">#40A3D2EF</color>
-	<color name="o2_color_sky_blue_light_30_25_percent">#40D0E8F6</color>
-	<color name="o2_color_sky_blue_dark_25_percent">#40057DB2</color>
-	<color name="o2_color_blue_primary_light_40_percent">#66B2E5F5</color>
-	<color name="o2_color_blue_primary_dark_40_percent">#6604264E</color>
+    <color name="o2_color_sky_blue_light_60_25_percent">#40A3D2EF</color>
+    <color name="o2_color_sky_blue_light_30_25_percent">#40D0E8F6</color>
+    <color name="o2_color_sky_blue_dark_25_percent">#40057DB2</color>
+    <color name="o2_color_blue_primary_light_40_percent">#66B2E5F5</color>
+    <color name="o2_color_blue_primary_dark_40_percent">#6604264E</color>
 
-	<color name="o2_color_orange">#FF7F41</color>
-	<color name="o2_color_orange_light">#FFD6C2</color>
+    <color name="o2_color_orange">#FF7F41</color>
+    <color name="o2_color_orange_light">#FFD6C2</color>
     <color name="o2_color_yellow">#FEDB00</color>
     <color name="o2_color_coral">#FF706E</color>
-	<color name="o2_color_pink">#CB31A0</color>
-	<color name="o2_color_purple">#953698</color>
+    <color name="o2_color_pink">#CB31A0</color>
+    <color name="o2_color_purple">#953698</color>
 
 </resources>

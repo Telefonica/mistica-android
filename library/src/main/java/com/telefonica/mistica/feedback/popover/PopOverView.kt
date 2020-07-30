@@ -36,7 +36,8 @@ import java.util.*
 import kotlin.math.max
 import kotlin.math.roundToInt
 
-open class PopOverView internal constructor(context: Context) : RelativeLayout(context), ViewTreeObserver.OnPreDrawListener, View.OnClickListener {
+open class PopOverView internal constructor(context: Context) : RelativeLayout(context),
+    ViewTreeObserver.OnPreDrawListener, View.OnClickListener {
 
     private lateinit var popOverContent: ViewGroup
     private lateinit var popOverTopTip: ImageView
@@ -227,8 +228,10 @@ open class PopOverView internal constructor(context: Context) : RelativeLayout(c
         if (popOverData?.animationType == PopOverData.ANIMATIONTYPE_FROMMASTERVIEW) {
             animators.add(
                 ObjectAnimator.ofFloat<View>(
-                    this, View.TRANSLATION_Y,
-                    (targetViewRelativeY + targetView.height / 2 - height / 2).toFloat(), popOverViewY
+                    this,
+                    View.TRANSLATION_Y,
+                    (targetViewRelativeY + targetView.height / 2 - height / 2).toFloat(),
+                    popOverViewY
                 )
             )
             animators.add(

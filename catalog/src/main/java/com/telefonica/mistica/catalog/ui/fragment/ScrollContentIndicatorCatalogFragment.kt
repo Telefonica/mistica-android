@@ -7,18 +7,23 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
-import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.button.ScrollContentIndicator
+import com.telefonica.mistica.catalog.R
 
 class ScrollContentIndicatorCatalogFragment : Fragment() {
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View =
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View =
         inflater.inflate(R.layout.screen_scroll_content_indicator_catalog, container, false)
 
     @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val scrollContentIndicator = view.findViewById<ScrollContentIndicator>(R.id.scrollContentIndicator)
+        val scrollContentIndicator =
+            view.findViewById<ScrollContentIndicator>(R.id.scrollContentIndicator)
         val showHideButton = view.findViewById<Button>(R.id.showHide)
 
         showHideButton.setOnClickListener {

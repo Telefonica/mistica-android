@@ -1,68 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <merge xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-	<ScrollView
-			android:layout_width="match_parent"
-			android:layout_height="0dp"
-			app:layout_constraintTop_toTopOf="parent"
-			app:layout_constraintBottom_toTopOf="@id/buttons_container">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/buttons_container"
+        app:layout_constraintTop_toTopOf="parent">
 
-		<LinearLayout
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:orientation="vertical"
-				android:paddingTop="24dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="24dp">
 
-			<com.airbnb.lottie.LottieAnimationView
-					android:id="@+id/icon"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					app:layout_constraintStart_toStartOf="parent"
-					android:layout_marginTop="24dp"
-					android:layout_marginStart="24dp"
-					app:lottie_enableMergePathsForKitKatAndAbove="true"
-					app:lottie_progress="0"
-					android:scaleType="center"/>
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:scaleType="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:lottie_enableMergePathsForKitKatAndAbove="true"
+                app:lottie_progress="0" />
 
-			<TextView
-					android:id="@+id/title"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:layout_marginTop="24dp"
-					android:layout_marginStart="24dp"
-					android:layout_marginEnd="24dp"
-					style="@style/AppTheme.TextAppearance.Headline3"/>
+            <TextView
+                android:id="@+id/title"
+                style="@style/AppTheme.TextAppearance.Headline3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp" />
 
-			<TextView
-					android:id="@+id/subtitle"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:layout_marginTop="16dp"
-					android:layout_marginStart="24dp"
-					android:layout_marginEnd="24dp"
-					android:layout_marginBottom="24dp"
-					style="@style/AppTheme.TextAppearance.Title1"/>
+            <TextView
+                android:id="@+id/subtitle"
+                style="@style/AppTheme.TextAppearance.Title1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="24dp" />
 
-			<FrameLayout
-					android:id="@+id/custom_content"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:layout_marginStart="24dp"
-					android:layout_marginEnd="24dp"
-					android:layout_marginBottom="24dp"
-					android:visibility="gone"/>
+            <FrameLayout
+                android:id="@+id/custom_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="24dp"
+                android:visibility="gone" />
 
-		</LinearLayout>
-	</ScrollView>
+        </LinearLayout>
+    </ScrollView>
 
-	<LinearLayout
-		android:id="@+id/buttons_container"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:padding="16dp"
-		android:orientation="vertical"
-		android:gravity="center_horizontal"
-		app:layout_constraintBottom_toBottomOf="parent"/>
+    <LinearLayout
+        android:id="@+id/buttons_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </merge>

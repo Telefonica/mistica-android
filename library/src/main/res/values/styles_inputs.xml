@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<style name="AppTheme.TextInputLayout" parent="Widget.Design.TextInputLayout">
-		<item name="hintTextAppearance">@style/AppTheme.TextAppearance.TextInputLayout.Hint</item>
-		<item name="errorTextAppearance">@style/AppTheme.TextAppearance.TextInputLayout.Error</item>
-		<item name="hintAnimationEnabled">false</item>
-		<item name="hintEnabled">false</item>
-		<item name="android:textColorHint">@android:color/transparent</item>
-	</style>
 
-	<style name="AppTheme.TextAppearance.TextInputLayout.Error" parent="TextAppearance.Design.Error">
-		<item name="android:textColor">?colorTextError</item>
-	</style>
-	<style name="AppTheme.TextAppearance.TextInputLayout.Hint" parent="TextAppearance.Design.Hint">
-		<item name="android:textSize">0sp</item>
-	</style>
+    <style name="AppTheme.TextInputLayout" parent="Widget.Design.TextInputLayout">
+        <item name="hintTextAppearance">@style/AppTheme.TextAppearance.TextInputLayout.Hint</item>
+        <item name="errorTextAppearance">@style/AppTheme.TextAppearance.TextInputLayout.Error</item>
+        <item name="hintAnimationEnabled">false</item>
+        <item name="hintEnabled">false</item>
+        <item name="android:textColorHint">@android:color/transparent</item>
+    </style>
+
+    <style name="AppTheme.TextAppearance.TextInputLayout.Error" parent="TextAppearance.Design.Error">
+        <item name="android:textColor">?colorTextError</item>
+    </style>
+
+    <style name="AppTheme.TextAppearance.TextInputLayout.Hint" parent="TextAppearance.Design.Hint">
+        <item name="android:textSize">0sp</item>
+    </style>
 </resources>
