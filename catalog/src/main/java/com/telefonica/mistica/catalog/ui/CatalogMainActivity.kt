@@ -27,7 +27,6 @@ class CatalogMainActivity : AppCompatActivity() {
 
         private val sections: List<Pair<String, Section>> = listOf(
             "Buttons" to Section.BUTTONS,
-            "Texts" to Section.TEXTS,
             "Inputs" to Section.INPUTS,
             "Snackbars" to Section.SNACKBARS,
             "Feedbacks" to Section.FEEDBACKS,

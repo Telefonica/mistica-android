@@ -14,7 +14,6 @@ class ComponentCatalogActivity : AppCompatActivity() {
 
         val fragment: Fragment = when (intent.getSerializableExtra(EXTRA_SECTION)) {
             Section.BUTTONS -> ButtonsCatalogFragment()
-            Section.TEXTS -> TextsCatalogFragment()
             Section.INPUTS -> InputsCatalogFragment()
             Section.SNACKBARS -> SnackBarCatalogFragment()
             Section.FEEDBACKS -> FeedbackScreenCatalogFragment()
@@ -30,7 +29,7 @@ class ComponentCatalogActivity : AppCompatActivity() {
         }
 
         supportFragmentManager.beginTransaction().apply {
-            add(R.id.catalog_container, fragment)
+            replace(R.id.catalog_container, fragment)
         }.commit()
     }
 
@@ -41,7 +40,6 @@ class ComponentCatalogActivity : AppCompatActivity() {
 
 enum class Section {
     BUTTONS,
-    TEXTS,
     INPUTS,
     SNACKBARS,
     FEEDBACKS,
