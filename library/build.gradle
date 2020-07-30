@@ -32,6 +32,10 @@ dependencies {
 publishing {
     repositories {
         maven {
+            credentials {
+                username System.env.NEXUS_USER
+                password System.env.NEXUS_PASS
+            }
             url "https://nexusng.tuenti.io/repository/maven-release-private/"
         }
     }
