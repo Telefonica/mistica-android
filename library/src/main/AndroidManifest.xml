@@ -1,13 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-		package="com.telefonica.mistica">
+    package="com.telefonica.mistica">
 
-	<uses-permission android:name="android.permission.VIBRATE" />
-	<application>
-		<activity
-				android:name="com.telefonica.mistica.catalog.ui.ComponentCatalogActivity"
-				android:exported="false" />
-		<activity
-				android:name="com.telefonica.mistica.catalog.ui.activity.FeedbackScreenCatalogActivity"
-				android:exported="false" />
-	</application>
+    <uses-permission android:name="android.permission.VIBRATE" />
+
 </manifest>

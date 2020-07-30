@@ -8,7 +8,7 @@ import android.widget.CompoundButton
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.google.android.material.chip.Chip
-import com.telefonica.mistica.R
+import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.chips.HorizontalScrollChipGroup
 
 class OthersCatalogFragment : Fragment() {

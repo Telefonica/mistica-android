@@ -11,7 +11,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Spinner
 import androidx.fragment.app.Fragment
-import com.telefonica.mistica.R
+import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.feedback.SnackbarBuilder
 
 class SnackBarCatalogFragment : Fragment() {

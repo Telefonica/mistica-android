@@ -30,7 +30,7 @@ stages:
    - "docker-compose pull"
    - "docker-compose up -d builder"
  deploy:
-   - "docker-compose exec -T builder bash -c \"cd /source; ./gradlew check assemble; ./gradlew publish\""
+   - "docker-compose exec -T builder bash -c \"cd /source; ./gradlew clean check assemble; ./gradlew publish\""
  docker_down:
    - "docker-compose down -v"
  build_image:

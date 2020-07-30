@@ -3,7 +3,7 @@ package com.telefonica.mistica.catalog.ui
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.telefonica.mistica.R
+import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.catalog.ui.fragment.BadgesCatalogFragment
 import com.telefonica.mistica.catalog.ui.fragment.ButtonsCatalogFragment
 import com.telefonica.mistica.catalog.ui.fragment.FeedbackScreenCatalogFragment

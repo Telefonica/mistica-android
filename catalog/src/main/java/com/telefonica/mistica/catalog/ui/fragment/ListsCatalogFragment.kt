@@ -9,7 +9,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
-import com.telefonica.mistica.R
+import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.list.ListRowView
 import com.telefonica.mistica.list.layout.configureWithBoxedLayout
 import com.telefonica.mistica.list.layout.configureWithFullWidthLayout

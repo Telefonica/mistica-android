@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
-import com.telefonica.mistica.R
+import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.feedback.screen.view.FeedbackScreenView
 import com.telefonica.mistica.feedback.screen.view.FeedbackScreenView.FeedbackType
 

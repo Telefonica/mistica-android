@@ -11,7 +11,7 @@ import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import com.telefonica.mistica.R
+import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.feedback.popover.PopOver
 
 class PopOverCatalogFragment : Fragment() {

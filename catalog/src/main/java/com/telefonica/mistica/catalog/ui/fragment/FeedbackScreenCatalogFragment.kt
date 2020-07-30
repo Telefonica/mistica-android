@@ -13,7 +13,7 @@ import android.widget.EditText
 import android.widget.Spinner
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
-import com.telefonica.mistica.R
+import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.catalog.ui.activity.FeedbackScreenCatalogActivity
 import com.telefonica.mistica.feedback.screen.view.FeedbackScreenView
 import com.telefonica.mistica.feedback.screen.view.FeedbackScreenView.FeedbackType

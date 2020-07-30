@@ -11,7 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
-import com.telefonica.mistica.R
+import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.input.CheckBoxInput
 import com.telefonica.mistica.input.DropDownInput
 import com.telefonica.mistica.input.TextInput
