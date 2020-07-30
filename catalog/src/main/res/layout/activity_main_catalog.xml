@@ -19,78 +19,91 @@
             android:src="@drawable/ic_mistica_logo_text" />
 
         <com.telefonica.mistica.button.Button
+            android:id="@+id/button_buttons"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="28dp"
             android:text="Buttons"/>
 
         <com.telefonica.mistica.button.Button
+            android:id="@+id/button_texts"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="Texts"/>
 
         <com.telefonica.mistica.button.Button
+            android:id="@+id/button_inputs"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="Inputs"/>
 
         <com.telefonica.mistica.button.Button
+            android:id="@+id/button_snackbars"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="Snackbars"/>
 
         <com.telefonica.mistica.button.Button
+            android:id="@+id/button_feedbacks"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="Feedbacks"/>
 
         <com.telefonica.mistica.button.Button
+            android:id="@+id/button_load_error_feedback"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="Load Error Feedback"/>
 
         <com.telefonica.mistica.button.Button
+            android:id="@+id/button_pop_overs"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="Pop Overs"/>
 
         <com.telefonica.mistica.button.Button
+            android:id="@+id/button_badges"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="Badges"/>
 
         <com.telefonica.mistica.button.Button
+            android:id="@+id/button_scroll_content_indicator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="Scroll Content Indicator"/>
 
         <com.telefonica.mistica.button.Button
+            android:id="@+id/button_tags"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="Tags"/>
 
         <com.telefonica.mistica.button.Button
+            android:id="@+id/button_lists"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="Lists"/>
 
         <com.telefonica.mistica.button.Button
+            android:id="@+id/button_headers"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="Headers"/>
 
         <com.telefonica.mistica.button.Button
+            android:id="@+id/button_others"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"

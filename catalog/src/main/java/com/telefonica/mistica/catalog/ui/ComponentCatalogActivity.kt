@@ -17,6 +17,7 @@ import com.telefonica.mistica.catalog.ui.fragment.ScrollContentIndicatorCatalogF
 import com.telefonica.mistica.catalog.ui.fragment.SnackBarCatalogFragment
 import com.telefonica.mistica.catalog.ui.fragment.TagsCatalogFragment
 import com.telefonica.mistica.catalog.ui.fragment.TextsCatalogFragment
+import java.io.Serializable
 
 class ComponentCatalogActivity : AppCompatActivity() {
 
