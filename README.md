@@ -81,6 +81,10 @@ Included in this repository is a demo of currently implemented components. A ful
 
 To see samples of all of our implemented components, run the [App](app) module in Android Studio.
 
+<p align="left">
+    <img width="25%" src="./doc/images/catalog/catalog.png">
+</p>
+
 ## Contributing
 
 TODO
