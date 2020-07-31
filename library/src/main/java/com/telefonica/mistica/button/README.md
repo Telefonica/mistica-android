@@ -5,11 +5,11 @@ Following classes should be used to place buttons in the app:
 In order to change appearance of them, just set the required style (styles for all kind of buttons are available on [styles_buttons.xml](https://github.com/tef-novum/android-messenger/blob/integration/toolkit/palette/src/main/res/values/styles_buttons.xml)).
 
 <p align="center">
-    <img src="../../../../../../../doc/images/buttons/buttons_tuenti.gif">
-    <img src="../../../../../../../doc/images/buttons/buttons_movistar.gif">
+    <img src="../../../../../../../../doc/images/buttons/buttons_tuenti.gif">
+    <img src="../../../../../../../../doc/images/buttons/buttons_movistar.gif">
 </p>
 <p align="center">
-    <img src="../../../../../../../doc/images/buttons/buttons_o2.gif">
-    <img src="../../../../../../../doc/images/buttons/buttons_vivo.gif">
+    <img src="../../../../../../../../doc/images/buttons/buttons_o2.gif">
+    <img src="../../../../../../../../doc/images/buttons/buttons_vivo.gif">
 </p>
 
