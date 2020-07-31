@@ -2,7 +2,7 @@
 This activity provides direct navigation to a feedback screen with a default close action on first button press.
 
 <p align="center">
-    <img src="../../../../../../../../doc/images/screen_feedbacks/feedbacks.gif">
+    <img src="../../../../../../../../../doc/images/screen_feedbacks/feedbacks.gif">
 </p>
 
 It can be launched with an ActionCommand or directly invoking the Intent with the corresponding extras:
