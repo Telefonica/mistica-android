@@ -1,0 +1,29 @@
+# Lists
+
+<p align="center">
+   <img>[[../../../../../../../../doc/images/lists/lists_1.gif]]</img>
+   <img>[[../../../../../../../../doc/images/lists/lists_2.gif]]</img>
+</p>
+
+Implemented as a custom view, `ListRowView` can be used inside any layout like a regular view, including recyclable lists. It supports both **attribute configuration** and **databinding for all properties**.
+
+```xml
+<declare-styleable name="ListRowView">
+	<attr name="listRowTitle" format="string"/>
+	<attr name="listRowDescription" format="string"/>
+	<attr name="listRowAssetDrawable" format="reference"/>
+	<attr name="listRowIsBoxed" format="boolean"/>
+	<attr name="listRowHasSmallAsset" format="boolean"/>
+	<attr name="listRowActionLayout" format="integer">
+		<enum name="none" value="-1" />
+	</attr>
+	<attr name="listRowBadgeCount" format="integer">
+		<enum name="gone" value="-1" />
+	</attr>
+	<attr name="onClick" format="string"/>
+</declare-styleable>
+```
+
+`ListLayout` class provides extension functions to configure recycler views where the rows can be used, with the 2 available layouts:
+* Full Width Layout
+* Boxed Layout
