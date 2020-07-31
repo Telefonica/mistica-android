@@ -1,4 +1,4 @@
-package com.telefonica.mistica.background
+package com.telefonica.mistica.util.background
 
 import android.content.Context
 import android.graphics.LinearGradient

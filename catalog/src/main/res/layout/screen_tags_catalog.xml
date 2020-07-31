@@ -37,9 +37,8 @@
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="ContentDescription" />
 
-            <androidx.appcompat.widget.AppCompatTextView
+            <com.telefonica.mistica.tag.TagView
                 android:id="@+id/tag_in_image"
-                style="@style/AppTheme.Widgets.Tag"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -55,9 +54,8 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <androidx.appcompat.widget.AppCompatTextView
+        <com.telefonica.mistica.tag.TagView
             android:id="@+id/tag_inline"
-            style="@style/AppTheme.Widgets.Tag"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"

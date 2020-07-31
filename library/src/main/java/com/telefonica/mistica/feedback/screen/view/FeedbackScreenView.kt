@@ -21,7 +21,7 @@ import androidx.annotation.LayoutRes
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.airbnb.lottie.LottieAnimationView
 import com.telefonica.mistica.R
-import com.telefonica.mistica.background.GradientBackgroundFactory
+import com.telefonica.mistica.util.background.GradientBackgroundFactory
 import com.telefonica.mistica.feedback.screen.haptics.HapticFeedbackType
 import com.telefonica.mistica.feedback.screen.haptics.performHapticFeedback
 import com.telefonica.mistica.util.convertDpToPx

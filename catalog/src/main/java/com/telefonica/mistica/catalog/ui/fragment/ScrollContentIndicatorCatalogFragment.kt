@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
-import com.telefonica.mistica.button.ScrollContentIndicator
+import com.telefonica.mistica.contentindicator.ScrollContentIndicator
 import com.telefonica.mistica.catalog.R
 
 class ScrollContentIndicatorCatalogFragment : Fragment() {

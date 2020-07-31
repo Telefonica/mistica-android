@@ -1,4 +1,4 @@
-package com.telefonica.mistica.button
+package com.telefonica.mistica.contentindicator
 
 import android.content.Context
 import android.os.Build
@@ -77,13 +77,17 @@ class ScrollContentIndicator @JvmOverloads constructor(
             Animation.RELATIVE_TO_SELF,
             SCALE_PIVOT_Y
         )
-        val alphaAnimation = AlphaAnimation(IN_ALPHA_FROM, IN_ALPHA_TO)
+        val alphaAnimation = AlphaAnimation(
+            IN_ALPHA_FROM,
+            IN_ALPHA_TO
+        )
 
         AnimationSet(SHARE_INTERPOLATOR).run {
             addAnimation(scaleAnimation)
             addAnimation(alphaAnimation)
             interpolator = DecelerateInterpolator()
-            duration = ANIM_DURATION_MS
+            duration =
+                ANIM_DURATION_MS
             startAnimation(this)
         }
     }
@@ -99,13 +103,17 @@ class ScrollContentIndicator @JvmOverloads constructor(
             Animation.RELATIVE_TO_SELF,
             SCALE_PIVOT_Y
         )
-        val alphaAnimation = AlphaAnimation(OUT_ALPHA_FROM, OUT_ALPHA_TO)
+        val alphaAnimation = AlphaAnimation(
+            OUT_ALPHA_FROM,
+            OUT_ALPHA_TO
+        )
 
         AnimationSet(SHARE_INTERPOLATOR).run {
             addAnimation(scaleAnimation)
             addAnimation(alphaAnimation)
             interpolator = AccelerateInterpolator()
-            duration = ANIM_DURATION_MS
+            duration =
+                ANIM_DURATION_MS
             startAnimation(this)
         }
     }
