@@ -1,8 +1,8 @@
 # Lists
 
 <p align="center">
-   <img>[[../../../../../../../../doc/images/lists/lists_1.gif]]</img>
-   <img>[[../../../../../../../../doc/images/lists/lists_2.gif]]</img>
+   <img src="../../../../../../../../doc/images/lists/lists_1.gif" />
+   <img src="../../../../../../../../doc/images/lists/lists_2.gif" />
 </p>
 
 Implemented as a custom view, `ListRowView` can be used inside any layout like a regular view, including recyclable lists. It supports both **attribute configuration** and **databinding for all properties**.
