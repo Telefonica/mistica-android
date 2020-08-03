@@ -1,15 +1,17 @@
+# PopOvers
+
 A Popover can be used to display some content on top of another.
 
 <p align="center">
     <img src="../../../../../../../../../doc/images/popovers/popover-3.gif">
 </p>
 
-`FeedbackProvider` injectable class, **allows showing pop overs** on any part of the app:
+`PopOver` **allows showing pop overs** on any part of the app:
 
 ```kotlin
-popOver(targetView: View): PopOver
+PopOver(context: Context, targetView: View)
 ```
-Returns a PopOver class, which most relevant functions are:
+Which most relevant functions are:
 
 ```kotlin
 setTitle(@StringRes stringId: Int): PopOver
