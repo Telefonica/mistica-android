@@ -1,7 +1,7 @@
 # Load Error Feedback
 
 <p align="center">
-   <img src="../../../../../../../../../doc/images/load_feedback_error/load_feedback_error.png" />
+   <img width="50%" src="../../../../../../../../../doc/images/load_feedback_error/load_feedback_error.png" />
 </p>
 
 Implemented as a custom view, `LoadErrorFeedbackView` can be used inside any layout like a regular view. It supports both **attribute configuration** and **databinding for all properties**.
