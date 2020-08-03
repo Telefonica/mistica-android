@@ -1,4 +1,4 @@
-Component used to select one among several options, similar to a radio group, following [Material guidelines](1). It's implemented using a combination of `ChipGroup` and `Chip` classes from [Android Design Support library](2). In addition to the standard behavior of a `ChipGroup` with `Chips`, our Chips component has the following features:
+In addition to the standard behavior of a `ChipGroup` with `Chips`, our Chips component has the following features:
 * Chips on a single horizontal line
 * Horizontal scroll
 * Single selection (like a radio group)
@@ -13,12 +13,12 @@ Component used to select one among several options, similar to a radio group, fo
 </p>
 
 # HorizontalScrollChipGroup
-The implementation is done using a custom view [`HorizontalScrollChipGroup`](3) that encapsulates a `HorizontalScrollView` with a `ChipGroup` inside. This component already provides all the extra behavior described above.
+The implementation is done using a custom view [`HorizontalScrollChipGroup`](./HorizontalScrollChipGroup.kt) that encapsulates a `HorizontalScrollView` with a `ChipGroup` inside. This component already provides all the extra behavior described above.
 
 ## Usage
 You just need to add a `HorizontalScrollChipGroup` to your layout:
 ```xml
-<com.tuenti.ui.chips.HorizontalScrollChipGroup
+<com.telefonica.mistica.chips.HorizontalScrollChipGroup
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="?colorChipGroupBackground"
@@ -26,9 +26,9 @@ You just need to add a `HorizontalScrollChipGroup` to your layout:
 ```
 
 # Chips
-Chips need to be inflated and added to the ChipGroup in Java/Kotlin code. You can always use data binding if you create a binding adapter (i.e [ChipsBindingAdapter in Explore](4))
+Chips need to be inflated and added to the ChipGroup in Java/Kotlin code. You can always use data binding if you create a binding adapter.
 
-We only support [Chip Choice](5) for now, since that's the style that covers our current use case. So you'll need to inflate always the same already existing layout [com.tuenti.ui.R.layout.chip_choice](6).
+We only support [Chip Choice](5) for now, since that's the style that covers our current use case. So you'll need to inflate always the same already existing layout [com.telefonica.mistica.R.layout.chip_choice](../../../../../res/layout/chip_choice.xml).
 
 ## Usage
 ```kotlin
