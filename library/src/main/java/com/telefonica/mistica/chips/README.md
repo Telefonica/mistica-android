@@ -28,7 +28,7 @@ You just need to add a `HorizontalScrollChipGroup` to your layout:
 # Chips
 Chips need to be inflated and added to the ChipGroup in Java/Kotlin code. You can always use data binding if you create a binding adapter.
 
-We only support [Chip Choice](5) for now, since that's the style that covers our current use case. So you'll need to inflate always the same already existing layout [com.telefonica.mistica.R.layout.chip_choice](../../../../../res/layout/chip_choice.xml).
+We only support "Chip Choice" for now, since that's the style that covers our current use case. So you'll need to inflate always the same already existing layout [com.telefonica.mistica.R.layout.chip_choice](../../../../../res/layout/chip_choice.xml).
 
 ## Usage
 ```kotlin
