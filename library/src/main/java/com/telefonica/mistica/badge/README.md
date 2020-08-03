@@ -3,7 +3,7 @@
 Badges are placed on an overlay, at the top right side of any other view:
 
 <p align="center">
-    <img src="../../../../../../../../doc/images/badges/badges.gif">
+    <img width="25%" src="../../../../../../../../doc/images/badges/badges.gif">
 </p>
 
 To use it, use `com.telefonica.mistica.badge.Badge`
