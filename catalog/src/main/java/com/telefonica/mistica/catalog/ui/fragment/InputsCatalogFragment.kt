@@ -14,7 +14,6 @@ import androidx.fragment.app.Fragment
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.input.CheckBoxInput
 import com.telefonica.mistica.input.DropDownInput
-import com.telefonica.mistica.input.TextInput
 
 class InputsCatalogFragment : Fragment() {
 
@@ -25,10 +24,6 @@ class InputsCatalogFragment : Fragment() {
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         return layoutInflater.inflate(R.layout.screen_inputs_catalog, container, false).apply {
-
-            findViewById<TextInput>(R.id.textInputError)?.apply {
-                error = "Error Text!"
-            }
 
             val countries = arrayOf("Item 1", "Item 2", "Item 3", "Item 4")
 

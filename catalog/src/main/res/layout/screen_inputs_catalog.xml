@@ -38,11 +38,11 @@
                 android:text="Text Input With Error" />
 
             <com.telefonica.mistica.input.TextInput
-                android:id="@+id/textInputError"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
+                app:inputError="With Error!"
                 app:inputHint="Type Something..."
                 app:inputType="text" />
 
@@ -163,14 +163,12 @@
             android:orientation="vertical">
 
             <com.telefonica.mistica.input.TextInput
-                android:id="@+id/textInputErrorInverse"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 app:inputError="With Error!"
                 app:inputHint="Type Something..."
-                app:inputText="Text"
                 app:inputInverse="true"
                 app:inputType="text" />
 

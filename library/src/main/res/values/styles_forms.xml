@@ -30,11 +30,6 @@
         <item name="colorError">?colorError</item>
     </style>
 
-    <style name="AppTheme.Forms.TextInputLayout.Error.Inverse">
-        <item name="android:textColor">?colorTextPrimaryInverse</item>
-        <item name="colorError">?colorTextPrimaryInverse</item>
-    </style>
-
     <style name="AppTheme.Forms.TextInputLayout.Hint" parent="TextAppearance.Design.Hint" />
 
     <style name="AppTheme.Forms.TextInputLayout.Helper" parent="AppTheme.TextAppearance.Caption1" />
