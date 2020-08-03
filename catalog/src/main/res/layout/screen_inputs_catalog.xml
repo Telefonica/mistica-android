@@ -8,138 +8,183 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?colorBackground"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?colorBackground"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <com.telefonica.mistica.section.SectionTitleView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="Text Input" />
+
+            <com.telefonica.mistica.input.TextInput
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:inputHint="Type Something..."
+                app:inputType="text" />
+
+            <com.telefonica.mistica.section.SectionTitleView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="Text Input With Error" />
+
+            <com.telefonica.mistica.input.TextInput
+                android:id="@+id/textInputError"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:inputHint="Type Something..."
+                app:inputType="text" />
+
+            <com.telefonica.mistica.section.SectionTitleView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="Text Input With Assertive Text" />
+
+            <com.telefonica.mistica.input.TextInput
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:inputHelperText="This is a helper text"
+                app:inputHint="Type Something..."
+                app:inputType="text" />
+
+            <com.telefonica.mistica.section.SectionTitleView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="Password Input" />
+
+            <com.telefonica.mistica.input.TextInput
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:inputHint="Password"
+                app:inputType="password" />
+
+            <com.telefonica.mistica.section.SectionTitleView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="Phone Input" />
+
+            <com.telefonica.mistica.input.TextInput
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:inputHint="Phone number"
+                app:inputType="phone" />
+
+            <com.telefonica.mistica.section.SectionTitleView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="Email Input" />
+
+            <com.telefonica.mistica.input.TextInput
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:inputHint="Email"
+                app:inputType="email" />
+
+            <com.telefonica.mistica.section.SectionTitleView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="Text Area" />
+
+            <com.telefonica.mistica.input.TextInput
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:inputCounterEnabled="true"
+                app:inputHint="Type Something..."
+                app:inputMaxLength="200"
+                app:inputType="textArea" />
+
+            <com.telefonica.mistica.section.SectionTitleView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="DropDown" />
+
+            <com.telefonica.mistica.input.DropDownInput
+                android:id="@+id/dropDownInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:inputHint="Select something" />
+
+            <com.telefonica.mistica.section.SectionTitleView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="CheckBox Input" />
+
+            <com.telefonica.mistica.input.CheckBoxInput
+                android:id="@+id/checkboxInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp" />
+
+        </LinearLayout>
 
         <com.telefonica.mistica.section.SectionTitleView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
-            android:text="Text Input" />
+            android:layout_marginStart="16dp"
+            android:text="Inverse Inputs" />
 
-        <com.telefonica.mistica.input.TextInput
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            app:inputHint="Type Something..."
-            app:inputType="text" />
+            android:padding="16dp"
+            android:background="?colorPrimary"
+            android:orientation="vertical">
 
-        <com.telefonica.mistica.section.SectionTitleView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:text="Text Input With Error" />
+            <com.telefonica.mistica.input.TextInput
+                android:id="@+id/textInputErrorInverse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:inputError="With Error!"
+                app:inputHint="Type Something..."
+                app:inputText="Text"
+                app:inputInverse="true"
+                app:inputType="text" />
 
-        <com.telefonica.mistica.input.TextInput
-            android:id="@+id/textInputError"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            app:inputHint="Type Something..."
-            app:inputType="text" />
+            <com.telefonica.mistica.input.TextInput
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:inputHelperText="With Helper Text!"
+                app:inputHint="Type Something..."
+                app:inputInverse="true"
+                app:inputType="text" />
 
-        <com.telefonica.mistica.section.SectionTitleView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:text="Text Input With Assertive Text" />
-
-        <com.telefonica.mistica.input.TextInput
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            app:inputHelperText="This is a helper text"
-            app:inputHint="Type Something..."
-            app:inputType="text" />
-
-        <com.telefonica.mistica.section.SectionTitleView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:text="Password Input" />
-
-        <com.telefonica.mistica.input.TextInput
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            app:inputHint="Password"
-            app:inputType="password" />
-
-        <com.telefonica.mistica.section.SectionTitleView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:text="Phone Input" />
-
-        <com.telefonica.mistica.input.TextInput
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            app:inputHint="Phone number"
-            app:inputType="phone" />
-
-        <com.telefonica.mistica.section.SectionTitleView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:text="Email Input" />
-
-        <com.telefonica.mistica.input.TextInput
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            app:inputHint="Email"
-            app:inputType="email" />
-
-        <com.telefonica.mistica.section.SectionTitleView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:text="Text Area" />
-
-        <com.telefonica.mistica.input.TextInput
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            app:inputCounterEnabled="true"
-            app:inputHint="Type Something..."
-            app:inputMaxLength="200"
-            app:inputType="textArea" />
-
-        <com.telefonica.mistica.section.SectionTitleView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:text="DropDown" />
-
-        <com.telefonica.mistica.input.DropDownInput
-            android:id="@+id/dropDownInput"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            app:inputHint="Select something" />
-
-        <com.telefonica.mistica.section.SectionTitleView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:text="CheckBox Input" />
-
-        <com.telefonica.mistica.input.CheckBoxInput
-            android:id="@+id/checkboxInput"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp" />
+        </LinearLayout>
 
     </LinearLayout>
 

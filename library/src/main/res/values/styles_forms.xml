@@ -30,9 +30,18 @@
         <item name="colorError">?colorError</item>
     </style>
 
+    <style name="AppTheme.Forms.TextInputLayout.Error.Inverse">
+        <item name="android:textColor">?colorTextPrimaryInverse</item>
+        <item name="colorError">?colorTextPrimaryInverse</item>
+    </style>
+
     <style name="AppTheme.Forms.TextInputLayout.Hint" parent="TextAppearance.Design.Hint" />
 
     <style name="AppTheme.Forms.TextInputLayout.Helper" parent="AppTheme.TextAppearance.Caption1" />
+
+    <style name="AppTheme.Forms.TextInputLayout.Helper.Inverse">
+        <item name="android:textColor">?colorTextPrimaryInverse</item>
+    </style>
 
     <style name="AppTheme.Forms.TextInputLayout.Password" parent="AppTheme.Forms.TextInputLayout">
         <item name="passwordToggleEnabled">true</item>

@@ -29,6 +29,11 @@ import com.telefonica.mistica.R
         type = Input::class,
         attribute = "inputEnabled",
         method = "setEnabled"
+    ),
+    BindingMethod(
+        type = Input::class,
+        attribute = "inputInverse",
+        method = "setInverse"
     )
 )
 abstract class Input @JvmOverloads constructor(
@@ -63,6 +68,7 @@ abstract class Input @JvmOverloads constructor(
         var initialError: String? = null
         var initialHelperText: String? = null
         var initialEnabled: Boolean = true
+        var initialInverse: Boolean = false
 
         if (attrs != null) {
             val styledAttrs = context.theme.obtainStyledAttributes(
@@ -76,6 +82,7 @@ abstract class Input @JvmOverloads constructor(
                 initialError = styledAttrs.getString(R.styleable.Input_inputError)
                 initialHelperText = styledAttrs.getString(R.styleable.Input_inputHelperText)
                 initialEnabled = styledAttrs.getBoolean(R.styleable.Input_inputEnabled, true)
+                initialInverse = styledAttrs.getBoolean(R.styleable.Input_inputInverse, false)
             } finally {
                 styledAttrs.recycle()
             }
@@ -87,14 +94,32 @@ abstract class Input @JvmOverloads constructor(
         hint = initialHint
         error = initialError
         helperText = initialHelperText
+        setInverse(initialInverse)
     }
 
     fun setError(@StringRes textRes: Int?) {
-        layoutView.error = textRes?.let { context.getString(it) }
+        error = textRes?.let { context.getString(it) }
     }
 
     fun setErrorEnabled(enabled: Boolean) {
         layoutView.isErrorEnabled = enabled
+    }
+
+    fun setInverse(inverse: Boolean) {
+        layoutView.setErrorTextAppearance(
+            if (inverse) {
+                R.style.AppTheme_Forms_TextInputLayout_Error_Inverse
+            } else {
+                R.style.AppTheme_Forms_TextInputLayout_Error
+            }
+        )
+        layoutView.setHelperTextTextAppearance(
+            if (inverse) {
+                R.style.AppTheme_Forms_TextInputLayout_Helper_Inverse
+            } else {
+                R.style.AppTheme_Forms_TextInputLayout_Helper
+            }
+        )
     }
 
     override fun setEnabled(enabled: Boolean) {

@@ -84,6 +84,7 @@
         <attr name="inputError" format="string" />
         <attr name="inputHelperText" format="string" />
         <attr name="inputEnabled" format="boolean" />
+        <attr name="inputInverse" format="boolean" />
     </declare-styleable>
 
     <declare-styleable name="TextInput">
