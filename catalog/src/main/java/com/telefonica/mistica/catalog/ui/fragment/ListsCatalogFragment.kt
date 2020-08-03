@@ -11,8 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.list.ListRowView
-import com.telefonica.mistica.list.layout.configureWithBoxedLayout
-import com.telefonica.mistica.list.layout.configureWithFullWidthLayout
+import com.telefonica.mistica.list.MisticaRecyclerView
 
 class ListsCatalogFragment : Fragment() {
 
@@ -28,12 +27,10 @@ class ListsCatalogFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val list: RecyclerView = view.findViewById(R.id.list)
-        list.configureWithFullWidthLayout()
+        val list: MisticaRecyclerView = view.findViewById(R.id.list)
         list.adapter = ListAdapter(boxed = false)
 
-        val boxedList: RecyclerView = view.findViewById(R.id.boxed_list)
-        boxedList.configureWithBoxedLayout()
+        val boxedList: MisticaRecyclerView = view.findViewById(R.id.boxed_list)
         boxedList.adapter = ListAdapter(boxed = true)
     }
 

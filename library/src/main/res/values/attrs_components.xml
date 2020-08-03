@@ -54,6 +54,13 @@
         <attr name="onClick" format="string" />
     </declare-styleable>
 
+    <declare-styleable name="MisticaRecyclerView">
+        <attr name="listLayoutType" format="integer">
+            <enum name="full_width" value="0" />
+            <enum name="boxed" value="1" />
+        </attr>
+    </declare-styleable>
+
     <declare-styleable name="HeaderView">
         <attr name="headerHasTopPadding" format="boolean" />
         <attr name="headerInverse" format="boolean" />
