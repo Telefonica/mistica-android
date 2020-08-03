@@ -1,4 +1,4 @@
-# Load Error Feedback component
+# Load Error Feedback
 
 <p align="center">
    <img src="../../../../../../../../../doc/images/load_feedback_error/load_feedback_error.png" />
