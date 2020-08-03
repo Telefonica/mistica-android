@@ -1,10 +1,12 @@
+# Badges
+
 Badges are placed on an overlay, at the top right side of any other view:
 
 <p align="center">
     <img src="../../../../../../../../doc/images/badges/badges.gif">
 </p>
 
-To use it, use `com.tuenti.ui.core.component.badge.Badge`
+To use it, use `com.telefonica.mistica.badge.Badge`
 
 There are two group of methods:
 
