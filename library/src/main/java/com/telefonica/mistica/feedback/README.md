@@ -1,3 +1,5 @@
+# Snackbars
+
 Snackbars allow to show contextual information usually after the user has done any action. Snackbars are displayed during 5 seconds on the screen if there isn't an action associated, and 10 when is it. There are also two types, informative and critical:
 
 <p align="center">
