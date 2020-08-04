@@ -19,7 +19,7 @@ Inside the dependency block in your build.gradle, add this line to add the libra
 ```gradle
 dependencies {
     ...
-    implementation 'com.telefonica.mistica:library:$version'
+    implementation 'com.telefonica.mistica:mistica:$version'
     ...
 }
 ```
@@ -29,8 +29,8 @@ In case you also want to include also the components catalog in your application
 ```gradle
 dependencies {
     ...
-    implementation 'com.telefonica.mistica:library:$version'
-    implementation 'com.telefonica.mistica:catalog:$version'
+    implementation 'com.telefonica.mistica:mistica:$version'
+    implementation 'com.telefonica.mistica:mistica-catalog:$version'
     ...
 }
 ```
