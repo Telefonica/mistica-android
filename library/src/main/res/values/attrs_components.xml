@@ -95,14 +95,14 @@
             <enum name="textArea" value="3" />
             <enum name="phone" value="4" />
         </attr>
-        <attr name="inputText" format="string" />
+        <attr name="inputText" format="string" /> <!-- Supports inverse databinding -->
         <attr name="inputCounterEnabled" format="boolean" />
         <attr name="inputMaxLength" format="integer" />
         <attr name="inputAutofillEnabled" format="boolean" />
     </declare-styleable>
 
     <declare-styleable name="CheckBoxInput">
-        <attr name="inputChecked" format="boolean" />
+        <attr name="inputChecked" format="boolean" /> <!-- Supports inverse databinding -->
         <attr name="inputCheckText" format="string" />
     </declare-styleable>
 
