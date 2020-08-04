@@ -7,7 +7,7 @@
    <img src="../../../../../../../../doc/images/lists/lists_2.gif" />
 </p>
 
-Implemented as a custom view, `ListRowView` can be used inside any layout like a regular view, including recyclable lists. It supports both **attribute configuration** and **databinding for all properties**.
+Implemented as a custom view, `com.telefonica.mistica.ListRowView` can be used inside any layout like a regular view, including recyclable lists. It supports both **attribute configuration** and **databinding for all properties**.
 
 ```xml
 <declare-styleable name="ListRowView">
@@ -37,7 +37,7 @@ Implemented as a custom view, `ListRowView` can be used inside any layout like a
 * Full Width Layout --> `configureWithFullWidthLayout`
 * Boxed Layout --> `configureWithBoxedLayout`
 
-Also `MisticaRecyclerView` is just a `RecyclerView` that already supports previous layout styles by both attribute specification and databinding:
+Also `com.telefonica.mistica.MisticaRecyclerView` is just a `RecyclerView` that already supports previous layout styles by both attribute specification and databinding:
 ```xml
 <declare-styleable name="MisticaRecyclerView">
     <attr name="listLayoutType" format="integer">
