@@ -7,7 +7,7 @@ Snackbars allow to show contextual information usually after the user has done a
     <img src="../../../../../../../../doc/images/snackbars/snackbars_critical.gif">
 </p>
 
-`SnackbarBuilder` **allows showing snackbars** on any part of the app:
+`com.telefonica.mistica.feedback.SnackbarBuilder` **allows showing snackbars** on any part of the app:
 * `SnackbarBuilder(view: View, @StringRes resId: Int)`
   * Prepares an snackbar to show it over the specified view with given string resource as message
 * `SnackbarBuilder(view: View, text: String): SnackbarBuilder`
