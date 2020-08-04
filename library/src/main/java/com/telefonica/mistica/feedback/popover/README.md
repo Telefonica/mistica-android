@@ -6,7 +6,7 @@ A Popover can be used to display some content on top of another.
     <img src="../../../../../../../../../doc/images/popovers/popover-3.gif">
 </p>
 
-`PopOver` **allows showing pop overs** on any part of the app:
+`com.telefonica.mistica.feedback.popover.PopOver` **allows showing pop overs** on any part of the app:
 
 ```kotlin
 PopOver(context: Context, targetView: View)
