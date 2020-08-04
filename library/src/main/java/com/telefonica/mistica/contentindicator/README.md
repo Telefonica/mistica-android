@@ -1,4 +1,4 @@
-# Load Error Feedback
+# Scroll Content Indicator
 
 <p align="center">
    <img src="../../../../../../../../doc/images/contentindicator/scroll_content_indicator.gif" />
