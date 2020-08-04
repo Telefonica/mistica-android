@@ -4,7 +4,7 @@
     <img src="../../../../../../../../../doc/images/screen_feedbacks/feedbacks.gif">
 </p>
 
-`FeedbackScreenView` can be used inside any layout like a regular view, presentation of the view can be diferent depending on the design requirements. In order to configure it for the specific purpose, it supports both **attribute configuration** and **databinding for all properties**
+`com.telefonica.mistica.FeedbackScreenView` can be used inside any layout like a regular view, presentation of the view can be diferent depending on the design requirements. In order to configure it for the specific purpose, it supports both **attribute configuration and databinding for all properties**
 
 ```xml
 <declare-styleable name="FeedbackScreen">
