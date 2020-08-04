@@ -1,4 +1,7 @@
-![Mistica for Android](./doc/images/mistica-logo.svg)
+<br>
+<br>
+<img height="64" alt="Mística for Android" src="./doc/images/mistica-logo.svg">
+<br>
 
 #  Mistica for Android
 
