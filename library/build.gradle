@@ -43,7 +43,7 @@ publishing {
         impl(MavenPublication) {
             artifact 'build/outputs/aar/library-release.aar'
             groupId 'com.telefonica.mistica'
-            artifactId 'library'
+            artifactId 'mistica'
             version version
         }
     }
