@@ -2,33 +2,11 @@ package com.telefonica.mistica.list.layout
 
 import android.graphics.Rect
 import android.view.View
-import androidx.annotation.IntDef
-import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.telefonica.mistica.list.decoration.divider.DividerItemAdapter
 import com.telefonica.mistica.list.decoration.divider.DividerItemDecoration
 import com.telefonica.mistica.util.convertDpToPx
-
-@Retention(AnnotationRetention.SOURCE)
-@IntDef(
-    ListLayoutType.TYPE_FULL_WIDTH,
-    ListLayoutType.TYPE_BOXED
-)
-annotation class ListLayoutType {
-    companion object {
-        const val TYPE_FULL_WIDTH = 0
-        const val TYPE_BOXED = 1
-    }
-}
-
-@BindingAdapter("listLayoutType")
-fun RecyclerView.setListLayoutStyleType(@ListLayoutType layoutType: Int) {
-    when (layoutType) {
-        ListLayoutType.TYPE_BOXED -> configureWithBoxedLayout()
-        else -> configureWithFullWidthLayout()
-    }
-}
 
 fun RecyclerView.configureWithFullWidthLayout() {
     removeItemDecorations()

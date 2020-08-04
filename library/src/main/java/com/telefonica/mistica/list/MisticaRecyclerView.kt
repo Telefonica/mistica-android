@@ -2,13 +2,14 @@ package com.telefonica.mistica.list
 
 import android.content.Context
 import android.util.AttributeSet
+import androidx.annotation.IntDef
 import androidx.annotation.Nullable
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import androidx.recyclerview.widget.RecyclerView
 import com.telefonica.mistica.R
-import com.telefonica.mistica.list.layout.ListLayoutType
-import com.telefonica.mistica.list.layout.setListLayoutStyleType
+import com.telefonica.mistica.list.layout.configureWithBoxedLayout
+import com.telefonica.mistica.list.layout.configureWithFullWidthLayout
 
 @BindingMethods(
     BindingMethod(
@@ -35,8 +36,15 @@ class MisticaRecyclerView : RecyclerView {
         init(attrs)
     }
 
+    @Retention(AnnotationRetention.SOURCE)
+    @IntDef(
+        TYPE_FULL_WIDTH,
+        TYPE_BOXED
+    )
+    annotation class ListLayoutType
+
     fun init(@Nullable attrs: AttributeSet? = null) {
-        var initialType: Int = ListLayoutType.TYPE_FULL_WIDTH
+        var initialType: Int = TYPE_FULL_WIDTH
         if (attrs != null) {
             val styledAttrs = context.theme.obtainStyledAttributes(
                 attrs,
@@ -51,6 +59,14 @@ class MisticaRecyclerView : RecyclerView {
     }
 
     fun setListLayoutType(@ListLayoutType type: Int) {
-        setListLayoutStyleType(type)
+        when (type) {
+            TYPE_BOXED -> configureWithBoxedLayout()
+            else -> configureWithFullWidthLayout()
+        }
+    }
+
+    companion object {
+        const val TYPE_FULL_WIDTH = 0
+        const val TYPE_BOXED = 1
     }
 }
