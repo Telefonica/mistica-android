@@ -1,8 +1,8 @@
 # Form Inputs
 
 <p align="center">
-   <img width="30%" src="../../../../../../../doc/images/inputs/inputs1.png" />
-   <img width="30%" src="../../../../../../../doc/images/inputs/inputs2.png" />
+   <img width="30%" src="../../../../../../../../doc/images/inputs/inputs1.png" />
+   <img width="30%" src="../../../../../../../../doc/images/inputs/inputs2.png" />
 </p>
 
 There are three input types, for each one, a component is provided:
