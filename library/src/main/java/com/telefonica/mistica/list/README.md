@@ -31,7 +31,7 @@ Implemented as a custom view, `ListRowView` can be used inside any layout like a
 </declare-styleable>
 ```
 
-# Layouts
+## Layouts
 
 `ListLayout` class provides extension functions to configure recycler views where the rows can be used, with the 2 available layouts:
 * Full Width Layout --> `configureWithFullWidthLayout`
