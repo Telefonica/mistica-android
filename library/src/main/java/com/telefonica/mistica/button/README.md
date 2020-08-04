@@ -4,6 +4,8 @@ Following classes should be used to place buttons in the app:
 * `com.telefonica.mistica.Button` --> Simple button with primary style applied by default
 * `com.telefonica.mistica.ProgressButton` --> In case of the need of a loading state (a button with progress), this one can be used to show an spinner (with an optional loading text) with an animation. `app:isLoading` attribute can be used in order to set it as loading on xml layouts, also with databinding.
 
+Buttons are based on material components, so all material functionalities are applicable on them.
+
 In order to change appearance of them, just set the required style (styles for all kind of buttons are available on [styles_buttons.xml](../../../../../../../../library/src/main/res/values/styles_buttons.xml)).
 
 <p align="center">
