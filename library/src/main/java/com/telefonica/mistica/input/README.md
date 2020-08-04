@@ -5,7 +5,7 @@
    <img width="30%" src="../../../../../../../../doc/images/inputs/inputs2.png" />
 </p>
 
-There are three input types, for each one, a component is provided:
+There are three input types. For each one, a component is provided:
 * Text Inputs --> `com.telefonica.mistica.input.TextInput`
 * Check Box Input --> `com.telefonica.mistica.input.CheckBoxInput`
 * Drop Down Input --> `com.telefonica.mistica.input.DropDownInput`
