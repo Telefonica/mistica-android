@@ -10,10 +10,6 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.telefonica.mistica.R
 
-/**
- * Copyright (c) Tuenti Technologies. All rights reserved.
- */
-
 open class DividerItemDecoration @JvmOverloads constructor(
     context: Context,
     private val adapter: DividerItemAdapter,

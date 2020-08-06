@@ -17,6 +17,11 @@ android {
     }
 }
 
+task sourceJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier "sources"
+}
+
 dependencies {
     implementation project(':library')
 
@@ -36,6 +41,7 @@ publishing {
     publications {
         impl(MavenPublication) {
             artifact 'build/outputs/aar/catalog-release.aar'
+            artifact(sourceJar)
             groupId 'com.telefonica.mistica'
             artifactId 'mistica-catalog'
             version version
