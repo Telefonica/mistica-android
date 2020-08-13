@@ -79,6 +79,11 @@
         <attr name="headerSubtitleHasSecondaryColor" format="boolean" />
     </declare-styleable>
 
+    <declare-styleable name="HighlightedCardView">
+        <attr name="highlightedCardInverse" format="boolean" />
+        <attr name="highlightedCardTitle" format="string" />
+    </declare-styleable>
+
     <declare-styleable name="Input">
         <attr name="inputHint" format="string" />
         <attr name="inputError" format="string" />

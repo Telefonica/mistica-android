@@ -1,5 +1,6 @@
 package com.telefonica.mistica.catalog.ui
 
+import android.icu.text.Collator.ReorderCodes.OTHERS
 import android.os.Bundle
 import androidx.annotation.StyleRes
 import androidx.appcompat.app.AppCompatActivity
@@ -36,6 +37,7 @@ class ComponentCatalogActivity : AppCompatActivity() {
             Section.TAG -> TagsCatalogFragment()
             Section.LISTS -> ListsCatalogFragment()
             Section.HEADERS -> HeadersCatalogFragment()
+            Section.HIGHLIGHTED_CARDS -> HighlightedCardsCatalogFragment()
             else -> OthersCatalogFragment()
         }
 
@@ -64,5 +66,6 @@ enum class Section {
     TAG,
     LISTS,
     HEADERS,
-    OTHERS
+    HIGHLIGHTED_CARDS,
+    OTHERS,
 }
