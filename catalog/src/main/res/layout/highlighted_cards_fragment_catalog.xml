@@ -1,12 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="8dp">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.telefonica.mistica.section.SectionTitleView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Highlighted Card Tester" />
+
+        <com.telefonica.mistica.input.TextInput
+            android:id="@+id/input_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            app:inputHint="Title"
+            app:inputText="Resolver problema técnico"
+            app:inputType="text" />
+
+        <com.telefonica.mistica.input.TextInput
+            android:id="@+id/input_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:inputHint="Message"
+            app:inputText="Usa nuestra herramienta para resolver tus problemas técnicos"
+            app:inputType="text" />
+
+        <com.telefonica.mistica.input.DropDownInput
+            android:id="@+id/dropdown_button_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:inputHint="Choose button config" />
+
+        <com.telefonica.mistica.input.TextInput
+            android:id="@+id/input_button_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            app:inputHint="Button message"
+            app:inputText="Empezar pruebas"
+            app:inputType="text" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="16dp"
+            android:orientation="horizontal">
+
+            <com.telefonica.mistica.input.CheckBoxInput
+                android:id="@+id/checkbox_close_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:inputCheckText="Show close button" />
+
+            <com.telefonica.mistica.input.CheckBoxInput
+                android:id="@+id/checkbox_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:inputCheckText="Show image" />
+
+        </LinearLayout>
+
+        <com.telefonica.mistica.input.CheckBoxInput
+            android:id="@+id/check_inverse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:inputCheckText="Inverse Display"
+            app:inputChecked="false" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="16dp"
+            android:layout_marginTop="8dp"
+            android:background="?colorDivider" />
+
         <com.telefonica.mistica.highlightedcard.HighlightedCardView
             android:id="@+id/highlighted_card_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="16dp"
+            android:background="?colorDivider" />
+
+        <com.telefonica.mistica.button.Button
+            android:id="@+id/button_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Update" />
+
+    </LinearLayout>
 
 </ScrollView>

@@ -4,15 +4,20 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.Button
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.telefonica.mistica.catalog.R
-import com.telefonica.mistica.header.HeaderView
+import com.telefonica.mistica.highlightedcard.HighlightedCardView
+import com.telefonica.mistica.highlightedcard.HighlightedCardView.*
 import com.telefonica.mistica.input.CheckBoxInput
+import com.telefonica.mistica.input.DropDownInput
 import com.telefonica.mistica.input.TextInput
 
 class HighlightedCardsCatalogFragment : Fragment() {
+
+    private var buttonStyle: ButtonStyle = ButtonStyle.PRIMARY
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -25,28 +30,45 @@ class HighlightedCardsCatalogFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        view.findViewById<Button>(R.id.button_update).setOnClickListener {
-//            updateHeaderView(view)
-//        }
-//        updateHeaderView(view)
+        view.findViewById<Button>(R.id.button_update).setOnClickListener { updateHighlightedCardView(view) }
+        configureButtonDropdown(view)
+        updateHighlightedCardView(view)
     }
 
-//    private fun updateHeaderView(view: View) {
-//        with(view.findViewById<HeaderView>(R.id.header_view)) {
-//            setInverse(view.findViewById<CheckBoxInput>(R.id.check_inverse).isChecked())
-//            setHasTopPadding(view.findViewById<CheckBoxInput>(R.id.check_top_padding).isChecked())
-//            setFirstPretitle(view.findViewById<TextInput>(R.id.input_first_pretitle).text.toString())
+    private fun configureButtonDropdown(view: View) {
+        val buttonTypes: List<Pair<String, ButtonStyle>> = listOf(
+            "Primary" to ButtonStyle.PRIMARY,
+            "Secondary" to ButtonStyle.SECONDARY,
+            "Link" to ButtonStyle.LINK,
+            "No button" to ButtonStyle.NO_BUTTON
+        )
+        with(view.findViewById<DropDownInput>(R.id.dropdown_button_type)) {
+            post {
+                dropDown.setAdapter(
+                    ArrayAdapter(
+                        context,
+                        R.layout.dropdown_menu_popup_item,
+                        buttonTypes.map { it.first }
+                    )
+                )
+                dropDown.onItemClickListener =
+                    AdapterView.OnItemClickListener { _, _, position, _ ->
+                        buttonStyle = buttonTypes[position].second
+                    }
+            }
+        }
+    }
+
+    private fun updateHighlightedCardView(view: View) {
+        with(view.findViewById<HighlightedCardView>(R.id.highlighted_card_view)) {
+            setInverse(view.findViewById<CheckBoxInput>(R.id.check_inverse).isChecked())
+            setTitle(view.findViewById<TextInput>(R.id.input_title).text.toString())
+            setContent(view.findViewById<TextInput>(R.id.input_content).text.toString())
+            setButtonText(view.findViewById<TextInput>(R.id.input_button_text).text.toString())
+            setButtonStyle(buttonStyle)
+
 //            setFirstPretitleHasSecondaryColor(
 //                view.findViewById<CheckBoxInput>(R.id.check_first_pretitle_secondary).isChecked()
-//            )
-//            setTitle(view.findViewById<TextInput>(R.id.input_title).text.toString())
-//            setSecondPretitle(view.findViewById<TextInput>(R.id.input_second_pretitle).text.toString())
-//            setSecondPretitleHasSecondaryColor(
-//                view.findViewById<CheckBoxInput>(R.id.check_second_pretitle_secondary).isChecked()
-//            )
-//            setNumeral(view.findViewById<TextInput>(R.id.input_numeral).text.toString())
-//            setNumeralHasDangerColor(
-//                view.findViewById<CheckBoxInput>(R.id.check_numeral_danger).isChecked()
 //            )
 //            setActionButtonText(view.findViewById<TextInput>(R.id.input_action_text).text.toString())
 //            setActionButtonOnClick(View.OnClickListener {
@@ -68,6 +90,6 @@ class HighlightedCardsCatalogFragment : Fragment() {
 //            setSubtitleHasSecondaryColor(
 //                view.findViewById<CheckBoxInput>(R.id.check_subtitle_secondary).isChecked()
 //            )
-//        }
-//    }
+        }
+    }
 }

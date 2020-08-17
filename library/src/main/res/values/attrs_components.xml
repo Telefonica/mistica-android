@@ -82,6 +82,16 @@
     <declare-styleable name="HighlightedCardView">
         <attr name="highlightedCardInverse" format="boolean" />
         <attr name="highlightedCardTitle" format="string" />
+        <attr name="highlightedCardContent" format="string" />
+        <attr name="highlightedCardButton" format="string" />
+        <attr name="highlightedCardShowCloseAction" format="boolean" />
+        <attr name="highlightedCardAssetDrawable" format="reference" />
+        <attr name="highlightedCardButtonStyle" format="enum">
+            <enum name="primary" value="0"/>
+            <enum name="secundary" value="1"/>
+            <enum name="link" value="2"/>
+            <enum name="none" value="3"/>
+        </attr>
     </declare-styleable>
 
     <declare-styleable name="Input">

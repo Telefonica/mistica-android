@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/highlighted_card_background"
-    android:padding="1dp"
-    android:minHeight="100dp">
+    android:minHeight="100dp"
+    android:padding="1dp">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -26,7 +26,7 @@
         tools:text="Title" />
 
     <TextView
-        android:id="@+id/highlighted_card_subtitle"
+        android:id="@+id/highlighted_card_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
@@ -35,17 +35,96 @@
         app:layout_constraintTop_toBottomOf="@+id/highlighted_card_title"
         tools:text="A Subtitle example" />
 
+<!--    Primary-->
     <com.telefonica.mistica.button.Button
-        android:id="@+id/button_update"
+        android:id="@+id/highlighted_card_button_primary"
+        style="@style/AppTheme.Button.DefaultButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="24dp"
         android:text="Update"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/highlighted_card_subtitle"
+        app:layout_constraintTop_toBottomOf="@+id/highlighted_card_content"
+        app:layout_goneMarginBottom="0dp"
+        app:layout_goneMarginTop="0dp" />
 
+    <com.telefonica.mistica.button.Button
+        android:id="@+id/highlighted_card_button_primary_inverse"
+        style="@style/AppTheme.Button.PrimaryButtonInverse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="24dp"
+        android:text="Update"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/highlighted_card_content"
+        app:layout_goneMarginBottom="0dp"
+        app:layout_goneMarginTop="0dp" />
+
+    <!--    Secondary-->
+    <com.telefonica.mistica.button.Button
+        android:id="@+id/highlighted_card_button_secondary"
+        style="@style/AppTheme.Button.SecondaryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="24dp"
+        android:text="Update"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/highlighted_card_content"
+        app:layout_goneMarginBottom="0dp"
+        app:layout_goneMarginTop="0dp" />
+
+    <com.telefonica.mistica.button.Button
+        android:id="@+id/highlighted_card_button_secondary_inverse"
+        style="@style/AppTheme.Button.SecondaryButtonInverse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="24dp"
+        android:text="Update"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/highlighted_card_content"
+        app:layout_goneMarginBottom="0dp"
+        app:layout_goneMarginTop="0dp" />
+
+    <!--    Link-->
+    <com.telefonica.mistica.button.Button
+        android:id="@+id/highlighted_card_button_link"
+        style="@style/AppTheme.Button.LinkButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="24dp"
+        android:text="Update"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/highlighted_card_content"
+        app:layout_goneMarginBottom="0dp"
+        app:layout_goneMarginTop="0dp" />
+
+    <com.telefonica.mistica.button.Button
+        android:id="@+id/highlighted_card_button_link_inverse"
+        style="@style/AppTheme.Button.LinkButtonInverse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="24dp"
+        android:text="Update"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/highlighted_card_content"
         app:layout_goneMarginBottom="0dp"
         app:layout_goneMarginTop="0dp" />
 
