@@ -110,7 +110,7 @@ To create or modify components on this repository, follow the next steps:
    - Take into account provided **themes**, and check your view is correctly displayed for all them.
 
 4. To help other developers, add (or update) associated documentation.
-   - Place this documentation under a `README.md` file at package directoy where component was defined.
+   - Place this documentation under a `README.md` file at package directory where component was defined.
   
 5. Add your component to the catalog, by including it and its variants inside `catalog` module, so other developers can quickly test it.
    - Add a new entry to the main section list.
