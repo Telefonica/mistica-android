@@ -1,14 +1,15 @@
 package com.telefonica.mistica.highlightedcard
 
 import android.content.Context
+import android.graphics.drawable.Drawable
 import android.util.AttributeSet
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.ColorInt
+import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.BindingMethod
@@ -41,6 +42,16 @@ import com.telefonica.mistica.util.getThemeColor
         type = HighlightedCardView::class,
         attribute = "highlightedCardButtonStyle",
         method = "setButtonStyle"
+    ),
+    BindingMethod(
+        type = HighlightedCardView::class,
+        attribute = "highlightedCardImage",
+        method = "setImage"
+    ),
+    BindingMethod(
+        type = HighlightedCardView::class,
+        attribute = "highlightedCardImageVisibility",
+        method = "setImageVisibility"
     )
 )
 class HighlightedCardView @JvmOverloads constructor(
@@ -139,13 +150,30 @@ class HighlightedCardView @JvmOverloads constructor(
         configureTextsColors()
     }
 
+    fun setImage(@DrawableRes imageRes: Int) {
+        image.setImageResource(imageRes)
+        image.visibility = View.VISIBLE
+    }
+
+    fun setImage(imageRes: Drawable) {
+        image.setImageDrawable(imageRes)
+        image.visibility = View.VISIBLE
+    }
+
+    fun setImageVisibility(visible: Boolean) {
+        image.visibility = if (visible) View.VISIBLE else View.GONE
+    }
+
     private fun configureTextsColors() {
-        setBackgroundColor(context.getThemeColor(if (isInverse) R.attr.colorPrimary else R.attr.colorBackground))
+        val backgroundDrawable = if (isInverse) {
+            R.drawable.highlighted_card_background_inverse
+        } else {
+            R.drawable.highlighted_card_background
+        }
+        findViewById<ConstraintLayout>(R.id.highlighted_card_container).background = context.getDrawable(backgroundDrawable)
 
         @ColorInt val primaryColor: Int =
             context.getThemeColor(if (isInverse) R.attr.colorTextPrimaryInverse else R.attr.colorTextPrimary)
-//        @ColorInt val secondaryColor: Int =
-//            context.getThemeColor(if (isInverse) R.attr.colorTextSecondaryInverse else R.attr.colorTextSecondary)
 
         titleTextView.setTextColor(primaryColor)
         contentTextView.setTextColor(primaryColor)

@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.highlightedcard.HighlightedCardView
@@ -33,6 +34,13 @@ class HighlightedCardsCatalogFragment : Fragment() {
         view.findViewById<Button>(R.id.button_update).setOnClickListener { updateHighlightedCardView(view) }
         configureButtonDropdown(view)
         updateHighlightedCardView(view)
+        configureImage(view)
+    }
+
+    private fun configureImage(view: View) {
+        with(view.findViewById<ImageView>(R.id.highlighted_card_image)) {
+            setImageResource(R.drawable.ic_mistica_logo_text)
+        }
     }
 
     private fun configureButtonDropdown(view: View) {
@@ -62,6 +70,7 @@ class HighlightedCardsCatalogFragment : Fragment() {
     private fun updateHighlightedCardView(view: View) {
         with(view.findViewById<HighlightedCardView>(R.id.highlighted_card_view)) {
             setInverse(view.findViewById<CheckBoxInput>(R.id.check_inverse).isChecked())
+            setImageVisibility(view.findViewById<CheckBoxInput>(R.id.checkbox_image).isChecked())
             setTitle(view.findViewById<TextInput>(R.id.input_title).text.toString())
             setContent(view.findViewById<TextInput>(R.id.input_content).text.toString())
             setButtonText(view.findViewById<TextInput>(R.id.input_button_text).text.toString())

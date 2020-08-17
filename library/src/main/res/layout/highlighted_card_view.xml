@@ -2,9 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/highlighted_card_container"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/highlighted_card_background"
+    android:background="@drawable/highlighted_card_background_inverse"
     android:minHeight="100dp"
     android:padding="1dp">
 
@@ -25,17 +26,19 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Title" />
 
+    <!--    Primary-->
     <TextView
         android:id="@+id/highlighted_card_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="8dp"
         android:textAppearance="@style/AppTheme.TextAppearance.Sub1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/highlighted_card_title"
-        tools:text="A Subtitle example" />
+        tools:text="A Subtitle example lalalalalalala A Subtitle example lalalalalalala A Subtitle example lalalalalalala" />
 
-<!--    Primary-->
     <com.telefonica.mistica.button.Button
         android:id="@+id/highlighted_card_button_primary"
         style="@style/AppTheme.Button.DefaultButton"
@@ -135,6 +138,7 @@
         android:layout_height="match_parent"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
