@@ -15,15 +15,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_margin="8dp"
             android:text="Highlighted Card Tester" />
 
         <com.telefonica.mistica.input.TextInput
             android:id="@+id/input_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
+            android:layout_margin="8dp"
             app:inputHint="Title"
             app:inputText="Resolver problema técnico"
             app:inputType="text" />
@@ -32,6 +31,7 @@
             android:id="@+id/input_content"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="8dp"
             app:inputHint="Message"
             app:inputText="Usa nuestra herramienta para resolver tus problemas técnicos"
             app:inputType="text" />
@@ -40,43 +40,35 @@
             android:id="@+id/dropdown_button_type"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_margin="8dp"
             app:inputHint="Choose button config" />
 
         <com.telefonica.mistica.input.TextInput
             android:id="@+id/input_button_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
+            android:layout_margin="8dp"
             app:inputHint="Button message"
             app:inputText="Empezar pruebas"
             app:inputType="text" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <com.telefonica.mistica.input.CheckBoxInput
+            android:id="@+id/checkbox_close_button"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginRight="16dp"
-            android:orientation="horizontal">
+            android:layout_margin="8dp"
+            app:inputCheckText="Show close button" />
 
-            <com.telefonica.mistica.input.CheckBoxInput
-                android:id="@+id/checkbox_close_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:inputCheckText="Show close button" />
-
-            <com.telefonica.mistica.input.CheckBoxInput
-                android:id="@+id/checkbox_image"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:inputCheckText="Show image" />
-
-        </LinearLayout>
+        <com.telefonica.mistica.input.CheckBoxInput
+            android:id="@+id/checkbox_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:inputCheckText="Show image" />
 
         <com.telefonica.mistica.input.CheckBoxInput
             android:id="@+id/check_inverse"
+            android:layout_margin="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:inputCheckText="Inverse Display"

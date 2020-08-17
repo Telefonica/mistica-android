@@ -25,11 +25,6 @@ import com.telefonica.mistica.util.getThemeColor
     ),
     BindingMethod(
         type = HighlightedCardView::class,
-        attribute = "highlightedCardButtonOnClick",
-        method = "setButtonOnClick"
-    ),
-    BindingMethod(
-        type = HighlightedCardView::class,
         attribute = "highlightedCardTitle",
         method = "setTitle"
     ),
@@ -52,6 +47,21 @@ import com.telefonica.mistica.util.getThemeColor
         type = HighlightedCardView::class,
         attribute = "highlightedCardImageVisibility",
         method = "setImageVisibility"
+    ),
+    BindingMethod(
+        type = HighlightedCardView::class,
+        attribute = "highlightedCardCloseButtonVisibility",
+        method = "setCloseVisibility"
+    ),
+    BindingMethod(
+        type = HighlightedCardView::class,
+        attribute = "highlightedCardButtonOnClick",
+        method = "setButtonOnClick"
+    ),
+    BindingMethod(
+        type = HighlightedCardView::class,
+        attribute = "highlightedCardCloseButtonOnClick",
+        method = "setCloseButtonOnClick"
     )
 )
 class HighlightedCardView @JvmOverloads constructor(
@@ -100,13 +110,22 @@ class HighlightedCardView @JvmOverloads constructor(
             button?.setTextAndVisibility(styledAttrs.getText(R.styleable.HighlightedCardView_highlightedCardButton))
 
             val hasCloseButton = styledAttrs.getBoolean(
-                R.styleable.HighlightedCardView_highlightedCardShowCloseAction,
+                R.styleable.HighlightedCardView_highlightedCardCloseButtonVisibility,
                 false
             )
             closeButton.visibility = if (hasCloseButton) View.VISIBLE else View.GONE
 
             styledAttrs.recycle()
         }
+    }
+
+    fun setButtonOnClick(onClickListener: OnClickListener?) {
+        this.buttonClickListener = onClickListener
+        button?.setOnClickListener(onClickListener)
+    }
+
+    fun setCloseButtonOnClick(onClickListener: OnClickListener?) {
+        this.closeButton.setOnClickListener(onClickListener)
     }
 
     fun setTitle(text: CharSequence?) {
@@ -134,11 +153,6 @@ class HighlightedCardView @JvmOverloads constructor(
         textRes?.let { setButtonText(context.getString(it)) }
     }
 
-    fun setActionButtonOnClick(onClickListener: OnClickListener?) {
-        buttonClickListener = onClickListener
-        button?.setOnClickListener(onClickListener)
-    }
-
     fun setButtonStyle(buttonStyle: ButtonStyle) {
         this.buttonStyle = buttonStyle
         reconfigureButton()
@@ -162,6 +176,10 @@ class HighlightedCardView @JvmOverloads constructor(
 
     fun setImageVisibility(visible: Boolean) {
         image.visibility = if (visible) View.VISIBLE else View.GONE
+    }
+
+    fun setCloseVisibility(visible: Boolean) {
+        closeButton.visibility = if (visible) View.VISIBLE else View.GONE
     }
 
     private fun configureTextsColors() {

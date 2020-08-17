@@ -4,10 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.ImageView
+import android.widget.*
 import androidx.fragment.app.Fragment
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.highlightedcard.HighlightedCardView
@@ -39,7 +36,7 @@ class HighlightedCardsCatalogFragment : Fragment() {
 
     private fun configureImage(view: View) {
         with(view.findViewById<ImageView>(R.id.highlighted_card_image)) {
-            setImageResource(R.drawable.ic_mistica_logo_text)
+            setImageResource(R.drawable.ic_cards)
         }
     }
 
@@ -71,34 +68,25 @@ class HighlightedCardsCatalogFragment : Fragment() {
         with(view.findViewById<HighlightedCardView>(R.id.highlighted_card_view)) {
             setInverse(view.findViewById<CheckBoxInput>(R.id.check_inverse).isChecked())
             setImageVisibility(view.findViewById<CheckBoxInput>(R.id.checkbox_image).isChecked())
+            setCloseVisibility(view.findViewById<CheckBoxInput>(R.id.checkbox_close_button).isChecked())
             setTitle(view.findViewById<TextInput>(R.id.input_title).text.toString())
             setContent(view.findViewById<TextInput>(R.id.input_content).text.toString())
             setButtonText(view.findViewById<TextInput>(R.id.input_button_text).text.toString())
             setButtonStyle(buttonStyle)
-
-//            setFirstPretitleHasSecondaryColor(
-//                view.findViewById<CheckBoxInput>(R.id.check_first_pretitle_secondary).isChecked()
-//            )
-//            setActionButtonText(view.findViewById<TextInput>(R.id.input_action_text).text.toString())
-//            setActionButtonOnClick(View.OnClickListener {
-//                Toast.makeText(
-//                    view.context,
-//                    "Action Clicked!",
-//                    Toast.LENGTH_SHORT
-//                ).show()
-//            })
-//            setSecondaryActionButtonText(view.findViewById<TextInput>(R.id.input_secondary_action_text).text)
-//            setSecondaryActionButtonOnClick(View.OnClickListener {
-//                Toast.makeText(
-//                    view.context,
-//                    "Secondary Action Clicked!",
-//                    Toast.LENGTH_SHORT
-//                ).show()
-//            })
-//            setSubtitle(view.findViewById<TextInput>(R.id.input_subtitle).text.toString())
-//            setSubtitleHasSecondaryColor(
-//                view.findViewById<CheckBoxInput>(R.id.check_subtitle_secondary).isChecked()
-//            )
+            setButtonOnClick(View.OnClickListener {
+                Toast.makeText(
+                    view.context,
+                    "Action Clicked!",
+                    Toast.LENGTH_SHORT
+                ).show()
+            })
+            setCloseButtonOnClick(View.OnClickListener {
+                Toast.makeText(
+                    view.context,
+                    "Close Clicked!",
+                    Toast.LENGTH_SHORT
+                ).show()
+            })
         }
     }
 }

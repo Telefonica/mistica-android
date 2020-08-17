@@ -84,9 +84,11 @@
         <attr name="highlightedCardTitle" format="string" />
         <attr name="highlightedCardContent" format="string" />
         <attr name="highlightedCardButton" format="string" />
-        <attr name="highlightedCardShowCloseAction" format="boolean" />
         <attr name="highlightedCardImage" format="reference" />
         <attr name="highlightedCardImageVisibility" format="boolean" />
+        <attr name="highlightedCardCloseButtonVisibility" format="boolean" />
+        <attr name="highlightedCardButtonOnClick" format="string" />
+        <attr name="highlightedCardCloseButtonOnClick" format="string" />
         <attr name="highlightedCardButtonStyle" format="enum">
             <enum name="primary" value="0"/>
             <enum name="secundary" value="1"/>
