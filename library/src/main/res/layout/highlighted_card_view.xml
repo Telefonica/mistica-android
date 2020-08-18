@@ -36,8 +36,7 @@
         app:layout_constraintEnd_toStartOf="@+id/highlighted_card_image"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/highlighted_card_title"
-        tools:text="A Subtitle example lalalalalalala A Subtitle example lalalalalalala A Subtitle example lalalalalalala"
-        />
+        tools:text="Usa nuestra herramienta para resolver tus problemas técnicos" />
 
     <!--    Primary-->
     <com.telefonica.mistica.button.Button
@@ -135,12 +134,13 @@
 
     <ImageView
         android:id="@+id/highlighted_card_image"
-        android:layout_width="100dp"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
 
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="2:3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />

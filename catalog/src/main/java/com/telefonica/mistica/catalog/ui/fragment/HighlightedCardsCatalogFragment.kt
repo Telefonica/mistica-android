@@ -36,7 +36,7 @@ class HighlightedCardsCatalogFragment : Fragment() {
 
     private fun configureImage(view: View) {
         with(view.findViewById<ImageView>(R.id.highlighted_card_image)) {
-            setImageResource(R.drawable.ic_cards)
+            setImageResource(R.drawable.higlighted_card_image)
         }
     }
 
