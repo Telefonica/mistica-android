@@ -31,7 +31,6 @@ class HighlightedCardsCatalogFragment : Fragment() {
         view.findViewById<Button>(R.id.button_update).setOnClickListener { updateHighlightedCardView(view) }
         configureButtonDropdown(view)
         updateHighlightedCardView(view)
-        configureImage(view)
     }
 
     private fun configureImage(view: View) {
@@ -66,8 +65,12 @@ class HighlightedCardsCatalogFragment : Fragment() {
 
     private fun updateHighlightedCardView(view: View) {
         with(view.findViewById<HighlightedCardView>(R.id.highlighted_card_view)) {
+            if (view.findViewById<CheckBoxInput>(R.id.checkbox_image).isChecked()) {
+                setImage(R.drawable.higlighted_card_image)
+            } else {
+                hideImage()
+            }
             setInverse(view.findViewById<CheckBoxInput>(R.id.check_inverse).isChecked())
-            setImageVisibility(view.findViewById<CheckBoxInput>(R.id.checkbox_image).isChecked())
             setCloseVisibility(view.findViewById<CheckBoxInput>(R.id.checkbox_close_button).isChecked())
             setTitle(view.findViewById<TextInput>(R.id.input_title).text.toString())
             setContent(view.findViewById<TextInput>(R.id.input_content).text.toString())

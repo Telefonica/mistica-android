@@ -11,13 +11,20 @@ import android.widget.TextView
 import androidx.annotation.ColorInt
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.graphics.drawable.DrawableCompat
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
 import com.telefonica.mistica.util.getThemeColor
 
 @BindingMethods(
+    BindingMethod(
+        type = HighlightedCardView::class,
+        attribute = "highlightedCardBackground",
+        method = "setCustomBackground"
+    ),
     BindingMethod(
         type = HighlightedCardView::class,
         attribute = "highlightedCardInverse",
@@ -42,6 +49,11 @@ import com.telefonica.mistica.util.getThemeColor
         type = HighlightedCardView::class,
         attribute = "highlightedCardImage",
         method = "setImage"
+    ),
+    BindingMethod(
+        type = HighlightedCardView::class,
+        attribute = "highlightedCardButton",
+        method = "setButtonText"
     ),
     BindingMethod(
         type = HighlightedCardView::class,
@@ -79,12 +91,14 @@ class HighlightedCardView @JvmOverloads constructor(
     private val contentTextView: TextView
     private val image: ImageView
     private val closeButton: ImageView
+    private val container: ConstraintLayout
 
     private var button: Button?
     private var buttonClickListener: OnClickListener? = null
     private var buttonText: String? = null
 
     private var isInverse: Boolean = false
+    private var hasCustomBackground: Boolean = false
     private var buttonStyle: ButtonStyle = ButtonStyle.NO_BUTTON
 
     init {
@@ -95,6 +109,7 @@ class HighlightedCardView @JvmOverloads constructor(
         button = findViewById(R.id.highlighted_card_button_primary)
         image = findViewById(R.id.highlighted_card_image)
         closeButton = findViewById(R.id.highlighted_card_close_button)
+        container = findViewById(R.id.highlighted_card_container)
 
         if (attrs != null) {
             val styledAttrs =
@@ -105,17 +120,39 @@ class HighlightedCardView @JvmOverloads constructor(
                     0
                 )
 
-            titleTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.HighlightedCardView_highlightedCardTitle))
-            contentTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.HighlightedCardView_highlightedCardContent))
-            button?.setTextAndVisibility(styledAttrs.getText(R.styleable.HighlightedCardView_highlightedCardButton))
+            styledAttrs.getDrawable(R.styleable.HighlightedCardView_highlightedCardBackground)
+                ?.let { setBackground(it) }
 
-            val hasCloseButton = styledAttrs.getBoolean(
-                R.styleable.HighlightedCardView_highlightedCardCloseButtonVisibility,
+
+            isInverse = styledAttrs.getBoolean(
+                R.styleable.HighlightedCardView_highlightedCardInverse,
                 false
             )
-            closeButton.visibility = if (hasCloseButton) View.VISIBLE else View.GONE
+            titleTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.HighlightedCardView_highlightedCardTitle))
+            contentTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.HighlightedCardView_highlightedCardContent))
+            buttonText = styledAttrs.getText(R.styleable.HighlightedCardView_highlightedCardButton)?.toString()
+            button?.setTextAndVisibility(buttonText)
+            buttonStyle = when (styledAttrs.getInt(
+                R.styleable.HighlightedCardView_highlightedCardButtonStyle,
+                3
+            )) {
+                0 -> ButtonStyle.PRIMARY
+                1 -> ButtonStyle.SECONDARY
+                2 -> ButtonStyle.LINK
+                else -> ButtonStyle.NO_BUTTON
+            }
+
+            setCloseVisibility(
+                styledAttrs.getBoolean(
+                    R.styleable.HighlightedCardView_highlightedCardCloseButtonVisibility,
+                    false
+                )
+            )
+            styledAttrs.getDrawable(R.styleable.HighlightedCardView_highlightedCardImage)
+                ?.let { setImage(it) }
 
             styledAttrs.recycle()
+            reload()
         }
     }
 
@@ -146,7 +183,7 @@ class HighlightedCardView @JvmOverloads constructor(
 
     fun setButtonText(text: CharSequence?) {
         text?.let { buttonText = it.toString() }
-        reconfigureButton()
+        configureButton()
     }
 
     fun setButtonText(@StringRes textRes: Int?) {
@@ -155,13 +192,12 @@ class HighlightedCardView @JvmOverloads constructor(
 
     fun setButtonStyle(buttonStyle: ButtonStyle) {
         this.buttonStyle = buttonStyle
-        reconfigureButton()
+        configureButton()
     }
 
     fun setInverse(inverse: Boolean) {
         isInverse = inverse
-        reconfigureButton()
-        configureTextsColors()
+        reload()
     }
 
     fun setImage(@DrawableRes imageRes: Int) {
@@ -174,30 +210,50 @@ class HighlightedCardView @JvmOverloads constructor(
         image.visibility = View.VISIBLE
     }
 
-    fun setImageVisibility(visible: Boolean) {
-        image.visibility = if (visible) View.VISIBLE else View.GONE
+    fun setCustomBackground(@DrawableRes imageRes: Int) {
+        setCustomBackground(context.getDrawable(imageRes)!!)
+    }
+
+    fun setCustomBackground(drawable: Drawable) {
+        container.background = drawable
+        hasCustomBackground = true
+    }
+
+    fun hideImage() {
+        image.visibility = View.GONE
     }
 
     fun setCloseVisibility(visible: Boolean) {
         closeButton.visibility = if (visible) View.VISIBLE else View.GONE
     }
 
-    private fun configureTextsColors() {
-        val backgroundDrawable = if (isInverse) {
-            R.drawable.highlighted_card_background_inverse
-        } else {
-            R.drawable.highlighted_card_background
-        }
-        findViewById<ConstraintLayout>(R.id.highlighted_card_container).background = context.getDrawable(backgroundDrawable)
-
+    private fun configureColors() {
         @ColorInt val primaryColor: Int =
             context.getThemeColor(if (isInverse) R.attr.colorTextPrimaryInverse else R.attr.colorTextPrimary)
 
         titleTextView.setTextColor(primaryColor)
         contentTextView.setTextColor(primaryColor)
+        closeButton.setCrossColor(primaryColor)
     }
 
-    private fun reconfigureButton() {
+    private fun configureBackground() {
+        if (!hasCustomBackground) {
+            val backgroundDrawable = if (isInverse) {
+                R.drawable.highlighted_card_background_inverse
+            } else {
+                R.drawable.highlighted_card_background
+            }
+            container.background = context.getDrawable(backgroundDrawable)
+        }
+    }
+
+    private fun reload() {
+        configureButton()
+        configureBackground()
+        configureColors()
+    }
+
+    private fun configureButton() {
         val button: Button? = when (buttonStyle) {
             ButtonStyle.PRIMARY -> findViewById(if (isInverse) R.id.highlighted_card_button_primary_inverse else R.id.highlighted_card_button_primary)
             ButtonStyle.SECONDARY -> findViewById(if (isInverse) R.id.highlighted_card_button_secondary_inverse else R.id.highlighted_card_button_secondary)
@@ -221,5 +277,13 @@ class HighlightedCardView @JvmOverloads constructor(
         } else {
             visibility = View.GONE
         }
+    }
+
+    private fun ImageView.setCrossColor(@ColorInt color: Int) {
+        val unwrappedDrawable =
+            AppCompatResources.getDrawable(context, R.drawable.icn_cross_highlight_card)!!
+        val drawable = DrawableCompat.wrap(unwrappedDrawable)
+        DrawableCompat.setTint(drawable, color)
+        closeButton.setImageDrawable(drawable)
     }
 }
