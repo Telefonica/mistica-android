@@ -74,6 +74,14 @@
             app:inputCheckText="Inverse Display"
             app:inputChecked="false" />
 
+        <com.telefonica.mistica.input.CheckBoxInput
+            android:id="@+id/check_custom_background"
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:inputCheckText="Custom background"
+            app:inputChecked="false" />
+
         <View
             android:layout_width="match_parent"
             android:layout_height="16dp"

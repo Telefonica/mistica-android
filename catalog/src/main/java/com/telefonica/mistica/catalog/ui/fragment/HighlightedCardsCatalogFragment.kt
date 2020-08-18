@@ -76,6 +76,11 @@ class HighlightedCardsCatalogFragment : Fragment() {
             setContent(view.findViewById<TextInput>(R.id.input_content).text.toString())
             setButtonText(view.findViewById<TextInput>(R.id.input_button_text).text.toString())
             setButtonStyle(buttonStyle)
+            if (view.findViewById<CheckBoxInput>(R.id.check_custom_background).isChecked()) {
+                setCustomBackground(R.drawable.highlighted_card_custom_background)
+            } else {
+                disableCustomBackground()
+            }
             setButtonOnClick(View.OnClickListener {
                 Toast.makeText(
                     view.context,

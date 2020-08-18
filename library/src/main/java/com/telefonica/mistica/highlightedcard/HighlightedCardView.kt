@@ -219,6 +219,11 @@ class HighlightedCardView @JvmOverloads constructor(
         hasCustomBackground = true
     }
 
+    fun disableCustomBackground() {
+        hasCustomBackground = false
+        configureBackground()
+    }
+
     fun hideImage() {
         image.visibility = View.GONE
     }
