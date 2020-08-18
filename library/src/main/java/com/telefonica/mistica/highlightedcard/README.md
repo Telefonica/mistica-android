@@ -1,10 +1,10 @@
 # Highlighted Cards
 
 <p align="center">
-   <img src="../../../../../../../../doc/images/highlighted_cards/highlighted_cards_1" />
-   <img src="../../../../../../../../doc/images/highlighted_cards/highlighted_cards_2" />
-   <img src="../../../../../../../../doc/images/highlighted_cards/highlighted_cards_3" />
-   <img src="../../../../../../../../doc/images/highlighted_cards/highlighted_cards_4" />
+   <img src="../../../../../../../../doc/images/highlighted_cards/highlighted_cards_1.png" />
+   <img src="../../../../../../../../doc/images/highlighted_cards/highlighted_cards_2.png" />
+   <img src="../../../../../../../../doc/images/highlighted_cards/highlighted_cards_3.png" />
+   <img src="../../../../../../../../doc/images/highlighted_cards/highlighted_cards_4.png" />
 </p>
 
 Implemented as a custom view, `com.telefonica.mistica.highlightedcard.HighlightedCardView` can be used inside any layout like a regular view. It supports both **attribute configuration and databinding for all properties**.
