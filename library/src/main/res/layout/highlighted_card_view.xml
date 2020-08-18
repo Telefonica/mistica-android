@@ -46,13 +46,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="24dp"
-        android:text="Update"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/highlighted_card_content"
         app:layout_goneMarginBottom="0dp"
-        app:layout_goneMarginTop="0dp" />
+        app:layout_goneMarginTop="0dp"
+        tools:text="Update" />
 
     <com.telefonica.mistica.button.Button
         android:id="@+id/highlighted_card_button_primary_inverse"
@@ -61,13 +61,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="24dp"
-        android:text="Update"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/highlighted_card_content"
         app:layout_goneMarginBottom="0dp"
-        app:layout_goneMarginTop="0dp" />
+        app:layout_goneMarginTop="0dp"
+        tools:text="Update" />
 
     <!--    Secondary-->
     <com.telefonica.mistica.button.Button
@@ -77,13 +77,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="24dp"
-        android:text="Update"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/highlighted_card_content"
         app:layout_goneMarginBottom="0dp"
-        app:layout_goneMarginTop="0dp" />
+        app:layout_goneMarginTop="0dp"
+        tools:text="Update" />
 
     <com.telefonica.mistica.button.Button
         android:id="@+id/highlighted_card_button_secondary_inverse"
@@ -92,13 +92,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="24dp"
-        android:text="Update"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/highlighted_card_content"
         app:layout_goneMarginBottom="0dp"
-        app:layout_goneMarginTop="0dp" />
+        app:layout_goneMarginTop="0dp"
+        tools:text="Update" />
 
     <!--    Link-->
     <com.telefonica.mistica.button.Button
@@ -108,13 +108,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="24dp"
-        android:text="Update"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/highlighted_card_content"
         app:layout_goneMarginBottom="0dp"
-        app:layout_goneMarginTop="0dp" />
+        app:layout_goneMarginTop="0dp"
+        tools:text="Update" />
 
     <com.telefonica.mistica.button.Button
         android:id="@+id/highlighted_card_button_link_inverse"
@@ -123,24 +123,21 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="24dp"
-        android:text="Update"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/highlighted_card_content"
         app:layout_goneMarginBottom="0dp"
-        app:layout_goneMarginTop="0dp" />
-
+        app:layout_goneMarginTop="0dp"
+        tools:text="Update" />
 
     <ImageView
         android:id="@+id/highlighted_card_image"
         android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:adjustViewBounds="true"
-        android:scaleType="fitXY"
-
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="2:3"
+        android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
