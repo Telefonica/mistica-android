@@ -41,8 +41,8 @@ class TagsCatalogFragment : Fragment() {
                 before: Int,
                 count: Int
             ) {
-                tagInImage.text = inputText
-                tagInline.text = inputText
+                tagInImage.text = inputText.toString()
+                tagInline.text = inputText.toString()
             }
         })
     }
