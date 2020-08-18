@@ -42,7 +42,7 @@
     <!--    Primary-->
     <com.telefonica.mistica.button.Button
         android:id="@+id/highlighted_card_button_primary"
-        style="@style/AppTheme.Button.DefaultButton"
+        style="@style/AppTheme.Button.DefaultButton.Small"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -57,7 +57,7 @@
 
     <com.telefonica.mistica.button.Button
         android:id="@+id/highlighted_card_button_primary_inverse"
-        style="@style/AppTheme.Button.PrimaryButtonInverse"
+        style="@style/AppTheme.Button.PrimaryButtonInverse.Small"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -73,7 +73,7 @@
     <!--    Secondary-->
     <com.telefonica.mistica.button.Button
         android:id="@+id/highlighted_card_button_secondary"
-        style="@style/AppTheme.Button.SecondaryButton"
+        style="@style/AppTheme.Button.SecondaryButton.Small"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -88,7 +88,7 @@
 
     <com.telefonica.mistica.button.Button
         android:id="@+id/highlighted_card_button_secondary_inverse"
-        style="@style/AppTheme.Button.SecondaryButtonInverse"
+        style="@style/AppTheme.Button.SecondaryButtonInverse.Small"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
