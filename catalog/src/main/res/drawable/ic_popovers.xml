@@ -6,10 +6,10 @@
     <path
         android:fillAlpha="0.03"
         android:fillColor="#F2F2F2"
-        android:fillType="evenOdd"
+        android:fillType="nonZero"
         android:pathData="M0,0h24v24h-24z" />
     <path
         android:fillColor="#003245"
-        android:fillType="evenOdd"
+        android:fillType="nonZero"
         android:pathData="M4,18.4259L4,8.4259L8.178,8.4259L12,4.1832L15.823,8.4259L20,8.4259L20,18.4259L4,18.4259Z" />
 </vector>
