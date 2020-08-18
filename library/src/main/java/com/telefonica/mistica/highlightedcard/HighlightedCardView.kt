@@ -10,6 +10,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.ColorInt
 import androidx.annotation.DrawableRes
+import androidx.annotation.IntDef
 import androidx.annotation.StringRes
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -83,9 +84,14 @@ class HighlightedCardView @JvmOverloads constructor(
     defStyleRes: Int = 0
 ) : ConstraintLayout(context, attrs, defStyleAttr) {
 
-    enum class ButtonStyle {
-        PRIMARY, SECONDARY, LINK, NO_BUTTON
-    }
+    @Retention(AnnotationRetention.SOURCE)
+    @IntDef(
+        BUTTON_STYLE_PRIMARY,
+        BUTTON_STYLE_SECONDARY,
+        BUTTON_STYLE_LINK,
+        BUTTON_STYLE_NO_BUTTON
+    )
+    annotation class ButtonStyle
 
     private val titleTextView: TextView
     private val contentTextView: TextView
@@ -99,7 +105,7 @@ class HighlightedCardView @JvmOverloads constructor(
 
     private var isInverse: Boolean = false
     private var hasCustomBackground: Boolean = false
-    private var buttonStyle: ButtonStyle = ButtonStyle.NO_BUTTON
+    private var buttonStyle: Int = BUTTON_STYLE_NO_BUTTON
 
     init {
         LayoutInflater.from(context).inflate(R.layout.highlighted_card_view, this, true)
@@ -132,15 +138,10 @@ class HighlightedCardView @JvmOverloads constructor(
             contentTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.HighlightedCardView_highlightedCardContent))
             buttonText = styledAttrs.getText(R.styleable.HighlightedCardView_highlightedCardButton)?.toString()
             button?.setTextAndVisibility(buttonText)
-            buttonStyle = when (styledAttrs.getInt(
+            buttonStyle = styledAttrs.getInt(
                 R.styleable.HighlightedCardView_highlightedCardButtonStyle,
-                3
-            )) {
-                0 -> ButtonStyle.PRIMARY
-                1 -> ButtonStyle.SECONDARY
-                2 -> ButtonStyle.LINK
-                else -> ButtonStyle.NO_BUTTON
-            }
+                BUTTON_STYLE_NO_BUTTON
+            )
 
             setCloseVisibility(
                 styledAttrs.getBoolean(
@@ -190,7 +191,7 @@ class HighlightedCardView @JvmOverloads constructor(
         textRes?.let { setButtonText(context.getString(it)) }
     }
 
-    fun setButtonStyle(buttonStyle: ButtonStyle) {
+    fun setButtonStyle(@ButtonStyle buttonStyle: Int) {
         this.buttonStyle = buttonStyle
         configureButton()
     }
@@ -260,10 +261,10 @@ class HighlightedCardView @JvmOverloads constructor(
 
     private fun configureButton() {
         val button: Button? = when (buttonStyle) {
-            ButtonStyle.PRIMARY -> findViewById(if (isInverse) R.id.highlighted_card_button_primary_inverse else R.id.highlighted_card_button_primary)
-            ButtonStyle.SECONDARY -> findViewById(if (isInverse) R.id.highlighted_card_button_secondary_inverse else R.id.highlighted_card_button_secondary)
-            ButtonStyle.LINK -> findViewById(if (isInverse) R.id.highlighted_card_button_link_inverse else R.id.highlighted_card_button_link)
-            ButtonStyle.NO_BUTTON -> null
+            BUTTON_STYLE_PRIMARY -> findViewById(if (isInverse) R.id.highlighted_card_button_primary_inverse else R.id.highlighted_card_button_primary)
+            BUTTON_STYLE_SECONDARY -> findViewById(if (isInverse) R.id.highlighted_card_button_secondary_inverse else R.id.highlighted_card_button_secondary)
+            BUTTON_STYLE_LINK -> findViewById(if (isInverse) R.id.highlighted_card_button_link_inverse else R.id.highlighted_card_button_link)
+            else -> null
         }
 
         if (this.button != button) {
@@ -290,5 +291,12 @@ class HighlightedCardView @JvmOverloads constructor(
         val drawable = DrawableCompat.wrap(unwrappedDrawable)
         DrawableCompat.setTint(drawable, color)
         closeButton.setImageDrawable(drawable)
+    }
+
+    companion object {
+        const val BUTTON_STYLE_PRIMARY = 0
+        const val BUTTON_STYLE_SECONDARY = 1
+        const val BUTTON_STYLE_LINK = 2
+        const val BUTTON_STYLE_NO_BUTTON = 3
     }
 }
