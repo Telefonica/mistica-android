@@ -166,19 +166,19 @@ class HighlightedCardView @JvmOverloads constructor(
         this.closeButton.setOnClickListener(onClickListener)
     }
 
-    fun setTitle(text: CharSequence?) {
+    fun setTitle(text: CharSequence) {
         titleTextView.setTextAndVisibility(text)
     }
 
-    fun setTitle(@StringRes textRes: Int?) {
+    fun setTitle(@StringRes textRes: Int) {
         textRes?.let { setTitle(context.getString(it)) }
     }
 
-    fun setContent(text: CharSequence?) {
+    fun setContent(text: CharSequence) {
         contentTextView.setTextAndVisibility(text)
     }
 
-    fun setContent(@StringRes textRes: Int?) {
+    fun setContent(@StringRes textRes: Int) {
         textRes?.let { setContent(context.getString(it)) }
     }
 

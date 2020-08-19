@@ -33,12 +33,6 @@ class HighlightedCardsCatalogFragment : Fragment() {
         updateHighlightedCardView(view)
     }
 
-    private fun configureImage(view: View) {
-        with(view.findViewById<ImageView>(R.id.highlighted_card_image)) {
-            setImageResource(R.drawable.higlighted_card_image)
-        }
-    }
-
     private fun configureButtonDropdown(view: View) {
         val buttonTypes: List<Pair<String, Int>> = listOf(
             "Primary" to HighlightedCardView.BUTTON_STYLE_PRIMARY,
