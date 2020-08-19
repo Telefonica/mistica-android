@@ -127,8 +127,7 @@ class HighlightedCardView @JvmOverloads constructor(
                 )
 
             styledAttrs.getDrawable(R.styleable.HighlightedCardView_highlightedCardBackground)
-                ?.let { setBackground(it) }
-
+                ?.let { setCustomBackground(it) }
 
             isInverse = styledAttrs.getBoolean(
                 R.styleable.HighlightedCardView_highlightedCardInverse,
