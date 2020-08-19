@@ -134,10 +134,12 @@ class HighlightedCardView @JvmOverloads constructor(
                 R.styleable.HighlightedCardView_highlightedCardInverse,
                 false
             )
-            titleTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.HighlightedCardView_highlightedCardTitle))
-            contentTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.HighlightedCardView_highlightedCardContent))
-            buttonText = styledAttrs.getText(R.styleable.HighlightedCardView_highlightedCardButton)?.toString()
-            button?.setTextAndVisibility(buttonText)
+
+            styledAttrs.getText(R.styleable.HighlightedCardView_highlightedCardTitle)?.let { titleTextView.text = it }
+            styledAttrs.getText(R.styleable.HighlightedCardView_highlightedCardContent)?.let { contentTextView.text = it }
+            styledAttrs.getText(R.styleable.HighlightedCardView_highlightedCardButton)?.let { buttonText = it.toString() }
+            buttonText?.let { button?.text = it }
+
             buttonStyle = styledAttrs.getInt(
                 R.styleable.HighlightedCardView_highlightedCardButtonStyle,
                 BUTTON_STYLE_NO_BUTTON
@@ -154,8 +156,7 @@ class HighlightedCardView @JvmOverloads constructor(
 
             styledAttrs.recycle()
         }
-        configureBackground()
-        configureColors()
+        reload()
     }
 
     fun setButtonOnClick(onClickListener: OnClickListener?) {
@@ -168,19 +169,19 @@ class HighlightedCardView @JvmOverloads constructor(
     }
 
     fun setTitle(text: CharSequence) {
-        titleTextView.setTextAndVisibility(text)
+        titleTextView.text = text
     }
 
     fun setTitle(@StringRes textRes: Int) {
-        textRes?.let { setTitle(context.getString(it)) }
+        setTitle(context.getString(textRes))
     }
 
     fun setContent(text: CharSequence) {
-        contentTextView.setTextAndVisibility(text)
+        contentTextView.text = text
     }
 
     fun setContent(@StringRes textRes: Int) {
-        textRes?.let { setContent(context.getString(it)) }
+        setContent(context.getString(textRes))
     }
 
     fun setButtonText(text: CharSequence?) {
@@ -274,15 +275,6 @@ class HighlightedCardView @JvmOverloads constructor(
             button?.visibility = View.VISIBLE
             this.button?.visibility = View.GONE
             this.button = button
-        }
-    }
-
-    private fun TextView.setTextAndVisibility(newText: CharSequence?) {
-        if (newText?.isNotBlank() == true) {
-            text = newText
-            visibility = View.VISIBLE
-        } else {
-            visibility = View.GONE
         }
     }
 
