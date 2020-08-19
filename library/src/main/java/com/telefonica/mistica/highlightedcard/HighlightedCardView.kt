@@ -270,10 +270,11 @@ class HighlightedCardView @JvmOverloads constructor(
 
         button?.setOnClickListener(buttonClickListener)
         button?.text = buttonText
-        button?.visibility = View.VISIBLE
-        this.button?.visibility = View.GONE
-        this.button = button
-
+        if (this.button != button) {
+            button?.visibility = View.VISIBLE
+            this.button?.visibility = View.GONE
+            this.button = button
+        }
     }
 
     private fun ImageView.setCrossColor(@ColorInt color: Int) {
