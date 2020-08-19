@@ -129,7 +129,6 @@
         android:id="@+id/highlighted_card_image"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="2:3"
         app:layout_constraintEnd_toEndOf="parent"
