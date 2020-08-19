@@ -153,8 +153,9 @@ class HighlightedCardView @JvmOverloads constructor(
                 ?.let { setImage(it) }
 
             styledAttrs.recycle()
-            reload()
         }
+        configureBackground()
+        configureColors()
     }
 
     fun setButtonOnClick(onClickListener: OnClickListener?) {
