@@ -1,6 +1,8 @@
 package com.telefonica.mistica.highlightedcard
 
 import android.content.Context
+import android.graphics.*
+import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.util.AttributeSet
 import android.view.LayoutInflater
@@ -19,6 +21,7 @@ import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
 import com.telefonica.mistica.util.getThemeColor
+
 
 @BindingMethods(
     BindingMethod(
@@ -217,7 +220,10 @@ class HighlightedCardView @JvmOverloads constructor(
     }
 
     fun setCustomBackground(drawable: Drawable) {
-        container.background = drawable
+
+        val roundedCornerBitmap = BitmapDrawable(resources, getRoundedCornerBitmap((drawable as BitmapDrawable).bitmap))
+
+        container.background = roundedCornerBitmap
         hasCustomBackground = true
     }
 
@@ -275,6 +281,26 @@ class HighlightedCardView @JvmOverloads constructor(
             this.button?.visibility = View.GONE
             this.button = button
         }
+    }
+
+    private fun getRoundedCornerBitmap(bitmap: Bitmap): Bitmap? {
+        val output = Bitmap.createBitmap(
+            bitmap.width, bitmap
+                .height, Bitmap.Config.ARGB_8888
+        )
+        val canvas = Canvas(output)
+        val color = context.getThemeColor(R.attr.colorBorder)
+        val paint = Paint()
+        val rect = Rect(0, 0, bitmap.width, bitmap.height)
+        val rectF = RectF(rect)
+        val roundPx = resources.getDimension(R.dimen.highlighted_card_corner_radius)
+        paint.isAntiAlias = true
+        canvas.drawARGB(0, 0, 0, 0)
+        paint.color = color
+        canvas.drawRoundRect(rectF, roundPx, roundPx, paint)
+        paint.xfermode = PorterDuffXfermode(PorterDuff.Mode.SRC_IN)
+        canvas.drawBitmap(bitmap, rect, rect, paint)
+        return output
     }
 
     private fun ImageView.setCrossColor(@ColorInt color: Int) {
