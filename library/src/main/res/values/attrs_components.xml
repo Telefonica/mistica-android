@@ -95,6 +95,11 @@
             <enum name="link" value="2"/>
             <enum name="none" value="3"/>
         </attr>
+        <attr name="highlightedCardImageStyle" format="enum">
+            <enum name="modeFit" value="0"/>
+            <enum name="modeFill" value="1"/>
+            <enum name="none" value="2"/>
+        </attr>
     </declare-styleable>
 
     <declare-styleable name="Input">

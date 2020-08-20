@@ -52,6 +52,13 @@
             app:inputText="Start tests"
             app:inputType="text" />
 
+        <com.telefonica.mistica.input.DropDownInput
+            android:id="@+id/dropdown_image_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:inputHint="Choose image config" />
+
         <com.telefonica.mistica.input.CheckBoxInput
             android:id="@+id/checkbox_close_button"
             android:layout_width="wrap_content"
@@ -59,13 +66,6 @@
             android:layout_margin="8dp"
             app:inputChecked="false"
             app:inputCheckText="Show close button" />
-
-        <com.telefonica.mistica.input.CheckBoxInput
-            android:id="@+id/checkbox_image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            app:inputCheckText="Show image" />
 
         <com.telefonica.mistica.input.CheckBoxInput
             android:id="@+id/check_inverse"
