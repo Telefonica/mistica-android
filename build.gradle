@@ -17,7 +17,7 @@ buildscript {
 allprojects {
 
     group = 'com.telefonica.mistica'
-    version = '0.2.1-beta3'
+    version = '0.2.1-beta4'
 
     repositories {
         google()
