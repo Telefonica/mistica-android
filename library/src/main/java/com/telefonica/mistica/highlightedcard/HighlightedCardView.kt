@@ -98,7 +98,8 @@ class HighlightedCardView @JvmOverloads constructor(
 
     private val titleTextView: TextView
     private val contentTextView: TextView
-    private val image: ImageView
+    private val imageModeFit: ImageView
+    private val imageModeFill: ImageView
     private val closeButton: ImageView
     private val container: ConstraintLayout
 
@@ -116,7 +117,8 @@ class HighlightedCardView @JvmOverloads constructor(
         titleTextView = findViewById(R.id.highlighted_card_title)
         contentTextView = findViewById(R.id.highlighted_card_content)
         button = findViewById(R.id.highlighted_card_button_primary)
-        image = findViewById(R.id.highlighted_card_image)
+        imageModeFit = findViewById(R.id.highlighted_card_image_mode_fit)
+        imageModeFill = findViewById(R.id.highlighted_card_image_mode_fill)
         closeButton = findViewById(R.id.highlighted_card_close_button)
         container = findViewById(R.id.highlighted_card_container)
 
@@ -206,13 +208,13 @@ class HighlightedCardView @JvmOverloads constructor(
     }
 
     fun setImage(@DrawableRes imageRes: Int) {
-        image.setImageResource(imageRes)
-        image.visibility = View.VISIBLE
+        imageModeFit.setImageResource(imageRes)
+        imageModeFit.visibility = View.VISIBLE
     }
 
     fun setImage(imageRes: Drawable) {
-        image.setImageDrawable(imageRes)
-        image.visibility = View.VISIBLE
+        imageModeFit.setImageDrawable(imageRes)
+        imageModeFit.visibility = View.VISIBLE
     }
 
     fun setCustomBackground(@DrawableRes imageRes: Int) {
@@ -233,7 +235,7 @@ class HighlightedCardView @JvmOverloads constructor(
     }
 
     fun hideImage() {
-        image.visibility = View.GONE
+        imageModeFit.visibility = View.GONE
     }
 
     fun setCloseVisibility(visible: Boolean) {

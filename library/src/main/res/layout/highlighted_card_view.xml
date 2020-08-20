@@ -35,7 +35,7 @@
         android:layout_marginBottom="16dp"
         android:textAppearance="@style/AppTheme.TextAppearance.Sub1"
         app:layout_constraintBottom_toTopOf="@+id/barrier_button"
-        app:layout_constraintEnd_toStartOf="@+id/highlighted_card_image"
+        app:layout_constraintEnd_toStartOf="@+id/barrier_image"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/highlighted_card_title"
         app:layout_goneMarginBottom="24dp"
@@ -125,16 +125,38 @@
         tools:text="Update"
         tools:visibility="gone" />
 
-    <ImageView
-        android:id="@+id/highlighted_card_image"
-        android:layout_width="0dp"
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier_image"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintDimensionRatio="2:3"
-        android:scaleType="fitXY"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="parent"
+        app:barrierDirection="left"
+        app:constraint_referenced_ids="highlighted_card_image_mode_fit, highlighted_card_image_mode_fill"/>
+
+    <ImageView
+        android:id="@+id/highlighted_card_image_mode_fill"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
         tools:srcCompat="@tools:sample/avatars"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_max="100dp"
+        app:layout_constrainedWidth="true"
+        android:visibility="gone"
+        tools:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/highlighted_card_image_mode_fit"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        tools:srcCompat="@tools:sample/avatars"
+        app:layout_constraintDimensionRatio="W,3:2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_max="100dp"
+        app:layout_constrainedWidth="true"
         tools:visibility="visible" />
 
     <ImageView
