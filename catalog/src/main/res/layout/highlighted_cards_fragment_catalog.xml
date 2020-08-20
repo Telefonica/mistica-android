@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             app:inputHint="Title"
-            app:inputText="Resolver problema técnico"
+            app:inputText="Solve technical issue"
             app:inputType="text" />
 
         <com.telefonica.mistica.input.TextInput
@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             app:inputHint="Message"
-            app:inputText="Usa nuestra herramienta para resolver tus problemas técnicos"
+            app:inputText="Use our tools to solve your technical issue"
             app:inputType="text" />
 
         <com.telefonica.mistica.input.DropDownInput
@@ -49,7 +49,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             app:inputHint="Button message"
-            app:inputText="Empezar pruebas"
+            app:inputText="Start tests"
             app:inputType="text" />
 
         <com.telefonica.mistica.input.CheckBoxInput
