@@ -15,6 +15,7 @@ import com.telefonica.mistica.input.TextInput
 class HighlightedCardsCatalogFragment : Fragment() {
 
     private var buttonStyle: Int = HighlightedCardView.BUTTON_STYLE_NO_BUTTON
+    private var imageStyle: Int = HighlightedCardView.IMAGE_STYLE_NO_IMAGE
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,7 +31,31 @@ class HighlightedCardsCatalogFragment : Fragment() {
         view.findViewById<Button>(R.id.button_update)
             .setOnClickListener { updateHighlightedCardView(view) }
         configureButtonDropdown(view)
+        configureImageDropdown(view)
         updateHighlightedCardView(view)
+    }
+
+    private fun configureImageDropdown(view: View) {
+        val imageTypes: List<Pair<String, Int>> = listOf(
+            "Fit" to HighlightedCardView.IMAGE_STYLE_MODE_FIT,
+            "Fill" to HighlightedCardView.IMAGE_STYLE_MODE_FILL,
+            "No image" to HighlightedCardView.IMAGE_STYLE_NO_IMAGE
+        )
+        with(view.findViewById<DropDownInput>(R.id.dropdown_image_type)) {
+            post {
+                dropDown.setAdapter(
+                    ArrayAdapter(
+                        context,
+                        R.layout.dropdown_menu_popup_item,
+                        imageTypes.map { it.first }
+                    )
+                )
+                dropDown.onItemClickListener =
+                    AdapterView.OnItemClickListener { _, _, position, _ ->
+                        imageStyle = imageTypes[position].second
+                    }
+            }
+        }
     }
 
     private fun configureButtonDropdown(view: View) {
@@ -59,11 +84,11 @@ class HighlightedCardsCatalogFragment : Fragment() {
 
     private fun updateHighlightedCardView(view: View) {
         with(view.findViewById<HighlightedCardView>(R.id.highlighted_card_view)) {
-            if (view.findViewById<CheckBoxInput>(R.id.checkbox_image).isChecked()) {
-                setImage(R.drawable.higlighted_card_image)
-            } else {
-                hideImage()
+            when (imageStyle) {
+                HighlightedCardView.IMAGE_STYLE_MODE_FIT  -> setImage(R.drawable.higlighted_card_image)
+                HighlightedCardView.IMAGE_STYLE_MODE_FILL -> setImage(R.drawable.highlighted_card_fill_mode_example)
             }
+            setImageStyle(imageStyle)
             setInverse(view.findViewById<CheckBoxInput>(R.id.check_inverse).isChecked())
             setCloseVisibility(
                 view.findViewById<CheckBoxInput>(R.id.checkbox_close_button).isChecked()

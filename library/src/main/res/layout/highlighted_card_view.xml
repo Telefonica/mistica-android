@@ -33,12 +33,12 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
-        app:layout_goneMarginBottom="24dp"
         android:textAppearance="@style/AppTheme.TextAppearance.Sub1"
-        app:layout_constraintEnd_toStartOf="@+id/highlighted_card_image"
+        app:layout_constraintBottom_toTopOf="@+id/barrier_button"
+        app:layout_constraintEnd_toStartOf="@+id/barrier_image"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/highlighted_card_title"
-        app:layout_constraintBottom_toTopOf="@+id/barrier_button"
+        app:layout_goneMarginBottom="24dp"
         tools:text="Content example" />
 
     <!--    Primary-->
@@ -123,17 +123,42 @@
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/highlighted_card_content"
         tools:text="Update"
-        tools:visibility="gone"/>
+        tools:visibility="gone" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:barrierDirection="left"
+        app:barrierAllowsGoneWidgets="true"
+        app:constraint_referenced_ids="highlighted_card_image_mode_fit, highlighted_card_image_mode_fill" />
+
 
     <ImageView
-        android:id="@+id/highlighted_card_image"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:scaleType="fitXY"
+        android:id="@+id/highlighted_card_image_mode_fill"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:visibility="gone"
+        app:layout_constrainedWidth="true"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintDimensionRatio="2:3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_max="100dp"
+        tools:srcCompat="@tools:sample/avatars"
+        tools:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/highlighted_card_image_mode_fit"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        android:visibility="gone"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_max="100dp"
         tools:srcCompat="@tools:sample/avatars"
         tools:visibility="gone" />
 
@@ -144,14 +169,16 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:src="@drawable/icn_cross_highlight_card"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
 
     <androidx.constraintlayout.widget.Barrier
         android:id="@+id/barrier_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:barrierDirection="top"
-        app:constraint_referenced_ids="highlighted_card_button_link_inverse, highlighted_card_button_link, highlighted_card_button_secondary_inverse, highlighted_card_button_secondary, highlighted_card_button_primary_inverse, highlighted_card_button_primary"/>
+        app:constraint_referenced_ids="highlighted_card_button_link_inverse, highlighted_card_button_link, highlighted_card_button_secondary_inverse, highlighted_card_button_secondary, highlighted_card_button_primary_inverse, highlighted_card_button_primary" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
