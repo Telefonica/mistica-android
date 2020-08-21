@@ -22,6 +22,7 @@ workflows:
             keys:
               username: NEXUS_USER
               password: NEXUS_PASS
+              appcenter: APPCENTER_KEY
   image:
     stages: ["build_image", "push_image"]
 

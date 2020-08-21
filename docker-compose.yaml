@@ -8,6 +8,7 @@ services:
       TERM: "xterm" # Needed for gradle
       NEXUS_USER: "${NEXUS_USER}"
       NEXUS_PASS: "${NEXUS_PASS}"
+      APPCENTER_KEY: "${APPCENTER_KEY}"
     volumes:
       - ".:/source"
       - "/var/lib/gradle-cache:/root/.gradle"
