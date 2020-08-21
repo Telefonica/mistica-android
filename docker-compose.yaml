@@ -9,6 +9,7 @@ services:
       NEXUS_USER: "${NEXUS_USER}"
       NEXUS_PASS: "${NEXUS_PASS}"
       APPCENTER_KEY: "${APPCENTER_KEY}"
+      APPCENTER_API_TOKEN: "${APPCENTER_API_TOKEN}"
     volumes:
       - ".:/source"
       - "/var/lib/gradle-cache:/root/.gradle"
