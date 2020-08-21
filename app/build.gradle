@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.betomorrow.appcenter'
 
 android {
     compileSdkVersion 29
@@ -13,6 +14,20 @@ android {
         versionName version
     }
 }
+
+appcenter {
+    apiToken = System.env.APPCENTER_API_TOKEN
+    ownerName = "Tuenti-Organization"
+    distributionGroups = ["Public"]
+    releaseNotes = file("../README.md")
+    notifyTesters = true
+    apps {
+        debug {
+            appName = "mistica"
+        }
+    }
+}
+
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"

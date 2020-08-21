@@ -22,7 +22,17 @@ workflows:
             keys:
               username: NEXUS_USER
               password: NEXUS_PASS
-              appcenter: APPCENTER_KEY
+  release:
+    stages: ["docker_up", "deploy", "catalog" "docker_down"]
+    plugins:
+      vault:
+        secrets:
+          - path: secret/services/jenkins/maven-private
+            keys:
+              username: NEXUS_USER
+              password: NEXUS_PASS
+              appcenter_project_key: APPCENTER_KEY
+              appcenter_api_key: APPCENTER_API_TOKEN
   image:
     stages: ["build_image", "push_image"]
 
@@ -32,6 +42,8 @@ stages:
     - "docker-compose up -d builder"
   deploy:
     - "docker-compose exec -T builder bash -c \"cd /source; ./gradlew clean check assemble; ./gradlew publish\""
+  catalog:
+    - "docker-compose exec -T builder bash -c \"cd /source; ./gradlew clean check appCenterAssembleAndUploadDebug\""
   docker_down:
     - "docker-compose down -v"
   build_image:
