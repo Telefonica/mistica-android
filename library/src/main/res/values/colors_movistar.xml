@@ -59,6 +59,6 @@
 
     <!-- Prominent Color Palette -->
     <color name="movistar_prominent_color_blue">#0B2739</color>
-    <color name="movistar_prominent_color_blue_dark">#081F2D</color>
+    <color name="movistar_prominent_color_blue_dark">#001E29</color>
 
 </resources>
