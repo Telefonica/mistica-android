@@ -178,7 +178,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_weight="1"
                 app:inputHint="Subtitle"
-                app:inputText="Y esto es un subtitulo"
+                app:inputText="Y esto es un subtítulo"
                 app:inputType="text" />
 
             <com.telefonica.mistica.input.CheckBoxInput

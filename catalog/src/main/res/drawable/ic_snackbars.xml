@@ -6,14 +6,14 @@
     <path
         android:fillAlpha="0.03"
         android:fillColor="#F2F2F2"
-        android:fillType="evenOdd"
+        android:fillType="nonZero"
         android:pathData="M0,0h24v24h-24z" />
     <path
         android:fillColor="#003245"
-        android:fillType="evenOdd"
+        android:fillType="nonZero"
         android:pathData="M18.912,8.913L17.25,8.913L17.25,7.6196L18,5.332L18,3L14.0655,3C12.447,7.7075 10.8765,10.3854 9,10.3913L9,9.6522L3,9.6522L3,19.2609L9,19.2609L9,18.5217L10.5,18.5217L12.3802,20L18.726,20L21,17.8373L21,10.2531L18.912,8.913ZM19.5,17.2098L18.1208,18.5217L12.9052,18.5217L11.025,17.0435L9,17.0435L9,11.8696C11.8357,11.8696 14.0452,7.6757 15.1418,4.4783L16.5,4.4783L16.5,5.0629L15.75,7.3505L15.75,10.3913L18.4673,10.3913L19.5,11.0543L19.5,17.2098Z" />
     <path
         android:fillColor="#FFF"
-        android:fillType="evenOdd"
+        android:fillType="nonZero"
         android:pathData="M19.5,17.2098L18.1208,18.5217L12.9052,18.5217L11.025,17.0435L9,17.0435L9,11.8696C11.8357,11.8696 14.0452,7.6757 15.1418,4.4783L16.5,4.4783L16.5,5.0629L15.75,7.3505L15.75,10.3913L18.4673,10.3913L19.5,11.0543L19.5,17.2098Z" />
 </vector>
