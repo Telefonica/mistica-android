@@ -40,6 +40,7 @@ class CheckBoxInput @JvmOverloads constructor(
 ) : Input(context, attrs, defStyleAttr, defStyleRes) {
 
     private lateinit var checkBox: AppCompatCheckBox
+    private var onCheckedChangeListener: CompoundButton.OnCheckedChangeListener? = null
 
     override fun handleAttrsAndInflateLayout(
         attrs: AttributeSet?,
@@ -72,8 +73,16 @@ class CheckBoxInput @JvmOverloads constructor(
 
         setChecked(initialInputChecked)
         setText(initialInputText)
+        configureErrorResetOnCheckChange()
 
         return findViewById(R.id.text_input_layout)
+    }
+
+    private fun configureErrorResetOnCheckChange() {
+        checkBox.setOnCheckedChangeListener { buttonView, isChecked ->
+            setErrorEnabled(false)
+            onCheckedChangeListener?.onCheckedChanged(buttonView, isChecked)
+        }
     }
 
     fun setChecked(checked: Boolean) {
@@ -91,7 +100,7 @@ class CheckBoxInput @JvmOverloads constructor(
         checkBox.text
 
     fun setOnCheckedChangeListener(listener: CompoundButton.OnCheckedChangeListener?) {
-        checkBox.setOnCheckedChangeListener(listener)
+        onCheckedChangeListener = listener
     }
 
     fun setMovementMethod(movementMethod: MovementMethod) {
