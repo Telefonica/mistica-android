@@ -10,6 +10,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import androidx.annotation.CallSuper
 import androidx.fragment.app.Fragment
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.input.CheckBoxInput
@@ -50,8 +51,9 @@ class InputsCatalogFragment : Fragment() {
         val link1 = "Legal Grounds"
         val link2 = "Privacy Policy"
 
-        val link1ClickableSpan = object : ClickableSpan() {
+        val link1ClickableSpan = object : CheckBoxClickableSpan() {
             override fun onClick(checkBox: View) {
+                super.onClick(checkBox)
                 view?.findViewById<CheckBoxInput>(R.id.checkboxInput)?.apply {
                     error = "Error Text! Tapped on $link1"
                 }
@@ -61,8 +63,9 @@ class InputsCatalogFragment : Fragment() {
         val start1 = message.indexOf(link1)
         val end1 = start1 + link1.length
 
-        val link2ClickableSpan = object : ClickableSpan() {
+        val link2ClickableSpan = object : CheckBoxClickableSpan() {
             override fun onClick(checkBox: View) {
+                super.onClick(checkBox)
                 view?.findViewById<CheckBoxInput>(R.id.checkboxInput)?.apply {
                     error = "Error Text! Tapped on $link2"
                 }
@@ -75,6 +78,16 @@ class InputsCatalogFragment : Fragment() {
         return SpannableString(message).apply {
             setSpan(link1ClickableSpan, start1, end1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
             setSpan(link2ClickableSpan, start2, end2, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        }
+    }
+
+    /**
+     * Avoids toggling checkbox state when tapping on the span
+     */
+    abstract class CheckBoxClickableSpan : ClickableSpan() {
+        @CallSuper
+        override fun onClick(checkBox: View) {
+            checkBox.cancelPendingInputEvents()
         }
     }
 }
