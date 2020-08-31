@@ -6,7 +6,7 @@
 #  Mistica for Android
 
 [![Platform](https://img.shields.io/badge/Platform-Android-brightgreen)](https://github.com/Telefonica/mistica-android)
-[![Version](https://img.shields.io/badge/Version-0.2.4-blue)](https://github.com/Telefonica/mistica-android)
+[![Version](https://img.shields.io/badge/Version-0.2.5-blue)](https://github.com/Telefonica/mistica-android)
 [![Support](https://img.shields.io/badge/Support-%3E%3D%20Android%205.0-brightgreen)](https://github.com/Telefonica/mistica-android)
 [![Kotlin version badge](https://img.shields.io/badge/kotlin-1.3-blue.svg)](https://kotlinlang.org/docs/reference/whatsnew13.html)
 
