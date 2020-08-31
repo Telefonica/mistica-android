@@ -21,6 +21,7 @@ class FeedbackScreenCatalogActivity : AppCompatActivity() {
     var firstButtonText: String? = null
     var secondButtonText: String? = null
     var showSecondButtonAsLink: Boolean? = null
+    var showLoadingInButton: Boolean? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -41,7 +42,14 @@ class FeedbackScreenCatalogActivity : AppCompatActivity() {
             firstButtonText?.let { setFeedbackFirstButtonText(it) }
             secondButtonText?.let { setFeedbackSecondButtonText(it) }
             showSecondButtonAsLink?.let { setFeedbackSecondButtonAsLink(it) }
-            setFirstButtonOnClick(View.OnClickListener { finish() })
+            setFirstButtonOnClick(View.OnClickListener {
+                if (showLoadingInButton == true) {
+                    setIsLoading(true)
+                    handler.postDelayed({ setIsLoading(false) }, RETRY_DELAY)
+                } else {
+                    finish()
+                }
+            })
         }
     }
 
@@ -62,11 +70,16 @@ class FeedbackScreenCatalogActivity : AppCompatActivity() {
             EXTRA_SHOW_SECOND_BUTTON_AS_LINK,
             SHOW_SECOND_BUTTON_AS_LINK_DEFAULT_VALUE
         )
+        showLoadingInButton = intent.getBooleanExtra(
+            EXTRA_SHOW_LOADING_IN_BUTTON,
+            SHOW_LOADING_IN_BUTTON_DEFAULT_VALUE
+        )
     }
 
     companion object {
         const val INVALID_DEFAULT_VALUE = -1
         const val SHOW_SECOND_BUTTON_AS_LINK_DEFAULT_VALUE = false
+        const val SHOW_LOADING_IN_BUTTON_DEFAULT_VALUE = false
 
         const val EXTRA_TYPE = "extra_type"
         const val EXTRA_TITLE = "extra_title"
@@ -75,8 +88,10 @@ class FeedbackScreenCatalogActivity : AppCompatActivity() {
         const val EXTRA_FIRST_BUTTON_TEXT = "extra_first_button_text"
         const val EXTRA_SECOND_BUTTON_TEXT = "extra_second_button_text"
         const val EXTRA_SHOW_SECOND_BUTTON_AS_LINK = "extra_second_button_as_link"
+        const val EXTRA_SHOW_LOADING_IN_BUTTON = "extra_show_loading_in_button"
         const val EXTRA_THEME = "extra_theme"
 
         private const val NO_THEME_OVERRIDE = -1
+        private const val RETRY_DELAY = 2000L
     }
 }
