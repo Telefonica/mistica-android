@@ -134,8 +134,13 @@ class FeedbackScreenView : ConstraintLayout {
     fun getFirstButtonText(): String = firstButtonText.toString()
 
     fun setIsLoading(isLoading: Boolean) {
+        val wasLoading = this.isLoading
         this.isLoading = isLoading
         firstButton.setIsLoading(isLoading)
+        if (wasLoading && !isLoading) {
+            icon.playAnimation()
+            executeHapticFeedback()
+        }
     }
 
     private fun init(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) {
@@ -171,7 +176,7 @@ class FeedbackScreenView : ConstraintLayout {
     }
 
     override fun onAttachedToWindow() {
-        super.onAttachedToWindow();
+        super.onAttachedToWindow()
         configureView()
         animateViewsOnFirstLayout()
     }
@@ -307,6 +312,10 @@ class FeedbackScreenView : ConstraintLayout {
 
         animation.start()
         icon.playAnimation()
+        executeHapticFeedback()
+    }
+
+    private fun executeHapticFeedback() {
         postDelayed(
             { performHapticFeedback() },
             if (type == TYPE_ERROR) HAPTIC_FEEDBACK_ERROR_DELAY else HAPTIC_FEEDBACK_DEFAULT_DELAY
