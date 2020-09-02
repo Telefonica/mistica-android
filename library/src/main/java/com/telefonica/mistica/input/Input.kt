@@ -49,7 +49,7 @@ abstract class Input @JvmOverloads constructor(
 ) : FrameLayout(context, attrs, defStyleAttr, defStyleRes) {
 
     var helperText: String?
-        get() = layoutView.helperText.toString()
+        get() = layoutView.helperText?.toString()
         set(value) {
             layoutView.helperText = value
         }
@@ -75,7 +75,7 @@ abstract class Input @JvmOverloads constructor(
         }
 
     var hint: String?
-        get() = layoutView.hint.toString()
+        get() = layoutView.hint?.toString()
         set(value) {
             layoutView.hint = value
         }
