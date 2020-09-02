@@ -55,7 +55,7 @@ abstract class Input @JvmOverloads constructor(
         }
 
     var error: String?
-        get() = layoutView.error.toString()
+        get() = layoutView.error?.toString()
         set(value) {
             layoutView.error = if (value != null && inverse) {
                 /* TextInputLayout errorTextAppearance always affect both hint and subtitle colors.
