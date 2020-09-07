@@ -91,5 +91,5 @@ To see samples of all of our implemented components, run the [App](app) module i
 
 ## Contributing
 
-See [CONTRIBUTING.md](./contributing.md)
+See [CONTRIBUTING.md](./CONTRIBUTING.md)
  
