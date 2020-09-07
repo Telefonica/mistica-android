@@ -2,7 +2,7 @@
 <resources>
 
     <style name="AppTheme.Widgets.Tag" parent="Widget.AppCompat.TextView">
-        <item name="android:textAppearance">@style/AppTheme.TextAppearance.Caption3</item>
+        <item name="android:textAppearance">@style/AppTheme.TextAppearance.Preset8.Medium</item>
         <item name="android:textColor">?colorTextPrimaryInverse</item>
         <item name="android:background">@drawable/tag_background</item>
         <item name="android:textAllCaps">true</item>

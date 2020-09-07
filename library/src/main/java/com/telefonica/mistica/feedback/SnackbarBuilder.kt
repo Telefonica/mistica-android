@@ -105,9 +105,9 @@ open class SnackbarBuilder(view: View?, text: String) {
     private fun setTextStyles(snackbar: Snackbar) {
         val text = snackbar.view.findViewById<TextView>(R.id.snackbar_text)
         text.maxLines = MAX_TEXT_LINES
-        text.setTextAppearance(text.context, R.style.AppTheme_TextAppearance_Sub1)
+        text.setTextAppearance(text.context, R.style.AppTheme_TextAppearance_Preset7)
         val action = snackbar.view.findViewById<TextView>(R.id.snackbar_action)
-        action.setTextAppearance(action.context, R.style.AppTheme_TextAppearance_Body2)
+        action.setTextAppearance(action.context, R.style.AppTheme_TextAppearance_Preset6_Medium)
         action.isAllCaps = false
     }
 

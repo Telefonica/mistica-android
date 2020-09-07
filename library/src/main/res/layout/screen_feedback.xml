@@ -27,7 +27,7 @@
 
             <TextView
                 android:id="@+id/title"
-                style="@style/AppTheme.TextAppearance.Headline3"
+                style="@style/AppTheme.TextAppearance.Preset3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -36,7 +36,7 @@
 
             <TextView
                 android:id="@+id/subtitle"
-                style="@style/AppTheme.TextAppearance.Title1"
+                style="@style/AppTheme.TextAppearance.Preset5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"

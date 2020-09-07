@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:textAppearance="@style/AppTheme.TextAppearance.Title1"
+        android:textAppearance="@style/AppTheme.TextAppearance.Preset5"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Title" />
@@ -33,7 +33,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
-        android:textAppearance="@style/AppTheme.TextAppearance.Sub1"
+        android:textAppearance="@style/AppTheme.TextAppearance.Preset7"
         app:layout_constraintBottom_toTopOf="@+id/barrier_button"
         app:layout_constraintEnd_toStartOf="@+id/barrier_image"
         app:layout_constraintStart_toStartOf="@+id/guideline"

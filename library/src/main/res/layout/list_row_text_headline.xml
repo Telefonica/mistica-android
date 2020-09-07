@@ -4,5 +4,5 @@
     android:layout_height="wrap_content"
     android:ellipsize="end"
     android:maxLines="1"
-    android:textAppearance="@style/AppTheme.TextAppearance.Caption1"
+    android:textAppearance="@style/AppTheme.TextAppearance.Preset8"
     android:textColor="@color/text_secondary_selector" />

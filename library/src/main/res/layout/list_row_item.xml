@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:maxLines="2"
-            android:textAppearance="@style/AppTheme.TextAppearance.Title1"
+            android:textAppearance="@style/AppTheme.TextAppearance.Preset5"
             android:textColor="@color/text_primary_selector"
             tools:text="Title" />
 
@@ -57,7 +57,7 @@
             android:ellipsize="end"
             android:maxLines="2"
             android:minHeight="20dp"
-            android:textAppearance="@style/AppTheme.TextAppearance.Sub1"
+            android:textAppearance="@style/AppTheme.TextAppearance.Preset7"
             android:textColor="@color/text_secondary_selector"
             android:visibility="gone"
             tools:text="Subtitle"
@@ -72,7 +72,7 @@
             android:ellipsize="end"
             android:maxLines="2"
             android:minHeight="20dp"
-            android:textAppearance="@style/AppTheme.TextAppearance.Sub1"
+            android:textAppearance="@style/AppTheme.TextAppearance.Preset7"
             android:textColor="@color/text_secondary_selector"
             android:visibility="gone"
             tools:text="Description"
