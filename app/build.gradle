@@ -19,7 +19,8 @@ appcenter {
     apiToken = System.env.APPCENTER_API_TOKEN
     ownerName = "Tuenti-Organization"
     distributionGroups = ["Public"]
-    releaseNotes = file("../README.md")
+    releaseNotes = "# Library version: ${android.defaultConfig.versionName} \n See https://github.com/Telefonica/mistica-android/releases for more info."
+
     notifyTesters = true
     apps {
         debug {

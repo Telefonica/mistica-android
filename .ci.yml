@@ -23,7 +23,7 @@ workflows:
               username: NEXUS_USER
               password: NEXUS_PASS
   release:
-    stages: ["docker_up", "deploy", "catalog" "docker_down"]
+    stages: ["docker_up", "deploy_and_catalog", "docker_down"]
     plugins:
       vault:
         secrets:
@@ -42,8 +42,8 @@ stages:
     - "docker-compose up -d builder"
   deploy:
     - "docker-compose exec -T builder bash -c \"cd /source; ./gradlew clean check assemble; ./gradlew publish\""
-  catalog:
-    - "docker-compose exec -T builder bash -c \"cd /source; ./gradlew clean check appCenterAssembleAndUploadDebug\""
+  deploy_and_catalog:
+    - "docker-compose exec -T builder bash -c \"cd /source; ./gradlew clean check assemble; ./gradlew publish; ./gradlew appCenterAssembleAndUploadDebug\""
   docker_down:
     - "docker-compose down -v"
   build_image:
