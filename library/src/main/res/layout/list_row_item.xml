@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:maxLines="2"
-            android:textAppearance="@style/AppTheme.TextAppearance.Preset5"
+            android:textAppearance="@style/AppTheme.TextAppearance.Preset6"
             android:textColor="@color/text_primary_selector"
             tools:text="Title" />
 
