@@ -5,26 +5,31 @@
 
     <style name="AppTheme.TextAppearance.Preset1">
         <item name="android:textSize">32sp</item>
+        <item name="lineHeight">40sp</item>
         <item name="android:fontFamily">@string/font_family_light</item>
     </style>
 
     <style name="AppTheme.TextAppearance.Preset2">
         <item name="android:textSize">28sp</item>
+        <item name="lineHeight">32sp</item>
         <item name="android:fontFamily">@string/font_family_light</item>
     </style>
 
     <style name="AppTheme.TextAppearance.Preset3">
         <item name="android:textSize">24sp</item>
+        <item name="lineHeight">32sp</item>
         <item name="android:fontFamily">@string/font_family_light</item>
     </style>
 
     <style name="AppTheme.TextAppearance.Preset4">
         <item name="android:textSize">22sp</item>
+        <item name="lineHeight">24sp</item>
         <item name="android:fontFamily">@string/font_family_light</item>
     </style>
 
     <style name="AppTheme.TextAppearance.Preset5">
         <item name="android:textSize">18sp</item>
+        <item name="lineHeight">24sp</item>
         <item name="android:fontFamily">@string/font_family_light</item>
     </style>
 
@@ -34,7 +39,12 @@
 
     <style name="AppTheme.TextAppearance.Preset6">
         <item name="android:textSize">16sp</item>
+        <item name="lineHeight">24sp</item>
         <item name="android:fontFamily">@string/font_family_regular</item>
+    </style>
+
+    <style name="AppTheme.TextAppearance.Preset6.Light">
+        <item name="android:fontFamily">@string/font_family_light</item>
     </style>
 
     <style name="AppTheme.TextAppearance.Preset6.Medium">
@@ -43,6 +53,7 @@
 
     <style name="AppTheme.TextAppearance.Preset7">
         <item name="android:textSize">14sp</item>
+        <item name="lineHeight">20sp</item>
         <item name="android:fontFamily">@string/font_family_regular</item>
     </style>
 
@@ -52,6 +63,7 @@
 
     <style name="AppTheme.TextAppearance.Preset8">
         <item name="android:textSize">12sp</item>
+        <item name="lineHeight">16sp</item>
         <item name="android:fontFamily">@string/font_family_regular</item>
     </style>
 
@@ -61,6 +73,7 @@
 
     <style name="AppTheme.TextAppearance.System">
         <item name="android:textSize">10sp</item>
+        <item name="lineHeight">14sp</item>
         <item name="android:fontFamily">@string/font_family_regular</item>
     </style>
 
