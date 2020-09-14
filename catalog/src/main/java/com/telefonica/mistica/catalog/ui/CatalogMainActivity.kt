@@ -11,10 +11,16 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.StyleRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.microsoft.appcenter.AppCenter
+import com.microsoft.appcenter.analytics.Analytics
+import com.microsoft.appcenter.crashes.Crashes
+import com.microsoft.appcenter.distribute.Distribute
+import com.telefonica.mistica.catalog.BuildConfig
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.input.DropDownInput
 import com.telefonica.mistica.list.ListRowView
 import com.telefonica.mistica.list.layout.configureWithFullWidthLayout
+
 
 class CatalogMainActivity : AppCompatActivity() {
 
@@ -24,12 +30,23 @@ class CatalogMainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_catalog)
+        initializeAppCenterIfNeeded()
 
         with(findViewById<RecyclerView>(R.id.list_sections)) {
             configureWithFullWidthLayout()
             adapter = SectionAdapter()
         }
         configureThemeDropDown()
+    }
+
+    private fun initializeAppCenterIfNeeded() {
+        if (!BuildConfig.APPCENTER_KEY.isNullOrEmpty() && BuildConfig.APPCENTER_KEY != "null") {
+            AppCenter.start(
+                application, BuildConfig.APPCENTER_KEY,
+                Distribute::class.java, Analytics::class.java, Crashes::class.java
+            )
+            Distribute.setEnabledForDebuggableBuild(true)
+        }
     }
 
     private fun configureThemeDropDown() {
