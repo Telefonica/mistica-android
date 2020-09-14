@@ -79,6 +79,10 @@ Just set your App or any specific activity to use any of the following:
 * [Chips](library/src/main/java/com/telefonica/mistica/chips)
 * [Highlighted Cards](library/src/main/java/com/telefonica/mistica/highlightedcard)
 
+## Text Presets Styles
+
+Library includes a set of available [Text Appearance](library/src/main/res/values/styles_fonts.xml) styles, applicable for all kind of TextViews.
+
 ## Demo app
 
 Included in this repository is a demo of currently implemented components. A full list of implemented components can be found here: [Components](library/src/main/java/com/telefonica/mistica).
