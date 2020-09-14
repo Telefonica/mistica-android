@@ -22,7 +22,7 @@ workflows:
             keys:
               username: NEXUS_USER
               password: NEXUS_PASS
-  release:
+  publish:
     stages: ["docker_up", "deploy_and_catalog", "docker_down"]
     plugins:
       vault:
