@@ -64,7 +64,7 @@
     </style>
 
     <style name="AppTheme.Button.SecondaryButton" parent="AppTheme.OutlinedButton">
-        <item name="android:background">@android:color/transparent</item>
+        <item name="backgroundTint">@android:color/transparent</item>
         <item name="android:textColor">@color/text_button_secondary_selector</item>
         <item name="iconTint">@color/text_button_secondary_selector</item>
         <item name="strokeColor">@color/button_secondary_background_selector</item>
@@ -115,7 +115,7 @@
     </style>
 
     <style name="AppTheme.Button.SecondaryButtonInverse" parent="AppTheme.OutlinedButton">
-        <item name="android:background">@android:color/transparent</item>
+        <item name="backgroundTint">@android:color/transparent</item>
         <item name="android:textColor">@color/text_button_secondary_inverse_selector</item>
         <item name="iconTint">@color/text_button_secondary_inverse_selector</item>
         <item name="strokeColor">@color/button_secondary_background_inverse_selector</item>

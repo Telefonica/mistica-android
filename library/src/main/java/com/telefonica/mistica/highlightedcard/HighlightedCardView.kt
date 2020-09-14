@@ -271,7 +271,7 @@ class HighlightedCardView @JvmOverloads constructor(
 
     private fun configureColors() {
         @ColorInt val primaryColor: Int =
-            context.getThemeColor(if (isInverse) R.attr.colorTextPrimaryInverse else R.attr.colorTextPrimary)
+            context.getThemeColor(if (isInverse) R.attr.colorTextSecondaryInverse else R.attr.colorTextSecondary)
 
         titleTextView.setTextColor(primaryColor)
         contentTextView.setTextColor(primaryColor)

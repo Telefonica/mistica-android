@@ -49,13 +49,13 @@ abstract class Input @JvmOverloads constructor(
 ) : FrameLayout(context, attrs, defStyleAttr, defStyleRes) {
 
     var helperText: String?
-        get() = layoutView.helperText.toString()
+        get() = layoutView.helperText?.toString()
         set(value) {
             layoutView.helperText = value
         }
 
     var error: String?
-        get() = layoutView.error.toString()
+        get() = layoutView.error?.toString()
         set(value) {
             layoutView.error = if (value != null && inverse) {
                 /* TextInputLayout errorTextAppearance always affect both hint and subtitle colors.
@@ -75,7 +75,7 @@ abstract class Input @JvmOverloads constructor(
         }
 
     var hint: String?
-        get() = layoutView.hint.toString()
+        get() = layoutView.hint?.toString()
         set(value) {
             layoutView.hint = value
         }

@@ -59,6 +59,13 @@
         android:layout_marginTop="8dp"
         app:inputCheckText="Show second button as link" />
 
+    <com.telefonica.mistica.input.CheckBoxInput
+        android:id="@+id/check_feedback_show_loading_in_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:inputCheckText="Show loading in button" />
+
     <com.telefonica.mistica.button.Button
         android:id="@+id/button_create_feedback"
         android:layout_width="wrap_content"

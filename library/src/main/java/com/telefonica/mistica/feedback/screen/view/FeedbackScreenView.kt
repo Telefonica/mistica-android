@@ -21,6 +21,7 @@ import androidx.annotation.LayoutRes
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.airbnb.lottie.LottieAnimationView
 import com.telefonica.mistica.R
+import com.telefonica.mistica.button.ProgressButton
 import com.telefonica.mistica.feedback.screen.haptics.HapticFeedbackType
 import com.telefonica.mistica.feedback.screen.haptics.performHapticFeedback
 import com.telefonica.mistica.util.background.GradientBackgroundFactory
@@ -42,12 +43,13 @@ class FeedbackScreenView : ConstraintLayout {
     private lateinit var subtitle: TextView
     private lateinit var customContentContainer: FrameLayout
     private lateinit var buttonsContainer: LinearLayout
-    private lateinit var firstButton: Button
+    private lateinit var firstButton: ProgressButton
     private lateinit var secondButton: Button
 
     private var type: Int = TYPE_INFO
     private var titleText: CharSequence = ""
     private var subtitleText: CharSequence = ""
+    private var isLoading: Boolean = false
 
     @LayoutRes
     private var customContentLayout: Int? = null
@@ -100,7 +102,7 @@ class FeedbackScreenView : ConstraintLayout {
 
     fun setFeedbackFirstButtonText(text: CharSequence) {
         firstButtonText = text
-        firstButton.text = text
+        firstButton.setText(text)
         firstButton.visibility = if (text.isBlank()) View.GONE else View.VISIBLE
     }
 
@@ -130,6 +132,16 @@ class FeedbackScreenView : ConstraintLayout {
     }
 
     fun getFirstButtonText(): String = firstButtonText.toString()
+
+    fun setIsLoading(isLoading: Boolean) {
+        val wasLoading = this.isLoading
+        this.isLoading = isLoading
+        firstButton.setIsLoading(isLoading)
+        if (wasLoading && !isLoading) {
+            icon.playAnimation()
+            executeHapticFeedback()
+        }
+    }
 
     private fun init(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) {
         LayoutInflater.from(context).inflate(R.layout.screen_feedback, this, true)
@@ -164,7 +176,7 @@ class FeedbackScreenView : ConstraintLayout {
     }
 
     override fun onAttachedToWindow() {
-        super.onAttachedToWindow();
+        super.onAttachedToWindow()
         configureView()
         animateViewsOnFirstLayout()
     }
@@ -258,6 +270,7 @@ class FeedbackScreenView : ConstraintLayout {
         firstButton = findViewById(R.id.first_button)
         setFeedbackFirstButtonText(firstButtonText)
         firstButtonClickListener?.let { setFirstButtonOnClick(it) }
+        firstButton.setIsLoading(isLoading)
 
         secondButton =
             findViewById(if (secondButtonAsLink) R.id.link_button else R.id.second_button)
@@ -299,6 +312,10 @@ class FeedbackScreenView : ConstraintLayout {
 
         animation.start()
         icon.playAnimation()
+        executeHapticFeedback()
+    }
+
+    private fun executeHapticFeedback() {
         postDelayed(
             { performHapticFeedback() },
             if (type == TYPE_ERROR) HAPTIC_FEEDBACK_ERROR_DELAY else HAPTIC_FEEDBACK_DEFAULT_DELAY
