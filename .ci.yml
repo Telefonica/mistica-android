@@ -31,7 +31,7 @@ workflows:
             keys:
               username: NEXUS_USER
               password: NEXUS_PASS
-          - path: secret/services/mistica/android
+          - path: secret/services/jenkins/appcenter
             keys:
               appcenter_project_key: APPCENTER_KEY
               appcenter_api_token: APPCENTER_API_TOKEN
