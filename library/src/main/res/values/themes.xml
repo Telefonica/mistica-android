@@ -15,7 +15,7 @@
         <item name="android:colorControlActivated">?colorControlActivated</item>
         <item name="android:colorControlNormal">?colorControlNormal</item>
 
-        <item name="android:textAppearance">@style/AppTheme.TextAppearance.Body1</item>
+        <item name="android:textAppearance">@style/AppTheme.TextAppearance.Preset6</item>
 
         <item name="materialButtonStyle">@style/AppTheme.Button.DefaultButton</item>
 

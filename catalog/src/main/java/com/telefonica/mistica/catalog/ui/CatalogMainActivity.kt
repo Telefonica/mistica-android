@@ -89,6 +89,7 @@ class CatalogMainActivity : AppCompatActivity() {
         }
 
         private val sections: List<SectionItem> = listOf(
+            SectionItem("Texts", R.drawable.ic_texts, Section.TEXTS),
             SectionItem("Buttons", R.drawable.ic_buttons, Section.BUTTONS),
             SectionItem("Inputs", R.drawable.ic_inputs, Section.INPUTS),
             SectionItem("Snackbars", R.drawable.ic_snackbars, Section.SNACKBARS),
