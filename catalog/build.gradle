@@ -10,6 +10,8 @@ android {
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 29
+
+        buildConfigField "String", "APPCENTER_KEY", "\"" + System.env.APPCENTER_KEY + "\""
     }
 
     buildFeatures {
@@ -23,6 +25,11 @@ task sourceJar(type: Jar) {
 }
 
 dependencies {
+    def appCenterSdkVersion = '3.3.0'
+    implementation "com.microsoft.appcenter:appcenter-analytics:${appCenterSdkVersion}"
+    implementation "com.microsoft.appcenter:appcenter-crashes:${appCenterSdkVersion}"
+    implementation "com.microsoft.appcenter:appcenter-distribute:${appCenterSdkVersion}"
+
     implementation project(':library')
 
     testImplementation 'junit:junit:4.13'
