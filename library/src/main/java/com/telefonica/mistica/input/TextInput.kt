@@ -18,6 +18,7 @@ import androidx.databinding.adapters.ListenerUtil
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.telefonica.mistica.R
+import com.telefonica.mistica.input.validations.TextInputValidation
 
 @BindingMethods(
     BindingMethod(
@@ -174,6 +175,8 @@ class TextInput @JvmOverloads constructor(
     fun setOnEditorActionListener(l: TextView.OnEditorActionListener) {
         editTextView.setOnEditorActionListener(l)
     }
+
+    fun isValid(textInputValidation: TextInputValidation) = textInputValidation.isValid(text)
 
     override fun onCreateInputConnection(outAttrs: EditorInfo): InputConnection? =
         editTextView.onCreateInputConnection(outAttrs)

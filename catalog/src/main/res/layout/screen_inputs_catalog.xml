@@ -107,6 +107,74 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
+                android:text="Email Input with validation" />
+
+            <com.telefonica.mistica.input.TextInput
+                android:id="@+id/text_input_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:inputHint="Email"
+                app:inputType="email" />
+
+            <com.telefonica.mistica.button.Button
+                android:id="@+id/button_text_input_email"
+                style="@style/AppTheme.Button.DefaultButton.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Validate email" />
+
+            <com.telefonica.mistica.section.SectionTitleView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:text="Phone Input with validation" />
+
+            <com.telefonica.mistica.input.TextInput
+                android:id="@+id/text_input_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:inputHint="Phone"
+                app:inputType="phone" />
+
+            <com.telefonica.mistica.button.Button
+                android:id="@+id/button_text_input_phone"
+                style="@style/AppTheme.Button.DefaultButton.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Validate phone" />
+
+            <com.telefonica.mistica.section.SectionTitleView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="Text Input with custom validation" />
+
+            <com.telefonica.mistica.input.TextInput
+                android:id="@+id/text_input_custom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:inputHint="Custom text" />
+
+            <com.telefonica.mistica.button.Button
+                android:id="@+id/button_text_input_custom"
+                style="@style/AppTheme.Button.DefaultButton.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Validate" />
+
+            <com.telefonica.mistica.section.SectionTitleView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
                 android:text="Text Area" />
 
             <com.telefonica.mistica.input.TextInput
