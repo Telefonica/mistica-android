@@ -6,15 +6,26 @@
 #  Mistica for Android
 
 [![Platform](https://img.shields.io/badge/Platform-Android-brightgreen)](https://github.com/Telefonica/mistica-android)
-[![Version](https://img.shields.io/badge/Version-0.2.8-blue)](https://github.com/Telefonica/mistica-android)
+[![Version](https://img.shields.io/badge/Version-1.0.0-blue)](https://github.com/Telefonica/mistica-android)
 [![Support](https://img.shields.io/badge/Support-%3E%3D%20Android%205.0-brightgreen)](https://github.com/Telefonica/mistica-android)
 [![Kotlin version badge](https://img.shields.io/badge/kotlin-1.3-blue.svg)](https://kotlinlang.org/docs/reference/whatsnew13.html)
 
 Mistica is a framework that contains reusable UI components and utilities.
 
 ## Instalation
+Include nexus repository in the `build.gradle` of your project (If it is unreachable from your vpn, please [contact us](mailto:lifecycle@tuenti.com)): 
 
-Inside the dependency block in your build.gradle, add this line to add the library:
+```gradle
+allprojects {
+    repositories {
+        maven { url 'https://nexusng.tuenti.io/repository/maven-group/' }
+        ...
+    }
+    ...
+}
+```
+
+Inside the dependency block in the `build.gradle` of your application, add this line to add the library:
 
 ```gradle
 dependencies {
@@ -79,11 +90,17 @@ Just set your App or any specific activity to use any of the following:
 * [Chips](library/src/main/java/com/telefonica/mistica/chips)
 * [Highlighted Cards](library/src/main/java/com/telefonica/mistica/highlightedcard)
 
+## Text Presets Styles
+
+Library includes a set of available [Text Appearance](library/src/main/res/values/styles_fonts.xml) styles, applicable for all kind of TextViews.
+
 ## Demo app
 
 Included in this repository is a demo of currently implemented components. A full list of implemented components can be found here: [Components](library/src/main/java/com/telefonica/mistica).
 
-To see samples of all of our implemented components, run the [App](app) module in Android Studio.
+The app can be downloaded [here](https://install.appcenter.ms/orgs/tuenti-organization/apps/mistica/distribution_groups/public) or manually built.
+
+To compile the app manually run the [App](app) module in Android Studio.
 
 <p align="left">
     <img width="25%" src="./doc/images/catalog/catalog.png">

@@ -24,6 +24,7 @@ class ComponentCatalogActivity : AppCompatActivity() {
         setContentView(R.layout.screen_component_catalog)
 
         val fragment: Fragment = when (intent.getSerializableExtra(EXTRA_SECTION)) {
+            Section.TEXTS -> TextPresetsCatalogFragment()
             Section.BUTTONS -> ButtonsCatalogFragment()
             Section.INPUTS -> InputsCatalogFragment()
             Section.SNACKBARS -> SnackBarCatalogFragment()
@@ -54,6 +55,7 @@ class ComponentCatalogActivity : AppCompatActivity() {
 }
 
 enum class Section {
+    TEXTS,
     BUTTONS,
     INPUTS,
     SNACKBARS,

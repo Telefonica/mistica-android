@@ -20,10 +20,10 @@ class ScrollContentIndicator @JvmOverloads constructor(
 
     init {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            setTextAppearance(R.style.AppTheme_TextAppearance_Sub2)
+            setTextAppearance(R.style.AppTheme_TextAppearance_Preset7_Medium)
         } else {
             @Suppress("DEPRECATION")
-            setTextAppearance(context, R.style.AppTheme_TextAppearance_Sub2)
+            setTextAppearance(context, R.style.AppTheme_TextAppearance_Preset7_Medium)
         }
         layoutParams = ViewGroup.LayoutParams(
             ViewGroup.LayoutParams.WRAP_CONTENT,
