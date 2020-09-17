@@ -13,8 +13,19 @@
 Mistica is a framework that contains reusable UI components and utilities.
 
 ## Instalation
+Include nexus repository in the `build.gradle` of your project (If it is unreachable from your vpn, please [contact us](mailto:lifecycle@tuenti.com)): 
 
-Inside the dependency block in your build.gradle, add this line to add the library:
+```gradle
+allprojects {
+    repositories {
+        maven { url 'https://nexusng.tuenti.io/repository/maven-group/' }
+        ...
+    }
+    ...
+}
+```
+
+Inside the dependency block in the `build.gradle` of your application, add this line to add the library:
 
 ```gradle
 dependencies {
