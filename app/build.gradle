@@ -16,14 +16,14 @@ android {
 }
 
 def versionCodeDate() {
-    return new Date().format("yyyyMMddHHmmss").toInteger()
+    return new Date().format("yyMMddHHmm").toInteger()
 }
 
 appcenter {
     apiToken = System.env.APPCENTER_API_TOKEN ?: ""
     ownerName = "Tuenti-Organization"
     distributionGroups = ["Public"]
-    releaseNotes = "# Library version: ${android.defaultConfig.versionName} \n See https://github.com/Telefonica/mistica-android/releases for more info."
+    releaseNotes = "# Library version: ${version} \n See https://github.com/Telefonica/mistica-android/releases for more info."
 
     notifyTesters = true
     apps {
