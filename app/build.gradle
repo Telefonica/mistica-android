@@ -9,9 +9,13 @@ android {
         applicationId "com.telefonica.mistica.app"
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode 1
+        versionCode versionCodeDate()
         versionName "1.0.0"
     }
+}
+
+def versionCodeDate() {
+    return new Date().format("yyyyMMddHHmmss").toInteger()
 }
 
 dependencies {
