@@ -3,19 +3,34 @@ package com.telefonica.mistica.input.validations
 import android.util.Patterns
 
 interface TextInputValidation {
-    fun isValid(text: String?): Boolean
+    fun isValid(text: String?): TextInputValidationResult
 }
 
-object EmailTextInputValidation : TextInputValidation {
+sealed class TextInputValidationResult {
+    object Success : TextInputValidationResult()
+    class Invalid(val invalidMessage: String) : TextInputValidationResult()
+}
 
-    override fun isValid(text: String?): Boolean =
-        !text.isNullOrBlank() && Patterns.EMAIL_ADDRESS.matcher(text).matches()
+class EmailTextInputValidation(private val invalidMessage: String) : TextInputValidation {
+    override fun isValid(text: String?): TextInputValidationResult =
+        if (!text.isNullOrBlank() && Patterns.EMAIL_ADDRESS.matcher(text).matches()) {
+            TextInputValidationResult.Success
+        } else {
+            TextInputValidationResult.Invalid(invalidMessage)
+        }
 
 }
 
-object PhoneTextInputValidation : TextInputValidation {
+class PhoneTextInputValidation(private val invalidMessage: String) : TextInputValidation {
+    override fun isValid(text: String?): TextInputValidationResult =
+        if (!text.isNullOrBlank() && Patterns.PHONE.matcher(text).matches()) {
+            TextInputValidationResult.Success
+        } else {
+            TextInputValidationResult.Invalid(invalidMessage)
+        }
 
-    override fun isValid(text: String?): Boolean =
-        !text.isNullOrBlank() && Patterns.PHONE.matcher(text).matches()
+}
 
+class NoValidation() : TextInputValidation {
+    override fun isValid(text: String?) = TextInputValidationResult.Success
 }

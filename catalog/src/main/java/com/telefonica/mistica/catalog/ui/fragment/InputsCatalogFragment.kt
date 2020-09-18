@@ -17,9 +17,10 @@ import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.input.CheckBoxInput
 import com.telefonica.mistica.input.DropDownInput
 import com.telefonica.mistica.input.TextInput
-import com.telefonica.mistica.input.isEmailValid
-import com.telefonica.mistica.input.isPhoneValid
+import com.telefonica.mistica.input.validations.EmailTextInputValidation
+import com.telefonica.mistica.input.validations.PhoneTextInputValidation
 import com.telefonica.mistica.input.validations.TextInputValidation
+import com.telefonica.mistica.input.validations.TextInputValidationResult
 
 class InputsCatalogFragment : Fragment() {
 
@@ -48,53 +49,32 @@ class InputsCatalogFragment : Fragment() {
                 setMovementMethod(LinkMovementMethod.getInstance())
             }
 
-            val textInputEmail = findViewById<TextInput>(R.id.text_input_email)
+            val textInputEmail = findViewById<TextInput>(R.id.text_input_email).apply {
+                setValidation(EmailTextInputValidation("Email invalid"))
+            }
             findViewById<Button>(R.id.button_text_input_email)?.apply {
                 setOnClickListener {
-                    textInputEmail?.let { onEmailValidation(textInputEmail) }
+                    textInputEmail?.let { textInputEmail.validate() }
                 }
             }
 
-            val textInputPhone = findViewById<TextInput>(R.id.text_input_phone)
+            val textInputPhone = findViewById<TextInput>(R.id.text_input_phone).apply {
+                setValidation(PhoneTextInputValidation("Phone invalid"))
+            }
             findViewById<Button>(R.id.button_text_input_phone)?.apply {
                 setOnClickListener {
-                    textInputEmail?.let { onPhoneValidation(textInputPhone) }
+                    textInputEmail?.let { textInputPhone.validate() }
                 }
             }
 
-            val textInputCustom = findViewById<TextInput>(R.id.text_input_custom)
+            val textInputCustom = findViewById<TextInput>(R.id.text_input_custom).apply {
+                setValidation(customTextInputValidation)
+            }
             findViewById<Button>(R.id.button_text_input_custom)?.apply {
                 setOnClickListener {
-                    textInputEmail?.let { onCustomValidation(textInputCustom) }
+                    textInputEmail?.let { textInputCustom.validate() }
                 }
             }
-        }
-    }
-
-    private fun onEmailValidation(textInput: TextInput) {
-        if (textInput.isEmailValid()) {
-            textInput.setErrorEnabled(false)
-        } else {
-            textInput.setErrorEnabled(true)
-            textInput.error = "Email invalid"
-        }
-    }
-
-    private fun onPhoneValidation(textInput: TextInput) {
-        if (textInput.isPhoneValid()) {
-            textInput.setErrorEnabled(false)
-        } else {
-            textInput.setErrorEnabled(true)
-            textInput.error = "Phone invalid"
-        }
-    }
-
-    private fun onCustomValidation(textInput: TextInput) {
-        if (textInput.isValid(customTextInputValidation)) {
-            textInput.setErrorEnabled(false)
-        } else {
-            textInput.setErrorEnabled(true)
-            textInput.error = "Should match \"Mistica rules\""
         }
     }
 
@@ -145,7 +125,11 @@ class InputsCatalogFragment : Fragment() {
     }
 
     private val customTextInputValidation = object : TextInputValidation {
-        override fun isValid(text: String?): Boolean =
-            text.equals("Mistica rules")
+        override fun isValid(text: String?): TextInputValidationResult =
+            if (text.equals("Mistica rules")) {
+                TextInputValidationResult.Success
+            } else {
+                TextInputValidationResult.Invalid("Message should be \"Mistica Rules\"")
+            }
     }
 }
