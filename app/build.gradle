@@ -15,8 +15,8 @@ android {
     }
 }
 
-def versionCodeDate() {
-    return new Date().format("yyMMddHHmm").toInteger()
+static def versionCodeDate() {
+    return (new Date().toTimestamp().getTime() / 10).toInteger()
 }
 
 appcenter {
