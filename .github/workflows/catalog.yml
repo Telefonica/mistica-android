@@ -1,0 +1,11 @@
+name: Generate catalog app
+on: workflow_dispatch
+jobs:
+    build:
+      name: Generate catalog apk
+      runs-on: self-hosted-novum
+      steps:
+      - name: curl
+          uses: wei/curl@v1
+          with:
+            args: -X POST -d '{"script": "tu-ci", "operation": "create_or_update_job",  "repository": "mistica-android",  "branch": "apps/github-actions",  "workflow": "catalog",  "ticket": "APPS-7160", "username": "flow"}' https://flow.tuenti.io/events/FLOW/SCRIPT_EVENT
