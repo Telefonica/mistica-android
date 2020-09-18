@@ -7,4 +7,4 @@ jobs:
     - name: curl
       uses: wei/curl@v1
       with:
-        args: -X POST -d \'{\"script\": \"tu-ci\", \"operation\": \"create_or_update_job\",  \"repository\": \"mistica-android\",  \"branch\": \"apps/github-actions\",  \"workflow\": \"catalog\",  \"ticket\": \"APPS-7160\", \"username\": \"flow\"}\' https://flow.tuenti.io/events/FLOW/SCRIPT_EVENT
+        args: -X POST -d {\"script\": \"tu-ci\", \"operation\": \"create_or_update_job\",  \"repository\": \"mistica-android\",  \"branch\": \"apps/github-actions\",  \"workflow\": \"catalog\",  \"ticket\": \"APPS-7160\", \"username\": \"flow\"} https://flow.tuenti.io/events/FLOW/SCRIPT_EVENT
