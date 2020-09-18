@@ -1,10 +1,10 @@
 name: Generate catalog app
-on: workflow_dispatch
+on: push
 jobs:
   catalog:
     runs-on: self-hosted-novum
     steps:
-    - name: Publish
+    - name: Publish catalog
       uses: satak/webrequest-action@master
       with:
         url: https://flow.tuenti.io/events/FLOW/SCRIPT_EVENT

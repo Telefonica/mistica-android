@@ -13,15 +13,6 @@ defaults:
 
 timeout: 60
 workflows:
-  deploy:
-    stages: ["docker_up", "deploy", "docker_down"]
-    plugins:
-      vault:
-        secrets:
-          - path: secret/services/jenkins/maven-private
-            keys:
-              username: NEXUS_USER
-              password: NEXUS_PASS
   publish:
     stages: ["docker_up", "deploy", "docker_down"]
     plugins:
