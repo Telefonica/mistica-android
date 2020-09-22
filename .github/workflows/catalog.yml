@@ -10,4 +10,4 @@ jobs:
       with:
         url: https://flow.tuenti.io/events/FLOW/SCRIPT_EVENT
         method: POST
-        payload: '{"script": "tu-ci", "operation": "create_or_update_job",  "repository": "mistica-android",  "branch": "master",  "workflow": "catalog",  "ticket": "APPS-7169", "username": "flow"}'
+        payload: '{"script": "tu-ci", "operation": "create_or_update_job",  "repository": "mistica-android",  "branch": "apps/github-actions",  "workflow": "catalog",  "ticket": "APPS-7169", "username": "flow"}'
