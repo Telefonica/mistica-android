@@ -1,4 +1,4 @@
-name: "Generate library version ${{ github.event.inputs.libraryVersion }}"
+name: "Publish library"
 on: 
   workflow_dispatch:
     inputs:
