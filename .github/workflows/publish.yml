@@ -1,4 +1,4 @@
-name: Generate library version
+name: "Generate library version ${{ github.event.inputs.libraryVersion }}"
 on: 
   workflow_dispatch:
     inputs:
@@ -29,7 +29,6 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-
 
       - name: Release library
         uses: satak/webrequest-action@master
