@@ -1,8 +1,8 @@
-name: Generate catalog app
+name: "Generate catalog app"
 on:
   push:
-#    branches:
-#      - master
+    branches:
+      - master
 jobs:
   catalog:
     runs-on: self-hosted-novum
