@@ -10,16 +10,20 @@ android {
         applicationId "com.telefonica.mistica.app"
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode 1
-        versionName version
+        versionCode versionCodeDate()
+        versionName "1.0.0"
     }
+}
+
+static def versionCodeDate() {
+    return (new Date().toTimestamp().getTime() / 60).toInteger()
 }
 
 appcenter {
     apiToken = System.env.APPCENTER_API_TOKEN ?: ""
     ownerName = "Tuenti-Organization"
     distributionGroups = ["Public"]
-    releaseNotes = "# Library version: ${android.defaultConfig.versionName} \n See https://github.com/Telefonica/mistica-android/releases for more info."
+    releaseNotes = "# Library version: ${version} \n See https://github.com/Telefonica/mistica-android/releases for more info."
 
     notifyTesters = true
     apps {
