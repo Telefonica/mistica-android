@@ -22,7 +22,7 @@ buildscript {
 allprojects {
 
     group = 'com.telefonica.mistica'
-    version = new File('version.txt').text
+    version = '1.0.0-test'
 
     repositories {
         google()
