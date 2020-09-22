@@ -1,0 +1,15 @@
+name: "Generate catalog app"
+on:
+  push:
+    branches:
+      - master
+jobs:
+  catalog:
+    runs-on: self-hosted-novum
+    steps:
+    - name: Publish catalog
+      uses: satak/webrequest-action@master
+      with:
+        url: https://flow.tuenti.io/events/FLOW/SCRIPT_EVENT
+        method: POST
+        payload: '{"script": "tu-ci", "operation": "create_or_update_job",  "repository": "mistica-android",  "branch": "master",  "workflow": "catalog",  "ticket": "APPS-7169", "username": "flow"}'

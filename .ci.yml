@@ -13,7 +13,7 @@ defaults:
 
 timeout: 60
 workflows:
-  deploy:
+  publish:
     stages: ["docker_up", "deploy", "docker_down"]
     plugins:
       vault:
@@ -22,8 +22,8 @@ workflows:
             keys:
               username: NEXUS_USER
               password: NEXUS_PASS
-  publish:
-    stages: ["docker_up", "deploy_and_catalog", "docker_down"]
+  catalog:
+    stages: ["docker_up", "catalog", "docker_down"]
     plugins:
       vault:
         secrets:
@@ -44,8 +44,8 @@ stages:
     - "docker-compose up -d builder"
   deploy:
     - "docker-compose exec -T builder bash -c \"cd /source; ./gradlew clean check assemble; ./gradlew publish\""
-  deploy_and_catalog:
-    - "docker-compose exec -T builder bash -c \"cd /source; ./gradlew clean check assemble; ./gradlew publish; ./gradlew appCenterAssembleAndUploadDebug\""
+  catalog:
+    - "docker-compose exec -T builder bash -c \"cd /source; ./gradlew clean check appCenterAssembleAndUploadDebug\""
   docker_down:
     - "docker-compose down -v"
   build_image:
