@@ -1,9 +1,10 @@
 name: Generate library version
-on: workflow_dispatch
-  inputs:
-    libraryVersion:
-      description: "Library version"
-      required: true
+on: 
+  workflow_dispatch:
+    inputs:
+      libraryVersion:
+        description: "Library version"
+        required: true
 jobs:
   publish:
     runs-on: self-hosted-novum
