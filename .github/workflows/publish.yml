@@ -56,6 +56,7 @@ jobs:
           payload: '{"script": "tu-ci", "operation": "create_or_update_job",  "repository": "mistica-android",  "branch": "master",  "workflow": "publish",  "ticket": "APPS-7169", "username": "flow"}'
 
       - name: Create Release in github
+        if: steps.check.outputs.has-permission
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
