@@ -1,10 +1,10 @@
 name: "Run tests"
-on: 
+on:
   pull_request:
-    branches: master
-    
+    branches:
+      - master
 jobs:
-  publish:
+  tests:
     runs-on: self-hosted-novum
     steps:
       - name: Checkout repo
