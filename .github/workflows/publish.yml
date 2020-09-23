@@ -34,9 +34,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
       # Use the output from the `check` step
-      - name: Run only if user has NOT sufficient permissions
+      - name: Check permissions
         if: "! steps.check.outputs.has-permission"
-        run: echo "Sorry! Your permissions are insufficient."    
+        run: exit 1    
 
       - name: Push changes
         if: steps.check.outputs.has-permission
