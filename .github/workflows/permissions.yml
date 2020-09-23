@@ -1,0 +1,13 @@
+name: "Testing permissions check"
+on: 
+  workflow_dispatch
+jobs:
+  permissions:
+    runs-on: self-hosted-novum
+    steps:
+      - name: Test permissions
+        uses: scherermichael-oss/action-has-permission@master
+        with:
+          required-permission: admin
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
