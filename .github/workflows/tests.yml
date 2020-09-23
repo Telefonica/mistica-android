@@ -1,10 +1,8 @@
 name: "Run tests"
-#on:
-#  pull_request:
-#    branches:
-#      - master
-on: 
-  workflow_dispatch
+on:
+  pull_request:
+    branches:
+      - master
 jobs:
   tests:
     runs-on: self-hosted-novum
@@ -15,12 +13,4 @@ jobs:
     - name: "Build Android project"
       uses: vgaidarji/android-github-actions-build@v1.0.1
       with:
-        args: 'bash ./gradlew --no-daemon clean check assemble'
-        
-#    - name: Setup java
-#      uses: actions/setup-java@v1
-#      with:
-#        java-version: 1.8
-
-#    - name: Execute tests
-#      run: 'bash ./gradlew --no-daemon clean check assemble'
+        args: 'bash ./gradlew --no-daemon clean check'
