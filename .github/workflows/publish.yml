@@ -5,6 +5,9 @@ on:
       libraryVersion:
         description: "Library version"
         required: true
+      releaseDescription:
+        description: "Release description"
+        required: true
 jobs:
   publish:
     runs-on: self-hosted-novum
@@ -51,3 +54,14 @@ jobs:
           url: https://flow.tuenti.io/events/FLOW/SCRIPT_EVENT
           method: POST
           payload: '{"script": "tu-ci", "operation": "create_or_update_job",  "repository": "mistica-android",  "branch": "master",  "workflow": "publish",  "ticket": "APPS-7169", "username": "flow"}'
+
+      - name: Create Release in github
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.event.inputs.libraryVersion }}
+          release_name: Release ${{ github.event.inputs.libraryVersion }}
+          body: ${{ github.event.inputs.releaseDescription }}
+          draft: true
+          prerelease: true
