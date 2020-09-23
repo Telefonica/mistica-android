@@ -14,7 +14,7 @@ jobs:
 
       - run: 'echo -n ${{ github.event.inputs.libraryVersion }} > version.txt'
         shell: bash
-
+    
       - name: Commit changes
         uses: EndBug/add-and-commit@v4
         with:
@@ -24,13 +24,28 @@ jobs:
           add: "version.txt"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Check permissions
+        id: check
+        uses: scherermichael-oss/action-has-permission@master
+        with:
+          required-permission: admin
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
+      # Use the output from the `check` step
+      - name: Run only if user has NOT sufficient permissions
+        if: "! steps.check.outputs.has-permission"
+        run: echo "Sorry! Your permissions are insufficient."    
 
       - name: Push changes
+        if: steps.check.outputs.has-permission
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Release library
+        if: steps.check.outputs.has-permission
         uses: satak/webrequest-action@master
         with:
           url: https://flow.tuenti.io/events/FLOW/SCRIPT_EVENT
