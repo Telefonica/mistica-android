@@ -12,7 +12,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v2
 
-      - run: 'echo ${{ github.event.inputs.libraryVersion }} > version.txt'
+      - run: 'echo -n ${{ github.event.inputs.libraryVersion }} > version.txt'
         shell: bash
 
       - name: Commit changes
