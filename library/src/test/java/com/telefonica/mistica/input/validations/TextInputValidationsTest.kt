@@ -12,7 +12,7 @@ class TextInputValidationsTest {
 
         val validationResult = emailTextInputValidation.isValid(validEmail)
 
-        assertEquals(TextInputValidationResult.Success, validationResult)
+        assertTrue(validationResult is TextInputValidationResult.Success)
     }
 
     @Test
@@ -21,9 +21,8 @@ class TextInputValidationsTest {
 
         val validationResult = emailTextInputValidation.isValid(invalidEmail)
 
-        assertTrue(validationResult is TextInputValidationResult.Invalid)
-        if (validationResult is TextInputValidationResult.Invalid) {
-            assertEquals(invalidMessageEmail, validationResult.invalidMessage)
+        (validationResult as TextInputValidationResult.Invalid).apply {
+            assertEquals(invalidMessageEmail, this.invalidMessage)
         }
     }
 
@@ -51,7 +50,7 @@ class TextInputValidationsTest {
 
         val validationResult = phoneTextInputValidation.isValid(validPhone)
 
-        assertEquals(TextInputValidationResult.Success, validationResult)
+        assertTrue(validationResult is TextInputValidationResult.Success)
     }
 
     @Test
@@ -60,9 +59,8 @@ class TextInputValidationsTest {
 
         val validationResult = phoneTextInputValidation.isValid(invalidPhone)
 
-        assertTrue(validationResult is TextInputValidationResult.Invalid)
-        if (validationResult is TextInputValidationResult.Invalid) {
-            assertEquals(invalidMessagePhone, validationResult.invalidMessage)
+        (validationResult as TextInputValidationResult.Invalid).apply {
+            assertEquals(invalidMessagePhone, this.invalidMessage)
         }
     }
 
@@ -90,7 +88,7 @@ class TextInputValidationsTest {
 
         val validationResult = customTextInputValidation.isValid(validReversedText)
 
-        assertEquals(TextInputValidationResult.Success, validationResult)
+        assert(validationResult is TextInputValidationResult.Success)
     }
 
     @Test
@@ -99,9 +97,8 @@ class TextInputValidationsTest {
 
         val validationResult = customTextInputValidation.isValid(invalidReversedText)
 
-        assertTrue(validationResult is TextInputValidationResult.Invalid)
-        if (validationResult is TextInputValidationResult.Invalid) {
-            assertEquals(invalidReversedTextMessage, validationResult.invalidMessage)
+        (validationResult as TextInputValidationResult.Invalid).apply {
+            assertEquals(invalidReversedTextMessage, this.invalidMessage)
         }
     }
 
@@ -117,7 +114,7 @@ class TextInputValidationsTest {
     @Test
     fun `should return Invalid when validate with a custom validator an empty String`() {
         val customTextInputValidation = givenACustomTextInputValidation()
-        
+
         val validationResult = customTextInputValidation.isValid("")
 
         assertTrue(validationResult is TextInputValidationResult.Invalid)
