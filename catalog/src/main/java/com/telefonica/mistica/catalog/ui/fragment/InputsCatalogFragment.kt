@@ -10,11 +10,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.Button
 import androidx.annotation.CallSuper
 import androidx.fragment.app.Fragment
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.input.CheckBoxInput
 import com.telefonica.mistica.input.DropDownInput
+import com.telefonica.mistica.input.TextInput
+import com.telefonica.mistica.input.validations.EmailTextInputValidation
+import com.telefonica.mistica.input.validations.PhoneTextInputValidation
+import com.telefonica.mistica.input.validations.TextInputValidation
+import com.telefonica.mistica.input.validations.TextInputValidationResult
 
 class InputsCatalogFragment : Fragment() {
 
@@ -41,6 +47,33 @@ class InputsCatalogFragment : Fragment() {
             findViewById<CheckBoxInput>(R.id.checkboxInput)?.apply {
                 setText(createdSpannableText())
                 setMovementMethod(LinkMovementMethod.getInstance())
+            }
+
+            val textInputEmail = findViewById<TextInput>(R.id.text_input_email).apply {
+                setValidation(EmailTextInputValidation("Email invalid"))
+            }
+            findViewById<Button>(R.id.button_text_input_email)?.apply {
+                setOnClickListener {
+                    textInputEmail?.let { textInputEmail.validate() }
+                }
+            }
+
+            val textInputPhone = findViewById<TextInput>(R.id.text_input_phone).apply {
+                setValidation(PhoneTextInputValidation("Phone invalid"))
+            }
+            findViewById<Button>(R.id.button_text_input_phone)?.apply {
+                setOnClickListener {
+                    textInputEmail?.let { textInputPhone.validate() }
+                }
+            }
+
+            val textInputCustom = findViewById<TextInput>(R.id.text_input_custom).apply {
+                setValidation(customTextInputValidation)
+            }
+            findViewById<Button>(R.id.button_text_input_custom)?.apply {
+                setOnClickListener {
+                    textInputEmail?.let { textInputCustom.validate() }
+                }
             }
         }
     }
@@ -89,5 +122,14 @@ class InputsCatalogFragment : Fragment() {
         override fun onClick(checkBox: View) {
             checkBox.cancelPendingInputEvents()
         }
+    }
+
+    private val customTextInputValidation = object : TextInputValidation {
+        override fun isValid(text: String?): TextInputValidationResult =
+            if (text.equals("Mistica rules")) {
+                TextInputValidationResult.Success
+            } else {
+                TextInputValidationResult.Invalid("Message should be \"Mistica Rules\"")
+            }
     }
 }

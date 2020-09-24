@@ -18,6 +18,9 @@ import androidx.databinding.adapters.ListenerUtil
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.telefonica.mistica.R
+import com.telefonica.mistica.input.validations.NoValidation
+import com.telefonica.mistica.input.validations.TextInputValidation
+import com.telefonica.mistica.input.validations.TextInputValidationResult
 
 @BindingMethods(
     BindingMethod(
@@ -77,6 +80,8 @@ class TextInput @JvmOverloads constructor(
     private var type: Int = TYPE_TEXT
 
     private lateinit var editTextView: TextInputEditText
+
+    private var validation: TextInputValidation = NoValidation()
 
     override fun handleAttrsAndInflateLayout(
         attrs: AttributeSet?,
@@ -173,6 +178,22 @@ class TextInput @JvmOverloads constructor(
 
     fun setOnEditorActionListener(l: TextView.OnEditorActionListener) {
         editTextView.setOnEditorActionListener(l)
+    }
+
+    fun setValidation(validation: TextInputValidation) {
+        this.validation = validation
+    }
+
+    fun isValid(): TextInputValidationResult = validation.isValid(text)
+
+    fun validate() = when (val result = isValid()) {
+        TextInputValidationResult.Success -> {
+            setErrorEnabled(false)
+        }
+        is TextInputValidationResult.Invalid -> {
+            error = result.invalidMessage
+            setErrorEnabled(true)
+        }
     }
 
     override fun onCreateInputConnection(outAttrs: EditorInfo): InputConnection? =
