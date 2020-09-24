@@ -8,7 +8,7 @@ Badges are placed on an overlay, at the top right side of any other view:
 
 To use it, use `com.telefonica.mistica.badge.Badge`
 
-There are two group of methods:
+There are two groups of methods:
 
 ```kotlin
 fun showBadgeIn(anchor: View, count: Int = 0)
@@ -24,4 +24,4 @@ Also, you can specify a `parent`, which will be the layout where `anchor` is pre
 fun removeBadge(badgeDrawable: BadgeDrawable, anchor: View)
 fun removeBadge(badgeDrawable: BadgeDrawable, parent: ViewGroup)
 ```
-Use these methods to delete the badge from the anchor/parent. You will need to decide which one to call based on how you added it to your anchor.
+Use these methods to delete the badge from the anchor/parent. You will need to decide which one to call based on how you added the badge to your anchor.
