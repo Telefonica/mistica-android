@@ -3,11 +3,17 @@ on:
   pull_request:
     branches:
       - master
+    types: [closed]
 jobs:
   catalog:
     runs-on: self-hosted-novum
     steps:
+    - name: Check pull request status
+      if: "!github. **event**.pull_request.merged == true"
+      run: 'echo "Skipping generation, pull request still not merged"'
+      
     - name: Publish catalog
+      if: github. **event**.pull_request.merged == true
       uses: satak/webrequest-action@master
       with:
         url: https://flow.tuenti.io/events/FLOW/SCRIPT_EVENT
