@@ -10,7 +10,7 @@ jobs:
     steps:
     - name: Check pull request status
       if: "!github. **event**.pull_request.merged == true"
-      run: 'echo "Skipping generation, pull request still not merged"'
+      run: 'echo "Skipping generation, pull request is not merged"'
       
     - name: Publish catalog
       if: github.event.pull_request.merged == true
