@@ -24,4 +24,4 @@ Also, you can specify a `parent`, which will be the layout where `anchor` is pre
 fun removeBadge(badgeDrawable: BadgeDrawable, anchor: View)
 fun removeBadge(badgeDrawable: BadgeDrawable, parent: ViewGroup)
 ```
-Use these methods to delete the badge from the anchor/parent. You will need to decide which one to call based on how you added it to your anchor.
+Use these methods to delete the badge from the anchor/parent. You will need to decide which one to call based on how you added the badge to your anchor.
