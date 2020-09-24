@@ -8,7 +8,7 @@ Badges are placed on an overlay, at the top right side of any other view:
 
 To use it, use `com.telefonica.mistica.badge.Badge`
 
-There are two group of methods:
+There are two groups of methods:
 
 ```kotlin
 fun showBadgeIn(anchor: View, count: Int = 0)
