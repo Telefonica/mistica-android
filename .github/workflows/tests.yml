@@ -13,4 +13,4 @@ jobs:
     - name: "Build Android project"
       uses: vgaidarji/android-github-actions-build@v1.0.1
       with:
-        args: 'bash ./gradlew --no-daemon clean check'
+        args: 'bash ./gradlew --no-daemon clean check assemble'
