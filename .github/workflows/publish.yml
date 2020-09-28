@@ -18,23 +18,23 @@ jobs:
       - run: 'echo -n ${{ github.event.inputs.libraryVersion }} > version.txt'
         shell: bash
     
-      - name: Commit changes
-        uses: EndBug/add-and-commit@v4
-        with:
-          author_name: mistica
-          author_email: android@tuenti.com
-          message: "Increasing version to ${{ github.event.inputs.libraryVersion }}"
-          add: "version.txt"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
-#      - name: Check permissions
-#        id: check
-#        uses: scherermichael-oss/action-has-permission@master
+#      - name: Commit changes
+#        uses: EndBug/add-and-commit@v4
 #        with:
-#          required-permission: admin
+#          author_name: mistica
+#          author_email: android@tuenti.com
+#          message: "Increasing version to ${{ github.event.inputs.libraryVersion }}"
+#          add: "version.txt"
 #        env:
 #          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Check permissions
+        id: check
+        uses: scherermichael-oss/action-has-permission@master
+        with:
+          required-permission: admin
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
       # Use the output from the `check` step
 #      - name: Check permissions
