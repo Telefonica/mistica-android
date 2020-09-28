@@ -11,7 +11,7 @@ on:
 jobs:
   publish:
     runs-on: self-hosted-novum
-    container: docker.tuenti.io/android/mistica_builder:1
+    container: docker.tuenti.io/android/mistica_builder:2
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
