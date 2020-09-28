@@ -96,7 +96,7 @@ Library includes a set of available [Text Appearance](library/src/main/res/value
 
 ## Demo app
 
-Included in this repository is a demo of currently implemented components. A full list of implemented components can be found here: [Components](library/src/main/java/com/telefonica/mistica).
+There is a demo of currently implemented components in this repository. A full list of implemented components can be found here: [Components](library/src/main/java/com/telefonica/mistica).
 
 The app can be downloaded [here](https://install.appcenter.ms/orgs/tuenti-organization/apps/mistica/distribution_groups/public) or manually built.
 
