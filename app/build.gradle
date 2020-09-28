@@ -11,7 +11,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 29
         versionCode versionCodeDate()
-        versionName "1.0.0" ASDFG
+        versionName "1.0.0"
     }
 }
 
