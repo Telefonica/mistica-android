@@ -13,7 +13,7 @@ RUN \
 	# 32-bits compatibility
 	apt-get install -y libstdc++6:i386 && \
 	# unzip
-	apt-get install -y unzip \
+	apt-get install -y unzip && \
 	# git
 	apt-get install -y git
 
