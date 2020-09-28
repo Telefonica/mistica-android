@@ -34,7 +34,5 @@ RUN yes | sdkmanager "extras;android;m2repository" "extras;google;google_play_se
 RUN yes | sdkmanager "platforms;android-29"
 RUN yes | sdkmanager --update
 
-RUN git config user.name "Mistica" && git config user.email "android@tuenti.com"
-
 # adb server
 EXPOSE 5037
