@@ -11,12 +11,13 @@ on:
 jobs:
   publish:
     runs-on: self-hosted-novum
+    container: docker.tuenti.io/service-inf/mistica-web-builder:1.0.0
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
 
-      - run: 'echo -n ${{ github.event.inputs.libraryVersion }} > version.txt'
-        shell: bash
+#      - run: 'echo -n ${{ github.event.inputs.libraryVersion }} > version.txt'
+#        shell: bash
     
 #      - name: Commit changes
 #        uses: EndBug/add-and-commit@v4
