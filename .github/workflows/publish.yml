@@ -11,23 +11,23 @@ on:
 jobs:
   publish:
     runs-on: self-hosted-novum
-    container: docker.tuenti.io/service-inf/mistica-web-builder:1.0.0
+    container: docker.tuenti.io/android/mistica_builder:1
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
 
-#      - run: 'echo -n ${{ github.event.inputs.libraryVersion }} > version.txt'
-#        shell: bash
+      - run: 'echo -n ${{ github.event.inputs.libraryVersion }} > version.txt'
+        shell: bash
     
-#      - name: Commit changes
-#        uses: EndBug/add-and-commit@v4
-#        with:
-#          author_name: mistica
-#          author_email: android@tuenti.com
-#          message: "Increasing version to ${{ github.event.inputs.libraryVersion }}"
-#          add: "version.txt"
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v4
+        with:
+          author_name: mistica
+          author_email: android@tuenti.com
+          message: "Increasing version to ${{ github.event.inputs.libraryVersion }}"
+          add: "version.txt"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
       - name: Check permissions
         id: check
@@ -38,32 +38,32 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
       # Use the output from the `check` step
-#      - name: Check permissions
-#        if: "! steps.check.outputs.has-permission"
-#        run: exit 1    
+      - name: Check permissions
+        if: "! steps.check.outputs.has-permission"
+        run: exit 1    
 
-#      - name: Push changes
-#        if: steps.check.outputs.has-permission
-#        uses: ad-m/github-push-action@master
-#        with:
-#          github_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Push changes
+        if: steps.check.outputs.has-permission
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 
-#      - name: Release library
-#        if: steps.check.outputs.has-permission
-#        uses: satak/webrequest-action@master
-#        with:
-#          url: https://flow.tuenti.io/events/FLOW/SCRIPT_EVENT
-#          method: POST
-#          payload: '{"script": "tu-ci", "operation": "create_or_update_job",  "repository": "mistica-android",  "branch": "master",  "workflow": "publish",  "ticket": "APPS-7169", "username": "flow"}'
+      - name: Release library
+        if: steps.check.outputs.has-permission
+        uses: satak/webrequest-action@master
+        with:
+          url: https://flow.tuenti.io/events/FLOW/SCRIPT_EVENT
+          method: POST
+          payload: '{"script": "tu-ci", "operation": "create_or_update_job",  "repository": "mistica-android",  "branch": "master",  "workflow": "publish",  "ticket": "APPS-7169", "username": "flow"}'
 
-#      - name: Create Release in github
-#        if: steps.check.outputs.has-permission
-#        uses: actions/create-release@v1
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#        with:
-#          tag_name: ${{ github.event.inputs.libraryVersion }}
-#          release_name: ${{ github.event.inputs.libraryVersion }}
-#          body: ${{ github.event.inputs.releaseDescription }}
-#          draft: true
-#          prerelease: true
+      - name: Create Release in github
+        if: steps.check.outputs.has-permission
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.event.inputs.libraryVersion }}
+          release_name: ${{ github.event.inputs.libraryVersion }}
+          body: ${{ github.event.inputs.releaseDescription }}
+          draft: true
+          prerelease: true
