@@ -1,0 +1,27 @@
+name: 'Commit and push'
+description: 'This actions commits version.txt file'
+inputs:
+    github_token:
+        description: 'Github token'
+        required: true
+    files:
+        description: 'Files to add'
+        required: false
+        default: '.'
+runs:
+    using: "composite"
+    steps:
+      - run: 'git add ${{ inputs.files }}'
+        shell: bash
+
+      - run: 'git config user.name "Mistica"'
+        shell: bash
+
+      - run: 'git config user.email "android@tuenti.com"'
+        shell: bash
+
+      - run: 'git commit -m "Increasing version"'
+        shell: bash
+
+      - run: 'git push'
+        shell: bash
