@@ -31,7 +31,9 @@ jobs:
         if: "! steps.check.outputs.has-permission"
         run: exit 1    
         
-      - uses: ./.github/actions/commit_and_push
+      - name: Increase version
+        uses: ./.github/actions/commit_and_push
+        if: steps.check.outputs.has-permission
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           files: '.'
