@@ -11,7 +11,6 @@ on:
 jobs:
   publish:
     runs-on: self-hosted-novum
-    container: docker.tuenti.io/android/mistica_builder:2
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
@@ -32,17 +31,13 @@ jobs:
         if: "! steps.check.outputs.has-permission"
         run: exit 1    
         
-      - name: push
-        if: steps.check.outputs.has-permission 
-        uses: github-actions-x/commit@v2.7
+      - uses: ./.github/actions/commit_and_push
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          push-branch: 'master'
-          name: mistica
-          email: android@tuenti.com
-          files: version.txt 
-          commit-message: 'Increasing version to ${{ github.event.inputs.libraryVersion }}'
-
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          files: '.'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
       - name: Release library
         if: steps.check.outputs.has-permission
         uses: satak/webrequest-action@master
