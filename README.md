@@ -106,6 +106,14 @@ To compile the app manually run the [App](app) module in Android Studio.
     <img width="25%" src="./doc/images/catalog/catalog.png">
 </p>
 
+## Library size
+
+Library aar size is around **270 KB**, without including transitive dependencies (Lottie, material and kotlin).
+
+Your app size increase may depend on which of these transitive libraries are already being used, and also, the usage of them, so proguard can shrink more or less code.
+
+Just to put an example, in a common scenario where your app is already using material and kotlin libs, app size increase should be around 400 KB
+
 ## Contributing
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md)
