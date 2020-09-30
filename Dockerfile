@@ -13,7 +13,9 @@ RUN \
 	# 32-bits compatibility
 	apt-get install -y libstdc++6:i386 && \
 	# unzip
-	apt-get install -y unzip
+	apt-get install -y unzip && \
+	# git
+	apt-get install -y git
 
 # Java
 COPY --from=adoptopenjdk/openjdk8:jdk8u192-b12 /opt/java/openjdk /opt/java/openjdk
