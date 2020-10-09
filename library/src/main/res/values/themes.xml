@@ -36,9 +36,9 @@
         <item name="colorIconPrimary">?colorPrimary</item>
         <item name="colorIconPrimaryDark">?colorPrimaryDark</item>
         <item name="colorIconBrand">?colorPrimary</item>
-        <item name="colorIconAccent">?colorAccent</item>
+        <item name="colorIconSuccess">?colorAccent</item>
         <item name="colorIconWarning">?colorPrimary</item>
-        <item name="colorIconDanger">?colorPrimary</item>
+        <item name="colorIconError">?colorPrimary</item>
         <item name="colorIconCustomPurple">?colorPrimary</item>
         <item name="colorIconCustomMagenta">?colorPrimary</item>
     </style>

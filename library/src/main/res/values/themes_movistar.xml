@@ -362,7 +362,7 @@
         <item name="colorIconDisabled">@color/movistar_color_grey_3</item>
         <item name="colorIconSecondary">@color/movistar_color_grey_2</item>
         <item name="colorIconWarning">@color/movistar_color_egg</item>
-        <item name="colorIconDanger">@color/movistar_color_pepper</item>
+        <item name="colorIconError">@color/movistar_color_pepper</item>
         <item name="colorIconCustomPurple">@color/movistar_color_purple</item>
         <item name="colorIconCustomMagenta">@color/movistar_color_pink</item>
 
