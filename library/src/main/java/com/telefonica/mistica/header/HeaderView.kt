@@ -61,7 +61,7 @@ import com.telefonica.mistica.util.getThemeColor
     ),
     BindingMethod(
         type = HeaderView::class,
-        attribute = "headerNumeralHasDangerColor",
+        attribute = "headerNumeralHasErrorColor",
         method = "setNumeralHasDangerColor"
     ),
     BindingMethod(
@@ -163,7 +163,7 @@ class HeaderView @JvmOverloads constructor(
 
             numeralTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.HeaderView_headerNumeral))
             numeralHasDangerColor =
-                styledAttrs.getBoolean(R.styleable.HeaderView_headerNumeralHasDangerColor, false)
+                styledAttrs.getBoolean(R.styleable.HeaderView_headerNumeralHasErrorColor, false)
 
             actionButton.setTextAndVisibility(styledAttrs.getText(R.styleable.HeaderView_headerActionButtonText))
             secondaryActionButton.setTextAndVisibility(styledAttrs.getText(R.styleable.HeaderView_headerSecondaryActionButtonText))

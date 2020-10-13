@@ -17,7 +17,7 @@ Implemented as a custom view, `com.telefonica.mistica.header.HeaderView` can be 
     <attr name="headerSecondPretitle" format="string"/>
     <attr name="headerSecondPretitleHasSecondaryColor" format="boolean"/>
     <attr name="headerNumeral" format="string"/>
-    <attr name="headerNumeralHasDangerColor" format="boolean"/>
+    <attr name="headerNumeralHasErrorColor" format="boolean"/>
     <attr name="headerActionButtonText" format="string"/>
     <attr name="headerSecondaryActionButtonText" format="string"/>
     <attr name="headerActionButtonOnClick" format="string"/>
