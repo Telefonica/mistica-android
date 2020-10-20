@@ -105,10 +105,15 @@
         android:layout_marginBottom="24dp"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/highlighted_card_content"
         app:layout_goneMarginBottom="24dp"
         app:layout_goneMarginTop="0dp"
+        android:minWidth="0dp"
+        android:paddingStart="0dp"
+        android:paddingLeft="0dp"
+        android:paddingEnd="0dp"
+        android:paddingRight="0dp"
         tools:text="Update" />
 
     <com.telefonica.mistica.button.Button
@@ -120,8 +125,13 @@
         android:layout_marginBottom="24dp"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/highlighted_card_content"
+        android:minWidth="0dp"
+        android:paddingStart="0dp"
+        android:paddingLeft="0dp"
+        android:paddingEnd="0dp"
+        android:paddingRight="0dp"
         tools:text="Update"
         tools:visibility="gone" />
 
