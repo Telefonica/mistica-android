@@ -312,12 +312,12 @@
         <attr name="colorIconPrimary" format="color|reference" />
         <attr name="colorIconPrimaryDark" format="color|reference" />
         <attr name="colorIconBrand" format="color|reference" />
-        <attr name="colorIconAccent" format="color|reference" />
+        <attr name="colorIconSuccess" format="color|reference" />
         <attr name="colorIconDisabled" format="color|reference" />
         <attr name="colorIconInverse" format="color|reference" />
         <attr name="colorIconSecondary" format="color|reference" />
         <attr name="colorIconWarning" format="color|reference" />
-        <attr name="colorIconDanger" format="color|reference" />
+        <attr name="colorIconError" format="color|reference" />
         <attr name="colorIconCustomPurple" format="color|reference" />
         <attr name="colorIconCustomMagenta" format="color|reference" />
 
