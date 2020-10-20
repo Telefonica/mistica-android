@@ -18,6 +18,8 @@ class ScrollContentIndicator @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : AppCompatTextView(context, attrs, defStyleAttr) {
 
+    private var animationsEnabled = true
+
     init {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             setTextAppearance(R.style.AppTheme_TextAppearance_Preset7_Medium)
@@ -66,6 +68,14 @@ class ScrollContentIndicator @JvmOverloads constructor(
         super.setVisibility(visibility)
     }
 
+    open fun disableAnimations() {
+        animationsEnabled = false
+    }
+
+    open fun enableAnimations() {
+        animationsEnabled = true
+    }
+
     private fun runEaseOutAnimation() {
         val scaleAnimation = ScaleAnimation(
             IN_SCALE_FROM_X,
@@ -86,8 +96,7 @@ class ScrollContentIndicator @JvmOverloads constructor(
             addAnimation(scaleAnimation)
             addAnimation(alphaAnimation)
             interpolator = DecelerateInterpolator()
-            duration =
-                ANIM_DURATION_MS
+            duration = if (animationsEnabled) ANIM_DURATION_MS else 0
             startAnimation(this)
         }
     }
@@ -112,8 +121,7 @@ class ScrollContentIndicator @JvmOverloads constructor(
             addAnimation(scaleAnimation)
             addAnimation(alphaAnimation)
             interpolator = AccelerateInterpolator()
-            duration =
-                ANIM_DURATION_MS
+            duration = if (animationsEnabled) ANIM_DURATION_MS else 0
             startAnimation(this)
         }
     }
