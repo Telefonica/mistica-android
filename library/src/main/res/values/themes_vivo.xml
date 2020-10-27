@@ -141,7 +141,7 @@
         <item name="colorViewPagerItemSecondary">@color/vivo_color_grey_0</item>
 
         <!-- Login -->
-        <item name="colorLoginOverlay">@color/vivo_color_black_40_percent</item>
+        <item name="colorLoginOverlay">@android:color/transparent</item>
         <item name="colorLoginDarkOverlay">@color/vivo_color_black_80_percent</item>
         <item name="colorLoginTextInput">@color/vivo_color_grey_3</item>
         <item name="colorLoginItem">@color/vivo_color_white</item>
