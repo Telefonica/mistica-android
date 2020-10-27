@@ -94,6 +94,7 @@ class CatalogMainActivity : AppCompatActivity() {
             SectionItem("Lists", R.drawable.ic_lists, Section.LISTS),
             SectionItem("Headers", R.drawable.ic_headers, Section.HEADERS),
             SectionItem("Highlighted Cards", R.drawable.ic_cards, Section.HIGHLIGHTED_CARDS),
+            SectionItem("Controls", R.drawable.ic_feedbacks, Section.CONTROLS), //Pending icon
             SectionItem("Others", R.drawable.ic_others, Section.OTHERS)
         )
 
