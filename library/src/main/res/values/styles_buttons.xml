@@ -37,7 +37,7 @@
         <item name="android:textAppearance">@style/AppTheme.TextAppearance.Preset7.Medium</item>
         <item name="android:paddingStart">@dimen/button_link_horizontal_padding</item>
         <item name="android:paddingEnd">@dimen/button_link_horizontal_padding</item>
-        <item name="android:minWidth">@dimen/button_small_min_width</item>
+        <item name="android:minWidth">0dp</item>
         <item name="android:minHeight">@dimen/button_small_height</item>
         <item name="android:insetTop">@dimen/button_vertical_inset</item>
         <item name="android:insetBottom">@dimen/button_vertical_inset</item>
