@@ -9,6 +9,6 @@ jobs:
         uses: actions/checkout@v2
 
       - name: "Build Android project"
-        uses: android/mistica_builder@v2
+        uses: docker://docker.tuenti.io/android/mistica_builder:2
         with:
           args: 'bash ./gradlew --no-daemon clean check assemble'
