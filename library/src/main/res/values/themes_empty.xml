@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="EmptyMisticaTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+
+        <!-- # Colors # -->
+
+        <!-- General -->
+        <item name="colorBackground">@null</item>
+
+        <item name="colorTextPrimary">@null</item>
+        <item name="colorTextSecondary">@null</item>
+        <item name="colorTextDisabled">@null</item>
+        <item name="colorTextPrimaryInverse">@null</item>
+        <item name="colorTextSecondaryInverse">@null</item>
+
+        <item name="colorTextHint">@null</item>
+        <item name="colorTextLink">@null</item>
+        <item name="colorTextLinkPressed">@null</item>
+        <item name="colorTextLinkDisabled">@null</item>
+        <item name="colorTextLinkSnackbar">@null</item>
+
+        <item name="colorTextError">@null</item>
+        <item name="colorTextDanger">@null</item>
+        <item name="colorTextNavigationBarPrimary">@null</item>
+
+        <item name="colorTextAccent">@null</item>
+        <item name="colorTextAccentDisabled">@null</item>
+
+        <item name="colorTabSelected">@null</item>
+
+        <item name="textInputLabel">@null</item>
+
+        <item name="colorBackgroundAlternative">@null</item>
+
+        <item name="colorTimeIndicatorWarning">@null</item>
+
+        <!-- Recents -->
+        <item name="colorSearchOverlay">@null</item>
+
+        <!-- Bubbles -->
+        <item name="colorBubbleMeBackground">@null</item>
+        <item name="colorBubbleMeBackgroundPressed">@null</item>
+        <item name="colorBubbleOtherBackground">@null</item>
+        <item name="colorBubbleOtherBackgroundPressed">@null</item>
+        <item name="colorBubbleBackgroundHighlighted">@null</item>
+
+        <item name="colorPhotoChatBubbleTimestampBackground">@null</item>
+        <item name="colorChatBgFailedBubble">@null</item>
+
+        <!-- Buttons -->
+        <item name="colorTextButtonPrimary">@null</item>
+        <item name="colorTextButtonSecondary">@null</item>
+        <item name="colorTextButtonSecondaryPressed">@null</item>
+        <item name="colorTextButtonSecondaryDisabled">@null</item>
+
+        <item name="colorTextButtonPrimaryInverse">@null</item>
+        <item name="colorTextButtonPrimaryInversePressed">@null</item>
+        <item name="colorTextButtonPrimaryInverseDisabled">@null</item>
+
+        <item name="colorTextButtonSecondaryInverse">@null</item>
+        <item name="colorTextButtonSecondaryInversePressed">@null</item>
+        <item name="colorTextButtonSecondaryInverseDisabled">@null</item>
+
+        <item name="colorButtonPrimaryBackground">@null</item>
+        <item name="colorButtonPrimaryBackgroundPressed">@null</item>
+        <item name="colorButtonPrimaryBackgroundDisabled">@null</item>
+
+        <item name="colorButtonSecondaryBackground">@null</item>
+        <item name="colorButtonSecondaryBackgroundPressed">@null</item>
+        <item name="colorButtonSecondaryBackgroundDisabled">@null</item>
+
+        <item name="colorButtonDangerBackground">@null</item>
+        <item name="colorButtonDangerBackgroundPressed">@null</item>
+        <item name="colorButtonDangerBackgroundDisabled">@null</item>
+
+        <item name="colorButtonPrimaryBackgroundInverse">@null</item>
+        <item name="colorButtonPrimaryBackgroundPressedInverse">@null</item>
+        <item name="colorButtonPrimaryBackgroundDisabledInverse">@null</item>
+
+        <item name="colorButtonSecondaryBorderInverse">@null</item>
+        <item name="colorButtonSecondaryBorderPressedInverse">@null</item>
+        <item name="colorButtonSecondaryBorderDisabledInverse">@null</item>
+
+        <item name="colorLinkButtonBackgroundPressed">@null</item>
+        <item name="colorLinkButtonBackgroundPressedInverse">@null</item>
+
+        <item name="colorButtonCircularBorderBackground">@null</item>
+
+        <!-- Call button -->
+        <item name="colorButtonDanger">@null</item>
+        <item name="colorButtonDangerDisabled">@null</item>
+        <item name="colorButtonDangerPressed">@null</item>
+
+        <!-- Call dialog -->
+        <item name="colorCallDialogWindowBackground">@null</item>
+
+        <!-- Call screen -->
+        <item name="colorCallScreenOverlayTransparent">@null</item>
+        <item name="colorCallScreenOverlay">@null</item>
+        <item name="colorCallScreenCallEndedBackgroundOpacity">@null</item>
+        <item name="colorCallScreenFilterButtonBackground">@null</item>
+        <item name="colorCallScreenTextShadow">@null</item>
+        <item name="colorCallScreenDialerButtonPressed">@null</item>
+        <item name="colorCallScreenDialerButton">@null</item>
+        <item name="colorCallScreenWaveformViewLineTransparent">@null</item>
+        <item name="colorCallScreenWaveformViewLineOpaque">@null</item>
+        <item name="colorCallScreenFilterSelector">@null</item>
+
+        <!-- Feedbacks -->
+        <item name="colorFeedbackErrorBackground">@null</item>
+        <item name="colorFeedbackInfoBackground">@null</item>
+        <item name="colorToastShadowBackground">@null</item>
+        <item name="colorBorder">@null</item>
+
+        <!-- Dividers -->
+        <item name="colorDivider">@null</item>
+        <item name="colorDividerFat">@null</item>
+        <item name="colorDividerInverse">@null</item>
+        <item name="colorDividerAlbumPhotoDropDownMenu">@null</item>
+
+        <!-- View Pager indicators -->
+        <item name="colorViewPagerItemPrimary">@null</item>
+        <item name="colorViewPagerItemSecondary">@null</item>
+
+        <!-- Login -->
+        <item name="colorLoginOverlay">@null</item>
+        <item name="colorLoginDarkOverlay">@null</item>
+        <item name="colorLoginTextInput">@null</item>
+        <item name="colorLoginItem">@null</item>
+        <item name="colorLoginItemPressed">@null</item>
+        <item name="colorLoginEditTextAccent">@null</item>
+        <item name="colorLoginEditTextControlNormal">@null</item>
+        <item name="colorLoginEditTextControlHighlight">@null</item>
+        <item name="colorLoginEditTextControlActivated">@null</item>
+        <item name="colorLoginEditTextText">@null</item>
+
+        <!-- Sign Up -->
+        <item name="colorSignUpSocialBackground">@null</item>
+        <item name="colorSignUpSocialLoginItem">@null</item>
+        <item name="colorSignUpSocialLoginItemPressed">@null</item>
+
+        <!-- Chat -->
+        <item name="colorMucEventAccentColor">@null</item>
+
+        <!-- Telco Profile -->
+        <item name="colorProfileOverlayBackground">@null</item>
+        <item name="colorProfileSwipeBackShadow">@null</item>
+        <item name="colorProfileCallActionDisabledBackground">@null</item>
+
+        <!--  Own Profile  -->
+        <item name="colorFingerprintBackground">@null</item>
+        <item name="colorProfileItemIcon">@null</item>
+
+        <!-- Session Management -->
+        <item name="colorSessionManagementIcon">@null</item>
+
+        <!-- Photos -->
+        <item name="colorPhotosBackground">@null</item>
+        <item name="colorAlbumRowBackground">@null</item>
+
+        <!-- News -->
+        <item name="colorNewsNotificationBackground">@null</item>
+
+        <!-- Call Dialog -->
+        <item name="colorOutgoingCallDialogForegroundSignal">@null</item>
+        <item name="colorOutgoingCallDialogBackgroundSignal">@null</item>
+
+        <!-- Chat Bar -->
+        <item name="colorCharCounterTextColor">@null</item>
+
+        <!-- Customer Care -->
+        <item name="colorCustomerCareCategoryPickerDivider">@null</item>
+
+        <!-- Albums -->
+        <item name="colorAlbumsPlaceholderPlain">@null</item>
+        <item name="colorAlbumsPlaceholderPlainTransparent">@null</item>
+
+        <!-- Call Screen -->
+        <item name="colorVoipInCallActionButton">@null</item>
+        <item name="colorVoipQualityFeedbackBackgroundLightGray">@null</item>
+        <item name="colorVoipQualityFeedbackBrightCapsuleMin">@null</item>
+        <item name="colorVoipQualityFeedbackBrightCapsuleMax">@null</item>
+        <item name="colorVoipQualityFeedbackDarkCapsuleMin">@null</item>
+        <item name="colorVoipQualityFeedbackDarkCapsuleMax">@null</item>
+        <item name="colorVoipGradientBackground">@null</item>
+
+        <!-- Tabs -->
+        <item name="colorMainTabText">@null</item>
+        <item name="colorMainTabTextSelected">@null</item>
+
+        <!-- Assistant -->
+        <item name="colorGradientBackgroundFirst">@null</item>
+        <item name="colorGradientBackgroundSecond">@null</item>
+        <item name="colorGradientBackgroundThird">@null</item>
+        <item name="colorGradientBackgroundFourth">@null</item>
+
+        <item name="colorTextAssistantHint">@null</item>
+
+        <item name="colorAssistantButtonBackground">@null</item>
+        <item name="colorAssistantButtonBackgroundPressed">@null</item>
+        <item name="colorAssistantButtonBackgroundDisabled">@null</item>
+
+        <item name="colorAssistantButtonNotificationsBackground">@null</item>
+
+        <item name="colorAssistantButtonBorderBackground">@null</item>
+        <item name="colorAssistantButtonBorderBackgroundPressed">@null</item>
+        <item name="colorAssistantButtonBorderBackgroundDisabled">@null</item>
+
+        <item name="colorAssistantButtonFlowBackground">@null</item>
+        <item name="colorAssistantButtonFlowBackgroundPressed">@null</item>
+        <item name="colorAssistantButtonFlowBackgroundDisabled">@null</item>
+
+        <item name="colorAssistantDivider">@null</item>
+        <item name="colorAssistantCardShadow">@null</item>
+
+        <item name="colorAssistantChartPrimaryActive">@null</item>
+        <item name="colorAssistantChartPrimaryInactive">@null</item>
+        <item name="colorAssistantChartSecondaryActive">@null</item>
+        <item name="colorAssistantChartSecondaryInactive">@null</item>
+        <item name="colorAssistantBadge">@null</item>
+        <item name="colorAssistantChartCircleBackground">@null</item>
+        <item name="colorAssistantChartCirclePrimary">@null</item>
+        <item name="colorAssistantChartCircleWarning">@null</item>
+        <item name="colorAssistantChartCircleDanger">@null</item>
+
+        <!-- Onboarding Wizard -->
+        <item name="colorScreenBackground">@null</item>
+
+        <!-- Call -->
+        <item name="colorTextNewBubbleCallContent">@null</item>
+
+        <!-- Location bubble -->
+        <item name="colorNewBubbleLocationForwardNormal">@null</item>
+        <item name="colorNewBubbleLocationForwardPressed">@null</item>
+
+        <!-- Photo -->
+        <item name="colorNewBubblePhotoTimestampBackground">@null</item>
+
+        <!-- Gif -->
+        <item name="colorNewBubbleIconBg">@null</item>
+
+        <!-- Video -->
+        <item name="colorVideoProgressBg">@null</item>
+        <item name="colorVideoTimeText">@null</item>
+        <item name="colorVideoViewBg">@null</item>
+        <item name="colorVideoViewBgWith40Alpha">@null</item>
+        <item name="colorVideoPlayBgWith30Alpha">@null</item>
+
+        <!-- Date Meta Message -->
+        <item name="colorDateMessageTextColor">@null</item>
+
+        <!-- Unread Marker -->
+        <item name="colorUnreadMarkerTextColor">@null</item>
+
+        <!-- Pin Screen -->
+        <item name="colorPinGradientFirst">@null</item>
+        <item name="colorPinGradientSecond">@null</item>
+        <item name="colorPinGradientThird">@null</item>
+        <item name="colorPinGradientFourth">@null</item>
+        <item name="colorPinLoadingOverlay">@null</item>
+        <item name="colorPinBiometricOverlay">@null</item>
+
+        <!-- Explore -->
+        <item name="colorSkeletonBackground">@null</item>
+        <item name="colorSkeletonWave">@null</item>
+        <item name="colorExploreCardPressed">@null</item>
+
+        <!-- Login loading Screen -->
+        <item name="colorLoginLoadingGradientFirst">@null</item>
+        <item name="colorLoginLoadingGradientSecond">@null</item>
+        <item name="colorLoginLoadingGradientThird">@null</item>
+        <item name="colorLoginLoadingGradientFourth">@null</item>
+
+        <!-- Bottom Bar -->
+        <item name="colorAppbarText">@null</item>
+        <item name="colorAppbarTextSelected">@null</item>
+
+        <!-- Support and ticketing  -->
+        <item name="colorTagBackgroundFirst">@null</item>
+        <item name="colorTagBackgroundFourth">@null</item>
+        <item name="colorTagBackgroundSecond">@null</item>
+        <item name="colorTagBackgroundThird">@null</item>
+
+        <!-- Widget -->
+        <item name="colorChartBackground">@null</item>
+        <item name="colorChartPrimary">@null</item>
+        <item name="colorChartPrimaryDark">@null</item>
+        <item name="colorChartPrimaryLight">@null</item>
+        <item name="colorChartWarning">@null</item>
+        <item name="colorChartWarningLight">@null</item>
+        <item name="colorChartDanger">@null</item>
+        <item name="colorChartUnlimited">@null</item>
+        <item name="colorChartCritical">@null</item>
+
+        <!-- Youtube player -->
+        <item name="colorYoutubeBackgroundLayer">@null</item>
+
+        <!-- Chips -->
+        <item name="colorChipGroupBackground">@null</item>
+        <item name="colorChipTextDefault">@null</item>
+        <item name="colorChipTextChecked">@null</item>
+        <item name="colorChipBackgroundDefault">@null</item>
+        <item name="colorChipBackgroundChecked">@null</item>
+
+        <!-- Badge -->
+        <item name="colorBadgeBackground">@null</item>
+
+        <!-- Scroll content indicator -->
+        <item name="scrollContentIndicatorGradientStart">@null</item>
+        <item name="scrollContentIndicatorGradientEnd">@null</item>
+
+        <!-- Iconography colors -->
+        <item name="colorIconPrimary">@null</item>
+        <item name="colorIconPrimaryDark">@null</item>
+        <item name="colorIconBrand">@null</item>
+        <item name="colorIconSuccess">@null</item>
+        <item name="colorIconDisabled">@null</item>
+        <item name="colorIconInverse">@null</item>
+        <item name="colorIconSecondary">@null</item>
+        <item name="colorIconWarning">@null</item>
+        <item name="colorIconError">@null</item>
+        <item name="colorIconCustomPurple">@null</item>
+        <item name="colorIconCustomMagenta">@null</item>
+
+        <!-- Tag -->
+        <item name="colorPromoBackground">@null</item>
+
+        <!-- # Feedbacks # -->
+        <item name="feedbackScreenSuccessWithGradient">false</item>
+        <item name="feedbackScreenSuccessInverse">false</item>
+        <item name="feedbackScreenSuccessAnimation">@null</item>
+        <item name="feedbackScreenSuccessIcon">@null</item>
+        <item name="feedbackScreenErrorAnimation">@null</item>
+        <item name="feedbackScreenErrorIcon">@null</item>
+        <item name="feedbackScreenInfoAnimation">@null</item>
+        <item name="feedbackScreenInfoIcon">@null</item>
+    </style>
+</resources>
