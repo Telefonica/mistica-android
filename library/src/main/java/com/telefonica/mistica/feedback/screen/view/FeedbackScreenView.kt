@@ -349,7 +349,13 @@ class FeedbackScreenView : ConstraintLayout {
     private fun getThemeRes(@AttrRes attributeRes: Int, resolveRefs: Boolean = true): Int? {
         val typedValue = TypedValue()
         context.theme.resolveAttribute(attributeRes, typedValue, resolveRefs)
-        return typedValue.data.takeIf { typedValue.type != TypedValue.TYPE_NULL }
+        return typedValue.data.takeIf {
+            when (typedValue.type) {
+                TypedValue.TYPE_NULL -> false
+                TypedValue.TYPE_REFERENCE -> typedValue.data != 0
+                else -> true
+            }
+        }
     }
 
     private fun getBooleanThemeRes(@AttrRes attributeRes: Int): Boolean =
