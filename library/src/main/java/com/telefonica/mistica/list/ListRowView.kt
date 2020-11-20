@@ -64,6 +64,11 @@ import com.telefonica.mistica.util.convertDpToPx
     ),
     BindingMethod(
         type = ListRowView::class,
+        attribute = "listRowAssetHasBackground",
+        method = "setBackgroundAsset"
+    ),
+    BindingMethod(
+        type = ListRowView::class,
         attribute = "listRowActionLayout",
         method = "setActionLayout"
     ),
@@ -81,6 +86,7 @@ class ListRowView @JvmOverloads constructor(
 
     private val textsContainer: LinearLayout
     private val assetImageView: ImageView
+    private val assetImageLayout: FrameLayout
     private val headlineContainer: FrameLayout
     private val titleTextView: TextView
     private val subtitleTextView: TextView
@@ -91,6 +97,7 @@ class ListRowView @JvmOverloads constructor(
     private var currentHeadlineLayoutRes: Int = HEADLINE_NONE
     private var currentActionLayoutRes: Int = ACTION_NONE
     private var isSmallAsset: Boolean = false
+    private var assetHasBackground: Boolean = false
 
     init {
         LayoutInflater.from(context).inflate(R.layout.list_row_item, this, true)
@@ -101,6 +108,7 @@ class ListRowView @JvmOverloads constructor(
 
         textsContainer = findViewById(R.id.row_texts_container)
         assetImageView = findViewById(R.id.row_asset_image)
+        assetImageLayout = findViewById(R.id.row_asset_image_layout)
         headlineContainer = findViewById(R.id.row_headline)
         titleTextView = findViewById(R.id.row_title_text)
         subtitleTextView = findViewById(R.id.row_subtitle_text)
@@ -155,17 +163,26 @@ class ListRowView @JvmOverloads constructor(
         recalculateAssetPosition()
     }
 
+    fun setBackgroundAsset(hasBackground: Boolean) {
+        assetHasBackground = hasBackground
+        assetImageLayout.setBackgroundResource(if (hasBackground) R.drawable.bg_list_image else 0)
+        recalculateAssetPosition()
+    }
+
     fun setAssetResource(@DrawableRes resource: Int? = null) {
         setAssetDrawable(resource?.let { ContextCompat.getDrawable(context, it) })
     }
 
     fun setAssetDrawable(drawable: Drawable? = null) {
         assetImageView.setImageDrawable(drawable)
-        assetImageView.visibility = if (drawable != null) {
+        val visibility = if (drawable != null) {
             View.VISIBLE
         } else {
             View.GONE
         }
+
+        assetImageLayout.visibility = visibility
+        assetImageView.visibility = visibility
     }
 
     fun setTitle(text: CharSequence?) {
@@ -263,15 +280,15 @@ class ListRowView @JvmOverloads constructor(
     }
 
     private fun recalculateAssetPosition() {
-        with(assetImageView.layoutParams as LayoutParams) {
+        with(assetImageLayout.layoutParams as LayoutParams) {
             if (isAnyTextDifferentThanTitleVisible()) {
                 bottomToBottom = ConstraintSet.UNSET
-                topMargin = context.convertDpToPx(if (isSmallAsset) 8 else 4)
+                topMargin = context.convertDpToPx(if (isSmallAsset && !assetHasBackground) 8 else 4)
             } else {
                 bottomToBottom = ConstraintSet.PARENT_ID
                 topMargin = context.convertDpToPx(0)
             }
-            assetImageView.layoutParams = this
+            assetImageLayout.layoutParams = this
         }
     }
 

@@ -21,6 +21,7 @@ Implemented as a custom view, `com.telefonica.mistica.ListRowView` can be used i
     <attr name="listRowAssetDrawable" format="reference" />
     <attr name="listRowIsBoxed" format="boolean" />
     <attr name="listRowHasSmallAsset" format="boolean" />
+    <attr name="listRowAssetHasBackground" format="boolean" />
     <attr name="listRowActionLayout" format="integer">
         <enum name="none" value="-1" />
     </attr>

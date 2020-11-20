@@ -45,7 +45,7 @@ class ListsCatalogFragment : Fragment() {
                 ) as ListRowView
             )
 
-        override fun getItemCount(): Int = 23
+        override fun getItemCount(): Int = 25
 
         override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
             val rowView: ListRowView = holder.rowView
@@ -155,6 +155,17 @@ class ListsCatalogFragment : Fragment() {
                     withSubtitle = true,
                     withHeadline = true
                 )
+                23 -> rowView.configureView(
+                    withAsset = true,
+                    withSmallAsset = true,
+                    withBackgroundAsset = true,
+                    withLongDescription = false
+                )
+                24 -> rowView.configureView(
+                    withAsset = true,
+                    withSmallAsset = true,
+                    withBackgroundAsset = true
+                )
             }
         }
 
@@ -164,6 +175,7 @@ class ListsCatalogFragment : Fragment() {
             withLongDescription: Boolean? = null,
             withAsset: Boolean = false,
             withSmallAsset: Boolean = false,
+            withBackgroundAsset: Boolean = false,
             withAction: Boolean = false,
             withBadgeCount: Int = ListRowView.BADGE_GONE,
             withHeadline: Boolean = false,
@@ -189,6 +201,7 @@ class ListsCatalogFragment : Fragment() {
             )
             setAssetResource(if (withAsset) R.drawable.ic_lists else null)
             setSmallAsset(withSmallAsset)
+            setBackgroundAsset(withBackgroundAsset)
             if (withAction) {
                 setActionLayout(R.layout.list_row_chevron_action)
                 setOnClickListener { Toast.makeText(context, "Click!", Toast.LENGTH_SHORT).show() }
