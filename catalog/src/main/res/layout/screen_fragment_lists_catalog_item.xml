@@ -6,6 +6,6 @@
     app:listRowAssetDrawable="@android:drawable/btn_star"
     app:listRowBadgeCount="gone"
     app:listRowDescription="Test Subtitle"
-    app:listRowHasSmallAsset="true"
+    app:listRowAssetType="smallIcon"
     app:listRowIsBoxed="true"
     app:listRowTitle="Test Title" />
