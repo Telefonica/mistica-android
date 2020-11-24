@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="AppTheme.TextAppearance" parent="TextAppearance.AppCompat" />
+    <style name="AppTheme.TextAppearance" parent="TextAppearance.AppCompat" >
+        <item name="android:letterSpacing">0.0</item>
+    </style>
 
     <style name="AppTheme.TextAppearance.Preset1">
         <item name="android:textSize">32sp</item>
