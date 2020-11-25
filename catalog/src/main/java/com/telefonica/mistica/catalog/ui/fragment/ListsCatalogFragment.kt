@@ -57,11 +57,15 @@ class ListsCatalogFragment : Fragment() {
             when (position) {
                 0 -> rowView.configureView()
                 1 -> rowView.configureView(
-                    withAction = true
+                    withAction = true,
+                    withAsset = true,
+                    withAssetType = TYPE_LARGE_ICON
                 )
                 2 -> rowView.configureView(
                     withAction = true,
-                    withBadgeCount = 0
+                    withBadgeCount = 0,
+                    withAsset = true,
+                    withAssetType = TYPE_IMAGE
                 )
                 3 -> rowView.configureView(
                     withAction = true,
@@ -212,8 +216,10 @@ class ListsCatalogFragment : Fragment() {
                     }
                 }
             )
-            setAssetResource(if (withAsset) R.drawable.ic_lists else null)
+
             setAssetType(withAssetType)
+            setAssetResource(getAssetResource(withAsset, withAssetType))
+
             if (withAction) {
                 setActionLayout(R.layout.list_row_chevron_action)
                 setOnClickListener { Toast.makeText(context, "Click!", Toast.LENGTH_SHORT).show() }
@@ -223,6 +229,17 @@ class ListsCatalogFragment : Fragment() {
             }
             setBadgeCount(withBadgeCount)
         }
+
+        private fun getAssetResource(withAsset: Boolean, withAssetType: Int): Int =
+            if (withAsset) {
+                if (withAssetType == TYPE_IMAGE) {
+                    R.drawable.netflix_logo
+                } else {
+                    R.drawable.ic_lists
+                }
+            } else {
+                -1
+            }
     }
 
     class ListViewHolder(val rowView: ListRowView) : RecyclerView.ViewHolder(rowView)

@@ -120,8 +120,8 @@ class CatalogMainActivity : AppCompatActivity() {
                             context.startActivity(this)
                         }
                 }
-                setAssetResource(section.icon)
                 setAssetType(TYPE_SMALL_ICON)
+                setAssetResource(section.icon)
             }
         }
 

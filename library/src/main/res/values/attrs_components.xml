@@ -42,8 +42,9 @@
         <attr name="listRowTitle" format="string" />
         <attr name="listRowSubtitle" format="string" />
         <attr name="listRowDescription" format="string" />
-        <attr name="listRowAssetDrawable" format="reference" />
-        <attr name="listRowAssetBackground" format="reference" />
+        <attr name="listRowAssetDrawable" format="integer" >
+            <enum name="none" value="-1" />
+        </attr>
         <attr name="listRowAssetType" format="enum">
             <enum name="image" value="0" />
             <enum name="smallIcon" value="1" />

@@ -1,8 +1,11 @@
 package com.telefonica.mistica.list
 
 import android.content.Context
+import android.graphics.BitmapFactory
 import android.graphics.drawable.Drawable
+import android.media.ThumbnailUtils
 import android.util.AttributeSet
+import android.util.Log
 import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
@@ -10,18 +13,22 @@ import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
 import androidx.annotation.IntDef
 import androidx.annotation.LayoutRes
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
 import androidx.core.content.ContextCompat
+import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
+import coil.load
+import coil.transform.CircleCropTransformation
 import com.telefonica.mistica.R
 import com.telefonica.mistica.badge.Badge
 import com.telefonica.mistica.util.convertDpToPx
+import kotlin.math.min
+
 
 @BindingMethods(
     BindingMethod(
@@ -52,7 +59,7 @@ import com.telefonica.mistica.util.convertDpToPx
     BindingMethod(
         type = ListRowView::class,
         attribute = "listRowAssetDrawable",
-        method = "setAssetDrawable"
+        method = "setAssetResource"
     ),
     BindingMethod(
         type = ListRowView::class,
@@ -144,7 +151,7 @@ class ListRowView @JvmOverloads constructor(
             setDescription(styledAttrs.getText(R.styleable.ListRowView_listRowDescription))
             setBoxed(styledAttrs.getBoolean(R.styleable.ListRowView_listRowIsBoxed, false))
             setAssetType(styledAttrs.getType(R.styleable.ListRowView_listRowAssetType))
-            setAssetDrawable(styledAttrs.getDrawable(R.styleable.ListRowView_listRowAssetDrawable))
+            setAssetResource(styledAttrs.getResourceId(R.styleable.ListRowView_listRowAssetDrawable, -1))
             setBadgeCount(styledAttrs.getInt(R.styleable.ListRowView_listRowBadgeCount, BADGE_GONE))
             styledAttrs.getResourceId(
                 R.styleable.ListRowView_listRowActionLayout,
@@ -156,13 +163,17 @@ class ListRowView @JvmOverloads constructor(
         }
     }
 
-    fun setAssetResource(@DrawableRes resource: Int? = null) {
-        setAssetDrawable(resource?.let { ContextCompat.getDrawable(context, it) })
-    }
+    fun setAssetResource(@DrawableRes resource: Int) {
+        if (resource != -1) {
+            if (assetType == TYPE_IMAGE) {
+//                loadImageManually(resource)
+                loadImageWithCoil(resource)
+            } else {
+                assetImageView.load(resource)
+            }
+        }
 
-    fun setAssetDrawable(drawable: Drawable? = null) {
-        assetImageView.setImageDrawable(drawable)
-        val visibility = if (drawable != null) {
+        val visibility = if (resource != -1) {
             View.VISIBLE
         } else {
             View.GONE
@@ -170,6 +181,36 @@ class ListRowView @JvmOverloads constructor(
 
         assetImageLayout.visibility = visibility
         assetImageView.visibility = visibility
+    }
+
+    private fun loadImageWithCoil(resource: Int) {
+        val startTime = System.currentTimeMillis()
+        assetImageView.load(resource) {
+            transformations(CircleCropTransformation())
+        }
+        val endTime = System.currentTimeMillis()
+        Log.d("setAssetResource", "With Coil: ${endTime - startTime}")
+    }
+
+    private fun loadImageWithCoil(drawable: Drawable) {
+        val startTime = System.currentTimeMillis()
+        assetImageView.load(drawable) {
+            transformations(CircleCropTransformation())
+        }
+        val endTime = System.currentTimeMillis()
+        Log.d("setAssetResource", "With Coil: ${endTime - startTime}")
+    }
+
+    private fun loadImageManually(resource: Int) {
+        val startTime = System.currentTimeMillis()
+        val bitmap = BitmapFactory.decodeResource(resources, resource)
+        val size = min(bitmap.width, bitmap.height)
+        val centerCropBitmap = ThumbnailUtils.extractThumbnail(bitmap, size, size)
+        val roundedBitmapDrawable = RoundedBitmapDrawableFactory.create(resources, centerCropBitmap)
+        roundedBitmapDrawable.isCircular = true
+        assetImageView.setImageDrawable(roundedBitmapDrawable)
+        val endTime = System.currentTimeMillis()
+        Log.d("setAssetResource", "Manually: ${endTime - startTime}")
     }
 
     fun setAssetType(@AssetType type: Int) {
@@ -182,7 +223,6 @@ class ListRowView @JvmOverloads constructor(
             TYPE_IMAGE -> {
                 assetImageView.setSize(40)
                 assetImageLayout.setBackgroundResource(0)
-                //TODO: crop the image to be a circle
             }
             TYPE_SMALL_ICON -> {
                 assetImageView.setSize(24)
