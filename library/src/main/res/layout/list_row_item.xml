@@ -27,6 +27,15 @@
             tools:src="@android:drawable/btn_star"
             tools:visibility="visible" />
 
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/row_asset_circular_image"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            tools:src="@android:drawable/btn_star"
+            tools:visibility="visible" />
+
     </FrameLayout>
 
     <LinearLayout

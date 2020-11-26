@@ -21,7 +21,6 @@ import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
-import com.bumptech.glide.Glide
 import com.telefonica.mistica.R
 import com.telefonica.mistica.badge.Badge
 import com.telefonica.mistica.util.convertDpToPx
@@ -95,6 +94,7 @@ class ListRowView @JvmOverloads constructor(
 
     private val textsContainer: LinearLayout
     private val assetImageView: ImageView
+    private val assetCircularImageView: ImageView
     private val assetImageLayout: FrameLayout
     private val headlineContainer: FrameLayout
     private val titleTextView: TextView
@@ -116,6 +116,7 @@ class ListRowView @JvmOverloads constructor(
 
         textsContainer = findViewById(R.id.row_texts_container)
         assetImageView = findViewById(R.id.row_asset_image)
+        assetCircularImageView = findViewById(R.id.row_asset_circular_image)
         assetImageLayout = findViewById(R.id.row_asset_image_layout)
         headlineContainer = findViewById(R.id.row_headline)
         titleTextView = findViewById(R.id.row_title_text)
@@ -165,15 +166,19 @@ class ListRowView @JvmOverloads constructor(
             if (assetType == TYPE_IMAGE) {
 //                loadImageManually(resource)
 //                loadCircleImageWithCoil(resource)
-                Glide.with(this)
-                    .load(resource)
-                    .circleCrop()
-                    .into(assetImageView)
+//                loadCircleImageWithGlide(resource)
+                val startTime = System.currentTimeMillis()
+                assetCircularImageView.setImageResource(resource)
+                assetCircularImageView.visibility = VISIBLE
+                assetImageView.visibility = GONE
+                val endTime = System.currentTimeMillis()
+                Log.d("setAssetResource", "With Coil: ${endTime - startTime}")
             } else {
 //                loadImageWithCoil(resource)
-                Glide.with(this)
-                    .load(resource)
-                    .into(assetImageView)
+//                loadImageWithGlide(resource)
+                assetImageView.setImageResource(resource)
+                assetCircularImageView.visibility = GONE
+                assetImageView.visibility = VISIBLE
             }
         }
 
@@ -184,8 +189,21 @@ class ListRowView @JvmOverloads constructor(
         }
 
         assetImageLayout.visibility = visibility
-        assetImageView.visibility = visibility
+//        assetImageView.visibility = visibility
     }
+
+//    private fun loadImageWithGlide(resource: Int) {
+//        Glide.with(this)
+//            .load(resource)
+//            .into(assetImageView)
+//    }
+//
+//    private fun loadCircleImageWithGlide(resource: Int) {
+//        Glide.with(this)
+//            .load(resource)
+//            .circleCrop()
+//            .into(assetImageView)
+//    }
 
 //    private fun loadImageWithCoil(resource: Int) {
 //        val request = ImageRequest.Builder(context)
@@ -227,7 +245,7 @@ class ListRowView @JvmOverloads constructor(
     private fun configureAsset() {
         when (assetType) {
             TYPE_IMAGE -> {
-                assetImageView.setSize(40)
+//                assetImageView.setSize(40)
                 assetImageLayout.setBackgroundResource(0)
             }
             TYPE_SMALL_ICON -> {
