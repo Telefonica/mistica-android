@@ -38,7 +38,7 @@ dependencies {
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'com.airbnb.android:lottie:3.2.2'
-    implementation 'io.coil-kt:coil:1.1.0'
+    implementation 'io.coil-kt:coil-base:1.1.0'
 
     testImplementation 'junit:junit:4.13'
 }
