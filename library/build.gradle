@@ -15,14 +15,6 @@ android {
     buildFeatures {
         dataBinding true
     }
-
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
 }
 
 task sourceJar(type: Jar) {
@@ -38,7 +30,8 @@ dependencies {
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'com.airbnb.android:lottie:3.2.2'
-    implementation 'io.coil-kt:coil-base:1.1.0'
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+//    implementation 'io.coil-kt:coil-base:1.1.0'
 
     testImplementation 'junit:junit:4.13'
 }

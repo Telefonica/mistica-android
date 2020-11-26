@@ -21,9 +21,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
-import coil.ImageLoader
-import coil.request.ImageRequest
-import coil.transform.CircleCropTransformation
+import com.bumptech.glide.Glide
 import com.telefonica.mistica.R
 import com.telefonica.mistica.badge.Badge
 import com.telefonica.mistica.util.convertDpToPx
@@ -166,13 +164,16 @@ class ListRowView @JvmOverloads constructor(
         if (resource != -1) {
             if (assetType == TYPE_IMAGE) {
 //                loadImageManually(resource)
-                loadImageWithCoil(resource)
+//                loadCircleImageWithCoil(resource)
+                Glide.with(this)
+                    .load(resource)
+                    .circleCrop()
+                    .into(assetImageView)
             } else {
-                val request = ImageRequest.Builder(context)
-                    .data(resource)
-                    .target(assetImageView)
-                    .build()
-                ImageLoader.invoke(context).enqueue(request)
+//                loadImageWithCoil(resource)
+                Glide.with(this)
+                    .load(resource)
+                    .into(assetImageView)
             }
         }
 
@@ -186,17 +187,25 @@ class ListRowView @JvmOverloads constructor(
         assetImageView.visibility = visibility
     }
 
-    private fun loadImageWithCoil(resource: Int) {
-        val startTime = System.currentTimeMillis()
-        val request = ImageRequest.Builder(context)
-            .data(resource)
-            .target(assetImageView)
-            .transformations(CircleCropTransformation())
-            .build()
-        ImageLoader.invoke(context).enqueue(request)
-        val endTime = System.currentTimeMillis()
-        Log.d("setAssetResource", "With Coil: ${endTime - startTime}")
-    }
+//    private fun loadImageWithCoil(resource: Int) {
+//        val request = ImageRequest.Builder(context)
+//            .data(resource)
+//            .target(assetImageView)
+//            .build()
+//        ImageLoader.invoke(context).enqueue(request)
+//    }
+//
+//    private fun loadCircleImageWithCoil(resource: Int) {
+//        val startTime = System.currentTimeMillis()
+//        val request = ImageRequest.Builder(context)
+//            .data(resource)
+//            .target(assetImageView)
+//            .transformations(CircleCropTransformation())
+//            .build()
+//        ImageLoader.invoke(context).enqueue(request)
+//        val endTime = System.currentTimeMillis()
+//        Log.d("setAssetResource", "With Coil: ${endTime - startTime}")
+//    }
 
     private fun loadImageManually(resource: Int) {
         val startTime = System.currentTimeMillis()
