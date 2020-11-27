@@ -19,9 +19,12 @@ Implemented as a custom view, `com.telefonica.mistica.ListRowView` can be used i
     <attr name="listRowSubtitle" format="string" />
     <attr name="listRowDescription" format="string" />
     <attr name="listRowAssetDrawable" format="reference" />
+    <attr name="listRowAssetType" format="enum">
+        <enum name="image" value="0" />
+        <enum name="smallIcon" value="1" />
+        <enum name="largeIcon" value="2" />
+    </attr>
     <attr name="listRowIsBoxed" format="boolean" />
-    <attr name="listRowHasSmallAsset" format="boolean" />
-    <attr name="listRowAssetHasBackground" format="boolean" />
     <attr name="listRowActionLayout" format="integer">
         <enum name="none" value="-1" />
     </attr>

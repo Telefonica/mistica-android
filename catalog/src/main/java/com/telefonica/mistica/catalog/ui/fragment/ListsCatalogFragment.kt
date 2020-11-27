@@ -57,15 +57,11 @@ class ListsCatalogFragment : Fragment() {
             when (position) {
                 0 -> rowView.configureView()
                 1 -> rowView.configureView(
-                    withAction = true,
-                    withAsset = true,
-                    withAssetType = TYPE_LARGE_ICON
+                    withAction = true
                 )
                 2 -> rowView.configureView(
                     withAction = true,
-                    withBadgeCount = 0,
-                    withAsset = true,
-                    withAssetType = TYPE_IMAGE
+                    withBadgeCount = 0
                 )
                 3 -> rowView.configureView(
                     withAction = true,
@@ -230,7 +226,7 @@ class ListsCatalogFragment : Fragment() {
             setBadgeCount(withBadgeCount)
         }
 
-        private fun getAssetResource(withAsset: Boolean, withAssetType: Int): Int =
+        private fun getAssetResource(withAsset: Boolean, withAssetType: Int): Int? =
             if (withAsset) {
                 if (withAssetType == TYPE_IMAGE) {
                     R.drawable.netflix_logo
@@ -238,7 +234,7 @@ class ListsCatalogFragment : Fragment() {
                     R.drawable.ic_lists
                 }
             } else {
-                -1
+                null
             }
     }
 

@@ -1,8 +1,7 @@
 package com.telefonica.mistica.list
 
 import android.content.Context
-import android.graphics.BitmapFactory
-import android.media.ThumbnailUtils
+import android.graphics.drawable.Drawable
 import android.util.AttributeSet
 import android.util.Log
 import android.util.TypedValue
@@ -18,13 +17,11 @@ import androidx.annotation.LayoutRes
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
 import androidx.core.content.ContextCompat
-import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
 import com.telefonica.mistica.badge.Badge
 import com.telefonica.mistica.util.convertDpToPx
-import kotlin.math.min
 
 @BindingMethods(
     BindingMethod(
@@ -55,7 +52,7 @@ import kotlin.math.min
     BindingMethod(
         type = ListRowView::class,
         attribute = "listRowAssetDrawable",
-        method = "setAssetResource"
+        method = "setAssetDrawable"
     ),
     BindingMethod(
         type = ListRowView::class,
@@ -149,7 +146,7 @@ class ListRowView @JvmOverloads constructor(
             setDescription(styledAttrs.getText(R.styleable.ListRowView_listRowDescription))
             setBoxed(styledAttrs.getBoolean(R.styleable.ListRowView_listRowIsBoxed, false))
             setAssetType(styledAttrs.getType(R.styleable.ListRowView_listRowAssetType))
-            setAssetResource(styledAttrs.getResourceId(R.styleable.ListRowView_listRowAssetDrawable, -1))
+            setAssetDrawable(styledAttrs.getDrawable(R.styleable.ListRowView_listRowAssetDrawable))
             setBadgeCount(styledAttrs.getInt(R.styleable.ListRowView_listRowBadgeCount, BADGE_GONE))
             styledAttrs.getResourceId(
                 R.styleable.ListRowView_listRowActionLayout,
@@ -161,80 +158,25 @@ class ListRowView @JvmOverloads constructor(
         }
     }
 
-    fun setAssetResource(@DrawableRes resource: Int) {
-        if (resource != -1) {
+    fun setAssetResource(@DrawableRes resource: Int? = null) {
+        setAssetDrawable(resource?.let { ContextCompat.getDrawable(context, it) })
+    }
+
+    fun setAssetDrawable(drawable: Drawable? = null) {
+        if (drawable != null) {
             if (assetType == TYPE_IMAGE) {
-//                loadImageManually(resource)
-//                loadCircleImageWithCoil(resource)
-//                loadCircleImageWithGlide(resource)
-                val startTime = System.currentTimeMillis()
-                assetCircularImageView.setImageResource(resource)
+                assetCircularImageView.setImageDrawable(drawable)
                 assetCircularImageView.visibility = VISIBLE
                 assetImageView.visibility = GONE
-                val endTime = System.currentTimeMillis()
-                Log.d("setAssetResource", "With Coil: ${endTime - startTime}")
             } else {
-//                loadImageWithCoil(resource)
-//                loadImageWithGlide(resource)
-                assetImageView.setImageResource(resource)
+                assetImageView.setImageDrawable(drawable)
                 assetCircularImageView.visibility = GONE
                 assetImageView.visibility = VISIBLE
             }
-        }
-
-        val visibility = if (resource != -1) {
-            View.VISIBLE
+            assetImageLayout.visibility = VISIBLE
         } else {
-            View.GONE
+            assetImageLayout.visibility = GONE
         }
-
-        assetImageLayout.visibility = visibility
-//        assetImageView.visibility = visibility
-    }
-
-//    private fun loadImageWithGlide(resource: Int) {
-//        Glide.with(this)
-//            .load(resource)
-//            .into(assetImageView)
-//    }
-//
-//    private fun loadCircleImageWithGlide(resource: Int) {
-//        Glide.with(this)
-//            .load(resource)
-//            .circleCrop()
-//            .into(assetImageView)
-//    }
-
-//    private fun loadImageWithCoil(resource: Int) {
-//        val request = ImageRequest.Builder(context)
-//            .data(resource)
-//            .target(assetImageView)
-//            .build()
-//        ImageLoader.invoke(context).enqueue(request)
-//    }
-//
-//    private fun loadCircleImageWithCoil(resource: Int) {
-//        val startTime = System.currentTimeMillis()
-//        val request = ImageRequest.Builder(context)
-//            .data(resource)
-//            .target(assetImageView)
-//            .transformations(CircleCropTransformation())
-//            .build()
-//        ImageLoader.invoke(context).enqueue(request)
-//        val endTime = System.currentTimeMillis()
-//        Log.d("setAssetResource", "With Coil: ${endTime - startTime}")
-//    }
-
-    private fun loadImageManually(resource: Int) {
-        val startTime = System.currentTimeMillis()
-        val bitmap = BitmapFactory.decodeResource(resources, resource)
-        val size = min(bitmap.width, bitmap.height)
-        val centerCropBitmap = ThumbnailUtils.extractThumbnail(bitmap, size, size)
-        val roundedBitmapDrawable = RoundedBitmapDrawableFactory.create(resources, centerCropBitmap)
-        roundedBitmapDrawable.isCircular = true
-        assetImageView.setImageDrawable(roundedBitmapDrawable)
-        val endTime = System.currentTimeMillis()
-        Log.d("setAssetResource", "Manually: ${endTime - startTime}")
     }
 
     fun setAssetType(@AssetType type: Int) {
@@ -245,7 +187,6 @@ class ListRowView @JvmOverloads constructor(
     private fun configureAsset() {
         when (assetType) {
             TYPE_IMAGE -> {
-//                assetImageView.setSize(40)
                 assetImageLayout.setBackgroundResource(0)
             }
             TYPE_SMALL_ICON -> {
