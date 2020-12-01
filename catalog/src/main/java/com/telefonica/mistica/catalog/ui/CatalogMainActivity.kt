@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.input.DropDownInput
 import com.telefonica.mistica.list.ListRowView
+import com.telefonica.mistica.list.ListRowView.Companion.TYPE_SMALL_ICON
 import com.telefonica.mistica.list.layout.configureWithFullWidthLayout
 
 
@@ -119,8 +120,8 @@ class CatalogMainActivity : AppCompatActivity() {
                             context.startActivity(this)
                         }
                 }
+                setAssetType(TYPE_SMALL_ICON)
                 setAssetResource(section.icon)
-                setSmallAsset(true)
             }
         }
 

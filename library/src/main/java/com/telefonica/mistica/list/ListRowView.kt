@@ -3,6 +3,7 @@ package com.telefonica.mistica.list
 import android.content.Context
 import android.graphics.drawable.Drawable
 import android.util.AttributeSet
+import android.util.Log
 import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.annotation.DrawableRes
+import androidx.annotation.IntDef
 import androidx.annotation.LayoutRes
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
@@ -54,13 +56,13 @@ import com.telefonica.mistica.util.convertDpToPx
     ),
     BindingMethod(
         type = ListRowView::class,
-        attribute = "listRowIsBoxed",
-        method = "setBoxed"
+        attribute = "listRowAssetType",
+        method = "setAssetType"
     ),
     BindingMethod(
         type = ListRowView::class,
-        attribute = "listRowHasSmallAsset",
-        method = "setSmallAsset"
+        attribute = "listRowIsBoxed",
+        method = "setBoxed"
     ),
     BindingMethod(
         type = ListRowView::class,
@@ -79,8 +81,18 @@ class ListRowView @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : ConstraintLayout(context, attrs, defStyleAttr) {
 
+    @Retention(AnnotationRetention.SOURCE)
+    @IntDef(
+        TYPE_IMAGE,
+        TYPE_SMALL_ICON,
+        TYPE_LARGE_ICON
+    )
+    annotation class AssetType
+
     private val textsContainer: LinearLayout
     private val assetImageView: ImageView
+    private val assetCircularImageView: ImageView
+    private val assetImageLayout: FrameLayout
     private val headlineContainer: FrameLayout
     private val titleTextView: TextView
     private val subtitleTextView: TextView
@@ -90,7 +102,7 @@ class ListRowView @JvmOverloads constructor(
 
     private var currentHeadlineLayoutRes: Int = HEADLINE_NONE
     private var currentActionLayoutRes: Int = ACTION_NONE
-    private var isSmallAsset: Boolean = false
+    private var assetType: Int = TYPE_SMALL_ICON
 
     init {
         LayoutInflater.from(context).inflate(R.layout.list_row_item, this, true)
@@ -101,6 +113,8 @@ class ListRowView @JvmOverloads constructor(
 
         textsContainer = findViewById(R.id.row_texts_container)
         assetImageView = findViewById(R.id.row_asset_image)
+        assetCircularImageView = findViewById(R.id.row_asset_circular_image)
+        assetImageLayout = findViewById(R.id.row_asset_image_layout)
         headlineContainer = findViewById(R.id.row_headline)
         titleTextView = findViewById(R.id.row_title_text)
         subtitleTextView = findViewById(R.id.row_subtitle_text)
@@ -131,12 +145,7 @@ class ListRowView @JvmOverloads constructor(
             setSubtitle(styledAttrs.getText(R.styleable.ListRowView_listRowSubtitle))
             setDescription(styledAttrs.getText(R.styleable.ListRowView_listRowDescription))
             setBoxed(styledAttrs.getBoolean(R.styleable.ListRowView_listRowIsBoxed, false))
-            setSmallAsset(
-                styledAttrs.getBoolean(
-                    R.styleable.ListRowView_listRowHasSmallAsset,
-                    false
-                )
-            )
+            setAssetType(styledAttrs.getType(R.styleable.ListRowView_listRowAssetType))
             setAssetDrawable(styledAttrs.getDrawable(R.styleable.ListRowView_listRowAssetDrawable))
             setBadgeCount(styledAttrs.getInt(R.styleable.ListRowView_listRowBadgeCount, BADGE_GONE))
             styledAttrs.getResourceId(
@@ -149,23 +158,47 @@ class ListRowView @JvmOverloads constructor(
         }
     }
 
-    fun setSmallAsset(isSmall: Boolean) {
-        isSmallAsset = isSmall
-        assetImageView.setSize(if (isSmall) 24 else 40)
-        recalculateAssetPosition()
-    }
-
     fun setAssetResource(@DrawableRes resource: Int? = null) {
         setAssetDrawable(resource?.let { ContextCompat.getDrawable(context, it) })
     }
 
     fun setAssetDrawable(drawable: Drawable? = null) {
-        assetImageView.setImageDrawable(drawable)
-        assetImageView.visibility = if (drawable != null) {
-            View.VISIBLE
+        if (drawable != null) {
+            if (assetType == TYPE_IMAGE) {
+                assetCircularImageView.setImageDrawable(drawable)
+                assetCircularImageView.visibility = VISIBLE
+                assetImageView.visibility = GONE
+            } else {
+                assetImageView.setImageDrawable(drawable)
+                assetCircularImageView.visibility = GONE
+                assetImageView.visibility = VISIBLE
+            }
+            assetImageLayout.visibility = VISIBLE
         } else {
-            View.GONE
+            assetImageLayout.visibility = GONE
         }
+    }
+
+    fun setAssetType(@AssetType type: Int) {
+        assetType = type
+        configureAsset()
+    }
+
+    private fun configureAsset() {
+        when (assetType) {
+            TYPE_IMAGE -> {
+                assetImageLayout.setBackgroundResource(0)
+            }
+            TYPE_SMALL_ICON -> {
+                assetImageView.setSize(24)
+                assetImageLayout.setBackgroundResource(0)
+            }
+            TYPE_LARGE_ICON -> {
+                assetImageView.setSize(24)
+                assetImageLayout.setBackgroundResource(R.drawable.bg_list_image)
+            }
+        }
+        recalculateAssetPosition()
     }
 
     fun setTitle(text: CharSequence?) {
@@ -263,15 +296,15 @@ class ListRowView @JvmOverloads constructor(
     }
 
     private fun recalculateAssetPosition() {
-        with(assetImageView.layoutParams as LayoutParams) {
+        with(assetImageLayout.layoutParams as LayoutParams) {
             if (isAnyTextDifferentThanTitleVisible()) {
                 bottomToBottom = ConstraintSet.UNSET
-                topMargin = context.convertDpToPx(if (isSmallAsset) 8 else 4)
+                topMargin = context.convertDpToPx(if (assetType == TYPE_SMALL_ICON) 8 else 4)
             } else {
                 bottomToBottom = ConstraintSet.PARENT_ID
                 topMargin = context.convertDpToPx(0)
             }
-            assetImageView.layoutParams = this
+            assetImageLayout.layoutParams = this
         }
     }
 
@@ -303,5 +336,8 @@ class ListRowView @JvmOverloads constructor(
         const val BADGE_GONE = -1
         const val ACTION_NONE = -1
         const val HEADLINE_NONE = -1
+        const val TYPE_IMAGE = 0
+        const val TYPE_SMALL_ICON = 1
+        const val TYPE_LARGE_ICON = 2
     }
 }
