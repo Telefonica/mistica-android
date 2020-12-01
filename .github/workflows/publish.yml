@@ -58,4 +58,4 @@ jobs:
           release_name: ${{ github.event.inputs.libraryVersion }}
           body: ${{ github.event.inputs.releaseDescription }}
           draft: true
-          prerelease: true
+          prerelease: false
