@@ -229,7 +229,7 @@ class ListsCatalogFragment : Fragment() {
         private fun getAssetResource(withAsset: Boolean, withAssetType: Int): Int? =
             if (withAsset) {
                 if (withAssetType == TYPE_IMAGE) {
-                    R.drawable.netflix_logo
+                    R.drawable.highlighted_card_custom_background
                 } else {
                     R.drawable.ic_lists
                 }
