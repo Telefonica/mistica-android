@@ -48,5 +48,11 @@ class BadgesCatalogFragment : Fragment() {
                 badgeVisible = !badgeVisible
             }
         }
+        findViewById<Button>(R.id.button_hide_badge_when_count_zero).apply {
+            setOnClickListener {
+                Badge.showBadgeIn(imageView, 0)
+                badgeVisible = false
+            }
+        }
     }
 }

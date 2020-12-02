@@ -16,7 +16,19 @@ object Badge {
     var badgeNotificationsDescriptionResource: Int = R.plurals.badge_notifications_description
 
     @JvmStatic
-    fun showBadgeIn(anchor: View, count: Int = 0): BadgeDrawable {
+    fun showBadgeIn(anchor: View): BadgeDrawable {
+        val parent = anchor.parent
+        if (parent is ViewGroup) {
+            return createBadge(anchor, NON_NUMERIC_BADGE).apply {
+                addToView(anchor, parent, getContentDescription(anchor, NON_NUMERIC_BADGE))
+            }
+        } else {
+            throw RuntimeException("The view's parent is not a ViewGroup. Use showBadgeIn(anchor,parent) instead")
+        }
+    }
+
+    @JvmStatic
+    fun showBadgeIn(anchor: View, count: Int): BadgeDrawable {
         val parent = anchor.parent
         if (parent is ViewGroup) {
             return showBadgeIn(anchor, parent, count)
@@ -26,13 +38,14 @@ object Badge {
     }
 
     @JvmStatic
-    fun showBadgeIn(anchor: View, parent: ViewGroup, count: Int = 0): BadgeDrawable =
-        BadgeDrawable.create(anchor.context).apply {
-            maxCharacterCount = 2
-            backgroundColor = anchor.context.getThemeColor(R.attr.colorBadgeBackground)
-            setupCount(count)
-            addToView(anchor, parent, getContentDescription(anchor, count))
+    fun showBadgeIn(anchor: View, parent: ViewGroup, count: Int = 0): BadgeDrawable {
+        return createBadge(anchor, count).apply {
+            when {
+                count > NON_NUMERIC_BADGE -> addToView(anchor, parent, getContentDescription(anchor, count))
+                else -> removeBadge(anchor)
+            }
         }
+    }
 
     @JvmStatic
     fun removeBadge(anchor: View) {
@@ -50,6 +63,15 @@ object Badge {
             resetContentDescription(anchor)
             parent.overlay.clear()
         }
+    }
+
+    private fun createBadge(
+        anchor: View,
+        count: Int
+    ) = BadgeDrawable.create(anchor.context).apply {
+        maxCharacterCount = 2
+        backgroundColor = anchor.context.getThemeColor(R.attr.colorBadgeBackground)
+        setupCount(count)
     }
 
     private fun getContentDescription(anchor: View, count: Int): String {
@@ -105,4 +127,7 @@ object Badge {
         this.bounds = rect
         this.updateBadgeCoordinates(anchor, parent)
     }
+
+
+    private const val NON_NUMERIC_BADGE = 0
 }

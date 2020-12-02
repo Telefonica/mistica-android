@@ -18,7 +18,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:src="@drawable/icn_creditcard" />
+        android:src="@drawable/icn_creditcard"
+        android:contentDescription="image" />
 
     <Button
         android:id="@+id/button_add_to_image_view"
@@ -32,6 +33,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Toggle With Number" />
+        android:text="Toggle With Number > 0" />
+
+    <Button
+        android:id="@+id/button_hide_badge_when_count_zero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Remove when number = 0" />
 
 </LinearLayout>
