@@ -19,33 +19,40 @@ object Badge {
     fun showBadgeIn(anchor: View): BadgeDrawable {
         val parent = anchor.parent
         if (parent is ViewGroup) {
-            return createBadge(anchor, NON_NUMERIC_BADGE).apply {
-                addToView(anchor, parent, getContentDescription(anchor, NON_NUMERIC_BADGE))
-            }
+            return showBadgeIn(anchor, parent)
         } else {
             throw RuntimeException("The view's parent is not a ViewGroup. Use showBadgeIn(anchor,parent) instead")
         }
     }
 
     @JvmStatic
-    fun showBadgeIn(anchor: View, count: Int): BadgeDrawable {
+    fun showBadgeIn(anchor: View, parent: ViewGroup): BadgeDrawable =
+        createBadge(anchor, NON_NUMERIC_BADGE).apply {
+            addToView(anchor, parent, getContentDescription(anchor, NON_NUMERIC_BADGE))
+        }
+
+    @JvmStatic
+    fun showNumericBadgeIn(anchor: View, count: Int): BadgeDrawable {
         val parent = anchor.parent
         if (parent is ViewGroup) {
-            return showBadgeIn(anchor, parent, count)
+            return showNumericBadgeIn(anchor, parent, count)
         } else {
             throw RuntimeException("The view's parent is not a ViewGroup. Use showBadgeIn(anchor,parent) instead")
         }
     }
 
     @JvmStatic
-    fun showBadgeIn(anchor: View, parent: ViewGroup, count: Int = 0): BadgeDrawable {
-        return createBadge(anchor, count).apply {
-            when {
-                count > NON_NUMERIC_BADGE -> addToView(anchor, parent, getContentDescription(anchor, count))
-                else -> removeBadge(anchor)
+    fun showNumericBadgeIn(anchor: View, parent: ViewGroup, count: Int): BadgeDrawable =
+        createBadge(anchor, count).apply {
+            when (count) {
+                NON_NUMERIC_BADGE -> removeBadge(anchor)
+                else -> addToView(
+                    anchor,
+                    parent,
+                    getContentDescription(anchor, count)
+                )
             }
         }
-    }
 
     @JvmStatic
     fun removeBadge(anchor: View) {

@@ -3,7 +3,6 @@ package com.telefonica.mistica.list
 import android.content.Context
 import android.graphics.drawable.Drawable
 import android.util.AttributeSet
-import android.util.Log
 import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
@@ -147,7 +146,7 @@ class ListRowView @JvmOverloads constructor(
             setBoxed(styledAttrs.getBoolean(R.styleable.ListRowView_listRowIsBoxed, false))
             setAssetType(styledAttrs.getType(R.styleable.ListRowView_listRowAssetType))
             setAssetDrawable(styledAttrs.getDrawable(R.styleable.ListRowView_listRowAssetDrawable))
-            setBadgeCount(styledAttrs.getInt(R.styleable.ListRowView_listRowBadgeCount, BADGE_GONE))
+            setNumericBadge(styledAttrs.getInt(R.styleable.ListRowView_listRowBadgeCount, BADGE_GONE))
             styledAttrs.getResourceId(
                 R.styleable.ListRowView_listRowActionLayout,
                 TypedValue.TYPE_NULL
@@ -259,19 +258,25 @@ class ListRowView @JvmOverloads constructor(
         }
     }
 
-    fun setBadgeCount(count: Int = 0) {
+    fun setBadge(){
+        titleTextView.maxLines = 1
+        Badge.showBadgeIn(badgeAnchor)
+        badgeAnchor.visibility = View.VISIBLE
+    }
+
+    fun setNumericBadge(count: Int) {
         Badge.removeBadge(badgeAnchor)
         if (count == BADGE_GONE) {
             titleTextView.maxLines = 2
             badgeAnchor.visibility = View.GONE
         } else {
             titleTextView.maxLines = 1
-            Badge.showBadgeIn(badgeAnchor, count)
+            Badge.showNumericBadgeIn(badgeAnchor, count)
             badgeAnchor.visibility = View.VISIBLE
         }
     }
 
-    fun getActionView(): View? =
+    private fun getActionView(): View? =
         actionContainer.getChildAt(0)
 
     override fun setEnabled(enabled: Boolean) {
@@ -279,12 +284,6 @@ class ListRowView @JvmOverloads constructor(
         titleTextView.isEnabled = enabled
         descriptionTextView.isEnabled = enabled
         getActionView()?.isEnabled = enabled
-    }
-
-    fun delegateClickOnActionView() {
-        setOnClickListener {
-            getActionView()?.performClick()
-        }
     }
 
     private fun recalculateTitleBottomConstraints() {
@@ -333,7 +332,7 @@ class ListRowView @JvmOverloads constructor(
     }
 
     companion object {
-        const val BADGE_GONE = -1
+        const val BADGE_GONE = 0
         const val ACTION_NONE = -1
         const val HEADLINE_NONE = -1
         const val TYPE_IMAGE = 0

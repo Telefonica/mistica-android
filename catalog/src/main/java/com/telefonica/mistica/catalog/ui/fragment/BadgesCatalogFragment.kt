@@ -28,7 +28,7 @@ class BadgesCatalogFragment : Fragment() {
 
     private fun View.configureButtons() {
         val imageView = findViewById<ImageView>(R.id.imageView)
-        findViewById<Button>(R.id.button_add_to_image_view).apply {
+        findViewById<Button>(R.id.button_add_non_numeric_badge).apply {
             setOnClickListener {
                 if (!badgeVisible) {
                     Badge.showBadgeIn(imageView)
@@ -38,19 +38,19 @@ class BadgesCatalogFragment : Fragment() {
                 badgeVisible = !badgeVisible
             }
         }
-        findViewById<Button>(R.id.button_add_to_image_view_number).apply {
+        findViewById<Button>(R.id.button_add_numeric_badge).apply {
             setOnClickListener {
                 if (!badgeVisible) {
-                    Badge.showBadgeIn(imageView, Random(System.currentTimeMillis()).nextInt(1, 11))
+                    Badge.showNumericBadgeIn(imageView, Random(System.currentTimeMillis()).nextInt(1, 11))
                 } else {
                     Badge.removeBadge(imageView)
                 }
                 badgeVisible = !badgeVisible
             }
         }
-        findViewById<Button>(R.id.button_hide_badge_when_count_zero).apply {
+        findViewById<Button>(R.id.button_remove_badge_if_numeric_with_count_zero).apply {
             setOnClickListener {
-                Badge.showBadgeIn(imageView, 0)
+                Badge.showNumericBadgeIn(imageView, 0)
                 badgeVisible = false
             }
         }

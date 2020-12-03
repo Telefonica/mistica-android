@@ -223,7 +223,11 @@ class ListsCatalogFragment : Fragment() {
                 setActionLayout(ListRowView.ACTION_NONE)
                 isClickable = false
             }
-            setBadgeCount(withBadgeCount)
+            if (withBadgeCount == 0) {
+                setBadge()
+            } else {
+                setNumericBadge(withBadgeCount)
+            }
         }
 
         private fun getAssetResource(withAsset: Boolean, withAssetType: Int): Int? =
