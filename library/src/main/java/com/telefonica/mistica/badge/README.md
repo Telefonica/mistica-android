@@ -8,13 +8,16 @@ Badges are placed on an overlay, at the top right side of any other view:
 
 To use it, use `com.telefonica.mistica.badge.Badge`
 
-There are two groups of methods:
+There are two groups of methods corresponding to the two different badge styles, numeric and non-numeric:
 
 ```kotlin
-fun showBadgeIn(anchor: View, count: Int = 0)
-fun showBadgeIn(anchor: View, parent: ViewGroup, count: Int = 0)
+fun showBadgeIn(anchor: View): BadgeDrawable
+fun showBadgeIn(anchor: View, parent: ViewGroup): BadgeDrawable
+
+fun showNumericBadgeIn(anchor: View, count: Int): BadgeDrawable
+fun showNumericBadgeIn(anchor: View, parent: ViewGroup, count: Int): BadgeDrawable
 ```
-That will add a badge on the top right side of `anchor` view. The badge will be presented without a number, unless count is specified (and it has a positive number). All numbers bigger than 9 will be cropped to `9+`
+That will add a badge on the top right side of `anchor` view. The badge will be presented without a number, unless count is specified (and it has a positive number). All numbers bigger than 9 will be cropped to `9+`. If count is specified with 0 value the badge will be removed/hidden. 
 
 Also, you can specify a `parent`, which will be the layout where `anchor` is presented. This is useful only when you need to do something custom, like positioning the badge closer to the view. (See `showProfileBadge` as an example)
 
