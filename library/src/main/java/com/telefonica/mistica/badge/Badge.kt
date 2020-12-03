@@ -110,7 +110,7 @@ object Badge {
     private fun BadgeDrawable.setupCount(count: Int) {
         this.maxCharacterCount = 2
         when (count) {
-            0 -> this.clearNumber()
+            NON_NUMERIC_BADGE -> this.clearNumber()
             else -> this.number = count
         }
     }

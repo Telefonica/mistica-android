@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.list.ListRowView
 import com.telefonica.mistica.list.ListRowView.AssetType
+import com.telefonica.mistica.list.ListRowView.Companion.BADGE_GONE
 import com.telefonica.mistica.list.ListRowView.Companion.TYPE_IMAGE
 import com.telefonica.mistica.list.ListRowView.Companion.TYPE_LARGE_ICON
 import com.telefonica.mistica.list.ListRowView.Companion.TYPE_SMALL_ICON
@@ -190,7 +191,7 @@ class ListsCatalogFragment : Fragment() {
             withAsset: Boolean = false,
             @AssetType withAssetType: Int = TYPE_SMALL_ICON,
             withAction: Boolean = false,
-            withBadgeCount: Int = ListRowView.BADGE_GONE,
+            withBadgeCount: Int = BADGE_GONE,
             withHeadline: Boolean = false,
             withSubtitle: Boolean = false
         ) {
@@ -223,10 +224,9 @@ class ListsCatalogFragment : Fragment() {
                 setActionLayout(ListRowView.ACTION_NONE)
                 isClickable = false
             }
-            if (withBadgeCount == 0) {
-                setBadge()
-            } else {
-                setNumericBadge(withBadgeCount)
+            when (withBadgeCount) {
+                0 -> setBadge()
+                else -> setNumericBadge(withBadgeCount)
             }
         }
 

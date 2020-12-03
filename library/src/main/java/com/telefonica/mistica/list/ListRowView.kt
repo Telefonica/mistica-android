@@ -147,10 +147,7 @@ class ListRowView @JvmOverloads constructor(
             setAssetType(styledAttrs.getType(R.styleable.ListRowView_listRowAssetType))
             setAssetDrawable(styledAttrs.getDrawable(R.styleable.ListRowView_listRowAssetDrawable))
             setNumericBadge(styledAttrs.getInt(R.styleable.ListRowView_listRowBadgeCount, BADGE_GONE))
-            styledAttrs.getResourceId(
-                R.styleable.ListRowView_listRowActionLayout,
-                TypedValue.TYPE_NULL
-            )
+            styledAttrs.getResourceId(R.styleable.ListRowView_listRowActionLayout, TypedValue.TYPE_NULL)
                 .takeIf { it != TypedValue.TYPE_NULL }
                 .let { setActionLayout(it ?: ACTION_NONE) }
             styledAttrs.recycle()
@@ -258,7 +255,8 @@ class ListRowView @JvmOverloads constructor(
         }
     }
 
-    fun setBadge(){
+    fun setBadge() {
+        Badge.removeBadge(badgeAnchor)
         titleTextView.maxLines = 1
         Badge.showBadgeIn(badgeAnchor)
         badgeAnchor.visibility = View.VISIBLE
@@ -266,7 +264,7 @@ class ListRowView @JvmOverloads constructor(
 
     fun setNumericBadge(count: Int) {
         Badge.removeBadge(badgeAnchor)
-        if (count == BADGE_GONE) {
+        if (count <= BADGE_GONE) {
             titleTextView.maxLines = 2
             badgeAnchor.visibility = View.GONE
         } else {
@@ -332,7 +330,7 @@ class ListRowView @JvmOverloads constructor(
     }
 
     companion object {
-        const val BADGE_GONE = 0
+        const val BADGE_GONE = -1
         const val ACTION_NONE = -1
         const val HEADLINE_NONE = -1
         const val TYPE_IMAGE = 0
