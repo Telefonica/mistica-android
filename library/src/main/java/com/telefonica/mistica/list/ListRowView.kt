@@ -71,7 +71,12 @@ import com.telefonica.mistica.util.convertDpToPx
     BindingMethod(
         type = ListRowView::class,
         attribute = "listRowBadgeCount",
-        method = "setBadgeCount"
+        method = "setBadge"
+    ),
+    BindingMethod(
+        type = ListRowView::class,
+        attribute = "listRowBadgeCount",
+        method = "setNumericBadge"
     )
 )
 class ListRowView @JvmOverloads constructor(
