@@ -37,7 +37,7 @@ object Badge {
         if (parent is ViewGroup) {
             return showNumericBadgeIn(anchor, parent, count)
         } else {
-            throw RuntimeException("The view's parent is not a ViewGroup. Use showBadgeIn(anchor,parent) instead")
+            throw RuntimeException("The view's parent is not a ViewGroup. Use showNumericBadgeIn(anchor, parent, count) instead")
         }
     }
 
