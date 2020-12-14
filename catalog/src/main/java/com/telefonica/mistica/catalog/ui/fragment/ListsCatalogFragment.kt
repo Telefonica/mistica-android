@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.list.ListRowView
 import com.telefonica.mistica.list.ListRowView.AssetType
-import com.telefonica.mistica.list.ListRowView.Companion.BADGE_GONE
 import com.telefonica.mistica.list.ListRowView.Companion.TYPE_IMAGE
 import com.telefonica.mistica.list.ListRowView.Companion.TYPE_LARGE_ICON
 import com.telefonica.mistica.list.ListRowView.Companion.TYPE_SMALL_ICON
@@ -62,11 +61,11 @@ class ListsCatalogFragment : Fragment() {
                 )
                 2 -> rowView.configureView(
                     withAction = true,
-                    withBadgeCount = 0
+                    withBadge = true
                 )
                 3 -> rowView.configureView(
                     withAction = true,
-                    withBadgeCount = 1
+                    withBadgeNumeric = 1
                 )
                 4 -> rowView.configureView(
                     withLongDescription = false
@@ -88,13 +87,13 @@ class ListsCatalogFragment : Fragment() {
                     withAsset = true,
                     withAssetType = TYPE_LARGE_ICON,
                     withAction = true,
-                    withBadgeCount = 0
+                    withBadge = true
                 )
                 9 -> rowView.configureView(
                     withAsset = true,
                     withAssetType = TYPE_LARGE_ICON,
                     withAction = true,
-                    withBadgeCount = 5
+                    withBadgeNumeric = 5
                 )
                 10 -> rowView.configureView(
                     withLongDescription = false,
@@ -120,13 +119,13 @@ class ListsCatalogFragment : Fragment() {
                     withAsset = true,
                     withAssetType = TYPE_SMALL_ICON,
                     withAction = true,
-                    withBadgeCount = 0
+                    withBadge = true
                 )
                 15 -> rowView.configureView(
                     withAsset = true,
                     withAssetType = TYPE_SMALL_ICON,
                     withAction = true,
-                    withBadgeCount = 10
+                    withBadgeNumeric = 10
                 )
                 16 -> rowView.configureView(
                     withLongTitle = true,
@@ -191,7 +190,8 @@ class ListsCatalogFragment : Fragment() {
             withAsset: Boolean = false,
             @AssetType withAssetType: Int = TYPE_SMALL_ICON,
             withAction: Boolean = false,
-            withBadgeCount: Int = BADGE_GONE,
+            withBadge: Boolean = false,
+            withBadgeNumeric: Int = 0,
             withHeadline: Boolean = false,
             withSubtitle: Boolean = false
         ) {
@@ -224,9 +224,11 @@ class ListsCatalogFragment : Fragment() {
                 setActionLayout(ListRowView.ACTION_NONE)
                 isClickable = false
             }
-            when (withBadgeCount) {
-                0 -> setBadge()
-                else -> setNumericBadge(withBadgeCount)
+
+            when {
+                withBadge -> setBadge()
+                withBadgeNumeric > 0 -> setNumericBadge(withBadgeNumeric)
+                else -> setNumericBadge(0)
             }
         }
 
