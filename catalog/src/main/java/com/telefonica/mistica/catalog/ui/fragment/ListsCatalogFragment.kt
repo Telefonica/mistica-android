@@ -226,9 +226,9 @@ class ListsCatalogFragment : Fragment() {
             }
 
             when {
-                withBadge -> setBadge()
+                withBadge -> setBadge(true)
                 withBadgeNumeric > 0 -> setNumericBadge(withBadgeNumeric)
-                else -> setNumericBadge(0)
+                else -> setBadge(false)
             }
         }
 
