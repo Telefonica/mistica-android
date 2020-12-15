@@ -71,7 +71,7 @@ import com.telefonica.mistica.util.convertDpToPx
     ),
     BindingMethod(
         type = ListRowView::class,
-        attribute = "listRowBadgeCount",
+        attribute = "listRowBadgeVisible",
         method = "setBadge"
     ),
     BindingMethod(
@@ -152,7 +152,7 @@ class ListRowView @JvmOverloads constructor(
             setBoxed(styledAttrs.getBoolean(R.styleable.ListRowView_listRowIsBoxed, false))
             setAssetType(styledAttrs.getType(R.styleable.ListRowView_listRowAssetType))
             setAssetDrawable(styledAttrs.getDrawable(R.styleable.ListRowView_listRowAssetDrawable))
-            initBadge(styledAttrs)
+            setBadgeInitialState(styledAttrs)
 
             styledAttrs.getResourceId(
                 R.styleable.ListRowView_listRowActionLayout,
@@ -272,27 +272,18 @@ class ListRowView @JvmOverloads constructor(
             Badge.showBadgeIn(badgeAnchor)
             badgeAnchor.visibility = View.VISIBLE
         } else {
-            badgeAnchor.visibility = View.GONE
+            hideBadge()
         }
     }
 
     fun setNumericBadge(count: Int) {
         Badge.removeBadge(badgeAnchor)
         if (count <= 0) {
-            titleTextView.maxLines = 2
-            badgeAnchor.visibility = View.GONE
+            hideBadge()
         } else {
             titleTextView.maxLines = 1
             Badge.showNumericBadgeIn(badgeAnchor, count)
             badgeAnchor.visibility = View.VISIBLE
-        }
-    }
-
-    private fun initBadge(styledAttrs: TypedArray) {
-        val badgeState =
-            styledAttrs.getInt(R.styleable.ListRowView_listRowBadgeCount, BADGE_UNDEFINED)
-        if (badgeState != BADGE_UNDEFINED) {
-            setNumericBadge(badgeState)
         }
     }
 
@@ -304,6 +295,22 @@ class ListRowView @JvmOverloads constructor(
         titleTextView.isEnabled = enabled
         descriptionTextView.isEnabled = enabled
         getActionView()?.isEnabled = enabled
+    }
+
+    private fun hideBadge() {
+        titleTextView.maxLines = 2
+        badgeAnchor.visibility = GONE
+    }
+
+    private fun setBadgeInitialState(styledAttrs: TypedArray) {
+        val numericBadgeState =
+            styledAttrs.getInt(R.styleable.ListRowView_listRowBadgeCount, BADGE_GONE)
+        setNumericBadge(numericBadgeState)
+
+
+        val nonNumericBadgeState =
+            styledAttrs.getBoolean(R.styleable.ListRowView_listRowBadgeVisible, false)
+        setBadge(nonNumericBadgeState)
     }
 
     private fun recalculateTitleBottomConstraints() {
@@ -352,7 +359,7 @@ class ListRowView @JvmOverloads constructor(
     }
 
     companion object {
-        private const val BADGE_UNDEFINED = -1
+        private const val BADGE_GONE = 0
         const val ACTION_NONE = -1
         const val HEADLINE_NONE = -1
         const val TYPE_IMAGE = 0

@@ -53,8 +53,9 @@
             <enum name="none" value="-1" />
         </attr>
         <attr name="listRowBadgeCount" format="integer">
-            <enum name="gone" value="-1" />
+            <enum name="gone" value="0" />
         </attr>
+        <attr name="listRowBadgeVisible" format="boolean" />
         <attr name="onClick" format="string" />
     </declare-styleable>
 
