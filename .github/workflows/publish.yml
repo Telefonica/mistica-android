@@ -41,6 +41,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
       - name: Release library
+        if: steps.check.outputs.has-permission
         uses: docker://docker.tuenti.io/android/mistica_builder:2
         with:
           args: 'bash ./gradlew --no-daemon clean check assemble; ./gradlew --no-daemon publish'
