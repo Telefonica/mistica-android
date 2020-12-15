@@ -44,7 +44,7 @@ jobs:
         if: steps.check.outputs.has-permission
         uses: docker://docker.tuenti.io/android/mistica_builder:2
         with:
-          args: 'bash ./gradlew --no-daemon clean check assemble publish'
+          args: 'bash ./gradlew --no-daemon clean check assemble ; ./gradlew --no-daemon publish'
 
       - name: Create Release in github
         if: steps.check.outputs.has-permission
