@@ -296,7 +296,7 @@ class ListRowView @JvmOverloads constructor(
         }
     }
 
-    private fun getActionView(): View? =
+    fun getActionView(): View? =
         actionContainer.getChildAt(0)
 
     override fun setEnabled(enabled: Boolean) {
