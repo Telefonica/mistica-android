@@ -41,12 +41,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
       - name: Release library
-        if: steps.check.outputs.has-permission
-        uses: satak/webrequest-action@master
+        uses: docker://docker.tuenti.io/android/mistica_builder:2
         with:
-          url: https://flow.tuenti.io/events/FLOW/SCRIPT_EVENT
-          method: POST
-          payload: '{"script": "tu-ci", "operation": "create_or_update_job",  "repository": "mistica-android",  "branch": "master",  "workflow": "publish",  "ticket": "APPS-7169", "username": "flow"}'
+          args: 'bash ./gradlew --no-daemon clean check assemble; ./gradlew --no-daemon publish'
 
       - name: Create Release in github
         if: steps.check.outputs.has-permission
