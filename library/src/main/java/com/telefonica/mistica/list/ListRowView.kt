@@ -297,6 +297,12 @@ class ListRowView @JvmOverloads constructor(
         getActionView()?.isEnabled = enabled
     }
 
+    fun delegateClickOnActionView() {
+        setOnClickListener {
+            getActionView()?.performClick()
+        }
+    }
+
     private fun hideBadge() {
         titleTextView.maxLines = 2
         badgeAnchor.visibility = GONE
