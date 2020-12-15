@@ -1,5 +1,5 @@
 name: "Publish library"
-on: 
+on:
   workflow_dispatch:
     inputs:
       libraryVersion:
@@ -17,7 +17,7 @@ jobs:
 
       - run: 'echo -n ${{ github.event.inputs.libraryVersion }} > version.txt'
         shell: bash
-          
+
       - name: Check permissions
         id: check
         uses: scherermichael-oss/action-has-permission@master
@@ -25,12 +25,12 @@ jobs:
           required-permission: admin
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        
+
       # Use the output from the `check` step
       - name: Check permissions
         if: "! steps.check.outputs.has-permission"
-        run: exit 1    
-        
+        run: exit 1
+
       - name: Increase version
         uses: ./.github/actions/commit_and_push
         if: steps.check.outputs.has-permission
@@ -39,12 +39,14 @@ jobs:
           files: '.'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
+
       - name: Release library
         if: steps.check.outputs.has-permission
-        uses: docker://docker.tuenti.io/android/mistica_builder:2
+        uses: satak/webrequest-action@master
         with:
-          args: 'bash ./gradlew --no-daemon clean check assemble ; ./gradlew --no-daemon publish'
+          url: https://flow.tuenti.io/events/FLOW/SCRIPT_EVENT
+          method: POST
+          payload: '{"script": "tu-ci", "operation": "create_or_update_job",  "repository": "mistica-android",  "branch": "${{ github.ref##*/ }}",  "workflow": "publish",  "ticket": "APPS-7169", "username": "flow"}'
 
       - name: Create Release in github
         if: steps.check.outputs.has-permission
@@ -56,4 +58,4 @@ jobs:
           release_name: ${{ github.event.inputs.libraryVersion }}
           body: ${{ github.event.inputs.releaseDescription }}
           draft: true
-          prerelease: false
+          prerelease: true
