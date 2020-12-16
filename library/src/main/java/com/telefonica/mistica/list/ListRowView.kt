@@ -145,7 +145,7 @@ class ListRowView @JvmOverloads constructor(
             setSubtitle(styledAttrs.getText(R.styleable.ListRowView_listRowSubtitle))
             setDescription(styledAttrs.getText(R.styleable.ListRowView_listRowDescription))
             setBoxed(styledAttrs.getBoolean(R.styleable.ListRowView_listRowIsBoxed, false))
-            setAssetType(styledAttrs.getType(R.styleable.ListRowView_listRowAssetType))
+            setAssetType(styledAttrs.getInt(R.styleable.ListRowView_listRowAssetType, TYPE_SMALL_ICON))
             setAssetDrawable(styledAttrs.getDrawable(R.styleable.ListRowView_listRowAssetDrawable))
             setBadgeCount(styledAttrs.getInt(R.styleable.ListRowView_listRowBadgeCount, BADGE_GONE))
             styledAttrs.getResourceId(
