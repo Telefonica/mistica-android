@@ -361,6 +361,9 @@
         <item name="feedbackScreenErrorIcon">@null</item>
         <item name="feedbackScreenInfoAnimation">@null</item>
         <item name="feedbackScreenInfoIcon">@null</item>
+
+        <!-- Stepper -->
+        <item name="stepperFinishedStepIcon">@null</item>
     </style>
 
     <style name="MisticaAlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">

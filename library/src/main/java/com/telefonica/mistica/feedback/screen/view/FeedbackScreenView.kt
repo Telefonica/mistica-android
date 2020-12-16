@@ -27,6 +27,7 @@ import com.telefonica.mistica.feedback.screen.haptics.performHapticFeedback
 import com.telefonica.mistica.util.background.GradientBackgroundFactory
 import com.telefonica.mistica.util.convertDpToPx
 import com.telefonica.mistica.util.getThemeColor
+import com.telefonica.mistica.util.getThemeRes
 
 class FeedbackScreenView : ConstraintLayout {
 
@@ -223,8 +224,8 @@ class FeedbackScreenView : ConstraintLayout {
     }
 
     private fun configureIcon(@AttrRes animationAttr: Int, @AttrRes imageAttr: Int) {
-        val animationResource: Int? = getThemeRes(animationAttr, false)
-        val imageResource: Int? = getThemeRes(imageAttr, false)
+        val animationResource: Int? = context.getThemeRes(animationAttr, false)
+        val imageResource: Int? = context.getThemeRes(imageAttr, false)
         when {
             animationResource != null -> {
                 icon.setAnimation(animationResource)
@@ -346,20 +347,8 @@ class FeedbackScreenView : ConstraintLayout {
                 (getBooleanThemeRes(R.attr.feedbackScreenSuccessWithGradient) ||
                         getBooleanThemeRes(R.attr.feedbackScreenSuccessInverse))
 
-    private fun getThemeRes(@AttrRes attributeRes: Int, resolveRefs: Boolean = true): Int? {
-        val typedValue = TypedValue()
-        context.theme.resolveAttribute(attributeRes, typedValue, resolveRefs)
-        return typedValue.data.takeIf {
-            when (typedValue.type) {
-                TypedValue.TYPE_NULL -> false
-                TypedValue.TYPE_REFERENCE -> typedValue.data != 0
-                else -> true
-            }
-        }
-    }
-
     private fun getBooleanThemeRes(@AttrRes attributeRes: Int): Boolean =
-        getThemeRes(attributeRes)?.let { it != 0 } ?: false
+        context.getThemeRes(attributeRes)?.let { it != 0 } ?: false
 
     companion object {
         const val TYPE_SUCCESS = 0

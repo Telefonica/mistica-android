@@ -133,4 +133,13 @@
         <attr name="inputCheckText" format="string" />
     </declare-styleable>
 
+    <declare-styleable name="IndeterminateStepperView">
+        <attr name="progress" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="DeterminateStepperView">
+        <attr name="maxSteps" format="integer" />
+        <attr name="step" format="integer" />
+    </declare-styleable>
+
 </resources>

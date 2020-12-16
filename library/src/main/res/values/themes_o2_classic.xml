@@ -387,6 +387,9 @@
 
         <!-- Tag -->
         <item name="colorPromoBackground">@color/o2_classic_color_purple</item>
+
+        <!-- Stepper -->
+        <item name="stepperFinishedStepIcon">@drawable/icn_checked_o2_classic</item>
     </style>
 
     <style name="MisticaAlertDialogTheme.O2Classic">

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/step_container"
+    android:layout_width="@dimen/stepper_step_width"
+    android:layout_height="@dimen/stepper_step_width"
+    android:background="@drawable/stepper_unselected_step_background">
+
+    <TextView
+        android:id="@+id/step_number"
+        android:layout_width="@dimen/stepper_step_width"
+        android:layout_height="@dimen/stepper_step_height"
+        tools:text="1"
+        android:textColor="?colorTextSecondary"
+        android:textSize="@dimen/stepper_step_text_size"
+        android:gravity="center"/>
+</RelativeLayout>

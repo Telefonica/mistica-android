@@ -338,4 +338,8 @@
         <attr name="feedbackScreenInfoIcon" format="reference" />
     </declare-styleable>
 
+    <declare-styleable name="Stepper">
+        <attr name="stepperFinishedStepIcon" format="reference"/>
+    </declare-styleable>
+
 </resources>

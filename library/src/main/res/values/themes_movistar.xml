@@ -368,6 +368,9 @@
 
         <!-- Tag -->
         <item name="colorPromoBackground">@color/movistar_color_purple</item>
+
+        <!-- Stepper -->
+        <item name="stepperFinishedStepIcon">@drawable/icn_checked_movistar</item>
     </style>
 
     <style name="MisticaAlertDialogTheme.Movistar">
