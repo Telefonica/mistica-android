@@ -53,8 +53,11 @@ jobs:
       - name: Release library
         if: steps.check.outputs.has-permission
         uses: docker://docker.tuenti.io/android/mistica_builder:2
+        env:
+          NEXUS_USER: ${{ secrets.NEXUS_USER }}
+          NEXUS_PASS: ${{ secrets.NEXUS_PASS }}
         with:
-          args: 'bash ./gradlew --no-daemon clean check assemble publish -Pusername=flow'
+          args: 'bash ./gradlew --no-daemon clean check assemble publish'
 
       - name: Create Release in github
         if: steps.check.outputs.has-permission
