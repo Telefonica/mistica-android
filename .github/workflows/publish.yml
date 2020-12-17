@@ -15,16 +15,6 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v2
 
-      - name: Prints the current branch name
-        run: echo "${GITHUB_BRANCH##*/}"
-        env:
-          GITHUB_BRANCH: ${{ github.ref }}
-
-      - name: Get the current branch name
-        id: branch-name
-        shell: bash
-        run: echo "::set-output name=branch::${GITHUB_REF#refs/heads/}"
-
       - run: 'echo -n ${{ github.event.inputs.libraryVersion }} > version.txt'
         shell: bash
 
@@ -57,7 +47,7 @@ jobs:
           NEXUS_USER: ${{ secrets.NEXUS_USER }}
           NEXUS_PASS: ${{ secrets.NEXUS_PASS }}
         with:
-          args: 'bash ./gradlew --no-daemon clean check assemble publish'
+          args: 'bash ./gradlew --no-daemon --info --stacktrace clean check assemble publish'
 
       - name: Create Release in github
         if: steps.check.outputs.has-permission
