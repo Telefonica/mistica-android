@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="media_card_corner_radius">4dp</dimen>
+    <dimen name="media_card_image_width">328dp</dimen>
+    <dimen name="media_card_image_height">184dp</dimen>
+    <dimen name="media_card_">2dp</dimen>
+
+</resources>
