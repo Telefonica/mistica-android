@@ -61,6 +61,10 @@ class DeterminateStepperView @JvmOverloads constructor(
     fun setMaxSteps(maxSteps: Int) {
         reset()
 
+        if (maxSteps <= 0) {
+            return
+        }
+
         this.maxSteps = maxSteps
         isDetermined = maxSteps <= MAX_DETERMINED_STEPS
 
