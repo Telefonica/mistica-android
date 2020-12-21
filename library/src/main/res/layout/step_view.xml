@@ -11,7 +11,7 @@
         android:layout_width="@dimen/stepper_step_width"
         android:layout_height="@dimen/stepper_step_height"
         tools:text="1"
+        style="@style/AppTheme.TextAppearance.Preset8.Medium"
         android:textColor="?colorTextSecondary"
-        android:textSize="@dimen/stepper_step_text_size"
         android:gravity="center"/>
 </RelativeLayout>

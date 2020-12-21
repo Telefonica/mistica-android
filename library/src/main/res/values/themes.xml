@@ -76,6 +76,8 @@
 
         <item name="colorTimeIndicatorWarning">@null</item>
 
+        <item name="colorBorderDark">@null</item>
+
         <!-- Recents -->
         <item name="colorSearchOverlay">@null</item>
 

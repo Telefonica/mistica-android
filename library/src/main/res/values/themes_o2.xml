@@ -38,6 +38,8 @@
 
         <item name="colorTimeIndicatorWarning">@color/o2_color_pink</item>
 
+        <item name="colorBorderDark">@color/o2_color_grey_1</item>
+
         <!-- Recents -->
         <item name="colorSearchOverlay">@color/o2_color_black_50_percent</item>
 
