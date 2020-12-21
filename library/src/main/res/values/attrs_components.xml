@@ -134,4 +134,15 @@
         <attr name="inputCheckText" format="string" />
     </declare-styleable>
 
+    <declare-styleable name="MediaCardView">
+        <attr name="mediaCardTag" format="string" />
+        <attr name="mediaCardTitle" format="string" />
+        <attr name="mediaCardSubtitle" format="string" />
+        <attr name="mediaCardDescription" format="string" />
+        <attr name="mediaCardPrimaryButtonText" format="string" />
+        <attr name="mediaCardLinkButtonText" format="string" />
+        <attr name="mediaCardImage" format="reference" />
+        <attr name="mediaCardPrimaryButtonOnClick" format="string" />
+        <attr name="mediaCardLinkButtonOnClick" format="string" />
+    </declare-styleable>
 </resources>

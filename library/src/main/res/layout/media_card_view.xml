@@ -8,10 +8,12 @@
     tools:parentTag="android.widget.LinearLayout">
 
     <ImageView
-        android:id="@+id/highlighted_card_image_mode_fit"
+        android:id="@+id/media_card_media"
         android:layout_width="@dimen/media_card_image_width"
         android:layout_height="@dimen/media_card_image_height"
         android:scaleType="fitXY"
+        android:visibility="gone"
+        tools:ignore="ContentDescription"
         tools:srcCompat="@tools:sample/avatars"
         tools:visibility="visible" />
 
@@ -24,20 +26,17 @@
         android:paddingEnd="16dp"
         android:paddingBottom="24dp">
 
-        <TextView
+        <com.telefonica.mistica.tag.TagView
             android:id="@+id/media_card_tag"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:ellipsize="end"
-            android:maxLines="1"
-            android:textAppearance="@style/AppTheme.TextAppearance.Preset8"
             android:visibility="gone"
             tools:text="HEADLINE"
             tools:visibility="visible" />
 
         <TextView
-            android:id="@+id/media_card_"
+            android:id="@+id/media_card_subtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -77,17 +76,16 @@
             android:orientation="vertical" />
 
         <LinearLayout
-            android:id="@+id/media_card_actions_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:orientation="horizontal">
 
             <com.telefonica.mistica.button.Button
-                android:id="@+id/media_card_main_button"
+                android:id="@+id/media_card_primary_button"
                 style="@style/AppTheme.Button.DefaultButton.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:visibility="gone"
                 tools:text="Button small"
                 tools:visibility="visible" />
@@ -97,6 +95,7 @@
                 style="@style/AppTheme.Button.LinkButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:visibility="gone"
                 tools:text="Link button"
                 tools:visibility="visible" />
