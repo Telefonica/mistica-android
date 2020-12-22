@@ -93,7 +93,8 @@ class CatalogMainActivity : AppCompatActivity() {
             ),
             SectionItem("Tags", R.drawable.ic_tags, Section.TAG),
             SectionItem("Lists", R.drawable.ic_lists, Section.LISTS),
-            SectionItem("Headers", R.drawable.ic_headers, Section.HEADERS),
+            SectionItem("Media Card", R.drawable.ic_cards, Section.MEDIA_CARDS),
+            SectionItem("Headers", R.drawable.ic_header, Section.HEADERS),
             SectionItem("Highlighted Cards", R.drawable.ic_cards, Section.HIGHLIGHTED_CARDS),
             SectionItem("Controls", R.drawable.ic_feedbacks, Section.CONTROLS), //Pending icon
             SectionItem("Others", R.drawable.ic_others, Section.OTHERS)

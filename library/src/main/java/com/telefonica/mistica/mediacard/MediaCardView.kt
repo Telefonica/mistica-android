@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
@@ -54,12 +55,12 @@ import com.telefonica.mistica.button.Button
     BindingMethod(
         type = MediaCardView::class,
         attribute = "mediaCardPrimaryButtonOnClick",
-        method = "setPrimaryButtonTextOnClick"
+        method = "setPrimaryButtonOnClick"
     ),
     BindingMethod(
         type = MediaCardView::class,
         attribute = "mediaCardLinkButtonOnClick",
-        method = "setLinkButtonTextOnClick"
+        method = "setLinkButtonOnClick"
     )
 )
 class MediaCardView @JvmOverloads constructor(
@@ -113,9 +114,12 @@ class MediaCardView @JvmOverloads constructor(
         }
     }
 
+    fun setImage(@DrawableRes imageRes: Int) {
+        imageView.setImageResource(imageRes)
+    }
+
     fun setImage(imageRes: Drawable) {
         imageView.setImageDrawable(imageRes)
-        imageView.visibility = View.VISIBLE
     }
 
     fun setTag(text: CharSequence?) {
@@ -159,11 +163,19 @@ class MediaCardView @JvmOverloads constructor(
     }
 
     fun setLinkButtonText(text: CharSequence?) {
-        primaryButton.setTextAndVisibility(text)
+        linkButton.setTextAndVisibility(text)
     }
 
     fun setLinkButtonText(@StringRes textRes: Int?) {
         textRes?.let { setLinkButtonText(context.getString(it)) }
+    }
+
+    fun setPrimaryButtonOnClick(onClickListener: OnClickListener?) {
+        primaryButton.setOnClickListener(onClickListener)
+    }
+
+    fun setLinkButtonOnClick(onClickListener: OnClickListener?) {
+        linkButton.setOnClickListener(onClickListener)
     }
 
     private fun TextView.setTextAndVisibility(newText: CharSequence?) {
