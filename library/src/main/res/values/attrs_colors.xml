@@ -341,7 +341,7 @@
     </declare-styleable>
 
     <declare-styleable name="Stepper">
-        <attr name="stepperFinishedStepIcon" format="reference"/>
+        <attr name="stepperFinishedStepAnimation" format="reference"/>
     </declare-styleable>
 
 </resources>

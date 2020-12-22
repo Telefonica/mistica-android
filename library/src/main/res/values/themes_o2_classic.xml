@@ -391,7 +391,7 @@
         <item name="colorPromoBackground">@color/o2_classic_color_purple</item>
 
         <!-- Stepper -->
-        <item name="stepperFinishedStepIcon">@drawable/icn_checked_o2_classic</item>
+        <item name="stepperFinishedStepAnimation">@raw/feedback_success_o2</item>
     </style>
 
     <style name="MisticaAlertDialogTheme.O2Classic">

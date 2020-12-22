@@ -97,8 +97,7 @@ class DeterminateStepperView @JvmOverloads constructor(
 
     private fun createFirstDeterminedStep(container: ConstraintLayout) {
         val firstStep = StepView(context).apply {
-            setStep(FIRST_STEP)
-            setSelected()
+            setStep(FIRST_STEP, isSelected = true)
             id = View.generateViewId()
         }
         steps.add(firstStep)

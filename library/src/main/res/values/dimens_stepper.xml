@@ -5,4 +5,5 @@
     <dimen name="stepper_step_width">24dp</dimen>
     <dimen name="stepper_step_height">24dp</dimen>
     <dimen name="stepper_step_margin">8dp</dimen>
+    <dimen name="step_completed_icon_width">3.5dp</dimen>
 </resources>

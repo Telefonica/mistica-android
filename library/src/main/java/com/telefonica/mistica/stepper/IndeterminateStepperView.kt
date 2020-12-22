@@ -1,8 +1,10 @@
 package com.telefonica.mistica.stepper
 
+import android.animation.ValueAnimator
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
+import android.view.animation.AccelerateDecelerateInterpolator
 import android.widget.LinearLayout
 import android.widget.ProgressBar
 import androidx.databinding.BindingMethod
@@ -43,7 +45,14 @@ class IndeterminateStepperView @JvmOverloads constructor(
     }
 
     fun setProgress(progress: Int) {
-        progressBar.progress = progress
+        ValueAnimator.ofInt(progressBar.progress, progress).apply {
+            addUpdateListener {
+                progressBar.progress = it.animatedValue as Int
+            }
+            duration = PROGRESS_ANIMATION_DURATION
+            interpolator = AccelerateDecelerateInterpolator()
+            start()
+        }
     }
 
     internal fun reset() {
@@ -55,6 +64,7 @@ class IndeterminateStepperView @JvmOverloads constructor(
     }
 
     private companion object {
+        const val PROGRESS_ANIMATION_DURATION = 500L
         const val EMPTY_PROGRESS = 0
         const val FULL_PROGRESS = 100
     }

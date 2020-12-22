@@ -351,7 +351,7 @@
         <item name="colorPromoBackground">@color/vivo_color_purple</item>
 
         <!-- Stepper -->
-        <item name="stepperFinishedStepIcon">@drawable/icn_checked_vivo</item>
+        <item name="stepperFinishedStepAnimation">@raw/feedback_success</item>
     </style>
 
     <style name="MisticaAlertDialogTheme.Vivo">
