@@ -95,9 +95,9 @@ class CatalogMainActivity : AppCompatActivity() {
             SectionItem("Lists", R.drawable.ic_lists, Section.LISTS),
             SectionItem("Headers", R.drawable.ic_headers, Section.HEADERS),
             SectionItem("Highlighted Cards", R.drawable.ic_cards, Section.HIGHLIGHTED_CARDS),
-            SectionItem("Controls", R.drawable.ic_feedbacks, Section.CONTROLS), // TODO Pending icon
+            SectionItem("Controls", R.drawable.ic_controls, Section.CONTROLS),
             SectionItem("Others", R.drawable.ic_others, Section.OTHERS),
-            SectionItem("Steppers", R.drawable.ic_feedbacks, Section.STEPPERS) // TODO Pending icon
+            SectionItem("Steppers", R.drawable.ic_stepper, Section.STEPPERS)
         )
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
