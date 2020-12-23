@@ -3,13 +3,16 @@ package com.telefonica.mistica.mediacard
 import android.content.Context
 import android.graphics.drawable.Drawable
 import android.util.AttributeSet
+import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.*
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
+import androidx.cardview.widget.CardView
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
@@ -61,14 +64,18 @@ import com.telefonica.mistica.button.Button
         type = MediaCardView::class,
         attribute = "mediaCardLinkButtonOnClick",
         method = "setLinkButtonOnClick"
+    ),
+    BindingMethod(
+        type = MediaCardView::class,
+        attribute = "mediaCardOnClick",
+        method = "setLinkButtonOnClick"
     )
 )
 class MediaCardView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
-    defStyleAttr: Int = 0,
-    defStyleRes: Int = 0
-) : LinearLayout(context, attrs, defStyleAttr, defStyleRes) {
+    defStyleAttr: Int = 0
+) : CardView(context, attrs, defStyleAttr) {
 
     private val tagTextView: TextView
     private val titleTextView: TextView
@@ -77,10 +84,15 @@ class MediaCardView @JvmOverloads constructor(
     private val imageView: ImageView
     private val primaryButton: Button
     private val linkButton: Button
-    private val additionalContentLayout: LinearLayout
+    private val customContentLayout: LinearLayout
 
     init {
         LayoutInflater.from(context).inflate(R.layout.media_card_view, this, true)
+        isClickable = true
+        isFocusable = true
+        cardElevation = 0F
+        radius = resources.getDimension(R.dimen.media_card_corner_radius)
+        minimumWidth = resources.getDimension(R.dimen.media_card_min_with).toInt()
 
         tagTextView = findViewById(R.id.media_card_tag)
         titleTextView = findViewById(R.id.media_card_title)
@@ -89,7 +101,7 @@ class MediaCardView @JvmOverloads constructor(
         imageView = findViewById(R.id.media_card_media)
         primaryButton = findViewById(R.id.media_card_primary_button)
         linkButton = findViewById(R.id.media_card_link_button)
-        additionalContentLayout = findViewById(R.id.media_card_additional_content_layout)
+        customContentLayout = findViewById(R.id.media_card_custom_content_layout)
 
         if (attrs != null) {
             val styledAttrs =
@@ -110,6 +122,7 @@ class MediaCardView @JvmOverloads constructor(
             styledAttrs.getDrawable(R.styleable.MediaCardView_mediaCardImage)
                 ?.let { setImage(it) }
 
+            setCardRipple(mediaCardHasButtons())
             styledAttrs.recycle()
         }
     }
@@ -172,18 +185,33 @@ class MediaCardView @JvmOverloads constructor(
 
     fun setPrimaryButtonOnClick(onClickListener: OnClickListener?) {
         primaryButton.setOnClickListener(onClickListener)
+        setCardRipple(mediaCardHasButtons())
     }
 
     fun setLinkButtonOnClick(onClickListener: OnClickListener?) {
         linkButton.setOnClickListener(onClickListener)
+        setCardRipple(mediaCardHasButtons())
     }
 
     private fun TextView.setTextAndVisibility(newText: CharSequence?) {
         if (newText?.isNotBlank() == true) {
             text = newText
-            visibility = View.VISIBLE
+            visibility = VISIBLE
         } else {
-            visibility = View.GONE
+            visibility = GONE
+        }
+    }
+
+    private fun mediaCardHasButtons() : Boolean =
+        primaryButton.visibility == VISIBLE || linkButton.visibility == VISIBLE
+
+    private fun CardView.setCardRipple(cardHasButtons : Boolean){
+        foreground = if(!cardHasButtons) {
+            val outValue = TypedValue()
+            context.theme.resolveAttribute(android.R.attr.selectableItemBackground, outValue, true)
+            resources.getDrawable(outValue.resourceId, context.theme)
+        }else{
+            null
         }
     }
 }
