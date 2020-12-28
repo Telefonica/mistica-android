@@ -44,6 +44,7 @@
                 android:layout_marginTop="8dp"
                 android:ellipsize="end"
                 android:maxLines="1"
+                android:textAllCaps="true"
                 android:textAppearance="@style/AppTheme.TextAppearance.Preset8"
                 android:visibility="gone"
                 tools:text="Text under headline"
@@ -67,9 +68,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:textAppearance="@style/AppTheme.TextAppearance.Preset7"
-                android:visibility="gone"
-                tools:text="This is a descriotion. Lorem ipsum bla bla bla bla bla"
-                tools:visibility="visible" />
+                android:textColor="?colorTextSecondary"
+                tools:text="This is a descriotion. Lorem ipsum bla bla bla bla bla" />
 
             <LinearLayout
                 android:id="@+id/media_card_custom_content_layout"
