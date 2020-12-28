@@ -126,10 +126,16 @@ class DataCardView @JvmOverloads constructor(
 
     fun setIcon(icon: Drawable) {
         iconImageView.setImageDrawable(icon)
+        iconImageView.visibility = View.VISIBLE
     }
 
     fun setIcon(@DrawableRes iconRes: Int) {
         iconImageView.setImageResource(iconRes)
+        iconImageView.visibility = View.VISIBLE
+    }
+
+    fun removeIcon(){
+        iconImageView.visibility = View.GONE
     }
 
     fun setTag(text: CharSequence?) {
@@ -202,7 +208,7 @@ class DataCardView @JvmOverloads constructor(
         additionalContentLayout.addView(content)
     }
 
-    private fun shouldShowRippleOnClick() : Boolean =
+    private fun shouldShowRippleOnClick(): Boolean =
         primaryButton.visibility == GONE
 
     private fun TextView.setTextAndVisibility(newText: CharSequence?) {
@@ -215,7 +221,7 @@ class DataCardView @JvmOverloads constructor(
     }
 
     private fun CardView.setCardRipple(showRippleOnClick: Boolean) {
-        foreground = if (!showRippleOnClick) {
+        foreground = if (showRippleOnClick) {
             val outValue = TypedValue()
             context.theme.resolveAttribute(android.R.attr.selectableItemBackground, outValue, true)
             resources.getDrawable(outValue.resourceId, context.theme)

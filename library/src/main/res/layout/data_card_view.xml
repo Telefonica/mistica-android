@@ -1,104 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
 <merge xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     tools:parentTag="androidx.cardview.widget.CardView">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="24dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/data_card_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            app:shapeAppearance="@style/CircleImageView"
+            tools:srcCompat="@tools:sample/avatars"
+            tools:visibility="visible" />
+
+        <com.telefonica.mistica.tag.TagView
+            android:id="@+id/data_card_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"
+            tools:text="HEADLINE"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/data_card_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textAllCaps="true"
+            android:textAppearance="@style/AppTheme.TextAppearance.Preset8"
+            android:visibility="gone"
+            tools:text="Text under headline"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/data_card_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textAppearance="@style/AppTheme.TextAppearance.Preset5"
+            android:visibility="gone"
+            tools:text="Title"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/data_card_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textAppearance="@style/AppTheme.TextAppearance.Preset7"
+            android:textColor="?colorTextSecondary"
+            tools:text="This is a descriotion. Lorem ipsum bla bla bla bla bla" />
+
+        <LinearLayout
+            android:id="@+id/data_card_custom_content_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingStart="16dp"
-            android:paddingTop="8dp"
-            android:paddingEnd="16dp"
-            android:paddingBottom="24dp">
+            android:orientation="horizontal">
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/data_card_icon"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:scaleType="centerCrop"
-                app:shapeAppearance="@style/CircleImageView"
-                tools:srcCompat="@tools:sample/avatars"/>
-
-            <com.telefonica.mistica.tag.TagView
-                android:id="@+id/data_card_tag"
+            <com.telefonica.mistica.button.Button
+                android:id="@+id/data_card_primary_button"
+                style="@style/AppTheme.Button.DefaultButton.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 android:visibility="gone"
-                tools:text="HEADLINE"
+                tools:text="Primary button"
                 tools:visibility="visible" />
 
-            <TextView
-                android:id="@+id/data_card_subtitle"
+            <com.telefonica.mistica.button.Button
+                android:id="@+id/data_card_link_button"
+                style="@style/AppTheme.Button.LinkButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:textAllCaps="true"
-                android:textAppearance="@style/AppTheme.TextAppearance.Preset8"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
                 android:visibility="gone"
-                tools:text="Text under headline"
+                tools:text="Link button"
                 tools:visibility="visible" />
-
-            <TextView
-                android:id="@+id/data_card_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:textAppearance="@style/AppTheme.TextAppearance.Preset5"
-                android:visibility="gone"
-                tools:text="Title"
-                tools:visibility="visible" />
-
-            <TextView
-                android:id="@+id/data_card_description"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:textAppearance="@style/AppTheme.TextAppearance.Preset7"
-                android:textColor="?colorTextSecondary"
-                tools:text="This is a descriotion. Lorem ipsum bla bla bla bla bla" />
-
-            <LinearLayout
-                android:id="@+id/data_card_custom_content_layout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <com.telefonica.mistica.button.Button
-                    android:id="@+id/data_card_primary_button"
-                    style="@style/AppTheme.Button.DefaultButton.Small"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:visibility="gone"
-                    tools:text="Primary button"
-                    tools:visibility="visible" />
-
-                <com.telefonica.mistica.button.Button
-                    android:id="@+id/data_card_link_button"
-                    style="@style/AppTheme.Button.LinkButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:visibility="gone"
-                    tools:text="Link button"
-                    tools:visibility="visible" />
-
-            </LinearLayout>
 
         </LinearLayout>
+
+    </LinearLayout>
 </merge>

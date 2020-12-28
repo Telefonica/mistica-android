@@ -37,6 +37,7 @@ class ComponentCatalogActivity : AppCompatActivity() {
             Section.TAG -> TagsCatalogFragment()
             Section.LISTS -> ListsCatalogFragment()
             Section.MEDIA_CARDS -> MediaCardsFragment()
+            Section.DATA_CARDS -> DataCardFragment()
             Section.HEADERS -> HeadersCatalogFragment()
             Section.HIGHLIGHTED_CARDS -> HighlightedCardsCatalogFragment()
             Section.CONTROLS -> ControlsCatalogFragment()
@@ -71,6 +72,7 @@ enum class Section {
     HEADERS,
     HIGHLIGHTED_CARDS,
     MEDIA_CARDS,
+    DATA_CARDS,
     CONTROLS,
     OTHERS,
 }

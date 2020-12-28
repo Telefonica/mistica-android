@@ -8,12 +8,12 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.telefonica.mistica.catalog.R
+import com.telefonica.mistica.datacard.DataCardView
 import com.telefonica.mistica.input.CheckBoxInput
 import com.telefonica.mistica.input.TextInput
-import com.telefonica.mistica.mediacard.MediaCardView
 
 
-class MediaCardsFragment : Fragment() {
+class DataCardFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -21,19 +21,18 @@ class MediaCardsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
-        return inflater.inflate(R.layout.media_card_fragment_catalog, container, false)
+        return inflater.inflate(R.layout.data_card_fragment_catalog, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        view.findViewById<Button>(R.id.media_card_button_update)
-            .setOnClickListener { updateMediaCardView(view) }
-        updateMediaCardView(view)
+        view.findViewById<Button>(R.id.data_card_button_update)
+            .setOnClickListener { updateDataCardView(view) }
+        updateDataCardView(view)
     }
 
-    private fun updateMediaCardView(view: View) {
-        with(view.findViewById<MediaCardView>(R.id.media_card_view)) {
-            setImage(R.drawable.media_card_sample_image)
+    private fun updateDataCardView(view: View) {
+        with(view.findViewById<DataCardView>(R.id.data_card_view)) {
             setTag(view.findViewById<TextInput>(R.id.input_tag).text.toString())
             setTitle(view.findViewById<TextInput>(R.id.input_title).text.toString())
             setSubtitle(view.findViewById<TextInput>(R.id.input_subtitle).text.toString())
@@ -41,10 +40,16 @@ class MediaCardsFragment : Fragment() {
             setPrimaryButtonText(view.findViewById<TextInput>(R.id.input_primary_button).text.toString())
             setLinkButtonText(view.findViewById<TextInput>(R.id.input_link_button).text.toString())
             if (view.findViewById<CheckBoxInput>(R.id.additional_content_checkbox).isChecked()) {
+                setDataCardAdditionalContent(null)
                 val additionalContent  = LayoutInflater.from(context).inflate(R.layout.card_additional_sample_content, this, false )
-                setMediaCardAdditionalContent(additionalContent)
+                setDataCardAdditionalContent(additionalContent)
             } else {
-                setMediaCardAdditionalContent(null)
+                setDataCardAdditionalContent(null)
+            }
+            if (view.findViewById<CheckBoxInput>(R.id.show_icon_checkbox).isChecked()) {
+                setIcon(R.drawable.media_card_sample_image)
+            } else {
+                removeIcon()
             }
             setPrimaryButtonOnClick(View.OnClickListener {
                 Toast.makeText(
@@ -60,10 +65,10 @@ class MediaCardsFragment : Fragment() {
                     Toast.LENGTH_SHORT
                 ).show()
             })
-            setMediaCardOnClick(View.OnClickListener {
+            setDataCardOnClick(View.OnClickListener {
                 Toast.makeText(
                     view.context,
-                    "Media card clicked!",
+                    "Data card clicked!",
                     Toast.LENGTH_SHORT
                 ).show()
             })
