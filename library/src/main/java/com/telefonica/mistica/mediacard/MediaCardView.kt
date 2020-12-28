@@ -6,7 +6,7 @@ import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
-import android.view.View.*
+import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -68,7 +68,7 @@ import com.telefonica.mistica.button.Button
     BindingMethod(
         type = MediaCardView::class,
         attribute = "mediaCardOnClick",
-        method = "setLinkButtonOnClick"
+        method = "setMediaCardOnClick"
     )
 )
 class MediaCardView @JvmOverloads constructor(
@@ -84,7 +84,7 @@ class MediaCardView @JvmOverloads constructor(
     private val imageView: ImageView
     private val primaryButton: Button
     private val linkButton: Button
-    private val customContentLayout: LinearLayout
+    private val additionalContentLayout: LinearLayout
 
     init {
         LayoutInflater.from(context).inflate(R.layout.media_card_view, this, true)
@@ -101,7 +101,7 @@ class MediaCardView @JvmOverloads constructor(
         imageView = findViewById(R.id.media_card_media)
         primaryButton = findViewById(R.id.media_card_primary_button)
         linkButton = findViewById(R.id.media_card_link_button)
-        customContentLayout = findViewById(R.id.media_card_custom_content_layout)
+        additionalContentLayout = findViewById(R.id.media_card_custom_content_layout)
 
         if (attrs != null) {
             val styledAttrs =
@@ -193,6 +193,18 @@ class MediaCardView @JvmOverloads constructor(
         setCardRipple(mediaCardHasButtons())
     }
 
+    fun setMediaCardOnClick(onClickListener: OnClickListener?) {
+        this.setOnClickListener(onClickListener)
+    }
+
+    fun setMediaCardAdditionalContent(content: View?) {
+        if (content == null) {
+            additionalContentLayout.removeAllViews()
+            return
+        }
+        additionalContentLayout.addView(content)
+    }
+
     private fun TextView.setTextAndVisibility(newText: CharSequence?) {
         if (newText?.isNotBlank() == true) {
             text = newText
@@ -202,15 +214,15 @@ class MediaCardView @JvmOverloads constructor(
         }
     }
 
-    private fun mediaCardHasButtons() : Boolean =
+    private fun mediaCardHasButtons(): Boolean =
         primaryButton.visibility == VISIBLE || linkButton.visibility == VISIBLE
 
-    private fun CardView.setCardRipple(cardHasButtons : Boolean){
-        foreground = if(!cardHasButtons) {
+    private fun CardView.setCardRipple(cardHasButtons: Boolean) {
+        foreground = if (!cardHasButtons) {
             val outValue = TypedValue()
             context.theme.resolveAttribute(android.R.attr.selectableItemBackground, outValue, true)
             resources.getDrawable(outValue.resourceId, context.theme)
-        }else{
+        } else {
             null
         }
     }

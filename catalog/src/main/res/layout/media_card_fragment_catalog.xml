@@ -71,6 +71,14 @@
             app:inputText="Ver otros"
             app:inputType="text" />
 
+        <com.telefonica.mistica.input.CheckBoxInput
+            android:id="@+id/additional_content_checkbox"
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:inputCheckText="With additional content"
+            app:inputChecked="false" />
+
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
