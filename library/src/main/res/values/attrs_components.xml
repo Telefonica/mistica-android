@@ -146,4 +146,17 @@
         <attr name="mediaCardLinkButtonOnClick" format="string" />
         <attr name="mediaCardOnClick" format="string" />
     </declare-styleable>
+
+    <declare-styleable name="DataCardView">
+        <attr name="dataCardIcon" format="reference" />
+        <attr name="dataCardTag" format="string" />
+        <attr name="dataCardTitle" format="string" />
+        <attr name="dataCardSubtitle" format="string" />
+        <attr name="dataCardDescription" format="string" />
+        <attr name="dataCardPrimaryButtonText" format="string" />
+        <attr name="dataCardLinkButtonText" format="string" />
+        <attr name="dataCardPrimaryButtonOnClick" format="string" />
+        <attr name="dataCardLinkButtonOnClick" format="string" />
+        <attr name="dataCardOnClick" format="string" />
+    </declare-styleable>
 </resources>
