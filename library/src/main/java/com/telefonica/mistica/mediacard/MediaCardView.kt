@@ -6,7 +6,6 @@ import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -20,6 +19,11 @@ import com.telefonica.mistica.button.Button
 
 
 @BindingMethods(
+    BindingMethod(
+        type = MediaCardView::class,
+        attribute = "mediaCardImageDrawable",
+        method = "setImageDrawable"
+    ),
     BindingMethod(
         type = MediaCardView::class,
         attribute = "mediaCardTag",
@@ -39,11 +43,6 @@ import com.telefonica.mistica.button.Button
         type = MediaCardView::class,
         attribute = "mediaCardDescription",
         method = "setDescription"
-    ),
-    BindingMethod(
-        type = MediaCardView::class,
-        attribute = "mediaCardImageDrawable",
-        method = "setImageDrawable"
     ),
     BindingMethod(
         type = MediaCardView::class,
@@ -122,7 +121,7 @@ class MediaCardView @JvmOverloads constructor(
             styledAttrs.getDrawable(R.styleable.MediaCardView_mediaCardImage)
                 ?.let { setImage(it) }
 
-            setCardRipple(mediaCardHasButtons())
+            setCardRipple(shouldShowRipple())
             styledAttrs.recycle()
         }
     }
@@ -131,8 +130,8 @@ class MediaCardView @JvmOverloads constructor(
         imageView.setImageResource(imageRes)
     }
 
-    fun setImage(imageRes: Drawable) {
-        imageView.setImageDrawable(imageRes)
+    fun setImage(imageDrawable: Drawable) {
+        imageView.setImageDrawable(imageDrawable)
     }
 
     fun setTag(text: CharSequence?) {
@@ -185,12 +184,12 @@ class MediaCardView @JvmOverloads constructor(
 
     fun setPrimaryButtonOnClick(onClickListener: OnClickListener?) {
         primaryButton.setOnClickListener(onClickListener)
-        setCardRipple(mediaCardHasButtons())
+        setCardRipple(shouldShowRipple())
     }
 
     fun setLinkButtonOnClick(onClickListener: OnClickListener?) {
         linkButton.setOnClickListener(onClickListener)
-        setCardRipple(mediaCardHasButtons())
+        setCardRipple(shouldShowRipple())
     }
 
     fun setMediaCardOnClick(onClickListener: OnClickListener?) {
@@ -214,11 +213,11 @@ class MediaCardView @JvmOverloads constructor(
         }
     }
 
-    private fun mediaCardHasButtons(): Boolean =
-        primaryButton.visibility == VISIBLE || linkButton.visibility == VISIBLE
+    private fun shouldShowRipple(): Boolean =
+        primaryButton.visibility == GONE && linkButton.visibility == GONE
 
-    private fun CardView.setCardRipple(cardHasButtons: Boolean) {
-        foreground = if (!cardHasButtons) {
+    private fun CardView.setCardRipple(showRippleOnClick: Boolean) {
+        foreground = if (showRippleOnClick) {
             val outValue = TypedValue()
             context.theme.resolveAttribute(android.R.attr.selectableItemBackground, outValue, true)
             resources.getDrawable(outValue.resourceId, context.theme)
