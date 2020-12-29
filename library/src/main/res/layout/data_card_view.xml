@@ -77,6 +77,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:orientation="horizontal">
 
             <com.telefonica.mistica.button.Button
@@ -84,7 +85,7 @@
                 style="@style/AppTheme.Button.DefaultButton.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginEnd="24dp"
                 android:visibility="gone"
                 tools:text="Primary button"
                 tools:visibility="visible" />
@@ -94,8 +95,7 @@
                 style="@style/AppTheme.Button.LinkButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginStart="-8dp"
                 android:visibility="gone"
                 tools:text="Link button"
                 tools:visibility="visible" />
