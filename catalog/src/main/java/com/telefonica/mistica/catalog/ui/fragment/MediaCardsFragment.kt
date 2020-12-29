@@ -41,7 +41,7 @@ class MediaCardsFragment : Fragment() {
             setPrimaryButtonText(view.findViewById<TextInput>(R.id.input_primary_button).text.toString())
             setLinkButtonText(view.findViewById<TextInput>(R.id.input_link_button).text.toString())
             if (view.findViewById<CheckBoxInput>(R.id.additional_content_checkbox).isChecked()) {
-                val additionalContent  = LayoutInflater.from(context).inflate(R.layout.card_additional_sample_content, this, false )
+                val additionalContent  = LayoutInflater.from(context).inflate(R.layout.media_card_additional_sample_content, this, false )
                 setMediaCardAdditionalContent(additionalContent)
             } else {
                 setMediaCardAdditionalContent(null)
