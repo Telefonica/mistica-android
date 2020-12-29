@@ -1,9 +1,9 @@
 # Data Cards
 
 <p align="center">
-    <img width="25%" src="../../../../../../../../doc/images/media_cards/mediaCard1.png">
-    <img width="25%" src="../../../../../../../../doc/images/media_cards/mediaCard2.png">
-    <img width="25%" src="../../../../../../../../doc/images/media_cards/mediaCard3.png">
+    <img width="25%" src="../../../../../../../../doc/images/data_cards/dataCard1.png">
+    <img width="25%" src="../../../../../../../../doc/images/data_cards/dataCard2.png">
+    <img width="25%" src="../../../../../../../../doc/images/data_cards/dataCard3.png">
 </p>
 
 Data cards require a minimum content of a **title, description and a link button.**
