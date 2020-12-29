@@ -126,6 +126,8 @@ class MediaCardView @JvmOverloads constructor(
         }
     }
 
+    fun getCardImageView(): ImageView = imageView
+
     fun setImage(@DrawableRes imageRes: Int) {
         imageView.setImageResource(imageRes)
     }
