@@ -47,7 +47,7 @@ jobs:
           NEXUS_USER: ${{ secrets.NEXUS_USER }}
           NEXUS_PASS: ${{ secrets.NEXUS_PASS }}
         with:
-          args: 'bash ./gradlew --no-daemon --info --stacktrace clean check assemble publish'
+          args: 'bash ./gradlew --no-daemon clean check assemble; ./gradlew publish'
 
       - name: Create Release in github
         if: steps.check.outputs.has-permission
