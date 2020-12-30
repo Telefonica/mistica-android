@@ -50,7 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             app:inputHint="Description"
-            app:inputText="This is a description"
+            app:inputText="This is a description with a long test so we can test muliline in the description area of the card view"
             app:inputType="text" />
 
         <com.telefonica.mistica.input.TextInput
@@ -73,10 +73,18 @@
 
         <com.telefonica.mistica.input.CheckBoxInput
             android:id="@+id/additional_content_checkbox"
-            android:layout_margin="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="8dp"
             app:inputCheckText="With additional content"
+            app:inputChecked="false" />
+
+        <com.telefonica.mistica.input.CheckBoxInput
+            android:id="@+id/video_content_checkbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:inputCheckText="With video"
             app:inputChecked="false" />
 
         <FrameLayout
@@ -87,7 +95,7 @@
 
             <com.telefonica.mistica.mediacard.MediaCardView
                 android:id="@+id/media_card_view"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </FrameLayout>
 

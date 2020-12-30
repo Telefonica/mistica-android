@@ -6,18 +6,31 @@
     tools:parentTag="androidx.cardview.widget.CardView">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/media_card_background"
         android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/media_card_media"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scaleType="fitXY"
-            tools:ignore="ContentDescription"
-            tools:srcCompat="@tools:sample/avatars" />
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <VideoView
+                android:id="@+id/media_card_video"
+                android:layout_width="wrap_content"
+                android:layout_height="184dp" />
+
+            <ImageView
+                android:id="@+id/media_card_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:visibility="gone"
+                tools:ignore="ContentDescription"
+                tools:srcCompat="@tools:sample/avatars"
+                tools:visibility="visible" />
+
+        </FrameLayout>
 
         <LinearLayout
             android:layout_width="match_parent"

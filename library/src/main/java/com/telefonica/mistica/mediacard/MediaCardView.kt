@@ -2,6 +2,7 @@ package com.telefonica.mistica.mediacard
 
 import android.content.Context
 import android.graphics.drawable.Drawable
+import android.net.Uri
 import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.LayoutInflater
@@ -9,6 +10,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.VideoView
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.cardview.widget.CardView
@@ -76,11 +78,12 @@ class MediaCardView @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : CardView(context, attrs, defStyleAttr) {
 
+    private val imageView: ImageView
+    private val videoView: VideoView
     private val tagTextView: TextView
     private val titleTextView: TextView
     private val subtitleTextView: TextView
     private val descriptionTextView: TextView
-    private val imageView: ImageView
     private val primaryButton: Button
     private val linkButton: Button
     private val additionalContentLayout: LinearLayout
@@ -93,11 +96,12 @@ class MediaCardView @JvmOverloads constructor(
         radius = resources.getDimension(R.dimen.media_card_corner_radius)
         minimumWidth = resources.getDimension(R.dimen.media_card_min_with).toInt()
 
+        videoView = findViewById(R.id.media_card_video)
+        imageView = findViewById(R.id.media_card_image)
         tagTextView = findViewById(R.id.media_card_tag)
         titleTextView = findViewById(R.id.media_card_title)
         subtitleTextView = findViewById(R.id.media_card_subtitle)
         descriptionTextView = findViewById(R.id.media_card_description)
-        imageView = findViewById(R.id.media_card_media)
         primaryButton = findViewById(R.id.media_card_primary_button)
         linkButton = findViewById(R.id.media_card_link_button)
         additionalContentLayout = findViewById(R.id.media_card_custom_content_layout)
@@ -126,14 +130,32 @@ class MediaCardView @JvmOverloads constructor(
         }
     }
 
+    fun setVideo(videoUri: Uri) {
+        videoView.setVideoURI(videoUri)
+        videoView.setOnPreparedListener {
+            imageView.visibility = GONE
+            it.isLooping = true
+            videoView.start()
+        }
+        videoView.visibility = VISIBLE
+    }
+
+    fun releaseVideoPlayer() {
+        videoView.stopPlayback()
+    }
+
     fun getCardImageView(): ImageView = imageView
 
     fun setImage(@DrawableRes imageRes: Int) {
         imageView.setImageResource(imageRes)
+        imageView.visibility = VISIBLE
+        videoView.visibility = GONE
     }
 
     fun setImage(imageDrawable: Drawable) {
         imageView.setImageDrawable(imageDrawable)
+        imageView.visibility = VISIBLE
+        videoView.visibility = GONE
     }
 
     fun setTag(text: CharSequence?) {
