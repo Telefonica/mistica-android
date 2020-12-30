@@ -95,6 +95,7 @@ class MediaCardView @JvmOverloads constructor(
         cardElevation = 0F
         radius = resources.getDimension(R.dimen.media_card_corner_radius)
         minimumWidth = resources.getDimension(R.dimen.media_card_min_with).toInt()
+        background = resources.getDrawable(R.drawable.media_card_background, context.theme)
 
         videoView = findViewById(R.id.media_card_video)
         imageView = findViewById(R.id.media_card_image)
