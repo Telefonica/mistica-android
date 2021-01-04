@@ -85,14 +85,19 @@ class MediaCardsFragment : Fragment() {
 
     private fun MediaCardView.setMultimedia(view: View) {
         if (view.findViewById<CheckBoxInput>(R.id.video_content_checkbox).isChecked()) {
+            val mediaUri = Uri.parse("android.resource://"
+                        + context.packageName + "/raw/" + LOCAL_VIDEO_FILE_NAME
+            )
             setImage(R.drawable.media_card_video_thumbnail)
-            setVideo(Uri.parse(VIDEO_SAMPLE_INTERNET_FILE))
+            setVideo(mediaUri)
+//            setVideo(Uri.parse(VIDEO_SAMPLE_INTERNET_FILE))
         } else {
             setImage(R.drawable.media_card_sample_image)
         }
     }
 
     companion object {
+        private const val LOCAL_VIDEO_FILE_NAME = "media_card_video"
         private const val VIDEO_SAMPLE_INTERNET_FILE =
             "https://fr.movistar-es-dev.svc.dev.mad.tuenti.io/2rkYQYRLMGaJnx-2uRP_TzNMlcJVlgb0IMSJ5sSC_VXV85P7EYDyRSw"
     }
