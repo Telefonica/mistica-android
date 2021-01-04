@@ -32,6 +32,11 @@ class MediaCardsFragment : Fragment() {
         updateMediaCardView(view)
     }
 
+    override fun onPause() {
+
+        super.onPause()
+    }
+
     private fun updateMediaCardView(view: View) {
         with(view.findViewById<MediaCardView>(R.id.media_card_view)) {
             setMultimedia(view)
@@ -90,7 +95,6 @@ class MediaCardsFragment : Fragment() {
             )
             setImage(R.drawable.media_card_video_thumbnail)
             setVideo(mediaUri)
-//            setVideo(Uri.parse(VIDEO_SAMPLE_INTERNET_FILE))
         } else {
             setImage(R.drawable.media_card_sample_image)
         }

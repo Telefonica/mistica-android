@@ -2,6 +2,7 @@ package com.telefonica.mistica.mediacard
 
 import android.content.Context
 import android.graphics.drawable.Drawable
+import android.media.MediaPlayer.MEDIA_INFO_VIDEO_RENDERING_START
 import android.net.Uri
 import android.util.AttributeSet
 import android.util.TypedValue
@@ -131,17 +132,31 @@ class MediaCardView @JvmOverloads constructor(
         }
     }
 
+    override fun onVisibilityChanged(changedView: View, visibility: Int) {
+        super.onVisibilityChanged(changedView, visibility)
+        if(visibility != VISIBLE){
+            imageView.visibility = VISIBLE
+            releaseVideoPlayer()
+        }
+    }
+
     fun setVideo(videoUri: Uri) {
+        videoView.visibility = VISIBLE
         videoView.setVideoURI(videoUri)
         videoView.setOnPreparedListener {
             it.isLooping = true
             videoView.start()
-            imageView.visibility = GONE
         }
-        videoView.visibility = VISIBLE
+        videoView.setOnInfoListener { mp, what, extra ->
+            when (what) {
+                MEDIA_INFO_VIDEO_RENDERING_START -> imageView.visibility = GONE
+                else -> imageView.visibility = VISIBLE
+            }
+            true
+        }
     }
 
-    fun releaseVideoPlayer() {
+    private fun releaseVideoPlayer() {
         videoView.stopPlayback()
     }
 
@@ -150,13 +165,11 @@ class MediaCardView @JvmOverloads constructor(
     fun setImage(@DrawableRes imageRes: Int) {
         imageView.setImageResource(imageRes)
         imageView.visibility = VISIBLE
-        videoView.visibility = GONE
     }
 
     fun setImage(imageDrawable: Drawable) {
         imageView.setImageDrawable(imageDrawable)
         imageView.visibility = VISIBLE
-        videoView.visibility = GONE
     }
 
     fun setTag(text: CharSequence?) {
