@@ -134,9 +134,9 @@ class MediaCardView @JvmOverloads constructor(
     fun setVideo(videoUri: Uri) {
         videoView.setVideoURI(videoUri)
         videoView.setOnPreparedListener {
-            imageView.visibility = GONE
             it.isLooping = true
             videoView.start()
+            imageView.visibility = GONE
         }
         videoView.visibility = VISIBLE
     }

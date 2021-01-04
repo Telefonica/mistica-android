@@ -85,20 +85,15 @@ class MediaCardsFragment : Fragment() {
 
     private fun MediaCardView.setMultimedia(view: View) {
         if (view.findViewById<CheckBoxInput>(R.id.video_content_checkbox).isChecked()) {
-//            val mediaUri = Uri.parse(
-//                "android.resource://"
-//                        + context.packageName.toString() + "/raw/" + VIDEO_SAMPLE_LOCAL_FILE
-//            )
-                    val mediaUri = Uri.parse(VIDEO_SAMPLE_INTERNET_FILE)
-            setVideo(mediaUri)
+            setImage(R.drawable.media_card_video_thumbnail)
+            setVideo(Uri.parse(VIDEO_SAMPLE_INTERNET_FILE))
         } else {
             setImage(R.drawable.media_card_sample_image)
         }
     }
 
     companion object {
-        private const val VIDEO_SAMPLE_LOCAL_FILE = "tacoma_narrows"
         private const val VIDEO_SAMPLE_INTERNET_FILE =
-            "https://developers.google.com/training/images/tacoma_narrows.mp4"
+            "https://fr.movistar-es-dev.svc.dev.mad.tuenti.io/2rkYQYRLMGaJnx-2uRP_TzNMlcJVlgb0IMSJ5sSC_VXV85P7EYDyRSw"
     }
 }
