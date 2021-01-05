@@ -5,6 +5,7 @@ import android.graphics.drawable.Drawable
 import android.media.MediaPlayer
 import android.net.Uri
 import android.util.AttributeSet
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.ImageView
@@ -16,7 +17,7 @@ import com.telefonica.mistica.util.hide
 import com.telefonica.mistica.util.show
 
 
-class MediaCardVideoView @JvmOverloads constructor(
+internal class MediaCardVideoView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
@@ -35,9 +36,13 @@ class MediaCardVideoView @JvmOverloads constructor(
     override fun onVisibilityChanged(changedView: View, visibility: Int) {
         super.onVisibilityChanged(changedView, visibility)
         if (visibility != VISIBLE) {
-            thumbnail.show()
-            videoView.stopPlayback()
+            stopVideoPlayback()
         }
+    }
+
+    override fun onDetachedFromWindow() {
+        stopVideoPlayback()
+        super.onDetachedFromWindow()
     }
 
     fun setVideo(videoUri: Uri, @DrawableRes imageRes: Int) {
@@ -48,6 +53,11 @@ class MediaCardVideoView @JvmOverloads constructor(
     fun setVideo(videoUri: Uri, imageDrawable: Drawable) {
         thumbnail.setImageDrawable(imageDrawable)
         setVideo(videoUri)
+    }
+
+    private fun stopVideoPlayback(){
+        thumbnail.show()
+        videoView.stopPlayback()
     }
 
     private fun setVideo(videoUri: Uri) {
