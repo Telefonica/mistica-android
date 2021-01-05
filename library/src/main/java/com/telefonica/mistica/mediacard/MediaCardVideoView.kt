@@ -72,7 +72,7 @@ internal class MediaCardVideoView @JvmOverloads constructor(
             }
             true
         }
-        videoView.setOnErrorListener { _, errorCode, _ ->
+        videoView.setOnErrorListener { _, _, _ ->
             thumbnail.show()
             true
         }
