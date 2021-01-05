@@ -8,13 +8,18 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.telefonica.mistica.catalog.R
+import com.telefonica.mistica.catalog.ui.fragment.MediaCardAdapter.Companion.MEDIA_CARDS_CAROUSEL_SIZE
 import com.telefonica.mistica.input.CheckBoxInput
 import com.telefonica.mistica.input.TextInput
 import com.telefonica.mistica.mediacard.MediaCardView
 
 
 class MediaCardsFragment : Fragment() {
+
+    private lateinit var mediaCardRecyclerView: RecyclerView
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,21 +33,98 @@ class MediaCardsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         view.findViewById<Button>(R.id.media_card_button_update)
-            .setOnClickListener { updateMediaCardView(view) }
-        updateMediaCardView(view)
+            .setOnClickListener { setMediaCardsCarousel(view) }
+        mediaCardRecyclerView = view.findViewById(R.id.media_cards_carousel)
+        setMediaCardsCarousel(view)
     }
 
-    private fun updateMediaCardView(view: View) {
-        with(view.findViewById<MediaCardView>(R.id.media_card_view)) {
-            setMultimedia(view)
-            setTag(view.findViewById<TextInput>(R.id.input_tag).text.toString())
-            setTitle(view.findViewById<TextInput>(R.id.input_title).text.toString())
-            setSubtitle(view.findViewById<TextInput>(R.id.input_subtitle).text.toString())
-            setDescription(view.findViewById<TextInput>(R.id.input_description).text.toString())
-            setPrimaryButtonText(view.findViewById<TextInput>(R.id.input_primary_button).text.toString())
-            setLinkButtonText(view.findViewById<TextInput>(R.id.input_link_button).text.toString())
-            setAditionalCardContent(view)
-            setClickListeners(view)
+    private fun setMediaCardsCarousel(view: View) {
+        val cardData = MediaCardData(
+            tag = view.findViewById<TextInput>(R.id.input_tag).text.toString(),
+            title = view.findViewById<TextInput>(R.id.input_title).text.toString(),
+            subtitle = view.findViewById<TextInput>(R.id.input_subtitle).text.toString(),
+            description = view.findViewById<TextInput>(R.id.input_description).text.toString(),
+            primaryButton = view.findViewById<TextInput>(R.id.input_primary_button).text.toString(),
+            linkButton = view.findViewById<TextInput>(R.id.input_link_button).text.toString(),
+            hasAdditionalContent = view.findViewById<CheckBoxInput>(R.id.additional_content_checkbox)
+                .isChecked(),
+            showWithVideo = view.findViewById<CheckBoxInput>(R.id.video_content_checkbox)
+                .isChecked()
+        )
+        val mediaCards = mutableListOf<MediaCardData>()
+        for (a in 1..MEDIA_CARDS_CAROUSEL_SIZE) {
+            mediaCards.add(cardData)
+        }
+        mediaCardRecyclerView.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        mediaCardRecyclerView.adapter = MediaCardAdapter(mediaCards)
+    }
+}
+
+data class MediaCardData(
+    val tag: String?,
+    val title: String?,
+    val subtitle: String?,
+    val description: String?,
+    val primaryButton: String?,
+    val linkButton: String?,
+    val hasAdditionalContent: Boolean = false,
+    val showWithVideo: Boolean = false
+)
+
+class MediaCardAdapter(private val mediaCards: List<MediaCardData>) :
+    RecyclerView.Adapter<MediaCardAdapter.CardViewHolder>() {
+
+    class CardViewHolder(val cardView: MediaCardView) : RecyclerView.ViewHolder(cardView)
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardViewHolder {
+        val context = parent.context
+        val inflater = LayoutInflater.from(context)
+        val mediaCardView = inflater.inflate(
+            R.layout.media_card_carousel_item, parent, false
+        ) as MediaCardView
+        return CardViewHolder(mediaCardView)
+    }
+
+    override fun getItemCount(): Int = MEDIA_CARDS_CAROUSEL_SIZE
+
+    override fun onBindViewHolder(holder: CardViewHolder, position: Int) {
+        val cardData = mediaCards[position]
+        with(holder.cardView) {
+            setMultimedia(cardData)
+            setTag(cardData.tag)
+            setTitle(cardData.title)
+            setSubtitle(cardData.subtitle)
+            setDescription(cardData.description)
+            setPrimaryButtonText(cardData.primaryButton)
+            setLinkButtonText(cardData.linkButton)
+            setAdditionalCardContent(this, cardData)
+            setClickListeners(this)
+        }
+    }
+
+    private fun MediaCardView.setAdditionalCardContent(view: View, cardData: MediaCardData) {
+        if (cardData.hasAdditionalContent) {
+            val additionalContent = LayoutInflater.from(context).inflate(
+                R.layout.media_card_additional_sample_content,
+                this,
+                false
+            )
+            setMediaCardAdditionalContent(additionalContent)
+        } else {
+            setMediaCardAdditionalContent(null)
+        }
+    }
+
+    private fun MediaCardView.setMultimedia(cardData: MediaCardData) {
+        if (cardData.showWithVideo) {
+            val mediaUri = Uri.parse(
+                "android.resource://"
+                        + context.packageName + "/raw/" + LOCAL_VIDEO_FILE_NAME
+            )
+            setVideo(mediaUri, R.drawable.media_card_video_thumbnail)
+        } else {
+            setCardImage(R.drawable.media_card_sample_image)
         }
     }
 
@@ -70,34 +152,11 @@ class MediaCardsFragment : Fragment() {
         })
     }
 
-    private fun MediaCardView.setAditionalCardContent(view: View) {
-        if (view.findViewById<CheckBoxInput>(R.id.additional_content_checkbox).isChecked()) {
-            val additionalContent = LayoutInflater.from(context).inflate(
-                R.layout.media_card_additional_sample_content,
-                this,
-                false
-            )
-            setMediaCardAdditionalContent(additionalContent)
-        } else {
-            setMediaCardAdditionalContent(null)
-        }
-    }
-
-    private fun MediaCardView.setMultimedia(view: View) {
-        if (view.findViewById<CheckBoxInput>(R.id.video_content_checkbox).isChecked()) {
-            val mediaUri = Uri.parse(
-                "android.resource://"
-                        + context.packageName + "/raw/" + LOCAL_VIDEO_FILE_NAME
-            )
-            setVideo(mediaUri, R.drawable.media_card_video_thumbnail)
-        } else {
-            setCardImage(R.drawable.media_card_sample_image)
-        }
-    }
-
     companion object {
+        const val MEDIA_CARDS_CAROUSEL_SIZE = 10
         private const val LOCAL_VIDEO_FILE_NAME = "media_card_video"
         private const val VIDEO_SAMPLE_INTERNET_FILE =
             "https://fr-es.mytelco.io/2pcJZ7t0l3FMf8bwAoBG-VeQs4PYt-VOd6vnHk0K2BYg2zg85KhOT7Q"
     }
+
 }
