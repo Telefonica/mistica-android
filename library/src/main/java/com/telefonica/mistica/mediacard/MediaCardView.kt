@@ -2,7 +2,6 @@ package com.telefonica.mistica.mediacard
 
 import android.content.Context
 import android.graphics.drawable.Drawable
-import android.media.MediaPlayer.MEDIA_INFO_VIDEO_RENDERING_START
 import android.net.Uri
 import android.util.AttributeSet
 import android.util.TypedValue
@@ -11,7 +10,6 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import android.widget.VideoView
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.cardview.widget.CardView
@@ -19,6 +17,8 @@ import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
 import com.telefonica.mistica.button.Button
+import com.telefonica.mistica.util.hide
+import com.telefonica.mistica.util.show
 
 
 @BindingMethods(
@@ -79,9 +79,8 @@ class MediaCardView @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : CardView(context, attrs, defStyleAttr) {
 
-    private val imageView: ImageView
-    private val videoView: VideoView
-//    private val videoThumbnail: ImageView
+    private val cardImageView: ImageView
+    private val cardVideoView: MediaCardVideoView
     private val tagTextView: TextView
     private val titleTextView: TextView
     private val subtitleTextView: TextView
@@ -99,9 +98,8 @@ class MediaCardView @JvmOverloads constructor(
         minimumWidth = resources.getDimension(R.dimen.media_card_min_with).toInt()
         background = resources.getDrawable(R.drawable.media_card_background, context.theme)
 
-        imageView = findViewById(R.id.media_card_image)
-        videoView = findViewById(R.id.media_card_video)
-//        videoThumbnail = findViewById(R.id.media_card_video_thumbnail)
+        cardImageView = findViewById(R.id.media_card_image)
+        cardVideoView = findViewById(R.id.media_card_video_view)
         tagTextView = findViewById(R.id.media_card_tag)
         titleTextView = findViewById(R.id.media_card_title)
         subtitleTextView = findViewById(R.id.media_card_subtitle)
@@ -127,51 +125,39 @@ class MediaCardView @JvmOverloads constructor(
             linkButton.setTextAndVisibility(styledAttrs.getText(R.styleable.MediaCardView_mediaCardLinkButtonText))
 
             styledAttrs.getDrawable(R.styleable.MediaCardView_mediaCardImage)
-                ?.let { setImage(it) }
+                ?.let { setCardImage(it) }
 
             setCardRipple(shouldShowRipple())
             styledAttrs.recycle()
         }
     }
 
-    override fun onVisibilityChanged(changedView: View, visibility: Int) {
-        super.onVisibilityChanged(changedView, visibility)
-        if(visibility != VISIBLE){
-            imageView.visibility = VISIBLE
-            releaseVideoPlayer()
-        }
+    fun getVideoThumbnailImageView() = cardVideoView.thumbnail
+
+    fun setVideo(videoUri: Uri, @DrawableRes imageRes: Int) {
+        cardVideoView.show()
+        cardVideoView.setVideo(videoUri, imageRes)
+        cardImageView.hide()
     }
 
-    fun setVideo(videoUri: Uri) {
-        videoView.visibility = VISIBLE
-        videoView.setVideoURI(videoUri)
-        videoView.setOnPreparedListener {
-            it.isLooping = true
-            videoView.start()
-        }
-        videoView.setOnInfoListener { mp, what, extra ->
-            when (what) {
-                MEDIA_INFO_VIDEO_RENDERING_START -> imageView.visibility = GONE
-                else -> imageView.visibility = VISIBLE
-            }
-            true
-        }
+    fun setVideo(videoUri: Uri, imageDrawable: Drawable) {
+        cardVideoView.show()
+        cardVideoView.setVideo(videoUri, imageDrawable)
+        cardImageView.hide()
     }
 
-    private fun releaseVideoPlayer() {
-        videoView.stopPlayback()
+    fun getCardImageView(): ImageView = cardImageView
+
+    fun setCardImage(@DrawableRes imageRes: Int) {
+        cardImageView.setImageResource(imageRes)
+        cardVideoView.hide()
+        cardImageView.show()
     }
 
-    fun getCardImageView(): ImageView = imageView
-
-    fun setImage(@DrawableRes imageRes: Int) {
-        imageView.setImageResource(imageRes)
-        imageView.visibility = VISIBLE
-    }
-
-    fun setImage(imageDrawable: Drawable) {
-        imageView.setImageDrawable(imageDrawable)
-        imageView.visibility = VISIBLE
+    fun setCardImage(imageDrawable: Drawable) {
+        cardImageView.setImageDrawable(imageDrawable)
+        cardVideoView.hide()
+        cardImageView.show()
     }
 
     fun setTag(text: CharSequence?) {
@@ -247,9 +233,9 @@ class MediaCardView @JvmOverloads constructor(
     private fun TextView.setTextAndVisibility(newText: CharSequence?) {
         if (newText?.isNotBlank() == true) {
             text = newText
-            visibility = VISIBLE
+            show()
         } else {
-            visibility = GONE
+            hide()
         }
     }
 

@@ -10,7 +10,21 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <include layout="@layout/media_card_video_layout" />
+        <com.telefonica.mistica.mediacard.MediaCardVideoView
+            android:id="@+id/media_card_video_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/media_card_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:visibility="gone"
+            tools:ignore="ContentDescription"
+            tools:srcCompat="@tools:sample/avatars"
+            tools:visibility="visible" />
 
         <LinearLayout
             android:layout_width="match_parent"

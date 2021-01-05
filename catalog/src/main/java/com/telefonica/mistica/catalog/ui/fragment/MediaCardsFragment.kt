@@ -85,13 +85,13 @@ class MediaCardsFragment : Fragment() {
 
     private fun MediaCardView.setMultimedia(view: View) {
         if (view.findViewById<CheckBoxInput>(R.id.video_content_checkbox).isChecked()) {
-            val mediaUri = Uri.parse("android.resource://"
+            val mediaUri = Uri.parse(
+                "android.resource://"
                         + context.packageName + "/raw/" + LOCAL_VIDEO_FILE_NAME
             )
-            setImage(R.drawable.media_card_video_thumbnail)
-            setVideo(mediaUri)
+            setVideo(mediaUri, R.drawable.media_card_video_thumbnail)
         } else {
-            setImage(R.drawable.media_card_sample_image)
+            setCardImage(R.drawable.media_card_sample_image)
         }
     }
 
