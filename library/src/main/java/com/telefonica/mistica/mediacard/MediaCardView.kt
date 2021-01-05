@@ -66,11 +66,6 @@ import com.telefonica.mistica.util.show
         type = MediaCardView::class,
         attribute = "mediaCardLinkButtonOnClick",
         method = "setLinkButtonOnClick"
-    ),
-    BindingMethod(
-        type = MediaCardView::class,
-        attribute = "mediaCardOnClick",
-        method = "setMediaCardOnClick"
     )
 )
 class MediaCardView @JvmOverloads constructor(
@@ -216,10 +211,6 @@ class MediaCardView @JvmOverloads constructor(
     fun setLinkButtonOnClick(onClickListener: OnClickListener?) {
         linkButton.setOnClickListener(onClickListener)
         setCardRipple(shouldShowRipple())
-    }
-
-    fun setMediaCardOnClick(onClickListener: OnClickListener?) {
-        this.setOnClickListener(onClickListener)
     }
 
     fun setMediaCardAdditionalContent(content: View?) {

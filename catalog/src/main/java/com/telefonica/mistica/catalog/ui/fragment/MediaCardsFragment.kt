@@ -160,13 +160,13 @@ class MediaCardAdapter(private val mediaCards: List<MediaCardData>) :
                 Toast.LENGTH_SHORT
             ).show()
         })
-        setMediaCardOnClick(View.OnClickListener {
+        setOnClickListener {
             Toast.makeText(
                 view.context,
                 "Media card clicked!",
                 Toast.LENGTH_SHORT
             ).show()
-        })
+        }
     }
 
     companion object {
