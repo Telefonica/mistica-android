@@ -65,13 +65,13 @@ class DataCardFragment : Fragment() {
                     Toast.LENGTH_SHORT
                 ).show()
             })
-            setDataCardOnClick(View.OnClickListener {
+            setOnClickListener {
                 Toast.makeText(
                     view.context,
                     "Data card clicked!",
                     Toast.LENGTH_SHORT
                 ).show()
-            })
+            }
         }
     }
 }

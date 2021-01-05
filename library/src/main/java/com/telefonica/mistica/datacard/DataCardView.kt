@@ -62,11 +62,6 @@ import com.telefonica.mistica.button.Button
         type = DataCardView::class,
         attribute = "dataCardLinkButtonOnClick",
         method = "setLinkButtonOnClick"
-    ),
-    BindingMethod(
-        type = DataCardView::class,
-        attribute = "dataCardOnClick",
-        method = "setDataCardOnClick"
     )
 )
 class DataCardView @JvmOverloads constructor(
@@ -194,10 +189,6 @@ class DataCardView @JvmOverloads constructor(
     fun setLinkButtonOnClick(onClickListener: OnClickListener?) {
         linkButton.setOnClickListener(onClickListener)
         setCardRipple(shouldShowRippleOnClick())
-    }
-
-    fun setDataCardOnClick(onClickListener: OnClickListener?) {
-        this.setOnClickListener(onClickListener)
     }
 
     fun setDataCardAdditionalContent(content: View?) {

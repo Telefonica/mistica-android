@@ -20,6 +20,5 @@ Implemented as a custom view, `com.telefonica.mistica.datacard.DataCardView` can
         <attr name="dataCardLinkButtonText" format="string" />
         <attr name="dataCardPrimaryButtonOnClick" format="string" />
         <attr name="dataCardLinkButtonOnClick" format="string" />
-        <attr name="dataCardOnClick" format="string" />
     </declare-styleable>
 ```

@@ -157,6 +157,5 @@
         <attr name="dataCardLinkButtonText" format="string" />
         <attr name="dataCardPrimaryButtonOnClick" format="string" />
         <attr name="dataCardLinkButtonOnClick" format="string" />
-        <attr name="dataCardOnClick" format="string" />
     </declare-styleable>
 </resources>
