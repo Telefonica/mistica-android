@@ -2,10 +2,9 @@ package com.telefonica.mistica.mediacard
 
 import android.content.Context
 import android.graphics.drawable.Drawable
-import android.media.MediaPlayer
+import android.media.MediaPlayer.MEDIA_INFO_VIDEO_RENDERING_START
 import android.net.Uri
 import android.util.AttributeSet
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.ImageView
@@ -55,24 +54,27 @@ internal class MediaCardVideoView @JvmOverloads constructor(
         setVideo(videoUri)
     }
 
-    private fun stopVideoPlayback(){
+    private fun stopVideoPlayback() {
         thumbnail.show()
         videoView.stopPlayback()
     }
 
     private fun setVideo(videoUri: Uri) {
+        videoView.show()
         videoView.setVideoURI(videoUri)
         videoView.setOnPreparedListener {
             it.isLooping = true
             videoView.start()
         }
         videoView.setOnInfoListener { _, state, _ ->
-            when (state) {
-                MediaPlayer.MEDIA_INFO_VIDEO_RENDERING_START -> thumbnail.hide()
-                else -> thumbnail.show()
+            if (state == MEDIA_INFO_VIDEO_RENDERING_START) {
+                thumbnail.hide()
             }
             true
         }
-        videoView.show()
+        videoView.setOnErrorListener { _, errorCode, _ ->
+            thumbnail.show()
+            true
+        }
     }
 }
