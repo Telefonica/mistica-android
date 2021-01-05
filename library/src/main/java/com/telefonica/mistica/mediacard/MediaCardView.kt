@@ -81,6 +81,7 @@ class MediaCardView @JvmOverloads constructor(
 
     private val imageView: ImageView
     private val videoView: VideoView
+//    private val videoThumbnail: ImageView
     private val tagTextView: TextView
     private val titleTextView: TextView
     private val subtitleTextView: TextView
@@ -98,8 +99,9 @@ class MediaCardView @JvmOverloads constructor(
         minimumWidth = resources.getDimension(R.dimen.media_card_min_with).toInt()
         background = resources.getDrawable(R.drawable.media_card_background, context.theme)
 
-        videoView = findViewById(R.id.media_card_video)
         imageView = findViewById(R.id.media_card_image)
+        videoView = findViewById(R.id.media_card_video)
+//        videoThumbnail = findViewById(R.id.media_card_video_thumbnail)
         tagTextView = findViewById(R.id.media_card_tag)
         titleTextView = findViewById(R.id.media_card_title)
         subtitleTextView = findViewById(R.id.media_card_subtitle)

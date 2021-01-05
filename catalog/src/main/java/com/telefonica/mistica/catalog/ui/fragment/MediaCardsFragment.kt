@@ -32,11 +32,6 @@ class MediaCardsFragment : Fragment() {
         updateMediaCardView(view)
     }
 
-    override fun onPause() {
-
-        super.onPause()
-    }
-
     private fun updateMediaCardView(view: View) {
         with(view.findViewById<MediaCardView>(R.id.media_card_view)) {
             setMultimedia(view)
@@ -103,6 +98,6 @@ class MediaCardsFragment : Fragment() {
     companion object {
         private const val LOCAL_VIDEO_FILE_NAME = "media_card_video"
         private const val VIDEO_SAMPLE_INTERNET_FILE =
-            "https://fr.movistar-es-dev.svc.dev.mad.tuenti.io/2rkYQYRLMGaJnx-2uRP_TzNMlcJVlgb0IMSJ5sSC_VXV85P7EYDyRSw"
+            "https://fr-es.mytelco.io/2pcJZ7t0l3FMf8bwAoBG-VeQs4PYt-VOd6vnHk0K2BYg2zg85KhOT7Q"
     }
 }
