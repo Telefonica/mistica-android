@@ -24,6 +24,5 @@ configured through the public api or via xml `attr`:
         <attr name="mediaCardImage" format="reference" />
         <attr name="mediaCardPrimaryButtonOnClick" format="string" />
         <attr name="mediaCardLinkButtonOnClick" format="string" />
-        <attr name="mediaCardOnClick" format="string" />
     </declare-styleable>
 ```
