@@ -60,7 +60,6 @@ internal class MediaCardVideoView @JvmOverloads constructor(
     }
 
     private fun setVideo(videoUri: Uri) {
-        videoView.show()
         videoView.setVideoURI(videoUri)
         videoView.setOnPreparedListener {
             it.isLooping = true
@@ -76,5 +75,6 @@ internal class MediaCardVideoView @JvmOverloads constructor(
             thumbnail.show()
             true
         }
+        videoView.show()
     }
 }
