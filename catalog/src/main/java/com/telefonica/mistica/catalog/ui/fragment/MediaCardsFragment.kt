@@ -48,7 +48,9 @@ class MediaCardsFragment : Fragment() {
             linkButton = view.findViewById<TextInput>(R.id.input_link_button).text.toString(),
             hasAdditionalContent = view.findViewById<CheckBoxInput>(R.id.additional_content_checkbox)
                 .isChecked(),
-            showWithVideo = view.findViewById<CheckBoxInput>(R.id.video_content_checkbox)
+            internetVideoResource = view.findViewById<CheckBoxInput>(R.id.video_internet_content_checkbox)
+                .isChecked(),
+            localVideoResource = view.findViewById<CheckBoxInput>(R.id.video_local_content_checkbox)
                 .isChecked()
         )
         val mediaCards = mutableListOf<MediaCardData>()
@@ -69,7 +71,8 @@ data class MediaCardData(
     val primaryButton: String?,
     val linkButton: String?,
     val hasAdditionalContent: Boolean = false,
-    val showWithVideo: Boolean = false
+    val internetVideoResource: Boolean = false,
+    val localVideoResource: Boolean = false
 )
 
 class MediaCardAdapter(private val mediaCards: List<MediaCardData>) :
@@ -117,15 +120,29 @@ class MediaCardAdapter(private val mediaCards: List<MediaCardData>) :
     }
 
     private fun MediaCardView.setMultimedia(cardData: MediaCardData) {
-        if (cardData.showWithVideo) {
-//            val mediaUri = Uri.parse(
-//                "android.resource://"
-//                        + context.packageName + "/raw/" + LOCAL_VIDEO_FILE_NAME
-//            )
-            setVideo(Uri.parse(VIDEO_SAMPLE_INTERNET_FILE), R.drawable.media_card_video_thumbnail)
+        if (cardData.internetVideoResource || cardData.localVideoResource) {
+            if (cardData.localVideoResource) {
+                loadVideoFromLocal()
+            } else {
+                loadVideoFromInternet()
+            }
         } else {
             setCardImage(R.drawable.media_card_sample_image)
         }
+    }
+
+    private fun MediaCardView.loadVideoFromInternet() {
+        setVideo(
+            Uri.parse(VIDEO_SAMPLE_INTERNET_FILE),
+            R.drawable.media_card_internet_video_thumbnail
+        )
+    }
+
+    private fun MediaCardView.loadVideoFromLocal() {
+        setVideo(
+            Uri.parse("android.resource://${context.packageName}/raw/$LOCAL_VIDEO_FILE_NAME"),
+            R.drawable.media_card_local_video_thumbnail
+        )
     }
 
     private fun MediaCardView.setClickListeners(view: View) {
@@ -156,7 +173,7 @@ class MediaCardAdapter(private val mediaCards: List<MediaCardData>) :
         const val MEDIA_CARDS_CAROUSEL_SIZE = 10
         private const val LOCAL_VIDEO_FILE_NAME = "media_card_video"
         private const val VIDEO_SAMPLE_INTERNET_FILE =
-            "https://fr-es.mytelco.io/2pcJZ7t0l3FMf8bwAoBG-VeQs4PYt-VOd6vnHk0K2BYg2zg85KhOT7Q"
+            "https://fr-es.mytelco.io/2hi3ruaA-rsLprXrhwHf-5LEpifOh4JAiDa0ZJWbj4w__PUAFIk5h5A"
     }
 
 }
