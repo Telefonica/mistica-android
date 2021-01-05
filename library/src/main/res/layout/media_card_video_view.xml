@@ -25,8 +25,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ContentDescription"
-        tools:srcCompat="@tools:sample/avatars"
-        tools:visibility="visible" />
+        tools:ignore="ContentDescription" />
 
 </merge>

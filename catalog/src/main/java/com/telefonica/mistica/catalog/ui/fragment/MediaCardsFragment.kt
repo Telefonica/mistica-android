@@ -118,11 +118,11 @@ class MediaCardAdapter(private val mediaCards: List<MediaCardData>) :
 
     private fun MediaCardView.setMultimedia(cardData: MediaCardData) {
         if (cardData.showWithVideo) {
-            val mediaUri = Uri.parse(
-                "android.resource://"
-                        + context.packageName + "/raw/" + LOCAL_VIDEO_FILE_NAME
-            )
-            setVideo(mediaUri, R.drawable.media_card_video_thumbnail)
+//            val mediaUri = Uri.parse(
+//                "android.resource://"
+//                        + context.packageName + "/raw/" + LOCAL_VIDEO_FILE_NAME
+//            )
+            setVideo(Uri.parse(VIDEO_SAMPLE_INTERNET_FILE), R.drawable.media_card_video_thumbnail)
         } else {
             setCardImage(R.drawable.media_card_sample_image)
         }
