@@ -12,6 +12,8 @@ import android.widget.VideoView
 import androidx.annotation.DrawableRes
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.telefonica.mistica.R
+import com.telefonica.mistica.util.hide
+import com.telefonica.mistica.util.show
 
 
 class MediaCardVideoView @JvmOverloads constructor(
@@ -33,7 +35,7 @@ class MediaCardVideoView @JvmOverloads constructor(
     override fun onVisibilityChanged(changedView: View, visibility: Int) {
         super.onVisibilityChanged(changedView, visibility)
         if (visibility != VISIBLE) {
-            thumbnail.visibility = VISIBLE
+            thumbnail.show()
             videoView.stopPlayback()
         }
     }
@@ -49,7 +51,7 @@ class MediaCardVideoView @JvmOverloads constructor(
     }
 
     private fun setVideo(videoUri: Uri) {
-        videoView.visibility = VISIBLE
+        videoView.show()
         videoView.setVideoURI(videoUri)
         videoView.setOnPreparedListener {
             it.isLooping = true
@@ -57,8 +59,8 @@ class MediaCardVideoView @JvmOverloads constructor(
         }
         videoView.setOnInfoListener { _, state, _ ->
             when (state) {
-                MediaPlayer.MEDIA_INFO_VIDEO_RENDERING_START -> thumbnail.visibility = GONE
-                else -> thumbnail.visibility = VISIBLE
+                MediaPlayer.MEDIA_INFO_VIDEO_RENDERING_START -> thumbnail.hide()
+                else -> thumbnail.show()
             }
             true
         }
