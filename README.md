@@ -90,6 +90,8 @@ Just set your App or any specific activity to use any of the following:
 * [Chips](library/src/main/java/com/telefonica/mistica/chips)
 * [Highlighted Cards](library/src/main/java/com/telefonica/mistica/highlightedcard)
 * [Controls](library/src/main/java/com/telefonica/mistica/control)
+* [Media Cards](library/src/main/java/com/telefonica/mistica/mediacard)
+* [Data Cards](library/src/main/java/com/telefonica/mistica/datacard)
 
 ## Text Presets Styles
 

@@ -134,4 +134,28 @@
         <attr name="inputCheckText" format="string" />
     </declare-styleable>
 
+    <declare-styleable name="MediaCardView">
+        <attr name="mediaCardTag" format="string" />
+        <attr name="mediaCardTitle" format="string" />
+        <attr name="mediaCardSubtitle" format="string" />
+        <attr name="mediaCardDescription" format="string" />
+        <attr name="mediaCardPrimaryButtonText" format="string" />
+        <attr name="mediaCardLinkButtonText" format="string" />
+        <attr name="mediaCardImage" format="reference" />
+        <attr name="mediaCardPrimaryButtonOnClick" format="string" />
+        <attr name="mediaCardLinkButtonOnClick" format="string" />
+        <attr name="mediaCardOnClick" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="DataCardView">
+        <attr name="dataCardIcon" format="reference" />
+        <attr name="dataCardTag" format="string" />
+        <attr name="dataCardTitle" format="string" />
+        <attr name="dataCardSubtitle" format="string" />
+        <attr name="dataCardDescription" format="string" />
+        <attr name="dataCardPrimaryButtonText" format="string" />
+        <attr name="dataCardLinkButtonText" format="string" />
+        <attr name="dataCardPrimaryButtonOnClick" format="string" />
+        <attr name="dataCardLinkButtonOnClick" format="string" />
+    </declare-styleable>
 </resources>
