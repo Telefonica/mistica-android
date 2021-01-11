@@ -101,15 +101,15 @@ class MediaCardAdapter(private val mediaCards: List<MediaCardData>) :
             setDescription(cardData.description)
             setPrimaryButtonText(cardData.primaryButton)
             setLinkButtonText(cardData.linkButton)
-            setAdditionalCardContent(this, cardData)
+            setAdditionalCardContent(cardData)
             setClickListeners(this)
         }
     }
 
-    private fun MediaCardView.setAdditionalCardContent(view: View, cardData: MediaCardData) {
+    private fun MediaCardView.setAdditionalCardContent(cardData: MediaCardData) {
         if (cardData.hasAdditionalContent) {
             val additionalContent = LayoutInflater.from(context).inflate(
-                R.layout.media_card_additional_sample_content,
+                R.layout.card_additional_sample_content,
                 this,
                 false
             )

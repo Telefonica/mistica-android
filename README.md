@@ -13,7 +13,7 @@
 Mistica is a framework that contains reusable UI components and utilities.
 
 ## Instalation
-Include nexus repository in the `build.gradle` of your project (If it is unreachable from your vpn, please [contact us](mailto:lifecycle@tuenti.com)): 
+Include nexus repository in the `build.gradle` of your project (If it is unreachable from your vpn, please [contact us](mailto:cto-android@telefonica.com)): 
 
 ```gradle
 allprojects {
