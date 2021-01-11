@@ -16,22 +16,42 @@ object Badge {
     var badgeNotificationsDescriptionResource: Int = R.plurals.badge_notifications_description
 
     @JvmStatic
-    fun showBadgeIn(anchor: View, count: Int = 0): BadgeDrawable {
+    fun showBadgeIn(anchor: View): BadgeDrawable {
         val parent = anchor.parent
         if (parent is ViewGroup) {
-            return showBadgeIn(anchor, parent, count)
+            return showBadgeIn(anchor, parent)
         } else {
             throw RuntimeException("The view's parent is not a ViewGroup. Use showBadgeIn(anchor,parent) instead")
         }
     }
 
     @JvmStatic
-    fun showBadgeIn(anchor: View, parent: ViewGroup, count: Int = 0): BadgeDrawable =
-        BadgeDrawable.create(anchor.context).apply {
-            maxCharacterCount = 2
-            backgroundColor = anchor.context.getThemeColor(R.attr.colorBadgeBackground)
-            setupCount(count)
-            addToView(anchor, parent, getContentDescription(anchor, count))
+    fun showBadgeIn(anchor: View, parent: ViewGroup): BadgeDrawable =
+        createBadge(anchor, NON_NUMERIC_BADGE).apply {
+            addToView(anchor, parent, getContentDescription(anchor, NON_NUMERIC_BADGE))
+        }
+
+    @JvmStatic
+    fun showNumericBadgeIn(anchor: View, count: Int): BadgeDrawable {
+        val parent = anchor.parent
+        if (parent is ViewGroup) {
+            return showNumericBadgeIn(anchor, parent, count)
+        } else {
+            throw RuntimeException("The view's parent is not a ViewGroup. Use showNumericBadgeIn(anchor, parent, count) instead")
+        }
+    }
+
+    @JvmStatic
+    fun showNumericBadgeIn(anchor: View, parent: ViewGroup, count: Int): BadgeDrawable =
+        createBadge(anchor, count).apply {
+            when (count) {
+                NON_NUMERIC_BADGE -> removeBadge(anchor)
+                else -> addToView(
+                    anchor,
+                    parent,
+                    getContentDescription(anchor, count)
+                )
+            }
         }
 
     @JvmStatic
@@ -50,6 +70,15 @@ object Badge {
             resetContentDescription(anchor)
             parent.overlay.clear()
         }
+    }
+
+    private fun createBadge(
+        anchor: View,
+        count: Int
+    ) = BadgeDrawable.create(anchor.context).apply {
+        maxCharacterCount = 2
+        backgroundColor = anchor.context.getThemeColor(R.attr.colorBadgeBackground)
+        setupCount(count)
     }
 
     private fun getContentDescription(anchor: View, count: Int): String {
@@ -81,7 +110,7 @@ object Badge {
     private fun BadgeDrawable.setupCount(count: Int) {
         this.maxCharacterCount = 2
         when (count) {
-            0 -> this.clearNumber()
+            NON_NUMERIC_BADGE -> this.clearNumber()
             else -> this.number = count
         }
     }
@@ -105,4 +134,7 @@ object Badge {
         this.bounds = rect
         this.updateBadgeCoordinates(anchor, parent)
     }
+
+
+    private const val NON_NUMERIC_BADGE = 0
 }

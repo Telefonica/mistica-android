@@ -61,11 +61,11 @@ class ListsCatalogFragment : Fragment() {
                 )
                 2 -> rowView.configureView(
                     withAction = true,
-                    withBadgeCount = 0
+                    withBadge = true
                 )
                 3 -> rowView.configureView(
                     withAction = true,
-                    withBadgeCount = 1
+                    withBadgeNumeric = 1
                 )
                 4 -> rowView.configureView(
                     withLongDescription = false
@@ -87,13 +87,13 @@ class ListsCatalogFragment : Fragment() {
                     withAsset = true,
                     withAssetType = TYPE_LARGE_ICON,
                     withAction = true,
-                    withBadgeCount = 0
+                    withBadge = true
                 )
                 9 -> rowView.configureView(
                     withAsset = true,
                     withAssetType = TYPE_LARGE_ICON,
                     withAction = true,
-                    withBadgeCount = 5
+                    withBadgeNumeric = 5
                 )
                 10 -> rowView.configureView(
                     withLongDescription = false,
@@ -119,13 +119,13 @@ class ListsCatalogFragment : Fragment() {
                     withAsset = true,
                     withAssetType = TYPE_SMALL_ICON,
                     withAction = true,
-                    withBadgeCount = 0
+                    withBadge = true
                 )
                 15 -> rowView.configureView(
                     withAsset = true,
                     withAssetType = TYPE_SMALL_ICON,
                     withAction = true,
-                    withBadgeCount = 10
+                    withBadgeNumeric = 10
                 )
                 16 -> rowView.configureView(
                     withLongTitle = true,
@@ -190,7 +190,8 @@ class ListsCatalogFragment : Fragment() {
             withAsset: Boolean = false,
             @AssetType withAssetType: Int = TYPE_SMALL_ICON,
             withAction: Boolean = false,
-            withBadgeCount: Int = ListRowView.BADGE_GONE,
+            withBadge: Boolean = false,
+            withBadgeNumeric: Int = 0,
             withHeadline: Boolean = false,
             withSubtitle: Boolean = false
         ) {
@@ -223,7 +224,12 @@ class ListsCatalogFragment : Fragment() {
                 setActionLayout(ListRowView.ACTION_NONE)
                 isClickable = false
             }
-            setBadgeCount(withBadgeCount)
+
+            when {
+                withBadge -> setBadge(true)
+                withBadgeNumeric > 0 -> setNumericBadge(withBadgeNumeric)
+                else -> setBadge(false)
+            }
         }
 
         private fun getAssetResource(withAsset: Boolean, withAssetType: Int): Int? =

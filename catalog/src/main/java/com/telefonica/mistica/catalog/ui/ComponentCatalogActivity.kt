@@ -36,6 +36,8 @@ class ComponentCatalogActivity : AppCompatActivity() {
             Section.SCROLL_CONTENT_INDICATOR -> ScrollContentIndicatorCatalogFragment()
             Section.TAG -> TagsCatalogFragment()
             Section.LISTS -> ListsCatalogFragment()
+            Section.MEDIA_CARDS -> MediaCardsFragment()
+            Section.DATA_CARDS -> DataCardFragment()
             Section.HEADERS -> HeadersCatalogFragment()
             Section.HIGHLIGHTED_CARDS -> HighlightedCardsCatalogFragment()
             Section.CONTROLS -> ControlsCatalogFragment()
@@ -70,6 +72,8 @@ enum class Section {
     LISTS,
     HEADERS,
     HIGHLIGHTED_CARDS,
+    MEDIA_CARDS,
+    DATA_CARDS,
     CONTROLS,
     OTHERS,
     STEPPERS

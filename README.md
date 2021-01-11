@@ -6,14 +6,14 @@
 #  Mistica for Android
 
 [![Platform](https://img.shields.io/badge/Platform-Android-brightgreen)](https://github.com/Telefonica/mistica-android)
-[![Version](https://img.shields.io/badge/Version-1.1.0-blue)](https://github.com/Telefonica/mistica-android)
+[![Version](https://img.shields.io/badge/Version-1.2.1-blue)](https://github.com/Telefonica/mistica-android)
 [![Support](https://img.shields.io/badge/Support-%3E%3D%20Android%205.0-brightgreen)](https://github.com/Telefonica/mistica-android)
 [![Kotlin version badge](https://img.shields.io/badge/kotlin-1.3-blue.svg)](https://kotlinlang.org/docs/reference/whatsnew13.html)
 
 Mistica is a framework that contains reusable UI components and utilities.
 
 ## Instalation
-Include nexus repository in the `build.gradle` of your project (If it is unreachable from your vpn, please [contact us](mailto:lifecycle@tuenti.com)): 
+Include nexus repository in the `build.gradle` of your project (If it is unreachable from your vpn, please [contact us](mailto:cto-android@telefonica.com)): 
 
 ```gradle
 allprojects {
@@ -90,6 +90,8 @@ Just set your App or any specific activity to use any of the following:
 * [Chips](library/src/main/java/com/telefonica/mistica/chips)
 * [Highlighted Cards](library/src/main/java/com/telefonica/mistica/highlightedcard)
 * [Controls](library/src/main/java/com/telefonica/mistica/control)
+* [Media Cards](library/src/main/java/com/telefonica/mistica/mediacard)
+* [Data Cards](library/src/main/java/com/telefonica/mistica/datacard)
 
 ## Text Presets Styles
 

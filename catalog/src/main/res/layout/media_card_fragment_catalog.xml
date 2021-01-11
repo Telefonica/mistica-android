@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:orientation="vertical">
+
+        <com.telefonica.mistica.section.SectionTitleView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_margin="8dp"
+            android:text="Media Card Tester" />
+
+        <com.telefonica.mistica.input.TextInput
+            android:id="@+id/input_tag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:inputHint="Tag"
+            app:inputText="HEADLINE"
+            app:inputType="text" />
+
+        <com.telefonica.mistica.input.TextInput
+            android:id="@+id/input_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:inputHint="Title"
+            app:inputText="Item title"
+            app:inputType="text" />
+
+        <com.telefonica.mistica.input.TextInput
+            android:id="@+id/input_subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:inputHint="Subtitle"
+            app:inputText="Subtitle under tag"
+            app:inputType="text" />
+
+        <com.telefonica.mistica.input.TextInput
+            android:id="@+id/input_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:inputHint="Description"
+            app:inputText="This is a description with a long test so we can test muliline in the description area of the card view"
+            app:inputType="text" />
+
+        <com.telefonica.mistica.input.TextInput
+            android:id="@+id/input_primary_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:inputHint="Action"
+            app:inputText="Ver detalle"
+            app:inputType="text" />
+
+        <com.telefonica.mistica.input.TextInput
+            android:id="@+id/input_link_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:inputHint="Secondary Action"
+            app:inputText="Ver otros"
+            app:inputType="text" />
+
+        <com.telefonica.mistica.input.CheckBoxInput
+            android:id="@+id/additional_content_checkbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:inputCheckText="With additional content"
+            app:inputChecked="false" />
+
+        <com.telefonica.mistica.input.CheckBoxInput
+            android:id="@+id/video_internet_content_checkbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:inputCheckText="With video from internet"
+            app:inputChecked="false" />
+
+        <com.telefonica.mistica.input.CheckBoxInput
+            android:id="@+id/video_local_content_checkbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:inputCheckText="With video from local resource"
+            app:inputChecked="false" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?colorDivider"
+            android:padding="16dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/media_cards_carousel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </FrameLayout>
+
+        <com.telefonica.mistica.button.Button
+            android:id="@+id/media_card_button_update"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="Update" />
+
+    </LinearLayout>
+</ScrollView>
