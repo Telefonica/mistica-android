@@ -40,6 +40,15 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Build library
+        if: steps.check.outputs.has-permission
+        uses: docker://docker.tuenti.io/android/mistica_builder:2
+        env:
+          NEXUS_USER: ${{ secrets.NEXUS_USER }}
+          NEXUS_PASS: ${{ secrets.NEXUS_PASS }}
+        with:
+          args: 'bash ./gradlew --no-daemon clean check assemble'
+
       - name: Release library
         if: steps.check.outputs.has-permission
         uses: docker://docker.tuenti.io/android/mistica_builder:2
@@ -47,7 +56,7 @@ jobs:
           NEXUS_USER: ${{ secrets.NEXUS_USER }}
           NEXUS_PASS: ${{ secrets.NEXUS_PASS }}
         with:
-          args: 'bash ./gradlew --no-daemon --info --stacktrace clean check assemble publish'
+          args: 'bash ./gradlew publish'
 
       - name: Create Release in github
         if: steps.check.outputs.has-permission
