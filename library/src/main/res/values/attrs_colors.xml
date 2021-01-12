@@ -33,6 +33,8 @@
 
         <attr name="colorTimeIndicatorWarning" format="color|reference" />
 
+        <attr name="colorBorderDark" format="color|reference" />
+
         <!-- Recents -->
         <attr name="colorSearchOverlay" format="color|reference" />
 
@@ -336,6 +338,10 @@
         <attr name="feedbackScreenErrorIcon" format="reference" />
         <attr name="feedbackScreenInfoAnimation" format="reference" />
         <attr name="feedbackScreenInfoIcon" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="Stepper">
+        <attr name="stepperFinishedStepAnimation" format="reference"/>
     </declare-styleable>
 
 </resources>

@@ -39,6 +39,8 @@
 
         <item name="colorTimeIndicatorWarning">@color/movistar_color_pink</item>
 
+        <item name="colorBorderDark">@color/movistar_color_grey_1</item>
+
         <!-- Recents -->
         <item name="colorSearchOverlay">@color/movistar_color_black_50_percent</item>
 
@@ -349,7 +351,7 @@
         <!-- Feedbacks -->
         <item name="feedbackScreenSuccessWithGradient">false</item>
         <item name="feedbackScreenSuccessInverse">true</item>
-        <item name="feedbackScreenSuccessAnimation">@raw/feedback_success_movistar</item>
+        <item name="feedbackScreenSuccessAnimation">@raw/feedback_success</item>
         <item name="feedbackScreenErrorAnimation">@raw/feedback_error_movistar</item>
         <item name="feedbackScreenInfoIcon">@drawable/feedback_info_movistar</item>
 
@@ -368,6 +370,9 @@
 
         <!-- Tag -->
         <item name="colorPromoBackground">@color/movistar_color_purple</item>
+
+        <!-- Stepper -->
+        <item name="stepperFinishedStepAnimation">@raw/feedback_success</item>
     </style>
 
     <style name="MisticaAlertDialogTheme.Movistar">

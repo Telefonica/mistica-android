@@ -39,6 +39,8 @@
 
         <item name="colorTimeIndicatorWarning">@color/vivo_color_pink</item>
 
+        <item name="colorBorderDark">@color/vivo_color_grey_1</item>
+
         <!-- Recents -->
         <item name="colorSearchOverlay">@color/vivo_color_black_50_percent</item>
 
@@ -347,6 +349,9 @@
 
         <!-- Tag -->
         <item name="colorPromoBackground">@color/vivo_color_purple</item>
+
+        <!-- Stepper -->
+        <item name="stepperFinishedStepAnimation">@raw/feedback_success</item>
     </style>
 
     <style name="MisticaAlertDialogTheme.Vivo">

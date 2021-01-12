@@ -15,6 +15,10 @@ android {
     buildFeatures {
         dataBinding true
     }
+
+    defaultConfig {
+        vectorDrawables.useSupportLibrary = true
+    }
 }
 
 task sourceJar(type: Jar) {
