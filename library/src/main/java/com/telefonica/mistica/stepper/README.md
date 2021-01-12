@@ -5,7 +5,7 @@ There are two types of steppers:
 ### Indeterminate
 
 <p align="center">
-   <img src="../../../../../../../../doc/images/steppers/indeterminate_stepper.gif" />
+   <img src="../../../../../../../../doc/images/steppers/indeterminate_stepper.png" />
 </p>
 
 Use `com.telefonica.mistica.stepper.IndeterminateStepperView` inside any layout. The progress of this stepper has a range of steps from 0 to 100.
