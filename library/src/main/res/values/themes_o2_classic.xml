@@ -388,7 +388,7 @@
         <item name="colorIconDisabled">@color/o2_classic_color_grey_3</item>
 
         <!-- Tag -->
-        <item name="colorPromoBackground">@color/o2_classic_color_purple</item>
+        <item name="colorPromoBackground">@color/o2_classic_color_pink</item>
 
         <!-- Stepper -->
         <item name="stepperFinishedStepAnimation">@raw/feedback_success_o2</item>
