@@ -163,7 +163,7 @@
         android:id="@+id/highlighted_card_image_mode_fit"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:scaleType="fitXY"
+        android:scaleType="fitEnd"
         android:visibility="gone"
         app:layout_constrainedWidth="true"
         app:layout_constraintBottom_toBottomOf="parent"
