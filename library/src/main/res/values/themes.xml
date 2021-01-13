@@ -366,6 +366,8 @@
 
         <!-- Stepper -->
         <item name="stepperFinishedStepAnimation">@null</item>
+
+        <item name="tabStyle">@style/AppTheme.Widgets.TabLayout</item>
     </style>
 
     <style name="MisticaAlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">

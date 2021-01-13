@@ -42,6 +42,7 @@ class ComponentCatalogActivity : AppCompatActivity() {
             Section.HIGHLIGHTED_CARDS -> HighlightedCardsCatalogFragment()
             Section.CONTROLS -> ControlsCatalogFragment()
             Section.STEPPERS -> SteppersCatalogFragment()
+            Section.TABS -> TabsCatalogFragment()
             else -> OthersCatalogFragment()
         }
 
@@ -76,5 +77,6 @@ enum class Section {
     DATA_CARDS,
     CONTROLS,
     OTHERS,
-    STEPPERS
+    STEPPERS,
+    TABS,
 }

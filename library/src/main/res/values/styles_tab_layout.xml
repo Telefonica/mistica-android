@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<style name="AppTheme.Widgets.TabLayout" parent="Widget.MaterialComponents.TabLayout">
+		<item name="tabTextAppearance">@style/AppTheme.TextAppearance.Preset6</item>
+		<item name="tabTextColor">?colorTextPrimary</item>
+		<item name="tabBackground">@drawable/tab_indicator</item>
+		<item name="tabIconTint">@color/tab_icon_selector</item>
+		<item name="tabIndicatorFullWidth">true</item>
+		<item name="tabMode">fixed</item>
+		<item name="tabGravity">fill</item>
+		<item name="tabInlineLabel">true</item>
+		<item name="tabPadding">16dp</item>
+		<item name="iconEndPadding">8dp</item>
+	</style>
+</resources>
