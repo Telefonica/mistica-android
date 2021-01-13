@@ -38,7 +38,7 @@ import com.telefonica.mistica.util.show
     ),
     BindingMethod(
         type = MediaCardView::class,
-        attribute = "mediaCardSubtitle",
+        attribute = "cardTagSubtitle",
         method = "setSubtitle"
     ),
     BindingMethod(
@@ -101,15 +101,15 @@ class MediaCardView @JvmOverloads constructor(
                     0
                 )
 
-            cardContentView.tagTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.MediaCardView_mediaCardTag))
-            cardContentView.tagSubtitleTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.MediaCardView_mediaCardSubtitle))
-            cardContentView.titleTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.MediaCardView_mediaCardTitle))
-            cardContentView.descriptionTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.MediaCardView_mediaCardDescription))
+//            cardContentView.tagTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.MediaCardView_mediaCardTag))
+//            cardContentView.tagSubtitleTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.MediaCardView_mediaCardSubtitle))
+//            cardContentView.titleTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.MediaCardView_mediaCardTitle))
+//            cardContentView.descriptionTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.MediaCardView_mediaCardDescription))
+//
+//            cardActionsView.primaryButton.setTextAndVisibility(styledAttrs.getText(R.styleable.MediaCardView_mediaCardPrimaryButtonText))
+//            cardActionsView.linkButton.setTextAndVisibility(styledAttrs.getText(R.styleable.MediaCardView_mediaCardLinkButtonText))
 
-            cardActionsView.primaryButton.setTextAndVisibility(styledAttrs.getText(R.styleable.MediaCardView_mediaCardPrimaryButtonText))
-            cardActionsView.linkButton.setTextAndVisibility(styledAttrs.getText(R.styleable.MediaCardView_mediaCardLinkButtonText))
-
-            styledAttrs.getDrawable(R.styleable.MediaCardView_mediaCardImage)
+            styledAttrs.getDrawable(R.styleable.MediaCardView_cardImage)
                 ?.let { setCardImage(it) }
 
             setCardRipple(shouldShowRippleOnClick())

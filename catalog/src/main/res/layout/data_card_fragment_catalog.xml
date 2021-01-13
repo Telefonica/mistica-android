@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             app:inputHint="Subtitle"
-            app:inputText="Subtitle under tag"
+            app:inputText="This is a subtitle"
             app:inputType="text" />
 
         <com.telefonica.mistica.input.TextInput

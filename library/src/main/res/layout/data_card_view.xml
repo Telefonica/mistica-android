@@ -29,14 +29,14 @@
             tools:visibility="visible" />
 
         <com.telefonica.mistica.card.CardContentView
-            android:id="@+id/data_card_content"
+            android:id="@+id/card_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <include layout="@layout/card_custom_layout" />
 
         <com.telefonica.mistica.card.CardActionsView
-            android:id="@+id/data_card_actions"
+            android:id="@+id/card_actions"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
