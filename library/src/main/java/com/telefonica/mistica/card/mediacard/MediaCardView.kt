@@ -102,8 +102,8 @@ class MediaCardView @JvmOverloads constructor(
                 )
 
             cardContentView.tagTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.MediaCardView_mediaCardTag))
-            cardContentView.titleTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.MediaCardView_mediaCardTitle))
             cardContentView.tagSubtitleTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.MediaCardView_mediaCardSubtitle))
+            cardContentView.titleTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.MediaCardView_mediaCardTitle))
             cardContentView.descriptionTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.MediaCardView_mediaCardDescription))
 
             cardActionsView.primaryButton.setTextAndVisibility(styledAttrs.getText(R.styleable.MediaCardView_mediaCardPrimaryButtonText))
@@ -146,7 +146,7 @@ class MediaCardView @JvmOverloads constructor(
     }
 
     fun setSubtitle(text: CharSequence?) {
-        cardContentView.tagSubtitle.setTextAndVisibility(text)
+        cardContentView.tagSubtitleTextView.setTextAndVisibility(text)
     }
 
     fun setSubtitle(@StringRes textRes: Int?) {

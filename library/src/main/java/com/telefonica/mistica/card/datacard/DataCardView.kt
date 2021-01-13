@@ -15,7 +15,8 @@ import androidx.cardview.widget.CardView
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
-import com.telefonica.mistica.button.Button
+import com.telefonica.mistica.card.CardActionsView
+import com.telefonica.mistica.card.CardContentView
 
 @BindingMethods(
     BindingMethod(
@@ -71,13 +72,9 @@ class DataCardView @JvmOverloads constructor(
 ) : CardView(context, attrs, defStyleAttr) {
 
     private val iconImageView: ImageView
-    private val tagTextView: TextView
-    private val titleTextView: TextView
-    private val subtitleTextView: TextView
-    private val descriptionTextView: TextView
-    private val primaryButton: Button
-    private val linkButton: Button
-    private val additionalContentLayout: LinearLayout
+    private val cardContentView: CardContentView
+    private val cardCustomContentLayout: LinearLayout
+    private val cardActionsView: CardActionsView
 
     init {
         LayoutInflater.from(context).inflate(R.layout.data_card_view, this, true)
@@ -87,13 +84,9 @@ class DataCardView @JvmOverloads constructor(
         radius = resources.getDimension(R.dimen.data_card_corner_radius)
 
         iconImageView = findViewById(R.id.data_card_icon)
-        tagTextView = findViewById(R.id.data_card_tag)
-        titleTextView = findViewById(R.id.data_card_title)
-        subtitleTextView = findViewById(R.id.data_card_subtitle)
-        descriptionTextView = findViewById(R.id.data_card_description)
-        primaryButton = findViewById(R.id.data_card_primary_button)
-        linkButton = findViewById(R.id.data_card_link_button)
-        additionalContentLayout = findViewById(R.id.data_card_custom_content_layout)
+        cardContentView = findViewById(R.id.data_card_content)
+        cardCustomContentLayout = findViewById(R.id.card_custom_content_layout)
+        cardActionsView = findViewById(R.id.data_card_actions)
 
         if (attrs != null) {
             val styledAttrs =
@@ -104,12 +97,13 @@ class DataCardView @JvmOverloads constructor(
                     0
                 )
 
-            tagTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.DataCardView_dataCardTag))
-            titleTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.DataCardView_dataCardTitle))
-            subtitleTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.DataCardView_dataCardSubtitle))
-            descriptionTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.DataCardView_dataCardDescription))
-            primaryButton.setTextAndVisibility(styledAttrs.getText(R.styleable.DataCardView_dataCardPrimaryButtonText))
-            linkButton.setTextAndVisibility(styledAttrs.getText(R.styleable.DataCardView_dataCardLinkButtonText))
+            cardContentView.tagTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.DataCardView_dataCardTag))
+            cardContentView.titleTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.DataCardView_dataCardTitle))
+            cardContentView.subtitleTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.DataCardView_dataCardSubtitle))
+            cardContentView.descriptionTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.DataCardView_dataCardDescription))
+
+            cardActionsView.primaryButton.setTextAndVisibility(styledAttrs.getText(R.styleable.DataCardView_dataCardPrimaryButtonText))
+            cardActionsView.linkButton.setTextAndVisibility(styledAttrs.getText(R.styleable.DataCardView_dataCardLinkButtonText))
 
             styledAttrs.getDrawable(R.styleable.DataCardView_dataCardIcon)
                 ?.let { setIcon(it) }
@@ -129,12 +123,12 @@ class DataCardView @JvmOverloads constructor(
         iconImageView.visibility = View.VISIBLE
     }
 
-    fun removeIcon(){
+    fun removeIcon() {
         iconImageView.visibility = View.GONE
     }
 
     fun setTag(text: CharSequence?) {
-        tagTextView.setTextAndVisibility(text)
+        cardContentView.tagTextView.setTextAndVisibility(text)
     }
 
     fun setTag(@StringRes textRes: Int?) {
@@ -142,7 +136,7 @@ class DataCardView @JvmOverloads constructor(
     }
 
     fun setTitle(text: CharSequence?) {
-        titleTextView.setTextAndVisibility(text)
+        cardContentView.titleTextView.setTextAndVisibility(text)
     }
 
     fun setTitle(@StringRes textRes: Int?) {
@@ -150,7 +144,7 @@ class DataCardView @JvmOverloads constructor(
     }
 
     fun setSubtitle(text: CharSequence?) {
-        subtitleTextView.setTextAndVisibility(text)
+        cardContentView.subtitleTextView.setTextAndVisibility(text)
     }
 
     fun setSubtitle(@StringRes textRes: Int?) {
@@ -158,7 +152,7 @@ class DataCardView @JvmOverloads constructor(
     }
 
     fun setDescription(text: CharSequence?) {
-        descriptionTextView.setTextAndVisibility(text)
+        cardContentView.descriptionTextView.setTextAndVisibility(text)
     }
 
     fun setDescription(@StringRes textRes: Int?) {
@@ -166,7 +160,7 @@ class DataCardView @JvmOverloads constructor(
     }
 
     fun setPrimaryButtonText(text: CharSequence?) {
-        primaryButton.setTextAndVisibility(text)
+        cardActionsView.primaryButton.setTextAndVisibility(text)
     }
 
     fun setPrimaryButtonText(@StringRes textRes: Int?) {
@@ -174,7 +168,7 @@ class DataCardView @JvmOverloads constructor(
     }
 
     fun setLinkButtonText(text: CharSequence?) {
-        linkButton.setTextAndVisibility(text)
+        cardActionsView.linkButton.setTextAndVisibility(text)
     }
 
     fun setLinkButtonText(@StringRes textRes: Int?) {
@@ -182,25 +176,24 @@ class DataCardView @JvmOverloads constructor(
     }
 
     fun setPrimaryButtonOnClick(onClickListener: OnClickListener?) {
-        primaryButton.setOnClickListener(onClickListener)
+        cardActionsView.primaryButton.setOnClickListener(onClickListener)
         setCardRipple(shouldShowRippleOnClick())
     }
 
     fun setLinkButtonOnClick(onClickListener: OnClickListener?) {
-        linkButton.setOnClickListener(onClickListener)
+        cardActionsView.linkButton.setOnClickListener(onClickListener)
         setCardRipple(shouldShowRippleOnClick())
     }
 
     fun setDataCardAdditionalContent(content: View?) {
         if (content == null) {
-            additionalContentLayout.removeAllViews()
+            cardCustomContentLayout.removeAllViews()
             return
         }
-        additionalContentLayout.addView(content)
+        cardCustomContentLayout.addView(content)
     }
 
-    private fun shouldShowRippleOnClick(): Boolean =
-        primaryButton.visibility == GONE
+    private fun shouldShowRippleOnClick(): Boolean = cardActionsView.cardHasNoActions()
 
     private fun TextView.setTextAndVisibility(newText: CharSequence?) {
         if (newText?.isNotBlank() == true) {
