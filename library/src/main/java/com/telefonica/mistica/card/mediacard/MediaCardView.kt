@@ -2,7 +2,6 @@ package com.telefonica.mistica.card.mediacard
 
 import android.content.Context
 import android.graphics.drawable.Drawable
-import android.net.Uri
 import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.LayoutInflater
@@ -16,8 +15,8 @@ import androidx.cardview.widget.CardView
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
-import com.telefonica.mistica.button.Button
-import com.telefonica.mistica.util.hide
+import com.telefonica.mistica.card.CardActionsView
+import com.telefonica.mistica.card.CardContentView
 import com.telefonica.mistica.util.show
 
 
@@ -75,13 +74,9 @@ class MediaCardView @JvmOverloads constructor(
 ) : CardView(context, attrs, defStyleAttr) {
 
     private val cardImageView: ImageView
-    private val tagTextView: TextView
-    private val titleTextView: TextView
-    private val subtitleTextView: TextView
-    private val descriptionTextView: TextView
-    private val primaryButton: Button
-    private val linkButton: Button
-    private val additionalContentLayout: LinearLayout
+    private val cardContentView: CardContentView
+    private val cardCustomContentLayout: LinearLayout
+    private val cardActionsView: CardActionsView
 
     init {
         LayoutInflater.from(context).inflate(R.layout.media_card_view, this, true)
@@ -93,13 +88,9 @@ class MediaCardView @JvmOverloads constructor(
         background = resources.getDrawable(R.drawable.media_card_background, context.theme)
 
         cardImageView = findViewById(R.id.media_card_image)
-        tagTextView = findViewById(R.id.media_card_tag)
-        titleTextView = findViewById(R.id.media_card_title)
-        subtitleTextView = findViewById(R.id.media_card_subtitle)
-        descriptionTextView = findViewById(R.id.media_card_description)
-        primaryButton = findViewById(R.id.media_card_primary_button)
-        linkButton = findViewById(R.id.media_card_link_button)
-        additionalContentLayout = findViewById(R.id.media_card_custom_content_layout)
+        cardContentView = findViewById(R.id.media_card_content)
+        cardCustomContentLayout = findViewById(R.id.card_custom_content_layout)
+        cardActionsView = findViewById(R.id.media_card_actions)
 
         if (attrs != null) {
             val styledAttrs =
@@ -110,17 +101,18 @@ class MediaCardView @JvmOverloads constructor(
                     0
                 )
 
-            tagTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.MediaCardView_mediaCardTag))
-            titleTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.MediaCardView_mediaCardTitle))
-            subtitleTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.MediaCardView_mediaCardSubtitle))
-            descriptionTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.MediaCardView_mediaCardDescription))
-            primaryButton.setTextAndVisibility(styledAttrs.getText(R.styleable.MediaCardView_mediaCardPrimaryButtonText))
-            linkButton.setTextAndVisibility(styledAttrs.getText(R.styleable.MediaCardView_mediaCardLinkButtonText))
+            cardContentView.tagTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.MediaCardView_mediaCardTag))
+            cardContentView.titleTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.MediaCardView_mediaCardTitle))
+            cardContentView.tagSubtitleTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.MediaCardView_mediaCardSubtitle))
+            cardContentView.descriptionTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.MediaCardView_mediaCardDescription))
+
+            cardActionsView.primaryButton.setTextAndVisibility(styledAttrs.getText(R.styleable.MediaCardView_mediaCardPrimaryButtonText))
+            cardActionsView.linkButton.setTextAndVisibility(styledAttrs.getText(R.styleable.MediaCardView_mediaCardLinkButtonText))
 
             styledAttrs.getDrawable(R.styleable.MediaCardView_mediaCardImage)
                 ?.let { setCardImage(it) }
 
-            setCardRipple(shouldShowRipple())
+            setCardRipple(shouldShowRippleOnClick())
             styledAttrs.recycle()
         }
     }
@@ -138,7 +130,7 @@ class MediaCardView @JvmOverloads constructor(
     }
 
     fun setTag(text: CharSequence?) {
-        tagTextView.setTextAndVisibility(text)
+        cardContentView.tagTextView.setTextAndVisibility(text)
     }
 
     fun setTag(@StringRes textRes: Int?) {
@@ -146,7 +138,7 @@ class MediaCardView @JvmOverloads constructor(
     }
 
     fun setTitle(text: CharSequence?) {
-        titleTextView.setTextAndVisibility(text)
+        cardContentView.titleTextView.setTextAndVisibility(text)
     }
 
     fun setTitle(@StringRes textRes: Int?) {
@@ -154,7 +146,7 @@ class MediaCardView @JvmOverloads constructor(
     }
 
     fun setSubtitle(text: CharSequence?) {
-        subtitleTextView.setTextAndVisibility(text)
+        cardContentView.tagSubtitle.setTextAndVisibility(text)
     }
 
     fun setSubtitle(@StringRes textRes: Int?) {
@@ -162,7 +154,7 @@ class MediaCardView @JvmOverloads constructor(
     }
 
     fun setDescription(text: CharSequence?) {
-        descriptionTextView.setTextAndVisibility(text)
+        cardContentView.descriptionTextView.setTextAndVisibility(text)
     }
 
     fun setDescription(@StringRes textRes: Int?) {
@@ -170,7 +162,7 @@ class MediaCardView @JvmOverloads constructor(
     }
 
     fun setPrimaryButtonText(text: CharSequence?) {
-        primaryButton.setTextAndVisibility(text)
+        cardActionsView.primaryButton.setTextAndVisibility(text)
     }
 
     fun setPrimaryButtonText(@StringRes textRes: Int?) {
@@ -178,7 +170,7 @@ class MediaCardView @JvmOverloads constructor(
     }
 
     fun setLinkButtonText(text: CharSequence?) {
-        linkButton.setTextAndVisibility(text)
+        cardActionsView.linkButton.setTextAndVisibility(text)
     }
 
     fun setLinkButtonText(@StringRes textRes: Int?) {
@@ -186,34 +178,24 @@ class MediaCardView @JvmOverloads constructor(
     }
 
     fun setPrimaryButtonOnClick(onClickListener: OnClickListener?) {
-        primaryButton.setOnClickListener(onClickListener)
-        setCardRipple(shouldShowRipple())
+        cardActionsView.primaryButton.setOnClickListener(onClickListener)
+        setCardRipple(shouldShowRippleOnClick())
     }
 
     fun setLinkButtonOnClick(onClickListener: OnClickListener?) {
-        linkButton.setOnClickListener(onClickListener)
-        setCardRipple(shouldShowRipple())
+        cardActionsView.linkButton.setOnClickListener(onClickListener)
+        setCardRipple(shouldShowRippleOnClick())
     }
 
     fun setMediaCardAdditionalContent(content: View?) {
         if (content == null) {
-            additionalContentLayout.removeAllViews()
+            cardCustomContentLayout.removeAllViews()
             return
         }
-        additionalContentLayout.addView(content)
+        cardCustomContentLayout.addView(content)
     }
 
-    private fun TextView.setTextAndVisibility(newText: CharSequence?) {
-        if (newText?.isNotBlank() == true) {
-            text = newText
-            show()
-        } else {
-            hide()
-        }
-    }
-
-    private fun shouldShowRipple(): Boolean =
-        primaryButton.visibility == GONE && linkButton.visibility == GONE
+    private fun shouldShowRippleOnClick(): Boolean = cardActionsView.cardHasNoActions()
 
     private fun CardView.setCardRipple(showRippleOnClick: Boolean) {
         foreground = if (showRippleOnClick) {
@@ -222,6 +204,15 @@ class MediaCardView @JvmOverloads constructor(
             resources.getDrawable(outValue.resourceId, context.theme)
         } else {
             null
+        }
+    }
+
+    private fun TextView.setTextAndVisibility(newText: CharSequence?) {
+        if (newText?.isNotBlank() == true) {
+            text = newText
+            visibility = VISIBLE
+        } else {
+            visibility = GONE
         }
     }
 }
