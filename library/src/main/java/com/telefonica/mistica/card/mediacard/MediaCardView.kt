@@ -75,7 +75,6 @@ class MediaCardView @JvmOverloads constructor(
 ) : CardView(context, attrs, defStyleAttr) {
 
     private val cardImageView: ImageView
-    private val cardVideoView: MediaCardVideoView
     private val tagTextView: TextView
     private val titleTextView: TextView
     private val subtitleTextView: TextView
@@ -94,7 +93,6 @@ class MediaCardView @JvmOverloads constructor(
         background = resources.getDrawable(R.drawable.media_card_background, context.theme)
 
         cardImageView = findViewById(R.id.media_card_image)
-        cardVideoView = findViewById(R.id.media_card_video_view)
         tagTextView = findViewById(R.id.media_card_tag)
         titleTextView = findViewById(R.id.media_card_title)
         subtitleTextView = findViewById(R.id.media_card_subtitle)
@@ -127,31 +125,15 @@ class MediaCardView @JvmOverloads constructor(
         }
     }
 
-    fun getVideoThumbnailImageView() = cardVideoView.thumbnail
-
-    fun setVideo(videoUri: Uri, @DrawableRes imageRes: Int) {
-        cardVideoView.show()
-        cardVideoView.setVideo(videoUri, imageRes)
-        cardImageView.hide()
-    }
-
-    fun setVideo(videoUri: Uri, imageDrawable: Drawable) {
-        cardVideoView.show()
-        cardVideoView.setVideo(videoUri, imageDrawable)
-        cardImageView.hide()
-    }
-
     fun getCardImageView(): ImageView = cardImageView
 
     fun setCardImage(@DrawableRes imageRes: Int) {
         cardImageView.setImageResource(imageRes)
-        cardVideoView.hide()
         cardImageView.show()
     }
 
     fun setCardImage(imageDrawable: Drawable) {
         cardImageView.setImageDrawable(imageDrawable)
-        cardVideoView.hide()
         cardImageView.show()
     }
 
