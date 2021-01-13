@@ -1,4 +1,4 @@
-package com.telefonica.mistica.mediacard
+package com.telefonica.mistica.card.mediacard
 
 import android.content.Context
 import android.graphics.drawable.Drawable

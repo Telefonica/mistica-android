@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <com.telefonica.mistica.mediacard.MediaCardVideoView
+        <com.telefonica.mistica.card.mediacard.MediaCardVideoView
             android:id="@+id/media_card_video_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

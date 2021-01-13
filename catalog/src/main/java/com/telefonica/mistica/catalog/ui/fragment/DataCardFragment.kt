@@ -8,7 +8,7 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.telefonica.mistica.catalog.R
-import com.telefonica.mistica.datacard.DataCardView
+import com.telefonica.mistica.card.datacard.DataCardView
 import com.telefonica.mistica.input.CheckBoxInput
 import com.telefonica.mistica.input.TextInput
 

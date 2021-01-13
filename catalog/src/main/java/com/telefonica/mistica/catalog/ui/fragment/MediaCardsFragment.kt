@@ -14,7 +14,7 @@ import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.catalog.ui.fragment.MediaCardAdapter.Companion.MEDIA_CARDS_CAROUSEL_SIZE
 import com.telefonica.mistica.input.CheckBoxInput
 import com.telefonica.mistica.input.TextInput
-import com.telefonica.mistica.mediacard.MediaCardView
+import com.telefonica.mistica.card.mediacard.MediaCardView
 
 
 class MediaCardsFragment : Fragment() {

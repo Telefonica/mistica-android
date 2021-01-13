@@ -1,8 +1,7 @@
-package com.telefonica.mistica.mediacard
+package com.telefonica.mistica.card.datacard
 
 import android.content.Context
 import android.graphics.drawable.Drawable
-import android.net.Uri
 import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.LayoutInflater
@@ -17,65 +16,61 @@ import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
 import com.telefonica.mistica.button.Button
-import com.telefonica.mistica.util.hide
-import com.telefonica.mistica.util.show
-
 
 @BindingMethods(
     BindingMethod(
-        type = MediaCardView::class,
-        attribute = "mediaCardImageDrawable",
-        method = "setImageDrawable"
+        type = DataCardView::class,
+        attribute = "dataCardImageDrawable",
+        method = "setCardIcon"
     ),
     BindingMethod(
-        type = MediaCardView::class,
-        attribute = "mediaCardTag",
+        type = DataCardView::class,
+        attribute = "dataCardTag",
         method = "setTag"
     ),
     BindingMethod(
-        type = MediaCardView::class,
-        attribute = "mediaCardTitle",
+        type = DataCardView::class,
+        attribute = "dataCardTitle",
         method = "setTitle"
     ),
     BindingMethod(
-        type = MediaCardView::class,
-        attribute = "mediaCardSubtitle",
+        type = DataCardView::class,
+        attribute = "dataCardSubtitle",
         method = "setSubtitle"
     ),
     BindingMethod(
-        type = MediaCardView::class,
-        attribute = "mediaCardDescription",
+        type = DataCardView::class,
+        attribute = "dataCardDescription",
         method = "setDescription"
     ),
     BindingMethod(
-        type = MediaCardView::class,
-        attribute = "mediaCardPrimaryButtonText",
+        type = DataCardView::class,
+        attribute = "dataCardPrimaryButtonText",
         method = "setPrimaryButtonText"
     ),
     BindingMethod(
-        type = MediaCardView::class,
-        attribute = "mediaCardLinkButtonText",
+        type = DataCardView::class,
+        attribute = "dataCardLinkButtonText",
         method = "setLinkButtonText"
     ),
     BindingMethod(
-        type = MediaCardView::class,
-        attribute = "mediaCardPrimaryButtonOnClick",
+        type = DataCardView::class,
+        attribute = "dataCardPrimaryButtonOnClick",
         method = "setPrimaryButtonOnClick"
     ),
     BindingMethod(
-        type = MediaCardView::class,
-        attribute = "mediaCardLinkButtonOnClick",
+        type = DataCardView::class,
+        attribute = "dataCardLinkButtonOnClick",
         method = "setLinkButtonOnClick"
     )
 )
-class MediaCardView @JvmOverloads constructor(
+class DataCardView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
 ) : CardView(context, attrs, defStyleAttr) {
 
-    private val cardImageView: ImageView
-    private val cardVideoView: MediaCardVideoView
+    private val iconImageView: ImageView
     private val tagTextView: TextView
     private val titleTextView: TextView
     private val subtitleTextView: TextView
@@ -85,74 +80,57 @@ class MediaCardView @JvmOverloads constructor(
     private val additionalContentLayout: LinearLayout
 
     init {
-        LayoutInflater.from(context).inflate(R.layout.media_card_view, this, true)
+        LayoutInflater.from(context).inflate(R.layout.data_card_view, this, true)
         isClickable = true
         isFocusable = true
         cardElevation = 0F
-        radius = resources.getDimension(R.dimen.media_card_corner_radius)
-        minimumWidth = resources.getDimension(R.dimen.media_card_min_with).toInt()
-        background = resources.getDrawable(R.drawable.media_card_background, context.theme)
+        radius = resources.getDimension(R.dimen.data_card_corner_radius)
 
-        cardImageView = findViewById(R.id.media_card_image)
-        cardVideoView = findViewById(R.id.media_card_video_view)
-        tagTextView = findViewById(R.id.media_card_tag)
-        titleTextView = findViewById(R.id.media_card_title)
-        subtitleTextView = findViewById(R.id.media_card_subtitle)
-        descriptionTextView = findViewById(R.id.media_card_description)
-        primaryButton = findViewById(R.id.media_card_primary_button)
-        linkButton = findViewById(R.id.media_card_link_button)
-        additionalContentLayout = findViewById(R.id.media_card_custom_content_layout)
+        iconImageView = findViewById(R.id.data_card_icon)
+        tagTextView = findViewById(R.id.data_card_tag)
+        titleTextView = findViewById(R.id.data_card_title)
+        subtitleTextView = findViewById(R.id.data_card_subtitle)
+        descriptionTextView = findViewById(R.id.data_card_description)
+        primaryButton = findViewById(R.id.data_card_primary_button)
+        linkButton = findViewById(R.id.data_card_link_button)
+        additionalContentLayout = findViewById(R.id.data_card_custom_content_layout)
 
         if (attrs != null) {
             val styledAttrs =
                 context.theme.obtainStyledAttributes(
                     attrs,
-                    R.styleable.MediaCardView,
+                    R.styleable.DataCardView,
                     defStyleAttr,
                     0
                 )
 
-            tagTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.MediaCardView_mediaCardTag))
-            titleTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.MediaCardView_mediaCardTitle))
-            subtitleTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.MediaCardView_mediaCardSubtitle))
-            descriptionTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.MediaCardView_mediaCardDescription))
-            primaryButton.setTextAndVisibility(styledAttrs.getText(R.styleable.MediaCardView_mediaCardPrimaryButtonText))
-            linkButton.setTextAndVisibility(styledAttrs.getText(R.styleable.MediaCardView_mediaCardLinkButtonText))
+            tagTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.DataCardView_dataCardTag))
+            titleTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.DataCardView_dataCardTitle))
+            subtitleTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.DataCardView_dataCardSubtitle))
+            descriptionTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.DataCardView_dataCardDescription))
+            primaryButton.setTextAndVisibility(styledAttrs.getText(R.styleable.DataCardView_dataCardPrimaryButtonText))
+            linkButton.setTextAndVisibility(styledAttrs.getText(R.styleable.DataCardView_dataCardLinkButtonText))
 
-            styledAttrs.getDrawable(R.styleable.MediaCardView_mediaCardImage)
-                ?.let { setCardImage(it) }
+            styledAttrs.getDrawable(R.styleable.DataCardView_dataCardIcon)
+                ?.let { setIcon(it) }
 
-            setCardRipple(shouldShowRipple())
+            setCardRipple(shouldShowRippleOnClick())
             styledAttrs.recycle()
         }
     }
 
-    fun getVideoThumbnailImageView() = cardVideoView.thumbnail
-
-    fun setVideo(videoUri: Uri, @DrawableRes imageRes: Int) {
-        cardVideoView.show()
-        cardVideoView.setVideo(videoUri, imageRes)
-        cardImageView.hide()
+    fun setIcon(icon: Drawable) {
+        iconImageView.setImageDrawable(icon)
+        iconImageView.visibility = View.VISIBLE
     }
 
-    fun setVideo(videoUri: Uri, imageDrawable: Drawable) {
-        cardVideoView.show()
-        cardVideoView.setVideo(videoUri, imageDrawable)
-        cardImageView.hide()
+    fun setIcon(@DrawableRes iconRes: Int) {
+        iconImageView.setImageResource(iconRes)
+        iconImageView.visibility = View.VISIBLE
     }
 
-    fun getCardImageView(): ImageView = cardImageView
-
-    fun setCardImage(@DrawableRes imageRes: Int) {
-        cardImageView.setImageResource(imageRes)
-        cardVideoView.hide()
-        cardImageView.show()
-    }
-
-    fun setCardImage(imageDrawable: Drawable) {
-        cardImageView.setImageDrawable(imageDrawable)
-        cardVideoView.hide()
-        cardImageView.show()
+    fun removeIcon(){
+        iconImageView.visibility = View.GONE
     }
 
     fun setTag(text: CharSequence?) {
@@ -205,15 +183,15 @@ class MediaCardView @JvmOverloads constructor(
 
     fun setPrimaryButtonOnClick(onClickListener: OnClickListener?) {
         primaryButton.setOnClickListener(onClickListener)
-        setCardRipple(shouldShowRipple())
+        setCardRipple(shouldShowRippleOnClick())
     }
 
     fun setLinkButtonOnClick(onClickListener: OnClickListener?) {
         linkButton.setOnClickListener(onClickListener)
-        setCardRipple(shouldShowRipple())
+        setCardRipple(shouldShowRippleOnClick())
     }
 
-    fun setMediaCardAdditionalContent(content: View?) {
+    fun setDataCardAdditionalContent(content: View?) {
         if (content == null) {
             additionalContentLayout.removeAllViews()
             return
@@ -221,17 +199,17 @@ class MediaCardView @JvmOverloads constructor(
         additionalContentLayout.addView(content)
     }
 
+    private fun shouldShowRippleOnClick(): Boolean =
+        primaryButton.visibility == GONE
+
     private fun TextView.setTextAndVisibility(newText: CharSequence?) {
         if (newText?.isNotBlank() == true) {
             text = newText
-            show()
+            visibility = VISIBLE
         } else {
-            hide()
+            visibility = GONE
         }
     }
-
-    private fun shouldShowRipple(): Boolean =
-        primaryButton.visibility == GONE && linkButton.visibility == GONE
 
     private fun CardView.setCardRipple(showRippleOnClick: Boolean) {
         foreground = if (showRippleOnClick) {

@@ -93,7 +93,7 @@
             android:background="?colorDivider"
             android:padding="16dp">
 
-            <com.telefonica.mistica.datacard.DataCardView
+            <com.telefonica.mistica.card.datacard.DataCardView
                 android:id="@+id/data_card_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
