@@ -40,11 +40,11 @@ class DataCardFragment : Fragment() {
             setPrimaryButtonText(view.findViewById<TextInput>(R.id.input_primary_button).text.toString())
             setLinkButtonText(view.findViewById<TextInput>(R.id.input_link_button).text.toString())
             if (view.findViewById<CheckBoxInput>(R.id.additional_content_checkbox).isChecked()) {
-                setDataCardAdditionalContent(null)
-                val additionalContent  = LayoutInflater.from(context).inflate(R.layout.card_additional_sample_content, this, false )
-                setDataCardAdditionalContent(additionalContent)
+                setCardAdditionalContent(null)
+                val additionalContent  = LayoutInflater.from(context).inflate(R.layout.card_custom_sample_content, this, false )
+                setCardAdditionalContent(additionalContent)
             } else {
-                setDataCardAdditionalContent(null)
+                setCardAdditionalContent(null)
             }
             if (view.findViewById<CheckBoxInput>(R.id.show_icon_checkbox).isChecked()) {
                 setIcon(R.drawable.media_card_sample_image)

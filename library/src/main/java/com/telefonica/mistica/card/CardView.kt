@@ -71,7 +71,8 @@ abstract class CardView @JvmOverloads constructor(
         isClickable = true
         isFocusable = true
         cardElevation = 0F
-        radius = resources.getDimension(R.dimen.data_card_corner_radius)
+        radius = resources.getDimension(R.dimen.card_corner_radius)
+        minimumWidth = resources.getDimension(R.dimen.card_min_width).toInt()
 
         cardContentView = rootView.findViewById(R.id.card_content)
         cardCustomContentLayout = rootView.findViewById(R.id.card_custom_content_layout)
@@ -160,7 +161,7 @@ abstract class CardView @JvmOverloads constructor(
         setCardRipple(shouldShowRippleOnClick())
     }
 
-    fun setDataCardAdditionalContent(content: View?) {
+    fun setCardAdditionalContent(content: View?) {
         if (content == null) {
             cardCustomContentLayout.removeAllViews()
             return
