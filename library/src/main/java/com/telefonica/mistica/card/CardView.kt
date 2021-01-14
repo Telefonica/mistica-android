@@ -162,11 +162,10 @@ abstract class CardView @JvmOverloads constructor(
     }
 
     fun setCardAdditionalContent(content: View?) {
-        if (content == null) {
-            cardCustomContentLayout.removeAllViews()
-            return
+        cardCustomContentLayout.removeAllViews()
+        if (content != null) {
+            cardCustomContentLayout.addView(content)
         }
-        cardCustomContentLayout.addView(content)
     }
 
     protected fun TextView.setTextAndVisibility(newText: CharSequence?) {
