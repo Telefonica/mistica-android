@@ -15,10 +15,10 @@ configured through the public api or via xml `attr`:
 
 ```xml
     <declare-styleable name="CardView">
-        <attr name="cardTag" format="string" />
         <attr name="cardImage" format="reference" />
+        <attr name="cardTag" format="string" />
+        <attr name="cardPretitle" format="string" />
         <attr name="cardTitle" format="string" />
-        <attr name="cardSubtitle" format="string" />
         <attr name="cardDescription" format="string" />
         <attr name="cardPrimaryButtonText" format="string" />
         <attr name="cardLinkButtonText" format="string" />

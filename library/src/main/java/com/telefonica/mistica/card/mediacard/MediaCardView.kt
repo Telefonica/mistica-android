@@ -22,6 +22,11 @@ import com.telefonica.mistica.util.show
         type = MediaCardView::class,
         attribute = "mediaCardImageDrawable",
         method = "setImageDrawable"
+    ),
+    BindingMethod(
+        type = MediaCardView::class,
+        attribute = "cardPretitle",
+        method = "setPretitle"
     )
 )
 class MediaCardView @JvmOverloads constructor(
@@ -58,7 +63,6 @@ class MediaCardView @JvmOverloads constructor(
     }
 
 
-
     fun getCardImageView(): ImageView = cardImageView
 
     fun setCardImage(@DrawableRes imageRes: Int) {
@@ -71,16 +75,16 @@ class MediaCardView @JvmOverloads constructor(
         cardImageView.show()
     }
 
-    fun setOtherMultimedia(view: View){
+    fun setOtherMultimedia(view: View) {
         cardImageView.hide()
         otherMediaLayout.addView(view)
     }
 
-    override fun setSubtitle(text: CharSequence?) {
-        cardContentView.tagSubtitleTextView.setTextAndVisibility(text)
+    fun setPretitle(text: CharSequence?) {
+        cardContentView.pretitleTextView.setTextAndVisibility(text)
     }
 
-    override fun setSubtitle(@StringRes textRes: Int?) {
-        textRes?.let { setSubtitle(context.getString(it)) }
+    fun setPretitle(@StringRes textRes: Int?) {
+        textRes?.let { setPretitle(context.getString(it)) }
     }
 }

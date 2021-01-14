@@ -15,7 +15,7 @@ class CardContentView @JvmOverloads internal constructor(
 ) : LinearLayout(context, attrs, defStyleAttr) {
 
     val tagTextView: TextView
-    val tagSubtitleTextView: TextView
+    val pretitleTextView: TextView
     val titleTextView: TextView
     val subtitleTextView: TextView
     val descriptionTextView: TextView
@@ -26,7 +26,7 @@ class CardContentView @JvmOverloads internal constructor(
         gravity = Gravity.START
 
         tagTextView = findViewById(R.id.card_tag)
-        tagSubtitleTextView = findViewById(R.id.card_tag_subtitle)
+        pretitleTextView = findViewById(R.id.card_pre_title)
         titleTextView = findViewById(R.id.card_title)
         subtitleTextView = findViewById(R.id.card_subtitle)
         descriptionTextView = findViewById(R.id.card_description)

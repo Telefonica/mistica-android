@@ -18,6 +18,11 @@ import com.telefonica.mistica.card.CardView
         type = DataCardView::class,
         attribute = "cardIcon",
         method = "setCardIcon"
+    ),
+    BindingMethod(
+        type = DataCardView::class,
+        attribute = "cardSubtitle",
+        method = "setSubtitle"
     )
 )
 class DataCardView @JvmOverloads constructor(
@@ -65,11 +70,11 @@ class DataCardView @JvmOverloads constructor(
         iconImageView.visibility = View.GONE
     }
 
-    override fun setSubtitle(text: CharSequence?) {
+    fun setSubtitle(text: CharSequence?){
         cardContentView.subtitleTextView.setTextAndVisibility(text)
     }
 
-    override fun setSubtitle(@StringRes textRes: Int?) {
+    fun setSubtitle(@StringRes textRes: Int?){
         textRes?.let { setSubtitle(context.getString(it)) }
     }
 }

@@ -25,11 +25,6 @@ import com.telefonica.mistica.R
     ),
     BindingMethod(
         type = CardView::class,
-        attribute = "cardSubtitle",
-        method = "setSubtitle"
-    ),
-    BindingMethod(
-        type = CardView::class,
         attribute = "cardDescription",
         method = "setDescription"
     ),
@@ -89,7 +84,6 @@ abstract class CardView @JvmOverloads constructor(
 
             setTag(styledAttrs.getText(R.styleable.CardView_cardTag))
             setTitle(styledAttrs.getText(R.styleable.CardView_cardTitle))
-            setSubtitle(styledAttrs.getText(R.styleable.CardView_cardSubtitle))
             setDescription(styledAttrs.getText(R.styleable.CardView_cardDescription))
 
             setPrimaryButtonText(styledAttrs.getText(R.styleable.CardView_cardPrimaryButtonText))
@@ -122,10 +116,6 @@ abstract class CardView @JvmOverloads constructor(
     fun setTitle(@StringRes textRes: Int?) {
         textRes?.let { setTitle(context.getString(it)) }
     }
-
-    abstract fun setSubtitle(text: CharSequence?)
-
-    abstract fun setSubtitle(@StringRes textRes: Int?)
 
     fun setDescription(text: CharSequence?) {
         cardContentView.descriptionTextView.setTextAndVisibility(text)

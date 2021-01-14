@@ -89,8 +89,8 @@ class MediaCardAdapter(private val mediaCards: List<MediaCardData>) :
         with(holder.cardView) {
             setCardImage(R.drawable.media_card_sample_image)
             setTag(cardData.tag)
+            setPretitle(cardData.subtitle)
             setTitle(cardData.title)
-            setSubtitle(cardData.subtitle)
             setDescription(cardData.description)
             setPrimaryButtonText(cardData.primaryButton)
             setLinkButtonText(cardData.linkButton)
