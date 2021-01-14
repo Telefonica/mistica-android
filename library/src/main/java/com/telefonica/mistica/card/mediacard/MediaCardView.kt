@@ -5,6 +5,7 @@ import android.graphics.drawable.Drawable
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.FrameLayout
 import android.widget.ImageView
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
@@ -12,6 +13,7 @@ import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
 import com.telefonica.mistica.card.CardView
+import com.telefonica.mistica.util.hide
 import com.telefonica.mistica.util.show
 
 
@@ -29,6 +31,7 @@ class MediaCardView @JvmOverloads constructor(
 ) : CardView(context, attrs, defStyleAttr) {
 
     private lateinit var cardImageView: ImageView
+    private lateinit var otherMediaLayout: FrameLayout
 
     override fun handleAttrsAndInflateLayout(
         attrs: AttributeSet?,
@@ -38,6 +41,7 @@ class MediaCardView @JvmOverloads constructor(
 
         val rootView = LayoutInflater.from(context).inflate(R.layout.media_card_view, this, true)
         cardImageView = findViewById(R.id.media_card_image)
+        otherMediaLayout = findViewById(R.id.media_card_multimedia_container)
 
         if (attrs != null) {
             val styledAttrs =
@@ -53,6 +57,8 @@ class MediaCardView @JvmOverloads constructor(
         return rootView
     }
 
+
+
     fun getCardImageView(): ImageView = cardImageView
 
     fun setCardImage(@DrawableRes imageRes: Int) {
@@ -63,6 +69,11 @@ class MediaCardView @JvmOverloads constructor(
     fun setCardImage(imageDrawable: Drawable) {
         cardImageView.setImageDrawable(imageDrawable)
         cardImageView.show()
+    }
+
+    fun setOtherMultimedia(view: View){
+        cardImageView.hide()
+        otherMediaLayout.addView(view)
     }
 
     override fun setSubtitle(text: CharSequence?) {

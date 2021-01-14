@@ -10,15 +10,15 @@ Data cards require a minimum content of a **title, description and a link button
 Implemented as a custom view, `com.telefonica.mistica.card.datacard.DataCardView` can be used inside any layout like a regular view. It supports both **attribute configuration and databinding for all properties**.
 
 ```xml
-    <declare-styleable name="DataCardView">
-        <attr name="dataCardIcon" format="reference" />
-        <attr name="dataCardTag" format="string" />
-        <attr name="dataCardTitle" format="string" />
-        <attr name="dataCardSubtitle" format="string" />
-        <attr name="dataCardDescription" format="string" />
-        <attr name="dataCardPrimaryButtonText" format="string" />
-        <attr name="dataCardLinkButtonText" format="string" />
-        <attr name="dataCardPrimaryButtonOnClick" format="string" />
-        <attr name="dataCardLinkButtonOnClick" format="string" />
+    <declare-styleable name="CardView">
+        <attr name="cardIcon" format="reference" />
+        <attr name="cardTag" format="string" />
+        <attr name="cardTitle" format="string" />
+        <attr name="cardSubtitle" format="string" />
+        <attr name="cardDescription" format="string" />
+        <attr name="cardPrimaryButtonText" format="string" />
+        <attr name="cardLinkButtonText" format="string" />
+        <attr name="cardPrimaryButtonOnClick" format="string" />
+        <attr name="cardLinkButtonOnClick" format="string" />
     </declare-styleable>
 ```

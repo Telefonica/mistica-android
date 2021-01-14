@@ -14,15 +14,25 @@ Minimum required content for media cards are an image/gif/video and a descriptio
 configured through the public api or via xml `attr`: 
 
 ```xml
-    <declare-styleable name="MediaCardView">
-        <attr name="mediaCardTag" format="string" />
-        <attr name="mediaCardTitle" format="string" />
-        <attr name="mediaCardSubtitle" format="string" />
-        <attr name="mediaCardDescription" format="string" />
-        <attr name="mediaCardPrimaryButtonText" format="string" />
-        <attr name="mediaCardLinkButtonText" format="string" />
-        <attr name="mediaCardImage" format="reference" />
-        <attr name="mediaCardPrimaryButtonOnClick" format="string" />
-        <attr name="mediaCardLinkButtonOnClick" format="string" />
+    <declare-styleable name="CardView">
+        <attr name="cardTag" format="string" />
+        <attr name="cardImage" format="reference" />
+        <attr name="cardTitle" format="string" />
+        <attr name="cardSubtitle" format="string" />
+        <attr name="cardDescription" format="string" />
+        <attr name="cardPrimaryButtonText" format="string" />
+        <attr name="cardLinkButtonText" format="string" />
+        <attr name="cardPrimaryButtonOnClick" format="string" />
+        <attr name="cardLinkButtonOnClick" format="string" />
     </declare-styleable>
 ```
+
+Media cards will also enable adding different types of media other than images, such as video or gifs. 
+It provides the following method were any kind of view can be passed and will be displayed at the top
+of the card matching the whole card width and wrapping the height of the media content. 
+
+```kotlin
+fun setOtherMultimedia(view: View)
+```
+
+A `VideoView` or any other kind of custom view can be added. 

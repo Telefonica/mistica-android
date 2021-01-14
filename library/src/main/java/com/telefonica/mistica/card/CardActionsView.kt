@@ -9,7 +9,7 @@ import com.telefonica.mistica.R
 import com.telefonica.mistica.button.Button
 import com.telefonica.mistica.util.convertDpToPx
 
-class CardActionsView @JvmOverloads constructor(
+class CardActionsView @JvmOverloads internal constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
