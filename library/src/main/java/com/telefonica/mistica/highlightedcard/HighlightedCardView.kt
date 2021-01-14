@@ -111,8 +111,7 @@ class HighlightedCardView @JvmOverloads constructor(
 
     private val titleTextView: TextView
     private val contentTextView: TextView
-    private val imageModeFit: ImageView
-    private val imageModeFill: ImageView
+    private val image: ImageView
     private val closeButton: ImageView
     private val container: ConstraintLayout
 
@@ -131,8 +130,7 @@ class HighlightedCardView @JvmOverloads constructor(
         titleTextView = findViewById(R.id.highlighted_card_title)
         contentTextView = findViewById(R.id.highlighted_card_content)
         button = findViewById(R.id.highlighted_card_button_primary)
-        imageModeFit = findViewById(R.id.highlighted_card_image_mode_fit)
-        imageModeFill = findViewById(R.id.highlighted_card_image_mode_fill)
+        image = findViewById(R.id.highlighted_card_image)
         closeButton = findViewById(R.id.highlighted_card_close_button)
         container = findViewById(R.id.highlighted_card_container)
 
@@ -230,14 +228,12 @@ class HighlightedCardView @JvmOverloads constructor(
     }
 
     fun setImage(@DrawableRes imageRes: Int) {
-        imageModeFit.setImageResource(imageRes)
-        imageModeFill.setImageResource(imageRes)
+        image.setImageResource(imageRes)
         configureImage()
     }
 
     fun setImage(imageRes: Drawable) {
-        imageModeFit.setImageDrawable(imageRes)
-        imageModeFill.setImageDrawable(imageRes)
+        image.setImageDrawable(imageRes)
         configureImage()
     }
 
@@ -292,23 +288,22 @@ class HighlightedCardView @JvmOverloads constructor(
         when (imageStyle) {
             IMAGE_STYLE_MODE_FIT -> showFitImage()
             IMAGE_STYLE_MODE_FILL -> showFillImage()
-            IMAGE_STYLE_NO_IMAGE -> hideAllImages()
+            IMAGE_STYLE_NO_IMAGE -> hideImage()
         }
     }
 
     private fun showFillImage() {
-        imageModeFill.visibility = View.VISIBLE
-        imageModeFit.visibility = View.GONE
+        image.scaleType = ImageView.ScaleType.CENTER_CROP
+        image.visibility = View.VISIBLE
     }
 
     private fun showFitImage() {
-        imageModeFit.visibility = View.VISIBLE
-        imageModeFill.visibility = View.GONE
+        image.scaleType = ImageView.ScaleType.FIT_END
+        image.visibility = View.VISIBLE
     }
 
-    private fun hideAllImages() {
-        imageModeFit.visibility = View.GONE
-        imageModeFill.visibility = View.GONE
+    private fun hideImage() {
+        image.visibility = View.GONE
     }
 
     private fun reload() {
