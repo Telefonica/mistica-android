@@ -22,7 +22,7 @@ buildscript {
 allprojects {
 
     group = 'com.telefonica.mistica'
-    version = System.getenv("LIBRARY_VERSION") ?: "undefined"
+    version = System.getProperty("LIBRARY_VERSION") ?: "undefined"
 
     repositories {
         google()

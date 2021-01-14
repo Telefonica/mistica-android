@@ -34,9 +34,8 @@ jobs:
         env:
           NEXUS_USER: ${{ secrets.NEXUS_USER }}
           NEXUS_PASS: ${{ secrets.NEXUS_PASS }}
-          LIBRARY_VERSION: ${{ github.event.inputs.libraryVersion }}
         with:
-          args: 'bash ./gradlew --no-daemon clean check assemble'
+          args: 'bash ./gradlew --no-daemon clean check assemble -PLIBRARY_VERSION=${{ github.event.inputs.libraryVersion }}'
 
       - name: Release library
         if: steps.check.outputs.has-permission
