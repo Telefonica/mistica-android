@@ -15,9 +15,6 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v2
 
-      - run: 'echo -n ${{ github.event.inputs.libraryVersion }} > version.txt'
-        shell: bash
-
       - name: Check permissions
         id: check
         uses: scherermichael-oss/action-has-permission@master
