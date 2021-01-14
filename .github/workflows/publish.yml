@@ -31,21 +31,13 @@ jobs:
         if: "! steps.check.outputs.has-permission"
         run: exit 1
 
-      - name: Increase version
-        uses: ./.github/actions/commit_and_push
-        if: steps.check.outputs.has-permission
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          files: '.'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Build library
         if: steps.check.outputs.has-permission
         uses: docker://docker.tuenti.io/android/mistica_builder:2
         env:
           NEXUS_USER: ${{ secrets.NEXUS_USER }}
           NEXUS_PASS: ${{ secrets.NEXUS_PASS }}
+          LIBRARY_VERSION: ${{ github.event.inputs.libraryVersion }}
         with:
           args: 'bash ./gradlew --no-daemon clean check assemble'
 
