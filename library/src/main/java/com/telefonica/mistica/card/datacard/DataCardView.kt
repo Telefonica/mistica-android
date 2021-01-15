@@ -50,8 +50,10 @@ class DataCardView @JvmOverloads constructor(
                     defStyleAttr,
                     0
                 )
+            setSubtitle(styledAttrs.getText(R.styleable.DataCardView_cardSubtitle))
             styledAttrs.getDrawable(R.styleable.DataCardView_cardIcon)
                 ?.let { setIcon(it) }
+
         }
         return rootView
     }
@@ -70,11 +72,11 @@ class DataCardView @JvmOverloads constructor(
         iconImageView.visibility = View.GONE
     }
 
-    fun setSubtitle(text: CharSequence?){
-        cardContentView.subtitleTextView.setTextAndVisibility(text)
+    fun setSubtitle(text: CharSequence?) {
+        text?.let { setSubtitle(it.toString()) }
     }
 
-    fun setSubtitle(@StringRes textRes: Int?){
+    fun setSubtitle(@StringRes textRes: Int?) {
         textRes?.let { setSubtitle(context.getString(it)) }
     }
 }

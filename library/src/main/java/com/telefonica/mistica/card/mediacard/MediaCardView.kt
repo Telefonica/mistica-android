@@ -56,6 +56,7 @@ class MediaCardView @JvmOverloads constructor(
                     defStyleAttr,
                     0
                 )
+            setPretitle(styledAttrs.getText(R.styleable.MediaCardView_cardPretitle))
             styledAttrs.getDrawable(R.styleable.MediaCardView_cardImage)
                 ?.let { setCardImage(it) }
         }
@@ -66,11 +67,13 @@ class MediaCardView @JvmOverloads constructor(
     fun getCardImageView(): ImageView = cardImageView
 
     fun setCardImage(@DrawableRes imageRes: Int) {
+        otherMediaLayout.removeAllViews()
         cardImageView.setImageResource(imageRes)
         cardImageView.show()
     }
 
     fun setCardImage(imageDrawable: Drawable) {
+        otherMediaLayout.removeAllViews()
         cardImageView.setImageDrawable(imageDrawable)
         cardImageView.show()
     }
@@ -81,7 +84,7 @@ class MediaCardView @JvmOverloads constructor(
     }
 
     fun setPretitle(text: CharSequence?) {
-        cardContentView.pretitleTextView.setTextAndVisibility(text)
+        text?.let { setPretitle(it.toString()) }
     }
 
     fun setPretitle(@StringRes textRes: Int?) {

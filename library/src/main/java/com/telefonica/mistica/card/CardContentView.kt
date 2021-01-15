@@ -8,7 +8,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import com.telefonica.mistica.R
 
-class CardContentView @JvmOverloads internal constructor(
+internal class CardContentView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0

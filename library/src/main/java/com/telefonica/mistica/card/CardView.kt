@@ -55,8 +55,7 @@ abstract class CardView @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : CardView(context, attrs, defStyleAttr) {
 
-
-    protected val cardContentView: CardContentView
+    private val cardContentView: CardContentView
     private val cardCustomContentLayout: LinearLayout
     private val cardActionsView: CardActionsView
 
@@ -95,7 +94,7 @@ abstract class CardView @JvmOverloads constructor(
         setCardRipple(shouldShowRippleOnClick())
     }
 
-    abstract fun handleAttrsAndInflateLayout(
+    protected abstract fun handleAttrsAndInflateLayout(
         attrs: AttributeSet? = null,
         defStyleAttr: Int = 0,
         defStyleRes: Int = 0
@@ -156,6 +155,14 @@ abstract class CardView @JvmOverloads constructor(
         if (content != null) {
             cardCustomContentLayout.addView(content)
         }
+    }
+
+    protected fun setPretitle(pretitle: String) {
+        cardContentView.pretitleTextView.setTextAndVisibility(pretitle)
+    }
+
+    protected fun setSubtitle(subtitle: String) {
+        cardContentView.subtitleTextView.setTextAndVisibility(subtitle)
     }
 
     protected fun TextView.setTextAndVisibility(newText: CharSequence?) {

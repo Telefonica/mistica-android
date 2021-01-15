@@ -6,7 +6,6 @@ import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
-import android.widget.TextView
 
 fun ViewGroup.children(): Iterable<View> = (0 until childCount)
     .map { index -> getChildAt(index) }
