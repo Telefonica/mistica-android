@@ -2,7 +2,7 @@
 <resources>
 	<style name="AppTheme.Widgets.TabLayout" parent="Widget.MaterialComponents.TabLayout">
 		<item name="tabTextAppearance">@style/AppTheme.TextAppearance.Preset6</item>
-		<item name="tabTextColor">?colorTextPrimary</item>
+		<item name="tabTextColor">@color/tab_text_selector</item>
 		<item name="tabBackground">@drawable/tab_indicator</item>
 		<item name="tabIconTint">@color/tab_icon_selector</item>
 		<item name="tabIndicatorFullWidth">true</item>
