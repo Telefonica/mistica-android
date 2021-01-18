@@ -53,6 +53,7 @@ class DataCardView @JvmOverloads constructor(
             setSubtitle(styledAttrs.getText(R.styleable.DataCardView_cardSubtitle))
             styledAttrs.getDrawable(R.styleable.DataCardView_cardIcon)
                 ?.let { setIcon(it) }
+            styledAttrs.recycle()
 
         }
         return rootView

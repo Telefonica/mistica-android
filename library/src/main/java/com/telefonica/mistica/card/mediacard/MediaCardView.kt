@@ -52,13 +52,14 @@ class MediaCardView @JvmOverloads constructor(
             val styledAttrs =
                 context.theme.obtainStyledAttributes(
                     attrs,
-                    R.styleable.DataCardView,
+                    R.styleable.MediaCardView,
                     defStyleAttr,
                     0
                 )
             setPretitle(styledAttrs.getText(R.styleable.MediaCardView_cardPretitle))
             styledAttrs.getDrawable(R.styleable.MediaCardView_cardImage)
                 ?.let { setCardImage(it) }
+            styledAttrs.recycle()
         }
         return rootView
     }
