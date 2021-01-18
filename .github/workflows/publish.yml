@@ -15,9 +15,6 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v2
 
-      - run: 'echo -n ${{ github.event.inputs.libraryVersion }} > version.txt'
-        shell: bash
-
       - name: Check permissions
         id: check
         uses: scherermichael-oss/action-has-permission@master
@@ -30,15 +27,6 @@ jobs:
       - name: Check permissions
         if: "! steps.check.outputs.has-permission"
         run: exit 1
-
-      - name: Increase version
-        uses: ./.github/actions/commit_and_push
-        if: steps.check.outputs.has-permission
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          files: '.'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build library
         if: steps.check.outputs.has-permission
@@ -56,7 +44,7 @@ jobs:
           NEXUS_USER: ${{ secrets.NEXUS_USER }}
           NEXUS_PASS: ${{ secrets.NEXUS_PASS }}
         with:
-          args: 'bash ./gradlew publish'
+          args: 'bash ./gradlew publish -DLIBRARY_VERSION=${{ github.event.inputs.libraryVersion }}'
 
       - name: Create Release in github
         if: steps.check.outputs.has-permission
