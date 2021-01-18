@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?colorBackground"
+    android:orientation="vertical">
+
+    <com.telefonica.mistica.tabs.TabLayout
+        android:id="@+id/content_tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="?colorIconDisabled" />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="30dp" />
+
+    <com.telefonica.mistica.input.TextInput
+        android:id="@+id/tab_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:inputHint="Tab Label"
+        app:inputText="Tab" />
+
+    <com.telefonica.mistica.input.CheckBoxInput
+        android:id="@+id/tab_icon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:inputCheckText="Add Icon" />
+
+    <com.telefonica.mistica.button.Button
+        android:id="@+id/add_tab_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Add Tab" />
+
+    <com.telefonica.mistica.button.Button
+        android:id="@+id/remove_tab_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:text="Remove Tab" />
+
+</LinearLayout>
