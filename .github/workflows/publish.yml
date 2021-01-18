@@ -35,7 +35,7 @@ jobs:
           NEXUS_USER: ${{ secrets.NEXUS_USER }}
           NEXUS_PASS: ${{ secrets.NEXUS_PASS }}
         with:
-          args: 'bash ./gradlew --no-daemon clean check assemble -DLIBRARY_VERSION=${{ github.event.inputs.libraryVersion }}'
+          args: 'bash ./gradlew --no-daemon clean check assemble'
 
       - name: Release library
         if: steps.check.outputs.has-permission
@@ -44,7 +44,7 @@ jobs:
           NEXUS_USER: ${{ secrets.NEXUS_USER }}
           NEXUS_PASS: ${{ secrets.NEXUS_PASS }}
         with:
-          args: 'bash ./gradlew publish'
+          args: 'bash ./gradlew publish -DLIBRARY_VERSION=${{ github.event.inputs.libraryVersion }}'
 
       - name: Create Release in github
         if: steps.check.outputs.has-permission
