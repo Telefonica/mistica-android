@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             app:inputHint="Subtitle"
-            app:inputText="Subtitle under tag"
+            app:inputText="This is a subtitle"
             app:inputType="text" />
 
         <com.telefonica.mistica.input.TextInput
@@ -77,22 +77,6 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             app:inputCheckText="With additional content"
-            app:inputChecked="false" />
-
-        <com.telefonica.mistica.input.CheckBoxInput
-            android:id="@+id/video_internet_content_checkbox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            app:inputCheckText="With video from internet"
-            app:inputChecked="false" />
-
-        <com.telefonica.mistica.input.CheckBoxInput
-            android:id="@+id/video_local_content_checkbox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            app:inputCheckText="With video from local resource"
             app:inputChecked="false" />
 
         <FrameLayout

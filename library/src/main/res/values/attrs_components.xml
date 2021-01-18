@@ -95,15 +95,15 @@
         <attr name="highlightedCardButtonOnClick" format="string" />
         <attr name="highlightedCardCloseButtonOnClick" format="string" />
         <attr name="highlightedCardButtonStyle" format="enum">
-            <enum name="primary" value="0"/>
-            <enum name="secondary" value="1"/>
-            <enum name="link" value="2"/>
-            <enum name="none" value="3"/>
+            <enum name="primary" value="0" />
+            <enum name="secondary" value="1" />
+            <enum name="link" value="2" />
+            <enum name="none" value="3" />
         </attr>
         <attr name="highlightedCardImageStyle" format="enum">
-            <enum name="modeFit" value="0"/>
-            <enum name="modeFill" value="1"/>
-            <enum name="none" value="2"/>
+            <enum name="modeFit" value="0" />
+            <enum name="modeFill" value="1" />
+            <enum name="none" value="2" />
         </attr>
     </declare-styleable>
 
@@ -134,28 +134,24 @@
         <attr name="inputCheckText" format="string" />
     </declare-styleable>
 
+    <declare-styleable name="CardView">
+        <attr name="cardTag" format="string" />
+        <attr name="cardTitle" format="string" />
+        <attr name="cardDescription" format="string" />
+        <attr name="cardPrimaryButtonText" format="string" />
+        <attr name="cardLinkButtonText" format="string" />
+        <attr name="cardPrimaryButtonOnClick" format="string" />
+        <attr name="cardLinkButtonOnClick" format="string" />
+    </declare-styleable>
+
     <declare-styleable name="MediaCardView">
-        <attr name="mediaCardTag" format="string" />
-        <attr name="mediaCardTitle" format="string" />
-        <attr name="mediaCardSubtitle" format="string" />
-        <attr name="mediaCardDescription" format="string" />
-        <attr name="mediaCardPrimaryButtonText" format="string" />
-        <attr name="mediaCardLinkButtonText" format="string" />
-        <attr name="mediaCardImage" format="reference" />
-        <attr name="mediaCardPrimaryButtonOnClick" format="string" />
-        <attr name="mediaCardLinkButtonOnClick" format="string" />
+        <attr name="cardImage" format="reference" />
+        <attr name="cardPretitle" format="string" />
     </declare-styleable>
 
     <declare-styleable name="DataCardView">
-        <attr name="dataCardIcon" format="reference" />
-        <attr name="dataCardTag" format="string" />
-        <attr name="dataCardTitle" format="string" />
-        <attr name="dataCardSubtitle" format="string" />
-        <attr name="dataCardDescription" format="string" />
-        <attr name="dataCardPrimaryButtonText" format="string" />
-        <attr name="dataCardLinkButtonText" format="string" />
-        <attr name="dataCardPrimaryButtonOnClick" format="string" />
-        <attr name="dataCardLinkButtonOnClick" format="string" />
+        <attr name="cardIcon" format="reference" />
+        <attr name="cardSubtitle" format="string" />
     </declare-styleable>
 
     <declare-styleable name="IndeterminateStepperView">
