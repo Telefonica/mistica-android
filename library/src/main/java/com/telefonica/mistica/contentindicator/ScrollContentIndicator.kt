@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.view.ViewOutlineProvider
 import android.view.animation.*
 import androidx.appcompat.widget.AppCompatTextView
+import androidx.core.content.ContextCompat
 import com.telefonica.mistica.R
 import com.telefonica.mistica.util.getThemeColor
 
@@ -45,7 +46,10 @@ class ScrollContentIndicator @JvmOverloads constructor(
 
         isClickable = true
         isFocusable = true
-        background = context.getDrawable(R.drawable.scroll_content_indicator_clickable_background)
+        background = ContextCompat.getDrawable(
+            context,
+            R.drawable.scroll_content_indicator_clickable_background
+        )
 
         elevation = context.resources.getDimension(R.dimen.scroll_content_elevation)
         clipToOutline = true
@@ -68,11 +72,11 @@ class ScrollContentIndicator @JvmOverloads constructor(
         super.setVisibility(visibility)
     }
 
-    open fun disableAnimations() {
+    fun disableAnimations() {
         animationsEnabled = false
     }
 
-    open fun enableAnimations() {
+    fun enableAnimations() {
         animationsEnabled = true
     }
 
