@@ -6,7 +6,7 @@
     android:background="?colorBackground"
     android:orientation="vertical">
 
-    <com.telefonica.mistica.tabs.TabLayout
+    <com.google.android.material.tabs.TabLayout
         android:id="@+id/content_tabs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
