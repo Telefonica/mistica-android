@@ -10,12 +10,12 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
+import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayout.Tab
 import com.telefonica.mistica.button.Button
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.input.CheckBoxInput
 import com.telefonica.mistica.input.TextInput
-import com.telefonica.mistica.tabs.TabLayout
 
 class TabsCatalogFragment : Fragment() {
 
@@ -41,7 +41,7 @@ class TabsCatalogFragment : Fragment() {
         iconCheckbox = root.findViewById(R.id.tab_icon)
         viewPager = root.findViewById<ViewPager2>(R.id.view_pager).also {
             it.adapter = pagerAdapter
-            it.registerOnPageChangeCallback(object: ViewPager2.OnPageChangeCallback() {
+            it.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
                 override fun onPageSelected(position: Int) {
                     tabs.selectTab(tabs.getTabAt(position))
                 }

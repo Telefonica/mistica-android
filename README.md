@@ -92,6 +92,7 @@ Just set your App or any specific activity to use any of the following:
 * [Media Cards](library/src/main/java/com/telefonica/mistica/mediacard)
 * [Data Cards](library/src/main/java/com/telefonica/mistica/datacard)
 * [Steppers](library/src/main/java/com/telefonica/mistica/stepper)
+* [Tabs](library/src/main/java/com/telefonica/mistica/tabs)
 
 ## Text Presets Styles
 
