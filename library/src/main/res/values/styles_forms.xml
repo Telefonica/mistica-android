@@ -16,12 +16,13 @@
         <item name="errorIconDrawable">@null</item>
     </style>
 
-    <style name="AppTheme.Forms.TextInputLayout.EditText.TextArea" parent="AppTheme.Forms.TextInputLayout.EditText">
+    <style name="AppTheme.Forms.TextInputLayout.EditText.TextArea">
         <item name="android:minLines">4</item>
         <item name="android:maxLines">4</item>
         <item name="android:inputType">textMultiLine</item>
         <item name="android:gravity">start|top</item>
-        <item name="android:layout_height">156dp</item>
+        <item name="android:minHeight">156dp</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:lineSpacingExtra">8dp</item>
     </style>
 
@@ -52,7 +53,8 @@
 
     <style name="AppTheme.Forms.TextInputLayout.EditText" parent="AppTheme.TextAppearance.Preset6">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">56dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">56dp</item>
         <item name="android:paddingTop">24dp</item>
         <item name="android:layout_margin">0dp</item>
         <item name="android:background">@drawable/bg_textinputedittext</item>
@@ -60,19 +62,19 @@
         <item name="android:inputType">textCapSentences</item>
     </style>
 
-    <style name="AppTheme.Forms.TextInputLayout.EditText.Password" parent="AppTheme.Forms.TextInputLayout.EditText">
+    <style name="AppTheme.Forms.TextInputLayout.EditText.Password">
         <item name="android:inputType">textPassword</item>
     </style>
 
-    <style name="AppTheme.Forms.TextInputLayout.EditText.Phone" parent="AppTheme.Forms.TextInputLayout.EditText">
+    <style name="AppTheme.Forms.TextInputLayout.EditText.Phone">
         <item name="android:inputType">phone</item>
     </style>
 
-    <style name="AppTheme.Forms.TextInputLayout.EditText.Email" parent="AppTheme.Forms.TextInputLayout.EditText">
+    <style name="AppTheme.Forms.TextInputLayout.EditText.Email">
         <item name="android:inputType">textEmailAddress</item>
     </style>
 
-    <style name="AppTheme.Forms.TextInputLayout.EditText.Dropdown" parent="AppTheme.Forms.TextInputLayout.EditText">
+    <style name="AppTheme.Forms.TextInputLayout.EditText.Dropdown">
         <item name="endIconMode">dropdown_menu</item>
         <item name="android:paddingLeft">16dp</item>
         <item name="android:paddingTop">26dp</item>
