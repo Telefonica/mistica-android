@@ -5,6 +5,7 @@
         <item name="android:layout_gravity">center_vertical</item>
         <item name="boxBackgroundColor">@android:color/transparent</item>
         <item name="boxStrokeColor">@android:color/transparent</item>
+        <item name="boxCollapsedPaddingTop">8dp</item>
         <item name="boxStrokeWidth">0dp</item>
         <item name="boxStrokeWidthFocused">0dp</item>
         <item name="hintEnabled">true</item>
@@ -56,6 +57,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:minHeight">56dp</item>
         <item name="android:paddingTop">24dp</item>
+        <item name="android:paddingBottom">8dp</item>
         <item name="android:layout_margin">0dp</item>
         <item name="android:background">@drawable/bg_textinputedittext</item>
         <item name="android:maxLines">1</item>
