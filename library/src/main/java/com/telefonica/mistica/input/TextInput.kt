@@ -2,6 +2,7 @@ package com.telefonica.mistica.input
 
 import android.content.Context
 import android.os.Build
+import android.provider.Settings
 import android.text.Editable
 import android.text.InputFilter.LengthFilter
 import android.text.TextWatcher
@@ -21,6 +22,7 @@ import com.telefonica.mistica.R
 import com.telefonica.mistica.input.validations.NoValidation
 import com.telefonica.mistica.input.validations.TextInputValidation
 import com.telefonica.mistica.input.validations.TextInputValidationResult
+import com.telefonica.mistica.util.padding
 
 @BindingMethods(
     BindingMethod(
@@ -132,6 +134,7 @@ class TextInput @JvmOverloads constructor(
         configureAutoFill()
         setAutofillEnabled(initialAutofillEnabled)
         configureErrorResetOnTextChange()
+        configureEditTextPaddingTop()
 
         return findViewById<TextInputLayout>(R.id.text_input_layout).apply {
             isCounterEnabled = initialCounterEnabled
@@ -223,6 +226,14 @@ class TextInput @JvmOverloads constructor(
         })
     }
 
+    private fun configureEditTextPaddingTop() {
+        val fontScale =
+            Settings.System.getFloat(context.contentResolver, Settings.System.FONT_SCALE, 1F)
+        editTextView.padding(
+            top = (editTextView.paddingTop * fontScale).toInt()
+        )
+    }
+
     private fun setMaxTextLength(maxLength: Int) {
         editTextView.filters.filterNot {
             it is LengthFilter
@@ -273,9 +284,9 @@ class TextInput @JvmOverloads constructor(
             }
             val oldTextWatcher = ListenerUtil.trackListener(input, textWatcher, R.id.textWatcher)
             if (oldTextWatcher != null) {
-                input.removeTextChangedListener(oldTextWatcher);
+                input.removeTextChangedListener(oldTextWatcher)
             }
-            input.addTextChangedListener(textWatcher);
+            input.addTextChangedListener(textWatcher)
         }
     }
 }
