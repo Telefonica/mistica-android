@@ -23,9 +23,13 @@
 
         <TextView
             android:id="@+id/selected_step_number"
-            android:layout_width="@dimen/stepper_step_width"
-            android:layout_height="@dimen/stepper_step_height"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:gravity="center"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true"
             android:textColor="?colorTextPrimaryInverse"
             style="@style/AppTheme.TextAppearance.Preset8.Medium"
             tools:text="1" />
@@ -39,9 +43,13 @@
 
         <TextView
             android:id="@+id/unselected_step_number"
-            android:layout_width="@dimen/stepper_step_width"
-            android:layout_height="@dimen/stepper_step_height"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:gravity="center"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true"
             android:textColor="?colorTextSecondary"
             style="@style/AppTheme.TextAppearance.Preset8.Medium"
             tools:text="1" />

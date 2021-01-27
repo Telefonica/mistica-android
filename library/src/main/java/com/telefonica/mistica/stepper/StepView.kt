@@ -3,6 +3,7 @@ package com.telefonica.mistica.stepper
 import android.content.Context
 import android.graphics.PorterDuff
 import android.graphics.PorterDuffColorFilter
+import android.provider.Settings
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
@@ -44,7 +45,18 @@ internal class StepView @JvmOverloads constructor(
         unselectedStepContainer = findViewById(R.id.unselected_step_container)
         checkIcon = findViewById(R.id.check_icon)
 
+        scaleLayoutAccordingTextSize()
+
         setUpLottieAnimation()
+    }
+
+    private fun scaleLayoutAccordingTextSize() {
+        val fontScale = Settings.System.getFloat(context.contentResolver, Settings.System.FONT_SCALE, 1F)
+        val stepWidth = (resources.getDimension(R.dimen.stepper_step_width) * fontScale).toInt()
+
+        selectedStepContainer.layoutParams = LayoutParams(stepWidth, stepWidth)
+        unselectedStepContainer.layoutParams = LayoutParams(stepWidth, stepWidth)
+        checkIcon.layoutParams = LayoutParams(stepWidth, stepWidth)
     }
 
     private fun setUpLottieAnimation() {
