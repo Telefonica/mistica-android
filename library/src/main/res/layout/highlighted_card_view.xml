@@ -18,10 +18,11 @@
 
     <TextView
         android:id="@+id/highlighted_card_title"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:textAppearance="@style/AppTheme.TextAppearance.Preset5"
+        app:layout_constraintEnd_toStartOf="@+id/highlighted_card_image"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="@tools:sample/first_names" />
@@ -39,8 +40,8 @@
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/highlighted_card_title"
         app:layout_goneMarginBottom="24dp"
-        tools:text="@tools:sample/lorem/random"
-        tools:lines="5" />
+        tools:lines="5"
+        tools:text="@tools:sample/lorem/random" />
 
     <!--    Primary-->
     <com.telefonica.mistica.button.Button
@@ -111,11 +112,6 @@
         app:layout_constraintTop_toBottomOf="@+id/highlighted_card_content"
         app:layout_goneMarginBottom="24dp"
         app:layout_goneMarginTop="0dp"
-        android:minWidth="0dp"
-        android:paddingStart="0dp"
-        android:paddingLeft="0dp"
-        android:paddingEnd="0dp"
-        android:paddingRight="0dp"
         tools:text="Update" />
 
     <com.telefonica.mistica.button.Button
@@ -129,11 +125,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/highlighted_card_content"
-        android:minWidth="0dp"
-        android:paddingStart="0dp"
-        android:paddingLeft="0dp"
-        android:paddingEnd="0dp"
-        android:paddingRight="0dp"
         tools:text="Update"
         tools:visibility="gone" />
 
