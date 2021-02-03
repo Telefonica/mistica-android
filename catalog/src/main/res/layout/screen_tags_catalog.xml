@@ -34,8 +34,7 @@
                 app:layout_constraintDimensionRatio="16:9"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="ContentDescription" />
+                app:layout_constraintTop_toTopOf="parent"/>
 
             <com.telefonica.mistica.tag.TagView
                 android:id="@+id/tag_in_image"

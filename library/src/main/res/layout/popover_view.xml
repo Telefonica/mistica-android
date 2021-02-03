@@ -56,6 +56,7 @@
             android:id="@+id/close_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/close_button_content_description"
             android:src="@drawable/icn_cross_popover"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -64,6 +65,7 @@
             android:id="@+id/popover_image"
             android:layout_width="40dp"
             android:layout_height="40dp"
+            android:importantForAccessibility="no"
             android:visibility="gone"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/guideline"
@@ -81,7 +83,8 @@
         android:layout_marginLeft="@dimen/popover_arrow_margin_horizontal"
         android:layout_marginRight="@dimen/popover_arrow_margin_horizontal"
         android:layout_marginBottom="@dimen/popover_arrow_margin_vertical"
-        android:background="@drawable/icn_arrow_popover_up" />
+        android:background="@drawable/icn_arrow_popover_up"
+        android:importantForAccessibility="no" />
 
     <ImageView
         android:id="@+id/popover_pointer_down"
@@ -91,6 +94,7 @@
         android:layout_marginLeft="@dimen/popover_arrow_margin_horizontal"
         android:layout_marginTop="@dimen/popover_arrow_margin_vertical"
         android:layout_marginRight="@dimen/popover_arrow_margin_horizontal"
-        android:background="@drawable/icn_arrow_popover_down" />
+        android:background="@drawable/icn_arrow_popover_down"
+        android:importantForAccessibility="no" />
 
 </merge>

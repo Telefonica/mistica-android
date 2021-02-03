@@ -49,6 +49,12 @@ open class PopOver(
     open fun show(containerView: View): PopOver =
         apply { show(containerView as ViewGroup, targetView) }
 
+    open fun setContentDescription(@StringRes stringId: Int): PopOver =
+        apply { popOverData = popOverData.copy(contentDescription = context.getString(stringId)) }
+
+    open fun setContentDescription(string: String): PopOver =
+        apply { popOverData = popOverData.copy(contentDescription = string) }
+
     open fun hide() {
         if (popOverView == null) {
             return

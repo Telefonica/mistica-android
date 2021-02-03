@@ -99,6 +99,7 @@ open class PopOverView internal constructor(context: Context) : RelativeLayout(c
         applyTheme(popOverData.theme)
         setTipMargin(popOverData.extraMarginForTip)
         setMargin(popOverData)
+        contentDescription = popOverData.contentDescription
         setShadow()
         if (dimensionsKnown) {
             applyPopOverTipPosition()
