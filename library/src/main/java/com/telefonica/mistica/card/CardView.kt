@@ -8,6 +8,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.annotation.StringRes
 import androidx.cardview.widget.CardView
+import androidx.core.content.res.ResourcesCompat
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
@@ -180,7 +181,7 @@ abstract class CardView @JvmOverloads constructor(
         foreground = if (showRippleOnClick) {
             val outValue = TypedValue()
             context.theme.resolveAttribute(android.R.attr.selectableItemBackground, outValue, true)
-            resources.getDrawable(outValue.resourceId, context.theme)
+            ResourcesCompat.getDrawable(resources, outValue.resourceId, context.theme)
         } else {
             null
         }

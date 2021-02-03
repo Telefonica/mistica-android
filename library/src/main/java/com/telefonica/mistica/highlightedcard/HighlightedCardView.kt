@@ -16,6 +16,7 @@ import androidx.annotation.IntDef
 import androidx.annotation.StringRes
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.DrawableCompat
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
@@ -243,7 +244,7 @@ class HighlightedCardView @JvmOverloads constructor(
     }
 
     fun setCustomBackground(@DrawableRes imageRes: Int) {
-        setCustomBackground(context.getDrawable(imageRes)!!)
+        setCustomBackground(ContextCompat.getDrawable(context, imageRes)!!)
     }
 
     fun setCustomBackground(drawable: Drawable) {
@@ -280,7 +281,7 @@ class HighlightedCardView @JvmOverloads constructor(
             } else {
                 R.drawable.highlighted_card_background
             }
-            container.background = context.getDrawable(backgroundDrawable)
+            container.background = ContextCompat.getDrawable(context, backgroundDrawable)
         }
     }
 
