@@ -1,4 +1,4 @@
-  <img height="64" alt="Mística for Android" src="./doc/images/misticaAndroid.svg">
+  <img alt="Mística for Android" src="./doc/images/misticaAndroid.svg">
 <br>
 
 #  Mistica for Android
