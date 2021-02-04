@@ -19,7 +19,6 @@
             android:id="@+id/media_card_image"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:importantForAccessibility="no"
             android:scaleType="centerCrop"
             android:visibility="gone"
             tools:srcCompat="@tools:sample/avatars"

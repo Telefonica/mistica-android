@@ -64,13 +64,20 @@ class MediaCardView @JvmOverloads constructor(
         return rootView
     }
 
-
     fun getCardImageView(): ImageView = cardImageView
 
     fun setCardImage(@DrawableRes imageRes: Int) {
         otherMediaLayout.removeAllViews()
         cardImageView.setImageResource(imageRes)
         cardImageView.show()
+    }
+
+    fun setCardImageContentDescription(description: String) {
+        cardImageView.contentDescription = description
+    }
+
+    fun removeCardImageContentDescription() {
+        cardImageView.contentDescription = null
     }
 
     fun setCardImage(imageDrawable: Drawable) {
