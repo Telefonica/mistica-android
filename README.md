@@ -1,4 +1,4 @@
-  <img alt="Mística for Android" src="./doc/images/misticaAndroid.svg">
+  <img alt="Mística for Android" src="./doc/images/mistica-android.svg">
 <br>
 
 [![Platform](https://img.shields.io/badge/Platform-Android-brightgreen)](https://github.com/Telefonica/mistica-android)
