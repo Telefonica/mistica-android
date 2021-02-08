@@ -268,7 +268,6 @@ class ListRowView @JvmOverloads constructor(
     fun setBadge(show: Boolean) {
         Badge.removeBadge(badgeAnchor)
         if (show) {
-            titleTextView.maxLines = 1
             Badge.showBadgeIn(badgeAnchor)
             badgeAnchor.visibility = View.VISIBLE
         } else {
@@ -281,7 +280,6 @@ class ListRowView @JvmOverloads constructor(
         if (count <= 0) {
             hideBadge()
         } else {
-            titleTextView.maxLines = 1
             Badge.showNumericBadgeIn(badgeAnchor, count)
             badgeAnchor.visibility = View.VISIBLE
         }
@@ -304,7 +302,6 @@ class ListRowView @JvmOverloads constructor(
     }
 
     private fun hideBadge() {
-        titleTextView.maxLines = 2
         badgeAnchor.visibility = GONE
     }
 
