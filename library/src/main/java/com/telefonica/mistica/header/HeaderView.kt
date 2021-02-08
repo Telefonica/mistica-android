@@ -134,6 +134,7 @@ class HeaderView @JvmOverloads constructor(
         actionButton = findViewById(R.id.header_action_button)
         secondaryActionButton = findViewById(R.id.header_secondary_action_button)
         subtitleTextView = findViewById(R.id.header_subtitle)
+        isFocusable = true
 
         if (attrs != null) {
             val styledAttrs =

@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/highlighted_card_background"
+    android:focusable="true"
     android:minHeight="100dp"
     android:padding="1dp">
 

@@ -31,7 +31,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:inputType="text"
-            app:inputHint="Feedback Title" />
+            app:inputHint="Feedback Title"
+            app:inputText="This is a title" />
 
         <com.telefonica.mistica.input.TextInput
             android:id="@+id/input_feedback_subtitle"
@@ -39,7 +40,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:inputType="text"
-            app:inputHint="Feedback Subtitle" />
+            app:inputHint="Feedback Subtitle"
+            app:inputText="This is the feedback description" />
 
         <com.telefonica.mistica.input.TextInput
             android:id="@+id/input_feedback_first_button"
