@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
     <plurals name="badge_notifications_description" comment="(number_notifications)1$s notifications">
-        <item quantity="one">%1$s notificación</item>
-        <item quantity="other">%1$s notificaciones</item>
+        <item quantity="one">%1$s notification</item>
+        <item quantity="other">%1$s notifications</item>
     </plurals>
 </resources>

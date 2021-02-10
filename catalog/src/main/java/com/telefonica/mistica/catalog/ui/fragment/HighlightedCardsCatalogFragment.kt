@@ -90,9 +90,6 @@ class HighlightedCardsCatalogFragment : Fragment() {
             }
             setImageStyle(imageStyle)
             setInverse(view.findViewById<CheckBoxInput>(R.id.check_inverse).isChecked())
-            setCloseVisibility(
-                view.findViewById<CheckBoxInput>(R.id.checkbox_close_button).isChecked()
-            )
             setTitle(view.findViewById<TextInput>(R.id.input_title).text.toString())
             setContent(view.findViewById<TextInput>(R.id.input_content).text.toString())
             setButtonText(view.findViewById<TextInput>(R.id.input_button_text).text.toString())
@@ -102,6 +99,7 @@ class HighlightedCardsCatalogFragment : Fragment() {
             } else {
                 disableCustomBackground()
             }
+            setCloseButton(view)
             setButtonOnClick(View.OnClickListener {
                 Toast.makeText(
                     view.context,
@@ -109,13 +107,22 @@ class HighlightedCardsCatalogFragment : Fragment() {
                     Toast.LENGTH_SHORT
                 ).show()
             })
-            setCloseButtonOnClick(View.OnClickListener {
+        }
+    }
+
+    private fun HighlightedCardView.setCloseButton(view: View) {
+        if (view.findViewById<CheckBoxInput>(R.id.checkbox_close_button).isChecked()) {
+            val onButtonClicked = View.OnClickListener {
                 Toast.makeText(
                     view.context,
                     "Close Clicked!",
                     Toast.LENGTH_SHORT
                 ).show()
-            })
+            }
+            setCloseButtonOnClick(onButtonClicked)
+            setCloseButton("Dismiss card")
+        } else {
+            removeCloseButton()
         }
     }
 }

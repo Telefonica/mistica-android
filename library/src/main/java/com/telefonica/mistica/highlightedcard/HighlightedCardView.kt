@@ -22,6 +22,8 @@ import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
 import com.telefonica.mistica.util.getThemeColor
+import com.telefonica.mistica.util.hide
+import com.telefonica.mistica.util.show
 
 
 @BindingMethods(
@@ -79,6 +81,11 @@ import com.telefonica.mistica.util.getThemeColor
         type = HighlightedCardView::class,
         attribute = "highlightedCardButtonOnClick",
         method = "setButtonOnClick"
+    ),
+    BindingMethod(
+        type = HighlightedCardView::class,
+        attribute = "highlightedCardCloseButton",
+        method = "setCloseButton"
     ),
     BindingMethod(
         type = HighlightedCardView::class,
@@ -169,13 +176,8 @@ class HighlightedCardView @JvmOverloads constructor(
                 R.styleable.HighlightedCardView_highlightedCardImageStyle,
                 IMAGE_STYLE_NO_IMAGE
             )
-
-            setCloseVisibility(
-                styledAttrs.getBoolean(
-                    R.styleable.HighlightedCardView_highlightedCardCloseButtonVisibility,
-                    false
-                )
-            )
+            styledAttrs.getText(R.styleable.HighlightedCardView_highlightedCardCloseButton)
+                ?.let { setCloseButton(it) }
             styledAttrs.getDrawable(R.styleable.HighlightedCardView_highlightedCardImage)
                 ?.let { setImage(it) }
 
@@ -187,10 +189,6 @@ class HighlightedCardView @JvmOverloads constructor(
     fun setButtonOnClick(onClickListener: OnClickListener?) {
         this.buttonClickListener = onClickListener
         button?.setOnClickListener(onClickListener)
-    }
-
-    fun setCloseButtonOnClick(onClickListener: OnClickListener?) {
-        this.closeButton.setOnClickListener(onClickListener)
     }
 
     fun setTitle(text: CharSequence) {
@@ -261,8 +259,17 @@ class HighlightedCardView @JvmOverloads constructor(
         configureBackground()
     }
 
-    fun setCloseVisibility(visible: Boolean) {
-        closeButton.visibility = if (visible) View.VISIBLE else View.GONE
+    fun setCloseButton(buttonContentDescription: CharSequence) {
+        closeButton.contentDescription = buttonContentDescription
+        closeButton.show()
+    }
+
+    fun setCloseButtonOnClick(onButtonClick: OnClickListener) {
+        closeButton.setOnClickListener(onButtonClick)
+    }
+
+    fun removeCloseButton() {
+        closeButton.hide()
     }
 
     private fun configureColors() {
