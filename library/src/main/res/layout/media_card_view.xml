@@ -21,6 +21,7 @@
             android:layout_height="wrap_content"
             android:scaleType="centerCrop"
             android:visibility="gone"
+            tools:ignore="ContentDescription"
             tools:srcCompat="@tools:sample/avatars"
             tools:visibility="visible" />
 

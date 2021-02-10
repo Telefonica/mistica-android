@@ -27,6 +27,11 @@ import com.telefonica.mistica.util.show
         type = MediaCardView::class,
         attribute = "cardPretitle",
         method = "setPretitle"
+    ),
+    BindingMethod(
+        type = MediaCardView::class,
+        attribute = "cardImageContentDescription",
+        method = "setCardImageContentDescription"
     )
 )
 class MediaCardView @JvmOverloads constructor(
@@ -57,6 +62,7 @@ class MediaCardView @JvmOverloads constructor(
                     0
                 )
             setPretitle(styledAttrs.getText(R.styleable.MediaCardView_cardPretitle))
+            setCardImageContentDescription(styledAttrs.getText(R.styleable.MediaCardView_cardImageContentDescription))
             styledAttrs.getDrawable(R.styleable.MediaCardView_cardImage)
                 ?.let { setCardImage(it) }
             styledAttrs.recycle()
@@ -72,8 +78,12 @@ class MediaCardView @JvmOverloads constructor(
         cardImageView.show()
     }
 
-    fun setCardImageContentDescription(description: String) {
+    fun setCardImageContentDescription(description: CharSequence) {
         cardImageView.contentDescription = description
+    }
+
+    fun setCardImageContentDescription(@StringRes textRes: Int?) {
+        textRes?.let { setCardImageContentDescription(context.getString(it)) }
     }
 
     fun removeCardImageContentDescription() {

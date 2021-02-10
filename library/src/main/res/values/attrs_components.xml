@@ -147,6 +147,7 @@
     <declare-styleable name="MediaCardView">
         <attr name="cardImage" format="reference" />
         <attr name="cardPretitle" format="string" />
+        <attr name="cardImageContentDescription" format="string" />
     </declare-styleable>
 
     <declare-styleable name="DataCardView">
