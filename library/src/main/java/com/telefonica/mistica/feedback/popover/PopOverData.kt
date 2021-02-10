@@ -29,7 +29,7 @@ internal data class PopOverData(
     val imageRes: Int? = null,
     val margin: Int = 0,
     val theme: PopOverTheme = PopOverTheme,
-    val contentDescription: String? = null
+    val dismissButtonContentDescription: String? = null
 ) {
     companion object {
         const val ANIMATIONTYPE_FROMMASTERVIEW = 101
