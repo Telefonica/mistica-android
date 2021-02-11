@@ -3,7 +3,6 @@ package com.telefonica.mistica.badge
 import android.graphics.Rect
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.PluralsRes
 import com.google.android.material.badge.BadgeDrawable
 import com.telefonica.mistica.R
 import com.telefonica.mistica.util.getThemeColor
@@ -11,9 +10,6 @@ import com.telefonica.mistica.util.getThemeColor
 object Badge {
 
     var contentDescriptions: MutableMap<Int, CharSequence?> = mutableMapOf()
-
-    @PluralsRes
-    var badgeNotificationsDescriptionResource: Int = R.plurals.badge_notifications_description
 
     @JvmStatic
     fun showBadgeIn(anchor: View, badgeDescription: String? = null): BadgeDrawable {
@@ -106,12 +102,8 @@ object Badge {
         if (!contentDescriptions.containsKey(anchor.hashCode())) {
             contentDescriptions[anchor.hashCode()] = anchor.contentDescription
         }
-        val countValueForStringsRetrieval = when {
-            count != 0 -> count
-            else -> 1
-        }
-        val suffix = badgeDescription ?:
-            getDefaultBadgeDescription(anchor, countValueForStringsRetrieval)
+
+        val suffix = badgeDescription ?: getDefaultBadgeDescription(anchor, count)
 
         return when (contentDescriptions[anchor.hashCode()]) {
             null -> suffix
@@ -121,12 +113,12 @@ object Badge {
 
     private fun getDefaultBadgeDescription(
         anchor: View,
-        countValueForStringsRetrieval: Int
-    ) = anchor.context.resources.getQuantityString(
-        badgeNotificationsDescriptionResource,
-        countValueForStringsRetrieval,
-        countValueForStringsRetrieval
-    )
+        count: Int
+    ) = if (count == 0) {
+        anchor.context.getString(R.string.badge_notification_description)
+    } else {
+        count.toString()
+    }
 
     private fun resetContentDescription(anchor: View) {
         if (contentDescriptions.containsKey(anchor.hashCode())) {
