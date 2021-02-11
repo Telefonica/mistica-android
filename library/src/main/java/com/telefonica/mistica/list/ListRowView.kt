@@ -150,7 +150,12 @@ class ListRowView @JvmOverloads constructor(
             setSubtitle(styledAttrs.getText(R.styleable.ListRowView_listRowSubtitle))
             setDescription(styledAttrs.getText(R.styleable.ListRowView_listRowDescription))
             setBoxed(styledAttrs.getBoolean(R.styleable.ListRowView_listRowIsBoxed, false))
-            setAssetType(styledAttrs.getInt(R.styleable.ListRowView_listRowAssetType, TYPE_SMALL_ICON))
+            setAssetType(
+                styledAttrs.getInt(
+                    R.styleable.ListRowView_listRowAssetType,
+                    TYPE_SMALL_ICON
+                )
+            )
             setAssetDrawable(styledAttrs.getDrawable(R.styleable.ListRowView_listRowAssetDrawable))
             setBadgeInitialState(styledAttrs)
 
@@ -265,22 +270,22 @@ class ListRowView @JvmOverloads constructor(
         }
     }
 
-    fun setBadge(show: Boolean) {
+    fun setBadge(show: Boolean, withBadgeDescription: String? = null) {
         Badge.removeBadge(badgeAnchor)
         if (show) {
-            Badge.showBadgeIn(badgeAnchor)
+            Badge.showBadgeIn(badgeAnchor, withBadgeDescription)
             badgeAnchor.visibility = View.VISIBLE
         } else {
             hideBadge()
         }
     }
 
-    fun setNumericBadge(count: Int) {
+    fun setNumericBadge(count: Int, withBadgeDescription: String? = null) {
         Badge.removeBadge(badgeAnchor)
         if (count <= 0) {
             hideBadge()
         } else {
-            Badge.showNumericBadgeIn(badgeAnchor, count)
+            Badge.showNumericBadgeIn(badgeAnchor, count, withBadgeDescription)
             badgeAnchor.visibility = View.VISIBLE
         }
     }

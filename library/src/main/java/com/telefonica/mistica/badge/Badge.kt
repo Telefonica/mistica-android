@@ -16,40 +16,57 @@ object Badge {
     var badgeNotificationsDescriptionResource: Int = R.plurals.badge_notifications_description
 
     @JvmStatic
-    fun showBadgeIn(anchor: View): BadgeDrawable {
+    fun showBadgeIn(anchor: View, badgeDescription: String? = null): BadgeDrawable {
         val parent = anchor.parent
         if (parent is ViewGroup) {
-            return showBadgeIn(anchor, parent)
+            return showBadgeIn(anchor, parent, badgeDescription)
         } else {
             throw RuntimeException("The view's parent is not a ViewGroup. Use showBadgeIn(anchor,parent) instead")
         }
     }
 
     @JvmStatic
-    fun showBadgeIn(anchor: View, parent: ViewGroup): BadgeDrawable =
+    fun showBadgeIn(
+        anchor: View,
+        parent: ViewGroup,
+        badgeDescription: String? = null
+    ): BadgeDrawable =
         createBadge(anchor, NON_NUMERIC_BADGE).apply {
-            addToView(anchor, parent, getContentDescription(anchor, NON_NUMERIC_BADGE))
+            addToView(
+                anchor,
+                parent,
+                buildBadgeContentDescription(anchor, NON_NUMERIC_BADGE, badgeDescription)
+            )
         }
 
     @JvmStatic
-    fun showNumericBadgeIn(anchor: View, count: Int): BadgeDrawable {
+    fun showNumericBadgeIn(
+        anchor: View,
+        count: Int,
+        badgeDescription: String? = null
+    ): BadgeDrawable {
         val parent = anchor.parent
         if (parent is ViewGroup) {
-            return showNumericBadgeIn(anchor, parent, count)
+            return showNumericBadgeIn(anchor, parent, count, badgeDescription)
         } else {
             throw RuntimeException("The view's parent is not a ViewGroup. Use showNumericBadgeIn(anchor, parent, count) instead")
         }
     }
 
     @JvmStatic
-    fun showNumericBadgeIn(anchor: View, parent: ViewGroup, count: Int): BadgeDrawable =
+    fun showNumericBadgeIn(
+        anchor: View,
+        parent: ViewGroup,
+        count: Int,
+        badgeDescription: String? = null
+    ): BadgeDrawable =
         createBadge(anchor, count).apply {
             when (count) {
                 NON_NUMERIC_BADGE -> removeBadge(anchor)
                 else -> addToView(
                     anchor,
                     parent,
-                    getContentDescription(anchor, count)
+                    buildBadgeContentDescription(anchor, count, badgeDescription)
                 )
             }
         }
@@ -81,7 +98,11 @@ object Badge {
         setupCount(count)
     }
 
-    private fun getContentDescription(anchor: View, count: Int): String {
+    private fun buildBadgeContentDescription(
+        anchor: View,
+        count: Int,
+        badgeDescription: String?
+    ): String {
         if (!contentDescriptions.containsKey(anchor.hashCode())) {
             contentDescriptions[anchor.hashCode()] = anchor.contentDescription
         }
@@ -89,17 +110,23 @@ object Badge {
             count != 0 -> count
             else -> 1
         }
-        val suffix = anchor.context.resources.getQuantityString(
-            badgeNotificationsDescriptionResource,
-            countValueForStringsRetrieval,
-            countValueForStringsRetrieval
-        )
+        val suffix = badgeDescription ?:
+            getDefaultBadgeDescription(anchor, countValueForStringsRetrieval)
 
         return when (contentDescriptions[anchor.hashCode()]) {
             null -> suffix
             else -> "${contentDescriptions[anchor.hashCode()]}, $suffix"
         }
     }
+
+    private fun getDefaultBadgeDescription(
+        anchor: View,
+        countValueForStringsRetrieval: Int
+    ) = anchor.context.resources.getQuantityString(
+        badgeNotificationsDescriptionResource,
+        countValueForStringsRetrieval,
+        countValueForStringsRetrieval
+    )
 
     private fun resetContentDescription(anchor: View) {
         if (contentDescriptions.containsKey(anchor.hashCode())) {
