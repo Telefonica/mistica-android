@@ -78,7 +78,7 @@ class MediaCardView @JvmOverloads constructor(
         cardImageView.show()
     }
 
-    fun setCardImageContentDescription(description: CharSequence) {
+    fun setCardImageContentDescription(description: CharSequence?) {
         cardImageView.contentDescription = description
     }
 
