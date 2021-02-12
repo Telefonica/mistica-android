@@ -62,7 +62,7 @@ class ListsCatalogFragment : Fragment() {
                 2 -> rowView.configureView(
                     withAction = true,
                     withBadge = true,
-                    withBadgeDescription = "Tienes mensajes sin leer"
+                    withBadgeDescription = "You have unread messages"
                 )
                 3 -> rowView.configureView(
                     withAction = true,
@@ -95,7 +95,7 @@ class ListsCatalogFragment : Fragment() {
                     withAssetType = TYPE_LARGE_ICON,
                     withAction = true,
                     withBadgeNumeric = 5,
-                    withBadgeDescription = "5 mensajes nuevos"
+                    withBadgeDescription = "5 new messages"
                 )
                 10 -> rowView.configureView(
                     withLongDescription = false,
