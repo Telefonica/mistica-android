@@ -261,11 +261,6 @@ class ListRowView @JvmOverloads constructor(
         }
     }
 
-    @BindingAdapter(value = ["listRowBadgeVisible", "listRowBadgeDescription"], requireAll = false)
-    fun setBadge(view: ListRowView, show: Boolean, withBadgeDescription: String? = null) {
-        view.setBadge(show, withBadgeDescription)
-    }
-
     fun setBadge(show: Boolean, withBadgeDescription: String? = null) {
         Badge.removeBadge(badgeAnchor)
         if (show) {
@@ -274,11 +269,6 @@ class ListRowView @JvmOverloads constructor(
         } else {
             hideBadge()
         }
-    }
-
-    @BindingAdapter(value = ["listRowBadgeCount", "listRowBadgeDescription"], requireAll = false)
-    fun setNumericBadge(view: ListRowView, count: Int, withBadgeDescription: String? = null) {
-        view.setNumericBadge(count, withBadgeDescription)
     }
 
     fun setNumericBadge(count: Int, withBadgeDescription: String? = null) {
@@ -374,5 +364,23 @@ class ListRowView @JvmOverloads constructor(
         const val TYPE_IMAGE = 0
         const val TYPE_SMALL_ICON = 1
         const val TYPE_LARGE_ICON = 2
+
+        @BindingAdapter(
+            value = ["listRowBadgeCount", "listRowBadgeDescription"],
+            requireAll = false
+        )
+        @JvmStatic
+        fun setNumericBadge(view: ListRowView, count: Int, withBadgeDescription: String? = null) {
+            view.setNumericBadge(count, withBadgeDescription)
+        }
+
+        @BindingAdapter(
+            value = ["listRowBadgeVisible", "listRowBadgeDescription"],
+            requireAll = false
+        )
+        @JvmStatic
+        fun setBadge(view: ListRowView, show: Boolean, withBadgeDescription: String? = null) {
+            view.setBadge(show, withBadgeDescription)
+        }
     }
 }
