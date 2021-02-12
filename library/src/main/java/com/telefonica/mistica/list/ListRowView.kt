@@ -17,6 +17,7 @@ import androidx.annotation.LayoutRes
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
 import androidx.core.content.ContextCompat
+import androidx.databinding.BindingAdapter
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
@@ -69,16 +70,6 @@ import com.telefonica.mistica.util.convertDpToPx
         attribute = "listRowActionLayout",
         method = "setActionLayout"
     ),
-    BindingMethod(
-        type = ListRowView::class,
-        attribute = "listRowBadgeVisible",
-        method = "setBadge"
-    ),
-    BindingMethod(
-        type = ListRowView::class,
-        attribute = "listRowBadgeCount",
-        method = "setNumericBadge"
-    )
 )
 class ListRowView @JvmOverloads constructor(
     context: Context,
@@ -270,6 +261,11 @@ class ListRowView @JvmOverloads constructor(
         }
     }
 
+    @BindingAdapter(value = ["listRowBadgeVisible", "listRowBadgeDescription"], requireAll = false)
+    fun setBadge(view: ListRowView, show: Boolean, withBadgeDescription: String? = null) {
+        view.setBadge(show, withBadgeDescription)
+    }
+
     fun setBadge(show: Boolean, withBadgeDescription: String? = null) {
         Badge.removeBadge(badgeAnchor)
         if (show) {
@@ -278,6 +274,11 @@ class ListRowView @JvmOverloads constructor(
         } else {
             hideBadge()
         }
+    }
+
+    @BindingAdapter(value = ["listRowBadgeCount", "listRowBadgeDescription"], requireAll = false)
+    fun setNumericBadge(view: ListRowView, count: Int, withBadgeDescription: String? = null) {
+        view.setNumericBadge(count, withBadgeDescription)
     }
 
     fun setNumericBadge(count: Int, withBadgeDescription: String? = null) {
