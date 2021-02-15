@@ -17,6 +17,7 @@ import androidx.annotation.LayoutRes
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
 import androidx.core.content.ContextCompat
+import androidx.databinding.BindingAdapter
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
@@ -69,16 +70,6 @@ import com.telefonica.mistica.util.convertDpToPx
         attribute = "listRowActionLayout",
         method = "setActionLayout"
     ),
-    BindingMethod(
-        type = ListRowView::class,
-        attribute = "listRowBadgeVisible",
-        method = "setBadge"
-    ),
-    BindingMethod(
-        type = ListRowView::class,
-        attribute = "listRowBadgeCount",
-        method = "setNumericBadge"
-    )
 )
 class ListRowView @JvmOverloads constructor(
     context: Context,
@@ -150,7 +141,12 @@ class ListRowView @JvmOverloads constructor(
             setSubtitle(styledAttrs.getText(R.styleable.ListRowView_listRowSubtitle))
             setDescription(styledAttrs.getText(R.styleable.ListRowView_listRowDescription))
             setBoxed(styledAttrs.getBoolean(R.styleable.ListRowView_listRowIsBoxed, false))
-            setAssetType(styledAttrs.getInt(R.styleable.ListRowView_listRowAssetType, TYPE_SMALL_ICON))
+            setAssetType(
+                styledAttrs.getInt(
+                    R.styleable.ListRowView_listRowAssetType,
+                    TYPE_SMALL_ICON
+                )
+            )
             setAssetDrawable(styledAttrs.getDrawable(R.styleable.ListRowView_listRowAssetDrawable))
             setBadgeInitialState(styledAttrs)
 
@@ -265,22 +261,22 @@ class ListRowView @JvmOverloads constructor(
         }
     }
 
-    fun setBadge(show: Boolean) {
+    fun setBadge(show: Boolean, withBadgeDescription: String? = null) {
         Badge.removeBadge(badgeAnchor)
         if (show) {
-            Badge.showBadgeIn(badgeAnchor)
+            Badge.showBadgeIn(badgeAnchor, withBadgeDescription)
             badgeAnchor.visibility = View.VISIBLE
         } else {
             hideBadge()
         }
     }
 
-    fun setNumericBadge(count: Int) {
+    fun setNumericBadge(count: Int, withBadgeDescription: String? = null) {
         Badge.removeBadge(badgeAnchor)
         if (count <= 0) {
             hideBadge()
         } else {
-            Badge.showNumericBadgeIn(badgeAnchor, count)
+            Badge.showNumericBadgeIn(badgeAnchor, count, withBadgeDescription)
             badgeAnchor.visibility = View.VISIBLE
         }
     }
@@ -368,5 +364,23 @@ class ListRowView @JvmOverloads constructor(
         const val TYPE_IMAGE = 0
         const val TYPE_SMALL_ICON = 1
         const val TYPE_LARGE_ICON = 2
+
+        @BindingAdapter(
+            value = ["listRowBadgeCount", "listRowBadgeDescription"],
+            requireAll = false
+        )
+        @JvmStatic
+        fun setNumericBadge(view: ListRowView, count: Int, withBadgeDescription: String? = null) {
+            view.setNumericBadge(count, withBadgeDescription)
+        }
+
+        @BindingAdapter(
+            value = ["listRowBadgeVisible", "listRowBadgeDescription"],
+            requireAll = false
+        )
+        @JvmStatic
+        fun setBadge(view: ListRowView, show: Boolean, withBadgeDescription: String? = null) {
+            view.setBadge(show, withBadgeDescription)
+        }
     }
 }

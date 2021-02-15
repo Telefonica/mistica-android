@@ -56,6 +56,7 @@
             <enum name="gone" value="0" />
         </attr>
         <attr name="listRowBadgeVisible" format="boolean" />
+        <attr name="listRowBadgeDescription" format="string" />
         <attr name="onClick" format="string" />
     </declare-styleable>
 
@@ -91,8 +92,8 @@
         <attr name="highlightedCardContent" format="string" />
         <attr name="highlightedCardButton" format="string" />
         <attr name="highlightedCardImage" format="reference" />
-        <attr name="highlightedCardCloseButtonVisibility" format="boolean" />
         <attr name="highlightedCardButtonOnClick" format="string" />
+        <attr name="highlightedCardCloseButton" format="string" />
         <attr name="highlightedCardCloseButtonOnClick" format="string" />
         <attr name="highlightedCardButtonStyle" format="enum">
             <enum name="primary" value="0" />
@@ -147,6 +148,7 @@
     <declare-styleable name="MediaCardView">
         <attr name="cardImage" format="reference" />
         <attr name="cardPretitle" format="string" />
+        <attr name="cardImageContentDescription" format="string" />
     </declare-styleable>
 
     <declare-styleable name="DataCardView">

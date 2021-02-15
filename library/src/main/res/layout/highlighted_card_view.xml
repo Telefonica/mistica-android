@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/highlighted_card_background"
+    android:focusable="true"
     android:minHeight="100dp"
     android:padding="1dp">
 
@@ -13,6 +14,7 @@
         android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:importantForAccessibility="no"
         android:orientation="vertical"
         app:layout_constraintGuide_begin="16dp" />
 
@@ -21,6 +23,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
+        android:focusable="false"
         android:textAppearance="@style/AppTheme.TextAppearance.Preset5"
         app:layout_constraintEnd_toStartOf="@+id/highlighted_card_image"
         app:layout_constraintStart_toStartOf="@+id/guideline"
@@ -34,6 +37,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
+        android:focusable="false"
         android:textAppearance="@style/AppTheme.TextAppearance.Preset7"
         app:layout_constraintBottom_toTopOf="@+id/barrier_button"
         app:layout_constraintEnd_toStartOf="@+id/highlighted_card_image"
@@ -132,6 +136,7 @@
         android:id="@+id/highlighted_card_image"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
+        android:importantForAccessibility="no"
         android:scaleType="centerCrop"
         android:visibility="gone"
         app:layout_constrainedWidth="true"
@@ -148,6 +153,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:contentDescription="@string/close_button_content_description"
         android:src="@drawable/icn_cross_highlight_card"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"

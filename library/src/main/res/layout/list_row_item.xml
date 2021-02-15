@@ -23,6 +23,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_gravity="center"
+            android:importantForAccessibility="no"
             android:visibility="gone"
             tools:src="@android:drawable/btn_star"
             tools:visibility="visible" />
@@ -32,6 +33,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_gravity="center"
+            android:importantForAccessibility="no"
             android:scaleType="centerCrop"
             android:visibility="gone"
             app:shapeAppearance="@style/CircleImageView"

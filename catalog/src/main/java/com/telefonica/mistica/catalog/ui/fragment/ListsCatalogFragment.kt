@@ -61,7 +61,8 @@ class ListsCatalogFragment : Fragment() {
                 )
                 2 -> rowView.configureView(
                     withAction = true,
-                    withBadge = true
+                    withBadge = true,
+                    withBadgeDescription = "You have unread messages"
                 )
                 3 -> rowView.configureView(
                     withAction = true,
@@ -93,7 +94,8 @@ class ListsCatalogFragment : Fragment() {
                     withAsset = true,
                     withAssetType = TYPE_LARGE_ICON,
                     withAction = true,
-                    withBadgeNumeric = 5
+                    withBadgeNumeric = 5,
+                    withBadgeDescription = "5 new messages"
                 )
                 10 -> rowView.configureView(
                     withLongDescription = false,
@@ -193,7 +195,8 @@ class ListsCatalogFragment : Fragment() {
             withBadge: Boolean = false,
             withBadgeNumeric: Int = 0,
             withHeadline: Boolean = false,
-            withSubtitle: Boolean = false
+            withSubtitle: Boolean = false,
+            withBadgeDescription: String? = null
         ) {
             if (withHeadline) {
                 setHeadlineLayout(R.layout.list_row_text_headline)
@@ -226,9 +229,9 @@ class ListsCatalogFragment : Fragment() {
             }
 
             when {
-                withBadge -> setBadge(true)
-                withBadgeNumeric > 0 -> setNumericBadge(withBadgeNumeric)
-                else -> setBadge(false)
+                withBadge -> setBadge(true, withBadgeDescription)
+                withBadgeNumeric > 0 -> setNumericBadge(withBadgeNumeric, withBadgeDescription)
+                else -> setBadge(false, withBadgeDescription)
             }
         }
 

@@ -49,6 +49,12 @@ open class PopOver(
     open fun show(containerView: View): PopOver =
         apply { show(containerView as ViewGroup, targetView) }
 
+    open fun setDismissButtonContentDescription(@StringRes stringId: Int): PopOver =
+        apply { popOverData = popOverData.copy(dismissButtonContentDescription = context.getString(stringId)) }
+
+    open fun setDismissButtonContentDescription(contentDescription: String): PopOver =
+        apply { popOverData = popOverData.copy(dismissButtonContentDescription = contentDescription) }
+
     open fun hide() {
         if (popOverView == null) {
             return

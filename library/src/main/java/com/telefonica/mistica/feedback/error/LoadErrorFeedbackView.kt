@@ -68,6 +68,7 @@ class LoadErrorFeedbackView @JvmOverloads constructor(
         titleTextView = findViewById(R.id.load_error_feedback_title)
         descriptionTextView = findViewById(R.id.load_error_feedback_description)
         button = findViewById(R.id.load_error_feedback_button)
+        isFocusable = true
 
         if (attrs != null) {
             val theme = context.theme
