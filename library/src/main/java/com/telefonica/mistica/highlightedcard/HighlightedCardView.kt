@@ -264,10 +264,9 @@ class HighlightedCardView @JvmOverloads constructor(
     fun setCloseButton(buttonContentDescription: CharSequence) {
         closeButton.contentDescription = buttonContentDescription
         closeButton.show()
-        if (showCloseButtonBackground()) {
-            closeButtonBackground.show()
-        } else {
-            closeButtonBackground.hide()
+        when (showCloseButtonBackground()) {
+            true -> closeButtonBackground.show()
+            false -> closeButtonBackground.hide()
         }
     }
 
