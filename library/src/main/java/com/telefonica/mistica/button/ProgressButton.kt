@@ -75,6 +75,7 @@ class ProgressButton : FrameLayout {
             }
         }
 
+        isClickable = false
         setPadding(0, 0, 0, 0)
         setBackgroundColor(Color.TRANSPARENT)
         originalTextColors = buttonNormal.textColors
