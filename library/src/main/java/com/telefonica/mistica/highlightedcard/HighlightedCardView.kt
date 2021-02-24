@@ -121,6 +121,7 @@ class HighlightedCardView @JvmOverloads constructor(
     private val contentTextView: TextView
     private val image: ImageView
     private val closeButton: ImageView
+    private val closeButtonBackground: View
     private val container: ConstraintLayout
 
     private var button: Button?
@@ -140,6 +141,7 @@ class HighlightedCardView @JvmOverloads constructor(
         button = findViewById(R.id.highlighted_card_button_primary)
         image = findViewById(R.id.highlighted_card_image)
         closeButton = findViewById(R.id.highlighted_card_close_button)
+        closeButtonBackground = findViewById(R.id.highlighted_card_close_button_background)
         container = findViewById(R.id.highlighted_card_container)
 
         if (attrs != null) {
@@ -262,7 +264,14 @@ class HighlightedCardView @JvmOverloads constructor(
     fun setCloseButton(buttonContentDescription: CharSequence) {
         closeButton.contentDescription = buttonContentDescription
         closeButton.show()
+        when (showCloseButtonBackground()) {
+            true -> closeButtonBackground.show()
+            false -> closeButtonBackground.hide()
+        }
     }
+
+    private fun showCloseButtonBackground() =
+        isInverse || hasCustomBackground || imageStyle == IMAGE_STYLE_MODE_FILL
 
     fun setCloseButtonOnClick(onButtonClick: OnClickListener) {
         closeButton.setOnClickListener(onButtonClick)
@@ -270,15 +279,18 @@ class HighlightedCardView @JvmOverloads constructor(
 
     fun removeCloseButton() {
         closeButton.hide()
+        closeButtonBackground.hide()
     }
 
     private fun configureColors() {
         @ColorInt val primaryColor: Int =
-            context.getThemeColor(if (isInverse) R.attr.colorTextSecondaryInverse else R.attr.colorTextSecondary)
-
+            context.getThemeColor(if (isInverse) R.attr.colorTextPrimaryInverse else R.attr.colorTextPrimary)
         titleTextView.setTextColor(primaryColor)
-        contentTextView.setTextColor(primaryColor)
-        closeButton.setCrossColor(primaryColor)
+
+        @ColorInt val secondaryColor: Int =
+            context.getThemeColor(if (isInverse) R.attr.colorTextSecondaryInverse else R.attr.colorTextSecondary)
+        contentTextView.setTextColor(secondaryColor)
+
     }
 
     private fun configureBackground() {
