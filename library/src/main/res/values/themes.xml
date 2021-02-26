@@ -13,7 +13,7 @@
         <item name="android:textColorHint">?colorTextHint</item>
 
         <item name="android:colorControlActivated">?colorControlActivated</item>
-        <item name="android:colorControlNormal">?colorControlNormal</item>
+        <item name="android:colorControlNormal">?attr/colorControl</item>
 
         <item name="android:textAppearance">@style/AppTheme.TextAppearance.Preset6</item>
 
@@ -27,20 +27,20 @@
         <!-- Chips -->
         <item name="colorChipGroupBackground">?colorPrimary</item>
 
-        <item name="colorBadgeBackground">?colorError</item>
+        <item name="colorBadge">?colorError</item>
 
         <!-- Tag -->
-        <item name="colorPromoBackground">?colorAccent</item>
+        <item name="colorPromo">?colorAccent</item>
 
         <!-- Iconography colors -->
         <item name="colorIconPrimary">?colorPrimary</item>
         <item name="colorIconPrimaryDark">?colorPrimaryDark</item>
-        <item name="colorIconBrand">?colorPrimary</item>
-        <item name="colorIconSuccess">?colorAccent</item>
-        <item name="colorIconWarning">?colorPrimary</item>
-        <item name="colorIconError">?colorPrimary</item>
-        <item name="colorIconCustomPurple">?colorPrimary</item>
-        <item name="colorIconCustomMagenta">?colorPrimary</item>
+        <item name="colorBrand">?colorPrimary</item>
+        <item name="colorSuccess">?colorAccent</item>
+        <item name="colorWarning">?colorPrimary</item>
+        <item name="colorError">?colorPrimary</item>
+        <item name="colorPromo">?colorPrimary</item>
+        <item name="colorHighlight">?colorPrimary</item>
 
         <!-- ### Default empty values ### -->
 
@@ -57,11 +57,11 @@
 
         <item name="colorTextHint">@null</item>
         <item name="colorTextLink">@null</item>
-        <item name="colorTextLinkPressed">@null</item>
+        <item name="colorTextLinkSelected">@null</item>
         <item name="colorTextLinkDisabled">@null</item>
         <item name="colorTextLinkSnackbar">@null</item>
 
-        <item name="colorTextError">@null</item>
+        <item name="colorError">@null</item>
         <item name="colorTextDanger">@null</item>
         <item name="colorTextNavigationBarPrimary">@null</item>
 
@@ -98,34 +98,34 @@
         <item name="colorTextButtonSecondaryDisabled">@null</item>
 
         <item name="colorTextButtonPrimaryInverse">@null</item>
-        <item name="colorTextButtonPrimaryInversePressed">@null</item>
+        <item name="colorTextButtonPrimaryInverseSelected">@null</item>
         <item name="colorTextButtonPrimaryInverseDisabled">@null</item>
 
         <item name="colorTextButtonSecondaryInverse">@null</item>
-        <item name="colorTextButtonSecondaryInversePressed">@null</item>
+        <item name="colorTextButtonSecondaryInverseSelected">@null</item>
         <item name="colorTextButtonSecondaryInverseDisabled">@null</item>
 
         <item name="colorButtonPrimaryBackground">@null</item>
-        <item name="colorButtonPrimaryBackgroundPressed">@null</item>
+        <item name="colorButtonPrimaryBackgroundSelected">@null</item>
         <item name="colorButtonPrimaryBackgroundDisabled">@null</item>
 
         <item name="colorButtonSecondaryBackground">@null</item>
-        <item name="colorButtonSecondaryBackgroundPressed">@null</item>
+        <item name="colorButtonSecondaryBackgroundSelected">@null</item>
         <item name="colorButtonSecondaryBackgroundDisabled">@null</item>
 
         <item name="colorButtonDangerBackground">@null</item>
-        <item name="colorButtonDangerBackgroundPressed">@null</item>
+        <item name="colorButtonDangerBackgroundSelected">@null</item>
         <item name="colorButtonDangerBackgroundDisabled">@null</item>
 
         <item name="colorButtonPrimaryBackgroundInverse">@null</item>
-        <item name="colorButtonPrimaryBackgroundPressedInverse">@null</item>
+        <item name="colorButtonPrimaryBackgroundSelectedInverse">@null</item>
         <item name="colorButtonPrimaryBackgroundDisabledInverse">@null</item>
 
         <item name="colorButtonSecondaryBorderInverse">@null</item>
-        <item name="colorButtonSecondaryBorderPressedInverse">@null</item>
+        <item name="colorButtonSecondaryBorderSelectedInverse">@null</item>
         <item name="colorButtonSecondaryBorderDisabledInverse">@null</item>
 
-        <item name="colorLinkButtonBackgroundPressed">@null</item>
+        <item name="colorButtonLinkBackgroundSelected">@null</item>
         <item name="colorLinkButtonBackgroundPressedInverse">@null</item>
 
         <item name="colorButtonCircularBorderBackground">@null</item>
@@ -350,9 +350,9 @@
         <item name="scrollContentIndicatorGradientEnd">@null</item>
 
         <!-- Iconography colors -->
-        <item name="colorIconDisabled">@null</item>
-        <item name="colorIconInverse">@null</item>
-        <item name="colorIconSecondary">@null</item>
+        <item name="colorNeutralLow">@null</item>
+        <item name="colorInverse">@null</item>
+        <item name="colorNeutralMedium">@null</item>
 
         <!-- # Feedbacks # -->
         <item name="feedbackScreenSuccessWithGradient">false</item>

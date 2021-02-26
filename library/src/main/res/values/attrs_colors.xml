@@ -14,11 +14,11 @@
 
         <attr name="colorTextHint" format="color|reference" />
         <attr name="colorTextLink" format="color|reference" />
-        <attr name="colorTextLinkPressed" format="color|reference" />
+        <attr name="colorTextLinkSelected" format="color|reference" />
         <attr name="colorTextLinkDisabled" format="color|reference" />
         <attr name="colorTextLinkSnackbar" format="color|reference" />
 
-        <attr name="colorTextError" format="color|reference" />
+        <attr name="colorError" format="color|reference" />
         <attr name="colorTextDanger" format="color|reference" />
         <attr name="colorTextNavigationBarPrimary" format="color|reference" />
 
@@ -55,34 +55,34 @@
         <attr name="colorTextButtonSecondaryDisabled" format="color|reference" />
 
         <attr name="colorTextButtonPrimaryInverse" format="color|reference" />
-        <attr name="colorTextButtonPrimaryInversePressed" format="color|reference" />
+        <attr name="colorTextButtonPrimaryInverseSelected" format="color|reference" />
         <attr name="colorTextButtonPrimaryInverseDisabled" format="color|reference" />
 
         <attr name="colorTextButtonSecondaryInverse" format="color|reference" />
-        <attr name="colorTextButtonSecondaryInversePressed" format="color|reference" />
+        <attr name="colorTextButtonSecondaryInverseSelected" format="color|reference" />
         <attr name="colorTextButtonSecondaryInverseDisabled" format="color|reference" />
 
         <attr name="colorButtonPrimaryBackground" format="color|reference" />
-        <attr name="colorButtonPrimaryBackgroundPressed" format="color|reference" />
+        <attr name="colorButtonPrimaryBackgroundSelected" format="color|reference" />
         <attr name="colorButtonPrimaryBackgroundDisabled" format="color|reference" />
 
         <attr name="colorButtonSecondaryBackground" format="color|reference" />
-        <attr name="colorButtonSecondaryBackgroundPressed" format="color|reference" />
+        <attr name="colorButtonSecondaryBackgroundSelected" format="color|reference" />
         <attr name="colorButtonSecondaryBackgroundDisabled" format="color|reference" />
 
         <attr name="colorButtonDangerBackground" format="color|reference" />
-        <attr name="colorButtonDangerBackgroundPressed" format="color|reference" />
+        <attr name="colorButtonDangerBackgroundSelected" format="color|reference" />
         <attr name="colorButtonDangerBackgroundDisabled" format="color|reference" />
 
         <attr name="colorButtonPrimaryBackgroundInverse" format="color|reference" />
-        <attr name="colorButtonPrimaryBackgroundPressedInverse" format="color|reference" />
+        <attr name="colorButtonPrimaryBackgroundSelectedInverse" format="color|reference" />
         <attr name="colorButtonPrimaryBackgroundDisabledInverse" format="color|reference" />
 
         <attr name="colorButtonSecondaryBorderInverse" format="color|reference" />
-        <attr name="colorButtonSecondaryBorderPressedInverse" format="color|reference" />
+        <attr name="colorButtonSecondaryBorderSelectedInverse" format="color|reference" />
         <attr name="colorButtonSecondaryBorderDisabledInverse" format="color|reference" />
 
-        <attr name="colorLinkButtonBackgroundPressed" format="color|reference" />
+        <attr name="colorButtonLinkBackgroundSelected" format="color|reference" />
         <attr name="colorLinkButtonBackgroundPressedInverse" format="color|reference" />
 
         <attr name="colorButtonCircularBorderBackground" format="color|reference" />
@@ -304,7 +304,7 @@
         <attr name="colorChipBackgroundChecked" format="color|reference" />
 
         <!-- Badge -->
-        <attr name="colorBadgeBackground" format="color|reference" />
+        <attr name="colorBadge" format="color|reference" />
 
         <!-- Scroll content indicator -->
         <attr name="scrollContentIndicatorGradientStart" format="color|reference" />
@@ -313,18 +313,18 @@
         <!-- Iconography colors -->
         <attr name="colorIconPrimary" format="color|reference" />
         <attr name="colorIconPrimaryDark" format="color|reference" />
-        <attr name="colorIconBrand" format="color|reference" />
-        <attr name="colorIconSuccess" format="color|reference" />
-        <attr name="colorIconDisabled" format="color|reference" />
-        <attr name="colorIconInverse" format="color|reference" />
-        <attr name="colorIconSecondary" format="color|reference" />
-        <attr name="colorIconWarning" format="color|reference" />
-        <attr name="colorIconError" format="color|reference" />
-        <attr name="colorIconCustomPurple" format="color|reference" />
-        <attr name="colorIconCustomMagenta" format="color|reference" />
+        <attr name="colorBrand" format="color|reference" />
+        <attr name="colorSuccess" format="color|reference" />
+        <attr name="colorNeutralLow" format="color|reference" />
+        <attr name="colorInverse" format="color|reference" />
+        <attr name="colorNeutralMedium" format="color|reference" />
+        <attr name="colorWarning" format="color|reference" />
+        <attr name="colorError" format="color|reference" />
+        <attr name="colorPromo" format="color|reference" />
+        <attr name="colorHighlight" format="color|reference" />
 
         <!-- Tag -->
-        <attr name="colorPromoBackground" format="color|reference" />
+        <attr name="colorPromo" format="color|reference" />
 
     </declare-styleable>
 

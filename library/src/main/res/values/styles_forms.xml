@@ -8,7 +8,7 @@
         <item name="boxStrokeWidth">0dp</item>
         <item name="boxStrokeWidthFocused">0dp</item>
         <item name="hintEnabled">true</item>
-        <item name="errorTextColor">?colorTextError</item>
+        <item name="errorTextColor">?attr/colorError</item>
         <item name="hintTextColor">?textInputLabel</item>
         <item name="hintTextAppearance">@style/AppTheme.Forms.TextInputLayout.Hint</item>
         <item name="errorTextAppearance">@style/AppTheme.Forms.TextInputLayout.Error</item>
@@ -27,7 +27,7 @@
     </style>
 
     <style name="AppTheme.Forms.TextInputLayout.Error" parent="TextAppearance.Design.Error">
-        <item name="android:textColor">?colorTextError</item>
+        <item name="android:textColor">?attr/colorError</item>
         <item name="colorError">?colorError</item>
     </style>
 

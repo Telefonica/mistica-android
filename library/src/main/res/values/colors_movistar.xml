@@ -2,12 +2,11 @@
 <resources>
     <color name="movistar_color_blue">#019DF4</color>
     <color name="movistar_color_blue_dark">#008EDD</color>
-    <color name="movistar_color_blue_light60">#65C3F8</color>
     <color name="movistar_color_blue_light50">#80CEF9</color>
     <color name="movistar_color_blue_light30">#B3E1FB</color>
-    <color name="movistar_color_blue_light60_25_percent">#40D8F0FD</color>
-    <color name="movistar_color_blue_light30_25_percent">#40ECF7FE</color>
     <color name="movistar_color_blue_light10">#E6F5FD</color>
+    <color name="movistar_color_blue_light50_25_percent">#E3F4FD</color>
+    <color name="movistar_color_blue_light30_25_percent">#ECF7FE</color>
 
     <color name="movistar_color_green">#5CB615</color>
     <color name="movistar_color_green_dark">#499110</color>
@@ -16,7 +15,7 @@
 
     <color name="movistar_color_pepper">#FF374A</color>
     <color name="movistar_color_pepper_dark">#D73241</color>
-    <color name="movistar_color_pepper_light">#FFC3C8</color>
+    <color name="movistar_color_pepper_light30">#FFC3C8</color>
 
     <color name="movistar_color_egg">#F28D15</color>
     <color name="movistar_color_egg_light">#F8D2B3</color>
@@ -38,7 +37,7 @@
     <color name="movistar_prominent_color_blue_dark">#081F2D</color>
 
     <!--    Palette colors with custom alpha -->
-    <color name="movistar_color_grey_6_60_percent">#99313235</color>
+    <color name="movistar_color_grey_6_60_alpha">#313235</color>
     <color name="movistar_color_white_20_percent">#33FFFFFF</color>
 
 </resources>

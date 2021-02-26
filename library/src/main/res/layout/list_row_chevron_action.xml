@@ -5,4 +5,4 @@
     android:layout_height="match_parent"
     android:importantForAccessibility="no"
     android:src="@drawable/icn_arrow"
-    app:tint="?colorTextHint" />
+    app:tint="?colorDivider" />

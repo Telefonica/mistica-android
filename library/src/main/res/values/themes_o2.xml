@@ -16,11 +16,11 @@
 
         <item name="colorTextHint">@color/o2_color_grey_2</item>
         <item name="colorTextLink">@color/o2_color_blue_primary</item>
-        <item name="colorTextLinkPressed">@color/o2_color_blue_primary_dark</item>
+        <item name="colorTextLinkSelected">@color/o2_color_blue_primary_dark</item>
         <item name="colorTextLinkDisabled">@color/o2_color_blue_light</item>
         <item name="colorTextLinkSnackbar">@color/o2_color_blue_light</item>
 
-        <item name="colorTextError">@color/o2_color_pepper</item>
+        <item name="colorError">@color/o2_color_pepper</item>
         <item name="colorTextNavigationBarPrimary">@color/o2_color_white</item>
 
         <item name="colorTextAccent">@color/o2_color_blue_light</item>
@@ -44,7 +44,7 @@
         <item name="colorSearchOverlay">@color/o2_color_black_50_percent</item>
 
         <!-- Controls -->
-        <item name="colorControlNormal">@color/o2_color_grey_3</item>
+        <item name="colorControl">@color/o2_color_grey_3</item>
         <item name="colorControlHighlight">@color/o2_color_grey_5</item>
         <item name="colorControlActivated">@color/o2_color_blue_primary</item>
 
@@ -65,31 +65,31 @@
         <item name="colorTextButtonSecondaryDisabled">@color/o2_color_blue_primary_light_60</item>
 
         <item name="colorTextButtonPrimaryInverse">@color/o2_color_blue_primary</item>
-        <item name="colorTextButtonPrimaryInversePressed">@color/o2_color_blue_primary_dark</item>
+        <item name="colorTextButtonPrimaryInverseSelected">@color/o2_color_blue_primary_dark</item>
         <item name="colorTextButtonPrimaryInverseDisabled">@color/o2_color_blue_primary_light_10
         </item>
 
         <item name="colorTextButtonSecondaryInverse">@color/o2_color_white</item>
-        <item name="colorTextButtonSecondaryInversePressed">@color/o2_color_white</item>
+        <item name="colorTextButtonSecondaryInverseSelected">@color/o2_color_white</item>
         <item name="colorTextButtonSecondaryInverseDisabled">@color/o2_color_blue_primary_light_60
         </item>
 
         <item name="colorButtonPrimaryBackground">@color/o2_color_blue_primary</item>
-        <item name="colorButtonPrimaryBackgroundPressed">@color/o2_color_blue_primary_dark</item>
+        <item name="colorButtonPrimaryBackgroundSelected">@color/o2_color_blue_primary_dark</item>
         <item name="colorButtonPrimaryBackgroundDisabled">@color/o2_color_blue_primary_light_10
         </item>
 
         <item name="colorButtonSecondaryBackground">@color/o2_color_blue_primary</item>
-        <item name="colorButtonSecondaryBackgroundPressed">@color/o2_color_blue_primary_dark</item>
+        <item name="colorButtonSecondaryBackgroundSelected">@color/o2_color_blue_primary_dark</item>
         <item name="colorButtonSecondaryBackgroundDisabled">@color/o2_color_blue_primary_light_10
         </item>
 
         <item name="colorButtonDangerBackground">@color/o2_color_pepper</item>
-        <item name="colorButtonDangerBackgroundPressed">@color/o2_color_pepper_dark</item>
+        <item name="colorButtonDangerBackgroundSelected">@color/o2_color_pepper_dark</item>
         <item name="colorButtonDangerBackgroundDisabled">@color/o2_color_pepper_light</item>
 
         <item name="colorButtonPrimaryBackgroundInverse">@color/o2_color_white</item>
-        <item name="colorButtonPrimaryBackgroundPressedInverse">
+        <item name="colorButtonPrimaryBackgroundSelectedInverse">
             @color/o2_color_blue_primary_light_60
         </item>
         <item name="colorButtonPrimaryBackgroundDisabledInverse">
@@ -97,10 +97,10 @@
         </item>
 
         <item name="colorButtonSecondaryBorderInverse">@color/o2_color_white</item>
-        <item name="colorButtonSecondaryBorderPressedInverse">@color/o2_color_blue_light_60</item>
+        <item name="colorButtonSecondaryBorderSelectedInverse">@color/o2_color_blue_light_60</item>
         <item name="colorButtonSecondaryBorderDisabledInverse">@color/o2_color_blue_light_60</item>
 
-        <item name="colorLinkButtonBackgroundPressed">@color/o2_color_blue_primary_light_10</item>
+        <item name="colorButtonLinkBackgroundSelected">@color/o2_color_blue_primary_light_10</item>
         <item name="colorLinkButtonBackgroundPressedInverse">@color/o2_color_white_20_percent</item>
 
         <item name="colorButtonCircularBorderBackground">@color/o2_color_grey_3</item>
@@ -345,12 +345,12 @@
         <item name="scrollContentIndicatorGradientEnd">@color/o2_color_blue_primary_dark</item>
 
         <!-- Iconography colors -->
-        <item name="colorIconInverse">@color/o2_color_white</item>
-        <item name="colorIconSecondary">@color/o2_color_grey_2</item>
-        <item name="colorIconDisabled">@color/o2_color_grey_3</item>
+        <item name="colorInverse">@color/o2_color_white</item>
+        <item name="colorNeutralMedium">@color/o2_color_grey_2</item>
+        <item name="colorNeutralLow">@color/o2_color_grey_3</item>
 
         <!-- Tag -->
-        <item name="colorPromoBackground">@color/o2_color_purple</item>
+        <item name="colorPromo">@color/o2_color_purple</item>
 
         <!-- Stepper -->
         <item name="stepperFinishedStepAnimation">@raw/feedback_success_o2</item>

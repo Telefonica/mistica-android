@@ -53,7 +53,7 @@
         <item name="backgroundTint">@color/button_primary_background_selector</item>
         <item name="android:textColor">?colorTextButtonPrimary</item>
         <item name="iconTint">?colorTextButtonPrimary</item>
-        <item name="rippleColor">?colorButtonPrimaryBackgroundPressed</item>
+        <item name="rippleColor">?attr/colorButtonPrimaryBackgroundSelected</item>
     </style>
 
     <style name="AppTheme.Button.DefaultButton.Small">
@@ -83,7 +83,7 @@
         <item name="backgroundTint">@color/button_danger_background_selector</item>
         <item name="android:textColor">?colorTextButtonPrimary</item>
         <item name="iconTint">?colorTextButtonPrimary</item>
-        <item name="rippleColor">?colorButtonDangerBackgroundPressed</item>
+        <item name="rippleColor">?attr/colorButtonDangerBackgroundSelected</item>
     </style>
 
     <style name="AppTheme.Button.DangerButton.Small">
@@ -97,14 +97,14 @@
         <item name="backgroundTint">@android:color/transparent</item>
         <item name="android:textColor">@color/text_button_link_selector</item>
         <item name="iconTint">@color/text_button_link_selector</item>
-        <item name="rippleColor">?colorLinkButtonBackgroundPressed</item>
+        <item name="rippleColor">?attr/colorButtonLinkBackgroundSelected</item>
     </style>
 
     <style name="AppTheme.Button.PrimaryButtonInverse">
         <item name="backgroundTint">@color/button_primary_background_inverse_selector</item>
         <item name="android:textColor">@color/text_button_primary_inverse_selector</item>
         <item name="iconTint">@color/text_button_primary_inverse_selector</item>
-        <item name="rippleColor">?colorButtonPrimaryBackgroundPressedInverse</item>
+        <item name="rippleColor">?attr/colorButtonPrimaryBackgroundSelectedInverse</item>
     </style>
 
     <style name="AppTheme.Button.PrimaryButtonInverse.Small">
