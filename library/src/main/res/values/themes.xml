@@ -25,7 +25,7 @@
         </item>
 
         <!-- Chips -->
-        <item name="colorChipGroupBackground">?colorPrimary</item>
+        <item name="colorChipGroupBackground">?attr/colorBrand</item>
 
         <item name="colorBadge">?colorError</item>
 
@@ -33,14 +33,14 @@
         <item name="colorPromo">?colorAccent</item>
 
         <!-- Iconography colors -->
-        <item name="colorIconPrimary">?colorPrimary</item>
+        <item name="colorIconPrimary">?attr/colorBrand</item>
         <item name="colorIconPrimaryDark">?colorPrimaryDark</item>
-        <item name="colorBrand">?colorPrimary</item>
+        <item name="colorBrand">?attr/colorBrand</item>
         <item name="colorSuccess">?colorAccent</item>
-        <item name="colorWarning">?colorPrimary</item>
-        <item name="colorError">?colorPrimary</item>
-        <item name="colorPromo">?colorPrimary</item>
-        <item name="colorHighlight">?colorPrimary</item>
+        <item name="colorWarning">?attr/colorBrand</item>
+        <item name="colorError">?attr/colorBrand</item>
+        <item name="colorPromo">?attr/colorBrand</item>
+        <item name="colorHighlight">?attr/colorBrand</item>
 
         <!-- ### Default empty values ### -->
 
@@ -57,12 +57,12 @@
 
         <item name="colorTextHint">@null</item>
         <item name="colorTextLink">@null</item>
-        <item name="colorTextLinkSelected">@null</item>
+        <item name="colorTextLink">@null</item>
         <item name="colorTextLinkDisabled">@null</item>
         <item name="colorTextLinkSnackbar">@null</item>
 
         <item name="colorError">@null</item>
-        <item name="colorTextDanger">@null</item>
+        <item name="colorHighlight">@null</item>
         <item name="colorTextNavigationBarPrimary">@null</item>
 
         <item name="colorTextAccent">@null</item>
@@ -70,7 +70,7 @@
 
         <item name="colorTabSelected">@null</item>
 
-        <item name="textInputLabel">@null</item>
+        <item name="colorControlActivated">@null</item>
 
         <item name="colorBackgroundAlternative">@null</item>
 

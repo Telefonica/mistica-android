@@ -16,7 +16,7 @@
 
         <item name="colorTextHint">@color/o2_color_grey_2</item>
         <item name="colorTextLink">@color/o2_color_blue_primary</item>
-        <item name="colorTextLinkSelected">@color/o2_color_blue_primary_dark</item>
+        <item name="colorTextLink">@color/o2_color_blue_primary_dark</item>
         <item name="colorTextLinkDisabled">@color/o2_color_blue_light</item>
         <item name="colorTextLinkSnackbar">@color/o2_color_blue_light</item>
 
@@ -27,12 +27,12 @@
         <item name="colorTextAccentDisabled">@color/o2_color_grey_2</item>
 
         <item name="colorAccent">@color/o2_color_teal</item>
-        <item name="colorPrimary">@color/o2_color_blue_primary</item>
+        <item name="colorBrand">@color/o2_color_blue_primary</item>
         <item name="colorPrimaryDark">@color/o2_color_blue_primary_dark</item>
 
         <item name="colorTabSelected">@color/o2_color_blue_primary</item>
 
-        <item name="textInputLabel">@color/o2_color_blue_primary</item>
+        <item name="colorControlActivated">@color/o2_color_blue_primary</item>
 
         <item name="colorBackgroundAlternative">@color/o2_color_grey_5</item>
 
@@ -329,7 +329,7 @@
 
         <!-- Chips -->
         <item name="colorChipTextDefault">@color/o2_color_white</item>
-        <item name="colorChipTextChecked">?colorPrimary</item>
+        <item name="colorChipTextChecked">?attr/colorBrand</item>
         <item name="colorChipBackgroundDefault">@color/o2_color_blue_primary_dark</item>
         <item name="colorChipBackgroundChecked">@color/o2_color_white</item>
 

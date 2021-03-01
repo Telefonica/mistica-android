@@ -16,24 +16,24 @@
 
         <item name="colorTextHint">@color/o2_classic_color_grey_2</item>
         <item name="colorTextLink">@color/o2_classic_color_sky_blue</item>
-        <item name="colorTextLinkSelected">@color/o2_classic_color_sky_blue</item>
+        <item name="colorTextLink">@color/o2_classic_color_sky_blue</item>
         <item name="colorTextLinkDisabled">@color/o2_classic_color_sky_blue_light</item>
         <item name="colorTextLinkSnackbar">@color/o2_classic_color_sky_blue_light</item>
 
         <item name="colorError">@color/o2_classic_color_pepper</item>
-        <item name="colorTextDanger">@color/o2_classic_color_pink</item>
+        <item name="colorHighlight">@color/o2_classic_color_pink</item>
         <item name="colorTextNavigationBarPrimary">@color/o2_classic_color_white</item>
 
         <item name="colorTextAccent">@color/o2_classic_color_sky_blue_light</item>
         <item name="colorTextAccentDisabled">@color/o2_classic_color_grey_2</item>
 
         <item name="colorAccent">@color/o2_classic_color_gem</item>
-        <item name="colorPrimary">@color/o2_classic_color_blue</item>
+        <item name="colorBrand">@color/o2_classic_color_blue</item>
         <item name="colorPrimaryDark">@color/o2_classic_color_blue_dark</item>
 
         <item name="colorTabSelected">@color/o2_classic_color_gem</item>
 
-        <item name="textInputLabel">@color/o2_classic_color_gem</item>
+        <item name="colorControlActivated">@color/o2_classic_color_gem</item>
 
         <item name="colorBackgroundAlternative">@color/o2_classic_color_grey_5</item>
 
@@ -365,7 +365,7 @@
 
         <!-- Chips -->
         <item name="colorChipTextDefault">@color/o2_classic_color_white</item>
-        <item name="colorChipTextChecked">?colorPrimary</item>
+        <item name="colorChipTextChecked">?attr/colorBrand</item>
         <item name="colorChipBackgroundDefault">@color/o2_classic_color_blue_dark</item>
         <item name="colorChipBackgroundChecked">@color/o2_classic_color_white</item>
 

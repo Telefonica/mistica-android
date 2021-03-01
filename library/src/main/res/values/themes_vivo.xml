@@ -16,24 +16,24 @@
 
         <item name="colorTextHint">@color/vivo_color_grey_2</item>
         <item name="colorTextLink">@color/vivo_color_purple</item>
-        <item name="colorTextLinkSelected">@color/vivo_color_purple</item>
+        <item name="colorTextLink">@color/vivo_color_purple</item>
         <item name="colorTextLinkDisabled">@color/vivo_color_purple_light40</item>
         <item name="colorTextLinkSnackbar">@color/vivo_color_purple_light40</item>
 
         <item name="colorError">@color/vivo_color_pepper</item>
-        <item name="colorTextDanger">@color/vivo_color_pink</item>
+        <item name="colorHighlight">@color/vivo_color_pink</item>
         <item name="colorTextNavigationBarPrimary">@color/vivo_color_white</item>
 
         <item name="colorTextAccent">@color/vivo_color_white</item>
         <item name="colorTextAccentDisabled">@color/vivo_color_white_50_percent</item>
 
         <item name="colorAccent">@color/vivo_color_green</item>
-        <item name="colorPrimary">@color/vivo_color_purple</item>
+        <item name="colorBrand">@color/vivo_color_purple</item>
         <item name="colorPrimaryDark">@color/vivo_color_purple_dark</item>
 
         <item name="colorTabSelected">@color/vivo_color_purple</item>
 
-        <item name="textInputLabel">@color/vivo_color_purple</item>
+        <item name="colorControlActivated">@color/vivo_color_purple</item>
 
         <item name="colorBackgroundAlternative">@color/vivo_color_grey_5</item>
 
@@ -329,7 +329,7 @@
 
         <!-- Chips -->
         <item name="colorChipTextDefault">@color/vivo_color_white</item>
-        <item name="colorChipTextChecked">?colorPrimary</item>
+        <item name="colorChipTextChecked">?attr/colorBrand</item>
         <item name="colorChipBackgroundDefault">@color/vivo_color_purple_dark</item>
         <item name="colorChipBackgroundChecked">@color/vivo_color_white</item>
 

@@ -14,12 +14,12 @@
 
         <attr name="colorTextHint" format="color|reference" />
         <attr name="colorTextLink" format="color|reference" />
-        <attr name="colorTextLinkSelected" format="color|reference" />
+        <attr name="colorTextLink" format="color|reference" />
         <attr name="colorTextLinkDisabled" format="color|reference" />
         <attr name="colorTextLinkSnackbar" format="color|reference" />
 
         <attr name="colorError" format="color|reference" />
-        <attr name="colorTextDanger" format="color|reference" />
+        <attr name="colorHighlight" format="color|reference" />
         <attr name="colorTextNavigationBarPrimary" format="color|reference" />
 
         <attr name="colorTextAccent" format="color|reference" />
@@ -27,7 +27,7 @@
 
         <attr name="colorTabSelected" format="color|reference" />
 
-        <attr name="textInputLabel" format="color|reference" />
+        <attr name="colorControlActivated" format="color|reference" />
 
         <attr name="colorBackgroundAlternative" format="color|reference" />
 
@@ -307,7 +307,7 @@
         <attr name="colorBadge" format="color|reference" />
 
         <!-- Scroll content indicator -->
-        <attr name="scrollContentIndicatorGradientStart" format="color|reference" />
+        <attr name="colorBrandscrollContentIndicatorGradientStart" format="color|reference" />
         <attr name="scrollContentIndicatorGradientEnd" format="color|reference" />
 
         <!-- Iconography colors -->
