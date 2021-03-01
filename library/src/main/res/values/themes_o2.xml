@@ -61,7 +61,7 @@
         <!-- Buttons -->
         <item name="colorTextButtonPrimary">@color/o2_color_white</item>
         <item name="colorTextButtonSecondary">@color/o2_color_blue_primary</item>
-        <item name="colorTextButtonSecondaryPressed">@color/o2_color_blue_primary_dark</item>
+        <item name="colorTextButtonSecondarySelected">@color/o2_color_blue_primary_dark</item>
         <item name="colorTextButtonSecondaryDisabled">@color/o2_color_blue_primary_light_60</item>
 
         <item name="colorTextButtonPrimaryInverse">@color/o2_color_blue_primary</item>

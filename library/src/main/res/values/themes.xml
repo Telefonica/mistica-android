@@ -94,7 +94,7 @@
         <!-- Buttons -->
         <item name="colorTextButtonPrimary">@null</item>
         <item name="colorTextButtonSecondary">@null</item>
-        <item name="colorTextButtonSecondaryPressed">@null</item>
+        <item name="colorTextButtonSecondarySelected">@null</item>
         <item name="colorTextButtonSecondaryDisabled">@null</item>
 
         <item name="colorTextButtonPrimaryInverse">@null</item>

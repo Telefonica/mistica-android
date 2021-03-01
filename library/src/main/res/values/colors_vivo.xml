@@ -19,7 +19,7 @@
     <color name="vivo_color_pink">#EB3D7D</color>
     <color name="vivo_color_pepper">#CC1F59</color>
     <color name="vivo_color_pepper_dark">#B71D63</color>
-    <color name="vivo_color_pepper_light">#F7B1CB</color>
+    <color name="vivo_color_pepper_light30">#F7B1CB</color>
 
     <color name="vivo_color_grey_1">#F6F6F6</color>
     <color name="vivo_color_grey_2">#EEEEEE</color>
@@ -28,4 +28,9 @@
     <color name="vivo_color_grey_5">#666666</color>
     <color name="vivo_color_grey_6">#000000</color>
     <color name="vivo_color_white">#FFFFFF</color>
+
+    <!--    Palette colors with custom alpha -->
+    <color name="vivo_color_grey_6_60_alpha">#99000000</color>
+    <color name="vivo_color_white_20_alpha">#33000000</color>
+
 </resources>

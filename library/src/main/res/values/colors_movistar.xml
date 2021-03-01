@@ -38,6 +38,5 @@
 
     <!--    Palette colors with custom alpha -->
     <color name="movistar_color_grey_6_60_alpha">#313235</color>
-    <color name="movistar_color_white_20_percent">#33FFFFFF</color>
 
 </resources>
