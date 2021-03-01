@@ -86,7 +86,7 @@ Just set your App or any specific activity to use any of the following:
 * [Lists](library/src/main/java/com/telefonica/mistica/list)
 * [Headers](library/src/main/java/com/telefonica/mistica/header)
 * [Sections](library/src/main/java/com/telefonica/mistica/section)
-* [Chips](library/src/main/java/com/telefonica/mistica/chips)
+* [Filters](library/src/main/java/com/telefonica/mistica/filters)
 * [Highlighted Cards](library/src/main/java/com/telefonica/mistica/highlightedcard)
 * [Controls](library/src/main/java/com/telefonica/mistica/control)
 * [Media Cards](library/src/main/java/com/telefonica/mistica/mediacard)

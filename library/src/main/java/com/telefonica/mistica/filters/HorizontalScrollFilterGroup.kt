@@ -1,4 +1,4 @@
-package com.telefonica.mistica.chips
+package com.telefonica.mistica.filters
 
 import android.content.Context
 import android.graphics.Rect
@@ -12,33 +12,33 @@ import com.google.android.material.chip.ChipGroup
 import com.telefonica.mistica.R
 import com.telefonica.mistica.util.children
 
-class HorizontalScrollChipGroup @JvmOverloads constructor(
+class HorizontalScrollFilterGroup @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyle: Int = 0
 ) : FrameLayout(context, attrs, defStyle) {
 
-    private val chipGroup: ChipGroup by lazy { findViewById<ChipGroup>(R.id.chips_group) }
-    private val scrollView: HorizontalScrollView by lazy { findViewById<HorizontalScrollView>(R.id.chips_scroll_view) }
+    private val chipGroup: ChipGroup by lazy { findViewById(R.id.chips_group) }
+    private val scrollView: HorizontalScrollView by lazy { findViewById(R.id.chips_scroll_view) }
     private val horizontalPadding: Int =
         context.resources.getDimensionPixelOffset(R.dimen.chip_group_horizontal_padding)
 
     init {
-        View.inflate(context, R.layout.horizontal_scroll_chip_group, this)
+        View.inflate(context, R.layout.horizontal_scroll_filter_group, this)
         setOnCheckedChangeListener { _, _ -> }
     }
 
-    fun addChip(chip: Chip) {
-        chipGroup.addView(chip)
+    fun addFilter(filter: Chip) {
+        chipGroup.addView(filter)
 
-        if (chip.isChecked) {
+        if (filter.isChecked) {
             chipGroup.clearCheck()
-            chipGroup.check(chip.id)
+            chipGroup.check(filter.id)
             chipGroup.makeCheckedChipNonCheckable()
         }
     }
 
-    fun removeAllChips() {
+    fun removeAllFilters() {
         chipGroup.removeAllViews()
     }
 

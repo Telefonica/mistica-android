@@ -16,10 +16,10 @@
             android:layout_gravity="start"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:text="Chips" />
+            android:text="Filters" />
 
-        <com.telefonica.mistica.chips.HorizontalScrollChipGroup
-            android:id="@+id/chips"
+        <com.telefonica.mistica.filters.HorizontalScrollFilterGroup
+            android:id="@+id/filters"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp" />
