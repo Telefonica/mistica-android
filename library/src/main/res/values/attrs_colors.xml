@@ -64,7 +64,6 @@
         <attr name="colorControl" format="color|reference" />
         <attr name="colorControlActivated" format="color|reference" />
         <attr name="colorControlError" format="color|reference" />
-        <attr name="colorControlHighlight" format="color|reference" />
 
         <attr name="colorLoadingBar" format="color|reference" />
         <attr name="colorLoadingBarBackground" format="color|reference" />

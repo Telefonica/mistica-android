@@ -46,7 +46,7 @@
 
         <!-- Controls -->
         <item name="colorControl">@color/o2_classic_color_grey_3</item>
-        <item name="colorControlHighlight">@color/o2_classic_color_grey_5</item>
+        <item name="colorBackgroundAlternative">@color/o2_classic_color_grey_5</item>
         <item name="colorControlActivated">@color/o2_classic_color_gem</item>
 
         <!-- Bubbles -->

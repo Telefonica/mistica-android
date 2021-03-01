@@ -17,7 +17,7 @@
         <item name="colorBackgroundSkeletonInverse">@color/movistar_color_blue_dark</item>
         <item name="colorNavigationBarBackground">@color/movistar_color_blue</item>
         <item name="colorNavigationSearchBarBackground">@color/movistar_color_blue_dark</item>
-        <item name="colorBackgroundAlternative">@color/movistar_color_grey_2</item>
+        <item name="colorBackgroundAlternative">@color/movistar_color_grey_1</item>
         <item name="colorBackgroundFeedbackBottom">@color/movistar_color_blue</item>
 
         <!-- Border colors -->
@@ -75,7 +75,6 @@
         <item name="colorControl">@color/movistar_color_grey_3</item>
         <item name="colorControlActivated">@color/movistar_color_blue</item>
         <item name="colorControlError">@color/movistar_color_pepper</item>
-        <item name="colorControlHighlight">@color/movistar_color_grey_1</item>
 
         <item name="colorLoadingBar">@color/movistar_color_green</item>
         <item name="colorLoadingBarBackground">@color/movistar_color_green_light50</item>
