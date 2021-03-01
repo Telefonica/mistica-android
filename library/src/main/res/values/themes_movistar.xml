@@ -153,7 +153,6 @@
         <!-- General -->
         <item name="colorPrimary">@color/movistar_prominent_color_blue</item>
         <item name="colorPrimaryDark">@color/movistar_prominent_color_blue_dark</item>
-        <item name="colorTabSelected">@color/movistar_prominent_color_blue</item>
         <item name="colorBrand">@color/movistar_prominent_color_blue</item>
 
         <!-- Chips -->
@@ -165,7 +164,6 @@
         <!-- General -->
         <item name="colorPrimary">@color/movistar_prominent_color_blue</item>
         <item name="colorPrimaryDark">@color/movistar_prominent_color_blue_dark</item>
-        <item name="colorTabSelected">@color/movistar_prominent_color_blue</item>
         <item name="colorBrand">@color/movistar_prominent_color_blue</item>
 
         <!-- Chips -->
