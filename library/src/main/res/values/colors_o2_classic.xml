@@ -6,12 +6,10 @@
     <color name="o2_classic_color_sky_blue">#0090D0</color>
     <color name="o2_classic_color_sky_blue_dark">#057DB2</color>
     <color name="o2_classic_color_sky_blue_light">#65B4E4</color>
-    <color name="o2_classic_color_sky_blue_30_percent">#4D0090D0</color>
     <color name="o2_classic_color_sky_blue_light_50">#80C7E7</color>
     <color name="o2_classic_color_sky_blue_light_30">#D0E8F6</color>
     <color name="o2_classic_color_sky_blue_light_10">#E9F5FB</color>
     <color name="o2_classic_color_deep_sky_blue">#7FD4FE</color>
-
 
     <color name="o2_classic_color_gem">#01B7B4</color>
     <color name="o2_classic_color_gem_dark">#099E9B</color>
@@ -39,4 +37,9 @@
     <color name="o2_classic_color_grey_5">#757575</color>
     <color name="o2_classic_color_grey_6">#000033</color>
     <color name="o2_classic_color_white">#FFFFFF</color>
+
+    <!--    Palette colors with custom alpha -->
+    <color name="o2_color_classic_grey_6_60_alpha">#99000033</color>
+    <color name="o2_color_classic_white_20_alpha">#33FFFFFF</color>
+
 </resources>

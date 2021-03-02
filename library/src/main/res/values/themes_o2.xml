@@ -120,7 +120,6 @@
         <item name="textAppBar">@color/o2_color_grey_4</item>
         <item name="textAppBarSelected">@color/o2_color_blue_primary</item>
 
-
         <!-- Chips colors -->
         <item name="colorChipTextDefault">@color/o2_color_white</item>
         <item name="colorChipTextChecked">?attr/colorBrand</item>
