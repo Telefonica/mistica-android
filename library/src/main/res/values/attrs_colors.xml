@@ -113,6 +113,13 @@
         <attr name="colorChipBackgroundDefault" format="color|reference" />
         <attr name="colorChipBackgroundChecked" format="color|reference" />
 
+        <!-- o2 classic special constants -->
+
+        <attr name="colorGradientBackgroundFirst" format="color|reference" />
+        <attr name="colorGradientBackgroundSecond" format="color|reference" />
+        <attr name="colorGradientBackgroundThird" format="color|reference" />
+        <attr name="colorGradientBackgroundFourth" format="color|reference" />
+
     </declare-styleable>
 
     <declare-styleable name="Feedbacks">

@@ -138,6 +138,11 @@
 
         <item name="alertDialogTheme">@style/MisticaAlertDialogTheme.O2Classic</item>
 
+        <item name="colorGradientBackgroundFirst">@color/o2_classic_gradient_first</item>
+        <item name="colorGradientBackgroundSecond">@color/o2_classic_gradient_second</item>
+        <item name="colorGradientBackgroundThird">@color/o2_classic_gradient_third</item>
+        <item name="colorGradientBackgroundFourth">@color/o2_classic_gradient_fourth</item>
+
     </style>
 
     <style name="MisticaAlertDialogTheme.O2Classic">

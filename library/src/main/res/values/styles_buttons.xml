@@ -134,7 +134,7 @@
         <item name="backgroundTint">@android:color/transparent</item>
         <item name="android:textColor">@color/text_button_link_inverse_selector</item>
         <item name="iconTint">@color/text_button_link_inverse_selector</item>
-        <item name="rippleColor">?colorLinkButtonBackgroundPressedInverse</item>
+        <item name="rippleColor">?colorButtonLinkBackgroundSelected</item>
     </style>
 
 </resources>
