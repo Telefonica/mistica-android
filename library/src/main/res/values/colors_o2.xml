@@ -26,7 +26,7 @@
     <color name="o2_color_purple">#953698</color>
     <color name="o2_color_pepper">#FF374A</color>
     <color name="o2_color_pepper_dark">#D73241</color>
-    <color name="o2_color_pepper_light_30">#FFC3C8</color>
+    <color name="o2_color_pepper_light30">#FFC3C8</color>
 
     <color name="o2_color_grey_1">#F6F6F6</color>
     <color name="o2_color_grey_2">#EEEEEE</color>
@@ -35,4 +35,9 @@
     <color name="o2_color_grey_5">#707070</color>
     <color name="o2_color_grey_6">#000033</color>
     <color name="o2_color_white">#FFFFFF</color>
+
+    <!--    Palette colors with custom alpha -->
+    <color name="o2_color_grey_6_60_alpha">#99000033</color>
+    <color name="o2_color_white_20_alpha">#33FFFFFF</color>
+
 </resources>

@@ -3,8 +3,6 @@
 
     <style name="MisticaTheme.Vivo">
 
-        <item name="alertDialogTheme">@style/MisticaAlertDialogTheme.Vivo</item>
-
         <!-- Android theme 3 base colors -->
         <item name="colorPrimary">@color/vivo_color_purple</item>
         <item name="colorAccent">@color/vivo_color_green</item>
@@ -135,6 +133,8 @@
 
         <!-- Stepper -->
         <item name="stepperFinishedStepAnimation">@raw/feedback_success</item>
+
+        <item name="alertDialogTheme">@style/MisticaAlertDialogTheme.Vivo</item>
     </style>
 
     <style name="MisticaAlertDialogTheme.Vivo">
