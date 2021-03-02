@@ -19,9 +19,9 @@ class HorizontalScrollFilterGroup @JvmOverloads constructor(
 ) : FrameLayout(context, attrs, defStyle) {
 
     private val chipGroup: ChipGroup by lazy { findViewById(R.id.chips_group) }
-    private val scrollView: HorizontalScrollView by lazy { findViewById(R.id.chips_scroll_view) }
+    private val scrollView: HorizontalScrollView by lazy { findViewById(R.id.filters_scroll_view) }
     private val horizontalPadding: Int =
-        context.resources.getDimensionPixelOffset(R.dimen.chip_group_horizontal_padding)
+        context.resources.getDimensionPixelOffset(R.dimen.filter_group_horizontal_padding)
 
     init {
         View.inflate(context, R.layout.horizontal_scroll_filter_group, this)

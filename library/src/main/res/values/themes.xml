@@ -24,8 +24,8 @@
             @dimen/design_snackbar_action_inline_max_width
         </item>
 
-        <!-- Chips -->
-        <item name="colorChipGroupBackground">?colorPrimary</item>
+        <!-- Filters -->
+        <item name="colorFilterGroupBackground">?colorPrimary</item>
 
         <item name="colorBadgeBackground">?colorError</item>
 
@@ -339,11 +339,11 @@
         <!-- Youtube player -->
         <item name="colorYoutubeBackgroundLayer">@null</item>
 
-        <!-- Chips -->
-        <item name="colorChipTextDefault">@null</item>
-        <item name="colorChipTextChecked">@null</item>
-        <item name="colorChipBackgroundDefault">@null</item>
-        <item name="colorChipBackgroundChecked">@null</item>
+        <!-- Filters -->
+        <item name="colorFilterTextDefault">@null</item>
+        <item name="colorFilterTextChecked">@null</item>
+        <item name="colorFilterBackgroundDefault">@null</item>
+        <item name="colorFilterBackgroundChecked">@null</item>
 
         <!-- Scroll content indicator -->
         <item name="scrollContentIndicatorGradientStart">@null</item>

@@ -327,11 +327,11 @@
         <!-- Youtube player -->
         <item name="colorYoutubeBackgroundLayer">@color/vivo_color_black_30_percent</item>
 
-        <!-- Chips -->
-        <item name="colorChipTextDefault">@color/vivo_color_white</item>
-        <item name="colorChipTextChecked">?colorPrimary</item>
-        <item name="colorChipBackgroundDefault">@color/vivo_color_purple_dark</item>
-        <item name="colorChipBackgroundChecked">@color/vivo_color_white</item>
+        <!-- Filters -->
+        <item name="colorFilterTextDefault">@color/vivo_color_white</item>
+        <item name="colorFilterTextChecked">?colorPrimary</item>
+        <item name="colorFilterBackgroundDefault">@color/vivo_color_purple_dark</item>
+        <item name="colorFilterBackgroundChecked">@color/vivo_color_white</item>
 
         <!-- Feedbacks -->
         <item name="feedbackScreenSuccessWithGradient">false</item>
