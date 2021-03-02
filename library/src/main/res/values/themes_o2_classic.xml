@@ -85,6 +85,7 @@
 
         <!-- Divider colors -->
         <item name="colorDivider">@color/o2_classic_color_grey_2</item>
+        <item name="colorDividerInverse">@color/o2_color_classic_white_20_alpha</item>
         <item name="colorNavigationBarDivider">@color/o2_classic_color_blue</item>
 
         <!-- Feedback colors -->

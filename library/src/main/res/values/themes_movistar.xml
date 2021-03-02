@@ -83,6 +83,7 @@
 
         <!-- Divider colors -->
         <item name="colorDivider">@color/movistar_color_grey_2</item>
+        <item name="colorDividerInverse">@color/movistar_color_blue_dark</item>
         <item name="colorNavigationBarDivider">@color/movistar_color_blue</item>
 
         <!-- Feedback colors -->
@@ -146,6 +147,7 @@
         <item name="colorPrimary">@color/movistar_prominent_color_blue</item>
         <item name="colorPrimaryDark">@color/movistar_prominent_color_blue_dark</item>
         <item name="colorBrand">@color/movistar_prominent_color_blue</item>
+        <item name="colorDividerInverse">@color/movistar_prominent_color_blue_dark</item>
 
         <!-- Chips -->
         <item name="colorChipBackgroundDefault">@color/movistar_prominent_color_blue_dark</item>
@@ -157,6 +159,7 @@
         <item name="colorPrimary">@color/movistar_prominent_color_blue</item>
         <item name="colorPrimaryDark">@color/movistar_prominent_color_blue_dark</item>
         <item name="colorBrand">@color/movistar_prominent_color_blue</item>
+        <item name="colorDividerInverse">@color/movistar_prominent_color_blue_dark</item>
 
         <!-- Chips -->
         <item name="colorChipBackgroundDefault">@color/movistar_prominent_color_blue_dark</item>
