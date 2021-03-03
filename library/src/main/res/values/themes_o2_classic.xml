@@ -3,11 +3,6 @@
 
     <style name="MisticaTheme.O2Classic">
 
-        <!-- Android theme 3 base colors -->
-        <item name="colorPrimary">@color/o2_classic_color_blue</item>
-        <item name="colorAccent">@color/o2_classic_color_gem</item>
-        <item name="colorPrimaryDark">@color/o2_classic_color_blue_dark</item>
-
         <!-- Background colors -->
         <item name="colorAppBarBackground">@color/o2_classic_color_white</item>
         <item name="colorBackground">@color/o2_classic_color_white</item>
