@@ -27,6 +27,7 @@
         <attr name="colorButtonDangerBackgroundSelected" format="color|reference" />
         <attr name="colorButtonDangerBackgroundHover" format="color|reference" />
         <attr name="colorButtonLinkBackgroundSelected" format="color|reference" />
+        <attr name="colorButtonLinkBackgroundSelectedInverse" format="color|reference" />
 
         <attr name="colorButtonPrimaryBackground" format="color|reference" />
         <attr name="colorButtonPrimaryBackgroundDisabled" format="color|reference" />

@@ -27,6 +27,7 @@
         <item name="colorButtonDangerBackgroundSelected">@color/o2_classic_color_pepper_dark</item>
         <item name="colorButtonDangerBackgroundHover">@color/o2_classic_color_pepper_dark</item>
         <item name="colorButtonLinkBackgroundSelected">@color/o2_classic_color_sky_blue_light_10</item>
+        <item name="colorButtonLinkBackgroundSelectedInverse">@color/o2_color_classic_white_20_alpha</item>
 
         <item name="colorButtonPrimaryBackground">@color/o2_classic_color_sky_blue</item>
         <item name="colorButtonPrimaryBackgroundDisabled">@color/o2_classic_color_sky_blue_light_50</item>
@@ -115,7 +116,7 @@
         <item name="textNavigationBarSecondary">@color/o2_classic_color_blue_light_60</item>
         <item name="textAppBar">@color/o2_classic_color_grey_4</item>
         <item name="textAppBarSelected">@color/o2_classic_color_blue</item>
-        
+
         <!-- Chips colors -->
         <item name="colorChipTextDefault">@color/o2_classic_color_white</item>
         <item name="colorChipTextChecked">?attr/colorBrand</item>
