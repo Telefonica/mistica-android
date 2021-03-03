@@ -327,11 +327,11 @@
         <!-- Youtube player -->
         <item name="colorYoutubeBackgroundLayer">@color/o2_color_black_30_percent</item>
 
-        <!-- Chips -->
-        <item name="colorChipTextDefault">@color/o2_color_white</item>
-        <item name="colorChipTextChecked">?colorPrimary</item>
-        <item name="colorChipBackgroundDefault">@color/o2_color_blue_primary_dark</item>
-        <item name="colorChipBackgroundChecked">@color/o2_color_white</item>
+        <!-- Filters -->
+        <item name="colorFilterTextDefault">@color/o2_color_white</item>
+        <item name="colorFilterTextChecked">?colorPrimary</item>
+        <item name="colorFilterBackgroundDefault">@color/o2_color_blue_primary_dark</item>
+        <item name="colorFilterBackgroundChecked">@color/o2_color_white</item>
 
         <!-- Feedbacks -->
         <item name="feedbackScreenSuccessWithGradient">true</item>

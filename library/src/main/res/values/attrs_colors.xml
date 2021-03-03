@@ -296,12 +296,12 @@
         <!-- Youtube player -->
         <attr name="colorYoutubeBackgroundLayer" format="color|reference" />
 
-        <!-- Chips -->
-        <attr name="colorChipGroupBackground" format="color|reference" />
-        <attr name="colorChipTextDefault" format="color|reference" />
-        <attr name="colorChipTextChecked" format="color|reference" />
-        <attr name="colorChipBackgroundDefault" format="color|reference" />
-        <attr name="colorChipBackgroundChecked" format="color|reference" />
+        <!-- Filters -->
+        <attr name="colorFilterGroupBackground" format="color|reference" />
+        <attr name="colorFilterTextDefault" format="color|reference" />
+        <attr name="colorFilterTextChecked" format="color|reference" />
+        <attr name="colorFilterBackgroundDefault" format="color|reference" />
+        <attr name="colorFilterBackgroundChecked" format="color|reference" />
 
         <!-- Badge -->
         <attr name="colorBadgeBackground" format="color|reference" />

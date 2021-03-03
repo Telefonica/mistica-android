@@ -342,11 +342,11 @@
         <!-- Youtube player -->
         <item name="colorYoutubeBackgroundLayer">@color/movistar_color_black_30_percent</item>
 
-        <!-- Chips -->
-        <item name="colorChipTextDefault">@color/movistar_color_white</item>
-        <item name="colorChipTextChecked">?colorPrimary</item>
-        <item name="colorChipBackgroundDefault">@color/movistar_color_blue_dark</item>
-        <item name="colorChipBackgroundChecked">@color/movistar_color_white</item>
+        <!-- Filters -->
+        <item name="colorFilterTextDefault">@color/movistar_color_white</item>
+        <item name="colorFilterTextChecked">?colorPrimary</item>
+        <item name="colorFilterBackgroundDefault">@color/movistar_color_blue_dark</item>
+        <item name="colorFilterBackgroundChecked">@color/movistar_color_white</item>
 
         <!-- Feedbacks -->
         <item name="feedbackScreenSuccessWithGradient">false</item>
@@ -399,8 +399,8 @@
         <item name="colorPinGradientThird">@color/movistar_prominent_color_blue</item>
         <item name="colorPinGradientFourth">@color/movistar_prominent_color_blue</item>
 
-        <!-- Chips -->
-        <item name="colorChipBackgroundDefault">@color/movistar_prominent_color_blue_dark</item>
+        <!-- Filters -->
+        <item name="colorFilterBackgroundDefault">@color/movistar_prominent_color_blue_dark</item>
 
         <!-- Iconography colors -->
         <item name="colorIconBrand">@color/movistar_color_blue</item>
@@ -425,8 +425,8 @@
         <item name="colorPinGradientThird">@color/movistar_prominent_color_blue</item>
         <item name="colorPinGradientFourth">@color/movistar_prominent_color_blue</item>
 
-        <!-- Chips -->
-        <item name="colorChipBackgroundDefault">@color/movistar_prominent_color_blue_dark</item>
+        <!-- Filters -->
+        <item name="colorFilterBackgroundDefault">@color/movistar_prominent_color_blue_dark</item>
 
         <!-- Iconography colors -->
         <item name="colorIconBrand">@color/movistar_color_blue</item>
