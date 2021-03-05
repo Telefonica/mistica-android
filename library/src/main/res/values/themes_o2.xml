@@ -121,6 +121,12 @@
         <item name="colorChipTextChecked">?attr/colorBrand</item>
         <item name="colorChipBackgroundDefault">@color/o2_color_blue_primary_dark</item>
         <item name="colorChipBackgroundChecked">@color/o2_color_white</item>
+
+        <!-- Gradients (assistant, pin fingerprint screens) -->
+        <item name="colorGradientBackgroundFirst">?colorPrimary</item>
+        <item name="colorGradientBackgroundSecond">?colorPrimary</item>
+        <item name="colorGradientBackgroundThird">?colorPrimary</item>
+        <item name="colorGradientBackgroundFourth">?colorPrimary</item>
         
         <!-- Feedbacks -->
         <item name="feedbackScreenSuccessWithGradient">true</item>

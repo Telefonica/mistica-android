@@ -123,6 +123,12 @@
         <item name="colorChipBackgroundDefault">@color/vivo_color_purple_dark</item>
         <item name="colorChipBackgroundChecked">@color/vivo_color_white</item>
 
+        <!-- Gradients (assistant, pin fingerprint screens) -->
+        <item name="colorGradientBackgroundFirst">@color/vivo_gradient_first</item>
+        <item name="colorGradientBackgroundSecond">@color/vivo_gradient_second</item>
+        <item name="colorGradientBackgroundThird">@color/vivo_gradient_third</item>
+        <item name="colorGradientBackgroundFourth">@color/vivo_gradient_fourth</item>
+
         <!-- Feedbacks -->
         <item name="feedbackScreenSuccessWithGradient">false</item>
         <item name="feedbackScreenSuccessInverse">true</item>

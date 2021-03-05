@@ -29,6 +29,11 @@
     <color name="vivo_color_grey_6">#000000</color>
     <color name="vivo_color_white">#FFFFFF</color>
 
+    <color name="vivo_gradient_first">#7850A0</color>
+    <color name="vivo_gradient_second">#660099</color>
+    <color name="vivo_gradient_third">#660099</color>
+    <color name="vivo_gradient_fourth">#461E5F</color>
+
     <!--    Palette colors with custom alpha -->
     <color name="vivo_color_grey_6_60_alpha">#99000000</color>
     <color name="vivo_color_white_20_alpha">#33000000</color>

@@ -121,6 +121,12 @@
         <item name="colorChipBackgroundDefault">@color/movistar_color_blue_dark</item>
         <item name="colorChipBackgroundChecked">@color/movistar_color_white</item>
 
+        <!-- Gradients (assistant, pin fingerprint screens) -->
+        <item name="colorGradientBackgroundFirst">?colorPrimary</item>
+        <item name="colorGradientBackgroundSecond">?colorPrimary</item>
+        <item name="colorGradientBackgroundThird">?colorPrimary</item>
+        <item name="colorGradientBackgroundFourth">?colorPrimary</item>
+
         <!-- Feedbacks -->
         <item name="feedbackScreenSuccessWithGradient">false</item>
         <item name="feedbackScreenSuccessInverse">true</item>
