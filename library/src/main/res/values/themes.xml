@@ -4,6 +4,7 @@
     <style name="MisticaTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
 
         <item name="colorPrimary">?colorBrand</item>
+        <item name="colorPrimaryDark">?colorBrandDark</item>
         <item name="android:windowBackground">?colorBackground</item>
         <item name="android:textColorPrimary">@color/text_primary_selector</item>
         <item name="android:textColorPrimaryInverse">?colorTextPrimaryInverse</item>

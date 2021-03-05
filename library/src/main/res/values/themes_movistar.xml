@@ -11,7 +11,6 @@
         <item name="colorBackgroundSkeleton">@color/movistar_color_grey_1</item>
         <item name="colorBackgroundSkeletonInverse">@color/movistar_color_blue_dark</item>
         <item name="colorNavigationBarBackground">@color/movistar_color_blue</item>
-        <item name="colorNavigationSearchBarBackground">@color/movistar_color_blue_dark</item>
         <item name="colorBackgroundAlternative">@color/movistar_color_grey_1</item>
         <item name="colorBackgroundFeedbackBottom">@color/movistar_color_blue</item>
 
@@ -27,7 +26,7 @@
         <item name="colorButtonDangerBackgroundSelected">@color/movistar_color_pepper_dark</item>
         <item name="colorButtonDangerBackgroundHover">@color/movistar_color_pepper_dark</item>
         <item name="colorButtonLinkBackgroundSelected">@color/movistar_color_blue_light10</item>
-        <item name="colorButtonLinkBackgroundSelectedInverse">@color/movistar_color_white_6_20_alpha</item>
+        <item name="colorButtonLinkBackgroundSelectedInverse">@color/movistar_color_white_20_alpha</item>
 
         <item name="colorButtonPrimaryBackground">@color/movistar_color_green</item>
         <item name="colorButtonPrimaryBackgroundDisabled">@color/movistar_color_green_light50</item>
@@ -89,6 +88,7 @@
 
         <!-- Global colors -->
         <item name="colorBrand">@color/movistar_color_blue</item>
+        <item name="colorBrandDark">@color/movistar_color_blue_dark</item>
         <item name="colorInverse">@color/movistar_color_white</item>
         <item name="colorNeutralHigh">@color/movistar_color_grey_6</item>
         <item name="colorNeutralLow">@color/movistar_color_grey_3</item>
@@ -111,9 +111,9 @@
 
         <!-- Bars text colors -->
         <item name="colorTextNavigationBarPrimary">@color/movistar_color_white</item>
-        <item name="textNavigationBarSecondary">@color/movistar_color_blue_light30</item>
-        <item name="textAppBar">@color/movistar_color_grey_4</item>
-        <item name="textAppBarSelected">@color/movistar_color_blue</item>
+        <item name="colorTextNavigationBarSecondary">@color/movistar_color_blue_light30</item>
+        <item name="colorTextAppBar">@color/movistar_color_grey_4</item>
+        <item name="colorTextAppBarSelected">@color/movistar_color_blue</item>
 
         <!-- Chip colors -->
         <item name="colorChipTextChecked">?attr/colorBrand</item>

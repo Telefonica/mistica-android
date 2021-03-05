@@ -11,7 +11,6 @@
         <attr name="colorBackgroundSkeleton" format="color|reference" />
         <attr name="colorBackgroundSkeletonInverse" format="color|reference" />
         <attr name="colorNavigationBarBackground" format="color|reference" />
-        <attr name="colorNavigationSearchBarBackground" format="color|reference" />
         <attr name="colorBackgroundAlternative" format="color|reference" />
         <attr name="colorBackgroundFeedbackBottom" format="color|reference" />
 
@@ -60,7 +59,6 @@
         <attr name="colorTextLinkDisabled" format="color|reference" />
         <attr name="colorTextLinkSnackbar" format="color|reference" />
 
-
         <!-- Controls -->
         <attr name="colorControl" format="color|reference" />
         <attr name="colorControlActivated" format="color|reference" />
@@ -83,6 +81,7 @@
 
         <!-- Global -->
         <attr name="colorBrand" format="color|reference" />
+        <attr name="colorBrandDark" format="color|reference" />
         <attr name="colorInverse" format="color|reference" />
         <attr name="colorNeutralHigh" format="color|reference" />
         <attr name="colorNeutralLow" format="color|reference" />
@@ -105,9 +104,9 @@
 
         <!-- Bars text -->
         <attr name="colorTextNavigationBarPrimary" format="color|reference" />
-        <attr name="textNavigationBarSecondary" format="color|reference" />
-        <attr name="textAppBar" format="color|reference" />
-        <attr name="textAppBarSelected" format="color|reference" />
+        <attr name="colorTextNavigationBarSecondary" format="color|reference" />
+        <attr name="colorTextAppBar" format="color|reference" />
+        <attr name="colorTextAppBarSelected" format="color|reference" />
 
         <!-- Chips -->
         <attr name="colorChipTextChecked" format="color|reference" />

@@ -11,7 +11,6 @@
         <item name="colorBackgroundSkeleton">@color/o2_classic_color_grey_1</item>
         <item name="colorBackgroundSkeletonInverse">@color/o2_color_classic_white_20_alpha</item>
         <item name="colorNavigationBarBackground">@color/o2_classic_color_blue</item>
-        <item name="colorNavigationSearchBarBackground">@color/o2_classic_color_blue_dark</item>
         <item name="colorBackgroundAlternative">@color/o2_classic_color_grey_1</item>
         <item name="colorBackgroundFeedbackBottom">@color/o2_classic_gradient_fourth</item>
 
@@ -68,7 +67,6 @@
         <item name="colorTextLinkDisabled">@color/o2_classic_color_sky_blue_light</item>
         <item name="colorTextLinkSnackbar">@color/o2_classic_color_sky_blue_light</item>
 
-
         <!-- Control colors -->
         <item name="colorControl">@color/o2_classic_color_grey_3</item>
         <item name="colorControlActivated">@color/o2_classic_color_gem</item>
@@ -91,6 +89,7 @@
 
         <!-- Global colors -->
         <item name="colorBrand">@color/o2_classic_color_blue</item>
+        <item name="colorBrandDark">@color/o2_classic_color_blue_dark</item>
         <item name="colorInverse">@color/o2_classic_color_white</item>
         <item name="colorNeutralHigh">@color/o2_classic_color_grey_6</item>
         <item name="colorNeutralLow">@color/o2_classic_color_grey_3</item>
@@ -113,9 +112,9 @@
 
         <!-- Bars text colors -->
         <item name="colorTextNavigationBarPrimary">@color/o2_classic_color_white</item>
-        <item name="textNavigationBarSecondary">@color/o2_classic_color_blue_light_60</item>
-        <item name="textAppBar">@color/o2_classic_color_grey_4</item>
-        <item name="textAppBarSelected">@color/o2_classic_color_blue</item>
+        <item name="colorTextNavigationBarSecondary">@color/o2_classic_color_blue_light_60</item>
+        <item name="colorTextAppBar">@color/o2_classic_color_grey_4</item>
+        <item name="colorTextAppBarSelected">@color/o2_classic_color_blue</item>
 
         <!-- Chips colors -->
         <item name="colorChipTextDefault">@color/o2_classic_color_white</item>

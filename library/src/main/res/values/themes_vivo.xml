@@ -11,7 +11,6 @@
         <item name="colorBackgroundSkeleton">@color/vivo_color_grey_1</item>
         <item name="colorBackgroundSkeletonInverse">@color/vivo_color_white_20_alpha</item>
         <item name="colorNavigationBarBackground">@color/vivo_color_purple</item>
-        <item name="colorNavigationSearchBarBackground">@color/vivo_color_purple_dark</item>
         <item name="colorBackgroundAlternative">@color/vivo_color_grey_1</item>
         <item name="colorBackgroundFeedbackBottom">@color/vivo_color_purple</item>
 
@@ -91,6 +90,7 @@
 
         <!-- Global colors -->
         <item name="colorBrand">@color/vivo_color_purple</item>
+        <item name="colorBrandDark">@color/vivo_color_purple_dark</item>
         <item name="colorInverse">@color/vivo_color_white</item>
         <item name="colorNeutralHigh">@color/vivo_color_grey_6</item>
         <item name="colorNeutralLow">@color/vivo_color_grey_3</item>
@@ -113,9 +113,9 @@
 
         <!-- Bars text colors -->
         <item name="colorTextNavigationBarPrimary">@color/vivo_color_white</item>
-        <item name="textNavigationBarSecondary">@color/vivo_color_purple_light50</item>
-        <item name="textAppBar">@color/vivo_color_grey_4</item>
-        <item name="textAppBarSelected">@color/vivo_color_purple</item>
+        <item name="colorTextNavigationBarSecondary">@color/vivo_color_purple_light50</item>
+        <item name="colorTextAppBar">@color/vivo_color_grey_4</item>
+        <item name="colorTextAppBarSelected">@color/vivo_color_purple</item>
 
         <!-- Chip colors -->
         <item name="colorChipTextChecked">?attr/colorBrand</item>
