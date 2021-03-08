@@ -115,11 +115,11 @@
         <item name="colorTextAppBar">@color/movistar_color_grey_4</item>
         <item name="colorTextAppBarSelected">@color/movistar_color_blue</item>
 
-        <!-- Chip colors -->
-        <item name="colorChipTextChecked">?attr/colorBrand</item>
-        <item name="colorChipTextDefault">@color/movistar_color_white</item>
-        <item name="colorChipBackgroundDefault">@color/movistar_color_blue_dark</item>
-        <item name="colorChipBackgroundChecked">@color/movistar_color_white</item>
+        <!-- Filters -->
+        <item name="colorFilterTextChecked">?colorBrand</item>
+        <item name="colorFilterTextDefault">@color/movistar_color_white</item>
+        <item name="colorFilterBackgroundDefault">@color/movistar_color_blue_dark</item>
+        <item name="colorFilterBackgroundChecked">@color/movistar_color_white</item>
 
         <!-- Gradients (assistant, pin fingerprint screens) -->
         <item name="colorGradientBackgroundFirst">?colorBrand</item>
@@ -155,8 +155,8 @@
         <item name="colorBrand">@color/movistar_prominent_color_blue</item>
         <item name="colorDividerInverse">@color/movistar_prominent_color_blue_dark</item>
 
-        <!-- Chips -->
-        <item name="colorChipBackgroundDefault">@color/movistar_prominent_color_blue_dark</item>
+        <!-- Filters -->
+        <item name="colorFilterBackgroundDefault">@color/movistar_prominent_color_blue_dark</item>
     </style>
 
     <!-- Just a copy of the above. As themes do not support multiple inheritance. -->
@@ -167,8 +167,8 @@
         <item name="colorBrand">@color/movistar_prominent_color_blue</item>
         <item name="colorDividerInverse">@color/movistar_prominent_color_blue_dark</item>
 
-        <!-- Chips -->
-        <item name="colorChipBackgroundDefault">@color/movistar_prominent_color_blue_dark</item>
+        <!-- Filters -->
+        <item name="colorFilterBackgroundDefault">@color/movistar_prominent_color_blue_dark</item>
     </style>
 
 </resources>

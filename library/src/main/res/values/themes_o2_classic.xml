@@ -126,11 +126,11 @@
         <item name="colorLoginLoadingGradientThird">?colorGradientBackgroundThird</item>
         <item name="colorLoginLoadingGradientFourth">?colorGradientBackgroundFourth</item>
 
-        <!-- Chips colors -->
-        <item name="colorChipTextDefault">@color/o2_classic_color_white</item>
-        <item name="colorChipTextChecked">?attr/colorBrand</item>
-        <item name="colorChipBackgroundDefault">@color/o2_classic_color_blue_dark</item>
-        <item name="colorChipBackgroundChecked">@color/o2_classic_color_white</item>
+        <!-- Filters -->
+        <item name="colorFilterTextDefault">@color/o2_classic_color_white</item>
+        <item name="colorFilterTextChecked">?colorBrand</item>
+        <item name="colorFilterBackgroundDefault">@color/o2_classic_color_blue_dark</item>
+        <item name="colorFilterBackgroundChecked">@color/o2_classic_color_white</item>
 
         <!-- Feedbacks -->
         <item name="feedbackScreenSuccessWithGradient">true</item>

@@ -9,7 +9,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.google.android.material.chip.Chip
 import com.telefonica.mistica.catalog.R
-import com.telefonica.mistica.chips.HorizontalScrollChipGroup
+import com.telefonica.mistica.filters.HorizontalScrollFilterGroup
 
 class OthersCatalogFragment : Fragment() {
 
@@ -20,33 +20,33 @@ class OthersCatalogFragment : Fragment() {
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         return layoutInflater.inflate(R.layout.screen_others_catalog, container, false).apply {
-            configureChips()
+            configureFilters()
         }
     }
 
-    private fun View.configureChips() {
-        findViewById<HorizontalScrollChipGroup>(R.id.chips).apply {
-            addChip("Chip 1", checked = true)
-            addChip("Chip 2")
-            addChip("Chip 3")
-            addChip("Chip 4")
-            addChip("Chip 5")
+    private fun View.configureFilters() {
+        findViewById<HorizontalScrollFilterGroup>(R.id.filters).apply {
+            addFilter("Filter 1", checked = true)
+            addFilter("Filter 2")
+            addFilter("Filter 3")
+            addFilter("Filter 4")
+            addFilter("Filter 5")
             setOnCheckedChangeListener { _, id ->
-                Toast.makeText(context, "chip with id $id checked", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Filter with id $id checked", Toast.LENGTH_SHORT).show()
             }
         }
     }
 
-    private fun HorizontalScrollChipGroup.addChip(text: String, checked: Boolean = false): Chip =
+    private fun HorizontalScrollFilterGroup.addFilter(text: String, checked: Boolean = false): Chip =
         (LayoutInflater.from(context).inflate(R.layout.chip_choice, this, false) as Chip).apply {
             this.text = text
             this.isChecked = checked
             setOnCheckedChangeListener { _: CompoundButton?, checked: Boolean ->
                 if (checked) {
-                    Toast.makeText(context, "chip with text $text checked", Toast.LENGTH_SHORT)
+                    Toast.makeText(context, "Filter with text $text checked", Toast.LENGTH_SHORT)
                         .show()
                 }
             }
-            addChip(this)
+            addFilter(this)
         }
 }

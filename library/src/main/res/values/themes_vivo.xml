@@ -117,11 +117,11 @@
         <item name="colorTextAppBar">@color/vivo_color_grey_4</item>
         <item name="colorTextAppBarSelected">@color/vivo_color_purple</item>
 
-        <!-- Chip colors -->
-        <item name="colorChipTextChecked">?attr/colorBrand</item>
-        <item name="colorChipTextDefault">@color/vivo_color_white</item>
-        <item name="colorChipBackgroundDefault">@color/vivo_color_purple_dark</item>
-        <item name="colorChipBackgroundChecked">@color/vivo_color_white</item>
+        <!-- Filters -->
+        <item name="colorFilterTextChecked">?colorBrand</item>
+        <item name="colorFilterTextDefault">@color/vivo_color_white</item>
+        <item name="colorFilterBackgroundDefault">@color/vivo_color_purple_dark</item>
+        <item name="colorFilterBackgroundChecked">@color/vivo_color_white</item>
 
         <!-- Gradients (assistant, pin fingerprint screens) -->
         <item name="colorGradientBackgroundFirst">@color/vivo_gradient_first</item>
