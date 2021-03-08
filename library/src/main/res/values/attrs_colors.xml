@@ -108,11 +108,11 @@
         <attr name="colorTextAppBar" format="color|reference" />
         <attr name="colorTextAppBarSelected" format="color|reference" />
 
-        <!-- Chips -->
-        <attr name="colorChipTextChecked" format="color|reference" />
-        <attr name="colorChipTextDefault" format="color|reference" />
-        <attr name="colorChipBackgroundDefault" format="color|reference" />
-        <attr name="colorChipBackgroundChecked" format="color|reference" />
+        <!-- Filters -->
+        <attr name="colorFilterTextDefault" format="color|reference" />
+        <attr name="colorFilterTextChecked" format="color|reference" />
+        <attr name="colorFilterBackgroundDefault" format="color|reference" />
+        <attr name="colorFilterBackgroundChecked" format="color|reference" />
 
         <!-- Gradients for backgrounds -->
         <attr name="colorGradientBackgroundFirst" format="color|reference" />
