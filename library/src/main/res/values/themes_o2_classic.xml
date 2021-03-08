@@ -7,9 +7,9 @@
         <item name="colorAppBarBackground">@color/o2_classic_color_white</item>
         <item name="colorBackground">@color/o2_classic_color_white</item>
         <item name="colorBackgroundBrand">@color/o2_classic_color_blue</item>
-        <item name="colorBackgroundOverlay">@color/o2_color_classic_grey_6_60_alpha</item>
+        <item name="colorBackgroundOverlay">@color/o2_classic_color_grey_6_60_alpha</item>
         <item name="colorBackgroundSkeleton">@color/o2_classic_color_grey_1</item>
-        <item name="colorBackgroundSkeletonInverse">@color/o2_color_classic_white_20_alpha</item>
+        <item name="colorBackgroundSkeletonInverse">@color/o2_classic_color_white_20_alpha</item>
         <item name="colorNavigationBarBackground">@color/o2_classic_color_blue</item>
         <item name="colorBackgroundAlternative">@color/o2_classic_color_grey_1</item>
         <item name="colorBackgroundFeedbackBottom">@color/o2_classic_gradient_fourth</item>
@@ -26,7 +26,7 @@
         <item name="colorButtonDangerBackgroundSelected">@color/o2_classic_color_pepper_dark</item>
         <item name="colorButtonDangerBackgroundHover">@color/o2_classic_color_pepper_dark</item>
         <item name="colorButtonLinkBackgroundSelected">@color/o2_classic_color_sky_blue_light_10</item>
-        <item name="colorButtonLinkBackgroundSelectedInverse">@color/o2_color_classic_white_20_alpha</item>
+        <item name="colorButtonLinkBackgroundSelectedInverse">@color/o2_classic_color_white_20_alpha</item>
 
         <item name="colorButtonPrimaryBackground">@color/o2_classic_color_sky_blue</item>
         <item name="colorButtonPrimaryBackgroundDisabled">@color/o2_classic_color_sky_blue_light_50</item>
@@ -79,7 +79,7 @@
 
         <!-- Divider colors -->
         <item name="colorDivider">@color/o2_classic_color_grey_2</item>
-        <item name="colorDividerInverse">@color/o2_color_classic_white_20_alpha</item>
+        <item name="colorDividerInverse">@color/o2_classic_color_white_20_alpha</item>
         <item name="colorNavigationBarDivider">@color/o2_classic_color_blue</item>
 
         <!-- Feedback colors -->
