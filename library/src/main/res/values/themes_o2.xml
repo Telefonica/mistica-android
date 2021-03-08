@@ -123,10 +123,14 @@
         <item name="colorChipBackgroundChecked">@color/o2_color_white</item>
 
         <!-- Gradients (assistant, pin fingerprint screens) -->
-        <item name="colorGradientBackgroundFirst">?colorPrimary</item>
-        <item name="colorGradientBackgroundSecond">?colorPrimary</item>
-        <item name="colorGradientBackgroundThird">?colorPrimary</item>
-        <item name="colorGradientBackgroundFourth">?colorPrimary</item>
+        <item name="colorGradientBackgroundFirst">?colorBrand</item>
+        <item name="colorGradientBackgroundSecond">?colorBrand</item>
+        <item name="colorGradientBackgroundThird">?colorBrand</item>
+        <item name="colorGradientBackgroundFourth">?colorBrand</item>
+        <item name="colorLoginLoadingGradientFirst">?colorBrand</item>
+        <item name="colorLoginLoadingGradientSecond">?colorBrand</item>
+        <item name="colorLoginLoadingGradientThird">?colorBrand</item>
+        <item name="colorLoginLoadingGradientFourth">?colorBrand</item>
         
         <!-- Feedbacks -->
         <item name="feedbackScreenSuccessWithGradient">true</item>

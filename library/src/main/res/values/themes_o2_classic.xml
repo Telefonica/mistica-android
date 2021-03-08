@@ -116,6 +116,16 @@
         <item name="colorTextAppBar">@color/o2_classic_color_grey_4</item>
         <item name="colorTextAppBarSelected">@color/o2_classic_color_blue</item>
 
+        <!-- Gradients (assistant, pin fingerprint screens) -->
+        <item name="colorGradientBackgroundFirst">@color/o2_classic_gradient_first</item>
+        <item name="colorGradientBackgroundSecond">@color/o2_classic_gradient_second</item>
+        <item name="colorGradientBackgroundThird">@color/o2_classic_gradient_third</item>
+        <item name="colorGradientBackgroundFourth">@color/o2_classic_gradient_fourth</item>
+        <item name="colorLoginLoadingGradientFirst">?colorGradientBackgroundFirst</item>
+        <item name="colorLoginLoadingGradientSecond">?colorGradientBackgroundSecond</item>
+        <item name="colorLoginLoadingGradientThird">?colorGradientBackgroundThird</item>
+        <item name="colorLoginLoadingGradientFourth">?colorGradientBackgroundFourth</item>
+
         <!-- Chips colors -->
         <item name="colorChipTextDefault">@color/o2_classic_color_white</item>
         <item name="colorChipTextChecked">?attr/colorBrand</item>
@@ -133,11 +143,6 @@
         <item name="stepperFinishedStepAnimation">@raw/feedback_success_o2</item>
 
         <item name="alertDialogTheme">@style/MisticaAlertDialogTheme.O2Classic</item>
-
-        <item name="colorGradientBackgroundFirst">@color/o2_classic_gradient_first</item>
-        <item name="colorGradientBackgroundSecond">@color/o2_classic_gradient_second</item>
-        <item name="colorGradientBackgroundThird">@color/o2_classic_gradient_third</item>
-        <item name="colorGradientBackgroundFourth">@color/o2_classic_gradient_fourth</item>
 
     </style>
 

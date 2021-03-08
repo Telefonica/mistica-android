@@ -114,12 +114,15 @@
         <attr name="colorChipBackgroundDefault" format="color|reference" />
         <attr name="colorChipBackgroundChecked" format="color|reference" />
 
-        <!-- o2 classic special constants -->
-
+        <!-- Gradients for backgrounds -->
         <attr name="colorGradientBackgroundFirst" format="color|reference" />
         <attr name="colorGradientBackgroundSecond" format="color|reference" />
         <attr name="colorGradientBackgroundThird" format="color|reference" />
         <attr name="colorGradientBackgroundFourth" format="color|reference" />
+        <attr name="colorLoginLoadingGradientFirst" format="color|reference" />
+        <attr name="colorLoginLoadingGradientSecond" format="color|reference" />
+        <attr name="colorLoginLoadingGradientThird" format="color|reference" />
+        <attr name="colorLoginLoadingGradientFourth" format="color|reference" />
 
     </declare-styleable>
 
