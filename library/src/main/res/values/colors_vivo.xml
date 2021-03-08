@@ -34,7 +34,7 @@
     <color name="vivo_gradient_third">#660099</color>
     <color name="vivo_gradient_fourth">#461E5F</color>
 
-    <!--    Palette colors with custom alpha -->
+    <!--  Android specific palette for colors with custom alpha -->
     <color name="vivo_color_grey_6_60_alpha">#99000000</color>
     <color name="vivo_color_white_20_alpha">#33000000</color>
 

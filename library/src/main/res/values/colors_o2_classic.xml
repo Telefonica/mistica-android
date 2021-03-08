@@ -38,7 +38,7 @@
     <color name="o2_classic_color_grey_6">#000033</color>
     <color name="o2_classic_color_white">#FFFFFF</color>
 
-    <!--    Palette colors with custom alpha -->
+    <!--  Android specific palette for colors with custom alpha -->
     <color name="o2_color_classic_grey_6_60_alpha">#99000033</color>
     <color name="o2_color_classic_white_20_alpha">#33FFFFFF</color>
 

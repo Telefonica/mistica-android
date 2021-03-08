@@ -21,12 +21,12 @@ object GradientBackgroundFactory {
 
     @JvmStatic
     fun getBackgroundForPinScreen(context: Context): Drawable {
-        return getBackground(context, getPinScreenColors(context))
+        return getBackground(context, getColors(context))
     }
 
     @JvmStatic
     fun getBackgroundForLoginLoadingScreen(context: Context): Drawable {
-        return getBackground(context, getLoginLoadingScreenColors(context))
+        return getBackground(context, getColors(context))
     }
 
     private fun getBackground(context: Context, intColors: IntArray): Drawable {
@@ -66,24 +66,6 @@ object GradientBackgroundFactory {
     }
 
     private fun getColors(context: Context): IntArray {
-        val intColors = IntArray(4)
-        intColors[0] = context.getThemeColor(R.attr.colorGradientBackgroundFirst)
-        intColors[1] = context.getThemeColor(R.attr.colorGradientBackgroundSecond)
-        intColors[2] = context.getThemeColor(R.attr.colorGradientBackgroundThird)
-        intColors[3] = context.getThemeColor(R.attr.colorGradientBackgroundFourth)
-        return intColors
-    }
-
-    private fun getPinScreenColors(context: Context): IntArray {
-        val intColors = IntArray(4)
-        intColors[0] = context.getThemeColor(R.attr.colorGradientBackgroundFirst)
-        intColors[1] = context.getThemeColor(R.attr.colorGradientBackgroundSecond)
-        intColors[2] = context.getThemeColor(R.attr.colorGradientBackgroundThird)
-        intColors[3] = context.getThemeColor(R.attr.colorGradientBackgroundFourth)
-        return intColors
-    }
-
-    private fun getLoginLoadingScreenColors(context: Context): IntArray {
         val intColors = IntArray(4)
         intColors[0] = context.getThemeColor(R.attr.colorGradientBackgroundFirst)
         intColors[1] = context.getThemeColor(R.attr.colorGradientBackgroundSecond)
