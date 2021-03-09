@@ -5,8 +5,6 @@
     <color name="movistar_color_blue_light50">#80CEF9</color>
     <color name="movistar_color_blue_light30">#B3E1FB</color>
     <color name="movistar_color_blue_light10">#E6F5FD</color>
-    <color name="movistar_color_blue_light50_25_percent">#E3F4FD</color>
-    <color name="movistar_color_blue_light30_25_percent">#ECF7FE</color>
 
     <color name="movistar_color_green">#5CB615</color>
     <color name="movistar_color_green_dark">#499110</color>
