@@ -21,12 +21,10 @@ class DropDownInput @JvmOverloads constructor(
         defStyleAttr: Int,
         defStyleRes: Int
     ): TextInputLayout {
-
         LayoutInflater.from(context).inflate(R.layout.input_dropdown, this, true)
-
-        dropDown = findViewById(R.id.dropdown_input)
-
-        return findViewById(R.id.text_input_layout)
+        return findViewById<TextInputLayout>(R.id.text_input_layout).also {
+            dropDown = it.editText as AutoCompleteTextView
+        }
     }
 
     override fun setEnabled(enabled: Boolean) {
