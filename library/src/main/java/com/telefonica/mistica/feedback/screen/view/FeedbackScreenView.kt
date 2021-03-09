@@ -198,7 +198,7 @@ class FeedbackScreenView : ConstraintLayout {
                 )
                 getBooleanThemeRes(R.attr.feedbackScreenSuccessInverse) -> ColorDrawable(
                     context.getThemeColor(
-                        R.attr.colorBrand
+                        R.attr.colorPrimary
                     )
                 )
                 else -> ColorDrawable(context.getThemeColor(R.attr.colorBackground))

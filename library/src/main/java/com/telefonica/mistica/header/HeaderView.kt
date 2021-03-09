@@ -286,7 +286,7 @@ class HeaderView @JvmOverloads constructor(
     }
 
     private fun configureTextsColors() {
-        setBackgroundColor(context.getThemeColor(if (isInverse) R.attr.colorBrand else R.attr.colorBackground))
+        setBackgroundColor(context.getThemeColor(if (isInverse) R.attr.colorPrimary else R.attr.colorBackground))
 
         @ColorInt val primaryColor: Int =
             context.getThemeColor(if (isInverse) R.attr.colorTextPrimaryInverse else R.attr.colorTextPrimary)
@@ -298,7 +298,7 @@ class HeaderView @JvmOverloads constructor(
         secondPretitleTextView.setTextColor(if (secondPretitleHasSecondaryColor) secondaryColor else primaryColor)
         numeralTextView.setTextColor(
             if (numeralHasDangerColor && !isInverse) context.getThemeColor(
-                R.attr.colorHighlight
+                R.attr.colorTextDanger
             ) else primaryColor
         )
         subtitleTextView.setTextColor(if (subtitleHasSecondaryColor) secondaryColor else primaryColor)

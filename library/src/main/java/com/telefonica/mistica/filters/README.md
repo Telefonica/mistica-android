@@ -21,7 +21,7 @@ You just need to add a `HorizontalScrollFilterGroup` to your layout:
 <com.telefonica.mistica.filters.HorizontalScrollFilterGroup
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="?colorBackgroundBrand"
+    android:background="?colorFilterGroupBackground"
 />
 ```
 
