@@ -3,335 +3,134 @@
 
     <style name="MisticaTheme.O2">
 
-        <item name="alertDialogTheme">@style/MisticaAlertDialogTheme.O2</item>
-
-        <!-- General -->
+        <!-- Background colors -->
+        <item name="colorAppBarBackground">@color/o2_color_white</item>
         <item name="colorBackground">@color/o2_color_white</item>
+        <item name="colorBackgroundBrand">@color/o2_color_blue_primary</item>
+        <item name="colorBackgroundOverlay">@color/o2_color_grey_6_60_alpha</item>
+        <item name="colorBackgroundSkeleton">@color/o2_color_grey_1</item>
+        <item name="colorBackgroundSkeletonInverse">@color/o2_color_white_20_alpha</item>
+        <item name="colorNavigationBarBackground">@color/o2_color_blue_primary</item>
+        <item name="colorBackgroundAlternative">@color/o2_color_grey_1</item>
+        <item name="colorBackgroundFeedbackBottom">@color/o2_color_blue_primary</item>
 
-        <item name="colorTextPrimary">@color/o2_color_grey_0</item>
-        <item name="colorTextSecondary">@color/o2_color_grey_1</item>
-        <item name="colorTextDisabled">@color/o2_color_grey_3</item>
-        <item name="colorTextPrimaryInverse">@color/o2_color_white</item>
-        <item name="colorTextSecondaryInverse">@color/o2_color_blue_primary_light_10</item>
+        <!-- Border colors -->
+        <item name="colorBorderLight">@color/o2_color_grey_1</item>
+        <item name="colorBorder">@color/o2_color_grey_3</item>
+        <item name="colorBorderDark">@color/o2_color_grey_5</item>
+        <item name="colorBorderSelected">@color/o2_color_blue_primary</item>
 
-        <item name="colorTextHint">@color/o2_color_grey_2</item>
-        <item name="colorTextLink">@color/o2_color_blue_primary</item>
-        <item name="colorTextLinkPressed">@color/o2_color_blue_primary_dark</item>
-        <item name="colorTextLinkDisabled">@color/o2_color_blue_light</item>
-        <item name="colorTextLinkSnackbar">@color/o2_color_blue_light</item>
-
-        <item name="colorTextError">@color/o2_color_pepper</item>
-        <item name="colorTextNavigationBarPrimary">@color/o2_color_white</item>
-
-        <item name="colorTextAccent">@color/o2_color_blue_light</item>
-        <item name="colorTextAccentDisabled">@color/o2_color_grey_2</item>
-
-        <item name="colorAccent">@color/o2_color_teal</item>
-        <item name="colorPrimary">@color/o2_color_blue_primary</item>
-        <item name="colorPrimaryDark">@color/o2_color_blue_primary_dark</item>
-
-        <item name="colorTabSelected">@color/o2_color_blue_primary</item>
-
-        <item name="textInputLabel">@color/o2_color_blue_primary</item>
-
-        <item name="colorBackgroundAlternative">@color/o2_color_grey_5</item>
-
-        <item name="colorTimeIndicatorWarning">@color/o2_color_pink</item>
-
-        <item name="colorBorderDark">@color/o2_color_grey_1</item>
-
-        <!-- Recents -->
-        <item name="colorSearchOverlay">@color/o2_color_black_50_percent</item>
-
-        <!-- Controls -->
-        <item name="colorControlNormal">@color/o2_color_grey_3</item>
-        <item name="colorControlHighlight">@color/o2_color_grey_5</item>
-        <item name="colorControlActivated">@color/o2_color_blue_primary</item>
-
-        <!-- Bubbles -->
-        <item name="colorBubbleMeBackground">@color/o2_color_grey_4</item>
-        <item name="colorBubbleMeBackgroundPressed">@color/o2_color_grey_3</item>
-        <item name="colorBubbleOtherBackground">@color/o2_color_blue_light_30</item>
-        <item name="colorBubbleOtherBackgroundPressed">@color/o2_color_blue_light_60</item>
-        <item name="colorBubbleBackgroundHighlighted">@color/o2_color_blue_mid_30_percent</item>
-
-        <item name="colorPhotoChatBubbleTimestampBackground">@color/o2_color_black_30_percent</item>
-        <item name="colorChatBgFailedBubble">@color/o2_color_white_50_percent</item>
-
-        <!-- Buttons -->
-        <item name="colorTextButtonPrimary">@color/o2_color_white</item>
-        <item name="colorTextButtonSecondary">@color/o2_color_blue_primary</item>
-        <item name="colorTextButtonSecondaryPressed">@color/o2_color_blue_primary_dark</item>
-        <item name="colorTextButtonSecondaryDisabled">@color/o2_color_blue_primary_light_60</item>
-
-        <item name="colorTextButtonPrimaryInverse">@color/o2_color_blue_primary</item>
-        <item name="colorTextButtonPrimaryInversePressed">@color/o2_color_blue_primary_dark</item>
-        <item name="colorTextButtonPrimaryInverseDisabled">@color/o2_color_blue_primary_light_10
-        </item>
-
-        <item name="colorTextButtonSecondaryInverse">@color/o2_color_white</item>
-        <item name="colorTextButtonSecondaryInversePressed">@color/o2_color_white</item>
-        <item name="colorTextButtonSecondaryInverseDisabled">@color/o2_color_blue_primary_light_60
-        </item>
+        <!-- Button colors -->
+        <item name="colorButtonDangerBackground">@color/o2_color_pepper</item>
+        <item name="colorButtonDangerBackgroundDisabled">@color/o2_color_pepper_light30</item>
+        <item name="colorButtonDangerBackgroundSelected">@color/o2_color_pepper_dark</item>
+        <item name="colorButtonDangerBackgroundHover">@color/o2_color_pepper_dark</item>
+        <item name="colorButtonLinkBackgroundSelected">@color/o2_color_blue_light_10</item>
+        <item name="colorButtonLinkBackgroundSelectedInverse">@color/o2_color_white_20_alpha</item>
 
         <item name="colorButtonPrimaryBackground">@color/o2_color_blue_primary</item>
-        <item name="colorButtonPrimaryBackgroundPressed">@color/o2_color_blue_primary_dark</item>
-        <item name="colorButtonPrimaryBackgroundDisabled">@color/o2_color_blue_primary_light_10
+        <item name="colorButtonPrimaryBackgroundDisabled">@color/o2_color_blue_primary_light_10</item>
+        <item name="colorButtonPrimaryBackgroundDisabledInverse">@color/o2_color_blue_primary_light_50
         </item>
-
+        <item name="colorButtonPrimaryBackgroundInverse">@color/o2_color_white</item>
+        <item name="colorButtonPrimaryBackgroundSelected">@color/o2_color_blue_primary_dark</item>
+        <item name="colorButtonPrimaryBackgroundHover">@color/o2_color_blue_primary_dark</item>
+        <item name="colorButtonPrimaryBackgroundSelectedInverse">@color/o2_color_blue_primary_light_50
+        </item>
         <item name="colorButtonSecondaryBackground">@color/o2_color_blue_primary</item>
-        <item name="colorButtonSecondaryBackgroundPressed">@color/o2_color_blue_primary_dark</item>
         <item name="colorButtonSecondaryBackgroundDisabled">@color/o2_color_blue_primary_light_10
         </item>
-
-        <item name="colorButtonDangerBackground">@color/o2_color_pepper</item>
-        <item name="colorButtonDangerBackgroundPressed">@color/o2_color_pepper_dark</item>
-        <item name="colorButtonDangerBackgroundDisabled">@color/o2_color_pepper_light</item>
-
-        <item name="colorButtonPrimaryBackgroundInverse">@color/o2_color_white</item>
-        <item name="colorButtonPrimaryBackgroundPressedInverse">
-            @color/o2_color_blue_primary_light_60
+        <item name="colorButtonSecondaryBackgroundSelected">@color/o2_color_blue_primary_dark</item>
+        <item name="colorButtonSecondaryBorderDisabledInverse">@color/o2_color_blue_primary_light_50
         </item>
-        <item name="colorButtonPrimaryBackgroundDisabledInverse">
-            @color/o2_color_blue_primary_light_60
-        </item>
-
         <item name="colorButtonSecondaryBorderInverse">@color/o2_color_white</item>
-        <item name="colorButtonSecondaryBorderPressedInverse">@color/o2_color_blue_light_60</item>
-        <item name="colorButtonSecondaryBorderDisabledInverse">@color/o2_color_blue_light_60</item>
-
-        <item name="colorLinkButtonBackgroundPressed">@color/o2_color_blue_primary_light_10</item>
-        <item name="colorLinkButtonBackgroundPressedInverse">@color/o2_color_white_20_percent</item>
-
-        <item name="colorButtonCircularBorderBackground">@color/o2_color_grey_3</item>
-
-        <!-- Call button -->
-        <item name="colorButtonDanger">@color/o2_color_pepper</item>
-        <item name="colorButtonDangerDisabled">@color/o2_color_pepper_light</item>
-        <item name="colorButtonDangerPressed">@color/o2_color_pepper_dark</item>
-
-        <!-- Call dialog -->
-        <item name="colorCallDialogWindowBackground">@color/o2_color_black_50_percent</item>
-
-        <!-- Call screen -->
-        <item name="colorCallScreenOverlayTransparent">@color/o2_color_black_50_percent</item>
-        <item name="colorCallScreenOverlay">@color/o2_color_black</item>
-        <item name="colorCallScreenCallEndedBackgroundOpacity">@color/o2_color_black_70_percent
+        <item name="colorButtonSecondaryBorderSelectedInverse">@color/o2_color_blue_primary_light_50
         </item>
-        <item name="colorCallScreenFilterButtonBackground">@color/o2_color_black_5_percent</item>
-        <item name="colorCallScreenTextShadow">@color/o2_color_black_80_percent</item>
-        <item name="colorCallScreenDialerButtonPressed">@color/o2_color_white_50_percent</item>
-        <item name="colorCallScreenDialerButton">@color/o2_color_white</item>
-        <item name="colorCallScreenWaveformViewLineTransparent">@color/o2_color_white_50_percent
-        </item>
-        <item name="colorCallScreenWaveformViewLineOpaque">@color/o2_color_white</item>
-        <item name="colorCallScreenFilterSelector">@color/o2_color_white_35_percent</item>
 
-        <!-- Feedbacks -->
+        <item name="colorTextButtonPrimary">@color/o2_color_white</item>
+        <item name="colorTextButtonPrimaryInverse">@color/o2_color_blue_primary</item>
+        <item name="colorTextButtonPrimaryInverseDisabled">@color/o2_color_blue_primary_light_10</item>
+        <item name="colorTextButtonPrimaryInverseSelected">@color/o2_color_blue_primary_dark</item>
+        <item name="colorTextButtonSecondary">@color/o2_color_blue_primary</item>
+        <item name="colorTextButtonSecondaryDisabled">@color/o2_color_blue_primary_light_10</item>
+        <item name="colorTextButtonSecondarySelected">@color/o2_color_blue_primary_dark</item>
+        <item name="colorTextButtonSecondaryInverse">@color/o2_color_white</item>
+        <item name="colorTextButtonSecondaryInverseDisabled">@color/o2_color_blue_primary_light_50
+        </item>
+        <item name="colorTextButtonSecondaryInverseSelected">@color/o2_color_white</item>
+
+        <!-- Text Links -->
+        <item name="colorTextLink">@color/o2_color_blue_primary</item>
+        <item name="colorTextLinkDanger">@color/o2_color_pepper</item>
+        <item name="colorTextLinkDangerDisabled">@color/o2_color_pepper_light30
+        </item>
+        <item name="colorTextLinkDisabled">@color/o2_color_blue_primary_light_50</item>
+        <item name="colorTextLinkSnackbar">@color/o2_color_blue_primary_light_50</item>
+
+        <!-- Control colors -->
+        <item name="colorControl">@color/o2_color_grey_3</item>
+        <item name="colorControlActivated">@color/o2_color_blue_primary</item>
+        <item name="colorControlError">@color/o2_color_pepper</item>
+
+        <item name="colorLoadingBar">@color/o2_color_blue_primary</item>
+        <item name="colorLoadingBarBackground">@color/o2_color_grey_1</item>
+        <item name="colorLoadingBarBackgroundInverse">@color/o2_color_grey_1</item>
+        <item name="colorLoadingBarInverse">@color/o2_color_blue_primary</item>
+
+        <!-- Divider colors -->
+        <item name="colorDivider">@color/o2_color_grey_2</item>
+        <item name="colorDividerInverse">@color/o2_color_white_20_alpha</item>
+        <item name="colorNavigationBarDivider">@color/o2_color_blue_primary</item>
+
+        <!-- Feedback colors -->
+        <item name="colorBadge">@color/o2_color_pepper_dark</item>
         <item name="colorFeedbackErrorBackground">@color/o2_color_pepper</item>
-        <item name="colorFeedbackInfoBackground">@color/o2_color_grey_0</item>
-        <item name="colorToastShadowBackground">@color/o2_color_black_70_percent</item>
-        <item name="colorBorder">@color/o2_color_grey_3</item>
+        <item name="colorFeedbackInfoBackground">@color/o2_color_grey_6</item>
 
-        <!-- Dividers -->
-        <item name="colorDivider">@color/o2_color_grey_4</item>
-        <item name="colorDividerFat">@color/o2_color_grey_5</item>
-        <item name="colorDividerInverse">@color/o2_color_white</item>
-        <item name="colorDividerAlbumPhotoDropDownMenu">@color/o2_color_black_10_percent</item>
+        <!-- Global colors -->
+        <item name="colorBrand">@color/o2_color_blue_primary</item>
+        <item name="colorBrandDark">@color/o2_color_blue_primary_dark</item>
+        <item name="colorInverse">@color/o2_color_white</item>
+        <item name="colorNeutralHigh">@color/o2_color_grey_6</item>
+        <item name="colorNeutralLow">@color/o2_color_grey_3</item>
+        <item name="colorNeutralMedium">@color/o2_color_grey_5</item>
+        <item name="colorPromo">@color/o2_color_purple</item>
+        <item name="colorHighlight">@color/o2_color_pink</item>
 
-        <!-- View Pager indicators -->
-        <item name="colorViewPagerItemPrimary">@color/o2_color_white</item>
-        <item name="colorViewPagerItemSecondary">@color/o2_color_grey_0</item>
+        <!-- Texts colors -->
+        <item name="colorTextPrimary">@color/o2_color_grey_6</item>
+        <item name="colorTextPrimaryInverse">@color/o2_color_white</item>
+        <item name="colorTextSecondary">@color/o2_color_grey_5</item>
+        <item name="colorTextSecondaryInverse">@color/o2_color_blue_light_60</item>
+        <item name="colorTextDisabled">@color/o2_color_grey_3</item>
+        <item name="colorTextAmount">@color/o2_color_blue_primary</item>
 
-        <!-- Login -->
-        <item name="colorLoginOverlay">@color/o2_color_black_5_percent</item>
-        <item name="colorLoginDarkOverlay">@color/o2_color_black_80_percent</item>
-        <item name="colorLoginTextInput">@color/o2_color_grey_3</item>
-        <item name="colorLoginItem">@color/o2_color_white</item>
-        <item name="colorLoginItemPressed">@color/o2_color_white_85_percent</item>
-        <item name="colorLoginEditTextAccent">@color/o2_color_white</item>
-        <item name="colorLoginEditTextControlNormal">@color/o2_color_white</item>
-        <item name="colorLoginEditTextControlHighlight">@color/o2_color_white</item>
-        <item name="colorLoginEditTextControlActivated">@color/o2_color_white</item>
-        <item name="colorLoginEditTextText">@color/o2_color_white</item>
+        <!-- State colors -->
+        <item name="colorError">@color/o2_color_pepper</item>
+        <item name="colorSuccess">@color/o2_color_teal</item>
+        <item name="colorWarning">@color/o2_color_orange</item>
 
-        <!-- Sign Up -->
-        <item name="colorSignUpSocialBackground">@color/o2_color_black</item>
-        <item name="colorSignUpSocialLoginItem">@color/o2_color_grey_3</item>
-        <item name="colorSignUpSocialLoginItemPressed">@color/o2_color_grey_3_85_percent</item>
-
-        <!-- Chat -->
-        <item name="colorMucEventAccentColor">@color/o2_color_grey_1</item>
-
-        <!-- Telco Profile -->
-        <item name="colorProfileOverlayBackground">@color/o2_color_white_85_percent</item>
-        <item name="colorProfileSwipeBackShadow">@color/o2_color_black_50_percent</item>
-        <item name="colorProfileCallActionDisabledBackground">@color/o2_color_grey_3</item>
-
-        <!--  Own Profile  -->
-        <item name="colorFingerprintBackground">@color/o2_color_blue_primary</item>
-        <item name="colorProfileItemIcon">@color/o2_color_grey_1</item>
-
-        <!-- Session management -->
-        <item name="colorSessionManagementIcon">@color/o2_color_grey_0</item>
-
-        <!-- Photos -->
-        <item name="colorPhotosBackground">@color/o2_color_black</item>
-        <item name="colorAlbumRowBackground">@color/o2_color_black_80_percent</item>
-
-        <!-- News -->
-        <item name="colorNewsNotificationBackground">@color/o2_color_black</item>
-
-        <!-- Call Dialog -->
-        <item name="colorOutgoingCallDialogForegroundSignal">#FF262626</item>
-        <item name="colorOutgoingCallDialogBackgroundSignal">#FFE6E6E6</item>
-
-        <!-- Chat Bar -->
-        <item name="colorCharCounterTextColor">@color/o2_color_grey_1</item>
-
-        <!-- Customer Care -->
-        <item name="colorCustomerCareCategoryPickerDivider">#FFE6E6E6</item>
-
-        <!-- Albums -->
-        <item name="colorAlbumsPlaceholderPlain">#FF333333</item>
-        <item name="colorAlbumsPlaceholderPlainTransparent">#DD333333</item>
-
-        <!-- Call Screen -->
-        <item name="colorVoipInCallActionButton">#00FFFFFF</item>
-        <item name="colorVoipQualityFeedbackBackgroundLightGray">#AAAAAA</item>
-        <item name="colorVoipQualityFeedbackBrightCapsuleMin">#7FFFFFFF</item>
-        <item name="colorVoipQualityFeedbackBrightCapsuleMax">#FFFFFF</item>
-        <item name="colorVoipQualityFeedbackDarkCapsuleMin">#A3A3A3</item>
-        <item name="colorVoipQualityFeedbackDarkCapsuleMax">#222222</item>
-        <item name="colorVoipGradientBackground">#FF272A2F</item>
-
-        <!-- Tabs -->
-        <item name="colorMainTabText">@color/o2_color_white</item>
-        <item name="colorMainTabTextSelected">@color/o2_color_white</item>
-
-        <!-- Assistant -->
-        <item name="colorGradientBackgroundFirst">@color/o2_color_blue_primary</item>
-        <item name="colorGradientBackgroundSecond">@color/o2_color_blue_primary</item>
-        <item name="colorGradientBackgroundThird">@color/o2_color_blue_primary</item>
-        <item name="colorGradientBackgroundFourth">@color/o2_color_blue_primary</item>
-
-        <item name="colorTextAssistantHint">@color/o2_color_blue_light_60</item>
-
-        <item name="colorAssistantButtonBackground">@color/o2_color_sky_blue_light_30_25_percent
-        </item>
-        <item name="colorAssistantButtonBackgroundPressed">
-            @color/o2_color_sky_blue_light_60_25_percent
-        </item>
-        <item name="colorAssistantButtonBackgroundDisabled">
-            @color/o2_color_sky_blue_light_60_25_percent
-        </item>
-
-        <item name="colorAssistantButtonNotificationsBackground">@color/o2_color_white</item>
-
-        <item name="colorAssistantButtonBorderBackground">@color/o2_color_white</item>
-        <item name="colorAssistantButtonBorderBackgroundPressed">@color/o2_color_blue_light_60
-        </item>
-        <item name="colorAssistantButtonBorderBackgroundDisabled">@color/o2_color_blue_light_60
-        </item>
-
-        <item name="colorAssistantButtonFlowBackground">@color/o2_color_white</item>
-        <item name="colorAssistantButtonFlowBackgroundPressed">
-            @color/o2_color_sky_blue_light_60_25_percent
-        </item>
-        <item name="colorAssistantButtonFlowBackgroundDisabled">
-            @color/o2_color_sky_blue_light_60_25_percent
-        </item>
-
-        <item name="colorAssistantDivider">@color/o2_color_blue_primary_light_40_percent</item>
-        <item name="colorAssistantCardShadow">@color/o2_color_blue_primary_dark_40_percent</item>
-
-        <item name="colorAssistantChartPrimaryActive">@color/o2_color_blue_mid</item>
-        <item name="colorAssistantChartPrimaryInactive">@color/o2_color_grey_4</item>
-        <item name="colorAssistantChartSecondaryActive">@color/o2_color_orange</item>
-        <item name="colorAssistantChartSecondaryInactive">@color/o2_color_orange</item>
-        <item name="colorAssistantBadge">@color/o2_color_blue_primary</item>
-        <item name="colorAssistantChartCircleBackground">@color/o2_color_grey_4</item>
-        <item name="colorAssistantChartCirclePrimary">@color/o2_color_blue_mid</item>
-        <item name="colorAssistantChartCircleWarning">@color/o2_color_blue_mid</item>
-        <item name="colorAssistantChartCircleDanger">@color/o2_color_blue_mid</item>
-
-        <!-- Onboarding Wizard -->
-        <item name="colorScreenBackground">@color/o2_color_black_20_percent</item>
-
-        <!-- Call -->
-        <item name="colorTextNewBubbleCallContent">@color/o2_color_grey_1</item>
-
-        <!-- Location bubble -->
-        <item name="colorNewBubbleLocationForwardNormal">@color/o2_color_black_30_percent</item>
-        <item name="colorNewBubbleLocationForwardPressed">@color/o2_color_black_40_percent</item>
-
-        <!-- Photo -->
-        <item name="colorNewBubblePhotoTimestampBackground">@color/o2_color_black_30_percent</item>
-
-        <!-- Gif -->
-        <item name="colorNewBubbleIconBg">@color/o2_color_black_30_percent</item>
-
-        <!-- Video -->
-        <item name="colorVideoProgressBg">@color/o2_color_grey_3</item>
-        <item name="colorVideoTimeText">@color/o2_color_grey_3</item>
-        <item name="colorVideoViewBg">@color/o2_color_black</item>
-        <item name="colorVideoViewBgWith40Alpha">@color/o2_color_black_40_percent</item>
-        <item name="colorVideoPlayBgWith30Alpha">@color/o2_color_black_30_percent</item>
-
-        <!-- Date Meta Message -->
-        <item name="colorDateMessageTextColor">@color/o2_color_grey_1</item>
-
-        <!-- Unread Marker -->
-        <item name="colorUnreadMarkerTextColor">@color/o2_color_grey_1</item>
-
-        <!-- Pin Screen -->
-        <item name="colorPinGradientFirst">@color/o2_color_blue_primary</item>
-        <item name="colorPinGradientSecond">@color/o2_color_blue_primary</item>
-        <item name="colorPinGradientThird">@color/o2_color_blue_primary</item>
-        <item name="colorPinGradientFourth">@color/o2_color_blue_primary</item>
-        <item name="colorPinLoadingOverlay">@color/o2_color_black_50_percent</item>
-        <item name="colorPinBiometricOverlay">@color/o2_color_black_40_percent</item>
-
-        <!-- Explore -->
-        <item name="colorSkeletonBackground">@color/o2_color_grey_4</item>
-        <item name="colorSkeletonWave">@color/o2_color_grey_5</item>
-        <item name="colorExploreCardPressed">@color/o2_color_grey_2_25_percent</item>
-
-        <!-- Login loading Screen -->
-        <item name="colorLoginLoadingGradientFirst">@color/o2_background_brand_first</item>
-        <item name="colorLoginLoadingGradientSecond">@color/o2_background_brand_second</item>
-        <item name="colorLoginLoadingGradientThird">@color/o2_background_brand_third</item>
-        <item name="colorLoginLoadingGradientFourth">@color/o2_background_brand_fourth</item>
-
-        <!-- Bottom Bar -->
-        <item name="colorAppbarText">@color/o2_color_grey_2</item>
-        <item name="colorAppbarTextSelected">@color/o2_color_blue_primary</item>
-
-        <!-- Support and ticketing  -->
-        <item name="colorTagBackgroundFirst">@color/o2_color_green</item>
-        <item name="colorTagBackgroundFourth">@color/o2_color_orange</item>
-        <item name="colorTagBackgroundSecond">@color/o2_color_grey_3</item>
-        <item name="colorTagBackgroundThird">@color/o2_color_blue_primary</item>
-
-        <!-- Widget -->
-        <item name="colorChartBackground">@color/o2_color_grey_4</item>
-        <item name="colorChartPrimary">@color/o2_color_green</item>
-        <item name="colorChartPrimaryDark">@color/o2_color_green</item>
-        <item name="colorChartPrimaryLight">@color/o2_color_green</item>
-        <item name="colorChartWarning">@color/o2_color_yellow</item>
-        <item name="colorChartWarningLight">@color/o2_color_yellow</item>
-        <item name="colorChartDanger">@color/o2_color_coral</item>
-        <item name="colorChartUnlimited">@color/o2_color_blue_light</item>
-        <item name="colorChartCritical">@color/o2_color_coral</item>
-
-        <!-- Youtube player -->
-        <item name="colorYoutubeBackgroundLayer">@color/o2_color_black_30_percent</item>
+        <!-- Bars text colors -->
+        <item name="colorTextNavigationBarPrimary">@color/o2_color_white</item>
+        <item name="colorTextNavigationBarSecondary">@color/o2_color_blue_primary_light_50</item>
+        <item name="colorTextAppBar">@color/o2_color_grey_4</item>
+        <item name="colorTextAppBarSelected">@color/o2_color_blue_primary</item>
 
         <!-- Filters -->
         <item name="colorFilterTextDefault">@color/o2_color_white</item>
-        <item name="colorFilterTextChecked">?colorPrimary</item>
+        <item name="colorFilterTextChecked">?colorBrand</item>
         <item name="colorFilterBackgroundDefault">@color/o2_color_blue_primary_dark</item>
         <item name="colorFilterBackgroundChecked">@color/o2_color_white</item>
+
+        <!-- Gradients (assistant, pin fingerprint screens) -->
+        <item name="colorGradientBackgroundFirst">?colorBrand</item>
+        <item name="colorGradientBackgroundSecond">?colorBrand</item>
+        <item name="colorGradientBackgroundThird">?colorBrand</item>
+        <item name="colorGradientBackgroundFourth">?colorBrand</item>
+        <item name="colorLoginLoadingGradientFirst">?colorBrand</item>
+        <item name="colorLoginLoadingGradientSecond">?colorBrand</item>
+        <item name="colorLoginLoadingGradientThird">?colorBrand</item>
+        <item name="colorLoginLoadingGradientFourth">?colorBrand</item>
 
         <!-- Feedbacks -->
         <item name="feedbackScreenSuccessWithGradient">true</item>
@@ -340,25 +139,15 @@
         <item name="feedbackScreenErrorAnimation">@raw/feedback_error_o2</item>
         <item name="feedbackScreenInfoIcon">@drawable/feedback_info_o2</item>
 
-        <!-- Scroll content indicator -->
-        <item name="scrollContentIndicatorGradientStart">@color/o2_color_blue_primary</item>
-        <item name="scrollContentIndicatorGradientEnd">@color/o2_color_blue_primary_dark</item>
-
-        <!-- Iconography colors -->
-        <item name="colorIconInverse">@color/o2_color_white</item>
-        <item name="colorIconSecondary">@color/o2_color_grey_2</item>
-        <item name="colorIconDisabled">@color/o2_color_grey_3</item>
-
-        <!-- Tag -->
-        <item name="colorPromoBackground">@color/o2_color_purple</item>
-
         <!-- Stepper -->
         <item name="stepperFinishedStepAnimation">@raw/feedback_success_o2</item>
+
+        <item name="alertDialogTheme">@style/MisticaAlertDialogTheme.O2</item>
     </style>
 
     <style name="MisticaAlertDialogTheme.O2">
         <item name="colorAccent">@color/o2_color_teal</item>
-        <item name="colorTextPrimary">@color/o2_color_grey_0</item>
+        <item name="colorTextPrimary">@color/o2_color_grey_6</item>
         <item name="colorTextLink">@color/o2_color_blue_mid</item>
     </style>
 

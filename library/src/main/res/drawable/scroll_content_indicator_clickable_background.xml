@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ripple xmlns:android="http://schemas.android.com/apk/res/android"
-    android:color="?colorControlHighlight">
+    android:color="?attr/colorBackgroundAlternative">
     <item
         android:id="@+id/background"
         android:drawable="@drawable/scroll_content_indicator_background" />
