@@ -125,10 +125,10 @@
         <item name="colorFilterBackgroundChecked">@color/vivo_color_white</item>
 
         <!-- Gradients (assistant, pin fingerprint screens) -->
-        <item name="colorGradientBackgroundFirst">@color/vivo_gradient_first</item>
-        <item name="colorGradientBackgroundSecond">@color/vivo_gradient_second</item>
-        <item name="colorGradientBackgroundThird">@color/vivo_gradient_third</item>
-        <item name="colorGradientBackgroundFourth">@color/vivo_gradient_fourth</item>
+        <item name="colorGradientBackgroundFirst">?colorBrand</item>
+        <item name="colorGradientBackgroundSecond">?colorBrand</item>
+        <item name="colorGradientBackgroundThird">?colorBrand</item>
+        <item name="colorGradientBackgroundFourth">?colorBrand</item>
         <item name="colorLoginLoadingGradientFirst">?colorBrand</item>
         <item name="colorLoginLoadingGradientSecond">?colorBrand</item>
         <item name="colorLoginLoadingGradientThird">?colorBrand</item>
