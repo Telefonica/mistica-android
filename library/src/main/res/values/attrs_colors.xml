@@ -9,6 +9,7 @@
         <attr name="colorBackgroundBrand" format="color|reference" />
         <attr name="colorBackgroundOverlay" format="color|reference" />
         <attr name="colorBackgroundSkeleton" format="color|reference" />
+        <attr name="colorSkeletonWave" format="color|reference" />
         <attr name="colorBackgroundSkeletonInverse" format="color|reference" />
         <attr name="colorNavigationBarBackground" format="color|reference" />
         <attr name="colorBackgroundAlternative" format="color|reference" />
