@@ -4,7 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.*
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.Button
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.highlightedcard.HighlightedCardView
@@ -68,7 +71,7 @@ class HighlightedCardsCatalogFragment : Fragment() {
         with(view.findViewById<DropDownInput>(R.id.dropdown_button_type)) {
             post {
                 dropDown.setAdapter(
-                    ArrayAdapter(
+                    DropDownInput.Adapter(
                         context,
                         R.layout.dropdown_menu_popup_item,
                         buttonTypes.map { it.first }
@@ -85,7 +88,7 @@ class HighlightedCardsCatalogFragment : Fragment() {
     private fun updateHighlightedCardView(view: View) {
         with(view.findViewById<HighlightedCardView>(R.id.highlighted_card_view)) {
             when (imageStyle) {
-                HighlightedCardView.IMAGE_STYLE_MODE_FIT  -> setImage(R.drawable.higlighted_card_image)
+                HighlightedCardView.IMAGE_STYLE_MODE_FIT -> setImage(R.drawable.higlighted_card_image)
                 HighlightedCardView.IMAGE_STYLE_MODE_FILL -> setImage(R.drawable.highlighted_card_fill_mode_example)
             }
             setImageStyle(imageStyle)
