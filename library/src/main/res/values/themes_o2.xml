@@ -25,7 +25,6 @@
         <item name="colorButtonDangerBackground">@color/o2_color_pepper</item>
         <item name="colorButtonDangerBackgroundDisabled">@color/o2_color_pepper_light30</item>
         <item name="colorButtonDangerBackgroundSelected">@color/o2_color_pepper_dark</item>
-        <item name="colorButtonDangerBackgroundHover">@color/o2_color_pepper_dark</item>
         <item name="colorButtonLinkBackgroundSelected">@color/o2_color_blue_light_10</item>
         <item name="colorButtonLinkBackgroundSelectedInverse">@color/o2_color_white_20_alpha</item>
 
@@ -35,7 +34,6 @@
         </item>
         <item name="colorButtonPrimaryBackgroundInverse">@color/o2_color_white</item>
         <item name="colorButtonPrimaryBackgroundSelected">@color/o2_color_blue_primary_dark</item>
-        <item name="colorButtonPrimaryBackgroundHover">@color/o2_color_blue_primary_dark</item>
         <item name="colorButtonPrimaryBackgroundSelectedInverse">@color/o2_color_blue_primary_light_50
         </item>
         <item name="colorButtonSecondaryBackground">@color/o2_color_blue_primary</item>

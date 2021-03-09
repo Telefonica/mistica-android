@@ -25,7 +25,6 @@
         <item name="colorButtonDangerBackground">@color/vivo_color_pepper</item>
         <item name="colorButtonDangerBackgroundDisabled">@color/vivo_color_pepper_light30</item>
         <item name="colorButtonDangerBackgroundSelected">@color/vivo_color_pepper_dark</item>
-        <item name="colorButtonDangerBackgroundHover">@color/vivo_color_pepper_dark</item>
         <item name="colorButtonLinkBackgroundSelected">@color/vivo_color_purple_light10</item>
         <item name="colorButtonLinkBackgroundSelectedInverse">@color/vivo_color_white_20_alpha</item>
 
@@ -35,7 +34,6 @@
         </item>
         <item name="colorButtonPrimaryBackgroundInverse">@color/vivo_color_white</item>
         <item name="colorButtonPrimaryBackgroundSelected">@color/vivo_color_purple_dark</item>
-        <item name="colorButtonPrimaryBackgroundHover">@color/vivo_color_purple_dark</item>
         <item name="colorButtonPrimaryBackgroundSelectedInverse">@color/vivo_color_purple_light50
         </item>
         <item name="colorButtonSecondaryBackground">@color/vivo_color_purple</item>

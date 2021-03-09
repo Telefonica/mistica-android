@@ -25,7 +25,6 @@
         <attr name="colorButtonDangerBackground" format="color|reference" />
         <attr name="colorButtonDangerBackgroundDisabled" format="color|reference" />
         <attr name="colorButtonDangerBackgroundSelected" format="color|reference" />
-        <attr name="colorButtonDangerBackgroundHover" format="color|reference" />
         <attr name="colorButtonLinkBackgroundSelected" format="color|reference" />
         <attr name="colorButtonLinkBackgroundSelectedInverse" format="color|reference" />
 
@@ -34,7 +33,6 @@
         <attr name="colorButtonPrimaryBackgroundDisabledInverse" format="color|reference" />
         <attr name="colorButtonPrimaryBackgroundInverse" format="color|reference" />
         <attr name="colorButtonPrimaryBackgroundSelected" format="color|reference" />
-        <attr name="colorButtonPrimaryBackgroundHover" format="color|reference" />
         <attr name="colorButtonPrimaryBackgroundSelectedInverse" format="color|reference" />
         <attr name="colorButtonSecondaryBackground" format="color|reference" />
         <attr name="colorButtonSecondaryBackgroundDisabled" format="color|reference" />

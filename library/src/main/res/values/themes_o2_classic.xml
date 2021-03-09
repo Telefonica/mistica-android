@@ -25,7 +25,6 @@
         <item name="colorButtonDangerBackground">@color/o2_classic_color_pepper</item>
         <item name="colorButtonDangerBackgroundDisabled">@color/o2_classic_color_pepper_light_30</item>
         <item name="colorButtonDangerBackgroundSelected">@color/o2_classic_color_pepper_dark</item>
-        <item name="colorButtonDangerBackgroundHover">@color/o2_classic_color_pepper_dark</item>
         <item name="colorButtonLinkBackgroundSelected">@color/o2_classic_color_sky_blue_light_10</item>
         <item name="colorButtonLinkBackgroundSelectedInverse">@color/o2_classic_color_white_20_alpha</item>
 
@@ -35,7 +34,6 @@
         </item>
         <item name="colorButtonPrimaryBackgroundInverse">@color/o2_classic_color_white</item>
         <item name="colorButtonPrimaryBackgroundSelected">@color/o2_classic_color_sky_blue_dark</item>
-        <item name="colorButtonPrimaryBackgroundHover">@color/o2_classic_color_sky_blue_dark</item>
         <item name="colorButtonPrimaryBackgroundSelectedInverse">@color/o2_classic_color_sky_blue_light_50
         </item>
         <item name="colorButtonSecondaryBackground">@color/o2_classic_color_sky_blue</item>
@@ -122,10 +120,10 @@
         <item name="colorGradientBackgroundSecond">@color/o2_classic_gradient_second</item>
         <item name="colorGradientBackgroundThird">@color/o2_classic_gradient_third</item>
         <item name="colorGradientBackgroundFourth">@color/o2_classic_gradient_fourth</item>
-        <item name="colorLoginLoadingGradientFirst">?colorGradientBackgroundFirst</item>
-        <item name="colorLoginLoadingGradientSecond">?colorGradientBackgroundSecond</item>
-        <item name="colorLoginLoadingGradientThird">?colorGradientBackgroundThird</item>
-        <item name="colorLoginLoadingGradientFourth">?colorGradientBackgroundFourth</item>
+        <item name="colorLoginLoadingGradientFirst">@color/o2_classic_gradient_first</item>
+        <item name="colorLoginLoadingGradientSecond">@color/o2_classic_gradient_second</item>
+        <item name="colorLoginLoadingGradientThird">@color/o2_classic_gradient_third</item>
+        <item name="colorLoginLoadingGradientFourth">@color/o2_classic_gradient_fourth</item>
 
         <!-- Filters -->
         <item name="colorFilterTextDefault">@color/o2_classic_color_white</item>
