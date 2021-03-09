@@ -20,11 +20,6 @@ object GradientBackgroundFactory {
     }
 
     @JvmStatic
-    fun getBackgroundForPinScreen(context: Context): Drawable {
-        return getBackground(context, getGradientColors(context))
-    }
-
-    @JvmStatic
     fun getBackgroundForLoginLoadingScreen(context: Context): Drawable {
         return getBackground(context, getLoginLoadingScreenColors(context))
     }
