@@ -46,6 +46,5 @@
     <color name="movistar_color_grey_6_30_alpha">#4D313235</color>
     <color name="movistar_color_blue_dark_80_alpha">#CC008EDD</color>
     <color name="movistar_color_blue_light30_30_alpha">#4DB3E1FB</color>
-    <color name="movistar_color_blue_light10_25_alpha">#40E6F5FD</color>
     <color name="movistar_color_blue_light50_25_alpha">#4080CEF9</color>
 </resources>
