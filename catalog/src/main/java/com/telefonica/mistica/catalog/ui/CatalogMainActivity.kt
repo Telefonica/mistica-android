@@ -45,19 +45,17 @@ class CatalogMainActivity : AppCompatActivity() {
         )
 
         findViewById<DropDownInput>(R.id.drop_down_themes)?.apply {
-            post {
-                dropDown.setAdapter(
-                    ArrayAdapter(
-                        context,
-                        R.layout.dropdown_menu_popup_item,
-                        styles.map { it.first }
-                    )
+            dropDown.setAdapter(
+                DropDownInput.Adapter(
+                    context,
+                    R.layout.dropdown_menu_popup_item,
+                    styles.map { it.first }
                 )
-                dropDown.onItemClickListener =
-                    AdapterView.OnItemClickListener { _, _, position, _ ->
-                        themeOverride = styles[position].second
-                    }
-            }
+            )
+            dropDown.onItemClickListener =
+                AdapterView.OnItemClickListener { _, _, position, _ ->
+                    themeOverride = styles[position].second
+                }
         }
     }
 
