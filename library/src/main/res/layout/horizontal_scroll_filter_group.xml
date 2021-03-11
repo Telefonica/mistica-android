@@ -5,7 +5,7 @@
         android:id="@+id/filters_scroll_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorFilterGroupBackground"
+        android:background="?colorBackgroundBrand"
         android:clipToPadding="false"
         android:fillViewport="true"
         android:minHeight="48dp"
