@@ -33,6 +33,9 @@ class TagView @JvmOverloads constructor(
                 .let {
                     background.colorFilter = BlendModeColorFilterCompat
                         .createBlendModeColorFilterCompat(it, BlendModeCompat.SRC_ATOP)
+                    if (it == context.getThemeColor(R.attr.colorInverse)) {
+                        setTextColor(context.getThemeColor(R.attr.colorTextPrimary))
+                    }
                 }
             styledAttrs.recycle()
         }
