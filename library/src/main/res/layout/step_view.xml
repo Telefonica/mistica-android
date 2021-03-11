@@ -31,7 +31,7 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentTop="true"
             android:textColor="?colorTextPrimaryInverse"
-            style="@style/AppTheme.TextAppearance.Preset8.Medium"
+            style="@style/AppTheme.TextAppearance.Preset1.Medium"
             tools:text="1" />
     </RelativeLayout>
 
@@ -51,7 +51,7 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentTop="true"
             android:textColor="?colorTextSecondary"
-            style="@style/AppTheme.TextAppearance.Preset8.Medium"
+            style="@style/AppTheme.TextAppearance.Preset1.Medium"
             tools:text="1" />
     </RelativeLayout>
 

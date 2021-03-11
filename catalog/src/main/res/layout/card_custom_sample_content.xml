@@ -9,20 +9,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Top description"
-        android:textAppearance="@style/AppTheme.TextAppearance.Preset7"
+        android:textAppearance="@style/AppTheme.TextAppearance.Preset2"
         android:textColor="?colorTextSecondary" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="00,00 €/mes"
-        android:textAppearance="@style/AppTheme.TextAppearance.Preset3" />
+        android:textAppearance="@style/AppTheme.TextAppearance.Preset6" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Bottom description"
-        android:textAppearance="@style/AppTheme.TextAppearance.Preset7"
+        android:textAppearance="@style/AppTheme.TextAppearance.Preset2"
         android:textColor="?colorTextSecondary" />
 
 </LinearLayout>

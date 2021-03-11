@@ -3,5 +3,5 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:textAppearance="@style/AppTheme.TextAppearance.Preset7"
+    android:textAppearance="@style/AppTheme.TextAppearance.Preset2"
     android:gravity="center"/>

@@ -2,7 +2,7 @@
 <resources>
 
     <style name="AppTheme.Widgets.Chip.Choice" parent="Widget.MaterialComponents.Chip.Choice">
-        <item name="android:textAppearance">@style/AppTheme.TextAppearance.Preset7</item>
+        <item name="android:textAppearance">@style/AppTheme.TextAppearance.Preset2</item>
         <item name="android:textColor">@color/filter_text_color</item>
         <item name="chipMinHeight">32dp</item>
         <item name="chipStartPadding">16dp</item>

@@ -65,7 +65,7 @@
             android:id="@+id/row_title_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="@style/AppTheme.TextAppearance.Preset6.Light"
+            android:textAppearance="@style/AppTheme.TextAppearance.Preset3.Light"
             android:textColor="@color/text_primary_selector"
             tools:text="Title" />
 
@@ -76,7 +76,7 @@
             android:layout_marginTop="2dp"
             android:layout_marginBottom="2dp"
             android:minHeight="20dp"
-            android:textAppearance="@style/AppTheme.TextAppearance.Preset7"
+            android:textAppearance="@style/AppTheme.TextAppearance.Preset2"
             android:textColor="@color/text_secondary_selector"
             android:visibility="gone"
             tools:text="Subtitle"
@@ -89,7 +89,7 @@
             android:layout_marginTop="2dp"
             android:layout_marginBottom="2dp"
             android:minHeight="20dp"
-            android:textAppearance="@style/AppTheme.TextAppearance.Preset7"
+            android:textAppearance="@style/AppTheme.TextAppearance.Preset2"
             android:textColor="@color/text_secondary_selector"
             android:visibility="gone"
             tools:text="Description"
