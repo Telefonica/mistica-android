@@ -8,6 +8,10 @@
         <attr name="isLoading" format="boolean" />
     </declare-styleable>
 
+    <declare-styleable name="TagView">
+        <attr name="tagColor" format="color|reference" />
+    </declare-styleable>
+
     <declare-styleable name="FeedbackScreen">
         <attr name="feedbackType" format="enum">
             <enum name="success" value="0" />
