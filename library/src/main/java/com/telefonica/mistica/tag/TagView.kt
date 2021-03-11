@@ -29,7 +29,7 @@ class TagView @JvmOverloads constructor(
                     defStyleAttr,
                     0
                 )
-            styledAttrs.getColor(R.styleable.TagView_tagColor, R.attr.colorPromo)
+            styledAttrs.getColor(R.styleable.TagView_tagColor, context.getThemeColor(R.attr.colorPromo))
                 .let {
                     background.colorFilter = BlendModeColorFilterCompat
                         .createBlendModeColorFilterCompat(it, BlendModeCompat.SRC_ATOP)
