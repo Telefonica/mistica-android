@@ -104,8 +104,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:text="Preset 2"
-            android:textAppearance="@style/AppTheme.TextAppearance.Preset2" />
+            android:text="Preset 1"
+            android:textAppearance="@style/AppTheme.TextAppearance.Preset1" />
 
         <TextView
             android:layout_width="wrap_content"
