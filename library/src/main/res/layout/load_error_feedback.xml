@@ -7,7 +7,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:gravity="center"
-        android:textAppearance="@style/AppTheme.TextAppearance.Preset6.Medium"
+        android:textAppearance="@style/AppTheme.TextAppearance.Preset3.Medium"
         android:textColor="?colorTextPrimary"
         android:visibility="gone" />
 
@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/error_generic"
-        android:textAppearance="@style/AppTheme.TextAppearance.Preset7"
+        android:textAppearance="@style/AppTheme.TextAppearance.Preset2"
         android:textColor="?colorTextSecondary" />
 
     <com.telefonica.mistica.button.ProgressButton

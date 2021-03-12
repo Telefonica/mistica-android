@@ -33,7 +33,7 @@
 
     <style name="AppTheme.Forms.TextInputLayout.Hint" parent="TextAppearance.Design.Hint" />
 
-    <style name="AppTheme.Forms.TextInputLayout.Helper" parent="AppTheme.TextAppearance.Preset8" />
+    <style name="AppTheme.Forms.TextInputLayout.Helper" parent="AppTheme.TextAppearance.Preset1" />
 
     <style name="AppTheme.Forms.TextInputLayout.Helper.Inverse">
         <item name="android:textColor">?colorTextPrimaryInverse</item>
@@ -51,7 +51,7 @@
         <item name="android:paddingEnd">0dp</item>
     </style>
 
-    <style name="AppTheme.Forms.TextInputLayout.EditText" parent="AppTheme.TextAppearance.Preset6">
+    <style name="AppTheme.Forms.TextInputLayout.EditText" parent="AppTheme.TextAppearance.Preset3">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:minHeight">56dp</item>
@@ -89,7 +89,7 @@
     <style name="AppTheme.Forms.CheckBox" parent="Widget.AppCompat.CompoundButton.CheckBox">
         <item name="android:paddingStart">8dp</item>
         <item name="android:gravity">top</item>
-        <item name="android:textAppearance">@style/AppTheme.TextAppearance.Preset6</item>
+        <item name="android:textAppearance">@style/AppTheme.TextAppearance.Preset3</item>
         <item name="android:textColorHighlight">?attr/colorBackgroundAlternative</item>
         <item name="android:textColorLink">@color/text_link_selector</item>
     </style>

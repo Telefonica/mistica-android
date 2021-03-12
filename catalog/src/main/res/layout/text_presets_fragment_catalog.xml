@@ -20,64 +20,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:text="Preset 1"
-            android:textAppearance="@style/AppTheme.TextAppearance.Preset1" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="Preset 2"
-            android:textAppearance="@style/AppTheme.TextAppearance.Preset2" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="Preset 3"
-            android:textAppearance="@style/AppTheme.TextAppearance.Preset3" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="Preset 4"
-            android:textAppearance="@style/AppTheme.TextAppearance.Preset4" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="Preset 5"
-            android:textAppearance="@style/AppTheme.TextAppearance.Preset5" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="Preset 5 (Medium)"
-            android:textAppearance="@style/AppTheme.TextAppearance.Preset5.Medium" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="Preset 6"
-            android:textAppearance="@style/AppTheme.TextAppearance.Preset6" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="Preset 6 (Light)"
-            android:textAppearance="@style/AppTheme.TextAppearance.Preset6.Light" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="Preset 6 (Medium)"
-            android:textAppearance="@style/AppTheme.TextAppearance.Preset6.Medium" />
+            android:text="Preset 8"
+            android:textAppearance="@style/AppTheme.TextAppearance.Preset8" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -90,22 +34,85 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:text="Preset 7 (Medium)"
-            android:textAppearance="@style/AppTheme.TextAppearance.Preset7.Medium" />
+            android:text="Preset 6"
+            android:textAppearance="@style/AppTheme.TextAppearance.Preset6" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:text="Preset 8"
-            android:textAppearance="@style/AppTheme.TextAppearance.Preset7" />
+            android:text="Preset 5"
+            android:textAppearance="@style/AppTheme.TextAppearance.Preset5" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:text="Preset 8 (Medium)"
-            android:textAppearance="@style/AppTheme.TextAppearance.Preset8.Medium" />
+            android:text="Preset 4"
+            android:textAppearance="@style/AppTheme.TextAppearance.Preset4" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Preset 4 (Light)"
+            android:textAppearance="@style/AppTheme.TextAppearance.Preset4.Light" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Preset 4 (Medium)"
+            android:textAppearance="@style/AppTheme.TextAppearance.Preset4.Medium" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Preset 3"
+            android:textAppearance="@style/AppTheme.TextAppearance.Preset3" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Preset 3 (Light)"
+            android:textAppearance="@style/AppTheme.TextAppearance.Preset3.Light" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Preset 3 (Medium)"
+            android:textAppearance="@style/AppTheme.TextAppearance.Preset3.Medium" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Preset 2"
+            android:textAppearance="@style/AppTheme.TextAppearance.Preset2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Preset 2 (Medium)"
+            android:textAppearance="@style/AppTheme.TextAppearance.Preset2.Medium" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Preset 1"
+            android:textAppearance="@style/AppTheme.TextAppearance.Preset1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Preset 1 (Medium)"
+            android:textAppearance="@style/AppTheme.TextAppearance.Preset1.Medium" />
 
         <TextView
             android:layout_width="wrap_content"

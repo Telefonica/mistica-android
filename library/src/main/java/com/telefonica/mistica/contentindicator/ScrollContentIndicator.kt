@@ -23,10 +23,10 @@ class ScrollContentIndicator @JvmOverloads constructor(
 
     init {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            setTextAppearance(R.style.AppTheme_TextAppearance_Preset7_Medium)
+            setTextAppearance(R.style.AppTheme_TextAppearance_Preset2_Medium)
         } else {
             @Suppress("DEPRECATION")
-            setTextAppearance(context, R.style.AppTheme_TextAppearance_Preset7_Medium)
+            setTextAppearance(context, R.style.AppTheme_TextAppearance_Preset2_Medium)
         }
         layoutParams = ViewGroup.LayoutParams(
             ViewGroup.LayoutParams.WRAP_CONTENT,
@@ -72,11 +72,11 @@ class ScrollContentIndicator @JvmOverloads constructor(
         super.setVisibility(visibility)
     }
 
-    open fun disableAnimations() {
+    fun disableAnimations() {
         animationsEnabled = false
     }
 
-    open fun enableAnimations() {
+    fun enableAnimations() {
         animationsEnabled = true
     }
 
