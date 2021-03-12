@@ -8,8 +8,8 @@
         <item name="boxStrokeWidth">0dp</item>
         <item name="boxStrokeWidthFocused">0dp</item>
         <item name="hintEnabled">true</item>
-        <item name="errorTextColor">?colorTextError</item>
-        <item name="hintTextColor">?textInputLabel</item>
+        <item name="errorTextColor">?attr/colorError</item>
+        <item name="hintTextColor">?attr/colorControlActivated</item>
         <item name="hintTextAppearance">@style/AppTheme.Forms.TextInputLayout.Hint</item>
         <item name="errorTextAppearance">@style/AppTheme.Forms.TextInputLayout.Error</item>
         <item name="helperTextTextAppearance">@style/AppTheme.Forms.TextInputLayout.Helper</item>
@@ -27,7 +27,7 @@
     </style>
 
     <style name="AppTheme.Forms.TextInputLayout.Error" parent="TextAppearance.Design.Error">
-        <item name="android:textColor">?colorTextError</item>
+        <item name="android:textColor">?attr/colorError</item>
         <item name="colorError">?colorError</item>
     </style>
 
@@ -90,7 +90,7 @@
         <item name="android:paddingStart">8dp</item>
         <item name="android:gravity">top</item>
         <item name="android:textAppearance">@style/AppTheme.TextAppearance.Preset3</item>
-        <item name="android:textColorHighlight">?colorControlHighlight</item>
+        <item name="android:textColorHighlight">?attr/colorBackgroundAlternative</item>
         <item name="android:textColorLink">@color/text_link_selector</item>
     </style>
 </resources>

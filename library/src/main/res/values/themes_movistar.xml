@@ -3,350 +3,132 @@
 
     <style name="MisticaTheme.Movistar">
 
-        <item name="alertDialogTheme">@style/MisticaAlertDialogTheme.Movistar</item>
-
-        <!-- General -->
+        <!-- Background colors -->
+        <item name="colorAppBarBackground">@color/movistar_color_white</item>
         <item name="colorBackground">@color/movistar_color_white</item>
+        <item name="colorBackgroundBrand">@color/movistar_color_blue</item>
+        <item name="colorBackgroundOverlay">@color/movistar_color_grey_6_60_alpha</item>
+        <item name="colorBackgroundSkeleton">@color/movistar_color_grey_1</item>
+        <item name="colorSkeletonWave">@color/movistar_color_grey_2</item>
+        <item name="colorBackgroundSkeletonInverse">@color/movistar_color_blue_dark</item>
+        <item name="colorNavigationBarBackground">@color/movistar_color_blue</item>
+        <item name="colorBackgroundAlternative">@color/movistar_color_grey_1</item>
+        <item name="colorBackgroundFeedbackBottom">@color/movistar_color_blue</item>
 
-        <item name="colorTextPrimary">@color/movistar_color_grey_0</item>
-        <item name="colorTextSecondary">@color/movistar_color_grey_1</item>
-        <item name="colorTextDisabled">@color/movistar_color_grey_3</item>
-        <item name="colorTextPrimaryInverse">@color/movistar_color_white</item>
-        <item name="colorTextSecondaryInverse">@color/movistar_color_blue_light30</item>
+        <!-- Border colors -->
+        <item name="colorBorderLight">@color/movistar_color_grey_1</item>
+        <item name="colorBorder">@color/movistar_color_grey_3</item>
+        <item name="colorBorderDark">@color/movistar_color_grey_5</item>
+        <item name="colorBorderSelected">@color/movistar_color_green</item>
 
-        <item name="colorTextHint">@color/movistar_color_grey_2</item>
-        <item name="colorTextLink">@color/movistar_color_blue</item>
-        <item name="colorTextLinkPressed">@color/movistar_color_blue</item>
-        <item name="colorTextLinkDisabled">@color/movistar_color_blue_light30</item>
-        <item name="colorTextLinkSnackbar">@color/movistar_color_blue_light60</item>
-
-        <item name="colorTextError">@color/movistar_color_pepper</item>
-        <item name="colorTextDanger">@color/movistar_color_pink</item>
-        <item name="colorTextNavigationBarPrimary">@color/movistar_color_white</item>
-
-        <item name="colorTextAccent">@color/movistar_color_white</item>
-        <item name="colorTextAccentDisabled">@color/movistar_color_white_50_percent</item>
-
-        <item name="colorAccent">@color/movistar_color_green</item>
-        <item name="colorPrimary">@color/movistar_color_blue</item>
-        <item name="colorPrimaryDark">@color/movistar_color_blue_dark</item>
-
-        <item name="colorTabSelected">@color/movistar_color_blue</item>
-
-        <item name="textInputLabel">@color/movistar_color_blue</item>
-
-        <item name="colorBackgroundAlternative">@color/movistar_color_grey_5</item>
-
-        <item name="colorTimeIndicatorWarning">@color/movistar_color_pink</item>
-
-        <item name="colorBorderDark">@color/movistar_color_grey_1</item>
-
-        <!-- Recents -->
-        <item name="colorSearchOverlay">@color/movistar_color_black_50_percent</item>
-
-        <!-- Controls -->
-        <item name="colorControlNormal">@color/movistar_color_grey_3</item>
-        <item name="colorControlHighlight">@color/movistar_color_grey_5</item>
-        <item name="colorControlActivated">@color/movistar_color_blue</item>
-
-        <!-- Bubbles -->
-        <item name="colorBubbleMeBackground">@color/movistar_color_grey_5</item>
-        <item name="colorBubbleMeBackgroundPressed">@color/movistar_color_grey_4</item>
-        <item name="colorBubbleOtherBackground">@color/movistar_color_green_light30</item>
-        <item name="colorBubbleOtherBackgroundPressed">@color/movistar_color_green_light50</item>
-        <item name="colorBubbleBackgroundHighlighted">@color/movistar_color_blue_30_percent</item>
-
-        <item name="colorPhotoChatBubbleTimestampBackground">
-            @color/movistar_color_black_30_percent
-        </item>
-        <item name="colorChatBgFailedBubble">@color/movistar_color_white_50_percent</item>
-
-        <!-- Buttons -->
-        <item name="colorTextButtonPrimary">@color/movistar_color_white</item>
-        <item name="colorTextButtonSecondary">@color/movistar_color_green</item>
-        <item name="colorTextButtonSecondaryPressed">@color/movistar_color_green_dark</item>
-        <item name="colorTextButtonSecondaryDisabled">@color/movistar_color_green_light50</item>
-
-        <item name="colorTextButtonPrimaryInverse">@color/movistar_color_blue</item>
-        <item name="colorTextButtonPrimaryInversePressed">@color/movistar_color_blue</item>
-        <item name="colorTextButtonPrimaryInverseDisabled">@color/movistar_color_blue_light30</item>
-
-        <item name="colorTextButtonSecondaryInverse">@color/movistar_color_white</item>
-        <item name="colorTextButtonSecondaryInversePressed">@color/movistar_color_white</item>
-        <item name="colorTextButtonSecondaryInverseDisabled">@color/movistar_color_blue_light50
-        </item>
+        <!-- Button colors -->
+        <item name="colorButtonDangerBackground">@color/movistar_color_pepper</item>
+        <item name="colorButtonDangerBackgroundDisabled">@color/movistar_color_pepper_light30</item>
+        <item name="colorButtonDangerBackgroundSelected">@color/movistar_color_pepper_dark</item>
+        <item name="colorButtonLinkBackgroundSelected">@color/movistar_color_blue_light10</item>
+        <item name="colorButtonLinkBackgroundSelectedInverse">@color/movistar_color_white_20_alpha</item>
 
         <item name="colorButtonPrimaryBackground">@color/movistar_color_green</item>
-        <item name="colorButtonPrimaryBackgroundPressed">@color/movistar_color_green_dark</item>
         <item name="colorButtonPrimaryBackgroundDisabled">@color/movistar_color_green_light50</item>
-
+        <item name="colorButtonPrimaryBackgroundDisabledInverse">@color/movistar_color_blue_light50
+        </item>
+        <item name="colorButtonPrimaryBackgroundInverse">@color/movistar_color_white</item>
+        <item name="colorButtonPrimaryBackgroundSelected">@color/movistar_color_green_dark</item>
+        <item name="colorButtonPrimaryBackgroundSelectedInverse">@color/movistar_color_blue_light50
+        </item>
         <item name="colorButtonSecondaryBackground">@color/movistar_color_green</item>
-        <item name="colorButtonSecondaryBackgroundPressed">@color/movistar_color_green_dark</item>
         <item name="colorButtonSecondaryBackgroundDisabled">@color/movistar_color_green_light50
         </item>
-
-        <item name="colorButtonDangerBackground">@color/movistar_color_pepper</item>
-        <item name="colorButtonDangerBackgroundPressed">@color/movistar_color_pepper_dark</item>
-        <item name="colorButtonDangerBackgroundDisabled">@color/movistar_color_pepper_light</item>
-
-        <item name="colorButtonPrimaryBackgroundInverse">@color/movistar_color_white</item>
-        <item name="colorButtonPrimaryBackgroundPressedInverse">@color/movistar_color_blue_light60
+        <item name="colorButtonSecondaryBackgroundSelected">@color/movistar_color_green_dark</item>
+        <item name="colorButtonSecondaryBorderDisabledInverse">@color/movistar_color_blue_light50
         </item>
-        <item name="colorButtonPrimaryBackgroundDisabledInverse">
-            @color/movistar_color_blue_light60
-        </item>
-
         <item name="colorButtonSecondaryBorderInverse">@color/movistar_color_white</item>
-        <item name="colorButtonSecondaryBorderPressedInverse">@color/movistar_color_blue_light60
+        <item name="colorButtonSecondaryBorderSelectedInverse">@color/movistar_color_blue_light50
         </item>
-        <item name="colorButtonSecondaryBorderDisabledInverse">@color/movistar_color_blue_light60
+        <item name="colorTextButtonPrimary">@color/movistar_color_white</item>
+        <item name="colorTextButtonPrimaryInverse">@color/movistar_color_blue</item>
+        <item name="colorTextButtonPrimaryInverseDisabled">@color/movistar_color_blue_light30</item>
+        <item name="colorTextButtonPrimaryInverseSelected">@color/movistar_color_blue</item>
+        <item name="colorTextButtonSecondary">@color/movistar_color_green</item>
+        <item name="colorTextButtonSecondaryDisabled">@color/movistar_color_green_light50</item>
+        <item name="colorTextButtonSecondarySelected">@color/movistar_color_green_dark</item>
+        <item name="colorTextButtonSecondaryInverse">@color/movistar_color_white</item>
+        <item name="colorTextButtonSecondaryInverseDisabled">@color/movistar_color_blue_light50
         </item>
+        <item name="colorTextButtonSecondaryInverseSelected">@color/movistar_color_white</item>
 
-        <item name="colorLinkButtonBackgroundPressed">@color/movistar_color_blue_light10</item>
-        <item name="colorLinkButtonBackgroundPressedInverse">
-            @color/movistar_color_white_20_percent
+        <!-- Text Links -->
+        <item name="colorTextLink">@color/movistar_color_blue</item>
+        <item name="colorTextLinkDanger">@color/movistar_color_pepper</item>
+        <item name="colorTextLinkDangerDisabled">@color/movistar_color_pepper_light30
         </item>
+        <item name="colorTextLinkDisabled">@color/movistar_color_blue_light30</item>
+        <item name="colorTextLinkSnackbar">@color/movistar_color_blue_light50</item>
 
-        <item name="colorButtonCircularBorderBackground">@color/movistar_color_grey_3</item>
+        <!-- Control colors -->
+        <item name="colorControl">@color/movistar_color_grey_3</item>
+        <item name="colorControlActivated">@color/movistar_color_blue</item>
+        <item name="colorControlError">@color/movistar_color_pepper</item>
 
-        <!-- Call button -->
-        <item name="colorButtonDanger">@color/movistar_color_pepper</item>
-        <item name="colorButtonDangerDisabled">@color/movistar_color_pepper_light</item>
-        <item name="colorButtonDangerPressed">@color/movistar_color_pepper_dark</item>
+        <item name="colorLoadingBar">@color/movistar_color_green</item>
+        <item name="colorLoadingBarBackground">@color/movistar_color_green_light50</item>
+        <item name="colorLoadingBarBackgroundInverse">@color/movistar_color_blue_dark</item>
+        <item name="colorLoadingBarInverse">@color/movistar_color_blue_light50</item>
 
-        <!-- Call dialog -->
-        <item name="colorCallDialogWindowBackground">@color/movistar_color_black_50_percent</item>
+        <!-- Divider colors -->
+        <item name="colorDivider">@color/movistar_color_grey_2</item>
+        <item name="colorDividerInverse">@color/movistar_color_blue_dark</item>
+        <item name="colorNavigationBarDivider">@color/movistar_color_blue</item>
 
-        <!-- Call screen -->
-        <item name="colorCallScreenOverlayTransparent">@color/movistar_color_black_50_percent</item>
-        <item name="colorCallScreenOverlay">@color/movistar_color_black</item>
-        <item name="colorCallScreenCallEndedBackgroundOpacity">
-            @color/movistar_color_black_70_percent
-        </item>
-        <item name="colorCallScreenFilterButtonBackground">@color/movistar_color_black_5_percent
-        </item>
-        <item name="colorCallScreenTextShadow">@color/movistar_color_black_80_percent</item>
-        <item name="colorCallScreenDialerButtonPressed">@color/movistar_color_white_50_percent
-        </item>
-        <item name="colorCallScreenDialerButton">@color/movistar_color_white</item>
-        <item name="colorCallScreenWaveformViewLineTransparent">
-            @color/movistar_color_white_50_percent
-        </item>
-        <item name="colorCallScreenWaveformViewLineOpaque">@color/movistar_color_white</item>
-        <item name="colorCallScreenFilterSelector">@color/movistar_color_white_35_percent</item>
-
-        <!-- Feedbacks -->
+        <!-- Feedback colors -->
+        <item name="colorBadge">@color/movistar_color_pepper_dark</item>
         <item name="colorFeedbackErrorBackground">@color/movistar_color_pepper</item>
-        <item name="colorFeedbackInfoBackground">@color/movistar_color_grey_0</item>
-        <item name="colorToastShadowBackground">@color/movistar_color_black_70_percent</item>
-        <item name="colorBorder">@color/movistar_color_grey_3</item>
+        <item name="colorFeedbackInfoBackground">@color/movistar_color_grey_6</item>
 
-        <!-- Dividers -->
-        <item name="colorDivider">@color/movistar_color_grey_4</item>
-        <item name="colorDividerFat">@color/movistar_color_grey_5</item>
-        <item name="colorDividerInverse">@color/movistar_color_white</item>
-        <item name="colorDividerAlbumPhotoDropDownMenu">@color/movistar_color_black_10_percent
-        </item>
+        <!-- Global colors -->
+        <item name="colorBrand">@color/movistar_color_blue</item>
+        <item name="colorBrandDark">@color/movistar_color_blue_dark</item>
+        <item name="colorInverse">@color/movistar_color_white</item>
+        <item name="colorNeutralHigh">@color/movistar_color_grey_6</item>
+        <item name="colorNeutralLow">@color/movistar_color_grey_3</item>
+        <item name="colorNeutralMedium">@color/movistar_color_grey_5</item>
+        <item name="colorPromo">@color/movistar_color_purple</item>
+        <item name="colorHighlight">@color/movistar_color_pink</item>
 
-        <!-- View Pager indicators -->
-        <item name="colorViewPagerItemPrimary">@color/movistar_color_white</item>
-        <item name="colorViewPagerItemSecondary">@color/movistar_color_grey_0</item>
+        <!-- Texts colors -->
+        <item name="colorTextPrimary">@color/movistar_color_grey_6</item>
+        <item name="colorTextPrimaryInverse">@color/movistar_color_white</item>
+        <item name="colorTextSecondary">@color/movistar_color_grey_5</item>
+        <item name="colorTextSecondaryInverse">@color/movistar_color_blue_light30</item>
+        <item name="colorTextDisabled">@color/movistar_color_grey_3</item>
+        <item name="colorTextAmount">@color/movistar_color_blue</item>
 
-        <!-- Login -->
-        <item name="colorLoginOverlay">@color/movistar_color_black_50_percent</item>
-        <item name="colorLoginDarkOverlay">@color/movistar_color_black_80_percent</item>
-        <item name="colorLoginTextInput">@color/movistar_color_grey_3</item>
-        <item name="colorLoginItem">@color/movistar_color_white</item>
-        <item name="colorLoginItemPressed">@color/movistar_color_white_85_percent</item>
-        <item name="colorLoginEditTextAccent">@color/movistar_color_white</item>
-        <item name="colorLoginEditTextControlNormal">@color/movistar_color_white</item>
-        <item name="colorLoginEditTextControlHighlight">@color/movistar_color_white</item>
-        <item name="colorLoginEditTextControlActivated">@color/movistar_color_white</item>
-        <item name="colorLoginEditTextText">@color/movistar_color_white</item>
+        <!-- State colors -->
+        <item name="colorError">@color/movistar_color_pepper</item>
+        <item name="colorSuccess">@color/movistar_color_green</item>
+        <item name="colorWarning">@color/movistar_color_egg</item>
 
-        <!-- Sign Up -->
-        <item name="colorSignUpSocialBackground">@color/movistar_color_black</item>
-        <item name="colorSignUpSocialLoginItem">@color/movistar_color_grey_3</item>
-        <item name="colorSignUpSocialLoginItemPressed">@color/movistar_color_grey_3_85_percent
-        </item>
-
-        <!-- Chat -->
-        <item name="colorMucEventAccentColor">@color/movistar_color_grey_1</item>
-
-        <!-- Telco Profile -->
-        <item name="colorProfileOverlayBackground">@color/movistar_color_white_85_percent</item>
-        <item name="colorProfileSwipeBackShadow">@color/movistar_color_black_50_percent</item>
-        <item name="colorProfileCallActionDisabledBackground">@color/movistar_color_grey_3</item>
-
-        <!--  Own Profile  -->
-        <item name="colorFingerprintBackground">@color/movistar_color_blue</item>
-        <item name="colorProfileItemIcon">@color/movistar_color_grey_1</item>
-
-        <!-- Session management -->
-        <item name="colorSessionManagementIcon">@color/movistar_color_grey_0</item>
-
-        <!-- Photos -->
-        <item name="colorPhotosBackground">@color/movistar_color_black</item>
-        <item name="colorAlbumRowBackground">@color/movistar_color_black_80_percent</item>
-
-        <!-- News -->
-        <item name="colorNewsNotificationBackground">@color/movistar_color_black</item>
-
-        <!-- Call Dialog -->
-        <item name="colorOutgoingCallDialogForegroundSignal">#FF262626</item>
-        <item name="colorOutgoingCallDialogBackgroundSignal">#FFE6E6E6</item>
-
-        <!-- Chat Bar -->
-        <item name="colorCharCounterTextColor">@color/movistar_color_grey_1</item>
-
-        <!-- Customer Care -->
-        <item name="colorCustomerCareCategoryPickerDivider">#FFE6E6E6</item>
-
-        <!-- Albums -->
-        <item name="colorAlbumsPlaceholderPlain">#FF333333</item>
-        <item name="colorAlbumsPlaceholderPlainTransparent">#DD333333</item>
-
-        <!-- Call Screen -->
-        <item name="colorVoipInCallActionButton">#00FFFFFF</item>
-        <item name="colorVoipQualityFeedbackBackgroundLightGray">#AAAAAA</item>
-        <item name="colorVoipQualityFeedbackBrightCapsuleMin">#7FFFFFFF</item>
-        <item name="colorVoipQualityFeedbackBrightCapsuleMax">#FFFFFF</item>
-        <item name="colorVoipQualityFeedbackDarkCapsuleMin">#A3A3A3</item>
-        <item name="colorVoipQualityFeedbackDarkCapsuleMax">#222222</item>
-        <item name="colorVoipGradientBackground">#FF272A2F</item>
-
-        <!-- Tabs -->
-        <item name="colorMainTabText">@color/movistar_color_blue_light30</item>
-        <item name="colorMainTabTextSelected">@color/movistar_color_white</item>
-
-        <!-- Assistant -->
-        <item name="colorGradientBackgroundFirst">@color/movistar_gradient_first</item>
-        <item name="colorGradientBackgroundSecond">@color/movistar_gradient_second</item>
-        <item name="colorGradientBackgroundThird">@color/movistar_gradient_third</item>
-        <item name="colorGradientBackgroundFourth">@color/movistar_gradient_fourth</item>
-
-        <item name="colorTextAssistantHint">@color/movistar_color_blue_light30</item>
-
-        <item name="colorAssistantButtonBackground">@color/movistar_color_blue_light30_25_percent
-        </item>
-        <item name="colorAssistantButtonBackgroundPressed">
-            @color/movistar_color_blue_light60_25_percent
-        </item>
-        <item name="colorAssistantButtonBackgroundDisabled">
-            @color/movistar_color_blue_light60_25_percent
-        </item>
-
-        <item name="colorAssistantButtonNotificationsBackground">@color/movistar_color_white</item>
-
-        <item name="colorAssistantButtonBorderBackground">@color/movistar_color_white</item>
-        <item name="colorAssistantButtonBorderBackgroundPressed">
-            @color/movistar_color_blue_light60
-        </item>
-        <item name="colorAssistantButtonBorderBackgroundDisabled">
-            @color/movistar_color_blue_light60
-        </item>
-
-        <item name="colorAssistantButtonFlowBackground">@color/movistar_color_white</item>
-        <item name="colorAssistantButtonFlowBackgroundPressed">
-            @color/movistar_color_blue_light60_25_percent
-        </item>
-        <item name="colorAssistantButtonFlowBackgroundDisabled">
-            @color/movistar_color_blue_light60_25_percent
-        </item>
-
-        <item name="colorAssistantDivider">@color/movistar_color_blue_light60</item>
-        <item name="colorAssistantCardShadow">@color/movistar_color_blue_dark_80_percent</item>
-
-        <item name="colorAssistantChartPrimaryActive">@color/movistar_color_blue</item>
-        <item name="colorAssistantChartPrimaryInactive">@color/movistar_color_blue_light30</item>
-        <item name="colorAssistantChartSecondaryActive">@color/movistar_color_green</item>
-        <item name="colorAssistantChartSecondaryInactive">@color/movistar_color_green_light30</item>
-        <item name="colorAssistantBadge">@color/movistar_color_blue</item>
-        <item name="colorAssistantChartCircleBackground">@color/movistar_color_grey_4</item>
-        <item name="colorAssistantChartCirclePrimary">@color/movistar_color_green</item>
-        <item name="colorAssistantChartCircleWarning">@color/movistar_color_egg</item>
-        <item name="colorAssistantChartCircleDanger">@color/movistar_color_pink</item>
-
-        <!-- Onboarding Wizard -->
-        <item name="colorScreenBackground">@color/movistar_color_black_20_percent</item>
-
-        <!-- Call -->
-        <item name="colorTextNewBubbleCallContent">@color/movistar_color_grey_1</item>
-
-        <!-- Location bubble -->
-        <item name="colorNewBubbleLocationForwardNormal">@color/movistar_color_black_30_percent
-        </item>
-        <item name="colorNewBubbleLocationForwardPressed">@color/movistar_color_black_40_percent
-        </item>
-
-        <!-- Photo -->
-        <item name="colorNewBubblePhotoTimestampBackground">@color/movistar_color_black_30_percent
-        </item>
-
-        <!-- Gif -->
-        <item name="colorNewBubbleIconBg">@color/movistar_color_black_30_percent</item>
-
-        <!-- Video -->
-        <item name="colorVideoProgressBg">@color/movistar_color_grey_3</item>
-        <item name="colorVideoTimeText">@color/movistar_color_grey_3</item>
-        <item name="colorVideoViewBg">@color/movistar_color_black</item>
-        <item name="colorVideoViewBgWith40Alpha">@color/movistar_color_black_40_percent</item>
-        <item name="colorVideoPlayBgWith30Alpha">@color/movistar_color_black_30_percent</item>
-
-        <!-- Date Meta Message -->
-        <item name="colorDateMessageTextColor">@color/movistar_color_grey_1</item>
-
-        <!-- Unread Marker -->
-        <item name="colorUnreadMarkerTextColor">@color/movistar_color_grey_1</item>
-
-        <!-- Pin Screen -->
-        <item name="colorPinGradientFirst">@color/movistar_color_blue</item>
-        <item name="colorPinGradientSecond">@color/movistar_color_blue</item>
-        <item name="colorPinGradientThird">@color/movistar_color_blue</item>
-        <item name="colorPinGradientFourth">@color/movistar_color_blue</item>
-        <item name="colorPinLoadingOverlay">@color/movistar_color_black_50_percent</item>
-        <item name="colorPinBiometricOverlay">@color/movistar_color_black_40_percent</item>
-
-        <!-- Explore -->
-        <item name="colorSkeletonBackground">@color/movistar_color_grey_4</item>
-        <item name="colorSkeletonWave">@color/movistar_color_grey_5</item>
-        <item name="colorExploreCardPressed">@color/movistar_color_grey_2_25_percent</item>
-
-        <!-- Login loading Screen -->
-        <item name="colorLoginLoadingGradientFirst">@color/movistar_color_blue_dark</item>
-        <item name="colorLoginLoadingGradientSecond">@color/movistar_color_blue_dark</item>
-        <item name="colorLoginLoadingGradientThird">@color/movistar_color_blue_dark</item>
-        <item name="colorLoginLoadingGradientFourth">@color/movistar_color_blue_dark</item>
-
-        <!-- Bottom Bar -->
-        <item name="colorAppbarText">@color/movistar_color_grey_2</item>
-        <item name="colorAppbarTextSelected">@color/movistar_color_blue</item>
-
-        <!-- Support and ticketing  -->
-        <item name="colorTagBackgroundFirst">@color/movistar_color_green</item>
-        <item name="colorTagBackgroundFourth">@color/movistar_color_egg</item>
-        <item name="colorTagBackgroundSecond">@color/movistar_color_grey_3</item>
-        <item name="colorTagBackgroundThird">@color/movistar_color_blue</item>
-
-        <!-- Widget -->
-        <item name="colorChartBackground">@color/movistar_color_grey_4</item>
-        <item name="colorChartPrimary">@color/movistar_color_green</item>
-        <item name="colorChartPrimaryDark">@color/movistar_color_green_dark</item>
-        <item name="colorChartPrimaryLight">@color/movistar_color_green_light30</item>
-        <item name="colorChartWarning">@color/movistar_color_egg</item>
-        <item name="colorChartWarningLight">@color/movistar_color_egg_light</item>
-        <item name="colorChartDanger">@color/movistar_color_pink</item>
-        <item name="colorChartUnlimited">@color/movistar_color_green_light50</item>
-        <item name="colorChartCritical">@color/movistar_color_grey_4</item>
-
-        <!-- Youtube player -->
-        <item name="colorYoutubeBackgroundLayer">@color/movistar_color_black_30_percent</item>
+        <!-- Bars text colors -->
+        <item name="colorTextNavigationBarPrimary">@color/movistar_color_white</item>
+        <item name="colorTextNavigationBarSecondary">@color/movistar_color_blue_light30</item>
+        <item name="colorTextAppBar">@color/movistar_color_grey_4</item>
+        <item name="colorTextAppBarSelected">@color/movistar_color_blue</item>
 
         <!-- Filters -->
+        <item name="colorFilterTextChecked">?colorBrand</item>
         <item name="colorFilterTextDefault">@color/movistar_color_white</item>
-        <item name="colorFilterTextChecked">?colorPrimary</item>
         <item name="colorFilterBackgroundDefault">@color/movistar_color_blue_dark</item>
         <item name="colorFilterBackgroundChecked">@color/movistar_color_white</item>
+
+        <!-- Gradients (assistant, pin fingerprint screens) -->
+        <item name="colorGradientBackgroundFirst">?colorBrand</item>
+        <item name="colorGradientBackgroundSecond">?colorBrand</item>
+        <item name="colorGradientBackgroundThird">?colorBrand</item>
+        <item name="colorGradientBackgroundFourth">?colorBrand</item>
+        <item name="colorLoginLoadingGradientFirst">?colorBrandDark</item>
+        <item name="colorLoginLoadingGradientSecond">?colorBrandDark</item>
+        <item name="colorLoginLoadingGradientThird">?colorBrandDark</item>
+        <item name="colorLoginLoadingGradientFourth">?colorBrandDark</item>
 
         <!-- Feedbacks -->
         <item name="feedbackScreenSuccessWithGradient">false</item>
@@ -355,29 +137,13 @@
         <item name="feedbackScreenErrorAnimation">@raw/feedback_error_movistar</item>
         <item name="feedbackScreenInfoIcon">@drawable/feedback_info_movistar</item>
 
-        <!-- Scroll content indicator -->
-        <item name="scrollContentIndicatorGradientStart">@color/movistar_color_blue</item>
-        <item name="scrollContentIndicatorGradientEnd">@color/movistar_color_blue_dark</item>
-
-        <!-- Iconography colors -->
-        <item name="colorIconInverse">@color/movistar_color_white</item>
-        <item name="colorIconDisabled">@color/movistar_color_grey_3</item>
-        <item name="colorIconSecondary">@color/movistar_color_grey_2</item>
-        <item name="colorIconWarning">@color/movistar_color_egg</item>
-        <item name="colorIconError">@color/movistar_color_pepper</item>
-        <item name="colorIconCustomPurple">@color/movistar_color_purple</item>
-        <item name="colorIconCustomMagenta">@color/movistar_color_pink</item>
-
-        <!-- Tag -->
-        <item name="colorPromoBackground">@color/movistar_color_purple</item>
-
         <!-- Stepper -->
         <item name="stepperFinishedStepAnimation">@raw/feedback_success</item>
     </style>
 
     <style name="MisticaAlertDialogTheme.Movistar">
         <item name="colorAccent">@color/movistar_color_green</item>
-        <item name="colorTextPrimary">@color/movistar_color_grey_0</item>
+        <item name="colorTextPrimary">@color/movistar_color_grey_6</item>
         <item name="colorTextLink">@color/movistar_color_blue</item>
     </style>
 
@@ -385,25 +151,11 @@
         <!-- General -->
         <item name="colorPrimary">@color/movistar_prominent_color_blue</item>
         <item name="colorPrimaryDark">@color/movistar_prominent_color_blue_dark</item>
-        <item name="colorTabSelected">@color/movistar_prominent_color_blue</item>
-
-        <!-- Fonts -->
-        <item name="colorTextPrimaryInverse">@color/movistar_color_white</item>
-
-        <!-- Bottom Bar -->
-        <item name="colorAppbarTextSelected">@color/movistar_prominent_color_blue</item>
-
-        <!-- Pin Screen -->
-        <item name="colorPinGradientFirst">@color/movistar_prominent_color_blue</item>
-        <item name="colorPinGradientSecond">@color/movistar_prominent_color_blue</item>
-        <item name="colorPinGradientThird">@color/movistar_prominent_color_blue</item>
-        <item name="colorPinGradientFourth">@color/movistar_prominent_color_blue</item>
+        <item name="colorBrand">@color/movistar_prominent_color_blue</item>
+        <item name="colorDividerInverse">@color/movistar_prominent_color_blue_dark</item>
 
         <!-- Filters -->
         <item name="colorFilterBackgroundDefault">@color/movistar_prominent_color_blue_dark</item>
-
-        <!-- Iconography colors -->
-        <item name="colorIconBrand">@color/movistar_color_blue</item>
     </style>
 
     <!-- Just a copy of the above. As themes do not support multiple inheritance. -->
@@ -411,25 +163,11 @@
         <!-- General -->
         <item name="colorPrimary">@color/movistar_prominent_color_blue</item>
         <item name="colorPrimaryDark">@color/movistar_prominent_color_blue_dark</item>
-        <item name="colorTabSelected">@color/movistar_prominent_color_blue</item>
-
-        <!-- Fonts -->
-        <item name="colorTextPrimaryInverse">@color/movistar_color_white</item>
-
-        <!-- Bottom Bar -->
-        <item name="colorAppbarTextSelected">@color/movistar_prominent_color_blue</item>
-
-        <!-- Pin Screen -->
-        <item name="colorPinGradientFirst">@color/movistar_prominent_color_blue</item>
-        <item name="colorPinGradientSecond">@color/movistar_prominent_color_blue</item>
-        <item name="colorPinGradientThird">@color/movistar_prominent_color_blue</item>
-        <item name="colorPinGradientFourth">@color/movistar_prominent_color_blue</item>
+        <item name="colorBrand">@color/movistar_prominent_color_blue</item>
+        <item name="colorDividerInverse">@color/movistar_prominent_color_blue_dark</item>
 
         <!-- Filters -->
         <item name="colorFilterBackgroundDefault">@color/movistar_prominent_color_blue_dark</item>
-
-        <!-- Iconography colors -->
-        <item name="colorIconBrand">@color/movistar_color_blue</item>
     </style>
 
 </resources>

@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
 import android.widget.Button
 import androidx.fragment.app.Fragment
 import com.telefonica.mistica.catalog.R
@@ -30,20 +29,20 @@ class SteppersCatalogFragment : Fragment() {
         val previousStep = view.findViewById<Button>(R.id.previous_step)
         val nextStep = view.findViewById<Button>(R.id.next_step)
 
-        val numberOfSteps = arrayOf(2, 3, 4, 5, 6)
+        val numberOfSteps = listOf(2, 3, 4, 5, 6)
 
         var currentStep = 1
         var maxSteps = 2
 
         with(numberOfStepsDropDown.dropDown) {
             setAdapter(
-                ArrayAdapter(
+                DropDownInput.Adapter(
                     view.context,
                     R.layout.dropdown_menu_popup_item,
-                    numberOfSteps
+                    numberOfSteps.map { it.toString() }
                 )
             )
-            setText(2.toString(), false)
+            setText(2.toString())
             setOnItemClickListener { _, _, position, _ ->
                 maxSteps = numberOfSteps[position]
                 currentStep = 1

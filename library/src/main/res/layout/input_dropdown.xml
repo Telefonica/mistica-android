@@ -6,7 +6,6 @@
     android:layout_height="wrap_content">
 
     <androidx.appcompat.widget.AppCompatAutoCompleteTextView
-        android:id="@+id/dropdown_input"
         style="@style/AppTheme.Forms.TextInputLayout.EditText.Dropdown" />
 
 </com.google.android.material.textfield.TextInputLayout>
