@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MisticaTheme.Movistar" parent="MisticaTheme.Movistar_Base">
+        <!-- Background colors -->
+        <item name="colorAppBarBackground">@color/movistar_color_darkModeGrey</item>
+        <item name="colorBackground">@color/movistar_color_darkModeBlack</item>
+        <item name="colorBackgroundBrand">@color/movistar_color_darkModeBlack</item>
+        <item name="colorBackgroundOverlay">@color/movistar_color_grey_6_80_alpha</item>
+        <item name="colorBackgroundSkeleton">@color/movistar_color_grey_6</item>
+        <item name="colorSkeletonWave">@color/movistar_color_grey_5</item>
+        <item name="colorBackgroundSkeletonInverse">@color/movistar_color_grey_6</item>
+        <item name="colorNavigationBarBackground">@color/movistar_color_darkModeBlack</item>
+        <item name="colorBackgroundAlternative">@color/movistar_color_darkModeGrey</item>
+        <item name="colorBackgroundFeedbackBottom">@color/movistar_color_darkModeBlack</item>
+
+        <!-- Border colors -->
+        <item name="colorBorderLight">@color/movistar_color_darkModeBlack</item>
+        <item name="colorBorder">@color/movistar_color_darkModeGrey</item>
+
+        <!-- Button colors -->
+        <item name="colorButtonLinkBackgroundSelected">@color/movistar_color_darkModeGrey</item>
+        <item name="colorButtonLinkBackgroundSelectedInverse">@color/movistar_color_darkModeGrey
+        </item>
+        <item name="colorButtonPrimaryBackgroundDisabled">
+            @color/movistar_color_green_light50_40_alpha
+        </item>
+        <item name="colorButtonPrimaryBackgroundDisabledInverse">
+            @color/movistar_color_green_light50_40_alpha
+        </item>
+        <item name="colorButtonPrimaryBackgroundInverse">@color/movistar_color_green</item>
+        <item name="colorButtonPrimaryBackgroundSelectedInverse">@color/movistar_color_green_dark
+        </item>
+        <item name="colorButtonSecondaryBorderDisabledInverse">
+            @color/movistar_color_green_light50_40_alpha
+        </item>
+        <item name="colorButtonSecondaryBorderInverse">@color/movistar_color_green</item>
+        <item name="colorButtonSecondaryBorderSelectedInverse">@color/movistar_color_green_dark
+        </item>
+        <item name="colorTextButtonPrimary">@color/movistar_color_white</item>
+        <item name="colorTextButtonPrimaryDisabled">@color/movistar_color_grey_2</item>
+        <item name="colorTextButtonPrimaryInverse">@color/movistar_color_white</item>
+        <item name="colorTextButtonPrimaryInverseDisabled">@color/movistar_color_grey_5</item>
+        <item name="colorTextButtonPrimaryInverseSelected">@color/movistar_color_white</item>
+        <item name="colorTextButtonSecondary">@color/movistar_color_white</item>
+        <item name="colorTextButtonSecondaryDisabled">@color/movistar_color_green_light50_40_alpha
+        </item>
+        <item name="colorTextButtonSecondaryInverseDisabled">
+            @color/movistar_color_green_light50_40_alpha
+        </item>
+
+        <!-- Text Links -->
+        <item name="colorTextLinkDisabled">@color/movistar_color_darkModeMovistarBlueDark</item>
+
+        <!-- Control colors -->
+        <item name="colorControl">@color/movistar_color_grey_6</item>
+
+        <item name="colorLoadingBarBackgroundInverse">@color/movistar_color_green_dark</item>
+        <item name="colorLoadingBarInverse">@color/movistar_color_green_light50</item>
+
+        <!-- Divider colors -->
+        <item name="colorDivider">@color/movistar_color_darkModeGrey</item>
+        <item name="colorDividerInverse">@color/movistar_color_darkModeGrey</item>
+        <item name="colorNavigationBarDivider">@color/movistar_color_darkModeBlack</item>
+
+        <!-- Global colors -->
+        <item name="colorBrand">@color/movistar_color_blue_light50</item>
+        <item name="colorBrandDark">@color/movistar_color_grey_6</item>
+        <item name="colorInverse">@color/movistar_color_grey_2</item>
+        <item name="colorNeutralHigh">@color/movistar_color_grey_4</item>
+        <item name="colorNeutralLow">@color/movistar_color_grey_6</item>
+
+        <!-- Texts colors -->
+        <item name="colorTextPrimary">@color/movistar_color_white</item>
+        <item name="colorTextSecondary">@color/movistar_color_grey_4</item>
+        <item name="colorTextSecondaryInverse">@color/movistar_color_grey_4</item>
+        <item name="colorTextDisabled">@color/movistar_color_grey_5</item>
+
+        <!-- Bars text colors -->
+        <item name="colorTextNavigationBarSecondary">@color/movistar_color_grey_4</item>
+        <item name="colorTextAppBar">@color/movistar_color_grey_5</item>
+        <item name="colorTextAppBarSelected">@color/movistar_color_white</item>
+
+        <!-- Filters: No changes for DARK MODE? -->
+        <!--        <item name="colorFilterTextChecked">?colorBrand</item>-->
+        <!--        <item name="colorFilterTextDefault">@color/movistar_color_white</item>-->
+        <!--        <item name="colorFilterBackgroundDefault">@color/movistar_color_blue_dark</item>-->
+        <!--        <item name="colorFilterBackgroundChecked">@color/movistar_color_white</item>-->
+    </style>
+
+    <style name="MisticaAlertDialogTheme.Movistar">
+        <item name="colorAccent">@color/movistar_color_green</item>
+        <item name="colorTextPrimary">@color/movistar_color_grey_6</item>
+        <item name="colorTextLink">@color/movistar_color_blue</item>
+    </style>
+
+    <!-- What about PROMINENT in DARK MODE? -->
+<!--    <style name="MisticaMovistarProminentOverride">-->
+<!--        &lt;!&ndash; General &ndash;&gt;-->
+<!--        <item name="colorPrimary">@color/movistar_prominent_color_blue</item>-->
+<!--        <item name="colorPrimaryDark">@color/movistar_prominent_color_blue_dark</item>-->
+<!--        <item name="colorBrand">@color/movistar_prominent_color_blue</item>-->
+<!--        <item name="colorDividerInverse">@color/movistar_prominent_color_blue_dark</item>-->
+
+<!--        &lt;!&ndash; Filters &ndash;&gt;-->
+<!--        <item name="colorFilterBackgroundDefault">@color/movistar_prominent_color_blue_dark</item>-->
+<!--    </style>-->
+
+<!--    &lt;!&ndash; Just a copy of the above. As themes do not support multiple inheritance. &ndash;&gt;-->
+<!--    <style name="MisticaTheme.Movistar.Prominent">-->
+<!--        &lt;!&ndash; General &ndash;&gt;-->
+<!--        <item name="colorPrimary">@color/movistar_prominent_color_blue</item>-->
+<!--        <item name="colorPrimaryDark">@color/movistar_prominent_color_blue_dark</item>-->
+<!--        <item name="colorBrand">@color/movistar_prominent_color_blue</item>-->
+<!--        <item name="colorDividerInverse">@color/movistar_prominent_color_blue_dark</item>-->
+
+<!--        &lt;!&ndash; Filters &ndash;&gt;-->
+<!--        <item name="colorFilterBackgroundDefault">@color/movistar_prominent_color_blue_dark</item>-->
+<!--    </style>-->
+
+</resources>
