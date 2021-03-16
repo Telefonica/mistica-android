@@ -2,7 +2,7 @@
     <corners android:radius="44dp" />
     <gradient
         android:angle="0"
-        android:endColor="?colorBrand"
-        android:startColor="?colorBrand"
+        android:endColor="?colorBackgroundBrand"
+        android:startColor="?colorBackgroundBrand"
         android:type="linear" />
 </shape>
