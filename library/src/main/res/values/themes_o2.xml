@@ -47,6 +47,7 @@
         </item>
 
         <item name="colorTextButtonPrimary">@color/o2_color_white</item>
+        <item name="colorTextButtonPrimaryDisabled">@color/o2_color_white</item>
         <item name="colorTextButtonPrimaryInverse">@color/o2_color_blue_primary</item>
         <item name="colorTextButtonPrimaryInverseDisabled">@color/o2_color_blue_primary_light_10</item>
         <item name="colorTextButtonPrimaryInverseSelected">@color/o2_color_blue_primary_dark</item>

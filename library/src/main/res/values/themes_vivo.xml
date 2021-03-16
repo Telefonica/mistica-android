@@ -47,6 +47,7 @@
         </item>
 
         <item name="colorTextButtonPrimary">@color/vivo_color_white</item>
+        <item name="colorTextButtonPrimaryDisabled">@color/vivo_color_white</item>
         <item name="colorTextButtonPrimaryInverse">@color/vivo_color_purple</item>
         <item name="colorTextButtonPrimaryInverseDisabled">@color/vivo_color_purple_light20</item>
         <item name="colorTextButtonPrimaryInverseSelected">@color/vivo_color_purple</item>
