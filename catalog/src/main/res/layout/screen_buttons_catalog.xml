@@ -256,7 +256,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:background="?attr/colorBrand"
+            android:background="?attr/colorBackgroundBrand"
             android:gravity="center_horizontal"
             android:orientation="vertical">
 

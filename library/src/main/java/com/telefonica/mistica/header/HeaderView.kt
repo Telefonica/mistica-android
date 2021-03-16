@@ -286,7 +286,7 @@ class HeaderView @JvmOverloads constructor(
     }
 
     private fun configureTextsColors() {
-        setBackgroundColor(context.getThemeColor(if (isInverse) R.attr.colorBrand else R.attr.colorBackground))
+        setBackgroundColor(context.getThemeColor(if (isInverse) R.attr.colorBackgroundBrand else R.attr.colorBackground))
 
         @ColorInt val primaryColor: Int =
             context.getThemeColor(if (isInverse) R.attr.colorTextPrimaryInverse else R.attr.colorTextPrimary)

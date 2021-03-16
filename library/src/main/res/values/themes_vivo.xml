@@ -123,14 +123,14 @@
         <item name="colorFilterBackgroundChecked">@color/vivo_color_white</item>
 
         <!-- Gradients (assistant, pin fingerprint screens) -->
-        <item name="colorGradientBackgroundFirst">?colorBrand</item>
-        <item name="colorGradientBackgroundSecond">?colorBrand</item>
-        <item name="colorGradientBackgroundThird">?colorBrand</item>
-        <item name="colorGradientBackgroundFourth">?colorBrand</item>
-        <item name="colorLoginLoadingGradientFirst">?colorBrand</item>
-        <item name="colorLoginLoadingGradientSecond">?colorBrand</item>
-        <item name="colorLoginLoadingGradientThird">?colorBrand</item>
-        <item name="colorLoginLoadingGradientFourth">?colorBrand</item>
+        <item name="colorGradientBackgroundFirst">?colorBackgroundBrand</item>
+        <item name="colorGradientBackgroundSecond">?colorBackgroundBrand</item>
+        <item name="colorGradientBackgroundThird">?colorBackgroundBrand</item>
+        <item name="colorGradientBackgroundFourth">?colorBackgroundBrand</item>
+        <item name="colorLoginLoadingGradientFirst">?colorBackgroundBrand</item>
+        <item name="colorLoginLoadingGradientSecond">?colorBackgroundBrand</item>
+        <item name="colorLoginLoadingGradientThird">?colorBackgroundBrand</item>
+        <item name="colorLoginLoadingGradientFourth">?colorBackgroundBrand</item>
 
         <!-- Feedbacks -->
         <item name="feedbackScreenSuccessWithGradient">false</item>

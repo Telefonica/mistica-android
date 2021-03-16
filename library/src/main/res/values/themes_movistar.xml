@@ -124,10 +124,10 @@
         <item name="colorFilterBackgroundChecked">@color/movistar_color_white</item>
 
         <!-- Gradients (assistant, pin fingerprint screens) -->
-        <item name="colorGradientBackgroundFirst">?colorBrand</item>
-        <item name="colorGradientBackgroundSecond">?colorBrand</item>
-        <item name="colorGradientBackgroundThird">?colorBrand</item>
-        <item name="colorGradientBackgroundFourth">?colorBrand</item>
+        <item name="colorGradientBackgroundFirst">?colorBackgroundBrand</item>
+        <item name="colorGradientBackgroundSecond">?colorBackgroundBrand</item>
+        <item name="colorGradientBackgroundThird">?colorBackgroundBrand</item>
+        <item name="colorGradientBackgroundFourth">?colorBackgroundBrand</item>
         <item name="colorLoginLoadingGradientFirst">?colorBrandDark</item>
         <item name="colorLoginLoadingGradientSecond">?colorBrandDark</item>
         <item name="colorLoginLoadingGradientThird">?colorBrandDark</item>
