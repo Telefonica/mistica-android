@@ -9,6 +9,7 @@
     <color name="movistar_color_green">#5CB615</color>
     <color name="movistar_color_green_dark">#499110</color>
     <color name="movistar_color_green_light50">#ADDA8A</color>
+    <color name="movistar_color_green_light50_40_alpha">#66ADDA8A</color>
     <color name="movistar_color_green_light30">#CEE9B9</color>
 
     <color name="movistar_color_pepper">#FF374A</color>
@@ -47,4 +48,12 @@
     <color name="movistar_color_blue_dark_80_alpha">#CC008EDD</color>
     <color name="movistar_color_blue_light30_30_alpha">#4DB3E1FB</color>
     <color name="movistar_color_blue_light50_25_alpha">#4080CEF9</color>
+
+    <!-- Dark Mode Color Palette -->
+    <color name="movistar_color_darkModeBlack">#191919</color>
+    <color name="movistar_color_darkModeGrey">#242424</color>
+    <color name="movistar_color_darkModeMovistarBlueDark">#4C7389</color>
+    <!-- <color name="movistar_color_darkModeMovistarGreenDark">#637951</color> -->
+    <!-- <color name="movistar_color_darkModePepperDark">#8C5A5E</color> -->
+    <!-- <color name="movistar_color_movistarGreenLight10">#F1F8EB</color> -->
 </resources>

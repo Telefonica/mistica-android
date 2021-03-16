@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="MisticaTheme.Movistar">
+    <style name="MisticaTheme.Movistar" parent="MisticaTheme.Movistar_Base" />
+
+    <style name="MisticaTheme.Movistar_Base">
 
         <!-- Background colors -->
         <item name="colorAppBarBackground">@color/movistar_color_white</item>
@@ -46,6 +48,7 @@
         <item name="colorButtonSecondaryBorderSelectedInverse">@color/movistar_color_blue_light50
         </item>
         <item name="colorTextButtonPrimary">@color/movistar_color_white</item>
+        <item name="colorTextButtonPrimaryDisabled">@color/movistar_color_white</item>
         <item name="colorTextButtonPrimaryInverse">@color/movistar_color_blue</item>
         <item name="colorTextButtonPrimaryInverseDisabled">@color/movistar_color_blue_light30</item>
         <item name="colorTextButtonPrimaryInverseSelected">@color/movistar_color_blue</item>
