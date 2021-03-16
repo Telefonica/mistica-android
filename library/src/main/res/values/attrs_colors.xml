@@ -41,6 +41,7 @@
         <attr name="colorButtonSecondaryBorderInverse" format="color|reference" />
         <attr name="colorButtonSecondaryBorderSelectedInverse" format="color|reference" />
         <attr name="colorTextButtonPrimary" format="color|reference" />
+        <attr name="colorTextButtonPrimaryDisabled" format="color|reference" />
         <attr name="colorTextButtonPrimaryInverse" format="color|reference" />
         <attr name="colorTextButtonPrimaryInverseDisabled" format="color|reference" />
         <attr name="colorTextButtonPrimaryInverseSelected" format="color|reference" />
