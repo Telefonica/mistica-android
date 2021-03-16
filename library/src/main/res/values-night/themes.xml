@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MisticaTheme" parent="MisticaTheme_Base">
+        <item name="colorPrimary">@color/movistar_color_darkModeGrey</item>
+    </style>
+
+</resources>

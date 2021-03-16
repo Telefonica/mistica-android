@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="MisticaTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="MisticaTheme" parent="MisticaTheme_Base"/>
+
+    <style name="MisticaTheme_Base" parent="Theme.MaterialComponents.DayNight.NoActionBar">
 
         <item name="colorPrimary">?colorBrand</item>
         <item name="colorPrimaryDark">?colorBrandDark</item>
