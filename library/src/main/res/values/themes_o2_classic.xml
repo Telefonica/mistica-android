@@ -69,7 +69,7 @@
 
         <!-- Control colors -->
         <item name="colorControl">@color/o2_classic_color_grey_3</item>
-        <item name="colorControlActivated">@color/o2_classic_color_gem</item>
+        <item name="colorControlActive">@color/o2_classic_color_gem</item>
         <item name="colorControlError">@color/o2_classic_color_pepper</item>
 
         <item name="colorLoadingBar">@color/o2_classic_color_gem</item>

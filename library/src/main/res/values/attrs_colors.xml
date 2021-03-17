@@ -61,7 +61,7 @@
 
         <!-- Controls -->
         <attr name="colorControl" format="color|reference" />
-        <attr name="colorControlActivated" format="color|reference" />
+        <attr name="colorControlActive" format="color|reference" /> <!-- controlActivated in mistica-design, we cannot use colorControlActivated in Android because it overlaps with a framework attribute -->
         <attr name="colorControlError" format="color|reference" />
 
         <attr name="colorLoadingBar" format="color|reference" />

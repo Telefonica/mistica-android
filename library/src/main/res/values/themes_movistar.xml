@@ -70,7 +70,7 @@
 
         <!-- Control colors -->
         <item name="colorControl">@color/movistar_color_grey_3</item>
-        <item name="colorControlActivated">@color/movistar_color_blue</item>
+        <item name="colorControlActive">@color/movistar_color_blue</item>
         <item name="colorControlError">@color/movistar_color_pepper</item>
 
         <item name="colorLoadingBar">@color/movistar_color_green</item>
