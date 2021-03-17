@@ -100,7 +100,7 @@
         <item name="colorTextPrimary">@color/o2_classic_color_grey_6</item>
         <item name="colorTextPrimaryInverse">@color/o2_classic_color_white</item>
         <item name="colorTextSecondary">@color/o2_classic_color_grey_5</item>
-        <item name="colorTextSecondaryInverse">@color/o2_classic_color_sky_blue_light</item>
+        <item name="colorTextSecondaryInverse">@color/o2_classic_color_white</item>
         <item name="colorTextDisabled">@color/o2_classic_color_grey_3</item>
         <item name="colorTextAmount">@color/o2_classic_color_sky_blue</item>
 

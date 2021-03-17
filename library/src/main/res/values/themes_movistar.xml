@@ -99,7 +99,7 @@
         <item name="colorTextPrimary">@color/movistar_color_grey_6</item>
         <item name="colorTextPrimaryInverse">@color/movistar_color_white</item>
         <item name="colorTextSecondary">@color/movistar_color_grey_5</item>
-        <item name="colorTextSecondaryInverse">@color/movistar_color_blue_light30</item>
+        <item name="colorTextSecondaryInverse">@color/movistar_color_white</item>
         <item name="colorTextDisabled">@color/movistar_color_grey_3</item>
         <item name="colorTextAmount">@color/movistar_color_blue</item>
 
