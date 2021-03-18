@@ -3,6 +3,8 @@ package com.telefonica.mistica.feedback.screen.view
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.content.Context
+import android.graphics.PorterDuff
+import android.graphics.PorterDuffColorFilter
 import android.graphics.drawable.ColorDrawable
 import android.util.AttributeSet
 import android.util.TypedValue
@@ -18,8 +20,12 @@ import androidx.annotation.AttrRes
 import androidx.annotation.ColorInt
 import androidx.annotation.IntDef
 import androidx.annotation.LayoutRes
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.graphics.drawable.DrawableCompat
 import com.airbnb.lottie.LottieAnimationView
+import com.airbnb.lottie.LottieProperty
+import com.airbnb.lottie.model.KeyPath
 import com.telefonica.mistica.R
 import com.telefonica.mistica.button.ProgressButton
 import com.telefonica.mistica.feedback.screen.haptics.HapticFeedbackType
@@ -212,27 +218,50 @@ class FeedbackScreenView : ConstraintLayout {
     private fun configureIcon() {
         when (type) {
             TYPE_SUCCESS -> configureIcon(
-                R.attr.feedbackScreenSuccessAnimation,
-                R.attr.feedbackScreenSuccessIcon
+                animationAttr = R.attr.feedbackScreenSuccessAnimation,
+                imageAttr = R.attr.feedbackScreenSuccessIcon,
+                colorAttr = R.attr.colorInverse,
             )
             TYPE_ERROR -> configureIcon(
-                R.attr.feedbackScreenErrorAnimation,
-                R.attr.feedbackScreenErrorIcon
+                animationAttr = R.attr.feedbackScreenErrorAnimation,
+                imageAttr = R.attr.feedbackScreenErrorIcon,
+                colorAttr = R.attr.colorError
             )
-            else -> configureIcon(R.attr.feedbackScreenInfoAnimation, R.attr.feedbackScreenInfoIcon)
+            TYPE_INFO -> configureIcon(
+                animationAttr = R.attr.feedbackScreenInfoAnimation,
+                imageAttr = R.attr.feedbackScreenInfoIcon,
+                colorAttr = R.attr.colorBrand
+            )
         }
     }
 
-    private fun configureIcon(@AttrRes animationAttr: Int, @AttrRes imageAttr: Int) {
+    private fun configureIcon(
+        @AttrRes animationAttr: Int,
+        @AttrRes imageAttr: Int,
+        @AttrRes colorAttr: Int,
+    ) {
         val animationResource: Int? = context.getThemeRes(animationAttr, false)
         val imageResource: Int? = context.getThemeRes(imageAttr, false)
         when {
             animationResource != null -> {
                 icon.setAnimation(animationResource)
+                icon.addValueCallback(
+                    KeyPath("**"),
+                    LottieProperty.COLOR_FILTER,
+                    {
+                        PorterDuffColorFilter(
+                            context.getThemeColor(colorAttr),
+                            PorterDuff.Mode.SRC_ATOP
+                        )
+                    }
+                )
                 icon.visibility = View.VISIBLE
             }
             imageResource != null -> {
-                icon.setImageResource(imageResource)
+                val unwrappedDrawable = AppCompatResources.getDrawable(context, imageResource)!!
+                val drawable = DrawableCompat.wrap(unwrappedDrawable)
+                DrawableCompat.setTint(drawable, context.getThemeColor(colorAttr))
+                icon.setImageDrawable(drawable)
                 icon.visibility = View.VISIBLE
             }
             else -> icon.visibility = View.GONE
