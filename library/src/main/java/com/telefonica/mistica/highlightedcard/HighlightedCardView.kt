@@ -14,10 +14,8 @@ import androidx.annotation.ColorInt
 import androidx.annotation.DrawableRes
 import androidx.annotation.IntDef
 import androidx.annotation.StringRes
-import androidx.appcompat.content.res.AppCompatResources
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
-import androidx.core.graphics.drawable.DrawableCompat
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
@@ -368,14 +366,6 @@ class HighlightedCardView @JvmOverloads constructor(
         paint.xfermode = PorterDuffXfermode(PorterDuff.Mode.SRC_IN)
         canvas.drawBitmap(bitmap, rect, rect, paint)
         return output
-    }
-
-    private fun ImageView.setCrossColor(@ColorInt color: Int) {
-        val unwrappedDrawable =
-            AppCompatResources.getDrawable(context, R.drawable.icn_cross_highlight_card)!!
-        val drawable = DrawableCompat.wrap(unwrappedDrawable)
-        DrawableCompat.setTint(drawable, color)
-        closeButton.setImageDrawable(drawable)
     }
 
     companion object {
