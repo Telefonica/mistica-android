@@ -45,7 +45,7 @@ internal object PopOverTheme {
     val bottomTip: Int = R.drawable.icn_arrow_popover_down
 
     @DrawableRes
-    val closeButton = R.drawable.icn_cross_popover
+    val closeButton = R.drawable.icn_cross
 
     @AttrRes
     val textColor = R.attr.colorTextPrimary
