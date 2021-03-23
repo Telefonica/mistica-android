@@ -40,11 +40,11 @@ open class PopOverView internal constructor(context: Context) : RelativeLayout(c
     ViewTreeObserver.OnPreDrawListener, View.OnClickListener {
 
     private lateinit var popOverContent: ViewGroup
-    private lateinit var popOverTopTip: ImageView
+    private lateinit var popOverTopTip: View
     private lateinit var popOverTitle: TextView
     private lateinit var popOverImage: ImageView
     private lateinit var popOverDescription: TextView
-    private lateinit var popOverBottomTip: ImageView
+    private lateinit var popOverBottomTip: View
     private lateinit var popOverCloseButton: ImageView
 
     private var popOverData: PopOverData? = null
@@ -181,8 +181,8 @@ open class PopOverView internal constructor(context: Context) : RelativeLayout(c
     }
 
     private fun applyTheme(theme: PopOverTheme) {
-        popOverTopTip.setImageResource(theme.topTip)
-        popOverBottomTip.setImageResource(theme.bottomTip)
+        popOverTopTip.setBackgroundResource(theme.topTip)
+        popOverBottomTip.setBackgroundResource(theme.bottomTip)
         popOverTitle.setTextColor(context.getThemeColor(theme.textColor))
         popOverCloseButton.setImageResource(theme.closeButton)
     }
