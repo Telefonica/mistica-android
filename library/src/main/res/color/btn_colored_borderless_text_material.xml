@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item android:color="?android:attr/textColorSecondary" android:state_enabled="false" app:alpha="?android:attr/disabledAlpha" />
+<selector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <item android:color="?android:attr/textColorSecondary" android:state_enabled="false" app:alpha="?android:attr/disabledAlpha" tools:ignore="UseAndroidAlpha" />
     <item android:color="?colorTextLink" />
 </selector>
