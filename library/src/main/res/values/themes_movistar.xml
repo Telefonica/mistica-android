@@ -141,12 +141,6 @@
         <item name="stepperFinishedStepAnimation">@raw/feedback_success</item>
     </style>
 
-    <style name="MisticaAlertDialogTheme.Movistar">
-        <item name="colorAccent">@color/movistar_color_green</item>
-        <item name="colorTextPrimary">@color/movistar_color_grey_6</item>
-        <item name="colorTextLink">@color/movistar_color_blue</item>
-    </style>
-
     <style name="MisticaMovistarProminentOverride">
         <!-- General -->
         <item name="colorPrimary">@color/movistar_prominent_color_blue</item>

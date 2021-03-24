@@ -25,15 +25,4 @@
         <item name="tabStyle">@style/AppTheme.Widgets.TabLayout</item>
     </style>
 
-    <style name="MisticaAlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
-        <item name="android:textColorPrimary">?colorTextPrimary</item>
-        <item name="buttonBarNeutralButtonStyle">@style/MisticaAlertDialogTheme.Button</item>
-        <item name="buttonBarNegativeButtonStyle">@style/MisticaAlertDialogTheme.Button</item>
-        <item name="buttonBarPositiveButtonStyle">@style/MisticaAlertDialogTheme.Button</item>
-    </style>
-
-    <style name="MisticaAlertDialogTheme.Button" parent="Widget.MaterialComponents.Button.TextButton">
-        <item name="android:textColor">@color/btn_colored_borderless_text_material</item>
-    </style>
-
 </resources>

@@ -141,14 +141,6 @@
         <!-- Stepper -->
         <item name="stepperFinishedStepAnimation">@raw/feedback_success_o2</item>
 
-        <item name="alertDialogTheme">@style/MisticaAlertDialogTheme.O2Classic</item>
-
-    </style>
-
-    <style name="MisticaAlertDialogTheme.O2Classic">
-        <item name="colorAccent">@color/o2_classic_color_gem</item>
-        <item name="colorTextPrimary">@color/o2_classic_color_grey_6</item>
-        <item name="colorTextLink">@color/o2_classic_color_sky_blue</item>
     </style>
 
 </resources>
