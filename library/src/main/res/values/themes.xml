@@ -24,9 +24,9 @@
 
         <item name="tabStyle">@style/AppTheme.Widgets.TabLayout</item>
 
-        <item name="font_family_light">@font/on_air_light</item>
-        <item name="font_family_regular">@font/on_air_regular</item>
-        <item name="font_family_medium">@font/on_air_bold</item>
+        <item name="font_family_light">sans-serif-light</item>
+        <item name="font_family_regular">sans-serif</item>
+        <item name="font_family_medium">sans-serif-medium</item>
 
     </style>
 
