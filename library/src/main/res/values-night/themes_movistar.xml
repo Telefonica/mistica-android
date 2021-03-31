@@ -92,11 +92,6 @@
         <item name="colorTextAppBar">@color/movistar_color_grey_5</item>
         <item name="colorTextAppBarSelected">@color/movistar_color_grey_2</item>
 
-        <!-- Filters: No changes for DARK MODE? -->
-        <!--        <item name="colorFilterTextChecked">?colorBrand</item>-->
-        <!--        <item name="colorFilterTextDefault">@color/movistar_color_white</item>-->
-        <!--        <item name="colorFilterBackgroundDefault">@color/movistar_color_blue_dark</item>-->
-        <!--        <item name="colorFilterBackgroundChecked">@color/movistar_color_white</item>-->
     </style>
 
     <style name="MisticaAlertDialogTheme.Movistar">
