@@ -108,12 +108,6 @@
         <attr name="colorTextAppBar" format="color|reference" />
         <attr name="colorTextAppBarSelected" format="color|reference" />
 
-        <!-- Filters -->
-        <attr name="colorFilterTextDefault" format="color|reference" />
-        <attr name="colorFilterTextChecked" format="color|reference" />
-        <attr name="colorFilterBackgroundDefault" format="color|reference" />
-        <attr name="colorFilterBackgroundChecked" format="color|reference" />
-
         <!-- Gradients for backgrounds -->
         <attr name="colorGradientBackgroundFirst" format="color|reference" />
         <attr name="colorGradientBackgroundSecond" format="color|reference" />

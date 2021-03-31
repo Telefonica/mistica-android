@@ -116,12 +116,6 @@
         <item name="colorTextAppBar">@color/o2_color_grey_4</item>
         <item name="colorTextAppBarSelected">@color/o2_color_blue_primary</item>
 
-        <!-- Filters -->
-        <item name="colorFilterTextDefault">@color/o2_color_white</item>
-        <item name="colorFilterTextChecked">?colorBrand</item>
-        <item name="colorFilterBackgroundDefault">@color/o2_color_blue_primary_dark</item>
-        <item name="colorFilterBackgroundChecked">@color/o2_color_white</item>
-
         <!-- Gradients (assistant, pin fingerprint screens) -->
         <item name="colorGradientBackgroundFirst">?colorBackgroundBrand</item>
         <item name="colorGradientBackgroundSecond">?colorBackgroundBrand</item>

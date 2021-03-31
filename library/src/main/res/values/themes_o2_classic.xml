@@ -126,12 +126,6 @@
         <item name="colorLoginLoadingGradientThird">@color/o2_classic_gradient_third</item>
         <item name="colorLoginLoadingGradientFourth">@color/o2_classic_gradient_fourth</item>
 
-        <!-- Filters -->
-        <item name="colorFilterTextDefault">@color/o2_classic_color_white</item>
-        <item name="colorFilterTextChecked">?colorBrand</item>
-        <item name="colorFilterBackgroundDefault">@color/o2_classic_color_blue_dark</item>
-        <item name="colorFilterBackgroundChecked">@color/o2_classic_color_white</item>
-
         <!-- Feedbacks -->
         <item name="feedbackScreenSuccessWithGradient">true</item>
         <item name="feedbackScreenSuccessInverse">true</item>
