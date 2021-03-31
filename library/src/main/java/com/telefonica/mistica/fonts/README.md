@@ -9,7 +9,7 @@ To know more about this typeface follow this [link](https://brandfactory.telefon
 ## How to use
 
 1. Download the font from the links above
-2. Put your font files into your `<app>/res/fonts` directory (create it if not exists)
+2. Put your font files into your `<app>/res/font` directory (create it if not exists)
 3. In your `theme.xml` include the definition below:
 
 For OnAir font:
