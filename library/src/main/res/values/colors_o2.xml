@@ -50,4 +50,12 @@
     <color name="o2_color_blue_primary_dark_40_alpha">#66000066</color>
     <color name="o2_color_blue_primary_40_alpha">#66000066</color>
 
+    <!-- Dark mode -->
+    <color name="o2_color_darkModeBlack">#191919</color>
+    <color name="o2_color_darkModeGrey">#242424</color>
+    <color name="o2_color_darkModeGrey_80_alpha">#CC242424</color>
+    <color name="o2_color_darkModeGrey6">#313235</color>
+    <color name="o2_color_darkModeO2BluePrimary">#0020D6</color>
+    <color name="o2_color_darkModeO2BluePrimaryDark">#000099</color>
+
 </resources>
