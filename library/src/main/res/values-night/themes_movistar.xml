@@ -8,6 +8,7 @@
         <!-- Background colors -->
         <item name="colorAppBarBackground">@color/movistar_color_darkModeGrey</item>
         <item name="colorBackground">@color/movistar_color_darkModeBlack</item>
+        <item name="colorBackgroundContainer">@color/movistar_color_darkModeGrey</item>
         <item name="colorBackgroundBrand">@color/movistar_color_darkModeBlack</item>
         <item name="colorBackgroundOverlay">@color/movistar_color_darkModeGrey_80_alpha</item>
         <item name="colorBackgroundSkeleton">@color/movistar_color_grey_6</item>
@@ -26,24 +27,17 @@
         <item name="colorButtonDangerBackgroundDisabled">@color/movistar_color_darkModeGrey</item>
 
         <item name="colorButtonLinkBackgroundSelected">@color/movistar_color_darkModeGrey</item>
-        <item name="colorButtonLinkBackgroundSelectedInverse">@color/movistar_color_darkModeGrey
-        </item>
+        <item name="colorButtonLinkBackgroundSelectedInverse">@color/movistar_color_darkModeGrey</item>
 
         <item name="colorButtonPrimaryBackgroundDisabled">@color/movistar_color_darkModeGrey</item>
-        <item name="colorButtonPrimaryBackgroundDisabledInverse">
-            @color/movistar_color_darkModeGrey
-        </item>
+        <item name="colorButtonPrimaryBackgroundDisabledInverse">@color/movistar_color_darkModeGrey</item>
         <item name="colorButtonPrimaryBackgroundInverse">@color/movistar_color_green</item>
-        <item name="colorButtonPrimaryBackgroundSelectedInverse">@color/movistar_color_green_dark
-        </item>
+        <item name="colorButtonPrimaryBackgroundSelectedInverse">@color/movistar_color_green_dark</item>
 
-        <item name="colorButtonSecondaryBackgroundDisabled">@color/movistar_color_darkModeGrey
-        </item>
-        <item name="colorButtonSecondaryBorderDisabledInverse">@color/movistar_color_darkModeGrey
-        </item>
+        <item name="colorButtonSecondaryBackgroundDisabled">@color/movistar_color_darkModeGrey</item>
+        <item name="colorButtonSecondaryBorderDisabledInverse">@color/movistar_color_darkModeGrey</item>
         <item name="colorButtonSecondaryBorderInverse">@color/movistar_color_green</item>
-        <item name="colorButtonSecondaryBorderSelectedInverse">@color/movistar_color_green_dark
-        </item>
+        <item name="colorButtonSecondaryBorderSelectedInverse">@color/movistar_color_green_dark</item>
 
         <item name="colorTextButtonPrimary">@color/movistar_color_grey_2</item>
         <item name="colorTextButtonPrimaryDisabled">@color/movistar_color_grey_5</item>
@@ -58,7 +52,9 @@
         <item name="colorTextButtonSecondaryInverseSelected">@color/movistar_color_green_dark</item>
 
         <!-- Text Links -->
-        <item name="colorTextLinkDisabled">@color/movistar_color_darkModeMovistarBlueDark</item>
+        <item name="colorTextLinkInverse">@color/movistar_color_blue</item>
+        <item name="colorTextLinkDangerDisabled">@color/movistar_color_grey_5</item>
+        <item name="colorTextLinkDisabled">@color/movistar_color_grey_6</item>
 
         <!-- Control colors -->
         <item name="colorControl">@color/movistar_color_grey_6</item>
@@ -94,12 +90,6 @@
 
     </style>
 
-    <style name="MisticaAlertDialogTheme.Movistar">
-        <item name="colorAccent">@color/movistar_color_green</item>
-        <item name="colorTextPrimary">@color/movistar_color_grey_6</item>
-        <item name="colorTextLink">@color/movistar_color_blue</item>
-    </style>
-
     <!-- What about PROMINENT in DARK MODE? -->
     <!--    <style name="MisticaMovistarProminentOverride">-->
     <!--        &lt;!&ndash; General &ndash;&gt;-->
@@ -108,8 +98,6 @@
     <!--        <item name="colorBrand">@color/movistar_prominent_color_blue</item>-->
     <!--        <item name="colorDividerInverse">@color/movistar_prominent_color_blue_dark</item>-->
 
-    <!--        &lt;!&ndash; Filters &ndash;&gt;-->
-    <!--        <item name="colorFilterBackgroundDefault">@color/movistar_prominent_color_blue_dark</item>-->
     <!--    </style>-->
 
     <!--    &lt;!&ndash; Just a copy of the above. As themes do not support multiple inheritance. &ndash;&gt;-->
@@ -120,8 +108,6 @@
     <!--        <item name="colorBrand">@color/movistar_prominent_color_blue</item>-->
     <!--        <item name="colorDividerInverse">@color/movistar_prominent_color_blue_dark</item>-->
 
-    <!--        &lt;!&ndash; Filters &ndash;&gt;-->
-    <!--        <item name="colorFilterBackgroundDefault">@color/movistar_prominent_color_blue_dark</item>-->
     <!--    </style>-->
 
 </resources>
