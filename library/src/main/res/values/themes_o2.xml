@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="MisticaTheme.O2">
+    <style name="MisticaTheme.O2" parent="MisticaTheme.O2_Base" />
+
+    <style name="MisticaTheme.O2_Base">
 
         <!-- Background colors -->
         <item name="colorAppBarBackground">@color/o2_color_white</item>
         <item name="colorBackground">@color/o2_color_white</item>
+        <item name="colorBackgroundContainer">@color/o2_color_white</item>
         <item name="colorBackgroundBrand">@color/o2_color_blue_primary</item>
         <item name="colorBackgroundOverlay">@color/o2_color_grey_6_60_alpha</item>
         <item name="colorBackgroundSkeleton">@color/o2_color_grey_1</item>
-        <item name="colorSkeletonWave">@color/o2_color_grey_2</item>
         <item name="colorBackgroundSkeletonInverse">@color/o2_color_white_20_alpha</item>
         <item name="colorNavigationBarBackground">@color/o2_color_blue_primary</item>
         <item name="colorBackgroundAlternative">@color/o2_color_grey_1</item>
         <item name="colorBackgroundFeedbackBottom">@color/o2_color_blue_primary</item>
+
+        <item name="colorSkeletonWave">@color/o2_color_grey_2</item>
 
         <!-- Border colors -->
         <item name="colorBorderLight">@color/o2_color_grey_1</item>
@@ -25,45 +29,42 @@
         <item name="colorButtonDangerBackground">@color/o2_color_pepper</item>
         <item name="colorButtonDangerBackgroundDisabled">@color/o2_color_pepper_light30</item>
         <item name="colorButtonDangerBackgroundSelected">@color/o2_color_pepper_dark</item>
+
         <item name="colorButtonLinkBackgroundSelected">@color/o2_color_blue_light_10</item>
         <item name="colorButtonLinkBackgroundSelectedInverse">@color/o2_color_white_20_alpha</item>
 
         <item name="colorButtonPrimaryBackground">@color/o2_color_blue_primary</item>
         <item name="colorButtonPrimaryBackgroundDisabled">@color/o2_color_blue_primary_light_10</item>
-        <item name="colorButtonPrimaryBackgroundDisabledInverse">@color/o2_color_blue_primary_light_50
-        </item>
+        <item name="colorButtonPrimaryBackgroundDisabledInverse">@color/o2_color_blue_primary_light_50</item>
         <item name="colorButtonPrimaryBackgroundInverse">@color/o2_color_white</item>
         <item name="colorButtonPrimaryBackgroundSelected">@color/o2_color_blue_primary_dark</item>
-        <item name="colorButtonPrimaryBackgroundSelectedInverse">@color/o2_color_blue_primary_light_50
-        </item>
+        <item name="colorButtonPrimaryBackgroundSelectedInverse">@color/o2_color_blue_primary_light_50</item>
+
         <item name="colorButtonSecondaryBackground">@color/o2_color_blue_primary</item>
-        <item name="colorButtonSecondaryBackgroundDisabled">@color/o2_color_blue_primary_light_10
-        </item>
+        <item name="colorButtonSecondaryBackgroundDisabled">@color/o2_color_blue_primary_light_10</item>
         <item name="colorButtonSecondaryBackgroundSelected">@color/o2_color_blue_primary_dark</item>
-        <item name="colorButtonSecondaryBorderDisabledInverse">@color/o2_color_blue_primary_light_50
-        </item>
+        <item name="colorButtonSecondaryBorderDisabledInverse">@color/o2_color_blue_primary_light_50</item>
         <item name="colorButtonSecondaryBorderInverse">@color/o2_color_white</item>
-        <item name="colorButtonSecondaryBorderSelectedInverse">@color/o2_color_blue_primary_light_50
-        </item>
+        <item name="colorButtonSecondaryBorderSelectedInverse">@color/o2_color_blue_primary_light_50</item>
 
         <item name="colorTextButtonPrimary">@color/o2_color_white</item>
         <item name="colorTextButtonPrimaryDisabled">@color/o2_color_white</item>
         <item name="colorTextButtonPrimaryInverse">@color/o2_color_blue_primary</item>
         <item name="colorTextButtonPrimaryInverseDisabled">@color/o2_color_blue_primary_light_10</item>
         <item name="colorTextButtonPrimaryInverseSelected">@color/o2_color_blue_primary_dark</item>
+
         <item name="colorTextButtonSecondary">@color/o2_color_blue_primary</item>
         <item name="colorTextButtonSecondaryDisabled">@color/o2_color_blue_primary_light_10</item>
         <item name="colorTextButtonSecondarySelected">@color/o2_color_blue_primary_dark</item>
         <item name="colorTextButtonSecondaryInverse">@color/o2_color_white</item>
-        <item name="colorTextButtonSecondaryInverseDisabled">@color/o2_color_blue_primary_light_50
-        </item>
+        <item name="colorTextButtonSecondaryInverseDisabled">@color/o2_color_blue_primary_light_50</item>
         <item name="colorTextButtonSecondaryInverseSelected">@color/o2_color_white</item>
 
         <!-- Text Links -->
         <item name="colorTextLink">@color/o2_color_blue_primary</item>
+        <item name="colorTextLinkInverse">@color/o2_color_white</item>
         <item name="colorTextLinkDanger">@color/o2_color_pepper</item>
-        <item name="colorTextLinkDangerDisabled">@color/o2_color_pepper_light30
-        </item>
+        <item name="colorTextLinkDangerDisabled">@color/o2_color_pepper_light30</item>
         <item name="colorTextLinkDisabled">@color/o2_color_blue_primary_light_50</item>
         <item name="colorTextLinkSnackbar">@color/o2_color_blue_primary_light_50</item>
 
@@ -71,7 +72,6 @@
         <item name="colorControl">@color/o2_color_grey_3</item>
         <item name="colorControlActive">@color/o2_color_blue_primary</item>
         <item name="colorControlError">@color/o2_color_pepper</item>
-
         <item name="colorLoadingBar">@color/o2_color_blue_primary</item>
         <item name="colorLoadingBarBackground">@color/o2_color_grey_1</item>
         <item name="colorLoadingBarBackgroundInverse">@color/o2_color_grey_1</item>
@@ -92,8 +92,8 @@
         <item name="colorBrandDark">@color/o2_color_blue_primary_dark</item>
         <item name="colorInverse">@color/o2_color_white</item>
         <item name="colorNeutralHigh">@color/o2_color_grey_6</item>
-        <item name="colorNeutralLow">@color/o2_color_grey_3</item>
         <item name="colorNeutralMedium">@color/o2_color_grey_5</item>
+        <item name="colorNeutralLow">@color/o2_color_grey_3</item>
         <item name="colorPromo">@color/o2_color_purple</item>
         <item name="colorHighlight">@color/o2_color_pink</item>
 
