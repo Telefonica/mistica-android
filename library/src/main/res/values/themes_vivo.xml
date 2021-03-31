@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="MisticaTheme.Vivo">
+    <style name="MisticaTheme.Vivo" parent="MisticaTheme.Vivo_Base" />
+
+    <style name="MisticaTheme.Vivo_Base">
 
         <!-- Background colors -->
         <item name="colorAppBarBackground">@color/vivo_color_white</item>
         <item name="colorBackground">@color/vivo_color_white</item>
+        <item name="colorBackgroundContainer">@color/vivo_color_white</item>
         <item name="colorBackgroundBrand">@color/vivo_color_purple</item>
         <item name="colorBackgroundOverlay">@color/vivo_color_grey_6_60_alpha</item>
         <item name="colorBackgroundSkeleton">@color/vivo_color_grey_1</item>
-        <item name="colorSkeletonWave">@color/vivo_color_grey_2</item>
         <item name="colorBackgroundSkeletonInverse">@color/vivo_color_white_20_alpha</item>
         <item name="colorNavigationBarBackground">@color/vivo_color_purple</item>
         <item name="colorBackgroundAlternative">@color/vivo_color_grey_1</item>
         <item name="colorBackgroundFeedbackBottom">@color/vivo_color_purple</item>
+
+        <item name="colorSkeletonWave">@color/vivo_color_grey_2</item>
 
         <!-- Border colors -->
         <item name="colorBorderLight">@color/vivo_color_grey_1</item>
@@ -25,54 +29,49 @@
         <item name="colorButtonDangerBackground">@color/vivo_color_pepper</item>
         <item name="colorButtonDangerBackgroundDisabled">@color/vivo_color_pepper_light30</item>
         <item name="colorButtonDangerBackgroundSelected">@color/vivo_color_pepper_dark</item>
+
         <item name="colorButtonLinkBackgroundSelected">@color/vivo_color_purple_light10</item>
         <item name="colorButtonLinkBackgroundSelectedInverse">@color/vivo_color_white_20_alpha</item>
 
         <item name="colorButtonPrimaryBackground">@color/vivo_color_purple</item>
         <item name="colorButtonPrimaryBackgroundDisabled">@color/vivo_color_purple_light20</item>
-        <item name="colorButtonPrimaryBackgroundDisabledInverse">@color/vivo_color_purple_light50
-        </item>
+        <item name="colorButtonPrimaryBackgroundDisabledInverse">@color/vivo_color_purple_light50</item>
         <item name="colorButtonPrimaryBackgroundInverse">@color/vivo_color_white</item>
         <item name="colorButtonPrimaryBackgroundSelected">@color/vivo_color_purple_dark</item>
-        <item name="colorButtonPrimaryBackgroundSelectedInverse">@color/vivo_color_purple_light50
-        </item>
+        <item name="colorButtonPrimaryBackgroundSelectedInverse">@color/vivo_color_purple_light50</item>
+
         <item name="colorButtonSecondaryBackground">@color/vivo_color_purple</item>
-        <item name="colorButtonSecondaryBackgroundDisabled">@color/vivo_color_purple_light20
-        </item>
+        <item name="colorButtonSecondaryBackgroundDisabled">@color/vivo_color_purple_light20</item>
         <item name="colorButtonSecondaryBackgroundSelected">@color/vivo_color_purple_dark</item>
-        <item name="colorButtonSecondaryBorderDisabledInverse">@color/vivo_color_purple_light50
-        </item>
+        <item name="colorButtonSecondaryBorderDisabledInverse">@color/vivo_color_purple_light50</item>
         <item name="colorButtonSecondaryBorderInverse">@color/vivo_color_white</item>
-        <item name="colorButtonSecondaryBorderSelectedInverse">@color/vivo_color_purple_light50
-        </item>
+        <item name="colorButtonSecondaryBorderSelectedInverse">@color/vivo_color_purple_light50</item>
 
         <item name="colorTextButtonPrimary">@color/vivo_color_white</item>
         <item name="colorTextButtonPrimaryDisabled">@color/vivo_color_white</item>
         <item name="colorTextButtonPrimaryInverse">@color/vivo_color_purple</item>
         <item name="colorTextButtonPrimaryInverseDisabled">@color/vivo_color_purple_light20</item>
         <item name="colorTextButtonPrimaryInverseSelected">@color/vivo_color_purple</item>
+
         <item name="colorTextButtonSecondary">@color/vivo_color_purple</item>
         <item name="colorTextButtonSecondaryDisabled">@color/vivo_color_purple_light20</item>
         <item name="colorTextButtonSecondarySelected">@color/vivo_color_purple_dark</item>
         <item name="colorTextButtonSecondaryInverse">@color/vivo_color_white</item>
-        <item name="colorTextButtonSecondaryInverseDisabled">@color/vivo_color_purple_light50
-        </item>
+        <item name="colorTextButtonSecondaryInverseDisabled">@color/vivo_color_purple_light50</item>
         <item name="colorTextButtonSecondaryInverseSelected">@color/vivo_color_white</item>
 
         <!-- Text Links -->
         <item name="colorTextLink">@color/vivo_color_purple</item>
+        <item name="colorTextLinkInverse">@color/vivo_color_white</item>
         <item name="colorTextLinkDanger">@color/vivo_color_pepper</item>
-        <item name="colorTextLinkDangerDisabled">@color/vivo_color_pepper_light30
-        </item>
+        <item name="colorTextLinkDangerDisabled">@color/vivo_color_pepper_light30</item>
         <item name="colorTextLinkDisabled">@color/vivo_color_purple_light50</item>
         <item name="colorTextLinkSnackbar">@color/vivo_color_purple_light50</item>
-
 
         <!-- Control colors -->
         <item name="colorControl">@color/vivo_color_grey_3</item>
         <item name="colorControlActive">@color/vivo_color_purple</item>
         <item name="colorControlError">@color/vivo_color_pepper</item>
-
         <item name="colorLoadingBar">@color/vivo_color_pink</item>
         <item name="colorLoadingBarBackground">@color/vivo_color_pepper_light30</item>
         <item name="colorLoadingBarBackgroundInverse">@color/vivo_color_purple_light50</item>
