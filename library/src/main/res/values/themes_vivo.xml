@@ -92,8 +92,8 @@
         <item name="colorBrandDark">@color/vivo_color_purple_dark</item>
         <item name="colorInverse">@color/vivo_color_white</item>
         <item name="colorNeutralHigh">@color/vivo_color_grey_6</item>
-        <item name="colorNeutralLow">@color/vivo_color_grey_3</item>
         <item name="colorNeutralMedium">@color/vivo_color_grey_5</item>
+        <item name="colorNeutralLow">@color/vivo_color_grey_3</item>
         <item name="colorPromo">@color/vivo_color_purple</item>
         <item name="colorHighlight">@color/vivo_color_pink</item>
 
