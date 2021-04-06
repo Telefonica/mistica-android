@@ -2,9 +2,6 @@
 <resources>
 
     <style name="MisticaTheme.Movistar" parent="MisticaTheme.Movistar_Base">
-        <!-- Android framework colors -->
-        <item name="colorPrimary">?colorNavigationBarBackground</item>
-
         <!-- Background colors -->
         <item name="colorAppBarBackground">@color/movistar_color_darkModeGrey</item>
         <item name="colorBackground">@color/movistar_color_darkModeBlack</item>
