@@ -25,8 +25,8 @@
         <!-- Button colors -->
         <item name="colorButtonDangerBackgroundDisabled">@color/vivo_color_darkModeGrey</item>
 
-        <item name="colorButtonLinkBackgroundSelected">@color/vivo_color_darkModeGrey</item>
-        <item name="colorButtonLinkBackgroundSelectedInverse">@color/vivo_color_darkModeGrey</item>
+        <item name="colorButtonLinkBackgroundSelected">@color/vivo_color_white_5_alpha</item>
+        <item name="colorButtonLinkBackgroundSelectedInverse">@color/vivo_color_white_5_alpha</item>
 
         <item name="colorButtonPrimaryBackground">@color/vivo_color_purple_light80</item>
         <item name="colorButtonPrimaryBackgroundDisabled">@color/vivo_color_darkModeGrey</item>
@@ -64,12 +64,10 @@
         <item name="colorControlActive">@color/vivo_color_purple_light80</item>
         <item name="colorLoadingBar">@color/vivo_color_purple_light80</item>
         <item name="colorLoadingBarBackground">@color/vivo_color_darkModeGrey6</item>
-        <item name="colorLoadingBarBackgroundInverse">@color/vivo_color_darkModeGrey6</item>
-        <item name="colorLoadingBarInverse">@color/vivo_color_purple_light80</item>
 
         <!-- Divider colors -->
-        <item name="colorDivider">@color/vivo_color_darkModeGrey</item>
-        <item name="colorDividerInverse">@color/vivo_color_darkModeGrey</item>
+        <item name="colorDivider">@color/vivo_color_white_5_alpha</item>
+        <item name="colorDividerInverse">@color/vivo_color_white_5_alpha</item>
         <item name="colorNavigationBarDivider">@color/vivo_color_darkModeBlack</item>
 
         <!-- Feedback colors -->
