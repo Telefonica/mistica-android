@@ -69,8 +69,6 @@
 
         <attr name="colorLoadingBar" format="color|reference" />
         <attr name="colorLoadingBarBackground" format="color|reference" />
-        <attr name="colorLoadingBarBackgroundInverse" format="color|reference" />
-        <attr name="colorLoadingBarInverse" format="color|reference" />
 
         <!-- Dividers -->
         <attr name="colorDivider" format="color|reference" />

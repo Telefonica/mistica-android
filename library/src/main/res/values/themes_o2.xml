@@ -74,8 +74,6 @@
         <item name="colorControlError">@color/o2_color_pepper</item>
         <item name="colorLoadingBar">@color/o2_color_blue_primary</item>
         <item name="colorLoadingBarBackground">@color/o2_color_grey_1</item>
-        <item name="colorLoadingBarBackgroundInverse">@color/o2_color_grey_1</item>
-        <item name="colorLoadingBarInverse">@color/o2_color_blue_primary</item>
 
         <!-- Divider colors -->
         <item name="colorDivider">@color/o2_color_grey_2</item>
@@ -107,7 +105,7 @@
 
         <!-- State colors -->
         <item name="colorError">@color/o2_color_pepper</item>
-        <item name="colorSuccess">@color/o2_color_teal</item>
+        <item name="colorSuccess">@color/o2_color_green</item>
         <item name="colorWarning">@color/o2_color_orange</item>
 
         <!-- Bars text colors -->
