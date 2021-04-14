@@ -8,7 +8,7 @@
         <item name="colorBackground">@color/o2_color_darkModeBlack</item>
         <item name="colorBackgroundContainer">@color/o2_color_darkModeGrey</item>
         <item name="colorBackgroundBrand">@color/o2_color_darkModeBlack</item>
-        <item name="colorBackgroundOverlay">@color/o2_color_darkModeGrey</item>
+        <item name="colorBackgroundOverlay">@color/o2_color_darkModeGrey_80_alpha</item>
         <item name="colorBackgroundSkeleton">@color/o2_color_darkModeGrey6</item>
         <item name="colorBackgroundSkeletonInverse">@color/o2_color_darkModeGrey6</item>
         <item name="colorNavigationBarBackground">@color/o2_color_darkModeBlack</item>
@@ -18,7 +18,7 @@
         <item name="colorSkeletonWave">@color/o2_color_grey_5</item>
 
         <!-- Border colors -->
-        <item name="colorBorderLight">@color/o2_color_darkModeBlack</item>
+        <item name="colorBorderLight">@color/o2_color_darkModeGrey</item>
         <item name="colorBorder">@color/o2_color_darkModeGrey</item>
         <item name="colorBorderSelected">@color/o2_color_darkModeO2BluePrimary</item>
 
@@ -26,7 +26,7 @@
         <item name="colorButtonDangerBackgroundDisabled">@color/o2_color_darkModeGrey</item>
 
         <item name="colorButtonLinkBackgroundSelected">@color/o2_color_darkModeGrey</item>
-        <item name="colorButtonLinkBackgroundSelectedInverse">@color/o2_color_darkModeGrey</item>
+        <item name="colorButtonLinkBackgroundSelectedInverse">@color/o2_color_white_5_alpha</item>
 
         <item name="colorButtonPrimaryBackground">@color/o2_color_darkModeO2BluePrimary</item>
         <item name="colorButtonPrimaryBackgroundDisabled">@color/o2_color_darkModeGrey</item>
@@ -66,18 +66,17 @@
         <item name="colorControlActive">@color/o2_color_blue_primary_light_50</item>
         <item name="colorLoadingBar">@color/o2_color_darkModeO2BluePrimary</item>
         <item name="colorLoadingBarBackground">@color/o2_color_darkModeGrey6</item>
-        <item name="colorLoadingBarInverse">@color/o2_color_darkModeO2BluePrimary</item>
 
         <!-- Divider colors -->
-        <item name="colorDivider">@color/o2_color_darkModeGrey</item>
-        <item name="colorDividerInverse">@color/o2_color_darkModeGrey</item>
+        <item name="colorDivider">@color/o2_color_white_5_alpha</item>
+        <item name="colorDividerInverse">@color/o2_color_white_5_alpha</item>
         <item name="colorNavigationBarDivider">@color/o2_color_darkModeBlack</item>
 
         <!-- Feedback colors -->
         <item name="colorFeedbackInfoBackground">@color/o2_color_darkModeGrey6</item>
 
         <!-- Global colors -->
-        <item name="colorBrand">@color/o2_color_darkModeO2BluePrimary</item>
+        <item name="colorBrand">@color/o2_color_blue_primary_light_50</item>
         <item name="colorBrandDark">@color/o2_color_darkModeGrey6</item>
         <item name="colorInverse">@color/o2_color_grey_2</item>
         <item name="colorNeutralHigh">@color/o2_color_grey_4</item>

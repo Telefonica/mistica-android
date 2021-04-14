@@ -25,7 +25,7 @@
         <!-- Button colors -->
         <item name="colorButtonDangerBackgroundDisabled">@color/o2_classic_color_darkModeGrey</item>
 
-        <item name="colorButtonLinkBackgroundSelected">@color/o2_classic_color_darkModeGrey</item>
+        <item name="colorButtonLinkBackgroundSelected">@color/o2_classic_color_white_5_alpha</item>
         <item name="colorButtonLinkBackgroundSelectedInverse">@color/o2_classic_color_darkModeGrey</item>
 
         <item name="colorButtonPrimaryBackgroundDisabled">@color/o2_classic_color_darkModeGrey</item>
@@ -54,24 +54,21 @@
         <!-- Text Links -->
         <item name="colorTextLink">@color/o2_classic_color_sky_blue_light</item>
         <item name="colorTextLinkInverse">@color/o2_classic_color_sky_blue_light</item>
-        <item name="colorTextLinkDangerDisabled">@color/o2_classic_color_grey_5</item>
+        <item name="colorTextLinkDangerDisabled">@color/o2_classic_color_grey_6</item>
         <item name="colorTextLinkDisabled">@color/o2_color_darkModeGrey6</item>
 
         <!-- Control colors -->
         <item name="colorControl">@color/o2_classic_color_darkModeGrey6</item>
         <item name="colorControlActive">@color/o2_classic_color_sky_blue</item>
         <item name="colorLoadingBar">@color/o2_classic_color_sky_blue</item>
-        <item name="colorLoadingBarBackground">@color/o2_classic_color_darkModeGrey</item>
-        <item name="colorLoadingBarBackgroundInverse">@color/o2_classic_color_darkModeGrey</item>
-        <item name="colorLoadingBarInverse">@color/o2_classic_color_sky_blue</item>
 
         <!-- Divider colors -->
-        <item name="colorDivider">@color/o2_classic_color_darkModeGrey</item>
-        <item name="colorDividerInverse">@color/o2_classic_color_darkModeGrey</item>
+        <item name="colorDivider">@color/o2_classic_color_white_5_alpha</item>
+        <item name="colorDividerInverse">@color/o2_classic_color_white_5_alpha</item>
         <item name="colorNavigationBarDivider">@color/o2_classic_color_darkModeBlack</item>
 
         <!-- Feedback colors -->
-        <item name="colorFeedbackInfoBackground">@color/o2_classic_color_darkModeGrey</item>
+        <item name="colorFeedbackInfoBackground">@color/o2_classic_color_darkModeGrey6</item>
 
         <!-- Global colors -->
         <item name="colorBrand">@color/o2_classic_color_sky_blue</item>
@@ -93,8 +90,6 @@
         <item name="colorTextNavigationBarSecondary">@color/o2_classic_color_grey_4</item>
         <item name="colorTextAppBar">@color/o2_classic_color_grey_5</item>
         <item name="colorTextAppBarSelected">@color/o2_classic_color_grey_2</item>
-
-        <!-- Gradients ??? (assistant, pin fingerprint screens) -->
 
     </style>
 
