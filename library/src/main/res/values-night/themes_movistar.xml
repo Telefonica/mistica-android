@@ -85,24 +85,10 @@
 
     </style>
 
-    <!-- What about PROMINENT in DARK MODE? -->
-    <!--    <style name="MisticaMovistarProminentOverride">-->
-    <!--        &lt;!&ndash; General &ndash;&gt;-->
-    <!--        <item name="colorPrimary">@color/movistar_prominent_color_blue</item>-->
-    <!--        <item name="colorPrimaryDark">@color/movistar_prominent_color_blue_dark</item>-->
-    <!--        <item name="colorBrand">@color/movistar_prominent_color_blue</item>-->
-    <!--        <item name="colorDividerInverse">@color/movistar_prominent_color_blue_dark</item>-->
+    <!-- Prominent in dark mode has exactly the same colors as non prominent theme -->
+    <style name="MisticaMovistarProminentOverride" />
 
-    <!--    </style>-->
-
-    <!--    &lt;!&ndash; Just a copy of the above. As themes do not support multiple inheritance. &ndash;&gt;-->
-    <!--    <style name="MisticaTheme.Movistar.Prominent">-->
-    <!--        &lt;!&ndash; General &ndash;&gt;-->
-    <!--        <item name="colorPrimary">@color/movistar_prominent_color_blue</item>-->
-    <!--        <item name="colorPrimaryDark">@color/movistar_prominent_color_blue_dark</item>-->
-    <!--        <item name="colorBrand">@color/movistar_prominent_color_blue</item>-->
-    <!--        <item name="colorDividerInverse">@color/movistar_prominent_color_blue_dark</item>-->
-
-    <!--    </style>-->
+    <!-- Just a copy of the above. As themes do not support multiple inheritance. -->
+    <style name="MisticaTheme.Movistar.Prominent" />
 
 </resources>
