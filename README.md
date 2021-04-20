@@ -98,6 +98,11 @@ Just set your App or any specific activity to use any of the following:
 
 Library includes a set of available [Text Appearance](library/src/main/res/values/styles_fonts.xml) styles, applicable for all kind of TextViews.
 
+## Using fonts
+
+Mistica defines 3 typographic styles to be used along with the library, these typefaces are defined as attributes and can be override using some allowed fonts.
+More info [here](library/src/main/java/com/telefonica/mistica/fonts)
+
 ## Demo app
 
 There is a demo of currently implemented components in this repository. A full list of implemented components can be found here: [Components](library/src/main/java/com/telefonica/mistica).
