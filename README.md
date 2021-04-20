@@ -11,10 +11,10 @@
 
 Mistica is a framework that contains reusable UI components and utilities.
 
-## Instalation
+## Installation
 Include nexus repository in the `build.gradle` of your project (If it is unreachable from your vpn, please [contact us](mailto:cto-android@telefonica.com)): 
 
-```gradle
+```groovy
 allprojects {
     repositories {
         maven { url 'https://nexusng.tuenti.io/repository/maven-group/' }
@@ -26,7 +26,7 @@ allprojects {
 
 Inside the dependency block in the `build.gradle` of your application, add this line to add the library:
 
-```gradle
+```groovy
 dependencies {
     ...
     implementation 'com.telefonica.mistica:mistica:$version'
@@ -36,7 +36,7 @@ dependencies {
 
 In case you also want to include also the components catalog in your application:
 
-```gradle
+```groovy
 dependencies {
     ...
     implementation 'com.telefonica.mistica:mistica:$version'
@@ -127,3 +127,6 @@ Just to put an example, in a common scenario where your app is already using mat
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md)
  
+## Upgrading guide
+
+See [UPGRADING.md](./UPGRADING.md)
