@@ -74,7 +74,7 @@
         <item name="colorBrand">@color/o2_classic_color_sky_blue</item>
         <item name="colorBrandDark">@color/o2_classic_color_darkModeGrey6</item>
         <item name="colorInverse">@color/o2_classic_color_grey_2</item>
-        <item name="colorNeutralHigh">@color/o2_classic_color_grey_4</item>
+        <item name="colorNeutralHigh">@color/o2_classic_color_grey_2</item>
         <item name="colorNeutralLow">@color/o2_classic_color_darkModeGrey6</item>
 
         <!-- Texts colors -->
