@@ -77,7 +77,7 @@
         <item name="colorBrand">@color/vivo_color_purple_light80</item>
         <item name="colorBrandDark">@color/vivo_color_darkModeGrey6</item>
         <item name="colorInverse">@color/vivo_color_grey_2</item>
-        <item name="colorNeutralHigh">@color/vivo_color_grey_4</item>
+        <item name="colorNeutralHigh">@color/vivo_color_grey_2</item>
         <item name="colorNeutralLow">@color/vivo_color_darkModeGrey6</item>
         <item name="colorPromo">@color/vivo_color_purple_light80</item>
 
