@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
 import android.widget.Button
 import androidx.annotation.LayoutRes
 import androidx.annotation.StyleRes
@@ -46,12 +45,13 @@ class FeedbackScreenCatalogFragment(
 
         with(typeDropDown.dropDown) {
             setAdapter(
-                ArrayAdapter(
+                DropDownInput.Adapter(
                     view.context,
                     R.layout.dropdown_menu_popup_item,
-                    Type.values().map { it.name })
+                    Type.values().map { it.name }
+                )
             )
-            setText(Type.SUCCESS.name, false)
+            setText(Type.SUCCESS.name)
         }
 
         createButton.setOnClickListener {

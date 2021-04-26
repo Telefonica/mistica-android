@@ -48,3 +48,23 @@ And `com.telefonica.mistica.input.CheckBoxInput` provides also:
     <attr name="inputCheckText" format="string" />
 </declare-styleable>
 ```
+
+Following Material recommendations we implement Drop Down Input using a `TextInputLayout` with an
+`AutoCompleteTextView` inside (No more `Spinner`). In order to better mimic the behavior of a drop
+down selector we include an Adapter `com.telefonica.mistica.input.DropDownInput.Adapter` that
+prevents filtering when (manually or programmatically) setting a text.
+
+```kotlin
+val dropDownInput: DropDownInput
+dropDownInput.dropDown.setAdapter(
+    DropDownInput.Adapter(
+        context,
+        R.layout.dropdown_menu_popup_item,
+        listOf("First option", "Second option", "Third option")
+    )
+)
+dropDownInput.dropDown.setOnItemClickListener { parent, view, position, id ->
+    // do something
+}
+dropDownInput.dropDown.setText("First option") // Select first option
+```

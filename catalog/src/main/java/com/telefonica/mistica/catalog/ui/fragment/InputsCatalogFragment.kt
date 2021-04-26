@@ -9,7 +9,6 @@ import android.text.style.ClickableSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.Toast
 import androidx.annotation.CallSuper
@@ -34,16 +33,16 @@ class InputsCatalogFragment : Fragment() {
         super.onCreateView(inflater, container, savedInstanceState)
         return layoutInflater.inflate(R.layout.screen_inputs_catalog, container, false).apply {
 
-            val countries = arrayOf("Item 1", "Item 2", "Item 3", "Item 4")
-
-            val arrayAdapter = ArrayAdapter(
-                context,
-                R.layout.dropdown_menu_popup_item,
-                countries
-            )
+            val countries = listOf("Item 1", "Item 2", "Item 3", "Item 4")
 
             findViewById<DropDownInput>(R.id.dropDownInput)?.apply {
-                dropDown.setAdapter(arrayAdapter)
+                dropDown.setAdapter(
+                    DropDownInput.Adapter(
+                        context,
+                        R.layout.dropdown_menu_popup_item,
+                        countries
+                    )
+                )
             }
 
             findViewById<CheckBoxInput>(R.id.checkboxInput)?.apply {

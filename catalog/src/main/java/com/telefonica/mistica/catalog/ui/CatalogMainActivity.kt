@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.input.DropDownInput
 import com.telefonica.mistica.list.ListRowView
+import com.telefonica.mistica.list.ListRowView.Companion.TYPE_SMALL_ICON
 import com.telefonica.mistica.list.layout.configureWithFullWidthLayout
 
 
@@ -44,19 +45,17 @@ class CatalogMainActivity : AppCompatActivity() {
         )
 
         findViewById<DropDownInput>(R.id.drop_down_themes)?.apply {
-            post {
-                dropDown.setAdapter(
-                    ArrayAdapter(
-                        context,
-                        R.layout.dropdown_menu_popup_item,
-                        styles.map { it.first }
-                    )
+            dropDown.setAdapter(
+                DropDownInput.Adapter(
+                    context,
+                    R.layout.dropdown_menu_popup_item,
+                    styles.map { it.first }
                 )
-                dropDown.onItemClickListener =
-                    AdapterView.OnItemClickListener { _, _, position, _ ->
-                        themeOverride = styles[position].second
-                    }
-            }
+            )
+            dropDown.onItemClickListener =
+                AdapterView.OnItemClickListener { _, _, position, _ ->
+                    themeOverride = styles[position].second
+                }
         }
     }
 
@@ -92,10 +91,14 @@ class CatalogMainActivity : AppCompatActivity() {
             ),
             SectionItem("Tags", R.drawable.ic_tags, Section.TAG),
             SectionItem("Lists", R.drawable.ic_lists, Section.LISTS),
-            SectionItem("Headers", R.drawable.ic_headers, Section.HEADERS),
+            SectionItem("Media Card", R.drawable.ic_cards, Section.MEDIA_CARDS),
+            SectionItem("Data Card", R.drawable.ic_cards, Section.DATA_CARDS),
             SectionItem("Highlighted Cards", R.drawable.ic_cards, Section.HIGHLIGHTED_CARDS),
-            SectionItem("Controls", R.drawable.ic_feedbacks, Section.CONTROLS), //Pending icon
-            SectionItem("Others", R.drawable.ic_others, Section.OTHERS)
+            SectionItem("Headers", R.drawable.ic_header, Section.HEADERS),
+            SectionItem("Controls", R.drawable.ic_controls, Section.CONTROLS),
+            SectionItem("Others", R.drawable.ic_others, Section.OTHERS),
+            SectionItem("Steppers", R.drawable.ic_stepper, Section.STEPPERS),
+            SectionItem("Tabs", R.drawable.ic_tab, Section.TABS)
         )
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -119,8 +122,8 @@ class CatalogMainActivity : AppCompatActivity() {
                             context.startActivity(this)
                         }
                 }
+                setAssetType(TYPE_SMALL_ICON)
                 setAssetResource(section.icon)
-                setSmallAsset(true)
             }
         }
 

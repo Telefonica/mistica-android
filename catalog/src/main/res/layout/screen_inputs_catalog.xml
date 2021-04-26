@@ -144,10 +144,10 @@
                 android:text="Validate email" />
 
             <com.telefonica.mistica.section.SectionTitleView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start"
-                app:sectionTitle="Phone Input with validation" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="Phone Input with validation" />
 
             <com.telefonica.mistica.input.TextInput
                 android:id="@+id/text_input_phone"
@@ -243,7 +243,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?colorPrimary"
+            android:background="?attr/colorBrand"
             android:orientation="vertical"
             android:padding="16dp">
 

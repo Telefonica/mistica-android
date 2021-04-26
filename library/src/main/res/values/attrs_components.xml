@@ -8,6 +8,10 @@
         <attr name="isLoading" format="boolean" />
     </declare-styleable>
 
+    <declare-styleable name="TagView">
+        <attr name="tagColor" format="color|reference" />
+    </declare-styleable>
+
     <declare-styleable name="FeedbackScreen">
         <attr name="feedbackType" format="enum">
             <enum name="success" value="0" />
@@ -43,14 +47,20 @@
         <attr name="listRowSubtitle" format="string" />
         <attr name="listRowDescription" format="string" />
         <attr name="listRowAssetDrawable" format="reference" />
+        <attr name="listRowAssetType" format="enum">
+            <enum name="image" value="0" />
+            <enum name="smallIcon" value="1" />
+            <enum name="largeIcon" value="2" />
+        </attr>
         <attr name="listRowIsBoxed" format="boolean" />
-        <attr name="listRowHasSmallAsset" format="boolean" />
         <attr name="listRowActionLayout" format="integer">
             <enum name="none" value="-1" />
         </attr>
         <attr name="listRowBadgeCount" format="integer">
-            <enum name="gone" value="-1" />
+            <enum name="gone" value="0" />
         </attr>
+        <attr name="listRowBadgeVisible" format="boolean" />
+        <attr name="listRowBadgeDescription" format="string" />
         <attr name="onClick" format="string" />
     </declare-styleable>
 
@@ -91,19 +101,19 @@
         <attr name="highlightedCardContent" format="string" />
         <attr name="highlightedCardButton" format="string" />
         <attr name="highlightedCardImage" format="reference" />
-        <attr name="highlightedCardCloseButtonVisibility" format="boolean" />
         <attr name="highlightedCardButtonOnClick" format="string" />
+        <attr name="highlightedCardCloseButton" format="string" />
         <attr name="highlightedCardCloseButtonOnClick" format="string" />
         <attr name="highlightedCardButtonStyle" format="enum">
-            <enum name="primary" value="0"/>
-            <enum name="secondary" value="1"/>
-            <enum name="link" value="2"/>
-            <enum name="none" value="3"/>
+            <enum name="primary" value="0" />
+            <enum name="secondary" value="1" />
+            <enum name="link" value="2" />
+            <enum name="none" value="3" />
         </attr>
         <attr name="highlightedCardImageStyle" format="enum">
-            <enum name="modeFit" value="0"/>
-            <enum name="modeFill" value="1"/>
-            <enum name="none" value="2"/>
+            <enum name="modeFit" value="0" />
+            <enum name="modeFill" value="1" />
+            <enum name="none" value="2" />
         </attr>
     </declare-styleable>
 
@@ -132,6 +142,36 @@
     <declare-styleable name="CheckBoxInput">
         <attr name="inputChecked" format="boolean" /> <!-- Supports inverse databinding -->
         <attr name="inputCheckText" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="CardView">
+        <attr name="cardTag" format="string" />
+        <attr name="cardTitle" format="string" />
+        <attr name="cardDescription" format="string" />
+        <attr name="cardPrimaryButtonText" format="string" />
+        <attr name="cardLinkButtonText" format="string" />
+        <attr name="cardPrimaryButtonOnClick" format="string" />
+        <attr name="cardLinkButtonOnClick" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="MediaCardView">
+        <attr name="cardImage" format="reference" />
+        <attr name="cardPretitle" format="string" />
+        <attr name="cardImageContentDescription" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="DataCardView">
+        <attr name="cardIcon" format="reference" />
+        <attr name="cardSubtitle" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="IndeterminateStepperView">
+        <attr name="progress" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="DeterminateStepperView">
+        <attr name="maxSteps" format="integer" />
+        <attr name="step" format="integer" />
     </declare-styleable>
 
 </resources>

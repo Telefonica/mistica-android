@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
-import android.widget.ArrayAdapter
 import android.widget.Button
 import androidx.fragment.app.Fragment
 import com.telefonica.mistica.catalog.R
@@ -35,13 +34,13 @@ class SnackBarCatalogFragment : Fragment() {
 
         with(dropDownInput.dropDown) {
             setAdapter(
-                ArrayAdapter(
+                DropDownInput.Adapter(
                     view.context,
                     R.layout.dropdown_menu_popup_item,
                     SnackBarType.values().map { it.name }
                 )
             )
-            setText(SnackBarType.INFORMATIVE.toString(), false)
+            setText(SnackBarType.INFORMATIVE.toString())
         }
 
         createButton.setOnClickListener {

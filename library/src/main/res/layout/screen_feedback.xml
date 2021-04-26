@@ -11,6 +11,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:focusable="true"
             android:orientation="vertical"
             android:paddingTop="24dp">
 
@@ -27,7 +28,7 @@
 
             <TextView
                 android:id="@+id/title"
-                style="@style/AppTheme.TextAppearance.Preset3"
+                style="@style/AppTheme.TextAppearance.Preset6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -36,7 +37,7 @@
 
             <TextView
                 android:id="@+id/subtitle"
-                style="@style/AppTheme.TextAppearance.Preset5"
+                style="@style/AppTheme.TextAppearance.Preset4.Light"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"

@@ -16,12 +16,7 @@ object GradientBackgroundFactory {
 
     @JvmStatic
     fun getBackground(context: Context): Drawable {
-        return getBackground(context, getColors(context))
-    }
-
-    @JvmStatic
-    fun getBackgroundForPinScreen(context: Context): Drawable {
-        return getBackground(context, getPinScreenColors(context))
+        return getBackground(context, getGradientColors(context))
     }
 
     @JvmStatic
@@ -65,21 +60,12 @@ object GradientBackgroundFactory {
         return positions
     }
 
-    private fun getColors(context: Context): IntArray {
+    private fun getGradientColors(context: Context): IntArray {
         val intColors = IntArray(4)
         intColors[0] = context.getThemeColor(R.attr.colorGradientBackgroundFirst)
         intColors[1] = context.getThemeColor(R.attr.colorGradientBackgroundSecond)
         intColors[2] = context.getThemeColor(R.attr.colorGradientBackgroundThird)
         intColors[3] = context.getThemeColor(R.attr.colorGradientBackgroundFourth)
-        return intColors
-    }
-
-    private fun getPinScreenColors(context: Context): IntArray {
-        val intColors = IntArray(4)
-        intColors[0] = context.getThemeColor(R.attr.colorPinGradientFirst)
-        intColors[1] = context.getThemeColor(R.attr.colorPinGradientSecond)
-        intColors[2] = context.getThemeColor(R.attr.colorPinGradientThird)
-        intColors[3] = context.getThemeColor(R.attr.colorPinGradientFourth)
         return intColors
     }
 

@@ -16,11 +16,14 @@ import androidx.annotation.IntDef
 import androidx.annotation.StringRes
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.DrawableCompat
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
 import com.telefonica.mistica.util.getThemeColor
+import com.telefonica.mistica.util.hide
+import com.telefonica.mistica.util.show
 
 
 @BindingMethods(
@@ -81,6 +84,11 @@ import com.telefonica.mistica.util.getThemeColor
     ),
     BindingMethod(
         type = HighlightedCardView::class,
+        attribute = "highlightedCardCloseButton",
+        method = "setCloseButton"
+    ),
+    BindingMethod(
+        type = HighlightedCardView::class,
         attribute = "highlightedCardCloseButtonOnClick",
         method = "setCloseButtonOnClick"
     )
@@ -88,8 +96,7 @@ import com.telefonica.mistica.util.getThemeColor
 class HighlightedCardView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
-    defStyleAttr: Int = 0,
-    defStyleRes: Int = 0
+    defStyleAttr: Int = 0
 ) : ConstraintLayout(context, attrs, defStyleAttr) {
 
     @Retention(AnnotationRetention.SOURCE)
@@ -112,9 +119,9 @@ class HighlightedCardView @JvmOverloads constructor(
 
     private val titleTextView: TextView
     private val contentTextView: TextView
-    private val imageModeFit: ImageView
-    private val imageModeFill: ImageView
+    private val image: ImageView
     private val closeButton: ImageView
+    private val closeButtonBackground: View
     private val container: ConstraintLayout
 
     private var button: Button?
@@ -132,9 +139,9 @@ class HighlightedCardView @JvmOverloads constructor(
         titleTextView = findViewById(R.id.highlighted_card_title)
         contentTextView = findViewById(R.id.highlighted_card_content)
         button = findViewById(R.id.highlighted_card_button_primary)
-        imageModeFit = findViewById(R.id.highlighted_card_image_mode_fit)
-        imageModeFill = findViewById(R.id.highlighted_card_image_mode_fill)
+        image = findViewById(R.id.highlighted_card_image)
         closeButton = findViewById(R.id.highlighted_card_close_button)
+        closeButtonBackground = findViewById(R.id.highlighted_card_close_button_background)
         container = findViewById(R.id.highlighted_card_container)
 
         if (attrs != null) {
@@ -171,13 +178,8 @@ class HighlightedCardView @JvmOverloads constructor(
                 R.styleable.HighlightedCardView_highlightedCardImageStyle,
                 IMAGE_STYLE_NO_IMAGE
             )
-
-            setCloseVisibility(
-                styledAttrs.getBoolean(
-                    R.styleable.HighlightedCardView_highlightedCardCloseButtonVisibility,
-                    false
-                )
-            )
+            styledAttrs.getText(R.styleable.HighlightedCardView_highlightedCardCloseButton)
+                ?.let { setCloseButton(it) }
             styledAttrs.getDrawable(R.styleable.HighlightedCardView_highlightedCardImage)
                 ?.let { setImage(it) }
 
@@ -189,10 +191,6 @@ class HighlightedCardView @JvmOverloads constructor(
     fun setButtonOnClick(onClickListener: OnClickListener?) {
         this.buttonClickListener = onClickListener
         button?.setOnClickListener(onClickListener)
-    }
-
-    fun setCloseButtonOnClick(onClickListener: OnClickListener?) {
-        this.closeButton.setOnClickListener(onClickListener)
     }
 
     fun setTitle(text: CharSequence) {
@@ -231,14 +229,12 @@ class HighlightedCardView @JvmOverloads constructor(
     }
 
     fun setImage(@DrawableRes imageRes: Int) {
-        imageModeFit.setImageResource(imageRes)
-        imageModeFill.setImageResource(imageRes)
+        image.setImageResource(imageRes)
         configureImage()
     }
 
     fun setImage(imageRes: Drawable) {
-        imageModeFit.setImageDrawable(imageRes)
-        imageModeFill.setImageDrawable(imageRes)
+        image.setImageDrawable(imageRes)
         configureImage()
     }
 
@@ -248,7 +244,7 @@ class HighlightedCardView @JvmOverloads constructor(
     }
 
     fun setCustomBackground(@DrawableRes imageRes: Int) {
-        setCustomBackground(context.getDrawable(imageRes)!!)
+        setCustomBackground(ContextCompat.getDrawable(context, imageRes)!!)
     }
 
     fun setCustomBackground(drawable: Drawable) {
@@ -265,17 +261,36 @@ class HighlightedCardView @JvmOverloads constructor(
         configureBackground()
     }
 
-    fun setCloseVisibility(visible: Boolean) {
-        closeButton.visibility = if (visible) View.VISIBLE else View.GONE
+    fun setCloseButton(buttonContentDescription: CharSequence) {
+        closeButton.contentDescription = buttonContentDescription
+        closeButton.show()
+        when (showCloseButtonBackground()) {
+            true -> closeButtonBackground.show()
+            false -> closeButtonBackground.hide()
+        }
+    }
+
+    private fun showCloseButtonBackground() =
+        isInverse || hasCustomBackground || imageStyle == IMAGE_STYLE_MODE_FILL
+
+    fun setCloseButtonOnClick(onButtonClick: OnClickListener) {
+        closeButton.setOnClickListener(onButtonClick)
+    }
+
+    fun removeCloseButton() {
+        closeButton.hide()
+        closeButtonBackground.hide()
     }
 
     private fun configureColors() {
         @ColorInt val primaryColor: Int =
-            context.getThemeColor(if (isInverse) R.attr.colorTextSecondaryInverse else R.attr.colorTextSecondary)
-
+            context.getThemeColor(if (isInverse) R.attr.colorTextPrimaryInverse else R.attr.colorTextPrimary)
         titleTextView.setTextColor(primaryColor)
-        contentTextView.setTextColor(primaryColor)
-        closeButton.setCrossColor(primaryColor)
+
+        @ColorInt val secondaryColor: Int =
+            context.getThemeColor(if (isInverse) R.attr.colorTextSecondaryInverse else R.attr.colorTextSecondary)
+        contentTextView.setTextColor(secondaryColor)
+
     }
 
     private fun configureBackground() {
@@ -285,7 +300,7 @@ class HighlightedCardView @JvmOverloads constructor(
             } else {
                 R.drawable.highlighted_card_background
             }
-            container.background = context.getDrawable(backgroundDrawable)
+            container.background = ContextCompat.getDrawable(context, backgroundDrawable)
         }
     }
 
@@ -293,23 +308,22 @@ class HighlightedCardView @JvmOverloads constructor(
         when (imageStyle) {
             IMAGE_STYLE_MODE_FIT -> showFitImage()
             IMAGE_STYLE_MODE_FILL -> showFillImage()
-            IMAGE_STYLE_NO_IMAGE -> hideAllImages()
+            IMAGE_STYLE_NO_IMAGE -> hideImage()
         }
     }
 
     private fun showFillImage() {
-        imageModeFill.visibility = View.VISIBLE
-        imageModeFit.visibility = View.GONE
+        image.scaleType = ImageView.ScaleType.CENTER_CROP
+        image.visibility = View.VISIBLE
     }
 
     private fun showFitImage() {
-        imageModeFit.visibility = View.VISIBLE
-        imageModeFill.visibility = View.GONE
+        image.scaleType = ImageView.ScaleType.FIT_END
+        image.visibility = View.VISIBLE
     }
 
-    private fun hideAllImages() {
-        imageModeFit.visibility = View.GONE
-        imageModeFill.visibility = View.GONE
+    private fun hideImage() {
+        image.visibility = View.GONE
     }
 
     private fun reload() {

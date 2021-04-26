@@ -5,78 +5,82 @@
         <item name="android:letterSpacing">0.0</item>
     </style>
 
-    <style name="AppTheme.TextAppearance.Preset1">
+    <style name="AppTheme.TextAppearance.Preset8">
         <item name="android:textSize">32sp</item>
         <item name="lineHeight">40sp</item>
-        <item name="android:fontFamily">@string/font_family_light</item>
-    </style>
-
-    <style name="AppTheme.TextAppearance.Preset2">
-        <item name="android:textSize">28sp</item>
-        <item name="lineHeight">32sp</item>
-        <item name="android:fontFamily">@string/font_family_light</item>
-    </style>
-
-    <style name="AppTheme.TextAppearance.Preset3">
-        <item name="android:textSize">24sp</item>
-        <item name="lineHeight">32sp</item>
-        <item name="android:fontFamily">@string/font_family_light</item>
-    </style>
-
-    <style name="AppTheme.TextAppearance.Preset4">
-        <item name="android:textSize">22sp</item>
-        <item name="lineHeight">24sp</item>
-        <item name="android:fontFamily">@string/font_family_light</item>
-    </style>
-
-    <style name="AppTheme.TextAppearance.Preset5">
-        <item name="android:textSize">18sp</item>
-        <item name="lineHeight">24sp</item>
-        <item name="android:fontFamily">@string/font_family_light</item>
-    </style>
-
-    <style name="AppTheme.TextAppearance.Preset5.Medium">
-        <item name="android:fontFamily">@string/font_family_medium</item>
-    </style>
-
-    <style name="AppTheme.TextAppearance.Preset6">
-        <item name="android:textSize">16sp</item>
-        <item name="lineHeight">24sp</item>
-        <item name="android:fontFamily">@string/font_family_regular</item>
-    </style>
-
-    <style name="AppTheme.TextAppearance.Preset6.Light">
-        <item name="android:fontFamily">@string/font_family_light</item>
-    </style>
-
-    <style name="AppTheme.TextAppearance.Preset6.Medium">
-        <item name="android:fontFamily">@string/font_family_medium</item>
+        <item name="android:fontFamily">?font_family_light</item>
     </style>
 
     <style name="AppTheme.TextAppearance.Preset7">
+        <item name="android:textSize">28sp</item>
+        <item name="lineHeight">32sp</item>
+        <item name="android:fontFamily">?font_family_light</item>
+    </style>
+
+    <style name="AppTheme.TextAppearance.Preset6">
+        <item name="android:textSize">24sp</item>
+        <item name="lineHeight">32sp</item>
+        <item name="android:fontFamily">?font_family_light</item>
+    </style>
+
+    <style name="AppTheme.TextAppearance.Preset5">
+        <item name="android:textSize">22sp</item>
+        <item name="lineHeight">24sp</item>
+        <item name="android:fontFamily">?font_family_light</item>
+    </style>
+
+    <style name="AppTheme.TextAppearance.Preset4">
+        <item name="android:textSize">18sp</item>
+        <item name="lineHeight">24sp</item>
+        <item name="android:fontFamily">?font_family_regular</item>
+    </style>
+
+    <style name="AppTheme.TextAppearance.Preset4.Light">
+        <item name="android:fontFamily">?font_family_light</item>
+    </style>
+
+    <style name="AppTheme.TextAppearance.Preset4.Medium">
+        <item name="android:fontFamily">?font_family_medium</item>
+    </style>
+
+    <style name="AppTheme.TextAppearance.Preset3">
+        <item name="android:textSize">16sp</item>
+        <item name="lineHeight">24sp</item>
+        <item name="android:fontFamily">?font_family_regular</item>
+    </style>
+
+    <style name="AppTheme.TextAppearance.Preset3.Light">
+        <item name="android:fontFamily">?font_family_light</item>
+    </style>
+
+    <style name="AppTheme.TextAppearance.Preset3.Medium">
+        <item name="android:fontFamily">?font_family_medium</item>
+    </style>
+
+    <style name="AppTheme.TextAppearance.Preset2">
         <item name="android:textSize">14sp</item>
         <item name="lineHeight">20sp</item>
-        <item name="android:fontFamily">@string/font_family_regular</item>
+        <item name="android:fontFamily">?font_family_regular</item>
     </style>
 
-    <style name="AppTheme.TextAppearance.Preset7.Medium">
-        <item name="android:fontFamily">@string/font_family_medium</item>
+    <style name="AppTheme.TextAppearance.Preset2.Medium">
+        <item name="android:fontFamily">?font_family_medium</item>
     </style>
 
-    <style name="AppTheme.TextAppearance.Preset8">
+    <style name="AppTheme.TextAppearance.Preset1">
         <item name="android:textSize">12sp</item>
         <item name="lineHeight">16sp</item>
-        <item name="android:fontFamily">@string/font_family_regular</item>
+        <item name="android:fontFamily">?font_family_regular</item>
     </style>
 
-    <style name="AppTheme.TextAppearance.Preset8.Medium">
-        <item name="android:fontFamily">@string/font_family_medium</item>
+    <style name="AppTheme.TextAppearance.Preset1.Medium">
+        <item name="android:fontFamily">?font_family_medium</item>
     </style>
 
     <style name="AppTheme.TextAppearance.System">
         <item name="android:textSize">10sp</item>
         <item name="lineHeight">14sp</item>
-        <item name="android:fontFamily">@string/font_family_regular</item>
+        <item name="android:fontFamily">?font_family_regular</item>
     </style>
 
 </resources>

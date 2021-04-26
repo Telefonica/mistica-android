@@ -11,6 +11,10 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.list.ListRowView
+import com.telefonica.mistica.list.ListRowView.AssetType
+import com.telefonica.mistica.list.ListRowView.Companion.TYPE_IMAGE
+import com.telefonica.mistica.list.ListRowView.Companion.TYPE_LARGE_ICON
+import com.telefonica.mistica.list.ListRowView.Companion.TYPE_SMALL_ICON
 import com.telefonica.mistica.list.MisticaRecyclerView
 
 class ListsCatalogFragment : Fragment() {
@@ -45,7 +49,7 @@ class ListsCatalogFragment : Fragment() {
                 ) as ListRowView
             )
 
-        override fun getItemCount(): Int = 23
+        override fun getItemCount(): Int = 25
 
         override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
             val rowView: ListRowView = holder.rowView
@@ -57,11 +61,12 @@ class ListsCatalogFragment : Fragment() {
                 )
                 2 -> rowView.configureView(
                     withAction = true,
-                    withBadgeCount = 0
+                    withBadge = true,
+                    withBadgeDescription = "You have unread messages"
                 )
                 3 -> rowView.configureView(
                     withAction = true,
-                    withBadgeCount = 1
+                    withBadgeNumeric = 1
                 )
                 4 -> rowView.configureView(
                     withLongDescription = false
@@ -71,51 +76,58 @@ class ListsCatalogFragment : Fragment() {
                     withAction = true
                 )
                 6 -> rowView.configureView(
-                    withAsset = true
+                    withAsset = true,
+                    withAssetType = TYPE_LARGE_ICON
                 )
                 7 -> rowView.configureView(
                     withAsset = true,
+                    withAssetType = TYPE_LARGE_ICON,
                     withAction = true
                 )
                 8 -> rowView.configureView(
                     withAsset = true,
+                    withAssetType = TYPE_LARGE_ICON,
                     withAction = true,
-                    withBadgeCount = 0
+                    withBadge = true
                 )
                 9 -> rowView.configureView(
                     withAsset = true,
+                    withAssetType = TYPE_LARGE_ICON,
                     withAction = true,
-                    withBadgeCount = 5
+                    withBadgeNumeric = 5,
+                    withBadgeDescription = "5 new messages"
                 )
                 10 -> rowView.configureView(
                     withLongDescription = false,
-                    withAsset = true
+                    withAsset = true,
+                    withAssetType = TYPE_LARGE_ICON
                 )
                 11 -> rowView.configureView(
                     withLongDescription = false,
                     withAsset = true,
+                    withAssetType = TYPE_LARGE_ICON,
                     withAction = true
                 )
                 12 -> rowView.configureView(
                     withAsset = true,
-                    withSmallAsset = true
+                    withAssetType = TYPE_SMALL_ICON
                 )
                 13 -> rowView.configureView(
                     withAsset = true,
-                    withSmallAsset = true,
+                    withAssetType = TYPE_SMALL_ICON,
                     withAction = true
                 )
                 14 -> rowView.configureView(
                     withAsset = true,
-                    withSmallAsset = true,
+                    withAssetType = TYPE_SMALL_ICON,
                     withAction = true,
-                    withBadgeCount = 0
+                    withBadge = true
                 )
                 15 -> rowView.configureView(
                     withAsset = true,
-                    withSmallAsset = true,
+                    withAssetType = TYPE_SMALL_ICON,
                     withAction = true,
-                    withBadgeCount = 10
+                    withBadgeNumeric = 10
                 )
                 16 -> rowView.configureView(
                     withLongTitle = true,
@@ -124,36 +136,51 @@ class ListsCatalogFragment : Fragment() {
                 17 -> rowView.configureView(
                     withLongTitle = true,
                     withLongDescription = true,
-                    withAsset = true
+                    withAsset = true,
+                    withAssetType = TYPE_LARGE_ICON
                 )
                 18 -> rowView.configureView(
                     withLongTitle = true,
                     withLongDescription = true,
                     withAsset = true,
+                    withAssetType = TYPE_LARGE_ICON,
                     withAction = true
                 )
                 19 -> rowView.configureView(
                     withAsset = true,
+                    withAssetType = TYPE_LARGE_ICON,
                     withAction = true,
                     withHeadline = true
                 )
                 20 -> rowView.configureView(
                     withAsset = true,
+                    withAssetType = TYPE_LARGE_ICON,
                     withAction = true,
                     withSubtitle = true
                 )
                 21 -> rowView.configureView(
                     withAsset = true,
+                    withAssetType = TYPE_LARGE_ICON,
                     withAction = true,
                     withSubtitle = true,
                     withHeadline = true
                 )
                 22 -> rowView.configureView(
                     withAsset = true,
+                    withAssetType = TYPE_LARGE_ICON,
                     withLongDescription = false,
                     withAction = true,
                     withSubtitle = true,
                     withHeadline = true
+                )
+                23 -> rowView.configureView(
+                    withAsset = true,
+                    withAssetType = TYPE_IMAGE,
+                    withLongDescription = false
+                )
+                24 -> rowView.configureView(
+                    withAsset = true,
+                    withAssetType = TYPE_IMAGE
                 )
             }
         }
@@ -163,11 +190,13 @@ class ListsCatalogFragment : Fragment() {
             withLongTitle: Boolean = false,
             withLongDescription: Boolean? = null,
             withAsset: Boolean = false,
-            withSmallAsset: Boolean = false,
+            @AssetType withAssetType: Int = TYPE_SMALL_ICON,
             withAction: Boolean = false,
-            withBadgeCount: Int = ListRowView.BADGE_GONE,
+            withBadge: Boolean = false,
+            withBadgeNumeric: Int = 0,
             withHeadline: Boolean = false,
-            withSubtitle: Boolean = false
+            withSubtitle: Boolean = false,
+            withBadgeDescription: String? = null
         ) {
             if (withHeadline) {
                 setHeadlineLayout(R.layout.list_row_text_headline)
@@ -187,8 +216,10 @@ class ListsCatalogFragment : Fragment() {
                     }
                 }
             )
-            setAssetResource(if (withAsset) R.drawable.ic_lists else null)
-            setSmallAsset(withSmallAsset)
+
+            setAssetType(withAssetType)
+            setAssetResource(getAssetResource(withAsset, withAssetType))
+
             if (withAction) {
                 setActionLayout(R.layout.list_row_chevron_action)
                 setOnClickListener { Toast.makeText(context, "Click!", Toast.LENGTH_SHORT).show() }
@@ -196,8 +227,24 @@ class ListsCatalogFragment : Fragment() {
                 setActionLayout(ListRowView.ACTION_NONE)
                 isClickable = false
             }
-            setBadgeCount(withBadgeCount)
+
+            when {
+                withBadge -> setBadge(true, withBadgeDescription)
+                withBadgeNumeric > 0 -> setNumericBadge(withBadgeNumeric, withBadgeDescription)
+                else -> setBadge(false, withBadgeDescription)
+            }
         }
+
+        private fun getAssetResource(withAsset: Boolean, withAssetType: Int): Int? =
+            if (withAsset) {
+                if (withAssetType == TYPE_IMAGE) {
+                    R.drawable.highlighted_card_custom_background
+                } else {
+                    R.drawable.ic_lists
+                }
+            } else {
+                null
+            }
     }
 
     class ListViewHolder(val rowView: ListRowView) : RecyclerView.ViewHolder(rowView)

@@ -20,7 +20,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:inputType="text"
-        app:inputHint="PopOver Title Text" />
+        app:inputHint="PopOver Title Text"
+        app:inputText="Title of the pop over" />
 
     <com.telefonica.mistica.input.TextInput
         android:id="@+id/input_popover_message"
@@ -28,7 +29,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:inputType="text"
-        app:inputHint="PopOver Message text" />
+        app:inputHint="PopOver Message text"
+        app:inputText="Popover long description text" />
 
     <com.telefonica.mistica.input.CheckBoxInput
         android:id="@+id/input_popover_checkbox_image"

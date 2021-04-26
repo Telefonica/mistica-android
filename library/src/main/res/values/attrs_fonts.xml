@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="Fonts">
+        <attr name="font_family_light" format="string"/>
+        <attr name="font_family_regular" format="string"/>
+        <attr name="font_family_medium" format="string"/>
+    </declare-styleable>
+
+</resources>

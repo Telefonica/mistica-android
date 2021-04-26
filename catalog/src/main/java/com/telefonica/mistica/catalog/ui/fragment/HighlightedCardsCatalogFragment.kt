@@ -4,7 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.*
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.Button
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.highlightedcard.HighlightedCardView
@@ -68,7 +71,7 @@ class HighlightedCardsCatalogFragment : Fragment() {
         with(view.findViewById<DropDownInput>(R.id.dropdown_button_type)) {
             post {
                 dropDown.setAdapter(
-                    ArrayAdapter(
+                    DropDownInput.Adapter(
                         context,
                         R.layout.dropdown_menu_popup_item,
                         buttonTypes.map { it.first }
@@ -85,14 +88,11 @@ class HighlightedCardsCatalogFragment : Fragment() {
     private fun updateHighlightedCardView(view: View) {
         with(view.findViewById<HighlightedCardView>(R.id.highlighted_card_view)) {
             when (imageStyle) {
-                HighlightedCardView.IMAGE_STYLE_MODE_FIT  -> setImage(R.drawable.higlighted_card_image)
+                HighlightedCardView.IMAGE_STYLE_MODE_FIT -> setImage(R.drawable.higlighted_card_image)
                 HighlightedCardView.IMAGE_STYLE_MODE_FILL -> setImage(R.drawable.highlighted_card_fill_mode_example)
             }
             setImageStyle(imageStyle)
             setInverse(view.findViewById<CheckBoxInput>(R.id.check_inverse).isChecked())
-            setCloseVisibility(
-                view.findViewById<CheckBoxInput>(R.id.checkbox_close_button).isChecked()
-            )
             setTitle(view.findViewById<TextInput>(R.id.input_title).text.toString())
             setContent(view.findViewById<TextInput>(R.id.input_content).text.toString())
             setButtonText(view.findViewById<TextInput>(R.id.input_button_text).text.toString())
@@ -102,6 +102,7 @@ class HighlightedCardsCatalogFragment : Fragment() {
             } else {
                 disableCustomBackground()
             }
+            setCloseButton(view)
             setButtonOnClick(View.OnClickListener {
                 Toast.makeText(
                     view.context,
@@ -109,13 +110,22 @@ class HighlightedCardsCatalogFragment : Fragment() {
                     Toast.LENGTH_SHORT
                 ).show()
             })
-            setCloseButtonOnClick(View.OnClickListener {
+        }
+    }
+
+    private fun HighlightedCardView.setCloseButton(view: View) {
+        if (view.findViewById<CheckBoxInput>(R.id.checkbox_close_button).isChecked()) {
+            val onButtonClicked = View.OnClickListener {
                 Toast.makeText(
                     view.context,
                     "Close Clicked!",
                     Toast.LENGTH_SHORT
                 ).show()
-            })
+            }
+            setCloseButtonOnClick(onButtonClicked)
+            setCloseButton("Dismiss card")
+        } else {
+            removeCloseButton()
         }
     }
 }

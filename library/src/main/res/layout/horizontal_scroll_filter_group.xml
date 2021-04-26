@@ -1,0 +1,32 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <HorizontalScrollView
+        android:id="@+id/filters_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?colorBackgroundBrand"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:minHeight="48dp"
+        android:scrollbars="none">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical">
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chips_group"
+                style="@style/AppTheme.Widgets.ChipGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/filter_group_horizontal_padding"
+                android:layout_marginEnd="@dimen/filter_group_horizontal_padding"
+                app:singleLine="true"
+                app:singleSelection="true" />
+
+        </FrameLayout>
+
+    </HorizontalScrollView>
+</merge>

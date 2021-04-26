@@ -2,7 +2,7 @@
 <resources>
 
     <style name="AppTheme.Button" parent="Widget.MaterialComponents.Button.UnelevatedButton">
-        <item name="android:textAppearance">@style/AppTheme.TextAppearance.Preset6.Medium</item>
+        <item name="android:textAppearance">@style/AppTheme.TextAppearance.Preset3.Medium</item>
         <item name="android:minHeight">@dimen/button_height</item>
         <item name="android:insetTop">@dimen/button_vertical_inset</item>
         <item name="android:insetBottom">@dimen/button_vertical_inset</item>
@@ -18,7 +18,7 @@
     </style>
 
     <style name="AppTheme.OutlinedButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
-        <item name="android:textAppearance">@style/AppTheme.TextAppearance.Preset6.Medium</item>
+        <item name="android:textAppearance">@style/AppTheme.TextAppearance.Preset3.Medium</item>
         <item name="android:minHeight">@dimen/button_height</item>
         <item name="android:insetTop">@dimen/button_vertical_inset</item>
         <item name="android:insetBottom">@dimen/button_vertical_inset</item>
@@ -34,7 +34,7 @@
     </style>
 
     <style name="AppTheme.LinkButton" parent="Widget.MaterialComponents.Button.TextButton">
-        <item name="android:textAppearance">@style/AppTheme.TextAppearance.Preset7.Medium</item>
+        <item name="android:textAppearance">@style/AppTheme.TextAppearance.Preset2.Medium</item>
         <item name="android:paddingStart">@dimen/button_link_horizontal_padding</item>
         <item name="android:paddingEnd">@dimen/button_link_horizontal_padding</item>
         <item name="android:minWidth">0dp</item>
@@ -53,11 +53,11 @@
         <item name="backgroundTint">@color/button_primary_background_selector</item>
         <item name="android:textColor">?colorTextButtonPrimary</item>
         <item name="iconTint">?colorTextButtonPrimary</item>
-        <item name="rippleColor">?colorButtonPrimaryBackgroundPressed</item>
+        <item name="rippleColor">?attr/colorButtonPrimaryBackgroundSelected</item>
     </style>
 
     <style name="AppTheme.Button.DefaultButton.Small">
-        <item name="android:textAppearance">@style/AppTheme.TextAppearance.Preset7.Medium</item>
+        <item name="android:textAppearance">@style/AppTheme.TextAppearance.Preset2.Medium</item>
         <item name="android:minWidth">@dimen/button_small_min_width</item>
         <item name="android:minHeight">@dimen/button_small_height</item>
         <item name="iconSize">@dimen/button_small_icon_size</item>
@@ -73,7 +73,7 @@
     </style>
 
     <style name="AppTheme.Button.SecondaryButton.Small">
-        <item name="android:textAppearance">@style/AppTheme.TextAppearance.Preset7.Medium</item>
+        <item name="android:textAppearance">@style/AppTheme.TextAppearance.Preset2.Medium</item>
         <item name="android:minWidth">@dimen/button_small_min_width</item>
         <item name="android:minHeight">@dimen/button_small_height</item>
         <item name="iconSize">@dimen/button_small_icon_size</item>
@@ -83,11 +83,11 @@
         <item name="backgroundTint">@color/button_danger_background_selector</item>
         <item name="android:textColor">?colorTextButtonPrimary</item>
         <item name="iconTint">?colorTextButtonPrimary</item>
-        <item name="rippleColor">?colorButtonDangerBackgroundPressed</item>
+        <item name="rippleColor">?attr/colorButtonDangerBackgroundSelected</item>
     </style>
 
     <style name="AppTheme.Button.DangerButton.Small">
-        <item name="android:textAppearance">@style/AppTheme.TextAppearance.Preset7.Medium</item>
+        <item name="android:textAppearance">@style/AppTheme.TextAppearance.Preset2.Medium</item>
         <item name="android:minWidth">@dimen/button_small_min_width</item>
         <item name="android:minHeight">@dimen/button_small_height</item>
         <item name="iconSize">@dimen/button_small_icon_size</item>
@@ -97,18 +97,18 @@
         <item name="backgroundTint">@android:color/transparent</item>
         <item name="android:textColor">@color/text_button_link_selector</item>
         <item name="iconTint">@color/text_button_link_selector</item>
-        <item name="rippleColor">?colorLinkButtonBackgroundPressed</item>
+        <item name="rippleColor">?attr/colorButtonLinkBackgroundSelected</item>
     </style>
 
     <style name="AppTheme.Button.PrimaryButtonInverse">
         <item name="backgroundTint">@color/button_primary_background_inverse_selector</item>
         <item name="android:textColor">@color/text_button_primary_inverse_selector</item>
         <item name="iconTint">@color/text_button_primary_inverse_selector</item>
-        <item name="rippleColor">?colorButtonPrimaryBackgroundPressedInverse</item>
+        <item name="rippleColor">?attr/colorButtonPrimaryBackgroundSelectedInverse</item>
     </style>
 
     <style name="AppTheme.Button.PrimaryButtonInverse.Small">
-        <item name="android:textAppearance">@style/AppTheme.TextAppearance.Preset7.Medium</item>
+        <item name="android:textAppearance">@style/AppTheme.TextAppearance.Preset2.Medium</item>
         <item name="android:minWidth">@dimen/button_small_min_width</item>
         <item name="android:minHeight">@dimen/button_small_height</item>
         <item name="iconSize">@dimen/button_small_icon_size</item>
@@ -124,7 +124,7 @@
     </style>
 
     <style name="AppTheme.Button.SecondaryButtonInverse.Small">
-        <item name="android:textAppearance">@style/AppTheme.TextAppearance.Preset7.Medium</item>
+        <item name="android:textAppearance">@style/AppTheme.TextAppearance.Preset2.Medium</item>
         <item name="android:minWidth">@dimen/button_small_min_width</item>
         <item name="android:minHeight">@dimen/button_small_height</item>
         <item name="iconSize">@dimen/button_small_icon_size</item>
@@ -134,7 +134,7 @@
         <item name="backgroundTint">@android:color/transparent</item>
         <item name="android:textColor">@color/text_button_link_inverse_selector</item>
         <item name="iconTint">@color/text_button_link_inverse_selector</item>
-        <item name="rippleColor">?colorLinkButtonBackgroundPressedInverse</item>
+        <item name="rippleColor">?colorButtonLinkBackgroundSelected</item>
     </style>
 
 </resources>

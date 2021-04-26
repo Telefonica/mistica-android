@@ -5,7 +5,8 @@
     app:listRowActionLayout="@layout/list_row_chevron_action"
     app:listRowAssetDrawable="@android:drawable/btn_star"
     app:listRowBadgeCount="gone"
+    app:listRowBadgeVisible="false"
     app:listRowDescription="Test Subtitle"
-    app:listRowHasSmallAsset="true"
+    app:listRowAssetType="smallIcon"
     app:listRowIsBoxed="true"
     app:listRowTitle="Test Title" />

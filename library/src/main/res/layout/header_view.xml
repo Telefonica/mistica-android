@@ -16,9 +16,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:ellipsize="end"
-        android:maxLines="1"
-        android:textAppearance="@style/AppTheme.TextAppearance.Preset6"
+        android:focusable="false"
+        android:textAppearance="@style/AppTheme.TextAppearance.Preset3"
         android:visibility="gone"
         tools:text="First Pretitle"
         tools:visibility="visible" />
@@ -28,8 +27,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
+        android:focusable="false"
         android:maxLength="80"
-        android:textAppearance="@style/AppTheme.TextAppearance.Preset3"
+        android:textAppearance="@style/AppTheme.TextAppearance.Preset6"
         tools:text="Title"
         tools:visibility="visible" />
 
@@ -38,9 +38,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:ellipsize="end"
-        android:maxLines="1"
-        android:textAppearance="@style/AppTheme.TextAppearance.Preset6"
+        android:focusable="false"
+        android:textAppearance="@style/AppTheme.TextAppearance.Preset3"
         android:visibility="gone"
         tools:text="Second Pretitle"
         tools:visibility="visible" />
@@ -51,8 +50,9 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:ellipsize="end"
+        android:focusable="false"
         android:maxLines="1"
-        android:textAppearance="@style/AppTheme.TextAppearance.Preset1"
+        android:textAppearance="@style/AppTheme.TextAppearance.Preset8"
         android:visibility="gone"
         tools:text="00,00€"
         tools:visibility="visible" />
@@ -104,9 +104,8 @@
         android:id="@+id/header_subtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ellipsize="end"
-        android:maxLines="1"
-        android:textAppearance="@style/AppTheme.TextAppearance.Preset6"
+        android:focusable="true"
+        android:textAppearance="@style/AppTheme.TextAppearance.Preset3"
         android:visibility="gone"
         tools:text="Subtitle"
         tools:visibility="visible" />

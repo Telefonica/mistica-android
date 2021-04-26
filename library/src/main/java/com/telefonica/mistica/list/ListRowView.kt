@@ -1,6 +1,7 @@
 package com.telefonica.mistica.list
 
 import android.content.Context
+import android.content.res.TypedArray
 import android.graphics.drawable.Drawable
 import android.util.AttributeSet
 import android.util.TypedValue
@@ -11,10 +12,12 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.annotation.DrawableRes
+import androidx.annotation.IntDef
 import androidx.annotation.LayoutRes
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
 import androidx.core.content.ContextCompat
+import androidx.databinding.BindingAdapter
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
@@ -54,24 +57,19 @@ import com.telefonica.mistica.util.convertDpToPx
     ),
     BindingMethod(
         type = ListRowView::class,
-        attribute = "listRowIsBoxed",
-        method = "setBoxed"
+        attribute = "listRowAssetType",
+        method = "setAssetType"
     ),
     BindingMethod(
         type = ListRowView::class,
-        attribute = "listRowHasSmallAsset",
-        method = "setSmallAsset"
+        attribute = "listRowIsBoxed",
+        method = "setBoxed"
     ),
     BindingMethod(
         type = ListRowView::class,
         attribute = "listRowActionLayout",
         method = "setActionLayout"
     ),
-    BindingMethod(
-        type = ListRowView::class,
-        attribute = "listRowBadgeCount",
-        method = "setBadgeCount"
-    )
 )
 class ListRowView @JvmOverloads constructor(
     context: Context,
@@ -79,8 +77,18 @@ class ListRowView @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : ConstraintLayout(context, attrs, defStyleAttr) {
 
+    @Retention(AnnotationRetention.SOURCE)
+    @IntDef(
+        TYPE_IMAGE,
+        TYPE_SMALL_ICON,
+        TYPE_LARGE_ICON
+    )
+    annotation class AssetType
+
     private val textsContainer: LinearLayout
     private val assetImageView: ImageView
+    private val assetCircularImageView: ImageView
+    private val assetImageLayout: FrameLayout
     private val headlineContainer: FrameLayout
     private val titleTextView: TextView
     private val subtitleTextView: TextView
@@ -90,7 +98,7 @@ class ListRowView @JvmOverloads constructor(
 
     private var currentHeadlineLayoutRes: Int = HEADLINE_NONE
     private var currentActionLayoutRes: Int = ACTION_NONE
-    private var isSmallAsset: Boolean = false
+    private var assetType: Int = TYPE_SMALL_ICON
 
     init {
         LayoutInflater.from(context).inflate(R.layout.list_row_item, this, true)
@@ -101,6 +109,8 @@ class ListRowView @JvmOverloads constructor(
 
         textsContainer = findViewById(R.id.row_texts_container)
         assetImageView = findViewById(R.id.row_asset_image)
+        assetCircularImageView = findViewById(R.id.row_asset_circular_image)
+        assetImageLayout = findViewById(R.id.row_asset_image_layout)
         headlineContainer = findViewById(R.id.row_headline)
         titleTextView = findViewById(R.id.row_title_text)
         subtitleTextView = findViewById(R.id.row_subtitle_text)
@@ -131,14 +141,15 @@ class ListRowView @JvmOverloads constructor(
             setSubtitle(styledAttrs.getText(R.styleable.ListRowView_listRowSubtitle))
             setDescription(styledAttrs.getText(R.styleable.ListRowView_listRowDescription))
             setBoxed(styledAttrs.getBoolean(R.styleable.ListRowView_listRowIsBoxed, false))
-            setSmallAsset(
-                styledAttrs.getBoolean(
-                    R.styleable.ListRowView_listRowHasSmallAsset,
-                    false
+            setAssetType(
+                styledAttrs.getInt(
+                    R.styleable.ListRowView_listRowAssetType,
+                    TYPE_SMALL_ICON
                 )
             )
             setAssetDrawable(styledAttrs.getDrawable(R.styleable.ListRowView_listRowAssetDrawable))
-            setBadgeCount(styledAttrs.getInt(R.styleable.ListRowView_listRowBadgeCount, BADGE_GONE))
+            setBadgeInitialState(styledAttrs)
+
             styledAttrs.getResourceId(
                 R.styleable.ListRowView_listRowActionLayout,
                 TypedValue.TYPE_NULL
@@ -149,23 +160,47 @@ class ListRowView @JvmOverloads constructor(
         }
     }
 
-    fun setSmallAsset(isSmall: Boolean) {
-        isSmallAsset = isSmall
-        assetImageView.setSize(if (isSmall) 24 else 40)
-        recalculateAssetPosition()
-    }
-
     fun setAssetResource(@DrawableRes resource: Int? = null) {
         setAssetDrawable(resource?.let { ContextCompat.getDrawable(context, it) })
     }
 
     fun setAssetDrawable(drawable: Drawable? = null) {
-        assetImageView.setImageDrawable(drawable)
-        assetImageView.visibility = if (drawable != null) {
-            View.VISIBLE
+        if (drawable != null) {
+            if (assetType == TYPE_IMAGE) {
+                assetCircularImageView.setImageDrawable(drawable)
+                assetCircularImageView.visibility = VISIBLE
+                assetImageView.visibility = GONE
+            } else {
+                assetImageView.setImageDrawable(drawable)
+                assetCircularImageView.visibility = GONE
+                assetImageView.visibility = VISIBLE
+            }
+            assetImageLayout.visibility = VISIBLE
         } else {
-            View.GONE
+            assetImageLayout.visibility = GONE
         }
+    }
+
+    fun setAssetType(@AssetType type: Int) {
+        assetType = type
+        configureAsset()
+    }
+
+    private fun configureAsset() {
+        when (assetType) {
+            TYPE_IMAGE -> {
+                assetImageLayout.setBackgroundResource(0)
+            }
+            TYPE_SMALL_ICON -> {
+                assetImageView.setSize(24)
+                assetImageLayout.setBackgroundResource(0)
+            }
+            TYPE_LARGE_ICON -> {
+                assetImageView.setSize(24)
+                assetImageLayout.setBackgroundResource(R.drawable.bg_list_image)
+            }
+        }
+        recalculateAssetPosition()
     }
 
     fun setTitle(text: CharSequence?) {
@@ -226,14 +261,22 @@ class ListRowView @JvmOverloads constructor(
         }
     }
 
-    fun setBadgeCount(count: Int = 0) {
+    fun setBadge(show: Boolean, withBadgeDescription: String? = null) {
         Badge.removeBadge(badgeAnchor)
-        if (count == BADGE_GONE) {
-            titleTextView.maxLines = 2
-            badgeAnchor.visibility = View.GONE
+        if (show) {
+            Badge.showBadgeIn(badgeAnchor, withBadgeDescription)
+            badgeAnchor.visibility = View.VISIBLE
         } else {
-            titleTextView.maxLines = 1
-            Badge.showBadgeIn(badgeAnchor, count)
+            hideBadge()
+        }
+    }
+
+    fun setNumericBadge(count: Int, withBadgeDescription: String? = null) {
+        Badge.removeBadge(badgeAnchor)
+        if (count <= 0) {
+            hideBadge()
+        } else {
+            Badge.showNumericBadgeIn(badgeAnchor, count, withBadgeDescription)
             badgeAnchor.visibility = View.VISIBLE
         }
     }
@@ -254,6 +297,21 @@ class ListRowView @JvmOverloads constructor(
         }
     }
 
+    private fun hideBadge() {
+        badgeAnchor.visibility = GONE
+    }
+
+    private fun setBadgeInitialState(styledAttrs: TypedArray) {
+        val numericBadgeState =
+            styledAttrs.getInt(R.styleable.ListRowView_listRowBadgeCount, BADGE_GONE)
+        setNumericBadge(numericBadgeState)
+
+
+        val nonNumericBadgeState =
+            styledAttrs.getBoolean(R.styleable.ListRowView_listRowBadgeVisible, false)
+        setBadge(nonNumericBadgeState)
+    }
+
     private fun recalculateTitleBottomConstraints() {
         with(textsContainer.layoutParams as LayoutParams) {
             bottomToBottom =
@@ -263,15 +321,15 @@ class ListRowView @JvmOverloads constructor(
     }
 
     private fun recalculateAssetPosition() {
-        with(assetImageView.layoutParams as LayoutParams) {
+        with(assetImageLayout.layoutParams as LayoutParams) {
             if (isAnyTextDifferentThanTitleVisible()) {
                 bottomToBottom = ConstraintSet.UNSET
-                topMargin = context.convertDpToPx(if (isSmallAsset) 8 else 4)
+                topMargin = context.convertDpToPx(if (assetType == TYPE_SMALL_ICON) 8 else 4)
             } else {
                 bottomToBottom = ConstraintSet.PARENT_ID
                 topMargin = context.convertDpToPx(0)
             }
-            assetImageView.layoutParams = this
+            assetImageLayout.layoutParams = this
         }
     }
 
@@ -300,8 +358,29 @@ class ListRowView @JvmOverloads constructor(
     }
 
     companion object {
-        const val BADGE_GONE = -1
+        private const val BADGE_GONE = 0
         const val ACTION_NONE = -1
         const val HEADLINE_NONE = -1
+        const val TYPE_IMAGE = 0
+        const val TYPE_SMALL_ICON = 1
+        const val TYPE_LARGE_ICON = 2
+
+        @BindingAdapter(
+            value = ["listRowBadgeCount", "listRowBadgeDescription"],
+            requireAll = false
+        )
+        @JvmStatic
+        fun setNumericBadge(view: ListRowView, count: Int, withBadgeDescription: String? = null) {
+            view.setNumericBadge(count, withBadgeDescription)
+        }
+
+        @BindingAdapter(
+            value = ["listRowBadgeVisible", "listRowBadgeDescription"],
+            requireAll = false
+        )
+        @JvmStatic
+        fun setBadge(view: ListRowView, show: Boolean, withBadgeDescription: String? = null) {
+            view.setBadge(show, withBadgeDescription)
+        }
     }
 }
