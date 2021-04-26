@@ -51,7 +51,7 @@ class InputsCatalogFragment : Fragment() {
             }
 
             findViewById<SectionTitleView>(R.id.section_title_with_link)?.apply {
-                setLinkCallback {
+                setOnLinkClickedListener {
                     Toast.makeText(
                         this.context,
                         "Link tapped!",

@@ -20,6 +20,11 @@ import com.telefonica.mistica.util.setTextAndVisibility
         type = SectionTitleView::class,
         attribute = "sectionLink",
         method = "setLink"
+    ),
+    BindingMethod(
+        type = SectionTitleView::class,
+        attribute = "sectionLinkOnClick",
+        method = "setOnLinkClickedListener"
     )
 )
 class SectionTitleView @JvmOverloads constructor(
@@ -61,8 +66,8 @@ class SectionTitleView @JvmOverloads constructor(
         lintTextView.text = text
     }
 
-    fun setLinkCallback(onclickHandler: () -> Unit) {
-        lintTextView.setOnClickListener { onclickHandler.invoke() }
+    fun setOnLinkClickedListener(listener: () -> Unit) {
+        lintTextView.setOnClickListener { listener.invoke() }
     }
 
 }
