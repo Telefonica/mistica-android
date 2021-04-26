@@ -34,6 +34,7 @@
     <color name="vivo_color_white_5_alpha">#0DFFFFFF</color>
     <color name="vivo_color_white_20_alpha">#33FFFFFF</color>
     <color name="vivo_color_white_50_alpha">#80FFFFFF</color>
+    <color name="vivo_color_grey_5_30_alpha">#4D666666</color>
     <color name="vivo_color_grey_6_30_alpha">#4D000000</color>
     <color name="vivo_color_grey_6_40_alpha">#66000000</color>
     <color name="vivo_color_grey_6_50_alpha">#80000000</color>
