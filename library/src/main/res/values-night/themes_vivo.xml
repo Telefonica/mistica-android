@@ -15,7 +15,7 @@
         <item name="colorBackgroundAlternative">@color/vivo_color_darkModeGrey</item>
         <item name="colorBackgroundFeedbackBottom">@color/vivo_color_darkModeBlack</item>
 
-        <item name="colorSkeletonWave">@color/vivo_color_grey_5</item>
+        <item name="colorSkeletonWave">@color/vivo_color_grey_5_30_alpha</item>
 
         <!-- Border colors -->
         <item name="colorBorderLight">@color/vivo_color_darkModeBlack</item>

@@ -14,7 +14,7 @@
         <item name="colorBackgroundAlternative">@color/movistar_color_darkModeGrey</item>
         <item name="colorBackgroundFeedbackBottom">@color/movistar_color_darkModeBlack</item>
 
-        <item name="colorSkeletonWave">@color/movistar_color_grey_5</item>
+        <item name="colorSkeletonWave">@color/movistar_color_grey_5_30_alpha</item>
 
         <!-- Border colors -->
         <item name="colorBorderLight">@color/movistar_color_darkModeBlack</item>

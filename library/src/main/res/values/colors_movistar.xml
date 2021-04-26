@@ -42,6 +42,7 @@
     <color name="movistar_color_white_5_alpha">#0DFFFFFF</color>
     <color name="movistar_color_white_20_alpha">#33FFFFFF</color>
     <color name="movistar_color_white_50_alpha">#80FFFFFF</color>
+    <color name="movistar_color_grey_5_30_alpha">#4D86888C</color>
     <color name="movistar_color_grey_6_80_alpha">#CC313235</color>
     <color name="movistar_color_grey_6_60_alpha">#99313235</color>
     <color name="movistar_color_grey_6_40_alpha">#66313235</color>
