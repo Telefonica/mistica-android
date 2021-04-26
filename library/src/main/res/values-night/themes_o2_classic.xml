@@ -20,7 +20,6 @@
         <!-- Border colors -->
         <item name="colorBorderLight">@color/o2_classic_color_darkModeBlack</item>
         <item name="colorBorder">@color/o2_classic_color_darkModeGrey</item>
-        <item name="colorBorderSelected">@color/o2_classic_color_sky_blue</item>
 
         <!-- Button colors -->
         <item name="colorButtonDangerBackgroundDisabled">@color/o2_classic_color_darkModeGrey</item>
@@ -59,8 +58,6 @@
 
         <!-- Control colors -->
         <item name="colorControl">@color/o2_classic_color_darkModeGrey6</item>
-        <item name="colorControlActive">@color/o2_classic_color_sky_blue</item>
-        <item name="colorLoadingBar">@color/o2_classic_color_sky_blue</item>
 
         <!-- Divider colors -->
         <item name="colorDivider">@color/o2_classic_color_white_5_alpha</item>
