@@ -34,7 +34,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:textAppearance="@style/AppTheme.TextAppearance.Preset7.Medium"
-        android:color="?colorTextLink"
+        android:textColor="?colorTextLink"
         android:visibility="gone"
         tools:text="Section link"
         tools:visibility="visible"
