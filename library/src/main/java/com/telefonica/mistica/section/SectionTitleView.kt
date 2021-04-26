@@ -17,9 +17,10 @@ import com.telefonica.mistica.util.setTextAndVisibility
         method = "setTitle"
     ),
     BindingMethod(
-    type = SectionTitleView::class,
-    attribute = "sectionLink",
-    method = "setLink")
+        type = SectionTitleView::class,
+        attribute = "sectionLink",
+        method = "setLink"
+    )
 )
 class SectionTitleView @JvmOverloads constructor(
     context: Context,
