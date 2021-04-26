@@ -13,12 +13,18 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
+import com.telefonica.mistica.tag.TagView
 
 @BindingMethods(
     BindingMethod(
         type = CardView::class,
         attribute = "cardTag",
         method = "setTag"
+    ),
+    BindingMethod(
+        type = CardView::class,
+        attribute = "cardTagStyle",
+        method = "setTagStyle"
     ),
     BindingMethod(
         type = CardView::class,
@@ -85,6 +91,7 @@ abstract class CardView @JvmOverloads constructor(
                 )
 
             setTag(styledAttrs.getText(R.styleable.CardView_cardTag))
+            setTagStyle(styledAttrs.getColor(R.styleable.CardView_cardTagStyle, TagView.TAG_STYLE_PROMO))
             setTitle(styledAttrs.getText(R.styleable.CardView_cardTitle))
             setDescription(styledAttrs.getText(R.styleable.CardView_cardDescription))
 
@@ -109,6 +116,10 @@ abstract class CardView @JvmOverloads constructor(
 
     fun setTag(@StringRes textRes: Int?) {
         textRes?.let { setTag(context.getString(it)) }
+    }
+
+    fun setTagStyle(@TagView.TagStyle tagStyle: Int) {
+        cardContentView.tagTextView.setTagStyle(tagStyle)
     }
 
     fun setTitle(text: CharSequence?) {

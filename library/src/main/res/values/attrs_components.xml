@@ -9,7 +9,16 @@
     </declare-styleable>
 
     <declare-styleable name="TagView">
-        <attr name="tagColor" format="color|reference" />
+        <attr name="tagStyle" format="enum">
+            <enum name="promo" value="0" />
+            <enum name="brand" value="1" />
+            <enum name="neutralHigh" value="2" />
+            <enum name="neutralMedium" value="3" />
+            <enum name="success" value="4" />
+            <enum name="warning" value="5" />
+            <enum name="error" value="6" />
+            <enum name="inverse" value="7" />
+        </attr>
     </declare-styleable>
 
     <declare-styleable name="FeedbackScreen">
@@ -141,6 +150,16 @@
 
     <declare-styleable name="CardView">
         <attr name="cardTag" format="string" />
+        <attr name="cardTagStyle" format="enum">
+            <enum name="promo" value="0" />
+            <enum name="brand" value="1" />
+            <enum name="neutralHigh" value="2" />
+            <enum name="neutralMedium" value="3" />
+            <enum name="success" value="4" />
+            <enum name="warning" value="5" />
+            <enum name="error" value="6" />
+            <enum name="inverse" value="7" />
+        </attr>
         <attr name="cardTitle" format="string" />
         <attr name="cardDescription" format="string" />
         <attr name="cardPrimaryButtonText" format="string" />

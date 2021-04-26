@@ -26,6 +26,13 @@
             app:inputText="HEADLINE"
             app:inputType="text" />
 
+        <com.telefonica.mistica.input.DropDownInput
+            android:id="@+id/tagStyleSelector"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:inputHint="Select Headline color" />
+
         <com.telefonica.mistica.input.TextInput
             android:id="@+id/input_title"
             android:layout_width="match_parent"
