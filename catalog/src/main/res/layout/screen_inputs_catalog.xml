@@ -21,7 +21,24 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
-                android:text="Text Input" />
+                app:sectionTitle="Text Input" />
+
+            <com.telefonica.mistica.input.TextInput
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:inputHint="Type Something..."
+                app:inputType="text" />
+
+            <com.telefonica.mistica.section.SectionTitleView
+                android:id="@+id/section_title_with_link"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                app:sectionTitle="Text Input with link"
+                app:sectionLink="Any link"
+                />
 
             <com.telefonica.mistica.input.TextInput
                 android:layout_width="match_parent"
@@ -35,7 +52,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
-                android:text="Text Input With Error" />
+                app:sectionTitle="Text Input With Error" />
 
             <com.telefonica.mistica.input.TextInput
                 android:layout_width="match_parent"
@@ -50,7 +67,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
-                android:text="Text Input With Assertive Text" />
+                app:sectionTitle="Text Input With Assertive Text that is way too long to fit in the given space" />
 
             <com.telefonica.mistica.input.TextInput
                 android:layout_width="match_parent"
@@ -65,7 +82,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
-                android:text="Password Input" />
+                app:sectionTitle="Password Input" />
 
             <com.telefonica.mistica.input.TextInput
                 android:layout_width="match_parent"
@@ -79,7 +96,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
-                android:text="Phone Input" />
+                app:sectionTitle="Phone Input" />
 
             <com.telefonica.mistica.input.TextInput
                 android:layout_width="match_parent"
@@ -93,7 +110,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
-                android:text="Email Input" />
+                app:sectionTitle="Email Input" />
 
             <com.telefonica.mistica.input.TextInput
                 android:layout_width="match_parent"
@@ -107,7 +124,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
-                android:text="Email Input with validation" />
+                app:sectionTitle="Email Input with validation" />
 
             <com.telefonica.mistica.input.TextInput
                 android:id="@+id/text_input_email"
@@ -130,7 +147,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
-            android:text="Phone Input with validation" />
+                app:sectionTitle="Phone Input with validation" />
 
             <com.telefonica.mistica.input.TextInput
                 android:id="@+id/text_input_phone"
@@ -153,7 +170,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
-                android:text="Text Input with custom validation" />
+                app:sectionTitle="Text Input with custom validation" />
 
             <com.telefonica.mistica.input.TextInput
                 android:id="@+id/text_input_custom"
@@ -175,7 +192,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
-                android:text="Text Area" />
+                app:sectionTitle="Text Area" />
 
             <com.telefonica.mistica.input.TextInput
                 android:layout_width="match_parent"
@@ -191,7 +208,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
-                android:text="DropDown" />
+                app:sectionTitle="DropDown" />
 
             <com.telefonica.mistica.input.DropDownInput
                 android:id="@+id/dropDownInput"
@@ -205,7 +222,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
-                android:text="CheckBox Input" />
+                app:sectionTitle="CheckBox Input" />
 
             <com.telefonica.mistica.input.CheckBoxInput
                 android:id="@+id/checkboxInput"
@@ -221,7 +238,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:layout_marginStart="16dp"
-            android:text="Inverse Inputs" />
+            app:sectionTitle="Inverse Inputs" />
 
         <LinearLayout
             android:layout_width="match_parent"
