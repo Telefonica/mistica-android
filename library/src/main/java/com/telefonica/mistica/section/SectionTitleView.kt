@@ -59,11 +59,11 @@ class SectionTitleView @JvmOverloads constructor(
     }
 
     fun setTitle(text: CharSequence?) {
-        titleTextView.text = text
+        titleTextView.setTextAndVisibility(text)
     }
 
     fun setLink(text: CharSequence?) {
-        lintTextView.text = text
+        lintTextView.setTextAndVisibility(text)
     }
 
     fun setOnLinkClickedListener(listener: () -> Unit) {
