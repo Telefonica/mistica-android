@@ -49,7 +49,7 @@
                 app:layout_constraintHorizontal_bias="0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:tagStyle="inverse"
+                app:tagColor="?colorInverse"
                 tools:text="@tools:sample/full_names" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -67,7 +67,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:text="Brand"
-            app:tagStyle="brand"
+            app:tagColor="?colorInverse"
             tools:text="@tools:sample/full_names" />
 
         <com.telefonica.mistica.tag.TagView
@@ -75,7 +75,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:text="neutralHigh"
-            app:tagStyle="neutralHigh"
+            app:tagColor="?colorNeutralHigh"
             tools:text="@tools:sample/full_names" />
 
         <com.telefonica.mistica.tag.TagView
@@ -83,7 +83,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:text="neutralMedium"
-            app:tagStyle="neutralMedium"
+            app:tagColor="?colorNeutralMedium"
             tools:text="@tools:sample/full_names" />
 
         <com.telefonica.mistica.tag.TagView
@@ -91,7 +91,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:text="Success"
-            app:tagStyle="success"
+            app:tagColor="?colorSuccess"
             tools:text="@tools:sample/full_names" />
 
         <com.telefonica.mistica.tag.TagView
@@ -99,7 +99,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:text="Warning"
-            app:tagStyle="warning"
+            app:tagColor="?colorWarning"
             tools:text="@tools:sample/full_names" />
 
         <com.telefonica.mistica.tag.TagView
@@ -107,7 +107,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:text="Error"
-            app:tagStyle="error"
+            app:tagColor="?colorError"
             tools:text="@tools:sample/full_names" />
 
         <com.telefonica.mistica.input.TextInput
