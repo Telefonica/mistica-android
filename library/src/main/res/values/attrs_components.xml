@@ -89,6 +89,12 @@
         <attr name="headerSubtitleHasSecondaryColor" format="boolean" />
     </declare-styleable>
 
+    <declare-styleable name="SectionTitleView">
+        <attr name="sectionTitle" format="string" />
+        <attr name="sectionLink" format="string" />
+        <attr name="sectionLinkOnClick" format="string" />
+    </declare-styleable>
+
     <declare-styleable name="HighlightedCardView">
         <attr name="highlightedCardBackground" format="reference" />
         <attr name="highlightedCardInverse" format="boolean" />

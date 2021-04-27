@@ -10,6 +10,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toast
 import androidx.annotation.CallSuper
 import androidx.fragment.app.Fragment
 import com.telefonica.mistica.catalog.R
@@ -20,6 +21,7 @@ import com.telefonica.mistica.input.validations.EmailTextInputValidation
 import com.telefonica.mistica.input.validations.PhoneTextInputValidation
 import com.telefonica.mistica.input.validations.TextInputValidation
 import com.telefonica.mistica.input.validations.TextInputValidationResult
+import com.telefonica.mistica.section.SectionTitleView
 
 class InputsCatalogFragment : Fragment() {
 
@@ -46,6 +48,16 @@ class InputsCatalogFragment : Fragment() {
             findViewById<CheckBoxInput>(R.id.checkboxInput)?.apply {
                 setText(createdSpannableText())
                 setMovementMethod(LinkMovementMethod.getInstance())
+            }
+
+            findViewById<SectionTitleView>(R.id.section_title_with_link)?.apply {
+                setOnLinkClickedListener {
+                    Toast.makeText(
+                        this.context,
+                        "Link tapped!",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
             }
 
             val textInputEmail = findViewById<TextInput>(R.id.text_input_email).apply {

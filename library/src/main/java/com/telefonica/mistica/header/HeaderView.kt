@@ -17,6 +17,7 @@ import com.telefonica.mistica.R
 import com.telefonica.mistica.util.children
 import com.telefonica.mistica.util.convertDpToPx
 import com.telefonica.mistica.util.getThemeColor
+import com.telefonica.mistica.util.setTextAndVisibility
 
 @BindingMethods(
     BindingMethod(
@@ -349,15 +350,6 @@ class HeaderView @JvmOverloads constructor(
     private fun View.applyBottomMargin(dpsMargin: Int) {
         layoutParams = (layoutParams as LayoutParams).apply {
             bottomMargin = context.convertDpToPx(dpsMargin)
-        }
-    }
-
-    private fun TextView.setTextAndVisibility(newText: CharSequence?) {
-        if (newText?.isNotBlank() == true) {
-            text = newText
-            visibility = View.VISIBLE
-        } else {
-            visibility = View.GONE
         }
     }
 
