@@ -40,6 +40,8 @@ class TagView @JvmOverloads constructor(
             .createBlendModeColorFilterCompat(color, BlendModeCompat.SRC_ATOP)
         if (color == context.getThemeColor(R.attr.colorInverse)) {
             setTextColor(context.getThemeColor(R.attr.colorTextPrimary))
+        } else {
+            setTextColor(context.getThemeColor(R.attr.colorTextPrimaryInverse))
         }
     }
 }
