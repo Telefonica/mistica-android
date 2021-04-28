@@ -2,8 +2,8 @@ package com.telefonica.mistica.tag
 
 import android.content.Context
 import android.util.AttributeSet
+import androidx.annotation.ColorInt
 import androidx.appcompat.view.ContextThemeWrapper
-import androidx.core.content.ContextCompat
 import androidx.core.graphics.BlendModeColorFilterCompat
 import androidx.core.graphics.BlendModeCompat
 import com.google.android.material.textview.MaterialTextView
@@ -20,6 +20,7 @@ class TagView @JvmOverloads constructor(
     attrs,
     defStyleAttr
 ) {
+
     init {
         if (attrs != null) {
             val styledAttrs =
@@ -29,15 +30,18 @@ class TagView @JvmOverloads constructor(
                     defStyleAttr,
                     0
                 )
-            styledAttrs.getColor(R.styleable.TagView_tagColor, context.getThemeColor(R.attr.colorPromo))
-                .let {
-                    background.colorFilter = BlendModeColorFilterCompat
-                        .createBlendModeColorFilterCompat(it, BlendModeCompat.SRC_ATOP)
-                    if (it == context.getThemeColor(R.attr.colorInverse)) {
-                        setTextColor(context.getThemeColor(R.attr.colorTextPrimary))
-                    }
-                }
+            setTagColor(styledAttrs.getColor(R.styleable.TagView_tagColor, context.getThemeColor(R.attr.colorPromo)))
             styledAttrs.recycle()
+        }
+    }
+
+    fun setTagColor(@ColorInt color: Int) {
+        background.colorFilter = BlendModeColorFilterCompat
+            .createBlendModeColorFilterCompat(color, BlendModeCompat.SRC_ATOP)
+        if (color == context.getThemeColor(R.attr.colorInverse)) {
+            setTextColor(context.getThemeColor(R.attr.colorTextPrimary))
+        } else {
+            setTextColor(context.getThemeColor(R.attr.colorTextPrimaryInverse))
         }
     }
 }

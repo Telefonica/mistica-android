@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.widget.LinearLayout
 import android.widget.TextView
 import com.telefonica.mistica.R
+import com.telefonica.mistica.tag.TagView
 
 internal class CardContentView @JvmOverloads constructor(
     context: Context,
@@ -14,7 +15,7 @@ internal class CardContentView @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : LinearLayout(context, attrs, defStyleAttr) {
 
-    val tagTextView: TextView
+    val tagTextView: TagView
     val pretitleTextView: TextView
     val titleTextView: TextView
     val subtitleTextView: TextView

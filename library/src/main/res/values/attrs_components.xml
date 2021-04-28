@@ -147,6 +147,7 @@
 
     <declare-styleable name="CardView">
         <attr name="cardTag" format="string" />
+        <attr name="cardTagColor" format="color|reference" />
         <attr name="cardTitle" format="string" />
         <attr name="cardDescription" format="string" />
         <attr name="cardPrimaryButtonText" format="string" />

@@ -6,6 +6,7 @@ import android.util.TypedValue
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.annotation.ColorInt
 import androidx.annotation.StringRes
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
@@ -13,12 +14,18 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
+import com.telefonica.mistica.util.getThemeColor
 
 @BindingMethods(
     BindingMethod(
         type = CardView::class,
         attribute = "cardTag",
         method = "setTag"
+    ),
+    BindingMethod(
+        type = CardView::class,
+        attribute = "cardTagColor",
+        method = "setTagColor"
     ),
     BindingMethod(
         type = CardView::class,
@@ -85,6 +92,7 @@ abstract class CardView @JvmOverloads constructor(
                 )
 
             setTag(styledAttrs.getText(R.styleable.CardView_cardTag))
+            setTagColor(styledAttrs.getColor(R.styleable.CardView_cardTagColor, context.getThemeColor(R.attr.colorPromo)))
             setTitle(styledAttrs.getText(R.styleable.CardView_cardTitle))
             setDescription(styledAttrs.getText(R.styleable.CardView_cardDescription))
 
@@ -109,6 +117,10 @@ abstract class CardView @JvmOverloads constructor(
 
     fun setTag(@StringRes textRes: Int?) {
         textRes?.let { setTag(context.getString(it)) }
+    }
+
+    fun setTagColor(@ColorInt color: Int) {
+        cardContentView.tagTextView.setTagColor(color)
     }
 
     fun setTitle(text: CharSequence?) {

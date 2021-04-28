@@ -74,6 +74,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
+            android:text="Brand Dark"
+            app:tagColor="?colorBrandDark"
+            tools:text="@tools:sample/full_names" />
+
+        <com.telefonica.mistica.tag.TagView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
             android:text="neutralHigh"
             app:tagColor="?colorNeutralHigh"
             tools:text="@tools:sample/full_names" />
