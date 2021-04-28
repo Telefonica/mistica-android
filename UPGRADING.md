@@ -19,3 +19,7 @@ AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 ```
 
 And your app will be forced to always use light themes.
+
+### SectionTitleView changes
+
+Instead of setting the text for the view with `android:text` you should use `app:sectionTitle`.
