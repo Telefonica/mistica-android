@@ -22,4 +22,4 @@ And your app will be forced to always use light themes.
 
 ### SectionTitleView changes
 
-Instead of setting the text for the view with `android:text` you should use `app:sectionTitle`.
+Instead of setting the text for the view with `android:text` you should use `app:sectionTitle` in the [SectionTitleView](https://github.com/Telefonica/mistica-android/blob/2.0.0/library/src/main/java/com/telefonica/mistica/section/README.md) component.
