@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="popover_elevation">2dp</dimen>
-    <dimen name="popover_arrow_margin_vertical">-6dp</dimen>
+    <dimen name="popover_arrow_margin_vertical">-1dp</dimen>
     <dimen name="popover_arrow_margin_horizontal">-6dp</dimen>
     <dimen name="popover_custom_corner_radius">4dp</dimen>
 </resources>

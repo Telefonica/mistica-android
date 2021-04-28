@@ -51,8 +51,8 @@
 
     <style name="AppTheme.Button.DefaultButton">
         <item name="backgroundTint">@color/button_primary_background_selector</item>
-        <item name="android:textColor">?colorTextButtonPrimary</item>
-        <item name="iconTint">?colorTextButtonPrimary</item>
+        <item name="android:textColor">@color/button_primary_text_selector</item>
+        <item name="iconTint">@color/button_primary_text_selector</item>
         <item name="rippleColor">?attr/colorButtonPrimaryBackgroundSelected</item>
     </style>
 
@@ -81,8 +81,8 @@
 
     <style name="AppTheme.Button.DangerButton">
         <item name="backgroundTint">@color/button_danger_background_selector</item>
-        <item name="android:textColor">?colorTextButtonPrimary</item>
-        <item name="iconTint">?colorTextButtonPrimary</item>
+        <item name="android:textColor">@color/button_primary_text_selector</item>
+        <item name="iconTint">@color/button_primary_text_selector</item>
         <item name="rippleColor">?attr/colorButtonDangerBackgroundSelected</item>
     </style>
 

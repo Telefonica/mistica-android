@@ -83,21 +83,11 @@
             app:inputCheckText="Custom background"
             app:inputChecked="false" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="16dp"
-            android:layout_marginTop="8dp"
-            android:background="?colorDivider" />
-
         <com.telefonica.mistica.highlightedcard.HighlightedCardView
             android:id="@+id/highlighted_card_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="16dp"
-            android:background="?colorDivider" />
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="16dp" />
 
         <com.telefonica.mistica.button.Button
             android:id="@+id/button_update"

@@ -31,8 +31,10 @@
 
     <!--  Android specific palette for colors with custom alpha -->
     <color name="vivo_color_blue_30_alpha">#4D00ABDB</color>
+    <color name="vivo_color_white_5_alpha">#0DFFFFFF</color>
     <color name="vivo_color_white_20_alpha">#33FFFFFF</color>
     <color name="vivo_color_white_50_alpha">#80FFFFFF</color>
+    <color name="vivo_color_grey_5_30_alpha">#4D666666</color>
     <color name="vivo_color_grey_6_30_alpha">#4D000000</color>
     <color name="vivo_color_grey_6_40_alpha">#66000000</color>
     <color name="vivo_color_grey_6_50_alpha">#80000000</color>
@@ -42,5 +44,11 @@
     <color name="vivo_color_purple_light20_40_alpha">#66E0CCEB</color>
     <color name="vivo_color_purple_light50_25_alpha">#40B280CC</color>
     <color name="vivo_color_purple_dark_80_alpha">#CC461E5F</color>
+
+    <!-- Dark mode -->
+    <color name="vivo_color_darkModeBlack">#191919</color>
+    <color name="vivo_color_darkModeGrey">#242424</color>
+    <color name="vivo_color_darkModeGrey_80_alpha">#CC242424</color>
+    <color name="vivo_color_darkModeGrey6">#313235</color>
 
 </resources>

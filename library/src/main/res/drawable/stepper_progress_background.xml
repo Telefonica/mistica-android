@@ -10,7 +10,7 @@
         <scale android:scaleWidth="100%">
             <shape>
                 <corners android:radius="@dimen/stepper_progress_bar_radius" />
-                <solid android:color="?colorControlActivated" />
+                <solid android:color="?attr/colorControlActive" />
             </shape>
         </scale>
     </item>

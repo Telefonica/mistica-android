@@ -39,18 +39,26 @@
     <color name="o2_classic_color_white">#FFFFFF</color>
 
     <!--  Android specific palette for colors with custom alpha -->
+    <color name="o2_classic_color_white_5_alpha">#0DFFFFFF</color>
+    <color name="o2_classic_color_white_20_alpha">#33FFFFFF</color>
     <color name="o2_classic_color_white_50_alpha">#80FFFFFF</color>
+    <color name="o2_classic_color_grey_5_30_alpha">#4D757575</color>
     <color name="o2_classic_color_grey_6_5_alpha">#0D000033</color>
     <color name="o2_classic_color_grey_6_30_alpha">#4D000033</color>
     <color name="o2_classic_color_grey_6_40_alpha">#66000033</color>
     <color name="o2_classic_color_grey_6_60_alpha">#99000033</color>
     <color name="o2_classic_color_grey_6_80_alpha">#CC000033</color>
-    <color name="o2_classic_color_white_20_alpha">#33FFFFFF</color>
     <color name="o2_classic_color_sky_blue_30_alpha">#4D0090D0</color>
     <color name="o2_classic_color_sky_blue_light_30_alpha">#4D65B4E4</color>
     <color name="o2_classic_color_sky_blue_light_40_alpha">#6665B4E4</color>
     <color name="o2_classic_color_sky_blue_light_30_25_alpha">#40D0E8F6</color>
     <color name="o2_classic_color_sky_blue_light_50_25_alpha">#4080C7E7</color>
     <color name="o2_classic_color_blue_dark_40_alpha">#6604264E</color>
+
+    <!-- Dark mode -->
+    <color name="o2_classic_color_darkModeBlack">#191919</color>
+    <color name="o2_classic_color_darkModeGrey">#242424</color>
+    <color name="o2_classic_color_darkModeGrey_80_alpha">#CC242424</color>
+    <color name="o2_classic_color_darkModeGrey6">#313235</color>
 
 </resources>

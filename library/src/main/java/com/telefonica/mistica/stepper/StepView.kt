@@ -69,7 +69,7 @@ internal class StepView @JvmOverloads constructor(
             addValueCallback(
                 keyPath,
                 LottieProperty.COLOR_FILTER,
-                { PorterDuffColorFilter(context.getThemeColor(R.attr.colorControlActivated), PorterDuff.Mode.SRC_ATOP) }
+                { PorterDuffColorFilter(context.getThemeColor(R.attr.colorControlActive), PorterDuff.Mode.SRC_ATOP) }
             )
             addValueCallback(
                 keyPath,

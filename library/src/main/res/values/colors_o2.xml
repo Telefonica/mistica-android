@@ -37,9 +37,11 @@
     <color name="o2_color_white">#FFFFFF</color>
 
     <!--  Android specific palette for colors with custom alpha -->
+    <color name="o2_color_white_5_alpha">#0DFFFFFF</color>
     <color name="o2_color_white_20_alpha">#33FFFFFF</color>
     <color name="o2_color_white_50_alpha">#80FFFFFF</color>
     <color name="o2_color_grey_6_5_alpha">#0D000033</color>
+    <color name="o2_color_grey_5_30_alpha">#4D707070</color>
     <color name="o2_color_grey_6_30_alpha">#4D000033</color>
     <color name="o2_color_grey_6_40_alpha">#66000033</color>
     <color name="o2_color_grey_6_60_alpha">#99000033</color>
@@ -49,5 +51,13 @@
     <color name="o2_color_sky_blue_light_30_25_alpha">#40D0E8F6</color>
     <color name="o2_color_blue_primary_dark_40_alpha">#66000066</color>
     <color name="o2_color_blue_primary_40_alpha">#66000066</color>
+
+    <!-- Dark mode -->
+    <color name="o2_color_darkModeBlack">#191919</color>
+    <color name="o2_color_darkModeGrey">#242424</color>
+    <color name="o2_color_darkModeGrey_80_alpha">#CC242424</color>
+    <color name="o2_color_darkModeGrey6">#313235</color>
+    <color name="o2_color_darkModeO2BluePrimary">#0020D6</color>
+    <color name="o2_color_darkModeO2BluePrimaryDark">#000099</color>
 
 </resources>
