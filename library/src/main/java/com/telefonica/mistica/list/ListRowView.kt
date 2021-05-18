@@ -264,8 +264,8 @@ class ListRowView @JvmOverloads constructor(
     fun setBadge(show: Boolean, withBadgeDescription: String? = null) {
         Badge.removeBadge(badgeAnchor)
         if (show) {
-            Badge.showBadgeIn(badgeAnchor, withBadgeDescription)
             badgeAnchor.visibility = View.VISIBLE
+            Badge.showBadgeIn(badgeAnchor, withBadgeDescription)
         } else {
             hideBadge()
         }
@@ -276,8 +276,8 @@ class ListRowView @JvmOverloads constructor(
         if (count <= 0) {
             hideBadge()
         } else {
-            Badge.showNumericBadgeIn(badgeAnchor, count, withBadgeDescription)
             badgeAnchor.visibility = View.VISIBLE
+            Badge.showNumericBadgeIn(badgeAnchor, count, withBadgeDescription)
         }
     }
 
