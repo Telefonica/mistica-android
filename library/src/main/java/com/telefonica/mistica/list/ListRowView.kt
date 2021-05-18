@@ -262,22 +262,18 @@ class ListRowView @JvmOverloads constructor(
     }
 
     fun setBadge(show: Boolean, withBadgeDescription: String? = null) {
-        Badge.removeBadge(badgeAnchor)
         if (show) {
-            badgeAnchor.visibility = View.VISIBLE
-            Badge.showBadgeIn(badgeAnchor, withBadgeDescription)
+            showNonNumericBadge(withBadgeDescription)
         } else {
             hideBadge()
         }
     }
 
     fun setNumericBadge(count: Int, withBadgeDescription: String? = null) {
-        Badge.removeBadge(badgeAnchor)
-        if (count <= 0) {
-            hideBadge()
+        if (count > 0) {
+            showNumericBadge(count, withBadgeDescription)
         } else {
-            badgeAnchor.visibility = View.VISIBLE
-            Badge.showNumericBadgeIn(badgeAnchor, count, withBadgeDescription)
+            hideBadge()
         }
     }
 
@@ -297,7 +293,20 @@ class ListRowView @JvmOverloads constructor(
         }
     }
 
+    private fun showNonNumericBadge(withBadgeDescription: String?) {
+        Badge.removeBadge(badgeAnchor)
+        badgeAnchor.visibility = View.VISIBLE
+        Badge.showBadgeIn(badgeAnchor, withBadgeDescription)
+    }
+
+    private fun showNumericBadge(count: Int, withBadgeDescription: String?) {
+        Badge.removeBadge(badgeAnchor)
+        badgeAnchor.visibility = View.VISIBLE
+        Badge.showNumericBadgeIn(badgeAnchor, count, withBadgeDescription)
+    }
+
     private fun hideBadge() {
+        Badge.removeBadge(badgeAnchor)
         badgeAnchor.visibility = GONE
     }
 
