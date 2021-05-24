@@ -7,7 +7,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:gravity="center"
-        android:textAppearance="@style/AppTheme.TextAppearance.Preset3.Medium"
+        android:textAppearance="@style/AppTheme.TextAppearance.Preset4.Light"
         android:textColor="?colorTextPrimary"
         android:visibility="gone" />
 
