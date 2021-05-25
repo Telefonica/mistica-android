@@ -48,7 +48,7 @@ To create or modify components on this repository, follow the next steps:
 
 1. Clone this repo
 
-2. Open project with Android Studio
+2. Open project with Android Studio. Code style setup is automatically configured for the IDE with files included in the repo.
 
 3. Place the new component under `library` module, under `com.telefonica.mistica` package. The component should have a proper definition by the design team. When implementing the component, follow these guidelines:
    - The component should be implemented to be reusable. Make it **generic** enough so that other teams can also use it.
