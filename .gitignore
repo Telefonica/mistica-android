@@ -2,7 +2,8 @@ syntax: glob
 
 local.properties
 .idea/*
-.DS_Store 
+!.idea/codeStyles
+.DS_Store
 bin/
 gen/
 .gradle/
