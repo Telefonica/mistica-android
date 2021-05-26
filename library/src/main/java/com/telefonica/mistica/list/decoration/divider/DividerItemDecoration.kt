@@ -14,7 +14,6 @@ open class DividerItemDecoration @JvmOverloads constructor(
     context: Context,
     private val adapter: DividerItemAdapter,
     @DrawableRes drawableRes: Int = R.drawable.generic_divider,
-    private val paintLastRow: Boolean = false
 ) : RecyclerView.ItemDecoration() {
 
     private val divider: Drawable? = ContextCompat.getDrawable(context, drawableRes)
@@ -33,10 +32,10 @@ open class DividerItemDecoration @JvmOverloads constructor(
         outRect: Rect,
         view: View,
         parent: RecyclerView,
-        state: RecyclerView.State
+        state: RecyclerView.State,
     ) {
         val position = parent.getChildAdapterPosition(view)
-        if (hasDivider(parent, position)) {
+        if (hasDivider(position)) {
             outRect.set(0, 0, 0, divider?.intrinsicHeight ?: 0)
         } else {
             outRect.set(0, 0, 0, 0)
@@ -44,15 +43,15 @@ open class DividerItemDecoration @JvmOverloads constructor(
         drawableState = view.drawableState
     }
 
-    private fun hasDivider(parent: RecyclerView, position: Int): Boolean =
-        position != RecyclerView.NO_POSITION && adapter.hasDivider(position) && (paintLastRow || position != parent.adapter!!.itemCount - 1)
+    private fun hasDivider(position: Int): Boolean =
+        position != RecyclerView.NO_POSITION && adapter.hasDivider(position)
 
     private fun drawHorizontal(c: Canvas, parent: RecyclerView, divider: Drawable) {
         c.save()
         for (i in 0 until parent.childCount) {
             val child = parent.getChildAt(i)
             val position = parent.getChildAdapterPosition(child)
-            if (!hasDivider(parent, position)) {
+            if (!hasDivider(position)) {
                 continue
             }
             parent.getDecoratedBoundsWithMargins(child, bounds)
