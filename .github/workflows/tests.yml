@@ -11,4 +11,4 @@ jobs:
     - name: "Build Android project"
       uses: docker://docker.tuenti.io/android/mistica_builder:2
       with:
-        args: 'bash ./gradlew --no-daemon clean check assemble'
+        args: 'bash ./gradlew clean check assemble'
