@@ -147,7 +147,7 @@
     </style>
 
     <!-- Just a copy of the above. As themes do not support multiple inheritance. -->
-    <style name="MisticaTheme.Movistar.Prominent">
+    <style name="MisticaTheme.Telefonica.Prominent">
         <!-- General -->
         <item name="colorPrimary">@color/movistar_prominent_color_blue</item>
         <item name="colorPrimaryDark">@color/movistar_prominent_color_blue_dark</item>

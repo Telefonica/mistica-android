@@ -11,5 +11,6 @@
 		<item name="tabInlineLabel">true</item>
 		<item name="tabPadding">16dp</item>
 		<item name="iconEndPadding">8dp</item>
+		<item name="tabIndicatorAnimationDuration">300</item>
 	</style>
 </resources>
