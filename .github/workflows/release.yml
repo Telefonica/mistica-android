@@ -15,6 +15,5 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v2
 
-      - name: TODO
-        with:
-          args: 'bash echo TODO'
+      - run: 'echo TODO Autotest'
+        shell: bash
