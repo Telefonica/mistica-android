@@ -8,7 +8,6 @@ artifacts {
 }
 
 apply plugin: 'maven-publish'
-apply plugin: 'signing'
 
 ext {
     PUBLISH_GROUP_ID = 'com.telefonica'
@@ -122,8 +121,4 @@ publishing {
             }
         }
     }
-}
-
-signing {
-    sign publishing.publications
 }
