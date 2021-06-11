@@ -16,16 +16,16 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Check permissions
-          id: check
-          uses: scherermichael-oss/action-has-permission@master
-          with:
-            required-permission: admin
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        id: check
+        uses: scherermichael-oss/action-has-permission@master
+        with:
+          required-permission: admin
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Check permissions
-          if: "! steps.check.outputs.has-permission"
-          run: exit 1
+        if: "! steps.check.outputs.has-permission"
+        run: exit 1
 
       - name: Build library
         if: steps.check.outputs.has-permission
