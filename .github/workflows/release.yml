@@ -1,0 +1,20 @@
+name: "Release library"
+on:
+  workflow_dispatch:
+    inputs:
+      libraryVersion:
+        description: "Library version"
+        required: true
+      changelog:
+        description: "Changelog (you can format it later)"
+        required: true
+jobs:
+  release:
+    runs-on: self-hosted-novum
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: TODO
+        with:
+          args: 'bash echo TODO'
