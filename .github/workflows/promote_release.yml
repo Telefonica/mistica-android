@@ -1,0 +1,10 @@
+name: "Promote draft release"
+on:
+  release:
+    types: [published]
+jobs:
+  promote:
+    runs-on: self-hosted-novum
+    steps:
+      - run: 'echo TODO Promote'
+        shell: bash
