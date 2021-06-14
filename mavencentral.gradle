@@ -116,8 +116,8 @@ publishing {
             url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
 
             credentials {
-                username System.getProperty("MOBILE_MAVENCENTRAL_USER")
-                password System.getProperty("MOBILE_MAVENCENTRAL_PASSWORD")
+                username System.getenv("MOBILE_MAVENCENTRAL_USER")
+                password System.getenv("MOBILE_MAVENCENTRAL_PASSWORD")
             }
         }
     }
