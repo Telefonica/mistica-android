@@ -6,8 +6,8 @@
     android:gravity="start"
     android:orientation="vertical"
     android:paddingStart="16dp"
-    android:paddingTop="32dp"
-    android:paddingEnd="32dp"
+    android:paddingTop="16dp"
+    android:paddingEnd="16dp"
     android:paddingBottom="24dp"
     tools:parentTag="android.widget.LinearLayout">
 
