@@ -24,7 +24,7 @@ nexusStaging {
     //serverUrl = "https://s01.oss.sonatype.org/service/local/" //required only for projects registered in Sonatype after 2021-02-24
     packageGroup = "com.telefonica" //optional if packageGroup == project.getGroup()
     stagingProfileId = "com.telefonica" //when not defined will be got from server using "packageGroup"
-    stagingRepositoryId = "comtelefonica-1014"
+    stagingProfileId = System.getProperty("STAGING_PROFILE_ID")
     username = System.getenv("MOBILE_MAVENCENTRAL_USER")
     password = System.getenv("MOBILE_MAVENCENTRAL_PASSWORD")
 }
