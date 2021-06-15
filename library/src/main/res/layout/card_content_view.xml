@@ -32,7 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:textAppearance="@style/AppTheme.TextAppearance.Preset4.Light"
+        android:textAppearance="@style/AppTheme.TextAppearance.Preset4"
         android:visibility="gone"
         tools:text="Title"
         tools:visibility="visible" />
