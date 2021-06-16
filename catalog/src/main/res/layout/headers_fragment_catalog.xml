@@ -189,6 +189,22 @@
 
         </LinearLayout>
 
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="16dp"
+                android:orientation="horizontal">
+
+            <com.telefonica.mistica.input.CheckBoxInput
+                    android:id="@+id/check_bottom_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:inputCheckText="Add a bottom layout" />
+
+        </LinearLayout>
+
         <View
             android:layout_width="match_parent"
             android:layout_height="16dp"

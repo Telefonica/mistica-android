@@ -87,6 +87,9 @@
         <attr name="headerSecondaryActionButtonOnClick" format="string" />
         <attr name="headerSubtitle" format="string" />
         <attr name="headerSubtitleHasSecondaryColor" format="boolean" />
+        <attr name="headerBottomLayout" format="integer">
+            <enum name="none" value="-1" />
+        </attr>
     </declare-styleable>
 
     <declare-styleable name="SectionTitleView">

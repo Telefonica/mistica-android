@@ -100,6 +100,13 @@
             android:visibility="gone" />
     </LinearLayout>
 
+    <FrameLayout
+            android:id="@+id/bottom_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
     <TextView
         android:id="@+id/header_subtitle"
         android:layout_width="wrap_content"
