@@ -1,4 +1,4 @@
-name: "Release library"
+name: "Release library to MavenCentral"
 on:
   workflow_dispatch:
     inputs:
