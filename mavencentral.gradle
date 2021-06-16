@@ -131,6 +131,8 @@ publishing {
     }
 }
 
+println("ORG_GRADLE_PROJECT_SIGNINGKEYID")
+
 signing {
     def signingKeyId = System.getenv("ORG_GRADLE_PROJECT_SIGNINGKEYID")
     def signingKey = System.getenv("ORG_GRADLE_PROJECT_SIGNINGKEY")
