@@ -132,12 +132,15 @@ publishing {
 }
 
 println(System.getenv("ORG_GRADLE_PROJECT_signingKeyId"))
-println(System.getenv("signingKeyId"))
+println(findProperty("signingKeyId"))
 
 signing {
-    def signingKeyId = findProperty("signingKeyId")
-    def signingKey = findProperty("signingKey")
-    def signingPassword = findProperty("signingPassword")
+//    def signingKeyId = findProperty("signingKeyId")
+//    def signingKey = findProperty("signingKey")
+//    def signingPassword = findProperty("signingPassword")
+    def signingKeyId = System.getenv("ORG_GRADLE_PROJECT_signingKeyId")
+    def signingKey = System.getenv("ORG_GRADLE_PROJECT_signingKey")
+    def signingPassword = System.getenv("ORG_GRADLE_PROJECT_signingPassword")
     useInMemoryPgpKeys(signingKeyId, signingKey, signingPassword)
     sign publishing.publications
 }
