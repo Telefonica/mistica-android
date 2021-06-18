@@ -14,5 +14,5 @@ jobs:
           MOBILE_MAVENCENTRAL_USER: ${{ secrets.MOBILE_MAVENCENTRAL_USER }}
           MOBILE_MAVENCENTRAL_PASSWORD: ${{ secrets.MOBILE_MAVENCENTRAL_PASSWORD }}
         with:
-          args: 'bash ./gradlew clean :library:assembleRelease :catalog:assembleRelease'
+          args: 'bash ./gradlew getStagingProfile | sed -n -e "s/^Received staging profile id: //p"'
 
