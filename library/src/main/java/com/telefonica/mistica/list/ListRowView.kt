@@ -67,6 +67,11 @@ import com.telefonica.mistica.util.convertDpToPx
     ),
     BindingMethod(
         type = ListRowView::class,
+        attribute = "backgroundType",
+        method = "setBackgroundType"
+    ),
+    BindingMethod(
+        type = ListRowView::class,
         attribute = "listRowActionLayout",
         method = "setActionLayout"
     ),
@@ -74,7 +79,7 @@ import com.telefonica.mistica.util.convertDpToPx
 class ListRowView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
-    defStyleAttr: Int = 0
+    defStyleAttr: Int = 0,
 ) : ConstraintLayout(context, attrs, defStyleAttr) {
 
     @Retention(AnnotationRetention.SOURCE)
@@ -84,6 +89,20 @@ class ListRowView @JvmOverloads constructor(
         TYPE_LARGE_ICON
     )
     annotation class AssetType
+
+    @Retention(AnnotationRetention.SOURCE)
+    @IntDef(
+        BackgroundType.TYPE_NORMAL,
+        BackgroundType.TYPE_BOXED,
+        BackgroundType.TYPE_BOXED_INVERSE,
+    )
+    annotation class BackgroundType {
+        companion object {
+            const val TYPE_NORMAL = 0
+            const val TYPE_BOXED = 1
+            const val TYPE_BOXED_INVERSE = 2
+        }
+    }
 
     private val textsContainer: LinearLayout
     private val assetImageView: ImageView
@@ -140,7 +159,18 @@ class ListRowView @JvmOverloads constructor(
             )
             setSubtitle(styledAttrs.getText(R.styleable.ListRowView_listRowSubtitle))
             setDescription(styledAttrs.getText(R.styleable.ListRowView_listRowDescription))
-            setBoxed(styledAttrs.getBoolean(R.styleable.ListRowView_listRowIsBoxed, false))
+            val isBoxed = styledAttrs.getBoolean(R.styleable.ListRowView_listRowIsBoxed, false)
+            val backgroundTypeDefaultValue = if (isBoxed) {
+                BackgroundType.TYPE_BOXED
+            } else {
+                BackgroundType.TYPE_NORMAL
+            }
+            setBackgroundType(
+                styledAttrs.getInt(
+                    R.styleable.ListRowView_listRowBackgroundType,
+                    backgroundTypeDefaultValue
+                )
+            )
             setAssetType(
                 styledAttrs.getInt(
                     R.styleable.ListRowView_listRowAssetType,
@@ -208,10 +238,36 @@ class ListRowView @JvmOverloads constructor(
         recalculateTitleBottomConstraints()
     }
 
+    @Deprecated(
+        message = "setBoxed is deprecated, please use 'setBackgroundType' instead",
+        replaceWith = ReplaceWith(expression = "this.setBackgroundType(type)"),
+        level = DeprecationLevel.WARNING,
+    )
     fun setBoxed(boxed: Boolean) {
-        @DrawableRes val backgroundDrawable: Int =
-            if (boxed) R.drawable.boxed_list_row_background else R.drawable.list_row_background
+        setBackgroundType(BackgroundType.TYPE_BOXED)
+    }
+
+    fun setBackgroundType(@BackgroundType type: Int) {
+        @DrawableRes val backgroundDrawable: Int = when (type) {
+            BackgroundType.TYPE_BOXED -> R.drawable.boxed_list_row_background
+            BackgroundType.TYPE_BOXED_INVERSE -> R.drawable.boxed_inverse_list_row_background
+            BackgroundType.TYPE_NORMAL -> R.drawable.list_row_background
+            else -> R.drawable.list_row_background
+        }
         background = ContextCompat.getDrawable(context, backgroundDrawable)
+        configureTextViewsColor(type)
+    }
+
+    private fun configureTextViewsColor(@BackgroundType type: Int) {
+        val colorResId = if (type == BackgroundType.TYPE_BOXED_INVERSE) {
+            R.color.text_primary_inverse_selector
+        } else {
+            R.color.text_primary_selector
+        }
+        val color = ContextCompat.getColor(context, colorResId)
+        titleTextView.setTextColor(color)
+        subtitleTextView.setTextColor(color)
+        descriptionTextView.setTextColor(color)
     }
 
     fun setHeadlineVisible(visible: Boolean) {
@@ -314,7 +370,6 @@ class ListRowView @JvmOverloads constructor(
         val numericBadgeState =
             styledAttrs.getInt(R.styleable.ListRowView_listRowBadgeCount, BADGE_GONE)
         setNumericBadge(numericBadgeState)
-
 
         val nonNumericBadgeState =
             styledAttrs.getBoolean(R.styleable.ListRowView_listRowBadgeVisible, false)

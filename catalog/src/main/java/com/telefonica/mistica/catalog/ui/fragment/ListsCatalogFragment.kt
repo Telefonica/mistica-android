@@ -22,7 +22,7 @@ class ListsCatalogFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         return inflater.inflate(R.layout.screen_fragment_lists_catalog, container, false)
@@ -32,14 +32,20 @@ class ListsCatalogFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val list: MisticaRecyclerView = view.findViewById(R.id.list)
-        list.adapter = ListAdapter(boxed = false)
+        list.adapter = ListAdapter(backgroundType = ListRowView.BackgroundType.TYPE_NORMAL)
 
         val boxedList: MisticaRecyclerView = view.findViewById(R.id.boxed_list)
-        boxedList.adapter = ListAdapter(boxed = true)
+        boxedList.adapter = ListAdapter(backgroundType = ListRowView.BackgroundType.TYPE_BOXED)
+
+        val boxedInverseList: MisticaRecyclerView = view.findViewById(R.id.boxed_inverse_list)
+        boxedInverseList.adapter = ListAdapter(backgroundType = ListRowView.BackgroundType.TYPE_BOXED_INVERSE)
     }
 
     @Suppress("MagicNumber")
-    class ListAdapter(private val boxed: Boolean) : RecyclerView.Adapter<ListViewHolder>() {
+    class ListAdapter(
+        @ListRowView.BackgroundType private val backgroundType: Int,
+    ) : RecyclerView.Adapter<ListViewHolder>() {
+
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder =
             ListViewHolder(
                 LayoutInflater.from(parent.context).inflate(
@@ -53,117 +59,141 @@ class ListsCatalogFragment : Fragment() {
 
         override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
             val rowView: ListRowView = holder.rowView
-            rowView.setBoxed(boxed)
+            rowView.setBackgroundType(backgroundType)
+            val withInverseBackground = backgroundType == ListRowView.BackgroundType.TYPE_BOXED_INVERSE
             when (position) {
-                0 -> rowView.configureView()
+                0 -> rowView.configureView(
+                    withInverseBackground = withInverseBackground,
+                )
                 1 -> rowView.configureView(
-                    withAction = true
+                    withAction = true,
+                    withInverseBackground = withInverseBackground,
                 )
                 2 -> rowView.configureView(
                     withAction = true,
                     withBadge = true,
-                    withBadgeDescription = "You have unread messages"
+                    withBadgeDescription = "You have unread messages",
+                    withInverseBackground = withInverseBackground,
                 )
                 3 -> rowView.configureView(
                     withAction = true,
-                    withBadgeNumeric = 1
+                    withBadgeNumeric = 1,
+                    withInverseBackground = withInverseBackground,
                 )
                 4 -> rowView.configureView(
-                    withLongDescription = false
+                    withLongDescription = false,
+                    withInverseBackground = withInverseBackground,
                 )
                 5 -> rowView.configureView(
                     withLongDescription = false,
-                    withAction = true
+                    withAction = true,
+                    withInverseBackground = withInverseBackground,
                 )
                 6 -> rowView.configureView(
                     withAsset = true,
-                    withAssetType = TYPE_LARGE_ICON
+                    withAssetType = TYPE_LARGE_ICON,
+                    withInverseBackground = withInverseBackground,
                 )
                 7 -> rowView.configureView(
                     withAsset = true,
                     withAssetType = TYPE_LARGE_ICON,
-                    withAction = true
+                    withAction = true,
+                    withInverseBackground = withInverseBackground,
                 )
                 8 -> rowView.configureView(
                     withAsset = true,
                     withAssetType = TYPE_LARGE_ICON,
                     withAction = true,
-                    withBadge = true
+                    withBadge = true,
+                    withInverseBackground = withInverseBackground,
                 )
                 9 -> rowView.configureView(
                     withAsset = true,
                     withAssetType = TYPE_LARGE_ICON,
                     withAction = true,
                     withBadgeNumeric = 5,
-                    withBadgeDescription = "5 new messages"
+                    withBadgeDescription = "5 new messages",
+                    withInverseBackground = withInverseBackground,
                 )
                 10 -> rowView.configureView(
                     withLongDescription = false,
                     withAsset = true,
-                    withAssetType = TYPE_LARGE_ICON
+                    withAssetType = TYPE_LARGE_ICON,
+                    withInverseBackground = withInverseBackground,
                 )
                 11 -> rowView.configureView(
                     withLongDescription = false,
                     withAsset = true,
                     withAssetType = TYPE_LARGE_ICON,
-                    withAction = true
+                    withAction = true,
+                    withInverseBackground = withInverseBackground,
                 )
                 12 -> rowView.configureView(
                     withAsset = true,
-                    withAssetType = TYPE_SMALL_ICON
+                    withAssetType = TYPE_SMALL_ICON,
+                    withInverseBackground = withInverseBackground,
                 )
                 13 -> rowView.configureView(
                     withAsset = true,
                     withAssetType = TYPE_SMALL_ICON,
-                    withAction = true
+                    withAction = true,
+                    withInverseBackground = withInverseBackground,
                 )
                 14 -> rowView.configureView(
                     withAsset = true,
                     withAssetType = TYPE_SMALL_ICON,
                     withAction = true,
-                    withBadge = true
+                    withBadge = true,
+                    withInverseBackground = withInverseBackground,
                 )
                 15 -> rowView.configureView(
                     withAsset = true,
                     withAssetType = TYPE_SMALL_ICON,
                     withAction = true,
-                    withBadgeNumeric = 10
+                    withBadgeNumeric = 10,
+                    withInverseBackground = withInverseBackground,
                 )
                 16 -> rowView.configureView(
                     withLongTitle = true,
-                    withLongDescription = true
+                    withLongDescription = true,
+                    withInverseBackground = withInverseBackground,
                 )
                 17 -> rowView.configureView(
                     withLongTitle = true,
                     withLongDescription = true,
                     withAsset = true,
-                    withAssetType = TYPE_LARGE_ICON
+                    withAssetType = TYPE_LARGE_ICON,
+                    withInverseBackground = withInverseBackground,
                 )
                 18 -> rowView.configureView(
                     withLongTitle = true,
                     withLongDescription = true,
                     withAsset = true,
                     withAssetType = TYPE_LARGE_ICON,
-                    withAction = true
+                    withAction = true,
+                    withInverseBackground = withInverseBackground,
                 )
                 19 -> rowView.configureView(
                     withAsset = true,
                     withAssetType = TYPE_LARGE_ICON,
                     withAction = true,
-                    withHeadline = true
+                    withHeadline = true,
+                    withInverseBackground = withInverseBackground,
                 )
                 20 -> rowView.configureView(
                     withAsset = true,
                     withAssetType = TYPE_LARGE_ICON,
                     withAction = true,
-                    withSubtitle = true
+                    withSubtitle = true,
+                    withInverseBackground = withInverseBackground,
                 )
                 21 -> rowView.configureView(
                     withAsset = true,
                     withAssetType = TYPE_LARGE_ICON,
                     withAction = true,
                     withSubtitle = true,
-                    withHeadline = true
+                    withHeadline = true,
+                    withInverseBackground = withInverseBackground,
                 )
                 22 -> rowView.configureView(
                     withAsset = true,
@@ -171,16 +201,19 @@ class ListsCatalogFragment : Fragment() {
                     withLongDescription = false,
                     withAction = true,
                     withSubtitle = true,
-                    withHeadline = true
+                    withHeadline = true,
+                    withInverseBackground = withInverseBackground,
                 )
                 23 -> rowView.configureView(
                     withAsset = true,
                     withAssetType = TYPE_IMAGE,
-                    withLongDescription = false
+                    withLongDescription = false,
+                    withInverseBackground = withInverseBackground,
                 )
                 24 -> rowView.configureView(
                     withAsset = true,
-                    withAssetType = TYPE_IMAGE
+                    withAssetType = TYPE_IMAGE,
+                    withInverseBackground = withInverseBackground,
                 )
             }
         }
@@ -196,10 +229,17 @@ class ListsCatalogFragment : Fragment() {
             withBadgeNumeric: Int = 0,
             withHeadline: Boolean = false,
             withSubtitle: Boolean = false,
-            withBadgeDescription: String? = null
+            withBadgeDescription: String? = null,
+            withInverseBackground: Boolean,
         ) {
             if (withHeadline) {
-                setHeadlineLayout(R.layout.list_row_text_headline)
+                setHeadlineLayout(
+                    if (withInverseBackground) {
+                        R.layout.list_row_text_headline_inverse
+                    } else {
+                        R.layout.list_row_text_headline
+                    }
+                )
                 (getHeadline()!! as TextView).text = "Headline"
             } else {
                 setHeadlineLayout(ListRowView.HEADLINE_NONE)
@@ -221,7 +261,13 @@ class ListsCatalogFragment : Fragment() {
             setAssetResource(getAssetResource(withAsset, withAssetType))
 
             if (withAction) {
-                setActionLayout(R.layout.list_row_chevron_action)
+                setActionLayout(
+                    if (withInverseBackground) {
+                        R.layout.list_row_chevron_inverse_action
+                    } else {
+                        R.layout.list_row_chevron_action
+                    }
+                )
                 setOnClickListener { Toast.makeText(context, "Click!", Toast.LENGTH_SHORT).show() }
             } else {
                 setActionLayout(ListRowView.ACTION_NONE)
