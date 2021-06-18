@@ -20,7 +20,7 @@ apply plugin: 'io.codearte.nexus-staging'
 nexusStaging {
     packageGroup = "com.telefonica"
     stagingProfileId = "com.telefonica"
-    stagingProfileId = System.getProperty("STAGING_PROFILE_ID")
+    stagingProfileId = System.getProperty("STAGING_PROFILE_ID").replace("Received staging profile id: ", "")
     username = System.getenv("MOBILE_MAVENCENTRAL_USER")
     password = System.getenv("MOBILE_MAVENCENTRAL_PASSWORD")
 }
