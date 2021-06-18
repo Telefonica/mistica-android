@@ -1,4 +1,4 @@
-name: "Release library"
+name: "Release library to MavenCentral"
 on:
   workflow_dispatch:
     inputs:
@@ -15,5 +15,56 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v2
 
-      - run: 'echo TODO Autotest'
-        shell: bash
+      - name: Check permissions
+        id: check
+        uses: scherermichael-oss/action-has-permission@master
+        with:
+          required-permission: admin
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Check permissions
+        if: "! steps.check.outputs.has-permission"
+        run: exit 1
+
+      - name: Build library
+        if: steps.check.outputs.has-permission
+        uses: docker://docker.tuenti.io/android/mistica_builder:2
+        with:
+          args: 'bash ./gradlew clean :library:assembleRelease :catalog:assembleRelease'
+
+      - name: Release library
+        if: steps.check.outputs.has-permission
+        uses: docker://docker.tuenti.io/android/mistica_builder:2
+        env:
+          MOBILE_MAVENCENTRAL_USER: ${{ secrets.MOBILE_MAVENCENTRAL_USER }}
+          MOBILE_MAVENCENTRAL_PASSWORD: ${{ secrets.MOBILE_MAVENCENTRAL_PASSWORD }}
+          ORG_GRADLE_PROJECT_signingKey: ${{ secrets.ORG_GRADLE_PROJECT_SIGNINGKEY }}
+          ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.ORG_GRADLE_PROJECT_SIGNINGPASSWORD }}
+          ORG_GRADLE_PROJECT_signingKeyId: ${{ secrets.ORG_GRADLE_PROJECT_SIGNINGKEYID }}
+        with:
+          args: 'bash ./gradlew :library:publishReleasePublicationToSonatypeRepository -DLIBRARY_VERSION=${{ github.event.inputs.libraryVersion }}'
+
+      - name: Release catalog
+        if: steps.check.outputs.has-permission
+        uses: docker://docker.tuenti.io/android/mistica_builder:2
+        env:
+          MOBILE_MAVENCENTRAL_USER: ${{ secrets.MOBILE_MAVENCENTRAL_USER }}
+          MOBILE_MAVENCENTRAL_PASSWORD: ${{ secrets.MOBILE_MAVENCENTRAL_PASSWORD }}
+          ORG_GRADLE_PROJECT_signingKey: ${{ secrets.ORG_GRADLE_PROJECT_SIGNINGKEY }}
+          ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.ORG_GRADLE_PROJECT_SIGNINGPASSWORD }}
+          ORG_GRADLE_PROJECT_signingKeyId: ${{ secrets.ORG_GRADLE_PROJECT_SIGNINGKEYID }}
+        with:
+          args: 'bash ./gradlew :catalog:publishCatalogPublicationToSonatypeRepository -DLIBRARY_VERSION=${{ github.event.inputs.libraryVersion }}'
+
+      - name: Create Release in github
+        if: steps.check.outputs.has-permission
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.event.inputs.libraryVersion }}
+          release_name: ${{ github.event.inputs.libraryVersion }}
+          body: ${{ github.event.inputs.releaseDescription }}
+          draft: true
+          prerelease: false

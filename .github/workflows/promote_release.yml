@@ -6,5 +6,14 @@ jobs:
   promote:
     runs-on: self-hosted-novum
     steps:
-      - run: 'echo TODO Promote'
-        shell: bash
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Close and promote staging repository
+        uses: docker://docker.tuenti.io/android/mistica_builder:2
+        env:
+          MOBILE_MAVENCENTRAL_USER: ${{ secrets.MOBILE_MAVENCENTRAL_USER }}
+          MOBILE_MAVENCENTRAL_PASSWORD: ${{ secrets.MOBILE_MAVENCENTRAL_PASSWORD }}
+        with:
+          args: './gradlew closeAndReleaseRepository -DSTAGING_PROFILE_ID="$(./gradlew getStagingProfile  | sed -n -e "s/^Received staging profile id: //p")"'
+
