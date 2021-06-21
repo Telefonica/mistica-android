@@ -4,7 +4,7 @@
 
     <item android:id="@android:id/mask">
         <shape>
-            <!-- Color is irrelevant for mask -->
+            <!-- A color needs to be defined for the the mask to work, but it doesn't matter which color is used -->
             <solid android:color="#000000" />
             <corners android:radius="4dp" />
         </shape>
