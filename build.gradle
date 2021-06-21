@@ -18,13 +18,9 @@ buildscript {
 
 apply plugin: 'io.codearte.nexus-staging'
 
-def mavenStagingProfileId = null
-if (System.getProperty("STAGING_PROFILE_ID") != null && System.getProperty("STAGING_PROFILE_ID") != "") {
-    mavenStagingProfileId = System.getProperty("STAGING_PROFILE_ID").replace("Received staging profile id: ", "")
-}
 nexusStaging {
     packageGroup = "com.telefonica"
-    stagingProfileId = mavenStagingProfileId
+    stagingProfileId = "f7fe7699e57a"
     username = System.getenv("MOBILE_MAVENCENTRAL_USER")
     password = System.getenv("MOBILE_MAVENCENTRAL_PASSWORD")
 }
