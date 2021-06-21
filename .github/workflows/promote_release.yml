@@ -15,5 +15,5 @@ jobs:
           MOBILE_MAVENCENTRAL_USER: ${{ secrets.MOBILE_MAVENCENTRAL_USER }}
           MOBILE_MAVENCENTRAL_PASSWORD: ${{ secrets.MOBILE_MAVENCENTRAL_PASSWORD }}
         with:
-          args: 'bash ./gradlew closeAndReleaseRepository -DSTAGING_PROFILE_ID="$(./gradlew getStagingProfile)"'
+          args: 'bash ./gradlew closeAndReleaseRepository'
 
