@@ -1,6 +1,7 @@
 name: "Promote draft release"
 on:
-  workflow_dispatch
+  release:
+    types: [published]
 jobs:
   promote:
     runs-on: self-hosted-novum
