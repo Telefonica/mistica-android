@@ -17,10 +17,10 @@ buildscript {
 }
 
 apply plugin: 'io.codearte.nexus-staging'
+
 nexusStaging {
     packageGroup = "com.telefonica"
-    stagingProfileId = "com.telefonica"
-    stagingProfileId = System.getProperty("STAGING_PROFILE_ID")
+    stagingProfileId = "f7fe7699e57a"
     username = System.getenv("MOBILE_MAVENCENTRAL_USER")
     password = System.getenv("MOBILE_MAVENCENTRAL_PASSWORD")
 }
