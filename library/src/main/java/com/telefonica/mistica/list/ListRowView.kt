@@ -244,7 +244,13 @@ class ListRowView @JvmOverloads constructor(
         level = DeprecationLevel.WARNING,
     )
     fun setBoxed(boxed: Boolean) {
-        setBackgroundType(BackgroundType.TYPE_BOXED)
+        setBackgroundType(
+            if (boxed) {
+                BackgroundType.TYPE_BOXED
+            } else {
+                BackgroundType.TYPE_NORMAL
+            }
+        )
     }
 
     fun setBackgroundType(@BackgroundType type: Int) {
