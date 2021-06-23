@@ -83,7 +83,7 @@
         <!-- Feedback colors -->
         <item name="colorBadge">@color/telefonica_color_coral_dark</item>
         <item name="colorFeedbackErrorBackground">@color/telefonica_color_coral</item>
-        <item name="colorFeedbackInfoBackground">@color/telefonica_color_grey_6</item>
+        <item name="colorFeedbackInfoBackground">@color/telefonica_color_grey_9</item>
 
         <!-- Global colors -->
         <item name="colorBrand">@color/telefonica_color_blue</item>
