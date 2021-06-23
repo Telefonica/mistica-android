@@ -10,6 +10,7 @@
         android:id="@+id/checkbox_input"
         style="@style/AppTheme.Forms.CheckBox"
         android:layout_width="match_parent"
+            android:checked="true"
         android:layout_height="wrap_content"
         tools:text="@tools:sample/lorem/random" />
 

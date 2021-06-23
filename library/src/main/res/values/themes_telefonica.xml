@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MisticaTheme.Telefonica" parent="MisticaTheme.Telefonica_Base" />
+
+    <style name="MisticaTheme.Telefonica_Base">
+
+        <!-- Background colors -->
+        <item name="colorAppBarBackground">@color/telefonica_color_white</item>
+        <item name="colorBackground">@color/telefonica_color_white</item>
+        <item name="colorBackgroundContainer">@color/telefonica_color_white</item>
+        <item name="colorBackgroundBrand">@color/telefonica_color_blue</item>
+        <item name="colorBackgroundOverlay">@color/telefonica_color_grey_6_60_alpha</item>
+        <item name="colorBackgroundSkeleton">@color/telefonica_color_grey_1</item>
+        <item name="colorBackgroundSkeletonInverse">@color/telefonica_color_blue_dark</item>
+        <item name="colorNavigationBarBackground">@color/telefonica_color_blue</item>
+        <item name="colorBackgroundAlternative">@color/telefonica_color_grey_1</item>
+        <item name="colorBackgroundFeedbackBottom">@color/telefonica_color_blue</item>
+
+        <item name="colorSkeletonWave">@color/telefonica_color_grey_2</item>
+
+        <!-- Border colors -->
+        <item name="colorBorderLight">@color/telefonica_color_grey_1</item>
+        <item name="colorBorder">@color/telefonica_color_grey_2</item>
+        <item name="colorBorderDark">@color/telefonica_color_grey_5</item>
+        <item name="colorBorderSelected">@color/telefonica_color_blue</item>
+
+        <!-- Button colors -->
+        <item name="colorButtonDangerBackground">@color/telefonica_color_coral</item>
+        <item name="colorButtonDangerBackgroundDisabled">@color/telefonica_color_grey_2</item>
+        <item name="colorButtonDangerBackgroundSelected">@color/telefonica_color_coral_dark</item>
+
+        <item name="colorButtonLinkBackgroundSelected">@color/telefonica_color_grey_1</item>
+        <item name="colorButtonLinkBackgroundSelectedInverse">@color/telefonica_color_white_20_alpha</item>
+
+        <item name="colorButtonPrimaryBackground">@color/telefonica_color_blue</item>
+        <item name="colorButtonPrimaryBackgroundDisabled">@color/telefonica_color_grey_2</item>
+        <item name="colorButtonPrimaryBackgroundDisabledInverse">@color/telefonica_color_blue_light50</item>
+        <item name="colorButtonPrimaryBackgroundInverse">@color/telefonica_color_white</item>
+        <item name="colorButtonPrimaryBackgroundSelected">@color/telefonica_color_blue_dark</item>
+        <item name="colorButtonPrimaryBackgroundSelectedInverse">@color/telefonica_color_blue_light50</item>
+
+        <item name="colorButtonSecondaryBackground">@color/telefonica_color_blue</item>
+        <item name="colorButtonSecondaryBackgroundDisabled">@color/telefonica_color_grey_2</item>
+        <item name="colorButtonSecondaryBackgroundSelected">@color/telefonica_color_blue_dark</item>
+        <item name="colorButtonSecondaryBorderDisabledInverse">@color/telefonica_color_blue_light50</item>
+        <item name="colorButtonSecondaryBorderInverse">@color/telefonica_color_white</item>
+        <item name="colorButtonSecondaryBorderSelectedInverse">@color/telefonica_color_blue_light50</item>
+
+        <item name="colorTextButtonPrimary">@color/telefonica_color_white</item>
+        <item name="colorTextButtonPrimaryDisabled">@color/telefonica_color_white</item>
+        <item name="colorTextButtonPrimaryInverse">@color/telefonica_color_blue</item>
+        <item name="colorTextButtonPrimaryInverseDisabled">@color/telefonica_color_blue_light30</item>
+        <item name="colorTextButtonPrimaryInverseSelected">@color/telefonica_color_blue</item>
+
+        <item name="colorTextButtonSecondary">@color/telefonica_color_blue</item>
+        <item name="colorTextButtonSecondaryDisabled">@color/telefonica_color_grey_2</item>
+        <item name="colorTextButtonSecondarySelected">@color/telefonica_color_blue_dark</item>
+        <item name="colorTextButtonSecondaryInverse">@color/telefonica_color_white</item>
+        <item name="colorTextButtonSecondaryInverseDisabled">@color/telefonica_color_blue_light50</item>
+        <item name="colorTextButtonSecondaryInverseSelected">@color/telefonica_color_white</item>
+
+        <!-- Text Links -->
+        <item name="colorTextLink">@color/telefonica_color_blue</item>
+        <item name="colorTextLinkInverse">@color/telefonica_color_white</item>
+        <item name="colorTextLinkDanger">@color/telefonica_color_coral</item>
+        <item name="colorTextLinkDangerDisabled">@color/telefonica_color_grey_2</item>
+        <item name="colorTextLinkDisabled">@color/telefonica_color_grey_2</item>
+        <item name="colorTextLinkSnackbar">@color/telefonica_color_blue_light50</item>
+
+        <!-- Control colors -->
+        <item name="colorControl">@color/telefonica_color_grey_3</item>
+        <item name="colorControlActive">@color/telefonica_color_blue</item>
+        <item name="colorControlError">@color/telefonica_color_coral</item>
+        <item name="colorLoadingBar">@color/telefonica_color_blue_light50</item>
+        <item name="colorLoadingBarBackground">@color/telefonica_color_blue_dark</item>
+
+        <!-- Divider colors -->
+        <item name="colorDivider">@color/telefonica_color_grey_2</item>
+        <item name="colorDividerInverse">@color/telefonica_color_white</item>
+        <item name="colorNavigationBarDivider">@color/telefonica_color_blue</item>
+
+        <!-- Feedback colors -->
+        <item name="colorBadge">@color/telefonica_color_coral_dark</item>
+        <item name="colorFeedbackErrorBackground">@color/telefonica_color_coral</item>
+        <item name="colorFeedbackInfoBackground">@color/telefonica_color_grey_9</item>
+
+        <!-- Global colors -->
+        <item name="colorBrand">@color/telefonica_color_blue</item>
+        <item name="colorBrandDark">@color/telefonica_color_blue_dark</item>
+        <item name="colorInverse">@color/telefonica_color_white</item>
+        <item name="colorNeutralHigh">@color/telefonica_color_grey_9</item>
+        <item name="colorNeutralLow">@color/telefonica_color_grey_1</item>
+        <item name="colorNeutralMedium">@color/telefonica_color_grey_5</item>
+        <item name="colorPromo">@color/telefonica_color_orchid</item>
+        <item name="colorHighlight">@color/telefonica_color_coral_light</item>
+
+        <!-- Texts colors -->
+        <item name="colorTextPrimary">@color/telefonica_color_grey_9</item>
+        <item name="colorTextPrimaryInverse">@color/telefonica_color_white</item>
+        <item name="colorTextSecondary">@color/telefonica_color_grey_5</item>
+        <item name="colorTextSecondaryInverse">@color/telefonica_color_white</item>
+        <item name="colorTextDisabled">@color/telefonica_color_grey_3</item>
+        <item name="colorTextAmount">@color/telefonica_color_blue</item>
+
+        <!-- State colors -->
+        <item name="colorError">@color/telefonica_color_coral</item>
+        <item name="colorSuccess">@color/telefonica_color_turquoise</item>
+        <item name="colorWarning">@color/telefonica_color_ambar</item>
+
+        <!-- Bars text colors -->
+        <item name="colorTextNavigationBarPrimary">@color/telefonica_color_white</item>
+        <item name="colorTextNavigationBarSecondary">@color/telefonica_color_grey_1</item>
+        <item name="colorTextAppBar">@color/telefonica_color_grey_4</item>
+        <item name="colorTextAppBarSelected">@color/telefonica_color_blue</item>
+
+        <!-- Gradients (assistant, pin fingerprint screens) -->
+        <item name="colorGradientBackgroundFirst">?colorBackgroundBrand</item>
+        <item name="colorGradientBackgroundSecond">?colorBackgroundBrand</item>
+        <item name="colorGradientBackgroundThird">?colorBackgroundBrand</item>
+        <item name="colorGradientBackgroundFourth">?colorBackgroundBrand</item>
+        <item name="colorLoginLoadingGradientFirst">?colorBrandDark</item>
+        <item name="colorLoginLoadingGradientSecond">?colorBrandDark</item>
+        <item name="colorLoginLoadingGradientThird">?colorBrandDark</item>
+        <item name="colorLoginLoadingGradientFourth">?colorBrandDark</item>
+
+        <!-- Feedbacks -->
+        <item name="feedbackScreenSuccessWithGradient">false</item>
+        <item name="feedbackScreenSuccessInverse">true</item>
+        <item name="feedbackScreenSuccessAnimation">@raw/feedback_success</item>
+        <item name="feedbackScreenErrorAnimation">@raw/feedback_error_telefonica</item>
+        <item name="feedbackScreenInfoIcon">@drawable/feedback_info_telefonica</item>
+
+        <!-- Stepper -->
+        <item name="stepperFinishedStepAnimation">@raw/feedback_success</item>
+    </style>
+
+</resources>

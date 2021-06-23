@@ -2,14 +2,17 @@ package com.telefonica.mistica.header
 
 import android.content.Context
 import android.util.AttributeSet
+import android.util.TypedValue
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.FrameLayout
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.annotation.ColorInt
+import androidx.annotation.LayoutRes
 import androidx.annotation.StringRes
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
@@ -94,13 +97,18 @@ import com.telefonica.mistica.util.setTextAndVisibility
         type = HeaderView::class,
         attribute = "headerSubtitleHasSecondaryColor",
         method = "setSubtitleHasSecondaryColor"
-    )
+    ),
+    BindingMethod(
+        type = HeaderView::class,
+        attribute = "bottomLayout",
+        method = "setBottomLayout"
+    ),
 )
 class HeaderView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0,
-    defStyleRes: Int = 0
+    defStyleRes: Int = 0,
 ) : LinearLayout(context, attrs, defStyleAttr, defStyleRes) {
 
     private val firstPretitleTextView: TextView
@@ -111,6 +119,7 @@ class HeaderView @JvmOverloads constructor(
     private var actionButton: Button
     private var secondaryActionButton: Button
     private val subtitleTextView: TextView
+    private val bottomContainer: FrameLayout
 
     private var isInverse: Boolean = false
     private var hasTopPadding: Boolean = false
@@ -118,6 +127,7 @@ class HeaderView @JvmOverloads constructor(
     private var secondPretitleHasSecondaryColor: Boolean = false
     private var numeralHasDangerColor: Boolean = false
     private var subtitleHasSecondaryColor: Boolean = false
+    private var currentBottomLayoutRes: Int = BOTTOM_VIEW_NONE
 
     private var actionClickListener: OnClickListener? = null
     private var secondaryActionClickListener: OnClickListener? = null
@@ -135,6 +145,7 @@ class HeaderView @JvmOverloads constructor(
         actionButton = findViewById(R.id.header_action_button)
         secondaryActionButton = findViewById(R.id.header_secondary_action_button)
         subtitleTextView = findViewById(R.id.header_subtitle)
+        bottomContainer = findViewById(R.id.bottom_container)
         isFocusable = true
 
         if (attrs != null) {
@@ -176,10 +187,30 @@ class HeaderView @JvmOverloads constructor(
                 false
             )
 
+            styledAttrs.getResourceId(
+                R.styleable.HeaderView_headerBottomLayout,
+                TypedValue.TYPE_NULL
+            )
+                .takeIf { it != TypedValue.TYPE_NULL }
+                .let { setBottomLayout(it ?: BOTTOM_VIEW_NONE) }
+
             styledAttrs.recycle()
         }
         configureTextsColors()
         configurePaddingAndMargins()
+    }
+
+    fun setBottomLayout(@LayoutRes layoutRes: Int = BOTTOM_VIEW_NONE) {
+        if (currentBottomLayoutRes != layoutRes) {
+            bottomContainer.removeAllViews()
+            if (layoutRes != BOTTOM_VIEW_NONE) {
+                LayoutInflater.from(context).inflate(layoutRes, bottomContainer, true)
+                bottomContainer.visibility = VISIBLE
+            } else {
+                bottomContainer.visibility = GONE
+            }
+            currentBottomLayoutRes = layoutRes
+        }
     }
 
     fun setInverse(inverse: Boolean) {
@@ -364,4 +395,8 @@ class HeaderView @JvmOverloads constructor(
 
     private fun View.isVisible(): Boolean =
         visibility == View.VISIBLE
+
+    companion object {
+        const val BOTTOM_VIEW_NONE = -1
+    }
 }

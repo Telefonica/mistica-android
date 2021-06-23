@@ -14,10 +14,12 @@ import com.telefonica.mistica.input.TextInput
 
 class HeadersCatalogFragment : Fragment() {
 
+    private lateinit var headerView: HeaderView
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         return inflater.inflate(R.layout.headers_fragment_catalog, container, false)
@@ -33,6 +35,7 @@ class HeadersCatalogFragment : Fragment() {
 
     private fun updateHeaderView(view: View) {
         with(view.findViewById<HeaderView>(R.id.header_view)) {
+            headerView = this
             setInverse(view.findViewById<CheckBoxInput>(R.id.check_inverse).isChecked())
             setHasTopPadding(view.findViewById<CheckBoxInput>(R.id.check_top_padding).isChecked())
             setFirstPretitle(view.findViewById<TextInput>(R.id.input_first_pretitle).text.toString())
@@ -49,25 +52,34 @@ class HeadersCatalogFragment : Fragment() {
                 view.findViewById<CheckBoxInput>(R.id.check_numeral_danger).isChecked()
             )
             setActionButtonText(view.findViewById<TextInput>(R.id.input_action_text).text.toString())
-            setActionButtonOnClick(View.OnClickListener {
+            setActionButtonOnClick {
                 Toast.makeText(
                     view.context,
                     "Action Clicked!",
                     Toast.LENGTH_SHORT
                 ).show()
-            })
+            }
             setSecondaryActionButtonText(view.findViewById<TextInput>(R.id.input_secondary_action_text).text)
-            setSecondaryActionButtonOnClick(View.OnClickListener {
+            setSecondaryActionButtonOnClick {
                 Toast.makeText(
                     view.context,
                     "Secondary Action Clicked!",
                     Toast.LENGTH_SHORT
                 ).show()
-            })
+            }
             setSubtitle(view.findViewById<TextInput>(R.id.input_subtitle).text.toString())
             setSubtitleHasSecondaryColor(
                 view.findViewById<CheckBoxInput>(R.id.check_subtitle_secondary).isChecked()
             )
+            setSampleBottomLayout(view.findViewById<CheckBoxInput>(R.id.check_bottom_layout).isChecked())
+        }
+    }
+
+    private fun setSampleBottomLayout(checked: Boolean) {
+        if (checked) {
+            headerView.setBottomLayout(R.layout.headers_fragment_catalog_sample_bottom_layout)
+        } else {
+            headerView.setBottomLayout(HeaderView.BOTTOM_VIEW_NONE)
         }
     }
 }

@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
-import android.widget.ArrayAdapter
 import androidx.annotation.DrawableRes
 import androidx.annotation.StyleRes
 import androidx.appcompat.app.AppCompatActivity
@@ -16,7 +15,6 @@ import com.telefonica.mistica.input.DropDownInput
 import com.telefonica.mistica.list.ListRowView
 import com.telefonica.mistica.list.ListRowView.Companion.TYPE_SMALL_ICON
 import com.telefonica.mistica.list.layout.configureWithFullWidthLayout
-
 
 class CatalogMainActivity : AppCompatActivity() {
 
@@ -41,7 +39,8 @@ class CatalogMainActivity : AppCompatActivity() {
             "Movistar Priority" to R.style.MisticaTheme_Movistar_Prominent,
             "O2" to R.style.MisticaTheme_O2,
             "O2 Classic" to R.style.MisticaTheme_O2Classic,
-            "Vivo" to R.style.MisticaTheme_Vivo
+            "Vivo" to R.style.MisticaTheme_Vivo,
+            "Telefonica" to R.style.MisticaTheme_Telefonica,
         )
 
         findViewById<DropDownInput>(R.id.drop_down_themes)?.apply {
@@ -62,7 +61,7 @@ class CatalogMainActivity : AppCompatActivity() {
     data class SectionItem(
         val title: String,
         @DrawableRes val icon: Int,
-        val sectionToOpen: Section
+        val sectionToOpen: Section,
     )
 
     inner class SectionAdapter : RecyclerView.Adapter<SectionAdapter.ViewHolder>() {
@@ -101,12 +100,11 @@ class CatalogMainActivity : AppCompatActivity() {
             SectionItem("Tabs", R.drawable.ic_tab, Section.TABS)
         )
 
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-            return ViewHolder(
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder =
+            ViewHolder(
                 LayoutInflater.from(this@CatalogMainActivity)
                     .inflate(R.layout.list_item_main_catalog, parent, false)
             )
-        }
 
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
             val section = sections[position]
@@ -127,8 +125,7 @@ class CatalogMainActivity : AppCompatActivity() {
             }
         }
 
-        override fun getItemCount(): Int {
-            return sections.size
-        }
+        override fun getItemCount(): Int = sections.size
+
     }
 }
