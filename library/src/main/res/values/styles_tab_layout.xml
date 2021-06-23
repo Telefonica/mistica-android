@@ -12,6 +12,6 @@
 		<item name="tabPadding">16dp</item>
 		<item name="iconEndPadding">8dp</item>
 		<item name="tabIndicatorAnimationDuration">300</item>
-		<item name="tabIndicatorColor">?attr/colorControlActivated</item>
+		<item name="tabIndicatorColor">?attr/colorControlActive</item>
 	</style>
 </resources>
