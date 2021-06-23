@@ -15,7 +15,6 @@
         <item name="android:colorControlActivated">?attr/colorControlActive</item>
         <item name="colorControlActivated">?attr/colorControlActive</item>
         <item name="android:colorControlNormal">?attr/colorControl</item>
-        <item name="colorControlNormal">?attr/colorControl</item>
 
         <item name="android:textAppearance">@style/AppTheme.TextAppearance.Preset3</item>
 
