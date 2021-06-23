@@ -52,7 +52,13 @@
             <enum name="smallIcon" value="1" />
             <enum name="largeIcon" value="2" />
         </attr>
+        <!-- {@deprecated This attribute is deprecated. Use <code>listRowBackgroundType</code> instead } -->
         <attr name="listRowIsBoxed" format="boolean" />
+        <attr name="listRowBackgroundType" format="enum">
+            <enum name="normal" value="0" />
+            <enum name="boxed" value="1" />
+            <enum name="boxedInverse" value="2" />
+        </attr>
         <attr name="listRowActionLayout" format="integer">
             <enum name="none" value="-1" />
         </attr>
