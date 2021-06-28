@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:tools="http://schemas.android.com/tools"
+		tools:parentTag="FrameLayout"
+		>
+
+	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="@drawable/empty_state_card_view_background"
+			android:focusable="true"
+			android:orientation="vertical"
+			android:paddingTop="24dp"
+			android:paddingBottom="24dp"
+			>
+
+		<ImageView
+				android:id="@+id/empty_state_screen_image"
+				android:layout_width="wrap_content"
+				android:layout_height="112dp"
+				android:scaleType="fitStart"
+				android:layout_marginStart="16dp"
+				android:layout_marginEnd="16dp"
+				tools:ignore="ContentDescription"
+				tools:src="@tools:sample/avatars"
+				/>
+
+		<TextView
+				android:id="@+id/empty_state_screen_title"
+				style="@style/AppTheme.TextAppearance.Preset4.Light"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="20dp"
+				android:layout_marginStart="16dp"
+				android:layout_marginEnd="16dp"
+				tools:text="Your cart is empty"
+				/>
+
+		<TextView
+				android:id="@+id/empty_state_screen_subtitle"
+				style="@style/AppTheme.TextAppearance.Preset2"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="8dp"
+				android:layout_marginStart="16dp"
+				android:layout_marginEnd="16dp"
+				tools:text="Check our marketplaces and find something for you"
+				/>
+
+		<LinearLayout
+				android:id="@+id/buttons_container"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:gravity="start"
+				android:orientation="horizontal"
+				android:layout_marginTop="16dp"
+				android:layout_marginEnd="16dp"
+				android:layout_marginStart="0dp"
+				>
+
+			<com.telefonica.mistica.button.Button
+					android:id="@+id/empty_state_screen_primary_button"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginStart="16dp"
+					style="@style/AppTheme.Button.DefaultButton.Small"
+					tools:text="Explore Marketplace"
+					/>
+
+			<com.telefonica.mistica.button.Button
+					android:id="@+id/empty_state_screen_secondary_button"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginStart="16dp"
+					style="@style/AppTheme.Button.SecondaryButton.Small"
+					tools:text="Secondary Action"
+					/>
+
+			<com.telefonica.mistica.button.Button
+					android:id="@+id/empty_state_screen_link_button"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginStart="24dp"
+					style="@style/AppTheme.Button.LinkButton"
+					tools:text="More info"
+					/>
+
+		</LinearLayout>
+
+	</LinearLayout>
+
+</merge>

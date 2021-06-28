@@ -43,6 +43,8 @@ class ComponentCatalogActivity : AppCompatActivity() {
             Section.CONTROLS -> ControlsCatalogFragment()
             Section.STEPPERS -> SteppersCatalogFragment()
             Section.TABS -> TabsCatalogFragment()
+            Section.EMPTY_STATE_SCREEN -> EmptyStateScreenCatalogFragment(themeOverride)
+            Section.EMPTY_STATE_CARD -> EmptyStateCardCatalogFragment()
             else -> OthersCatalogFragment()
         }
 
@@ -79,4 +81,6 @@ enum class Section {
     OTHERS,
     STEPPERS,
     TABS,
+    EMPTY_STATE_SCREEN,
+    EMPTY_STATE_CARD
 }
