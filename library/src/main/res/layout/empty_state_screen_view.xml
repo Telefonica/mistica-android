@@ -46,9 +46,11 @@
 					style="@style/AppTheme.TextAppearance.Preset4.Light"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
+					android:visibility="gone"
 					android:layout_marginTop="16dp"
 					android:textColor="?colorTextSecondary"
 					tools:text="Check our marketplaces and find something for you"
+					tools:visibility="visible"
 					/>
 
 		</LinearLayout>

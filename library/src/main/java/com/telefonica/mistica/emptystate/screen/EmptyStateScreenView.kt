@@ -87,6 +87,7 @@ class EmptyStateScreenView @JvmOverloads constructor(
 
     @Retention(AnnotationRetention.SOURCE)
     @IntDef(
+        BUTTONS_CONFIG_NONE,
         BUTTONS_CONFIG_PRIMARY,
         BUTTONS_CONFIG_PRIMARY_LINK,
         BUTTONS_CONFIG_PRIMARY_SECONDARY,
@@ -106,6 +107,7 @@ class EmptyStateScreenView @JvmOverloads constructor(
     private var image: ImageView
     private var title: TextView
     private var subtitle: TextView
+    private var buttonsContainer: LinearLayout
     private var primaryButton: Button
     private var secondaryButton: Button
     private var linkButton: Button
@@ -118,12 +120,13 @@ class EmptyStateScreenView @JvmOverloads constructor(
         image = findViewById(R.id.empty_state_screen_image)
         title = findViewById(R.id.empty_state_screen_title)
         subtitle = findViewById(R.id.empty_state_screen_subtitle)
+        buttonsContainer = findViewById(R.id.buttons_container)
         primaryButton = findViewById(R.id.empty_state_screen_primary_button)
         secondaryButton = findViewById(R.id.empty_state_screen_secondary_button)
         linkButton = findViewById(R.id.empty_state_screen_link_button)
 
         @ButtonsConfig
-        var buttonsConfig: Int = BUTTONS_CONFIG_PRIMARY
+        var buttonsConfig: Int = BUTTONS_CONFIG_NONE
 
         @ImageSize
         var imageSize: Int = IMAGE_SIZE_FULL_WIDTH
@@ -169,10 +172,22 @@ class EmptyStateScreenView @JvmOverloads constructor(
     }
 
     fun setSubtitle(text: String) {
-        subtitle.text = text
+        if (text.isNotEmpty()) {
+            subtitle.text = text
+            subtitle.visibility = View.VISIBLE
+        } else {
+            subtitle.visibility = View.GONE
+        }
     }
 
     fun setButtonsConfig(@ButtonsConfig buttonsConfig: Int) {
+        if (buttonsConfig == BUTTONS_CONFIG_NONE) {
+            buttonsContainer.visibility = View.GONE
+            return
+        }
+
+        buttonsContainer.visibility = View.VISIBLE
+
         primaryButton.visibility = when (buttonsConfig) {
             BUTTONS_CONFIG_PRIMARY,
             BUTTONS_CONFIG_PRIMARY_LINK,
@@ -242,11 +257,12 @@ class EmptyStateScreenView @JvmOverloads constructor(
     }
 
     companion object {
-        const val BUTTONS_CONFIG_PRIMARY = 0
-        const val BUTTONS_CONFIG_PRIMARY_LINK = 1
-        const val BUTTONS_CONFIG_PRIMARY_SECONDARY = 2
-        const val BUTTONS_CONFIG_SECONDARY = 3
-        const val BUTTONS_CONFIG_SECONDARY_LINK = 4
+        const val BUTTONS_CONFIG_NONE = 0
+        const val BUTTONS_CONFIG_PRIMARY = 1
+        const val BUTTONS_CONFIG_PRIMARY_LINK = 2
+        const val BUTTONS_CONFIG_PRIMARY_SECONDARY = 3
+        const val BUTTONS_CONFIG_SECONDARY = 4
+        const val BUTTONS_CONFIG_SECONDARY_LINK = 5
 
         const val IMAGE_SIZE_ICON = 0
         const val IMAGE_SIZE_SMALL = 1

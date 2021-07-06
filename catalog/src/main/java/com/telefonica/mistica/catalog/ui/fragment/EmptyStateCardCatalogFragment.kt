@@ -89,6 +89,7 @@ class EmptyStateCardCatalogFragment : Fragment() {
     }
 
     private enum class CardButtonsConfig(@ButtonsConfig val buttonsConfig: Int) {
+        BUTTONS_CONFIG_NONE(EmptyStateCardView.BUTTONS_CONFIG_NONE),
         BUTTONS_CONFIG_PRIMARY(EmptyStateCardView.BUTTONS_CONFIG_PRIMARY),
         BUTTONS_CONFIG_PRIMARY_LINK(EmptyStateCardView.BUTTONS_CONFIG_PRIMARY_LINK),
         BUTTONS_CONFIG_PRIMARY_SECONDARY(EmptyStateCardView.BUTTONS_CONFIG_PRIMARY_SECONDARY),

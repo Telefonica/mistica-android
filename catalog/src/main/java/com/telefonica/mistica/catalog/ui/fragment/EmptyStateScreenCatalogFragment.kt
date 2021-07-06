@@ -101,6 +101,7 @@ class EmptyStateScreenCatalogFragment(
     }
 
     private enum class ScreenButtonsConfig(@ButtonsConfig val buttonsConfig: Int) {
+        BUTTONS_CONFIG_NONE(EmptyStateScreenView.BUTTONS_CONFIG_NONE),
         BUTTONS_CONFIG_PRIMARY(EmptyStateScreenView.BUTTONS_CONFIG_PRIMARY),
         BUTTONS_CONFIG_PRIMARY_LINK(EmptyStateScreenView.BUTTONS_CONFIG_PRIMARY_LINK),
         BUTTONS_CONFIG_PRIMARY_SECONDARY(EmptyStateScreenView.BUTTONS_CONFIG_PRIMARY_SECONDARY),
