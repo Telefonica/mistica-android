@@ -7,12 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.annotation.DrawableRes
 import androidx.annotation.IntDef
+import androidx.core.content.ContextCompat
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
@@ -84,7 +84,7 @@ class EmptyStateCardView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0,
-) : FrameLayout(context, attrs, defStyleAttr) {
+) : LinearLayout(context, attrs, defStyleAttr) {
 
     @Retention(AnnotationRetention.SOURCE)
     @IntDef(
@@ -113,6 +113,16 @@ class EmptyStateCardView @JvmOverloads constructor(
 
     init {
         LayoutInflater.from(context).inflate(R.layout.empty_state_card_view, this, true)
+
+        background = ContextCompat.getDrawable(context, R.drawable.empty_state_card_view_background)
+        isFocusable = true
+        orientation = VERTICAL
+        setPadding(
+            0,
+            context.convertDpToPx(24),
+            0,
+            context.convertDpToPx(24),
+        )
 
         image = findViewById(R.id.empty_state_screen_image)
         title = findViewById(R.id.empty_state_screen_title)

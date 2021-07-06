@@ -8,10 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.annotation.DrawableRes
 import androidx.annotation.IntDef
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
@@ -83,7 +83,7 @@ class EmptyStateScreenView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0,
-) : ConstraintLayout(context, attrs, defStyleAttr) {
+) : LinearLayout(context, attrs, defStyleAttr) {
 
     @Retention(AnnotationRetention.SOURCE)
     @IntDef(
@@ -112,6 +112,8 @@ class EmptyStateScreenView @JvmOverloads constructor(
 
     init {
         LayoutInflater.from(context).inflate(R.layout.empty_state_screen_view, this, true)
+
+        orientation = VERTICAL
 
         image = findViewById(R.id.empty_state_screen_image)
         title = findViewById(R.id.empty_state_screen_title)
