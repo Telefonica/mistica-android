@@ -43,6 +43,7 @@ class ComponentCatalogActivity : AppCompatActivity() {
             Section.CONTROLS -> ControlsCatalogFragment()
             Section.STEPPERS -> SteppersCatalogFragment()
             Section.TABS -> TabsCatalogFragment()
+            Section.CALLOUTS -> CalloutsCatalogFragment()
             else -> OthersCatalogFragment()
         }
 
@@ -79,4 +80,5 @@ enum class Section {
     OTHERS,
     STEPPERS,
     TABS,
+    CALLOUTS,
 }

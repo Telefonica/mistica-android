@@ -1,0 +1,125 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		>
+
+	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:padding="16dp"
+			android:animateLayoutChanges="true"
+			>
+
+		<com.telefonica.mistica.section.SectionTitleView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="start"
+				app:sectionTitle="Callout playground"
+				/>
+
+		<com.telefonica.mistica.input.CheckBoxInput
+				android:id="@+id/show_icon_input"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_margin="8dp"
+				app:inputCheckText="Show icon"
+				/>
+
+		<com.telefonica.mistica.input.CheckBoxInput
+				android:id="@+id/dismiss_input"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_margin="8dp"
+				app:inputCheckText="Is Dismissable"
+				/>
+
+		<com.telefonica.mistica.input.TextInput
+				android:id="@+id/title_input"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_margin="8dp"
+				app:inputHint="Title"
+				app:inputText="Callout sample title"
+				app:inputType="text"
+				/>
+
+		<com.telefonica.mistica.input.TextInput
+				android:id="@+id/description_input"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_margin="8dp"
+				app:inputHint="Description"
+				app:inputText="Callout sample description"
+				app:inputType="text"
+				/>
+
+		<com.telefonica.mistica.input.DropDownInput
+				android:id="@+id/buttons_config_dropdown"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_margin="8dp"
+				app:inputHint="Select buttons config"
+				/>
+
+		<com.telefonica.mistica.input.TextInput
+				android:id="@+id/primary_button_text_input"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_margin="8dp"
+				app:inputHint="Primary Button text"
+				app:inputText="Primary Action"
+				app:inputType="text"
+				/>
+
+		<com.telefonica.mistica.input.TextInput
+				android:id="@+id/secondary_button_text_input"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_margin="8dp"
+				app:inputHint="Secondary Button text"
+				app:inputText="Secondary Action"
+				app:inputType="text"
+				/>
+
+		<com.telefonica.mistica.input.TextInput
+				android:id="@+id/link_button_text_input"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_margin="8dp"
+				app:inputHint="Link Button text"
+				app:inputText="Link Action"
+				app:inputType="text"
+				/>
+
+		<View
+				android:layout_width="match_parent"
+				android:layout_height="48dp"
+				android:layout_marginTop="8dp"
+				android:background="?colorDivider"
+				/>
+
+		<com.telefonica.mistica.callout.CalloutView
+				android:id="@+id/callout_view"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				/>
+
+		<View
+				android:layout_width="match_parent"
+				android:layout_height="48dp"
+				android:background="?colorDivider"
+				/>
+
+		<com.telefonica.mistica.button.Button
+				android:id="@+id/update_button"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp"
+				android:layout_marginBottom="16dp"
+				android:text="Update"
+				/>
+
+	</LinearLayout>
+</ScrollView>
