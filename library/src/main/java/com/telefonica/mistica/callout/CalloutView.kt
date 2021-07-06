@@ -107,8 +107,6 @@ class CalloutView @JvmOverloads constructor(
     private var linkButton: Button
     private var closeButton: ImageView
 
-    private var dismissable = false
-
     private var onCalloutDismissListener: OnCalloutDismissListener = object : OnCalloutDismissListener {
         override fun onDismissed() {
 
@@ -129,6 +127,7 @@ class CalloutView @JvmOverloads constructor(
 
         @ButtonsConfig
         var buttonsConfig: Int = BUTTONS_CONFIG_PRIMARY
+        var dismissable = false
 
         if (attrs != null) {
             val styledAttrs = context.theme.obtainStyledAttributes(attrs, R.styleable.CalloutView, defStyleAttr, 0)
@@ -149,11 +148,11 @@ class CalloutView @JvmOverloads constructor(
         }
 
         setButtonsConfig(buttonsConfig)
-        setDismissable()
+        setDismissable(dismissable)
         initCloseButton()
     }
 
-    private fun setDismissable() {
+    fun setDismissable(dismissable: Boolean) {
         closeButton.visibility = if (dismissable) VISIBLE else GONE
     }
 
@@ -196,10 +195,16 @@ class CalloutView @JvmOverloads constructor(
 
     fun setIcon(@DrawableRes iconRes: Int) {
         icon.setImageResource(iconRes)
+        icon.visibility = VISIBLE
     }
 
     fun setIconDrawable(drawable: Drawable) {
         icon.setImageDrawable(drawable)
+        icon.visibility = VISIBLE
+    }
+
+    fun removeIcon() {
+        icon.visibility = GONE
     }
 
     fun setTitle(text: String) {
