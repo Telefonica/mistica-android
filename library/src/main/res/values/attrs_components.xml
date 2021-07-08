@@ -185,4 +185,56 @@
         <attr name="step" format="integer" />
     </declare-styleable>
 
+    <declare-styleable name="EmptyStateScreenView">
+        <attr name="emptyStateScreenImage" format="reference" />
+        <attr name="emptyStateScreenImageContentDescription" format="string" />
+        <attr name="emptyStateScreenImageSize" format="enum">
+            <enum name="icon" value="0" />
+            <enum name="small" value="1" />
+            <enum name="full_width" value="2" />
+        </attr>
+        <attr name="emptyStateScreenTitle" format="string" />
+        <attr name="emptyStateScreenSubtitle" format="string" />
+        <attr name="emptyStateScreenButtonsConfig" format="enum">
+            <enum name="none" value="0" />
+            <enum name="primary" value="1" />
+            <enum name="primary_link" value="2" />
+            <enum name="primary_secondary" value="3" />
+            <enum name="secondary" value="4" />
+            <enum name="secondary_link" value="5" />
+        </attr>
+        <attr name="emptyStateScreenPrimaryButtonText" format="string" />
+        <attr name="emptyStateScreenPrimaryButtonOnClick" format="string" />
+        <attr name="emptyStateScreenSecondaryButtonText" format="string" />
+        <attr name="emptyStateScreenSecondaryButtonOnClick" format="string" />
+        <attr name="emptyStateScreenLinkButtonText" format="string" />
+        <attr name="emptyStateScreenLinkButtonOnClick" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="EmptyStateCardView">
+        <attr name="emptyStateCardImage" format="reference" />
+        <attr name="emptyStateCardImageContentDescription" format="string" />
+        <attr name="emptyStateCardImageSize" format="enum">
+            <enum name="icon" value="0" />
+            <enum name="small" value="1" />
+        </attr>
+        <attr name="emptyStateCardTitle" format="string" />
+        <attr name="emptyStateCardSubtitle" format="string" />
+        <attr name="emptyStateCardButtonsConfig" format="enum">
+            <enum name="none" value="0" />
+            <enum name="primary" value="1" />
+            <enum name="primary_link" value="2" />
+            <enum name="primary_secondary" value="3" />
+            <enum name="secondary" value="4" />
+            <enum name="secondary_link" value="5" />
+            <enum name="link" value="6" />
+        </attr>
+        <attr name="emptyStateCardPrimaryButtonText" format="string" />
+        <attr name="emptyStateCardPrimaryButtonOnClick" format="string" />
+        <attr name="emptyStateCardSecondaryButtonText" format="string" />
+        <attr name="emptyStateCardSecondaryButtonOnClick" format="string" />
+        <attr name="emptyStateCardLinkButtonText" format="string" />
+        <attr name="emptyStateCardLinkButtonOnClick" format="string" />
+    </declare-styleable>
+
 </resources>

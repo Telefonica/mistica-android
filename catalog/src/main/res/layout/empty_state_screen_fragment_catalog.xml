@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		>
+
+	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_margin="8dp"
+			android:orientation="vertical"
+			>
+
+		<com.telefonica.mistica.section.SectionTitleView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="start"
+				android:layout_margin="8dp"
+				app:sectionTitle="Empty State Screen Tester"
+				/>
+
+		<com.telefonica.mistica.input.DropDownInput
+				android:id="@+id/image_size_dropdown"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_margin="8dp"
+				app:inputHint="Select image size"
+				/>
+
+		<com.telefonica.mistica.input.TextInput
+				android:id="@+id/title_input"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_margin="8dp"
+				app:inputHint="Title"
+				app:inputText="Your cart is empty"
+				app:inputType="text"
+				/>
+
+		<com.telefonica.mistica.input.TextInput
+				android:id="@+id/subtitle_input"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_margin="8dp"
+				app:inputHint="Subtitle"
+				app:inputText="Check our marketplaces and find something for you"
+				app:inputType="text"
+				/>
+
+		<com.telefonica.mistica.input.DropDownInput
+				android:id="@+id/buttons_config_dropdown"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_margin="8dp"
+				app:inputHint="Select buttons config"
+				/>
+
+		<com.telefonica.mistica.input.TextInput
+				android:id="@+id/primary_buton_text_input"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_margin="8dp"
+				app:inputHint="Primary Button text"
+				app:inputText="Explore Marketplace"
+				app:inputType="text"
+				/>
+
+		<com.telefonica.mistica.input.TextInput
+				android:id="@+id/secondary_buton_text_input"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_margin="8dp"
+				app:inputHint="Secondary Button text"
+				app:inputText="Secondary Action"
+				app:inputType="text"
+				/>
+
+		<com.telefonica.mistica.input.TextInput
+				android:id="@+id/link_buton_text_input"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_margin="8dp"
+				app:inputHint="Link Button text"
+				app:inputText="More info"
+				app:inputType="text"
+				/>
+
+		<com.telefonica.mistica.button.Button
+				android:id="@+id/show_button"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp"
+				android:layout_marginBottom="16dp"
+				android:text="Show"
+				/>
+
+	</LinearLayout>
+</ScrollView>
