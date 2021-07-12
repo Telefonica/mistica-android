@@ -203,18 +203,18 @@ class CalloutView @JvmOverloads constructor(
         onCalloutDismissListener = listener
     }
 
-    fun setIcon(@DrawableRes iconRes: Int) {
-        icon.setImageResource(iconRes)
-        icon.visibility = VISIBLE
+    fun setIcon(@DrawableRes iconRes: Int?) {
+        if (iconRes != null) {
+            icon.setImageResource(iconRes)
+            icon.visibility = VISIBLE
+        } else {
+            icon.visibility = GONE
+        }
     }
 
     fun setIconDrawable(drawable: Drawable) {
         icon.setImageDrawable(drawable)
         icon.visibility = VISIBLE
-    }
-
-    fun removeIcon() {
-        icon.visibility = GONE
     }
 
     fun setTitle(text: String) {

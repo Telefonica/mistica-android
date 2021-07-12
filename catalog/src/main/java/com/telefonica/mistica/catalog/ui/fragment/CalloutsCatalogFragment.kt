@@ -53,7 +53,7 @@ class CalloutsCatalogFragment : Fragment() {
             if (view.findViewById<CheckBoxInput>(R.id.show_icon_input).isChecked()) {
                 setIcon(R.drawable.ic_callout)
             } else {
-                removeIcon()
+                setIcon(null)
             }
             setDismissable(view.findViewById<CheckBoxInput>(R.id.dismiss_input).isChecked())
             setInverse(view.findViewById<CheckBoxInput>(R.id.inverse_input).isChecked())
