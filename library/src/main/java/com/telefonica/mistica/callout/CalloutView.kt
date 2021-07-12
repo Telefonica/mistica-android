@@ -90,7 +90,7 @@ class CalloutView @JvmOverloads constructor(
 
     @Retention(AnnotationRetention.SOURCE)
     @IntDef(
-        BUTTONS_CONFIG_EMPTY,
+        BUTTONS_CONFIG_NONE,
         BUTTONS_CONFIG_PRIMARY,
         BUTTONS_CONFIG_PRIMARY_LINK,
         BUTTONS_CONFIG_PRIMARY_SECONDARY,
@@ -260,7 +260,7 @@ class CalloutView @JvmOverloads constructor(
     }
 
     fun setButtonsConfig(@ButtonsConfig buttonsConfig: Int) {
-        if (buttonsConfig == BUTTONS_CONFIG_EMPTY) {
+        if (buttonsConfig == BUTTONS_CONFIG_NONE) {
             buttonsContainer.visibility = GONE
             return
         }
@@ -294,7 +294,7 @@ class CalloutView @JvmOverloads constructor(
     }
 
     companion object {
-        const val BUTTONS_CONFIG_EMPTY = -1
+        const val BUTTONS_CONFIG_NONE = -1
         const val BUTTONS_CONFIG_PRIMARY = 0
         const val BUTTONS_CONFIG_PRIMARY_LINK = 1
         const val BUTTONS_CONFIG_PRIMARY_SECONDARY = 2

@@ -76,7 +76,7 @@ class CalloutsCatalogFragment : Fragment() {
     }
 
     private enum class CalloutButtonsConfig(@CalloutView.ButtonsConfig val buttonsConfig: Int) {
-        BUTTONS_CONFIG_EMPTY(CalloutView.BUTTONS_CONFIG_EMPTY),
+        BUTTONS_CONFIG_NONE(CalloutView.BUTTONS_CONFIG_NONE),
         BUTTONS_CONFIG_PRIMARY(CalloutView.BUTTONS_CONFIG_PRIMARY),
         BUTTONS_CONFIG_PRIMARY_LINK(CalloutView.BUTTONS_CONFIG_PRIMARY_LINK),
         BUTTONS_CONFIG_PRIMARY_SECONDARY(CalloutView.BUTTONS_CONFIG_PRIMARY_SECONDARY),
