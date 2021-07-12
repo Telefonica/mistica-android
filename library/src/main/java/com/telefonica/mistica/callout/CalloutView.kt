@@ -218,7 +218,7 @@ class CalloutView @JvmOverloads constructor(
     }
 
     fun setTitle(text: String) {
-        if (text.isNotEmpty()) {
+        if (text.isNotBlank()) {
             title.text = text
             title.visibility = VISIBLE
         } else {
@@ -227,7 +227,7 @@ class CalloutView @JvmOverloads constructor(
     }
 
     fun setDescription(text: String) {
-        if (text.isNotEmpty()) {
+        if (text.isNotBlank()) {
             description.text = text
             description.visibility = VISIBLE
         } else {
