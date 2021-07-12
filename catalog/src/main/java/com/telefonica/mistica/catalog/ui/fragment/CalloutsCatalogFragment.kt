@@ -56,6 +56,7 @@ class CalloutsCatalogFragment : Fragment() {
                 removeIcon()
             }
             setDismissable(view.findViewById<CheckBoxInput>(R.id.dismiss_input).isChecked())
+            setInverse(view.findViewById<CheckBoxInput>(R.id.inverse_input).isChecked())
             setTitle(view.findViewById<TextInput>(R.id.title_input).text.toString())
             setDescription(view.findViewById<TextInput>(R.id.description_input).text.toString())
             setButtonsConfig(

@@ -14,6 +14,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.DrawableRes
 import androidx.annotation.IntDef
+import androidx.core.content.ContextCompat
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
@@ -128,6 +129,7 @@ class CalloutView @JvmOverloads constructor(
         @ButtonsConfig
         var buttonsConfig: Int = BUTTONS_CONFIG_PRIMARY
         var dismissable = false
+        var inverse = false
 
         if (attrs != null) {
             val styledAttrs = context.theme.obtainStyledAttributes(attrs, R.styleable.CalloutView, defStyleAttr, 0)
@@ -143,17 +145,24 @@ class CalloutView @JvmOverloads constructor(
             styledAttrs.getString(R.styleable.CalloutView_calloutLinkButtonText)?.let { setLinkButtonText(it) }
 
             dismissable = styledAttrs.getBoolean(R.styleable.CalloutView_calloutDismissable, false)
+            inverse = styledAttrs.getBoolean(R.styleable.CalloutView_calloutInverse, false)
 
             styledAttrs.recycle()
         }
 
         setButtonsConfig(buttonsConfig)
         setDismissable(dismissable)
+        setInverse(inverse)
         initCloseButton()
     }
 
     fun setDismissable(dismissable: Boolean) {
         closeButton.visibility = if (dismissable) VISIBLE else GONE
+    }
+
+    fun setInverse(inverse: Boolean) {
+        val backgroundDrawable = if (inverse) R.drawable.bg_callout_inverse else R.drawable.bg_callout
+        background = ContextCompat.getDrawable(context, backgroundDrawable)
     }
 
     private fun initCloseButton() {
@@ -187,6 +196,7 @@ class CalloutView @JvmOverloads constructor(
 
     fun show() {
         visibility = VISIBLE
+        invalidate()
     }
 
     fun setOnDismiss(listener: OnCalloutDismissListener) {

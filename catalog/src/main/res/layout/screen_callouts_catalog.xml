@@ -20,6 +20,15 @@
 				/>
 
 		<com.telefonica.mistica.input.CheckBoxInput
+				android:id="@+id/inverse_input"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_margin="8dp"
+				app:inputChecked="false"
+				app:inputCheckText="Inverse variant"
+				/>
+
+		<com.telefonica.mistica.input.CheckBoxInput
 				android:id="@+id/show_icon_input"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
