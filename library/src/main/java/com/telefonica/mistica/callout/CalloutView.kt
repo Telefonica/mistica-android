@@ -266,26 +266,37 @@ class CalloutView @JvmOverloads constructor(
         }
         buttonsContainer.visibility = VISIBLE
 
-        primaryButton.visibility = when (buttonsConfig) {
-            BUTTONS_CONFIG_PRIMARY,
-            BUTTONS_CONFIG_PRIMARY_LINK,
-            BUTTONS_CONFIG_PRIMARY_SECONDARY,
-            -> View.VISIBLE
-            else -> GONE
-        }
-        secondaryButton.visibility = when (buttonsConfig) {
-            BUTTONS_CONFIG_PRIMARY_SECONDARY,
-            BUTTONS_CONFIG_SECONDARY,
-            BUTTONS_CONFIG_SECONDARY_LINK,
-            -> View.VISIBLE
-            else -> GONE
-        }
-        linkButton.visibility = when (buttonsConfig) {
-            BUTTONS_CONFIG_PRIMARY_LINK,
-            BUTTONS_CONFIG_SECONDARY_LINK,
-            BUTTONS_CONFIG_LINK,
-            -> View.VISIBLE
-            else -> GONE
+        when (buttonsConfig) {
+            BUTTONS_CONFIG_PRIMARY -> {
+                primaryButton.visibility = VISIBLE
+                secondaryButton.visibility = GONE
+                linkButton.visibility = GONE
+            }
+            BUTTONS_CONFIG_PRIMARY_LINK -> {
+                primaryButton.visibility = VISIBLE
+                secondaryButton.visibility = GONE
+                linkButton.visibility = VISIBLE
+            }
+            BUTTONS_CONFIG_PRIMARY_SECONDARY -> {
+                primaryButton.visibility = VISIBLE
+                secondaryButton.visibility = VISIBLE
+                linkButton.visibility = GONE
+            }
+            BUTTONS_CONFIG_SECONDARY -> {
+                primaryButton.visibility = GONE
+                secondaryButton.visibility = VISIBLE
+                linkButton.visibility = GONE
+            }
+            BUTTONS_CONFIG_SECONDARY_LINK -> {
+                primaryButton.visibility = GONE
+                secondaryButton.visibility = VISIBLE
+                linkButton.visibility = VISIBLE
+            }
+            BUTTONS_CONFIG_LINK -> {
+                primaryButton.visibility = GONE
+                secondaryButton.visibility = GONE
+                linkButton.visibility = VISIBLE
+            }
         }
     }
 
