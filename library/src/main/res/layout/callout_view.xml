@@ -78,7 +78,7 @@
 				android:layout_marginEnd="16dp"
 				android:layout_weight=".5"
 				style="@style/AppTheme.Button.DefaultButton.Small"
-				tools:text="Primary sf as dfasdf asd fasd afs daf sd fasd"
+				tools:text="Primary"
 				/>
 
 		<com.telefonica.mistica.button.Button
