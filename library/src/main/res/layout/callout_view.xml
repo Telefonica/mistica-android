@@ -4,7 +4,8 @@
 		xmlns:app="http://schemas.android.com/apk/res-auto"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
-		android:padding="16dp"
+		android:paddingTop="16dp"
+		android:paddingBottom="16dp"
 		android:minHeight="56dp"
 		>
 
@@ -16,17 +17,18 @@
 			android:layout_width="24dp"
 			android:layout_height="24dp"
 			android:layout_marginStart="8dp"
+			android:layout_marginEnd="16dp"
 			android:src="@drawable/icn_cross"
 			android:contentDescription="@string/close_button_content_description"
-			tools:visibility="gone"
 			/>
 
 	<ImageView
 			android:id="@+id/callout_icon"
 			app:layout_constraintTop_toTopOf="parent"
-			app:layout_constraintLeft_toLeftOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
 			android:layout_width="24dp"
 			android:layout_height="24dp"
+			android:layout_marginStart="16dp"
 			android:importantForAccessibility="no"
 			tools:src="@tools:sample/avatars"
 			/>
@@ -34,10 +36,11 @@
 	<TextView
 			android:id="@+id/callout_title"
 			app:layout_constraintTop_toTopOf="parent"
-			app:layout_constraintRight_toLeftOf="@id/callout_close_button"
-			app:layout_constraintLeft_toRightOf="@id/callout_icon"
+			app:layout_constraintEnd_toStartOf="@id/callout_close_button"
+			app:layout_constraintStart_toEndOf="@id/callout_icon"
 			android:maxLines="2"
 			android:layout_marginStart="16dp"
+			android:layout_marginEnd="16dp"
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"
 			android:textAppearance="@style/AppTheme.TextAppearance.Preset3"
@@ -49,11 +52,12 @@
 	<TextView
 			android:id="@+id/callout_description"
 			app:layout_constraintTop_toBottomOf="@id/callout_title"
-			app:layout_constraintRight_toLeftOf="@id/callout_close_button"
-			app:layout_constraintLeft_toRightOf="@id/callout_icon"
-			android:layout_marginLeft="16dp"
+			app:layout_constraintEnd_toStartOf="@id/callout_close_button"
+			app:layout_constraintStart_toEndOf="@id/callout_icon"
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"
+			android:layout_marginStart="16dp"
+			android:layout_marginEnd="16dp"
 			android:maxLines="2"
 			android:textAppearance="@style/AppTheme.TextAppearance.Preset2"
 			android:textColor="?colorTextSecondary"
@@ -66,9 +70,11 @@
 			android:layout_height="wrap_content"
 			android:orientation="horizontal"
 			android:layout_marginTop="16dp"
+			android:layout_marginStart="16dp"
+			android:layout_marginEnd="16dp"
 			app:layout_constraintTop_toBottomOf="@id/callout_description"
-			app:layout_constraintLeft_toRightOf="@id/barrier"
-			app:layout_constraintRight_toRightOf="parent"
+			app:layout_constraintStart_toEndOf="@id/callout_icon"
+			app:layout_constraintEnd_toEndOf="parent"
 			>
 
 		<com.telefonica.mistica.button.Button
@@ -107,8 +113,9 @@
 			android:id="@+id/barrier"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			app:constraint_referenced_ids="callout_title,callout_description,callout_buttons_container"
-			app:barrierDirection="left"
+			app:layout_constraintStart_toStartOf="parent"
+			app:constraint_referenced_ids="callout_icon"
+			app:barrierDirection="end"
 			/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
