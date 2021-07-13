@@ -9,7 +9,6 @@
 			android:layout_height="wrap_content"
 			android:orientation="vertical"
 			android:padding="16dp"
-			android:animateLayoutChanges="true"
 			>
 
 		<com.telefonica.mistica.section.SectionTitleView
