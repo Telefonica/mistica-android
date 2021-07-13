@@ -394,7 +394,7 @@ class ListRowView @JvmOverloads constructor(
         with(assetImageLayout.layoutParams as LayoutParams) {
             if (isAnyTextDifferentThanTitleVisible()) {
                 bottomToBottom = ConstraintSet.UNSET
-                topMargin = context.convertDpToPx(if (assetType == TYPE_SMALL_ICON) 8 else 4)
+                topMargin = context.convertDpToPx(4)
             } else {
                 bottomToBottom = ConstraintSet.PARENT_ID
                 topMargin = context.convertDpToPx(0)

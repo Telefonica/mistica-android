@@ -160,12 +160,31 @@ class ListsCatalogFragment : Fragment() {
                 )
                 17 -> rowView.configureView(
                     withLongTitle = true,
-                    withLongDescription = true,
                     withAsset = true,
                     withAssetType = TYPE_LARGE_ICON,
                     withInverseBackground = withInverseBackground,
                 )
                 18 -> rowView.configureView(
+                    withLongTitle = true,
+                    withAsset = true,
+                    withAssetType = TYPE_SMALL_ICON,
+                    withInverseBackground = withInverseBackground,
+                )
+                19 -> rowView.configureView(
+                    withLongTitle = true,
+                    withLongDescription = true,
+                    withAsset = true,
+                    withAssetType = TYPE_LARGE_ICON,
+                    withInverseBackground = withInverseBackground,
+                )
+                20 -> rowView.configureView(
+                    withLongTitle = true,
+                    withLongDescription = true,
+                    withAsset = true,
+                    withAssetType = TYPE_SMALL_ICON,
+                    withInverseBackground = withInverseBackground,
+                )
+                21 -> rowView.configureView(
                     withLongTitle = true,
                     withLongDescription = true,
                     withAsset = true,
@@ -173,44 +192,44 @@ class ListsCatalogFragment : Fragment() {
                     withAction = true,
                     withInverseBackground = withInverseBackground,
                 )
-                19 -> rowView.configureView(
-                    withAsset = true,
-                    withAssetType = TYPE_LARGE_ICON,
-                    withAction = true,
-                    withHeadline = true,
-                    withInverseBackground = withInverseBackground,
-                )
-                20 -> rowView.configureView(
-                    withAsset = true,
-                    withAssetType = TYPE_LARGE_ICON,
-                    withAction = true,
-                    withSubtitle = true,
-                    withInverseBackground = withInverseBackground,
-                )
-                21 -> rowView.configureView(
-                    withAsset = true,
-                    withAssetType = TYPE_LARGE_ICON,
-                    withAction = true,
-                    withSubtitle = true,
-                    withHeadline = true,
-                    withInverseBackground = withInverseBackground,
-                )
                 22 -> rowView.configureView(
                     withAsset = true,
                     withAssetType = TYPE_LARGE_ICON,
-                    withLongDescription = false,
                     withAction = true,
-                    withSubtitle = true,
                     withHeadline = true,
                     withInverseBackground = withInverseBackground,
                 )
                 23 -> rowView.configureView(
                     withAsset = true,
+                    withAssetType = TYPE_LARGE_ICON,
+                    withAction = true,
+                    withSubtitle = true,
+                    withInverseBackground = withInverseBackground,
+                )
+                24 -> rowView.configureView(
+                    withAsset = true,
+                    withAssetType = TYPE_LARGE_ICON,
+                    withAction = true,
+                    withSubtitle = true,
+                    withHeadline = true,
+                    withInverseBackground = withInverseBackground,
+                )
+                25 -> rowView.configureView(
+                    withAsset = true,
+                    withAssetType = TYPE_LARGE_ICON,
+                    withLongDescription = false,
+                    withAction = true,
+                    withSubtitle = true,
+                    withHeadline = true,
+                    withInverseBackground = withInverseBackground,
+                )
+                26 -> rowView.configureView(
+                    withAsset = true,
                     withAssetType = TYPE_IMAGE,
                     withLongDescription = false,
                     withInverseBackground = withInverseBackground,
                 )
-                24 -> rowView.configureView(
+                27 -> rowView.configureView(
                     withAsset = true,
                     withAssetType = TYPE_IMAGE,
                     withInverseBackground = withInverseBackground,
