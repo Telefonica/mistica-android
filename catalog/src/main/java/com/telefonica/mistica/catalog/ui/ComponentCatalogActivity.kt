@@ -83,6 +83,6 @@ enum class Section {
     STEPPERS,
     TABS,
     EMPTY_STATE_SCREEN,
-    EMPTY_STATE_CARD
+    EMPTY_STATE_CARD,
     CALLOUTS,
 }
