@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
@@ -47,7 +48,7 @@ class CalloutsCatalogFragment : Fragment() {
     private fun updateCalloutView(view: View) {
         with(view.findViewById<CalloutView>(R.id.callout_view)) {
             if (visibility == GONE) {
-                show()
+                visibility = VISIBLE
             }
 
             if (view.findViewById<CheckBoxInput>(R.id.show_icon_input).isChecked()) {

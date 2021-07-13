@@ -108,11 +108,7 @@ class CalloutView @JvmOverloads constructor(
     private var linkButton: Button
     private var closeButton: ImageView
 
-    private var onCalloutDismissListener: OnCalloutDismissListener = object : OnCalloutDismissListener {
-        override fun onDismissed() {
-
-        }
-    }
+    private var onCalloutDismissListener: OnCalloutDismissListener = NO_OP_CALLOUT_LISTENER
 
     init {
         LayoutInflater.from(context).inflate(R.layout.callout_view, this, true)
@@ -175,8 +171,8 @@ class CalloutView @JvmOverloads constructor(
         val alphaAnimation = AlphaAnimation(1f, 0f)
         AnimationSet(true).run {
             addAnimation(alphaAnimation)
-            interpolator = INTERPOLATOR
-            duration = DURATION
+            interpolator = ANIMATION_INTERPOLATOR
+            duration = ANIMATION_DURATION
             startAnimation(this)
             setAnimationListener(object : Animation.AnimationListener {
                 override fun onAnimationStart(animation: Animation?) {
@@ -192,11 +188,6 @@ class CalloutView @JvmOverloads constructor(
                 }
             })
         }
-    }
-
-    fun show() {
-        visibility = VISIBLE
-        invalidate()
     }
 
     fun setOnDismiss(listener: OnCalloutDismissListener) {
@@ -313,7 +304,10 @@ class CalloutView @JvmOverloads constructor(
         const val BUTTONS_CONFIG_SECONDARY_LINK = 4
         const val BUTTONS_CONFIG_LINK = 5
 
-        val INTERPOLATOR = PathInterpolator(0.77f, 0f, 0.175f, 1f)
-        const val DURATION = 400L
+        val NO_OP_CALLOUT_LISTENER = object : OnCalloutDismissListener {
+            override fun onDismissed() {}
+        }
+        val ANIMATION_INTERPOLATOR = PathInterpolator(0.77f, 0f, 0.175f, 1f)
+        const val ANIMATION_DURATION = 400L
     }
 }
