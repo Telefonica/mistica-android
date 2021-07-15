@@ -8,13 +8,13 @@
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:orientation="vertical"
-			android:padding="16dp"
 			>
 
 		<com.telefonica.mistica.section.SectionTitleView
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_gravity="start"
+				android:layout_margin="16dp"
 				app:sectionTitle="Callout playground"
 				/>
 
@@ -101,31 +101,31 @@
 				app:inputType="text"
 				/>
 
-		<View
-				android:layout_width="match_parent"
-				android:layout_height="48dp"
-				android:layout_marginTop="8dp"
-				android:background="?colorDivider"
-				/>
-
-		<com.telefonica.mistica.callout.CalloutView
-				android:id="@+id/callout_view"
+		<LinearLayout
+				android:id="@+id/callout_preview_container"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				/>
-
-		<View
-				android:layout_width="match_parent"
-				android:layout_height="48dp"
+				android:paddingTop="48dp"
+				android:paddingBottom="48dp"
+				android:paddingStart="16dp"
+				android:paddingEnd="16dp"
+				android:layout_marginTop="8dp"
 				android:background="?colorDivider"
-				/>
+				android:orientation="vertical"
+				>
+
+			<com.telefonica.mistica.callout.CalloutView
+					android:id="@+id/callout_view"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					/>
+		</LinearLayout>
 
 		<com.telefonica.mistica.button.Button
 				android:id="@+id/update_button"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:layout_marginTop="16dp"
-				android:layout_marginBottom="16dp"
+				android:layout_margin="16dp"
 				android:text="Update"
 				/>
 

@@ -15,6 +15,7 @@ import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.input.CheckBoxInput
 import com.telefonica.mistica.input.DropDownInput
 import com.telefonica.mistica.input.TextInput
+import com.telefonica.mistica.util.getThemeColor
 
 class CalloutsCatalogFragment : Fragment() {
 
@@ -57,7 +58,15 @@ class CalloutsCatalogFragment : Fragment() {
                 setIcon(null)
             }
             setDismissable(view.findViewById<CheckBoxInput>(R.id.dismiss_input).isChecked())
-            setInverse(view.findViewById<CheckBoxInput>(R.id.inverse_input).isChecked())
+            val inverse = view.findViewById<CheckBoxInput>(R.id.inverse_input).isChecked()
+            setInverse(inverse)
+            with(view.findViewById<View>(R.id.callout_preview_container)) {
+                if (inverse) {
+                    setBackgroundColor(context.getThemeColor(R.attr.colorBackgroundBrand))
+                } else {
+                    setBackgroundColor(context.getThemeColor(R.attr.colorBackgroundContainer))
+                }
+            }
             setTitle(view.findViewById<TextInput>(R.id.title_input).text.toString())
             setDescription(view.findViewById<TextInput>(R.id.description_input).text.toString())
             setButtonsConfig(
