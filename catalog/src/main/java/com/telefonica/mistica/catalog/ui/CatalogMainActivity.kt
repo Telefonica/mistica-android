@@ -100,6 +100,8 @@ class CatalogMainActivity : AppCompatActivity() {
             SectionItem("Tabs", R.drawable.ic_tab, Section.TABS),
             SectionItem("Empty State Screen", R.drawable.ic_empty_states, Section.EMPTY_STATE_SCREEN),
             SectionItem("Empty State Card", R.drawable.ic_empty_states, Section.EMPTY_STATE_CARD),
+            SectionItem("Tabs", R.drawable.ic_tab, Section.TABS),
+            SectionItem("Callouts", R.drawable.ic_callout, Section.CALLOUTS),
         )
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder =
