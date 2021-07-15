@@ -180,6 +180,7 @@ class CalloutView @JvmOverloads constructor(
                 }
 
                 override fun onAnimationEnd(animation: Animation?) {
+                    onCalloutDismissListener.onDismissed()
                     visibility = GONE
                 }
 
