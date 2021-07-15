@@ -15,7 +15,7 @@ configuration and databinding for all properties**.
 	<attr name="calloutDescription" format="string"/>
 	<attr name="calloutIcon" format="reference"/>
 	<attr name="calloutButtonsConfig" format="enum">
-		<enum name="empty" value="-1"/>
+		<enum name="none" value="-1"/>
 		<enum name="primary" value="0" />
 		<enum name="primary_link" value="1" />
 		<enum name="primary_secondary" value="2" />
