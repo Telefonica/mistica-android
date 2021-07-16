@@ -10,6 +10,7 @@ _Provide a description of the implementation. A list of steps would be ideal._
 ### ☑️ Checks
 - [ ] I updated the documentation (readmes, wikis, etc). If no need to update documentation explain why.
 - [ ] Tested with dark mode.
+- [ ] Tested with API 21.
 
 ### :test_tube: How can I test this?
 _If it cannot be tested explain why._
