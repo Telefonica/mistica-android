@@ -41,10 +41,13 @@ class ListsCatalogFragment : Fragment() {
         boxedInverseList.adapter = ListAdapter(backgroundType = ListRowView.BackgroundType.TYPE_BOXED_INVERSE)
     }
 
-    @Suppress("MagicNumber")
     class ListAdapter(
         @ListRowView.BackgroundType private val backgroundType: Int,
     ) : RecyclerView.Adapter<ListViewHolder>() {
+
+        private val rowConfiguration = rowConfiguration(
+            withInverseBackground = backgroundType == ListRowView.BackgroundType.TYPE_BOXED_INVERSE
+        )
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder =
             ListViewHolder(
@@ -55,59 +58,80 @@ class ListsCatalogFragment : Fragment() {
                 ) as ListRowView
             )
 
-        override fun getItemCount(): Int = 25
+        override fun getItemCount(): Int = rowConfiguration.size
 
         override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
             val rowView: ListRowView = holder.rowView
             rowView.setBackgroundType(backgroundType)
-            val withInverseBackground = backgroundType == ListRowView.BackgroundType.TYPE_BOXED_INVERSE
-            when (position) {
-                0 -> rowView.configureView(
+            rowConfiguration[position].invoke(rowView)
+        }
+
+        private fun rowConfiguration(withInverseBackground: Boolean): List<(ListRowView) -> Unit> = listOf(
+            {
+                it.configureView(
                     withInverseBackground = withInverseBackground,
                 )
-                1 -> rowView.configureView(
+            },
+            {
+                it.configureView(
                     withAction = true,
                     withInverseBackground = withInverseBackground,
                 )
-                2 -> rowView.configureView(
+            },
+            {
+                it.configureView(
                     withAction = true,
                     withBadge = true,
                     withBadgeDescription = "You have unread messages",
                     withInverseBackground = withInverseBackground,
                 )
-                3 -> rowView.configureView(
+            },
+            {
+                it.configureView(
                     withAction = true,
                     withBadgeNumeric = 1,
                     withInverseBackground = withInverseBackground,
                 )
-                4 -> rowView.configureView(
+            },
+            {
+                it.configureView(
                     withLongDescription = false,
                     withInverseBackground = withInverseBackground,
                 )
-                5 -> rowView.configureView(
+            },
+            {
+                it.configureView(
                     withLongDescription = false,
                     withAction = true,
                     withInverseBackground = withInverseBackground,
                 )
-                6 -> rowView.configureView(
+            },
+            {
+                it.configureView(
                     withAsset = true,
                     withAssetType = TYPE_LARGE_ICON,
                     withInverseBackground = withInverseBackground,
                 )
-                7 -> rowView.configureView(
+            },
+            {
+                it.configureView(
                     withAsset = true,
                     withAssetType = TYPE_LARGE_ICON,
                     withAction = true,
                     withInverseBackground = withInverseBackground,
                 )
-                8 -> rowView.configureView(
+            },
+            {
+                it.configureView(
                     withAsset = true,
                     withAssetType = TYPE_LARGE_ICON,
                     withAction = true,
                     withBadge = true,
                     withInverseBackground = withInverseBackground,
                 )
-                9 -> rowView.configureView(
+            },
+            {
+                it.configureView(
                     withAsset = true,
                     withAssetType = TYPE_LARGE_ICON,
                     withAction = true,
@@ -115,76 +139,100 @@ class ListsCatalogFragment : Fragment() {
                     withBadgeDescription = "5 new messages",
                     withInverseBackground = withInverseBackground,
                 )
-                10 -> rowView.configureView(
+            },
+            {
+                it.configureView(
                     withLongDescription = false,
                     withAsset = true,
                     withAssetType = TYPE_LARGE_ICON,
                     withInverseBackground = withInverseBackground,
                 )
-                11 -> rowView.configureView(
+            },
+            {
+                it.configureView(
                     withLongDescription = false,
                     withAsset = true,
                     withAssetType = TYPE_LARGE_ICON,
                     withAction = true,
                     withInverseBackground = withInverseBackground,
                 )
-                12 -> rowView.configureView(
+            },
+            {
+                it.configureView(
                     withAsset = true,
                     withAssetType = TYPE_SMALL_ICON,
                     withInverseBackground = withInverseBackground,
                 )
-                13 -> rowView.configureView(
+            },
+            {
+                it.configureView(
                     withAsset = true,
                     withAssetType = TYPE_SMALL_ICON,
                     withAction = true,
                     withInverseBackground = withInverseBackground,
                 )
-                14 -> rowView.configureView(
+            },
+            {
+                it.configureView(
                     withAsset = true,
                     withAssetType = TYPE_SMALL_ICON,
                     withAction = true,
                     withBadge = true,
                     withInverseBackground = withInverseBackground,
                 )
-                15 -> rowView.configureView(
+            },
+            {
+                it.configureView(
                     withAsset = true,
                     withAssetType = TYPE_SMALL_ICON,
                     withAction = true,
                     withBadgeNumeric = 10,
                     withInverseBackground = withInverseBackground,
                 )
-                16 -> rowView.configureView(
+            },
+            {
+                it.configureView(
                     withLongTitle = true,
                     withLongDescription = true,
                     withInverseBackground = withInverseBackground,
                 )
-                17 -> rowView.configureView(
+            },
+            {
+                it.configureView(
                     withLongTitle = true,
                     withAsset = true,
                     withAssetType = TYPE_LARGE_ICON,
                     withInverseBackground = withInverseBackground,
                 )
-                18 -> rowView.configureView(
+            },
+            {
+                it.configureView(
                     withLongTitle = true,
                     withAsset = true,
                     withAssetType = TYPE_SMALL_ICON,
                     withInverseBackground = withInverseBackground,
                 )
-                19 -> rowView.configureView(
+            },
+            {
+                it.configureView(
                     withLongTitle = true,
                     withLongDescription = true,
                     withAsset = true,
                     withAssetType = TYPE_LARGE_ICON,
                     withInverseBackground = withInverseBackground,
                 )
-                20 -> rowView.configureView(
+            },
+            {
+                it.configureView(
                     withLongTitle = true,
                     withLongDescription = true,
                     withAsset = true,
                     withAssetType = TYPE_SMALL_ICON,
                     withInverseBackground = withInverseBackground,
                 )
-                21 -> rowView.configureView(
+            },
+            {
+                it.configureView(
                     withLongTitle = true,
                     withLongDescription = true,
                     withAsset = true,
@@ -192,21 +240,27 @@ class ListsCatalogFragment : Fragment() {
                     withAction = true,
                     withInverseBackground = withInverseBackground,
                 )
-                22 -> rowView.configureView(
+            },
+            {
+                it.configureView(
                     withAsset = true,
                     withAssetType = TYPE_LARGE_ICON,
                     withAction = true,
                     withHeadline = true,
                     withInverseBackground = withInverseBackground,
                 )
-                23 -> rowView.configureView(
+            },
+            {
+                it.configureView(
                     withAsset = true,
                     withAssetType = TYPE_LARGE_ICON,
                     withAction = true,
                     withSubtitle = true,
                     withInverseBackground = withInverseBackground,
                 )
-                24 -> rowView.configureView(
+            },
+            {
+                it.configureView(
                     withAsset = true,
                     withAssetType = TYPE_LARGE_ICON,
                     withAction = true,
@@ -214,7 +268,9 @@ class ListsCatalogFragment : Fragment() {
                     withHeadline = true,
                     withInverseBackground = withInverseBackground,
                 )
-                25 -> rowView.configureView(
+            },
+            {
+                it.configureView(
                     withAsset = true,
                     withAssetType = TYPE_LARGE_ICON,
                     withLongDescription = false,
@@ -223,19 +279,23 @@ class ListsCatalogFragment : Fragment() {
                     withHeadline = true,
                     withInverseBackground = withInverseBackground,
                 )
-                26 -> rowView.configureView(
+            },
+            {
+                it.configureView(
                     withAsset = true,
                     withAssetType = TYPE_IMAGE,
                     withLongDescription = false,
                     withInverseBackground = withInverseBackground,
                 )
-                27 -> rowView.configureView(
+            },
+            {
+                it.configureView(
                     withAsset = true,
                     withAssetType = TYPE_IMAGE,
                     withInverseBackground = withInverseBackground,
                 )
-            }
-        }
+            },
+        )
 
         @SuppressLint("SetTextI18n")
         private fun ListRowView.configureView(

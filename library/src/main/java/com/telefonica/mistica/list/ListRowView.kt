@@ -1,6 +1,7 @@
 package com.telefonica.mistica.list
 
 import android.content.Context
+import android.content.res.ColorStateList
 import android.content.res.TypedArray
 import android.graphics.drawable.Drawable
 import android.util.AttributeSet
@@ -11,6 +12,7 @@ import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.annotation.AttrRes
 import androidx.annotation.DrawableRes
 import androidx.annotation.IntDef
 import androidx.annotation.LayoutRes
@@ -23,6 +25,7 @@ import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
 import com.telefonica.mistica.badge.Badge
 import com.telefonica.mistica.util.convertDpToPx
+import com.telefonica.mistica.util.getThemeColor
 
 @BindingMethods(
     BindingMethod(
@@ -265,15 +268,49 @@ class ListRowView @JvmOverloads constructor(
     }
 
     private fun configureTextViewsColor(@BackgroundType type: Int) {
-        val colorResId = if (type == BackgroundType.TYPE_BOXED_INVERSE) {
-            R.color.text_primary_inverse_selector
+        val colorPrimary = if (type == BackgroundType.TYPE_BOXED_INVERSE) {
+            buildTextColorSelector(
+                R.attr.colorTextPrimaryInverse,
+                R.attr.colorTextDisabled
+            )
         } else {
-            R.color.text_primary_selector
+            buildTextColorSelector(
+                R.attr.colorTextPrimary,
+                R.attr.colorTextDisabled
+            )
         }
-        val color = ContextCompat.getColor(context, colorResId)
-        titleTextView.setTextColor(color)
-        subtitleTextView.setTextColor(color)
-        descriptionTextView.setTextColor(color)
+
+        val colorSecondary = if (type == BackgroundType.TYPE_BOXED_INVERSE) {
+            buildTextColorSelector(
+                R.attr.colorTextSecondaryInverse,
+                R.attr.colorTextDisabled
+            )
+        } else {
+            buildTextColorSelector(
+                R.attr.colorTextSecondary,
+                R.attr.colorTextDisabled
+            )
+        }
+
+        titleTextView.setTextColor(colorPrimary)
+        subtitleTextView.setTextColor(colorSecondary)
+        descriptionTextView.setTextColor(colorSecondary)
+    }
+
+    private fun buildTextColorSelector(@AttrRes enabledColorAttr: Int, @AttrRes disabledColorAttr: Int): ColorStateList {
+        val enabledColor: Int = context.getThemeColor(enabledColorAttr)
+        val disabledColor: Int = context.getThemeColor(disabledColorAttr)
+
+        return ColorStateList(
+            arrayOf(
+                intArrayOf(android.R.attr.state_enabled),
+                intArrayOf()
+            ),
+            intArrayOf(
+                enabledColor,
+                disabledColor
+            )
+        )
     }
 
     fun setHeadlineVisible(visible: Boolean) {
