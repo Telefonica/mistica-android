@@ -3,6 +3,7 @@ package com.telefonica.mistica.callout
 import android.content.Context
 import android.graphics.drawable.Drawable
 import android.util.AttributeSet
+import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.animation.AlphaAnimation
@@ -11,6 +12,7 @@ import android.view.animation.AnimationSet
 import android.view.animation.PathInterpolator
 import android.widget.FrameLayout
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.annotation.DrawableRes
 import androidx.annotation.IntDef
@@ -108,7 +110,7 @@ class CalloutView @JvmOverloads constructor(
     private var linkButton: Button
     private var closeButton: ImageView
 
-    private var onCalloutDismissListener: OnCalloutDismissListener = NO_OP_CALLOUT_LISTENER
+    private var onDismissed: () -> Unit = NO_OP_CALLOUT_LISTENER
 
     init {
         LayoutInflater.from(context).inflate(R.layout.callout_view, this, true)
@@ -180,7 +182,7 @@ class CalloutView @JvmOverloads constructor(
                 }
 
                 override fun onAnimationEnd(animation: Animation?) {
-                    onCalloutDismissListener.onDismissed()
+                    onDismissed()
                     visibility = GONE
                 }
 
@@ -191,8 +193,8 @@ class CalloutView @JvmOverloads constructor(
         }
     }
 
-    fun setOnDismiss(listener: OnCalloutDismissListener) {
-        onCalloutDismissListener = listener
+    fun setOnDismiss(listener: () -> Unit) {
+        onDismissed = listener
     }
 
     fun setIcon(@DrawableRes iconRes: Int?) {
@@ -268,6 +270,7 @@ class CalloutView @JvmOverloads constructor(
                 primaryButton.visibility = VISIBLE
                 secondaryButton.visibility = GONE
                 linkButton.visibility = VISIBLE
+                linkButton.layoutParams = marginStart(0f)
             }
             BUTTONS_CONFIG_PRIMARY_SECONDARY -> {
                 primaryButton.visibility = VISIBLE
@@ -283,17 +286,24 @@ class CalloutView @JvmOverloads constructor(
                 primaryButton.visibility = GONE
                 secondaryButton.visibility = VISIBLE
                 linkButton.visibility = VISIBLE
+                linkButton.layoutParams = marginStart(0f)
             }
             BUTTONS_CONFIG_LINK -> {
                 primaryButton.visibility = GONE
                 secondaryButton.visibility = GONE
                 linkButton.visibility = VISIBLE
+                linkButton.layoutParams = marginStart(-8f)
             }
         }
     }
 
-    interface OnCalloutDismissListener {
-        fun onDismissed()
+    private fun marginStart(value: Float): LinearLayout.LayoutParams {
+        val layoutParams = LinearLayout.LayoutParams(
+            LinearLayout.LayoutParams.WRAP_CONTENT,
+            LinearLayout.LayoutParams.WRAP_CONTENT
+        )
+        layoutParams.marginStart = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, value, resources.displayMetrics).toInt()
+        return layoutParams
     }
 
     companion object {
@@ -305,9 +315,7 @@ class CalloutView @JvmOverloads constructor(
         const val BUTTONS_CONFIG_SECONDARY_LINK = 4
         const val BUTTONS_CONFIG_LINK = 5
 
-        val NO_OP_CALLOUT_LISTENER = object : OnCalloutDismissListener {
-            override fun onDismissed() {}
-        }
+        val NO_OP_CALLOUT_LISTENER = {}
         val ANIMATION_INTERPOLATOR = PathInterpolator(0.77f, 0f, 0.175f, 1f)
         const val ANIMATION_DURATION = 400L
     }

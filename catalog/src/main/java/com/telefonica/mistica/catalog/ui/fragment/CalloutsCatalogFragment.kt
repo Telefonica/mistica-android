@@ -78,6 +78,7 @@ class CalloutsCatalogFragment : Fragment() {
             setPrimaryButtonOnClick { showToast(context, "Primary button clicked!") }
             setSecondaryButtonOnClick { showToast(context, "Secondary button clicked!") }
             setLinkButtonOnClick { showToast(context, "Link button clicked!") }
+            setOnDismiss { showToast(context, "Callout dismissed! Update to show again") }
         }
     }
 
