@@ -16,8 +16,11 @@ Implemented as a custom view, `com.telefonica.mistica.ListRowView` can be used i
 	</attr>
 	<attr name="listRowHeadlineVisible" format="boolean" />
 	<attr name="listRowTitle" format="string" />
+	<attr name="listRowTitleMaxLines" format="integer" />
 	<attr name="listRowSubtitle" format="string" />
+	<attr name="listRowSubtitleMaxLines" format="integer" />
 	<attr name="listRowDescription" format="string" />
+	<attr name="listRowDescriptionMaxLines" format="integer" />
 	<attr name="listRowAssetDrawable" format="reference" />
 	<attr name="listRowAssetType" format="enum">
 		<enum name="image" value="0" />
