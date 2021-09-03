@@ -193,7 +193,16 @@ class ListsCatalogFragment : Fragment() {
             {
                 it.configureView(
                     withLongTitle = true,
+                    withTitleMaxLines = 1,
                     withLongDescription = true,
+                    withInverseBackground = withInverseBackground,
+                )
+            },
+            {
+                it.configureView(
+                    withLongTitle = true,
+                    withLongDescription = true,
+                    withDescriptionMaxLines = 2,
                     withInverseBackground = withInverseBackground,
                 )
             },
@@ -300,7 +309,9 @@ class ListsCatalogFragment : Fragment() {
         @SuppressLint("SetTextI18n")
         private fun ListRowView.configureView(
             withLongTitle: Boolean = false,
+            withTitleMaxLines: Int? = null,
             withLongDescription: Boolean? = null,
+            withDescriptionMaxLines: Int? = null,
             withAsset: Boolean = false,
             @AssetType withAssetType: Int = TYPE_SMALL_ICON,
             withAction: Boolean = false,
@@ -308,6 +319,7 @@ class ListsCatalogFragment : Fragment() {
             withBadgeNumeric: Int = 0,
             withHeadline: Boolean = false,
             withSubtitle: Boolean = false,
+            withSubtitleMaxLines: Int? = null,
             withBadgeDescription: String? = null,
             withInverseBackground: Boolean,
         ) {
@@ -324,12 +336,17 @@ class ListsCatalogFragment : Fragment() {
                 setHeadlineLayout(ListRowView.HEADLINE_NONE)
             }
 
-            setTitle(if (withLongTitle) "Title long enough to need 2 lines to show it, just for testing purposes." else "Title")
+            withTitleMaxLines?.let { setTitleMaxLines(it) }
+            setTitle(if (withLongTitle) "Title long enough to need more than 2 lines to show it, just for testing purposes." +
+                    "More sample text just for testing purposes." else "Title")
+            withSubtitleMaxLines?.let { setSubtitleMaxLines(it) }
             setSubtitle(if (withSubtitle) "Any Subtitle" else null)
+            withDescriptionMaxLines?.let { setDescriptionMaxLines(it) }
             setDescription(
                 withLongDescription?.let { long ->
                     if (long) {
-                        "Description long enough to need 2 lines to show it, just for testing purposes."
+                        "Description long enough to need more than 2 lines to show it, just for testing purposes." +
+                                "Description long enough to need more than 2 lines to show it, just for testing purposes."
                     } else {
                         "Description"
                     }

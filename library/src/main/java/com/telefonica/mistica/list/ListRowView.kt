@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.res.ColorStateList
 import android.content.res.TypedArray
 import android.graphics.drawable.Drawable
+import android.text.TextUtils
 import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.LayoutInflater
@@ -45,13 +46,28 @@ import com.telefonica.mistica.util.getThemeColor
     ),
     BindingMethod(
         type = ListRowView::class,
+        attribute = "listRowTitleMaxLines",
+        method = "setTitleMaxLines"
+    ),
+    BindingMethod(
+        type = ListRowView::class,
         attribute = "listRowSubtitle",
         method = "setSubtitle"
     ),
     BindingMethod(
         type = ListRowView::class,
+        attribute = "listRowSubtitleMaxLines",
+        method = "setSubtitleMaxLines"
+    ),
+    BindingMethod(
+        type = ListRowView::class,
         attribute = "listRowDescription",
         method = "setDescription"
+    ),
+    BindingMethod(
+        type = ListRowView::class,
+        attribute = "listRowDescriptionMaxLines",
+        method = "setDescriptionMaxLines"
     ),
     BindingMethod(
         type = ListRowView::class,
@@ -147,6 +163,7 @@ class ListRowView @JvmOverloads constructor(
                 defStyleAttr,
                 0
             )
+            setTitleMaxLines(styledAttrs.getInteger(R.styleable.ListRowView_listRowTitleMaxLines, -1))
             styledAttrs.getText(R.styleable.ListRowView_listRowTitle)?.let { setTitle(it) }
             styledAttrs.getResourceId(
                 R.styleable.ListRowView_listRowHeadlineLayout,
@@ -160,7 +177,9 @@ class ListRowView @JvmOverloads constructor(
                     currentHeadlineLayoutRes != HEADLINE_NONE
                 )
             )
+            setSubtitleMaxLines(styledAttrs.getInteger(R.styleable.ListRowView_listRowSubtitleMaxLines, -1))
             setSubtitle(styledAttrs.getText(R.styleable.ListRowView_listRowSubtitle))
+            setDescriptionMaxLines(styledAttrs.getInteger(R.styleable.ListRowView_listRowDescriptionMaxLines, -1))
             setDescription(styledAttrs.getText(R.styleable.ListRowView_listRowDescription))
             val isBoxed = styledAttrs.getBoolean(R.styleable.ListRowView_listRowIsBoxed, false)
             val backgroundTypeDefaultValue = if (isBoxed) {
@@ -239,6 +258,13 @@ class ListRowView @JvmOverloads constructor(
     fun setTitle(text: CharSequence?) {
         titleTextView.text = text
         recalculateTitleBottomConstraints()
+    }
+
+    fun setTitleMaxLines(maxLines: Int) {
+        if (maxLines > 0) {
+            titleTextView.maxLines = maxLines
+            titleTextView.ellipsize = TextUtils.TruncateAt.END
+        }
     }
 
     @Deprecated(
@@ -341,10 +367,24 @@ class ListRowView @JvmOverloads constructor(
         recalculateAssetPosition()
     }
 
+    fun setSubtitleMaxLines(maxLines: Int) {
+        if (maxLines > 0) {
+            subtitleTextView.maxLines = maxLines
+            subtitleTextView.ellipsize = TextUtils.TruncateAt.END
+        }
+    }
+
     fun setDescription(text: CharSequence?) {
         descriptionTextView.setTextAndVisibility(text)
         recalculateTitleBottomConstraints()
         recalculateAssetPosition()
+    }
+
+    fun setDescriptionMaxLines(maxLines: Int) {
+        if (maxLines > 0) {
+            descriptionTextView.maxLines = maxLines
+            descriptionTextView.ellipsize = TextUtils.TruncateAt.END
+        }
     }
 
     fun setActionLayout(@LayoutRes layoutRes: Int = ACTION_NONE) {
