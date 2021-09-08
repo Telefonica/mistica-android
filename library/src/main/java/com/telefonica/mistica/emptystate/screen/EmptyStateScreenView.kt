@@ -245,8 +245,7 @@ class EmptyStateScreenView @JvmOverloads constructor(
         }
         image.scaleType = when (imageSize) {
             IMAGE_SIZE_ICON -> ImageView.ScaleType.CENTER_INSIDE
-            IMAGE_SIZE_SMALL -> ImageView.ScaleType.FIT_START
-            else -> ImageView.ScaleType.CENTER_INSIDE
+            else -> ImageView.ScaleType.FIT_START
         }
         image.layoutParams = image.layoutParams.apply {
             width = imageWidth
