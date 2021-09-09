@@ -4,5 +4,5 @@
 		android:id="@+id/empty_state_screen"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
-		app:emptyStateScreenImage="@drawable/empty_state_card_image"
+		app:emptyStateScreenImage="@drawable/empty_state_screen_image"
 		/>
