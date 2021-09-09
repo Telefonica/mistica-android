@@ -91,7 +91,6 @@ class EmptyStateScreenView @JvmOverloads constructor(
         BUTTONS_CONFIG_NONE,
         BUTTONS_CONFIG_PRIMARY,
         BUTTONS_CONFIG_PRIMARY_LINK,
-        BUTTONS_CONFIG_PRIMARY_SECONDARY,
         BUTTONS_CONFIG_SECONDARY,
         BUTTONS_CONFIG_SECONDARY_LINK,
     )
@@ -108,6 +107,7 @@ class EmptyStateScreenView @JvmOverloads constructor(
     private var image: ImageView
     private var title: TextView
     private var subtitle: TextView
+    private var buttonsContainer: LinearLayout
     private var primaryButton: Button
     private var secondaryButton: Button
     private var linkButton: Button
@@ -118,6 +118,7 @@ class EmptyStateScreenView @JvmOverloads constructor(
         image = findViewById(R.id.empty_state_screen_image)
         title = findViewById(R.id.empty_state_screen_title)
         subtitle = findViewById(R.id.empty_state_screen_subtitle)
+        buttonsContainer = findViewById(R.id.buttons_container)
         primaryButton = findViewById(R.id.empty_state_screen_primary_button)
         secondaryButton = findViewById(R.id.empty_state_screen_secondary_button)
         linkButton = findViewById(R.id.empty_state_screen_link_button)
@@ -178,15 +179,20 @@ class EmptyStateScreenView @JvmOverloads constructor(
     }
 
     fun setButtonsConfig(@ButtonsConfig buttonsConfig: Int) {
+        if (buttonsConfig == BUTTONS_CONFIG_NONE) {
+            buttonsContainer.visibility = View.GONE
+            return
+        }
+
+        buttonsContainer.visibility = View.VISIBLE
+
         primaryButton.visibility = when (buttonsConfig) {
             BUTTONS_CONFIG_PRIMARY,
             BUTTONS_CONFIG_PRIMARY_LINK,
-            BUTTONS_CONFIG_PRIMARY_SECONDARY,
             -> View.VISIBLE
             else -> View.GONE
         }
         secondaryButton.visibility = when (buttonsConfig) {
-            BUTTONS_CONFIG_PRIMARY_SECONDARY,
             BUTTONS_CONFIG_SECONDARY,
             BUTTONS_CONFIG_SECONDARY_LINK,
             -> View.VISIBLE
@@ -197,14 +203,6 @@ class EmptyStateScreenView @JvmOverloads constructor(
             BUTTONS_CONFIG_SECONDARY_LINK,
             -> View.VISIBLE
             else -> View.GONE
-        }
-
-        secondaryButton.layoutParams = (secondaryButton.layoutParams as LinearLayout.LayoutParams).apply {
-            topMargin = when (buttonsConfig) {
-                BUTTONS_CONFIG_SECONDARY,
-                BUTTONS_CONFIG_SECONDARY_LINK -> context.convertDpToPx(24)
-                else -> context.convertDpToPx(16)
-            }
         }
     }
 
@@ -257,7 +255,6 @@ class EmptyStateScreenView @JvmOverloads constructor(
         const val BUTTONS_CONFIG_NONE = 0
         const val BUTTONS_CONFIG_PRIMARY = 1
         const val BUTTONS_CONFIG_PRIMARY_LINK = 2
-        const val BUTTONS_CONFIG_PRIMARY_SECONDARY = 3
         const val BUTTONS_CONFIG_SECONDARY = 4
         const val BUTTONS_CONFIG_SECONDARY_LINK = 5
 

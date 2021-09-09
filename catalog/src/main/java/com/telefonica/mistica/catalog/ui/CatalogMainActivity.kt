@@ -98,7 +98,7 @@ class CatalogMainActivity : AppCompatActivity() {
             SectionItem("Others", R.drawable.ic_others, Section.OTHERS),
             SectionItem("Steppers", R.drawable.ic_stepper, Section.STEPPERS),
             SectionItem("Tabs", R.drawable.ic_tab, Section.TABS),
-            SectionItem("Empty State Screen", R.drawable.ic_empty_states, Section.EMPTY_STATE_SCREEN),
+            SectionItem("Empty State", R.drawable.ic_empty_states, Section.EMPTY_STATE),
             SectionItem("Empty State Card", R.drawable.ic_empty_states, Section.EMPTY_STATE_CARD),
             SectionItem("Tabs", R.drawable.ic_tab, Section.TABS),
             SectionItem("Callouts", R.drawable.ic_callout, Section.CALLOUTS),
