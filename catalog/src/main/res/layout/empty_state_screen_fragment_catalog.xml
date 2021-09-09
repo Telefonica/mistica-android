@@ -17,7 +17,7 @@
 				android:layout_height="wrap_content"
 				android:layout_gravity="start"
 				android:layout_margin="8dp"
-				app:sectionTitle="Empty State Screen Tester"
+				app:sectionTitle="Empty States Tester"
 				/>
 
 		<com.telefonica.mistica.input.DropDownInput

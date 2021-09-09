@@ -1,11 +1,11 @@
-# Empty State Screens
+# Empty States
 
 <p align="left">
     <img height=400 src="../../../../../../../../../doc/images/empty_states/screens/empty_state_screen_1.png" />
     <img height=400 src="../../../../../../../../../doc/images/empty_states/screens/empty_state_screen_2.png" />
 </p>
 
-Empty State Screens require a minimum content of **an image and a
+Empty States require a minimum content of **an image and a
 title**
 
 Implemented as a custom view,

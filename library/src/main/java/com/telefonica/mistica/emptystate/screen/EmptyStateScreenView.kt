@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.ScrollView
 import android.widget.TextView
 import androidx.annotation.DrawableRes
 import androidx.annotation.IntDef
@@ -83,14 +84,13 @@ class EmptyStateScreenView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0,
-) : LinearLayout(context, attrs, defStyleAttr) {
+) : ScrollView(context, attrs, defStyleAttr) {
 
     @Retention(AnnotationRetention.SOURCE)
     @IntDef(
         BUTTONS_CONFIG_NONE,
         BUTTONS_CONFIG_PRIMARY,
         BUTTONS_CONFIG_PRIMARY_LINK,
-        BUTTONS_CONFIG_PRIMARY_SECONDARY,
         BUTTONS_CONFIG_SECONDARY,
         BUTTONS_CONFIG_SECONDARY_LINK,
     )
@@ -114,8 +114,6 @@ class EmptyStateScreenView @JvmOverloads constructor(
 
     init {
         LayoutInflater.from(context).inflate(R.layout.empty_state_screen_view, this, true)
-
-        orientation = VERTICAL
 
         image = findViewById(R.id.empty_state_screen_image)
         title = findViewById(R.id.empty_state_screen_title)
@@ -191,12 +189,10 @@ class EmptyStateScreenView @JvmOverloads constructor(
         primaryButton.visibility = when (buttonsConfig) {
             BUTTONS_CONFIG_PRIMARY,
             BUTTONS_CONFIG_PRIMARY_LINK,
-            BUTTONS_CONFIG_PRIMARY_SECONDARY,
             -> View.VISIBLE
             else -> View.GONE
         }
         secondaryButton.visibility = when (buttonsConfig) {
-            BUTTONS_CONFIG_PRIMARY_SECONDARY,
             BUTTONS_CONFIG_SECONDARY,
             BUTTONS_CONFIG_SECONDARY_LINK,
             -> View.VISIBLE
@@ -247,8 +243,7 @@ class EmptyStateScreenView @JvmOverloads constructor(
         }
         image.scaleType = when (imageSize) {
             IMAGE_SIZE_ICON -> ImageView.ScaleType.CENTER_INSIDE
-            IMAGE_SIZE_SMALL -> ImageView.ScaleType.FIT_START
-            else -> ImageView.ScaleType.CENTER_INSIDE
+            else -> ImageView.ScaleType.FIT_START
         }
         image.layoutParams = image.layoutParams.apply {
             width = imageWidth
@@ -260,7 +255,6 @@ class EmptyStateScreenView @JvmOverloads constructor(
         const val BUTTONS_CONFIG_NONE = 0
         const val BUTTONS_CONFIG_PRIMARY = 1
         const val BUTTONS_CONFIG_PRIMARY_LINK = 2
-        const val BUTTONS_CONFIG_PRIMARY_SECONDARY = 3
         const val BUTTONS_CONFIG_SECONDARY = 4
         const val BUTTONS_CONFIG_SECONDARY_LINK = 5
 
