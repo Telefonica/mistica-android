@@ -5,7 +5,7 @@
 
     <style name="MisticaTheme_Base" parent="Theme.MaterialComponents.DayNight.NoActionBar">
 
-        <item name="colorPrimary">?colorNavigationBarBackground</item>
+        <item name="colorPrimary">?colorBrand</item>
         <item name="colorPrimaryDark">?colorBrandDark</item>
         <item name="android:windowBackground">?colorBackground</item>
         <item name="android:textColorPrimary">@color/text_primary_selector</item>
