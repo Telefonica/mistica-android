@@ -3,6 +3,7 @@ package com.telefonica.mistica.emptystate.screen
 import android.content.Context
 import android.graphics.drawable.Drawable
 import android.util.AttributeSet
+import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,6 +14,8 @@ import android.widget.ScrollView
 import android.widget.TextView
 import androidx.annotation.DrawableRes
 import androidx.annotation.IntDef
+import androidx.appcompat.content.res.AppCompatResources
+import androidx.core.graphics.drawable.DrawableCompat
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
@@ -134,7 +137,11 @@ class EmptyStateScreenView @JvmOverloads constructor(
             val styledAttrs =
                 theme.obtainStyledAttributes(attrs, R.styleable.EmptyStateScreenView, defStyleAttr, 0)
 
-            styledAttrs.getDrawable(R.styleable.EmptyStateScreenView_emptyStateScreenImage)?.let { setImageDrawable(it) }
+            styledAttrs.getResourceId(R.styleable.EmptyStateScreenView_emptyStateScreenImage, TypedValue.TYPE_NULL)
+                .takeIf { it != TypedValue.TYPE_NULL }
+                ?.let { AppCompatResources.getDrawable(context, it) }
+                ?.let { setImageDrawable(it) }
+
             styledAttrs.getString(R.styleable.EmptyStateScreenView_emptyStateScreenImageContentDescription)?.let { setImageContentDescription(it) }
             imageSize = styledAttrs.getInteger(R.styleable.EmptyStateScreenView_emptyStateScreenImageSize, imageSize)
 

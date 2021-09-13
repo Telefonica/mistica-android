@@ -3,6 +3,7 @@ package com.telefonica.mistica.emptystate.card
 import android.content.Context
 import android.graphics.drawable.Drawable
 import android.util.AttributeSet
+import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +13,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.annotation.DrawableRes
 import androidx.annotation.IntDef
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.content.ContextCompat
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
@@ -145,7 +147,11 @@ class EmptyStateCardView @JvmOverloads constructor(
             val styledAttrs =
                 theme.obtainStyledAttributes(attrs, R.styleable.EmptyStateCardView, defStyleAttr, 0)
 
-            styledAttrs.getDrawable(R.styleable.EmptyStateCardView_emptyStateCardImage)?.let { setImageDrawable(it) }
+            styledAttrs.getResourceId(R.styleable.EmptyStateCardView_emptyStateCardImage, TypedValue.TYPE_NULL)
+                .takeIf { it != TypedValue.TYPE_NULL }
+                ?.let { AppCompatResources.getDrawable(context, it) }
+                ?.let { setImageDrawable(it) }
+
             styledAttrs.getString(R.styleable.EmptyStateCardView_emptyStateCardImageContentDescription)?.let { setImageContentDescription(it) }
             imageSize = styledAttrs.getInteger(R.styleable.EmptyStateCardView_emptyStateCardImageSize, imageSize)
 
