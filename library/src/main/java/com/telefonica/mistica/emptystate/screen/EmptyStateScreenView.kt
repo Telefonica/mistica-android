@@ -15,7 +15,6 @@ import android.widget.TextView
 import androidx.annotation.DrawableRes
 import androidx.annotation.IntDef
 import androidx.appcompat.content.res.AppCompatResources
-import androidx.core.graphics.drawable.DrawableCompat
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
