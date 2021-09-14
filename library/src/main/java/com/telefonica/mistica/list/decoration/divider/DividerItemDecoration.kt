@@ -6,7 +6,7 @@ import android.graphics.Rect
 import android.graphics.drawable.Drawable
 import android.view.View
 import androidx.annotation.DrawableRes
-import androidx.core.content.ContextCompat
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.recyclerview.widget.RecyclerView
 import com.telefonica.mistica.R
 
@@ -16,7 +16,7 @@ open class DividerItemDecoration @JvmOverloads constructor(
     @DrawableRes drawableRes: Int = R.drawable.generic_divider,
 ) : RecyclerView.ItemDecoration() {
 
-    private val divider: Drawable? = ContextCompat.getDrawable(context, drawableRes)
+    private val divider: Drawable? = AppCompatResources.getDrawable(context, drawableRes)
     private val bounds = Rect()
 
     private var drawableState: IntArray = IntArray(0)

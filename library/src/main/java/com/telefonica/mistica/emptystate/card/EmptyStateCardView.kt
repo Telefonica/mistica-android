@@ -14,7 +14,6 @@ import android.widget.TextView
 import androidx.annotation.DrawableRes
 import androidx.annotation.IntDef
 import androidx.appcompat.content.res.AppCompatResources
-import androidx.core.content.ContextCompat
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
@@ -118,7 +117,7 @@ class EmptyStateCardView @JvmOverloads constructor(
     init {
         LayoutInflater.from(context).inflate(R.layout.empty_state_card_view, this, true)
 
-        background = ContextCompat.getDrawable(context, R.drawable.empty_state_card_view_background)
+        background = AppCompatResources.getDrawable(context, R.drawable.empty_state_card_view_background)
         isFocusable = true
         orientation = VERTICAL
         setPadding(

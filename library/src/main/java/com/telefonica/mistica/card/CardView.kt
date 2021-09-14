@@ -8,8 +8,8 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.annotation.ColorInt
 import androidx.annotation.StringRes
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.cardview.widget.CardView
-import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
@@ -76,7 +76,7 @@ abstract class CardView @JvmOverloads constructor(
         cardElevation = 0F
         radius = resources.getDimension(R.dimen.card_corner_radius)
         minimumWidth = resources.getDimension(R.dimen.card_min_width).toInt()
-        background = ContextCompat.getDrawable(context, R.drawable.card_view_background)
+        background = AppCompatResources.getDrawable(context, R.drawable.card_view_background)
 
         cardContentView = rootView.findViewById(R.id.card_content)
         cardCustomContentLayout = rootView.findViewById(R.id.card_custom_content_layout)

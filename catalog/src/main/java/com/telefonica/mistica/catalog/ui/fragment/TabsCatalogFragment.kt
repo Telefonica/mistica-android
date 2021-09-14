@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
@@ -75,7 +76,7 @@ class TabsCatalogFragment : Fragment() {
     private fun addTab(text: String?, checked: Boolean) {
         if (text.isNullOrEmpty()) return
         val tab = tabs.newTab().setText(text)
-        if (checked) tab.icon = context?.getDrawable(R.drawable.ic_tab)
+        if (checked) tab.icon = context?.let { AppCompatResources.getDrawable(it, R.drawable.ic_tab) }
         tabs.addTab(tab)
         pagerAdapter.addTab(text)
     }

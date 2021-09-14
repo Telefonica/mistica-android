@@ -17,9 +17,9 @@ import androidx.annotation.AttrRes
 import androidx.annotation.DrawableRes
 import androidx.annotation.IntDef
 import androidx.annotation.LayoutRes
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
-import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
@@ -199,7 +199,10 @@ class ListRowView @JvmOverloads constructor(
                     TYPE_SMALL_ICON
                 )
             )
-            setAssetDrawable(styledAttrs.getDrawable(R.styleable.ListRowView_listRowAssetDrawable))
+            val assetDrawable: Drawable? = styledAttrs.getResourceId(R.styleable.ListRowView_listRowAssetDrawable, TypedValue.TYPE_NULL)
+                .takeIf { it != TypedValue.TYPE_NULL }
+                ?.let { AppCompatResources.getDrawable(context, it) }
+            setAssetDrawable(assetDrawable)
             setBadgeInitialState(styledAttrs)
 
             styledAttrs.getResourceId(
@@ -213,7 +216,7 @@ class ListRowView @JvmOverloads constructor(
     }
 
     fun setAssetResource(@DrawableRes resource: Int? = null) {
-        setAssetDrawable(resource?.let { ContextCompat.getDrawable(context, it) })
+        setAssetDrawable(resource?.let { AppCompatResources.getDrawable(context, it) })
     }
 
     fun setAssetDrawable(drawable: Drawable? = null) {
@@ -289,7 +292,7 @@ class ListRowView @JvmOverloads constructor(
             BackgroundType.TYPE_NORMAL -> R.drawable.list_row_background
             else -> R.drawable.list_row_background
         }
-        background = ContextCompat.getDrawable(context, backgroundDrawable)
+        background = AppCompatResources.getDrawable(context, backgroundDrawable)
         configureTextViewsColor(type)
     }
 
