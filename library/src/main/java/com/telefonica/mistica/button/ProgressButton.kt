@@ -20,7 +20,7 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.annotation.ColorInt
 import androidx.annotation.StringRes
-import androidx.core.content.ContextCompat
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.graphics.ColorUtils
 import com.google.android.material.button.MaterialButton
 import com.telefonica.mistica.R
@@ -96,7 +96,7 @@ class ProgressButton : FrameLayout {
                 ViewGroup.LayoutParams.MATCH_PARENT
             )
             showTextOnly()
-            icon = ContextCompat.getDrawable(context, R.drawable.empty_material_button_icon)
+            icon = AppCompatResources.getDrawable(context, R.drawable.empty_material_button_icon)
             text = ""
         }
 

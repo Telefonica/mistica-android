@@ -5,6 +5,7 @@ import android.graphics.*
 import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.util.AttributeSet
+import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Button
@@ -14,8 +15,8 @@ import androidx.annotation.ColorInt
 import androidx.annotation.DrawableRes
 import androidx.annotation.IntDef
 import androidx.annotation.StringRes
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.core.content.ContextCompat
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
@@ -151,7 +152,9 @@ class HighlightedCardView @JvmOverloads constructor(
                     0
                 )
 
-            styledAttrs.getDrawable(R.styleable.HighlightedCardView_highlightedCardBackground)
+            styledAttrs.getResourceId(R.styleable.HighlightedCardView_highlightedCardBackground, TypedValue.TYPE_NULL)
+                .takeIf { it != TypedValue.TYPE_NULL }
+                ?.let { AppCompatResources.getDrawable(context, it) }
                 ?.let { setCustomBackground(it) }
 
             isInverse = styledAttrs.getBoolean(
@@ -178,7 +181,9 @@ class HighlightedCardView @JvmOverloads constructor(
             )
             styledAttrs.getText(R.styleable.HighlightedCardView_highlightedCardCloseButton)
                 ?.let { setCloseButton(it) }
-            styledAttrs.getDrawable(R.styleable.HighlightedCardView_highlightedCardImage)
+            styledAttrs.getResourceId(R.styleable.HighlightedCardView_highlightedCardImage, TypedValue.TYPE_NULL)
+                .takeIf { it != TypedValue.TYPE_NULL }
+                ?.let { AppCompatResources.getDrawable(context, it) }
                 ?.let { setImage(it) }
 
             styledAttrs.recycle()
@@ -242,7 +247,7 @@ class HighlightedCardView @JvmOverloads constructor(
     }
 
     fun setCustomBackground(@DrawableRes imageRes: Int) {
-        setCustomBackground(ContextCompat.getDrawable(context, imageRes)!!)
+        setCustomBackground(AppCompatResources.getDrawable(context, imageRes)!!)
     }
 
     fun setCustomBackground(drawable: Drawable) {
@@ -298,7 +303,7 @@ class HighlightedCardView @JvmOverloads constructor(
             } else {
                 R.drawable.highlighted_card_background
             }
-            container.background = ContextCompat.getDrawable(context, backgroundDrawable)
+            container.background = AppCompatResources.getDrawable(context, backgroundDrawable)
         }
     }
 
