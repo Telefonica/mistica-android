@@ -19,6 +19,10 @@ android {
     defaultConfig {
         vectorDrawables.useSupportLibrary = true
     }
+
+    kotlinOptions {
+        moduleName = "com.telefonica.mistica"
+    }
 }
 
 task sourceJar(type: Jar) {
