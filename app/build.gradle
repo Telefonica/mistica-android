@@ -1,17 +1,21 @@
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
-apply plugin: 'com.betomorrow.appcenter'
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android-extensions'
+    id 'com.betomorrow.appcenter'
+}
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 31
 
     defaultConfig {
         applicationId "com.telefonica.mistica.app"
         minSdkVersion 21
-        targetSdkVersion 29
+        targetSdkVersion 31
         versionCode versionCodeDate()
         versionName "1.0.0"
+
+        buildConfigField "String", "APPCENTER_KEY", "\"" + System.env.APPCENTER_KEY + "\""
     }
 }
 
@@ -35,7 +39,7 @@ appcenter {
 
 
 dependencies {
-    def appCenterSdkVersion = '3.3.0'
+    def appCenterSdkVersion = '4.2.0'
     implementation "com.microsoft.appcenter:appcenter-analytics:${appCenterSdkVersion}"
     implementation "com.microsoft.appcenter:appcenter-crashes:${appCenterSdkVersion}"
     implementation "com.microsoft.appcenter:appcenter-distribute:${appCenterSdkVersion}"
@@ -44,7 +48,7 @@ dependencies {
     implementation 'androidx.core:core-ktx:1.3.1'
     implementation "androidx.appcompat:appcompat:$support_version"
     
-    implementation project(':catalog')
+    implementation project(':catalog-compose')
     implementation project(':library')
 
     testImplementation 'junit:junit:4.13'

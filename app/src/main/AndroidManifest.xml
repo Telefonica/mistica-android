@@ -13,10 +13,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:name=".CatalogApplication"
-        android:theme="@style/MisticaTheme.Movistar">
+        android:theme="@style/MisticaTheme.Vivo">
 
         <activity
             android:name="com.telefonica.mistica.catalog.ui.CatalogMainActivity"
+            android:exported="true"
             tools:node="replace">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

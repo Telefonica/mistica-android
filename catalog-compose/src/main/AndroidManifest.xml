@@ -1,0 +1,24 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+		package="com.telefonica.mistica.catalog"
+		>
+
+	<application>
+<!--		<activity-->
+<!--				android:name="com.telefonica.mistica.catalog.ui.ComponentCatalogActivity"-->
+<!--				android:exported="false"-->
+<!--				/>-->
+<!--		<activity-->
+<!--				android:name="com.telefonica.mistica.catalog.ui.activity.FeedbackScreenCatalogActivity"-->
+<!--				android:exported="false"-->
+<!--				/>-->
+		<activity
+				android:name="com.telefonica.mistica.catalog.ui.CatalogMainActivity"
+				android:exported="false"
+				/>
+<!--		<activity-->
+<!--				android:name="com.telefonica.mistica.catalog.ui.activity.EmptyStateScreenCatalogActivity"-->
+<!--				android:exported="false"-->
+<!--				/>-->
+	</application>
+
+</manifest>
