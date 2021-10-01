@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Mística</string>
+    <string name="compose_activity">M.Compose</string>
 </resources>

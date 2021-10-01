@@ -13,12 +13,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:name=".CatalogApplication"
-        android:theme="@style/MisticaTheme.Vivo">
+        android:theme="@style/MisticaTheme.Movistar">
 
         <activity
             android:name="com.telefonica.mistica.catalog.ui.CatalogMainActivity"
             android:exported="true"
+            android:taskAffinity="com.telefonica.mistica.catalog"
             tools:node="replace">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+                android:name="com.telefonica.mistica.compose.catalog.ui.CatalogMainActivity"
+                android:exported="true"
+                android:label="@string/compose_activity"
+                android:taskAffinity="com.telefonica.mistica.compose.catalog"
+                tools:node="replace">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
