@@ -1,7 +1,7 @@
 version: 2
 
 parameters:
-  BUILDER_IMAGE: "docker.tuenti.io/android/mistica_builder:2"
+  BUILDER_IMAGE: "docker.tuenti.io/android/mistica_builder:3"
 
 defaults:
   platform: "docker-large"
