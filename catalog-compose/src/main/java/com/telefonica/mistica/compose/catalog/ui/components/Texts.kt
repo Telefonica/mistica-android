@@ -18,62 +18,62 @@ fun Texts() {
     ) {
         Text(
             text = "Preset 8",
-            style = MisticaTextStyle.preset8
+            style = MisticaTextStyle.Preset8
         )
         Text(
             text = "Preset 7",
-            style = MisticaTextStyle.preset7)
+            style = MisticaTextStyle.Preset7)
         Text(
             text = "Preset 6",
-            style = MisticaTextStyle.preset6
+            style = MisticaTextStyle.Preset6
         )
         Text(
             text = "Preset 5",
-            style = MisticaTextStyle.preset5
+            style = MisticaTextStyle.Preset5
         )
         Text(
             text = "Preset 4",
-            style = MisticaTextStyle.preset4
+            style = MisticaTextStyle.Preset4
         )
         Text(
             text = "Preset 4 (Light)",
-            style = MisticaTextStyle.preset4Light
+            style = MisticaTextStyle.Preset4Light
         )
         Text(
             text = "Preset 4 (Medium)",
-            style = MisticaTextStyle.preset4Medium
+            style = MisticaTextStyle.Preset4Medium
         )
         Text(
             text = "Preset 3",
-            style = MisticaTextStyle.preset3
+            style = MisticaTextStyle.Preset3
         )
         Text(
             text = "Preset 3 (Light)",
-            style = MisticaTextStyle.preset3Light
+            style = MisticaTextStyle.Preset3Light
         )
         Text(
             text = "Preset 3 (Medium)",
-            style = MisticaTextStyle.preset3Medium
+            style = MisticaTextStyle.Preset3Medium
         )
         Text(
             text = "Preset 2",
-            style = MisticaTextStyle.preset2
+            style = MisticaTextStyle.Preset2
         )
         Text(
             text = "Preset 2 (Medium)",
-            style = MisticaTextStyle.preset2Medium
+            style = MisticaTextStyle.Preset2Medium
         )
         Text(
             text = "Preset 1",
-            style = MisticaTextStyle.preset1
+            style = MisticaTextStyle.Preset1
         )
         Text(
             text = "Preset 1 (Medium)",
-            style = MisticaTextStyle.preset1Medium
+            style = MisticaTextStyle.Preset1Medium
         )
         Text(
             text = "System",
-            style = MisticaTextStyle.system
+            style = MisticaTextStyle.Pystem
         )
     }
 }

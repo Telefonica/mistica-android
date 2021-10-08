@@ -93,12 +93,12 @@ fun ComponentRow(
 fun CatalogNavHost(navController: NavHostController, modifier: Modifier = Modifier) {
     NavHost(
         navController = navController,
-        startDestination = "catalog",
+        startDestination = NavigationRoutes.CATALOG,
         modifier = modifier
     ) {
-        composable("catalog") { Catalog(navController = navController) }
-        composable("buttons") { Buttons() }
-        composable("texts") { Texts() }
+        composable(NavigationRoutes.CATALOG) { Catalog(navController = navController) }
+        composable(NavigationRoutes.BUTTONS) { Buttons() }
+        composable(NavigationRoutes.TEXTS) { Texts() }
     }
 }
 
@@ -108,12 +108,12 @@ fun Catalog(navController: NavHostController, modifier: Modifier = Modifier) {
         ComponentScreen(
             name = "Buttons",
             icon = R.drawable.ic_buttons,
-            navigation = "buttons"
+            navigation = NavigationRoutes.BUTTONS
         ),
         ComponentScreen(
             name = "Texts",
             icon = R.drawable.ic_texts,
-            navigation = "texts"
+            navigation = NavigationRoutes.TEXTS
         )
     )
     Column {
@@ -128,7 +128,7 @@ fun Catalog(navController: NavHostController, modifier: Modifier = Modifier) {
 
         Text(
             text = "Compose version",
-            style = MisticaTextStyle.preset8,
+            style = MisticaTextStyle.Preset8,
             modifier = Modifier
                 .align(Alignment.CenterHorizontally)
                 .padding(16.dp),
@@ -155,4 +155,10 @@ fun Catalog(navController: NavHostController, modifier: Modifier = Modifier) {
 @Composable
 fun ComponentRowPreview() {
     ComponentRow(componentScreen = ComponentScreen("Button", R.drawable.ic_buttons, ""))
+}
+
+object NavigationRoutes {
+    const val CATALOG = "catalog"
+    const val BUTTONS = "buttons"
+    const val TEXTS = "texts"
 }
