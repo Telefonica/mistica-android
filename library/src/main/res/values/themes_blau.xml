@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<style name="MisticaTheme.Blau" parent="MisticaTheme.Blau_Base" />
+
+	<style name="MisticaTheme.Blau_Base">
+
+		<!-- Background colors -->
+		<item name="colorBackgroundBrand">@color/blau_color_blue_primary</item>
+		<item name="colorAppBarBackground">@color/blau_color_white</item>
+		<item name="colorBackground">@color/blau_color_white</item>
+		<item name="colorBackgroundContainer">@color/blau_color_white</item>
+		<item name="colorBackgroundOverlay">@color/blau_color_blue_secondary_75_alpha</item>
+		<item name="colorBackgroundSkeleton">@color/blau_color_grey_2</item>
+		<item name="colorBackgroundSkeletonInverse">@color/blau_color_white</item>
+		<item name="colorNavigationBarBackground">@color/blau_color_blue_primary</item>
+		<item name="colorBackgroundAlternative">@color/blau_color_blue_primary20</item>
+		<item name="colorBackgroundFeedbackBottom">@color/blau_color_blue_primary</item>
+
+		<item name="colorSkeletonWave">@color/blau_color_grey_2</item>
+
+		<!-- Border colors -->
+		<item name="colorBorderLight">@color/blau_color_grey_1</item>
+		<item name="colorBorder">@color/blau_color_grey_2</item>
+		<item name="colorBorderDark">@color/blau_color_grey_5</item>
+		<item name="colorBorderSelected">@color/blau_color_blue_secondary60</item>
+
+		<!-- Button colors -->
+		<item name="colorButtonDangerBackground">@color/blau_color_red</item>
+		<item name="colorButtonDangerBackgroundDisabled">@color/blau_color_red_20</item>
+		<item name="colorButtonDangerBackgroundSelected">@color/blau_color_red_70</item>
+
+		<item name="colorButtonLinkBackgroundSelected">@color/blau_color_purple_10</item>
+		<item name="colorButtonLinkBackgroundSelectedInverse">@color/blau_color_white_30_alpha</item>
+
+		<item name="colorButtonPrimaryBackground">@color/blau_color_blue_secondary</item>
+		<item name="colorButtonPrimaryBackgroundDisabled">@color/blau_color_blue_secondary20</item>
+		<item name="colorButtonPrimaryBackgroundDisabledInverse">@color/blau_color_blue_primary30</item>
+		<item name="colorButtonPrimaryBackgroundInverse">@color/blau_color_white</item>
+		<item name="colorButtonPrimaryBackgroundSelected">@color/blau_color_blue_secondary60</item>
+		<item name="colorButtonPrimaryBackgroundSelectedInverse">@color/blau_color_blue_primary30</item>
+
+		<item name="colorButtonSecondaryBackground">@color/blau_color_blue_secondary</item>
+		<item name="colorButtonSecondaryBackgroundDisabled">@color/blau_color_blue_secondary20</item>
+		<item name="colorButtonSecondaryBackgroundSelected">@color/blau_color_blue_secondary60</item>
+		<item name="colorButtonSecondaryBorderDisabledInverse">@color/blau_color_blue_primary30</item>
+		<item name="colorButtonSecondaryBorderInverse">@color/blau_color_white</item>
+		<item name="colorButtonSecondaryBorderSelectedInverse">@color/blau_color_blue_primary30</item>
+
+		<item name="colorTextButtonPrimary">@color/blau_color_white</item>
+		<item name="colorTextButtonPrimaryDisabled">@color/blau_color_white</item>
+		<item name="colorTextButtonPrimaryInverse">@color/blau_color_blue_secondary</item>
+		<item name="colorTextButtonPrimaryInverseDisabled">@color/blau_color_blue_primary10</item>
+		<item name="colorTextButtonPrimaryInverseSelected">@color/blau_color_blue_secondary60</item>
+
+		<item name="colorTextButtonSecondary">@color/blau_color_blue_secondary</item>
+		<item name="colorTextButtonSecondaryDisabled">@color/blau_color_blue_secondary30</item>
+		<item name="colorTextButtonSecondarySelected">@color/blau_color_blue_secondary60</item>
+		<item name="colorTextButtonSecondaryInverse">@color/blau_color_white</item>
+		<item name="colorTextButtonSecondaryInverseDisabled">@color/blau_color_purple_30</item>
+		<item name="colorTextButtonSecondaryInverseSelected">@color/blau_color_white</item>
+
+		<!-- Text Links -->
+		<item name="colorTextLink">@color/blau_color_purple</item>
+		<item name="colorTextLinkInverse">@color/blau_color_white</item>
+		<item name="colorTextLinkDanger">@color/blau_color_red</item>
+		<item name="colorTextLinkDangerDisabled">@color/blau_color_red_20</item>
+		<item name="colorTextLinkDisabled">@color/blau_color_purple_30</item>
+		<item name="colorTextLinkSnackbar">@color/blau_color_purple_30</item>
+
+		<!-- Control colors -->
+		<item name="colorControl">@color/blau_color_grey_2</item>
+		<item name="colorControlActive">@color/blau_color_blue_secondary</item>
+		<item name="colorControlError">@color/blau_color_red</item>
+		<item name="colorLoadingBar">@color/blau_color_blue_secondary</item>
+		<item name="colorLoadingBarBackground">@color/blau_color_blue_secondary10</item>
+
+		<!-- Divider colors -->
+		<item name="colorDivider">@color/blau_color_grey_2</item>
+		<item name="colorDividerInverse">@color/blau_color_white_20_alpha</item>
+		<item name="colorNavigationBarDivider">@color/blau_color_blue_primary</item>
+
+		<!-- Feedback colors -->
+		<item name="colorBadge">@color/blau_color_red</item>
+		<item name="colorFeedbackErrorBackground">@color/blau_color_red</item>
+		<item name="colorFeedbackInfoBackground">@color/blau_color_grey_6</item>
+
+		<!-- Global colors -->
+		<item name="colorBrand">@color/blau_color_blue_primary</item>
+		<item name="colorBrandDark">@color/blau_color_blue_secondary</item>
+		<item name="colorInverse">@color/blau_color_white</item>
+		<item name="colorNeutralHigh">@color/blau_color_grey_6</item>
+		<item name="colorNeutralMedium">@color/blau_color_grey_5</item>
+		<item name="colorNeutralLow">@color/blau_color_grey_2</item>
+
+		<!-- Texts colors -->
+		<item name="colorTextPrimary">@color/blau_color_grey_6</item>
+		<item name="colorTextPrimaryInverse">@color/blau_color_white</item>
+		<item name="colorTextSecondary">@color/blau_color_grey_5</item>
+		<item name="colorTextSecondaryInverse">@color/blau_color_white</item>
+		<item name="colorTextDisabled">@color/blau_color_grey_3</item>
+		<item name="colorTextAmount">@color/blau_color_blue_secondary</item>
+
+		<!-- State colors -->
+		<item name="colorError">@color/blau_color_red</item>
+		<item name="colorSuccess">@color/blau_color_green</item>
+		<item name="colorWarning">@color/blau_color_yellow</item>
+		<item name="colorPromo">@color/blau_color_purple</item>
+		<item name="colorHighlight">@color/blau_color_blue_primary</item>
+
+		<!-- Bars text colors -->
+		<item name="colorTextNavigationBarPrimary">@color/blau_color_white</item>
+		<item name="colorTextNavigationBarSecondary">@color/blau_color_blue_secondary20</item>
+		<item name="colorTextAppBar">@color/blau_color_grey_5</item>
+		<item name="colorTextAppBarSelected">@color/blau_color_blue_secondary60</item>
+
+		<!-- Gradients (assistant, pin fingerprint screens) -->
+		<item name="colorGradientBackgroundFirst">?colorBackgroundBrand</item>
+		<item name="colorGradientBackgroundSecond">?colorBackgroundBrand</item>
+		<item name="colorGradientBackgroundThird">?colorBackgroundBrand</item>
+		<item name="colorGradientBackgroundFourth">?colorBackgroundBrand</item>
+		<item name="colorLoginLoadingGradientFirst">?colorBackgroundBrand</item>
+		<item name="colorLoginLoadingGradientSecond">?colorBackgroundBrand</item>
+		<item name="colorLoginLoadingGradientThird">?colorBackgroundBrand</item>
+		<item name="colorLoginLoadingGradientFourth">?colorBackgroundBrand</item>
+
+		<!-- Feedbacks -->
+		<item name="feedbackScreenSuccessWithGradient">false</item>
+		<item name="feedbackScreenSuccessInverse">true</item>
+		<item name="feedbackScreenSuccessAnimation">@raw/feedback_success</item>
+		<item name="feedbackScreenErrorAnimation">@raw/feedback_error_movistar</item>
+		<item name="feedbackScreenInfoIcon">@drawable/feedback_info_movistar</item>
+
+		<item name="stepperFinishedStepAnimation">@raw/feedback_success</item>
+	</style>
+</resources>

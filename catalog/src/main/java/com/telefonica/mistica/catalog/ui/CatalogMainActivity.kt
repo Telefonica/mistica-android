@@ -41,6 +41,7 @@ class CatalogMainActivity : AppCompatActivity() {
             "O2 Classic" to R.style.MisticaTheme_O2Classic,
             "Vivo" to R.style.MisticaTheme_Vivo,
             "Telefonica" to R.style.MisticaTheme_Telefonica,
+            "Blau" to R.style.MisticaTheme_Blau,
         )
 
         findViewById<DropDownInput>(R.id.drop_down_themes)?.apply {
