@@ -43,7 +43,7 @@
 		<item name="colorButtonSecondaryBackground">@color/blau_color_blue_secondary</item>
 		<item name="colorButtonSecondaryBackgroundDisabled">@color/blau_color_blue_secondary20</item>
 		<item name="colorButtonSecondaryBackgroundSelected">@color/blau_color_blue_secondary60</item>
-		<item name="colorButtonSecondaryBorderDisabledInverse">@color/blau_color_blue_primary30</item>
+		<item name="colorButtonSecondaryBorderDisabledInverse">@color/blau_color_blue_secondary20</item>
 		<item name="colorButtonSecondaryBorderInverse">@color/blau_color_white</item>
 		<item name="colorButtonSecondaryBorderSelectedInverse">@color/blau_color_blue_primary30</item>
 
@@ -54,10 +54,10 @@
 		<item name="colorTextButtonPrimaryInverseSelected">@color/blau_color_blue_secondary60</item>
 
 		<item name="colorTextButtonSecondary">@color/blau_color_blue_secondary</item>
-		<item name="colorTextButtonSecondaryDisabled">@color/blau_color_blue_secondary30</item>
+		<item name="colorTextButtonSecondaryDisabled">@color/blau_color_blue_secondary20</item>
 		<item name="colorTextButtonSecondarySelected">@color/blau_color_blue_secondary60</item>
 		<item name="colorTextButtonSecondaryInverse">@color/blau_color_white</item>
-		<item name="colorTextButtonSecondaryInverseDisabled">@color/blau_color_purple_30</item>
+		<item name="colorTextButtonSecondaryInverseDisabled">@color/blau_color_blue_secondary20</item>
 		<item name="colorTextButtonSecondaryInverseSelected">@color/blau_color_white</item>
 
 		<!-- Text Links -->
