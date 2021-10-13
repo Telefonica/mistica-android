@@ -46,6 +46,7 @@ Just set your App or any specific activity to use any of the following:
 * MisticaTheme.O2Classic
 * MisticaTheme.Vivo
 * MisticaTheme.Telefonica
+* MisticaTheme.Blau
 
 ```xml
 <manifest ...>
