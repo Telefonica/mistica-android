@@ -6,9 +6,13 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
 import com.telefonica.mistica.compose.button.Button
-import com.telefonica.mistica.compose.catalog.R
+import com.telefonica.mistica.compose.button.ProgressButton
+import com.telefonica.mistica.compose.button.ProgressButtonStyle
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 @Composable
 fun Buttons() {
@@ -18,9 +22,28 @@ fun Buttons() {
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Button(buttonText = "Primary")
-        Button(
-            buttonText = "Primary icon",
-            buttonIcon = ,
-        )
+
+        ProgressButton(
+            text = "Progress button",
+            loadingText = "Loading",
+            onClickListener = {
+                it.startLoading()
+                GlobalScope.launch {
+                    delay(1000)
+                    MainScope().launch { it.stopLoading() }
+                }
+            })
+
+        ProgressButton(
+            text = "Progress button",
+            loadingText = "Loading",
+            buttonStyle = ProgressButtonStyle.DANGER,
+            onClickListener = {
+                it.startLoading()
+                GlobalScope.launch {
+                    delay(1000)
+                    MainScope().launch { it.stopLoading() }
+                }
+            })
     }
 }
