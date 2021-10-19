@@ -11,11 +11,15 @@ jobs:
     - name: Check pull request status
       if: "!github.event.pull_request.merged == true"
       run: 'echo "Skipping generation, pull request is not merged"'
-      
+
+    - name: Checkout repo
+      if: github.event.pull_request.merged == true
+      uses: actions/checkout@v2
+
     - name: Publish catalog
       if: github.event.pull_request.merged == true
-      uses: satak/webrequest-action@master
+      uses: docker://docker.tuenti.io/android/mistica_builder:2
       with:
-        url: https://flow.tuenti.io/events/FLOW/SCRIPT_EVENT
-        method: POST
-        payload: '{"script": "tu-ci", "operation": "create_or_update_job",  "repository": "mistica-android",  "branch": "master",  "workflow": "catalog",  "ticket": "APPS-7169", "username": "flow"}'
+        args: 'bash ./gradlew clean check appCenterAssembleAndUploadDebug'
+      env:
+        APPCENTER_API_TOKEN: ${{ secrets.APPCENTER_API_TOKEN }}
