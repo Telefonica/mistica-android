@@ -6,7 +6,8 @@ import android.os.VibrationEffect
 import android.os.Vibrator
 
 fun Context.performHapticFeedback(type: HapticFeedbackType) {
-    val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+    val vibrator = getVibrator()
+
     if (!vibrator.hasVibrator()) {
         return
     }
@@ -18,6 +19,17 @@ fun Context.performHapticFeedback(type: HapticFeedbackType) {
         @Suppress("DEPRECATION")
         vibrator.vibrate(type.pattern, repeat)
     }
+}
+
+private fun Context.getVibrator(): Vibrator {
+    val vibratorName = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+        Context.VIBRATOR_MANAGER_SERVICE
+    } else {
+        @Suppress("DEPRECATION")
+        Context.VIBRATOR_SERVICE
+    }
+
+    return getSystemService(vibratorName) as Vibrator
 }
 
 enum class HapticFeedbackType(val pattern: LongArray) {

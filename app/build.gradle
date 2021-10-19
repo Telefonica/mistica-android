@@ -4,14 +4,18 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.betomorrow.appcenter'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 31
 
     defaultConfig {
         applicationId "com.telefonica.mistica.app"
         minSdkVersion 21
-        targetSdkVersion 29
+        targetSdkVersion 31
         versionCode versionCodeDate()
         versionName "1.0.0"
+    }
+
+    lintOptions {
+        warningsAsErrors true
     }
 }
 
@@ -33,9 +37,8 @@ appcenter {
     }
 }
 
-
 dependencies {
-    def appCenterSdkVersion = '3.3.0'
+    def appCenterSdkVersion = '4.2.0'
     implementation "com.microsoft.appcenter:appcenter-analytics:${appCenterSdkVersion}"
     implementation "com.microsoft.appcenter:appcenter-crashes:${appCenterSdkVersion}"
     implementation "com.microsoft.appcenter:appcenter-distribute:${appCenterSdkVersion}"
@@ -48,5 +51,4 @@ dependencies {
     implementation project(':library')
 
     testImplementation 'junit:junit:4.13'
-
 }

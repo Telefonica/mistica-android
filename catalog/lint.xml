@@ -3,4 +3,25 @@
     <issue id="HardcodedText" severity="ignore">
         <ignore path="**_catalog.xml" />
     </issue>
+    <issue id="GradleDependency" severity="ignore" />
+    <issue id="VectorRaster">
+        <ignore path="**/res/drawable/empty_state_card_image.xml" />
+        <ignore path="**/res/drawable/empty_state_screen_image.xml" />
+        <ignore path="**/res/drawable/higlighted_card_image.xml" />
+        <ignore path="**/res/drawable/ic_mistica_logo_text.xml" />
+    </issue>
+    <issue id="VectorPath">
+        <ignore path="**/res/drawable/empty_state_card_image.xml" />
+        <ignore path="**/res/drawable/empty_state_screen_image.xml" />
+        <ignore path="**/res/drawable/higlighted_card_image.xml" />
+        <ignore path="**/res/drawable/ic_inputs.xml" />
+    </issue>
+    <issue id="MergeRootFrame">
+        <ignore path="**/res/layout/screen_component_catalog.xml" />
+    </issue>
+    <issue id="IconLocation">
+        <ignore path="**/res/drawable/highlighted_card_custom_background.png" />
+        <ignore path="**/res/drawable/highlighted_card_fill_mode_example.png" />
+        <ignore path="**/res/drawable/media_card_sample_image.png" />
+    </issue>
 </lint>
