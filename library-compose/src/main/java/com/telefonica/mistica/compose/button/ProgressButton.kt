@@ -47,7 +47,7 @@ private fun getButtonStyle(style: ProgressButtonStyle) = when (style) {
 
 class LoadingControls(val startLoading: () -> Unit, val stopLoading: () -> Unit)
 
-//TODO temp
+
 enum class ProgressButtonStyle {
     DANGER,
     DANGER_SMALL,
