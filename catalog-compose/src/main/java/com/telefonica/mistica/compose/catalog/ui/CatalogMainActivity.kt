@@ -108,7 +108,7 @@ fun CatalogNavHost(navController: NavHostController, modifier: Modifier = Modifi
 fun Catalog(navController: NavHostController, modifier: Modifier = Modifier) {
     val components = listOf(
         ComponentScreen(
-            name = "Buttons",
+            name = "Buttons (Work in progress)",
             icon = R.drawable.ic_buttons,
             navigation = NavigationRoutes.BUTTONS
         ),
