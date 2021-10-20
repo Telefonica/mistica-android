@@ -23,33 +23,34 @@ import com.telefonica.mistica.feedback.screen.view.FeedbackScreenView
 fun Feedbacks(
 
 ) {
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.spacedBy(8.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
-    ) {
-        var showFeedback by remember { mutableStateOf(false) }
 
-        var title: String by remember { mutableStateOf("") }
-        var subtitle: String by remember { mutableStateOf("") }
-        var firstButtonText: String? by remember { mutableStateOf(null) }
-        var secondButtonText: String? by remember { mutableStateOf(null) }
-        var isFirstButtonLoading: Boolean by remember { mutableStateOf(false) }
-        var type: Int by remember { mutableStateOf(FeedbackScreenView.TYPE_INFO) }
+    var showFeedback by remember { mutableStateOf(false) }
 
-        if (showFeedback) {
-            Feedback(
-                type = type,
-                title = title,
-                subtitle = subtitle,
-                firstButtonText = firstButtonText,
-                secondButtonText = secondButtonText,
-                firstButtonOnClick = {},
-                secondButtonOnClick = {},
-                isFirstButtonLoading = isFirstButtonLoading,
-                onBackPressed = { showFeedback = false }
-            )
-        } else {
+    var title: String by remember { mutableStateOf("") }
+    var subtitle: String by remember { mutableStateOf("") }
+    var firstButtonText: String? by remember { mutableStateOf(null) }
+    var secondButtonText: String? by remember { mutableStateOf(null) }
+    var isFirstButtonLoading: Boolean by remember { mutableStateOf(false) }
+    var type: Int by remember { mutableStateOf(FeedbackScreenView.TYPE_INFO) }
+
+    if (showFeedback) {
+        Feedback(
+            type = type,
+            title = title,
+            subtitle = subtitle,
+            firstButtonText = firstButtonText,
+            secondButtonText = secondButtonText,
+            firstButtonOnClick = {},
+            secondButtonOnClick = {},
+            isFirstButtonLoading = isFirstButtonLoading,
+            onBackPressed = { showFeedback = false }
+        )
+    } else {
+        Column(
+            modifier = Modifier.fillMaxSize(),
+            verticalArrangement = Arrangement.spacedBy(8.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
+        ) {
             OutlinedTextField(value = title, onValueChange = { title = it }, label = { Text("Title") })
             OutlinedTextField(value = subtitle, onValueChange = { subtitle = it }, label = { Text("Subtitle") })
             OutlinedTextField(value = firstButtonText ?: "", onValueChange = { firstButtonText = it }, label = { Text("First Button") })
