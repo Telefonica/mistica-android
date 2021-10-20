@@ -4,6 +4,7 @@ import android.animation.Animator
 import android.animation.AnimatorSet
 import android.animation.ArgbEvaluator
 import android.animation.ObjectAnimator
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.res.ColorStateList
 import android.graphics.Color
@@ -63,6 +64,7 @@ class ProgressButton : FrameLayout {
         init(attrs, defStyleAttr)
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     private fun init(attrs: AttributeSet? = null, defStyleAttr: Int = 0) {
         if (attrs != null) {
             val theme = context.theme

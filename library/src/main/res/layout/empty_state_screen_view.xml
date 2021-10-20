@@ -12,6 +12,7 @@
 			android:paddingEnd="24dp"
 			android:paddingBottom="24dp"
 			style="@style/EmptyStateContainerWidth"
+			tools:ignore="RtlSymmetry"
 			>
 
 		<ImageView
