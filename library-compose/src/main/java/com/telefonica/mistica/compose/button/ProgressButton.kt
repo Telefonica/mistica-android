@@ -36,11 +36,11 @@ private fun getButtonStyle(style: ProgressButtonStyle) = when (style) {
     ProgressButtonStyle.LINK_INVERSE -> R.layout.progress_button_link_inverse_wrapper
     ProgressButtonStyle.LINK -> R.layout.progress_button_link_wrapper
     ProgressButtonStyle.PRIMARY_INVERSE -> R.layout.progress_button_primary_inverse_wrapper
-    ProgressButtonStyle.PRIMARY_INVERSE_SMALL -> R.layout.progress_button_primary_small_inverse_wrapper
+    ProgressButtonStyle.PRIMARY_SMALL_INVERSE -> R.layout.progress_button_primary_small_inverse_wrapper
     ProgressButtonStyle.PRIMARY_SMALL -> R.layout.progress_button_primary_small_wrapper
     ProgressButtonStyle.PRIMARY -> R.layout.progress_button_primary_wrapper
     ProgressButtonStyle.SECONDARY_INVERSE -> R.layout.progress_button_secondary_inverse_wrapper
-    ProgressButtonStyle.SECONDARY_INVERSE_SMALL -> R.layout.progress_button_secondary_small_inverse_wrapper
+    ProgressButtonStyle.SECONDARY_SMALL_INVERSE -> R.layout.progress_button_secondary_small_inverse_wrapper
     ProgressButtonStyle.SECONDARY_SMALL -> R.layout.progress_button_secondary_small_wrapper
     ProgressButtonStyle.SECONDARY -> R.layout.progress_button_secondary_wrapper
 }
@@ -54,11 +54,11 @@ enum class ProgressButtonStyle {
     LINK_INVERSE,
     LINK,
     PRIMARY_INVERSE,
-    PRIMARY_INVERSE_SMALL,
+    PRIMARY_SMALL_INVERSE,
     PRIMARY_SMALL,
     PRIMARY,
     SECONDARY_INVERSE,
-    SECONDARY_INVERSE_SMALL,
+    SECONDARY_SMALL_INVERSE,
     SECONDARY_SMALL,
     SECONDARY
 }
