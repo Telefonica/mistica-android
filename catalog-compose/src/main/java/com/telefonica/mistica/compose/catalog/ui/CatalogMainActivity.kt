@@ -32,6 +32,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.telefonica.mistica.compose.catalog.R
 import com.telefonica.mistica.compose.catalog.ui.components.Buttons
+import com.telefonica.mistica.compose.catalog.ui.components.Feedbacks
 import com.telefonica.mistica.compose.catalog.ui.components.Texts
 import com.telefonica.mistica.compose.text.MisticaTextStyle
 import com.telefonica.mistica.compose.theme.MisticaTheme
@@ -99,6 +100,7 @@ fun CatalogNavHost(navController: NavHostController, modifier: Modifier = Modifi
         composable(NavigationRoutes.CATALOG) { Catalog(navController = navController) }
         composable(NavigationRoutes.BUTTONS) { Buttons() }
         composable(NavigationRoutes.TEXTS) { Texts() }
+        composable(NavigationRoutes.TEXTS) { Feedbacks() }
     }
 }
 
@@ -114,6 +116,11 @@ fun Catalog(navController: NavHostController, modifier: Modifier = Modifier) {
             name = "Texts",
             icon = R.drawable.ic_texts,
             navigation = NavigationRoutes.TEXTS
+        ),
+        ComponentScreen(
+            name = "Feedbacks",
+            icon = R.drawable.ic_feedbacks,
+            navigation = NavigationRoutes.FEEDBACKS
         )
     )
     Column {
@@ -161,4 +168,5 @@ object NavigationRoutes {
     const val CATALOG = "catalog"
     const val BUTTONS = "buttons"
     const val TEXTS = "texts"
+    const val FEEDBACKS = "texts"
 }

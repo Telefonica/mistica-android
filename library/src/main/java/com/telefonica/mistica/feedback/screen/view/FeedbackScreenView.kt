@@ -64,6 +64,7 @@ class FeedbackScreenView : ConstraintLayout {
     private var secondButtonText: CharSequence = ""
     private var secondButtonAsLink: Boolean = false
     private var isIconAnimated: Boolean = false
+    var shouldAnimateOnAttachedToWindow: Boolean = true
 
     private var firstButtonClickListener: OnClickListener? = null
     private var secondButtonClickListener: OnClickListener? = null
@@ -309,40 +310,42 @@ class FeedbackScreenView : ConstraintLayout {
     }
 
     private fun animateViewsOnFirstLayout() {
-        viewTreeObserver.addOnGlobalLayoutListener(
-            object : ViewTreeObserver.OnGlobalLayoutListener {
-                override fun onGlobalLayout() {
-                    viewTreeObserver.removeOnGlobalLayoutListener(this)
-                    if (isIconAnimated) {
+        if (shouldAnimateOnAttachedToWindow) {
+            viewTreeObserver.addOnGlobalLayoutListener(
+                object : ViewTreeObserver.OnGlobalLayoutListener {
+                    override fun onGlobalLayout() {
+                        viewTreeObserver.removeOnGlobalLayoutListener(this)
                         animateViews()
                     }
                 }
-            }
-        )
+            )
+        }
     }
 
-    private fun animateViews() {
-        val animation = AnimatorSet().apply {
-            playTogether(
-                getFadeInAnim(title),
-                getFadeInAnim(subtitle),
-                getFadeInAnim(customContentContainer),
-                getTranslationYAnim(title),
-                getTranslationYAnim(subtitle),
-                getTranslationYAnim(customContentContainer)
-            )
-            interpolator = getCubicBezierInterpolator()
-            duration = TEXTS_ANIMATION_DURATION
-            startDelay = TEXTS_ANIMATION_DELAY
+    fun animateViews() {
+        if (isIconAnimated) {
+            val animation = AnimatorSet().apply {
+                playTogether(
+                    getFadeInAnim(title),
+                    getFadeInAnim(subtitle),
+                    getFadeInAnim(customContentContainer),
+                    getTranslationYAnim(title),
+                    getTranslationYAnim(subtitle),
+                    getTranslationYAnim(customContentContainer)
+                )
+                interpolator = getCubicBezierInterpolator()
+                duration = TEXTS_ANIMATION_DURATION
+                startDelay = TEXTS_ANIMATION_DELAY
+            }
+
+            title.alpha = 0F
+            subtitle.alpha = 0F
+            customContentContainer.alpha = 0F
+
+            animation.start()
+            icon.playAnimation()
+            executeHapticFeedback()
         }
-
-        title.alpha = 0F
-        subtitle.alpha = 0F
-        customContentContainer.alpha = 0F
-
-        animation.start()
-        icon.playAnimation()
-        executeHapticFeedback()
     }
 
     private fun executeHapticFeedback() {
