@@ -35,7 +35,7 @@ task sourceJar(type: Jar) {
 }
 
 dependencies {
-    api "com.google.android.material:material:$support_version"
+    api "com.google.android.material:material:1.4.0"
     api 'androidx.constraintlayout:constraintlayout:2.0.4'
     api 'androidx.constraintlayout:constraintlayout-solver:2.0.4'
     api 'androidx.recyclerview:recyclerview:1.1.0'

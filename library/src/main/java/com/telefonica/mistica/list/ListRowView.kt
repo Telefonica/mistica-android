@@ -132,6 +132,7 @@ class ListRowView @JvmOverloads constructor(
     private val subtitleTextView: TextView
     private val descriptionTextView: TextView
     private val badgeAnchor: View
+    private val badgeAnchorContainer: FrameLayout
     private val actionContainer: FrameLayout
 
     private var currentHeadlineLayoutRes: Int = HEADLINE_NONE
@@ -154,6 +155,7 @@ class ListRowView @JvmOverloads constructor(
         subtitleTextView = findViewById(R.id.row_subtitle_text)
         descriptionTextView = findViewById(R.id.row_description_text)
         badgeAnchor = findViewById(R.id.row_badge_anchor)
+        badgeAnchorContainer = findViewById(R.id.row_badge_container)
         actionContainer = findViewById(R.id.row_action_container)
 
         if (attrs != null) {
@@ -437,19 +439,19 @@ class ListRowView @JvmOverloads constructor(
 
     private fun showNonNumericBadge(withBadgeDescription: String?) {
         Badge.removeBadge(badgeAnchor)
-        badgeAnchor.visibility = View.VISIBLE
-        Badge.showBadgeIn(badgeAnchor, withBadgeDescription)
+        badgeAnchorContainer.visibility = View.VISIBLE
+        Badge.showBadgeIn(badgeAnchor, badgeAnchorContainer, withBadgeDescription)
     }
 
     private fun showNumericBadge(count: Int, withBadgeDescription: String?) {
         Badge.removeBadge(badgeAnchor)
-        badgeAnchor.visibility = View.VISIBLE
-        Badge.showNumericBadgeIn(badgeAnchor, count, withBadgeDescription)
+        badgeAnchorContainer.visibility = View.VISIBLE
+        Badge.showNumericBadgeIn(badgeAnchor, badgeAnchorContainer, count, withBadgeDescription)
     }
 
     private fun hideBadge() {
         Badge.removeBadge(badgeAnchor)
-        badgeAnchor.visibility = GONE
+        badgeAnchorContainer.visibility = GONE
     }
 
     private fun setBadgeInitialState(styledAttrs: TypedArray) {

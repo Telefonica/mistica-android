@@ -13,13 +13,19 @@
         android:layout_gravity="start"
         android:text="Badges" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:src="@drawable/icn_creditcard"
-        android:contentDescription="image" />
+    <FrameLayout
+            android:id="@+id/image_badge_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp">
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/icn_creditcard"
+            android:contentDescription="image" />
+    </FrameLayout>
 
     <Button
         android:id="@+id/button_add_non_numeric_badge"
