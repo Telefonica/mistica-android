@@ -17,7 +17,12 @@ fun Button(
     AndroidView(
         modifier = Modifier.wrapContentSize(),
         factory = { context ->
-            Button(context).apply {
+            val button = if (style != null) {
+                Button(context, null, style)
+            } else {
+                Button(context)
+            }
+            button.apply {
                 text = buttonText
                 icon = buttonIcon
                 setOnClickListener { onClickListener() }
