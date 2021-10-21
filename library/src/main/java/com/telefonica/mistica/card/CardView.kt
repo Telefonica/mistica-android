@@ -141,6 +141,7 @@ abstract class CardView @JvmOverloads constructor(
 
     fun setPrimaryButtonText(text: CharSequence?) {
         cardActionsView.primaryButton.setTextAndVisibility(text)
+        updateButtonsContainerVisibility()
     }
 
     fun setPrimaryButtonText(@StringRes textRes: Int?) {
@@ -149,6 +150,7 @@ abstract class CardView @JvmOverloads constructor(
 
     fun setLinkButtonText(text: CharSequence?) {
         cardActionsView.linkButton.setTextAndVisibility(text)
+        updateButtonsContainerVisibility()
     }
 
     fun setLinkButtonText(@StringRes textRes: Int?) {
@@ -199,5 +201,9 @@ abstract class CardView @JvmOverloads constructor(
         } else {
             null
         }
+    }
+
+    private fun updateButtonsContainerVisibility() {
+        cardActionsView.visibility = if (cardActionsView.cardHasNoActions()) View.GONE else View.VISIBLE
     }
 }
