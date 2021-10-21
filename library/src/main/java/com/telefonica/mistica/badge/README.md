@@ -10,6 +10,7 @@ To use it, use `com.telefonica.mistica.badge.Badge`
 
 There are two groups of methods corresponding to the two different badge styles, numeric and non-numeric:
 
+### Prior to `3.0.0` version
 ```kotlin
 fun showBadgeIn(anchor: View): BadgeDrawable
 fun showBadgeIn(anchor: View, parent: ViewGroup): BadgeDrawable
@@ -28,3 +29,13 @@ fun removeBadge(badgeDrawable: BadgeDrawable, anchor: View)
 fun removeBadge(badgeDrawable: BadgeDrawable, parent: ViewGroup)
 ```
 Use these methods to delete the badge from the anchor/parent. You will need to decide which one to call based on how you added the badge to your anchor.
+
+### Since `3.0.0` version
+
+`fun showBadgeIn(anchor: View): BadgeDrawable` and `fun showNumericBadgeIn(anchor: View, count: Int): BadgeDrawable` methods have been removed so now `parent` parameter is mandatory and it has to be a `FrameLayout`. Current methods to show the badge look like this:
+
+```kotlin
+fun showBadgeIn(anchor: View, parent: FrameLayout): BadgeDrawable
+
+fun showNumericBadgeIn(anchor: View, parent: FrameLayout, count: Int): BadgeDrawable
+```
