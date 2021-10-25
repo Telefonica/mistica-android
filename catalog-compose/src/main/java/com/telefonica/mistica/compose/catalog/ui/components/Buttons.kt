@@ -12,11 +12,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import com.telefonica.mistica.compose.button.Button
 import com.telefonica.mistica.compose.button.ProgressButton
 import com.telefonica.mistica.compose.button.ProgressButtonStyle
-import com.telefonica.mistica.compose.text.MisticaTextStyle
 import com.telefonica.mistica.compose.theme.MisticaTheme
+import com.telefonica.mistica.compose.theme.text.MisticaTypography
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.delay
@@ -32,7 +31,7 @@ fun Buttons() {
 
         Text(
             text = "Progress buttons",
-            style = MisticaTextStyle.Preset6
+            style = MisticaTheme.typography.Preset6
         )
         Divider(thickness = 1.dp)
 
@@ -68,7 +67,7 @@ fun Buttons() {
         ) {
             Text(
                 text = "(Inverse)",
-                style = MisticaTextStyle.Preset6,
+                style = MisticaTheme.typography.Preset6,
                 color = Color.White
             )
 

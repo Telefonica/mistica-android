@@ -34,7 +34,6 @@ import com.telefonica.mistica.compose.catalog.R
 import com.telefonica.mistica.compose.catalog.ui.components.Buttons
 import com.telefonica.mistica.compose.catalog.ui.components.Feedbacks
 import com.telefonica.mistica.compose.catalog.ui.components.Texts
-import com.telefonica.mistica.compose.text.MisticaTextStyle
 import com.telefonica.mistica.compose.theme.MisticaTheme
 
 class CatalogMainActivity : ComponentActivity() {
@@ -135,7 +134,7 @@ fun Catalog(navController: NavHostController, modifier: Modifier = Modifier) {
 
         Text(
             text = "Compose version",
-            style = MisticaTextStyle.Preset8,
+            style = MisticaTheme.typography.Preset8,
             modifier = Modifier
                 .align(Alignment.CenterHorizontally)
                 .padding(16.dp),

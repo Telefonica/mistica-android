@@ -7,7 +7,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import com.telefonica.mistica.compose.text.MisticaTextStyle
+import com.telefonica.mistica.compose.theme.MisticaTheme
 
 @Composable
 fun Texts() {
@@ -18,62 +18,63 @@ fun Texts() {
     ) {
         Text(
             text = "Preset 8",
-            style = MisticaTextStyle.Preset8
+            style = MisticaTheme.typography.Preset8
         )
         Text(
             text = "Preset 7",
-            style = MisticaTextStyle.Preset7)
+            style = MisticaTheme.typography.Preset7
+        )
         Text(
             text = "Preset 6",
-            style = MisticaTextStyle.Preset6
+            style = MisticaTheme.typography.Preset6
         )
         Text(
             text = "Preset 5",
-            style = MisticaTextStyle.Preset5
+            style = MisticaTheme.typography.Preset5
         )
         Text(
             text = "Preset 4",
-            style = MisticaTextStyle.Preset4
+            style = MisticaTheme.typography.Preset4
         )
         Text(
             text = "Preset 4 (Light)",
-            style = MisticaTextStyle.Preset4Light
+            style = MisticaTheme.typography.Preset4Light
         )
         Text(
             text = "Preset 4 (Medium)",
-            style = MisticaTextStyle.Preset4Medium
+            style = MisticaTheme.typography.Preset4Medium
         )
         Text(
             text = "Preset 3",
-            style = MisticaTextStyle.Preset3
+            style = MisticaTheme.typography.Preset3
         )
         Text(
             text = "Preset 3 (Light)",
-            style = MisticaTextStyle.Preset3Light
+            style = MisticaTheme.typography.Preset3Light
         )
         Text(
             text = "Preset 3 (Medium)",
-            style = MisticaTextStyle.Preset3Medium
+            style = MisticaTheme.typography.Preset3Medium
         )
         Text(
             text = "Preset 2",
-            style = MisticaTextStyle.Preset2
+            style = MisticaTheme.typography.Preset2
         )
         Text(
             text = "Preset 2 (Medium)",
-            style = MisticaTextStyle.Preset2Medium
+            style = MisticaTheme.typography.Preset2Medium
         )
         Text(
             text = "Preset 1",
-            style = MisticaTextStyle.Preset1
+            style = MisticaTheme.typography.Preset1
         )
         Text(
             text = "Preset 1 (Medium)",
-            style = MisticaTextStyle.Preset1Medium
+            style = MisticaTheme.typography.Preset1Medium
         )
         Text(
             text = "System",
-            style = MisticaTextStyle.Pystem
+            style = MisticaTheme.typography.System
         )
     }
 }
