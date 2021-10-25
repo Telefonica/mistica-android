@@ -10,7 +10,7 @@ Media cards consist of an image and some data:
 
 To use it, use `com.telefonica.mistica.card.mediacard.MediaCardView`
 
-Minimum required content for media cards are an image/gif/video and a description. The rest of the elements are optional and can be easily 
+Minimum required content for media cards is an image/gif/video with a description or a title. The rest of the elements are optional and can be easily 
 configured through the public api or via xml `attr`: 
 
 ```xml
