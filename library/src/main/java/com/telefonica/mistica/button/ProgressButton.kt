@@ -162,6 +162,9 @@ class ProgressButton : FrameLayout {
         setText(context.getString(textId))
     }
 
+    fun getLoadingText(): CharSequence =
+        buttonLoading.text
+
     fun setLoadingText(text: CharSequence) {
         buttonLoading.text = text
         if (isLoading) {
