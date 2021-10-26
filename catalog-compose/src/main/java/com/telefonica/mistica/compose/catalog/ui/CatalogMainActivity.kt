@@ -75,7 +75,8 @@ fun ComponentRow(
         ) {
             Icon(
                 painter = painterResource(id = componentScreen.icon),
-                contentDescription = null
+                contentDescription = null,
+                tint = Color.Unspecified
             )
             Text(
                 text = componentScreen.name,
@@ -85,7 +86,8 @@ fun ComponentRow(
         Icon(
             painter = painterResource(id = R.drawable.icn_arrow),
             contentDescription = null,
-            modifier = Modifier.align(Alignment.CenterEnd)
+            modifier = Modifier.align(Alignment.CenterEnd),
+            tint = Color.Unspecified
         )
     }
 }
