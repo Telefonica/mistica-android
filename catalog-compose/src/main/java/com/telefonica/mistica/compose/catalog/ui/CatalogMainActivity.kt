@@ -36,12 +36,13 @@ import com.telefonica.mistica.compose.catalog.ui.components.Feedbacks
 import com.telefonica.mistica.compose.catalog.ui.components.Texts
 import com.telefonica.mistica.compose.theme.MisticaTheme
 import com.telefonica.mistica.compose.theme.brand.MovistarBrand
+import com.telefonica.mistica.compose.theme.brand.MovistarProminentBrand
 
 class CatalogMainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MisticaTheme(brand = MovistarBrand) {
+            MisticaTheme(brand = MovistarProminentBrand) {
                 val navController = rememberNavController()
                 Scaffold { innerPadding ->
                     CatalogNavHost(navController, modifier = Modifier.padding(innerPadding))

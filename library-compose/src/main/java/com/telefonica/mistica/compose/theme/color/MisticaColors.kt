@@ -97,7 +97,6 @@ class MisticaColors(
     loginLoadingGradientSecond: Color = Color.Unspecified,
     loginLoadingGradientThird: Color = Color.Unspecified,
     loginLoadingGradientFourth: Color = Color.Unspecified,
-    isLight: Boolean = true,
 ) {
     var appBarBackground by mutableStateOf(appBarBackground, structuralEqualityPolicy())
         internal set
@@ -278,9 +277,6 @@ class MisticaColors(
     var loginLoadingGradientFourth by mutableStateOf(loginLoadingGradientFourth, structuralEqualityPolicy())
         internal set
 
-    var isLight by mutableStateOf(isLight, structuralEqualityPolicy())
-        internal set
-
     fun copy(
         appBarBackground: Color = this.appBarBackground,
         background: Color = this.background,
@@ -371,7 +367,6 @@ class MisticaColors(
         loginLoadingGradientSecond: Color = this.loginLoadingGradientSecond,
         loginLoadingGradientThird: Color = this.loginLoadingGradientThird,
         loginLoadingGradientFourth: Color = this.loginLoadingGradientFourth,
-        isLight: Boolean = this.isLight,
     ): MisticaColors = MisticaColors(
         appBarBackground,
         background,
@@ -462,7 +457,6 @@ class MisticaColors(
         loginLoadingGradientSecond,
         loginLoadingGradientThird,
         loginLoadingGradientFourth,
-        isLight,
     )
 
     internal fun MisticaColors.updateColorsFrom(other: MisticaColors) {
@@ -555,7 +549,6 @@ class MisticaColors(
         loginLoadingGradientSecond = other.loginLoadingGradientSecond
         loginLoadingGradientThird = other.loginLoadingGradientThird
         loginLoadingGradientFourth = other.loginLoadingGradientFourth
-        isLight = other.isLight
     }
 }
 

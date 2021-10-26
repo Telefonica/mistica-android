@@ -25,9 +25,9 @@ fun MisticaTheme(
     content: @Composable () -> Unit
 ) {
     val colors = if (darkTheme) {
-        brand.lightColors
-    } else {
         brand.darkColors
+    } else {
+        brand.lightColors
     }
     val rememberedColors = remember {
         colors.copy()
@@ -81,5 +81,3 @@ object MisticaTheme {
         @ReadOnlyComposable
         get() = LocalMisticaTypography.current
 }
-
-
