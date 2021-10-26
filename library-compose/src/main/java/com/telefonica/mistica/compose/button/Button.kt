@@ -1,6 +1,7 @@
 package com.telefonica.mistica.compose.button
 
 import android.view.LayoutInflater
+import android.view.View
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.viewinterop.AndroidView
 import com.telefonica.mistica.compose.R
@@ -13,31 +14,23 @@ fun Button(
     isLoading: Boolean = false,
     onClickListener: () -> Unit,
 ) {
-    AndroidView(factory = { context ->
-        val view = LayoutInflater.from(context).inflate(getButtonStyle(buttonStyle), null)
-        val button: com.telefonica.mistica.button.ProgressButton = view.findViewById(R.id.button)
-        button.apply {
+    fun View.updateButton() {
+        findViewById<com.telefonica.mistica.button.ProgressButton>(R.id.button).apply {
             setText(text)
             setLoadingText(loadingText)
             setIsLoading(isLoading)
             setOnClickListener { onClickListener() }
         }
-        view
-    },
-    update = { view ->
-        val button: com.telefonica.mistica.button.ProgressButton = view.findViewById(R.id.button)
-        button.apply {
-            if (getText() != text) {
-                setText(text)
-            }
-            if (getLoadingText() != loadingText) {
-                setLoadingText(loadingText)
-            }
-            if (this.isLoading != isLoading) {
-                setIsLoading(isLoading)
-            }
-        }
-    })
+    }
+
+    AndroidView(
+        factory = { context ->
+            val view = LayoutInflater.from(context).inflate(getButtonStyle(buttonStyle), null)
+            view.updateButton()
+            view
+        },
+        update = { view -> view.updateButton() }
+    )
 }
 
 private fun getButtonStyle(style: ButtonStyle) = when (style) {
