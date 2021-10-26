@@ -35,13 +35,13 @@ import com.telefonica.mistica.compose.catalog.ui.components.Buttons
 import com.telefonica.mistica.compose.catalog.ui.components.Feedbacks
 import com.telefonica.mistica.compose.catalog.ui.components.Texts
 import com.telefonica.mistica.compose.theme.MisticaTheme
+import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 
 class CatalogMainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MisticaTheme {
-
+            MisticaTheme(brand = MovistarBrand) {
                 val navController = rememberNavController()
                 Scaffold { innerPadding ->
                     CatalogNavHost(navController, modifier = Modifier.padding(innerPadding))
@@ -99,7 +99,7 @@ fun CatalogNavHost(navController: NavHostController, modifier: Modifier = Modifi
         composable(NavigationRoutes.CATALOG) { Catalog(navController = navController) }
         composable(NavigationRoutes.BUTTONS) { Buttons() }
         composable(NavigationRoutes.TEXTS) { Texts() }
-        composable(NavigationRoutes.TEXTS) { Feedbacks() }
+        composable(NavigationRoutes.FEEDBACKS) { Feedbacks() }
     }
 }
 
@@ -134,7 +134,7 @@ fun Catalog(navController: NavHostController, modifier: Modifier = Modifier) {
 
         Text(
             text = "Compose version",
-            style = MisticaTheme.typography.Preset8,
+            style = MisticaTheme.typography.preset8,
             modifier = Modifier
                 .align(Alignment.CenterHorizontally)
                 .padding(16.dp),
@@ -167,5 +167,5 @@ object NavigationRoutes {
     const val CATALOG = "catalog"
     const val BUTTONS = "buttons"
     const val TEXTS = "texts"
-    const val FEEDBACKS = "texts"
+    const val FEEDBACKS = "feedbacks"
 }

@@ -1,103 +1,103 @@
 package com.telefonica.mistica.compose.theme.color
 
-import androidx.compose.runtime.ProvidableCompositionLocal
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
+import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.runtime.structuralEqualityPolicy
 import androidx.compose.ui.graphics.Color
 
 class MisticaColors(
-    appBarBackground: Color,
-    background: Color,
-    backgroundContainer: Color,
-    backgroundBrand: Color,
-    backgroundOverlay: Color,
-    backgroundSkeleton: Color,
-    backgroundSkeletonInverse: Color,
-    navigationBarBackground: Color,
-    backgroundAlternative: Color,
-    backgroundFeedbackBottom: Color,
-    skeletonWave: Color,
-    borderLight: Color,
-    border: Color,
-    borderDark: Color,
-    borderSelected: Color,
-    buttonDangerBackground: Color,
-    buttonDangerBackgroundDisabled: Color,
-    buttonDangerBackgroundSelected: Color,
-    buttonLinkBackgroundSelected: Color,
-    buttonLinkBackgroundSelectedInverse: Color,
-    buttonPrimaryBackground: Color,
-    buttonPrimaryBackgroundDisabled: Color,
-    buttonPrimaryBackgroundDisabledInverse: Color,
-    buttonPrimaryBackgroundInverse: Color,
-    buttonPrimaryBackgroundSelected: Color,
-    buttonPrimaryBackgroundSelectedInverse: Color,
-    buttonSecondaryBackground: Color,
-    buttonSecondaryBackgroundDisabled: Color,
-    buttonSecondaryBackgroundSelected: Color,
-    buttonSecondaryBorderDisabledInverse: Color,
-    buttonSecondaryBorderInverse: Color,
-    buttonSecondaryBorderSelectedInverse: Color,
-    textButtonPrimary: Color,
-    textButtonPrimaryDisabled: Color,
-    textButtonPrimaryInverse: Color,
-    textButtonPrimaryInverseDisabled: Color,
-    textButtonPrimaryInverseSelected: Color,
-    textButtonSecondary: Color,
-    textButtonSecondaryDisabled: Color,
-    textButtonSecondarySelected: Color,
-    textButtonSecondaryInverse: Color,
-    textButtonSecondaryInverseDisabled: Color,
-    textButtonSecondaryInverseSelected: Color,
-    textLink: Color,
-    textLinkInverse: Color,
-    textLinkDanger: Color,
-    textLinkDangerDisabled: Color,
-    textLinkDisabled: Color,
-    textLinkSnackbar: Color,
-    control: Color,
-    controlActive: Color,
-    controlError: Color,
-    loadingBar: Color,
-    loadingBarBackground: Color,
-    divider: Color,
-    dividerInverse: Color,
-    navigationBarDivider: Color,
-    badge: Color,
-    feedbackErrorBackground: Color,
-    feedbackInfoBackground: Color,
-    brand: Color,
-    brandDark: Color,
-    inverse: Color,
-    neutralHigh: Color,
-    neutralLow: Color,
-    neutralMedium: Color,
-    promo: Color,
-    highlight: Color,
-    textPrimary: Color,
-    textPrimaryInverse: Color,
-    textSecondary: Color,
-    textSecondaryInverse: Color,
-    textDisabled: Color,
-    textAmount: Color,
-    error: Color,
-    success: Color,
-    warning: Color,
-    textNavigationBarPrimary: Color,
-    textNavigationBarSecondary: Color,
-    textAppBar: Color,
-    textAppBarSelected: Color,
-    gradientBackgroundFirst: Color,
-    gradientBackgroundSecond: Color,
-    gradientBackgroundThird: Color,
-    gradientBackgroundFourth: Color,
-    loginLoadingGradientFirst: Color,
-    loginLoadingGradientSecond: Color,
-    loginLoadingGradientThird: Color,
-    loginLoadingGradientFourth: Color,
-    isLight: Boolean
+    appBarBackground: Color = Color.Unspecified,
+    background: Color = Color.Unspecified,
+    backgroundContainer: Color = Color.Unspecified,
+    backgroundBrand: Color = Color.Unspecified,
+    backgroundOverlay: Color = Color.Unspecified,
+    backgroundSkeleton: Color = Color.Unspecified,
+    backgroundSkeletonInverse: Color = Color.Unspecified,
+    navigationBarBackground: Color = Color.Unspecified,
+    backgroundAlternative: Color = Color.Unspecified,
+    backgroundFeedbackBottom: Color = Color.Unspecified,
+    skeletonWave: Color = Color.Unspecified,
+    borderLight: Color = Color.Unspecified,
+    border: Color = Color.Unspecified,
+    borderDark: Color = Color.Unspecified,
+    borderSelected: Color = Color.Unspecified,
+    buttonDangerBackground: Color = Color.Unspecified,
+    buttonDangerBackgroundDisabled: Color = Color.Unspecified,
+    buttonDangerBackgroundSelected: Color = Color.Unspecified,
+    buttonLinkBackgroundSelected: Color = Color.Unspecified,
+    buttonLinkBackgroundSelectedInverse: Color = Color.Unspecified,
+    buttonPrimaryBackground: Color = Color.Unspecified,
+    buttonPrimaryBackgroundDisabled: Color = Color.Unspecified,
+    buttonPrimaryBackgroundDisabledInverse: Color = Color.Unspecified,
+    buttonPrimaryBackgroundInverse: Color = Color.Unspecified,
+    buttonPrimaryBackgroundSelected: Color = Color.Unspecified,
+    buttonPrimaryBackgroundSelectedInverse: Color = Color.Unspecified,
+    buttonSecondaryBackground: Color = Color.Unspecified,
+    buttonSecondaryBackgroundDisabled: Color = Color.Unspecified,
+    buttonSecondaryBackgroundSelected: Color = Color.Unspecified,
+    buttonSecondaryBorderDisabledInverse: Color = Color.Unspecified,
+    buttonSecondaryBorderInverse: Color = Color.Unspecified,
+    buttonSecondaryBorderSelectedInverse: Color = Color.Unspecified,
+    textButtonPrimary: Color = Color.Unspecified,
+    textButtonPrimaryDisabled: Color = Color.Unspecified,
+    textButtonPrimaryInverse: Color = Color.Unspecified,
+    textButtonPrimaryInverseDisabled: Color = Color.Unspecified,
+    textButtonPrimaryInverseSelected: Color = Color.Unspecified,
+    textButtonSecondary: Color = Color.Unspecified,
+    textButtonSecondaryDisabled: Color = Color.Unspecified,
+    textButtonSecondarySelected: Color = Color.Unspecified,
+    textButtonSecondaryInverse: Color = Color.Unspecified,
+    textButtonSecondaryInverseDisabled: Color = Color.Unspecified,
+    textButtonSecondaryInverseSelected: Color = Color.Unspecified,
+    textLink: Color = Color.Unspecified,
+    textLinkInverse: Color = Color.Unspecified,
+    textLinkDanger: Color = Color.Unspecified,
+    textLinkDangerDisabled: Color = Color.Unspecified,
+    textLinkDisabled: Color = Color.Unspecified,
+    textLinkSnackbar: Color = Color.Unspecified,
+    control: Color = Color.Unspecified,
+    controlActive: Color = Color.Unspecified,
+    controlError: Color = Color.Unspecified,
+    loadingBar: Color = Color.Unspecified,
+    loadingBarBackground: Color = Color.Unspecified,
+    divider: Color = Color.Unspecified,
+    dividerInverse: Color = Color.Unspecified,
+    navigationBarDivider: Color = Color.Unspecified,
+    badge: Color = Color.Unspecified,
+    feedbackErrorBackground: Color = Color.Unspecified,
+    feedbackInfoBackground: Color = Color.Unspecified,
+    brand: Color = Color.Unspecified,
+    brandDark: Color = Color.Unspecified,
+    inverse: Color = Color.Unspecified,
+    neutralHigh: Color = Color.Unspecified,
+    neutralLow: Color = Color.Unspecified,
+    neutralMedium: Color = Color.Unspecified,
+    promo: Color = Color.Unspecified,
+    highlight: Color = Color.Unspecified,
+    textPrimary: Color = Color.Unspecified,
+    textPrimaryInverse: Color = Color.Unspecified,
+    textSecondary: Color = Color.Unspecified,
+    textSecondaryInverse: Color = Color.Unspecified,
+    textDisabled: Color = Color.Unspecified,
+    textAmount: Color = Color.Unspecified,
+    error: Color = Color.Unspecified,
+    success: Color = Color.Unspecified,
+    warning: Color = Color.Unspecified,
+    textNavigationBarPrimary: Color = Color.Unspecified,
+    textNavigationBarSecondary: Color = Color.Unspecified,
+    textAppBar: Color = Color.Unspecified,
+    textAppBarSelected: Color = Color.Unspecified,
+    gradientBackgroundFirst: Color = Color.Unspecified,
+    gradientBackgroundSecond: Color = Color.Unspecified,
+    gradientBackgroundThird: Color = Color.Unspecified,
+    gradientBackgroundFourth: Color = Color.Unspecified,
+    loginLoadingGradientFirst: Color = Color.Unspecified,
+    loginLoadingGradientSecond: Color = Color.Unspecified,
+    loginLoadingGradientThird: Color = Color.Unspecified,
+    loginLoadingGradientFourth: Color = Color.Unspecified,
+    isLight: Boolean = true,
 ) {
     var appBarBackground by mutableStateOf(appBarBackground, structuralEqualityPolicy())
         internal set
@@ -464,6 +464,99 @@ class MisticaColors(
         loginLoadingGradientFourth,
         isLight,
     )
+
+    internal fun MisticaColors.updateColorsFrom(other: MisticaColors) {
+        appBarBackground = other.appBarBackground
+        background = other.background
+        backgroundContainer = other.backgroundContainer
+        backgroundBrand = other.backgroundBrand
+        backgroundOverlay = other.backgroundOverlay
+        backgroundSkeleton = other.backgroundSkeleton
+        backgroundSkeletonInverse = other.backgroundSkeletonInverse
+        navigationBarBackground = other.navigationBarBackground
+        backgroundAlternative = other.backgroundAlternative
+        backgroundFeedbackBottom = other.backgroundFeedbackBottom
+        skeletonWave = other.skeletonWave
+        borderLight = other.borderLight
+        border = other.border
+        borderDark = other.borderDark
+        borderSelected = other.borderSelected
+        buttonDangerBackground = other.buttonDangerBackground
+        buttonDangerBackgroundDisabled = other.buttonDangerBackgroundDisabled
+        buttonDangerBackgroundSelected = other.buttonDangerBackgroundSelected
+        buttonLinkBackgroundSelected = other.buttonLinkBackgroundSelected
+        buttonLinkBackgroundSelectedInverse = other.buttonLinkBackgroundSelectedInverse
+        buttonPrimaryBackground = other.buttonPrimaryBackground
+        buttonPrimaryBackgroundDisabled = other.buttonPrimaryBackgroundDisabled
+        buttonPrimaryBackgroundDisabledInverse = other.buttonPrimaryBackgroundDisabledInverse
+        buttonPrimaryBackgroundInverse = other.buttonPrimaryBackgroundInverse
+        buttonPrimaryBackgroundSelected = other.buttonPrimaryBackgroundSelected
+        buttonPrimaryBackgroundSelectedInverse = other.buttonPrimaryBackgroundSelectedInverse
+        buttonSecondaryBackground = other.buttonSecondaryBackground
+        buttonSecondaryBackgroundDisabled = other.buttonSecondaryBackgroundDisabled
+        buttonSecondaryBackgroundSelected = other.buttonSecondaryBackgroundSelected
+        buttonSecondaryBorderDisabledInverse = other.buttonSecondaryBorderDisabledInverse
+        buttonSecondaryBorderInverse = other.buttonSecondaryBorderInverse
+        buttonSecondaryBorderSelectedInverse = other.buttonSecondaryBorderSelectedInverse
+        textButtonPrimary = other.textButtonPrimary
+        textButtonPrimaryDisabled = other.textButtonPrimaryDisabled
+        textButtonPrimaryInverse = other.textButtonPrimaryInverse
+        textButtonPrimaryInverseDisabled = other.textButtonPrimaryInverseDisabled
+        textButtonPrimaryInverseSelected = other.textButtonPrimaryInverseSelected
+        textButtonSecondary = other.textButtonSecondary
+        textButtonSecondaryDisabled = other.textButtonSecondaryDisabled
+        textButtonSecondarySelected = other.textButtonSecondarySelected
+        textButtonSecondaryInverse = other.textButtonSecondaryInverse
+        textButtonSecondaryInverseDisabled = other.textButtonSecondaryInverseDisabled
+        textButtonSecondaryInverseSelected = other.textButtonSecondaryInverseSelected
+        textLink = other.textLink
+        textLinkInverse = other.textLinkInverse
+        textLinkDanger = other.textLinkDanger
+        textLinkDangerDisabled = other.textLinkDangerDisabled
+        textLinkDisabled = other.textLinkDisabled
+        textLinkSnackbar = other.textLinkSnackbar
+        control = other.control
+        controlActive = other.controlActive
+        controlError = other.controlError
+        loadingBar = other.loadingBar
+        loadingBarBackground = other.loadingBarBackground
+        divider = other.divider
+        dividerInverse = other.dividerInverse
+        navigationBarDivider = other.navigationBarDivider
+        badge = other.badge
+        feedbackErrorBackground = other.feedbackErrorBackground
+        feedbackInfoBackground = other.feedbackInfoBackground
+        brand = other.brand
+        brandDark = other.brandDark
+        inverse = other.inverse
+        neutralHigh = other.neutralHigh
+        neutralLow = other.neutralLow
+        neutralMedium = other.neutralMedium
+        promo = other.promo
+        highlight = other.highlight
+        textPrimary = other.textPrimary
+        textPrimaryInverse = other.textPrimaryInverse
+        textSecondary = other.textSecondary
+        textSecondaryInverse = other.textSecondaryInverse
+        textDisabled = other.textDisabled
+        textAmount = other.textAmount
+        error = other.error
+        success = other.success
+        warning = other.warning
+        textNavigationBarPrimary = other.textNavigationBarPrimary
+        textNavigationBarSecondary = other.textNavigationBarSecondary
+        textAppBar = other.textAppBar
+        textAppBarSelected = other.textAppBarSelected
+        gradientBackgroundFirst = other.gradientBackgroundFirst
+        gradientBackgroundSecond = other.gradientBackgroundSecond
+        gradientBackgroundThird = other.gradientBackgroundThird
+        gradientBackgroundFourth = other.gradientBackgroundFourth
+        loginLoadingGradientFirst = other.loginLoadingGradientFirst
+        loginLoadingGradientSecond = other.loginLoadingGradientSecond
+        loginLoadingGradientThird = other.loginLoadingGradientThird
+        loginLoadingGradientFourth = other.loginLoadingGradientFourth
+        isLight = other.isLight
+    }
 }
 
-internal val LocalMisticaColors: ProvidableCompositionLocal<MisticaColors> = null!! //TODO dpastor
+internal val LocalMisticaColors = staticCompositionLocalOf { MisticaColors() }
