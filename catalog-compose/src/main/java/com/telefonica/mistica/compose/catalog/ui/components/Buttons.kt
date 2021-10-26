@@ -45,17 +45,17 @@ fun Buttons() {
             ButtonStyle.values()
                 .filter { !it.name.contains("INVERSE") }
                 .forEach {
-                    var inProgress by remember(it.name) { mutableStateOf(false) }
+                    var isLoading by remember(it.name) { mutableStateOf(false) }
                     Button(
                         text = "Progress button - ${it.name}",
                         loadingText = "Loading",
                         buttonStyle = it,
-                        isLoading = inProgress,
+                        isLoading = isLoading,
                         onClickListener = {
-                            inProgress = true
+                            isLoading = true
                             GlobalScope.launch {
                                 delay(1000)
-                                MainScope().launch { inProgress = false }
+                                MainScope().launch { isLoading = false }
                             }
                         })
             }
@@ -78,17 +78,17 @@ fun Buttons() {
             ButtonStyle.values()
                 .filter { it.name.contains("INVERSE") }
                 .forEach {
-                    var inProgress by remember(it.name) { mutableStateOf(false) }
+                    var isLoading by remember(it.name) { mutableStateOf(false) }
                     Button(
                         text = "Progress button - ${it.name}",
                         loadingText = "Loading",
                         buttonStyle = it,
-                        isLoading = inProgress,
+                        isLoading = isLoading,
                         onClickListener = {
-                            inProgress = true
+                            isLoading = true
                             GlobalScope.launch {
                                 delay(1000)
-                                MainScope().launch { inProgress = false }
+                                MainScope().launch { isLoading = false }
                             }
                         })
             }
