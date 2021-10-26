@@ -73,21 +73,19 @@ fun ComponentRow(
         Row(
             modifier = Modifier.align(Alignment.CenterStart)
         ) {
-            Icon(
+            Image(
                 painter = painterResource(id = componentScreen.icon),
-                contentDescription = null,
-                tint = Color.Unspecified
+                contentDescription = null
             )
             Text(
                 text = componentScreen.name,
                 modifier = Modifier.padding(start = 16.dp)
             )
         }
-        Icon(
+        Image(
             painter = painterResource(id = R.drawable.icn_arrow),
             contentDescription = null,
-            modifier = Modifier.align(Alignment.CenterEnd),
-            tint = Color.Unspecified
+            modifier = Modifier.align(Alignment.CenterEnd)
         )
     }
 }
