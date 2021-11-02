@@ -10,7 +10,7 @@ on:
         required: true
 jobs:
   release:
-    runs-on: self-hosted-novum
+    runs-on: [self-hosted-org, linux]
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
@@ -33,6 +33,12 @@ jobs:
         with:
           args: 'bash ./gradlew clean :library:assembleRelease :catalog:assembleRelease'
 
+      - name: Build Compose library
+        if: steps.check.outputs.has-permission
+        uses: docker://docker.tuenti.io/android/mistica_builder:3
+        with:
+          args: 'bash ./gradlew clean :library-compose:assembleRelease :catalog-compose:assembleRelease'
+
       - name: Release library
         if: steps.check.outputs.has-permission
         uses: docker://docker.tuenti.io/android/mistica_builder:3
@@ -45,6 +51,18 @@ jobs:
         with:
           args: 'bash ./gradlew :library:publishReleasePublicationToSonatypeRepository -DLIBRARY_VERSION=${{ github.event.inputs.libraryVersion }}'
 
+      - name: Release Compose library
+        if: steps.check.outputs.has-permission
+        uses: docker://docker.tuenti.io/android/mistica_builder:3
+        env:
+          MOBILE_MAVENCENTRAL_USER: ${{ secrets.MOBILE_MAVENCENTRAL_USER }}
+          MOBILE_MAVENCENTRAL_PASSWORD: ${{ secrets.MOBILE_MAVENCENTRAL_PASSWORD }}
+          ORG_GRADLE_PROJECT_signingKey: ${{ secrets.ORG_GRADLE_PROJECT_SIGNINGKEY }}
+          ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.ORG_GRADLE_PROJECT_SIGNINGPASSWORD }}
+          ORG_GRADLE_PROJECT_signingKeyId: ${{ secrets.ORG_GRADLE_PROJECT_SIGNINGKEYID }}
+        with:
+          args: 'bash ./gradlew :library-compose:publishReleasePublicationToSonatypeRepository -DLIBRARY_VERSION=${{ github.event.inputs.libraryVersion }}'
+
       - name: Release catalog
         if: steps.check.outputs.has-permission
         uses: docker://docker.tuenti.io/android/mistica_builder:3
@@ -56,6 +74,18 @@ jobs:
           ORG_GRADLE_PROJECT_signingKeyId: ${{ secrets.ORG_GRADLE_PROJECT_SIGNINGKEYID }}
         with:
           args: 'bash ./gradlew :catalog:publishCatalogPublicationToSonatypeRepository -DLIBRARY_VERSION=${{ github.event.inputs.libraryVersion }}'
+
+      - name: Release Compose catalog
+        if: steps.check.outputs.has-permission
+        uses: docker://docker.tuenti.io/android/mistica_builder:3
+        env:
+          MOBILE_MAVENCENTRAL_USER: ${{ secrets.MOBILE_MAVENCENTRAL_USER }}
+          MOBILE_MAVENCENTRAL_PASSWORD: ${{ secrets.MOBILE_MAVENCENTRAL_PASSWORD }}
+          ORG_GRADLE_PROJECT_signingKey: ${{ secrets.ORG_GRADLE_PROJECT_SIGNINGKEY }}
+          ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.ORG_GRADLE_PROJECT_SIGNINGPASSWORD }}
+          ORG_GRADLE_PROJECT_signingKeyId: ${{ secrets.ORG_GRADLE_PROJECT_SIGNINGKEYID }}
+        with:
+          args: 'bash ./gradlew :catalog-compose:publishCatalogPublicationToSonatypeRepository -DLIBRARY_VERSION=${{ github.event.inputs.libraryVersion }}'
 
       - name: Create Release in github
         if: steps.check.outputs.has-permission
