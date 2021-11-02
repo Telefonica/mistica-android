@@ -22,7 +22,7 @@ import com.telefonica.mistica.compose.theme.text.MisticaTypography
 fun MisticaTheme(
     brand: Brand,
     darkTheme: Boolean = isSystemInDarkTheme(),
-    content: @Composable () -> Unit
+    content: @Composable () -> Unit,
 ) {
     val colors = if (darkTheme) {
         brand.darkColors
@@ -30,12 +30,12 @@ fun MisticaTheme(
         brand.lightColors
     }
     val rememberedColors = remember {
-        colors.copy()
+        MisticaColors()
     }.apply { updateColorsFrom(colors) }
 
-    val typography = MisticaTypography(
-        fontFamily = brand.fontFamily
-    )
+    val typography = remember {
+        MisticaTypography()
+    }.apply { updateWith(brand.fontFamily) }
 
     CompositionLocalProvider(
         LocalMisticaColors provides rememberedColors,
