@@ -1,6 +1,7 @@
 package com.telefonica.mistica.card
 
 import android.content.Context
+import android.text.TextUtils
 import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.View
@@ -14,6 +15,7 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
+import com.telefonica.mistica.card.mediacard.MediaCardView
 import com.telefonica.mistica.util.getThemeColor
 
 @BindingMethods(
@@ -34,8 +36,18 @@ import com.telefonica.mistica.util.getThemeColor
     ),
     BindingMethod(
         type = CardView::class,
+        attribute = "cardTitleMaxLines",
+        method = "setTitleMaxLines"
+    ),
+    BindingMethod(
+        type = CardView::class,
         attribute = "cardDescription",
         method = "setDescription"
+    ),
+    BindingMethod(
+        type = CardView::class,
+        attribute = "cardDescriptionMaxLines",
+        method = "setDescriptionMaxLines"
     ),
     BindingMethod(
         type = CardView::class,
@@ -94,8 +106,9 @@ abstract class CardView @JvmOverloads constructor(
             setTag(styledAttrs.getText(R.styleable.CardView_cardTag))
             setTagColor(styledAttrs.getColor(R.styleable.CardView_cardTagColor, context.getThemeColor(R.attr.colorPromo)))
             setTitle(styledAttrs.getText(R.styleable.CardView_cardTitle))
+            setTitleMaxLines(styledAttrs.getInteger(R.styleable.CardView_cardTitleMaxLines, -1))
             setDescription(styledAttrs.getText(R.styleable.CardView_cardDescription))
-
+            setDescriptionMaxLines(styledAttrs.getInteger(R.styleable.CardView_cardDescriptionMaxLines, -1))
             setPrimaryButtonText(styledAttrs.getText(R.styleable.CardView_cardPrimaryButtonText))
             setLinkButtonText(styledAttrs.getText(R.styleable.CardView_cardLinkButtonText))
 
@@ -127,12 +140,26 @@ abstract class CardView @JvmOverloads constructor(
         cardContentView.titleTextView.setTextAndVisibility(text)
     }
 
+    fun setTitleMaxLines(maxLines: Int) {
+        if (maxLines > 0) {
+            cardContentView.titleTextView.maxLines = maxLines
+            cardContentView.titleTextView.ellipsize = TextUtils.TruncateAt.END
+        }
+    }
+
     fun setTitle(@StringRes textRes: Int?) {
         textRes?.let { setTitle(context.getString(it)) }
     }
 
     fun setDescription(text: CharSequence?) {
         cardContentView.descriptionTextView.setTextAndVisibility(text)
+    }
+
+    fun setDescriptionMaxLines(maxLines: Int) {
+        if (maxLines > 0) {
+            cardContentView.descriptionTextView.maxLines = maxLines
+            cardContentView.descriptionTextView.ellipsize = TextUtils.TruncateAt.END
+        }
     }
 
     fun setDescription(@StringRes textRes: Int?) {

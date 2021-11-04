@@ -19,7 +19,9 @@ configured through the public api or via xml `attr`:
         <attr name="cardTag" format="string" />
         <attr name="cardPretitle" format="string" />
         <attr name="cardTitle" format="string" />
+        <attr name="cardTitleMaxLines" format="integer" />
         <attr name="cardDescription" format="string" />
+        <attr name="cardDescriptionMaxLines" format="integer" />
         <attr name="cardPrimaryButtonText" format="string" />
         <attr name="cardLinkButtonText" format="string" />
         <attr name="cardPrimaryButtonOnClick" format="string" />
