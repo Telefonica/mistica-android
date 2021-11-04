@@ -38,15 +38,13 @@ fun DropDownInput(
         },
         update = {
             if (itemsChanged) {
-                it.dropDown.apply {
-                    setAdapter(
-                        DropDownInput.Adapter(
-                            it.context,
-                            R.layout.dropdown_menu_popup_item,
-                            rememberedItems
-                        )
+                it.dropDown.setAdapter(
+                    DropDownInput.Adapter(
+                        it.context,
+                        R.layout.dropdown_menu_popup_item,
+                        rememberedItems
                     )
-                }
+                )
             }
             it.dropDown.setText(if (currentItemIndex >= 0) rememberedItems[currentItemIndex] else "")
             it.hint = hint
