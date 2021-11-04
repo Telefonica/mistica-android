@@ -1,9 +1,13 @@
 package com.telefonica.mistica.compose.theme.brand
 
 import androidx.compose.ui.graphics.Color
+import com.telefonica.mistica.compose.R
 import com.telefonica.mistica.compose.theme.color.MisticaColors
 
 object MovistarBrand : Brand {
+
+    override val compatibilityTheme: Int
+        get() = R.style.MisticaTheme_Movistar
 
     override val lightColors = MisticaColors(
         appBarBackground = MovistarPaletteColor.movistar_color_white,
@@ -164,6 +168,9 @@ object MovistarBrand : Brand {
 }
 
 object MovistarProminentBrand: Brand {
+
+    override val compatibilityTheme: Int
+        get() = R.style.MisticaTheme_Movistar_Prominent
 
     override val lightColors = MovistarBrand.lightColors.copy(
         brand = MovistarPaletteColor.movistar_prominent_color_blue,

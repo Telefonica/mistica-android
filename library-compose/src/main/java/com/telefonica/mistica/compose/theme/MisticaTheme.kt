@@ -8,9 +8,11 @@ import androidx.compose.material.Shapes
 import androidx.compose.material.Typography
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.ReadOnlyComposable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.theme.brand.Brand
 import com.telefonica.mistica.compose.theme.color.LocalMisticaColors
@@ -24,11 +26,17 @@ fun MisticaTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit,
 ) {
+    val context = LocalContext.current
+    LaunchedEffect(key1 = brand) {
+        context.setTheme(brand.compatibilityTheme)
+    }
+
     val colors = if (darkTheme) {
         brand.darkColors
     } else {
         brand.lightColors
     }
+
     val rememberedColors = remember {
         MisticaColors()
     }.apply { updateColorsFrom(colors) }
@@ -57,7 +65,9 @@ fun MisticaTheme(
                 onError = Color.Unspecified,
                 isLight = !darkTheme,
             ),
-            typography = Typography(),
+            typography = Typography(
+                body1 = LocalMisticaTypography.current.preset3
+            ),
             shapes = Shapes(
                 small = RoundedCornerShape(4.dp),
                 medium = RoundedCornerShape(4.dp),

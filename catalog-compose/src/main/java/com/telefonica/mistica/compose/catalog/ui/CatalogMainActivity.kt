@@ -20,6 +20,9 @@ import androidx.compose.material.Icon
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -30,22 +33,32 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.telefonica.mistica.compose.button.DropDownInput
 import com.telefonica.mistica.compose.catalog.R
 import com.telefonica.mistica.compose.catalog.ui.components.Buttons
 import com.telefonica.mistica.compose.catalog.ui.components.Feedbacks
 import com.telefonica.mistica.compose.catalog.ui.components.Texts
 import com.telefonica.mistica.compose.theme.MisticaTheme
+import com.telefonica.mistica.compose.theme.brand.Brand
 import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 import com.telefonica.mistica.compose.theme.brand.MovistarProminentBrand
 
 class CatalogMainActivity : ComponentActivity() {
+
+    private var brand by mutableStateOf<Brand>(MovistarBrand)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MisticaTheme(brand = MovistarProminentBrand) {
+            MisticaTheme(brand = brand) {
                 val navController = rememberNavController()
                 Scaffold { innerPadding ->
-                    CatalogNavHost(navController, modifier = Modifier.padding(innerPadding))
+                    CatalogNavHost(
+                        navController,
+                        modifier = Modifier.padding(innerPadding),
+                        onBrandChanged = { brand = it },
+                        currentBrand = brand,
+                    )
                 }
             }
         }
@@ -91,13 +104,24 @@ fun ComponentRow(
 }
 
 @Composable
-fun CatalogNavHost(navController: NavHostController, modifier: Modifier = Modifier) {
+fun CatalogNavHost(
+    navController: NavHostController,
+    modifier: Modifier = Modifier,
+    currentBrand: Brand,
+    onBrandChanged: (Brand) -> Unit,
+) {
     NavHost(
         navController = navController,
         startDestination = NavigationRoutes.CATALOG,
         modifier = modifier
     ) {
-        composable(NavigationRoutes.CATALOG) { Catalog(navController = navController) }
+        composable(NavigationRoutes.CATALOG) {
+            Catalog(
+                navController = navController,
+                onBrandChanged = onBrandChanged,
+                currentBrand = currentBrand,
+            )
+        }
         composable(NavigationRoutes.BUTTONS) { Buttons() }
         composable(NavigationRoutes.TEXTS) { Texts() }
         composable(NavigationRoutes.FEEDBACKS) { Feedbacks() }
@@ -105,7 +129,12 @@ fun CatalogNavHost(navController: NavHostController, modifier: Modifier = Modifi
 }
 
 @Composable
-fun Catalog(navController: NavHostController, modifier: Modifier = Modifier) {
+fun Catalog(
+    navController: NavHostController,
+    modifier: Modifier = Modifier,
+    currentBrand: Brand,
+    onBrandChanged: (Brand) -> Unit,
+) {
     val components = listOf(
         ComponentScreen(
             name = "Buttons (Work in progress)",
@@ -140,6 +169,17 @@ fun Catalog(navController: NavHostController, modifier: Modifier = Modifier) {
                 .align(Alignment.CenterHorizontally)
                 .padding(16.dp),
         )
+
+        DropDownInput(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp),
+            items = BRANDS.map { it.javaClass.simpleName },
+            currentItemIndex = BRANDS.indexOf(currentBrand),
+            onItemSelected = { index -> onBrandChanged(BRANDS[index]) },
+            hint = "Brand",
+        )
+
         // A surface container using the 'background' color from the theme
         LazyColumn(
             modifier = modifier
@@ -163,6 +203,11 @@ fun Catalog(navController: NavHostController, modifier: Modifier = Modifier) {
 fun ComponentRowPreview() {
     ComponentRow(componentScreen = ComponentScreen("Button", R.drawable.ic_buttons, ""))
 }
+
+val BRANDS = listOf(
+    MovistarBrand,
+    MovistarProminentBrand
+)
 
 object NavigationRoutes {
     const val CATALOG = "catalog"
