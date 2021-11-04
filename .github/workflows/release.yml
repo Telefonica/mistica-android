@@ -10,7 +10,7 @@ on:
         required: true
 jobs:
   release:
-    runs-on: [self-hosted-org, linux]
+    runs-on: self-hosted-novum
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
