@@ -16,7 +16,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Divider
-import androidx.compose.material.Icon
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -86,7 +85,7 @@ fun ComponentRow(
         Row(
             modifier = Modifier.align(Alignment.CenterStart)
         ) {
-            Icon(
+            Image(
                 painter = painterResource(id = componentScreen.icon),
                 contentDescription = null
             )
@@ -95,7 +94,7 @@ fun ComponentRow(
                 modifier = Modifier.padding(start = 16.dp)
             )
         }
-        Icon(
+        Image(
             painter = painterResource(id = R.drawable.icn_arrow),
             contentDescription = null,
             modifier = Modifier.align(Alignment.CenterEnd)
