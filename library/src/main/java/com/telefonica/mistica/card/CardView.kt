@@ -35,7 +35,7 @@ import com.telefonica.mistica.util.getThemeColor
         method = "setTitle"
     ),
     BindingMethod(
-        type = MediaCardView::class,
+        type = CardView::class,
         attribute = "cardTitleMaxLines",
         method = "setTitleMaxLines"
     ),
@@ -45,7 +45,7 @@ import com.telefonica.mistica.util.getThemeColor
         method = "setDescription"
     ),
     BindingMethod(
-        type = MediaCardView::class,
+        type = CardView::class,
         attribute = "cardDescriptionMaxLines",
         method = "setDescriptionMaxLines"
     ),
