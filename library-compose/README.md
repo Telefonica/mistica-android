@@ -90,7 +90,7 @@ There is a Mística-compose catalog in the [Demo app](https://github.com/Telefon
 | Badges					|     |     |    				
 | Scroll Content Indicator	|     |     |    								
 | Tags						|     |     |    			
-| Lists						|     |     |    			
+| Lists						|  🏃‍♂️ |     |    			
 | Headers					|     |     |    				
 | Sections					|     |     |    				
 | Filters					|     |     |    				
