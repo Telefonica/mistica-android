@@ -55,3 +55,23 @@ override fun onCreate(savedInstanceState: Bundle?) {
         }
     }
 ```
+
+## Composable components
+Mística-compose supports a subset of the Mística elements. The objective is to support all of them in a near future.
+
+* [Buttons](./src/main/java/com/telefonica/mistica/compose/button)
+* [Feedbacks](./src/main/java/com/telefonica/mistica/compose/feedback)
+
+## Fonts
+Mística-compose supports the same fonts supported in Mística. See [MisticaTypography](https://github.com/Telefonica/mistica-android/library-compose/src/main/java/com/telefonica/mistica/compose/theme/text/MisticaTypography.kt)
+
+Example of use:
+```kotlin
+Text(
+    text = "Preset 1",
+    style = MisticaTheme.typography.preset1
+)
+```
+
+## Demo app
+There is a Mística-compose catalog in the [Demo app](https://github.com/Telefonica/mistica-android/blob/master/README.md#demo-app) Search for Compose in your launcher
