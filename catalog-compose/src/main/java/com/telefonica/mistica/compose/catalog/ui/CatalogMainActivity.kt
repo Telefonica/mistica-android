@@ -36,6 +36,7 @@ import com.telefonica.mistica.compose.button.DropDownInput
 import com.telefonica.mistica.compose.catalog.R
 import com.telefonica.mistica.compose.catalog.ui.components.Buttons
 import com.telefonica.mistica.compose.catalog.ui.components.Feedbacks
+import com.telefonica.mistica.compose.catalog.ui.components.Lists
 import com.telefonica.mistica.compose.catalog.ui.components.Texts
 import com.telefonica.mistica.compose.theme.MisticaTheme
 import com.telefonica.mistica.compose.theme.brand.Brand
@@ -124,6 +125,7 @@ fun CatalogNavHost(
         composable(NavigationRoutes.BUTTONS) { Buttons() }
         composable(NavigationRoutes.TEXTS) { Texts() }
         composable(NavigationRoutes.FEEDBACKS) { Feedbacks() }
+        composable(NavigationRoutes.LISTS) { Lists() }
     }
 }
 
@@ -149,6 +151,11 @@ fun Catalog(
             name = "Feedbacks",
             icon = R.drawable.ic_feedbacks,
             navigation = NavigationRoutes.FEEDBACKS
+        ),
+        ComponentScreen(
+            name = "Lists",
+            icon = R.drawable.ic_lists,
+            navigation = NavigationRoutes.LISTS
         )
     )
     Column {
@@ -213,4 +220,5 @@ object NavigationRoutes {
     const val BUTTONS = "buttons"
     const val TEXTS = "texts"
     const val FEEDBACKS = "feedbacks"
+    const val LISTS = "lists"
 }
