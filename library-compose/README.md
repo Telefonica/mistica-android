@@ -75,3 +75,42 @@ Text(
 
 ## Demo app
 There is a Mística-compose catalog in the [Demo app](https://github.com/Telefonica/mistica-android/blob/master/README.md#demo-app) Search for Compose in your launcher
+
+## Current state
+
+### Components
+| Component | Available | Implementation |
+| ------------- | ------------- | ------------- |
+| Buttons					|  ✅  |  AndroidView   |    				
+| Inputs					|     |     |    				
+| Snackbars					|     |     |    				
+| Screen Feedbacks			|  ✅  |  AndroidView   | 					
+| Load Error Feedback		|     |     |    							
+| Pop Overs					|     |     |    				
+| Badges					|     |     |    				
+| Scroll Content Indicator	|     |     |    								
+| Tags						|     |     |    			
+| Lists						|     |     |    			
+| Headers					|     |     |    				
+| Sections					|     |     |    				
+| Filters					|     |     |    				
+| Highlighted Cards			|     |     |    						
+| Controls					|     |     |    				
+| Media Cards				|     |     |    					
+| Data Cards				|     |     |    					
+| Steppers					|     |     |    				
+| Tabs						|     |     |    			
+| Empty States				|     |     |    					
+| Empty State Cards			|     |     |    						
+| Callout					|     |     |    		
+
+
+### Brands
+| Brand | Available |
+| ------------- | ------------- |
+| Movistar					|  ✅  |
+| Movistar Prominent		|     |
+| O2						|     |
+| Vivo						|     |
+| Blau						|     |
+| Telefónica				|     |
