@@ -5,6 +5,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.runtime.structuralEqualityPolicy
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
@@ -12,6 +13,7 @@ import androidx.compose.ui.unit.sp
 
 class MisticaTypography(
     private var fontFamily: FontFamily = FontFamily.SansSerif,
+    private var defaultTextColor: Color = Color.Unspecified,
 ) {
     var preset8 by mutableStateOf(buildPreset8(), structuralEqualityPolicy())
         private set
@@ -62,6 +64,7 @@ class MisticaTypography(
         TextStyle(
             letterSpacing = 0.sp,
             fontFamily = fontFamily,
+            color = defaultTextColor,
         )
 
     private fun buildPreset8() =
