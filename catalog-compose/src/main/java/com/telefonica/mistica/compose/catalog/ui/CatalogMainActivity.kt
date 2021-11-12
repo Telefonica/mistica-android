@@ -17,6 +17,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Divider
+import androidx.compose.material.Icon
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -158,7 +159,7 @@ fun Catalog(
             painter = painterResource(id = R.drawable.ic_mistica_logo_text_compose),
             contentDescription = null,
             modifier = Modifier
-                .padding(start = 16.dp, top = 32.dp, end = 16.dp, bottom = 16.dp)
+                .padding(start = 16.dp, top = 32.dp, end = 16.dp, bottom = 16.dp),
         )
 
         Text(
