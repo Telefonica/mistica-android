@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -136,7 +137,7 @@ fun Catalog(
 ) {
     val components = listOf(
         ComponentScreen(
-            name = "Buttons (Work in progress)",
+            name = "Buttons",
             icon = R.drawable.ic_buttons,
             navigation = NavigationRoutes.BUTTONS
         ),
@@ -154,18 +155,16 @@ fun Catalog(
     Column {
 
         Image(
-            painter = painterResource(id = R.drawable.ic_mistica_logo_text),
+            painter = painterResource(id = R.drawable.ic_mistica_logo_text_compose),
             contentDescription = null,
             modifier = Modifier
-                .align(Alignment.CenterHorizontally)
-                .padding(16.dp)
+                .padding(start = 16.dp, top = 32.dp, end = 16.dp, bottom = 16.dp)
         )
 
         Text(
             text = "Compose version",
-            style = MisticaTheme.typography.preset8,
+            style = MisticaTheme.typography.preset4,
             modifier = Modifier
-                .align(Alignment.CenterHorizontally)
                 .padding(16.dp),
         )
 
