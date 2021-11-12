@@ -42,7 +42,9 @@ fun MisticaTheme(
     }.apply { updateColorsFrom(colors) }
 
     val typography = remember {
-        MisticaTypography()
+        MisticaTypography(
+            defaultTextColor = rememberedColors.textPrimary
+        )
     }.apply { updateWith(brand.fontFamily) }
 
     CompositionLocalProvider(
