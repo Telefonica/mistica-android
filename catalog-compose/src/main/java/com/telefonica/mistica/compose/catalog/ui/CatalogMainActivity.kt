@@ -43,6 +43,7 @@ import com.telefonica.mistica.compose.theme.MisticaTheme
 import com.telefonica.mistica.compose.theme.brand.Brand
 import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 import com.telefonica.mistica.compose.theme.brand.MovistarProminentBrand
+import com.telefonica.mistica.compose.theme.brand.TelefonicaBrand
 
 class CatalogMainActivity : ComponentActivity() {
 
@@ -205,7 +206,8 @@ fun ComponentRowPreview() {
 
 val BRANDS = listOf(
     MovistarBrand,
-    MovistarProminentBrand
+    MovistarProminentBrand,
+    TelefonicaBrand,
 )
 
 object NavigationRoutes {
