@@ -18,6 +18,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.feedback.Feedback
 import com.telefonica.mistica.feedback.screen.view.FeedbackScreenView
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 @Composable
 fun Feedbacks(
@@ -67,6 +71,10 @@ fun Feedbacks(
                 Text("Error")
                 Checkbox(checked = type == FeedbackScreenView.TYPE_ERROR, onCheckedChange = { type = FeedbackScreenView.TYPE_ERROR })
             }
+            com.telefonica.mistica.compose.button.Button(
+                text = "Show feedback",
+                onClickListener = { showFeedback = true }
+            )
             Button(onClick = { showFeedback = true }) {
                 Text("Show feedback")
             }

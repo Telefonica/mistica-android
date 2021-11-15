@@ -2,16 +2,16 @@ package com.telefonica.mistica.compose.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Colors
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Shapes
 import androidx.compose.material.Typography
+import androidx.compose.material.darkColors
+import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.ReadOnlyComposable
 import androidx.compose.runtime.remember
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.theme.brand.Brand
@@ -52,20 +52,18 @@ fun MisticaTheme(
         LocalMisticaTypography provides typography,
     ) {
         MaterialTheme(
-            colors = Colors(
-                primary = LocalMisticaColors.current.navigationBarBackground,
-                primaryVariant = Color.Unspecified,
-                secondary = Color.Unspecified,
-                secondaryVariant = Color.Unspecified,
+            colors = if (darkTheme) {
+                darkColors()
+            } else {
+                lightColors()
+            }.copy(
+                primary = LocalMisticaColors.current.brand,
+                primaryVariant = LocalMisticaColors.current.brand,
+                secondary = LocalMisticaColors.current.brand,
+                secondaryVariant = LocalMisticaColors.current.brand,
                 background = LocalMisticaColors.current.background,
-                surface = Color.Unspecified,
-                error = Color.Unspecified,
-                onPrimary = Color.Unspecified,
-                onSecondary = Color.Unspecified,
-                onBackground = Color.Unspecified,
-                onSurface = Color.Unspecified,
-                onError = Color.Unspecified,
-                isLight = !darkTheme,
+                error = LocalMisticaColors.current.error,
+
             ),
             typography = Typography(
                 body1 = LocalMisticaTypography.current.preset3
