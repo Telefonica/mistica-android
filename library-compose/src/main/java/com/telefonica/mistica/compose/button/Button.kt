@@ -9,7 +9,7 @@ import com.telefonica.mistica.compose.R
 @Composable
 fun Button(
     text: String,
-    loadingText: String,
+    loadingText: String = "",
     buttonStyle: ButtonStyle = ButtonStyle.PRIMARY,
     isLoading: Boolean = false,
     onClickListener: () -> Unit,
