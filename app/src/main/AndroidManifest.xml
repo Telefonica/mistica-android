@@ -19,6 +19,7 @@
             android:name="com.telefonica.mistica.catalog.ui.CatalogMainActivity"
             android:exported="true"
             android:taskAffinity="com.telefonica.mistica.catalog"
+            android:icon="@mipmap/ic_launcher"
             tools:node="replace">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,6 +31,8 @@
                 android:name="com.telefonica.mistica.compose.catalog.ui.CatalogMainActivity"
                 android:exported="true"
                 android:label="@string/compose_activity"
+                android:icon="@mipmap/ic_launcher_compose"
+                android:roundIcon="@mipmap/ic_launcher_compose_round"
                 android:taskAffinity="com.telefonica.mistica.compose.catalog"
                 tools:node="replace">
             <intent-filter>
