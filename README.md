@@ -12,6 +12,10 @@
 
 Mistica is a framework that contains reusable UI components and utilities.
 
+## Compose support
+
+There is a currently work in progress compose version of the library. Check the documentation [here](library-compose)
+
 ## Installation
 
 
