@@ -1,6 +1,6 @@
 # Jetpack Compose support
 
-[Jetpack compose](https://developer.android.com/jetpack/compose?gclid=Cj0KCQiAsqOMBhDFARIsAFBTN3fVBPwn0qPY2gE7Ghqy3N3sT1cZa2CQ4luSD5VgiCRZ5UHNQN0Ao2gaAmPrEALw_wcB&gclsrc=aw.ds) is a toolkit to develop native UI in Android. Newer and more powerful than Android Views it has became the default system in newer Telefónica Android applications.
+[Jetpack compose](https://developer.android.com/jetpack/compose) is a toolkit to develop native UI in Android. Newer and more powerful than Android Views it has became the default system in newer Telefónica Android applications.
 
 ## Installation
 
