@@ -1,7 +1,6 @@
 package com.telefonica.mistica.compose.catalog.ui
 
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
@@ -47,12 +46,11 @@ import com.telefonica.mistica.compose.theme.brand.MovistarProminentBrand
 
 class CatalogMainActivity : ComponentActivity() {
 
+    private var brand by mutableStateOf<Brand>(MovistarBrand)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            var brand by mutableStateOf<Brand>(MovistarBrand)
-            Log.d("gmerinoTest", "la brand ${brand.lightColors.brand}")
             MisticaTheme(brand = brand) {
                 val navController = rememberNavController()
                 Scaffold { innerPadding ->
