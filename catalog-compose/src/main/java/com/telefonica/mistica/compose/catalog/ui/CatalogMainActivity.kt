@@ -44,6 +44,7 @@ import com.telefonica.mistica.compose.theme.brand.BlauBrand
 import com.telefonica.mistica.compose.theme.brand.Brand
 import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 import com.telefonica.mistica.compose.theme.brand.MovistarProminentBrand
+import com.telefonica.mistica.compose.theme.brand.O2Brand
 import com.telefonica.mistica.compose.theme.brand.O2ClassicBrand
 import com.telefonica.mistica.compose.theme.brand.TelefonicaBrand
 import com.telefonica.mistica.compose.theme.brand.VivoBrand
@@ -214,6 +215,7 @@ val BRANDS = listOf(
     VivoBrand,
     BlauBrand,
     O2ClassicBrand,
+    O2Brand,
 )
 
 object NavigationRoutes {
