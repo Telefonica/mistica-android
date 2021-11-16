@@ -40,10 +40,14 @@ import com.telefonica.mistica.compose.catalog.ui.components.Buttons
 import com.telefonica.mistica.compose.catalog.ui.components.Feedbacks
 import com.telefonica.mistica.compose.catalog.ui.components.Texts
 import com.telefonica.mistica.compose.theme.MisticaTheme
+import com.telefonica.mistica.compose.theme.brand.BlauBrand
 import com.telefonica.mistica.compose.theme.brand.Brand
 import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 import com.telefonica.mistica.compose.theme.brand.MovistarProminentBrand
+import com.telefonica.mistica.compose.theme.brand.O2Brand
+import com.telefonica.mistica.compose.theme.brand.O2ClassicBrand
 import com.telefonica.mistica.compose.theme.brand.TelefonicaBrand
+import com.telefonica.mistica.compose.theme.brand.VivoBrand
 
 class CatalogMainActivity : ComponentActivity() {
 
@@ -208,6 +212,10 @@ val BRANDS = listOf(
     MovistarBrand,
     MovistarProminentBrand,
     TelefonicaBrand,
+    VivoBrand,
+    BlauBrand,
+    O2ClassicBrand,
+    O2Brand,
 )
 
 object NavigationRoutes {
