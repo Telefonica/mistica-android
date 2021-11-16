@@ -32,6 +32,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -113,7 +114,8 @@ fun ListRowItem(
             Column(
                 modifier = Modifier
                     .weight(1f)
-                    .absolutePadding(right = 4.dp)
+                    .absolutePadding(right = 16.dp)
+                    .align(CenterVertically)
             ) {
                 headline?.let {
                     it()
@@ -145,20 +147,21 @@ fun ListRowItem(
             if (badgeVisible) {
                 val badgeModifier = Modifier
                     .align(CenterVertically)
-                    .padding(4.dp)
+                    .absolutePadding(0.dp, 0.dp, 16.dp, 0.dp)
                 if (badge.isNullOrEmpty()) {
                     Surface(
                         shape = RoundedCornerShape(50),
                         color = MisticaTheme.colors.badge,
                         modifier = badgeModifier
-                            .height(8.dp)
-                            .width(8.dp)
+                            .size(8.dp),
                     ) { }
                 } else {
                     BadgeBox(
                         badgeContent = { Text(text = badge) },
+                        contentColor = Color.White,
                         backgroundColor = MisticaTheme.colors.badge,
                         modifier = badgeModifier
+                            .absolutePadding(0.dp, 0.dp, 8.dp, 0.dp)
                     ) { }
                 }
             }
@@ -177,20 +180,25 @@ private fun RowImage(image: RowImage?) {
     if (image != null) {
         when (image) {
             is Icon -> {
-                Image(
-                    painter = image.painter,
-                    contentDescription = null,
+                Surface(
                     modifier = Modifier
                         .size(40.dp)
                         .clip(CircleShape)
                         .let {
                             if (image.withBackground) {
-                                it.background(MisticaTheme.colors.neutralLow, shape = CircleShape)
+                                it.background(MisticaTheme.colors.neutralLow)
                             } else {
                                 it
                             }
                         }
-                )
+                ) {
+                    Image(
+                        painter = image.painter,
+                        contentDescription = null,
+                        modifier = Modifier
+                            .size(24.dp),
+                    )
+                }
             }
             is ResourceImage -> {
                 Image(
@@ -198,7 +206,8 @@ private fun RowImage(image: RowImage?) {
                     contentDescription = null,
                     modifier = Modifier
                         .size(40.dp)
-                        .clip(CircleShape)
+                        .clip(CircleShape),
+                    contentScale = ContentScale.Crop,
                 )
             }
         }
@@ -215,13 +224,16 @@ fun ListRowItemPreview() {
         Column {
             ListRowItem(
                 headline = { Chip() },
-                title = "Title Title Title Title Title Title Title Title Title Title Title Title Title Title Title Title Title ",
+                isBadgeVisible = true,
+                title = "Title",
                 subtitle = "Subtitle",
                 description = "Description",
-                rowImage = Icon(painterResource(id = R.drawable.icn_arrow), withBackground = true)
+                action = { Chevron() },
             )
             ListRowItem(
                 title = "Title",
+                isBadgeVisible = true,
+                badge = "2",
                 subtitle = "Subtitle",
                 description = "Description",
                 rowImage = Icon(painterResource(id = R.drawable.icn_arrow), withBackground = false),
@@ -284,9 +296,6 @@ fun Chevron() {
             contentDescription = null,
             modifier = Modifier
                 .align(CenterVertically)
-                .absolutePadding(
-                    left = 8.dp
-                )
         )
     }
 }
