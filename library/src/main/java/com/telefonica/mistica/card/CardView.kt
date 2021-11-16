@@ -1,6 +1,7 @@
 package com.telefonica.mistica.card
 
 import android.content.Context
+import android.text.TextUtils
 import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.View
@@ -8,12 +9,13 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.annotation.ColorInt
 import androidx.annotation.StringRes
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.cardview.widget.CardView
-import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
+import com.telefonica.mistica.card.mediacard.MediaCardView
 import com.telefonica.mistica.util.getThemeColor
 
 @BindingMethods(
@@ -34,8 +36,18 @@ import com.telefonica.mistica.util.getThemeColor
     ),
     BindingMethod(
         type = CardView::class,
+        attribute = "cardTitleMaxLines",
+        method = "setTitleMaxLines"
+    ),
+    BindingMethod(
+        type = CardView::class,
         attribute = "cardDescription",
         method = "setDescription"
+    ),
+    BindingMethod(
+        type = CardView::class,
+        attribute = "cardDescriptionMaxLines",
+        method = "setDescriptionMaxLines"
     ),
     BindingMethod(
         type = CardView::class,
@@ -76,7 +88,7 @@ abstract class CardView @JvmOverloads constructor(
         cardElevation = 0F
         radius = resources.getDimension(R.dimen.card_corner_radius)
         minimumWidth = resources.getDimension(R.dimen.card_min_width).toInt()
-        background = ContextCompat.getDrawable(context, R.drawable.card_view_background)
+        background = AppCompatResources.getDrawable(context, R.drawable.card_view_background)
 
         cardContentView = rootView.findViewById(R.id.card_content)
         cardCustomContentLayout = rootView.findViewById(R.id.card_custom_content_layout)
@@ -94,8 +106,9 @@ abstract class CardView @JvmOverloads constructor(
             setTag(styledAttrs.getText(R.styleable.CardView_cardTag))
             setTagColor(styledAttrs.getColor(R.styleable.CardView_cardTagColor, context.getThemeColor(R.attr.colorPromo)))
             setTitle(styledAttrs.getText(R.styleable.CardView_cardTitle))
+            setTitleMaxLines(styledAttrs.getInteger(R.styleable.CardView_cardTitleMaxLines, -1))
             setDescription(styledAttrs.getText(R.styleable.CardView_cardDescription))
-
+            setDescriptionMaxLines(styledAttrs.getInteger(R.styleable.CardView_cardDescriptionMaxLines, -1))
             setPrimaryButtonText(styledAttrs.getText(R.styleable.CardView_cardPrimaryButtonText))
             setLinkButtonText(styledAttrs.getText(R.styleable.CardView_cardLinkButtonText))
 
@@ -127,6 +140,13 @@ abstract class CardView @JvmOverloads constructor(
         cardContentView.titleTextView.setTextAndVisibility(text)
     }
 
+    fun setTitleMaxLines(maxLines: Int) {
+        if (maxLines > 0) {
+            cardContentView.titleTextView.maxLines = maxLines
+            cardContentView.titleTextView.ellipsize = TextUtils.TruncateAt.END
+        }
+    }
+
     fun setTitle(@StringRes textRes: Int?) {
         textRes?.let { setTitle(context.getString(it)) }
     }
@@ -135,12 +155,20 @@ abstract class CardView @JvmOverloads constructor(
         cardContentView.descriptionTextView.setTextAndVisibility(text)
     }
 
+    fun setDescriptionMaxLines(maxLines: Int) {
+        if (maxLines > 0) {
+            cardContentView.descriptionTextView.maxLines = maxLines
+            cardContentView.descriptionTextView.ellipsize = TextUtils.TruncateAt.END
+        }
+    }
+
     fun setDescription(@StringRes textRes: Int?) {
         textRes?.let { setDescription(context.getString(it)) }
     }
 
     fun setPrimaryButtonText(text: CharSequence?) {
         cardActionsView.primaryButton.setTextAndVisibility(text)
+        updateButtonsContainerVisibility()
     }
 
     fun setPrimaryButtonText(@StringRes textRes: Int?) {
@@ -149,6 +177,7 @@ abstract class CardView @JvmOverloads constructor(
 
     fun setLinkButtonText(text: CharSequence?) {
         cardActionsView.linkButton.setTextAndVisibility(text)
+        updateButtonsContainerVisibility()
     }
 
     fun setLinkButtonText(@StringRes textRes: Int?) {
@@ -199,5 +228,9 @@ abstract class CardView @JvmOverloads constructor(
         } else {
             null
         }
+    }
+
+    private fun updateButtonsContainerVisibility() {
+        cardActionsView.visibility = if (cardActionsView.cardHasNoActions()) View.GONE else View.VISIBLE
     }
 }

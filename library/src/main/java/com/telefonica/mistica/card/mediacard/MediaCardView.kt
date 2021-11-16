@@ -3,12 +3,14 @@ package com.telefonica.mistica.card.mediacard
 import android.content.Context
 import android.graphics.drawable.Drawable
 import android.util.AttributeSet
+import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.FrameLayout
 import android.widget.ImageView
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
@@ -63,7 +65,9 @@ class MediaCardView @JvmOverloads constructor(
                 )
             setPretitle(styledAttrs.getText(R.styleable.MediaCardView_cardPretitle))
             setCardImageContentDescription(styledAttrs.getText(R.styleable.MediaCardView_cardImageContentDescription))
-            styledAttrs.getDrawable(R.styleable.MediaCardView_cardImage)
+            styledAttrs.getResourceId(R.styleable.MediaCardView_cardImage, TypedValue.TYPE_NULL)
+                .takeIf { it != TypedValue.TYPE_NULL }
+                ?.let { AppCompatResources.getDrawable(context, it) }
                 ?.let { setCardImage(it) }
             styledAttrs.recycle()
         }
