@@ -17,9 +17,9 @@ import androidx.annotation.AttrRes
 import androidx.annotation.DrawableRes
 import androidx.annotation.IntDef
 import androidx.annotation.LayoutRes
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
-import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
@@ -132,6 +132,7 @@ class ListRowView @JvmOverloads constructor(
     private val subtitleTextView: TextView
     private val descriptionTextView: TextView
     private val badgeAnchor: View
+    private val badgeAnchorContainer: FrameLayout
     private val actionContainer: FrameLayout
 
     private var currentHeadlineLayoutRes: Int = HEADLINE_NONE
@@ -154,6 +155,7 @@ class ListRowView @JvmOverloads constructor(
         subtitleTextView = findViewById(R.id.row_subtitle_text)
         descriptionTextView = findViewById(R.id.row_description_text)
         badgeAnchor = findViewById(R.id.row_badge_anchor)
+        badgeAnchorContainer = findViewById(R.id.row_badge_container)
         actionContainer = findViewById(R.id.row_action_container)
 
         if (attrs != null) {
@@ -199,7 +201,10 @@ class ListRowView @JvmOverloads constructor(
                     TYPE_SMALL_ICON
                 )
             )
-            setAssetDrawable(styledAttrs.getDrawable(R.styleable.ListRowView_listRowAssetDrawable))
+            val assetDrawable: Drawable? = styledAttrs.getResourceId(R.styleable.ListRowView_listRowAssetDrawable, TypedValue.TYPE_NULL)
+                .takeIf { it != TypedValue.TYPE_NULL }
+                ?.let { AppCompatResources.getDrawable(context, it) }
+            setAssetDrawable(assetDrawable)
             setBadgeInitialState(styledAttrs)
 
             styledAttrs.getResourceId(
@@ -213,7 +218,7 @@ class ListRowView @JvmOverloads constructor(
     }
 
     fun setAssetResource(@DrawableRes resource: Int? = null) {
-        setAssetDrawable(resource?.let { ContextCompat.getDrawable(context, it) })
+        setAssetDrawable(resource?.let { AppCompatResources.getDrawable(context, it) })
     }
 
     fun setAssetDrawable(drawable: Drawable? = null) {
@@ -289,7 +294,7 @@ class ListRowView @JvmOverloads constructor(
             BackgroundType.TYPE_NORMAL -> R.drawable.list_row_background
             else -> R.drawable.list_row_background
         }
-        background = ContextCompat.getDrawable(context, backgroundDrawable)
+        background = AppCompatResources.getDrawable(context, backgroundDrawable)
         configureTextViewsColor(type)
     }
 
@@ -434,19 +439,19 @@ class ListRowView @JvmOverloads constructor(
 
     private fun showNonNumericBadge(withBadgeDescription: String?) {
         Badge.removeBadge(badgeAnchor)
-        badgeAnchor.visibility = View.VISIBLE
-        Badge.showBadgeIn(badgeAnchor, withBadgeDescription)
+        badgeAnchorContainer.visibility = View.VISIBLE
+        Badge.showBadgeIn(badgeAnchor, badgeAnchorContainer, withBadgeDescription)
     }
 
     private fun showNumericBadge(count: Int, withBadgeDescription: String?) {
         Badge.removeBadge(badgeAnchor)
-        badgeAnchor.visibility = View.VISIBLE
-        Badge.showNumericBadgeIn(badgeAnchor, count, withBadgeDescription)
+        badgeAnchorContainer.visibility = View.VISIBLE
+        Badge.showNumericBadgeIn(badgeAnchor, badgeAnchorContainer, count, withBadgeDescription)
     }
 
     private fun hideBadge() {
         Badge.removeBadge(badgeAnchor)
-        badgeAnchor.visibility = GONE
+        badgeAnchorContainer.visibility = GONE
     }
 
     private fun setBadgeInitialState(styledAttrs: TypedArray) {

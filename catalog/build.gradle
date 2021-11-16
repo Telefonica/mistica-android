@@ -12,10 +12,16 @@ android {
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 31
+
+        buildConfigField "String", "APPCENTER_KEY", "\"" + System.env.APPCENTER_KEY + "\""
     }
 
     buildFeatures {
         dataBinding true
+    }
+
+    lintOptions {
+        warningsAsErrors true
     }
 }
 

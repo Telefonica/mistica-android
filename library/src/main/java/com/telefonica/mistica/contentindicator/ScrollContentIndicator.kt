@@ -8,8 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.ViewOutlineProvider
 import android.view.animation.*
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.appcompat.widget.AppCompatTextView
-import androidx.core.content.ContextCompat
 import com.telefonica.mistica.R
 import com.telefonica.mistica.util.getThemeColor
 
@@ -46,7 +46,7 @@ class ScrollContentIndicator @JvmOverloads constructor(
 
         isClickable = true
         isFocusable = true
-        background = ContextCompat.getDrawable(
+        background = AppCompatResources.getDrawable(
             context,
             R.drawable.scroll_content_indicator_clickable_background
         )
