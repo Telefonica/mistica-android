@@ -16,7 +16,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.annotation.DrawableRes
 import androidx.annotation.IntDef
-import androidx.core.content.ContextCompat
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
@@ -132,7 +132,10 @@ class CalloutView @JvmOverloads constructor(
         if (attrs != null) {
             val styledAttrs = context.theme.obtainStyledAttributes(attrs, R.styleable.CalloutView, defStyleAttr, 0)
 
-            styledAttrs.getDrawable(R.styleable.CalloutView_calloutIcon)?.let { setIconDrawable(it) }
+            styledAttrs.getResourceId(R.styleable.CalloutView_calloutIcon, TypedValue.TYPE_NULL)
+                .takeIf { it != TypedValue.TYPE_NULL }
+                ?.let { AppCompatResources.getDrawable(context, it) }
+                ?.let { setIconDrawable(it) }
 
             styledAttrs.getString(R.styleable.CalloutView_calloutTitle)?.let { setTitle(it) }
             styledAttrs.getString(R.styleable.CalloutView_calloutDescription)?.let { setDescription(it) }
@@ -160,7 +163,7 @@ class CalloutView @JvmOverloads constructor(
 
     fun setInverse(inverse: Boolean) {
         val backgroundDrawable = if (inverse) R.drawable.bg_callout_inverse else R.drawable.bg_callout
-        background = ContextCompat.getDrawable(context, backgroundDrawable)
+        background = AppCompatResources.getDrawable(context, backgroundDrawable)
     }
 
     private fun initCloseButton() {
