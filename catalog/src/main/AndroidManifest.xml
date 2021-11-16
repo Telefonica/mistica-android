@@ -2,7 +2,7 @@
 		package="com.telefonica.mistica.catalog"
 		>
 
-	<application android:supportsRtl="false">
+	<application android:supportsRtl="true">
 		<activity
 				android:name="com.telefonica.mistica.catalog.ui.ComponentCatalogActivity"
 				android:exported="false"
