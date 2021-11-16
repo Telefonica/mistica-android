@@ -108,9 +108,10 @@ There is a Mística-compose catalog in the [Demo app](https://github.com/Telefon
 ### Brands
 | Brand | Available |
 | ------------- | ------------- |
-| Movistar					|  ✅  |
-| Movistar Prominent		|     |
-| O2						|     |
-| Vivo						|     |
-| Blau						|     |
-| Telefónica				|     |
+| Movistar                  |  ✅  |
+| Movistar Prominent        |  ✅  |
+| O2                        |  ✅  |
+| O2 Classic                |  ✅  |
+| Vivo                      |  ✅  |
+| Blau                      |  ✅  |
+| Telefónica                |  ✅  |
