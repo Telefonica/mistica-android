@@ -3,6 +3,7 @@ package com.telefonica.mistica.compose.catalog.ui.components
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -10,17 +11,12 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
-import androidx.compose.material.Button
-import androidx.compose.material.Checkbox
-import androidx.compose.material.CheckboxDefaults
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Divider
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Switch
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
@@ -190,17 +186,15 @@ val samples = listOf(
     ),
 )
 
-
 @ExperimentalFoundationApi
 @ExperimentalMaterialApi
 @Composable
 fun Lists() {
-    val scrollState = rememberLazyListState()
-    LazyColumn(
-        state = scrollState,
-        modifier = Modifier.fillMaxSize(),
+    val scrollState = rememberScrollState()
+    Column(
+        modifier = Modifier.fillMaxSize().verticalScroll(state = scrollState),
     ) {
-        items(samples) { item ->
+        samples.forEach{ item ->
             ListRowItem(
                 backgroundType = item.backgroundType,
                 badge = item.badge,
@@ -218,7 +212,7 @@ fun Lists() {
                 color = MisticaTheme.colors.divider
             )
         }
-        items(samples.map { it.copy(backgroundType = BackgroundType.TYPE_BOXED) }) { item ->
+        samples.map { it.copy(backgroundType = BackgroundType.TYPE_BOXED) }.forEach { item ->
             ListRowItem(
                 backgroundType = item.backgroundType,
                 badge = item.badge,
@@ -236,7 +230,7 @@ fun Lists() {
                 color = MisticaTheme.colors.divider
             )
         }
-        items(samples.map { it.copy(backgroundType = BackgroundType.TYPE_BOXED_INVERSE) }) { item ->
+        samples.map { it.copy(backgroundType = BackgroundType.TYPE_BOXED_INVERSE) }.forEach { item ->
             ListRowItem(
                 backgroundType = item.backgroundType,
                 badge = item.badge,
