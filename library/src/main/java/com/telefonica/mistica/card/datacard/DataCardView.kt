@@ -3,11 +3,13 @@ package com.telefonica.mistica.card.datacard
 import android.content.Context
 import android.graphics.drawable.Drawable
 import android.util.AttributeSet
+import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.ImageView
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
@@ -51,7 +53,10 @@ class DataCardView @JvmOverloads constructor(
                     0
                 )
             setSubtitle(styledAttrs.getText(R.styleable.DataCardView_cardSubtitle))
-            styledAttrs.getDrawable(R.styleable.DataCardView_cardIcon)?.let { setIcon(it) }
+            styledAttrs.getResourceId(R.styleable.DataCardView_cardIcon, TypedValue.TYPE_NULL)
+                .takeIf { it != TypedValue.TYPE_NULL }
+                ?.let { AppCompatResources.getDrawable(context, it) }
+                ?.let { setIcon(it) }
             styledAttrs.recycle()
         }
         return rootView

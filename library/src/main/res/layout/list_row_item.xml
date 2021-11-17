@@ -54,7 +54,7 @@
 			android:layout_marginEnd="16dp"
 			android:orientation="vertical"
 			app:layout_constraintLeft_toRightOf="@id/row_asset_image_layout"
-			app:layout_constraintRight_toLeftOf="@id/row_badge_anchor"
+			app:layout_constraintRight_toLeftOf="@id/row_badge_container"
 			app:layout_constraintTop_toTopOf="parent"
 			>
 
@@ -106,18 +106,23 @@
 
 	</LinearLayout>
 
-	<View
-			android:id="@+id/row_badge_anchor"
-			android:layout_width="9dp"
-			android:layout_height="9dp"
+	<FrameLayout
+			android:id="@+id/row_badge_container"
+			android:layout_width="wrap_content"
+			android:layout_height="0dp"
 			android:layout_marginTop="9dp"
-			android:layout_marginEnd="25dp"
+			android:paddingEnd="25dp"
 			android:visibility="gone"
-			app:layout_constraintBottom_toBottomOf="parent"
-			app:layout_constraintRight_toLeftOf="@id/row_action_container"
-			app:layout_constraintTop_toTopOf="parent"
 			tools:visibility="visible"
-			/>
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toStartOf="@id/row_action_container"
+			app:layout_constraintTop_toTopOf="parent">
+		<View
+				android:id="@+id/row_badge_anchor"
+				android:layout_width="9dp"
+				android:layout_height="9dp"
+				android:layout_gravity="center" />
+	</FrameLayout>
 
 	<FrameLayout
 			android:id="@+id/row_action_container"

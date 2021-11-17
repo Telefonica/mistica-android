@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <lint>
     <issue id="UnusedResources" severity="ignore" />
+    <issue id="GradleDependency" severity="ignore" />
+    <issue id="ObsoleteLintCustomCheck" severity="ignore" />
+    <issue id="VectorPath">
+        <ignore path="**/res/drawable/feedback_info_o2.xml"/>
+        <ignore path="**/res/drawable/feedback_info_o2_classic.xml"/>
+    </issue>
 </lint>

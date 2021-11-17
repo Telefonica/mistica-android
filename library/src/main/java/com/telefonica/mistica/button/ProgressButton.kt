@@ -4,6 +4,7 @@ import android.animation.Animator
 import android.animation.AnimatorSet
 import android.animation.ArgbEvaluator
 import android.animation.ObjectAnimator
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.res.ColorStateList
 import android.graphics.Color
@@ -20,7 +21,7 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.annotation.ColorInt
 import androidx.annotation.StringRes
-import androidx.core.content.ContextCompat
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.graphics.ColorUtils
 import com.google.android.material.button.MaterialButton
 import com.telefonica.mistica.R
@@ -63,6 +64,7 @@ class ProgressButton : FrameLayout {
         init(attrs, defStyleAttr)
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     private fun init(attrs: AttributeSet? = null, defStyleAttr: Int = 0) {
         if (attrs != null) {
             val theme = context.theme
@@ -96,7 +98,7 @@ class ProgressButton : FrameLayout {
                 ViewGroup.LayoutParams.MATCH_PARENT
             )
             showTextOnly()
-            icon = ContextCompat.getDrawable(context, R.drawable.empty_material_button_icon)
+            icon = AppCompatResources.getDrawable(context, R.drawable.empty_material_button_icon)
             text = ""
         }
 

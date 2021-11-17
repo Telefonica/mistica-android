@@ -77,12 +77,14 @@
             android:gravity="center_horizontal">
             <Button
                 android:id="@+id/previous_step"
+                style="@style/AppTheme.Button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
                 android:text="Previous" />
             <Button
                 android:id="@+id/next_step"
+                style="@style/AppTheme.Button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Next" />

@@ -4,7 +4,6 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.Button
 import androidx.compose.material.Checkbox
 import androidx.compose.material.OutlinedTextField
 import androidx.compose.material.Text
@@ -16,6 +15,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.telefonica.mistica.compose.button.Button
 import com.telefonica.mistica.compose.feedback.Feedback
 import com.telefonica.mistica.feedback.screen.view.FeedbackScreenView
 
@@ -67,9 +67,10 @@ fun Feedbacks(
                 Text("Error")
                 Checkbox(checked = type == FeedbackScreenView.TYPE_ERROR, onCheckedChange = { type = FeedbackScreenView.TYPE_ERROR })
             }
-            Button(onClick = { showFeedback = true }) {
-                Text("Show feedback")
-            }
+            Button(
+                text = "Show feedback",
+                onClickListener = { showFeedback = true }
+            )
         }
     }
 }

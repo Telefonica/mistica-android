@@ -2,5 +2,6 @@
     package="com.telefonica.mistica">
 
     <uses-permission android:name="android.permission.VIBRATE" />
+    <application android:supportsRtl="false" />
 
 </manifest>

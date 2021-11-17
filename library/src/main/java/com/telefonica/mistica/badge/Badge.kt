@@ -3,6 +3,7 @@ package com.telefonica.mistica.badge
 import android.graphics.Rect
 import android.view.View
 import android.view.ViewGroup
+import android.widget.FrameLayout
 import com.google.android.material.badge.BadgeDrawable
 import com.telefonica.mistica.R
 import com.telefonica.mistica.util.getThemeColor
@@ -12,19 +13,9 @@ object Badge {
     var contentDescriptions: MutableMap<Int, CharSequence?> = mutableMapOf()
 
     @JvmStatic
-    fun showBadgeIn(anchor: View, badgeDescription: String? = null): BadgeDrawable {
-        val parent = anchor.parent
-        if (parent is ViewGroup) {
-            return showBadgeIn(anchor, parent, badgeDescription)
-        } else {
-            throw RuntimeException("The view's parent is not a ViewGroup. Use showBadgeIn(anchor,parent) instead")
-        }
-    }
-
-    @JvmStatic
     fun showBadgeIn(
         anchor: View,
-        parent: ViewGroup,
+        parent: FrameLayout,
         badgeDescription: String? = null
     ): BadgeDrawable =
         createBadge(anchor, NON_NUMERIC_BADGE).apply {
@@ -38,21 +29,7 @@ object Badge {
     @JvmStatic
     fun showNumericBadgeIn(
         anchor: View,
-        count: Int,
-        badgeDescription: String? = null
-    ): BadgeDrawable {
-        val parent = anchor.parent
-        if (parent is ViewGroup) {
-            return showNumericBadgeIn(anchor, parent, count, badgeDescription)
-        } else {
-            throw RuntimeException("The view's parent is not a ViewGroup. Use showNumericBadgeIn(anchor, parent, count) instead")
-        }
-    }
-
-    @JvmStatic
-    fun showNumericBadgeIn(
-        anchor: View,
-        parent: ViewGroup,
+        parent: FrameLayout,
         count: Int,
         badgeDescription: String? = null
     ): BadgeDrawable =
@@ -136,7 +113,7 @@ object Badge {
 
     private fun BadgeDrawable.addToView(
         anchor: View,
-        parent: ViewGroup,
+        parent: FrameLayout,
         contentDescription: CharSequence?
     ) {
         parent.post {
@@ -147,7 +124,7 @@ object Badge {
         }
     }
 
-    private fun BadgeDrawable.setBoundsFor(anchor: View, parent: ViewGroup) {
+    private fun BadgeDrawable.setBoundsFor(anchor: View, parent: FrameLayout) {
         val rect = Rect()
         parent.getDrawingRect(rect)
         this.bounds = rect

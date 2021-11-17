@@ -1,9 +1,5 @@
+  <img alt="Mística for Android" src="./doc/images/mistica-android.svg">
 <br>
-<br>
-<img height="64" alt="Mística for Android" src="./doc/images/mistica-logo.svg">
-<br>
-
-#  Mistica for Android
 
 [![Platform](https://img.shields.io/badge/Platform-Android-brightgreen)](https://github.com/Telefonica/mistica-android)
 [![Version](https://maven-badges.herokuapp.com/maven-central/com.telefonica/mistica/badge.png)](https://search.maven.org/artifact/com.telefonica/mistica)
@@ -11,6 +7,10 @@
 [![Kotlin version badge](https://img.shields.io/badge/kotlin-1.3-blue.svg)](https://kotlinlang.org/docs/reference/whatsnew13.html)
 
 Mistica is a framework that contains reusable UI components and utilities.
+
+## Compose support
+
+There is a currently work in progress compose version of the library. Check the documentation [here](library-compose)
 
 ## Installation
 
@@ -50,6 +50,7 @@ Just set your App or any specific activity to use any of the following:
 * MisticaTheme.O2Classic
 * MisticaTheme.Vivo
 * MisticaTheme.Telefonica
+* MisticaTheme.Blau
 
 ```xml
 <manifest ...>
