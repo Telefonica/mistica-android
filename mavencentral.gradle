@@ -191,7 +191,7 @@ publishing {
                     def dependenciesNode = asNode().appendNode('dependencies')
 
                     project.configurations.getByName("implementation").allDependencies.each {
-                        if (it.group != "com.telefonica.mistica" && it.name != "library") {
+                        if (it.group != "com.telefonica.mistica" && it.name != "library-compose") {
                             def dependencyNode = dependenciesNode.appendNode('dependency')
                             dependencyNode.appendNode('groupId', it.group)
                             dependencyNode.appendNode('artifactId', it.name)
@@ -202,7 +202,7 @@ publishing {
                     //Add a dependency with the library
                     def dependencyNode = dependenciesNode.appendNode('dependency')
                     dependencyNode.appendNode('groupId', PUBLISH_GROUP_ID)
-                    dependencyNode.appendNode('artifactId', PUBLISH_ARTIFACT_ID)
+                    dependencyNode.appendNode('artifactId', "$PUBLISH_ARTIFACT_ID-compose")
                     dependencyNode.appendNode('version', PUBLISH_VERSION)
                 }
             }
