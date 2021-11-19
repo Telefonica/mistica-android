@@ -17,8 +17,8 @@ import com.telefonica.mistica.compose.theme.MisticaTheme
 @Composable
 fun Circle(
     color: Color = MisticaTheme.colors.neutralLow,
-    content: @Composable (() -> Unit),
     size: Dp = 40.dp,
+    content: @Composable (() -> Unit),
 ) {
     Box(
         modifier = Modifier
