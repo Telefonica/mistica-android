@@ -10,6 +10,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.theme.MisticaTheme
 
@@ -17,10 +18,11 @@ import com.telefonica.mistica.compose.theme.MisticaTheme
 fun Circle(
     color: Color = MisticaTheme.colors.neutralLow,
     content: @Composable (() -> Unit),
+    size: Dp = 40.dp,
 ) {
     Box(
         modifier = Modifier
-            .size(40.dp)
+            .size(size)
             .clip(CircleShape)
             .background(color)
             .wrapContentSize(align = Alignment.Center)
