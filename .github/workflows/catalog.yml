@@ -18,7 +18,7 @@ jobs:
 
     - name: Publish catalog
       if: github.event.pull_request.merged == true
-      uses: docker://docker.tuenti.io/android/mistica_builder:2
+      uses: docker://docker.tuenti.io/android/mistica_builder:3
       with:
         args: 'bash ./gradlew clean check appCenterAssembleAndUploadDebug'
       env:
