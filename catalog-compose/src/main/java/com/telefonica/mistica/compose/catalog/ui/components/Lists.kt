@@ -64,9 +64,7 @@ val samples = listOf(
 
     ListItem(
         title = TITLE,
-        icon = {
-
-        },
+        icon = { ListIcon() },
     ),
     ListItem(
         title = TITLE,
@@ -217,7 +215,10 @@ fun Lists() {
                 color = MisticaTheme.colors.divider
             )
         }
-        samples.map { it.copy(backgroundType = BackgroundType.TYPE_BOXED_INVERSE) }.forEach { item ->
+        samples.map { it.copy(
+            backgroundType = BackgroundType.TYPE_BOXED_INVERSE,
+            action = { Chevron(isInverse = true) },
+        ) }.forEach { item ->
             ListRowItem(
                 backgroundType = item.backgroundType,
                 badge = item.badge,

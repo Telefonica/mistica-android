@@ -10,7 +10,6 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.theme.MisticaTheme
 
@@ -18,7 +17,7 @@ import com.telefonica.mistica.compose.theme.MisticaTheme
 @Composable
 fun Badge(
     modifier: Modifier = Modifier,
-    content: String?,
+    content: String? = null,
 ) {
     if (content.isNullOrEmpty()) {
         Surface(
@@ -40,11 +39,4 @@ fun Badge(
                 .absolutePadding(0.dp, 0.dp, 8.dp, 0.dp)
         ) { }
     }
-}
-
-@ExperimentalMaterialApi
-@Preview(showBackground = true)
-@Composable
-fun BadgePreview() {
-    Badge(content = "hola")
 }
