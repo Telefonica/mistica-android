@@ -4,7 +4,6 @@ plugins {
     id 'kotlin-android-extensions'
     id 'kotlin-kapt'
     id 'maven-publish'
-
 }
 
 android {
@@ -41,7 +40,6 @@ android {
 }
 
 dependencies {
-
     implementation project(':library')
 
     implementation 'androidx.core:core-ktx:1.6.0'
@@ -57,3 +55,5 @@ dependencies {
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
 }
+
+apply from: "${rootProject.projectDir}/mavencentral.gradle"
