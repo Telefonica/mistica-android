@@ -61,6 +61,7 @@ Mística-compose supports a subset of the Mística elements. The objective is to
 
 * [Buttons](./src/main/java/com/telefonica/mistica/compose/button)
 * [Feedbacks](./src/main/java/com/telefonica/mistica/compose/feedback)
+* [Lists](./src/main/java/com/telefonica/mistica/compose/list)
 
 ## Fonts
 Mística-compose supports the same fonts supported in Mística. See [MisticaTypography](https://github.com/Telefonica/mistica-android/library-compose/src/main/java/com/telefonica/mistica/compose/theme/text/MisticaTypography.kt)
@@ -90,7 +91,7 @@ There is a Mística-compose catalog in the [Demo app](https://github.com/Telefon
 | Badges					|     |     |    				
 | Scroll Content Indicator	|     |     |    								
 | Tags						|     |     |    			
-| Lists						|  🏃‍♂️ |     |    			
+| Lists						|  ✅️ |  Compose   |
 | Headers					|     |     |    				
 | Sections					|     |     |    				
 | Filters					|     |     |    				
