@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.absolutePadding
+import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -127,6 +128,9 @@ fun ListRowItem(
                         text = it,
                         style = MisticaTheme.typography.preset2,
                         color = textColorSecondary,
+                        modifier = Modifier
+                            .padding(vertical = 2.dp)
+                            .defaultMinSize(minHeight = 20.dp),
                     )
                 }
                 description?.let {
@@ -134,6 +138,9 @@ fun ListRowItem(
                         text = it,
                         style = MisticaTheme.typography.preset2,
                         color = textColorSecondary,
+                        modifier = Modifier
+                            .padding(vertical = 2.dp)
+                            .defaultMinSize(minHeight = 20.dp),
                     )
                 }
             }
