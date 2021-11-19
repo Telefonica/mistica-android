@@ -35,6 +35,7 @@ import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 @ExperimentalMaterialApi
 @Composable
 fun ListRowItem(
+    modifier: Modifier = Modifier,
     icon: @Composable (() -> Unit)? = null,
     title: String? = null,
     subtitle: String? = null,
@@ -52,7 +53,7 @@ fun ListRowItem(
         BackgroundType.TYPE_NORMAL -> Modifier
         BackgroundType.TYPE_BOXED,
         BackgroundType.TYPE_BOXED_INVERSE,
-        -> Modifier
+        -> modifier
             .padding(16.dp)
     }
         .fillMaxWidth()
