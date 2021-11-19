@@ -1,12 +1,10 @@
 package com.telefonica.mistica.compose.list
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.absolutePadding
@@ -15,12 +13,11 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.layout.wrapContentHeight
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.BadgeBox
 import androidx.compose.material.Checkbox
 import androidx.compose.material.ExperimentalMaterialApi
+import androidx.compose.material.Icon
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -31,8 +28,6 @@ import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.painter.Painter
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -43,7 +38,7 @@ import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 @ExperimentalMaterialApi
 @Composable
 fun ListRowItem(
-    rowImage: RowImage? = null,
+    icon: @Composable (() -> Unit)? = null,
     title: String? = null,
     subtitle: String? = null,
     description: String? = null,
@@ -51,7 +46,7 @@ fun ListRowItem(
     badge: String? = null,
     isBadgeVisible: Boolean = false,
     headline: @Composable (() -> Unit)? = null,
-    action: @Composable (ColumnScope.() -> Unit)? = null,
+    action: @Composable (() -> Unit)? = null,
     onClick: () -> Unit = {},
 ) {
     val badgeVisible by remember { mutableStateOf(isBadgeVisible) }
@@ -109,7 +104,10 @@ fun ListRowItem(
         Row(
             modifier = rowModifier
         ) {
-            RowImage(rowImage)
+            if (icon != null) {
+                icon()
+                Spacer(modifier = Modifier.width(16.dp))
+            }
 
             Column(
                 modifier = Modifier
@@ -175,46 +173,6 @@ fun ListRowItem(
     }
 }
 
-@Composable
-private fun RowImage(image: RowImage?) {
-    if (image != null) {
-        when (image) {
-            is Icon -> {
-                Surface(
-                    modifier = Modifier
-                        .size(40.dp)
-                        .clip(CircleShape)
-                        .let {
-                            if (image.withBackground) {
-                                it.background(MisticaTheme.colors.neutralLow)
-                            } else {
-                                it
-                            }
-                        }
-                ) {
-                    Image(
-                        painter = image.painter,
-                        contentDescription = null,
-                        modifier = Modifier
-                            .size(24.dp),
-                    )
-                }
-            }
-            is ResourceImage -> {
-                Image(
-                    painter = image.painter,
-                    contentDescription = null,
-                    modifier = Modifier
-                        .size(40.dp)
-                        .clip(CircleShape),
-                    contentScale = ContentScale.Crop,
-                )
-            }
-        }
-        Spacer(modifier = Modifier.width(16.dp))
-    }
-}
-
 @ExperimentalMaterialApi
 @Preview(showBackground = true)
 @Composable
@@ -236,14 +194,26 @@ fun ListRowItemPreview() {
                 badge = "2",
                 subtitle = "Subtitle",
                 description = "Description",
-                rowImage = Icon(painterResource(id = R.drawable.icn_arrow), withBackground = false),
+                icon = {
+                    Icon(
+                        painterResource(id = R.drawable.list_row_background),
+                        contentDescription = null
+                    )
+                },
                 action = { Chevron() }
             )
             ListRowItem(
                 title = "Title",
                 subtitle = "Subtitle",
                 description = "Description",
-                rowImage = Icon(painterResource(id = R.drawable.icn_arrow), withBackground = false),
+                icon = {
+                    Circle {
+                        Icon(
+                            painterResource(id = R.drawable.icn_arrow),
+                            contentDescription = null
+                        )
+                    }
+                },
                 action = {
                     Checkbox(
                         checked = checkedState.value,
@@ -260,52 +230,3 @@ enum class BackgroundType {
     TYPE_BOXED,
     TYPE_BOXED_INVERSE,
 }
-
-sealed class RowImage(val painter: Painter)
-
-class ResourceImage(painter: Painter) : RowImage(painter)
-class Icon(painter: Painter, val withBackground: Boolean) : RowImage(painter)
-
-@Composable
-fun Chip(
-    name: String = "Chip",
-    color: Color = MisticaTheme.colors.badge,
-) {
-    Surface(
-        shape = RoundedCornerShape(4.dp),
-        color = color,
-    ) {
-        Text(
-            text = name.uppercase(),
-            style = MisticaTheme.typography.preset1Medium,
-            color = Color.White,
-            modifier = Modifier.padding(
-                horizontal = 8.dp,
-            ),
-        )
-    }
-}
-
-@Composable
-fun Chevron() {
-    Row(
-        modifier = Modifier.wrapContentHeight(align = CenterVertically)
-    ) {
-        Image(
-            painter = painterResource(id = R.drawable.icn_arrow),
-            contentDescription = null,
-            modifier = Modifier
-                .align(CenterVertically)
-        )
-    }
-}
-
-fun Modifier.`if`(
-    condition: Boolean,
-    then: Modifier.() -> Modifier,
-): Modifier =
-    if (condition) {
-        then()
-    } else {
-        this
-    }
