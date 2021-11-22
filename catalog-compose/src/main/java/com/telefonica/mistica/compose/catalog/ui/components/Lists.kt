@@ -2,10 +2,11 @@ package com.telefonica.mistica.compose.catalog.ui.components
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.verticalScroll
@@ -13,8 +14,6 @@ import androidx.compose.material.Divider
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Icon
 import androidx.compose.material.Switch
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowForward
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -175,13 +174,11 @@ val samples = listOf(
 @ExperimentalMaterialApi
 @Composable
 fun Lists() {
-    val scrollState = rememberScrollState()
-    Column(
+    LazyColumn(
         modifier = Modifier
-            .fillMaxSize()
-            .verticalScroll(state = scrollState),
+            .fillMaxSize(),
     ) {
-        samples.forEach { item ->
+        items(samples) { item ->
             ListRowItem(
                 backgroundType = item.backgroundType,
                 badge = item.badge,
@@ -199,7 +196,9 @@ fun Lists() {
                 color = MisticaTheme.colors.divider
             )
         }
-        samples.map { it.copy(backgroundType = BackgroundType.TYPE_BOXED) }.forEach { item ->
+        items(samples.map {
+            it.copy(backgroundType = BackgroundType.TYPE_BOXED)
+        }) { item ->
             ListRowItem(
                 backgroundType = item.backgroundType,
                 badge = item.badge,
@@ -217,10 +216,12 @@ fun Lists() {
                 color = MisticaTheme.colors.divider
             )
         }
-        samples.map { it.copy(
-            backgroundType = BackgroundType.TYPE_BOXED_INVERSE,
-            action = { Chevron(isInverse = true) },
-        ) }.forEach { item ->
+        items(samples.map {
+            it.copy(
+                backgroundType = BackgroundType.TYPE_BOXED_INVERSE,
+                action = { Chevron(isInverse = true) },
+            )
+        }) { item ->
             ListRowItem(
                 backgroundType = item.backgroundType,
                 badge = item.badge,
