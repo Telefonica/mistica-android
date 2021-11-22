@@ -1,9 +1,7 @@
 package com.telefonica.mistica.compose.list
 
-import androidx.compose.foundation.layout.absolutePadding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material.BadgeBox
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -27,16 +25,13 @@ fun Badge(
                 .size(8.dp),
         ) { }
     } else {
-        BadgeBox(
-            badgeContent = {
-                Text(
-                    text = content,
-                    color = Color.White,
-                )
-            },
+        androidx.compose.material.Badge(
             backgroundColor = MisticaTheme.colors.badge,
-            modifier = modifier
-                .absolutePadding(0.dp, 0.dp, 8.dp, 0.dp)
-        ) { }
+        ) {
+            Text(
+                text = content,
+                color = Color.White,
+            )
+        }
     }
 }
