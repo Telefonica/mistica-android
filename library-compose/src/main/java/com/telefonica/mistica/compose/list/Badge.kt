@@ -16,7 +16,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.theme.MisticaTheme
 import com.telefonica.mistica.compose.theme.brand.MovistarBrand
-import com.telefonica.mistica.compose.theme.brand.VivoBrand
 
 @ExperimentalMaterialApi
 @Composable
