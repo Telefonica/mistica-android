@@ -186,7 +186,7 @@ fun Lists() {
                 title = item.title,
                 subtitle = item.subtitle,
                 description = item.description,
-                action = item.action,
+                trailing = item.action,
                 onClick = item.onClick,
             )
             Divider(
@@ -206,7 +206,7 @@ fun Lists() {
                 title = item.title,
                 subtitle = item.subtitle,
                 description = item.description,
-                action = item.action,
+                trailing = item.action,
                 onClick = item.onClick,
             )
             Divider(
@@ -229,7 +229,7 @@ fun Lists() {
                 title = item.title,
                 subtitle = item.subtitle,
                 description = item.description,
-                action = item.action,
+                trailing = item.action,
                 onClick = item.onClick,
             )
             Divider(

@@ -44,7 +44,7 @@ fun ListRowItem(
     badge: String? = null,
     isBadgeVisible: Boolean = false,
     headline: @Composable (() -> Unit)? = null,
-    action: @Composable (() -> Unit)? = null,
+    trailing: @Composable (() -> Unit)? = null,
     onClick: () -> Unit = {},
 ) {
     val badgeVisible by remember { mutableStateOf(isBadgeVisible) }
@@ -156,7 +156,7 @@ fun ListRowItem(
                 )
             }
 
-            action?.let {
+            trailing?.let {
                 Column(modifier = Modifier.align(CenterVertically)) {
                     it()
                 }
@@ -178,7 +178,7 @@ fun ListRowItemPreview() {
                 title = "Title",
                 subtitle = "Subtitle",
                 description = "Description",
-                action = { Chevron() },
+                trailing = { Chevron() },
             )
             ListRowItem(
                 title = "Title",
@@ -192,7 +192,7 @@ fun ListRowItemPreview() {
                         contentDescription = null
                     )
                 },
-                action = { Chevron() }
+                trailing = { Chevron() }
             )
             ListRowItem(
                 title = "Title",
@@ -206,7 +206,7 @@ fun ListRowItemPreview() {
                         )
                     }
                 },
-                action = {
+                trailing = {
                     Checkbox(
                         checked = checkedState.value,
                         onCheckedChange = { checkedState.value = it }
