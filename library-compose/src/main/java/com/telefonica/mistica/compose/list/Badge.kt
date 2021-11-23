@@ -3,6 +3,7 @@ package com.telefonica.mistica.compose.list
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.ExperimentalMaterialApi
@@ -15,6 +16,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.theme.MisticaTheme
 import com.telefonica.mistica.compose.theme.brand.MovistarBrand
+import com.telefonica.mistica.compose.theme.brand.VivoBrand
 
 @ExperimentalMaterialApi
 @Composable
@@ -47,7 +49,10 @@ fun Badge(
 @Composable
 fun BadgePreview() {
     MisticaTheme(brand = MovistarBrand) {
-        Column(horizontalAlignment = Alignment.End) {
+        Column(
+            horizontalAlignment = Alignment.End,
+            modifier = Modifier.padding(16.dp)
+        ) {
             Badge(content = "2")
             Spacer(modifier = Modifier.height(8.dp))
             Badge(content = "")
