@@ -23,7 +23,7 @@ import coil.transform.CircleCropTransformation
 import com.telefonica.mistica.compose.catalog.R
 import com.telefonica.mistica.compose.list.BackgroundType
 import com.telefonica.mistica.compose.shape.Chevron
-import com.telefonica.mistica.compose.chip.Chip
+import com.telefonica.mistica.compose.tag.Tag
 import com.telefonica.mistica.compose.shape.Circle
 import com.telefonica.mistica.compose.list.ListRowItem
 import com.telefonica.mistica.compose.theme.MisticaTheme
@@ -130,14 +130,14 @@ val samples = listOf(
     ),
 
     ListItem(
-        headline = { Chip("PROMO", MisticaTheme.colors.promo) },
+        headline = { Tag("PROMO", color = MisticaTheme.colors.promo) },
         title = TITLE,
         subtitle = SUBTITLE,
         action = { Chevron() },
         icon = { ListIcon() },
     ),
     ListItem(
-        headline = { Chip("PROMO", MisticaTheme.colors.promo) },
+        headline = { Tag("PROMO", color = MisticaTheme.colors.promo) },
         title = TITLE,
         subtitle = SUBTITLE,
         description = DESCRIPTION,
@@ -147,7 +147,7 @@ val samples = listOf(
         icon = { Avatar() },
     ),
     ListItem(
-        headline = { Chip("PROMO", MisticaTheme.colors.promo) },
+        headline = { Tag("PROMO", color = MisticaTheme.colors.promo) },
         title = TITLE,
         subtitle = SUBTITLE,
         description = DESCRIPTION,
@@ -157,7 +157,7 @@ val samples = listOf(
         icon = { Avatar() },
     ),
     ListItem(
-        headline = { Chip("PROMO", MisticaTheme.colors.promo) },
+        headline = { Tag("PROMO", color = MisticaTheme.colors.promo) },
         title = TITLE,
         subtitle = SUBTITLE,
         description = DESCRIPTION,

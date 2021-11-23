@@ -30,7 +30,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.R
 import com.telefonica.mistica.compose.badge.Badge
-import com.telefonica.mistica.compose.chip.Chip
+import com.telefonica.mistica.compose.tag.Tag
 import com.telefonica.mistica.compose.shape.Chevron
 import com.telefonica.mistica.compose.shape.Circle
 import com.telefonica.mistica.compose.theme.MisticaTheme
@@ -177,7 +177,7 @@ fun ListRowItemPreview() {
         val checkedState = remember { mutableStateOf(true) }
         Column {
             ListRowItem(
-                headline = { Chip() },
+                headline = { Tag("promo") },
                 isBadgeVisible = true,
                 title = "Title",
                 subtitle = "Subtitle",

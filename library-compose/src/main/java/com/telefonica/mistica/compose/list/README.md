@@ -68,7 +68,7 @@ Any `@Composable` could be used as `headline`.
 ```kotlin
   ListRowItem(
       title = "Title",
-      headline = { Chip() },
+      headline = { Tag() },
       icon = {
         Circle {
           Icon(
