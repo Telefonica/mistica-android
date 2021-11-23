@@ -1,4 +1,4 @@
-package com.telefonica.mistica.compose.list
+package com.telefonica.mistica.compose.shape
 
 import androidx.compose.foundation.Image
 import androidx.compose.runtime.Composable

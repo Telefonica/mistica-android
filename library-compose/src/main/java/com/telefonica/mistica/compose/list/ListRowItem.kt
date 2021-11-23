@@ -29,6 +29,10 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.R
+import com.telefonica.mistica.compose.badge.Badge
+import com.telefonica.mistica.compose.chip.Chip
+import com.telefonica.mistica.compose.shape.Chevron
+import com.telefonica.mistica.compose.shape.Circle
 import com.telefonica.mistica.compose.theme.MisticaTheme
 import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 

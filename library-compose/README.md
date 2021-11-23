@@ -59,9 +59,11 @@ override fun onCreate(savedInstanceState: Bundle?) {
 ## Composable components
 Mística-compose supports a subset of the Mística elements. The objective is to support all of them in a near future.
 
+* [Badges](./src/main/java/com/telefonica/mistica/compose/badge)
 * [Buttons](./src/main/java/com/telefonica/mistica/compose/button)
 * [Feedbacks](./src/main/java/com/telefonica/mistica/compose/feedback)
 * [Lists](./src/main/java/com/telefonica/mistica/compose/list)
+* [Tags](./src/main/java/com/telefonica/mistica/compose/chip)
 
 ## Fonts
 Mística-compose supports the same fonts supported in Mística. See [MisticaTypography](https://github.com/Telefonica/mistica-android/library-compose/src/main/java/com/telefonica/mistica/compose/theme/text/MisticaTypography.kt)
@@ -88,10 +90,10 @@ There is a Mística-compose catalog in the [Demo app](https://github.com/Telefon
 | Screen Feedbacks			|  ✅  |  AndroidView   | 					
 | Load Error Feedback		|     |     |    							
 | Pop Overs					|     |     |    				
-| Badges					|     |     |    				
+| Badges					|  ✅  |  Composable   |
 | Scroll Content Indicator	|     |     |    								
-| Tags						|     |     |    			
-| Lists						|  ✅️ |  Compose   |
+| Tags						|  ✅  |  Composable   |
+| Lists						|  ✅️ |  Composable   |
 | Headers					|     |     |    				
 | Sections					|     |     |    				
 | Filters					|     |     |    				

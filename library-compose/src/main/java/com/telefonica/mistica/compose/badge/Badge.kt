@@ -1,4 +1,4 @@
-package com.telefonica.mistica.compose.list
+package com.telefonica.mistica.compose.badge
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer

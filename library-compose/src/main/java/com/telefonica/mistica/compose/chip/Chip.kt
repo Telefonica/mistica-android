@@ -1,4 +1,4 @@
-package com.telefonica.mistica.compose.list
+package com.telefonica.mistica.compose.chip
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
