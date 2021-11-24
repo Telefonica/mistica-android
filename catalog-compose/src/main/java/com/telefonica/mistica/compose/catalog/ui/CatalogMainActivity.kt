@@ -3,6 +3,8 @@ package com.telefonica.mistica.compose.catalog.ui
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.annotation.DrawableRes
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -17,6 +19,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Divider
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Icon
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
@@ -38,6 +41,7 @@ import com.telefonica.mistica.compose.button.DropDownInput
 import com.telefonica.mistica.compose.catalog.R
 import com.telefonica.mistica.compose.catalog.ui.components.Buttons
 import com.telefonica.mistica.compose.catalog.ui.components.Feedbacks
+import com.telefonica.mistica.compose.catalog.ui.components.Lists
 import com.telefonica.mistica.compose.catalog.ui.components.Texts
 import com.telefonica.mistica.compose.theme.MisticaTheme
 import com.telefonica.mistica.compose.theme.brand.BlauBrand
@@ -49,6 +53,8 @@ import com.telefonica.mistica.compose.theme.brand.O2ClassicBrand
 import com.telefonica.mistica.compose.theme.brand.TelefonicaBrand
 import com.telefonica.mistica.compose.theme.brand.VivoBrand
 
+@ExperimentalFoundationApi
+@ExperimentalMaterialApi
 class CatalogMainActivity : ComponentActivity() {
 
     private var brand by mutableStateOf<Brand>(MovistarBrand)
@@ -73,7 +79,7 @@ class CatalogMainActivity : ComponentActivity() {
 
 data class ComponentScreen(
     val name: String,
-    val icon: Int,
+    @DrawableRes val icon: Int,
     val navigation: String,
 )
 
@@ -109,6 +115,8 @@ fun ComponentRow(
     }
 }
 
+@ExperimentalMaterialApi
+@ExperimentalFoundationApi
 @Composable
 fun CatalogNavHost(
     navController: NavHostController,
@@ -131,6 +139,7 @@ fun CatalogNavHost(
         composable(NavigationRoutes.BUTTONS) { Buttons() }
         composable(NavigationRoutes.TEXTS) { Texts() }
         composable(NavigationRoutes.FEEDBACKS) { Feedbacks() }
+        composable(NavigationRoutes.LISTS) { Lists() }
     }
 }
 
@@ -156,6 +165,11 @@ fun Catalog(
             name = "Feedbacks",
             icon = R.drawable.ic_feedbacks,
             navigation = NavigationRoutes.FEEDBACKS
+        ),
+        ComponentScreen(
+            name = "Lists",
+            icon = R.drawable.ic_lists,
+            navigation = NavigationRoutes.LISTS
         )
     )
     Column {
@@ -223,4 +237,5 @@ object NavigationRoutes {
     const val BUTTONS = "buttons"
     const val TEXTS = "texts"
     const val FEEDBACKS = "feedbacks"
+    const val LISTS = "lists"
 }
