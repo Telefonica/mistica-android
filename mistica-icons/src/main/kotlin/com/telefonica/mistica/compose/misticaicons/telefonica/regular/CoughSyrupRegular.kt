@@ -1,0 +1,151 @@
+package com.telefonica.mistica.compose.misticaicons.telefonica.regular
+
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.PathFillType.Companion.NonZero
+import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.StrokeCap.Companion.Butt
+import androidx.compose.ui.graphics.StrokeJoin.Companion.Miter
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.ImageVector.Builder
+import androidx.compose.ui.graphics.vector.path
+import androidx.compose.ui.unit.dp
+import com.telefonica.mistica.compose.misticaicons.telefonica.RegularGroup
+
+public val RegularGroup.CoughSyrupRegular: ImageVector
+    get() {
+        if (_coughSyrupRegular != null) {
+            return _coughSyrupRegular!!
+        }
+        _coughSyrupRegular = Builder(name = "CoughSyrupRegular", defaultWidth = 24.0.dp,
+                defaultHeight = 24.0.dp, viewportWidth = 24.0f, viewportHeight = 24.0f).apply {
+            path(fill = SolidColor(Color(0xFF313235)), stroke = null, strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt, strokeLineJoin = Miter, strokeLineMiter = 4.0f,
+                    pathFillType = NonZero) {
+                moveTo(14.69f, 20.487f)
+                curveToRelative(1.204f, 0.0f, 1.98f, -0.448f, 2.338f, -1.313f)
+                lineTo(6.77f, 19.174f)
+                curveToRelative(0.11f, 0.266f, 0.252f, 0.498f, 0.44f, 0.683f)
+                curveToRelative(0.434f, 0.42f, 1.076f, 0.633f, 1.916f, 0.633f)
+                horizontalLineToRelative(5.563f)
+                verticalLineToRelative(-0.003f)
+                close()
+                moveTo(8.271f, 3.423f)
+                verticalLineToRelative(2.924f)
+                curveToRelative(0.0f, 0.124f, 0.1f, 0.222f, 0.221f, 0.222f)
+                horizontalLineToRelative(6.742f)
+                arcToRelative(0.22f, 0.22f, 0.0f, false, false, 0.222f, -0.222f)
+                lineTo(15.456f, 3.423f)
+                curveToRelative(0.0f, -0.123f, -0.101f, -0.221f, -0.222f, -0.221f)
+                lineTo(8.493f, 3.202f)
+                arcToRelative(0.22f, 0.22f, 0.0f, false, false, -0.221f, 0.221f)
+                close()
+                moveTo(17.189f, 9.176f)
+                curveToRelative(-0.156f, -0.795f, -0.577f, -1.333f, -1.249f, -1.602f)
+                curveToRelative(-0.207f, 0.12f, -0.445f, 0.196f, -0.706f, 0.196f)
+                lineTo(8.493f, 7.77f)
+                curveToRelative(-0.238f, 0.0f, -0.462f, -0.064f, -0.658f, -0.17f)
+                curveToRelative(-0.236f, 0.1f, -0.451f, 0.224f, -0.625f, 0.389f)
+                curveToRelative(-0.302f, 0.291f, -0.496f, 0.697f, -0.597f, 1.187f)
+                lineTo(17.19f, 9.176f)
+                close()
+                moveTo(6.532f, 17.882f)
+                curveToRelative(0.0f, 0.031f, 0.006f, 0.06f, 0.006f, 0.09f)
+                horizontalLineToRelative(10.714f)
+                curveToRelative(0.0f, -0.03f, 0.006f, -0.059f, 0.006f, -0.09f)
+                lineToRelative(0.008f, -7.507f)
+                lineTo(6.535f, 10.375f)
+                verticalLineToRelative(7.507f)
+                horizontalLineToRelative(-0.003f)
+                close()
+                moveTo(16.633f, 6.56f)
+                curveToRelative(1.185f, 0.583f, 1.83f, 1.768f, 1.83f, 3.398f)
+                lineToRelative(-0.01f, 7.924f)
+                curveToRelative(0.0f, 2.381f, -1.408f, 3.804f, -3.764f, 3.804f)
+                lineTo(9.123f, 21.686f)
+                curveToRelative(-1.16f, 0.0f, -2.084f, -0.325f, -2.748f, -0.969f)
+                curveToRelative(-0.689f, -0.67f, -1.039f, -1.622f, -1.039f, -2.835f)
+                lineTo(5.336f, 9.958f)
+                curveToRelative(0.0f, -1.213f, 0.35f, -2.165f, 1.045f, -2.835f)
+                curveToRelative(0.21f, -0.204f, 0.457f, -0.367f, 0.72f, -0.507f)
+                arcToRelative(1.412f, 1.412f, 0.0f, false, true, -0.028f, -0.269f)
+                lineTo(7.073f, 3.423f)
+                curveTo(7.073f, 2.639f, 7.709f, 2.0f, 8.49f, 2.0f)
+                horizontalLineToRelative(6.742f)
+                curveToRelative(0.782f, 0.0f, 1.418f, 0.639f, 1.418f, 1.423f)
+                verticalLineToRelative(2.924f)
+                curveToRelative(0.005f, 0.073f, -0.006f, 0.143f, -0.017f, 0.213f)
+                close()
+                moveTo(9.305f, 6.03f)
+                arcToRelative(0.598f, 0.598f, 0.0f, false, true, -0.596f, -0.599f)
+                lineTo(8.709f, 4.314f)
+                arcToRelative(0.6f, 0.6f, 0.0f, false, true, 0.596f, -0.6f)
+                arcToRelative(0.6f, 0.6f, 0.0f, false, true, 0.597f, 0.6f)
+                lineTo(9.902f, 5.43f)
+                curveToRelative(0.003f, 0.33f, -0.266f, 0.6f, -0.597f, 0.6f)
+                close()
+                moveTo(11.014f, 6.03f)
+                arcToRelative(0.598f, 0.598f, 0.0f, false, true, -0.597f, -0.599f)
+                lineTo(10.417f, 4.314f)
+                arcToRelative(0.6f, 0.6f, 0.0f, false, true, 0.597f, -0.6f)
+                arcToRelative(0.6f, 0.6f, 0.0f, false, true, 0.597f, 0.6f)
+                lineTo(11.611f, 5.43f)
+                arcToRelative(0.6f, 0.6f, 0.0f, false, true, -0.597f, 0.6f)
+                close()
+                moveTo(12.72f, 6.03f)
+                arcToRelative(0.598f, 0.598f, 0.0f, false, true, -0.597f, -0.599f)
+                lineTo(12.123f, 4.314f)
+                arcToRelative(0.6f, 0.6f, 0.0f, false, true, 0.597f, -0.6f)
+                arcToRelative(0.6f, 0.6f, 0.0f, false, true, 0.597f, 0.6f)
+                lineTo(13.317f, 5.43f)
+                curveToRelative(0.0f, 0.33f, -0.267f, 0.6f, -0.597f, 0.6f)
+                close()
+                moveTo(14.426f, 6.03f)
+                arcToRelative(0.598f, 0.598f, 0.0f, false, true, -0.597f, -0.599f)
+                lineTo(13.829f, 4.314f)
+                arcToRelative(0.598f, 0.598f, 0.0f, true, true, 1.193f, 0.0f)
+                lineTo(15.022f, 5.43f)
+                curveToRelative(0.003f, 0.33f, -0.266f, 0.6f, -0.596f, 0.6f)
+                close()
+                moveTo(14.101f, 14.616f)
+                verticalLineToRelative(-0.863f)
+                horizontalLineToRelative(-1.798f)
+                lineTo(12.303f, 11.95f)
+                horizontalLineToRelative(-0.863f)
+                verticalLineToRelative(1.803f)
+                lineToRelative(-1.796f, 0.003f)
+                verticalLineToRelative(0.866f)
+                horizontalLineToRelative(1.796f)
+                lineToRelative(0.003f, 1.804f)
+                horizontalLineToRelative(0.862f)
+                verticalLineToRelative(-1.804f)
+                lineToRelative(1.796f, -0.006f)
+                close()
+                moveTo(14.176f, 12.714f)
+                curveToRelative(0.521f, 0.0f, 0.961f, 0.415f, 0.961f, 0.908f)
+                verticalLineToRelative(1.131f)
+                curveToRelative(0.0f, 0.49f, -0.44f, 0.905f, -0.96f, 0.905f)
+                horizontalLineToRelative(-0.838f)
+                verticalLineToRelative(0.843f)
+                curveToRelative(0.0f, 0.533f, -0.406f, 0.964f, -0.905f, 0.964f)
+                horizontalLineToRelative(-1.129f)
+                curveToRelative(-0.498f, 0.0f, -0.904f, -0.431f, -0.904f, -0.964f)
+                verticalLineToRelative(-0.837f)
+                horizontalLineToRelative(-0.838f)
+                curveToRelative(-0.53f, 0.0f, -0.96f, -0.406f, -0.96f, -0.908f)
+                verticalLineToRelative(-1.131f)
+                curveToRelative(0.0f, -0.499f, 0.43f, -0.908f, 0.96f, -0.908f)
+                horizontalLineToRelative(0.835f)
+                verticalLineToRelative(-0.84f)
+                curveToRelative(0.0f, -0.521f, 0.414f, -0.964f, 0.905f, -0.964f)
+                horizontalLineToRelative(1.128f)
+                curveToRelative(0.49f, 0.0f, 0.905f, 0.443f, 0.905f, 0.964f)
+                verticalLineToRelative(0.84f)
+                lineToRelative(0.84f, -0.003f)
+                close()
+            }
+        }
+        .build()
+        return _coughSyrupRegular!!
+    }
+
+private var _coughSyrupRegular: ImageVector? = null
