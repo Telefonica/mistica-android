@@ -357,6 +357,7 @@ class FeedbackScreenView : ConstraintLayout {
 
             title.alpha = 0F
             subtitle.alpha = 0F
+            errorReference.alpha = 0F
             customContentContainer.alpha = 0F
 
             animation.start()
