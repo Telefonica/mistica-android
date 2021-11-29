@@ -37,6 +37,7 @@ class FeedbackScreenCatalogFragment(
         val typeDropDown: DropDownInput = view.findViewById(R.id.dropdown_feedback_type)
         val inputTitle: TextInput = view.findViewById(R.id.input_feedback_title)
         val inputSubtitle: TextInput = view.findViewById(R.id.input_feedback_subtitle)
+        val inputErrorReference: TextInput = view.findViewById(R.id.input_feedback_error_reference)
         val inputFirstButtonText: TextInput = view.findViewById(R.id.input_feedback_first_button)
         val inputSecondButtonText: TextInput = view.findViewById(R.id.input_feedback_second_button)
         val checkBoxSecondButtonAsLink: CheckBoxInput = view.findViewById(R.id.check_feedback_second_button_as_link)
@@ -60,6 +61,7 @@ class FeedbackScreenCatalogFragment(
                 context = view.context,
                 title = inputTitle.toNullableString(),
                 subtitle = inputSubtitle.toNullableString(),
+                errorReference = inputErrorReference.toNullableString(),
                 firstButtonText = inputFirstButtonText.toNullableString(),
                 secondButtonText = inputSecondButtonText.toNullableString(),
                 showSecondButtonAsLink = checkBoxSecondButtonAsLink.isChecked(),
@@ -73,6 +75,7 @@ class FeedbackScreenCatalogFragment(
         @FeedbackType type: Int,
         title: String?,
         subtitle: String?,
+        errorReference: String?,
         @LayoutRes customContentLayout: Int = FeedbackScreenCatalogActivity.INVALID_DEFAULT_VALUE,
         firstButtonText: String?,
         secondButtonText: String?,
@@ -83,6 +86,7 @@ class FeedbackScreenCatalogFragment(
             putExtra(FeedbackScreenCatalogActivity.EXTRA_TYPE, type)
             putExtra(FeedbackScreenCatalogActivity.EXTRA_TITLE, title)
             putExtra(FeedbackScreenCatalogActivity.EXTRA_SUBTITLE, subtitle)
+            putExtra(FeedbackScreenCatalogActivity.EXTRA_ERROR_REFERENCE, errorReference)
             putExtra(FeedbackScreenCatalogActivity.EXTRA_FIRST_BUTTON_TEXT, firstButtonText)
             putExtra(FeedbackScreenCatalogActivity.EXTRA_SECOND_BUTTON_TEXT, secondButtonText)
             putExtra(FeedbackScreenCatalogActivity.EXTRA_CUSTOM_CONTENT, customContentLayout)
