@@ -60,6 +60,22 @@
         <item name="colorTextButtonSecondaryInverseDisabled">@color/o2_classic_color_sky_blue_light_50</item>
         <item name="colorTextButtonSecondaryInverseSelected">@color/o2_classic_color_white</item>
 
+        <!-- Tag colors -->
+        <item name="tagBackgroundSuccess">@color/o2_classic_color_green_10</item>
+        <item name="tagBackgroundWarning">@color/o2_classic_color_orange_10</item>
+        <item name="tagBackgroundError">@color/o2_classic_color_pepper_10</item>
+        <item name="tagBackgroundPromo">@color/o2_classic_color_pink_10</item>
+        <item name="tagBackgroundActive">@color/o2_classic_color_blue_10</item>
+        <item name="tagBackgroundInactive">@color/o2_classic_color_grey_1</item>
+        <item name="inverse">@color/o2_classic_color_white</item>
+
+        <item name="textTagSuccess">@color/o2_classic_color_green_75</item>
+        <item name="textTagWarning">@color/o2_classic_color_orange_80</item>
+        <item name="textTagError">@color/o2_classic_color_pepper_70</item>
+        <item name="textTagPromo">@color/o2_classic_color_pink_60</item>
+        <item name="textTagActive">@color/o2_classic_color_blue</item>
+        <item name="textTagInactive">@color/o2_classic_color_grey_5</item>
+
         <!-- Text Links -->
         <item name="colorTextLink">@color/o2_classic_color_sky_blue</item>
         <item name="colorTextLinkInverse">@color/o2_classic_color_white</item>

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="o2_classic_color_blue">#032B5A</color>
+    <color name="o2_classic_color_blue_10">#E6EAEE</color>
+    <color name="o2_classic_color_blue_30">#8195AC</color>
     <color name="o2_classic_color_blue_dark">#04264E</color>
     <color name="o2_classic_color_blue_light_60">#6C8BAF</color>
     <color name="o2_classic_color_sky_blue">#0090D0</color>
@@ -14,16 +16,34 @@
     <color name="o2_classic_color_gem">#01B7B4</color>
     <color name="o2_classic_color_gem_dark">#099E9B</color>
     <color name="o2_classic_color_gem_light_30">#99E2E1</color>
+
     <color name="o2_classic_color_yellow">#FFCC00</color>
+
     <color name="o2_classic_color_green">#84B50F</color>
+    <color name="o2_classic_color_green_10">#F3F8E7</color>
+    <color name="o2_classic_color_green_40">#A9CB57</color>
+    <color name="o2_classic_color_green_75">#4D621D</color>
     <color name="o2_classic_color_green_light">#DAE8B7</color>
+
     <color name="o2_classic_color_pepper">#FF374A</color>
+    <color name="o2_classic_color_pepper_10">#FFEBED</color>
+    <color name="o2_classic_color_pepper_40">#FF7380</color>
+    <color name="o2_classic_color_pepper_70">#B22634</color>
     <color name="o2_classic_color_pepper_dark">#D73241</color>
     <color name="o2_classic_color_pepper_light_30">#FFC3C8</color>
+
     <color name="o2_classic_color_orange">#FF7F41</color>
+    <color name="o2_classic_color_orange_10">#FFF2EC</color>
+    <color name="o2_classic_color_orange_40">#FFA57A</color>
+    <color name="o2_classic_color_orange_80">#73391D</color>
     <color name="o2_classic_color_orange_light">#FFD6C2</color>
+
     <color name="o2_classic_color_coral">#FF706E</color>
+
     <color name="o2_classic_color_pink">#EB3C7D</color>
+    <color name="o2_classic_color_pink_10">#FDEBF2</color>
+    <color name="o2_classic_color_pink_40">#F59DBE</color>
+    <color name="o2_classic_color_pink_60">#BC3064</color>
 
     <color name="o2_classic_gradient_first">#102550</color>
     <color name="o2_classic_gradient_second">#0B4680</color>

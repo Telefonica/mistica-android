@@ -53,6 +53,22 @@
         <item name="colorTextButtonSecondaryInverseDisabled">@color/vivo_color_grey_5</item>
         <item name="colorTextButtonSecondaryInverseSelected">@color/vivo_color_grey_4</item>
 
+        <!-- Tag colors -->
+        <item name="tagBackgroundSuccess">@color/vivo_color_white_5_alpha</item>
+        <item name="tagBackgroundWarning">@color/vivo_color_white_5_alpha</item>
+        <item name="tagBackgroundError">@color/vivo_color_white_5_alpha</item>
+        <item name="tagBackgroundPromo">@color/vivo_color_white_5_alpha</item>
+        <item name="tagBackgroundActive">@color/vivo_color_white_5_alpha</item>
+        <item name="tagBackgroundInactive">@color/vivo_color_white_5_alpha</item>
+        <item name="inverse">@color/vivo_color_grey_2</item>
+
+        <item name="textTagSuccess">@color/vivo_color_green_light30</item>
+        <item name="textTagWarning">@color/vivo_color_orange_light40</item>
+        <item name="textTagError">@color/vivo_color_pepper_light40</item>
+        <item name="textTagPromo">@color/vivo_color_purple_light50</item>
+        <item name="textTagActive">@color/vivo_color_purple_light50</item>
+        <item name="textTagInactive">@color/vivo_color_grey_4</item>
+
         <!-- Text Links -->
         <item name="colorTextLink">@color/vivo_color_purple_light50</item>
         <item name="colorTextLinkInverse">@color/vivo_color_purple_light50</item>

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="o2_color_blue_primary">#0019A5</color>
+    <color name="o2_color_blue_primary_10">#E5E8F6</color>
+    <color name="o2_color_blue_primary_15">#CCD1ED</color>
     <color name="o2_color_blue_primary_dark">#000066</color>
     <color name="o2_color_blue_primary_light_50">#808CD2</color>
     <color name="o2_color_blue_primary_light_10">#CCD1ED</color>
@@ -15,16 +17,34 @@
     <color name="o2_color_teal">#01B7B4</color>
     <color name="o2_color_teal_dark">#099E9B</color>
     <color name="o2_color_teal_light">#B1E4E3</color>
+
     <color name="o2_color_green">#91C90E</color>
+    <color name="o2_color_green_10">#F4FAE7</color>
+    <color name="o2_color_green_40">#B2D956</color>
+    <color name="o2_color_green_80">#415A06</color>
     <color name="o2_color_green_light">#DEEEB7</color>
+
     <color name="o2_color_yellow">#FEDB00</color>
     <color name="o2_color_yellow_light">#FEF6C3</color>
+
     <color name="o2_color_orange">#FF7F41</color>
+    <color name="o2_color_orange_10">#FFF2EC</color>
+    <color name="o2_color_orange_40">#FFA57A</color>
+    <color name="o2_color_orange_75">#A6522A</color>
     <color name="o2_color_orange_light">#FFD6C2</color>
+
     <color name="o2_color_coral">#FF706E</color>
+
     <color name="o2_color_pink">#CB31A0</color>
+
     <color name="o2_color_purple">#953698</color>
+    <color name="o2_color_purple_10">#F4EAF5</color>
+    <color name="o2_color_purple_30">#CA9ACB</color>
+
     <color name="o2_color_pepper">#FF374A</color>
+    <color name="o2_color_pepper_10">#FEEBED</color>
+    <color name="o2_color_pepper_40">#FF7380</color>
+    <color name="o2_color_pepper_60">#C32B3D</color>
     <color name="o2_color_pepper_dark">#D73241</color>
     <color name="o2_color_pepper_light30">#FFC3C8</color>
 

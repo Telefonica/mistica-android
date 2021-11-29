@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <resources>
     <color name="telefonica_color_blue">#0066FF</color>
+    <color name="telefonica_color_blue_30">#80B3FF</color>
     <color name="telefonica_color_blue_dark">#0356C9</color>
     <color name="telefonica_color_blue_light50">#80B2FF</color>
     <color name="telefonica_color_blue_light30">#B3D1FF</color>
@@ -20,18 +21,30 @@
     <color name="telefonica_color_egg_light">#F8D2B3</color>
 
     <color name="telefonica_color_ambar">#EAC344</color>
+    <color name="telefonica_color_ambar_10">#FDF9EC</color>
+    <color name="telefonica_color_ambar_40">#F0D57C</color>
+    <color name="telefonica_color_ambar_70">#69581F</color>
     <color name="telefonica_color_ambar_light">#F5E98A</color>
     <color name="telefonica_color_ambar_dark">#AD842D</color>
 
     <color name="telefonica_color_coral">#E66C64</color>
+    <color name="telefonica_color_coral_10">#FDF0EF</color>
+    <color name="telefonica_color_coral_40">#E3A19A</color>
+    <color name="telefonica_color_coral_70">#D50000</color>
     <color name="telefonica_color_coral_light">#E3A19A</color>
     <color name="telefonica_color_coral_dark">#912C31</color>
 
     <color name="telefonica_color_orchid">#C466EF</color>
+    <color name="telefonica_color_orchid_10">#F9F0FD</color>
+    <color name="telefonica_color_orchid_40">#D694F4</color>
+    <color name="telefonica_color_orchid_70">#8947A7</color>
     <color name="telefonica_color_orchid_light">#E7C2F8</color>
     <color name="telefonica_color_orchid_dark">#8A1A93</color>
 
     <color name="telefonica_color_turquoise">#59C2C9</color>
+    <color name="telefonica_color_turquoise_10">#EEF9FA</color>
+    <color name="telefonica_color_turquoise_40">#8BD4D9</color>
+    <color name="telefonica_color_turquoise_70">#3E888D</color>
     <color name="telefonica_color_turquoise_light">#67E0E5</color>
     <color name="telefonica_color_turquoise_dark">#3E8A8A</color>
 
