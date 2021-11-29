@@ -19,6 +19,7 @@ fun Feedback(
     @FeedbackScreenView.FeedbackType type: Int = FeedbackScreenView.TYPE_INFO,
     title: String = "",
     subtitle: String = "",
+    errorReference: String = "",
     firstButtonText: String?,
     secondButtonText: String?,
     firstButtonOnClick: (() -> Unit)?,
@@ -61,6 +62,7 @@ fun Feedback(
             setFeedbackType(type)
             setFeedbackTitle(title)
             setFeedbackSubtitle(subtitle)
+            setFeedbackErrorReference(errorReference)
             firstButtonText?.let { setFeedbackFirstButtonText(firstButtonText) }
             secondButtonText?.let { setFeedbackSecondButtonText(secondButtonText) }
             firstButtonOnClick?.let { setFirstButtonOnClick { firstButtonOnClick() } }
