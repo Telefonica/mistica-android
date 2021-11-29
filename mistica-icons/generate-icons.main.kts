@@ -6,7 +6,6 @@
 @file:Repository("file:///home/mvera/.m2/repository")
 
 // svg-to-compose
-//@file:DependsOn("com.github.DevSrSouza:svg-to-compose:0.7.0")
 @file:DependsOn("br.com.devsrsouza:svg-to-compose:0.7.0")
 @file:DependsOn("com.google.guava:guava:23.0")
 @file:DependsOn("com.android.tools:sdk-common:27.2.0-alpha16")

@@ -2,8 +2,6 @@ package com.telefonica.mistica.compose
 
 import androidx.compose.ui.graphics.vector.ImageVector
 import com.telefonica.mistica.compose.misticaicons.AllIcons
-import com.telefonica.mistica.compose.misticaicons.Blau
-import com.telefonica.mistica.compose.misticaicons.O2
 import com.telefonica.mistica.compose.misticaicons.Telefonica
 import kotlin.collections.List as ____KtList
 
