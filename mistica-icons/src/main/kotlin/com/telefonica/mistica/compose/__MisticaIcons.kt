@@ -16,6 +16,6 @@ public val MisticaIcons.AllIcons: ____KtList<ImageVector>
     if (__AllIcons != null) {
       return __AllIcons!!
     }
-    __AllIcons= O2.AllIcons + Blau.AllIcons + Telefonica.AllIcons + listOf()
+    __AllIcons= Telefonica.AllIcons + listOf()
     return __AllIcons!!
   }
