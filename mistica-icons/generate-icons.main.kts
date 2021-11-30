@@ -25,8 +25,6 @@ import java.io.File
 
 fun File.makeDirs() = apply { mkdirs() }
 
-val buildDir = File("build/").makeDirs()
-
 val githubId = "Telefonica/mistica-icons"
 val repository = "https://github.com/$githubId"
 
