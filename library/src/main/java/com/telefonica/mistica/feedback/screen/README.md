@@ -34,12 +34,21 @@ In order to configure it for the specific purpose, it supports both **attribute 
 ## Fields information
 
 `feedbackType` -> (Required) Type of the feedback for the specific purpose.
+
 `feedbackTitle` -> (Required) Title
+
 `feedbackSubtitle` -> (Required) Subtitle
+
 `feedbackErrorReference` -> (Optional) It allows specifying a error reference text, such as "Error reference: #95001". It is only displayed when field is not an empty string and the current feedback type is error.
+
 `feedbackCustomContentLayout` -> (Optional) Allows specifying a layout resource that will be inflated, showing its contents below the feedback subtitle.
+
 `feedbackFirstButtonText` -> (Optional) Allows specifying a Text for the first feedback button. A primary button will be displayed if text is not empty.
+
 `feedbackSecondButtonText` -> (Optional) Allows specifying a Text for the second feedback button. A secondary button will be displayed if text is not empty.
+
 `feedbackSecondButtonAsLink` -> (Optional) When specified as true, the second button is displayed as a link button.
+
 `feedbackFirstButtonOnClick` -> (Optional) Click action associated to first feedback button.
+
 `feedbackSecondButtonOnClick` -> (Optional) Click action associated to second feedback button.
