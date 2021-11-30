@@ -4,7 +4,13 @@
     <img src="../../../../../../../../../doc/images/screen_feedbacks/feedbacks.gif">
 </p>
 
-`com.telefonica.mistica.feedback.screen.view.FeedbackScreenView` can be used inside any layout like a regular view, presentation of the view can be diferent depending on the design requirements. In order to configure it for the specific purpose, it supports both **attribute configuration and databinding for all properties**
+`com.telefonica.mistica.feedback.screen.view.FeedbackScreenView` allows showing a full screen feedback which can be configured depending on the needs.
+
+It can be used inside any layout like a regular view. When adding it to the view hierarchy, screen entry animations will be performed.
+
+In order to configure it for the specific purpose, it supports both **attribute configuration and databinding for all properties**
+
+## Available fields
 
 ```xml
 <declare-styleable name="FeedbackScreen">
@@ -15,6 +21,7 @@
     </attr>
     <attr name="feedbackTitle" format="string"/>
     <attr name="feedbackSubtitle" format="string"/>
+	<attr name="feedbackErrorReference" format="string"/>
     <attr name="feedbackCustomContentLayout" format="reference"/>
     <attr name="feedbackFirstButtonText" format="string"/>
     <attr name="feedbackSecondButtonText" format="string"/>
