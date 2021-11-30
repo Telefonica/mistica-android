@@ -1,7 +1,7 @@
 package com.telefonica.mistica.compose.theme.brand
 
 import androidx.compose.ui.graphics.Color
-import com.telefonica.mistica.compose.R
+import com.telefonica.mistica.R
 import com.telefonica.mistica.compose.theme.color.MisticaColors
 
 object O2Brand : Brand {

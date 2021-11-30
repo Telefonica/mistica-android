@@ -4,7 +4,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.res.painterResource
-import com.telefonica.mistica.compose.R
+import com.telefonica.mistica.R
 import com.telefonica.mistica.compose.theme.MisticaTheme
 
 @Composable
