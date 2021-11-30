@@ -21,7 +21,7 @@ In order to configure it for the specific purpose, it supports both **attribute 
     </attr>
     <attr name="feedbackTitle" format="string"/>
     <attr name="feedbackSubtitle" format="string"/>
-	<attr name="feedbackErrorReference" format="string"/>
+    <attr name="feedbackErrorReference" format="string"/>
     <attr name="feedbackCustomContentLayout" format="reference"/>
     <attr name="feedbackFirstButtonText" format="string"/>
     <attr name="feedbackSecondButtonText" format="string"/>
