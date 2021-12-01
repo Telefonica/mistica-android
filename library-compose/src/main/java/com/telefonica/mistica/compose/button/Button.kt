@@ -3,11 +3,13 @@ package com.telefonica.mistica.compose.button
 import android.view.LayoutInflater
 import android.view.View
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.viewinterop.AndroidView
 import com.telefonica.mistica.compose.R
 
 @Composable
 fun Button(
+    modifier: Modifier = Modifier,
     text: String,
     loadingText: String = "",
     buttonStyle: ButtonStyle = ButtonStyle.PRIMARY,
@@ -24,6 +26,7 @@ fun Button(
     }
 
     AndroidView(
+        modifier = modifier,
         factory = { context ->
             val view = LayoutInflater.from(context).inflate(getButtonStyle(buttonStyle), null)
             view.updateButton()

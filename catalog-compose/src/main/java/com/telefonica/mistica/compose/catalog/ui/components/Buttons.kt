@@ -1,9 +1,14 @@
 package com.telefonica.mistica.compose.catalog.ui.components
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Divider
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
@@ -27,7 +32,9 @@ import kotlinx.coroutines.launch
 @Composable
 fun Buttons() {
     Column(
-        modifier = Modifier.fillMaxSize(),
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(top = 16.dp, bottom = 16.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
@@ -41,12 +48,16 @@ fun Buttons() {
         Column(
             verticalArrangement = Arrangement.spacedBy(8.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier.verticalScroll(rememberScrollState())
         ) {
             ButtonStyle.values()
                 .filter { !it.name.contains("INVERSE") }
                 .forEach {
                     var isLoading by remember(it.name) { mutableStateOf(false) }
                     Button(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(start = 16.dp, end = 16.dp),
                         text = "Progress button - ${it.name}",
                         loadingText = "Loading",
                         buttonStyle = it,
@@ -65,7 +76,11 @@ fun Buttons() {
 
         Column(
             modifier = Modifier
-                .background(MaterialTheme.colors.primary),
+                .background(MaterialTheme.colors.primary)
+                .verticalScroll(rememberScrollState())
+                .fillMaxWidth()
+                .padding(top = 16.dp, bottom = 16.dp)
+            ,
             verticalArrangement = Arrangement.spacedBy(8.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
