@@ -13,7 +13,7 @@ Implemented as a custom view, `com.telefonica.mistica.tag.TagView` can be used l
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:text="Active"
-			app:tagStyle="Active"
+			app:tagStyle="active"
 			app:tagIcon="@drawable/icon"
 			/>
 ```
