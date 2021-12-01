@@ -31,7 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            app:inputHint="Select Headline color" />
+            app:inputHint="Select Tag Style" />
 
         <com.telefonica.mistica.input.TextInput
             android:id="@+id/input_title"

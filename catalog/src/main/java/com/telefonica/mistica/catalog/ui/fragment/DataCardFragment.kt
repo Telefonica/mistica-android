@@ -8,26 +8,33 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.annotation.AttrRes
 import androidx.fragment.app.Fragment
-import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.card.datacard.DataCardView
+import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.input.CheckBoxInput
 import com.telefonica.mistica.input.DropDownInput
 import com.telefonica.mistica.input.TextInput
-import com.telefonica.mistica.util.getThemeColor
-
+import com.telefonica.mistica.tag.TagStyle
+import com.telefonica.mistica.tag.TagView.Companion.TYPE_ACTIVE
+import com.telefonica.mistica.tag.TagView.Companion.TYPE_ERROR
+import com.telefonica.mistica.tag.TagView.Companion.TYPE_INACTIVE
+import com.telefonica.mistica.tag.TagView.Companion.TYPE_INVERSE
+import com.telefonica.mistica.tag.TagView.Companion.TYPE_PROMO
+import com.telefonica.mistica.tag.TagView.Companion.TYPE_SUCCESS
+import com.telefonica.mistica.tag.TagView.Companion.TYPE_WARNING
 
 class DataCardFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         return inflater.inflate(R.layout.data_card_fragment_catalog, container, false)
     }
 
-    private var currentTagColor: Int = R.attr.colorPromo
+    @TagStyle
+    private var tagStyle = TYPE_PROMO
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -43,7 +50,7 @@ class DataCardFragment : Fragment() {
             )
             setText(TagColors.PROMO.name)
             setOnItemClickListener { _, _, _, _ ->
-                currentTagColor = TagColors.valueOf(text.toString()).colorAttr
+                tagStyle = TagColors.valueOf(text.toString()).tagStyle
                 updateDataCardView(view)
             }
         }
@@ -58,10 +65,11 @@ class DataCardFragment : Fragment() {
             setDescription(view.findViewById<TextInput>(R.id.input_description).text.toString())
             setPrimaryButtonText(view.findViewById<TextInput>(R.id.input_primary_button).text.toString())
             setLinkButtonText(view.findViewById<TextInput>(R.id.input_link_button).text.toString())
-            setTagColor(context.getThemeColor(currentTagColor))
+            setTagStyle(tagStyle)
+
             if (view.findViewById<CheckBoxInput>(R.id.additional_content_checkbox).isChecked()) {
                 setCardAdditionalContent(null)
-                val additionalContent  = LayoutInflater.from(context).inflate(R.layout.card_custom_sample_content, this, false )
+                val additionalContent = LayoutInflater.from(context).inflate(R.layout.card_custom_sample_content, this, false)
                 setCardAdditionalContent(additionalContent)
             } else {
                 setCardAdditionalContent(null)
@@ -72,38 +80,24 @@ class DataCardFragment : Fragment() {
                 removeIcon()
             }
             setPrimaryButtonOnClick {
-                Toast.makeText(
-                    view.context,
-                    "Primary button clicked!",
-                    Toast.LENGTH_SHORT
-                ).show()
+                Toast.makeText(view.context, "Primary button clicked!", Toast.LENGTH_SHORT).show()
             }
             setLinkButtonOnClick {
-                Toast.makeText(
-                    view.context,
-                    "Secondary button clicked!",
-                    Toast.LENGTH_SHORT
-                ).show()
+                Toast.makeText(view.context, "Secondary button clicked!", Toast.LENGTH_SHORT).show()
             }
             setOnClickListener {
-                Toast.makeText(
-                    view.context,
-                    "Data card clicked!",
-                    Toast.LENGTH_SHORT
-                ).show()
+                Toast.makeText(view.context, "Data card clicked!", Toast.LENGTH_SHORT).show()
             }
         }
     }
 
-    private enum class TagColors(@AttrRes val colorAttr: Int) {
-        PROMO(R.attr.colorPromo),
-        BRAND(R.attr.colorBrand),
-        BRAND_DARK(R.attr.colorBrandDark),
-        NEUTRAL_HIGH(R.attr.colorNeutralHigh),
-        NEUTRAL_MEDIUM(R.attr.colorNeutralMedium),
-        SUCCESS(R.attr.colorSuccess),
-        WARNING(R.attr.colorWarning),
-        ERROR(R.attr.colorError),
-        INVERSE(R.attr.colorInverse),
+    private enum class TagColors(@AttrRes val tagStyle: Int) {
+        PROMO(TYPE_PROMO),
+        ACTIVE(TYPE_ACTIVE),
+        INACTIVE(TYPE_INACTIVE),
+        SUCCESS(TYPE_SUCCESS),
+        WARNING(TYPE_WARNING),
+        ERROR(TYPE_ERROR),
+        INVERSE(TYPE_INVERSE),
     }
 }

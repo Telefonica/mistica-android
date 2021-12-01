@@ -7,17 +7,17 @@ import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.input.TextInput
+import com.telefonica.mistica.tag.TagView
 
 class TagsCatalogFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View =
         inflater.inflate(R.layout.screen_tags_catalog, container, false)
 
@@ -26,8 +26,13 @@ class TagsCatalogFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val textInput: TextInput = view.findViewById(R.id.textInput)
-        val tagInImage: TextView = view.findViewById(R.id.tag_in_image)
-        val tagInline: TextView = view.findViewById(R.id.tag_inline)
+
+        val tagViews = listOf<TagView>(
+            view.findViewById(R.id.regular_tag),
+            view.findViewById(R.id.regular_with_icon_tag),
+            view.findViewById(R.id.inverse_tag),
+            view.findViewById(R.id.inverse_with_icon_tag),
+        )
 
         textInput.addTextChangedListener(object : TextWatcher {
 
@@ -39,10 +44,9 @@ class TagsCatalogFragment : Fragment() {
                 inputText: CharSequence,
                 start: Int,
                 before: Int,
-                count: Int
+                count: Int,
             ) {
-                tagInImage.text = inputText.toString()
-                tagInline.text = inputText.toString()
+                tagViews.forEach { it.text = inputText.toString() }
             }
         })
     }
