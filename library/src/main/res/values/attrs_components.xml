@@ -21,6 +21,7 @@
         <attr name="feedbackTitle" format="string" />
         <attr name="feedbackSubtitle" format="string" />
         <attr name="feedbackCustomContentLayout" format="reference" />
+        <attr name="feedbackErrorReference" format="string" />
         <attr name="feedbackFirstButtonText" format="string" />
         <attr name="feedbackSecondButtonText" format="string" />
         <attr name="feedbackSecondButtonAsLink" format="boolean" />

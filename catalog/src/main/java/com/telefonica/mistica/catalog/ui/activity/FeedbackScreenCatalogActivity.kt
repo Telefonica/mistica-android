@@ -15,6 +15,7 @@ class FeedbackScreenCatalogActivity : AppCompatActivity() {
     var type: Int? = null
     var title: String? = null
     var subtitle: String? = null
+    var errorReference: String? = null
 
     @LayoutRes
     var customContentLayout: Int? = null
@@ -38,6 +39,7 @@ class FeedbackScreenCatalogActivity : AppCompatActivity() {
             type?.let { setFeedbackType(it) }
             title?.let { setFeedbackTitle(it) }
             subtitle?.let { setFeedbackSubtitle(it) }
+            errorReference?.let { setFeedbackErrorReference(it) }
             customContentLayout?.let { setCustomContentLayout(it) }
             firstButtonText?.let { setFeedbackFirstButtonText(it) }
             secondButtonText?.let { setFeedbackSecondButtonText(it) }
@@ -60,6 +62,7 @@ class FeedbackScreenCatalogActivity : AppCompatActivity() {
         )
         title = intent.getStringExtra(EXTRA_TITLE)
         subtitle = intent.getStringExtra(EXTRA_SUBTITLE)
+        errorReference = intent.getStringExtra(EXTRA_ERROR_REFERENCE)
         customContentLayout = intent.getIntExtra(
             EXTRA_CUSTOM_CONTENT,
             INVALID_DEFAULT_VALUE
@@ -84,6 +87,7 @@ class FeedbackScreenCatalogActivity : AppCompatActivity() {
         const val EXTRA_TYPE = "extra_type"
         const val EXTRA_TITLE = "extra_title"
         const val EXTRA_SUBTITLE = "extra_subtitle"
+        const val EXTRA_ERROR_REFERENCE = "extra_error_reference"
         const val EXTRA_CUSTOM_CONTENT = "extra_custom_content"
         const val EXTRA_FIRST_BUTTON_TEXT = "extra_first_button_text"
         const val EXTRA_SECOND_BUTTON_TEXT = "extra_second_button_text"

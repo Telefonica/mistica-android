@@ -44,6 +44,15 @@
             app:inputText="This is the feedback description" />
 
         <com.telefonica.mistica.input.TextInput
+            android:id="@+id/input_feedback_error_reference"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:inputType="text"
+            app:inputHint="Error Reference (For Error Feedbacks)"
+            app:inputText="Error reference: #95001" />
+
+        <com.telefonica.mistica.input.TextInput
             android:id="@+id/input_feedback_first_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
