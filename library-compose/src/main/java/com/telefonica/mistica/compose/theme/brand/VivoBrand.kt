@@ -182,16 +182,26 @@ private object VivoPaletteColor {
 
     val vivo_color_green = Color(0xFF99CC33)
     val vivo_color_green_dark = Color(0xFF33A14A)
+    val vivo_color_green_light10 = Color(0xFFEDF8E8)
+    val vivo_color_green_light30 = Color(0xFF91AE9E)
     val vivo_color_green_light40 = Color(0xFFD6EAAD)
 
     val vivo_color_blue = Color(0xFF00ABDB)
+
     val vivo_color_orange = Color(0xFFFF9900)
     val vivo_color_orange_dark = Color(0xFFFA6324)
     val vivo_color_orange_light = Color(0xFFFFD699)
+    val vivo_color_orange_light10 = Color(0xFFFFEFE1)
+    val vivo_color_orange_light40 = Color(0xFFFFB84C)
+
     val vivo_color_pink = Color(0xFFEB3D7D)
+
     val vivo_color_pepper = Color(0xFFCC1F59)
     val vivo_color_pepper_dark = Color(0xFFB71D63)
+    val vivo_color_pepper_dark_80 = Color(0xFF8F2052)
+    val vivo_color_pepper_light10 = Color(0xFFFCE4EF)
     val vivo_color_pepper_light30 = Color(0xFFF7B1CB)
+    val vivo_color_pepper_light40 = Color(0xFFDB628B)
 
     val vivo_color_grey_1 = Color(0xFFF6F6F6)
     val vivo_color_grey_2 = Color(0xFFEEEEEE)

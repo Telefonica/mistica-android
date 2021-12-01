@@ -196,6 +196,8 @@ object TelefonicaBrand : Brand {
 
 private object TelefonicaPaletteColor {
     val telefonica_color_blue = Color(0xFF0066FF)
+    val telefonica_color_blue_30 = Color(0xFF80B3FF)
+
     val telefonica_color_blue_dark = Color(0xFF0356C9)
     val telefonica_color_blue_light50 = Color(0xFF80B2FF)
     val telefonica_color_blue_light30 = Color(0xFFB3D1FF)
@@ -215,18 +217,30 @@ private object TelefonicaPaletteColor {
     val telefonica_color_egg_light = Color(0xFFF8D2B3)
 
     val telefonica_color_ambar = Color(0xFFEAC344)
+    val telefonica_color_ambar_10 = Color(0xFFFDF9EC)
+    val telefonica_color_ambar_40 = Color(0xFFF0D57C)
+    val telefonica_color_ambar_70 = Color(0xFF69581F)
     val telefonica_color_ambar_light = Color(0xFFF5E98A)
     val telefonica_color_ambar_dark = Color(0xFFAD842D)
 
     val telefonica_color_coral = Color(0xFFE66C64)
+    val telefonica_color_coral_10 = Color(0xFFFDF0EF)
+    val telefonica_color_coral_40 = Color(0xFFE3A19A)
+    val telefonica_color_coral_70 = Color(0xFFD50000)
     val telefonica_color_coral_light = Color(0xFFE3A19A)
     val telefonica_color_coral_dark = Color(0xFF912C31)
 
     val telefonica_color_orchid = Color(0xFFC466EF)
+    val telefonica_color_orchid_10 = Color(0xFFF9F0FD)
+    val telefonica_color_orchid_40 = Color(0xFFD694F4)
+    val telefonica_color_orchid_70 = Color(0xFF8947A7)
     val telefonica_color_orchid_light = Color(0xFFE7C2F8)
     val telefonica_color_orchid_dark = Color(0xFF8A1A93)
 
     val telefonica_color_turquoise = Color(0xFF59C2C9)
+    val telefonica_color_turquoise_10 = Color(0xFFEEF9FA)
+    val telefonica_color_turquoise_40 = Color(0xFF8BD4D9)
+    val telefonica_color_turquoise_70 = Color(0xFF3E888D)
     val telefonica_color_turquoise_light = Color(0xFF67E0E5)
     val telefonica_color_turquoise_dark = Color(0xFF3E8A8A)
 

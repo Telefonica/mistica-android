@@ -184,14 +184,17 @@ private object BlauPaletteColor {
     val blau_color_yellow = Color(0xFFFFA922)
     val blau_color_yellow_70 = Color(0xFF996614)
     val blau_color_yellow_60 = Color(0xFFF09500)
+    val blau_color_yellow_40 = Color(0xFFFFC364)
     val blau_color_yellow_10 = Color(0xFFFFF6E9)
 
     val blau_color_green = Color(0xFF30D300)
     val blau_color_green_70 = Color(0xFF1D7F00)
+    val blau_color_green_30 = Color(0xFF97E980)
     val blau_color_green_10 = Color(0xFFEAFBE5)
 
     val blau_color_red = Color(0xFFF64417)
     val blau_color_red_70 = Color(0xFFC93712)
+    val blau_color_red_40 = Color(0xFFF97C5D)
     val blau_color_red_30 = Color(0xFFFA9E87)
     val blau_color_red_20 = Color(0xFFFCC7B9)
     val blau_color_red_10 = Color(0xFFFEECE8)

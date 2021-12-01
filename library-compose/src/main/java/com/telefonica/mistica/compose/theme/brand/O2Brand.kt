@@ -174,6 +174,8 @@ object O2Brand : Brand {
 
 private object O2PaletteColor {
     val o2_color_blue_primary = Color(0xFF0019A5)
+    val o2_color_blue_primary_10 = Color(0xFFE5E8F6)
+    val o2_color_blue_primary_15 = Color(0xFFCCD1ED)
     val o2_color_blue_primary_dark = Color(0xFF000066)
     val o2_color_blue_primary_light_50 = Color(0xFF808CD2)
     val o2_color_blue_primary_light_10 = Color(0xFFCCD1ED)
@@ -188,16 +190,34 @@ private object O2PaletteColor {
     val o2_color_teal = Color(0xFF01B7B4)
     val o2_color_teal_dark = Color(0xFF099E9B)
     val o2_color_teal_light = Color(0xFFB1E4E3)
+
     val o2_color_green = Color(0xFF91C90E)
+    val o2_color_green_10 = Color(0xFFF4FAE7)
+    val o2_color_green_40 = Color(0xFFB2D956)
+    val o2_color_green_80 = Color(0xFF415A06)
     val o2_color_green_light = Color(0xFFDEEEB7)
+
     val o2_color_yellow = Color(0xFFFEDB00)
     val o2_color_yellow_light = Color(0xFFFEF6C3)
+
     val o2_color_orange = Color(0xFFFF7F41)
+    val o2_color_orange_10 = Color(0xFFFFF2EC)
+    val o2_color_orange_40 = Color(0xFFFFA57A)
+    val o2_color_orange_75 = Color(0xFFA6522A)
     val o2_color_orange_light = Color(0xFFFFD6C2)
+
     val o2_color_coral = Color(0xFFFF706E)
+
     val o2_color_pink = Color(0xFFCB31A0)
+
     val o2_color_purple = Color(0xFF953698)
+    val o2_color_purple_10 = Color(0xFFF4EAF5)
+    val o2_color_purple_30 = Color(0xFFCA9ACB)
+
     val o2_color_pepper = Color(0xFFFF374A)
+    val o2_color_pepper_10 = Color(0xFFFEEBED)
+    val o2_color_pepper_40 = Color(0xFFFF7380)
+    val o2_color_pepper_60 = Color(0xFFC32B3D)
     val o2_color_pepper_dark = Color(0xFFD73241)
     val o2_color_pepper_light30 = Color(0xFFFFC3C8)
 
