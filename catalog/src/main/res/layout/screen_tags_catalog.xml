@@ -1,131 +1,265 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		xmlns:tools="http://schemas.android.com/tools"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		android:padding="16dp"
+		>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+	<FrameLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="?attr/colorBrand"
+			android:layout_marginTop="16dp"
+			android:padding="16dp"
+			android:gravity="center"
+			>
 
-        <com.telefonica.mistica.section.SectionTitleView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:text="Tags" />
+		<com.telefonica.mistica.tag.TagView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_columnWeight="1"
+				android:layout_gravity="center"
+				android:text="Inverse"
+				app:tagStyle="inverse"
+				tools:text="@tools:sample/full_names"
+				/>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="16dp">
+	</FrameLayout>
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="64dp"
-                android:scaleType="centerCrop"
-                android:src="?attr/colorBrand"
-                app:layout_constraintDimensionRatio="16:9"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="ContentDescription" />
+	<GridLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:useDefaultMargins="true"
+			android:padding="16dp"
+			android:columnCount="3"
+			>
 
-            <com.telefonica.mistica.tag.TagView
-                android:id="@+id/tag_in_image"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:text="Inverse"
-                app:layout_constrainedWidth="true"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:tagColor="?colorInverse"
-                tools:text="@tools:sample/full_names" />
+		<com.telefonica.mistica.tag.TagView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_columnWeight="1"
+				android:layout_gravity="center"
+				android:text="Promotion"
+				tools:text="@tools:sample/full_names"
+				/>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+		<com.telefonica.mistica.tag.TagView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_columnWeight="1"
+				android:layout_gravity="center"
+				android:text="Active"
+				app:tagStyle="active"
+				tools:text="@tools:sample/full_names"
+				/>
 
-        <com.telefonica.mistica.tag.TagView
-            android:id="@+id/tag_inline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="PROMOTION"
-            tools:text="@tools:sample/full_names" />
+		<com.telefonica.mistica.tag.TagView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_columnWeight="1"
+				android:layout_gravity="center"
+				android:text="Inactive"
+				app:tagStyle="inactive"
+				tools:text="@tools:sample/full_names"
+				/>
 
-        <com.telefonica.mistica.tag.TagView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="Brand"
-            app:tagColor="?colorBrand"
-            tools:text="@tools:sample/full_names" />
+		<com.telefonica.mistica.tag.TagView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_columnWeight="1"
+				android:layout_gravity="center"
+				android:text="Success"
+				app:tagStyle="success"
+				tools:text="@tools:sample/full_names"
+				/>
 
-        <com.telefonica.mistica.tag.TagView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="Brand Dark"
-            app:tagColor="?colorBrandDark"
-            tools:text="@tools:sample/full_names" />
+		<com.telefonica.mistica.tag.TagView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_columnWeight="1"
+				android:layout_gravity="center"
+				android:text="Warning"
+				app:tagStyle="warning"
+				tools:text="@tools:sample/full_names"
+				/>
 
-        <com.telefonica.mistica.tag.TagView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="neutralHigh"
-            app:tagColor="?colorNeutralHigh"
-            tools:text="@tools:sample/full_names" />
+		<com.telefonica.mistica.tag.TagView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_columnWeight="1"
+				android:layout_gravity="center"
+				android:text="Error"
+				app:tagStyle="error"
+				tools:text="@tools:sample/full_names"
+				/>
+	</GridLayout>
 
-        <com.telefonica.mistica.tag.TagView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="neutralMedium"
-            app:tagColor="?colorNeutralMedium"
-            tools:text="@tools:sample/full_names" />
+	<FrameLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="?attr/colorBrand"
+			android:layout_marginTop="16dp"
+			android:padding="16dp"
+			android:gravity="center"
+			>
 
-        <com.telefonica.mistica.tag.TagView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="Success"
-            app:tagColor="?colorSuccess"
-            tools:text="@tools:sample/full_names" />
+		<com.telefonica.mistica.tag.TagView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_columnWeight="1"
+				android:layout_gravity="center"
+				android:text="Inverse"
+				app:tagStyle="inverse"
+				app:tagIcon="@drawable/icn_cross"
+				tools:text="@tools:sample/full_names"
+				/>
 
-        <com.telefonica.mistica.tag.TagView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="Warning"
-            app:tagColor="?colorWarning"
-            tools:text="@tools:sample/full_names" />
+	</FrameLayout>
 
-        <com.telefonica.mistica.tag.TagView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="Error"
-            app:tagColor="?colorError"
-            tools:text="@tools:sample/full_names" />
+	<GridLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:useDefaultMargins="true"
+			android:padding="16dp"
+			android:columnCount="3"
+			>
 
-        <com.telefonica.mistica.input.TextInput
-            android:id="@+id/textInput"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:inputHint="Type Something..."
-            app:inputText="PROMOTION"
-            app:inputType="text" />
+		<com.telefonica.mistica.tag.TagView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_columnWeight="1"
+				android:layout_gravity="center"
+				android:text="Promotion"
+				app:tagIcon="@drawable/icn_cross"
+				tools:text="@tools:sample/full_names"
+				/>
 
-    </LinearLayout>
+		<com.telefonica.mistica.tag.TagView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_columnWeight="1"
+				android:layout_gravity="center"
+				android:text="Active"
+				app:tagIcon="@drawable/icn_cross"
+				app:tagStyle="active"
+				tools:text="@tools:sample/full_names"
+				/>
 
-</ScrollView>
+		<com.telefonica.mistica.tag.TagView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_columnWeight="1"
+				android:layout_gravity="center"
+				android:text="Inactive"
+				app:tagIcon="@drawable/icn_cross"
+				app:tagStyle="inactive"
+				tools:text="@tools:sample/full_names"
+				/>
+
+		<com.telefonica.mistica.tag.TagView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_columnWeight="1"
+				android:layout_gravity="center"
+				android:text="Success"
+				app:tagIcon="@drawable/icn_cross"
+				app:tagStyle="success"
+				tools:text="@tools:sample/full_names"
+				/>
+
+		<com.telefonica.mistica.tag.TagView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_columnWeight="1"
+				android:layout_gravity="center"
+				android:text="Warning"
+				app:tagIcon="@drawable/icn_cross"
+				app:tagStyle="warning"
+				tools:text="@tools:sample/full_names"
+				/>
+
+		<com.telefonica.mistica.tag.TagView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_columnWeight="1"
+				android:layout_gravity="center"
+				android:text="Error"
+				app:tagIcon="@drawable/icn_cross"
+				app:tagStyle="error"
+				tools:text="@tools:sample/full_names"
+				/>
+	</GridLayout>
+
+	<View
+			android:layout_width="match_parent"
+			android:layout_height="2dp"
+			android:background="?tagBackgroundInactive"
+			/>
+
+
+	<com.telefonica.mistica.tag.TagView
+			android:id="@+id/regular_tag"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Promotion"
+			android:layout_marginTop="16dp"
+			android:layout_gravity="center"
+			tools:text="@tools:sample/full_names"
+			/>
+
+	<com.telefonica.mistica.tag.TagView
+			android:id="@+id/regular_with_icon_tag"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="8dp"
+			android:layout_gravity="center"
+			android:text="Promotion"
+			app:tagIcon="@drawable/icn_cross"
+			tools:text="@tools:sample/full_names"
+			/>
+
+	<LinearLayout
+			android:gravity="center"
+			android:layout_width="match_parent"
+			android:layout_marginTop="16dp"
+			android:layout_height="wrap_content"
+			android:padding="16dp"
+			android:background="?attr/colorBrand"
+			android:orientation="vertical"
+			>
+
+		<com.telefonica.mistica.tag.TagView
+				android:id="@+id/inverse_tag"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Promotion"
+				app:tagStyle="inverse"
+				tools:text="@tools:sample/full_names"
+				/>
+
+		<com.telefonica.mistica.tag.TagView
+				android:id="@+id/inverse_with_icon_tag"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="8dp"
+				android:text="Promotion"
+				app:tagStyle="inverse"
+				app:tagIcon="@drawable/icn_cross"
+				tools:text="@tools:sample/full_names"
+				/>
+
+	</LinearLayout>
+
+	<com.telefonica.mistica.input.TextInput
+			android:id="@+id/textInput"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			app:inputHint="Type Something..."
+			app:inputText="Promotion"
+			app:inputType="text"
+			/>
+
+</LinearLayout>
