@@ -100,7 +100,7 @@
         <item name="tagBackgroundWarning">@color/telefonica_color_ambar_10</item>
         <item name="tagBackgroundError">@color/telefonica_color_coral_10</item>
         <item name="tagBackgroundPromo">@color/telefonica_color_orchid_10</item>
-        <item name="tagBackgroundActive">@color/movistar_color_grey_1</item>
+        <item name="tagBackgroundActive">@color/telefonica_color_grey_1</item>
         <item name="tagBackgroundInactive">@color/telefonica_color_grey_1</item>
         <item name="inverse">@color/telefonica_color_white</item>
 
