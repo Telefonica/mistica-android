@@ -103,7 +103,7 @@ abstract class CardView @JvmOverloads constructor(
                 )
 
             setTag(styledAttrs.getText(R.styleable.CardView_cardTag))
-            setTagStyle(styledAttrs.getInt(R.styleable.TagView_tagStyle, TagView.TYPE_PROMO))
+            setTagStyle(styledAttrs.getInt(R.styleable.CardView_tagStyle, TagView.TYPE_PROMO))
             setTitle(styledAttrs.getText(R.styleable.CardView_cardTitle))
             setTitleMaxLines(styledAttrs.getInteger(R.styleable.CardView_cardTitleMaxLines, -1))
             setDescription(styledAttrs.getText(R.styleable.CardView_cardDescription))
