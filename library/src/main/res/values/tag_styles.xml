@@ -2,7 +2,7 @@
 <resources>
 
 	<style name="AppTheme.Widgets.Tag" parent="Widget.AppCompat.TextView">
-		<item name="android:textAppearance">@style/AppTheme.TextAppearance.Preset1.Medium</item>
+		<item name="android:textAppearance">@style/AppTheme.TextAppearance.Preset2.Medium</item>
 		<item name="android:background">@drawable/tag_background</item>
 		<item name="android:singleLine">true</item>
 		<item name="android:ellipsize">end</item>
