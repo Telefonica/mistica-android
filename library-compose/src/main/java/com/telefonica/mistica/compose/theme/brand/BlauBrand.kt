@@ -99,6 +99,18 @@ object BlauBrand : Brand {
         loginLoadingGradientSecond = BlauPaletteColor.blau_color_blue_primary,
         loginLoadingGradientThird = BlauPaletteColor.blau_color_blue_primary,
         loginLoadingGradientFourth = BlauPaletteColor.blau_color_blue_primary,
+        tagBackgroundSuccess = BlauPaletteColor.blau_color_green_10,
+        tagBackgroundWarning = BlauPaletteColor.blau_color_yellow_10,
+        tagBackgroundError = BlauPaletteColor.blau_color_red_10,
+        tagBackgroundPromo = BlauPaletteColor.blau_color_purple_10,
+        tagBackgroundActive = BlauPaletteColor.blau_color_blue_secondary10,
+        tagBackgroundInactive = BlauPaletteColor.blau_color_grey_2,
+        textTagSuccess = BlauPaletteColor.blau_color_green_70,
+        textTagWarning = BlauPaletteColor.blau_color_yellow_70,
+        textTagError = BlauPaletteColor.blau_color_red_70,
+        textTagPromo = BlauPaletteColor.blau_color_purple,
+        textTagActive = BlauPaletteColor.blau_color_blue_secondary,
+        textTagInactive = BlauPaletteColor.blau_color_grey_5,
     )
 
     override val darkColors = lightColors.copy(
@@ -163,6 +175,18 @@ object BlauBrand : Brand {
         textNavigationBarSecondary = BlauPaletteColor.blau_color_grey_4,
         textAppBar = BlauPaletteColor.blau_color_grey_5,
         textAppBarSelected = BlauPaletteColor.blau_color_grey_2,
+        tagBackgroundSuccess = BlauPaletteColor.blau_color_white_5_alpha,
+        tagBackgroundWarning = BlauPaletteColor.blau_color_white_5_alpha,
+        tagBackgroundError = BlauPaletteColor.blau_color_white_5_alpha,
+        tagBackgroundPromo = BlauPaletteColor.blau_color_white_5_alpha,
+        tagBackgroundActive = BlauPaletteColor.blau_color_white_5_alpha,
+        tagBackgroundInactive = BlauPaletteColor.blau_color_white_5_alpha,
+        textTagSuccess = BlauPaletteColor.blau_color_green_30,
+        textTagWarning = BlauPaletteColor.blau_color_yellow_40,
+        textTagError = BlauPaletteColor.blau_color_red_40,
+        textTagPromo = BlauPaletteColor.blau_color_purple_30,
+        textTagActive = BlauPaletteColor.blau_color_blue_primary30,
+        textTagInactive = BlauPaletteColor.blau_color_grey_4,
     )
 }
 

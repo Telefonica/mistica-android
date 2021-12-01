@@ -99,6 +99,18 @@ object MovistarBrand : Brand {
         loginLoadingGradientSecond = MovistarPaletteColor.movistar_color_blue_dark,
         loginLoadingGradientThird = MovistarPaletteColor.movistar_color_blue_dark,
         loginLoadingGradientFourth = MovistarPaletteColor.movistar_color_blue_dark,
+        tagBackgroundSuccess = MovistarPaletteColor.movistar_color_green_10,
+        tagBackgroundWarning = MovistarPaletteColor.movistar_color_egg_10,
+        tagBackgroundError = MovistarPaletteColor.movistar_color_pepper_10,
+        tagBackgroundPromo = MovistarPaletteColor.movistar_color_purple_10,
+        tagBackgroundActive = MovistarPaletteColor.movistar_color_blue_10,
+        tagBackgroundInactive = MovistarPaletteColor.movistar_color_grey_1,
+        textTagSuccess = MovistarPaletteColor.movistar_color_green_70,
+        textTagWarning = MovistarPaletteColor.movistar_color_egg_80,
+        textTagError = MovistarPaletteColor.movistar_color_pepper_70,
+        textTagPromo = MovistarPaletteColor.movistar_color_purple_70,
+        textTagActive = MovistarPaletteColor.movistar_color_blue,
+        textTagInactive = MovistarPaletteColor.movistar_color_grey_5,
     )
 
     override val darkColors =
@@ -164,10 +176,22 @@ object MovistarBrand : Brand {
             loginLoadingGradientSecond = MovistarPaletteColor.movistar_color_grey_6,
             loginLoadingGradientThird = MovistarPaletteColor.movistar_color_grey_6,
             loginLoadingGradientFourth = MovistarPaletteColor.movistar_color_grey_6,
+            tagBackgroundSuccess = MovistarPaletteColor.movistar_color_white_5_alpha,
+            tagBackgroundWarning = MovistarPaletteColor.movistar_color_white_5_alpha,
+            tagBackgroundError = MovistarPaletteColor.movistar_color_white_5_alpha,
+            tagBackgroundPromo = MovistarPaletteColor.movistar_color_white_5_alpha,
+            tagBackgroundActive = MovistarPaletteColor.movistar_color_white_5_alpha,
+            tagBackgroundInactive = MovistarPaletteColor.movistar_color_white_5_alpha,
+            textTagSuccess = MovistarPaletteColor.movistar_color_green_40,
+            textTagWarning = MovistarPaletteColor.movistar_color_egg_40,
+            textTagError = MovistarPaletteColor.movistar_color_pepper_40,
+            textTagPromo = MovistarPaletteColor.movistar_color_purple_40,
+            textTagActive = MovistarPaletteColor.movistar_color_blue_40,
+            textTagInactive = MovistarPaletteColor.movistar_color_grey_4,
         )
 }
 
-object MovistarProminentBrand: Brand {
+object MovistarProminentBrand : Brand {
 
     override val compatibilityTheme: Int
         get() = R.style.MisticaTheme_Movistar_Prominent

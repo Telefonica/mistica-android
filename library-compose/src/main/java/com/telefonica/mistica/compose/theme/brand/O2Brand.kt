@@ -99,6 +99,18 @@ object O2Brand : Brand {
         loginLoadingGradientSecond = O2PaletteColor.o2_color_blue_primary,
         loginLoadingGradientThird = O2PaletteColor.o2_color_blue_primary,
         loginLoadingGradientFourth = O2PaletteColor.o2_color_blue_primary,
+        tagBackgroundSuccess = O2PaletteColor.o2_color_green_10,
+        tagBackgroundWarning = O2PaletteColor.o2_color_orange_10,
+        tagBackgroundError = O2PaletteColor.o2_color_pepper_10,
+        tagBackgroundPromo = O2PaletteColor.o2_color_purple_10,
+        tagBackgroundActive = O2PaletteColor.o2_color_blue_primary_10,
+        tagBackgroundInactive = O2PaletteColor.o2_color_grey_1,
+        textTagSuccess = O2PaletteColor.o2_color_green_80,
+        textTagWarning = O2PaletteColor.o2_color_orange_75,
+        textTagError = O2PaletteColor.o2_color_pepper_60,
+        textTagPromo = O2PaletteColor.o2_color_purple,
+        textTagActive = O2PaletteColor.o2_color_blue_primary,
+        textTagInactive = O2PaletteColor.o2_color_grey_5,
     )
 
     override val darkColors = lightColors.copy(
@@ -169,6 +181,18 @@ object O2Brand : Brand {
         textNavigationBarSecondary = O2PaletteColor.o2_color_grey_4,
         textAppBar = O2PaletteColor.o2_color_grey_5,
         textAppBarSelected = O2PaletteColor.o2_color_grey_2,
+        tagBackgroundSuccess = O2PaletteColor.o2_color_white_5_alpha,
+        tagBackgroundWarning = O2PaletteColor.o2_color_white_5_alpha,
+        tagBackgroundError = O2PaletteColor.o2_color_white_5_alpha,
+        tagBackgroundPromo = O2PaletteColor.o2_color_white_5_alpha,
+        tagBackgroundActive = O2PaletteColor.o2_color_white_5_alpha,
+        tagBackgroundInactive = O2PaletteColor.o2_color_white_5_alpha,
+        textTagSuccess = O2PaletteColor.o2_color_green_40,
+        textTagWarning = O2PaletteColor.o2_color_orange_40,
+        textTagError = O2PaletteColor.o2_color_pepper_40,
+        textTagPromo = O2PaletteColor.o2_color_purple_30,
+        textTagActive = O2PaletteColor.o2_color_blue_primary_15,
+        textTagInactive = O2PaletteColor.o2_color_grey_4,
     )
 }
 

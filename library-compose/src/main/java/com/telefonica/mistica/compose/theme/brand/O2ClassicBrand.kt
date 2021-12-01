@@ -99,6 +99,18 @@ object O2ClassicBrand : Brand {
         loginLoadingGradientSecond = O2ClassicPaletteColor.o2_classic_gradient_second,
         loginLoadingGradientThird = O2ClassicPaletteColor.o2_classic_gradient_third,
         loginLoadingGradientFourth = O2ClassicPaletteColor.o2_classic_gradient_fourth,
+        tagBackgroundSuccess = O2ClassicPaletteColor.o2_classic_color_green_10,
+        tagBackgroundWarning = O2ClassicPaletteColor.o2_classic_color_orange_10,
+        tagBackgroundError = O2ClassicPaletteColor.o2_classic_color_pepper_10,
+        tagBackgroundPromo = O2ClassicPaletteColor.o2_classic_color_pink_10,
+        tagBackgroundActive = O2ClassicPaletteColor.o2_classic_color_blue_10,
+        tagBackgroundInactive = O2ClassicPaletteColor.o2_classic_color_grey_1,
+        textTagSuccess = O2ClassicPaletteColor.o2_classic_color_green_75,
+        textTagWarning = O2ClassicPaletteColor.o2_classic_color_orange_80,
+        textTagError = O2ClassicPaletteColor.o2_classic_color_pepper_70,
+        textTagPromo = O2ClassicPaletteColor.o2_classic_color_pink_60,
+        textTagActive = O2ClassicPaletteColor.o2_classic_color_blue,
+        textTagInactive = O2ClassicPaletteColor.o2_classic_color_grey_5,
     )
 
     override val darkColors = lightColors.copy(
@@ -161,6 +173,18 @@ object O2ClassicBrand : Brand {
         textNavigationBarSecondary = O2ClassicPaletteColor.o2_classic_color_grey_4,
         textAppBar = O2ClassicPaletteColor.o2_classic_color_grey_5,
         textAppBarSelected = O2ClassicPaletteColor.o2_classic_color_grey_2,
+        tagBackgroundSuccess = O2ClassicPaletteColor.o2_classic_color_white_5_alpha,
+        tagBackgroundWarning = O2ClassicPaletteColor.o2_classic_color_white_5_alpha,
+        tagBackgroundError = O2ClassicPaletteColor.o2_classic_color_white_5_alpha,
+        tagBackgroundPromo = O2ClassicPaletteColor.o2_classic_color_white_5_alpha,
+        tagBackgroundActive = O2ClassicPaletteColor.o2_classic_color_white_5_alpha,
+        tagBackgroundInactive = O2ClassicPaletteColor.o2_classic_color_white_5_alpha,
+        textTagSuccess = O2ClassicPaletteColor.o2_classic_color_green_40,
+        textTagWarning = O2ClassicPaletteColor.o2_classic_color_orange_40,
+        textTagError = O2ClassicPaletteColor.o2_classic_color_pepper_40,
+        textTagPromo = O2ClassicPaletteColor.o2_classic_color_pink_40,
+        textTagActive = O2ClassicPaletteColor.o2_classic_color_blue_30,
+        textTagInactive = O2ClassicPaletteColor.o2_classic_color_grey_4,
     )
 }
 

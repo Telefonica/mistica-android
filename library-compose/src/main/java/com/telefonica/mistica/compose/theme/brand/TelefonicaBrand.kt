@@ -99,6 +99,18 @@ object TelefonicaBrand : Brand {
         loginLoadingGradientSecond = TelefonicaPaletteColor.telefonica_color_blue_dark,
         loginLoadingGradientThird = TelefonicaPaletteColor.telefonica_color_blue_dark,
         loginLoadingGradientFourth = TelefonicaPaletteColor.telefonica_color_blue_dark,
+        tagBackgroundSuccess = TelefonicaPaletteColor.telefonica_color_turquoise_10,
+        tagBackgroundWarning = TelefonicaPaletteColor.telefonica_color_ambar_10,
+        tagBackgroundError = TelefonicaPaletteColor.telefonica_color_coral_10,
+        tagBackgroundPromo = TelefonicaPaletteColor.telefonica_color_orchid_10,
+        tagBackgroundActive = TelefonicaPaletteColor.telefonica_color_grey_1,
+        tagBackgroundInactive = TelefonicaPaletteColor.telefonica_color_grey_1,
+        textTagSuccess = TelefonicaPaletteColor.telefonica_color_turquoise_70,
+        textTagWarning = TelefonicaPaletteColor.telefonica_color_ambar_70,
+        textTagError = TelefonicaPaletteColor.telefonica_color_coral_70,
+        textTagPromo = TelefonicaPaletteColor.telefonica_color_orchid_70,
+        textTagActive = TelefonicaPaletteColor.telefonica_color_blue,
+        textTagInactive = TelefonicaPaletteColor.telefonica_color_grey_6,
     )
 
     override val darkColors = MisticaColors(
@@ -191,6 +203,18 @@ object TelefonicaBrand : Brand {
         loginLoadingGradientSecond = TelefonicaPaletteColor.telefonica_color_grey_6,
         loginLoadingGradientThird = TelefonicaPaletteColor.telefonica_color_grey_6,
         loginLoadingGradientFourth = TelefonicaPaletteColor.telefonica_color_grey_6,
+        tagBackgroundSuccess = TelefonicaPaletteColor.telefonica_color_white_5_alpha,
+        tagBackgroundWarning = TelefonicaPaletteColor.telefonica_color_white_5_alpha,
+        tagBackgroundError = TelefonicaPaletteColor.telefonica_color_white_5_alpha,
+        tagBackgroundPromo = TelefonicaPaletteColor.telefonica_color_white_5_alpha,
+        tagBackgroundActive = TelefonicaPaletteColor.telefonica_color_white_5_alpha,
+        tagBackgroundInactive = TelefonicaPaletteColor.telefonica_color_white_5_alpha,
+        textTagSuccess = TelefonicaPaletteColor.telefonica_color_turquoise_40,
+        textTagWarning = TelefonicaPaletteColor.telefonica_color_ambar_40,
+        textTagError = TelefonicaPaletteColor.telefonica_color_coral_40,
+        textTagPromo = TelefonicaPaletteColor.telefonica_color_orchid_40,
+        textTagActive = TelefonicaPaletteColor.telefonica_color_blue_30,
+        textTagInactive = TelefonicaPaletteColor.telefonica_color_grey_4,
     )
 }
 

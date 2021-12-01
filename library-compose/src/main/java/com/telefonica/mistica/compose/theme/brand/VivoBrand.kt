@@ -99,6 +99,18 @@ object VivoBrand : Brand {
         loginLoadingGradientSecond = VivoPaletteColor.vivo_color_purple,
         loginLoadingGradientThird = VivoPaletteColor.vivo_color_purple,
         loginLoadingGradientFourth = VivoPaletteColor.vivo_color_purple,
+        tagBackgroundSuccess = VivoPaletteColor.vivo_color_green_light10,
+        tagBackgroundWarning = VivoPaletteColor.vivo_color_orange_light10,
+        tagBackgroundError = VivoPaletteColor.vivo_color_pepper_light10,
+        tagBackgroundPromo = VivoPaletteColor.vivo_color_purple_light10,
+        tagBackgroundActive = VivoPaletteColor.vivo_color_purple_light10,
+        tagBackgroundInactive = VivoPaletteColor.vivo_color_grey_1,
+        textTagSuccess = VivoPaletteColor.vivo_color_green_dark,
+        textTagWarning = VivoPaletteColor.vivo_color_orange_dark,
+        textTagError = VivoPaletteColor.vivo_color_pepper_dark_80,
+        textTagPromo = VivoPaletteColor.vivo_color_purple,
+        textTagActive = VivoPaletteColor.vivo_color_purple,
+        textTagInactive = VivoPaletteColor.vivo_color_grey_5,
     )
 
     override val darkColors = lightColors.copy(
@@ -168,6 +180,18 @@ object VivoBrand : Brand {
         textNavigationBarSecondary = VivoPaletteColor.vivo_color_grey_4,
         textAppBar = VivoPaletteColor.vivo_color_grey_5,
         textAppBarSelected = VivoPaletteColor.vivo_color_grey_2,
+        tagBackgroundSuccess = VivoPaletteColor.vivo_color_white_5_alpha,
+        tagBackgroundWarning = VivoPaletteColor.vivo_color_white_5_alpha,
+        tagBackgroundError = VivoPaletteColor.vivo_color_white_5_alpha,
+        tagBackgroundPromo = VivoPaletteColor.vivo_color_white_5_alpha,
+        tagBackgroundActive = VivoPaletteColor.vivo_color_white_5_alpha,
+        tagBackgroundInactive = VivoPaletteColor.vivo_color_white_5_alpha,
+        textTagSuccess = VivoPaletteColor.vivo_color_green_light30,
+        textTagWarning = VivoPaletteColor.vivo_color_orange_light40,
+        textTagError = VivoPaletteColor.vivo_color_pepper_light40,
+        textTagPromo = VivoPaletteColor.vivo_color_purple_light50,
+        textTagActive = VivoPaletteColor.vivo_color_purple_light50,
+        textTagInactive = VivoPaletteColor.vivo_color_grey_4,
     )
 }
 
