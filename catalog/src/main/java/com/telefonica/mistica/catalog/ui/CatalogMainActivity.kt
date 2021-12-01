@@ -93,6 +93,7 @@ class CatalogMainActivity : AppCompatActivity() {
             SectionItem("Snackbars", R.drawable.ic_snackbars, Section.SNACKBARS),
             SectionItem("Tabs", R.drawable.ic_tab, Section.TABS),
             SectionItem("Tags", R.drawable.ic_tags, Section.TAG),
+            SectionItem("Texts", R.drawable.ic_texts, Section.TEXTS),
         )
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder =
