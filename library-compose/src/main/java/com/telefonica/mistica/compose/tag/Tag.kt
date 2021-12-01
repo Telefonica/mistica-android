@@ -39,6 +39,22 @@ fun Tag(
     }
 }
 
+class Tag constructor(
+    private val content: String,
+) {
+    private var modifier: Modifier = Modifier
+    private var color: Color? = null
+
+    fun withModifier(modifier: Modifier): Tag = this.apply { this.modifier = modifier }
+
+    fun withColor(color: Color): Tag = this.apply { this.color = color }
+
+    @Composable
+    fun build() {
+        Tag(content = content, modifier = modifier, color = color ?: MisticaTheme.colors.badge)
+    }
+}
+
 @Preview(showBackground = true)
 @Composable
 fun TagPreview() {

@@ -47,7 +47,7 @@ fun ListRowItem(
     backgroundType: BackgroundType = BackgroundType.TYPE_NORMAL,
     badge: String? = null,
     isBadgeVisible: Boolean = false,
-    headline: @Composable (() -> Unit)? = null,
+    headline: Tag? = null,
     trailing: @Composable (() -> Unit)? = null,
     onClick: () -> Unit = {},
 ) {
@@ -118,7 +118,7 @@ fun ListRowItem(
                     .align(CenterVertically)
             ) {
                 headline?.let {
-                    it()
+                    it.build()
                     Spacer(modifier = Modifier.height(8.dp))
                 }
                 title?.let {
@@ -177,7 +177,7 @@ fun ListRowItemPreview() {
         val checkedState = remember { mutableStateOf(true) }
         Column {
             ListRowItem(
-                headline = { Tag("promo") },
+                headline = Tag("Promo"),
                 isBadgeVisible = true,
                 title = "Title",
                 subtitle = "Subtitle",
