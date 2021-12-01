@@ -132,7 +132,7 @@ abstract class CardView @JvmOverloads constructor(
     }
 
     fun setTagStyle(@TagStyle style: Int) {
-        cardContentView.tagTextView.setStyle(style)
+        cardContentView.tagTextView.setTagStyle(style)
     }
 
     fun setTitle(text: CharSequence?) {

@@ -43,31 +43,35 @@ class TagView @JvmOverloads constructor(
     defStyleAttr
 ) {
 
+    @TagStyle
+    private var currentStyle = TYPE_PROMO
+
     init {
         if (attrs != null) {
             val styledAttrs = context.theme.obtainStyledAttributes(attrs, R.styleable.TagView, defStyleAttr, 0)
 
-            val style = styledAttrs.getInt(R.styleable.TagView_tagStyle, TYPE_PROMO)
+            val style = styledAttrs.getInt(R.styleable.TagView_tagStyle, currentStyle)
             val icon = styledAttrs.getDrawable(R.styleable.TagView_tagIcon)
-            setStyle(style, icon)
+            setTagStyle(style, icon)
 
             styledAttrs.recycle()
         }
     }
 
-    fun setStyle(@TagStyle style: Int, icon: Drawable? = null) {
+    fun setTagStyle(@TagStyle style: Int, icon: Drawable? = null) {
+        currentStyle = style
         val (tagBackground, tagTextColor) = style.getStyle()
         background.colorFilter = BlendModeColorFilterCompat.createBlendModeColorFilterCompat(context.getThemeColor(tagBackground), BlendModeCompat.SRC_ATOP)
         setTextColor(context.getThemeColor(tagTextColor))
 
         if (icon != null) {
-            setIcon(style, icon)
+            setTagIcon(icon)
         }
     }
 
-    private fun setIcon(@TagStyle style: Int, drawable: Drawable) {
+    fun setTagIcon(drawable: Drawable) {
 
-        DrawableCompat.setTint(DrawableCompat.wrap(drawable), context.getThemeColor(style.getStyle().second))
+        DrawableCompat.setTint(DrawableCompat.wrap(drawable), context.getThemeColor(currentStyle.getStyle().second))
 
         val iconSize = context.convertDpToPx(16)
         drawable.setBounds(0, 0, iconSize, iconSize)
