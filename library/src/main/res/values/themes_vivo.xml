@@ -67,7 +67,6 @@
         <item name="tagBackgroundPromo">@color/vivo_color_purple_light10</item>
         <item name="tagBackgroundActive">@color/vivo_color_purple_light10</item>
         <item name="tagBackgroundInactive">@color/vivo_color_grey_1</item>
-        <item name="inverse">@color/vivo_color_white</item>
 
         <item name="textTagSuccess">@color/vivo_color_green_dark</item>
         <item name="textTagWarning">@color/vivo_color_orange_dark</item>

@@ -100,7 +100,6 @@
 		<item name="tagBackgroundPromo">@color/blau_color_purple_10</item>
 		<item name="tagBackgroundActive">@color/blau_color_blue_secondary10</item>
 		<item name="tagBackgroundInactive">@color/blau_color_grey_2</item>
-		<item name="inverse">@color/blau_color_white</item>
 
 		<item name="textTagSuccess">@color/blau_color_green_70</item>
 		<item name="textTagWarning">@color/blau_color_yellow_70</item>

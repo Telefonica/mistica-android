@@ -57,7 +57,6 @@
         <item name="tagBackgroundPromo">@color/o2_classic_color_white_5_alpha</item>
         <item name="tagBackgroundActive">@color/o2_classic_color_white_5_alpha</item>
         <item name="tagBackgroundInactive">@color/o2_classic_color_white_5_alpha</item>
-        <item name="inverse">@color/o2_classic_color_grey_2</item>
 
         <item name="textTagSuccess">@color/o2_classic_color_green_40</item>
         <item name="textTagWarning">@color/o2_classic_color_orange_40</item>

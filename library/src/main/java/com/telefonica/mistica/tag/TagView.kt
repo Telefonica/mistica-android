@@ -93,7 +93,7 @@ class TagView @JvmOverloads constructor(
         TYPE_SUCCESS -> R.attr.tagBackgroundSuccess to R.attr.textTagSuccess
         TYPE_WARNING -> R.attr.tagBackgroundWarning to R.attr.textTagWarning
         TYPE_ERROR -> R.attr.tagBackgroundError to R.attr.textTagError
-        TYPE_INVERSE -> R.attr.inverse to R.attr.textTagActive
+        TYPE_INVERSE -> R.attr.colorInverse to R.attr.textTagActive
         else -> R.attr.tagBackgroundPromo to R.attr.textTagPromo
     }
 
