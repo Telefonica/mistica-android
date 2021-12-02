@@ -98,7 +98,7 @@ class TagView @JvmOverloads constructor(
     }
 
     private fun String.captitalizeFirstChar(): String {
-        return toLowerCase(Locale.getDefault()).capitalize(Locale.getDefault())
+        return lowercase(Locale.getDefault()).replaceFirstChar { if (it.isLowerCase()) it.uppercase() else it.toString() }
     }
 
     companion object {
