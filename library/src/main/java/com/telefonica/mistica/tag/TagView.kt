@@ -61,7 +61,7 @@ class TagView @JvmOverloads constructor(
     fun setTagStyle(@TagStyle style: Int, icon: Drawable? = null) {
         currentStyle = style
         val (tagBackground, tagTextColor) = style.getStyle()
-        background.colorFilter = BlendModeColorFilterCompat.createBlendModeColorFilterCompat(context.getThemeColor(tagBackground), BlendModeCompat.SRC_ATOP)
+        background.colorFilter = BlendModeColorFilterCompat.createBlendModeColorFilterCompat(context.getThemeColor(tagBackground), BlendModeCompat.SRC_IN)
         setTextColor(context.getThemeColor(tagTextColor))
 
         if (icon != null) {
