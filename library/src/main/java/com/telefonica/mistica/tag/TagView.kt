@@ -74,7 +74,8 @@ class TagView @JvmOverloads constructor(
         DrawableCompat.setTint(DrawableCompat.wrap(drawable), context.getThemeColor(currentStyle.getStyle().second))
 
         val iconSize = context.convertDpToPx(16)
-        drawable.setBounds(0, 0, iconSize, iconSize)
+        val fixedMargin = context.convertDpToPx(1.5F)
+        drawable.setBounds(0, fixedMargin, iconSize, iconSize + fixedMargin)
 
         setCompoundDrawablesRelative(drawable, null, null, null)
         compoundDrawablePadding = context.convertDpToPx(4)
