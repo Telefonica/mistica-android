@@ -58,6 +58,7 @@ class TagView @JvmOverloads constructor(
         }
     }
 
+    @JvmOverloads
     fun setTagStyle(@TagStyle style: Int, icon: Drawable? = null) {
         currentStyle = style
         val (tagBackground, tagTextColor) = style.getStyle()
