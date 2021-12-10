@@ -505,6 +505,18 @@ class MisticaColors(
         loginLoadingGradientSecond,
         loginLoadingGradientThird,
         loginLoadingGradientFourth,
+        tagBackgroundSuccess,
+        tagBackgroundWarning,
+        tagBackgroundError,
+        tagBackgroundPromo,
+        tagBackgroundActive,
+        tagBackgroundInactive,
+        textTagSuccess,
+        textTagWarning,
+        textTagError,
+        textTagPromo,
+        textTagActive,
+        textTagInactive,
     )
 
     internal fun MisticaColors.updateColorsFrom(other: MisticaColors) {
@@ -597,6 +609,18 @@ class MisticaColors(
         loginLoadingGradientSecond = other.loginLoadingGradientSecond
         loginLoadingGradientThird = other.loginLoadingGradientThird
         loginLoadingGradientFourth = other.loginLoadingGradientFourth
+        tagBackgroundSuccess = other.tagBackgroundSuccess
+        tagBackgroundWarning = other.tagBackgroundWarning
+        tagBackgroundError = other.tagBackgroundError
+        tagBackgroundPromo = other.tagBackgroundPromo
+        tagBackgroundActive = other.tagBackgroundActive
+        tagBackgroundInactive = other.tagBackgroundInactive
+        textTagSuccess = other.textTagSuccess
+        textTagWarning = other.textTagWarning
+        textTagError = other.textTagError
+        textTagPromo = other.textTagPromo
+        textTagActive = other.textTagActive
+        textTagInactive = other.textTagInactive
     }
 }
 
