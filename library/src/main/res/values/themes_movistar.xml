@@ -102,7 +102,6 @@
 		<item name="tagBackgroundPromo">@color/movistar_color_purple_10</item>
 		<item name="tagBackgroundActive">@color/movistar_color_blue_10</item>
 		<item name="tagBackgroundInactive">@color/movistar_color_grey_1</item>
-		<item name="inverse">@color/movistar_color_white</item>
 
 		<item name="textTagSuccess">@color/movistar_color_green_70</item>
 		<item name="textTagWarning">@color/movistar_color_egg_80</item>

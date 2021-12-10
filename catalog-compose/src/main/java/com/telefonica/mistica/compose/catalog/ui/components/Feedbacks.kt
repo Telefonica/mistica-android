@@ -28,6 +28,7 @@ fun Feedbacks(
 
     var title: String by remember { mutableStateOf("") }
     var subtitle: String by remember { mutableStateOf("") }
+    var errorReference: String by remember { mutableStateOf("") }
     var firstButtonText: String? by remember { mutableStateOf(null) }
     var secondButtonText: String? by remember { mutableStateOf(null) }
     var isFirstButtonLoading: Boolean by remember { mutableStateOf(false) }
@@ -38,6 +39,7 @@ fun Feedbacks(
             type = type,
             title = title,
             subtitle = subtitle,
+            errorReference = errorReference,
             firstButtonText = firstButtonText,
             secondButtonText = secondButtonText,
             firstButtonOnClick = {},
@@ -53,6 +55,7 @@ fun Feedbacks(
         ) {
             OutlinedTextField(value = title, onValueChange = { title = it }, label = { Text("Title") })
             OutlinedTextField(value = subtitle, onValueChange = { subtitle = it }, label = { Text("Subtitle") })
+            OutlinedTextField(value = errorReference, onValueChange = { errorReference = it }, label = { Text("Error Reference") })
             OutlinedTextField(value = firstButtonText ?: "", onValueChange = { firstButtonText = it }, label = { Text("First Button") })
             OutlinedTextField(value = secondButtonText ?: "", onValueChange = { secondButtonText = it }, label = { Text("Second Button") })
             Row {

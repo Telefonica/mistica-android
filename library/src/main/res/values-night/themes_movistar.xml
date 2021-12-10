@@ -76,7 +76,6 @@
         <item name="tagBackgroundPromo">@color/movistar_color_white_5_alpha</item>
         <item name="tagBackgroundActive">@color/movistar_color_white_5_alpha</item>
         <item name="tagBackgroundInactive">@color/movistar_color_white_5_alpha</item>
-        <item name="inverse">@color/movistar_color_grey_2</item>
 
         <item name="textTagSuccess">@color/movistar_color_green_40</item>
         <item name="textTagWarning">@color/movistar_color_egg_40</item>

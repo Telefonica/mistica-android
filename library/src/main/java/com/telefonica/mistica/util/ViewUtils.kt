@@ -10,10 +10,12 @@ import android.view.ViewGroup
 fun ViewGroup.children(): Iterable<View> = (0 until childCount)
     .map { index -> getChildAt(index) }
 
-fun Context.convertDpToPx(dps: Int): Int =
+fun Context.convertDpToPx(dps: Int): Int = convertDpToPx(dps.toFloat())
+
+fun Context.convertDpToPx(dps: Float): Int =
     TypedValue.applyDimension(
         TypedValue.COMPLEX_UNIT_DIP,
-        dps.toFloat(),
+        dps,
         resources.displayMetrics
     ).toInt()
 

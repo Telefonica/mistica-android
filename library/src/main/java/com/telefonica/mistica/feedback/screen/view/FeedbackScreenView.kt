@@ -48,6 +48,7 @@ class FeedbackScreenView : ConstraintLayout {
     private lateinit var icon: LottieAnimationView
     private lateinit var title: TextView
     private lateinit var subtitle: TextView
+    private lateinit var errorReference: TextView
     private lateinit var customContentContainer: FrameLayout
     private lateinit var buttonsContainer: LinearLayout
     private lateinit var firstButton: ProgressButton
@@ -56,6 +57,7 @@ class FeedbackScreenView : ConstraintLayout {
     private var type: Int = TYPE_INFO
     private var titleText: CharSequence = ""
     private var subtitleText: CharSequence = ""
+    private var errorReferenceText: CharSequence = ""
     private var isLoading: Boolean = false
 
     @LayoutRes
@@ -101,6 +103,16 @@ class FeedbackScreenView : ConstraintLayout {
     fun setFeedbackSubtitle(text: CharSequence) {
         subtitleText = text
         subtitle.text = text
+    }
+
+    fun setFeedbackErrorReference(text: CharSequence) {
+        errorReferenceText = text
+        errorReference.text = text
+        errorReference.visibility = if (text.isNotBlank() && type == TYPE_ERROR) {
+            View.VISIBLE
+        } else {
+            View.GONE
+        }
     }
 
     fun setCustomContentLayout(@LayoutRes layout: Int) {
@@ -162,6 +174,7 @@ class FeedbackScreenView : ConstraintLayout {
             styledAttrs.getText(R.styleable.FeedbackScreen_feedbackTitle)?.let { titleText = it }
             styledAttrs.getText(R.styleable.FeedbackScreen_feedbackSubtitle)
                 ?.let { subtitleText = it }
+            styledAttrs.getText(R.styleable.FeedbackScreen_feedbackErrorReference)?.let { errorReferenceText = it }
             customContentLayout = styledAttrs.getResourceId(
                 R.styleable.FeedbackScreen_feedbackCustomContentLayout,
                 TypedValue.TYPE_NULL
@@ -179,6 +192,7 @@ class FeedbackScreenView : ConstraintLayout {
         icon = findViewById(R.id.icon)
         title = findViewById(R.id.title)
         subtitle = findViewById(R.id.subtitle)
+        errorReference = findViewById(R.id.error_reference)
         customContentContainer = findViewById(R.id.custom_content)
         buttonsContainer = findViewById(R.id.buttons_container)
     }
@@ -282,6 +296,7 @@ class FeedbackScreenView : ConstraintLayout {
         subtitle.setTextColor(subtitleTextColor)
         setFeedbackTitle(titleText)
         setFeedbackSubtitle(subtitleText)
+        setFeedbackErrorReference(errorReferenceText)
     }
 
     private fun configureCustomContentView() {
@@ -329,9 +344,11 @@ class FeedbackScreenView : ConstraintLayout {
                     getFadeInAnim(title),
                     getFadeInAnim(subtitle),
                     getFadeInAnim(customContentContainer),
+                    getFadeInAnim(errorReference),
                     getTranslationYAnim(title),
                     getTranslationYAnim(subtitle),
-                    getTranslationYAnim(customContentContainer)
+                    getTranslationYAnim(customContentContainer),
+                    getTranslationYAnim(errorReference),
                 )
                 interpolator = getCubicBezierInterpolator()
                 duration = TEXTS_ANIMATION_DURATION
@@ -340,6 +357,7 @@ class FeedbackScreenView : ConstraintLayout {
 
             title.alpha = 0F
             subtitle.alpha = 0F
+            errorReference.alpha = 0F
             customContentContainer.alpha = 0F
 
             animation.start()

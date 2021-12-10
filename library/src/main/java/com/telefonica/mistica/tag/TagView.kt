@@ -58,10 +58,11 @@ class TagView @JvmOverloads constructor(
         }
     }
 
+    @JvmOverloads
     fun setTagStyle(@TagStyle style: Int, icon: Drawable? = null) {
         currentStyle = style
         val (tagBackground, tagTextColor) = style.getStyle()
-        background.colorFilter = BlendModeColorFilterCompat.createBlendModeColorFilterCompat(context.getThemeColor(tagBackground), BlendModeCompat.SRC_ATOP)
+        background.colorFilter = BlendModeColorFilterCompat.createBlendModeColorFilterCompat(context.getThemeColor(tagBackground), BlendModeCompat.SRC_IN)
         setTextColor(context.getThemeColor(tagTextColor))
 
         if (icon != null) {
@@ -74,7 +75,8 @@ class TagView @JvmOverloads constructor(
         DrawableCompat.setTint(DrawableCompat.wrap(drawable), context.getThemeColor(currentStyle.getStyle().second))
 
         val iconSize = context.convertDpToPx(16)
-        drawable.setBounds(0, 0, iconSize, iconSize)
+        val fixedMargin = context.convertDpToPx(1.5F)
+        drawable.setBounds(0, fixedMargin, iconSize, iconSize + fixedMargin)
 
         setCompoundDrawablesRelative(drawable, null, null, null)
         compoundDrawablePadding = context.convertDpToPx(4)
@@ -93,12 +95,12 @@ class TagView @JvmOverloads constructor(
         TYPE_SUCCESS -> R.attr.tagBackgroundSuccess to R.attr.textTagSuccess
         TYPE_WARNING -> R.attr.tagBackgroundWarning to R.attr.textTagWarning
         TYPE_ERROR -> R.attr.tagBackgroundError to R.attr.textTagError
-        TYPE_INVERSE -> R.attr.inverse to R.attr.textTagActive
+        TYPE_INVERSE -> R.attr.colorInverse to R.attr.textTagActive
         else -> R.attr.tagBackgroundPromo to R.attr.textTagPromo
     }
 
     private fun String.captitalizeFirstChar(): String {
-        return toLowerCase(Locale.getDefault()).capitalize(Locale.getDefault())
+        return lowercase(Locale.getDefault()).replaceFirstChar { if (it.isLowerCase()) it.uppercase() else it.toString() }
     }
 
     companion object {

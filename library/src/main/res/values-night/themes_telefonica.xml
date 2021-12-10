@@ -102,7 +102,6 @@
         <item name="tagBackgroundPromo">@color/telefonica_color_white_5_alpha</item>
         <item name="tagBackgroundActive">@color/telefonica_color_white_5_alpha</item>
         <item name="tagBackgroundInactive">@color/telefonica_color_white_5_alpha</item>
-        <item name="inverse">@color/telefonica_color_grey_2</item>
 
         <item name="textTagSuccess">@color/telefonica_color_turquoise_40</item>
         <item name="textTagWarning">@color/telefonica_color_ambar_40</item>
