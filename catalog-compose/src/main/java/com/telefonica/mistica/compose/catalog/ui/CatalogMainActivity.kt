@@ -42,6 +42,7 @@ import com.telefonica.mistica.compose.catalog.R
 import com.telefonica.mistica.compose.catalog.ui.components.Buttons
 import com.telefonica.mistica.compose.catalog.ui.components.Feedbacks
 import com.telefonica.mistica.compose.catalog.ui.components.Lists
+import com.telefonica.mistica.compose.catalog.ui.components.Tags
 import com.telefonica.mistica.compose.catalog.ui.components.Texts
 import com.telefonica.mistica.compose.theme.MisticaTheme
 import com.telefonica.mistica.compose.theme.brand.BlauBrand
@@ -140,6 +141,7 @@ fun CatalogNavHost(
         composable(NavigationRoutes.TEXTS) { Texts() }
         composable(NavigationRoutes.FEEDBACKS) { Feedbacks() }
         composable(NavigationRoutes.LISTS) { Lists() }
+        composable(NavigationRoutes.TAGS) { Tags() }
     }
 }
 
@@ -170,7 +172,12 @@ fun Catalog(
             name = "Lists",
             icon = R.drawable.ic_lists,
             navigation = NavigationRoutes.LISTS
-        )
+        ),
+        ComponentScreen(
+            name = "Tags",
+            icon = R.drawable.ic_tags,
+            navigation = NavigationRoutes.TAGS
+        ),
     )
     Column {
 
@@ -238,4 +245,5 @@ object NavigationRoutes {
     const val TEXTS = "texts"
     const val FEEDBACKS = "feedbacks"
     const val LISTS = "lists"
+    const val TAGS = "tags"
 }

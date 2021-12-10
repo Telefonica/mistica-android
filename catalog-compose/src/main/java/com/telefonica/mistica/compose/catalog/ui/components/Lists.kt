@@ -27,6 +27,7 @@ import com.telefonica.mistica.compose.tag.Tag
 import com.telefonica.mistica.compose.shape.Circle
 import com.telefonica.mistica.compose.list.ListRowItem
 import com.telefonica.mistica.compose.theme.MisticaTheme
+import com.telefonica.mistica.tag.TagView.Companion.TYPE_PROMO
 
 const val TITLE = "Title"
 const val SUBTITLE = "Subtitle"
@@ -130,14 +131,14 @@ val samples = listOf(
     ),
 
     ListItem(
-        headline = { Tag("PROMO", color = MisticaTheme.colors.promo) },
+        headline = { Tag("PROMO", style = TYPE_PROMO) },
         title = TITLE,
         subtitle = SUBTITLE,
         action = { Chevron() },
         icon = { ListIcon() },
     ),
     ListItem(
-        headline = { Tag("PROMO", color = MisticaTheme.colors.promo) },
+        headline = { Tag("PROMO", style = TYPE_PROMO) },
         title = TITLE,
         subtitle = SUBTITLE,
         description = DESCRIPTION,
@@ -147,7 +148,7 @@ val samples = listOf(
         icon = { Avatar() },
     ),
     ListItem(
-        headline = { Tag("PROMO", color = MisticaTheme.colors.promo) },
+        headline = { Tag("PROMO", style = TYPE_PROMO) },
         title = TITLE,
         subtitle = SUBTITLE,
         description = DESCRIPTION,
@@ -157,7 +158,7 @@ val samples = listOf(
         icon = { Avatar() },
     ),
     ListItem(
-        headline = { Tag("PROMO", color = MisticaTheme.colors.promo) },
+        headline = { Tag("PROMO", style = TYPE_PROMO) },
         title = TITLE,
         subtitle = SUBTITLE,
         description = DESCRIPTION,
