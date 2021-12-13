@@ -1,5 +1,6 @@
 package com.telefonica.mistica.compose.tag
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -36,6 +37,23 @@ fun Tag(
                 horizontal = 8.dp,
             ),
         )
+    }
+}
+
+class Tag constructor(
+    private val content: String,
+) {
+    private var modifier: Modifier = Modifier
+    private var color: Color? = null
+
+    fun withModifier(modifier: Modifier): Tag = this.apply { this.modifier = modifier }
+
+    fun withColor(color: Color): Tag = this.apply { this.color = color }
+
+    @SuppressLint("ComposableNaming")
+    @Composable
+    internal fun build() {
+        Tag(content = content, modifier = modifier, color = color ?: MisticaTheme.colors.badge)
     }
 }
 
