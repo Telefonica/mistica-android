@@ -1,6 +1,7 @@
 package com.telefonica.mistica.compose.tag
 
 import androidx.annotation.DrawableRes
+import android.annotation.SuppressLint
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -97,6 +98,7 @@ class Tag constructor(
     fun withStyle(@TagStyle style: Int) = apply { this.style = style }
     fun withIcon(@DrawableRes icon: Int?) = apply { this.icon = icon }
 
+    @SuppressLint("ComposableNaming")
     @Composable
     fun build() {
         Tag(text = content, modifier = modifier, style = style, icon = icon)

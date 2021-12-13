@@ -33,7 +33,8 @@ const val TITLE = "Title"
 const val SUBTITLE = "Subtitle"
 const val DESCRIPTION = "Description"
 
-val samples = listOf(
+@Composable
+fun samples() = listOf(
     ListItem(
         title = TITLE,
     ),
@@ -131,14 +132,14 @@ val samples = listOf(
     ),
 
     ListItem(
-        headline = { Tag("PROMO", style = TYPE_PROMO) },
+        headline = Tag(content ="PROMO").withStyle(TYPE_PROMO),
         title = TITLE,
         subtitle = SUBTITLE,
         action = { Chevron() },
         icon = { ListIcon() },
     ),
     ListItem(
-        headline = { Tag("PROMO", style = TYPE_PROMO) },
+        headline = Tag("PROMO").withStyle(TYPE_PROMO),
         title = TITLE,
         subtitle = SUBTITLE,
         description = DESCRIPTION,
@@ -148,7 +149,7 @@ val samples = listOf(
         icon = { Avatar() },
     ),
     ListItem(
-        headline = { Tag("PROMO", style = TYPE_PROMO) },
+        headline = Tag("PROMO").withStyle(TYPE_PROMO),
         title = TITLE,
         subtitle = SUBTITLE,
         description = DESCRIPTION,
@@ -158,7 +159,7 @@ val samples = listOf(
         icon = { Avatar() },
     ),
     ListItem(
-        headline = { Tag("PROMO", style = TYPE_PROMO) },
+        headline = Tag("PROMO").withStyle(TYPE_PROMO),
         title = TITLE,
         subtitle = SUBTITLE,
         description = DESCRIPTION,
@@ -173,6 +174,7 @@ val samples = listOf(
 @ExperimentalMaterialApi
 @Composable
 fun Lists() {
+    val samples = samples()
     LazyColumn(
         modifier = Modifier
             .fillMaxSize(),
@@ -249,7 +251,7 @@ data class ListItem(
     val backgroundType: BackgroundType = BackgroundType.TYPE_NORMAL,
     val badge: String? = null,
     val isBadgeVisible: Boolean = false,
-    val headline: @Composable (() -> Unit)? = null,
+    val headline: Tag? = null,
     val action: @Composable (() -> Unit)? = null,
     val onClick: () -> Unit = {},
 )
