@@ -1,7 +1,7 @@
 package com.telefonica.mistica.compose.tag
 
-import androidx.annotation.DrawableRes
 import android.annotation.SuppressLint
+import androidx.annotation.DrawableRes
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -108,62 +108,32 @@ class Tag constructor(
 @ExperimentalFoundationApi
 @Preview(showBackground = true)
 @Composable
-fun TagPreview() {
+internal fun TagPreview() {
     MisticaTheme(brand = MovistarBrand) {
         Column(
             modifier = Modifier
                 .padding(vertical = 32.dp, horizontal = 16.dp)
                 .background(MisticaTheme.colors.backgroundContainer),
         ) {
-            TagCatalogPreview()
-        }
-    }
-}
-
-@ExperimentalFoundationApi
-@Composable
-fun TagCatalogPreview() {
-    Column(
-        horizontalAlignment = Alignment.CenterHorizontally,
-    ) {
-        Surface(
-            color = MisticaTheme.colors.brand,
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(60.dp)
-        ) {
-            Tag(text = "Inverse", style = TYPE_INVERSE, modifier = Modifier.padding(8.dp))
-        }
-        LazyVerticalGrid(
-            cells = GridCells.Fixed(3),
-            modifier = Modifier.padding(16.dp)
-        ) {
-            item { Tag(text = "Promotion", style = TYPE_PROMO, modifier = Modifier.padding(4.dp)) }
-            item { Tag(text = "Active", style = TYPE_ACTIVE, modifier = Modifier.padding(4.dp)) }
-            item { Tag(text = "Inactive", style = TYPE_INACTIVE, modifier = Modifier.padding(4.dp)) }
-            item { Tag(text = "Success", style = TYPE_SUCCESS, modifier = Modifier.padding(4.dp)) }
-            item { Tag(text = "Warning", style = TYPE_WARNING, modifier = Modifier.padding(4.dp)) }
-            item { Tag(text = "Error", style = TYPE_ERROR, modifier = Modifier.padding(4.dp)) }
-        }
-        Surface(
-            color = MisticaTheme.colors.brand,
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(top = 16.dp)
-                .height(60.dp)
-        ) {
-            Tag(text = "Inverse", style = TYPE_INVERSE, modifier = Modifier.padding(8.dp), icon = android.R.drawable.ic_lock_power_off)
-        }
-        LazyVerticalGrid(
-            cells = GridCells.Fixed(3),
-            modifier = Modifier.padding(16.dp)
-        ) {
-            item { Tag(text = "Promotion", style = TYPE_PROMO, modifier = Modifier.padding(4.dp), icon = android.R.drawable.ic_lock_power_off) }
-            item { Tag(text = "Active", style = TYPE_ACTIVE, modifier = Modifier.padding(4.dp), icon = android.R.drawable.ic_lock_power_off) }
-            item { Tag(text = "Inactive", style = TYPE_INACTIVE, modifier = Modifier.padding(4.dp), icon = android.R.drawable.ic_lock_power_off) }
-            item { Tag(text = "Success", style = TYPE_SUCCESS, modifier = Modifier.padding(4.dp), icon = android.R.drawable.ic_lock_power_off) }
-            item { Tag(text = "Warning", style = TYPE_WARNING, modifier = Modifier.padding(4.dp), icon = android.R.drawable.ic_lock_power_off) }
-            item { Tag(text = "Error", style = TYPE_ERROR, modifier = Modifier.padding(4.dp), icon = android.R.drawable.ic_lock_power_off) }
+            Surface(
+                color = MisticaTheme.colors.brand,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(60.dp)
+            ) {
+                Tag(text = "Inverse", style = TYPE_INVERSE, modifier = Modifier.padding(8.dp), icon = android.R.drawable.ic_lock_power_off)
+            }
+            LazyVerticalGrid(
+                cells = GridCells.Fixed(3),
+                modifier = Modifier.padding(16.dp)
+            ) {
+                item { Tag(text = "Promotion", style = TYPE_PROMO, modifier = Modifier.padding(4.dp), icon = android.R.drawable.ic_lock_power_off) }
+                item { Tag(text = "Active", style = TYPE_ACTIVE, modifier = Modifier.padding(4.dp), icon = android.R.drawable.ic_lock_power_off) }
+                item { Tag(text = "Inactive", style = TYPE_INACTIVE, modifier = Modifier.padding(4.dp), icon = android.R.drawable.ic_lock_power_off) }
+                item { Tag(text = "Success", style = TYPE_SUCCESS, modifier = Modifier.padding(4.dp), icon = android.R.drawable.ic_lock_power_off) }
+                item { Tag(text = "Warning", style = TYPE_WARNING, modifier = Modifier.padding(4.dp), icon = android.R.drawable.ic_lock_power_off) }
+                item { Tag(text = "Error", style = TYPE_ERROR, modifier = Modifier.padding(4.dp), icon = android.R.drawable.ic_lock_power_off) }
+            }
         }
     }
 }
