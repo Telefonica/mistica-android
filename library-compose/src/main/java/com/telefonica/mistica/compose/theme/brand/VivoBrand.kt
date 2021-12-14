@@ -99,6 +99,18 @@ object VivoBrand : Brand {
         loginLoadingGradientSecond = VivoPaletteColor.vivo_color_purple,
         loginLoadingGradientThird = VivoPaletteColor.vivo_color_purple,
         loginLoadingGradientFourth = VivoPaletteColor.vivo_color_purple,
+        tagBackgroundSuccess = VivoPaletteColor.vivo_color_green_light10,
+        tagBackgroundWarning = VivoPaletteColor.vivo_color_orange_light10,
+        tagBackgroundError = VivoPaletteColor.vivo_color_pepper_light10,
+        tagBackgroundPromo = VivoPaletteColor.vivo_color_purple_light10,
+        tagBackgroundActive = VivoPaletteColor.vivo_color_purple_light10,
+        tagBackgroundInactive = VivoPaletteColor.vivo_color_grey_1,
+        textTagSuccess = VivoPaletteColor.vivo_color_green_dark,
+        textTagWarning = VivoPaletteColor.vivo_color_orange_dark,
+        textTagError = VivoPaletteColor.vivo_color_pepper_dark_80,
+        textTagPromo = VivoPaletteColor.vivo_color_purple,
+        textTagActive = VivoPaletteColor.vivo_color_purple,
+        textTagInactive = VivoPaletteColor.vivo_color_grey_5,
     )
 
     override val darkColors = lightColors.copy(
@@ -168,6 +180,18 @@ object VivoBrand : Brand {
         textNavigationBarSecondary = VivoPaletteColor.vivo_color_grey_4,
         textAppBar = VivoPaletteColor.vivo_color_grey_5,
         textAppBarSelected = VivoPaletteColor.vivo_color_grey_2,
+        tagBackgroundSuccess = VivoPaletteColor.vivo_color_white_5_alpha,
+        tagBackgroundWarning = VivoPaletteColor.vivo_color_white_5_alpha,
+        tagBackgroundError = VivoPaletteColor.vivo_color_white_5_alpha,
+        tagBackgroundPromo = VivoPaletteColor.vivo_color_white_5_alpha,
+        tagBackgroundActive = VivoPaletteColor.vivo_color_white_5_alpha,
+        tagBackgroundInactive = VivoPaletteColor.vivo_color_white_5_alpha,
+        textTagSuccess = VivoPaletteColor.vivo_color_green_light30,
+        textTagWarning = VivoPaletteColor.vivo_color_orange_light40,
+        textTagError = VivoPaletteColor.vivo_color_pepper_light40,
+        textTagPromo = VivoPaletteColor.vivo_color_purple_light50,
+        textTagActive = VivoPaletteColor.vivo_color_purple_light50,
+        textTagInactive = VivoPaletteColor.vivo_color_grey_4,
     )
 }
 
@@ -182,16 +206,26 @@ private object VivoPaletteColor {
 
     val vivo_color_green = Color(0xFF99CC33)
     val vivo_color_green_dark = Color(0xFF33A14A)
+    val vivo_color_green_light10 = Color(0xFFEDF8E8)
+    val vivo_color_green_light30 = Color(0xFF91AE9E)
     val vivo_color_green_light40 = Color(0xFFD6EAAD)
 
     val vivo_color_blue = Color(0xFF00ABDB)
+
     val vivo_color_orange = Color(0xFFFF9900)
     val vivo_color_orange_dark = Color(0xFFFA6324)
     val vivo_color_orange_light = Color(0xFFFFD699)
+    val vivo_color_orange_light10 = Color(0xFFFFEFE1)
+    val vivo_color_orange_light40 = Color(0xFFFFB84C)
+
     val vivo_color_pink = Color(0xFFEB3D7D)
+
     val vivo_color_pepper = Color(0xFFCC1F59)
     val vivo_color_pepper_dark = Color(0xFFB71D63)
+    val vivo_color_pepper_dark_80 = Color(0xFF8F2052)
+    val vivo_color_pepper_light10 = Color(0xFFFCE4EF)
     val vivo_color_pepper_light30 = Color(0xFFF7B1CB)
+    val vivo_color_pepper_light40 = Color(0xFFDB628B)
 
     val vivo_color_grey_1 = Color(0xFFF6F6F6)
     val vivo_color_grey_2 = Color(0xFFEEEEEE)

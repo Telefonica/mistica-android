@@ -8,9 +8,21 @@
         <attr name="isLoading" format="boolean" />
     </declare-styleable>
 
-    <declare-styleable name="TagView">
-        <attr name="tagColor" format="color|reference" />
-    </declare-styleable>
+	<declare-styleable name="TagView">
+		<attr name="tagIcon" format="reference" />
+		<attr name="tagStyle" />
+	</declare-styleable>
+
+	<!-- This attribute is being reused by CardView and TagView -->
+	<attr name="tagStyle" format="enum">
+		<enum name="promo" value="0" />
+		<enum name="active" value="1" />
+		<enum name="inactive" value="2" />
+		<enum name="success" value="3" />
+		<enum name="warning" value="4" />
+		<enum name="error" value="5" />
+		<enum name="inverse" value="6" />
+	</attr>
 
     <declare-styleable name="FeedbackScreen">
         <attr name="feedbackType" format="enum">
@@ -160,7 +172,7 @@
 
     <declare-styleable name="CardView">
         <attr name="cardTag" format="string" />
-        <attr name="cardTagColor" format="color|reference" />
+		<attr name="tagStyle" />
         <attr name="cardTitle" format="string" />
         <attr name="cardTitleMaxLines" format="integer" />
         <attr name="cardDescription" format="string" />

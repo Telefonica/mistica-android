@@ -17,14 +17,17 @@
 	<color name="blau_color_yellow">#FFA922</color>
 	<color name="blau_color_yellow_70">#996614</color>
 	<color name="blau_color_yellow_60">#F09500</color>
+	<color name="blau_color_yellow_40">#FFC364</color>
 	<color name="blau_color_yellow_10">#FFF6E9</color>
 
 	<color name="blau_color_green">#30D300</color>
 	<color name="blau_color_green_70">#1D7F00</color>
+	<color name="blau_color_green_30">#97E980</color>
 	<color name="blau_color_green_10">#EAFBE5</color>
 
 	<color name="blau_color_red">#F64417</color>
 	<color name="blau_color_red_70">#C93712</color>
+	<color name="blau_color_red_40">#F97C5D</color>
 	<color name="blau_color_red_30">#FA9E87</color>
 	<color name="blau_color_red_20">#FCC7B9</color>
 	<color name="blau_color_red_10">#FEECE8</color>

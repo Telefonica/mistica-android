@@ -99,6 +99,18 @@ object O2ClassicBrand : Brand {
         loginLoadingGradientSecond = O2ClassicPaletteColor.o2_classic_gradient_second,
         loginLoadingGradientThird = O2ClassicPaletteColor.o2_classic_gradient_third,
         loginLoadingGradientFourth = O2ClassicPaletteColor.o2_classic_gradient_fourth,
+        tagBackgroundSuccess = O2ClassicPaletteColor.o2_classic_color_green_10,
+        tagBackgroundWarning = O2ClassicPaletteColor.o2_classic_color_orange_10,
+        tagBackgroundError = O2ClassicPaletteColor.o2_classic_color_pepper_10,
+        tagBackgroundPromo = O2ClassicPaletteColor.o2_classic_color_pink_10,
+        tagBackgroundActive = O2ClassicPaletteColor.o2_classic_color_blue_10,
+        tagBackgroundInactive = O2ClassicPaletteColor.o2_classic_color_grey_1,
+        textTagSuccess = O2ClassicPaletteColor.o2_classic_color_green_75,
+        textTagWarning = O2ClassicPaletteColor.o2_classic_color_orange_80,
+        textTagError = O2ClassicPaletteColor.o2_classic_color_pepper_70,
+        textTagPromo = O2ClassicPaletteColor.o2_classic_color_pink_60,
+        textTagActive = O2ClassicPaletteColor.o2_classic_color_blue,
+        textTagInactive = O2ClassicPaletteColor.o2_classic_color_grey_5,
     )
 
     override val darkColors = lightColors.copy(
@@ -161,11 +173,25 @@ object O2ClassicBrand : Brand {
         textNavigationBarSecondary = O2ClassicPaletteColor.o2_classic_color_grey_4,
         textAppBar = O2ClassicPaletteColor.o2_classic_color_grey_5,
         textAppBarSelected = O2ClassicPaletteColor.o2_classic_color_grey_2,
+        tagBackgroundSuccess = O2ClassicPaletteColor.o2_classic_color_white_5_alpha,
+        tagBackgroundWarning = O2ClassicPaletteColor.o2_classic_color_white_5_alpha,
+        tagBackgroundError = O2ClassicPaletteColor.o2_classic_color_white_5_alpha,
+        tagBackgroundPromo = O2ClassicPaletteColor.o2_classic_color_white_5_alpha,
+        tagBackgroundActive = O2ClassicPaletteColor.o2_classic_color_white_5_alpha,
+        tagBackgroundInactive = O2ClassicPaletteColor.o2_classic_color_white_5_alpha,
+        textTagSuccess = O2ClassicPaletteColor.o2_classic_color_green_40,
+        textTagWarning = O2ClassicPaletteColor.o2_classic_color_orange_40,
+        textTagError = O2ClassicPaletteColor.o2_classic_color_pepper_40,
+        textTagPromo = O2ClassicPaletteColor.o2_classic_color_pink_40,
+        textTagActive = O2ClassicPaletteColor.o2_classic_color_blue_30,
+        textTagInactive = O2ClassicPaletteColor.o2_classic_color_grey_4,
     )
 }
 
 private object O2ClassicPaletteColor {
     val o2_classic_color_blue = Color(0xFF032B5A)
+    val o2_classic_color_blue_10 = Color(0xFFE6EAEE)
+    val o2_classic_color_blue_30 = Color(0xFF8195AC)
     val o2_classic_color_blue_dark = Color(0xFF04264E)
     val o2_classic_color_blue_light_60 = Color(0xFF6C8BAF)
     val o2_classic_color_sky_blue = Color(0xFF0090D0)
@@ -179,16 +205,34 @@ private object O2ClassicPaletteColor {
     val o2_classic_color_gem = Color(0xFF01B7B4)
     val o2_classic_color_gem_dark = Color(0xFF099E9B)
     val o2_classic_color_gem_light_30 = Color(0xFF99E2E1)
+
     val o2_classic_color_yellow = Color(0xFFFFCC00)
+
     val o2_classic_color_green = Color(0xFF84B50F)
+    val o2_classic_color_green_10 = Color(0xFFF3F8E7)
+    val o2_classic_color_green_40 = Color(0xFFA9CB57)
+    val o2_classic_color_green_75 = Color(0xFF4D621D)
     val o2_classic_color_green_light = Color(0xFFDAE8B7)
+
     val o2_classic_color_pepper = Color(0xFFFF374A)
+    val o2_classic_color_pepper_10 = Color(0xFFFFEBED)
+    val o2_classic_color_pepper_40 = Color(0xFFFF7380)
+    val o2_classic_color_pepper_70 = Color(0xFFB22634)
     val o2_classic_color_pepper_dark = Color(0xFFD73241)
     val o2_classic_color_pepper_light_30 = Color(0xFFFFC3C8)
+
     val o2_classic_color_orange = Color(0xFFFF7F41)
+    val o2_classic_color_orange_10 = Color(0xFFFFF2EC)
+    val o2_classic_color_orange_40 = Color(0xFFFFA57A)
+    val o2_classic_color_orange_80 = Color(0xFF73391D)
     val o2_classic_color_orange_light = Color(0xFFFFD6C2)
+
     val o2_classic_color_coral = Color(0xFFFF706E)
+
     val o2_classic_color_pink = Color(0xFFEB3C7D)
+    val o2_classic_color_pink_10 = Color(0xFFFDEBF2)
+    val o2_classic_color_pink_40 = Color(0xFFF59DBE)
+    val o2_classic_color_pink_60 = Color(0xFFBC3064)
 
     val o2_classic_gradient_first = Color(0xFF102550)
     val o2_classic_gradient_second = Color(0xFF0B4680)

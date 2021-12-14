@@ -72,37 +72,28 @@ class CatalogMainActivity : AppCompatActivity() {
         }
 
         private val sections: List<SectionItem> = listOf(
-            SectionItem("Texts", R.drawable.ic_texts, Section.TEXTS),
-            SectionItem("Buttons", R.drawable.ic_buttons, Section.BUTTONS),
-            SectionItem("Inputs", R.drawable.ic_inputs, Section.INPUTS),
-            SectionItem("Snackbars", R.drawable.ic_snackbars, Section.SNACKBARS),
-            SectionItem("Feedbacks", R.drawable.ic_feedbacks, Section.FEEDBACKS),
-            SectionItem(
-                "Load Error Feedback",
-                R.drawable.ic_load_feedback_error,
-                Section.LOAD_ERROR_FEEDBACK
-            ),
-            SectionItem("PopOvers", R.drawable.ic_popovers, Section.POPOVERS),
             SectionItem("Badges", R.drawable.ic_badges, Section.BADGES),
-            SectionItem(
-                "Scroll Content indicator",
-                R.drawable.ic_feedbacks,
-                Section.SCROLL_CONTENT_INDICATOR
-            ),
-            SectionItem("Tags", R.drawable.ic_tags, Section.TAG),
-            SectionItem("Lists", R.drawable.ic_lists, Section.LISTS),
-            SectionItem("Media Card", R.drawable.ic_cards, Section.MEDIA_CARDS),
-            SectionItem("Data Card", R.drawable.ic_cards, Section.DATA_CARDS),
-            SectionItem("Highlighted Cards", R.drawable.ic_cards, Section.HIGHLIGHTED_CARDS),
-            SectionItem("Headers", R.drawable.ic_header, Section.HEADERS),
+            SectionItem("Buttons", R.drawable.ic_buttons, Section.BUTTONS),
+            SectionItem("Callouts", R.drawable.ic_callout, Section.CALLOUTS),
             SectionItem("Controls", R.drawable.ic_controls, Section.CONTROLS),
-            SectionItem("Others", R.drawable.ic_others, Section.OTHERS),
-            SectionItem("Steppers", R.drawable.ic_stepper, Section.STEPPERS),
-            SectionItem("Tabs", R.drawable.ic_tab, Section.TABS),
+            SectionItem("Data Card", R.drawable.ic_cards, Section.DATA_CARDS),
             SectionItem("Empty State", R.drawable.ic_empty_states, Section.EMPTY_STATE),
             SectionItem("Empty State Card", R.drawable.ic_empty_states, Section.EMPTY_STATE_CARD),
+            SectionItem("Feedbacks", R.drawable.ic_feedbacks, Section.FEEDBACKS),
+            SectionItem("Headers", R.drawable.ic_header, Section.HEADERS),
+            SectionItem("Highlighted Cards", R.drawable.ic_cards, Section.HIGHLIGHTED_CARDS),
+            SectionItem("Inputs", R.drawable.ic_inputs, Section.INPUTS),
+            SectionItem("Lists", R.drawable.ic_lists, Section.LISTS),
+            SectionItem("Load Error Feedback", R.drawable.ic_load_feedback_error, Section.LOAD_ERROR_FEEDBACK),
+            SectionItem("Media Card", R.drawable.ic_cards, Section.MEDIA_CARDS),
+            SectionItem("Others", R.drawable.ic_others, Section.OTHERS),
+            SectionItem("PopOvers", R.drawable.ic_popovers, Section.POPOVERS),
+            SectionItem("Scroll Content indicator", R.drawable.ic_feedbacks, Section.SCROLL_CONTENT_INDICATOR),
+            SectionItem("Steppers", R.drawable.ic_stepper, Section.STEPPERS),
+            SectionItem("Snackbars", R.drawable.ic_snackbars, Section.SNACKBARS),
             SectionItem("Tabs", R.drawable.ic_tab, Section.TABS),
-            SectionItem("Callouts", R.drawable.ic_callout, Section.CALLOUTS),
+            SectionItem("Tags", R.drawable.ic_tags, Section.TAG),
+            SectionItem("Texts", R.drawable.ic_texts, Section.TEXTS),
         )
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder =

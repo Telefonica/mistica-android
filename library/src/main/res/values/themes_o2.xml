@@ -60,6 +60,21 @@
         <item name="colorTextButtonSecondaryInverseDisabled">@color/o2_color_blue_primary_light_50</item>
         <item name="colorTextButtonSecondaryInverseSelected">@color/o2_color_white</item>
 
+        <!-- Tag colors -->
+        <item name="tagBackgroundSuccess">@color/o2_color_green_10</item>
+        <item name="tagBackgroundWarning">@color/o2_color_orange_10</item>
+        <item name="tagBackgroundError">@color/o2_color_pepper_10</item>
+        <item name="tagBackgroundPromo">@color/o2_color_purple_10</item>
+        <item name="tagBackgroundActive">@color/o2_color_blue_primary_10</item>
+        <item name="tagBackgroundInactive">@color/o2_color_grey_1</item>
+
+        <item name="textTagSuccess">@color/o2_color_green_80</item>
+        <item name="textTagWarning">@color/o2_color_orange_75</item>
+        <item name="textTagError">@color/o2_color_pepper_60</item>
+        <item name="textTagPromo">@color/o2_color_purple</item>
+        <item name="textTagActive">@color/o2_color_blue_primary</item>
+        <item name="textTagInactive">@color/o2_color_grey_5</item>
+
         <!-- Text Links -->
         <item name="colorTextLink">@color/o2_color_blue_primary</item>
         <item name="colorTextLinkInverse">@color/o2_color_white</item>

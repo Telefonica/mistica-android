@@ -60,6 +60,21 @@
         <item name="colorTextButtonSecondaryInverseDisabled">@color/vivo_color_purple_light50</item>
         <item name="colorTextButtonSecondaryInverseSelected">@color/vivo_color_white</item>
 
+        <!-- Tag colors -->
+        <item name="tagBackgroundSuccess">@color/vivo_color_green_light10</item>
+        <item name="tagBackgroundWarning">@color/vivo_color_orange_light10</item>
+        <item name="tagBackgroundError">@color/vivo_color_pepper_light10</item>
+        <item name="tagBackgroundPromo">@color/vivo_color_purple_light10</item>
+        <item name="tagBackgroundActive">@color/vivo_color_purple_light10</item>
+        <item name="tagBackgroundInactive">@color/vivo_color_grey_1</item>
+
+        <item name="textTagSuccess">@color/vivo_color_green_dark</item>
+        <item name="textTagWarning">@color/vivo_color_orange_dark</item>
+        <item name="textTagError">@color/vivo_color_pepper_dark_80</item>
+        <item name="textTagPromo">@color/vivo_color_purple</item>
+        <item name="textTagActive">@color/vivo_color_purple</item>
+        <item name="textTagInactive">@color/vivo_color_grey_5</item>
+
         <!-- Text Links -->
         <item name="colorTextLink">@color/vivo_color_purple</item>
         <item name="colorTextLinkInverse">@color/vivo_color_white</item>

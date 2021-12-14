@@ -90,6 +90,22 @@
         <attr name="colorPromo" format="color|reference" />
         <attr name="colorHighlight" format="color|reference" />
 
+        <!-- Tags colors -->
+        <attr name="tagBackgroundPromo" format="color|reference" />
+        <attr name="tagBackgroundActive" format="color|reference" />
+        <attr name="tagBackgroundInactive" format="color|reference" />
+        <attr name="tagBackgroundSuccess" format="color|reference" />
+        <attr name="tagBackgroundWarning" format="color|reference" />
+        <attr name="tagBackgroundError" format="color|reference" />
+        <attr name="inverse" format="color|reference" />
+
+        <attr name="textTagPromo" format="color|reference" />
+        <attr name="textTagActive" format="color|reference" />
+        <attr name="textTagInactive" format="color|reference" />
+        <attr name="textTagSuccess" format="color|reference" />
+        <attr name="textTagWarning" format="color|reference" />
+        <attr name="textTagError" format="color|reference" />
+
         <!-- Texts colors -->
         <attr name="colorTextPrimary" format="color|reference" />
         <attr name="colorTextPrimaryInverse" format="color|reference" />

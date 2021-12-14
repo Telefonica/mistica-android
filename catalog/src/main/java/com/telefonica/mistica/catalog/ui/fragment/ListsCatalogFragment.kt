@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
@@ -16,6 +15,10 @@ import com.telefonica.mistica.list.ListRowView.Companion.TYPE_IMAGE
 import com.telefonica.mistica.list.ListRowView.Companion.TYPE_LARGE_ICON
 import com.telefonica.mistica.list.ListRowView.Companion.TYPE_SMALL_ICON
 import com.telefonica.mistica.list.MisticaRecyclerView
+import com.telefonica.mistica.tag.TagStyle
+import com.telefonica.mistica.tag.TagView
+import com.telefonica.mistica.tag.TagView.Companion.TYPE_INVERSE
+import com.telefonica.mistica.tag.TagView.Companion.TYPE_PROMO
 
 class ListsCatalogFragment : Fragment() {
 
@@ -265,6 +268,7 @@ class ListsCatalogFragment : Fragment() {
                     withAssetType = TYPE_LARGE_ICON,
                     withAction = true,
                     withSubtitle = true,
+                    withHeadline = true,
                     withInverseBackground = withInverseBackground,
                 )
             },
@@ -318,20 +322,18 @@ class ListsCatalogFragment : Fragment() {
             withBadge: Boolean = false,
             withBadgeNumeric: Int = 0,
             withHeadline: Boolean = false,
+            @TagStyle withHeadlineStyle: Int = TYPE_PROMO,
             withSubtitle: Boolean = false,
             withSubtitleMaxLines: Int? = null,
             withBadgeDescription: String? = null,
             withInverseBackground: Boolean,
         ) {
             if (withHeadline) {
-                setHeadlineLayout(
-                    if (withInverseBackground) {
-                        R.layout.list_row_text_headline_inverse
-                    } else {
-                        R.layout.list_row_text_headline
-                    }
-                )
-                (getHeadline()!! as TextView).text = "Headline"
+                setHeadlineLayout(R.layout.list_row_tag_headline)
+                (getHeadline()!! as TagView).apply {
+                    setTagStyle(if (withInverseBackground) TYPE_INVERSE else withHeadlineStyle)
+                    text = "Headline"
+                }
             } else {
                 setHeadlineLayout(ListRowView.HEADLINE_NONE)
             }

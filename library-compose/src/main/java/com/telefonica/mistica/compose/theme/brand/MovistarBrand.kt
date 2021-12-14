@@ -99,6 +99,18 @@ object MovistarBrand : Brand {
         loginLoadingGradientSecond = MovistarPaletteColor.movistar_color_blue_dark,
         loginLoadingGradientThird = MovistarPaletteColor.movistar_color_blue_dark,
         loginLoadingGradientFourth = MovistarPaletteColor.movistar_color_blue_dark,
+        tagBackgroundSuccess = MovistarPaletteColor.movistar_color_green_10,
+        tagBackgroundWarning = MovistarPaletteColor.movistar_color_egg_10,
+        tagBackgroundError = MovistarPaletteColor.movistar_color_pepper_10,
+        tagBackgroundPromo = MovistarPaletteColor.movistar_color_purple_10,
+        tagBackgroundActive = MovistarPaletteColor.movistar_color_blue_10,
+        tagBackgroundInactive = MovistarPaletteColor.movistar_color_grey_1,
+        textTagSuccess = MovistarPaletteColor.movistar_color_green_70,
+        textTagWarning = MovistarPaletteColor.movistar_color_egg_80,
+        textTagError = MovistarPaletteColor.movistar_color_pepper_70,
+        textTagPromo = MovistarPaletteColor.movistar_color_purple_70,
+        textTagActive = MovistarPaletteColor.movistar_color_blue,
+        textTagInactive = MovistarPaletteColor.movistar_color_grey_5,
     )
 
     override val darkColors =
@@ -164,10 +176,22 @@ object MovistarBrand : Brand {
             loginLoadingGradientSecond = MovistarPaletteColor.movistar_color_grey_6,
             loginLoadingGradientThird = MovistarPaletteColor.movistar_color_grey_6,
             loginLoadingGradientFourth = MovistarPaletteColor.movistar_color_grey_6,
+            tagBackgroundSuccess = MovistarPaletteColor.movistar_color_white_5_alpha,
+            tagBackgroundWarning = MovistarPaletteColor.movistar_color_white_5_alpha,
+            tagBackgroundError = MovistarPaletteColor.movistar_color_white_5_alpha,
+            tagBackgroundPromo = MovistarPaletteColor.movistar_color_white_5_alpha,
+            tagBackgroundActive = MovistarPaletteColor.movistar_color_white_5_alpha,
+            tagBackgroundInactive = MovistarPaletteColor.movistar_color_white_5_alpha,
+            textTagSuccess = MovistarPaletteColor.movistar_color_green_40,
+            textTagWarning = MovistarPaletteColor.movistar_color_egg_40,
+            textTagError = MovistarPaletteColor.movistar_color_pepper_40,
+            textTagPromo = MovistarPaletteColor.movistar_color_purple_40,
+            textTagActive = MovistarPaletteColor.movistar_color_blue_40,
+            textTagInactive = MovistarPaletteColor.movistar_color_grey_4,
         )
 }
 
-object MovistarProminentBrand: Brand {
+object MovistarProminentBrand : Brand {
 
     override val compatibilityTheme: Int
         get() = R.style.MisticaTheme_Movistar_Prominent
@@ -193,22 +217,42 @@ object MovistarProminentBrand: Brand {
 
 private object MovistarPaletteColor {
     val movistar_color_blue = Color(0xFF019DF4)
+    val movistar_color_blue_10 = Color(0xFFE6F5FD)
+    val movistar_color_blue_40 = Color(0xFF4DBAF7)
     val movistar_color_blue_dark = Color(0xFF008EDD)
     val movistar_color_blue_light50 = Color(0xFF80CEF9)
     val movistar_color_blue_light30 = Color(0xFFB3E1FB)
     val movistar_color_blue_light10 = Color(0xFFE6F5FD)
+
     val movistar_color_green = Color(0xFF5CB615)
+    val movistar_color_green_10 = Color(0xFFEFF8E8)
+    val movistar_color_green_40 = Color(0xFF8DCC5B)
+    val movistar_color_green_70 = Color(0xFF407F0F)
     val movistar_color_green_dark = Color(0xFF499110)
     val movistar_color_green_light50 = Color(0xFFADDA8A)
     val movistar_color_green_light50_40_alpha = Color(0x66ADDA8A)
     val movistar_color_green_light30 = Color(0xFFCEE9B9)
+
     val movistar_color_pepper = Color(0xFFFF374A)
+    val movistar_color_pepper_10 = Color(0xFFFFEBED)
+    val movistar_color_pepper_40 = Color(0xFFFF7380)
+    val movistar_color_pepper_70 = Color(0xFFB22634)
     val movistar_color_pepper_dark = Color(0xFFD73241)
     val movistar_color_pepper_light30 = Color(0xFFFFC3C8)
+
     val movistar_color_egg = Color(0xFFF28D15)
+    val movistar_color_egg_10 = Color(0xFFFEF4E8)
+    val movistar_color_egg_40 = Color(0xFFF6AF5B)
+    val movistar_color_egg_80 = Color(0xFF6D3F09)
     val movistar_color_egg_light = Color(0xFFF8D2B3)
+
     val movistar_color_pink = Color(0xFFE63780)
+
     val movistar_color_purple = Color(0xFFA13EA1)
+    val movistar_color_purple_10 = Color(0xFFF6ECF6)
+    val movistar_color_purple_40 = Color(0xFFBD78BD)
+    val movistar_color_purple_70 = Color(0xFF712B71)
+
     val movistar_color_grey_1 = Color(0xFFF6F6F6)
     val movistar_color_grey_2 = Color(0xFFEEEEEE)
     val movistar_color_grey_3 = Color(0xFFDDDDDD)
@@ -219,6 +263,8 @@ private object MovistarPaletteColor {
 
     // Prominent Color Palette
     val movistar_prominent_color_blue = Color(0xFF0B2739)
+    val movistar_prominent_color_blue_10 = Color(0xFFE6F5FD)
+    val movistar_prominent_color_blue_40 = Color(0xFF4DBAF7)
     val movistar_prominent_color_blue_dark = Color(0xFF081F2D)
     val movistar_prominent_color_blue_light_20 = Color(0xFFCED3D7)
     val movistar_prominent_color_blue_light_50 = Color(0xFF85939C)

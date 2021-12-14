@@ -97,6 +97,18 @@ class MisticaColors(
     loginLoadingGradientSecond: Color = Color.Unspecified,
     loginLoadingGradientThird: Color = Color.Unspecified,
     loginLoadingGradientFourth: Color = Color.Unspecified,
+    tagBackgroundSuccess: Color = Color.Unspecified,
+    tagBackgroundWarning: Color = Color.Unspecified,
+    tagBackgroundError: Color = Color.Unspecified,
+    tagBackgroundPromo: Color = Color.Unspecified,
+    tagBackgroundActive: Color = Color.Unspecified,
+    tagBackgroundInactive: Color = Color.Unspecified,
+    textTagSuccess: Color = Color.Unspecified,
+    textTagWarning: Color = Color.Unspecified,
+    textTagError: Color = Color.Unspecified,
+    textTagPromo: Color = Color.Unspecified,
+    textTagActive: Color = Color.Unspecified,
+    textTagInactive: Color = Color.Unspecified,
 ) {
     var appBarBackground by mutableStateOf(appBarBackground, structuralEqualityPolicy())
         internal set
@@ -276,6 +288,30 @@ class MisticaColors(
         internal set
     var loginLoadingGradientFourth by mutableStateOf(loginLoadingGradientFourth, structuralEqualityPolicy())
         internal set
+    var tagBackgroundSuccess by mutableStateOf(tagBackgroundSuccess, structuralEqualityPolicy())
+        internal set
+    var tagBackgroundWarning by mutableStateOf(tagBackgroundWarning, structuralEqualityPolicy())
+        internal set
+    var tagBackgroundError by mutableStateOf(tagBackgroundError, structuralEqualityPolicy())
+        internal set
+    var tagBackgroundPromo by mutableStateOf(tagBackgroundPromo, structuralEqualityPolicy())
+        internal set
+    var tagBackgroundActive by mutableStateOf(tagBackgroundActive, structuralEqualityPolicy())
+        internal set
+    var tagBackgroundInactive by mutableStateOf(tagBackgroundInactive, structuralEqualityPolicy())
+        internal set
+    var textTagSuccess by mutableStateOf(textTagSuccess, structuralEqualityPolicy())
+        internal set
+    var textTagWarning by mutableStateOf(textTagWarning, structuralEqualityPolicy())
+        internal set
+    var textTagError by mutableStateOf(textTagError, structuralEqualityPolicy())
+        internal set
+    var textTagPromo by mutableStateOf(textTagPromo, structuralEqualityPolicy())
+        internal set
+    var textTagActive by mutableStateOf(textTagActive, structuralEqualityPolicy())
+        internal set
+    var textTagInactive by mutableStateOf(textTagInactive, structuralEqualityPolicy())
+        internal set
 
     fun copy(
         appBarBackground: Color = this.appBarBackground,
@@ -367,6 +403,18 @@ class MisticaColors(
         loginLoadingGradientSecond: Color = this.loginLoadingGradientSecond,
         loginLoadingGradientThird: Color = this.loginLoadingGradientThird,
         loginLoadingGradientFourth: Color = this.loginLoadingGradientFourth,
+        tagBackgroundSuccess: Color = this.tagBackgroundSuccess,
+        tagBackgroundWarning: Color = this.tagBackgroundWarning,
+        tagBackgroundError: Color = this.tagBackgroundError,
+        tagBackgroundPromo: Color = this.tagBackgroundPromo,
+        tagBackgroundActive: Color = this.tagBackgroundActive,
+        tagBackgroundInactive: Color = this.tagBackgroundInactive,
+        textTagSuccess: Color = this.textTagSuccess,
+        textTagWarning: Color = this.textTagWarning,
+        textTagError: Color = this.textTagError,
+        textTagPromo: Color = this.textTagPromo,
+        textTagActive: Color = this.textTagActive,
+        textTagInactive: Color = this.textTagInactive,
     ): MisticaColors = MisticaColors(
         appBarBackground,
         background,
@@ -457,6 +505,18 @@ class MisticaColors(
         loginLoadingGradientSecond,
         loginLoadingGradientThird,
         loginLoadingGradientFourth,
+        tagBackgroundSuccess,
+        tagBackgroundWarning,
+        tagBackgroundError,
+        tagBackgroundPromo,
+        tagBackgroundActive,
+        tagBackgroundInactive,
+        textTagSuccess,
+        textTagWarning,
+        textTagError,
+        textTagPromo,
+        textTagActive,
+        textTagInactive,
     )
 
     internal fun MisticaColors.updateColorsFrom(other: MisticaColors) {
@@ -549,6 +609,18 @@ class MisticaColors(
         loginLoadingGradientSecond = other.loginLoadingGradientSecond
         loginLoadingGradientThird = other.loginLoadingGradientThird
         loginLoadingGradientFourth = other.loginLoadingGradientFourth
+        tagBackgroundSuccess = other.tagBackgroundSuccess
+        tagBackgroundWarning = other.tagBackgroundWarning
+        tagBackgroundError = other.tagBackgroundError
+        tagBackgroundPromo = other.tagBackgroundPromo
+        tagBackgroundActive = other.tagBackgroundActive
+        tagBackgroundInactive = other.tagBackgroundInactive
+        textTagSuccess = other.textTagSuccess
+        textTagWarning = other.textTagWarning
+        textTagError = other.textTagError
+        textTagPromo = other.textTagPromo
+        textTagActive = other.textTagActive
+        textTagInactive = other.textTagInactive
     }
 }
 
