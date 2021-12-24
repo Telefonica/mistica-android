@@ -14,13 +14,11 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Divider
 import androidx.compose.material.ExperimentalMaterialApi
-import androidx.compose.material.Icon
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -40,6 +38,7 @@ import androidx.navigation.compose.rememberNavController
 import com.telefonica.mistica.compose.button.DropDownInput
 import com.telefonica.mistica.compose.catalog.R
 import com.telefonica.mistica.compose.catalog.ui.components.Buttons
+import com.telefonica.mistica.compose.catalog.ui.components.DataCards
 import com.telefonica.mistica.compose.catalog.ui.components.Feedbacks
 import com.telefonica.mistica.compose.catalog.ui.components.Lists
 import com.telefonica.mistica.compose.catalog.ui.components.Tags
@@ -142,6 +141,7 @@ fun CatalogNavHost(
         composable(NavigationRoutes.FEEDBACKS) { Feedbacks() }
         composable(NavigationRoutes.LISTS) { Lists() }
         composable(NavigationRoutes.TAGS) { Tags() }
+        composable(NavigationRoutes.DATA_CARDS) { DataCards() }
     }
 }
 
@@ -177,6 +177,11 @@ fun Catalog(
             name = "Tags",
             icon = R.drawable.ic_tags,
             navigation = NavigationRoutes.TAGS
+        ),
+        ComponentScreen(
+            name = "Data Cards",
+            icon = R.drawable.ic_cards,
+            navigation = NavigationRoutes.DATA_CARDS
         ),
     )
     Column {
@@ -246,4 +251,5 @@ object NavigationRoutes {
     const val FEEDBACKS = "feedbacks"
     const val LISTS = "lists"
     const val TAGS = "tags"
+    const val DATA_CARDS = "Data Cards"
 }
