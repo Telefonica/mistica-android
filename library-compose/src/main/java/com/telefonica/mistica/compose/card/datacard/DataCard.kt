@@ -1,12 +1,21 @@
 package com.telefonica.mistica.compose.card.datacard
 
 import androidx.annotation.DrawableRes
+import androidx.compose.foundation.Image
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.tooling.preview.Preview
+import com.telefonica.mistica.compose.R
 import com.telefonica.mistica.compose.card.Action
 import com.telefonica.mistica.compose.card.Card
+import com.telefonica.mistica.compose.card.CardActions
+import com.telefonica.mistica.compose.card.CardContent
+import com.telefonica.mistica.compose.shape.Circle
 import com.telefonica.mistica.compose.tag.Tag
-import com.telefonica.mistica.tag.TagStyle
+import com.telefonica.mistica.compose.theme.MisticaTheme
+import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 import com.telefonica.mistica.tag.TagView
 
 @Composable
@@ -26,26 +35,41 @@ fun DataCard(
 ) {
     Card(
         modifier = modifier,
-        iconRes = iconRes,
-        cardTag = cardTag,
-        preTitle = preTitle,
-        title = title,
-        subtitle = subtitle,
-        titleMaxLines = titleMaxLines,
-        description = description,
-        descriptionMaxLines = descriptionMaxLines,
-        primaryButton = primaryButton,
-        linkButton = linkButton,
-        customContent = customContent,
-    )
+    ) {
+        CardIcon(iconRes)
+        CardContent(cardTag, preTitle, title, subtitle, description)
+        customContent()
+        CardActions(primaryButton, linkButton)
+    }
 }
 
-data class Tag(
-    val content: String,
-    @TagStyle val style: Int = TagView.TYPE_PROMO,
-)
+@Composable
+private fun CardIcon(iconRes: Int?) {
+    iconRes?.let {
+        Circle {
+            Image(
+                painterResource(id = iconRes),
+                contentDescription = null,
+                contentScale = ContentScale.Crop
+            )
+        }
+    }
+}
 
-data class Action(
-    val text: String,
-    val onTapped: () -> Unit,
-)
+
+@Preview
+@Composable
+fun CardPreview() {
+    MisticaTheme(brand = MovistarBrand) {
+        DataCard(
+            iconRes = R.drawable.bg_list_image,
+            cardTag = Tag("HEADLINE").withStyle(TagView.TYPE_PROMO),
+            preTitle = "Pretitle",
+            title = "Title",
+            subtitle = "Subtitle",
+            description = "Description",
+            primaryButton = Action("Primary") {},
+            linkButton = Action("Link") {}
+        )
+    }
+}

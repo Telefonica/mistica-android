@@ -1,8 +1,6 @@
 package com.telefonica.mistica.compose.card
 
-import androidx.annotation.DrawableRes
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.focusable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -17,33 +15,16 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.telefonica.mistica.compose.R
 import com.telefonica.mistica.compose.button.Button
 import com.telefonica.mistica.compose.button.ButtonStyle
-import com.telefonica.mistica.compose.shape.Circle
 import com.telefonica.mistica.compose.tag.Tag
 import com.telefonica.mistica.compose.theme.MisticaTheme
-import com.telefonica.mistica.compose.theme.brand.MovistarBrand
-import com.telefonica.mistica.tag.TagView
 
 @Composable
 fun Card(
     modifier: Modifier = Modifier,
-    @DrawableRes iconRes: Int? = null,
-    cardTag: Tag? = null,
-    preTitle: String? = null,
-    title: String? = null,
-    subtitle: String? = null,
-    titleMaxLines: Int? = 1,//TODO gmerino
-    description: String? = null,
-    descriptionMaxLines: Int? = 1,//TODO gmerino
-    primaryButton: Action? = null,
-    linkButton: Action? = null,
-    customContent: @Composable () -> Unit = {},
+    content: @Composable () -> Unit = {},
 ) {
 
     androidx.compose.material.Card(
@@ -62,16 +43,13 @@ fun Card(
                 bottom = 24.dp,
             ),
         ) {
-            CardIcon(iconRes)
-            CardContent(cardTag, preTitle, title, subtitle, description)
-            customContent()
-            CardActions(primaryButton, linkButton)
+            content()
         }
     }
 }
 
 @Composable
-private fun CardActions(primaryButton: Action?, linkButton: Action?) {
+internal fun CardActions(primaryButton: Action?, linkButton: Action?) {
     Row(
         modifier = Modifier
             .padding(top = 16.dp)
@@ -97,21 +75,10 @@ private fun CardActions(primaryButton: Action?, linkButton: Action?) {
     }
 }
 
-@Composable
-private fun CardIcon(iconRes: Int?) {
-    iconRes?.let {
-        Circle {
-            Image(
-                painterResource(id = iconRes),
-                contentDescription = null,
-                contentScale = ContentScale.Crop
-            )
-        }
-    }
-}
+
 
 @Composable
-private fun CardContent(
+internal fun CardContent(
     cardTag: Tag?,
     preTitle: String?,
     title: String?,
@@ -168,39 +135,3 @@ data class Action(
     val text: String,
     val onTapped: () -> Unit,
 )
-
-@Composable
-private fun Action.buildPrimary() {
-    Button(
-        text = text,
-        onClickListener = onTapped,
-        buttonStyle = ButtonStyle.PRIMARY_SMALL,
-    )
-}
-
-@Composable
-private fun Action.buildLink() {
-    Button(
-        modifier = Modifier.padding(start = 16.dp),
-        text = text,
-        onClickListener = onTapped,
-        buttonStyle = ButtonStyle.LINK,
-    )
-}
-
-@Preview
-@Composable
-fun CardPreview() {
-    MisticaTheme(brand = MovistarBrand) {
-        Card(
-            iconRes = R.drawable.bg_list_image,
-            cardTag = Tag("HEADLINE").withStyle(TagView.TYPE_PROMO),
-            preTitle = "Pretitle",
-            title = "Title",
-            subtitle = "Subtitle",
-            description = "Description",
-            primaryButton = Action("Primary") {},
-            linkButton = Action("Link") {}
-        )
-    }
-}
