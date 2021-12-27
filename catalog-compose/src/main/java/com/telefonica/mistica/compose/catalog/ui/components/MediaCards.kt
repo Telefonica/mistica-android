@@ -91,7 +91,7 @@ fun MediaCards() {
 
         MediaCard(
             modifier = Modifier
-                .padding(top = 24.dp)
+                .padding(24.dp)
                 .fillMaxWidth(),
             image = MediaCardImageResource(R.drawable.card_image_sample),
             tag = if (tag.isNotEmpty()) Tag(tag).withStyle(tagType) else null,
