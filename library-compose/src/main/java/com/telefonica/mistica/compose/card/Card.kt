@@ -24,6 +24,7 @@ import com.telefonica.mistica.compose.theme.MisticaTheme
 @Composable
 fun Card(
     modifier: Modifier = Modifier,
+    header: @Composable () -> Unit = {},
     content: @Composable () -> Unit = {},
 ) {
 
@@ -35,15 +36,18 @@ fun Card(
         shape = RoundedCornerShape(4.dp),
         border = BorderStroke(width = 1.dp, color = MisticaTheme.colors.border)
     ) {
-        Column(
-            modifier = Modifier.padding(
-                start = 16.dp,
-                top = 8.dp,
-                end = 16.dp,
-                bottom = 24.dp,
-            ),
-        ) {
-            content()
+        Column {
+            header()
+            Column(
+                modifier = Modifier.padding(
+                    start = 16.dp,
+                    top = 8.dp,
+                    end = 16.dp,
+                    bottom = 24.dp,
+                ),
+            ) {
+                content()
+            }
         }
     }
 }
@@ -116,7 +120,7 @@ internal fun CardContent(
         subtitle?.let {
             Text(
                 modifier = Modifier.padding(top = 8.dp),
-                text = subtitle,
+                text = subtitle.uppercase(),
                 style = MisticaTheme.typography.preset2,
             )
         }

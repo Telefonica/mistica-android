@@ -23,13 +23,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.card.Action
-import com.telefonica.mistica.compose.card.datacard.DataCard
+import com.telefonica.mistica.compose.card.mediacard.MediaCard
+import com.telefonica.mistica.compose.card.mediacard.MediaCardImage.MediaCardImageResource
 import com.telefonica.mistica.compose.catalog.R
 import com.telefonica.mistica.compose.tag.Tag
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_PROMO
 
 @Composable
-fun DataCards() {
+fun MediaCards() {
 
     var tag: String by remember { mutableStateOf("tag") }
     var tagType: Int by remember { mutableStateOf(TYPE_PROMO) }
@@ -52,7 +53,6 @@ fun DataCards() {
     var secondaryAction: String by remember { mutableStateOf("secondaryAction") }
 
     var withAditionalContent: Boolean by remember { mutableStateOf(false) }
-    var withIcon: Boolean by remember { mutableStateOf(false) }
 
     Column(
         modifier = Modifier
@@ -89,18 +89,12 @@ fun DataCards() {
             Text("With aditional content")
             Checkbox(checked = withAditionalContent, onCheckedChange = { withAditionalContent = !withAditionalContent })
         }
-        Row(
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Text("With icon")
-            Checkbox(checked = withIcon, onCheckedChange = { withIcon = !withIcon })
-        }
 
-        DataCard(
+        MediaCard(
             modifier = Modifier
                 .padding(top = 24.dp)
                 .width(IntrinsicSize.Max),
-            iconRes = if (withIcon) R.drawable.card_image_sample else null,
+            image = MediaCardImageResource(R.drawable.card_image_sample),
             tag = if (tag.isNotEmpty()) Tag(tag).withStyle(tagType) else null,
             preTitle = preTitle.getOrNullIfEmpty(),
             title = title.getOrNullIfEmpty(),
