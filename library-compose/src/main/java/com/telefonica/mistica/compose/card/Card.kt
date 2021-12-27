@@ -54,27 +54,29 @@ fun Card(
 
 @Composable
 internal fun CardActions(primaryButton: Action?, linkButton: Action?) {
-    Row(
-        modifier = Modifier
-            .padding(top = 16.dp)
-            .width(IntrinsicSize.Max),
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.Start,
+    if (primaryButton != null && linkButton != null) {
+        Row(
+            modifier = Modifier
+                .padding(top = 16.dp)
+                .width(IntrinsicSize.Max),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.Start,
 
-    ) {
-        primaryButton?.let {
-            Button(
-                text = it.text,
-                onClickListener = it.onTapped,
-                buttonStyle = ButtonStyle.PRIMARY_SMALL,
-            )
-        }
-        linkButton?.let {
-            Button(
-                text = it.text,
-                onClickListener = it.onTapped,
-                buttonStyle = ButtonStyle.LINK,
-            )
+            ) {
+            primaryButton?.let {
+                Button(
+                    text = it.text,
+                    onClickListener = it.onTapped,
+                    buttonStyle = ButtonStyle.PRIMARY_SMALL,
+                )
+            }
+            linkButton?.let {
+                Button(
+                    text = it.text,
+                    onClickListener = it.onTapped,
+                    buttonStyle = ButtonStyle.LINK,
+                )
+            }
         }
     }
 }
