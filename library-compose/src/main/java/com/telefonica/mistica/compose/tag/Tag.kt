@@ -101,7 +101,7 @@ class Tag constructor(
     @SuppressLint("ComposableNaming")
     @Composable
     fun build() {
-        Tag(text = content, modifier = modifier, style = style, icon = icon)
+        Tag(text = content.uppercase(), modifier = modifier, style = style, icon = icon)
     }
 }
 

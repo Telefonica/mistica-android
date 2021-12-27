@@ -41,7 +41,7 @@ fun Card(
             Column(
                 modifier = Modifier.padding(
                     start = 16.dp,
-                    top = 8.dp,
+                    top = 16.dp,
                     end = 16.dp,
                     bottom = 24.dp,
                 ),
@@ -83,20 +83,20 @@ internal fun CardActions(primaryButton: Action?, linkButton: Action?) {
 
 @Composable
 internal fun CardContent(
-    cardTag: Tag?,
+    tag: Tag?,
     preTitle: String?,
     title: String?,
     subtitle: String?,
     description: String?,
 ) {
     Column {
-        if (cardTag != null) {
+        if (tag != null) {
             Box(modifier = Modifier
                 .padding(
                     top = 8.dp
                 )
             ) {
-                cardTag.build()
+                tag.build()
             }
 
         }
@@ -112,14 +112,14 @@ internal fun CardContent(
 
         title?.let {
             Text(
-                modifier = Modifier.padding(top = 8.dp),
+                modifier = Modifier.padding(top = 4.dp),
                 text = title,
                 style = MisticaTheme.typography.preset4,
             )
         }
         subtitle?.let {
             Text(
-                modifier = Modifier.padding(top = 8.dp),
+                modifier = Modifier.padding(top =4.dp),
                 text = subtitle.uppercase(),
                 style = MisticaTheme.typography.preset2,
             )
