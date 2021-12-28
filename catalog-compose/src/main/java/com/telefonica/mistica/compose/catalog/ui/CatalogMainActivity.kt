@@ -258,6 +258,6 @@ object NavigationRoutes {
     const val FEEDBACKS = "feedbacks"
     const val LISTS = "lists"
     const val TAGS = "tags"
-    const val DATA_CARDS = "Data Cards"
-    const val MEDIA_CARDS = "Media Cards"
+    const val DATA_CARDS = "data-cards"
+    const val MEDIA_CARDS = "media-cards"
 }
