@@ -6,7 +6,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.runtime.structuralEqualityPolicy
 import androidx.compose.ui.graphics.Color
-
 class MisticaColors(
     appBarBackground: Color = Color.Unspecified,
     background: Color = Color.Unspecified,
@@ -41,6 +40,8 @@ class MisticaColors(
     buttonSecondaryBorderDisabledInverse: Color = Color.Unspecified,
     buttonSecondaryBorderInverse: Color = Color.Unspecified,
     buttonSecondaryBorderSelectedInverse: Color = Color.Unspecified,
+    carouselIndicatorActiveColor: Color = Color.Unspecified,
+    carouselIndicatorInactiveColor: Color = Color.Unspecified,
     control: Color = Color.Unspecified,
     controlActive: Color = Color.Unspecified,
     controlError: Color = Color.Unspecified,
@@ -312,23 +313,28 @@ class MisticaColors(
         internal set
     var textTagInactive by mutableStateOf(textTagInactive, structuralEqualityPolicy())
         internal set
+    var carouselIndicatorActiveColor by mutableStateOf(carouselIndicatorActiveColor, structuralEqualityPolicy())
+        internal set
+    var carouselIndicatorInactiveColor by mutableStateOf(carouselIndicatorInactiveColor, structuralEqualityPolicy())
+        internal set
 
     fun copy(
         appBarBackground: Color = this.appBarBackground,
         background: Color = this.background,
-        backgroundContainer: Color = this.backgroundContainer,
+        backgroundAlternative: Color = this.backgroundAlternative,
         backgroundBrand: Color = this.backgroundBrand,
+        backgroundContainer: Color = this.backgroundContainer,
+        backgroundFeedbackBottom: Color = this.backgroundFeedbackBottom,
         backgroundOverlay: Color = this.backgroundOverlay,
         backgroundSkeleton: Color = this.backgroundSkeleton,
         backgroundSkeletonInverse: Color = this.backgroundSkeletonInverse,
-        navigationBarBackground: Color = this.navigationBarBackground,
-        backgroundAlternative: Color = this.backgroundAlternative,
-        backgroundFeedbackBottom: Color = this.backgroundFeedbackBottom,
-        skeletonWave: Color = this.skeletonWave,
-        borderLight: Color = this.borderLight,
+        badge: Color = this.badge,
         border: Color = this.border,
         borderDark: Color = this.borderDark,
+        borderLight: Color = this.borderLight,
         borderSelected: Color = this.borderSelected,
+        brand: Color = this.brand,
+        brandDark: Color = this.brandDark,
         buttonDangerBackground: Color = this.buttonDangerBackground,
         buttonDangerBackgroundDisabled: Color = this.buttonDangerBackgroundDisabled,
         buttonDangerBackgroundSelected: Color = this.buttonDangerBackgroundSelected,
@@ -346,6 +352,45 @@ class MisticaColors(
         buttonSecondaryBorderDisabledInverse: Color = this.buttonSecondaryBorderDisabledInverse,
         buttonSecondaryBorderInverse: Color = this.buttonSecondaryBorderInverse,
         buttonSecondaryBorderSelectedInverse: Color = this.buttonSecondaryBorderSelectedInverse,
+        carouselIndicatorActiveColor: Color = this.carouselIndicatorActiveColor,
+        carouselIndicatorInactiveColor: Color = this.carouselIndicatorInactiveColor,
+        control: Color = this.control,
+        controlActive: Color = this.controlActive,
+        controlError: Color = this.controlError,
+        divider: Color = this.divider,
+        dividerInverse: Color = this.dividerInverse,
+        error: Color = this.error,
+        feedbackErrorBackground: Color = this.feedbackErrorBackground,
+        feedbackInfoBackground: Color = this.feedbackInfoBackground,
+        gradientBackgroundFirst: Color = this.gradientBackgroundFirst,
+        gradientBackgroundFourth: Color = this.gradientBackgroundFourth,
+        gradientBackgroundSecond: Color = this.gradientBackgroundSecond,
+        gradientBackgroundThird: Color = this.gradientBackgroundThird,
+        highlight: Color = this.highlight,
+        inverse: Color = this.inverse,
+        loadingBar: Color = this.loadingBar,
+        loadingBarBackground: Color = this.loadingBarBackground,
+        loginLoadingGradientFirst: Color = this.loginLoadingGradientFirst,
+        loginLoadingGradientFourth: Color = this.loginLoadingGradientFourth,
+        loginLoadingGradientSecond: Color = this.loginLoadingGradientSecond,
+        loginLoadingGradientThird: Color = this.loginLoadingGradientThird,
+        navigationBarBackground: Color = this.navigationBarBackground,
+        navigationBarDivider: Color = this.navigationBarDivider,
+        neutralHigh: Color = this.neutralHigh,
+        neutralLow: Color = this.neutralLow,
+        neutralMedium: Color = this.neutralMedium,
+        promo: Color = this.promo,
+        skeletonWave: Color = this.skeletonWave,
+        success: Color = this.success,
+        tagBackgroundActive: Color = this.tagBackgroundActive,
+        tagBackgroundError: Color = this.tagBackgroundError,
+        tagBackgroundInactive: Color = this.tagBackgroundInactive,
+        tagBackgroundPromo: Color = this.tagBackgroundPromo,
+        tagBackgroundSuccess: Color = this.tagBackgroundSuccess,
+        tagBackgroundWarning: Color = this.tagBackgroundWarning,
+        textAmount: Color = this.textAmount,
+        textAppBar: Color = this.textAppBar,
+        textAppBarSelected: Color = this.textAppBarSelected,
         textButtonPrimary: Color = this.textButtonPrimary,
         textButtonPrimaryDisabled: Color = this.textButtonPrimaryDisabled,
         textButtonPrimaryInverse: Color = this.textButtonPrimaryInverse,
@@ -353,188 +398,153 @@ class MisticaColors(
         textButtonPrimaryInverseSelected: Color = this.textButtonPrimaryInverseSelected,
         textButtonSecondary: Color = this.textButtonSecondary,
         textButtonSecondaryDisabled: Color = this.textButtonSecondaryDisabled,
-        textButtonSecondarySelected: Color = this.textButtonSecondarySelected,
         textButtonSecondaryInverse: Color = this.textButtonSecondaryInverse,
         textButtonSecondaryInverseDisabled: Color = this.textButtonSecondaryInverseDisabled,
         textButtonSecondaryInverseSelected: Color = this.textButtonSecondaryInverseSelected,
+        textButtonSecondarySelected: Color = this.textButtonSecondarySelected,
+        textDisabled: Color = this.textDisabled,
         textLink: Color = this.textLink,
-        textLinkInverse: Color = this.textLinkInverse,
         textLinkDanger: Color = this.textLinkDanger,
         textLinkDangerDisabled: Color = this.textLinkDangerDisabled,
         textLinkDisabled: Color = this.textLinkDisabled,
+        textLinkInverse: Color = this.textLinkInverse,
         textLinkSnackbar: Color = this.textLinkSnackbar,
-        control: Color = this.control,
-        controlActive: Color = this.controlActive,
-        controlError: Color = this.controlError,
-        loadingBar: Color = this.loadingBar,
-        loadingBarBackground: Color = this.loadingBarBackground,
-        divider: Color = this.divider,
-        dividerInverse: Color = this.dividerInverse,
-        navigationBarDivider: Color = this.navigationBarDivider,
-        badge: Color = this.badge,
-        feedbackErrorBackground: Color = this.feedbackErrorBackground,
-        feedbackInfoBackground: Color = this.feedbackInfoBackground,
-        brand: Color = this.brand,
-        brandDark: Color = this.brandDark,
-        inverse: Color = this.inverse,
-        neutralHigh: Color = this.neutralHigh,
-        neutralLow: Color = this.neutralLow,
-        neutralMedium: Color = this.neutralMedium,
-        promo: Color = this.promo,
-        highlight: Color = this.highlight,
+        textNavigationBarPrimary: Color = this.textNavigationBarPrimary,
+        textNavigationBarSecondary: Color = this.textNavigationBarSecondary,
         textPrimary: Color = this.textPrimary,
         textPrimaryInverse: Color = this.textPrimaryInverse,
         textSecondary: Color = this.textSecondary,
         textSecondaryInverse: Color = this.textSecondaryInverse,
-        textDisabled: Color = this.textDisabled,
-        textAmount: Color = this.textAmount,
-        error: Color = this.error,
-        success: Color = this.success,
-        warning: Color = this.warning,
-        textNavigationBarPrimary: Color = this.textNavigationBarPrimary,
-        textNavigationBarSecondary: Color = this.textNavigationBarSecondary,
-        textAppBar: Color = this.textAppBar,
-        textAppBarSelected: Color = this.textAppBarSelected,
-        gradientBackgroundFirst: Color = this.gradientBackgroundFirst,
-        gradientBackgroundSecond: Color = this.gradientBackgroundSecond,
-        gradientBackgroundThird: Color = this.gradientBackgroundThird,
-        gradientBackgroundFourth: Color = this.gradientBackgroundFourth,
-        loginLoadingGradientFirst: Color = this.loginLoadingGradientFirst,
-        loginLoadingGradientSecond: Color = this.loginLoadingGradientSecond,
-        loginLoadingGradientThird: Color = this.loginLoadingGradientThird,
-        loginLoadingGradientFourth: Color = this.loginLoadingGradientFourth,
-        tagBackgroundSuccess: Color = this.tagBackgroundSuccess,
-        tagBackgroundWarning: Color = this.tagBackgroundWarning,
-        tagBackgroundError: Color = this.tagBackgroundError,
-        tagBackgroundPromo: Color = this.tagBackgroundPromo,
-        tagBackgroundActive: Color = this.tagBackgroundActive,
-        tagBackgroundInactive: Color = this.tagBackgroundInactive,
+        textTagActive: Color = this.textTagActive,
+        textTagError: Color = this.textTagError,
+        textTagInactive: Color = this.textTagInactive,
+        textTagPromo: Color = this.textTagPromo,
         textTagSuccess: Color = this.textTagSuccess,
         textTagWarning: Color = this.textTagWarning,
-        textTagError: Color = this.textTagError,
-        textTagPromo: Color = this.textTagPromo,
-        textTagActive: Color = this.textTagActive,
-        textTagInactive: Color = this.textTagInactive,
+        warning: Color = this.warning,
     ): MisticaColors = MisticaColors(
-        appBarBackground,
-        background,
-        backgroundContainer,
-        backgroundBrand,
-        backgroundOverlay,
-        backgroundSkeleton,
-        backgroundSkeletonInverse,
-        navigationBarBackground,
-        backgroundAlternative,
-        backgroundFeedbackBottom,
-        skeletonWave,
-        borderLight,
-        border,
-        borderDark,
-        borderSelected,
-        buttonDangerBackground,
-        buttonDangerBackgroundDisabled,
-        buttonDangerBackgroundSelected,
-        buttonLinkBackgroundSelected,
-        buttonLinkBackgroundSelectedInverse,
-        buttonPrimaryBackground,
-        buttonPrimaryBackgroundDisabled,
-        buttonPrimaryBackgroundDisabledInverse,
-        buttonPrimaryBackgroundInverse,
-        buttonPrimaryBackgroundSelected,
-        buttonPrimaryBackgroundSelectedInverse,
-        buttonSecondaryBackground,
-        buttonSecondaryBackgroundDisabled,
-        buttonSecondaryBackgroundSelected,
-        buttonSecondaryBorderDisabledInverse,
-        buttonSecondaryBorderInverse,
-        buttonSecondaryBorderSelectedInverse,
-        textButtonPrimary,
-        textButtonPrimaryDisabled,
-        textButtonPrimaryInverse,
-        textButtonPrimaryInverseDisabled,
-        textButtonPrimaryInverseSelected,
-        textButtonSecondary,
-        textButtonSecondaryDisabled,
-        textButtonSecondarySelected,
-        textButtonSecondaryInverse,
-        textButtonSecondaryInverseDisabled,
-        textButtonSecondaryInverseSelected,
-        textLink,
-        textLinkInverse,
-        textLinkDanger,
-        textLinkDangerDisabled,
-        textLinkDisabled,
-        textLinkSnackbar,
-        control,
-        controlActive,
-        controlError,
-        loadingBar,
-        loadingBarBackground,
-        divider,
-        dividerInverse,
-        navigationBarDivider,
-        badge,
-        feedbackErrorBackground,
-        feedbackInfoBackground,
-        brand,
-        brandDark,
-        inverse,
-        neutralHigh,
-        neutralLow,
-        neutralMedium,
-        promo,
-        highlight,
-        textPrimary,
-        textPrimaryInverse,
-        textSecondary,
-        textSecondaryInverse,
-        textDisabled,
-        textAmount,
-        error,
-        success,
-        warning,
-        textNavigationBarPrimary,
-        textNavigationBarSecondary,
-        textAppBar,
-        textAppBarSelected,
-        gradientBackgroundFirst,
-        gradientBackgroundSecond,
-        gradientBackgroundThird,
-        gradientBackgroundFourth,
-        loginLoadingGradientFirst,
-        loginLoadingGradientSecond,
-        loginLoadingGradientThird,
-        loginLoadingGradientFourth,
-        tagBackgroundSuccess,
-        tagBackgroundWarning,
-        tagBackgroundError,
-        tagBackgroundPromo,
-        tagBackgroundActive,
-        tagBackgroundInactive,
-        textTagSuccess,
-        textTagWarning,
-        textTagError,
-        textTagPromo,
-        textTagActive,
-        textTagInactive,
+        appBarBackground = appBarBackground,
+        background = background,
+        backgroundAlternative = backgroundAlternative,
+        backgroundBrand = backgroundBrand,
+        backgroundContainer = backgroundContainer,
+        backgroundFeedbackBottom = backgroundFeedbackBottom,
+        backgroundOverlay = backgroundOverlay,
+        backgroundSkeleton = backgroundSkeleton,
+        backgroundSkeletonInverse = backgroundSkeletonInverse,
+        badge = badge,
+        border = border,
+        borderDark = borderDark,
+        borderLight = borderLight,
+        borderSelected = borderSelected,
+        brand = brand,
+        brandDark = brandDark,
+        buttonDangerBackground = buttonDangerBackground,
+        buttonDangerBackgroundDisabled = buttonDangerBackgroundDisabled,
+        buttonDangerBackgroundSelected = buttonDangerBackgroundSelected,
+        buttonLinkBackgroundSelected = buttonLinkBackgroundSelected,
+        buttonLinkBackgroundSelectedInverse = buttonLinkBackgroundSelectedInverse,
+        buttonPrimaryBackground = buttonPrimaryBackground,
+        buttonPrimaryBackgroundDisabled = buttonPrimaryBackgroundDisabled,
+        buttonPrimaryBackgroundDisabledInverse = buttonPrimaryBackgroundDisabledInverse,
+        buttonPrimaryBackgroundInverse = buttonPrimaryBackgroundInverse,
+        buttonPrimaryBackgroundSelected = buttonPrimaryBackgroundSelected,
+        buttonPrimaryBackgroundSelectedInverse = buttonPrimaryBackgroundSelectedInverse,
+        buttonSecondaryBackground = buttonSecondaryBackground,
+        buttonSecondaryBackgroundDisabled = buttonSecondaryBackgroundDisabled,
+        buttonSecondaryBackgroundSelected = buttonSecondaryBackgroundSelected,
+        buttonSecondaryBorderDisabledInverse = buttonSecondaryBorderDisabledInverse,
+        buttonSecondaryBorderInverse = buttonSecondaryBorderInverse,
+        buttonSecondaryBorderSelectedInverse = buttonSecondaryBorderSelectedInverse,
+        carouselIndicatorActiveColor = carouselIndicatorActiveColor,
+        carouselIndicatorInactiveColor = carouselIndicatorInactiveColor,
+        control = control,
+        controlActive = controlActive,
+        controlError = controlError,
+        divider = divider,
+        dividerInverse = dividerInverse,
+        error = error,
+        feedbackErrorBackground = feedbackErrorBackground,
+        feedbackInfoBackground = feedbackInfoBackground,
+        gradientBackgroundFirst = gradientBackgroundFirst,
+        gradientBackgroundFourth = gradientBackgroundFourth,
+        gradientBackgroundSecond = gradientBackgroundSecond,
+        gradientBackgroundThird = gradientBackgroundThird,
+        highlight = highlight,
+        inverse = inverse,
+        loadingBar = loadingBar,
+        loadingBarBackground = loadingBarBackground,
+        loginLoadingGradientFirst = loginLoadingGradientFirst,
+        loginLoadingGradientFourth = loginLoadingGradientFourth,
+        loginLoadingGradientSecond = loginLoadingGradientSecond,
+        loginLoadingGradientThird = loginLoadingGradientThird,
+        navigationBarBackground = navigationBarBackground,
+        navigationBarDivider = navigationBarDivider,
+        neutralHigh = neutralHigh,
+        neutralLow = neutralLow,
+        neutralMedium = neutralMedium,
+        promo = promo,
+        skeletonWave = skeletonWave,
+        success = success,
+        tagBackgroundActive = tagBackgroundActive,
+        tagBackgroundError = tagBackgroundError,
+        tagBackgroundInactive = tagBackgroundInactive,
+        tagBackgroundPromo = tagBackgroundPromo,
+        tagBackgroundSuccess = tagBackgroundSuccess,
+        tagBackgroundWarning = tagBackgroundWarning,
+        textAmount = textAmount,
+        textAppBar = textAppBar,
+        textAppBarSelected = textAppBarSelected,
+        textButtonPrimary = textButtonPrimary,
+        textButtonPrimaryDisabled = textButtonPrimaryDisabled,
+        textButtonPrimaryInverse = textButtonPrimaryInverse,
+        textButtonPrimaryInverseDisabled = textButtonPrimaryInverseDisabled,
+        textButtonPrimaryInverseSelected = textButtonPrimaryInverseSelected,
+        textButtonSecondary = textButtonSecondary,
+        textButtonSecondaryDisabled = textButtonSecondaryDisabled,
+        textButtonSecondaryInverse = textButtonSecondaryInverse,
+        textButtonSecondaryInverseDisabled = textButtonSecondaryInverseDisabled,
+        textButtonSecondaryInverseSelected = textButtonSecondaryInverseSelected,
+        textButtonSecondarySelected = textButtonSecondarySelected,
+        textDisabled = textDisabled,
+        textLink = textLink,
+        textLinkDanger = textLinkDanger,
+        textLinkDangerDisabled = textLinkDangerDisabled,
+        textLinkDisabled = textLinkDisabled,
+        textLinkInverse = textLinkInverse,
+        textLinkSnackbar = textLinkSnackbar,
+        textNavigationBarPrimary = textNavigationBarPrimary,
+        textNavigationBarSecondary = textNavigationBarSecondary,
+        textPrimary = textPrimary,
+        textPrimaryInverse = textPrimaryInverse,
+        textSecondary = textSecondary,
+        textSecondaryInverse = textSecondaryInverse,
+        textTagActive = textTagActive,
+        textTagError = textTagError,
+        textTagInactive = textTagInactive,
+        textTagPromo = textTagPromo,
+        textTagSuccess = textTagSuccess,
+        textTagWarning = textTagWarning,
+        warning = warning,
     )
 
     internal fun MisticaColors.updateColorsFrom(other: MisticaColors) {
         appBarBackground = other.appBarBackground
         background = other.background
-        backgroundContainer = other.backgroundContainer
+        backgroundAlternative = other.backgroundAlternative
         backgroundBrand = other.backgroundBrand
+        backgroundContainer = other.backgroundContainer
+        backgroundFeedbackBottom = other.backgroundFeedbackBottom
         backgroundOverlay = other.backgroundOverlay
         backgroundSkeleton = other.backgroundSkeleton
         backgroundSkeletonInverse = other.backgroundSkeletonInverse
-        navigationBarBackground = other.navigationBarBackground
-        backgroundAlternative = other.backgroundAlternative
-        backgroundFeedbackBottom = other.backgroundFeedbackBottom
-        skeletonWave = other.skeletonWave
-        borderLight = other.borderLight
+        badge = other.badge
         border = other.border
         borderDark = other.borderDark
+        borderLight = other.borderLight
         borderSelected = other.borderSelected
+        brand = other.brand
+        brandDark = other.brandDark
         buttonDangerBackground = other.buttonDangerBackground
         buttonDangerBackgroundDisabled = other.buttonDangerBackgroundDisabled
         buttonDangerBackgroundSelected = other.buttonDangerBackgroundSelected
@@ -552,6 +562,45 @@ class MisticaColors(
         buttonSecondaryBorderDisabledInverse = other.buttonSecondaryBorderDisabledInverse
         buttonSecondaryBorderInverse = other.buttonSecondaryBorderInverse
         buttonSecondaryBorderSelectedInverse = other.buttonSecondaryBorderSelectedInverse
+        carouselIndicatorActiveColor = other.carouselIndicatorActiveColor
+        carouselIndicatorInactiveColor = other.carouselIndicatorInactiveColor
+        control = other.control
+        controlActive = other.controlActive
+        controlError = other.controlError
+        divider = other.divider
+        dividerInverse = other.dividerInverse
+        error = other.error
+        feedbackErrorBackground = other.feedbackErrorBackground
+        feedbackInfoBackground = other.feedbackInfoBackground
+        gradientBackgroundFirst = other.gradientBackgroundFirst
+        gradientBackgroundFourth = other.gradientBackgroundFourth
+        gradientBackgroundSecond = other.gradientBackgroundSecond
+        gradientBackgroundThird = other.gradientBackgroundThird
+        highlight = other.highlight
+        inverse = other.inverse
+        loadingBar = other.loadingBar
+        loadingBarBackground = other.loadingBarBackground
+        loginLoadingGradientFirst = other.loginLoadingGradientFirst
+        loginLoadingGradientFourth = other.loginLoadingGradientFourth
+        loginLoadingGradientSecond = other.loginLoadingGradientSecond
+        loginLoadingGradientThird = other.loginLoadingGradientThird
+        navigationBarBackground = other.navigationBarBackground
+        navigationBarDivider = other.navigationBarDivider
+        neutralHigh = other.neutralHigh
+        neutralLow = other.neutralLow
+        neutralMedium = other.neutralMedium
+        promo = other.promo
+        skeletonWave = other.skeletonWave
+        success = other.success
+        tagBackgroundActive = other.tagBackgroundActive
+        tagBackgroundError = other.tagBackgroundError
+        tagBackgroundInactive = other.tagBackgroundInactive
+        tagBackgroundPromo = other.tagBackgroundPromo
+        tagBackgroundSuccess = other.tagBackgroundSuccess
+        tagBackgroundWarning = other.tagBackgroundWarning
+        textAmount = other.textAmount
+        textAppBar = other.textAppBar
+        textAppBarSelected = other.textAppBarSelected
         textButtonPrimary = other.textButtonPrimary
         textButtonPrimaryDisabled = other.textButtonPrimaryDisabled
         textButtonPrimaryInverse = other.textButtonPrimaryInverse
@@ -559,68 +608,30 @@ class MisticaColors(
         textButtonPrimaryInverseSelected = other.textButtonPrimaryInverseSelected
         textButtonSecondary = other.textButtonSecondary
         textButtonSecondaryDisabled = other.textButtonSecondaryDisabled
-        textButtonSecondarySelected = other.textButtonSecondarySelected
         textButtonSecondaryInverse = other.textButtonSecondaryInverse
         textButtonSecondaryInverseDisabled = other.textButtonSecondaryInverseDisabled
         textButtonSecondaryInverseSelected = other.textButtonSecondaryInverseSelected
+        textButtonSecondarySelected = other.textButtonSecondarySelected
+        textDisabled = other.textDisabled
         textLink = other.textLink
-        textLinkInverse = other.textLinkInverse
         textLinkDanger = other.textLinkDanger
         textLinkDangerDisabled = other.textLinkDangerDisabled
         textLinkDisabled = other.textLinkDisabled
+        textLinkInverse = other.textLinkInverse
         textLinkSnackbar = other.textLinkSnackbar
-        control = other.control
-        controlActive = other.controlActive
-        controlError = other.controlError
-        loadingBar = other.loadingBar
-        loadingBarBackground = other.loadingBarBackground
-        divider = other.divider
-        dividerInverse = other.dividerInverse
-        navigationBarDivider = other.navigationBarDivider
-        badge = other.badge
-        feedbackErrorBackground = other.feedbackErrorBackground
-        feedbackInfoBackground = other.feedbackInfoBackground
-        brand = other.brand
-        brandDark = other.brandDark
-        inverse = other.inverse
-        neutralHigh = other.neutralHigh
-        neutralLow = other.neutralLow
-        neutralMedium = other.neutralMedium
-        promo = other.promo
-        highlight = other.highlight
+        textNavigationBarPrimary = other.textNavigationBarPrimary
+        textNavigationBarSecondary = other.textNavigationBarSecondary
         textPrimary = other.textPrimary
         textPrimaryInverse = other.textPrimaryInverse
         textSecondary = other.textSecondary
         textSecondaryInverse = other.textSecondaryInverse
-        textDisabled = other.textDisabled
-        textAmount = other.textAmount
-        error = other.error
-        success = other.success
-        warning = other.warning
-        textNavigationBarPrimary = other.textNavigationBarPrimary
-        textNavigationBarSecondary = other.textNavigationBarSecondary
-        textAppBar = other.textAppBar
-        textAppBarSelected = other.textAppBarSelected
-        gradientBackgroundFirst = other.gradientBackgroundFirst
-        gradientBackgroundSecond = other.gradientBackgroundSecond
-        gradientBackgroundThird = other.gradientBackgroundThird
-        gradientBackgroundFourth = other.gradientBackgroundFourth
-        loginLoadingGradientFirst = other.loginLoadingGradientFirst
-        loginLoadingGradientSecond = other.loginLoadingGradientSecond
-        loginLoadingGradientThird = other.loginLoadingGradientThird
-        loginLoadingGradientFourth = other.loginLoadingGradientFourth
-        tagBackgroundSuccess = other.tagBackgroundSuccess
-        tagBackgroundWarning = other.tagBackgroundWarning
-        tagBackgroundError = other.tagBackgroundError
-        tagBackgroundPromo = other.tagBackgroundPromo
-        tagBackgroundActive = other.tagBackgroundActive
-        tagBackgroundInactive = other.tagBackgroundInactive
+        textTagActive = other.textTagActive
+        textTagError = other.textTagError
+        textTagInactive = other.textTagInactive
+        textTagPromo = other.textTagPromo
         textTagSuccess = other.textTagSuccess
         textTagWarning = other.textTagWarning
-        textTagError = other.textTagError
-        textTagPromo = other.textTagPromo
-        textTagActive = other.textTagActive
-        textTagInactive = other.textTagInactive
+        warning = other.warning
     }
 }
 

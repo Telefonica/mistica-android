@@ -43,6 +43,8 @@ object MovistarBrand : Brand {
         buttonSecondaryBorderDisabledInverse = MovistarPaletteColor.movistar_color_blue_light50,
         buttonSecondaryBorderInverse = MovistarPaletteColor.movistar_color_white,
         buttonSecondaryBorderSelectedInverse = MovistarPaletteColor.movistar_color_blue_light50,
+        carouselIndicatorActiveColor = MovistarPaletteColor.movistar_color_blue, //TODO gmerino
+        carouselIndicatorInactiveColor = MovistarPaletteColor.movistar_color_grey_1, //TODO gmerino
         control = MovistarPaletteColor.movistar_color_grey_3,
         controlActive = MovistarPaletteColor.movistar_color_blue,
         controlError = MovistarPaletteColor.movistar_color_pepper,
@@ -138,6 +140,8 @@ object MovistarBrand : Brand {
             buttonSecondaryBorderDisabledInverse = MovistarPaletteColor.movistar_color_darkModeGrey,
             buttonSecondaryBorderInverse = MovistarPaletteColor.movistar_color_green,
             buttonSecondaryBorderSelectedInverse = MovistarPaletteColor.movistar_color_green_dark,
+            carouselIndicatorActiveColor = MovistarPaletteColor.movistar_color_blue, //TODO gmerino
+            carouselIndicatorInactiveColor = MovistarPaletteColor.movistar_color_grey_1, //TODO gmerino
             control = MovistarPaletteColor.movistar_color_grey_6,
             divider = MovistarPaletteColor.movistar_color_white_5_alpha,
             dividerInverse = MovistarPaletteColor.movistar_color_white_5_alpha,

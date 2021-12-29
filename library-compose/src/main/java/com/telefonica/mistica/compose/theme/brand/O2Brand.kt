@@ -43,6 +43,8 @@ object O2Brand : Brand {
         buttonSecondaryBorderDisabledInverse = O2PaletteColor.o2_color_blue_primary_light_50,
         buttonSecondaryBorderInverse = O2PaletteColor.o2_color_white,
         buttonSecondaryBorderSelectedInverse = O2PaletteColor.o2_color_blue_primary_light_50,
+        carouselIndicatorActiveColor = Color.Unspecified, //TODO gmerino
+        carouselIndicatorInactiveColor = Color.Unspecified, //TODO gmerino
         control = O2PaletteColor.o2_color_grey_3,
         controlActive = O2PaletteColor.o2_color_blue_primary,
         controlError = O2PaletteColor.o2_color_pepper,
@@ -143,6 +145,8 @@ object O2Brand : Brand {
         buttonSecondaryBorderDisabledInverse = O2PaletteColor.o2_color_darkModeGrey,
         buttonSecondaryBorderInverse = O2PaletteColor.o2_color_darkModeO2BluePrimary,
         buttonSecondaryBorderSelectedInverse = O2PaletteColor.o2_color_darkModeO2BluePrimaryDark,
+        carouselIndicatorActiveColor = Color.Unspecified, //TODO gmerino
+        carouselIndicatorInactiveColor = Color.Unspecified, //TODO gmerino
         control = O2PaletteColor.o2_color_darkModeGrey6,
         controlActive = O2PaletteColor.o2_color_blue_primary_light_50,
         divider = O2PaletteColor.o2_color_white_5_alpha,
