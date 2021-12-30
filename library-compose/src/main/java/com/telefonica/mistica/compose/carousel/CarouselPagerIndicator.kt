@@ -314,7 +314,7 @@ internal fun CarouselPagerIndicator(
         }
 
         Log.d("gmerinoTest", "Should animate $shouldAnimate")
-        if (shouldAnimate) {
+//        if (shouldAnimate) {
             Box(
                 Modifier
                     .offset {
@@ -339,7 +339,7 @@ internal fun CarouselPagerIndicator(
                     )
             )
         }
-    }
+//    }
 }
 
 private data class VisibleWindowState(
