@@ -121,6 +121,7 @@ internal fun CarouselPagerIndicator(
 
     //Check if we can move the bullet without moving to the edge
     var shouldTryToMoveTheWindow = false
+    shouldAnimate = true
     when (movementDirection) {
         DECREASE -> {
             val desirablePosition = pagerState.currentPage //visibleWindowState.currentSelected - 1
@@ -314,7 +315,7 @@ internal fun CarouselPagerIndicator(
         }
 
         Log.d("gmerinoTest", "Should animate $shouldAnimate")
-//        if (shouldAnimate) {
+        if (shouldAnimate) {
             Box(
                 Modifier
                     .offset {
@@ -339,7 +340,7 @@ internal fun CarouselPagerIndicator(
                     )
             )
         }
-//    }
+    }
 }
 
 private data class VisibleWindowState(
