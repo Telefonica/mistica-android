@@ -268,7 +268,6 @@ internal fun CarouselPagerIndicator(
             }
         }
     }
-//    }
 
     currentSelectedInWindow = items.currentSelectedPositionInWindow()
 
@@ -285,30 +284,14 @@ internal fun CarouselPagerIndicator(
             horizontalArrangement = Arrangement.spacedBy(spacing),
             verticalAlignment = Alignment.CenterVertically,
         ) {
-//            val offset: (Int) -> IntOffset = if (shouldAnimate) {{ IntOffset(0,0)}} else {
-//                { index ->
-//                    val scrollPosition = (index + pagerState.currentPageOffset)
-//                        .coerceIn(0f,
-//                            (pagerState.pageCount - 1)
-//                                .coerceAtLeast(0)
-//                                .toFloat())
-//                    val x = ((spacingPx + indicatorWidthPx) * scrollPosition).toInt()
-//                    Log.d("gmerinoTest", "Scroll position: $scrollPosition, x: $x")
-//                    IntOffset(
-//                        x = x,
-//                        y = 0
-//                    )
-//                }
-//            }
-            val offset: (Int) -> IntOffset = { IntOffset(0,0)}
 
-            items.filterNot{ it.type == INVISIBLE }.forEachIndexed { index, item ->
+            items.filterNot{ it.type == INVISIBLE }.forEach { item ->
                 Log.d("gmerinoTest2", "$item")
                 when (item.type) {
-                    UNSELECTED -> Box(indicatorUnselectedModifier.offset { offset(index) })
-                    SELECTED -> if (shouldAnimate) Box(indicatorSelectedModifier.offset { offset(index) }) else Box(indicatorSelectedNotAnimatedModifier.offset { offset(index) })
-                    UNSELECTED_SMALL -> Box(indicatorUnselectedSmallModifier.offset { offset(index) })
-                    UNSELECTED_VERY_SMALL -> Box(indicatorUnselectedVerySmallModifier.offset { offset(index) })
+                    UNSELECTED -> Box(indicatorUnselectedModifier)
+                    SELECTED -> if (shouldAnimate) Box(indicatorSelectedModifier) else Box(indicatorSelectedNotAnimatedModifier)
+                    UNSELECTED_SMALL -> Box(indicatorUnselectedSmallModifier)
+                    UNSELECTED_VERY_SMALL -> Box(indicatorUnselectedVerySmallModifier)
                     INVISIBLE -> {}
                 }
             }
