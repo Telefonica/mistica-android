@@ -45,13 +45,13 @@ internal fun CarouselPagerIndicator(
     modifier: Modifier = Modifier,
     activeColor: Color = LocalContentColor.current.copy(alpha = LocalContentAlpha.current),
     inactiveColor: Color = activeColor.copy(ContentAlpha.disabled),
-    indicatorSelectedWidth: Dp = 10.dp * 2, //TODO gmerino use real values
+    indicatorSelectedWidth: Dp = 6.dp , //TODO Check with design the values
     indicatorSelectedHeight: Dp = indicatorSelectedWidth,
-    indicatorUnselectedWidth: Dp = 8.dp * 2, //TODO gmerino use real values
+    indicatorUnselectedWidth: Dp = 4.dp, //TODO Check with design the values
     indicatorUnselectedHeight: Dp = indicatorUnselectedWidth,
-    indicatorUnselectedSmallWidth: Dp = 6.dp * 2, //TODO gmerino use real values
+    indicatorUnselectedSmallWidth: Dp = 3.dp, //TODO Check with design the values
     indicatorUnselectedSmallHeight: Dp = indicatorUnselectedSmallWidth,
-    indicatorUnselectedVerySmallWidth: Dp = 4.dp * 2, //TODO gmerino use real values
+    indicatorUnselectedVerySmallWidth: Dp = 2.dp, //TODO Check with design the values
     indicatorUnselectedVerySmallHeight: Dp = indicatorUnselectedVerySmallWidth,
     spacing: Dp = 8.dp,
     indicatorShape: Shape = CircleShape,
@@ -81,8 +81,7 @@ internal fun CarouselPagerIndicator(
             }
         })
     }
-    var currentSelectedInWindow by remember { mutableStateOf(0) }
-    val currentlySelected by remember { mutableStateOf(0) }
+    var currentlySelected by remember { mutableStateOf(0) }
     var shouldAnimate by remember { mutableStateOf(true) }
 
     val indicatorUnselectedModifier = remember {
@@ -113,76 +112,60 @@ internal fun CarouselPagerIndicator(
 
     log("----- (before: $visibleWindowState)")
 
-    val movementDirection: MovementDirection = when {
-        pagerState.currentPage > currentlySelected -> INCREASE
-        pagerState.currentPage < currentlySelected -> DECREASE
-        else -> NO_MOVEMENT //They're the same
-    }
+    val movementDirection: MovementDirection = calculateDirection(
+        pagerState = pagerState,
+        currentlySelected = currentlySelected
+    )
+    currentlySelected = pagerState.currentPage
 
-    //Check if we can move the bullet without moving to the edge
-    var shouldTryToMoveTheWindow = false
-    shouldAnimate = true
-    when (movementDirection) {
-        DECREASE -> {
-            val desirablePosition = pagerState.currentPage //visibleWindowState.currentSelected - 1
-            val canMoveTheBullet = !visibleWindowState.window.isTheEdge(desirablePosition)
-            if (canMoveTheBullet) {
-                log("Moving the bullet - $movementDirection")
-                visibleWindowState.currentSelected = desirablePosition
-            }
-            shouldTryToMoveTheWindow = !canMoveTheBullet
-        }
-        INCREASE -> {
-            val desirablePosition = pagerState.currentPage //visibleWindowState.currentSelected + 1
-            val canMoveTheBullet = !visibleWindowState.window.isTheEdge(desirablePosition)
-            if (canMoveTheBullet) {
-                log("Moving the bullet - $movementDirection")
-                visibleWindowState.currentSelected = desirablePosition
-            }
-            shouldTryToMoveTheWindow = !canMoveTheBullet
-        }
-        NO_MOVEMENT -> {}
-    }
-
-    //If we can't, we try to move the window
-    var shouldMoveTheBulletToTheEdge = false
-    if (shouldTryToMoveTheWindow) {
-        when (movementDirection) {
-            DECREASE -> {
-                val canMoveTheWindow = visibleWindowState.window.first > 0
-                if (canMoveTheWindow) {
-                    log("Moving the window - $movementDirection")
-                    visibleWindowState.window = visibleWindowState.window.moveDecreasing()
-                    visibleWindowState.currentSelected--
-                    shouldAnimate = false
-                }
-                shouldMoveTheBulletToTheEdge = !canMoveTheWindow
-            }
-            INCREASE -> {
-                val canMoveTheWindow = visibleWindowState.window.second < pagerCount - 1
-                if (canMoveTheWindow) {
-                    log("Moving the window - $movementDirection")
-                    visibleWindowState.window = visibleWindowState.window.moveIncreasing()
-                    visibleWindowState.currentSelected++
-                    shouldAnimate = false
-                }
-                shouldMoveTheBulletToTheEdge = !canMoveTheWindow
-            }
-            NO_MOVEMENT -> {}
-        }
-    }
-    //If we can't we move the bullet to the edge position
-    if (shouldMoveTheBulletToTheEdge) {
-        log("Moving to the edge - $movementDirection")
-        when (movementDirection) {
-            DECREASE -> visibleWindowState.currentSelected--
-            INCREASE -> visibleWindowState.currentSelected++
-            NO_MOVEMENT -> {}
-        }
-    }
+    calculateWindowPosition(
+        shouldAnimate = shouldAnimate,
+        movementDirection = movementDirection,
+        pagerState = pagerState,
+        visibleWindowState = visibleWindowState,
+        pagerCount = pagerCount,
+        onShouldAnimateUpdate = { shouldAnimate = it },
+        log = ::log
+    )
 
     log("----- (after $visibleWindowState)")
 
+    calculateItems(
+        items,
+        visibleWindowState,
+        pagerCount,
+        pagerState,
+        log = ::log
+    )
+
+    PagerIndicatorBox(
+        items = items,
+        indicatorUnselectedWidth = indicatorUnselectedWidth,
+        indicatorUnselectedSmallWidth = indicatorUnselectedSmallWidth,
+        indicatorUnselectedVerySmallWidth = indicatorUnselectedVerySmallWidth,
+        spacing = spacing,
+        modifier = modifier,
+        indicatorUnselectedModifier = indicatorUnselectedModifier,
+        shouldAnimate = shouldAnimate,
+        indicatorSelectedModifier = indicatorSelectedModifier,
+        indicatorSelectedNotAnimatedModifier = indicatorSelectedNotAnimatedModifier,
+        indicatorUnselectedSmallModifier = indicatorUnselectedSmallModifier,
+        indicatorUnselectedVerySmallModifier = indicatorUnselectedVerySmallModifier,
+        pagerState = pagerState,
+        indicatorSelectedWidth = indicatorSelectedWidth,
+        indicatorSelectedHeight = indicatorSelectedHeight,
+        activeColor = activeColor,
+        indicatorShape = indicatorShape)
+}
+
+@ExperimentalPagerApi
+private fun calculateItems(
+    items: MutableList<Item>,
+    visibleWindowState: VisibleWindowState,
+    pagerCount: Int,
+    pagerState: PagerState,
+    log: (String) -> Unit,
+) {
     items.forEachIndexed { index, item ->
         when {
             //The bullets outside the window are invisible
@@ -266,8 +249,117 @@ internal fun CarouselPagerIndicator(
             }
         }
     }
+}
 
-    currentSelectedInWindow = items.currentSelectedPositionInWindow()
+@ExperimentalPagerApi
+@Composable
+private fun calculateWindowPosition(
+    shouldAnimate: Boolean,
+    movementDirection: MovementDirection,
+    pagerState: PagerState,
+    visibleWindowState: VisibleWindowState,
+    pagerCount: Int,
+    onShouldAnimateUpdate: (Boolean) -> Unit,
+    log: (String) -> Unit,
+) {
+    //Check if we can move the bullet without moving to the edge
+    var shouldTryToMoveTheWindow = false
+    when (movementDirection) {
+        DECREASE -> {
+            val desirablePosition = pagerState.currentPage //visibleWindowState.currentSelected - 1
+            val canMoveTheBullet = !visibleWindowState.window.isTheEdge(desirablePosition)
+            if (canMoveTheBullet) {
+                log("Moving the bullet - $movementDirection")
+                visibleWindowState.currentSelected = desirablePosition
+            }
+            shouldTryToMoveTheWindow = !canMoveTheBullet
+        }
+        INCREASE -> {
+            val desirablePosition = pagerState.currentPage //visibleWindowState.currentSelected + 1
+            val canMoveTheBullet = !visibleWindowState.window.isTheEdge(desirablePosition)
+            if (canMoveTheBullet) {
+                log("Moving the bullet - $movementDirection")
+                visibleWindowState.currentSelected = desirablePosition
+            }
+            shouldTryToMoveTheWindow = !canMoveTheBullet
+        }
+        NO_MOVEMENT -> {}
+    }
+
+    //If we can't, we try to move the window
+    var shouldMoveTheBulletToTheEdge = false
+    if (shouldTryToMoveTheWindow) {
+        when (movementDirection) {
+            DECREASE -> {
+                val canMoveTheWindow = visibleWindowState.window.first > 0
+                if (canMoveTheWindow) {
+                    log("Moving the window - $movementDirection")
+                    visibleWindowState.window = visibleWindowState.window.moveDecreasing()
+                    visibleWindowState.currentSelected--
+                    onShouldAnimateUpdate(false)
+                }
+                shouldMoveTheBulletToTheEdge = !canMoveTheWindow
+            }
+            INCREASE -> {
+                val canMoveTheWindow = visibleWindowState.window.second < pagerCount - 1
+                if (canMoveTheWindow) {
+                    log("Moving the window - $movementDirection")
+                    visibleWindowState.window = visibleWindowState.window.moveIncreasing()
+                    visibleWindowState.currentSelected++
+                    onShouldAnimateUpdate(false)
+                }
+                shouldMoveTheBulletToTheEdge = !canMoveTheWindow
+            }
+            NO_MOVEMENT -> {}
+        }
+    }
+    //If we can't we move the bullet to the edge position
+    if (shouldMoveTheBulletToTheEdge) {
+        log("Moving to the edge - $movementDirection")
+        when (movementDirection) {
+            DECREASE -> visibleWindowState.currentSelected--
+            INCREASE -> visibleWindowState.currentSelected++
+            NO_MOVEMENT -> {}
+        }
+    }
+}
+
+@ExperimentalPagerApi
+@Composable
+private fun calculateDirection(
+    pagerState: PagerState,
+    currentlySelected: Int,
+): MovementDirection {
+    val movementDirection: MovementDirection = when {
+        pagerState.currentPage > currentlySelected -> INCREASE
+        pagerState.currentPage < currentlySelected -> DECREASE
+        else -> NO_MOVEMENT //They're the same
+    }
+    return movementDirection
+}
+
+@ExperimentalPagerApi
+@Composable
+private fun PagerIndicatorBox(
+    items: MutableList<Item>,
+    indicatorUnselectedWidth: Dp,
+    indicatorUnselectedSmallWidth: Dp,
+    indicatorUnselectedVerySmallWidth: Dp,
+    spacing: Dp,
+    modifier: Modifier,
+    indicatorUnselectedModifier: Modifier,
+    shouldAnimate: Boolean,
+    indicatorSelectedModifier: Modifier,
+    indicatorSelectedNotAnimatedModifier: Modifier,
+    indicatorUnselectedSmallModifier: Modifier,
+    indicatorUnselectedVerySmallModifier: Modifier,
+    pagerState: PagerState,
+    indicatorSelectedWidth: Dp,
+    indicatorSelectedHeight: Dp,
+    activeColor: Color,
+    indicatorShape: Shape,
+) {
+    var currentSelectedInWindow = items.currentSelectedPositionInWindow()
 
     val indicatorWidthPx = LocalDensity.current.run { indicatorUnselectedWidth.roundToPx() }
     val indicatorSmallWidthPx = LocalDensity.current.run { indicatorUnselectedSmallWidth.roundToPx() }
