@@ -27,7 +27,11 @@ import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.PagerState
-import com.telefonica.mistica.compose.carousel.IndicatorType.*
+import com.telefonica.mistica.compose.carousel.IndicatorType.INVISIBLE
+import com.telefonica.mistica.compose.carousel.IndicatorType.SELECTED
+import com.telefonica.mistica.compose.carousel.IndicatorType.UNSELECTED
+import com.telefonica.mistica.compose.carousel.IndicatorType.UNSELECTED_SMALL
+import com.telefonica.mistica.compose.carousel.IndicatorType.UNSELECTED_VERY_SMALL
 import com.telefonica.mistica.compose.carousel.MovementDirection.DECREASE
 import com.telefonica.mistica.compose.carousel.MovementDirection.INCREASE
 import com.telefonica.mistica.compose.carousel.MovementDirection.NO_MOVEMENT
@@ -78,7 +82,7 @@ internal fun CarouselPagerIndicator(
         })
     }
     var currentSelectedInWindow by remember { mutableStateOf(0) }
-    var currentlySelected by remember { mutableStateOf(0) }
+    val currentlySelected by remember { mutableStateOf(0) }
     var shouldAnimate by remember { mutableStateOf(true) }
 
     val indicatorUnselectedModifier = remember {
@@ -179,7 +183,6 @@ internal fun CarouselPagerIndicator(
 
     log("----- (after $visibleWindowState)")
 
-    var selectedItemIndex: Int
     items.forEachIndexed { index, item ->
         when {
             //The bullets outside the window are invisible
@@ -191,7 +194,6 @@ internal fun CarouselPagerIndicator(
             index == visibleWindowState.currentSelected -> {
                 log("item-$index is the currently selected")
                 item.type = SELECTED
-                selectedItemIndex = index
             }
             //The adjacent to the edge may be small
             visibleWindowState.window.isTheAdjacentToTheLowerEdge(index) -> {
@@ -298,11 +300,6 @@ internal fun CarouselPagerIndicator(
             Box(
                 Modifier
                     .offset {
-                        val scrollPosition = (currentSelectedInWindow + pagerState.currentPageOffset)
-                            .coerceIn(0f,
-                                (pagerState.pageCount - 1)
-                                    .coerceAtLeast(0)
-                                    .toFloat())
 
                         fun IndicatorType.toPx() = when (this) {
                             UNSELECTED -> indicatorWidthPx
