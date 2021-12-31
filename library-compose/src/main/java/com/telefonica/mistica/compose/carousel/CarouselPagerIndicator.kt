@@ -32,17 +32,6 @@ import com.telefonica.mistica.compose.carousel.MovementDirection.DECREASE
 import com.telefonica.mistica.compose.carousel.MovementDirection.INCREASE
 import com.telefonica.mistica.compose.carousel.MovementDirection.NO_MOVEMENT
 
-/**
- * @param pagerState the state object of your [Pager] to be used to observe the list's state.
- * @param modifier the modifier to apply to this layout.
- * @param activeColor the color of the active Page indicator
- * @param inactiveColor the color of page indicators that are inactive. This defaults to
- * [activeColor] with the alpha component set to the [ContentAlpha.disabled].
- * @param indicatorWidth the width of each indicator in [Dp].
- * @param indicatorHeight the height of each indicator in [Dp]. Defaults to [indicatorWidth].
- * @param spacing the spacing between each indicator in [Dp].
- * @param indicatorShape the shape representing each indicator. This defaults to [CircleShape].
- */
 @SuppressLint("MutableCollectionMutableState")
 @ExperimentalPagerApi
 @Composable
@@ -52,18 +41,26 @@ internal fun CarouselPagerIndicator(
     modifier: Modifier = Modifier,
     activeColor: Color = LocalContentColor.current.copy(alpha = LocalContentAlpha.current),
     inactiveColor: Color = activeColor.copy(ContentAlpha.disabled),
-    indicatorSelectedWidth: Dp = 6.dp * 2, //TODO gmerino use real values
+    indicatorSelectedWidth: Dp = 10.dp * 2, //TODO gmerino use real values
     indicatorSelectedHeight: Dp = indicatorSelectedWidth,
-    indicatorUnselectedWidth: Dp = 4.dp * 2, //TODO gmerino use real values
+    indicatorUnselectedWidth: Dp = 8.dp * 2, //TODO gmerino use real values
     indicatorUnselectedHeight: Dp = indicatorUnselectedWidth,
-    indicatorUnselectedSmallWidth: Dp = 4.dp * 2, //TODO gmerino use real values
+    indicatorUnselectedSmallWidth: Dp = 6.dp * 2, //TODO gmerino use real values
     indicatorUnselectedSmallHeight: Dp = indicatorUnselectedSmallWidth,
     indicatorUnselectedVerySmallWidth: Dp = 4.dp * 2, //TODO gmerino use real values
-    indicatorUnselectedVerySmallHeight: Dp = indicatorUnselectedSmallWidth,
+    indicatorUnselectedVerySmallHeight: Dp = indicatorUnselectedVerySmallWidth,
     spacing: Dp = 8.dp,
     indicatorShape: Shape = CircleShape,
+    debug: Boolean = false,
 ) {
-    Log.d("gmerinoTest", "starting with - ${pagerState.currentPage}")
+
+    fun log(message: String) {
+        if (debug) {
+            Log.d("carousel", message)
+        }
+    }
+
+    log("starting with - ${pagerState.currentPage}")
 
     val visibleWindowState by remember {
         mutableStateOf(
@@ -91,13 +88,13 @@ internal fun CarouselPagerIndicator(
     }
     val indicatorUnselectedSmallModifier = remember {
         Modifier
-            .size(width = indicatorUnselectedWidth, height = indicatorUnselectedHeight)
-            .background(color = Color.Green, shape = indicatorShape)
+            .size(width = indicatorUnselectedSmallWidth, height = indicatorUnselectedSmallHeight)
+            .background(color = inactiveColor, shape = indicatorShape)
     }
     val indicatorUnselectedVerySmallModifier = remember {
         Modifier
-            .size(width = indicatorUnselectedWidth, height = indicatorUnselectedHeight)
-            .background(color = Color.Blue, shape = indicatorShape)
+            .size(width = indicatorUnselectedVerySmallWidth, height = indicatorUnselectedVerySmallHeight)
+            .background(color = inactiveColor, shape = indicatorShape)
     }
     val indicatorSelectedModifier = remember {
         Modifier
@@ -110,14 +107,13 @@ internal fun CarouselPagerIndicator(
             .background(color = activeColor, shape = indicatorShape)
     }
 
-    Log.d("gmerinoTest", "----- (before: $visibleWindowState)")
+    log("----- (before: $visibleWindowState)")
 
     val movementDirection: MovementDirection = when {
         pagerState.currentPage > currentlySelected -> INCREASE
         pagerState.currentPage < currentlySelected -> DECREASE
         else -> NO_MOVEMENT //They're the same
     }
-    currentlySelected = pagerState.currentPage
 
     //Check if we can move the bullet without moving to the edge
     var shouldTryToMoveTheWindow = false
@@ -127,7 +123,7 @@ internal fun CarouselPagerIndicator(
             val desirablePosition = pagerState.currentPage //visibleWindowState.currentSelected - 1
             val canMoveTheBullet = !visibleWindowState.window.isTheEdge(desirablePosition)
             if (canMoveTheBullet) {
-                Log.d("gmerinoTest", "Moving the bullet - $movementDirection")
+                log("Moving the bullet - $movementDirection")
                 visibleWindowState.currentSelected = desirablePosition
             }
             shouldTryToMoveTheWindow = !canMoveTheBullet
@@ -136,7 +132,7 @@ internal fun CarouselPagerIndicator(
             val desirablePosition = pagerState.currentPage //visibleWindowState.currentSelected + 1
             val canMoveTheBullet = !visibleWindowState.window.isTheEdge(desirablePosition)
             if (canMoveTheBullet) {
-                Log.d("gmerinoTest", "Moving the bullet - $movementDirection")
+                log("Moving the bullet - $movementDirection")
                 visibleWindowState.currentSelected = desirablePosition
             }
             shouldTryToMoveTheWindow = !canMoveTheBullet
@@ -151,7 +147,7 @@ internal fun CarouselPagerIndicator(
             DECREASE -> {
                 val canMoveTheWindow = visibleWindowState.window.first > 0
                 if (canMoveTheWindow) {
-                    Log.d("gmerinoTest", "Moving the window - $movementDirection")
+                    log("Moving the window - $movementDirection")
                     visibleWindowState.window = visibleWindowState.window.moveDecreasing()
                     visibleWindowState.currentSelected--
                     shouldAnimate = false
@@ -161,7 +157,7 @@ internal fun CarouselPagerIndicator(
             INCREASE -> {
                 val canMoveTheWindow = visibleWindowState.window.second < pagerCount - 1
                 if (canMoveTheWindow) {
-                    Log.d("gmerinoTest", "Moving the window - $movementDirection")
+                    log("Moving the window - $movementDirection")
                     visibleWindowState.window = visibleWindowState.window.moveIncreasing()
                     visibleWindowState.currentSelected++
                     shouldAnimate = false
@@ -173,7 +169,7 @@ internal fun CarouselPagerIndicator(
     }
     //If we can't we move the bullet to the edge position
     if (shouldMoveTheBulletToTheEdge) {
-        Log.d("gmerinoTest", "Moving to the edge - $movementDirection")
+        log("Moving to the edge - $movementDirection")
         when (movementDirection) {
             DECREASE -> visibleWindowState.currentSelected--
             INCREASE -> visibleWindowState.currentSelected++
@@ -181,19 +177,19 @@ internal fun CarouselPagerIndicator(
         }
     }
 
-    Log.d("gmerinoTest", "----- (after $visibleWindowState)")
+    log("----- (after $visibleWindowState)")
 
     var selectedItemIndex: Int
     items.forEachIndexed { index, item ->
         when {
             //The bullets outside the window are invisible
             !visibleWindowState.window.isInsideTheWindow(index) -> {
-                Log.d("gmerinoTest", "item-$index is outside the window")
+                log("item-$index is outside the window")
                 item.type = INVISIBLE
             }
             //The current selected
             index == visibleWindowState.currentSelected -> {
-                Log.d("gmerinoTest", "item-$index is the currently selected")
+                log("item-$index is the currently selected")
                 item.type = SELECTED
                 selectedItemIndex = index
             }
@@ -202,11 +198,11 @@ internal fun CarouselPagerIndicator(
                 val thereAreNoMoreItems = visibleWindowState.window.first == 0
                 when {
                     thereAreNoMoreItems -> {
-                        Log.d("gmerinoTest", "item-$index is unselected, because it's the adjacent to the edge, but there are no more items")
+                        log("item-$index is unselected, because it's the adjacent to the edge, but there are no more items")
                         item.type = UNSELECTED
                     }
                     else -> {
-                        Log.d("gmerinoTest", "item-$index is adjacent to the lower edge")
+                        log("item-$index is adjacent to the lower edge")
                         item.type = UNSELECTED_SMALL
                     }
                 }
@@ -216,11 +212,11 @@ internal fun CarouselPagerIndicator(
                 val thereAreNoMoreItems = visibleWindowState.window.second == pagerCount - 1
                 when {
                     thereAreNoMoreItems -> {
-                        Log.d("gmerinoTest", "item-$index is unselected, because it's the adjacent to the edge, but there are no more items")
+                        log("item-$index is unselected, because it's the adjacent to the edge, but there are no more items")
                         item.type = UNSELECTED
                     }
                     else -> {
-                        Log.d("gmerinoTest", "item-$index is adjacent to the higher edge")
+                        log("item-$index is adjacent to the higher edge")
                         item.type = UNSELECTED_SMALL
                     }
                 }
@@ -231,15 +227,15 @@ internal fun CarouselPagerIndicator(
                 val isTheSelectedAdjacent = (index + 1) == pagerState.currentPage //visibleWindowState.currentSelected
                 when {
                     thereAreNoMoreItems -> {
-                        Log.d("gmerinoTest", "item-$index is the lower edge and there are no more items")
+                        log("item-$index is the lower edge and there are no more items")
                         item.type = UNSELECTED
                     }
                     isTheSelectedAdjacent -> {
-                        Log.d("gmerinoTest", "item-$index is the lower edge and the selected is the adjacent")
+                        log("item-$index is the lower edge and the selected is the adjacent")
                         item.type = UNSELECTED_SMALL
                     }
                     else -> {
-                        Log.d("gmerinoTest", "item-$index is the lower edge and the selected is NOT adjacent")
+                        log("item-$index is the lower edge and the selected is NOT adjacent")
                         item.type = UNSELECTED_VERY_SMALL
                     }
                 }
@@ -249,21 +245,21 @@ internal fun CarouselPagerIndicator(
                 val isTheSelectedAdjacent = (index - 1) == pagerState.currentPage //visibleWindowState.currentSelected
                 when {
                     thereAreNoMoreItems -> {
-                        Log.d("gmerinoTest", "item-$index is the higher edge and there are no more items")
+                        log("item-$index is the higher edge and there are no more items")
                         item.type = UNSELECTED
                     }
                     isTheSelectedAdjacent -> {
-                        Log.d("gmerinoTest", "item-$index is the higher edge and the selected is the adjacent")
+                        log("item-$index is the higher edge and the selected is the adjacent")
                         item.type = UNSELECTED_SMALL
                     }
                     else -> {
-                        Log.d("gmerinoTest", "item-$index is the higher edge and the selected is NOT adjacent")
+                        log("item-$index is the higher edge and the selected is NOT adjacent")
                         item.type = UNSELECTED_VERY_SMALL
                     }
                 }
             }
             else -> {
-                Log.d("gmerinoTest", "item-$index is unselected")
+                log("item-$index is unselected")
                 item.type = UNSELECTED
             }
         }
@@ -276,6 +272,8 @@ internal fun CarouselPagerIndicator(
     val indicatorVerySmallWidthPx = LocalDensity.current.run { indicatorUnselectedVerySmallWidth.roundToPx() }
     val spacingPx = LocalDensity.current.run { spacing.roundToPx() }
 
+    val visibleItems = items.filterNot { it.type == INVISIBLE }
+
     Box(
         modifier = modifier,
         contentAlignment = Alignment.CenterStart
@@ -285,8 +283,7 @@ internal fun CarouselPagerIndicator(
             verticalAlignment = Alignment.CenterVertically,
         ) {
 
-            items.filterNot{ it.type == INVISIBLE }.forEach { item ->
-                Log.d("gmerinoTest2", "$item")
+            visibleItems.forEach { item ->
                 when (item.type) {
                     UNSELECTED -> Box(indicatorUnselectedModifier)
                     SELECTED -> if (shouldAnimate) Box(indicatorSelectedModifier) else Box(indicatorSelectedNotAnimatedModifier)
@@ -297,20 +294,30 @@ internal fun CarouselPagerIndicator(
             }
         }
 
-        Log.d("gmerinoTest", "Should animate $shouldAnimate")
         if (shouldAnimate) {
             Box(
                 Modifier
                     .offset {
-                        Log.d("gmerinoTest", "Current page: ${pagerState.currentPage}")
                         val scrollPosition = (currentSelectedInWindow + pagerState.currentPageOffset)
                             .coerceIn(0f,
                                 (pagerState.pageCount - 1)
                                     .coerceAtLeast(0)
                                     .toFloat())
 
-                        val x = ((spacingPx + indicatorWidthPx) * scrollPosition).toInt()
-                        Log.d("gmerinoTest", "Scroll position: (($spacingPx + $indicatorWidthPx) * $scrollPosition)")
+                        fun IndicatorType.toPx() = when (this) {
+                            UNSELECTED -> indicatorWidthPx
+                            SELECTED -> indicatorWidthPx
+                            UNSELECTED_SMALL -> indicatorSmallWidthPx
+                            UNSELECTED_VERY_SMALL -> indicatorVerySmallWidthPx
+                            INVISIBLE -> 0
+                        }
+
+                        var x = 0
+                        for (i in 0 until currentSelectedInWindow) {
+                            x += visibleItems[i].type.toPx() + spacingPx
+                        }
+                        x += ((visibleItems[currentSelectedInWindow].type.toPx() + spacingPx) * pagerState.currentPageOffset).toInt()
+
                         IntOffset(
                             x = x,
                             y = 0
@@ -330,6 +337,7 @@ private data class VisibleWindowState(
     var window: Window,
     var currentSelected: Int,
 )
+
 typealias Window = Pair<Int, Int>
 
 private fun Window.isTheEdge(position: Int): Boolean = isTheLowerEdge(position) || isTheHigherEdge(position)

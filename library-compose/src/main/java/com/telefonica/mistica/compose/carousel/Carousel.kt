@@ -63,7 +63,8 @@ fun Carousel(
                 .padding(16.dp),
             activeColor = pagerIndicatorActiveColor,
             inactiveColor = pagerIndicatorInactiveColor,
-            pagerCount = 6 //TODO
+            pagerCount = 6, //TODO
+            debug = true,
         )
     }
 
