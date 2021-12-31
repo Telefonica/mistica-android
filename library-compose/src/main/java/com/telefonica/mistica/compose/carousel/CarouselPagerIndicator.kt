@@ -9,9 +9,6 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material.ContentAlpha
-import androidx.compose.material.LocalContentAlpha
-import androidx.compose.material.LocalContentColor
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -35,17 +32,18 @@ import com.telefonica.mistica.compose.carousel.IndicatorType.UNSELECTED_VERY_SMA
 import com.telefonica.mistica.compose.carousel.MovementDirection.DECREASE
 import com.telefonica.mistica.compose.carousel.MovementDirection.INCREASE
 import com.telefonica.mistica.compose.carousel.MovementDirection.NO_MOVEMENT
+import com.telefonica.mistica.compose.theme.MisticaTheme
 
+@OptIn(ExperimentalPagerApi::class)
 @SuppressLint("MutableCollectionMutableState")
-@ExperimentalPagerApi
 @Composable
-internal fun CarouselPagerIndicator(
+fun CarouselPagerIndicator(
+    modifier: Modifier = Modifier,
     pagerState: PagerState,
     pagerCount: Int,
-    modifier: Modifier = Modifier,
-    activeColor: Color = LocalContentColor.current.copy(alpha = LocalContentAlpha.current),
-    inactiveColor: Color = activeColor.copy(ContentAlpha.disabled),
-    indicatorSelectedWidth: Dp = 6.dp , //TODO Check with design the values
+    activeColor: Color = MisticaTheme.colors.carouselIndicatorActiveColor,
+    inactiveColor: Color = MisticaTheme.colors.carouselIndicatorInactiveColor,
+    indicatorSelectedWidth: Dp = 6.dp, //TODO Check with design the values
     indicatorSelectedHeight: Dp = indicatorSelectedWidth,
     indicatorUnselectedWidth: Dp = 4.dp, //TODO Check with design the values
     indicatorUnselectedHeight: Dp = indicatorUnselectedWidth,
