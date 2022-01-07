@@ -54,12 +54,12 @@ private fun CardImage(mediaCardImage: MediaCardImage) {
         is MediaCardImageBitmap -> Image(
             mediaCardImage.imageBitmap,
             contentDescription = mediaCardImage.contentDescription,
-            contentScale = ContentScale.FillWidth
+            contentScale = ContentScale.FillHeight
         )
         is MediaCardImageResource -> Image(
             painterResource(id = mediaCardImage.imageRes),
             contentDescription = mediaCardImage.contentDescription,
-            contentScale = ContentScale.FillWidth
+            contentScale = ContentScale.FillHeight
         )
     }
 

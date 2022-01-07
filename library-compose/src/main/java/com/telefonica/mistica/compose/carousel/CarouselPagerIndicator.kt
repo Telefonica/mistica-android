@@ -43,13 +43,13 @@ fun CarouselPagerIndicator(
     pagerCount: Int,
     activeColor: Color = MisticaTheme.colors.carouselIndicatorActiveColor,
     inactiveColor: Color = MisticaTheme.colors.carouselIndicatorInactiveColor,
-    indicatorSelectedWidth: Dp = 6.dp, //TODO Check with design the values
+    indicatorSelectedWidth: Dp = 6.dp*2, //TODO Check with design the values
     indicatorSelectedHeight: Dp = indicatorSelectedWidth,
-    indicatorUnselectedWidth: Dp = 4.dp, //TODO Check with design the values
+    indicatorUnselectedWidth: Dp = 4.dp*2, //TODO Check with design the values
     indicatorUnselectedHeight: Dp = indicatorUnselectedWidth,
-    indicatorUnselectedSmallWidth: Dp = 3.dp, //TODO Check with design the values
+    indicatorUnselectedSmallWidth: Dp = 3.dp*2, //TODO Check with design the values
     indicatorUnselectedSmallHeight: Dp = indicatorUnselectedSmallWidth,
-    indicatorUnselectedVerySmallWidth: Dp = 2.dp, //TODO Check with design the values
+    indicatorUnselectedVerySmallWidth: Dp = 2.dp*2, //TODO Check with design the values
     indicatorUnselectedVerySmallHeight: Dp = indicatorUnselectedVerySmallWidth,
     spacing: Dp = 8.dp,
     indicatorShape: Shape = CircleShape,
