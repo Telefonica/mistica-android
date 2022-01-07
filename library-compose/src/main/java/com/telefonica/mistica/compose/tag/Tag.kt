@@ -94,7 +94,7 @@ class Tag constructor(
     @DrawableRes
     private var icon: Int? = null
 
-    fun withModifier(modifier: Modifier) = apply { this.modifier = modifier }
+    fun withModifier(modifier: Modifier) = apply { this.modifier = this.modifier.then(modifier) }
     fun withStyle(@TagStyle style: Int) = apply { this.style = style }
     fun withIcon(@DrawableRes icon: Int?) = apply { this.icon = icon }
 

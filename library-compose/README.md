@@ -99,8 +99,8 @@ There is a Mística-compose catalog in the [Demo app](https://github.com/Telefon
 | Filters					|     |     |    				
 | Highlighted Cards			|     |     |    						
 | Controls					|     |     |    				
-| Media Cards				|     |     |    					
-| Data Cards				|     |     |    					
+| Media Cards				|  ✅️ |  Composable   |
+| Data Cards				|  ✅️ |  Composable   |
 | Steppers					|     |     |    				
 | Tabs						|     |     |    			
 | Empty States				|     |     |    					
