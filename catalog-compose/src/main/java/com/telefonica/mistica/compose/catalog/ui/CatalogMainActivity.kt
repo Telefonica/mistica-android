@@ -38,9 +38,11 @@ import androidx.navigation.compose.rememberNavController
 import com.telefonica.mistica.compose.button.DropDownInput
 import com.telefonica.mistica.compose.catalog.R
 import com.telefonica.mistica.compose.catalog.ui.components.Buttons
+import com.telefonica.mistica.compose.catalog.ui.components.DataCards
 import com.telefonica.mistica.compose.catalog.ui.components.Carousels
 import com.telefonica.mistica.compose.catalog.ui.components.Feedbacks
 import com.telefonica.mistica.compose.catalog.ui.components.Lists
+import com.telefonica.mistica.compose.catalog.ui.components.MediaCards
 import com.telefonica.mistica.compose.catalog.ui.components.Tags
 import com.telefonica.mistica.compose.catalog.ui.components.Texts
 import com.telefonica.mistica.compose.theme.MisticaTheme
@@ -141,6 +143,8 @@ fun CatalogNavHost(
         composable(NavigationRoutes.FEEDBACKS) { Feedbacks() }
         composable(NavigationRoutes.LISTS) { Lists() }
         composable(NavigationRoutes.TAGS) { Tags() }
+        composable(NavigationRoutes.DATA_CARDS) { DataCards() }
+        composable(NavigationRoutes.MEDIA_CARDS) { MediaCards() }
         composable(NavigationRoutes.CAROUSELS) { Carousels() }
     }
 }
@@ -177,6 +181,16 @@ fun Catalog(
             name = "Tags",
             icon = R.drawable.ic_tags,
             navigation = NavigationRoutes.TAGS
+        ),
+        ComponentScreen(
+            name = "Data Cards",
+            icon = R.drawable.ic_cards,
+            navigation = NavigationRoutes.DATA_CARDS
+        ),
+        ComponentScreen(
+            name = "Media Cards",
+            icon = R.drawable.ic_cards,
+            navigation = NavigationRoutes.MEDIA_CARDS
         ),
         ComponentScreen(
             name = "Carousels",
@@ -251,5 +265,7 @@ object NavigationRoutes {
     const val FEEDBACKS = "feedbacks"
     const val LISTS = "lists"
     const val TAGS = "tags"
+    const val DATA_CARDS = "data-cards"
+    const val MEDIA_CARDS = "media-cards"
     const val CAROUSELS = "carousels"
 }
