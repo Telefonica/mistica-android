@@ -18,15 +18,12 @@ fun Carousel(
     carouselState: CarouselState = rememberCarouselState(),
     contentPadding: PaddingValues = PaddingValuesWithStartAndEndMargin(carouselState, start = 16.dp, end = 16.dp),
     itemCount: Int,
-//    paddingValues: PaddingValues = PaddingValues(start = 8.dp, end = 8.dp),
     content: @Composable (page: Int) -> Unit,
 ) {
     HorizontalPager(
         state = carouselState.pagerState,
-        // Add 32.dp horizontal padding to 'center' the pages
         contentPadding = contentPadding,
         count = itemCount,
-//        itemSpacing = 32.dp
     ) { page ->
         val (start, end) = when (page) {
             0 -> 16.dp to 4.dp
