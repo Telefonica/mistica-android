@@ -38,6 +38,7 @@ import com.telefonica.mistica.compose.theme.MisticaTheme
 @Composable
 fun CarouselPagerIndicator(
     modifier: Modifier = Modifier,
+    maximumVisibleItems: Int = Constants.MAX_WINDOW_SIZE,
     carouselState: CarouselState,
     pagerCount: Int,
     activeColor: Color = MisticaTheme.colors.carouselIndicatorActiveColor,
@@ -66,7 +67,7 @@ fun CarouselPagerIndicator(
     val visibleWindowState by remember {
         mutableStateOf(
             VisibleWindowState(
-                window = 0 to if (pagerCount > Constants.MAX_WINDOW_SIZE) 4 else pagerCount - 1,
+                window = 0 to if (pagerCount > maximumVisibleItems) 4 else pagerCount - 1,
                 currentSelected = 0,
             )
         )
@@ -117,7 +118,7 @@ fun CarouselPagerIndicator(
 
     calculateWindowPosition(
         movementDirection = movementDirection,
-        carouselState = carouselState,
+        currentSelected = carouselState.currentPage,
         visibleWindowState = visibleWindowState,
         pagerCount = pagerCount,
         onShouldAnimateUpdate = { shouldAnimate = it },
@@ -130,7 +131,7 @@ fun CarouselPagerIndicator(
         items,
         visibleWindowState,
         pagerCount,
-        carouselState,
+        carouselState.currentPage,
         log = ::log
     )
 
@@ -155,11 +156,11 @@ fun CarouselPagerIndicator(
 }
 
 @ExperimentalPagerApi
-private fun calculateItems(
+internal fun calculateItems(
     items: MutableList<Item>,
     visibleWindowState: VisibleWindowState,
     pagerCount: Int,
-    carouselState: CarouselState,
+    currentSelected: Int,
     log: (String) -> Unit,
 ) {
     items.forEachIndexed { index, item ->
@@ -174,7 +175,7 @@ private fun calculateItems(
                 log("item-$index is the currently selected")
                 item.type = SELECTED
             }
-            //The adjacent to the edge may be small
+            //The adjacent to the lower edge may be small
             visibleWindowState.window.isTheAdjacentToTheLowerEdge(index) -> {
                 val thereAreNoMoreItems = visibleWindowState.window.first == 0
                 when {
@@ -188,7 +189,7 @@ private fun calculateItems(
                     }
                 }
             }
-            //The adjacent to the edge may be small
+            //The adjacent to the higher edge may be small
             visibleWindowState.window.isTheAdjacentToTheHigherEdge(index) -> {
                 val thereAreNoMoreItems = visibleWindowState.window.second == pagerCount - 1
                 when {
@@ -202,10 +203,10 @@ private fun calculateItems(
                     }
                 }
             }
-            //The items in the edge can be regular, small or very small
+            //The items in the lower edge can be regular, small or very small
             visibleWindowState.window.isTheLowerEdge(index) -> {
                 val thereAreNoMoreItems = visibleWindowState.window.first == 0
-                val isTheSelectedAdjacent = (index + 1) == carouselState.currentPage //visibleWindowState.currentSelected
+                val isTheSelectedAdjacent = (index + 1) == currentSelected
                 when {
                     thereAreNoMoreItems -> {
                         log("item-$index is the lower edge and there are no more items")
@@ -221,9 +222,10 @@ private fun calculateItems(
                     }
                 }
             }
+            //The items in the higher edge can be regular, small or very small
             visibleWindowState.window.isTheHigherEdge(index) -> {
                 val thereAreNoMoreItems = visibleWindowState.window.second == pagerCount - 1
-                val isTheSelectedAdjacent = (index - 1) == carouselState.currentPage //visibleWindowState.currentSelected
+                val isTheSelectedAdjacent = (index - 1) == currentSelected
                 when {
                     thereAreNoMoreItems -> {
                         log("item-$index is the higher edge and there are no more items")
@@ -248,10 +250,9 @@ private fun calculateItems(
 }
 
 @ExperimentalPagerApi
-@Composable
-private fun calculateWindowPosition(
+internal fun calculateWindowPosition(
     movementDirection: MovementDirection,
-    carouselState: CarouselState,
+    currentSelected: Int,
     visibleWindowState: VisibleWindowState,
     pagerCount: Int,
     onShouldAnimateUpdate: (Boolean) -> Unit,
@@ -261,20 +262,18 @@ private fun calculateWindowPosition(
     var shouldTryToMoveTheWindow = false
     when (movementDirection) {
         DECREASE -> {
-            val desirablePosition = carouselState.currentPage //visibleWindowState.currentSelected - 1
-            val canMoveTheBullet = !visibleWindowState.window.isTheEdge(desirablePosition)
+            val canMoveTheBullet = !visibleWindowState.window.isTheEdge(currentSelected)
             if (canMoveTheBullet) {
                 log("Moving the bullet - $movementDirection")
-                visibleWindowState.currentSelected = desirablePosition
+                visibleWindowState.currentSelected = currentSelected
             }
             shouldTryToMoveTheWindow = !canMoveTheBullet
         }
         INCREASE -> {
-            val desirablePosition = carouselState.currentPage //visibleWindowState.currentSelected + 1
-            val canMoveTheBullet = !visibleWindowState.window.isTheEdge(desirablePosition)
+            val canMoveTheBullet = !visibleWindowState.window.isTheEdge(currentSelected)
             if (canMoveTheBullet) {
                 log("Moving the bullet - $movementDirection")
-                visibleWindowState.currentSelected = desirablePosition
+                visibleWindowState.currentSelected = currentSelected
             }
             shouldTryToMoveTheWindow = !canMoveTheBullet
         }
@@ -417,7 +416,7 @@ private fun PagerIndicatorBox(
     }
 }
 
-private data class VisibleWindowState(
+internal data class VisibleWindowState(
     var window: Window,
     var currentSelected: Int,
 )
@@ -435,9 +434,9 @@ private fun Window.moveIncreasing(steps: Int = 1): Window = this.first + steps t
 
 private fun List<Item>.currentSelectedPositionInWindow(): Int = filterNot { it.type == INVISIBLE }.indexOf(Item(type = SELECTED))
 
-private data class Item(var type: IndicatorType)
+internal data class Item(var type: IndicatorType)
 
-private enum class IndicatorType {
+internal enum class IndicatorType {
     UNSELECTED,
     SELECTED,
     UNSELECTED_SMALL,
@@ -449,4 +448,4 @@ private object Constants {
     const val MAX_WINDOW_SIZE = 5
 }
 
-private enum class MovementDirection { DECREASE, INCREASE, NO_MOVEMENT }
+internal enum class MovementDirection { DECREASE, INCREASE, NO_MOVEMENT }
