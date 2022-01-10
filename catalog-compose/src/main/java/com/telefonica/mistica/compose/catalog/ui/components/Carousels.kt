@@ -39,7 +39,7 @@ fun Carousels() {
             CarouselItem(page)
         }
         CarouselPagerIndicator(
-            pagerState = carouselState,
+            carouselState = carouselState,
             modifier = Modifier
                 .align(Alignment.CenterHorizontally)
                 .padding(16.dp),

@@ -22,7 +22,7 @@ fun Carousel(
     content: @Composable (page: Int) -> Unit,
 ) {
     HorizontalPager(
-        state = carouselState,
+        state = carouselState.pagerState,
         // Add 32.dp horizontal padding to 'center' the pages
         contentPadding = contentPadding,
         count = itemCount,
@@ -44,8 +44,8 @@ fun Carousel(
 @OptIn(ExperimentalPagerApi::class)
 internal data class PaddingValuesWithStartAndEndMargin(
     private val carouselState: CarouselState,
-    private val start: Dp = 16.dp,
-    private val end: Dp = 16.dp,
+    private val start: Dp = 4.dp,
+    private val end: Dp = 4.dp,
     private val top: Dp = 0.dp,
     private val bottom: Dp = 0.dp,
     private val firstItemStart: Dp = 0.dp,

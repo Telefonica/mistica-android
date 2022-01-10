@@ -23,7 +23,6 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import com.google.accompanist.pager.ExperimentalPagerApi
-import com.google.accompanist.pager.PagerState
 import com.telefonica.mistica.compose.carousel.IndicatorType.INVISIBLE
 import com.telefonica.mistica.compose.carousel.IndicatorType.SELECTED
 import com.telefonica.mistica.compose.carousel.IndicatorType.UNSELECTED
@@ -39,7 +38,7 @@ import com.telefonica.mistica.compose.theme.MisticaTheme
 @Composable
 fun CarouselPagerIndicator(
     modifier: Modifier = Modifier,
-    pagerState: PagerState,
+    carouselState: CarouselState,
     pagerCount: Int,
     activeColor: Color = MisticaTheme.colors.carouselIndicatorActiveColor,
     inactiveColor: Color = MisticaTheme.colors.carouselIndicatorInactiveColor,
@@ -62,7 +61,7 @@ fun CarouselPagerIndicator(
         }
     }
 
-    log("starting with - ${pagerState.currentPage}")
+    log("starting with - ${carouselState.currentPage}")
 
     val visibleWindowState by remember {
         mutableStateOf(
@@ -111,15 +110,14 @@ fun CarouselPagerIndicator(
     log("----- (before: $visibleWindowState)")
 
     val movementDirection: MovementDirection = calculateDirection(
-        pagerState = pagerState,
+        carouselState = carouselState,
         currentlySelected = currentlySelected
     )
-    currentlySelected = pagerState.currentPage
+    currentlySelected = carouselState.currentPage
 
     calculateWindowPosition(
-        shouldAnimate = shouldAnimate,
         movementDirection = movementDirection,
-        pagerState = pagerState,
+        carouselState = carouselState,
         visibleWindowState = visibleWindowState,
         pagerCount = pagerCount,
         onShouldAnimateUpdate = { shouldAnimate = it },
@@ -132,7 +130,7 @@ fun CarouselPagerIndicator(
         items,
         visibleWindowState,
         pagerCount,
-        pagerState,
+        carouselState,
         log = ::log
     )
 
@@ -149,7 +147,7 @@ fun CarouselPagerIndicator(
         indicatorSelectedNotAnimatedModifier = indicatorSelectedNotAnimatedModifier,
         indicatorUnselectedSmallModifier = indicatorUnselectedSmallModifier,
         indicatorUnselectedVerySmallModifier = indicatorUnselectedVerySmallModifier,
-        pagerState = pagerState,
+        carouselState = carouselState,
         indicatorSelectedWidth = indicatorSelectedWidth,
         indicatorSelectedHeight = indicatorSelectedHeight,
         activeColor = activeColor,
@@ -161,7 +159,7 @@ private fun calculateItems(
     items: MutableList<Item>,
     visibleWindowState: VisibleWindowState,
     pagerCount: Int,
-    pagerState: PagerState,
+    carouselState: CarouselState,
     log: (String) -> Unit,
 ) {
     items.forEachIndexed { index, item ->
@@ -207,7 +205,7 @@ private fun calculateItems(
             //The items in the edge can be regular, small or very small
             visibleWindowState.window.isTheLowerEdge(index) -> {
                 val thereAreNoMoreItems = visibleWindowState.window.first == 0
-                val isTheSelectedAdjacent = (index + 1) == pagerState.currentPage //visibleWindowState.currentSelected
+                val isTheSelectedAdjacent = (index + 1) == carouselState.currentPage //visibleWindowState.currentSelected
                 when {
                     thereAreNoMoreItems -> {
                         log("item-$index is the lower edge and there are no more items")
@@ -225,7 +223,7 @@ private fun calculateItems(
             }
             visibleWindowState.window.isTheHigherEdge(index) -> {
                 val thereAreNoMoreItems = visibleWindowState.window.second == pagerCount - 1
-                val isTheSelectedAdjacent = (index - 1) == pagerState.currentPage //visibleWindowState.currentSelected
+                val isTheSelectedAdjacent = (index - 1) == carouselState.currentPage //visibleWindowState.currentSelected
                 when {
                     thereAreNoMoreItems -> {
                         log("item-$index is the higher edge and there are no more items")
@@ -252,9 +250,8 @@ private fun calculateItems(
 @ExperimentalPagerApi
 @Composable
 private fun calculateWindowPosition(
-    shouldAnimate: Boolean,
     movementDirection: MovementDirection,
-    pagerState: PagerState,
+    carouselState: CarouselState,
     visibleWindowState: VisibleWindowState,
     pagerCount: Int,
     onShouldAnimateUpdate: (Boolean) -> Unit,
@@ -264,7 +261,7 @@ private fun calculateWindowPosition(
     var shouldTryToMoveTheWindow = false
     when (movementDirection) {
         DECREASE -> {
-            val desirablePosition = pagerState.currentPage //visibleWindowState.currentSelected - 1
+            val desirablePosition = carouselState.currentPage //visibleWindowState.currentSelected - 1
             val canMoveTheBullet = !visibleWindowState.window.isTheEdge(desirablePosition)
             if (canMoveTheBullet) {
                 log("Moving the bullet - $movementDirection")
@@ -273,7 +270,7 @@ private fun calculateWindowPosition(
             shouldTryToMoveTheWindow = !canMoveTheBullet
         }
         INCREASE -> {
-            val desirablePosition = pagerState.currentPage //visibleWindowState.currentSelected + 1
+            val desirablePosition = carouselState.currentPage //visibleWindowState.currentSelected + 1
             val canMoveTheBullet = !visibleWindowState.window.isTheEdge(desirablePosition)
             if (canMoveTheBullet) {
                 log("Moving the bullet - $movementDirection")
@@ -325,12 +322,12 @@ private fun calculateWindowPosition(
 @ExperimentalPagerApi
 @Composable
 private fun calculateDirection(
-    pagerState: PagerState,
+    carouselState: CarouselState,
     currentlySelected: Int,
 ): MovementDirection {
     val movementDirection: MovementDirection = when {
-        pagerState.currentPage > currentlySelected -> INCREASE
-        pagerState.currentPage < currentlySelected -> DECREASE
+        carouselState.currentPage > currentlySelected -> INCREASE
+        carouselState.currentPage < currentlySelected -> DECREASE
         else -> NO_MOVEMENT //They're the same
     }
     return movementDirection
@@ -351,7 +348,7 @@ private fun PagerIndicatorBox(
     indicatorSelectedNotAnimatedModifier: Modifier,
     indicatorUnselectedSmallModifier: Modifier,
     indicatorUnselectedVerySmallModifier: Modifier,
-    pagerState: PagerState,
+    carouselState: CarouselState,
     indicatorSelectedWidth: Dp,
     indicatorSelectedHeight: Dp,
     activeColor: Color,
@@ -403,7 +400,7 @@ private fun PagerIndicatorBox(
                         for (i in 0 until currentSelectedInWindow) {
                             x += visibleItems[i].type.toPx() + spacingPx
                         }
-                        x += ((visibleItems[currentSelectedInWindow].type.toPx() + spacingPx) * pagerState.currentPageOffset).toInt()
+                        x += ((visibleItems[currentSelectedInWindow].type.toPx() + spacingPx) * carouselState.currentPageOffset).toInt()
 
                         IntOffset(
                             x = x,
