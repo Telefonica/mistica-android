@@ -43,13 +43,13 @@ fun CarouselPagerIndicator(
     pagerCount: Int,
     activeColor: Color = MisticaTheme.colors.carouselIndicatorActiveColor,
     inactiveColor: Color = MisticaTheme.colors.carouselIndicatorInactiveColor,
-    indicatorSelectedWidth: Dp = 6.dp*2, //TODO Check with design the values
+    indicatorSelectedWidth: Dp = 10.dp,
     indicatorSelectedHeight: Dp = indicatorSelectedWidth,
-    indicatorUnselectedWidth: Dp = 4.dp*2, //TODO Check with design the values
+    indicatorUnselectedWidth: Dp = 8.dp,
     indicatorUnselectedHeight: Dp = indicatorUnselectedWidth,
-    indicatorUnselectedSmallWidth: Dp = 3.dp*2, //TODO Check with design the values
+    indicatorUnselectedSmallWidth: Dp = 6.dp,
     indicatorUnselectedSmallHeight: Dp = indicatorUnselectedSmallWidth,
-    indicatorUnselectedVerySmallWidth: Dp = 2.dp*2, //TODO Check with design the values
+    indicatorUnselectedVerySmallWidth: Dp = 4.dp,
     indicatorUnselectedVerySmallHeight: Dp = indicatorUnselectedVerySmallWidth,
     spacing: Dp = 8.dp,
     indicatorShape: Shape = CircleShape,
@@ -67,7 +67,7 @@ fun CarouselPagerIndicator(
     val visibleWindowState by remember {
         mutableStateOf(
             VisibleWindowState(
-                window = 0 to if (pagerCount > maximumVisibleItems) 4 else pagerCount - 1,
+                window = 0 to pagerCount.coerceAtMost(maximumVisibleItems) - 1,
                 currentSelected = 0,
             )
         )
