@@ -43,8 +43,8 @@ object VivoBrand : Brand {
         buttonSecondaryBorderDisabledInverse = VivoPaletteColor.vivo_color_purple_light50,
         buttonSecondaryBorderInverse = VivoPaletteColor.vivo_color_white,
         buttonSecondaryBorderSelectedInverse = VivoPaletteColor.vivo_color_purple_light50,
-        carouselIndicatorActiveColor = Color.Unspecified, //TODO gmerino
-        carouselIndicatorInactiveColor = Color.Unspecified, //TODO gmerino
+        carouselIndicatorActiveColor = VivoPaletteColor.vivo_color_purple,
+        carouselIndicatorInactiveColor = VivoPaletteColor.vivo_color_grey_3,
         control = VivoPaletteColor.vivo_color_grey_3,
         controlActive = VivoPaletteColor.vivo_color_purple,
         controlError = VivoPaletteColor.vivo_color_pepper,
@@ -143,8 +143,8 @@ object VivoBrand : Brand {
         buttonSecondaryBorderDisabledInverse = VivoPaletteColor.vivo_color_darkModeGrey,
         buttonSecondaryBorderInverse = VivoPaletteColor.vivo_color_purple_light80,
         buttonSecondaryBorderSelectedInverse = VivoPaletteColor.vivo_color_purple_dark,
-        carouselIndicatorActiveColor = Color.Unspecified, //TODO gmerino
-        carouselIndicatorInactiveColor = Color.Unspecified, //TODO gmerino
+        carouselIndicatorActiveColor = VivoPaletteColor.vivo_color_purple_light80,
+        carouselIndicatorInactiveColor = VivoPaletteColor.vivo_color_darkModeGrey6,
         control = VivoPaletteColor.vivo_color_darkModeGrey6,
         controlActive = VivoPaletteColor.vivo_color_purple_light80,
         divider = VivoPaletteColor.vivo_color_white_5_alpha,

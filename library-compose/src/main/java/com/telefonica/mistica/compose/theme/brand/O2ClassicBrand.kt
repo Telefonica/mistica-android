@@ -43,8 +43,8 @@ object O2ClassicBrand : Brand {
         buttonSecondaryBorderDisabledInverse = O2ClassicPaletteColor.o2_classic_color_sky_blue_light_50,
         buttonSecondaryBorderInverse = O2ClassicPaletteColor.o2_classic_color_white,
         buttonSecondaryBorderSelectedInverse = O2ClassicPaletteColor.o2_classic_color_sky_blue_light_50,
-        carouselIndicatorActiveColor = Color.Unspecified, //TODO gmerino
-        carouselIndicatorInactiveColor = Color.Unspecified, //TODO gmerino
+        carouselIndicatorActiveColor = O2ClassicPaletteColor.o2_classic_color_gem,
+        carouselIndicatorInactiveColor = O2ClassicPaletteColor.o2_classic_color_grey_3,
         control = O2ClassicPaletteColor.o2_classic_color_grey_3,
         controlActive = O2ClassicPaletteColor.o2_classic_color_gem,
         controlError = O2ClassicPaletteColor.o2_classic_color_pepper,
@@ -140,8 +140,8 @@ object O2ClassicBrand : Brand {
         buttonSecondaryBorderDisabledInverse = O2ClassicPaletteColor.o2_classic_color_darkModeGrey,
         buttonSecondaryBorderInverse = O2ClassicPaletteColor.o2_classic_color_sky_blue,
         buttonSecondaryBorderSelectedInverse = O2ClassicPaletteColor.o2_classic_color_sky_blue_dark,
-        carouselIndicatorActiveColor = Color.Unspecified, //TODO gmerino
-        carouselIndicatorInactiveColor = Color.Unspecified, //TODO gmerino
+        carouselIndicatorActiveColor = O2ClassicPaletteColor.o2_classic_color_gem,
+        carouselIndicatorInactiveColor = O2ClassicPaletteColor.o2_classic_color_darkModeGrey6,
         control = O2ClassicPaletteColor.o2_classic_color_darkModeGrey6,
         divider = O2ClassicPaletteColor.o2_classic_color_white_5_alpha,
         dividerInverse = O2ClassicPaletteColor.o2_classic_color_white_5_alpha,

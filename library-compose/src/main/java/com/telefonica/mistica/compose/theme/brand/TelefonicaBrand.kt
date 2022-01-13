@@ -43,8 +43,8 @@ object TelefonicaBrand : Brand {
         buttonSecondaryBorderDisabledInverse = TelefonicaPaletteColor.telefonica_color_blue_light50,
         buttonSecondaryBorderInverse = TelefonicaPaletteColor.telefonica_color_white,
         buttonSecondaryBorderSelectedInverse = TelefonicaPaletteColor.telefonica_color_blue_light50,
-        carouselIndicatorActiveColor = Color.Unspecified, //TODO gmerino
-        carouselIndicatorInactiveColor = Color.Unspecified, //TODO gmerino
+        carouselIndicatorActiveColor = TelefonicaPaletteColor.telefonica_color_blue,
+        carouselIndicatorInactiveColor = TelefonicaPaletteColor.telefonica_color_grey_3,
         control = TelefonicaPaletteColor.telefonica_color_grey_3,
         controlActive = TelefonicaPaletteColor.telefonica_color_blue,
         controlError = TelefonicaPaletteColor.telefonica_color_coral,
@@ -149,8 +149,8 @@ object TelefonicaBrand : Brand {
         buttonSecondaryBorderDisabledInverse = TelefonicaPaletteColor.telefonica_color_darkModeGrey,
         buttonSecondaryBorderInverse = TelefonicaPaletteColor.telefonica_color_blue,
         buttonSecondaryBorderSelectedInverse = TelefonicaPaletteColor.telefonica_color_blue_dark,
-        carouselIndicatorActiveColor = Color.Unspecified, //TODO gmerino
-        carouselIndicatorInactiveColor = Color.Unspecified, //TODO gmerino
+        carouselIndicatorActiveColor = TelefonicaPaletteColor.telefonica_color_blue,
+        carouselIndicatorInactiveColor = TelefonicaPaletteColor.telefonica_color_grey_6,
         control = TelefonicaPaletteColor.telefonica_color_grey_6,
         controlActive = TelefonicaPaletteColor.telefonica_color_blue,
         controlError = TelefonicaPaletteColor.telefonica_color_coral,

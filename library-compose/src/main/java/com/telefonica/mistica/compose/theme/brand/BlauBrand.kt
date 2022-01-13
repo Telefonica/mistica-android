@@ -43,8 +43,8 @@ object BlauBrand : Brand {
         buttonSecondaryBorderDisabledInverse = BlauPaletteColor.blau_color_blue_secondary20,
         buttonSecondaryBorderInverse = BlauPaletteColor.blau_color_white,
         buttonSecondaryBorderSelectedInverse = BlauPaletteColor.blau_color_blue_primary30,
-        carouselIndicatorActiveColor = Color.Unspecified, //TODO gmerino
-        carouselIndicatorInactiveColor = Color.Unspecified, //TODO gmerino
+        carouselIndicatorActiveColor = BlauPaletteColor.blau_color_blue_secondary,
+        carouselIndicatorInactiveColor = BlauPaletteColor.blau_color_grey_2,
         control = BlauPaletteColor.blau_color_grey_2,
         controlActive = BlauPaletteColor.blau_color_blue_secondary,
         controlError = BlauPaletteColor.blau_color_red,
@@ -140,8 +140,8 @@ object BlauBrand : Brand {
         buttonSecondaryBorderDisabledInverse = BlauPaletteColor.blau_color_darkModeGrey,
         buttonSecondaryBorderInverse = BlauPaletteColor.blau_color_blue_primary,
         buttonSecondaryBorderSelectedInverse = BlauPaletteColor.blau_color_blue_secondary60,
-        carouselIndicatorActiveColor = Color.Unspecified, //TODO gmerino
-        carouselIndicatorInactiveColor = Color.Unspecified, //TODO gmerino
+        carouselIndicatorActiveColor = BlauPaletteColor.blau_color_blue_secondary,
+        carouselIndicatorInactiveColor = BlauPaletteColor.blau_color_grey_5,
         control = BlauPaletteColor.blau_color_grey_5,
         divider = BlauPaletteColor.blau_color_white_5_alpha,
         dividerInverse = BlauPaletteColor.blau_color_white_5_alpha,
