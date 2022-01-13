@@ -39,6 +39,7 @@ import com.telefonica.mistica.compose.button.DropDownInput
 import com.telefonica.mistica.compose.catalog.R
 import com.telefonica.mistica.compose.catalog.ui.components.Buttons
 import com.telefonica.mistica.compose.catalog.ui.components.DataCards
+import com.telefonica.mistica.compose.catalog.ui.components.Carousels
 import com.telefonica.mistica.compose.catalog.ui.components.Feedbacks
 import com.telefonica.mistica.compose.catalog.ui.components.Lists
 import com.telefonica.mistica.compose.catalog.ui.components.MediaCards
@@ -144,6 +145,7 @@ fun CatalogNavHost(
         composable(NavigationRoutes.TAGS) { Tags() }
         composable(NavigationRoutes.DATA_CARDS) { DataCards() }
         composable(NavigationRoutes.MEDIA_CARDS) { MediaCards() }
+        composable(NavigationRoutes.CAROUSELS) { Carousels() }
     }
 }
 
@@ -189,6 +191,11 @@ fun Catalog(
             name = "Media Cards",
             icon = R.drawable.ic_cards,
             navigation = NavigationRoutes.MEDIA_CARDS
+        ),
+        ComponentScreen(
+            name = "Carousels",
+            icon = R.drawable.ic_tags,
+            navigation = NavigationRoutes.CAROUSELS
         ),
     )
     Column {
@@ -260,4 +267,5 @@ object NavigationRoutes {
     const val TAGS = "tags"
     const val DATA_CARDS = "data-cards"
     const val MEDIA_CARDS = "media-cards"
+    const val CAROUSELS = "carousels"
 }

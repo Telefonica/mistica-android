@@ -16,18 +16,6 @@
         android:theme="@style/MisticaTheme.Movistar">
 
         <activity
-            android:name="com.telefonica.mistica.catalog.ui.CatalogMainActivity"
-            android:exported="true"
-            android:taskAffinity="com.telefonica.mistica.catalog"
-            android:icon="@mipmap/ic_launcher"
-            tools:node="replace">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
-        <activity
                 android:name="com.telefonica.mistica.compose.catalog.ui.CatalogMainActivity"
                 android:exported="true"
                 android:label="@string/compose_activity"
@@ -35,6 +23,18 @@
                 android:roundIcon="@mipmap/ic_launcher_compose_round"
                 android:taskAffinity="com.telefonica.mistica.compose.catalog"
                 tools:node="replace">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.telefonica.mistica.catalog.ui.CatalogMainActivity"
+            android:exported="true"
+            android:taskAffinity="com.telefonica.mistica.catalog"
+            android:icon="@mipmap/ic_launcher"
+            tools:node="replace">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
