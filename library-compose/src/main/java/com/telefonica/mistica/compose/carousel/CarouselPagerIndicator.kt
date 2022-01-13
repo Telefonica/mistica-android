@@ -23,6 +23,17 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import com.google.accompanist.pager.ExperimentalPagerApi
+import com.telefonica.mistica.compose.carousel.CarouselPagerIndicator.MAX_WINDOW_SIZE
+import com.telefonica.mistica.compose.carousel.CarouselPagerIndicator.indicatorSelectedHeight
+import com.telefonica.mistica.compose.carousel.CarouselPagerIndicator.indicatorSelectedWidth
+import com.telefonica.mistica.compose.carousel.CarouselPagerIndicator.indicatorShape
+import com.telefonica.mistica.compose.carousel.CarouselPagerIndicator.indicatorUnselectedHeight
+import com.telefonica.mistica.compose.carousel.CarouselPagerIndicator.indicatorUnselectedSmallHeight
+import com.telefonica.mistica.compose.carousel.CarouselPagerIndicator.indicatorUnselectedSmallWidth
+import com.telefonica.mistica.compose.carousel.CarouselPagerIndicator.indicatorUnselectedVerySmallHeight
+import com.telefonica.mistica.compose.carousel.CarouselPagerIndicator.indicatorUnselectedVerySmallWidth
+import com.telefonica.mistica.compose.carousel.CarouselPagerIndicator.indicatorUnselectedWidth
+import com.telefonica.mistica.compose.carousel.CarouselPagerIndicator.spacing
 import com.telefonica.mistica.compose.carousel.IndicatorType.INVISIBLE
 import com.telefonica.mistica.compose.carousel.IndicatorType.SELECTED
 import com.telefonica.mistica.compose.carousel.IndicatorType.UNSELECTED
@@ -38,21 +49,8 @@ import com.telefonica.mistica.compose.theme.MisticaTheme
 @Composable
 fun CarouselPagerIndicator(
     modifier: Modifier = Modifier,
-    maximumVisibleItems: Int = Constants.MAX_WINDOW_SIZE,
     carouselState: CarouselState,
     pagerCount: Int,
-    activeColor: Color = MisticaTheme.colors.carouselIndicatorActiveColor,
-    inactiveColor: Color = MisticaTheme.colors.carouselIndicatorInactiveColor,
-    indicatorSelectedWidth: Dp = 10.dp,
-    indicatorSelectedHeight: Dp = indicatorSelectedWidth,
-    indicatorUnselectedWidth: Dp = 8.dp,
-    indicatorUnselectedHeight: Dp = indicatorUnselectedWidth,
-    indicatorUnselectedSmallWidth: Dp = 6.dp,
-    indicatorUnselectedSmallHeight: Dp = indicatorUnselectedSmallWidth,
-    indicatorUnselectedVerySmallWidth: Dp = 4.dp,
-    indicatorUnselectedVerySmallHeight: Dp = indicatorUnselectedVerySmallWidth,
-    spacing: Dp = 8.dp,
-    indicatorShape: Shape = CircleShape,
     debug: Boolean = false,
 ) {
 
@@ -62,12 +60,15 @@ fun CarouselPagerIndicator(
         }
     }
 
+    val activeColor: Color = MisticaTheme.colors.carouselIndicatorActiveColor
+    val inactiveColor: Color = MisticaTheme.colors.carouselIndicatorInactiveColor
+
     log("starting with - ${carouselState.currentPage}")
 
     val visibleWindowState by remember {
         mutableStateOf(
             VisibleWindowState(
-                window = 0 to pagerCount.coerceAtMost(maximumVisibleItems) - 1,
+                window = 0 to pagerCount.coerceAtMost(MAX_WINDOW_SIZE) - 1,
                 currentSelected = 0,
             )
         )
@@ -435,8 +436,19 @@ internal enum class IndicatorType {
     INVISIBLE,
 }
 
-private object Constants {
+private object CarouselPagerIndicator {
     const val MAX_WINDOW_SIZE = 5
+
+    val indicatorSelectedWidth: Dp = 10.dp
+    val indicatorSelectedHeight: Dp = indicatorSelectedWidth
+    val indicatorUnselectedWidth: Dp = 8.dp
+    val indicatorUnselectedHeight: Dp = indicatorUnselectedWidth
+    val indicatorUnselectedSmallWidth: Dp = 6.dp
+    val indicatorUnselectedSmallHeight: Dp = indicatorUnselectedSmallWidth
+    val indicatorUnselectedVerySmallWidth: Dp = 4.dp
+    val indicatorUnselectedVerySmallHeight: Dp = indicatorUnselectedVerySmallWidth
+    val spacing: Dp = 8.dp
+    val indicatorShape: Shape = CircleShape
 }
 
 internal enum class MovementDirection { DECREASE, INCREASE, NO_MOVEMENT }
