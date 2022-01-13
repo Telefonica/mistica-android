@@ -261,15 +261,7 @@ internal fun calculateWindowPosition(
     //Check if we can move the bullet without moving to the edge
     var shouldTryToMoveTheWindow = false
     when (movementDirection) {
-        DECREASE -> {
-            val canMoveTheBullet = !visibleWindowState.window.isTheEdge(currentSelected)
-            if (canMoveTheBullet) {
-                log("Moving the bullet - $movementDirection")
-                visibleWindowState.currentSelected = currentSelected
-            }
-            shouldTryToMoveTheWindow = !canMoveTheBullet
-        }
-        INCREASE -> {
+        DECREASE, INCREASE -> {
             val canMoveTheBullet = !visibleWindowState.window.isTheEdge(currentSelected)
             if (canMoveTheBullet) {
                 log("Moving the bullet - $movementDirection")
@@ -319,7 +311,6 @@ internal fun calculateWindowPosition(
 }
 
 @ExperimentalPagerApi
-@Composable
 private fun calculateDirection(
     carouselState: CarouselState,
     currentlySelected: Int,
