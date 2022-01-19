@@ -212,10 +212,6 @@ fun Lists() {
                 trailing = item.action,
                 onClick = item.onClick,
             )
-            Divider(
-                modifier = Modifier.padding(horizontal = 16.dp),
-                color = MisticaTheme.colors.divider
-            )
         }
         items(samples.map {
             it.copy(
@@ -234,10 +230,6 @@ fun Lists() {
                 description = item.description,
                 trailing = item.action,
                 onClick = item.onClick,
-            )
-            Divider(
-                modifier = Modifier.padding(horizontal = 16.dp),
-                color = MisticaTheme.colors.divider
             )
         }
     }
