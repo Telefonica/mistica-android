@@ -39,6 +39,7 @@ appcenter {
             appName = "mistica"
         }
     }
+    uploadMappingFiles = false
 }
 
 dependencies {
