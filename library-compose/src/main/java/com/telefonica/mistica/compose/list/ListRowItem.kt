@@ -58,7 +58,7 @@ fun ListRowItem(
         BackgroundType.TYPE_BOXED,
         BackgroundType.TYPE_BOXED_INVERSE,
         -> modifier
-            .padding(16.dp)
+            .padding(horizontal = 16.dp, vertical = 8.dp)
     }
         .fillMaxWidth()
         .clip(shape = RoundedCornerShape(4.dp))
@@ -124,7 +124,7 @@ fun ListRowItem(
                 title?.let {
                     Text(
                         text = it,
-                        style = MisticaTheme.typography.preset3Light,
+                        style = MisticaTheme.typography.preset3,
                         color = textColorPrimary,
                     )
                 }
