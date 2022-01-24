@@ -36,7 +36,11 @@ nexusStaging {
 allprojects {
 
     group = 'com.telefonica.mistica'
-    version = System.getProperty("LIBRARY_VERSION") ?: "undefined"
+    if (System.getProperty("SNAPSHOT_VERSION") != null) {
+        version = System.getProperty("SNAPSHOT_VERSION")+"-SNAPSHOT"
+    } else {
+        version = System.getProperty("LIBRARY_VERSION") ?: "undefined"
+    }
 
     repositories {
         google()
