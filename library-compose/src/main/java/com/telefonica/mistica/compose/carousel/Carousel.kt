@@ -39,7 +39,7 @@ fun Carousel(
 }
 
 @OptIn(ExperimentalPagerApi::class)
-internal data class PaddingValuesWithStartAndEndMargin(
+data class PaddingValuesWithStartAndEndMargin(
     private val carouselState: CarouselState,
     private val start: Dp = 4.dp,
     private val end: Dp = 4.dp,
