@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
@@ -54,7 +55,7 @@ fun Card(
 
 @Composable
 internal fun CardActions(primaryButton: Action?, linkButton: Action?) {
-    if (primaryButton != null && linkButton != null) {
+    if (primaryButton != null || linkButton != null) {
         Row(
             modifier = Modifier
                 .padding(top = 16.dp)
@@ -72,6 +73,7 @@ internal fun CardActions(primaryButton: Action?, linkButton: Action?) {
             }
             linkButton?.let {
                 Button(
+                    modifier = if (primaryButton == null) Modifier.offset(x = (-8).dp) else Modifier,
                     text = it.text,
                     onClickListener = it.onTapped,
                     buttonStyle = ButtonStyle.LINK,
