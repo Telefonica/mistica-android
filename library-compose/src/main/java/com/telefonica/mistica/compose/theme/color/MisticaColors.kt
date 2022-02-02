@@ -55,6 +55,8 @@ class MisticaColors(
     gradientBackgroundSecond: Color = Color.Unspecified,
     gradientBackgroundThird: Color = Color.Unspecified,
     highlight: Color = Color.Unspecified,
+    initialsIconBackground: Color = Color.Unspecified,
+    initialsIconForeground: Color = Color.Unspecified,
     inverse: Color = Color.Unspecified,
     loadingBar: Color = Color.Unspecified,
     loadingBarBackground: Color = Color.Unspecified,
@@ -235,6 +237,10 @@ class MisticaColors(
         internal set
     var brandDark by mutableStateOf(brandDark, structuralEqualityPolicy())
         internal set
+    var initialsIconBackground by mutableStateOf(initialsIconBackground, structuralEqualityPolicy())
+        internal set
+    var initialsIconForeground by mutableStateOf(initialsIconForeground, structuralEqualityPolicy())
+        internal set
     var inverse by mutableStateOf(inverse, structuralEqualityPolicy())
         internal set
     var neutralHigh by mutableStateOf(neutralHigh, structuralEqualityPolicy())
@@ -367,6 +373,8 @@ class MisticaColors(
         gradientBackgroundSecond: Color = this.gradientBackgroundSecond,
         gradientBackgroundThird: Color = this.gradientBackgroundThird,
         highlight: Color = this.highlight,
+        initialsIconBackground: Color = this.initialsIconBackground,
+        initialsIconForeground: Color = this.initialsIconForeground,
         inverse: Color = this.inverse,
         loadingBar: Color = this.loadingBar,
         loadingBarBackground: Color = this.loadingBarBackground,
@@ -577,6 +585,8 @@ class MisticaColors(
         gradientBackgroundSecond = other.gradientBackgroundSecond
         gradientBackgroundThird = other.gradientBackgroundThird
         highlight = other.highlight
+        initialsIconBackground = other.initialsIconBackground
+        initialsIconForeground = other.initialsIconForeground
         inverse = other.inverse
         loadingBar = other.loadingBar
         loadingBarBackground = other.loadingBarBackground
