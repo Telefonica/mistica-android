@@ -1,9 +1,7 @@
 package com.telefonica.mistica.compose.card.datacard
 
-import androidx.annotation.DrawableRes
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import com.telefonica.mistica.compose.R
 import com.telefonica.mistica.compose.card.Action
