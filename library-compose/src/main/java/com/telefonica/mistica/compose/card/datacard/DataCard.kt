@@ -145,8 +145,8 @@ fun resourceIconPainter(@DrawableRes iconRes: Int) = IconPainter.ResourceIconPai
 @Composable
 fun textIconPainter(
     text: String,
-    colorBackground: Color = MisticaTheme.colors.initialsIconBackground,
-    colorForeground: Color = MisticaTheme.colors.initialsIconForeground,
+    colorBackground: Color,
+    colorForeground: Color,
 ) = IconPainter.TextIconPainter(
     text = text,
     colorBackground = colorBackground,

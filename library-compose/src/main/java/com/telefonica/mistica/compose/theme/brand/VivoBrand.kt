@@ -58,8 +58,6 @@ object VivoBrand : Brand {
         gradientBackgroundSecond = VivoPaletteColor.vivo_color_purple,
         gradientBackgroundThird = VivoPaletteColor.vivo_color_purple,
         highlight = VivoPaletteColor.vivo_color_pink,
-        initialsIconBackground = VivoPaletteColor.vivo_color_purple_light10,
-        initialsIconForeground = VivoPaletteColor.vivo_color_purple,
         inverse = VivoPaletteColor.vivo_color_white,
         loadingBar = VivoPaletteColor.vivo_color_pink,
         loadingBarBackground = VivoPaletteColor.vivo_color_pepper_light30,

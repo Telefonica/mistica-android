@@ -58,8 +58,6 @@ object BlauBrand : Brand {
         gradientBackgroundSecond = BlauPaletteColor.blau_color_blue_primary,
         gradientBackgroundThird = BlauPaletteColor.blau_color_blue_primary,
         highlight = BlauPaletteColor.blau_color_blue_primary,
-        initialsIconBackground = BlauPaletteColor.blau_color_blue_secondary10,
-        initialsIconForeground = BlauPaletteColor.blau_color_blue_secondary,
         inverse = BlauPaletteColor.blau_color_white,
         loadingBar = BlauPaletteColor.blau_color_blue_secondary,
         loadingBarBackground = BlauPaletteColor.blau_color_blue_secondary10,

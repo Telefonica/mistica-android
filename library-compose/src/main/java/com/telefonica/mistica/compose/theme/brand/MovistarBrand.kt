@@ -58,8 +58,6 @@ object MovistarBrand : Brand {
         gradientBackgroundSecond = MovistarPaletteColor.movistar_color_blue,
         gradientBackgroundThird = MovistarPaletteColor.movistar_color_blue,
         highlight = MovistarPaletteColor.movistar_color_pink,
-        initialsIconBackground = MovistarPaletteColor.movistar_color_blue_10,
-        initialsIconForeground = MovistarPaletteColor.movistar_color_blue,
         inverse = MovistarPaletteColor.movistar_color_white,
         loadingBar = MovistarPaletteColor.movistar_color_blue_light50,
         loadingBarBackground = MovistarPaletteColor.movistar_color_blue_dark,

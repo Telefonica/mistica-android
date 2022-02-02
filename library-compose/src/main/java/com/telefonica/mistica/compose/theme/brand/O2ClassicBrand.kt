@@ -58,8 +58,6 @@ object O2ClassicBrand : Brand {
         gradientBackgroundSecond = O2ClassicPaletteColor.o2_classic_gradient_second,
         gradientBackgroundThird = O2ClassicPaletteColor.o2_classic_gradient_third,
         highlight = O2ClassicPaletteColor.o2_classic_color_pink,
-        initialsIconBackground = O2ClassicPaletteColor.o2_classic_color_blue_10,
-        initialsIconForeground = O2ClassicPaletteColor.o2_classic_color_blue,
         inverse = O2ClassicPaletteColor.o2_classic_color_white,
         loadingBar = O2ClassicPaletteColor.o2_classic_color_gem,
         loadingBarBackground = O2ClassicPaletteColor.o2_classic_color_gem_light_30,
