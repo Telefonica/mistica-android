@@ -23,6 +23,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.card.Action
 import com.telefonica.mistica.compose.card.datacard.DataCard
+import com.telefonica.mistica.compose.card.datacard.noIcon
+import com.telefonica.mistica.compose.card.datacard.resourceIconPainter
 import com.telefonica.mistica.compose.catalog.R
 import com.telefonica.mistica.compose.tag.Tag
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_PROMO
@@ -99,7 +101,7 @@ fun DataCards() {
             modifier = Modifier
                 .padding(24.dp)
                 .fillMaxWidth(),
-            iconRes = if (withIcon) R.drawable.card_image_sample else null,
+            iconPainter = if (withIcon) resourceIconPainter(iconRes = R.drawable.card_image_sample) else noIcon(),
             tag = if (tag.isNotEmpty()) Tag(tag).withStyle(tagType) else null,
             preTitle = preTitle.getOrNullIfEmpty(),
             title = title.getOrNullIfEmpty(),
