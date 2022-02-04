@@ -15,5 +15,6 @@ _Provide a description of the implementation. A list of steps would be ideal._
 ### :test_tube: How can I test this?
 _If it cannot be tested explain why._
 - [ ] 🖼️ Screenshots/Videos
+- [ ] Mistica APK link
 - [ ] Reviewed by Mistica design team
 - [ ] ...
