@@ -81,8 +81,6 @@ internal fun CardActions(primaryButton: Action?, linkButton: Action?) {
     }
 }
 
-
-
 @Composable
 internal fun CardContent(
     tag: Tag?,
@@ -100,7 +98,6 @@ internal fun CardContent(
             ) {
                 tag.build()
             }
-
         }
         preTitle?.let {
 
@@ -122,7 +119,7 @@ internal fun CardContent(
         subtitle?.let {
             Text(
                 modifier = Modifier.padding(top =4.dp),
-                text = subtitle.uppercase(),
+                text = subtitle,
                 style = MisticaTheme.typography.preset2,
             )
         }
