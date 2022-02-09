@@ -9,6 +9,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
@@ -27,16 +28,23 @@ sealed class IconPainter {
         }
     }
 
-    class ResourceIconPainter(val iconRes: Int) : IconPainter() {
+    class ResourceIconPainter(
+        val iconRes: Int,
+        val iconTint: Color?,
+        val backgroundColor: Color,
+    ) : IconPainter() {
         @Composable
         override fun Paint() {
             Box(
                 modifier = Modifier.padding(top = 8.dp, bottom = 8.dp),
             ) {
-                Circle {
+                Circle(
+                    color = backgroundColor
+                ) {
                     Image(
                         painter = painterResource(id = iconRes),
                         contentDescription = null,
+                        colorFilter = iconTint?.let { ColorFilter.tint(iconTint) },
                         contentScale = ContentScale.Crop
                     )
                 }
@@ -90,7 +98,16 @@ sealed class IconPainter {
     }
 }
 
-fun resourceIconPainter(@DrawableRes iconRes: Int) = IconPainter.ResourceIconPainter(iconRes)
+@Composable
+fun resourceIconPainter(
+    @DrawableRes iconRes: Int,
+    iconTint: Color? = null,
+    backgroundColor: Color = MisticaTheme.colors.neutralLow,
+) = IconPainter.ResourceIconPainter(
+    iconRes = iconRes,
+    iconTint = iconTint,
+    backgroundColor = backgroundColor
+)
 
 fun textIconPainter(
     text: String,
