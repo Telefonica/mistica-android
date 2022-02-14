@@ -40,6 +40,8 @@ import com.telefonica.mistica.compose.catalog.R
 import com.telefonica.mistica.compose.catalog.ui.components.Buttons
 import com.telefonica.mistica.compose.catalog.ui.components.DataCards
 import com.telefonica.mistica.compose.catalog.ui.components.Carousels
+import com.telefonica.mistica.compose.catalog.ui.components.EmptyStateCards
+import com.telefonica.mistica.compose.catalog.ui.components.EmptyStateScreen
 import com.telefonica.mistica.compose.catalog.ui.components.Feedbacks
 import com.telefonica.mistica.compose.catalog.ui.components.Lists
 import com.telefonica.mistica.compose.catalog.ui.components.MediaCards
@@ -146,6 +148,8 @@ fun CatalogNavHost(
         composable(NavigationRoutes.DATA_CARDS) { DataCards() }
         composable(NavigationRoutes.MEDIA_CARDS) { MediaCards() }
         composable(NavigationRoutes.CAROUSELS) { Carousels() }
+        composable(NavigationRoutes.EMPTY_STATE_CARD) { EmptyStateCards() }
+        composable(NavigationRoutes.EMPTY_STATE_SCREEN) { EmptyStateScreen() }
     }
 }
 
@@ -196,6 +200,16 @@ fun Catalog(
             name = "Carousels",
             icon = R.drawable.ic_tags,
             navigation = NavigationRoutes.CAROUSELS
+        ),
+        ComponentScreen(
+            name = "Empty State",
+            icon = R.drawable.ic_empty_states,
+            navigation = NavigationRoutes.EMPTY_STATE_SCREEN
+        ),
+        ComponentScreen(
+            name = "Empty State Card",
+            icon = R.drawable.ic_empty_states,
+            navigation = NavigationRoutes.EMPTY_STATE_CARD
         ),
     )
     Column {
@@ -268,4 +282,6 @@ object NavigationRoutes {
     const val DATA_CARDS = "data-cards"
     const val MEDIA_CARDS = "media-cards"
     const val CAROUSELS = "carousels"
+    const val EMPTY_STATE_SCREEN = "empty-state-screen"
+    const val EMPTY_STATE_CARD = "empty-state-card"
 }
