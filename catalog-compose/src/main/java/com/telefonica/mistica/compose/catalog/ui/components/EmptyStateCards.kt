@@ -38,7 +38,6 @@ fun EmptyStateCards() {
             .fillMaxSize()
             .padding(16.dp)
             .verticalScroll(rememberScrollState()),
-        verticalArrangement = Arrangement.Center,
     ) {
         Text(
             text = "EMPTY STATE CARD TESTER",

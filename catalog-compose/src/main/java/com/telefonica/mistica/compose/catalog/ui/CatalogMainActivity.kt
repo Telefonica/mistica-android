@@ -41,7 +41,7 @@ import com.telefonica.mistica.compose.catalog.ui.components.Buttons
 import com.telefonica.mistica.compose.catalog.ui.components.DataCards
 import com.telefonica.mistica.compose.catalog.ui.components.Carousels
 import com.telefonica.mistica.compose.catalog.ui.components.EmptyStateCards
-import com.telefonica.mistica.compose.catalog.ui.components.EmptyStateScreen
+import com.telefonica.mistica.compose.catalog.ui.components.EmptyStateScreens
 import com.telefonica.mistica.compose.catalog.ui.components.Feedbacks
 import com.telefonica.mistica.compose.catalog.ui.components.Lists
 import com.telefonica.mistica.compose.catalog.ui.components.MediaCards
@@ -149,7 +149,7 @@ fun CatalogNavHost(
         composable(NavigationRoutes.MEDIA_CARDS) { MediaCards() }
         composable(NavigationRoutes.CAROUSELS) { Carousels() }
         composable(NavigationRoutes.EMPTY_STATE_CARD) { EmptyStateCards() }
-        composable(NavigationRoutes.EMPTY_STATE_SCREEN) { EmptyStateScreen() }
+        composable(NavigationRoutes.EMPTY_STATE_SCREEN) { EmptyStateScreens() }
     }
 }
 
