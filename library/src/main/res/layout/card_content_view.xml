@@ -11,6 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:visibility="gone"
         tools:text="HEADLINE"
         tools:visibility="visible" />
@@ -19,7 +20,7 @@
         android:id="@+id/card_pre_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:textAllCaps="true"
         android:textAppearance="@style/AppTheme.TextAppearance.Preset1"
         android:textColor="?colorHighlight"

@@ -94,17 +94,15 @@ internal fun CardContent(
     Column {
         if (tag != null) {
             Box(modifier = Modifier
-                .padding(
-                    top = 8.dp
-                )
+                .padding(top = 8.dp, bottom = 8.dp)
             ) {
                 tag.build()
             }
         }
-        preTitle?.let {
 
+        preTitle?.let {
             Text(
-                modifier = Modifier.padding(top = 16.dp),
+                modifier = Modifier.padding(top = 8.dp),
                 text = preTitle,
                 style = MisticaTheme.typography.preset1,
                 color = MisticaTheme.colors.highlight
@@ -113,14 +111,14 @@ internal fun CardContent(
 
         title?.let {
             Text(
-                modifier = Modifier.padding(top = 4.dp),
+                modifier = Modifier.padding(top = 8.dp),
                 text = title,
                 style = MisticaTheme.typography.preset4,
             )
         }
         subtitle?.let {
             Text(
-                modifier = Modifier.padding(top =4.dp),
+                modifier = Modifier.padding(top = 8.dp),
                 text = subtitle,
                 style = MisticaTheme.typography.preset2,
             )
