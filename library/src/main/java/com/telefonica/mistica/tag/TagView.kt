@@ -85,7 +85,7 @@ class TagView @JvmOverloads constructor(
     }
 
     override fun setText(text: CharSequence?, type: BufferType?) {
-        super.setText(text?.toString()?.captitalizeFirstChar(), type)
+        super.setText(text?.toString(), type)
     }
 
     private fun Int.getStyle() = when (this) {
@@ -97,10 +97,6 @@ class TagView @JvmOverloads constructor(
         TYPE_ERROR -> R.attr.tagBackgroundError to R.attr.textTagError
         TYPE_INVERSE -> R.attr.colorInverse to R.attr.textTagActive
         else -> R.attr.tagBackgroundPromo to R.attr.textTagPromo
-    }
-
-    private fun String.captitalizeFirstChar(): String {
-        return lowercase(Locale.getDefault()).replaceFirstChar { if (it.isLowerCase()) it.uppercase() else it.toString() }
     }
 
     companion object {
