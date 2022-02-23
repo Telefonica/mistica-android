@@ -30,9 +30,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.R
 import com.telefonica.mistica.compose.badge.Badge
-import com.telefonica.mistica.compose.tag.Tag
 import com.telefonica.mistica.compose.shape.Chevron
 import com.telefonica.mistica.compose.shape.Circle
+import com.telefonica.mistica.compose.tag.Tag
 import com.telefonica.mistica.compose.theme.MisticaTheme
 import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 
@@ -54,7 +54,7 @@ fun ListRowItem(
     val badgeVisible by remember { mutableStateOf(isBadgeVisible) }
 
     val boxModifier = when (backgroundType) {
-        BackgroundType.TYPE_NORMAL -> Modifier
+        BackgroundType.TYPE_NORMAL -> modifier
         BackgroundType.TYPE_BOXED,
         BackgroundType.TYPE_BOXED_INVERSE,
         -> modifier
@@ -84,6 +84,10 @@ fun ListRowItem(
             )
     }
         .fillMaxWidth()
+        .defaultMinSize(minHeight = when(description) {
+            null -> 72.dp
+            else -> 80.dp
+        })
         .padding(16.dp)
 
     val textColorPrimary = when (backgroundType) {
