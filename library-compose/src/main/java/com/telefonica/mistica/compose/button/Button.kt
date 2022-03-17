@@ -14,6 +14,7 @@ fun Button(
     loadingText: String = "",
     buttonStyle: ButtonStyle = ButtonStyle.PRIMARY,
     isLoading: Boolean = false,
+    enabled: Boolean = true,
     onClickListener: () -> Unit,
 ) {
     fun View.updateButton() {
@@ -21,6 +22,7 @@ fun Button(
             setText(text)
             setLoadingText(loadingText)
             setIsLoading(isLoading)
+            isEnabled = enabled
             setOnClickListener { onClickListener() }
         }
     }
