@@ -85,7 +85,7 @@ private fun TextInputStandard() {
 
     TextInput(
         modifier = Modifier
-            //.fillMaxWidth()
+            .fillMaxWidth()
             .padding(top = 8.dp, start = 16.dp, end = 16.dp)
         ,
         value = text,
@@ -216,6 +216,9 @@ private fun ColumnScope.EmailInputWithValidation() {
         ,
         value = text,
         onValueChange = {
+            if (it.isNotEmpty()) {
+                isError = false
+            }
             text = it
         },
         isError = isError,
@@ -249,6 +252,9 @@ private fun ColumnScope.PhoneInputWithValidation() {
             .padding(top = 8.dp, start = 16.dp, end = 16.dp),
         value = text,
         onValueChange = {
+            if (it.isNotEmpty()) {
+                isError = false
+            }
             text = it
         },
         isError = isError,
