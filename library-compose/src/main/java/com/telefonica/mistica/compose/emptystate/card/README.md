@@ -2,7 +2,7 @@
 
 <p align="left">
     <img height=300 src="../../../../../../../../../../doc/images/empty_states/cards/empty_state_card_1.png" />
-    <img height=300 src="../../../../../../../../../../../doc/images/empty_states/cards/empty_state_card_2.png" />
+    <img height=300 src="../../../../../../../../../../doc/images/empty_states/cards/empty_state_card_2.png" />
 </p>
 
 Empty State Cards require a minimum content of **an image and a title**
