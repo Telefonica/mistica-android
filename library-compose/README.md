@@ -85,10 +85,10 @@ There is a Mística-compose catalog in the [Demo app](https://github.com/Telefon
 ### Components
 | Component | Available | Implementation |
 | ------------- | ------------- | ------------- |
-| Buttons					|  ✅  |  AndroidView   |    				
-| Inputs					|     |     |    				
+| Buttons					|  ✅  |  AndroidView   |
+| Inputs					|  ✅*  |  Composable   |
 | Snackbars					|     |     |    				
-| Screen Feedbacks			|  ✅  |  AndroidView   | 					
+| Screen Feedbacks			|  ✅  |  AndroidView   |
 | Load Error Feedback		|     |     |    							
 | Pop Overs					|     |     |    				
 | Badges					|  ✅  |  Composable   |
@@ -104,11 +104,13 @@ There is a Mística-compose catalog in the [Demo app](https://github.com/Telefon
 | Data Cards				|  ✅️ |  Composable   |
 | Steppers					|     |     |    				
 | Tabs						|     |     |    			
-| Empty States				|     |     |    					
-| Empty State Cards			|     |     |    						
+| Empty States				|  ✅ | AndroidView   |
+| Empty State Cards			|  ✅ | AndroidView   |
 | Callout					|     |     |    						
 | Carousel					|  ✅️ |  Composable   |
 
+***Note**: Not every text input type have been migrated, see [text input](https://github
+.com/Telefonica/mistica-android/tree/master/library-compose/src/main/java/com/telefonica/mistica/compose/input/README.md) section to see which ones are migrated.
 
 ### Brands
 | Brand | Available |

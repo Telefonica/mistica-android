@@ -169,7 +169,7 @@ fun Catalog(
             navigation = NavigationRoutes.BUTTONS
         ),
         ComponentScreen(
-            name = "Inpputs",
+            name = "Inputs",
             icon = R.drawable.ic_inputs,
             navigation = NavigationRoutes.INPUTS
         ),
