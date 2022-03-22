@@ -67,7 +67,7 @@ Mística-compose supports a subset of the Mística elements. The objective is to
 * [Carousel](./src/main/java/com/telefonica/mistica/compose/carousel)
 * [Empty States](./src/main/java/com/telefonica/mistica/compose/emptystate/screen)
 * [Empty State Cards](./src/main/java/com/telefonica/mistica/compose/emptystate/card)
-* [Inputs](./src/main/java/com/telefonica/mistica/compose/inputs)
+* [Inputs](./src/main/java/com/telefonica/mistica/compose/input)
 
 ## Fonts
 Mística-compose supports the same fonts supported in Mística. See [MisticaTypography](https://github.com/Telefonica/mistica-android/library-compose/src/main/java/com/telefonica/mistica/compose/theme/text/MisticaTypography.kt)
