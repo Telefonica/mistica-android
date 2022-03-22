@@ -69,7 +69,7 @@ private fun ColumnScope.Title(text: String) {
     Text(
         modifier = Modifier
             .align(Alignment.Start)
-            .padding(top = 0.dp, start = 16.dp, end = 16.dp)
+            .padding(start = 16.dp, end = 16.dp)
         ,
         text = text.uppercase(),
         style = MisticaTheme.typography.preset1Medium,
