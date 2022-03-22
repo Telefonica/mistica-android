@@ -20,6 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.button.Button
 import com.telefonica.mistica.compose.button.ButtonStyle
+import com.telefonica.mistica.compose.input.DropDownInput
 import com.telefonica.mistica.compose.input.EmailInput
 import com.telefonica.mistica.compose.input.PhoneInput
 import com.telefonica.mistica.compose.input.TextInput
@@ -52,6 +53,8 @@ fun Inputs() {
         EmailInputWithValidation()
         Title("Phone input with validation")
         PhoneInputWithValidation()
+        Title("Dropdown")
+        DropDownSample()
         Title("Inverse inputs")
         Column(
             modifier = Modifier
@@ -270,5 +273,25 @@ private fun ColumnScope.PhoneInputWithValidation() {
             isError = text.isEmpty()
         },
         buttonStyle = ButtonStyle.PRIMARY_SMALL
+    )
+}
+
+@Composable
+private fun DropDownSample() {
+    val items = remember {
+        listOf("Item 1", "Item 2", "Item 3")
+    }
+    var selectedItemIndex by remember {
+        mutableStateOf<Int?>(null)
+    }
+    DropDownInput(
+        modifier = Modifier.fillMaxWidth()
+            .padding(top = 8.dp, start = 16.dp, end = 16.dp),
+        hint = "Select something",
+        currentItemIndex = selectedItemIndex,
+        items = items,
+        onItemSelected = {
+            selectedItemIndex = it
+        }
     )
 }

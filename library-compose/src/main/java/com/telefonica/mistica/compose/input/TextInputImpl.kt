@@ -77,7 +77,7 @@ private fun TextBox(
     value: String,
     onValueChange: (String) -> Unit,
     label: String,
-    isError: Boolean = false,
+    isError: Boolean,
     trailingIcon: @Composable (() -> Unit)?,
     keyboardOptions: FoundationKeyboardOptions,
 ) {
