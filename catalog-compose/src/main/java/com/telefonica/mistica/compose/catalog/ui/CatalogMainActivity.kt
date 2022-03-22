@@ -43,6 +43,7 @@ import com.telefonica.mistica.compose.catalog.ui.components.Carousels
 import com.telefonica.mistica.compose.catalog.ui.components.EmptyStateCards
 import com.telefonica.mistica.compose.catalog.ui.components.EmptyStateScreens
 import com.telefonica.mistica.compose.catalog.ui.components.Feedbacks
+import com.telefonica.mistica.compose.catalog.ui.components.Inputs
 import com.telefonica.mistica.compose.catalog.ui.components.Lists
 import com.telefonica.mistica.compose.catalog.ui.components.MediaCards
 import com.telefonica.mistica.compose.catalog.ui.components.Tags
@@ -141,6 +142,7 @@ fun CatalogNavHost(
             )
         }
         composable(NavigationRoutes.BUTTONS) { Buttons() }
+        composable(NavigationRoutes.INPUTS) { Inputs() }
         composable(NavigationRoutes.TEXTS) { Texts() }
         composable(NavigationRoutes.FEEDBACKS) { Feedbacks() }
         composable(NavigationRoutes.LISTS) { Lists() }
@@ -165,6 +167,11 @@ fun Catalog(
             name = "Buttons",
             icon = R.drawable.ic_buttons,
             navigation = NavigationRoutes.BUTTONS
+        ),
+        ComponentScreen(
+            name = "Inputs",
+            icon = R.drawable.ic_inputs,
+            navigation = NavigationRoutes.INPUTS
         ),
         ComponentScreen(
             name = "Texts",
@@ -275,6 +282,7 @@ val BRANDS = listOf(
 object NavigationRoutes {
     const val CATALOG = "catalog"
     const val BUTTONS = "buttons"
+    const val INPUTS = "inputs"
     const val TEXTS = "texts"
     const val FEEDBACKS = "feedbacks"
     const val LISTS = "lists"
