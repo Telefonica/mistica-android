@@ -5,7 +5,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.KeyboardType
 
 @Composable
-fun PhoneInput(
+fun EmailInput(
     modifier: Modifier,
     value: String,
     onValueChange: (String) -> Unit,
@@ -28,7 +28,7 @@ fun PhoneInput(
         trailingIcon = trailingIcon,
         isInverse = isInverse,
         keyboardOptions = keyboardOptions.toFoundationKeyboardOptions(
-            keyboardType = KeyboardType.Phone
+            keyboardType = KeyboardType.Email
         )
     )
 }
