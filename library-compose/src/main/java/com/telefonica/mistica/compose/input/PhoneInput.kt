@@ -15,6 +15,9 @@ fun PhoneInput(
     errorText: String? = null,
     trailingIcon: @Composable (() -> Unit)? = null,
     isInverse: Boolean = false,
+    enabled: Boolean = true,
+    readOnly: Boolean = false,
+    onClick: (() -> Unit)? = null,
     keyboardOptions: KeyboardOptions = KeyboardOptions.Default
 ) {
     TextInputImpl(
@@ -27,6 +30,9 @@ fun PhoneInput(
         errorText = errorText,
         trailingIcon = trailingIcon,
         isInverse = isInverse,
+        enabled = enabled,
+        readOnly = readOnly,
+        onClick = onClick,
         keyboardOptions = keyboardOptions.toFoundationKeyboardOptions(
             keyboardType = KeyboardType.Phone
         )

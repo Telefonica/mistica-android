@@ -6,6 +6,9 @@ import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.slideInVertically
 import androidx.compose.foundation.border
+import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.interaction.collectIsFocusedAsState
+import androidx.compose.foundation.interaction.collectIsPressedAsState
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -19,12 +22,8 @@ import androidx.compose.material.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.compositionLocalOf
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.theme.MisticaTheme
@@ -40,6 +39,9 @@ internal fun TextInputImpl(
     errorText: String?,
     trailingIcon: @Composable (() -> Unit)?,
     isInverse: Boolean,
+    enabled: Boolean,
+    readOnly: Boolean,
+    onClick: (() -> Unit)?,
     keyboardOptions: FoundationKeyboardOptions,
 ) {
     val colors = if (isInverse) {
@@ -61,6 +63,9 @@ internal fun TextInputImpl(
                 label = label,
                 isError = isError,
                 trailingIcon = trailingIcon,
+                enabled = enabled,
+                readOnly = readOnly,
+                onClick = onClick,
                 keyboardOptions = keyboardOptions
             )
             Underline(
@@ -79,28 +84,35 @@ private fun TextBox(
     label: String,
     isError: Boolean,
     trailingIcon: @Composable (() -> Unit)?,
+    enabled: Boolean,
+    readOnly: Boolean,
+    onClick: (() -> Unit)?,
     keyboardOptions: FoundationKeyboardOptions,
 ) {
-    var labelIsMinimized by remember {
-        mutableStateOf(false)
+    val interactionSource = remember {
+        MutableInteractionSource()
+    }
+
+    if (onClick != null && interactionSource.collectIsPressedAsState().value) {
+        onClick()
     }
 
     TextField(
         modifier = Modifier
             .fillMaxWidth()
-            .border(width = 1.dp, color = MisticaTheme.colors.border, shape = RoundedCornerShape(4.dp))
-            .onFocusChanged {
-                labelIsMinimized = it.isFocused
-            },
+            .border(width = 1.dp, color = MisticaTheme.colors.border, shape = RoundedCornerShape(4.dp)),
+        enabled = enabled,
+        readOnly = readOnly,
         value = value,
         onValueChange = onValueChange,
         label = {
             TextInputLabel(
                 text = label,
-                isMinimized = labelIsMinimized,
+                isMinimized = interactionSource.collectIsFocusedAsState().value,
                 isError = isError
             )
         },
+        interactionSource = interactionSource,
         keyboardOptions = keyboardOptions,
         isError = isError,
         trailingIcon = trailingIcon,
