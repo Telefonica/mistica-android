@@ -49,7 +49,7 @@ fun ListRowItem(
     isBadgeVisible: Boolean = false,
     headline: Tag? = null,
     trailing: @Composable (() -> Unit)? = null,
-    onClick: () -> Unit = {},
+    onClick: (() -> Unit)? = null,
 ) {
     val badgeVisible by remember { mutableStateOf(isBadgeVisible) }
 
@@ -62,7 +62,7 @@ fun ListRowItem(
     }
         .fillMaxWidth()
         .clip(shape = RoundedCornerShape(4.dp))
-        .clickable(onClick = onClick)
+        .makeClickableIfNeeded(onClick)
 
     val rowModifier = when (backgroundType) {
         BackgroundType.TYPE_NORMAL -> Modifier
@@ -172,6 +172,13 @@ fun ListRowItem(
         }
     }
 }
+
+private fun Modifier.makeClickableIfNeeded(onClick: (() -> Unit)?): Modifier =
+    if (onClick != null) {
+        clickable(onClick = onClick)
+    } else {
+        this
+    }
 
 @ExperimentalMaterialApi
 @Preview(showBackground = true)

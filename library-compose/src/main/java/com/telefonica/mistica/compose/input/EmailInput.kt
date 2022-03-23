@@ -5,7 +5,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.KeyboardType
 
 @Composable
-fun TextInput(
+fun EmailInput(
     modifier: Modifier,
     value: String,
     onValueChange: (String) -> Unit,
@@ -18,7 +18,7 @@ fun TextInput(
     enabled: Boolean = true,
     readOnly: Boolean = false,
     onClick: (() -> Unit)? = null,
-    keyboardOptions: KeyboardOptions = KeyboardOptions.Default,
+    keyboardOptions: KeyboardOptions = KeyboardOptions.Default
 ) {
     TextInputImpl(
         modifier = modifier,
@@ -34,7 +34,7 @@ fun TextInput(
         readOnly = readOnly,
         onClick = onClick,
         keyboardOptions = keyboardOptions.toFoundationKeyboardOptions(
-            keyboardType = KeyboardType.Text
+            keyboardType = KeyboardType.Email
         )
     )
 }

@@ -1,4 +1,4 @@
-package com.telefonica.mistica.compose.button
+package com.telefonica.mistica.compose.input
 
 import android.widget.AdapterView
 import androidx.compose.runtime.Composable
@@ -12,7 +12,7 @@ import com.telefonica.mistica.input.DropDownInput
 fun DropDownInput(
     modifier: Modifier = Modifier,
     items: List<String>,
-    currentItemIndex: Int,
+    currentItemIndex: Int? = null,
     onItemSelected: (Int) -> Unit = {},
     hint: String? = null,
     error: String? = null,
@@ -46,7 +46,9 @@ fun DropDownInput(
                     )
                 )
             }
-            it.dropDown.setText(if (currentItemIndex >= 0) rememberedItems[currentItemIndex] else "")
+            it.dropDown.setText(
+                if (currentItemIndex != null && currentItemIndex >= 0) rememberedItems[currentItemIndex] else ""
+            )
             it.hint = hint
             it.error = error
             it.helperText = helperText
