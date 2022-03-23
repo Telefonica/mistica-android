@@ -49,7 +49,7 @@ fun ListRowItem(
     isBadgeVisible: Boolean = false,
     headline: Tag? = null,
     trailing: @Composable (() -> Unit)? = null,
-    onClick: (() -> Unit)? = {},
+    onClick: (() -> Unit)? = null,
 ) {
     val badgeVisible by remember { mutableStateOf(isBadgeVisible) }
 
