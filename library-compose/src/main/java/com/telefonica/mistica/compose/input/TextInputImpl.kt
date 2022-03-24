@@ -129,6 +129,7 @@ private fun TextBox(
             errorIndicatorColor = Color.Transparent,
             errorCursorColor = MisticaTheme.colors.controlActive,
         ),
+        singleLine = true,
         maxLines = 1,
         visualTransformation = visualTransformation,
     )
