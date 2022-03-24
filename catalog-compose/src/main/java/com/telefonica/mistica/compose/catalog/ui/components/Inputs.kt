@@ -191,7 +191,7 @@ private fun TextInputWithTransformation() {
 
 object PhoneVisualTransformation : VisualTransformation {
     override fun filter(text: AnnotatedString): TransformedText {
-        val newText = AnnotatedString("$PREFIX  $text")
+        val newText = AnnotatedString("$PREFIX$text")
         return TransformedText(newText, object : OffsetMapping {
             override fun originalToTransformed(offset: Int): Int =
                 offset + PREFIX_LENGTH
