@@ -25,6 +25,7 @@ import androidx.compose.runtime.compositionLocalOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.theme.MisticaTheme
 
@@ -42,6 +43,7 @@ internal fun TextInputImpl(
     enabled: Boolean,
     readOnly: Boolean,
     onClick: (() -> Unit)?,
+    visualTransformation: VisualTransformation,
     keyboardOptions: FoundationKeyboardOptions,
 ) {
     val colors = if (isInverse) {
@@ -66,6 +68,7 @@ internal fun TextInputImpl(
                 enabled = enabled,
                 readOnly = readOnly,
                 onClick = onClick,
+                visualTransformation = visualTransformation,
                 keyboardOptions = keyboardOptions
             )
             Underline(
@@ -87,6 +90,7 @@ private fun TextBox(
     enabled: Boolean,
     readOnly: Boolean,
     onClick: (() -> Unit)?,
+    visualTransformation: VisualTransformation,
     keyboardOptions: FoundationKeyboardOptions,
 ) {
     val interactionSource = remember {
@@ -126,6 +130,7 @@ private fun TextBox(
             errorCursorColor = MisticaTheme.colors.controlActive,
         ),
         maxLines = 1,
+        visualTransformation = visualTransformation,
     )
 }
 
