@@ -17,6 +17,10 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.AnnotatedString
+import androidx.compose.ui.text.input.OffsetMapping
+import androidx.compose.ui.text.input.TransformedText
+import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.button.Button
 import com.telefonica.mistica.compose.button.ButtonStyle
@@ -43,8 +47,8 @@ fun Inputs() {
         TextInputWithError()
         Title("Text Input With Assertive Text that is way too long to fit in the given space")
         TextInputWithHelperText()
-        Title("Password input")
-        PasswordInput()
+        Title("Text input with transformation")
+        TextInputWithTransformation()
         Title("Phone input")
         PhoneInputSample()
         Title("Email input")
@@ -147,25 +151,6 @@ private fun TextInputWithHelperText(
 }
 
 @Composable
-private fun PasswordInput() {
-    var text by remember {
-        mutableStateOf("")
-    }
-
-    TextInput(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(top = 8.dp, start = 16.dp, end = 16.dp)
-        ,
-        value = text,
-        onValueChange = {
-            text = it
-        },
-        label = "Type Something"
-    )
-}
-
-@Composable
 private fun PhoneInputSample() {
     var text by remember {
         mutableStateOf("")
@@ -182,6 +167,42 @@ private fun PhoneInputSample() {
         },
         label = "Type Something"
     )
+}
+
+@Composable
+private fun TextInputWithTransformation() {
+    var text by remember {
+        mutableStateOf("")
+    }
+
+    TextInput(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(top = 8.dp, start = 16.dp, end = 16.dp)
+        ,
+        value = text,
+        onValueChange = {
+            text = it
+        },
+        label = "Your name",
+        visualTransformation = PhoneVisualTransformation
+    )
+}
+
+object PhoneVisualTransformation : VisualTransformation {
+    override fun filter(text: AnnotatedString): TransformedText {
+        val newText = AnnotatedString("$PREFIX$text")
+        return TransformedText(newText, object : OffsetMapping {
+            override fun originalToTransformed(offset: Int): Int =
+                offset + PREFIX_LENGTH
+
+            override fun transformedToOriginal(offset: Int): Int =
+                offset - PREFIX_LENGTH
+        })
+    }
+
+    private const val PREFIX = "Hola,  "
+    private const val PREFIX_LENGTH = PREFIX.length
 }
 
 @Composable

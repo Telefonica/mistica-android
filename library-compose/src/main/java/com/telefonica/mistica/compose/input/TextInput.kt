@@ -3,6 +3,7 @@ package com.telefonica.mistica.compose.input
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.input.VisualTransformation
 
 @Composable
 fun TextInput(
@@ -18,6 +19,7 @@ fun TextInput(
     enabled: Boolean = true,
     readOnly: Boolean = false,
     onClick: (() -> Unit)? = null,
+    visualTransformation: VisualTransformation = VisualTransformation.None,
     keyboardOptions: KeyboardOptions = KeyboardOptions.Default,
 ) {
     TextInputImpl(
@@ -33,6 +35,7 @@ fun TextInput(
         enabled = enabled,
         readOnly = readOnly,
         onClick = onClick,
+        visualTransformation = visualTransformation,
         keyboardOptions = keyboardOptions.toFoundationKeyboardOptions(
             keyboardType = KeyboardType.Text
         )
