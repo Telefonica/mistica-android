@@ -68,6 +68,7 @@ Mística-compose supports a subset of the Mística elements. The objective is to
 * [Empty States](./src/main/java/com/telefonica/mistica/compose/emptystate/screen)
 * [Empty State Cards](./src/main/java/com/telefonica/mistica/compose/emptystate/card)
 * [Inputs](./src/main/java/com/telefonica/mistica/compose/input)
+* [Steppers](./src/main/java/com/telefonica/mistica/compose/stepper)
 
 ## Fonts
 Mística-compose supports the same fonts supported in Mística. See [MisticaTypography](https://github.com/Telefonica/mistica-android/library-compose/src/main/java/com/telefonica/mistica/compose/theme/text/MisticaTypography.kt)
@@ -105,8 +106,9 @@ There is a Mística-compose catalog in the [Demo app](https://github.com/Telefon
 | Controls					|     |     |    				
 | Media Cards				|  ✅️ |  Composable   |
 | Data Cards				|  ✅️ |  Composable   |
-| Steppers					|     |     |    				
-| Tabs						|     |     |    			
+| Indeterminate Stepper		|  ✅️ |  AndroidView  |
+| Determinate Stepper		|     |     |
+| Tabs						|     |     |
 | Empty States				|  ✅ | AndroidView   |
 | Empty State Cards			|  ✅ | AndroidView   |
 | Callout					|     |     |    						
