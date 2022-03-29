@@ -40,18 +40,22 @@ class IndeterminateStepperView @JvmOverloads constructor(
             )
 
             val progress = styledAttrs.getInteger(R.styleable.IndeterminateStepperView_progress, 0)
-            setProgress(progress)
+            setProgress(progress, animate = false)
         }
     }
 
-    fun setProgress(progress: Int) {
-        ValueAnimator.ofInt(progressBar.progress, progress).apply {
-            addUpdateListener {
-                progressBar.progress = it.animatedValue as Int
+    fun setProgress(progress: Int, animate: Boolean = true) {
+        if (animate) {
+            ValueAnimator.ofInt(progressBar.progress, progress).apply {
+                addUpdateListener {
+                    progressBar.progress = it.animatedValue as Int
+                }
+                duration = PROGRESS_ANIMATION_DURATION
+                interpolator = AccelerateDecelerateInterpolator()
+                start()
             }
-            duration = PROGRESS_ANIMATION_DURATION
-            interpolator = AccelerateDecelerateInterpolator()
-            start()
+        } else {
+            progressBar.progress = progress
         }
     }
 
