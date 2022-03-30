@@ -63,19 +63,21 @@ private fun IndeterminateStepperDemo(modifier: Modifier) {
             Button(
                 text = "Previous",
                 onClickListener = {
-                    if (progress - 10 >= 0) {
-                        progress -= 10
+                    if (progress - STEPPER_DEMO_PROGRESS_INTERVAL >= 0) {
+                        progress -= STEPPER_DEMO_PROGRESS_INTERVAL
                     }
                 }
             )
             Button(
                 text = "Next",
                 onClickListener = {
-                    if (progress + 10 <= 100) {
-                        progress += 10
+                    if (progress + STEPPER_DEMO_PROGRESS_INTERVAL <= 100) {
+                        progress += STEPPER_DEMO_PROGRESS_INTERVAL
                     }
                 }
             )
         }
     }
 }
+
+const val STEPPER_DEMO_PROGRESS_INTERVAL = 20

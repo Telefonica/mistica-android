@@ -4,7 +4,7 @@ import android.animation.ValueAnimator
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
-import android.view.animation.AccelerateDecelerateInterpolator
+import android.view.animation.DecelerateInterpolator
 import android.widget.LinearLayout
 import android.widget.ProgressBar
 import androidx.databinding.BindingMethod
@@ -51,7 +51,7 @@ class IndeterminateStepperView @JvmOverloads constructor(
                     progressBar.progress = it.animatedValue as Int
                 }
                 duration = PROGRESS_ANIMATION_DURATION
-                interpolator = AccelerateDecelerateInterpolator()
+                interpolator = DecelerateInterpolator()
                 start()
             }
         } else {
@@ -68,7 +68,7 @@ class IndeterminateStepperView @JvmOverloads constructor(
     }
 
     private companion object {
-        const val PROGRESS_ANIMATION_DURATION = 500L
+        const val PROGRESS_ANIMATION_DURATION = 100L
         const val EMPTY_PROGRESS = 0
         const val FULL_PROGRESS = 100
     }
