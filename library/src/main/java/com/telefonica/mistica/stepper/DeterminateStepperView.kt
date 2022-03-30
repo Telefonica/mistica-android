@@ -154,7 +154,7 @@ class DeterminateStepperView @JvmOverloads constructor(
 
     private fun setUpIndeterminateStepper() {
         indeterminateStepper = IndeterminateStepperView(context)
-        setIndeterminateStep(FIRST_STEP)
+        setIndeterminateStep(FIRST_STEP, animate = false)
         addView(indeterminateStepper)
     }
 
@@ -170,7 +170,7 @@ class DeterminateStepperView @JvmOverloads constructor(
         if (isDetermined) {
             setDeterminedStep(step)
         } else {
-            setIndeterminateStep(step)
+            setIndeterminateStep(step, animate = true)
         }
     }
 
@@ -209,9 +209,9 @@ class DeterminateStepperView @JvmOverloads constructor(
         }
     }
 
-    private fun setIndeterminateStep(step: Int) {
+    private fun setIndeterminateStep(step: Int, animate: Boolean) {
         val progress = (MAX_INDETERMINATE_PROGRESS / (maxSteps + 1)) * step
-        indeterminateStepper?.setProgress(progress.roundToInt())
+        indeterminateStepper?.setProgress(progress.roundToInt(), animate)
     }
 
     private fun complete() {

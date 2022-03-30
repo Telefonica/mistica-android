@@ -46,6 +46,7 @@ import com.telefonica.mistica.compose.catalog.ui.components.Feedbacks
 import com.telefonica.mistica.compose.catalog.ui.components.Inputs
 import com.telefonica.mistica.compose.catalog.ui.components.Lists
 import com.telefonica.mistica.compose.catalog.ui.components.MediaCards
+import com.telefonica.mistica.compose.catalog.ui.components.Steppers
 import com.telefonica.mistica.compose.catalog.ui.components.Tags
 import com.telefonica.mistica.compose.catalog.ui.components.Texts
 import com.telefonica.mistica.compose.theme.MisticaTheme
@@ -152,6 +153,7 @@ fun CatalogNavHost(
         composable(NavigationRoutes.CAROUSELS) { Carousels() }
         composable(NavigationRoutes.EMPTY_STATE_CARD) { EmptyStateCards() }
         composable(NavigationRoutes.EMPTY_STATE_SCREEN) { EmptyStateScreens() }
+        composable(NavigationRoutes.STEPPER) { Steppers() }
     }
 }
 
@@ -217,6 +219,11 @@ fun Catalog(
             name = "Empty State Card",
             icon = R.drawable.ic_empty_states,
             navigation = NavigationRoutes.EMPTY_STATE_CARD
+        ),
+        ComponentScreen(
+            name = "Steppers",
+            icon = R.drawable.ic_stepper,
+            navigation = NavigationRoutes.STEPPER
         ),
     )
     Column {
@@ -292,4 +299,5 @@ object NavigationRoutes {
     const val CAROUSELS = "carousels"
     const val EMPTY_STATE_SCREEN = "empty-state-screen"
     const val EMPTY_STATE_CARD = "empty-state-card"
+    const val STEPPER = "stepper"
 }
