@@ -70,19 +70,17 @@
         <item name="colorNeutralLow">@color/movistar_color_grey_6</item>
 
         <!-- Tag colors -->
-        <item name="tagBackgroundSuccess">@color/movistar_color_darkModeGrey</item>
-        <item name="tagBackgroundWarning">@color/movistar_color_darkModeGrey</item>
-        <item name="tagBackgroundError">@color/movistar_color_darkModeGrey</item>
-        <item name="tagBackgroundPromo">@color/movistar_color_darkModeGrey</item>
-        <item name="tagBackgroundActive">@color/movistar_color_darkModeGrey</item>
-        <item name="tagBackgroundInactive">@color/movistar_color_darkModeGrey</item>
+        <item name="successLow">@color/movistar_color_darkModeGrey</item>
+        <item name="warningLow">@color/movistar_color_darkModeGrey</item>
+        <item name="errorLow">@color/movistar_color_darkModeGrey</item>
+        <item name="promoLow">@color/movistar_color_darkModeGrey</item>
+        <item name="brandLow">@color/movistar_color_darkModeGrey</item>
 
-        <item name="textTagSuccess">@color/movistar_color_green_40</item>
-        <item name="textTagWarning">@color/movistar_color_egg_40</item>
-        <item name="textTagError">@color/movistar_color_pepper_40</item>
-        <item name="textTagPromo">@color/movistar_color_purple_40</item>
-        <item name="textTagActive">@color/movistar_color_blue_40</item>
-        <item name="textTagInactive">@color/movistar_color_grey_4</item>
+        <item name="successHigh">@color/movistar_color_green_40</item>
+        <item name="warningHigh">@color/movistar_color_egg_40</item>
+        <item name="errorHigh">@color/movistar_color_pepper_40</item>
+        <item name="promoHigh">@color/movistar_color_purple_40</item>
+        <item name="brandHigh">@color/movistar_color_blue_40</item>
 
         <!-- Texts colors -->
         <item name="colorTextPrimary">@color/movistar_color_grey_2</item>

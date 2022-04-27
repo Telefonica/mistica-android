@@ -96,19 +96,17 @@
         <item name="colorHighlight">@color/telefonica_color_coral_light</item>
 
         <!-- Tag colors -->
-        <item name="tagBackgroundSuccess">@color/telefonica_color_turquoise_10</item>
-        <item name="tagBackgroundWarning">@color/telefonica_color_ambar_10</item>
-        <item name="tagBackgroundError">@color/telefonica_color_coral_10</item>
-        <item name="tagBackgroundPromo">@color/telefonica_color_orchid_10</item>
-        <item name="tagBackgroundActive">@color/telefonica_color_grey_1</item>
-        <item name="tagBackgroundInactive">@color/telefonica_color_grey_1</item>
+        <item name="successLow">@color/telefonica_color_turquoise_10</item>
+        <item name="warningLow">@color/telefonica_color_ambar_10</item>
+        <item name="errorLow">@color/telefonica_color_coral_10</item>
+        <item name="promoLow">@color/telefonica_color_orchid_10</item>
+        <item name="brandLow">@color/telefonica_color_grey_1</item>
 
-        <item name="textTagSuccess">@color/telefonica_color_turquoise_70</item>
-        <item name="textTagWarning">@color/telefonica_color_ambar_70</item>
-        <item name="textTagError">@color/telefonica_color_coral_70</item>
-        <item name="textTagPromo">@color/telefonica_color_orchid_70</item>
-        <item name="textTagActive">@color/telefonica_color_blue</item>
-        <item name="textTagInactive">@color/telefonica_color_grey_6</item>
+        <item name="successHigh">@color/telefonica_color_turquoise_70</item>
+        <item name="warningHigh">@color/telefonica_color_ambar_70</item>
+        <item name="errorHigh">@color/telefonica_color_coral_70</item>
+        <item name="promoHigh">@color/telefonica_color_orchid_70</item>
+        <item name="brandHigh">@color/telefonica_color_blue</item>
 
         <!-- Texts colors -->
         <item name="colorTextPrimary">@color/telefonica_color_grey_9</item>

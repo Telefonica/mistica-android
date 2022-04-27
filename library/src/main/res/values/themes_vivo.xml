@@ -61,19 +61,17 @@
         <item name="colorTextButtonSecondaryInverseSelected">@color/vivo_color_white</item>
 
         <!-- Tag colors -->
-        <item name="tagBackgroundSuccess">@color/vivo_color_green_light10</item>
-        <item name="tagBackgroundWarning">@color/vivo_color_orange_light10</item>
-        <item name="tagBackgroundError">@color/vivo_color_pepper_light10</item>
-        <item name="tagBackgroundPromo">@color/vivo_color_purple_light10</item>
-        <item name="tagBackgroundActive">@color/vivo_color_purple_light10</item>
-        <item name="tagBackgroundInactive">@color/vivo_color_grey_1</item>
+        <item name="successLow">@color/vivo_color_green_light10</item>
+        <item name="warningLow">@color/vivo_color_orange_light10</item>
+        <item name="errorLow">@color/vivo_color_pepper_light10</item>
+        <item name="promoLow">@color/vivo_color_purple_light10</item>
+        <item name="brandLow">@color/vivo_color_purple_light10</item>
 
-        <item name="textTagSuccess">@color/vivo_color_green_dark</item>
-        <item name="textTagWarning">@color/vivo_color_orange_dark</item>
-        <item name="textTagError">@color/vivo_color_pepper_dark_80</item>
-        <item name="textTagPromo">@color/vivo_color_purple</item>
-        <item name="textTagActive">@color/vivo_color_purple</item>
-        <item name="textTagInactive">@color/vivo_color_grey_5</item>
+        <item name="successHigh">@color/vivo_color_green_dark</item>
+        <item name="warningHigh">@color/vivo_color_orange_dark</item>
+        <item name="errorHigh">@color/vivo_color_pepper_dark_80</item>
+        <item name="promoHigh">@color/vivo_color_purple</item>
+        <item name="brandHigh">@color/vivo_color_purple</item>
 
         <!-- Text Links -->
         <item name="colorTextLink">@color/vivo_color_purple</item>
@@ -108,7 +106,7 @@
         <item name="colorInverse">@color/vivo_color_white</item>
         <item name="colorNeutralHigh">@color/vivo_color_grey_6</item>
         <item name="colorNeutralMedium">@color/vivo_color_grey_5</item>
-        <item name="colorNeutralLow">@color/vivo_color_grey_3</item>
+        <item name="colorNeutralLow">@color/vivo_color_grey_1</item>
         <item name="colorPromo">@color/vivo_color_purple</item>
         <item name="colorHighlight">@color/vivo_color_pink</item>
 
