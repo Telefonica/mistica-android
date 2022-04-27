@@ -116,7 +116,6 @@
         <item name="colorTextSecondary">@color/telefonica_color_grey_5</item>
         <item name="colorTextSecondaryInverse">@color/telefonica_color_white</item>
         <item name="colorTextDisabled">@color/telefonica_color_grey_3</item>
-        <item name="colorTextAmount">@color/telefonica_color_blue</item>
 
         <!-- State colors -->
         <item name="colorError">@color/telefonica_color_coral</item>

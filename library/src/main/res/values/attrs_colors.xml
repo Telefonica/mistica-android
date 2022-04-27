@@ -112,7 +112,6 @@
         <attr name="colorTextSecondary" format="color|reference" />
         <attr name="colorTextSecondaryInverse" format="color|reference" />
         <attr name="colorTextDisabled" format="color|reference" />
-        <attr name="colorTextAmount" format="color|reference" />
 
         <!-- States -->
         <attr name="colorError" format="color|reference" />

@@ -103,7 +103,6 @@
         <item name="colorTextSecondary">@color/o2_color_grey_4</item>
         <item name="colorTextSecondaryInverse">@color/o2_color_grey_4</item>
         <item name="colorTextDisabled">@color/o2_color_grey_5</item>
-        <item name="colorTextAmount">@color/o2_color_blue_primary_light_10</item>
 
         <!-- Bars text colors -->
         <item name="colorTextNavigationBarPrimary">@color/o2_color_grey_2</item>

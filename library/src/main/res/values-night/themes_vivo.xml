@@ -102,7 +102,6 @@
         <item name="colorTextSecondary">@color/vivo_color_grey_4</item>
         <item name="colorTextSecondaryInverse">@color/vivo_color_grey_4</item>
         <item name="colorTextDisabled">@color/vivo_color_grey_5</item>
-        <item name="colorTextAmount">@color/vivo_color_purple_light50</item>
 
         <!-- Bars text colors -->
         <item name="colorTextNavigationBarPrimary">@color/vivo_color_grey_2</item>

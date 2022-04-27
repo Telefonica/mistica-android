@@ -76,7 +76,6 @@ class MisticaColors(
     tagBackgroundPromo: Color = Color.Unspecified,
     tagBackgroundSuccess: Color = Color.Unspecified,
     tagBackgroundWarning: Color = Color.Unspecified,
-    textAmount: Color = Color.Unspecified,
     textAppBar: Color = Color.Unspecified,
     textAppBarSelected: Color = Color.Unspecified,
     textButtonPrimary: Color = Color.Unspecified,
@@ -257,8 +256,6 @@ class MisticaColors(
         internal set
     var textDisabled by mutableStateOf(textDisabled, structuralEqualityPolicy())
         internal set
-    var textAmount by mutableStateOf(textAmount, structuralEqualityPolicy())
-        internal set
     var error by mutableStateOf(error, structuralEqualityPolicy())
         internal set
     var success by mutableStateOf(success, structuralEqualityPolicy())
@@ -388,7 +385,6 @@ class MisticaColors(
         tagBackgroundPromo: Color = this.tagBackgroundPromo,
         tagBackgroundSuccess: Color = this.tagBackgroundSuccess,
         tagBackgroundWarning: Color = this.tagBackgroundWarning,
-        textAmount: Color = this.textAmount,
         textAppBar: Color = this.textAppBar,
         textAppBarSelected: Color = this.textAppBarSelected,
         textButtonPrimary: Color = this.textButtonPrimary,
@@ -492,7 +488,6 @@ class MisticaColors(
         tagBackgroundPromo = tagBackgroundPromo,
         tagBackgroundSuccess = tagBackgroundSuccess,
         tagBackgroundWarning = tagBackgroundWarning,
-        textAmount = textAmount,
         textAppBar = textAppBar,
         textAppBarSelected = textAppBarSelected,
         textButtonPrimary = textButtonPrimary,
@@ -598,7 +593,6 @@ class MisticaColors(
         tagBackgroundPromo = other.tagBackgroundPromo
         tagBackgroundSuccess = other.tagBackgroundSuccess
         tagBackgroundWarning = other.tagBackgroundWarning
-        textAmount = other.textAmount
         textAppBar = other.textAppBar
         textAppBarSelected = other.textAppBarSelected
         textButtonPrimary = other.textButtonPrimary
