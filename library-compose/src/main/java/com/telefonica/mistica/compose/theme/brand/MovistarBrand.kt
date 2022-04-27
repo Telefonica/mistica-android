@@ -198,16 +198,16 @@ object MovistarProminentBrand : Brand {
         backgroundBrand = MovistarPaletteColor.movistar_prominent_color_blue,
         brand = MovistarPaletteColor.movistar_prominent_color_blue,
         brandDark = MovistarPaletteColor.movistar_prominent_color_blue_dark,
+        navigationBarBackground = MovistarPaletteColor.movistar_prominent_color_blue,
         dividerInverse = MovistarPaletteColor.movistar_prominent_color_blue_dark,
         gradientBackgroundFirst = MovistarPaletteColor.movistar_prominent_color_blue,
         gradientBackgroundFourth = MovistarPaletteColor.movistar_prominent_color_blue,
         gradientBackgroundSecond = MovistarPaletteColor.movistar_prominent_color_blue,
         gradientBackgroundThird = MovistarPaletteColor.movistar_prominent_color_blue,
         loginLoadingGradientFirst = MovistarPaletteColor.movistar_prominent_color_blue_dark,
-        loginLoadingGradientFourth = MovistarPaletteColor.movistar_prominent_color_blue_dark,
         loginLoadingGradientSecond = MovistarPaletteColor.movistar_prominent_color_blue_dark,
         loginLoadingGradientThird = MovistarPaletteColor.movistar_prominent_color_blue_dark,
-        navigationBarBackground = MovistarPaletteColor.movistar_prominent_color_blue,
+        loginLoadingGradientFourth = MovistarPaletteColor.movistar_prominent_color_blue_dark,
     )
 
     override val darkColors: MisticaColors = MovistarBrand.darkColors
