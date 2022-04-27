@@ -106,7 +106,7 @@
         <item name="colorInverse">@color/o2_color_white</item>
         <item name="colorNeutralHigh">@color/o2_color_grey_6</item>
         <item name="colorNeutralMedium">@color/o2_color_grey_5</item>
-        <item name="colorNeutralLow">@color/o2_color_grey_3</item>
+        <item name="colorNeutralLow">@color/o2_color_grey_1</item>
         <item name="colorPromo">@color/o2_color_purple</item>
         <item name="colorHighlight">@color/o2_color_pink</item>
 

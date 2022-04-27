@@ -90,7 +90,7 @@
 		<item name="colorBrandDark">@color/movistar_color_blue_dark</item>
 		<item name="colorInverse">@color/movistar_color_white</item>
 		<item name="colorNeutralHigh">@color/movistar_color_grey_6</item>
-		<item name="colorNeutralLow">@color/movistar_color_grey_3</item>
+		<item name="colorNeutralLow">@color/movistar_color_grey_1</item>
 		<item name="colorNeutralMedium">@color/movistar_color_grey_5</item>
 		<item name="colorPromo">@color/movistar_color_purple</item>
 		<item name="colorHighlight">@color/movistar_color_pink</item>

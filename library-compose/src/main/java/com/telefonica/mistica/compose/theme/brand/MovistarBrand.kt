@@ -68,7 +68,7 @@ object MovistarBrand : Brand {
         navigationBarBackground = MovistarPaletteColor.movistar_color_blue,
         navigationBarDivider = MovistarPaletteColor.movistar_color_blue,
         neutralHigh = MovistarPaletteColor.movistar_color_grey_6,
-        neutralLow = MovistarPaletteColor.movistar_color_grey_3,
+        neutralLow = MovistarPaletteColor.movistar_color_grey_1,
         neutralMedium = MovistarPaletteColor.movistar_color_grey_5,
         promo = MovistarPaletteColor.movistar_color_purple,
         skeletonWave = MovistarPaletteColor.movistar_color_grey_2,

@@ -68,7 +68,7 @@ object O2ClassicBrand : Brand {
         navigationBarBackground = O2ClassicPaletteColor.o2_classic_color_blue,
         navigationBarDivider = O2ClassicPaletteColor.o2_classic_color_blue,
         neutralHigh = O2ClassicPaletteColor.o2_classic_color_grey_6,
-        neutralLow = O2ClassicPaletteColor.o2_classic_color_grey_3,
+        neutralLow = O2ClassicPaletteColor.o2_classic_color_grey_1,
         neutralMedium = O2ClassicPaletteColor.o2_classic_color_grey_5,
         promo = O2ClassicPaletteColor.o2_classic_color_pink,
         skeletonWave = O2ClassicPaletteColor.o2_classic_color_grey_2,
