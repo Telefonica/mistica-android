@@ -195,15 +195,15 @@ object MovistarProminentBrand : Brand {
         get() = R.style.MisticaTheme_Movistar_Prominent
 
     override val lightColors = MovistarBrand.lightColors.copy(
-        backgroundBrand = MovistarPaletteColor.movistar_prominent_color_blue,
         brand = MovistarPaletteColor.movistar_prominent_color_blue,
-        brandDark = MovistarPaletteColor.movistar_prominent_color_blue_dark,
+        backgroundBrand = MovistarPaletteColor.movistar_prominent_color_blue,
         navigationBarBackground = MovistarPaletteColor.movistar_prominent_color_blue,
+        brandDark = MovistarPaletteColor.movistar_prominent_color_blue_dark,
         dividerInverse = MovistarPaletteColor.movistar_prominent_color_blue_dark,
         gradientBackgroundFirst = MovistarPaletteColor.movistar_prominent_color_blue,
-        gradientBackgroundFourth = MovistarPaletteColor.movistar_prominent_color_blue,
         gradientBackgroundSecond = MovistarPaletteColor.movistar_prominent_color_blue,
         gradientBackgroundThird = MovistarPaletteColor.movistar_prominent_color_blue,
+        gradientBackgroundFourth = MovistarPaletteColor.movistar_prominent_color_blue,
         loginLoadingGradientFirst = MovistarPaletteColor.movistar_prominent_color_blue_dark,
         loginLoadingGradientSecond = MovistarPaletteColor.movistar_prominent_color_blue_dark,
         loginLoadingGradientThird = MovistarPaletteColor.movistar_prominent_color_blue_dark,
