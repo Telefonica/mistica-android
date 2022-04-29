@@ -87,7 +87,7 @@
 
 		<!-- Global colors -->
 		<item name="colorBrand">@color/blau_color_blue_primary</item>
-		<item name="colorBrandDark">@color/blau_color_blue_secondary</item>
+		<item name="colorBrandHigh">@color/blau_color_blue_secondary</item>
 		<item name="colorInverse">@color/blau_color_white</item>
 		<item name="colorNeutralHigh">@color/blau_color_grey_6</item>
 		<item name="colorNeutralMedium">@color/blau_color_grey_5</item>

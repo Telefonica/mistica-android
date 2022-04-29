@@ -3,6 +3,6 @@
 
     <item android:color="?attr/colorInverse" android:state_checked="true" />
 
-    <item android:color="?attr/colorBrandDark" />
+    <item android:color="?attr/colorBrandHigh" />
 
 </selector>

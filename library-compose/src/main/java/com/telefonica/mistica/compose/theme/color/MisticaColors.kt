@@ -22,7 +22,7 @@ class MisticaColors(
     borderLight: Color = Color.Unspecified,
     borderSelected: Color = Color.Unspecified,
     brand: Color = Color.Unspecified,
-    brandDark: Color = Color.Unspecified,
+    brandHigh: Color = Color.Unspecified,
     buttonDangerBackground: Color = Color.Unspecified,
     buttonDangerBackgroundDisabled: Color = Color.Unspecified,
     buttonDangerBackgroundSelected: Color = Color.Unspecified,
@@ -229,7 +229,7 @@ class MisticaColors(
         internal set
     var brand by mutableStateOf(brand, structuralEqualityPolicy())
         internal set
-    var brandDark by mutableStateOf(brandDark, structuralEqualityPolicy())
+    var brandHigh by mutableStateOf(brandHigh, structuralEqualityPolicy())
         internal set
     var inverse by mutableStateOf(inverse, structuralEqualityPolicy())
         internal set
@@ -322,7 +322,7 @@ class MisticaColors(
         borderLight: Color = this.borderLight,
         borderSelected: Color = this.borderSelected,
         brand: Color = this.brand,
-        brandDark: Color = this.brandDark,
+        brandHigh: Color = this.brandHigh,
         buttonDangerBackground: Color = this.buttonDangerBackground,
         buttonDangerBackgroundDisabled: Color = this.buttonDangerBackgroundDisabled,
         buttonDangerBackgroundSelected: Color = this.buttonDangerBackgroundSelected,
@@ -422,7 +422,7 @@ class MisticaColors(
         borderLight = borderLight,
         borderSelected = borderSelected,
         brand = brand,
-        brandDark = brandDark,
+        brandHigh = brandHigh,
         buttonDangerBackground = buttonDangerBackground,
         buttonDangerBackgroundDisabled = buttonDangerBackgroundDisabled,
         buttonDangerBackgroundSelected = buttonDangerBackgroundSelected,
@@ -524,7 +524,7 @@ class MisticaColors(
         borderLight = other.borderLight
         borderSelected = other.borderSelected
         brand = other.brand
-        brandDark = other.brandDark
+        brandHigh = other.brandHigh
         buttonDangerBackground = other.buttonDangerBackground
         buttonDangerBackgroundDisabled = other.buttonDangerBackgroundDisabled
         buttonDangerBackgroundSelected = other.buttonDangerBackgroundSelected

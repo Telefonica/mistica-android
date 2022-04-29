@@ -82,7 +82,7 @@
 
         <!-- Global -->
         <attr name="colorBrand" format="color|reference" />
-        <attr name="colorBrandDark" format="color|reference" />
+        <attr name="colorBrandHigh" format="color|reference" />
         <attr name="colorInverse" format="color|reference" />
         <attr name="colorNeutralHigh" format="color|reference" />
         <attr name="colorNeutralLow" format="color|reference" />

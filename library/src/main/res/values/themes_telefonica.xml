@@ -87,7 +87,7 @@
 
         <!-- Global colors -->
         <item name="colorBrand">@color/telefonica_color_blue</item>
-        <item name="colorBrandDark">@color/telefonica_color_blue_dark</item>
+        <item name="colorBrandHigh">@color/telefonica_color_blue_dark</item>
         <item name="colorInverse">@color/telefonica_color_white</item>
         <item name="colorNeutralHigh">@color/telefonica_color_grey_9</item>
         <item name="colorNeutralLow">@color/telefonica_color_grey_1</item>
@@ -130,10 +130,10 @@
         <item name="colorGradientBackgroundSecond">?colorBackgroundBrand</item>
         <item name="colorGradientBackgroundThird">?colorBackgroundBrand</item>
         <item name="colorGradientBackgroundFourth">?colorBackgroundBrand</item>
-        <item name="colorLoginLoadingGradientFirst">?colorBrandDark</item>
-        <item name="colorLoginLoadingGradientSecond">?colorBrandDark</item>
-        <item name="colorLoginLoadingGradientThird">?colorBrandDark</item>
-        <item name="colorLoginLoadingGradientFourth">?colorBrandDark</item>
+        <item name="colorLoginLoadingGradientFirst">?colorBrandHigh</item>
+        <item name="colorLoginLoadingGradientSecond">?colorBrandHigh</item>
+        <item name="colorLoginLoadingGradientThird">?colorBrandHigh</item>
+        <item name="colorLoginLoadingGradientFourth">?colorBrandHigh</item>
 
         <!-- Feedbacks -->
         <item name="feedbackScreenSuccessWithGradient">false</item>
