@@ -71,7 +71,6 @@
         <item name="warningHigh">@color/o2_classic_color_orange_80</item>
         <item name="errorHigh">@color/o2_classic_color_pepper_70</item>
         <item name="promoHigh">@color/o2_classic_color_pink_60</item>
-        <item name="brandHigh">@color/o2_classic_color_blue</item>
 
         <!-- Text Links -->
         <item name="colorTextLink">@color/o2_classic_color_sky_blue</item>

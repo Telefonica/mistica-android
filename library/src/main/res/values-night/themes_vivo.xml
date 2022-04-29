@@ -64,7 +64,6 @@
         <item name="warningHigh">@color/vivo_color_orange_light40</item>
         <item name="errorHigh">@color/vivo_color_pepper_light40</item>
         <item name="promoHigh">@color/vivo_color_purple_light50</item>
-        <item name="brandHigh">@color/vivo_color_purple_light50</item>
 
         <!-- Text Links -->
         <item name="colorTextLink">@color/vivo_color_purple_light50</item>

@@ -101,7 +101,6 @@ class MisticaColors(
     textPrimaryInverse: Color = Color.Unspecified,
     textSecondary: Color = Color.Unspecified,
     textSecondaryInverse: Color = Color.Unspecified,
-    brandHigh: Color = Color.Unspecified,
     errorHigh: Color = Color.Unspecified,
     promoHigh: Color = Color.Unspecified,
     successHigh: Color = Color.Unspecified,
@@ -302,8 +301,6 @@ class MisticaColors(
         internal set
     var promoHigh by mutableStateOf(promoHigh, structuralEqualityPolicy())
         internal set
-    var brandHigh by mutableStateOf(brandHigh, structuralEqualityPolicy())
-        internal set
     var carouselIndicatorActiveColor by mutableStateOf(carouselIndicatorActiveColor, structuralEqualityPolicy())
         internal set
     var carouselIndicatorInactiveColor by mutableStateOf(carouselIndicatorInactiveColor, structuralEqualityPolicy())
@@ -404,7 +401,6 @@ class MisticaColors(
         textPrimaryInverse: Color = this.textPrimaryInverse,
         textSecondary: Color = this.textSecondary,
         textSecondaryInverse: Color = this.textSecondaryInverse,
-        brandHigh: Color = this.brandHigh,
         errorHigh: Color = this.errorHigh,
         promoHigh: Color = this.promoHigh,
         successHigh: Color = this.successHigh,
@@ -505,7 +501,6 @@ class MisticaColors(
         textPrimaryInverse = textPrimaryInverse,
         textSecondary = textSecondary,
         textSecondaryInverse = textSecondaryInverse,
-        brandHigh = brandHigh,
         errorHigh = errorHigh,
         promoHigh = promoHigh,
         successHigh = successHigh,
@@ -608,7 +603,6 @@ class MisticaColors(
         textPrimaryInverse = other.textPrimaryInverse
         textSecondary = other.textSecondary
         textSecondaryInverse = other.textSecondaryInverse
-        brandHigh = other.brandHigh
         errorHigh = other.errorHigh
         promoHigh = other.promoHigh
         successHigh = other.successHigh

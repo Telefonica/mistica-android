@@ -104,7 +104,6 @@
 		<item name="warningHigh">@color/blau_color_yellow_70</item>
 		<item name="errorHigh">@color/blau_color_red_70</item>
 		<item name="promoHigh">@color/blau_color_purple</item>
-		<item name="brandHigh">@color/blau_color_blue_secondary</item>
 
 		<!-- Texts colors -->
 		<item name="colorTextPrimary">@color/blau_color_grey_6</item>

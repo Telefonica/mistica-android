@@ -106,7 +106,6 @@
         <item name="warningHigh">@color/telefonica_color_ambar_70</item>
         <item name="errorHigh">@color/telefonica_color_coral_70</item>
         <item name="promoHigh">@color/telefonica_color_orchid_70</item>
-        <item name="brandHigh">@color/telefonica_color_blue</item>
 
         <!-- Texts colors -->
         <item name="colorTextPrimary">@color/telefonica_color_grey_9</item>

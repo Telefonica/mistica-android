@@ -59,7 +59,6 @@
 		<item name="warningHigh">@color/blau_color_yellow_40</item>
 		<item name="errorHigh">@color/blau_color_red_40</item>
 		<item name="promoHigh">@color/blau_color_purple_30</item>
-		<item name="brandHigh">@color/blau_color_blue_primary30</item>
 
 		<!-- Text Links -->
 		<item name="colorTextLink">@color/blau_color_purple</item>

@@ -99,7 +99,6 @@
         <attr name="inverse" format="color|reference" />
 
         <attr name="promoHigh" format="color|reference" />
-        <attr name="brandHigh" format="color|reference" />
         <attr name="successHigh" format="color|reference" />
         <attr name="warningHigh" format="color|reference" />
         <attr name="errorHigh" format="color|reference" />

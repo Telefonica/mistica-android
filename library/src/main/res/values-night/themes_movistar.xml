@@ -80,7 +80,6 @@
         <item name="warningHigh">@color/movistar_color_egg_40</item>
         <item name="errorHigh">@color/movistar_color_pepper_40</item>
         <item name="promoHigh">@color/movistar_color_purple_40</item>
-        <item name="brandHigh">@color/movistar_color_blue_40</item>
 
         <!-- Texts colors -->
         <item name="colorTextPrimary">@color/movistar_color_grey_2</item>
