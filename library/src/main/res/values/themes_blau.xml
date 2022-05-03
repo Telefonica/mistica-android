@@ -87,26 +87,23 @@
 
 		<!-- Global colors -->
 		<item name="colorBrand">@color/blau_color_blue_primary</item>
-		<item name="colorBrandDark">@color/blau_color_blue_secondary</item>
+		<item name="colorBrandHigh">@color/blau_color_blue_secondary</item>
 		<item name="colorInverse">@color/blau_color_white</item>
 		<item name="colorNeutralHigh">@color/blau_color_grey_6</item>
 		<item name="colorNeutralMedium">@color/blau_color_grey_5</item>
 		<item name="colorNeutralLow">@color/blau_color_grey_2</item>
 
 		<!-- Tag colors -->
-		<item name="tagBackgroundSuccess">@color/blau_color_green_10</item>
-		<item name="tagBackgroundWarning">@color/blau_color_yellow_10</item>
-		<item name="tagBackgroundError">@color/blau_color_red_10</item>
-		<item name="tagBackgroundPromo">@color/blau_color_purple_10</item>
-		<item name="tagBackgroundActive">@color/blau_color_blue_secondary10</item>
-		<item name="tagBackgroundInactive">@color/blau_color_grey_2</item>
+		<item name="successLow">@color/blau_color_green_10</item>
+		<item name="warningLow">@color/blau_color_yellow_10</item>
+		<item name="errorLow">@color/blau_color_red_10</item>
+		<item name="promoLow">@color/blau_color_purple_10</item>
+		<item name="brandLow">@color/blau_color_blue_secondary10</item>
 
-		<item name="textTagSuccess">@color/blau_color_green_70</item>
-		<item name="textTagWarning">@color/blau_color_yellow_70</item>
-		<item name="textTagError">@color/blau_color_red_70</item>
-		<item name="textTagPromo">@color/blau_color_purple</item>
-		<item name="textTagActive">@color/blau_color_blue_secondary</item>
-		<item name="textTagInactive">@color/blau_color_grey_5</item>
+		<item name="successHigh">@color/blau_color_green_70</item>
+		<item name="warningHigh">@color/blau_color_yellow_70</item>
+		<item name="errorHigh">@color/blau_color_red_70</item>
+		<item name="promoHigh">@color/blau_color_purple</item>
 
 		<!-- Texts colors -->
 		<item name="colorTextPrimary">@color/blau_color_grey_6</item>
@@ -114,7 +111,6 @@
 		<item name="colorTextSecondary">@color/blau_color_grey_5</item>
 		<item name="colorTextSecondaryInverse">@color/blau_color_white</item>
 		<item name="colorTextDisabled">@color/blau_color_grey_3</item>
-		<item name="colorTextAmount">@color/blau_color_blue_secondary</item>
 
 		<!-- State colors -->
 		<item name="colorError">@color/blau_color_red</item>

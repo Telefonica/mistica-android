@@ -87,28 +87,25 @@
 
 		<!-- Global colors -->
 		<item name="colorBrand">@color/movistar_color_blue</item>
-		<item name="colorBrandDark">@color/movistar_color_blue_dark</item>
+		<item name="colorBrandHigh">@color/movistar_color_blue_dark</item>
 		<item name="colorInverse">@color/movistar_color_white</item>
 		<item name="colorNeutralHigh">@color/movistar_color_grey_6</item>
-		<item name="colorNeutralLow">@color/movistar_color_grey_3</item>
+		<item name="colorNeutralLow">@color/movistar_color_grey_1</item>
 		<item name="colorNeutralMedium">@color/movistar_color_grey_5</item>
 		<item name="colorPromo">@color/movistar_color_purple</item>
 		<item name="colorHighlight">@color/movistar_color_pink</item>
 
 		<!-- Tag colors -->
-		<item name="tagBackgroundSuccess">@color/movistar_color_green_10</item>
-		<item name="tagBackgroundWarning">@color/movistar_color_egg_10</item>
-		<item name="tagBackgroundError">@color/movistar_color_pepper_10</item>
-		<item name="tagBackgroundPromo">@color/movistar_color_purple_10</item>
-		<item name="tagBackgroundActive">@color/movistar_color_blue_10</item>
-		<item name="tagBackgroundInactive">@color/movistar_color_grey_1</item>
+		<item name="successLow">@color/movistar_color_green_10</item>
+		<item name="warningLow">@color/movistar_color_egg_10</item>
+		<item name="errorLow">@color/movistar_color_pepper_10</item>
+		<item name="promoLow">@color/movistar_color_purple_10</item>
+		<item name="brandLow">@color/movistar_color_blue_10</item>
 
-		<item name="textTagSuccess">@color/movistar_color_green_70</item>
-		<item name="textTagWarning">@color/movistar_color_egg_80</item>
-		<item name="textTagError">@color/movistar_color_pepper_70</item>
-		<item name="textTagPromo">@color/movistar_color_purple_70</item>
-		<item name="textTagActive">@color/movistar_color_blue</item>
-		<item name="textTagInactive">@color/movistar_color_grey_5</item>
+		<item name="successHigh">@color/movistar_color_green_70</item>
+		<item name="warningHigh">@color/movistar_color_egg_80</item>
+		<item name="errorHigh">@color/movistar_color_pepper_70</item>
+		<item name="promoHigh">@color/movistar_color_purple_70</item>
 
 		<!-- Texts colors -->
 		<item name="colorTextPrimary">@color/movistar_color_grey_6</item>
@@ -116,7 +113,6 @@
 		<item name="colorTextSecondary">@color/movistar_color_grey_5</item>
 		<item name="colorTextSecondaryInverse">@color/movistar_color_white</item>
 		<item name="colorTextDisabled">@color/movistar_color_grey_3</item>
-		<item name="colorTextAmount">@color/movistar_color_blue</item>
 
 		<!-- State colors -->
 		<item name="colorError">@color/movistar_color_pepper</item>
@@ -134,10 +130,10 @@
 		<item name="colorGradientBackgroundSecond">?colorBackgroundBrand</item>
 		<item name="colorGradientBackgroundThird">?colorBackgroundBrand</item>
 		<item name="colorGradientBackgroundFourth">?colorBackgroundBrand</item>
-		<item name="colorLoginLoadingGradientFirst">?colorBrandDark</item>
-		<item name="colorLoginLoadingGradientSecond">?colorBrandDark</item>
-		<item name="colorLoginLoadingGradientThird">?colorBrandDark</item>
-		<item name="colorLoginLoadingGradientFourth">?colorBrandDark</item>
+		<item name="colorLoginLoadingGradientFirst">?colorBrandHigh</item>
+		<item name="colorLoginLoadingGradientSecond">?colorBrandHigh</item>
+		<item name="colorLoginLoadingGradientThird">?colorBrandHigh</item>
+		<item name="colorLoginLoadingGradientFourth">?colorBrandHigh</item>
 
 		<!-- Feedbacks -->
 		<item name="feedbackScreenSuccessWithGradient">false</item>
@@ -157,7 +153,7 @@
 		<item name="colorBrand">@color/movistar_prominent_color_blue</item>
 		<item name="colorBackgroundBrand">@color/movistar_prominent_color_blue</item>
 		<item name="colorNavigationBarBackground">@color/movistar_prominent_color_blue</item>
-		<item name="colorBrandDark">@color/movistar_prominent_color_blue_dark</item>
+		<item name="colorBrandHigh">@color/movistar_prominent_color_blue_dark</item>
 		<item name="colorDividerInverse">@color/movistar_prominent_color_blue_dark</item>
 	</style>
 
@@ -169,7 +165,7 @@
 		<item name="colorBrand">@color/movistar_prominent_color_blue</item>
 		<item name="colorBackgroundBrand">@color/movistar_prominent_color_blue</item>
 		<item name="colorNavigationBarBackground">@color/movistar_prominent_color_blue</item>
-		<item name="colorBrandDark">@color/movistar_prominent_color_blue_dark</item>
+		<item name="colorBrandHigh">@color/movistar_prominent_color_blue_dark</item>
 		<item name="colorDividerInverse">@color/movistar_prominent_color_blue_dark</item>
 	</style>
 

@@ -82,7 +82,7 @@
 
         <!-- Global -->
         <attr name="colorBrand" format="color|reference" />
-        <attr name="colorBrandDark" format="color|reference" />
+        <attr name="colorBrandHigh" format="color|reference" />
         <attr name="colorInverse" format="color|reference" />
         <attr name="colorNeutralHigh" format="color|reference" />
         <attr name="colorNeutralLow" format="color|reference" />
@@ -91,20 +91,17 @@
         <attr name="colorHighlight" format="color|reference" />
 
         <!-- Tags colors -->
-        <attr name="tagBackgroundPromo" format="color|reference" />
-        <attr name="tagBackgroundActive" format="color|reference" />
-        <attr name="tagBackgroundInactive" format="color|reference" />
-        <attr name="tagBackgroundSuccess" format="color|reference" />
-        <attr name="tagBackgroundWarning" format="color|reference" />
-        <attr name="tagBackgroundError" format="color|reference" />
+        <attr name="promoLow" format="color|reference" />
+        <attr name="brandLow" format="color|reference" />
+        <attr name="successLow" format="color|reference" />
+        <attr name="warningLow" format="color|reference" />
+        <attr name="errorLow" format="color|reference" />
         <attr name="inverse" format="color|reference" />
 
-        <attr name="textTagPromo" format="color|reference" />
-        <attr name="textTagActive" format="color|reference" />
-        <attr name="textTagInactive" format="color|reference" />
-        <attr name="textTagSuccess" format="color|reference" />
-        <attr name="textTagWarning" format="color|reference" />
-        <attr name="textTagError" format="color|reference" />
+        <attr name="promoHigh" format="color|reference" />
+        <attr name="successHigh" format="color|reference" />
+        <attr name="warningHigh" format="color|reference" />
+        <attr name="errorHigh" format="color|reference" />
 
         <!-- Texts colors -->
         <attr name="colorTextPrimary" format="color|reference" />
@@ -112,7 +109,6 @@
         <attr name="colorTextSecondary" format="color|reference" />
         <attr name="colorTextSecondaryInverse" format="color|reference" />
         <attr name="colorTextDisabled" format="color|reference" />
-        <attr name="colorTextAmount" format="color|reference" />
 
         <!-- States -->
         <attr name="colorError" format="color|reference" />

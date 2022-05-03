@@ -51,19 +51,16 @@
         <item name="colorTextButtonSecondaryInverseSelected">@color/o2_classic_color_grey_4</item>
 
         <!-- Tag colors -->
-        <item name="tagBackgroundSuccess">@color/o2_classic_color_darkModeGrey</item>
-        <item name="tagBackgroundWarning">@color/o2_classic_color_darkModeGrey</item>
-        <item name="tagBackgroundError">@color/o2_classic_color_darkModeGrey</item>
-        <item name="tagBackgroundPromo">@color/o2_classic_color_darkModeGrey</item>
-        <item name="tagBackgroundActive">@color/o2_classic_color_darkModeGrey</item>
-        <item name="tagBackgroundInactive">@color/o2_classic_color_darkModeGrey</item>
+        <item name="successLow">@color/o2_classic_color_darkModeGrey</item>
+        <item name="warningLow">@color/o2_classic_color_darkModeGrey</item>
+        <item name="errorLow">@color/o2_classic_color_darkModeGrey</item>
+        <item name="promoLow">@color/o2_classic_color_darkModeGrey</item>
+        <item name="brandLow">@color/o2_classic_color_darkModeGrey</item>
 
-        <item name="textTagSuccess">@color/o2_classic_color_green_40</item>
-        <item name="textTagWarning">@color/o2_classic_color_orange_40</item>
-        <item name="textTagError">@color/o2_classic_color_pepper_40</item>
-        <item name="textTagPromo">@color/o2_classic_color_pink_40</item>
-        <item name="textTagActive">@color/o2_classic_color_blue_30</item>
-        <item name="textTagInactive">@color/o2_classic_color_grey_4</item>
+        <item name="successHigh">@color/o2_classic_color_green_40</item>
+        <item name="warningHigh">@color/o2_classic_color_orange_40</item>
+        <item name="errorHigh">@color/o2_classic_color_pepper_40</item>
+        <item name="promoHigh">@color/o2_classic_color_pink_40</item>
 
         <!-- Text Links -->
         <item name="colorTextLink">@color/o2_classic_color_sky_blue_light</item>
@@ -84,7 +81,7 @@
 
         <!-- Global colors -->
         <item name="colorBrand">@color/o2_classic_color_sky_blue</item>
-        <item name="colorBrandDark">@color/o2_classic_color_darkModeGrey6</item>
+        <item name="colorBrandHigh">@color/o2_classic_color_darkModeGrey6</item>
         <item name="colorInverse">@color/o2_classic_color_grey_2</item>
         <item name="colorNeutralHigh">@color/o2_classic_color_grey_2</item>
         <item name="colorNeutralLow">@color/o2_classic_color_darkModeGrey6</item>
@@ -95,7 +92,6 @@
         <item name="colorTextSecondary">@color/o2_classic_color_grey_4</item>
         <item name="colorTextSecondaryInverse">@color/o2_classic_color_grey_4</item>
         <item name="colorTextDisabled">@color/o2_classic_color_grey_5</item>
-        <item name="colorTextAmount">@color/o2_classic_color_sky_blue_light_50</item>
 
         <!-- Bars text colors -->
         <item name="colorTextNavigationBarPrimary">@color/o2_classic_color_grey_2</item>

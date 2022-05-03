@@ -22,7 +22,7 @@ class MisticaColors(
     borderLight: Color = Color.Unspecified,
     borderSelected: Color = Color.Unspecified,
     brand: Color = Color.Unspecified,
-    brandDark: Color = Color.Unspecified,
+    brandHigh: Color = Color.Unspecified,
     buttonDangerBackground: Color = Color.Unspecified,
     buttonDangerBackgroundDisabled: Color = Color.Unspecified,
     buttonDangerBackgroundSelected: Color = Color.Unspecified,
@@ -70,13 +70,11 @@ class MisticaColors(
     promo: Color = Color.Unspecified,
     skeletonWave: Color = Color.Unspecified,
     success: Color = Color.Unspecified,
-    tagBackgroundActive: Color = Color.Unspecified,
-    tagBackgroundError: Color = Color.Unspecified,
-    tagBackgroundInactive: Color = Color.Unspecified,
-    tagBackgroundPromo: Color = Color.Unspecified,
-    tagBackgroundSuccess: Color = Color.Unspecified,
-    tagBackgroundWarning: Color = Color.Unspecified,
-    textAmount: Color = Color.Unspecified,
+    brandLow: Color = Color.Unspecified,
+    errorLow: Color = Color.Unspecified,
+    promoLow: Color = Color.Unspecified,
+    successLow: Color = Color.Unspecified,
+    warningLow: Color = Color.Unspecified,
     textAppBar: Color = Color.Unspecified,
     textAppBarSelected: Color = Color.Unspecified,
     textButtonPrimary: Color = Color.Unspecified,
@@ -103,12 +101,10 @@ class MisticaColors(
     textPrimaryInverse: Color = Color.Unspecified,
     textSecondary: Color = Color.Unspecified,
     textSecondaryInverse: Color = Color.Unspecified,
-    textTagActive: Color = Color.Unspecified,
-    textTagError: Color = Color.Unspecified,
-    textTagInactive: Color = Color.Unspecified,
-    textTagPromo: Color = Color.Unspecified,
-    textTagSuccess: Color = Color.Unspecified,
-    textTagWarning: Color = Color.Unspecified,
+    errorHigh: Color = Color.Unspecified,
+    promoHigh: Color = Color.Unspecified,
+    successHigh: Color = Color.Unspecified,
+    warningHigh: Color = Color.Unspecified,
     warning: Color = Color.Unspecified,
 ) {
     var appBarBackground by mutableStateOf(appBarBackground, structuralEqualityPolicy())
@@ -233,7 +229,7 @@ class MisticaColors(
         internal set
     var brand by mutableStateOf(brand, structuralEqualityPolicy())
         internal set
-    var brandDark by mutableStateOf(brandDark, structuralEqualityPolicy())
+    var brandHigh by mutableStateOf(brandHigh, structuralEqualityPolicy())
         internal set
     var inverse by mutableStateOf(inverse, structuralEqualityPolicy())
         internal set
@@ -256,8 +252,6 @@ class MisticaColors(
     var textSecondaryInverse by mutableStateOf(textSecondaryInverse, structuralEqualityPolicy())
         internal set
     var textDisabled by mutableStateOf(textDisabled, structuralEqualityPolicy())
-        internal set
-    var textAmount by mutableStateOf(textAmount, structuralEqualityPolicy())
         internal set
     var error by mutableStateOf(error, structuralEqualityPolicy())
         internal set
@@ -289,29 +283,23 @@ class MisticaColors(
         internal set
     var loginLoadingGradientFourth by mutableStateOf(loginLoadingGradientFourth, structuralEqualityPolicy())
         internal set
-    var tagBackgroundSuccess by mutableStateOf(tagBackgroundSuccess, structuralEqualityPolicy())
+    var successLow by mutableStateOf(successLow, structuralEqualityPolicy())
         internal set
-    var tagBackgroundWarning by mutableStateOf(tagBackgroundWarning, structuralEqualityPolicy())
+    var warningLow by mutableStateOf(warningLow, structuralEqualityPolicy())
         internal set
-    var tagBackgroundError by mutableStateOf(tagBackgroundError, structuralEqualityPolicy())
+    var errorLow by mutableStateOf(errorLow, structuralEqualityPolicy())
         internal set
-    var tagBackgroundPromo by mutableStateOf(tagBackgroundPromo, structuralEqualityPolicy())
+    var promoLow by mutableStateOf(promoLow, structuralEqualityPolicy())
         internal set
-    var tagBackgroundActive by mutableStateOf(tagBackgroundActive, structuralEqualityPolicy())
+    var brandLow by mutableStateOf(brandLow, structuralEqualityPolicy())
         internal set
-    var tagBackgroundInactive by mutableStateOf(tagBackgroundInactive, structuralEqualityPolicy())
+    var successHigh by mutableStateOf(successHigh, structuralEqualityPolicy())
         internal set
-    var textTagSuccess by mutableStateOf(textTagSuccess, structuralEqualityPolicy())
+    var warningHigh by mutableStateOf(warningHigh, structuralEqualityPolicy())
         internal set
-    var textTagWarning by mutableStateOf(textTagWarning, structuralEqualityPolicy())
+    var errorHigh by mutableStateOf(errorHigh, structuralEqualityPolicy())
         internal set
-    var textTagError by mutableStateOf(textTagError, structuralEqualityPolicy())
-        internal set
-    var textTagPromo by mutableStateOf(textTagPromo, structuralEqualityPolicy())
-        internal set
-    var textTagActive by mutableStateOf(textTagActive, structuralEqualityPolicy())
-        internal set
-    var textTagInactive by mutableStateOf(textTagInactive, structuralEqualityPolicy())
+    var promoHigh by mutableStateOf(promoHigh, structuralEqualityPolicy())
         internal set
     var carouselIndicatorActiveColor by mutableStateOf(carouselIndicatorActiveColor, structuralEqualityPolicy())
         internal set
@@ -334,7 +322,7 @@ class MisticaColors(
         borderLight: Color = this.borderLight,
         borderSelected: Color = this.borderSelected,
         brand: Color = this.brand,
-        brandDark: Color = this.brandDark,
+        brandHigh: Color = this.brandHigh,
         buttonDangerBackground: Color = this.buttonDangerBackground,
         buttonDangerBackgroundDisabled: Color = this.buttonDangerBackgroundDisabled,
         buttonDangerBackgroundSelected: Color = this.buttonDangerBackgroundSelected,
@@ -382,13 +370,11 @@ class MisticaColors(
         promo: Color = this.promo,
         skeletonWave: Color = this.skeletonWave,
         success: Color = this.success,
-        tagBackgroundActive: Color = this.tagBackgroundActive,
-        tagBackgroundError: Color = this.tagBackgroundError,
-        tagBackgroundInactive: Color = this.tagBackgroundInactive,
-        tagBackgroundPromo: Color = this.tagBackgroundPromo,
-        tagBackgroundSuccess: Color = this.tagBackgroundSuccess,
-        tagBackgroundWarning: Color = this.tagBackgroundWarning,
-        textAmount: Color = this.textAmount,
+        brandLow: Color = this.brandLow,
+        errorLow: Color = this.errorLow,
+        promoLow: Color = this.promoLow,
+        successLow: Color = this.successLow,
+        warningLow: Color = this.warningLow,
         textAppBar: Color = this.textAppBar,
         textAppBarSelected: Color = this.textAppBarSelected,
         textButtonPrimary: Color = this.textButtonPrimary,
@@ -415,12 +401,10 @@ class MisticaColors(
         textPrimaryInverse: Color = this.textPrimaryInverse,
         textSecondary: Color = this.textSecondary,
         textSecondaryInverse: Color = this.textSecondaryInverse,
-        textTagActive: Color = this.textTagActive,
-        textTagError: Color = this.textTagError,
-        textTagInactive: Color = this.textTagInactive,
-        textTagPromo: Color = this.textTagPromo,
-        textTagSuccess: Color = this.textTagSuccess,
-        textTagWarning: Color = this.textTagWarning,
+        errorHigh: Color = this.errorHigh,
+        promoHigh: Color = this.promoHigh,
+        successHigh: Color = this.successHigh,
+        warningHigh: Color = this.warningHigh,
         warning: Color = this.warning,
     ): MisticaColors = MisticaColors(
         appBarBackground = appBarBackground,
@@ -438,7 +422,7 @@ class MisticaColors(
         borderLight = borderLight,
         borderSelected = borderSelected,
         brand = brand,
-        brandDark = brandDark,
+        brandHigh = brandHigh,
         buttonDangerBackground = buttonDangerBackground,
         buttonDangerBackgroundDisabled = buttonDangerBackgroundDisabled,
         buttonDangerBackgroundSelected = buttonDangerBackgroundSelected,
@@ -486,13 +470,11 @@ class MisticaColors(
         promo = promo,
         skeletonWave = skeletonWave,
         success = success,
-        tagBackgroundActive = tagBackgroundActive,
-        tagBackgroundError = tagBackgroundError,
-        tagBackgroundInactive = tagBackgroundInactive,
-        tagBackgroundPromo = tagBackgroundPromo,
-        tagBackgroundSuccess = tagBackgroundSuccess,
-        tagBackgroundWarning = tagBackgroundWarning,
-        textAmount = textAmount,
+        brandLow = brandLow,
+        errorLow = errorLow,
+        promoLow = promoLow,
+        successLow = successLow,
+        warningLow = warningLow,
         textAppBar = textAppBar,
         textAppBarSelected = textAppBarSelected,
         textButtonPrimary = textButtonPrimary,
@@ -519,12 +501,10 @@ class MisticaColors(
         textPrimaryInverse = textPrimaryInverse,
         textSecondary = textSecondary,
         textSecondaryInverse = textSecondaryInverse,
-        textTagActive = textTagActive,
-        textTagError = textTagError,
-        textTagInactive = textTagInactive,
-        textTagPromo = textTagPromo,
-        textTagSuccess = textTagSuccess,
-        textTagWarning = textTagWarning,
+        errorHigh = errorHigh,
+        promoHigh = promoHigh,
+        successHigh = successHigh,
+        warningHigh = warningHigh,
         warning = warning,
     )
 
@@ -544,7 +524,7 @@ class MisticaColors(
         borderLight = other.borderLight
         borderSelected = other.borderSelected
         brand = other.brand
-        brandDark = other.brandDark
+        brandHigh = other.brandHigh
         buttonDangerBackground = other.buttonDangerBackground
         buttonDangerBackgroundDisabled = other.buttonDangerBackgroundDisabled
         buttonDangerBackgroundSelected = other.buttonDangerBackgroundSelected
@@ -592,13 +572,11 @@ class MisticaColors(
         promo = other.promo
         skeletonWave = other.skeletonWave
         success = other.success
-        tagBackgroundActive = other.tagBackgroundActive
-        tagBackgroundError = other.tagBackgroundError
-        tagBackgroundInactive = other.tagBackgroundInactive
-        tagBackgroundPromo = other.tagBackgroundPromo
-        tagBackgroundSuccess = other.tagBackgroundSuccess
-        tagBackgroundWarning = other.tagBackgroundWarning
-        textAmount = other.textAmount
+        brandLow = other.brandLow
+        errorLow = other.errorLow
+        promoLow = other.promoLow
+        successLow = other.successLow
+        warningLow = other.warningLow
         textAppBar = other.textAppBar
         textAppBarSelected = other.textAppBarSelected
         textButtonPrimary = other.textButtonPrimary
@@ -625,12 +603,10 @@ class MisticaColors(
         textPrimaryInverse = other.textPrimaryInverse
         textSecondary = other.textSecondary
         textSecondaryInverse = other.textSecondaryInverse
-        textTagActive = other.textTagActive
-        textTagError = other.textTagError
-        textTagInactive = other.textTagInactive
-        textTagPromo = other.textTagPromo
-        textTagSuccess = other.textTagSuccess
-        textTagWarning = other.textTagWarning
+        errorHigh = other.errorHigh
+        promoHigh = other.promoHigh
+        successHigh = other.successHigh
+        warningHigh = other.warningHigh
         warning = other.warning
     }
 }

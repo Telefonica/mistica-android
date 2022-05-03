@@ -61,19 +61,16 @@
         <item name="colorTextButtonSecondaryInverseSelected">@color/o2_color_white</item>
 
         <!-- Tag colors -->
-        <item name="tagBackgroundSuccess">@color/o2_color_green_10</item>
-        <item name="tagBackgroundWarning">@color/o2_color_orange_10</item>
-        <item name="tagBackgroundError">@color/o2_color_pepper_10</item>
-        <item name="tagBackgroundPromo">@color/o2_color_purple_10</item>
-        <item name="tagBackgroundActive">@color/o2_color_blue_primary_10</item>
-        <item name="tagBackgroundInactive">@color/o2_color_grey_1</item>
+        <item name="successLow">@color/o2_color_green_10</item>
+        <item name="warningLow">@color/o2_color_orange_10</item>
+        <item name="errorLow">@color/o2_color_pepper_10</item>
+        <item name="promoLow">@color/o2_color_purple_10</item>
+        <item name="brandLow">@color/o2_color_blue_primary_10</item>
 
-        <item name="textTagSuccess">@color/o2_color_green_80</item>
-        <item name="textTagWarning">@color/o2_color_orange_75</item>
-        <item name="textTagError">@color/o2_color_pepper_60</item>
-        <item name="textTagPromo">@color/o2_color_purple</item>
-        <item name="textTagActive">@color/o2_color_blue_primary</item>
-        <item name="textTagInactive">@color/o2_color_grey_5</item>
+        <item name="successHigh">@color/o2_color_green_80</item>
+        <item name="warningHigh">@color/o2_color_orange_75</item>
+        <item name="errorHigh">@color/o2_color_pepper_60</item>
+        <item name="promoHigh">@color/o2_color_purple</item>
 
         <!-- Text Links -->
         <item name="colorTextLink">@color/o2_color_blue_primary</item>
@@ -102,11 +99,11 @@
 
         <!-- Global colors -->
         <item name="colorBrand">@color/o2_color_blue_primary</item>
-        <item name="colorBrandDark">@color/o2_color_blue_primary_dark</item>
+        <item name="colorBrandHigh">@color/o2_color_blue_primary_dark</item>
         <item name="colorInverse">@color/o2_color_white</item>
         <item name="colorNeutralHigh">@color/o2_color_grey_6</item>
         <item name="colorNeutralMedium">@color/o2_color_grey_5</item>
-        <item name="colorNeutralLow">@color/o2_color_grey_3</item>
+        <item name="colorNeutralLow">@color/o2_color_grey_1</item>
         <item name="colorPromo">@color/o2_color_purple</item>
         <item name="colorHighlight">@color/o2_color_pink</item>
 
@@ -116,7 +113,6 @@
         <item name="colorTextSecondary">@color/o2_color_grey_5</item>
         <item name="colorTextSecondaryInverse">@color/o2_color_white</item>
         <item name="colorTextDisabled">@color/o2_color_grey_3</item>
-        <item name="colorTextAmount">@color/o2_color_blue_primary</item>
 
         <!-- State colors -->
         <item name="colorError">@color/o2_color_pepper</item>
