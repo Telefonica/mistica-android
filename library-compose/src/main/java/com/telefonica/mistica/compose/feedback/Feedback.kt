@@ -21,36 +21,17 @@ fun Feedback(
     subtitle: String = "",
     errorReference: String = "",
     firstButtonText: String?,
-    secondButtonText: String?,
+    secondButtonText: String? = null,
     firstButtonOnClick: (() -> Unit)?,
-    secondButtonOnClick: (() -> Unit)?,
+    secondButtonOnClick: (() -> Unit)? = null,
     isFirstButtonLoading: Boolean = false,
     secondButtonAsLink: Boolean = false,
-    onBackPressed: (() -> Unit)
-    ) {
-
-    val currentOnBack by rememberUpdatedState(newValue = onBackPressed)
+    onBackPressed: (() -> Unit)? = null
+) {
     var shouldPerformTheAnimation by remember { mutableStateOf(true) }
 
-    val backCallback = remember {
-        object : OnBackPressedCallback(true) {
-            override fun handleOnBackPressed() {
-                currentOnBack()
-            }
-
-        }
-    }
-
-    val backDispatcher = checkNotNull(LocalOnBackPressedDispatcherOwner.current) {
-        "No OnBackPressedDispatcherOwner was provided via LocalOnBackPressedDispatcherOwner"
-    }.onBackPressedDispatcher
-    val lifecycleOwner = LocalLifecycleOwner.current
-
-    DisposableEffect(lifecycleOwner, backDispatcher) {
-        backDispatcher.addCallback(lifecycleOwner, backCallback)
-        onDispose {
-            backCallback.remove()
-        }
+    onBackPressed?.let {
+        BackHandler(it)
     }
 
     AndroidView(factory = { context ->
@@ -74,6 +55,33 @@ fun Feedback(
                 shouldPerformTheAnimation = false
             }
         }
+    })
+}
+
+@Composable
+private fun BackHandler(
+    onBackPressed: () -> Unit
+) {
+    val currentOnBack by rememberUpdatedState(newValue = onBackPressed)
+
+    val backCallback = remember {
+        object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                currentOnBack()
+            }
+
+        }
     }
-    )
+
+    val backDispatcher = checkNotNull(LocalOnBackPressedDispatcherOwner.current) {
+        "No OnBackPressedDispatcherOwner was provided via LocalOnBackPressedDispatcherOwner"
+    }.onBackPressedDispatcher
+    val lifecycleOwner = LocalLifecycleOwner.current
+
+    DisposableEffect(lifecycleOwner, backDispatcher) {
+        backDispatcher.addCallback(lifecycleOwner, backCallback)
+        onDispose {
+            backCallback.remove()
+        }
+    }
 }
