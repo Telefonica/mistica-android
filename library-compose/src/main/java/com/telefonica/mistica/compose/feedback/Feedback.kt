@@ -1,16 +1,12 @@
 package com.telefonica.mistica.compose.feedback
 
 import android.view.ViewGroup
-import androidx.activity.OnBackPressedCallback
-import androidx.activity.compose.LocalOnBackPressedDispatcherOwner
+import androidx.activity.compose.BackHandler
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.viewinterop.AndroidView
 import com.telefonica.mistica.feedback.screen.view.FeedbackScreenView
 
@@ -31,7 +27,7 @@ fun Feedback(
     var shouldPerformTheAnimation by remember { mutableStateOf(true) }
 
     onBackPressed?.let {
-        BackHandler(it)
+        BackHandler(onBack = onBackPressed)
     }
 
     AndroidView(factory = { context ->
@@ -56,32 +52,5 @@ fun Feedback(
             }
         }
     })
-}
 
-@Composable
-private fun BackHandler(
-    onBackPressed: () -> Unit
-) {
-    val currentOnBack by rememberUpdatedState(newValue = onBackPressed)
-
-    val backCallback = remember {
-        object : OnBackPressedCallback(true) {
-            override fun handleOnBackPressed() {
-                currentOnBack()
-            }
-
-        }
-    }
-
-    val backDispatcher = checkNotNull(LocalOnBackPressedDispatcherOwner.current) {
-        "No OnBackPressedDispatcherOwner was provided via LocalOnBackPressedDispatcherOwner"
-    }.onBackPressedDispatcher
-    val lifecycleOwner = LocalLifecycleOwner.current
-
-    DisposableEffect(lifecycleOwner, backDispatcher) {
-        backDispatcher.addCallback(lifecycleOwner, backCallback)
-        onDispose {
-            backCallback.remove()
-        }
-    }
 }
