@@ -92,7 +92,7 @@ class MisticaTypography(
         buildBaseStyle().copy(
             fontSize = 22.sp,
             lineHeight = 24.sp,
-            fontWeight = FontWeight.Normal,
+            fontWeight = FontWeight.Light,
         )
 
     private fun buildPreset4() =
