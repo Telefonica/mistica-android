@@ -13,8 +13,8 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentSize
-import androidx.compose.foundation.lazy.GridCells
-import androidx.compose.foundation.lazy.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -23,6 +23,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
@@ -57,7 +58,9 @@ fun Tag(
         color = background,
     ) {
         Row(
-            modifier = Modifier.padding(start = if (icon != null) 8.dp else 12.dp, end = 12.dp),
+            modifier = Modifier
+                .testTag(TagTestTags.TAG)
+                .padding(start = if (icon != null) 8.dp else 12.dp, end = 12.dp),
             verticalAlignment = Alignment.CenterVertically,
         ) {
 
@@ -73,7 +76,9 @@ fun Tag(
 
             Text(
                 text = text,
-                modifier = Modifier.padding(start = if (icon != null) 4.dp else 0.dp),
+                modifier = Modifier
+                    .testTag(TagTestTags.TAG_TEXT)
+                    .padding(start = if (icon != null) 4.dp else 0.dp),
                 style = MisticaTheme.typography.preset2Medium,
                 color = textColor,
                 maxLines = 1,
@@ -81,6 +86,11 @@ fun Tag(
             )
         }
     }
+}
+
+object TagTestTags {
+    const val TAG = "tag"
+    const val TAG_TEXT = "tag_text"
 }
 
 class Tag constructor(
@@ -124,7 +134,7 @@ internal fun TagPreview() {
                 Tag(text = "Inverse", style = TYPE_INVERSE, modifier = Modifier.padding(8.dp), icon = android.R.drawable.ic_lock_power_off)
             }
             LazyVerticalGrid(
-                cells = GridCells.Fixed(3),
+                columns = GridCells.Fixed(3),
                 modifier = Modifier.padding(16.dp)
             ) {
                 item { Tag(text = "Promotion", style = TYPE_PROMO, modifier = Modifier.padding(4.dp), icon = android.R.drawable.ic_lock_power_off) }

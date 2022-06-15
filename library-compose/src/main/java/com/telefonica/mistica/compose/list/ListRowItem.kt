@@ -25,6 +25,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -105,7 +106,7 @@ fun ListRowItem(
     }
 
     Box(
-        modifier = boxModifier
+        modifier = boxModifier.testTag(ListRowItemTestTags.LIST_ROW_ITEM)
     ) {
         Row(
             modifier = rowModifier
@@ -130,6 +131,7 @@ fun ListRowItem(
                         text = it,
                         style = MisticaTheme.typography.preset3,
                         color = textColorPrimary,
+                        modifier = Modifier.testTag(ListRowItemTestTags.LIST_ROW_ITEM_TITLE),
                     )
                 }
                 subtitle?.let {
@@ -138,6 +140,7 @@ fun ListRowItem(
                         style = MisticaTheme.typography.preset2,
                         color = textColorSecondary,
                         modifier = Modifier
+                            .testTag(ListRowItemTestTags.LIST_ROW_ITEM_SUBTITLE)
                             .padding(vertical = 2.dp)
                             .defaultMinSize(minHeight = 20.dp),
                     )
@@ -148,6 +151,7 @@ fun ListRowItem(
                         style = MisticaTheme.typography.preset2,
                         color = textColorSecondary,
                         modifier = Modifier
+                            .testTag(ListRowItemTestTags.LIST_ROW_ITEM_DESCRIPTION)
                             .padding(vertical = 2.dp)
                             .defaultMinSize(minHeight = 20.dp),
                     )
@@ -179,6 +183,13 @@ private fun Modifier.makeClickableIfNeeded(onClick: (() -> Unit)?): Modifier =
     } else {
         this
     }
+
+object ListRowItemTestTags {
+    const val LIST_ROW_ITEM = "list_row_item"
+    const val LIST_ROW_ITEM_DESCRIPTION = "list_row_item_description"
+    const val LIST_ROW_ITEM_SUBTITLE = "list_row_item_subtitle"
+    const val LIST_ROW_ITEM_TITLE = "list_row_item_title"
+}
 
 @ExperimentalMaterialApi
 @Preview(showBackground = true)
