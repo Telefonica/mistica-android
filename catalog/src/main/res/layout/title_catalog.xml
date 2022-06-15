@@ -12,6 +12,40 @@
 			android:orientation="vertical">
 
 		<com.telefonica.mistica.title.TitleView
+				android:id="@+id/short_title_with_style_1"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="8dp"
+				app:titleStyle="title1"
+				app:title="Some title 1" />
+
+		<com.telefonica.mistica.title.TitleView
+				android:id="@+id/short_title_with_style_1_with_link"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="8dp"
+				app:link="Some link"
+				app:titleStyle="title1"
+				app:title="Some title 1" />
+
+		<com.telefonica.mistica.title.TitleView
+				android:id="@+id/long_title_with_style_1"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="8dp"
+				app:titleStyle="title1"
+				app:title="Some title that can get really long and almost fill the whole line" />
+
+		<com.telefonica.mistica.title.TitleView
+				android:id="@+id/long_title_with_style_1_with_link"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="8dp"
+				app:link="Some link"
+				app:titleStyle="title1"
+				app:title="Some title that can get really long and almost fill the whole line" />
+
+		<com.telefonica.mistica.title.TitleView
 				android:id="@+id/short_title"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
@@ -24,7 +58,7 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_marginBottom="8dp"
-				app:title="Section title that can get really long and almost fill the whole line" />
+				app:title="Some title that can get really long and almost fill the whole line" />
 
 		<com.telefonica.mistica.title.TitleView
 				android:id="@+id/short_title_with_link"
@@ -40,41 +74,7 @@
 				android:layout_height="wrap_content"
 				android:layout_marginBottom="8dp"
 				app:link="Some link"
-				app:title="Section title that can get really long and almost fill the whole line" />
-
-		<com.telefonica.mistica.title.TitleView
-				android:id="@+id/short_title_with_style_1"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_marginBottom="8dp"
-				app:titleStyle="title1"
-				app:title="Section title 1" />
-
-		<com.telefonica.mistica.title.TitleView
-				android:id="@+id/short_title_with_style_1_with_link"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_marginBottom="8dp"
-				app:link="Some link"
-				app:titleStyle="title1"
-				app:title="Section title 1" />
-
-		<com.telefonica.mistica.title.TitleView
-				android:id="@+id/long_title_with_style_1"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_marginBottom="8dp"
-				app:titleStyle="title1"
-				app:title="Section title that can get really long and almost fill the whole line" />
-
-		<com.telefonica.mistica.title.TitleView
-				android:id="@+id/long_title_with_style_1_with_link"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_marginBottom="8dp"
-				app:link="Some link"
-				app:titleStyle="title1"
-				app:title="Section title that can get really long and almost fill the whole line" />
+				app:title="Some title that can get really long and almost fill the whole line" />
 
 	</LinearLayout>
 </ScrollView>
