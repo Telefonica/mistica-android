@@ -25,6 +25,7 @@ class ComponentCatalogActivity : AppCompatActivity() {
 
         val fragment: Fragment = when (intent.getSerializableExtra(EXTRA_SECTION)) {
             Section.TEXTS -> TextPresetsCatalogFragment()
+            Section.TITLES -> TitleCatalogFragment()
             Section.BUTTONS -> ButtonsCatalogFragment()
             Section.INPUTS -> InputsCatalogFragment()
             Section.SNACKBARS -> SnackBarCatalogFragment()
@@ -64,6 +65,7 @@ class ComponentCatalogActivity : AppCompatActivity() {
 
 enum class Section {
     TEXTS,
+    TITLES,
     BUTTONS,
     INPUTS,
     SNACKBARS,

@@ -21,7 +21,7 @@ import com.telefonica.mistica.input.validations.EmailTextInputValidation
 import com.telefonica.mistica.input.validations.PhoneTextInputValidation
 import com.telefonica.mistica.input.validations.TextInputValidation
 import com.telefonica.mistica.input.validations.TextInputValidationResult
-import com.telefonica.mistica.section.SectionTitleView
+import com.telefonica.mistica.title.TitleView
 
 class InputsCatalogFragment : Fragment() {
 
@@ -50,7 +50,7 @@ class InputsCatalogFragment : Fragment() {
                 setMovementMethod(LinkMovementMethod.getInstance())
             }
 
-            findViewById<SectionTitleView>(R.id.section_title_with_link)?.apply {
+            findViewById<TitleView>(R.id.section_title_with_link)?.apply {
                 setOnLinkClickedListener {
                     Toast.makeText(
                         this.context,

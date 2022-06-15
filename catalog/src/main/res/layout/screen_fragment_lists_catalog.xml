@@ -12,13 +12,13 @@
 			android:orientation="vertical"
 			>
 
-		<com.telefonica.mistica.section.SectionTitleView
+		<com.telefonica.mistica.title.TitleView
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_gravity="start"
 				android:layout_marginStart="16dp"
 				android:layout_marginTop="16dp"
-				app:sectionTitle="Full Width List"
+				app:title="Full Width List"
 				/>
 
 		<com.telefonica.mistica.list.MisticaRecyclerView
@@ -31,13 +31,13 @@
 				app:listLayoutType="full_width"
 				/>
 
-		<com.telefonica.mistica.section.SectionTitleView
+		<com.telefonica.mistica.title.TitleView
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_gravity="start"
 				android:layout_marginStart="16dp"
 				android:layout_marginTop="8dp"
-				app:sectionTitle="Boxed List"
+				app:title="Boxed List"
 				/>
 
 		<com.telefonica.mistica.list.MisticaRecyclerView
@@ -50,13 +50,13 @@
 				app:listLayoutType="boxed"
 				/>
 
-		<com.telefonica.mistica.section.SectionTitleView
+		<com.telefonica.mistica.title.TitleView
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_gravity="start"
 				android:layout_marginStart="16dp"
 				android:layout_marginTop="8dp"
-				app:sectionTitle="Boxed Inverse List"
+				app:title="Boxed Inverse List"
 				/>
 
 		<com.telefonica.mistica.list.MisticaRecyclerView

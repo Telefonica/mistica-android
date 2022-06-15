@@ -1,4 +1,4 @@
-package com.telefonica.mistica.section
+package com.telefonica.mistica.title
 
 import android.content.Context
 import android.util.AttributeSet
@@ -12,22 +12,22 @@ import com.telefonica.mistica.util.setTextAndVisibility
 
 @BindingMethods(
     BindingMethod(
-        type = SectionTitleView::class,
-        attribute = "sectionTitle",
+        type = TitleView::class,
+        attribute = "title",
         method = "setTitle"
     ),
     BindingMethod(
-        type = SectionTitleView::class,
-        attribute = "sectionLink",
+        type = TitleView::class,
+        attribute = "link",
         method = "setLink"
     ),
     BindingMethod(
-        type = SectionTitleView::class,
-        attribute = "sectionLinkOnClick",
+        type = TitleView::class,
+        attribute = "linkOnClick",
         method = "setOnLinkClickedListener"
     )
 )
-class SectionTitleView @JvmOverloads constructor(
+class TitleView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
@@ -37,22 +37,22 @@ class SectionTitleView @JvmOverloads constructor(
     private var titleTextView: TextView
 
     init {
-        LayoutInflater.from(context).inflate(R.layout.section_title, this, true)
+        LayoutInflater.from(context).inflate(R.layout.title, this, true)
 
-        titleTextView = findViewById(R.id.section_title)
-        lintTextView = findViewById(R.id.section_link)
+        titleTextView = findViewById(R.id.title_text)
+        lintTextView = findViewById(R.id.link_text)
 
         if (attrs != null) {
             val styledAttrs =
                 context.theme.obtainStyledAttributes(
                     attrs,
-                    R.styleable.SectionTitleView,
+                    R.styleable.TitleView,
                     defStyleAttr,
                     0
                 )
 
-            titleTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.SectionTitleView_sectionTitle))
-            lintTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.SectionTitleView_sectionLink))
+            titleTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.TitleView_title))
+            lintTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.TitleView_link))
 
             styledAttrs.recycle()
         }

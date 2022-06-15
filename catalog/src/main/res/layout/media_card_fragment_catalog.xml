@@ -10,12 +10,12 @@
         android:layout_margin="8dp"
         android:orientation="vertical">
 
-        <com.telefonica.mistica.section.SectionTitleView
+        <com.telefonica.mistica.title.TitleView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:layout_margin="8dp"
-            android:text="Media Card Tester" />
+            app:title="Media Card Tester" />
 
         <com.telefonica.mistica.input.TextInput
             android:id="@+id/input_tag"
