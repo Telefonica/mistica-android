@@ -116,6 +116,10 @@
 
     <declare-styleable name="TitleView">
         <attr name="title" format="string" />
+        <attr name="titleStyle" format="enum">
+            <enum name="title1" value="0" />
+            <enum name="title2" value="1" />
+        </attr>
         <attr name="link" format="string" />
         <attr name="linkOnClick" format="string" />
     </declare-styleable>

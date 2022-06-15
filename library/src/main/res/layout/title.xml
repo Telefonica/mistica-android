@@ -18,7 +18,6 @@
         app:layout_constraintTop_toTopOf="parent"
         android:textAppearance="@style/AppTheme.TextAppearance.Preset1.Medium"
         android:textColor="?colorTextSecondary"
-        android:textAllCaps="true"
         tools:text="Some title that can get really long and almost fill the whole line" />
 
     <com.google.android.material.textview.MaterialTextView
@@ -29,7 +28,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:textAppearance="@style/AppTheme.TextAppearance.Preset2.Medium"
-        app:layout_constraintBaseline_toBaselineOf="@id/title"
+        app:layout_constraintBaseline_toBaselineOf="@id/title_text"
         android:textColor="?colorTextLink"
         android:visibility="gone"
         tools:text="Some link"
