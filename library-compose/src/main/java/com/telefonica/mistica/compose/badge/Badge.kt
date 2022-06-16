@@ -12,6 +12,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.theme.MisticaTheme
@@ -28,19 +29,27 @@ fun Badge(
             shape = CircleShape,
             color = MisticaTheme.colors.badge,
             modifier = modifier
+                .testTag(BadgeTestTags.BADGE)
                 .size(8.dp),
         ) { }
     } else {
         androidx.compose.material.Badge(
             backgroundColor = MisticaTheme.colors.badge,
-            modifier = modifier,
+            modifier = modifier.testTag(BadgeTestTags.BADGE_NUMBER),
         ) {
             Text(
+                modifier = Modifier.testTag(BadgeTestTags.BADGE_NUMBER_VALUE),
                 text = content,
                 color = MisticaTheme.colors.textPrimaryInverse,
             )
         }
     }
+}
+
+object BadgeTestTags {
+    const val BADGE = "badge"
+    const val BADGE_NUMBER = "badge_number"
+    const val BADGE_NUMBER_VALUE = "badge_number_value"
 }
 
 @ExperimentalMaterialApi

@@ -26,9 +26,12 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.testTagsAsResourceId
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
@@ -59,6 +62,7 @@ import com.telefonica.mistica.compose.theme.brand.O2ClassicBrand
 import com.telefonica.mistica.compose.theme.brand.TelefonicaBrand
 import com.telefonica.mistica.compose.theme.brand.VivoBrand
 
+@ExperimentalComposeUiApi
 @ExperimentalFoundationApi
 @ExperimentalMaterialApi
 class CatalogMainActivity : ComponentActivity() {
@@ -70,7 +74,9 @@ class CatalogMainActivity : ComponentActivity() {
         setContent {
             MisticaTheme(brand = brand) {
                 val navController = rememberNavController()
-                Scaffold { innerPadding ->
+                Scaffold(
+                    modifier = Modifier.semantics { this.testTagsAsResourceId = true }
+                ) { innerPadding ->
                     CatalogNavHost(
                         navController,
                         modifier = Modifier.padding(innerPadding),

@@ -8,8 +8,8 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.GridCells
-import androidx.compose.foundation.lazy.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.material.Divider
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -50,7 +50,7 @@ fun Tags() {
                 Tag(text = "Inverse", style = TagView.TYPE_INVERSE, modifier = Modifier.padding(8.dp))
             }
             LazyVerticalGrid(
-                cells = GridCells.Fixed(3),
+                columns = GridCells.Fixed(3),
                 modifier = Modifier.padding(16.dp)
             ) {
                 item { Tag(text = "Promotion", style = TagView.TYPE_PROMO, modifier = Modifier.padding(4.dp)) }
@@ -70,7 +70,7 @@ fun Tags() {
                 Tag(text = "Inverse", style = TagView.TYPE_INVERSE, modifier = Modifier.padding(8.dp), icon = android.R.drawable.ic_lock_power_off)
             }
             LazyVerticalGrid(
-                cells = GridCells.Fixed(3),
+                columns = GridCells.Fixed(3),
                 modifier = Modifier.padding(16.dp)
             ) {
                 item { Tag(text = "Promotion", style = TagView.TYPE_PROMO, modifier = Modifier.padding(4.dp), icon = android.R.drawable.ic_lock_power_off) }
