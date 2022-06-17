@@ -24,20 +24,15 @@ class MisticaColors(
     brand: Color = Color.Unspecified,
     brandHigh: Color = Color.Unspecified,
     buttonDangerBackground: Color = Color.Unspecified,
-    buttonDangerBackgroundDisabled: Color = Color.Unspecified,
     buttonDangerBackgroundSelected: Color = Color.Unspecified,
     buttonLinkBackgroundSelected: Color = Color.Unspecified,
     buttonLinkBackgroundSelectedInverse: Color = Color.Unspecified,
     buttonPrimaryBackground: Color = Color.Unspecified,
-    buttonPrimaryBackgroundDisabled: Color = Color.Unspecified,
-    buttonPrimaryBackgroundDisabledInverse: Color = Color.Unspecified,
     buttonPrimaryBackgroundInverse: Color = Color.Unspecified,
     buttonPrimaryBackgroundSelected: Color = Color.Unspecified,
     buttonPrimaryBackgroundSelectedInverse: Color = Color.Unspecified,
     buttonSecondaryBackground: Color = Color.Unspecified,
-    buttonSecondaryBackgroundDisabled: Color = Color.Unspecified,
     buttonSecondaryBackgroundSelected: Color = Color.Unspecified,
-    buttonSecondaryBorderDisabledInverse: Color = Color.Unspecified,
     buttonSecondaryBorderInverse: Color = Color.Unspecified,
     buttonSecondaryBorderSelectedInverse: Color = Color.Unspecified,
     carouselIndicatorActiveColor: Color = Color.Unspecified,
@@ -78,14 +73,10 @@ class MisticaColors(
     textAppBar: Color = Color.Unspecified,
     textAppBarSelected: Color = Color.Unspecified,
     textButtonPrimary: Color = Color.Unspecified,
-    textButtonPrimaryDisabled: Color = Color.Unspecified,
     textButtonPrimaryInverse: Color = Color.Unspecified,
-    textButtonPrimaryInverseDisabled: Color = Color.Unspecified,
     textButtonPrimaryInverseSelected: Color = Color.Unspecified,
     textButtonSecondary: Color = Color.Unspecified,
-    textButtonSecondaryDisabled: Color = Color.Unspecified,
     textButtonSecondaryInverse: Color = Color.Unspecified,
-    textButtonSecondaryInverseDisabled: Color = Color.Unspecified,
     textButtonSecondaryInverseSelected: Color = Color.Unspecified,
     textButtonSecondarySelected: Color = Color.Unspecified,
     textDisabled: Color = Color.Unspecified,
@@ -139,8 +130,6 @@ class MisticaColors(
         internal set
     var buttonDangerBackground by mutableStateOf(buttonDangerBackground, structuralEqualityPolicy())
         internal set
-    var buttonDangerBackgroundDisabled by mutableStateOf(buttonDangerBackgroundDisabled, structuralEqualityPolicy())
-        internal set
     var buttonDangerBackgroundSelected by mutableStateOf(buttonDangerBackgroundSelected, structuralEqualityPolicy())
         internal set
     var buttonLinkBackgroundSelected by mutableStateOf(buttonLinkBackgroundSelected, structuralEqualityPolicy())
@@ -148,10 +137,6 @@ class MisticaColors(
     var buttonLinkBackgroundSelectedInverse by mutableStateOf(buttonLinkBackgroundSelectedInverse, structuralEqualityPolicy())
         internal set
     var buttonPrimaryBackground by mutableStateOf(buttonPrimaryBackground, structuralEqualityPolicy())
-        internal set
-    var buttonPrimaryBackgroundDisabled by mutableStateOf(buttonPrimaryBackgroundDisabled, structuralEqualityPolicy())
-        internal set
-    var buttonPrimaryBackgroundDisabledInverse by mutableStateOf(buttonPrimaryBackgroundDisabledInverse, structuralEqualityPolicy())
         internal set
     var buttonPrimaryBackgroundInverse by mutableStateOf(buttonPrimaryBackgroundInverse, structuralEqualityPolicy())
         internal set
@@ -161,11 +146,7 @@ class MisticaColors(
         internal set
     var buttonSecondaryBackground by mutableStateOf(buttonSecondaryBackground, structuralEqualityPolicy())
         internal set
-    var buttonSecondaryBackgroundDisabled by mutableStateOf(buttonSecondaryBackgroundDisabled, structuralEqualityPolicy())
-        internal set
     var buttonSecondaryBackgroundSelected by mutableStateOf(buttonSecondaryBackgroundSelected, structuralEqualityPolicy())
-        internal set
-    var buttonSecondaryBorderDisabledInverse by mutableStateOf(buttonSecondaryBorderDisabledInverse, structuralEqualityPolicy())
         internal set
     var buttonSecondaryBorderInverse by mutableStateOf(buttonSecondaryBorderInverse, structuralEqualityPolicy())
         internal set
@@ -173,23 +154,15 @@ class MisticaColors(
         internal set
     var textButtonPrimary by mutableStateOf(textButtonPrimary, structuralEqualityPolicy())
         internal set
-    var textButtonPrimaryDisabled by mutableStateOf(textButtonPrimaryDisabled, structuralEqualityPolicy())
-        internal set
     var textButtonPrimaryInverse by mutableStateOf(textButtonPrimaryInverse, structuralEqualityPolicy())
-        internal set
-    var textButtonPrimaryInverseDisabled by mutableStateOf(textButtonPrimaryInverseDisabled, structuralEqualityPolicy())
         internal set
     var textButtonPrimaryInverseSelected by mutableStateOf(textButtonPrimaryInverseSelected, structuralEqualityPolicy())
         internal set
     var textButtonSecondary by mutableStateOf(textButtonSecondary, structuralEqualityPolicy())
         internal set
-    var textButtonSecondaryDisabled by mutableStateOf(textButtonSecondaryDisabled, structuralEqualityPolicy())
-        internal set
     var textButtonSecondarySelected by mutableStateOf(textButtonSecondarySelected, structuralEqualityPolicy())
         internal set
     var textButtonSecondaryInverse by mutableStateOf(textButtonSecondaryInverse, structuralEqualityPolicy())
-        internal set
-    var textButtonSecondaryInverseDisabled by mutableStateOf(textButtonSecondaryInverseDisabled, structuralEqualityPolicy())
         internal set
     var textButtonSecondaryInverseSelected by mutableStateOf(textButtonSecondaryInverseSelected, structuralEqualityPolicy())
         internal set
@@ -324,20 +297,15 @@ class MisticaColors(
         brand: Color = this.brand,
         brandHigh: Color = this.brandHigh,
         buttonDangerBackground: Color = this.buttonDangerBackground,
-        buttonDangerBackgroundDisabled: Color = this.buttonDangerBackgroundDisabled,
         buttonDangerBackgroundSelected: Color = this.buttonDangerBackgroundSelected,
         buttonLinkBackgroundSelected: Color = this.buttonLinkBackgroundSelected,
         buttonLinkBackgroundSelectedInverse: Color = this.buttonLinkBackgroundSelectedInverse,
         buttonPrimaryBackground: Color = this.buttonPrimaryBackground,
-        buttonPrimaryBackgroundDisabled: Color = this.buttonPrimaryBackgroundDisabled,
-        buttonPrimaryBackgroundDisabledInverse: Color = this.buttonPrimaryBackgroundDisabledInverse,
         buttonPrimaryBackgroundInverse: Color = this.buttonPrimaryBackgroundInverse,
         buttonPrimaryBackgroundSelected: Color = this.buttonPrimaryBackgroundSelected,
         buttonPrimaryBackgroundSelectedInverse: Color = this.buttonPrimaryBackgroundSelectedInverse,
         buttonSecondaryBackground: Color = this.buttonSecondaryBackground,
-        buttonSecondaryBackgroundDisabled: Color = this.buttonSecondaryBackgroundDisabled,
         buttonSecondaryBackgroundSelected: Color = this.buttonSecondaryBackgroundSelected,
-        buttonSecondaryBorderDisabledInverse: Color = this.buttonSecondaryBorderDisabledInverse,
         buttonSecondaryBorderInverse: Color = this.buttonSecondaryBorderInverse,
         buttonSecondaryBorderSelectedInverse: Color = this.buttonSecondaryBorderSelectedInverse,
         carouselIndicatorActiveColor: Color = this.carouselIndicatorActiveColor,
@@ -378,14 +346,10 @@ class MisticaColors(
         textAppBar: Color = this.textAppBar,
         textAppBarSelected: Color = this.textAppBarSelected,
         textButtonPrimary: Color = this.textButtonPrimary,
-        textButtonPrimaryDisabled: Color = this.textButtonPrimaryDisabled,
         textButtonPrimaryInverse: Color = this.textButtonPrimaryInverse,
-        textButtonPrimaryInverseDisabled: Color = this.textButtonPrimaryInverseDisabled,
         textButtonPrimaryInverseSelected: Color = this.textButtonPrimaryInverseSelected,
         textButtonSecondary: Color = this.textButtonSecondary,
-        textButtonSecondaryDisabled: Color = this.textButtonSecondaryDisabled,
         textButtonSecondaryInverse: Color = this.textButtonSecondaryInverse,
-        textButtonSecondaryInverseDisabled: Color = this.textButtonSecondaryInverseDisabled,
         textButtonSecondaryInverseSelected: Color = this.textButtonSecondaryInverseSelected,
         textButtonSecondarySelected: Color = this.textButtonSecondarySelected,
         textDisabled: Color = this.textDisabled,
@@ -424,20 +388,15 @@ class MisticaColors(
         brand = brand,
         brandHigh = brandHigh,
         buttonDangerBackground = buttonDangerBackground,
-        buttonDangerBackgroundDisabled = buttonDangerBackgroundDisabled,
         buttonDangerBackgroundSelected = buttonDangerBackgroundSelected,
         buttonLinkBackgroundSelected = buttonLinkBackgroundSelected,
         buttonLinkBackgroundSelectedInverse = buttonLinkBackgroundSelectedInverse,
         buttonPrimaryBackground = buttonPrimaryBackground,
-        buttonPrimaryBackgroundDisabled = buttonPrimaryBackgroundDisabled,
-        buttonPrimaryBackgroundDisabledInverse = buttonPrimaryBackgroundDisabledInverse,
         buttonPrimaryBackgroundInverse = buttonPrimaryBackgroundInverse,
         buttonPrimaryBackgroundSelected = buttonPrimaryBackgroundSelected,
         buttonPrimaryBackgroundSelectedInverse = buttonPrimaryBackgroundSelectedInverse,
         buttonSecondaryBackground = buttonSecondaryBackground,
-        buttonSecondaryBackgroundDisabled = buttonSecondaryBackgroundDisabled,
         buttonSecondaryBackgroundSelected = buttonSecondaryBackgroundSelected,
-        buttonSecondaryBorderDisabledInverse = buttonSecondaryBorderDisabledInverse,
         buttonSecondaryBorderInverse = buttonSecondaryBorderInverse,
         buttonSecondaryBorderSelectedInverse = buttonSecondaryBorderSelectedInverse,
         carouselIndicatorActiveColor = carouselIndicatorActiveColor,
@@ -478,14 +437,10 @@ class MisticaColors(
         textAppBar = textAppBar,
         textAppBarSelected = textAppBarSelected,
         textButtonPrimary = textButtonPrimary,
-        textButtonPrimaryDisabled = textButtonPrimaryDisabled,
         textButtonPrimaryInverse = textButtonPrimaryInverse,
-        textButtonPrimaryInverseDisabled = textButtonPrimaryInverseDisabled,
         textButtonPrimaryInverseSelected = textButtonPrimaryInverseSelected,
         textButtonSecondary = textButtonSecondary,
-        textButtonSecondaryDisabled = textButtonSecondaryDisabled,
         textButtonSecondaryInverse = textButtonSecondaryInverse,
-        textButtonSecondaryInverseDisabled = textButtonSecondaryInverseDisabled,
         textButtonSecondaryInverseSelected = textButtonSecondaryInverseSelected,
         textButtonSecondarySelected = textButtonSecondarySelected,
         textDisabled = textDisabled,
@@ -508,7 +463,7 @@ class MisticaColors(
         warning = warning,
     )
 
-    internal fun MisticaColors.updateColorsFrom(other: MisticaColors) {
+    internal fun updateColorsFrom(other: MisticaColors) {
         appBarBackground = other.appBarBackground
         background = other.background
         backgroundAlternative = other.backgroundAlternative
@@ -526,20 +481,15 @@ class MisticaColors(
         brand = other.brand
         brandHigh = other.brandHigh
         buttonDangerBackground = other.buttonDangerBackground
-        buttonDangerBackgroundDisabled = other.buttonDangerBackgroundDisabled
         buttonDangerBackgroundSelected = other.buttonDangerBackgroundSelected
         buttonLinkBackgroundSelected = other.buttonLinkBackgroundSelected
         buttonLinkBackgroundSelectedInverse = other.buttonLinkBackgroundSelectedInverse
         buttonPrimaryBackground = other.buttonPrimaryBackground
-        buttonPrimaryBackgroundDisabled = other.buttonPrimaryBackgroundDisabled
-        buttonPrimaryBackgroundDisabledInverse = other.buttonPrimaryBackgroundDisabledInverse
         buttonPrimaryBackgroundInverse = other.buttonPrimaryBackgroundInverse
         buttonPrimaryBackgroundSelected = other.buttonPrimaryBackgroundSelected
         buttonPrimaryBackgroundSelectedInverse = other.buttonPrimaryBackgroundSelectedInverse
         buttonSecondaryBackground = other.buttonSecondaryBackground
-        buttonSecondaryBackgroundDisabled = other.buttonSecondaryBackgroundDisabled
         buttonSecondaryBackgroundSelected = other.buttonSecondaryBackgroundSelected
-        buttonSecondaryBorderDisabledInverse = other.buttonSecondaryBorderDisabledInverse
         buttonSecondaryBorderInverse = other.buttonSecondaryBorderInverse
         buttonSecondaryBorderSelectedInverse = other.buttonSecondaryBorderSelectedInverse
         carouselIndicatorActiveColor = other.carouselIndicatorActiveColor
@@ -580,14 +530,10 @@ class MisticaColors(
         textAppBar = other.textAppBar
         textAppBarSelected = other.textAppBarSelected
         textButtonPrimary = other.textButtonPrimary
-        textButtonPrimaryDisabled = other.textButtonPrimaryDisabled
         textButtonPrimaryInverse = other.textButtonPrimaryInverse
-        textButtonPrimaryInverseDisabled = other.textButtonPrimaryInverseDisabled
         textButtonPrimaryInverseSelected = other.textButtonPrimaryInverseSelected
         textButtonSecondary = other.textButtonSecondary
-        textButtonSecondaryDisabled = other.textButtonSecondaryDisabled
         textButtonSecondaryInverse = other.textButtonSecondaryInverse
-        textButtonSecondaryInverseDisabled = other.textButtonSecondaryInverseDisabled
         textButtonSecondaryInverseSelected = other.textButtonSecondaryInverseSelected
         textButtonSecondarySelected = other.textButtonSecondarySelected
         textDisabled = other.textDisabled
