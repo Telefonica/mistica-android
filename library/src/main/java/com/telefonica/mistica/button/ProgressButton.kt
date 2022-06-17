@@ -25,6 +25,7 @@ import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.graphics.ColorUtils
 import com.google.android.material.button.MaterialButton
 import com.telefonica.mistica.R
+import com.telefonica.mistica.util.setAlpha
 
 class ProgressButton : FrameLayout {
 
@@ -177,6 +178,7 @@ class ProgressButton : FrameLayout {
 
     override fun setEnabled(enabled: Boolean) {
         super.setEnabled(enabled)
+        setAlpha(enabled)
         buttonBackground.isEnabled = enabled
         buttonNormal.isEnabled = enabled
         buttonLoading.isEnabled = enabled

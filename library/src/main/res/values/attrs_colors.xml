@@ -25,33 +25,24 @@
 
         <!-- Button colors -->
         <attr name="colorButtonDangerBackground" format="color|reference" />
-        <attr name="colorButtonDangerBackgroundDisabled" format="color|reference" />
         <attr name="colorButtonDangerBackgroundSelected" format="color|reference" />
         <attr name="colorButtonLinkBackgroundSelected" format="color|reference" />
         <attr name="colorButtonLinkBackgroundSelectedInverse" format="color|reference" />
 
         <attr name="colorButtonPrimaryBackground" format="color|reference" />
-        <attr name="colorButtonPrimaryBackgroundDisabled" format="color|reference" />
-        <attr name="colorButtonPrimaryBackgroundDisabledInverse" format="color|reference" />
         <attr name="colorButtonPrimaryBackgroundInverse" format="color|reference" />
         <attr name="colorButtonPrimaryBackgroundSelected" format="color|reference" />
         <attr name="colorButtonPrimaryBackgroundSelectedInverse" format="color|reference" />
         <attr name="colorButtonSecondaryBackground" format="color|reference" />
-        <attr name="colorButtonSecondaryBackgroundDisabled" format="color|reference" />
         <attr name="colorButtonSecondaryBackgroundSelected" format="color|reference" />
-        <attr name="colorButtonSecondaryBorderDisabledInverse" format="color|reference" />
         <attr name="colorButtonSecondaryBorderInverse" format="color|reference" />
         <attr name="colorButtonSecondaryBorderSelectedInverse" format="color|reference" />
         <attr name="colorTextButtonPrimary" format="color|reference" />
-        <attr name="colorTextButtonPrimaryDisabled" format="color|reference" />
         <attr name="colorTextButtonPrimaryInverse" format="color|reference" />
-        <attr name="colorTextButtonPrimaryInverseDisabled" format="color|reference" />
         <attr name="colorTextButtonPrimaryInverseSelected" format="color|reference" />
         <attr name="colorTextButtonSecondary" format="color|reference" />
-        <attr name="colorTextButtonSecondaryDisabled" format="color|reference" />
         <attr name="colorTextButtonSecondarySelected" format="color|reference" />
         <attr name="colorTextButtonSecondaryInverse" format="color|reference" />
-        <attr name="colorTextButtonSecondaryInverseDisabled" format="color|reference" />
         <attr name="colorTextButtonSecondaryInverseSelected" format="color|reference" />
 
         <!-- Text Links -->

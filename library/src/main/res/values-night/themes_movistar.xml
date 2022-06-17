@@ -21,31 +21,22 @@
         <item name="colorBorder">@color/movistar_color_darkModeGrey</item>
 
         <!-- Button colors -->
-        <item name="colorButtonDangerBackgroundDisabled">@color/movistar_color_darkModeGrey</item>
 
         <item name="colorButtonLinkBackgroundSelected">@color/movistar_color_white_5_alpha</item>
         <item name="colorButtonLinkBackgroundSelectedInverse">@color/movistar_color_white_5_alpha</item>
 
-        <item name="colorButtonPrimaryBackgroundDisabled">@color/movistar_color_darkModeGrey</item>
-        <item name="colorButtonPrimaryBackgroundDisabledInverse">@color/movistar_color_darkModeGrey</item>
         <item name="colorButtonPrimaryBackgroundInverse">@color/movistar_color_blue</item>
         <item name="colorButtonPrimaryBackgroundSelectedInverse">@color/movistar_color_blue_55</item>
 
-        <item name="colorButtonSecondaryBackgroundDisabled">@color/movistar_color_darkModeGrey</item>
-        <item name="colorButtonSecondaryBorderDisabledInverse">@color/movistar_color_darkModeGrey</item>
         <item name="colorButtonSecondaryBorderInverse">@color/movistar_color_blue</item>
         <item name="colorButtonSecondaryBorderSelectedInverse">@color/movistar_color_blue_55</item>
 
         <item name="colorTextButtonPrimary">@color/movistar_color_grey_2</item>
-        <item name="colorTextButtonPrimaryDisabled">@color/movistar_color_grey_5</item>
         <item name="colorTextButtonPrimaryInverse">@color/movistar_color_grey_2</item>
-        <item name="colorTextButtonPrimaryInverseDisabled">@color/movistar_color_grey_5</item>
         <item name="colorTextButtonPrimaryInverseSelected">@color/movistar_color_grey_2</item>
 
         <item name="colorTextButtonSecondary">@color/movistar_color_grey_2</item>
-        <item name="colorTextButtonSecondaryDisabled">@color/movistar_color_grey_5</item>
         <item name="colorTextButtonSecondaryInverse">@color/movistar_color_grey_2</item>
-        <item name="colorTextButtonSecondaryInverseDisabled">@color/movistar_color_grey_5</item>
         <item name="colorTextButtonSecondaryInverseSelected">@color/movistar_color_green_dark</item>
 
         <!-- Text Links -->

@@ -27,37 +27,28 @@
 
         <!-- Button colors -->
         <item name="colorButtonDangerBackground">@color/telefonica_color_coral</item>
-        <item name="colorButtonDangerBackgroundDisabled">@color/telefonica_color_grey_2</item>
         <item name="colorButtonDangerBackgroundSelected">@color/telefonica_color_coral_dark</item>
 
         <item name="colorButtonLinkBackgroundSelected">@color/telefonica_color_grey_1</item>
         <item name="colorButtonLinkBackgroundSelectedInverse">@color/telefonica_color_white_20_alpha</item>
 
         <item name="colorButtonPrimaryBackground">@color/telefonica_color_blue</item>
-        <item name="colorButtonPrimaryBackgroundDisabled">@color/telefonica_color_grey_2</item>
-        <item name="colorButtonPrimaryBackgroundDisabledInverse">@color/telefonica_color_blue_light50</item>
         <item name="colorButtonPrimaryBackgroundInverse">@color/telefonica_color_white</item>
         <item name="colorButtonPrimaryBackgroundSelected">@color/telefonica_color_blue_dark</item>
         <item name="colorButtonPrimaryBackgroundSelectedInverse">@color/telefonica_color_blue_light50</item>
 
         <item name="colorButtonSecondaryBackground">@color/telefonica_color_blue</item>
-        <item name="colorButtonSecondaryBackgroundDisabled">@color/telefonica_color_grey_2</item>
         <item name="colorButtonSecondaryBackgroundSelected">@color/telefonica_color_blue_dark</item>
-        <item name="colorButtonSecondaryBorderDisabledInverse">@color/telefonica_color_blue_light50</item>
         <item name="colorButtonSecondaryBorderInverse">@color/telefonica_color_white</item>
         <item name="colorButtonSecondaryBorderSelectedInverse">@color/telefonica_color_blue_light50</item>
 
         <item name="colorTextButtonPrimary">@color/telefonica_color_white</item>
-        <item name="colorTextButtonPrimaryDisabled">@color/telefonica_color_white</item>
         <item name="colorTextButtonPrimaryInverse">@color/telefonica_color_blue</item>
-        <item name="colorTextButtonPrimaryInverseDisabled">@color/telefonica_color_blue_light30</item>
         <item name="colorTextButtonPrimaryInverseSelected">@color/telefonica_color_blue</item>
 
         <item name="colorTextButtonSecondary">@color/telefonica_color_blue</item>
-        <item name="colorTextButtonSecondaryDisabled">@color/telefonica_color_grey_2</item>
         <item name="colorTextButtonSecondarySelected">@color/telefonica_color_blue_dark</item>
         <item name="colorTextButtonSecondaryInverse">@color/telefonica_color_white</item>
-        <item name="colorTextButtonSecondaryInverseDisabled">@color/telefonica_color_blue_light50</item>
         <item name="colorTextButtonSecondaryInverseSelected">@color/telefonica_color_white</item>
 
         <!-- Text Links -->

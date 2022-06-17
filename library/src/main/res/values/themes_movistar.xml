@@ -27,37 +27,28 @@
 
 		<!-- Button colors -->
 		<item name="colorButtonDangerBackground">@color/movistar_color_pepper</item>
-		<item name="colorButtonDangerBackgroundDisabled">@color/movistar_color_pepper_light30</item>
 		<item name="colorButtonDangerBackgroundSelected">@color/movistar_color_pepper_dark</item>
 
 		<item name="colorButtonLinkBackgroundSelected">@color/movistar_color_blue_light10</item>
 		<item name="colorButtonLinkBackgroundSelectedInverse">@color/movistar_color_white_20_alpha</item>
 
 		<item name="colorButtonPrimaryBackground">@color/movistar_color_blue</item>
-		<item name="colorButtonPrimaryBackgroundDisabled">@color/movistar_color_green_light50</item>
-		<item name="colorButtonPrimaryBackgroundDisabledInverse">@color/movistar_color_blue_light50</item>
 		<item name="colorButtonPrimaryBackgroundInverse">@color/movistar_color_white</item>
 		<item name="colorButtonPrimaryBackgroundSelected">@color/movistar_color_blue_55</item>
 		<item name="colorButtonPrimaryBackgroundSelectedInverse">@color/movistar_color_blue_light50</item>
 
 		<item name="colorButtonSecondaryBackground">@color/movistar_color_blue</item>
-		<item name="colorButtonSecondaryBackgroundDisabled">@color/movistar_color_green_light50</item>
 		<item name="colorButtonSecondaryBackgroundSelected">@color/movistar_color_blue_55</item>
-		<item name="colorButtonSecondaryBorderDisabledInverse">@color/movistar_color_blue_light50</item>
 		<item name="colorButtonSecondaryBorderInverse">@color/movistar_color_white</item>
 		<item name="colorButtonSecondaryBorderSelectedInverse">@color/movistar_color_blue_light50</item>
 
 		<item name="colorTextButtonPrimary">@color/movistar_color_white</item>
-		<item name="colorTextButtonPrimaryDisabled">@color/movistar_color_white</item>
 		<item name="colorTextButtonPrimaryInverse">@color/movistar_color_blue</item>
-		<item name="colorTextButtonPrimaryInverseDisabled">@color/movistar_color_blue_light30</item>
 		<item name="colorTextButtonPrimaryInverseSelected">@color/movistar_color_blue</item>
 
 		<item name="colorTextButtonSecondary">@color/movistar_color_blue</item>
-		<item name="colorTextButtonSecondaryDisabled">@color/movistar_color_green_light50</item>
 		<item name="colorTextButtonSecondarySelected">@color/movistar_color_blue_55</item>
 		<item name="colorTextButtonSecondaryInverse">@color/movistar_color_white</item>
-		<item name="colorTextButtonSecondaryInverseDisabled">@color/movistar_color_blue_light50</item>
 		<item name="colorTextButtonSecondaryInverseSelected">@color/movistar_color_white</item>
 
 		<!-- Text Links -->
