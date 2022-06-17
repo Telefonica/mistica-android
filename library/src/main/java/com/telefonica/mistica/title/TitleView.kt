@@ -85,7 +85,7 @@ class TitleView @JvmOverloads constructor(
         val styleConfig = when (style) {
             TITLE_1 -> TITLE_1_STYLE_CONFIG
             TITLE_2 -> TITLE_2_STYLE_CONFIG
-            else -> TITLE_2_STYLE_CONFIG
+            else -> TITLE_1_STYLE_CONFIG
         }
 
         titleTextView.setTextPreset(styleConfig.preset)
@@ -106,15 +106,15 @@ class TitleView @JvmOverloads constructor(
         const val TITLE_2 = 1
 
         private val TITLE_1_STYLE_CONFIG = TitleStyleConfig(
-            preset = R.style.AppTheme_TextAppearance_Preset5,
-            colorAttrRes = R.attr.colorTextPrimary,
-            isAllCaps = false,
-        )
-
-        private val TITLE_2_STYLE_CONFIG = TitleStyleConfig(
             preset = R.style.AppTheme_TextAppearance_Preset1,
             colorAttrRes = R.attr.colorTextSecondary,
             isAllCaps = true,
+        )
+
+        private val TITLE_2_STYLE_CONFIG = TitleStyleConfig(
+            preset = R.style.AppTheme_TextAppearance_Preset5,
+            colorAttrRes = R.attr.colorTextPrimary,
+            isAllCaps = false,
         )
     }
 }
