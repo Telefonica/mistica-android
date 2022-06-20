@@ -67,32 +67,40 @@ class MisticaTypography(
             color = defaultTextColor,
         )
 
-    private fun buildPreset8() =
+    private fun buildPreset8(
+        fontWeight: FontWeight = FontWeight.Light
+    ) =
         buildBaseStyle().copy(
             fontSize = 32.sp,
             lineHeight = 40.sp,
-            fontWeight = FontWeight.Light,
+            fontWeight = fontWeight,
         )
 
-    private fun buildPreset7() =
+    private fun buildPreset7(
+        fontWeight: FontWeight = FontWeight.Light
+    ) =
         buildBaseStyle().copy(
             fontSize = 28.sp,
             lineHeight = 32.sp,
-            fontWeight = FontWeight.Light,
+            fontWeight = fontWeight,
         )
 
-    private fun buildPreset6() =
+    private fun buildPreset6(
+        fontWeight: FontWeight = FontWeight.Light
+    ) =
         buildBaseStyle().copy(
             fontSize = 24.sp,
             lineHeight = 32.sp,
-            fontWeight = FontWeight.Light,
+            fontWeight = fontWeight,
         )
 
-    private fun buildPreset5() =
+    private fun buildPreset5(
+        fontWeight: FontWeight = FontWeight.Light
+    ) =
         buildBaseStyle().copy(
             fontSize = 22.sp,
             lineHeight = 24.sp,
-            fontWeight = FontWeight.Normal,
+            fontWeight = fontWeight,
         )
 
     private fun buildPreset4() =
@@ -161,13 +169,17 @@ class MisticaTypography(
         )
 
     fun updateWith(
-        fontFamily: FontFamily
+        fontFamily: FontFamily,
+        preset8FontWeight: FontWeight,
+        preset7FontWeight: FontWeight,
+        preset6FontWeight: FontWeight,
+        preset5FontWeight: FontWeight,
     ) {
         this.fontFamily = fontFamily
-        preset8 = buildPreset8()
-        preset7 = buildPreset7()
-        preset6 = buildPreset6()
-        preset5 = buildPreset5()
+        preset8 = buildPreset8(fontWeight = preset8FontWeight)
+        preset7 = buildPreset7(fontWeight = preset7FontWeight)
+        preset6 = buildPreset6(fontWeight = preset6FontWeight)
+        preset5 = buildPreset5(fontWeight = preset5FontWeight)
         preset4 = buildPreset4()
         preset4Light = buildPreset4Light()
         preset4Medium = buildPreset4Medium()
