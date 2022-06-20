@@ -20,32 +20,23 @@
 		<item name="colorBorder">@color/blau_color_darkModeGrey</item>
 
 		<!-- Button colors -->
-		<item name="colorButtonDangerBackgroundDisabled">@color/blau_color_darkModeGrey</item>
 
 		<item name="colorButtonLinkBackgroundSelected">@color/blau_color_purple_30_alpha</item>
 		<item name="colorButtonLinkBackgroundSelectedInverse">@color/blau_color_purple_30_alpha</item>
 
-		<item name="colorButtonPrimaryBackgroundDisabled">@color/blau_color_darkModeGrey</item>
-		<item name="colorButtonPrimaryBackgroundDisabledInverse">@color/blau_color_darkModeGrey</item>
 		<item name="colorButtonPrimaryBackgroundInverse">@color/blau_color_blue_primary</item>
 		<item name="colorButtonPrimaryBackgroundSelectedInverse">@color/blau_color_blue_secondary60</item>
 
-		<item name="colorButtonSecondaryBackgroundDisabled">@color/blau_color_darkModeGrey</item>
-		<item name="colorButtonSecondaryBorderDisabledInverse">@color/blau_color_darkModeGrey</item>
 		<item name="colorButtonSecondaryBorderInverse">@color/blau_color_blue_primary</item>
 		<item name="colorButtonSecondaryBorderSelectedInverse">@color/blau_color_blue_secondary60</item>
 
 		<item name="colorTextButtonPrimary">@color/blau_color_grey_2</item>
-		<item name="colorTextButtonPrimaryDisabled">@color/blau_color_grey_5</item>
 		<item name="colorTextButtonPrimaryInverse">@color/blau_color_grey_2</item>
-		<item name="colorTextButtonPrimaryInverseDisabled">@color/blau_color_grey_5</item>
 		<item name="colorTextButtonPrimaryInverseSelected">@color/blau_color_grey_2</item>
 
 		<item name="colorTextButtonSecondary">@color/blau_color_grey_2</item>
-		<item name="colorTextButtonSecondaryDisabled">@color/blau_color_grey_5</item>
 		<item name="colorTextButtonSecondarySelected">@color/blau_color_blue_secondary60</item>
 		<item name="colorTextButtonSecondaryInverse">@color/blau_color_grey_2</item>
-		<item name="colorTextButtonSecondaryInverseDisabled">@color/blau_color_grey_5</item>
 		<item name="colorTextButtonSecondaryInverseSelected">@color/blau_color_blue_secondary60</item>
 
 		<!-- Tag colors -->
