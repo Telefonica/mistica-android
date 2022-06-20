@@ -92,6 +92,7 @@ Just set your App or any specific activity to use any of the following:
 * [Empty States](library/src/main/java/com/telefonica/mistica/emptystate/screen)
 * [Empty State Cards](library/src/main/java/com/telefonica/mistica/emptystate/card)
 * [Callout](library/src/main/java/com/telefonica/mistica/callout)
+* [Title](library/src/main/java/com/telefonica/mistica/title)
 
 ## Text Presets Styles
 
