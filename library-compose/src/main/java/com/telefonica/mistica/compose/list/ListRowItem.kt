@@ -70,7 +70,7 @@ fun ListRowItem(
             .border(
                 width = 1.dp,
                 color = MisticaTheme.colors.border,
-                shape = RoundedCornerShape(4.dp),
+                shape = RoundedCornerShape(8.dp),
             )
         BackgroundType.TYPE_BOXED_INVERSE -> Modifier
             .background(
