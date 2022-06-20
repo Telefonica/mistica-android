@@ -1,6 +1,7 @@
 package com.telefonica.mistica.compose.theme.brand
 
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import com.telefonica.mistica.R
 import com.telefonica.mistica.compose.theme.color.MisticaColors
 
@@ -167,6 +168,18 @@ object MovistarBrand : Brand {
             successHigh = MovistarPaletteColor.movistar_color_green_40,
             warningHigh = MovistarPaletteColor.movistar_color_egg_40,
         )
+
+    override val preset5FontWeight: FontWeight
+        get() = FontWeight.Medium
+
+    override val preset6FontWeight: FontWeight
+        get() = FontWeight.Medium
+
+    override val preset7FontWeight: FontWeight
+        get() = FontWeight.Medium
+
+    override val preset8FontWeight: FontWeight
+        get() = FontWeight.Medium
 }
 
 object MovistarProminentBrand : Brand {
@@ -191,6 +204,18 @@ object MovistarProminentBrand : Brand {
     )
 
     override val darkColors: MisticaColors = MovistarBrand.darkColors
+
+    override val preset5FontWeight: FontWeight
+        get() = MovistarBrand.preset5FontWeight
+
+    override val preset6FontWeight: FontWeight
+        get() = MovistarBrand.preset6FontWeight
+
+    override val preset7FontWeight: FontWeight
+        get() = MovistarBrand.preset7FontWeight
+
+    override val preset8FontWeight: FontWeight
+        get() = MovistarBrand.preset8FontWeight
 }
 
 private object MovistarPaletteColor {
