@@ -10,12 +10,12 @@
 			android:orientation="vertical"
 			>
 
-		<com.telefonica.mistica.section.SectionTitleView
+		<com.telefonica.mistica.title.TitleView
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_gravity="start"
 				android:layout_margin="16dp"
-				app:sectionTitle="Callout playground"
+				app:title="Callout playground"
 				/>
 
 		<com.telefonica.mistica.input.CheckBoxInput

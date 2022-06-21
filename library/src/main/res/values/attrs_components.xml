@@ -114,10 +114,14 @@
         </attr>
     </declare-styleable>
 
-    <declare-styleable name="SectionTitleView">
-        <attr name="sectionTitle" format="string" />
-        <attr name="sectionLink" format="string" />
-        <attr name="sectionLinkOnClick" format="string" />
+    <declare-styleable name="TitleView">
+        <attr name="title" format="string" />
+        <attr name="titleStyle" format="enum">
+            <enum name="title1" value="0" />
+            <enum name="title2" value="1" />
+        </attr>
+        <attr name="link" format="string" />
+        <attr name="linkOnClick" format="string" />
     </declare-styleable>
 
     <declare-styleable name="HighlightedCardView">

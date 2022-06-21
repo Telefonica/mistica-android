@@ -7,31 +7,31 @@
     tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/section_title"
+        android:id="@+id/title_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constrainedWidth="true"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/section_link"
+        app:layout_constraintEnd_toStartOf="@id/link_text"
         app:layout_constraintTop_toTopOf="parent"
         android:textAppearance="@style/AppTheme.TextAppearance.Preset1.Medium"
         android:textColor="?colorTextSecondary"
-        android:textAllCaps="true"
-        tools:text="Section title that can get really long and almost fill the whole line" />
+        tools:text="Some title that can get really long and almost fill the whole line" />
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/section_link"
+        android:id="@+id/link_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingStart="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:textAppearance="@style/AppTheme.TextAppearance.Preset2.Medium"
+        app:layout_constraintBaseline_toBaselineOf="@id/title_text"
         android:textColor="?colorTextLink"
         android:visibility="gone"
-        tools:text="Section link"
+        tools:text="Some link"
         tools:visibility="visible"
         tools:ignore="RtlSymmetry" />
 </merge>
