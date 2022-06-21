@@ -259,11 +259,11 @@ class EmptyStateCardView @JvmOverloads constructor(
 
     fun setImageSize(@ImageSize imageSize: Int) {
         val imageWidth: Int = when (imageSize) {
-            IMAGE_SIZE_ICON -> context.convertDpToPx(64)
+            IMAGE_SIZE_ICON -> context.convertDpToPx(ICON_SIZE_DP)
             else -> ViewGroup.LayoutParams.WRAP_CONTENT
         }
         val imageHeight: Int = when (imageSize) {
-            IMAGE_SIZE_ICON -> context.convertDpToPx(64)
+            IMAGE_SIZE_ICON -> context.convertDpToPx(ICON_SIZE_DP)
             else -> context.convertDpToPx(112)
         }
         image.scaleType = when (imageSize) {
@@ -284,6 +284,7 @@ class EmptyStateCardView @JvmOverloads constructor(
         const val BUTTONS_CONFIG_SECONDARY = 4
         const val BUTTONS_CONFIG_SECONDARY_LINK = 5
         const val LINK = 6
+        private const val ICON_SIZE_DP = 48
 
         const val IMAGE_SIZE_ICON = 0
         const val IMAGE_SIZE_SMALL = 1
