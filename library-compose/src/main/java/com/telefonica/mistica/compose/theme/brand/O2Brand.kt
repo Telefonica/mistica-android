@@ -183,7 +183,6 @@ private object O2PaletteColor {
 
     val o2_color_blue_mid = Color(0xFF007BB2)
     val o2_color_blue_light = Color(0xFF41B6E6)
-    val o2_color_blue_light_10 = Color(0xFFECF7FC)
     val o2_color_blue_light_30 = Color(0xFFC6E9F7)
     val o2_color_blue_light_35 = Color(0xFF8DD3F0)
 
