@@ -67,7 +67,6 @@
         <item name="colorTextLink">@color/vivo_color_purple</item>
         <item name="colorTextLinkInverse">@color/vivo_color_white</item>
         <item name="colorTextLinkDanger">@color/vivo_color_pepper</item>
-        <item name="colorTextLinkDangerDisabled">@color/vivo_color_pepper_light30</item>
         <item name="colorTextLinkDisabled">@color/vivo_color_purple_light50</item>
         <item name="colorTextLinkSnackbar">@color/vivo_color_purple_light50</item>
 

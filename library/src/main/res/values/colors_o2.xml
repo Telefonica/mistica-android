@@ -35,7 +35,6 @@
     <color name="o2_color_pepper_10">#FEEBED</color>
     <color name="o2_color_pepper_40">#FF7380</color>
     <color name="o2_color_pepper_60">#C32B3D</color>
-    <color name="o2_color_pepper_light30">#FFC3C8</color> <!-- TODO ANDROID-10625 -->
 
     <color name="o2_color_grey_1">#F6F6F6</color>
     <color name="o2_color_grey_2">#EEEEEE</color>

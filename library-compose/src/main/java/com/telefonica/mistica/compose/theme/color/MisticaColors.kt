@@ -82,7 +82,6 @@ class MisticaColors(
     textDisabled: Color = Color.Unspecified,
     textLink: Color = Color.Unspecified,
     textLinkDanger: Color = Color.Unspecified,
-    textLinkDangerDisabled: Color = Color.Unspecified,
     textLinkDisabled: Color = Color.Unspecified,
     textLinkInverse: Color = Color.Unspecified,
     textLinkSnackbar: Color = Color.Unspecified,
@@ -171,8 +170,6 @@ class MisticaColors(
     var textLinkInverse by mutableStateOf(textLinkInverse, structuralEqualityPolicy())
         internal set
     var textLinkDanger by mutableStateOf(textLinkDanger, structuralEqualityPolicy())
-        internal set
-    var textLinkDangerDisabled by mutableStateOf(textLinkDangerDisabled, structuralEqualityPolicy())
         internal set
     var textLinkDisabled by mutableStateOf(textLinkDisabled, structuralEqualityPolicy())
         internal set
@@ -355,7 +352,6 @@ class MisticaColors(
         textDisabled: Color = this.textDisabled,
         textLink: Color = this.textLink,
         textLinkDanger: Color = this.textLinkDanger,
-        textLinkDangerDisabled: Color = this.textLinkDangerDisabled,
         textLinkDisabled: Color = this.textLinkDisabled,
         textLinkInverse: Color = this.textLinkInverse,
         textLinkSnackbar: Color = this.textLinkSnackbar,
@@ -446,7 +442,6 @@ class MisticaColors(
         textDisabled = textDisabled,
         textLink = textLink,
         textLinkDanger = textLinkDanger,
-        textLinkDangerDisabled = textLinkDangerDisabled,
         textLinkDisabled = textLinkDisabled,
         textLinkInverse = textLinkInverse,
         textLinkSnackbar = textLinkSnackbar,
@@ -539,7 +534,6 @@ class MisticaColors(
         textDisabled = other.textDisabled
         textLink = other.textLink
         textLinkDanger = other.textLinkDanger
-        textLinkDangerDisabled = other.textLinkDangerDisabled
         textLinkDisabled = other.textLinkDisabled
         textLinkInverse = other.textLinkInverse
         textLinkSnackbar = other.textLinkSnackbar

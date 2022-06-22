@@ -85,7 +85,6 @@ object O2Brand : Brand {
         textDisabled = O2PaletteColor.o2_color_grey_3,
         textLink = O2PaletteColor.o2_color_blue_primary,
         textLinkDanger = O2PaletteColor.o2_color_pepper,
-        textLinkDangerDisabled = O2PaletteColor.o2_color_pepper_light30,
         textLinkDisabled = O2PaletteColor.o2_color_blue_primary_30,
         textLinkInverse = O2PaletteColor.o2_color_white,
         textLinkSnackbar = O2PaletteColor.o2_color_blue_primary_30,
@@ -158,7 +157,6 @@ object O2Brand : Brand {
         textButtonSecondarySelected = O2PaletteColor.o2_color_grey_4,
         textDisabled = O2PaletteColor.o2_color_grey_5,
         textLink = O2PaletteColor.o2_color_blue_primary_30,
-        textLinkDangerDisabled = O2PaletteColor.o2_color_grey_5,
         textLinkDisabled = O2PaletteColor.o2_color_darkModeGrey6,
         textLinkInverse = O2PaletteColor.o2_color_blue_primary_30,
         textNavigationBarPrimary = O2PaletteColor.o2_color_grey_2,
@@ -210,7 +208,6 @@ private object O2PaletteColor {
     val o2_color_pepper_10 = Color(0xFFFEEBED)
     val o2_color_pepper_40 = Color(0xFFFF7380)
     val o2_color_pepper_60 = Color(0xFFC32B3D)
-    val o2_color_pepper_light30 = Color(0xFFFFC3C8)
 
     val o2_color_grey_1 = Color(0xFFF6F6F6)
     val o2_color_grey_2 = Color(0xFFEEEEEE)

@@ -67,7 +67,6 @@
         <item name="colorTextLink">@color/o2_classic_color_sky_blue</item>
         <item name="colorTextLinkInverse">@color/o2_classic_color_white</item>
         <item name="colorTextLinkDanger">@color/o2_classic_color_pepper</item>
-        <item name="colorTextLinkDangerDisabled">@color/o2_classic_color_pepper_20</item>
         <item name="colorTextLinkDisabled">@color/o2_classic_color_sky_blue_light</item>
         <item name="colorTextLinkSnackbar">@color/o2_classic_color_sky_blue_light</item>
 

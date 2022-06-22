@@ -55,7 +55,6 @@
         <item name="colorTextLink">@color/telefonica_color_blue</item>
         <item name="colorTextLinkInverse">@color/telefonica_color_white</item>
         <item name="colorTextLinkDanger">@color/telefonica_color_coral</item>
-        <item name="colorTextLinkDangerDisabled">@color/telefonica_color_grey_2</item>
         <item name="colorTextLinkDisabled">@color/telefonica_color_grey_2</item>
         <item name="colorTextLinkSnackbar">@color/telefonica_color_blue_30</item>
 

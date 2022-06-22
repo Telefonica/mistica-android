@@ -61,7 +61,6 @@
         <!-- Text Links -->
         <item name="colorTextLink">@color/o2_color_blue_primary_30</item>
         <item name="colorTextLinkInverse">@color/o2_color_blue_primary_30</item>
-        <item name="colorTextLinkDangerDisabled">@color/o2_color_grey_5</item>
         <item name="colorTextLinkDisabled">@color/o2_color_darkModeGrey6</item>
 
         <!-- Control colors -->

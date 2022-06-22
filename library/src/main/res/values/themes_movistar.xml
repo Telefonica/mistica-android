@@ -55,7 +55,6 @@
 		<item name="colorTextLink">@color/movistar_color_blue</item>
 		<item name="colorTextLinkInverse">@color/movistar_color_white</item>
 		<item name="colorTextLinkDanger">@color/movistar_color_pepper</item>
-		<item name="colorTextLinkDangerDisabled">@color/movistar_color_pepper_20</item>
 		<item name="colorTextLinkDisabled">@color/movistar_color_blue_30</item>
 		<item name="colorTextLinkSnackbar">@color/movistar_color_blue_30</item>
 

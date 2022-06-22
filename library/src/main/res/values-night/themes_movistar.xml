@@ -41,7 +41,6 @@
 
         <!-- Text Links -->
         <item name="colorTextLinkInverse">@color/movistar_color_blue</item>
-        <item name="colorTextLinkDangerDisabled">@color/movistar_color_grey_5</item>
         <item name="colorTextLinkDisabled">@color/movistar_color_grey_6</item>
 
         <!-- Control colors -->
