@@ -37,7 +37,7 @@
 
         <item name="colorTextButtonSecondary">@color/movistar_color_grey_2</item>
         <item name="colorTextButtonSecondaryInverse">@color/movistar_color_grey_2</item>
-        <item name="colorTextButtonSecondaryInverseSelected">@color/movistar_color_green_dark</item>
+        <item name="colorTextButtonSecondaryInverseSelected">@color/movistar_color_green_60</item>
 
         <!-- Text Links -->
         <item name="colorTextLinkInverse">@color/movistar_color_blue</item>

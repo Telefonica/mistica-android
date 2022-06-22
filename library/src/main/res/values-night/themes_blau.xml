@@ -75,7 +75,7 @@
 		<item name="colorInverse">@color/blau_color_grey_2</item>
 		<item name="colorNeutralHigh">@color/blau_color_grey_2</item>
 		<item name="colorNeutralMedium">@color/blau_color_grey_5</item>
-		<item name="colorNeutralLow">@color/blau_color_darkModeGrey</item>
+		<item name="colorNeutralLow">@color/blau_color_darkModeGrey6</item>
 
 		<!-- Texts colors -->
 		<item name="colorTextPrimary">@color/blau_color_grey_2</item>

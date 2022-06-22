@@ -24,7 +24,7 @@
 
         <!-- Button colors -->
 
-        <item name="colorButtonLinkBackgroundSelected">@color/o2_color_darkModeGrey</item>
+        <item name="colorButtonLinkBackgroundSelected">@color/o2_color_white_5_alpha</item>
         <item name="colorButtonLinkBackgroundSelectedInverse">@color/o2_color_white_5_alpha</item>
 
         <item name="colorButtonPrimaryBackground">@color/o2_color_darkModeO2BluePrimary</item>
@@ -59,14 +59,14 @@
         <item name="promoHigh">@color/o2_color_purple_30</item>
 
         <!-- Text Links -->
-        <item name="colorTextLink">@color/o2_color_blue_primary_light_50</item>
-        <item name="colorTextLinkInverse">@color/o2_color_blue_primary_light_50</item>
+        <item name="colorTextLink">@color/o2_color_blue_primary_30</item>
+        <item name="colorTextLinkInverse">@color/o2_color_blue_primary_30</item>
         <item name="colorTextLinkDangerDisabled">@color/o2_color_grey_5</item>
         <item name="colorTextLinkDisabled">@color/o2_color_darkModeGrey6</item>
 
         <!-- Control colors -->
         <item name="colorControl">@color/o2_color_darkModeGrey6</item>
-        <item name="colorControlActive">@color/o2_color_blue_primary_light_50</item>
+        <item name="colorControlActive">@color/o2_color_blue_primary_30</item>
         <item name="colorLoadingBar">@color/o2_color_darkModeO2BluePrimary</item>
         <item name="colorLoadingBarBackground">@color/o2_color_darkModeGrey6</item>
 
@@ -79,7 +79,7 @@
         <item name="colorFeedbackInfoBackground">@color/o2_color_darkModeGrey6</item>
 
         <!-- Global colors -->
-        <item name="colorBrand">@color/o2_color_blue_primary_light_50</item>
+        <item name="colorBrand">@color/o2_color_blue_primary_30</item>
         <item name="colorBrandHigh">@color/o2_color_darkModeGrey6</item>
         <item name="colorInverse">@color/o2_color_grey_2</item>
         <item name="colorNeutralHigh">@color/o2_color_grey_2</item>

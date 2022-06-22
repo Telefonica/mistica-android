@@ -10,9 +10,9 @@
         <item name="colorBackground">@color/telefonica_color_white</item>
         <item name="colorBackgroundContainer">@color/telefonica_color_white</item>
         <item name="colorBackgroundBrand">@color/telefonica_color_blue</item>
-        <item name="colorBackgroundOverlay">@color/telefonica_color_grey_6_60_alpha</item>
+        <item name="colorBackgroundOverlay">@color/telefonica_color_grey_6_80_alpha</item>
         <item name="colorBackgroundSkeleton">@color/telefonica_color_grey_1</item>
-        <item name="colorBackgroundSkeletonInverse">@color/telefonica_color_blue_dark</item>
+        <item name="colorBackgroundSkeletonInverse">@color/telefonica_color_blue_70</item>
         <item name="colorNavigationBarBackground">@color/telefonica_color_blue</item>
         <item name="colorBackgroundAlternative">@color/telefonica_color_grey_1</item>
         <item name="colorBackgroundFeedbackBottom">@color/telefonica_color_blue</item>
@@ -27,27 +27,27 @@
 
         <!-- Button colors -->
         <item name="colorButtonDangerBackground">@color/telefonica_color_coral</item>
-        <item name="colorButtonDangerBackgroundSelected">@color/telefonica_color_coral_dark</item>
+        <item name="colorButtonDangerBackgroundSelected">@color/telefonica_color_coral_80</item>
 
         <item name="colorButtonLinkBackgroundSelected">@color/telefonica_color_grey_1</item>
         <item name="colorButtonLinkBackgroundSelectedInverse">@color/telefonica_color_white_20_alpha</item>
 
         <item name="colorButtonPrimaryBackground">@color/telefonica_color_blue</item>
         <item name="colorButtonPrimaryBackgroundInverse">@color/telefonica_color_white</item>
-        <item name="colorButtonPrimaryBackgroundSelected">@color/telefonica_color_blue_dark</item>
-        <item name="colorButtonPrimaryBackgroundSelectedInverse">@color/telefonica_color_blue_light50</item>
+        <item name="colorButtonPrimaryBackgroundSelected">@color/telefonica_color_blue_70</item>
+        <item name="colorButtonPrimaryBackgroundSelectedInverse">@color/telefonica_color_blue_30</item>
 
         <item name="colorButtonSecondaryBackground">@color/telefonica_color_blue</item>
-        <item name="colorButtonSecondaryBackgroundSelected">@color/telefonica_color_blue_dark</item>
+        <item name="colorButtonSecondaryBackgroundSelected">@color/telefonica_color_blue_70</item>
         <item name="colorButtonSecondaryBorderInverse">@color/telefonica_color_white</item>
-        <item name="colorButtonSecondaryBorderSelectedInverse">@color/telefonica_color_blue_light50</item>
+        <item name="colorButtonSecondaryBorderSelectedInverse">@color/telefonica_color_blue_30</item>
 
         <item name="colorTextButtonPrimary">@color/telefonica_color_white</item>
         <item name="colorTextButtonPrimaryInverse">@color/telefonica_color_blue</item>
         <item name="colorTextButtonPrimaryInverseSelected">@color/telefonica_color_blue</item>
 
         <item name="colorTextButtonSecondary">@color/telefonica_color_blue</item>
-        <item name="colorTextButtonSecondarySelected">@color/telefonica_color_blue_dark</item>
+        <item name="colorTextButtonSecondarySelected">@color/telefonica_color_blue_70</item>
         <item name="colorTextButtonSecondaryInverse">@color/telefonica_color_white</item>
         <item name="colorTextButtonSecondaryInverseSelected">@color/telefonica_color_white</item>
 
@@ -57,14 +57,14 @@
         <item name="colorTextLinkDanger">@color/telefonica_color_coral</item>
         <item name="colorTextLinkDangerDisabled">@color/telefonica_color_grey_2</item>
         <item name="colorTextLinkDisabled">@color/telefonica_color_grey_2</item>
-        <item name="colorTextLinkSnackbar">@color/telefonica_color_blue_light50</item>
+        <item name="colorTextLinkSnackbar">@color/telefonica_color_blue_30</item>
 
         <!-- Control colors -->
         <item name="colorControl">@color/telefonica_color_grey_3</item>
         <item name="colorControlActive">@color/telefonica_color_blue</item>
         <item name="colorControlError">@color/telefonica_color_coral</item>
-        <item name="colorLoadingBar">@color/telefonica_color_blue_light50</item>
-        <item name="colorLoadingBarBackground">@color/telefonica_color_blue_dark</item>
+        <item name="colorLoadingBar">@color/telefonica_color_blue_30</item>
+        <item name="colorLoadingBarBackground">@color/telefonica_color_blue_70</item>
 
         <!-- Divider colors -->
         <item name="colorDivider">@color/telefonica_color_grey_2</item>
@@ -72,19 +72,19 @@
         <item name="colorNavigationBarDivider">@color/telefonica_color_blue</item>
 
         <!-- Feedback colors -->
-        <item name="colorBadge">@color/telefonica_color_coral_dark</item>
+        <item name="colorBadge">@color/telefonica_color_coral_80</item>
         <item name="colorFeedbackErrorBackground">@color/telefonica_color_coral</item>
         <item name="colorFeedbackInfoBackground">@color/telefonica_color_grey_9</item>
 
         <!-- Global colors -->
         <item name="colorBrand">@color/telefonica_color_blue</item>
-        <item name="colorBrandHigh">@color/telefonica_color_blue_dark</item>
+        <item name="colorBrandHigh">@color/telefonica_color_blue_70</item>
         <item name="colorInverse">@color/telefonica_color_white</item>
         <item name="colorNeutralHigh">@color/telefonica_color_grey_9</item>
         <item name="colorNeutralLow">@color/telefonica_color_grey_1</item>
         <item name="colorNeutralMedium">@color/telefonica_color_grey_5</item>
         <item name="colorPromo">@color/telefonica_color_orchid</item>
-        <item name="colorHighlight">@color/telefonica_color_coral_light</item>
+        <item name="colorHighlight">@color/telefonica_color_coral_40</item>
 
         <!-- Tag colors -->
         <item name="successLow">@color/telefonica_color_turquoise_10</item>

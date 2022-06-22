@@ -3,37 +3,27 @@
     <color name="o2_color_blue_primary">#0019A5</color>
     <color name="o2_color_blue_primary_10">#E5E8F6</color>
     <color name="o2_color_blue_primary_15">#CCD1ED</color>
-    <color name="o2_color_blue_primary_dark">#000066</color>
-    <color name="o2_color_blue_primary_light_50">#808CD2</color>
-    <color name="o2_color_blue_primary_light_10">#CCD1ED</color>
+    <color name="o2_color_blue_primary_30">#808CD2</color>
+    <color name="o2_color_blue_primary_70">#000066</color>
 
     <color name="o2_color_blue_mid">#007BB2</color>
-    <color name="o2_color_blue_mid_dark">#006795</color>
     <color name="o2_color_blue_light">#41B6E6</color>
-    <color name="o2_color_blue_light_60">#8DD3F0</color>
     <color name="o2_color_blue_light_30">#C6E9F7</color>
-    <color name="o2_color_blue_light_10">#ECF7FC</color>
+    <color name="o2_color_blue_light_35">#8DD3F0</color>
 
     <color name="o2_color_teal">#01B7B4</color>
-    <color name="o2_color_teal_dark">#099E9B</color>
-    <color name="o2_color_teal_light">#B1E4E3</color>
 
     <color name="o2_color_green">#91C90E</color>
     <color name="o2_color_green_10">#F4FAE7</color>
     <color name="o2_color_green_40">#B2D956</color>
     <color name="o2_color_green_80">#415A06</color>
-    <color name="o2_color_green_light">#DEEEB7</color>
 
     <color name="o2_color_yellow">#FEDB00</color>
-    <color name="o2_color_yellow_light">#FEF6C3</color>
 
     <color name="o2_color_orange">#FF7F41</color>
     <color name="o2_color_orange_10">#FFF2EC</color>
     <color name="o2_color_orange_40">#FFA57A</color>
     <color name="o2_color_orange_75">#A6522A</color>
-    <color name="o2_color_orange_light">#FFD6C2</color>
-
-    <color name="o2_color_coral">#FF706E</color>
 
     <color name="o2_color_pink">#CB31A0</color>
 
@@ -45,8 +35,7 @@
     <color name="o2_color_pepper_10">#FEEBED</color>
     <color name="o2_color_pepper_40">#FF7380</color>
     <color name="o2_color_pepper_60">#C32B3D</color>
-    <color name="o2_color_pepper_dark">#D73241</color>
-    <color name="o2_color_pepper_light30">#FFC3C8</color>
+    <color name="o2_color_pepper_light30">#FFC3C8</color> <!-- TODO ANDROID-10625 -->
 
     <color name="o2_color_grey_1">#F6F6F6</color>
     <color name="o2_color_grey_2">#EEEEEE</color>
@@ -60,17 +49,14 @@
     <color name="o2_color_white_5_alpha">#0DFFFFFF</color>
     <color name="o2_color_white_20_alpha">#33FFFFFF</color>
     <color name="o2_color_white_50_alpha">#80FFFFFF</color>
-    <color name="o2_color_grey_6_5_alpha">#0D000033</color>
     <color name="o2_color_grey_5_30_alpha">#4D707070</color>
+    <color name="o2_color_grey_6_5_alpha">#0D000033</color>
     <color name="o2_color_grey_6_30_alpha">#4D000033</color>
     <color name="o2_color_grey_6_40_alpha">#66000033</color>
     <color name="o2_color_grey_6_60_alpha">#99000033</color>
     <color name="o2_color_grey_6_80_alpha">#CC000033</color>
     <color name="o2_color_blue_mid_30_alpha">#4D007BB2</color>
-    <color name="o2_color_sky_blue_light_60_25_alpha">#40A3D2EF</color>
-    <color name="o2_color_sky_blue_light_30_25_alpha">#40D0E8F6</color>
-    <color name="o2_color_blue_primary_dark_40_alpha">#66000066</color>
-    <color name="o2_color_blue_primary_40_alpha">#66000066</color>
+    <color name="o2_color_blue_primary_70_40_alpha">#66000066</color>
 
     <!-- Dark mode -->
     <color name="o2_color_darkModeBlack">#191919</color>

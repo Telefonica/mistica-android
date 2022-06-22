@@ -27,10 +27,10 @@
         <item name="colorButtonLinkBackgroundSelectedInverse">@color/o2_classic_color_darkModeGrey</item>
 
         <item name="colorButtonPrimaryBackgroundInverse">@color/o2_classic_color_sky_blue</item>
-        <item name="colorButtonPrimaryBackgroundSelectedInverse">@color/o2_classic_color_sky_blue_dark</item>
+        <item name="colorButtonPrimaryBackgroundSelectedInverse">@color/o2_classic_color_sky_blue_55</item>
 
         <item name="colorButtonSecondaryBorderInverse">@color/o2_classic_color_sky_blue</item>
-        <item name="colorButtonSecondaryBorderSelectedInverse">@color/o2_classic_color_sky_blue_dark</item>
+        <item name="colorButtonSecondaryBorderSelectedInverse">@color/o2_classic_color_sky_blue_55</item>
 
         <item name="colorTextButtonPrimary">@color/o2_classic_color_grey_2</item>
         <item name="colorTextButtonPrimaryInverse">@color/o2_classic_color_grey_2</item>
