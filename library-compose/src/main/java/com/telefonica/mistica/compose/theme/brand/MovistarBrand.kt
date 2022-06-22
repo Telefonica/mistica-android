@@ -244,7 +244,6 @@ private object MovistarPaletteColor {
 
     val movistar_color_egg = Color(0xFFF28D15)
     val movistar_color_egg_10 = Color(0xFFFEF4E8)
-    val movistar_color_egg_25 = Color(0xFFFAD1A1)
     val movistar_color_egg_40 = Color(0xFFF6AF5B)
     val movistar_color_egg_80 = Color(0xFF6D3F09)
 

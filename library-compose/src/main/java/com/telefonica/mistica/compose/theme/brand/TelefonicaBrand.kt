@@ -156,7 +156,7 @@ object TelefonicaBrand : Brand {
         navigationBarBackground = TelefonicaPaletteColor.telefonica_color_darkModeBlack,
         navigationBarDivider = TelefonicaPaletteColor.telefonica_color_darkModeBlack,
         neutralHigh = TelefonicaPaletteColor.telefonica_color_grey_2,
-        neutralLow = TelefonicaPaletteColor.telefonica_color_grey_6,
+        neutralLow = TelefonicaPaletteColor.telefonica_color_darkModeGrey6,
         neutralMedium = TelefonicaPaletteColor.telefonica_color_grey_5,
         promo = TelefonicaPaletteColor.telefonica_color_orchid,
         skeletonWave = TelefonicaPaletteColor.telefonica_color_grey_5,
@@ -241,5 +241,6 @@ private object TelefonicaPaletteColor {
     // Dark Mode Color Palette
     val telefonica_color_darkModeBlack = Color(0xFF191919)
     val telefonica_color_darkModeGrey = Color(0xFF242424)
+    val telefonica_color_darkModeGrey6 = Color(0xFF313235)
     val telefonica_color_darkModeGrey_80_alpha = Color(0xCC242424)
 }
