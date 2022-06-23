@@ -104,7 +104,6 @@
         <item name="colorTextSecondary">@color/vivo_color_grey_5</item>
         <item name="colorTextSecondaryInverse">@color/vivo_color_white</item>
 
-
         <!-- State colors -->
         <item name="colorError">@color/vivo_color_pepper</item>
         <item name="colorSuccess">@color/vivo_color_green</item>
