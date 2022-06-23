@@ -56,7 +56,6 @@
         <!-- Text Links -->
         <item name="colorTextLink">@color/o2_classic_color_sky_blue_light</item>
         <item name="colorTextLinkInverse">@color/o2_classic_color_sky_blue_light</item>
-        <item name="colorTextLinkDisabled">@color/o2_color_darkModeGrey6</item>
 
         <!-- Control colors -->
         <item name="colorControl">@color/o2_classic_color_darkModeGrey6</item>
@@ -81,7 +80,6 @@
         <item name="colorTextPrimaryInverse">@color/o2_classic_color_grey_2</item>
         <item name="colorTextSecondary">@color/o2_classic_color_grey_4</item>
         <item name="colorTextSecondaryInverse">@color/o2_classic_color_grey_4</item>
-        <item name="colorTextDisabled">@color/o2_classic_color_grey_5</item>
 
         <!-- Bars text colors -->
         <item name="colorTextNavigationBarPrimary">@color/o2_classic_color_grey_2</item>

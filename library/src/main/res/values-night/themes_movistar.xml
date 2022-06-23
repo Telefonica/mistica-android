@@ -41,7 +41,6 @@
 
         <!-- Text Links -->
         <item name="colorTextLinkInverse">@color/movistar_color_blue</item>
-        <item name="colorTextLinkDisabled">@color/movistar_color_grey_6</item>
 
         <!-- Control colors -->
         <item name="colorControl">@color/movistar_color_grey_6</item>
@@ -76,7 +75,6 @@
         <item name="colorTextPrimaryInverse">@color/movistar_color_grey_2</item>
         <item name="colorTextSecondary">@color/movistar_color_grey_4</item>
         <item name="colorTextSecondaryInverse">@color/movistar_color_grey_4</item>
-        <item name="colorTextDisabled">@color/movistar_color_grey_5</item>
 
         <!-- Bars text colors -->
         <item name="colorTextNavigationBarPrimary">@color/movistar_color_grey_2</item>

@@ -27,6 +27,7 @@ import com.telefonica.mistica.R
 import com.telefonica.mistica.badge.Badge
 import com.telefonica.mistica.util.convertDpToPx
 import com.telefonica.mistica.util.getThemeColor
+import com.telefonica.mistica.util.setAlpha
 
 @BindingMethods(
     BindingMethod(
@@ -299,49 +300,27 @@ class ListRowView @JvmOverloads constructor(
     }
 
     private fun configureTextViewsColor(@BackgroundType type: Int) {
-        val colorPrimary = if (type == BackgroundType.TYPE_BOXED_INVERSE) {
-            buildTextColorSelector(
-                R.attr.colorTextPrimaryInverse,
-                R.attr.colorTextDisabled
+        val colorPrimary =
+            context.getThemeColor(
+                if (type == BackgroundType.TYPE_BOXED_INVERSE) {
+                    R.attr.colorTextPrimaryInverse
+                } else {
+                    R.attr.colorTextPrimary
+                }
             )
-        } else {
-            buildTextColorSelector(
-                R.attr.colorTextPrimary,
-                R.attr.colorTextDisabled
-            )
-        }
 
-        val colorSecondary = if (type == BackgroundType.TYPE_BOXED_INVERSE) {
-            buildTextColorSelector(
-                R.attr.colorTextSecondaryInverse,
-                R.attr.colorTextDisabled
+        val colorSecondary =
+            context.getThemeColor(
+                if (type == BackgroundType.TYPE_BOXED_INVERSE) {
+                    R.attr.colorTextSecondaryInverse
+                } else {
+                    R.attr.colorTextSecondary
+                }
             )
-        } else {
-            buildTextColorSelector(
-                R.attr.colorTextSecondary,
-                R.attr.colorTextDisabled
-            )
-        }
 
         titleTextView.setTextColor(colorPrimary)
         subtitleTextView.setTextColor(colorSecondary)
         descriptionTextView.setTextColor(colorSecondary)
-    }
-
-    private fun buildTextColorSelector(@AttrRes enabledColorAttr: Int, @AttrRes disabledColorAttr: Int): ColorStateList {
-        val enabledColor: Int = context.getThemeColor(enabledColorAttr)
-        val disabledColor: Int = context.getThemeColor(disabledColorAttr)
-
-        return ColorStateList(
-            arrayOf(
-                intArrayOf(android.R.attr.state_enabled),
-                intArrayOf()
-            ),
-            intArrayOf(
-                enabledColor,
-                disabledColor
-            )
-        )
     }
 
     fun setHeadlineVisible(visible: Boolean) {
@@ -429,6 +408,7 @@ class ListRowView @JvmOverloads constructor(
         titleTextView.isEnabled = enabled
         descriptionTextView.isEnabled = enabled
         getActionView()?.isEnabled = enabled
+        setAlpha(enabled)
     }
 
     fun delegateClickOnActionView() {

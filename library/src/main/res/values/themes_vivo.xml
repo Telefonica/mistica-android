@@ -67,7 +67,6 @@
         <item name="colorTextLink">@color/vivo_color_purple</item>
         <item name="colorTextLinkInverse">@color/vivo_color_white</item>
         <item name="colorTextLinkDanger">@color/vivo_color_pepper</item>
-        <item name="colorTextLinkDisabled">@color/vivo_color_purple_light50</item>
         <item name="colorTextLinkSnackbar">@color/vivo_color_purple_light50</item>
 
         <!-- Control colors -->
@@ -104,7 +103,7 @@
         <item name="colorTextPrimaryInverse">@color/vivo_color_white</item>
         <item name="colorTextSecondary">@color/vivo_color_grey_5</item>
         <item name="colorTextSecondaryInverse">@color/vivo_color_white</item>
-        <item name="colorTextDisabled">@color/vivo_color_grey_3</item>
+
 
         <!-- State colors -->
         <item name="colorError">@color/vivo_color_pepper</item>

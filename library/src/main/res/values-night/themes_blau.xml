@@ -53,7 +53,6 @@
 
 		<!-- Text Links -->
 		<item name="colorTextLink">@color/blau_color_purple</item>
-		<item name="colorTextLinkDisabled">@color/blau_color_grey_5</item>
 
 		<!-- Control colors -->
 		<item name="colorControl">@color/blau_color_grey_5</item>
@@ -81,7 +80,6 @@
 		<item name="colorTextPrimaryInverse">@color/blau_color_grey_2</item>
 		<item name="colorTextSecondary">@color/blau_color_grey_4</item>
 		<item name="colorTextSecondaryInverse">@color/blau_color_grey_4</item>
-		<item name="colorTextDisabled">@color/blau_color_grey_5</item>
 
 		<!-- Bars text colors -->
 		<item name="colorTextNavigationBarPrimary">@color/blau_color_grey_2</item>

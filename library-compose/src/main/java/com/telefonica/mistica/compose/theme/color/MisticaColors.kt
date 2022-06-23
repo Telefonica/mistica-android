@@ -79,10 +79,8 @@ class MisticaColors(
     textButtonSecondaryInverse: Color = Color.Unspecified,
     textButtonSecondaryInverseSelected: Color = Color.Unspecified,
     textButtonSecondarySelected: Color = Color.Unspecified,
-    textDisabled: Color = Color.Unspecified,
     textLink: Color = Color.Unspecified,
     textLinkDanger: Color = Color.Unspecified,
-    textLinkDisabled: Color = Color.Unspecified,
     textLinkInverse: Color = Color.Unspecified,
     textLinkSnackbar: Color = Color.Unspecified,
     textNavigationBarPrimary: Color = Color.Unspecified,
@@ -171,8 +169,6 @@ class MisticaColors(
         internal set
     var textLinkDanger by mutableStateOf(textLinkDanger, structuralEqualityPolicy())
         internal set
-    var textLinkDisabled by mutableStateOf(textLinkDisabled, structuralEqualityPolicy())
-        internal set
     var textLinkSnackbar by mutableStateOf(textLinkSnackbar, structuralEqualityPolicy())
         internal set
     var control by mutableStateOf(control, structuralEqualityPolicy())
@@ -220,8 +216,6 @@ class MisticaColors(
     var textSecondary by mutableStateOf(textSecondary, structuralEqualityPolicy())
         internal set
     var textSecondaryInverse by mutableStateOf(textSecondaryInverse, structuralEqualityPolicy())
-        internal set
-    var textDisabled by mutableStateOf(textDisabled, structuralEqualityPolicy())
         internal set
     var error by mutableStateOf(error, structuralEqualityPolicy())
         internal set
@@ -349,10 +343,8 @@ class MisticaColors(
         textButtonSecondaryInverse: Color = this.textButtonSecondaryInverse,
         textButtonSecondaryInverseSelected: Color = this.textButtonSecondaryInverseSelected,
         textButtonSecondarySelected: Color = this.textButtonSecondarySelected,
-        textDisabled: Color = this.textDisabled,
         textLink: Color = this.textLink,
         textLinkDanger: Color = this.textLinkDanger,
-        textLinkDisabled: Color = this.textLinkDisabled,
         textLinkInverse: Color = this.textLinkInverse,
         textLinkSnackbar: Color = this.textLinkSnackbar,
         textNavigationBarPrimary: Color = this.textNavigationBarPrimary,
@@ -439,10 +431,8 @@ class MisticaColors(
         textButtonSecondaryInverse = textButtonSecondaryInverse,
         textButtonSecondaryInverseSelected = textButtonSecondaryInverseSelected,
         textButtonSecondarySelected = textButtonSecondarySelected,
-        textDisabled = textDisabled,
         textLink = textLink,
         textLinkDanger = textLinkDanger,
-        textLinkDisabled = textLinkDisabled,
         textLinkInverse = textLinkInverse,
         textLinkSnackbar = textLinkSnackbar,
         textNavigationBarPrimary = textNavigationBarPrimary,
@@ -531,10 +521,8 @@ class MisticaColors(
         textButtonSecondaryInverse = other.textButtonSecondaryInverse
         textButtonSecondaryInverseSelected = other.textButtonSecondaryInverseSelected
         textButtonSecondarySelected = other.textButtonSecondarySelected
-        textDisabled = other.textDisabled
         textLink = other.textLink
         textLinkDanger = other.textLinkDanger
-        textLinkDisabled = other.textLinkDisabled
         textLinkInverse = other.textLinkInverse
         textLinkSnackbar = other.textLinkSnackbar
         textNavigationBarPrimary = other.textNavigationBarPrimary

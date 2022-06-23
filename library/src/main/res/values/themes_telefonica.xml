@@ -55,7 +55,6 @@
         <item name="colorTextLink">@color/telefonica_color_blue</item>
         <item name="colorTextLinkInverse">@color/telefonica_color_white</item>
         <item name="colorTextLinkDanger">@color/telefonica_color_coral</item>
-        <item name="colorTextLinkDisabled">@color/telefonica_color_grey_2</item>
         <item name="colorTextLinkSnackbar">@color/telefonica_color_blue_30</item>
 
         <!-- Control colors -->
@@ -102,7 +101,6 @@
         <item name="colorTextPrimaryInverse">@color/telefonica_color_white</item>
         <item name="colorTextSecondary">@color/telefonica_color_grey_5</item>
         <item name="colorTextSecondaryInverse">@color/telefonica_color_white</item>
-        <item name="colorTextDisabled">@color/telefonica_color_grey_3</item>
 
         <!-- State colors -->
         <item name="colorError">@color/telefonica_color_coral</item>
