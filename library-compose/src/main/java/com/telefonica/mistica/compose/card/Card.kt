@@ -34,7 +34,7 @@ fun Card(
             .focusable()
             .widthIn(min = 184.dp),
         elevation = 0.dp,
-        shape = RoundedCornerShape(4.dp),
+        shape = RoundedCornerShape(8.dp),
         border = BorderStroke(width = 1.dp, color = MisticaTheme.colors.border)
     ) {
         Column {

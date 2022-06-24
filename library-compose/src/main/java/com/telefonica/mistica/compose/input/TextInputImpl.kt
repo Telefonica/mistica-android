@@ -104,7 +104,7 @@ private fun TextBox(
     TextField(
         modifier = Modifier
             .fillMaxWidth()
-            .border(width = 1.dp, color = MisticaTheme.colors.border, shape = RoundedCornerShape(4.dp)),
+            .border(width = 1.dp, color = MisticaTheme.colors.border, shape = RoundedCornerShape(8.dp)),
         enabled = enabled,
         readOnly = readOnly,
         value = value,
