@@ -49,7 +49,6 @@
         <attr name="colorTextLink" format="color|reference" />
         <attr name="colorTextLinkInverse" format="color|reference" />
         <attr name="colorTextLinkDanger" format="color|reference" />
-        <attr name="colorTextLinkDangerDisabled" format="color|reference" />
         <attr name="colorTextLinkDisabled" format="color|reference" />
         <attr name="colorTextLinkSnackbar" format="color|reference" />
 

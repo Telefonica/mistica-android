@@ -59,7 +59,6 @@
         <!-- Text Links -->
         <item name="colorTextLink">@color/vivo_color_purple_light50</item>
         <item name="colorTextLinkInverse">@color/vivo_color_purple_light50</item>
-        <item name="colorTextLinkDangerDisabled">@color/vivo_color_grey_5</item>
         <item name="colorTextLinkDisabled">@color/vivo_color_darkModeGrey6</item>
 
         <!-- Control colors -->

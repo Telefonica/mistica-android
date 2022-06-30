@@ -19,25 +19,25 @@ object O2ClassicBrand : Brand {
         backgroundOverlay = O2ClassicPaletteColor.o2_classic_color_grey_6_60_alpha,
         backgroundSkeleton = O2ClassicPaletteColor.o2_classic_color_grey_1,
         backgroundSkeletonInverse = O2ClassicPaletteColor.o2_classic_color_white_20_alpha,
-        badge = O2ClassicPaletteColor.o2_classic_color_pepper_dark,
+        badge = O2ClassicPaletteColor.o2_classic_color_pepper_55,
         border = O2ClassicPaletteColor.o2_classic_color_grey_3,
         borderDark = O2ClassicPaletteColor.o2_classic_color_grey_5,
         borderLight = O2ClassicPaletteColor.o2_classic_color_grey_1,
         borderSelected = O2ClassicPaletteColor.o2_classic_color_gem,
         brand = O2ClassicPaletteColor.o2_classic_color_blue,
-        brandHigh = O2ClassicPaletteColor.o2_classic_color_blue_dark,
+        brandHigh = O2ClassicPaletteColor.o2_classic_color_blue_55,
         buttonDangerBackground = O2ClassicPaletteColor.o2_classic_color_pepper,
-        buttonDangerBackgroundSelected = O2ClassicPaletteColor.o2_classic_color_pepper_dark,
+        buttonDangerBackgroundSelected = O2ClassicPaletteColor.o2_classic_color_pepper_55,
         buttonLinkBackgroundSelected = O2ClassicPaletteColor.o2_classic_color_sky_blue_light_10,
         buttonLinkBackgroundSelectedInverse = O2ClassicPaletteColor.o2_classic_color_white_20_alpha,
         buttonPrimaryBackground = O2ClassicPaletteColor.o2_classic_color_sky_blue,
         buttonPrimaryBackgroundInverse = O2ClassicPaletteColor.o2_classic_color_white,
-        buttonPrimaryBackgroundSelected = O2ClassicPaletteColor.o2_classic_color_sky_blue_dark,
-        buttonPrimaryBackgroundSelectedInverse = O2ClassicPaletteColor.o2_classic_color_sky_blue_light_50,
+        buttonPrimaryBackgroundSelected = O2ClassicPaletteColor.o2_classic_color_sky_blue_55,
+        buttonPrimaryBackgroundSelectedInverse = O2ClassicPaletteColor.o2_classic_color_sky_blue_light_45,
         buttonSecondaryBackground = O2ClassicPaletteColor.o2_classic_color_sky_blue,
-        buttonSecondaryBackgroundSelected = O2ClassicPaletteColor.o2_classic_color_sky_blue_dark,
+        buttonSecondaryBackgroundSelected = O2ClassicPaletteColor.o2_classic_color_sky_blue_55,
         buttonSecondaryBorderInverse = O2ClassicPaletteColor.o2_classic_color_white,
-        buttonSecondaryBorderSelectedInverse = O2ClassicPaletteColor.o2_classic_color_sky_blue_light_50,
+        buttonSecondaryBorderSelectedInverse = O2ClassicPaletteColor.o2_classic_color_sky_blue_light_45,
         carouselIndicatorActiveColor = O2ClassicPaletteColor.o2_classic_color_gem,
         carouselIndicatorInactiveColor = O2ClassicPaletteColor.o2_classic_color_grey_3,
         control = O2ClassicPaletteColor.o2_classic_color_grey_3,
@@ -81,16 +81,15 @@ object O2ClassicBrand : Brand {
         textButtonSecondary = O2ClassicPaletteColor.o2_classic_color_sky_blue,
         textButtonSecondaryInverse = O2ClassicPaletteColor.o2_classic_color_white,
         textButtonSecondaryInverseSelected = O2ClassicPaletteColor.o2_classic_color_white,
-        textButtonSecondarySelected = O2ClassicPaletteColor.o2_classic_color_sky_blue_dark,
+        textButtonSecondarySelected = O2ClassicPaletteColor.o2_classic_color_sky_blue_55,
         textDisabled = O2ClassicPaletteColor.o2_classic_color_grey_3,
         textLink = O2ClassicPaletteColor.o2_classic_color_sky_blue,
         textLinkDanger = O2ClassicPaletteColor.o2_classic_color_pepper,
-        textLinkDangerDisabled = O2ClassicPaletteColor.o2_classic_color_pepper_light_30,
         textLinkDisabled = O2ClassicPaletteColor.o2_classic_color_sky_blue_light,
         textLinkInverse = O2ClassicPaletteColor.o2_classic_color_white,
         textLinkSnackbar = O2ClassicPaletteColor.o2_classic_color_sky_blue_light,
         textNavigationBarPrimary = O2ClassicPaletteColor.o2_classic_color_white,
-        textNavigationBarSecondary = O2ClassicPaletteColor.o2_classic_color_sky_blue_light_50,
+        textNavigationBarSecondary = O2ClassicPaletteColor.o2_classic_color_sky_blue_light_45,
         textPrimary = O2ClassicPaletteColor.o2_classic_color_grey_6,
         textPrimaryInverse = O2ClassicPaletteColor.o2_classic_color_white,
         textSecondary = O2ClassicPaletteColor.o2_classic_color_grey_5,
@@ -119,9 +118,9 @@ object O2ClassicBrand : Brand {
         buttonLinkBackgroundSelected = O2ClassicPaletteColor.o2_classic_color_white_5_alpha,
         buttonLinkBackgroundSelectedInverse = O2ClassicPaletteColor.o2_classic_color_darkModeGrey,
         buttonPrimaryBackgroundInverse = O2ClassicPaletteColor.o2_classic_color_sky_blue,
-        buttonPrimaryBackgroundSelectedInverse = O2ClassicPaletteColor.o2_classic_color_sky_blue_dark,
+        buttonPrimaryBackgroundSelectedInverse = O2ClassicPaletteColor.o2_classic_color_sky_blue_55,
         buttonSecondaryBorderInverse = O2ClassicPaletteColor.o2_classic_color_sky_blue,
-        buttonSecondaryBorderSelectedInverse = O2ClassicPaletteColor.o2_classic_color_sky_blue_dark,
+        buttonSecondaryBorderSelectedInverse = O2ClassicPaletteColor.o2_classic_color_sky_blue_55,
         carouselIndicatorActiveColor = O2ClassicPaletteColor.o2_classic_color_gem,
         carouselIndicatorInactiveColor = O2ClassicPaletteColor.o2_classic_color_darkModeGrey6,
         control = O2ClassicPaletteColor.o2_classic_color_darkModeGrey6,
@@ -150,7 +149,6 @@ object O2ClassicBrand : Brand {
         textButtonSecondarySelected = O2ClassicPaletteColor.o2_classic_color_grey_4,
         textDisabled = O2ClassicPaletteColor.o2_classic_color_grey_5,
         textLink = O2ClassicPaletteColor.o2_classic_color_sky_blue_light,
-        textLinkDangerDisabled = O2ClassicPaletteColor.o2_classic_color_grey_6,
         textLinkDisabled = O2ClassicPaletteColor.o2_classic_color_darkModeGrey6,
         textLinkInverse = O2ClassicPaletteColor.o2_classic_color_sky_blue_light,
         textNavigationBarPrimary = O2ClassicPaletteColor.o2_classic_color_grey_2,
@@ -170,13 +168,13 @@ private object O2ClassicPaletteColor {
     val o2_classic_color_blue = Color(0xFF032B5A)
     val o2_classic_color_blue_10 = Color(0xFFE6EAEE)
     val o2_classic_color_blue_30 = Color(0xFF8195AC)
-    val o2_classic_color_blue_dark = Color(0xFF04264E)
-    val o2_classic_color_blue_light_60 = Color(0xFF6C8BAF)
+    val o2_classic_color_blue_45 = Color(0xFF6C8BAF)
+    val o2_classic_color_blue_55 = Color(0xFF04264E)
     val o2_classic_color_sky_blue = Color(0xFF0090D0)
-    val o2_classic_color_sky_blue_dark = Color(0xFF057DB2)
+    val o2_classic_color_sky_blue_55 = Color(0xFF057DB2)
     val o2_classic_color_sky_blue_light = Color(0xFF65B4E4)
-    val o2_classic_color_sky_blue_light_50 = Color(0xFF80C7E7)
-    val o2_classic_color_sky_blue_light_30 = Color(0xFFD0E8F6)
+    val o2_classic_color_sky_blue_light_45 = Color(0xFF80C7E7)
+    val o2_classic_color_sky_blue_light_20 = Color(0xFFD0E8F6)
     val o2_classic_color_sky_blue_light_10 = Color(0xFFE9F5FB)
     val o2_classic_color_deep_sky_blue = Color(0xFF7FD4FE)
 
@@ -190,14 +188,13 @@ private object O2ClassicPaletteColor {
     val o2_classic_color_green_10 = Color(0xFFF3F8E7)
     val o2_classic_color_green_40 = Color(0xFFA9CB57)
     val o2_classic_color_green_75 = Color(0xFF4D621D)
-    val o2_classic_color_green_light = Color(0xFFDAE8B7)
 
     val o2_classic_color_pepper = Color(0xFFFF374A)
     val o2_classic_color_pepper_10 = Color(0xFFFFEBED)
+    val o2_classic_color_pepper_20 = Color(0xFFFFC3C8)
     val o2_classic_color_pepper_40 = Color(0xFFFF7380)
+    val o2_classic_color_pepper_55 = Color(0xFFD73241)
     val o2_classic_color_pepper_70 = Color(0xFFB22634)
-    val o2_classic_color_pepper_dark = Color(0xFFD73241)
-    val o2_classic_color_pepper_light_30 = Color(0xFFFFC3C8)
 
     val o2_classic_color_orange = Color(0xFFFF7F41)
     val o2_classic_color_orange_10 = Color(0xFFFFF2EC)
@@ -238,9 +235,9 @@ private object O2ClassicPaletteColor {
     val o2_classic_color_sky_blue_30_alpha = Color(0x4D0090D0)
     val o2_classic_color_sky_blue_light_30_alpha = Color(0x4D65B4E4)
     val o2_classic_color_sky_blue_light_40_alpha = Color(0x6665B4E4)
-    val o2_classic_color_sky_blue_light_30_25_alpha = Color(0x40D0E8F6)
-    val o2_classic_color_sky_blue_light_50_25_alpha = Color(0x4080C7E7)
-    val o2_classic_color_blue_dark_40_alpha = Color(0x6604264E)
+    val o2_classic_color_sky_blue_light_20_25_alpha = Color(0x40D0E8F6)
+    val o2_classic_color_sky_blue_light_45_25_alpha = Color(0x4080C7E7)
+    val o2_classic_color_blue_55_40_alpha = Color(0x6604264E)
 
     // Dark mode
     val o2_classic_color_darkModeBlack = Color(0xFF191919)

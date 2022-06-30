@@ -27,27 +27,27 @@
 
         <!-- Button colors -->
         <item name="colorButtonDangerBackground">@color/o2_classic_color_pepper</item>
-        <item name="colorButtonDangerBackgroundSelected">@color/o2_classic_color_pepper_dark</item>
+        <item name="colorButtonDangerBackgroundSelected">@color/o2_classic_color_pepper_55</item>
 
         <item name="colorButtonLinkBackgroundSelected">@color/o2_classic_color_sky_blue_light_10</item>
         <item name="colorButtonLinkBackgroundSelectedInverse">@color/o2_classic_color_white_20_alpha</item>
 
         <item name="colorButtonPrimaryBackground">@color/o2_classic_color_sky_blue</item>
         <item name="colorButtonPrimaryBackgroundInverse">@color/o2_classic_color_white</item>
-        <item name="colorButtonPrimaryBackgroundSelected">@color/o2_classic_color_sky_blue_dark</item>
-        <item name="colorButtonPrimaryBackgroundSelectedInverse">@color/o2_classic_color_sky_blue_light_50</item>
+        <item name="colorButtonPrimaryBackgroundSelected">@color/o2_classic_color_sky_blue_55</item>
+        <item name="colorButtonPrimaryBackgroundSelectedInverse">@color/o2_classic_color_sky_blue_light_45</item>
 
         <item name="colorButtonSecondaryBackground">@color/o2_classic_color_sky_blue</item>
-        <item name="colorButtonSecondaryBackgroundSelected">@color/o2_classic_color_sky_blue_dark</item>
+        <item name="colorButtonSecondaryBackgroundSelected">@color/o2_classic_color_sky_blue_55</item>
         <item name="colorButtonSecondaryBorderInverse">@color/o2_classic_color_white</item>
-        <item name="colorButtonSecondaryBorderSelectedInverse">@color/o2_classic_color_sky_blue_light_50</item>
+        <item name="colorButtonSecondaryBorderSelectedInverse">@color/o2_classic_color_sky_blue_light_45</item>
 
         <item name="colorTextButtonPrimary">@color/o2_classic_color_white</item>
         <item name="colorTextButtonPrimaryInverse">@color/o2_classic_color_sky_blue</item>
         <item name="colorTextButtonPrimaryInverseSelected">@color/o2_classic_color_sky_blue</item>
 
         <item name="colorTextButtonSecondary">@color/o2_classic_color_sky_blue</item>
-        <item name="colorTextButtonSecondarySelected">@color/o2_classic_color_sky_blue_dark</item>
+        <item name="colorTextButtonSecondarySelected">@color/o2_classic_color_sky_blue_55</item>
         <item name="colorTextButtonSecondaryInverse">@color/o2_classic_color_white</item>
         <item name="colorTextButtonSecondaryInverseSelected">@color/o2_classic_color_white</item>
 
@@ -67,7 +67,6 @@
         <item name="colorTextLink">@color/o2_classic_color_sky_blue</item>
         <item name="colorTextLinkInverse">@color/o2_classic_color_white</item>
         <item name="colorTextLinkDanger">@color/o2_classic_color_pepper</item>
-        <item name="colorTextLinkDangerDisabled">@color/o2_classic_color_pepper_light_30</item>
         <item name="colorTextLinkDisabled">@color/o2_classic_color_sky_blue_light</item>
         <item name="colorTextLinkSnackbar">@color/o2_classic_color_sky_blue_light</item>
 
@@ -84,13 +83,13 @@
         <item name="colorNavigationBarDivider">@color/o2_classic_color_blue</item>
 
         <!-- Feedback colors -->
-        <item name="colorBadge">@color/o2_classic_color_pepper_dark</item>
+        <item name="colorBadge">@color/o2_classic_color_pepper_55</item>
         <item name="colorFeedbackErrorBackground">@color/o2_classic_color_pepper</item>
         <item name="colorFeedbackInfoBackground">@color/o2_classic_color_grey_6</item>
 
         <!-- Global colors -->
         <item name="colorBrand">@color/o2_classic_color_blue</item>
-        <item name="colorBrandHigh">@color/o2_classic_color_blue_dark</item>
+        <item name="colorBrandHigh">@color/o2_classic_color_blue_55</item>
         <item name="colorInverse">@color/o2_classic_color_white</item>
         <item name="colorNeutralHigh">@color/o2_classic_color_grey_6</item>
         <item name="colorNeutralMedium">@color/o2_classic_color_grey_5</item>
@@ -112,7 +111,7 @@
 
         <!-- Bars text colors -->
         <item name="colorTextNavigationBarPrimary">@color/o2_classic_color_white</item>
-        <item name="colorTextNavigationBarSecondary">@color/o2_classic_color_sky_blue_light_50</item>
+        <item name="colorTextNavigationBarSecondary">@color/o2_classic_color_sky_blue_light_45</item>
         <item name="colorTextAppBar">@color/o2_classic_color_grey_4</item>
         <item name="colorTextAppBarSelected">@color/o2_classic_color_blue</item>
 

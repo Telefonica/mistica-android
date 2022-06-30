@@ -85,7 +85,6 @@ object VivoBrand : Brand {
         textDisabled = VivoPaletteColor.vivo_color_grey_3,
         textLink = VivoPaletteColor.vivo_color_purple,
         textLinkDanger = VivoPaletteColor.vivo_color_pepper,
-        textLinkDangerDisabled = VivoPaletteColor.vivo_color_pepper_light30,
         textLinkDisabled = VivoPaletteColor.vivo_color_purple_light50,
         textLinkInverse = VivoPaletteColor.vivo_color_white,
         textLinkSnackbar = VivoPaletteColor.vivo_color_purple_light50,
@@ -157,7 +156,6 @@ object VivoBrand : Brand {
         textButtonSecondarySelected = VivoPaletteColor.vivo_color_grey_4,
         textDisabled = VivoPaletteColor.vivo_color_grey_5,
         textLink = VivoPaletteColor.vivo_color_purple_light50,
-        textLinkDangerDisabled = VivoPaletteColor.vivo_color_grey_5,
         textLinkDisabled = VivoPaletteColor.vivo_color_darkModeGrey6,
         textLinkInverse = VivoPaletteColor.vivo_color_purple_light50,
         textNavigationBarPrimary = VivoPaletteColor.vivo_color_grey_2,
@@ -186,13 +184,11 @@ private object VivoPaletteColor {
     val vivo_color_green_dark = Color(0xFF33A14A)
     val vivo_color_green_light10 = Color(0xFFEDF8E8)
     val vivo_color_green_light30 = Color(0xFF91AE9E)
-    val vivo_color_green_light40 = Color(0xFFD6EAAD)
 
     val vivo_color_blue = Color(0xFF00ABDB)
 
     val vivo_color_orange = Color(0xFFFF9900)
     val vivo_color_orange_dark = Color(0xFFFA6324)
-    val vivo_color_orange_light = Color(0xFFFFD699)
     val vivo_color_orange_light10 = Color(0xFFFFEFE1)
     val vivo_color_orange_light40 = Color(0xFFFFB84C)
 

@@ -3,14 +3,14 @@
     <color name="o2_classic_color_blue">#032B5A</color>
     <color name="o2_classic_color_blue_10">#E6EAEE</color>
     <color name="o2_classic_color_blue_30">#8195AC</color>
-    <color name="o2_classic_color_blue_dark">#04264E</color>
-    <color name="o2_classic_color_blue_light_60">#6C8BAF</color>
+    <color name="o2_classic_color_blue_45">#6C8BAF</color>
+    <color name="o2_classic_color_blue_55">#04264E</color>
     <color name="o2_classic_color_sky_blue">#0090D0</color>
-    <color name="o2_classic_color_sky_blue_dark">#057DB2</color>
+    <color name="o2_classic_color_sky_blue_55">#057DB2</color>
     <color name="o2_classic_color_sky_blue_light">#65B4E4</color>
-    <color name="o2_classic_color_sky_blue_light_50">#80C7E7</color>
-    <color name="o2_classic_color_sky_blue_light_30">#D0E8F6</color>
     <color name="o2_classic_color_sky_blue_light_10">#E9F5FB</color>
+    <color name="o2_classic_color_sky_blue_light_20">#D0E8F6</color>
+    <color name="o2_classic_color_sky_blue_light_45">#80C7E7</color>
     <color name="o2_classic_color_deep_sky_blue">#7FD4FE</color>
 
     <color name="o2_classic_color_gem">#01B7B4</color>
@@ -23,14 +23,13 @@
     <color name="o2_classic_color_green_10">#F3F8E7</color>
     <color name="o2_classic_color_green_40">#A9CB57</color>
     <color name="o2_classic_color_green_75">#4D621D</color>
-    <color name="o2_classic_color_green_light">#DAE8B7</color>
 
     <color name="o2_classic_color_pepper">#FF374A</color>
     <color name="o2_classic_color_pepper_10">#FFEBED</color>
+    <color name="o2_classic_color_pepper_20">#FFC3C8</color>
     <color name="o2_classic_color_pepper_40">#FF7380</color>
+    <color name="o2_classic_color_pepper_55">#D73241</color>
     <color name="o2_classic_color_pepper_70">#B22634</color>
-    <color name="o2_classic_color_pepper_dark">#D73241</color>
-    <color name="o2_classic_color_pepper_light_30">#FFC3C8</color>
 
     <color name="o2_classic_color_orange">#FF7F41</color>
     <color name="o2_classic_color_orange_10">#FFF2EC</color>
@@ -71,9 +70,9 @@
     <color name="o2_classic_color_sky_blue_30_alpha">#4D0090D0</color>
     <color name="o2_classic_color_sky_blue_light_30_alpha">#4D65B4E4</color>
     <color name="o2_classic_color_sky_blue_light_40_alpha">#6665B4E4</color>
-    <color name="o2_classic_color_sky_blue_light_30_25_alpha">#40D0E8F6</color>
-    <color name="o2_classic_color_sky_blue_light_50_25_alpha">#4080C7E7</color>
-    <color name="o2_classic_color_blue_dark_40_alpha">#6604264E</color>
+    <color name="o2_classic_color_sky_blue_light_20_25_alpha">#40D0E8F6</color>
+    <color name="o2_classic_color_sky_blue_light_45_25_alpha">#4080C7E7</color>
+    <color name="o2_classic_color_blue_55_40_alpha">#6604264E</color>
 
     <!-- Dark mode -->
     <color name="o2_classic_color_darkModeBlack">#191919</color>

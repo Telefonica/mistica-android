@@ -85,7 +85,6 @@ object BlauBrand : Brand {
         textDisabled = BlauPaletteColor.blau_color_grey_3,
         textLink = BlauPaletteColor.blau_color_purple,
         textLinkDanger = BlauPaletteColor.blau_color_red,
-        textLinkDangerDisabled = BlauPaletteColor.blau_color_red_20,
         textLinkDisabled = BlauPaletteColor.blau_color_purple_30,
         textLinkInverse = BlauPaletteColor.blau_color_white,
         textLinkSnackbar = BlauPaletteColor.blau_color_purple_30,
@@ -134,7 +133,7 @@ object BlauBrand : Brand {
         navigationBarBackground = BlauPaletteColor.blau_color_darkModeBlack,
         navigationBarDivider = BlauPaletteColor.blau_color_darkModeBlack,
         neutralHigh = BlauPaletteColor.blau_color_grey_2,
-        neutralLow = BlauPaletteColor.blau_color_darkModeGrey,
+        neutralLow = BlauPaletteColor.blau_color_darkModeGrey6,
         neutralMedium = BlauPaletteColor.blau_color_grey_5,
         skeletonWave = BlauPaletteColor.blau_color_grey_5,
         brandLow = BlauPaletteColor.blau_color_darkModeGrey,
@@ -153,7 +152,6 @@ object BlauBrand : Brand {
         textButtonSecondarySelected = BlauPaletteColor.blau_color_blue_secondary60,
         textDisabled = BlauPaletteColor.blau_color_grey_5,
         textLink = BlauPaletteColor.blau_color_purple,
-        textLinkDangerDisabled = BlauPaletteColor.blau_color_grey_5,
         textLinkDisabled = BlauPaletteColor.blau_color_grey_5,
         textNavigationBarPrimary = BlauPaletteColor.blau_color_grey_2,
         textNavigationBarSecondary = BlauPaletteColor.blau_color_grey_4,
@@ -219,5 +217,6 @@ private object BlauPaletteColor {
     // Dark Mode Color Palette
     val blau_color_darkModeBlack = Color(0xFF191919)
     val blau_color_darkModeGrey = Color(0xFF242424)
+    val blau_color_darkModeGrey6 = Color(0xFF313235)
     val blau_color_darkModeGrey_80_alpha = Color(0xCC242424)
 }
