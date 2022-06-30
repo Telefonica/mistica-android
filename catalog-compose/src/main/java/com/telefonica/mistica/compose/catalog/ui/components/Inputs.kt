@@ -43,6 +43,10 @@ fun Inputs() {
     ) {
         Title("Text input")
         TextInputStandard()
+        Title("Empty disabled Text input")
+        TextInputStandard(enabled = false)
+        Title("Disabled Text input with content")
+        TextInputStandard(enabled = false, initialText = "Something")
         Title("Text input with error")
         TextInputWithError()
         Title("Text Input With Assertive Text that is way too long to fit in the given space")
@@ -59,6 +63,8 @@ fun Inputs() {
         PhoneInputWithValidation()
         Title("Dropdown")
         DropDownSample()
+        Title("Disable Dropdown")
+        DropDownSample(enabled = false)
         Title("Inverse inputs")
         Column(
             modifier = Modifier
@@ -85,9 +91,12 @@ private fun ColumnScope.Title(text: String) {
 }
 
 @Composable
-private fun TextInputStandard() {
+private fun TextInputStandard(
+    enabled: Boolean = true,
+    initialText: String = "",
+) {
     var text by remember {
-        mutableStateOf("")
+        mutableStateOf(initialText)
     }
 
     TextInput(
@@ -100,6 +109,7 @@ private fun TextInputStandard() {
             text = it
         },
         label = "Type Something",
+        enabled = enabled,
     )
 }
 
@@ -298,7 +308,7 @@ private fun ColumnScope.PhoneInputWithValidation() {
 }
 
 @Composable
-private fun DropDownSample() {
+private fun DropDownSample(enabled: Boolean = true) {
     val items = remember {
         listOf("Item 1", "Item 2", "Item 3")
     }
@@ -313,6 +323,7 @@ private fun DropDownSample() {
         items = items,
         onItemSelected = {
             selectedItemIndex = it
-        }
+        },
+        enabled = enabled
     )
 }

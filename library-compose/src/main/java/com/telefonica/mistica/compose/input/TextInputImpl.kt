@@ -27,6 +27,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
+import com.telefonica.mistica.compose.common.ui.alpha
 import com.telefonica.mistica.compose.theme.MisticaTheme
 
 @Composable
@@ -58,7 +59,10 @@ internal fun TextInputImpl(
         )
     }
     CompositionLocalProvider(LocalTextInputColors provides colors) {
-        Column(modifier = modifier) {
+        Column(
+            modifier = modifier
+                .alpha(enabled)
+        ) {
             TextBox(
                 value = value,
                 onValueChange = onValueChange,

@@ -32,6 +32,37 @@
                 app:inputType="text" />
 
             <com.telefonica.mistica.title.TitleView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    app:title="Empty and disabled Text Input" />
+
+            <com.telefonica.mistica.input.TextInput
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:inputEnabled="false"
+                    app:inputHint="Type Something..."
+                    app:inputType="text" />
+
+            <com.telefonica.mistica.title.TitleView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    app:title="Disabled Text Input with content" />
+
+            <com.telefonica.mistica.input.TextInput
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:inputEnabled="false"
+                    app:inputHint="Type Something..."
+                    app:inputText="Something"
+                    app:inputType="text" />
+
+            <com.telefonica.mistica.title.TitleView
                 android:id="@+id/section_title_with_link"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -205,6 +236,23 @@
                 app:inputType="textArea" />
 
             <com.telefonica.mistica.title.TitleView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    app:title="Disabled Text Area" />
+
+            <com.telefonica.mistica.input.TextInput
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:inputCounterEnabled="true"
+                    app:inputHint="Type Something..."
+                    app:inputMaxLength="200"
+                    app:inputEnabled="false"
+                    app:inputType="textArea" />
+
+            <com.telefonica.mistica.title.TitleView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
@@ -219,6 +267,21 @@
                 app:inputHint="Select something" />
 
             <com.telefonica.mistica.title.TitleView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    app:title="Disabled DropDown" />
+
+            <com.telefonica.mistica.input.DropDownInput
+                    android:id="@+id/disabled_dropDownInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:inputEnabled="false"
+                    app:inputHint="Select something" />
+
+            <com.telefonica.mistica.title.TitleView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
@@ -230,6 +293,21 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp" />
+
+            <com.telefonica.mistica.title.TitleView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    app:title="Disabled CheckBox Input" />
+
+            <com.telefonica.mistica.input.CheckBoxInput
+                    android:id="@+id/disabled_checkboxInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:inputCheckText="This is a disabled CheckBox"
+                    app:inputEnabled="false"/>
 
         </LinearLayout>
 

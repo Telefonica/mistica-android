@@ -12,7 +12,7 @@ import androidx.databinding.BindingMethods
 import com.google.android.material.textfield.TextInputLayout
 import com.telefonica.mistica.R
 import com.telefonica.mistica.util.getThemeColor
-
+import com.telefonica.mistica.util.setAlpha
 
 @BindingMethods(
     BindingMethod(
@@ -140,6 +140,7 @@ abstract class Input @JvmOverloads constructor(
     override fun setEnabled(enabled: Boolean) {
         super.setEnabled(enabled)
         layoutView.isEnabled = enabled
+        setAlpha(enabled)
     }
 
     abstract fun handleAttrsAndInflateLayout(

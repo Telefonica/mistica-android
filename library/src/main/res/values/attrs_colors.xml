@@ -49,7 +49,6 @@
         <attr name="colorTextLink" format="color|reference" />
         <attr name="colorTextLinkInverse" format="color|reference" />
         <attr name="colorTextLinkDanger" format="color|reference" />
-        <attr name="colorTextLinkDisabled" format="color|reference" />
         <attr name="colorTextLinkSnackbar" format="color|reference" />
 
         <!-- Controls -->
@@ -98,7 +97,6 @@
         <attr name="colorTextPrimaryInverse" format="color|reference" />
         <attr name="colorTextSecondary" format="color|reference" />
         <attr name="colorTextSecondaryInverse" format="color|reference" />
-        <attr name="colorTextDisabled" format="color|reference" />
 
         <!-- States -->
         <attr name="colorError" format="color|reference" />
