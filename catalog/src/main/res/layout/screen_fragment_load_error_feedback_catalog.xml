@@ -7,11 +7,11 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <com.telefonica.mistica.section.SectionTitleView
+    <com.telefonica.mistica.title.TitleView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
-        android:text="Load Error Feedback" />
+        app:title="Load Error Feedback" />
 
     <com.telefonica.mistica.feedback.error.LoadErrorFeedbackView
         android:id="@+id/load_error_feedback"

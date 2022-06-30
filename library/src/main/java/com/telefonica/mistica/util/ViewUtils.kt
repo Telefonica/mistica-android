@@ -35,3 +35,14 @@ fun View.padding(
 ) {
     setPadding(left, top, right, bottom)
 }
+
+fun View.setAlpha(enabled: Boolean) {
+    alpha = if (enabled) {
+        ENABLED_ALPHA
+    } else {
+        DISABLED_ALPHA
+    }
+}
+
+private const val ENABLED_ALPHA = 1F
+private const val DISABLED_ALPHA = 0.5F

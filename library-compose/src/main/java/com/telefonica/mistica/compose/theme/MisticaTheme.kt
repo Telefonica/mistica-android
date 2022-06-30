@@ -45,7 +45,15 @@ fun MisticaTheme(
         MisticaTypography(
             defaultTextColor = rememberedColors.textPrimary
         )
-    }.apply { updateWith(brand.fontFamily) }
+    }.apply {
+        updateWith(
+            fontFamily = brand.fontFamily,
+            preset8FontWeight = brand.preset8FontWeight,
+            preset7FontWeight = brand.preset7FontWeight,
+            preset6FontWeight = brand.preset6FontWeight,
+            preset5FontWeight = brand.preset5FontWeight,
+        )
+    }
 
     CompositionLocalProvider(
         LocalMisticaColors provides rememberedColors,

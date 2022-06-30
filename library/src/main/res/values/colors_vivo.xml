@@ -12,13 +12,11 @@
     <color name="vivo_color_green_dark">#33A14A</color>
     <color name="vivo_color_green_light10">#EDF8E8</color>
     <color name="vivo_color_green_light30">#91AE9E</color>
-    <color name="vivo_color_green_light40">#D6EAAD</color>
 
     <color name="vivo_color_blue">#00ABDB</color>
 
     <color name="vivo_color_orange">#FF9900</color>
     <color name="vivo_color_orange_dark">#FA6324</color>
-    <color name="vivo_color_orange_light">#FFD699</color>
     <color name="vivo_color_orange_light10">#FFEFE1</color>
     <color name="vivo_color_orange_light40">#FFB84C</color>
 

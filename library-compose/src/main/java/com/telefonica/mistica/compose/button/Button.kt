@@ -54,16 +54,16 @@ private fun getButtonStyle(style: ButtonStyle) = when (style) {
 }
 
 enum class ButtonStyle {
+    PRIMARY,
+    PRIMARY_SMALL,
+    SECONDARY,
+    SECONDARY_SMALL,
     DANGER,
     DANGER_SMALL,
-    LINK_INVERSE,
     LINK,
     PRIMARY_INVERSE,
     PRIMARY_SMALL_INVERSE,
-    PRIMARY_SMALL,
-    PRIMARY,
     SECONDARY_INVERSE,
     SECONDARY_SMALL_INVERSE,
-    SECONDARY_SMALL,
-    SECONDARY
+    LINK_INVERSE
 }

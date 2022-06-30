@@ -7,4 +7,10 @@
         <attr name="font_family_medium" format="string"/>
     </declare-styleable>
 
+    <declare-styleable name="PresetFonts">
+        <attr name="preset5Font" format="string"/>
+        <attr name="preset6Font" format="string"/>
+        <attr name="preset7Font" format="string"/>
+        <attr name="preset8Font" format="string"/>
+    </declare-styleable>
 </resources>

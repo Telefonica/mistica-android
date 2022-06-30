@@ -23,34 +23,25 @@
         <item name="colorBorderSelected">@color/vivo_color_purple_light80</item>
 
         <!-- Button colors -->
-        <item name="colorButtonDangerBackgroundDisabled">@color/vivo_color_darkModeGrey</item>
 
         <item name="colorButtonLinkBackgroundSelected">@color/vivo_color_white_5_alpha</item>
         <item name="colorButtonLinkBackgroundSelectedInverse">@color/vivo_color_white_5_alpha</item>
 
         <item name="colorButtonPrimaryBackground">@color/vivo_color_purple_light80</item>
-        <item name="colorButtonPrimaryBackgroundDisabled">@color/vivo_color_darkModeGrey</item>
-        <item name="colorButtonPrimaryBackgroundDisabledInverse">@color/vivo_color_darkModeGrey</item>
         <item name="colorButtonPrimaryBackgroundInverse">@color/vivo_color_purple_light80</item>
         <item name="colorButtonPrimaryBackgroundSelectedInverse">@color/vivo_color_purple_dark</item>
 
         <item name="colorButtonSecondaryBackground">@color/vivo_color_purple_light80</item>
-        <item name="colorButtonSecondaryBackgroundDisabled">@color/vivo_color_darkModeGrey</item>
-        <item name="colorButtonSecondaryBorderDisabledInverse">@color/vivo_color_darkModeGrey</item>
         <item name="colorButtonSecondaryBorderInverse">@color/vivo_color_purple_light80</item>
         <item name="colorButtonSecondaryBorderSelectedInverse">@color/vivo_color_purple_dark</item>
 
         <item name="colorTextButtonPrimary">@color/vivo_color_grey_2</item>
-        <item name="colorTextButtonPrimaryDisabled">@color/vivo_color_grey_5</item>
         <item name="colorTextButtonPrimaryInverse">@color/vivo_color_grey_2</item>
-        <item name="colorTextButtonPrimaryInverseDisabled">@color/vivo_color_grey_5</item>
         <item name="colorTextButtonPrimaryInverseSelected">@color/vivo_color_grey_2</item>
 
         <item name="colorTextButtonSecondary">@color/vivo_color_grey_2</item>
-        <item name="colorTextButtonSecondaryDisabled">@color/vivo_color_grey_5</item>
         <item name="colorTextButtonSecondarySelected">@color/vivo_color_grey_4</item>
         <item name="colorTextButtonSecondaryInverse">@color/vivo_color_grey_2</item>
-        <item name="colorTextButtonSecondaryInverseDisabled">@color/vivo_color_grey_5</item>
         <item name="colorTextButtonSecondaryInverseSelected">@color/vivo_color_grey_4</item>
 
         <!-- Tag colors -->
@@ -68,8 +59,6 @@
         <!-- Text Links -->
         <item name="colorTextLink">@color/vivo_color_purple_light50</item>
         <item name="colorTextLinkInverse">@color/vivo_color_purple_light50</item>
-        <item name="colorTextLinkDangerDisabled">@color/vivo_color_grey_5</item>
-        <item name="colorTextLinkDisabled">@color/vivo_color_darkModeGrey6</item>
 
         <!-- Control colors -->
         <item name="colorControl">@color/vivo_color_darkModeGrey6</item>
@@ -98,7 +87,6 @@
         <item name="colorTextPrimaryInverse">@color/vivo_color_grey_2</item>
         <item name="colorTextSecondary">@color/vivo_color_grey_4</item>
         <item name="colorTextSecondaryInverse">@color/vivo_color_grey_4</item>
-        <item name="colorTextDisabled">@color/vivo_color_grey_5</item>
 
         <!-- Bars text colors -->
         <item name="colorTextNavigationBarPrimary">@color/vivo_color_grey_2</item>

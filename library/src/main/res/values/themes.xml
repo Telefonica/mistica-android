@@ -8,7 +8,7 @@
         <item name="colorPrimary">?colorNavigationBarBackground</item>
         <item name="colorPrimaryDark">?colorBrandHigh</item>
         <item name="android:windowBackground">?colorBackground</item>
-        <item name="android:textColorPrimary">@color/text_primary_selector</item>
+        <item name="android:textColorPrimary">?colorTextPrimary</item>
         <item name="android:textColorPrimaryInverse">?colorTextPrimaryInverse</item>
         <item name="android:textColorSecondary">?colorTextSecondary</item>
         <item name="android:textColorSecondaryInverse">?colorTextSecondaryInverse</item>
@@ -31,6 +31,10 @@
         <item name="font_family_regular">sans-serif</item>
         <item name="font_family_medium">sans-serif-medium</item>
 
+        <item name="preset5Font">?font_family_light</item>
+        <item name="preset6Font">?font_family_light</item>
+        <item name="preset7Font">?font_family_light</item>
+        <item name="preset8Font">?font_family_light</item>
     </style>
 
 </resources>

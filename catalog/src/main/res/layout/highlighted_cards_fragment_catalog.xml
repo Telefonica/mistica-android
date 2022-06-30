@@ -10,13 +10,13 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <com.telefonica.mistica.section.SectionTitleView
+        <com.telefonica.mistica.title.TitleView
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:layout_margin="8dp"
-            android:text="Highlighted Card Tester" />
+            app:title="Highlighted Card Tester" />
 
         <com.telefonica.mistica.input.TextInput
             android:id="@+id/input_title"

@@ -22,32 +22,23 @@
         <item name="colorBorder">@color/o2_classic_color_darkModeGrey</item>
 
         <!-- Button colors -->
-        <item name="colorButtonDangerBackgroundDisabled">@color/o2_classic_color_darkModeGrey</item>
 
         <item name="colorButtonLinkBackgroundSelected">@color/o2_classic_color_white_5_alpha</item>
         <item name="colorButtonLinkBackgroundSelectedInverse">@color/o2_classic_color_darkModeGrey</item>
 
-        <item name="colorButtonPrimaryBackgroundDisabled">@color/o2_classic_color_darkModeGrey</item>
-        <item name="colorButtonPrimaryBackgroundDisabledInverse">@color/o2_classic_color_darkModeGrey</item>
         <item name="colorButtonPrimaryBackgroundInverse">@color/o2_classic_color_sky_blue</item>
-        <item name="colorButtonPrimaryBackgroundSelectedInverse">@color/o2_classic_color_sky_blue_dark</item>
+        <item name="colorButtonPrimaryBackgroundSelectedInverse">@color/o2_classic_color_sky_blue_55</item>
 
-        <item name="colorButtonSecondaryBackgroundDisabled">@color/o2_classic_color_darkModeGrey</item>
-        <item name="colorButtonSecondaryBorderDisabledInverse">@color/o2_classic_color_darkModeGrey</item>
         <item name="colorButtonSecondaryBorderInverse">@color/o2_classic_color_sky_blue</item>
-        <item name="colorButtonSecondaryBorderSelectedInverse">@color/o2_classic_color_sky_blue_dark</item>
+        <item name="colorButtonSecondaryBorderSelectedInverse">@color/o2_classic_color_sky_blue_55</item>
 
         <item name="colorTextButtonPrimary">@color/o2_classic_color_grey_2</item>
-        <item name="colorTextButtonPrimaryDisabled">@color/o2_classic_color_grey_5</item>
         <item name="colorTextButtonPrimaryInverse">@color/o2_classic_color_grey_2</item>
-        <item name="colorTextButtonPrimaryInverseDisabled">@color/o2_classic_color_grey_5</item>
         <item name="colorTextButtonPrimaryInverseSelected">@color/o2_classic_color_grey_2</item>
 
         <item name="colorTextButtonSecondary">@color/o2_classic_color_grey_2</item>
-        <item name="colorTextButtonSecondaryDisabled">@color/o2_classic_color_grey_5</item>
         <item name="colorTextButtonSecondarySelected">@color/o2_classic_color_grey_4</item>
         <item name="colorTextButtonSecondaryInverse">@color/o2_classic_color_grey_2</item>
-        <item name="colorTextButtonSecondaryInverseDisabled">@color/o2_classic_color_grey_5</item>
         <item name="colorTextButtonSecondaryInverseSelected">@color/o2_classic_color_grey_4</item>
 
         <!-- Tag colors -->
@@ -65,8 +56,6 @@
         <!-- Text Links -->
         <item name="colorTextLink">@color/o2_classic_color_sky_blue_light</item>
         <item name="colorTextLinkInverse">@color/o2_classic_color_sky_blue_light</item>
-        <item name="colorTextLinkDangerDisabled">@color/o2_classic_color_grey_6</item>
-        <item name="colorTextLinkDisabled">@color/o2_color_darkModeGrey6</item>
 
         <!-- Control colors -->
         <item name="colorControl">@color/o2_classic_color_darkModeGrey6</item>
@@ -91,7 +80,6 @@
         <item name="colorTextPrimaryInverse">@color/o2_classic_color_grey_2</item>
         <item name="colorTextSecondary">@color/o2_classic_color_grey_4</item>
         <item name="colorTextSecondaryInverse">@color/o2_classic_color_grey_4</item>
-        <item name="colorTextDisabled">@color/o2_classic_color_grey_5</item>
 
         <!-- Bars text colors -->
         <item name="colorTextNavigationBarPrimary">@color/o2_classic_color_grey_2</item>

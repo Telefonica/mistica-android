@@ -27,45 +27,34 @@
 
 		<!-- Button colors -->
 		<item name="colorButtonDangerBackground">@color/blau_color_red</item>
-		<item name="colorButtonDangerBackgroundDisabled">@color/blau_color_red_20</item>
 		<item name="colorButtonDangerBackgroundSelected">@color/blau_color_red_70</item>
 
 		<item name="colorButtonLinkBackgroundSelected">@color/blau_color_purple_10</item>
 		<item name="colorButtonLinkBackgroundSelectedInverse">@color/blau_color_white_30_alpha</item>
 
 		<item name="colorButtonPrimaryBackground">@color/blau_color_blue_secondary</item>
-		<item name="colorButtonPrimaryBackgroundDisabled">@color/blau_color_blue_secondary20</item>
-		<item name="colorButtonPrimaryBackgroundDisabledInverse">@color/blau_color_blue_primary30</item>
 		<item name="colorButtonPrimaryBackgroundInverse">@color/blau_color_white</item>
 		<item name="colorButtonPrimaryBackgroundSelected">@color/blau_color_blue_secondary60</item>
 		<item name="colorButtonPrimaryBackgroundSelectedInverse">@color/blau_color_blue_primary30</item>
 
 		<item name="colorButtonSecondaryBackground">@color/blau_color_blue_secondary</item>
-		<item name="colorButtonSecondaryBackgroundDisabled">@color/blau_color_blue_secondary20</item>
 		<item name="colorButtonSecondaryBackgroundSelected">@color/blau_color_blue_secondary60</item>
-		<item name="colorButtonSecondaryBorderDisabledInverse">@color/blau_color_blue_secondary20</item>
 		<item name="colorButtonSecondaryBorderInverse">@color/blau_color_white</item>
 		<item name="colorButtonSecondaryBorderSelectedInverse">@color/blau_color_blue_primary30</item>
 
 		<item name="colorTextButtonPrimary">@color/blau_color_white</item>
-		<item name="colorTextButtonPrimaryDisabled">@color/blau_color_white</item>
 		<item name="colorTextButtonPrimaryInverse">@color/blau_color_blue_secondary</item>
-		<item name="colorTextButtonPrimaryInverseDisabled">@color/blau_color_blue_primary10</item>
 		<item name="colorTextButtonPrimaryInverseSelected">@color/blau_color_blue_secondary60</item>
 
 		<item name="colorTextButtonSecondary">@color/blau_color_blue_secondary</item>
-		<item name="colorTextButtonSecondaryDisabled">@color/blau_color_blue_secondary20</item>
 		<item name="colorTextButtonSecondarySelected">@color/blau_color_blue_secondary60</item>
 		<item name="colorTextButtonSecondaryInverse">@color/blau_color_white</item>
-		<item name="colorTextButtonSecondaryInverseDisabled">@color/blau_color_blue_secondary20</item>
 		<item name="colorTextButtonSecondaryInverseSelected">@color/blau_color_white</item>
 
 		<!-- Text Links -->
 		<item name="colorTextLink">@color/blau_color_purple</item>
 		<item name="colorTextLinkInverse">@color/blau_color_white</item>
 		<item name="colorTextLinkDanger">@color/blau_color_red</item>
-		<item name="colorTextLinkDangerDisabled">@color/blau_color_red_20</item>
-		<item name="colorTextLinkDisabled">@color/blau_color_purple_30</item>
 		<item name="colorTextLinkSnackbar">@color/blau_color_purple_30</item>
 
 		<!-- Control colors -->
@@ -110,7 +99,6 @@
 		<item name="colorTextPrimaryInverse">@color/blau_color_white</item>
 		<item name="colorTextSecondary">@color/blau_color_grey_5</item>
 		<item name="colorTextSecondaryInverse">@color/blau_color_white</item>
-		<item name="colorTextDisabled">@color/blau_color_grey_3</item>
 
 		<!-- State colors -->
 		<item name="colorError">@color/blau_color_red</item>

@@ -27,37 +27,28 @@
 
         <!-- Button colors -->
         <item name="colorButtonDangerBackground">@color/vivo_color_pepper</item>
-        <item name="colorButtonDangerBackgroundDisabled">@color/vivo_color_pepper_light30</item>
         <item name="colorButtonDangerBackgroundSelected">@color/vivo_color_pepper_dark</item>
 
         <item name="colorButtonLinkBackgroundSelected">@color/vivo_color_purple_light10</item>
         <item name="colorButtonLinkBackgroundSelectedInverse">@color/vivo_color_white_20_alpha</item>
 
         <item name="colorButtonPrimaryBackground">@color/vivo_color_purple</item>
-        <item name="colorButtonPrimaryBackgroundDisabled">@color/vivo_color_purple_light20</item>
-        <item name="colorButtonPrimaryBackgroundDisabledInverse">@color/vivo_color_purple_light50</item>
         <item name="colorButtonPrimaryBackgroundInverse">@color/vivo_color_white</item>
         <item name="colorButtonPrimaryBackgroundSelected">@color/vivo_color_purple_dark</item>
         <item name="colorButtonPrimaryBackgroundSelectedInverse">@color/vivo_color_purple_light50</item>
 
         <item name="colorButtonSecondaryBackground">@color/vivo_color_purple</item>
-        <item name="colorButtonSecondaryBackgroundDisabled">@color/vivo_color_purple_light20</item>
         <item name="colorButtonSecondaryBackgroundSelected">@color/vivo_color_purple_dark</item>
-        <item name="colorButtonSecondaryBorderDisabledInverse">@color/vivo_color_purple_light50</item>
         <item name="colorButtonSecondaryBorderInverse">@color/vivo_color_white</item>
         <item name="colorButtonSecondaryBorderSelectedInverse">@color/vivo_color_purple_light50</item>
 
         <item name="colorTextButtonPrimary">@color/vivo_color_white</item>
-        <item name="colorTextButtonPrimaryDisabled">@color/vivo_color_white</item>
         <item name="colorTextButtonPrimaryInverse">@color/vivo_color_purple</item>
-        <item name="colorTextButtonPrimaryInverseDisabled">@color/vivo_color_purple_light20</item>
         <item name="colorTextButtonPrimaryInverseSelected">@color/vivo_color_purple</item>
 
         <item name="colorTextButtonSecondary">@color/vivo_color_purple</item>
-        <item name="colorTextButtonSecondaryDisabled">@color/vivo_color_purple_light20</item>
         <item name="colorTextButtonSecondarySelected">@color/vivo_color_purple_dark</item>
         <item name="colorTextButtonSecondaryInverse">@color/vivo_color_white</item>
-        <item name="colorTextButtonSecondaryInverseDisabled">@color/vivo_color_purple_light50</item>
         <item name="colorTextButtonSecondaryInverseSelected">@color/vivo_color_white</item>
 
         <!-- Tag colors -->
@@ -76,8 +67,6 @@
         <item name="colorTextLink">@color/vivo_color_purple</item>
         <item name="colorTextLinkInverse">@color/vivo_color_white</item>
         <item name="colorTextLinkDanger">@color/vivo_color_pepper</item>
-        <item name="colorTextLinkDangerDisabled">@color/vivo_color_pepper_light30</item>
-        <item name="colorTextLinkDisabled">@color/vivo_color_purple_light50</item>
         <item name="colorTextLinkSnackbar">@color/vivo_color_purple_light50</item>
 
         <!-- Control colors -->
@@ -114,7 +103,6 @@
         <item name="colorTextPrimaryInverse">@color/vivo_color_white</item>
         <item name="colorTextSecondary">@color/vivo_color_grey_5</item>
         <item name="colorTextSecondaryInverse">@color/vivo_color_white</item>
-        <item name="colorTextDisabled">@color/vivo_color_grey_3</item>
 
         <!-- State colors -->
         <item name="colorError">@color/vivo_color_pepper</item>

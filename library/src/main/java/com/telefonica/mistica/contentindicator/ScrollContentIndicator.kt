@@ -1,7 +1,6 @@
 package com.telefonica.mistica.contentindicator
 
 import android.content.Context
-import android.os.Build
 import android.util.AttributeSet
 import android.view.Gravity
 import android.view.View
@@ -12,6 +11,7 @@ import androidx.appcompat.content.res.AppCompatResources
 import androidx.appcompat.widget.AppCompatTextView
 import com.telefonica.mistica.R
 import com.telefonica.mistica.util.getThemeColor
+import com.telefonica.mistica.util.setTextPreset
 
 class ScrollContentIndicator @JvmOverloads constructor(
     context: Context,
@@ -22,12 +22,7 @@ class ScrollContentIndicator @JvmOverloads constructor(
     private var animationsEnabled = true
 
     init {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            setTextAppearance(R.style.AppTheme_TextAppearance_Preset2_Medium)
-        } else {
-            @Suppress("DEPRECATION")
-            setTextAppearance(context, R.style.AppTheme_TextAppearance_Preset2_Medium)
-        }
+        setTextPreset(R.style.AppTheme_TextAppearance_Preset2_Medium)
         layoutParams = ViewGroup.LayoutParams(
             ViewGroup.LayoutParams.WRAP_CONTENT,
             ViewGroup.LayoutParams.WRAP_CONTENT
