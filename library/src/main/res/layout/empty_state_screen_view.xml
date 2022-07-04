@@ -37,7 +37,7 @@
 
 		<TextView
 				android:id="@+id/empty_state_screen_subtitle"
-				style="@style/AppTheme.TextAppearance.Preset4.Light"
+				style="@style/AppTheme.TextAppearance.Preset3"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:visibility="gone"

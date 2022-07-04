@@ -37,7 +37,7 @@
 
             <TextView
                 android:id="@+id/subtitle"
-                style="@style/AppTheme.TextAppearance.Preset4"
+                style="@style/AppTheme.TextAppearance.Preset3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
