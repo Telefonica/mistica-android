@@ -80,11 +80,6 @@ fun ListRowItem(
                 color = MisticaTheme.colors.backgroundBrand,
                 shape = RoundedCornerShape(B0XED_CORNER_RADIUS),
             )
-            .border(
-                width = 1.dp,
-                color = MisticaTheme.colors.border,
-                shape = RoundedCornerShape(B0XED_CORNER_RADIUS),
-            )
     }
         .fillMaxWidth()
         .defaultMinSize(minHeight = when(description) {
