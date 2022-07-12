@@ -9,6 +9,6 @@ jobs:
       uses: actions/checkout@v2
     
     - name: "Build Android project"
-      uses: docker://docker.tuenti.io/android/novum_android_api31:1
+      uses: docker://docker.tuenti.io/android/novum_android_api31:2
       with:
         args: 'bash ./gradlew clean check assemble'
