@@ -134,10 +134,15 @@
 		<item name="stepperFinishedStepAnimation">@raw/feedback_success</item>
 
 		<!-- Presets overrides -->
-		<item name="preset5Font">?font_family_medium</item>
-		<item name="preset6Font">?font_family_medium</item>
-		<item name="preset7Font">?font_family_medium</item>
-		<item name="preset8Font">?font_family_medium</item>
+		<item name="preset5Font">?font_family_regular</item>
+		<item name="preset6Font">?font_family_regular</item>
+		<item name="preset7Font">?font_family_regular</item>
+		<item name="preset8Font">?font_family_regular</item>
+
+		<item name="preset5Style">bold</item>
+		<item name="preset6Style">bold</item>
+		<item name="preset7Style">bold</item>
+		<item name="preset8Style">bold</item>
 	</style>
 
 	<style name="MisticaMovistarProminentOverride">

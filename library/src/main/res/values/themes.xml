@@ -35,6 +35,11 @@
         <item name="preset6Font">?font_family_light</item>
         <item name="preset7Font">?font_family_light</item>
         <item name="preset8Font">?font_family_light</item>
+
+        <item name="preset5Style">normal</item>
+        <item name="preset6Style">normal</item>
+        <item name="preset7Style">normal</item>
+        <item name="preset8Style">normal</item>
     </style>
 
 </resources>
