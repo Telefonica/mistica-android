@@ -16,12 +16,12 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build library
-        uses: docker://docker.tuenti.io/android/novum_android_api31:1
+        uses: docker://docker.tuenti.io/android/novum_android_api31:2
         with:
           args: 'bash ./gradlew clean :library:assembleRelease :library-compose:assembleRelease :catalog:assembleRelease :catalog-compose:assembleRelease'
 
       - name: Release library
-        uses: docker://docker.tuenti.io/android/novum_android_api31:1
+        uses: docker://docker.tuenti.io/android/novum_android_api31:2
         env:
           MOBILE_MAVENCENTRAL_USER: ${{ secrets.MOBILE_MAVENCENTRAL_USER }}
           MOBILE_MAVENCENTRAL_PASSWORD: ${{ secrets.MOBILE_MAVENCENTRAL_PASSWORD }}
@@ -33,7 +33,7 @@ jobs:
           :library-compose:publishReleaseComposePublicationToSonatypeRepository -DLIBRARY_VERSION=${{ github.event.inputs.libraryVersion }}"
 
       - name: Release catalog
-        uses: docker://docker.tuenti.io/android/novum_android_api31:1
+        uses: docker://docker.tuenti.io/android/novum_android_api31:2
         env:
           MOBILE_MAVENCENTRAL_USER: ${{ secrets.MOBILE_MAVENCENTRAL_USER }}
           MOBILE_MAVENCENTRAL_PASSWORD: ${{ secrets.MOBILE_MAVENCENTRAL_PASSWORD }}
