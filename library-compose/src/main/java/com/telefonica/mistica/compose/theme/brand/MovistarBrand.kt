@@ -164,16 +164,16 @@ object MovistarBrand : Brand {
         )
 
     override val preset5FontWeight: FontWeight
-        get() = FontWeight.Medium
+        get() = FontWeight.Bold
 
     override val preset6FontWeight: FontWeight
-        get() = FontWeight.Medium
+        get() = FontWeight.Bold
 
     override val preset7FontWeight: FontWeight
-        get() = FontWeight.Medium
+        get() = FontWeight.Bold
 
     override val preset8FontWeight: FontWeight
-        get() = FontWeight.Medium
+        get() = FontWeight.Bold
 }
 
 object MovistarProminentBrand : Brand {
