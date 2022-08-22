@@ -5,7 +5,30 @@ import androidx.annotation.StyleRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.telefonica.mistica.catalog.R
-import com.telefonica.mistica.catalog.ui.fragment.*
+import com.telefonica.mistica.catalog.ui.fragment.BadgesCatalogFragment
+import com.telefonica.mistica.catalog.ui.fragment.BottomSheetCatalogFragment
+import com.telefonica.mistica.catalog.ui.fragment.ButtonsCatalogFragment
+import com.telefonica.mistica.catalog.ui.fragment.CalloutsCatalogFragment
+import com.telefonica.mistica.catalog.ui.fragment.ControlsCatalogFragment
+import com.telefonica.mistica.catalog.ui.fragment.DataCardFragment
+import com.telefonica.mistica.catalog.ui.fragment.EmptyStateCardCatalogFragment
+import com.telefonica.mistica.catalog.ui.fragment.EmptyStateScreenCatalogFragment
+import com.telefonica.mistica.catalog.ui.fragment.FeedbackScreenCatalogFragment
+import com.telefonica.mistica.catalog.ui.fragment.HeadersCatalogFragment
+import com.telefonica.mistica.catalog.ui.fragment.HighlightedCardsCatalogFragment
+import com.telefonica.mistica.catalog.ui.fragment.InputsCatalogFragment
+import com.telefonica.mistica.catalog.ui.fragment.ListsCatalogFragment
+import com.telefonica.mistica.catalog.ui.fragment.LoadErrorFeedbackCatalogFragment
+import com.telefonica.mistica.catalog.ui.fragment.MediaCardsFragment
+import com.telefonica.mistica.catalog.ui.fragment.OthersCatalogFragment
+import com.telefonica.mistica.catalog.ui.fragment.PopOverCatalogFragment
+import com.telefonica.mistica.catalog.ui.fragment.ScrollContentIndicatorCatalogFragment
+import com.telefonica.mistica.catalog.ui.fragment.SnackBarCatalogFragment
+import com.telefonica.mistica.catalog.ui.fragment.SteppersCatalogFragment
+import com.telefonica.mistica.catalog.ui.fragment.TabsCatalogFragment
+import com.telefonica.mistica.catalog.ui.fragment.TagsCatalogFragment
+import com.telefonica.mistica.catalog.ui.fragment.TextPresetsCatalogFragment
+import com.telefonica.mistica.catalog.ui.fragment.TitleCatalogFragment
 
 class ComponentCatalogActivity : AppCompatActivity() {
 
@@ -47,6 +70,7 @@ class ComponentCatalogActivity : AppCompatActivity() {
             Section.EMPTY_STATE -> EmptyStateScreenCatalogFragment(themeOverride)
             Section.EMPTY_STATE_CARD -> EmptyStateCardCatalogFragment()
             Section.CALLOUTS -> CalloutsCatalogFragment()
+            Section.BOTTOM_SHEET -> BottomSheetCatalogFragment()
             else -> OthersCatalogFragment()
         }
 
@@ -87,4 +111,5 @@ enum class Section {
     EMPTY_STATE,
     EMPTY_STATE_CARD,
     CALLOUTS,
+    BOTTOM_SHEET,
 }
