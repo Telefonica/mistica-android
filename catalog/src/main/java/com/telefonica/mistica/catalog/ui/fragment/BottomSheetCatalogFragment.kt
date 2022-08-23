@@ -11,7 +11,6 @@ import androidx.fragment.app.Fragment
 import com.telefonica.mistica.bottomsheet.Asset
 import com.telefonica.mistica.bottomsheet.BottomSheet
 import com.telefonica.mistica.bottomsheet.BottomSheetView
-import com.telefonica.mistica.bottomsheet.Children
 import com.telefonica.mistica.bottomsheet.OnBottomSheetClicked
 import com.telefonica.mistica.bottomsheet.RowWithCheckboxElement
 import com.telefonica.mistica.catalog.R
@@ -19,6 +18,7 @@ import com.telefonica.mistica.catalog.databinding.ScreenFragmentBottomSheetCatal
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import kotlin.math.max
 
 class BottomSheetCatalogFragment(
     @StyleRes private val themeOverride: Int? = null
@@ -44,26 +44,39 @@ class BottomSheetCatalogFragment(
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         binding.buttonShow.setOnClickListener {
-            BottomSheet(this.context!!)
-                .withList(Children.ListWithCheckbox(
-                    id = "0",
-                    elements = listOf(
-                        RowWithCheckboxElement.RowWithCheckBox(
-                            id ="0",
-                            title = "Test",
-                            asset = Asset.Image(ResourcesCompat.getDrawable(resources, R.drawable.highlighted_card_custom_background, context!!.theme)!!),
-                            description = null,
-                        ),
-                        RowWithCheckboxElement.RowWithCheckBox(
-                            id ="1",
-                            title = "Another",
-                            asset = Asset.Image(ResourcesCompat.getDrawable(resources, R.drawable.highlighted_card_custom_background, context!!.theme)!!),
-                            description = "Initially selected",
-                            selected = true,
-                        )
+            val elements = mutableListOf<RowWithCheckboxElement.RowWithCheckBox>(
+                RowWithCheckboxElement.RowWithCheckBox(
+                    id ="0",
+                    title = "Title",
+                    asset = Asset.Image(ResourcesCompat.getDrawable(resources, R.drawable.highlighted_card_custom_background, context!!.theme)!!),
+                    description = "Initially selected",
+                    selected = true,
+                )
+            )
+
+            for (i in 0..max(1, (binding.inputBottomsheetNumberOfElements.text ?: "1").toInt())) {
+                elements.add(
+                    RowWithCheckboxElement.RowWithCheckBox(
+                        id ="$i",
+                        title = "Another ($i)",
+                        asset = Asset.Image(ResourcesCompat.getDrawable(resources, R.drawable.highlighted_card_custom_background, context!!.theme)!!),
+                        selected = false,
                     )
-                ))
+                )
+            }
+
+            BottomSheet(this.context!!)
+                .withHeader(
+                    title = binding.inputBottomsheetTitle.text,
+                    subtitle = binding.inputBottomsheetSubtitle.text,
+                    description = binding.inputBottomsheetDescription.text,
+                )
+                .withList(
+                    id = "0",
+                    elements = elements
+                )
                 .withOnBottomSheetClickedListener(object: OnBottomSheetClicked {
                     override fun onTapped(bottomSheet: BottomSheetView,  childrenId: String, itemId: String) {
                         Toast

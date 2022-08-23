@@ -9,14 +9,18 @@ import com.telefonica.mistica.list.ListRowView
 import com.telefonica.mistica.list.ListRowView.Companion.TYPE_IMAGE
 import com.telefonica.mistica.list.ListRowView.Companion.TYPE_LARGE_ICON
 import com.telefonica.mistica.list.ListRowView.Companion.TYPE_SMALL_ICON
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.launch
 import kotlin.properties.Delegates
 
 internal class CheckBoxListAdapter(val items: List<ListElementViewData.RowWithCheckBoxViewData>) : RecyclerView.Adapter<ListViewHolder>() {
 
     var selectedPosition by Delegates.observable(items.indexOfFirst { it.selected }) { property, oldPos, newPos ->
-        if (newPos in items.indices) {
-            notifyItemChanged(oldPos)
-            notifyItemChanged(newPos)
+        if (newPos != oldPos && newPos in items.indices) {
+            MainScope().launch {
+                notifyItemChanged(oldPos)
+                notifyItemChanged(newPos)
+            }
         }
     }
 
@@ -37,7 +41,11 @@ internal class CheckBoxListAdapter(val items: List<ListElementViewData.RowWithCh
         rowView.setAsset(item.asset)
         (rowView.getActionView() as? AppCompatRadioButton)?.let { radioButton ->
             radioButton.isChecked = selectedPosition == position
-            radioButton.setOnCheckedChangeListener { _, _ -> onItemClicked(position, item) }
+            radioButton.setOnCheckedChangeListener { _, _ ->
+                if (radioButton.isPressed) {
+                    onItemClicked(position, item)
+                }
+            }
         }
         rowView.setOnClickListener {
             onItemClicked(position, item)

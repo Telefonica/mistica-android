@@ -3,6 +3,7 @@ package com.telefonica.mistica.bottomsheet
 import android.content.Context
 import android.view.View
 import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -12,14 +13,13 @@ import com.telefonica.mistica.R
 import com.telefonica.mistica.bottomsheet.Children.ListWithCheckbox
 import com.telefonica.mistica.bottomsheet.children.list.CheckBoxListAdapter
 
-class BottomSheetView(
+open class BottomSheetView(
     context: Context,
-    children: List<Children>,
+    bottomSheetModel: BottomSheetModel,
     private val onBottomSheetClicked: OnBottomSheetClicked,
 ): BottomSheetDialog(context, R.style.BottomSheetDialogTheme) {
 
     init {
-
         val onBottomSheetClickedWrapped: InternalOnBottomSheetClicked = object : InternalOnBottomSheetClicked {
             override fun onTapped(childrenId: String, itemId: String) {
                 onBottomSheetClicked.onTapped(this@BottomSheetView, childrenId, itemId)
@@ -29,7 +29,40 @@ class BottomSheetView(
         val root = View.inflate(getContext(), R.layout.bottom_sheet_layout, null)
         setContentView(root)
         setUpBehavior(root)
+        fillData(root, bottomSheetModel, context, onBottomSheetClickedWrapped)
+    }
+
+    private fun fillData(
+        root: View,
+        bottomSheetModel: BottomSheetModel,
+        context: Context,
+        onBottomSheetClickedWrapped: InternalOnBottomSheetClicked,
+    ) {
+        fillHeader(root, bottomSheetModel)
+        fillContent(root, bottomSheetModel, context, onBottomSheetClickedWrapped)
+    }
+
+    private fun fillHeader(
+        root: View,
+        bottomSheetModel: BottomSheetModel,
+    ) {
+        val title = root.findViewById<TextView>(R.id.title)
+        val subtitle = root.findViewById<TextView>(R.id.subtitle)
+        val description = root.findViewById<TextView>(R.id.description)
+
+        title.text = bottomSheetModel.header.title
+        subtitle.text = bottomSheetModel.header.subtitle
+        description.text = bottomSheetModel.header.description
+    }
+
+    private fun fillContent(
+        root: View,
+        bottomSheetModel: BottomSheetModel,
+        context: Context,
+        onBottomSheetClickedWrapped: InternalOnBottomSheetClicked,
+    ) {
         val container = root.findViewById<LinearLayout>(R.id.container)
+        val children = bottomSheetModel.content
         children.forEach {
             container.addView(it.toView(context, onBottomSheetClickedWrapped))
         }
@@ -54,14 +87,25 @@ class BottomSheetView(
 
 class BottomSheet(val context: Context){
 
-    private val children = mutableListOf<Children>()
-
+    private var bottomSheetModel: BottomSheetModel = BottomSheetModel()
     private var onBottomSheetClicked: OnBottomSheetClicked = object: OnBottomSheetClicked {
         override fun onTapped(bottomSheet: BottomSheetView, childrenId: String, itemId: String) {}
     }
 
-    fun withList(listChildren: ListWithCheckbox): BottomSheet = this.apply {
-        children.add(listChildren)
+    fun withHeader(
+        title: String? = null,
+        subtitle: String? = null,
+        description: String? = null,
+    ): BottomSheet = this.apply {
+        bottomSheetModel = bottomSheetModel.copy(header = Header(title, subtitle, description))
+    }
+
+    fun withList(
+        id: String,
+        elements: List<RowWithCheckboxElement>,
+    ): BottomSheet = this.apply {
+        val listContent = ListWithCheckbox(id = id, elements = elements)
+        bottomSheetModel = bottomSheetModel.copy(content = bottomSheetModel.content.toMutableList().also { it.add(listContent) })
     }
 
     fun withOnBottomSheetClickedListener(onBottomSheetClicked: OnBottomSheetClicked): BottomSheet = this.apply {
@@ -69,7 +113,7 @@ class BottomSheet(val context: Context){
     }
 
     fun show() {
-        BottomSheetView(context, children, onBottomSheetClicked)
+        BottomSheetView(context, bottomSheetModel, onBottomSheetClicked)
             .show()
     }
 }
