@@ -27,8 +27,7 @@
 			android:layout_height="match_parent"
 			android:clipToPadding="false"
 			android:divider="@null"
-			android:paddingTop="8dp"
-			android:paddingBottom="8dp"
+			android:paddingBottom="16dp"
 			android:scrollbarStyle="outsideOverlay"
 			android:orientation="vertical"
 			app:layout_constraintBottom_toBottomOf="parent"
@@ -42,18 +41,18 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:paddingStart="16dp"
-				android:paddingTop="24dp"
+				android:paddingTop="8dp"
+				android:paddingBottom="8dp"
 				tools:text="Title"
-				android:textAppearance="@style/AppTheme.TextAppearance.Preset5"/>
+				android:textAppearance="@style/AppTheme.TextAppearance.Preset4"/>
 
 		<TextView
 				android:id="@+id/subtitle"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:paddingStart="16dp"
-				android:paddingTop="8dp"
 				tools:text="Subtitle"
-				android:textAppearance="@style/AppTheme.TextAppearance.Preset4"/>
+				android:textAppearance="@style/AppTheme.TextAppearance.Preset2"/>
 
 		<TextView
 				android:id="@+id/description"
@@ -61,7 +60,6 @@
 				android:layout_height="wrap_content"
 				android:paddingStart="16dp"
 				android:paddingTop="8dp"
-				android:paddingBottom="24dp"
 				tools:text="Description"
 				android:textAppearance="@style/AppTheme.TextAppearance.Preset2"
 				android:textColor="?colorTextSecondary"/>

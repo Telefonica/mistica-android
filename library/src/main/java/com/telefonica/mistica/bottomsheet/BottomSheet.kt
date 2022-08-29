@@ -50,9 +50,13 @@ open class BottomSheetView(
         val subtitle = root.findViewById<TextView>(R.id.subtitle)
         val description = root.findViewById<TextView>(R.id.description)
 
-        title.text = bottomSheetModel.header.title
-        subtitle.text = bottomSheetModel.header.subtitle
-        description.text = bottomSheetModel.header.description
+        val titleText = bottomSheetModel.header.title
+        val subtitleText = bottomSheetModel.header.subtitle
+        val descriptionText = bottomSheetModel.header.description
+
+        title.setTextOrHideKeepingTheSpace(titleText)
+        subtitle.setTextOrHide(subtitleText)
+        description.setTextOrHide(descriptionText)
     }
 
     private fun fillContent(
@@ -82,6 +86,7 @@ open class BottomSheetView(
                 override fun onSlide(bottomSheet: View, slideOffset: Float) {}
             })
         }
+        setCanceledOnTouchOutside(true)
     }
 }
 
@@ -139,3 +144,19 @@ private fun ListWithCheckbox.toView(context: Context, onBottomSheetClicked: Inte
         it.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
         it.adapter = CheckBoxListAdapter(this.elements.mapToViewData(this.id, onBottomSheetClicked))
     }
+
+private fun TextView.setTextOrHide(text: String?) {
+    if (text.isNullOrEmpty()) {
+        this.visibility = View.GONE
+    } else {
+        this.text = text
+    }
+}
+
+private fun TextView.setTextOrHideKeepingTheSpace(text: String?) {
+    if (text.isNullOrEmpty()) {
+        this.visibility = View.INVISIBLE
+    } else {
+        this.text = text
+    }
+}
