@@ -17,23 +17,17 @@ data class Header(
 sealed class Children(open val id: String) {
     data class ListWithCheckbox(
         override val id: String,
-        val elements: List<RowWithCheckboxElement>,
+        val elements: List<RowWithCheckBox>,
     ) : Children(id = id)
 }
 
-sealed class RowWithCheckboxElement(
-    open val id: String,
-) {
-    data class RowWithCheckBox(
-        override val id: String,
-        val title: String,
-        val description: String? = null,
-        val asset: Asset? = null,
-        val selected: Boolean = false,
-    ) : RowWithCheckboxElement(
-        id = id,
-    )
-}
+data class RowWithCheckBox(
+    val id: String,
+    val title: String,
+    val description: String? = null,
+    val asset: Asset? = null,
+    val selected: Boolean = false,
+)
 
 sealed class Asset {
     data class Image(val drawableRes: Drawable) : Asset()

@@ -107,7 +107,7 @@ class BottomSheet(val context: Context){
 
     fun withList(
         id: String,
-        elements: List<RowWithCheckboxElement>,
+        elements: List<RowWithCheckBox>,
     ): BottomSheet = this.apply {
         val listContent = ListWithCheckbox(id = id, elements = elements)
         bottomSheetModel = bottomSheetModel.copy(content = bottomSheetModel.content.toMutableList().also { it.add(listContent) })

@@ -5,14 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.annotation.StyleRes
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import com.telefonica.mistica.bottomsheet.Asset
 import com.telefonica.mistica.bottomsheet.BottomSheet
 import com.telefonica.mistica.bottomsheet.BottomSheetView
 import com.telefonica.mistica.bottomsheet.OnBottomSheetClicked
-import com.telefonica.mistica.bottomsheet.RowWithCheckboxElement
+import com.telefonica.mistica.bottomsheet.RowWithCheckBox
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.catalog.databinding.ScreenFragmentBottomSheetCatalogBinding
 import kotlinx.coroutines.MainScope
@@ -20,9 +19,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlin.math.max
 
-class BottomSheetCatalogFragment(
-    @StyleRes private val themeOverride: Int? = null
-) : Fragment() {
+class BottomSheetCatalogFragment() : Fragment() {
 
     private var _binding: ScreenFragmentBottomSheetCatalogBinding? = null
     private val binding get() = _binding!!
@@ -46,8 +43,8 @@ class BottomSheetCatalogFragment(
         super.onViewCreated(view, savedInstanceState)
 
         binding.buttonShow.setOnClickListener {
-            val elements = mutableListOf<RowWithCheckboxElement.RowWithCheckBox>(
-                RowWithCheckboxElement.RowWithCheckBox(
+            val elements = mutableListOf(
+                RowWithCheckBox(
                     id ="0",
                     title = "Title",
                     asset = Asset.Image(ResourcesCompat.getDrawable(resources, R.drawable.highlighted_card_custom_background, context!!.theme)!!),
@@ -58,7 +55,7 @@ class BottomSheetCatalogFragment(
 
             for (i in 0..max(1, (binding.inputBottomsheetNumberOfElements.text ?: "1").toInt())) {
                 elements.add(
-                    RowWithCheckboxElement.RowWithCheckBox(
+                    RowWithCheckBox(
                         id ="$i",
                         title = "Another ($i)",
                         asset = Asset.Image(ResourcesCompat.getDrawable(resources, R.drawable.highlighted_card_custom_background, context!!.theme)!!),
