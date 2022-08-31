@@ -23,6 +23,9 @@ android {
     lintOptions {
         warningsAsErrors true
     }
+    viewBinding {
+        enabled = true
+    }
 }
 
 task sourceJar(type: Jar) {

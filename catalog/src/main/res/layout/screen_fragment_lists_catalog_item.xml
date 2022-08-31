@@ -1,5 +1,7 @@
 <com.telefonica.mistica.list.ListRowView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	tools:viewBindingIgnore="true"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:listRowActionLayout="@layout/list_row_chevron_action"
