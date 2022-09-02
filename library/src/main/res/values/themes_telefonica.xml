@@ -11,7 +11,7 @@
         <item name="colorBackgroundContainer">@color/telefonica_color_white</item>
         <item name="colorBackgroundBrand">@color/telefonica_color_blue</item>
         <item name="colorBackgroundOverlay">@color/telefonica_color_grey_6_80_alpha</item>
-        <item name="colorBackgroundSkeleton">@color/telefonica_color_grey_1</item>
+        <item name="colorBackgroundSkeleton">@color/telefonica_color_grey_2</item>
         <item name="colorBackgroundSkeletonInverse">@color/telefonica_color_blue_70</item>
         <item name="colorNavigationBarBackground">@color/telefonica_color_blue</item>
         <item name="colorBackgroundAlternative">@color/telefonica_color_grey_1</item>
