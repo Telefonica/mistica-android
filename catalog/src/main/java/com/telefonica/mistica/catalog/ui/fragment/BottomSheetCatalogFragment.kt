@@ -85,6 +85,16 @@ class BottomSheetCatalogFragment() : Fragment() {
                         }
                     }
                 })
+                .withOnCancelListener {
+                    Toast
+                        .makeText(this@BottomSheetCatalogFragment.context, "onCancel", Toast.LENGTH_SHORT)
+                        .show()
+                }
+                .withOnDismissListener {
+                    Toast
+                        .makeText(this@BottomSheetCatalogFragment.context, "onDismiss", Toast.LENGTH_SHORT)
+                        .show()
+                }
                 .show()
         }
 
