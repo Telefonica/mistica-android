@@ -1,0 +1,48 @@
+name: "Upload release to MavenCentral"
+on:
+  release:
+    types: [published]
+jobs:
+  promote:
+    runs-on: self-hosted-novum
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Build library
+        uses: docker://docker.tuenti.io/android/novum_android_api31:2
+        with:
+          args: 'bash ./gradlew clean :library:assembleRelease :library-compose:assembleRelease :catalog:assembleRelease :catalog-compose:assembleRelease'
+
+      - name: Release library
+        uses: docker://docker.tuenti.io/android/novum_android_api31:2
+        env:
+          MOBILE_MAVENCENTRAL_USER: ${{ secrets.MOBILE_MAVENCENTRAL_USER }}
+          MOBILE_MAVENCENTRAL_PASSWORD: ${{ secrets.MOBILE_MAVENCENTRAL_PASSWORD }}
+          ORG_GRADLE_PROJECT_signingKey: ${{ secrets.ORG_GRADLE_PROJECT_SIGNINGKEY }}
+          ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.ORG_GRADLE_PROJECT_SIGNINGPASSWORD }}
+          ORG_GRADLE_PROJECT_signingKeyId: ${{ secrets.ORG_GRADLE_PROJECT_SIGNINGKEYID }}
+        with:
+          args: "bash ./gradlew :library:publishReleasePublicationToSonatypeRepository -DLIBRARY_VERSION=${{ github.event.release.tag_name }}
+          :library-compose:publishReleaseComposePublicationToSonatypeRepository -DLIBRARY_VERSION=${{ github.event.release.tag_name }}"
+
+      - name: Release catalog
+        uses: docker://docker.tuenti.io/android/novum_android_api31:2
+        env:
+          MOBILE_MAVENCENTRAL_USER: ${{ secrets.MOBILE_MAVENCENTRAL_USER }}
+          MOBILE_MAVENCENTRAL_PASSWORD: ${{ secrets.MOBILE_MAVENCENTRAL_PASSWORD }}
+          ORG_GRADLE_PROJECT_signingKey: ${{ secrets.ORG_GRADLE_PROJECT_SIGNINGKEY }}
+          ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.ORG_GRADLE_PROJECT_SIGNINGPASSWORD }}
+          ORG_GRADLE_PROJECT_signingKeyId: ${{ secrets.ORG_GRADLE_PROJECT_SIGNINGKEYID }}
+        with:
+          args: "bash ./gradlew :catalog:publishCatalogPublicationToSonatypeRepository -DLIBRARY_VERSION=${{ github.event.release.tag_name }}
+          :catalog-compose:publishCatalogComposePublicationToSonatypeRepository -DLIBRARY_VERSION=${{ github.event.release.tag_name }}"
+
+      - name: Close and promote staging repository
+        uses: docker://docker.tuenti.io/android/novum_android_api31:2
+        env:
+          MOBILE_MAVENCENTRAL_USER: ${{ secrets.MOBILE_MAVENCENTRAL_USER }}
+          MOBILE_MAVENCENTRAL_PASSWORD: ${{ secrets.MOBILE_MAVENCENTRAL_PASSWORD }}
+        with:
+          args: 'bash ./gradlew closeAndReleaseRepository'
+
