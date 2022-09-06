@@ -2,6 +2,7 @@ name: "Upload release to MavenCentral"
 on:
   release:
     types: [published]
+  workflow_dispatch:
 jobs:
   promote:
     runs-on: self-hosted-novum
@@ -23,8 +24,8 @@ jobs:
           ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.ORG_GRADLE_PROJECT_SIGNINGPASSWORD }}
           ORG_GRADLE_PROJECT_signingKeyId: ${{ secrets.ORG_GRADLE_PROJECT_SIGNINGKEYID }}
         with:
-          args: "bash ./gradlew :library:publishReleasePublicationToSonatypeRepository -DLIBRARY_VERSION=${{ github.event.release.tag_name }}
-          :library-compose:publishReleaseComposePublicationToSonatypeRepository -DLIBRARY_VERSION=${{ github.event.release.tag_name }}"
+          args: "bash ./gradlew :library:publishReleasePublicationToSonatypeRepository -DLIBRARY_VERSION=6.1.1
+          :library-compose:publishReleaseComposePublicationToSonatypeRepository -DLIBRARY_VERSION=6.1.1"
 
       - name: Release catalog
         uses: docker://docker.tuenti.io/android/novum_android_api31:2
@@ -35,8 +36,8 @@ jobs:
           ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.ORG_GRADLE_PROJECT_SIGNINGPASSWORD }}
           ORG_GRADLE_PROJECT_signingKeyId: ${{ secrets.ORG_GRADLE_PROJECT_SIGNINGKEYID }}
         with:
-          args: "bash ./gradlew :catalog:publishCatalogPublicationToSonatypeRepository -DLIBRARY_VERSION=${{ github.event.release.tag_name }}
-          :catalog-compose:publishCatalogComposePublicationToSonatypeRepository -DLIBRARY_VERSION=${{ github.event.release.tag_name }}"
+          args: "bash ./gradlew :catalog:publishCatalogPublicationToSonatypeRepository -DLIBRARY_VERSION=6.1.1
+          :catalog-compose:publishCatalogComposePublicationToSonatypeRepository -DLIBRARY_VERSION=6.1.1"
 
       - name: Close and promote staging repository
         uses: docker://docker.tuenti.io/android/novum_android_api31:2
