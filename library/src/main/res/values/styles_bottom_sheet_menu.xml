@@ -3,7 +3,7 @@
 	<style name="BottomSheetWithBackground" parent="@style/Widget.Design.BottomSheet.Modal">
 		<item name="android:background">@drawable/bottom_sheet_background</item>
 	</style>
-	<style name="BaseBottomSheetDialog" parent="MisticaTheme">
+	<style name="BaseBottomSheetDialog">
 		<item name="android:windowIsFloating">true</item>
 		<item name="bottomSheetStyle">@style/BottomSheetWithBackground</item>
 		<item name="android:windowBackground">@android:color/transparent</item>

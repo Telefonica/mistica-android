@@ -17,6 +17,8 @@ open class BottomSheetView(
     context: Context,
     bottomSheetModel: BottomSheetModel,
     private val onBottomSheetClicked: OnBottomSheetClicked,
+    private val onDismiss: () -> Unit = {},
+    private val onCancel: () -> Unit = {},
 ): BottomSheetDialog(context, R.style.BottomSheetDialogTheme) {
 
     init {
@@ -76,7 +78,7 @@ open class BottomSheetView(
         val params = (root.parent as View).layoutParams as CoordinatorLayout.LayoutParams
         val behavior = params.behavior
         if (behavior is BottomSheetBehavior<*>) {
-            behavior.setBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback() {
+            behavior.addBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback() {
                 override fun onStateChanged(bottomSheet: View, newState: Int) {
                     if (newState == BottomSheetBehavior.STATE_HIDDEN) {
                         dismiss()
@@ -87,6 +89,8 @@ open class BottomSheetView(
             })
         }
         setCanceledOnTouchOutside(true)
+        setOnDismissListener { onDismiss() }
+        setOnCancelListener { onCancel() }
     }
 }
 
@@ -96,6 +100,8 @@ class BottomSheet(val context: Context){
     private var onBottomSheetClicked: OnBottomSheetClicked = object: OnBottomSheetClicked {
         override fun onTapped(bottomSheet: BottomSheetView, childrenId: String, itemId: String) {}
     }
+    private var onDismiss: () -> Unit = {}
+    private var onCancel: () -> Unit = {}
 
     fun withHeader(
         title: String? = null,
@@ -117,9 +123,22 @@ class BottomSheet(val context: Context){
         this.onBottomSheetClicked = onBottomSheetClicked
     }
 
+    fun withOnDismissListener(onDismiss: () -> Unit): BottomSheet = this.apply {
+        this.onDismiss = onDismiss
+    }
+
+    fun withOnCancelListener(onCancel: () -> Unit): BottomSheet = this.apply {
+        this.onCancel = onCancel
+    }
+
     fun show() {
-        BottomSheetView(context, bottomSheetModel, onBottomSheetClicked)
-            .show()
+        BottomSheetView(
+            context = context,
+            bottomSheetModel = bottomSheetModel,
+            onBottomSheetClicked = onBottomSheetClicked,
+            onDismiss = onDismiss,
+            onCancel = onCancel,
+        ).show()
     }
 }
 

@@ -1,6 +1,6 @@
 # Bottom Sheet
 
-Badges are placed on an overlay, at the top right side of any other view:
+Bottom sheets are surfaces containing supplementary content that are anchored to the bottom of the screen.
 
 <p align="center">
     <img width="25%" src="../../../../../../../../doc/images/bottom_sheet/bottom_sheet.gif">
@@ -30,6 +30,16 @@ BottomSheet(context)
             }
         }
     })
+    .withOnCancelListener {
+        Toast
+            .makeText(this@BottomSheetCatalogFragment.context, "onCancel", Toast.LENGTH_SHORT)
+            .show()
+    }
+    .withOnDismissListener {
+        Toast
+            .makeText(this@BottomSheetCatalogFragment.context, "onDismiss", Toast.LENGTH_SHORT)
+            .show()
+    }
     .show()
 
 ```
