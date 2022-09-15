@@ -65,7 +65,7 @@ class BottomSheetCatalogFragment() : Fragment() {
                 )
             }
 
-            BottomSheet(this.context!!)
+            BottomSheet(this.requireContext())
                 .withHeader(
                     title = binding.inputBottomsheetTitle.text,
                     subtitle = binding.inputBottomsheetSubtitle.text,
