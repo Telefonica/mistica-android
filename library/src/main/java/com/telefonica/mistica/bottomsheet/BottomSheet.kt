@@ -1,17 +1,20 @@
 package com.telefonica.mistica.bottomsheet
 
+import android.app.Dialog
 import android.content.Context
+import android.util.DisplayMetrics
 import android.view.View
+import android.widget.FrameLayout
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.coordinatorlayout.widget.CoordinatorLayout
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.telefonica.mistica.R
 import com.telefonica.mistica.bottomsheet.Children.ListWithCheckbox
-import com.telefonica.mistica.bottomsheet.children.list.CheckBoxListAdapter
+import com.telefonica.mistica.bottomsheet.children.list.SelectableListAdapter
+import com.telefonica.mistica.list.MisticaRecyclerView
+import com.telefonica.mistica.list.layout.configureWithFullWidthLayout
 
 open class BottomSheetView(
     context: Context,
@@ -32,6 +35,21 @@ open class BottomSheetView(
         setContentView(root)
         setUpBehavior(root)
         fillData(root, bottomSheetModel, context, onBottomSheetClickedWrapped)
+        setOnShowListener { dialog ->
+            val d = dialog as BottomSheetDialog
+            val bottomSheet = d.findViewById<View>(R.id.design_bottom_sheet) as FrameLayout?
+            val coordinatorLayout = bottomSheet!!.parent as CoordinatorLayout
+            val bottomSheetBehavior: BottomSheetBehavior<*> = BottomSheetBehavior.from(bottomSheet)
+            bottomSheetBehavior.peekHeight = (getWindowHeight(dialog) * 0.85).toInt() // bottomSheet!!.height
+            coordinatorLayout.parent.requestLayout()
+        }
+    }
+
+    private fun getWindowHeight(dialog: Dialog): Int {
+        // Calculate window height for fullscreen use
+        val displayMetrics = DisplayMetrics()
+        dialog.window?.windowManager?.defaultDisplay?.getMetrics(displayMetrics)
+        return displayMetrics.heightPixels
     }
 
     private fun fillData(
@@ -48,9 +66,9 @@ open class BottomSheetView(
         root: View,
         bottomSheetModel: BottomSheetModel,
     ) {
-        val title = root.findViewById<TextView>(R.id.title)
-        val subtitle = root.findViewById<TextView>(R.id.subtitle)
-        val description = root.findViewById<TextView>(R.id.description)
+        val title = root.findViewById<TextView>(com.telefonica.mistica.R.id.title)
+        val subtitle = root.findViewById<TextView>(com.telefonica.mistica.R.id.subtitle)
+        val description = root.findViewById<TextView>(com.telefonica.mistica.R.id.description)
 
         val titleText = bottomSheetModel.header.title
         val subtitleText = bottomSheetModel.header.subtitle
@@ -67,16 +85,16 @@ open class BottomSheetView(
         context: Context,
         onBottomSheetClickedWrapped: InternalOnBottomSheetClicked,
     ) {
-        val container = root.findViewById<LinearLayout>(R.id.container)
+        val container = root.findViewById<LinearLayout>(com.telefonica.mistica.R.id.container)
         val children = bottomSheetModel.content
         children.forEach {
             container.addView(it.toView(context, onBottomSheetClickedWrapped))
         }
     }
 
-    private fun setUpBehavior(root: View) {
+    private fun setUpBehavior(root: View): CoordinatorLayout.Behavior<View>? {
         val params = (root.parent as View).layoutParams as CoordinatorLayout.LayoutParams
-        val behavior = params.behavior
+        val behavior: CoordinatorLayout.Behavior<View>? = params.behavior
         if (behavior is BottomSheetBehavior<*>) {
             behavior.addBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback() {
                 override fun onStateChanged(bottomSheet: View, newState: Int) {
@@ -87,11 +105,28 @@ open class BottomSheetView(
 
                 override fun onSlide(bottomSheet: View, slideOffset: Float) {}
             })
+
+            behavior.halfExpandedRatio = 0.7F
+            behavior.expandedOffset = ((root.parent as View).height * (1 - 0.7)).toInt()
         }
         setCanceledOnTouchOutside(true)
         setOnDismissListener { onDismiss() }
         setOnCancelListener { onCancel() }
+        return behavior
     }
+
+    fun View.setupFullHeight(maxHeight: Double = 0.3) {
+        val displayMetrics = context?.resources?.displayMetrics
+        val height = displayMetrics?.heightPixels
+        val maximalHeight = (height?.times(maxHeight))?.toInt()
+        val layoutParams = this.layoutParams
+        maximalHeight?.let {
+            layoutParams.height = it
+        }
+        this.layoutParams = layoutParams
+    }
+
+
 }
 
 class BottomSheet(val context: Context){
@@ -155,13 +190,9 @@ private fun Children.toView(context: Context, onBottomSheetClicked: InternalOnBo
 }
 
 private fun ListWithCheckbox.toView(context: Context, onBottomSheetClicked: InternalOnBottomSheetClicked): View =
-    RecyclerView(context).also {
-        it.layoutParams = RecyclerView.LayoutParams(
-            RecyclerView.LayoutParams.MATCH_PARENT,
-            RecyclerView.LayoutParams.WRAP_CONTENT
-        )
-        it.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
-        it.adapter = CheckBoxListAdapter(this.elements.mapToViewData(this.id, onBottomSheetClicked))
+    MisticaRecyclerView(context).also {
+        it.configureWithFullWidthLayout()
+        it.adapter = SelectableListAdapter(this.elements.mapToViewData(this.id, onBottomSheetClicked))
     }
 
 private fun TextView.setTextOrHide(text: String?) {

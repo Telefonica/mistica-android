@@ -47,19 +47,20 @@ class BottomSheetCatalogFragment() : Fragment() {
                 RowWithCheckBox(
                     id ="0",
                     title = "Title",
-                    asset = Asset.Image(ResourcesCompat.getDrawable(resources, R.drawable.highlighted_card_custom_background, context!!.theme)!!),
-                    description = "Initially selected",
+                    asset = getIcon(),
+                    description = getDescription(),
                     selected = true,
                 )
             )
 
-            for (i in 0..max(1, (binding.inputBottomsheetNumberOfElements.text ?: "1").toInt())) {
+            for (i in 0 until max(1, (binding.inputBottomsheetNumberOfElements.text ?: "1").toInt())) {
                 elements.add(
                     RowWithCheckBox(
                         id ="$i",
                         title = "Another ($i)",
-                        asset = Asset.Image(ResourcesCompat.getDrawable(resources, R.drawable.highlighted_card_custom_background, context!!.theme)!!),
+                        asset = getIcon(),
                         selected = false,
+                        description = getDescription(),
                     )
                 )
             }
@@ -99,4 +100,9 @@ class BottomSheetCatalogFragment() : Fragment() {
         }
 
     }
+
+    private fun getIcon() = if (binding.inputBottomsheetRowsWithIcons.isChecked()) Asset.Image(ResourcesCompat.getDrawable(resources, R.drawable
+        .highlighted_card_custom_background, context!!.theme)!!) else null
+
+    private fun getDescription() = if (binding.inputBottomsheetRowsWithDescription.isChecked()) "A description" else null
 }
