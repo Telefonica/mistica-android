@@ -48,9 +48,9 @@ open class BottomSheetView(
         root: View,
         bottomSheetModel: BottomSheetModel,
     ) {
-        val title = root.findViewById<TextView>(com.telefonica.mistica.R.id.title)
-        val subtitle = root.findViewById<TextView>(com.telefonica.mistica.R.id.subtitle)
-        val description = root.findViewById<TextView>(com.telefonica.mistica.R.id.description)
+        val title = root.findViewById<TextView>(R.id.title)
+        val subtitle = root.findViewById<TextView>(R.id.subtitle)
+        val description = root.findViewById<TextView>(R.id.description)
 
         val titleText = bottomSheetModel.header.title
         val subtitleText = bottomSheetModel.header.subtitle
@@ -67,14 +67,14 @@ open class BottomSheetView(
         context: Context,
         onBottomSheetClickedWrapped: InternalOnBottomSheetClicked,
     ) {
-        val container = root.findViewById<LinearLayout>(com.telefonica.mistica.R.id.container)
+        val container = root.findViewById<LinearLayout>(R.id.container)
         val children = bottomSheetModel.content
         children.forEach {
             container.addView(it.toView(context, onBottomSheetClickedWrapped))
         }
     }
 
-    private fun setUpBehavior(root: View): CoordinatorLayout.Behavior<View>? {
+    private fun setUpBehavior(root: View) {
         val params = (root.parent as View).layoutParams as CoordinatorLayout.LayoutParams
         val behavior: CoordinatorLayout.Behavior<View>? = params.behavior
         if (behavior is BottomSheetBehavior<*>) {
@@ -95,7 +95,6 @@ open class BottomSheetView(
         setCanceledOnTouchOutside(true)
         setOnDismissListener { onDismiss() }
         setOnCancelListener { onCancel() }
-        return behavior
     }
 
 }
