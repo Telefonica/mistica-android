@@ -102,7 +102,7 @@ class BottomSheetCatalogFragment() : Fragment() {
     }
 
     private fun getIcon() = if (binding.inputBottomsheetRowsWithIcons.isChecked()) Asset.Image(ResourcesCompat.getDrawable(resources, R.drawable
-        .highlighted_card_custom_background, context!!.theme)!!) else null
+        .highlighted_card_custom_background, requireContext().theme)!!) else null
 
     private fun getDescription() = if (binding.inputBottomsheetRowsWithDescription.isChecked()) "A description" else null
 }
