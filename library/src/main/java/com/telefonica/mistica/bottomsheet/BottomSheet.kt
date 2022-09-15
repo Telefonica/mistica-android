@@ -1,10 +1,7 @@
 package com.telefonica.mistica.bottomsheet
 
-import android.app.Dialog
 import android.content.Context
-import android.util.DisplayMetrics
 import android.view.View
-import android.widget.FrameLayout
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -35,21 +32,6 @@ open class BottomSheetView(
         setContentView(root)
         setUpBehavior(root)
         fillData(root, bottomSheetModel, context, onBottomSheetClickedWrapped)
-        setOnShowListener { dialog ->
-            val d = dialog as BottomSheetDialog
-            val bottomSheet = d.findViewById<View>(R.id.design_bottom_sheet) as FrameLayout?
-            val coordinatorLayout = bottomSheet!!.parent as CoordinatorLayout
-            val bottomSheetBehavior: BottomSheetBehavior<*> = BottomSheetBehavior.from(bottomSheet)
-            bottomSheetBehavior.peekHeight = (getWindowHeight(dialog) * 0.85).toInt() // bottomSheet!!.height
-            coordinatorLayout.parent.requestLayout()
-        }
-    }
-
-    private fun getWindowHeight(dialog: Dialog): Int {
-        // Calculate window height for fullscreen use
-        val displayMetrics = DisplayMetrics()
-        dialog.window?.windowManager?.defaultDisplay?.getMetrics(displayMetrics)
-        return displayMetrics.heightPixels
     }
 
     private fun fillData(
@@ -106,26 +88,15 @@ open class BottomSheetView(
                 override fun onSlide(bottomSheet: View, slideOffset: Float) {}
             })
 
-            behavior.halfExpandedRatio = 0.7F
-            behavior.expandedOffset = ((root.parent as View).height * (1 - 0.7)).toInt()
+            context?.resources?.displayMetrics?.heightPixels?.let { height ->
+                behavior.maxHeight = (height * 0.7).toInt()
+            }
         }
         setCanceledOnTouchOutside(true)
         setOnDismissListener { onDismiss() }
         setOnCancelListener { onCancel() }
         return behavior
     }
-
-    fun View.setupFullHeight(maxHeight: Double = 0.3) {
-        val displayMetrics = context?.resources?.displayMetrics
-        val height = displayMetrics?.heightPixels
-        val maximalHeight = (height?.times(maxHeight))?.toInt()
-        val layoutParams = this.layoutParams
-        maximalHeight?.let {
-            layoutParams.height = it
-        }
-        this.layoutParams = layoutParams
-    }
-
 
 }
 
