@@ -70,7 +70,7 @@ class ComponentCatalogActivity : AppCompatActivity() {
             Section.EMPTY_STATE -> EmptyStateScreenCatalogFragment(themeOverride)
             Section.EMPTY_STATE_CARD -> EmptyStateCardCatalogFragment()
             Section.CALLOUTS -> CalloutsCatalogFragment()
-            Section.BOTTOM_SHEET -> BottomSheetCatalogFragment()
+            Section.SHEET -> BottomSheetCatalogFragment()
             else -> OthersCatalogFragment()
         }
 
@@ -111,5 +111,5 @@ enum class Section {
     EMPTY_STATE,
     EMPTY_STATE_CARD,
     CALLOUTS,
-    BOTTOM_SHEET,
+    SHEET,
 }

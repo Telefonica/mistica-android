@@ -5,13 +5,13 @@ import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.coordinatorlayout.widget.CoordinatorLayout
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.telefonica.mistica.R
 import com.telefonica.mistica.bottomsheet.Children.ListWithCheckbox
-import com.telefonica.mistica.bottomsheet.children.list.CheckBoxListAdapter
+import com.telefonica.mistica.bottomsheet.children.list.SelectableListAdapter
+import com.telefonica.mistica.list.MisticaRecyclerView
+import com.telefonica.mistica.list.layout.configureWithFullWidthLayout
 
 open class BottomSheetView(
     context: Context,
@@ -76,7 +76,7 @@ open class BottomSheetView(
 
     private fun setUpBehavior(root: View) {
         val params = (root.parent as View).layoutParams as CoordinatorLayout.LayoutParams
-        val behavior = params.behavior
+        val behavior: CoordinatorLayout.Behavior<View>? = params.behavior
         if (behavior is BottomSheetBehavior<*>) {
             behavior.addBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback() {
                 override fun onStateChanged(bottomSheet: View, newState: Int) {
@@ -87,11 +87,16 @@ open class BottomSheetView(
 
                 override fun onSlide(bottomSheet: View, slideOffset: Float) {}
             })
+
+            context?.resources?.displayMetrics?.heightPixels?.let { height ->
+                behavior.maxHeight = (height * 0.7).toInt()
+            }
         }
         setCanceledOnTouchOutside(true)
         setOnDismissListener { onDismiss() }
         setOnCancelListener { onCancel() }
     }
+
 }
 
 class BottomSheet(val context: Context){
@@ -155,13 +160,9 @@ private fun Children.toView(context: Context, onBottomSheetClicked: InternalOnBo
 }
 
 private fun ListWithCheckbox.toView(context: Context, onBottomSheetClicked: InternalOnBottomSheetClicked): View =
-    RecyclerView(context).also {
-        it.layoutParams = RecyclerView.LayoutParams(
-            RecyclerView.LayoutParams.MATCH_PARENT,
-            RecyclerView.LayoutParams.WRAP_CONTENT
-        )
-        it.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
-        it.adapter = CheckBoxListAdapter(this.elements.mapToViewData(this.id, onBottomSheetClicked))
+    MisticaRecyclerView(context).also {
+        it.configureWithFullWidthLayout()
+        it.adapter = SelectableListAdapter(this.elements.mapToViewData(this.id, onBottomSheetClicked))
     }
 
 private fun TextView.setTextOrHide(text: String?) {

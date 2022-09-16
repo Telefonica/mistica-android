@@ -18,7 +18,7 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_gravity="start"
-				app:title="Bottom Sheet" />
+				app:title="Sheet" />
 
 		<com.telefonica.mistica.input.TextInput
 				android:id="@+id/input_bottomsheet_title"
@@ -55,6 +55,22 @@
 				android:inputType="number"
 				app:inputHint="Number of elements"
 				app:inputText="4" />
+
+		<com.telefonica.mistica.input.CheckBoxInput
+				android:id="@+id/input_bottomsheet_rows_with_icons"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginEnd="8dp"
+				android:layout_marginStart="8dp"
+				app:inputCheckText="Rows with icon" />
+
+		<com.telefonica.mistica.input.CheckBoxInput
+				android:id="@+id/input_bottomsheet_rows_with_description"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginEnd="8dp"
+				android:layout_marginStart="8dp"
+				app:inputCheckText="Rows with description" />
 
 		<com.telefonica.mistica.button.Button
 				android:id="@+id/button_show"

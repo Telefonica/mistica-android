@@ -95,7 +95,7 @@ class CatalogMainActivity : AppCompatActivity() {
             SectionItem("Tags", R.drawable.ic_tags, Section.TAG),
             SectionItem("Texts", R.drawable.ic_texts, Section.TEXTS),
             SectionItem("Titles", R.drawable.ic_texts, Section.TITLES),
-            SectionItem("Bottom Sheet", R.drawable.ic_bottomsheet, Section.BOTTOM_SHEET),
+            SectionItem("Sheet", R.drawable.ic_sheets, Section.SHEET),
         )
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder =

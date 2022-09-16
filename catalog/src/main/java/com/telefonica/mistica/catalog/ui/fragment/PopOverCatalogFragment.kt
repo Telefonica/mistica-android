@@ -58,7 +58,7 @@ class PopOverCatalogFragment : Fragment() {
         addImage: CheckBoxInput
     ) {
         it.hideKeyboard()
-        val popover = PopOver(activity!!, it)
+        val popover = PopOver(requireActivity(), it)
             .setTitle(inputTitle.text.toString())
             .setDescription(inputMessage.text.toString())
 
@@ -66,7 +66,7 @@ class PopOverCatalogFragment : Fragment() {
             popover.setImage(R.drawable.ic_popovers)
         }
 
-        popover.show(activity!!)
+        popover.show(requireActivity())
     }
 
     private fun View.hideKeyboard() {

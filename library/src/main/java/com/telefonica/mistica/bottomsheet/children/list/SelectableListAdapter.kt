@@ -13,7 +13,7 @@ import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 import kotlin.properties.Delegates
 
-internal class CheckBoxListAdapter(val items: List<ListElementViewData.RowWithCheckBoxViewData>) : RecyclerView.Adapter<ListViewHolder>() {
+internal class SelectableListAdapter(val items: List<ListElementViewData.RowWithCheckBoxViewData>) : RecyclerView.Adapter<ListViewHolder>() {
 
     private var selectedPosition by Delegates.observable(items.indexOfFirst { it.selected }) { property, oldPos, newPos ->
         if (newPos != oldPos && newPos in items.indices) {
@@ -39,6 +39,7 @@ internal class CheckBoxListAdapter(val items: List<ListElementViewData.RowWithCh
         rowView.setTitle(item.title)
         rowView.setSubtitle(item.description)
         rowView.setAsset(item.asset)
+        rowView.setBackgroundType(ListRowView.BackgroundType.TYPE_NORMAL)
         (rowView.getActionView() as? AppCompatRadioButton)?.let { radioButton ->
             radioButton.isChecked = selectedPosition == position
             radioButton.setOnCheckedChangeListener { _, _ ->
