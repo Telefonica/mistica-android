@@ -22,7 +22,6 @@ import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Rect
-import android.os.Build.VERSION_CODES
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -173,11 +172,9 @@ open class PopOverView internal constructor(context: Context) : RelativeLayout(c
     }
 
     private fun setShadow() {
-        if (android.os.Build.VERSION.SDK_INT >= VERSION_CODES.LOLLIPOP) {
-            popOverContent.elevation = resources.getDimension(R.dimen.popover_elevation)
-            popOverBottomTip.elevation = resources.getDimension(R.dimen.popover_elevation)
-            popOverTopTip.elevation = resources.getDimension(R.dimen.popover_elevation)
-        }
+        popOverContent.elevation = resources.getDimension(R.dimen.popover_elevation)
+        popOverBottomTip.elevation = resources.getDimension(R.dimen.popover_elevation)
+        popOverTopTip.elevation = resources.getDimension(R.dimen.popover_elevation)
     }
 
     private fun applyTheme(theme: PopOverTheme) {
