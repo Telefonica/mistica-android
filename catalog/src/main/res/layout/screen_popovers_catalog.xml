@@ -55,4 +55,12 @@
         android:layout_marginTop="8dp"
         android:text="Test on top" />
 
+    <com.telefonica.mistica.input.DropDownInput
+            android:id="@+id/popover_position"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:inputHint="Force PopOver position"
+            />
+
 </LinearLayout>

@@ -34,6 +34,9 @@ open class PopOver(
     open fun setImage(@DrawableRes imageRes: Int): PopOver =
         apply { popOverData = popOverData.copy(imageRes = imageRes) }
 
+    open fun setPosition(position: PopOverView.Position): PopOver =
+        apply { popOverData = popOverData.copy(position = position) }
+
     open fun setDescription(@StringRes stringId: Int): PopOver =
         apply { popOverData = popOverData.copy(description = context.getString(stringId)) }
 

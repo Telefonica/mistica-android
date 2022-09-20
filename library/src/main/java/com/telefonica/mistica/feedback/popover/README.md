@@ -20,12 +20,23 @@ setImage(@DrawableRes imageRes: Int): PopOver
 setDescription(@StringRes stringId: Int): PopOver
 setDescription(string: String): PopOver
 setListener(listener: PopOverClickListener): PopOver
+setPosition(position: PopOverView.Position = AUTO): PopOver
 
 show(activity: Activity): PopOver
 show(containerView: View): PopOver
 
 hide(): Unit
 ```
+### Positioning
+If necessary, the position of the popover can be forced to the view it is linked to.
+```kotlin
+enum class PopOverView.Position {
+    AUTO, // The position is calculated in reference to the space that the popover has.
+    TOP, // Force to appear on top of the view it is linked.
+    BOTTOM, // Force to appear on bottom of the view it is linked.
+}
+```
+
 
 A pop over can contain an image. It's size should be 40x40dp:
 <p align="center">
