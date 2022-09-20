@@ -11,7 +11,7 @@
         <item name="colorBackgroundContainer">@color/o2_classic_color_white</item>
         <item name="colorBackgroundBrand">@color/o2_classic_color_blue</item>
         <item name="colorBackgroundOverlay">@color/o2_classic_color_grey_6_60_alpha</item>
-        <item name="colorBackgroundSkeleton">@color/o2_classic_color_grey_1</item>
+        <item name="colorBackgroundSkeleton">@color/o2_classic_color_grey_2</item>
         <item name="colorBackgroundSkeletonInverse">@color/o2_classic_color_white_20_alpha</item>
         <item name="colorNavigationBarBackground">@color/o2_classic_color_blue</item>
         <item name="colorBackgroundAlternative">@color/o2_classic_color_grey_1</item>

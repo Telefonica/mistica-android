@@ -11,7 +11,7 @@
 		<item name="colorBackgroundContainer">@color/movistar_color_white</item>
 		<item name="colorBackgroundBrand">@color/movistar_color_blue</item>
 		<item name="colorBackgroundOverlay">@color/movistar_color_grey_6_60_alpha</item>
-		<item name="colorBackgroundSkeleton">@color/movistar_color_grey_1</item>
+		<item name="colorBackgroundSkeleton">@color/movistar_color_grey_2</item>
 		<item name="colorBackgroundSkeletonInverse">@color/movistar_color_blue_55</item>
 		<item name="colorNavigationBarBackground">@color/movistar_color_blue</item>
 		<item name="colorBackgroundAlternative">@color/movistar_color_grey_1</item>

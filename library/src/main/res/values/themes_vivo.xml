@@ -11,7 +11,7 @@
         <item name="colorBackgroundContainer">@color/vivo_color_white</item>
         <item name="colorBackgroundBrand">@color/vivo_color_purple</item>
         <item name="colorBackgroundOverlay">@color/vivo_color_grey_6_60_alpha</item>
-        <item name="colorBackgroundSkeleton">@color/vivo_color_grey_1</item>
+        <item name="colorBackgroundSkeleton">@color/vivo_color_grey_2</item>
         <item name="colorBackgroundSkeletonInverse">@color/vivo_color_white_20_alpha</item>
         <item name="colorNavigationBarBackground">@color/vivo_color_purple</item>
         <item name="colorBackgroundAlternative">@color/vivo_color_grey_1</item>
