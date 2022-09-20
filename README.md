@@ -1,5 +1,5 @@
-  <img alt="Mística for Android" src="./doc/images/mistica-android.svg">
-<br>
+![Mistica for Android](doc/images/mistica-android-light.svg#gh-light-mode-only)
+![Mistica for Android](doc/images/mistica-android-dark.svg#gh-dark-mode-only)
 
 [![Platform](https://img.shields.io/badge/Platform-Android-brightgreen)](https://github.com/Telefonica/mistica-android)
 [![Version](https://maven-badges.herokuapp.com/maven-central/com.telefonica/mistica/badge.png)](https://search.maven.org/artifact/com.telefonica/mistica)
