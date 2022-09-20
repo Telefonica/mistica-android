@@ -45,6 +45,7 @@ open class PopOverView internal constructor(context: Context) : RelativeLayout(c
     private lateinit var popOverDescription: TextView
     private lateinit var popOverBottomTip: View
     private lateinit var popOverCloseButton: ImageView
+    private var popOverPosition: Position = Position.AUTO
 
     private var popOverData: PopOverData? = null
     private lateinit var targetView: View
@@ -98,6 +99,7 @@ open class PopOverView internal constructor(context: Context) : RelativeLayout(c
         applyTheme(popOverData.theme)
         setTipMargin(popOverData.extraMarginForTip)
         setMargin(popOverData)
+        setPosition(popOverData)
         contentDescription = popOverData.dismissButtonContentDescription
         setShadow()
         if (dimensionsKnown) {
@@ -177,6 +179,10 @@ open class PopOverView internal constructor(context: Context) : RelativeLayout(c
         popOverTopTip.elevation = resources.getDimension(R.dimen.popover_elevation)
     }
 
+    private fun setPosition(popOverData: PopOverData) {
+        popOverData.position?.let { popOverPosition = it }
+    }
+
     private fun applyTheme(theme: PopOverTheme) {
         popOverTopTip.setBackgroundResource(theme.topTip)
         popOverBottomTip.setBackgroundResource(theme.bottomTip)
@@ -210,7 +216,11 @@ open class PopOverView internal constructor(context: Context) : RelativeLayout(c
         x = popOverViewX
         setPointerCenterX(targetViewRelativeCenterX)
 
-        val showBelow = popOverViewAboveY < 0
+        val showBelow = when (popOverPosition) {
+            Position.AUTO -> popOverViewAboveY < 0
+            Position.TOP -> false
+            Position.BOTTOM -> true
+        }
 
         popOverTopTip.visibility = if (showBelow) View.VISIBLE else View.GONE
         popOverBottomTip.visibility = if (showBelow) View.GONE else View.VISIBLE
@@ -316,5 +326,9 @@ open class PopOverView internal constructor(context: Context) : RelativeLayout(c
         fun onPopOverViewClicked(popOverView: PopOverView)
 
         fun onCloseClicked(popOverView: PopOverView)
+    }
+
+    enum class Position {
+        AUTO, TOP, BOTTOM
     }
 }

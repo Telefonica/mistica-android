@@ -10,10 +10,14 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.feedback.popover.PopOver
+import com.telefonica.mistica.feedback.popover.PopOverView
 import com.telefonica.mistica.input.CheckBoxInput
+import com.telefonica.mistica.input.DropDownInput
 import com.telefonica.mistica.input.TextInput
 
 class PopOverCatalogFragment : Fragment() {
+
+    lateinit var dropDownInput: DropDownInput
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -32,6 +36,7 @@ class PopOverCatalogFragment : Fragment() {
         val createButton: Button = view.findViewById(R.id.button_create_popover)
         val createButtonOnTop: Button = view.findViewById(R.id.button_create_popover_on_top)
         val addImage: CheckBoxInput = view.findViewById(R.id.input_popover_checkbox_image)
+        dropDownInput = view.findViewById(R.id.popover_position)
 
         createButton.setOnClickListener {
             createPopOverOnView(
@@ -49,6 +54,17 @@ class PopOverCatalogFragment : Fragment() {
                 addImage
             )
         }
+
+        with(dropDownInput.dropDown) {
+            setAdapter(
+                DropDownInput.Adapter(
+                    view.context,
+                    R.layout.dropdown_menu_popup_item,
+                    PopOverView.Position.values().map { it.name },
+                )
+            )
+            setText(PopOverView.Position.AUTO.name)
+        }
     }
 
     private fun createPopOverOnView(
@@ -61,12 +77,17 @@ class PopOverCatalogFragment : Fragment() {
         val popover = PopOver(requireActivity(), it)
             .setTitle(inputTitle.text.toString())
             .setDescription(inputMessage.text.toString())
+            .setPosition(getPositionFromDropDown())
 
         if (addImage.isChecked()) {
             popover.setImage(R.drawable.ic_popovers)
         }
 
         popover.show(requireActivity())
+    }
+
+    private fun getPositionFromDropDown(): PopOverView.Position {
+        return PopOverView.Position.values().first { it.name == dropDownInput.dropDown.text.toString() }
     }
 
     private fun View.hideKeyboard() {
