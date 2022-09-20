@@ -27,14 +27,13 @@ show(containerView: View): PopOver
 
 hide(): Unit
 ```
-
+### Positioning
 If necessary, the position of the popover can be forced to the view it is linked to.
-AUTO: The position is calculated in reference to the space that the popover has.
-TOP: Force to appear on top of the view it is linked.
-BOTTOM: Force to appear on bottom of the view it is linked.
 ```kotlin
 enum class PopOverView.Position {
-    AUTO, TOP, BOTTOM
+    AUTO, // The position is calculated in reference to the space that the popover has.
+    TOP, // Force to appear on top of the view it is linked.
+    BOTTOM, // Force to appear on bottom of the view it is linked.
 }
 ```
 
