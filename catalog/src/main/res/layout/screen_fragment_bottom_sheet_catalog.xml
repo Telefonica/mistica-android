@@ -65,6 +65,14 @@
 				app:inputCheckText="Rows with icon" />
 
 		<com.telefonica.mistica.input.CheckBoxInput
+				android:id="@+id/input_bottomsheet_rows_with_small_icons"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginEnd="8dp"
+				android:layout_marginStart="8dp"
+				app:inputCheckText="Use small icons" />
+
+		<com.telefonica.mistica.input.CheckBoxInput
 				android:id="@+id/input_bottomsheet_rows_with_description"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"

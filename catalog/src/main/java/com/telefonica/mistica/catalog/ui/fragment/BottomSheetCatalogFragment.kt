@@ -101,8 +101,15 @@ class BottomSheetCatalogFragment() : Fragment() {
 
     }
 
-    private fun getIcon() = if (binding.inputBottomsheetRowsWithIcons.isChecked()) Asset.Image(ResourcesCompat.getDrawable(resources, R.drawable
-        .highlighted_card_custom_background, requireContext().theme)!!) else null
+    private fun getIcon() = if (binding.inputBottomsheetRowsWithIcons.isChecked()) {
+        if (binding.inputBottomsheetRowsWithSmallIcons.isChecked()) {
+            Asset.SmallImage(ResourcesCompat.getDrawable(resources, R.drawable.ic_sheets, requireContext().theme)!!)
+        } else {
+            Asset.Image(ResourcesCompat.getDrawable(resources, R.drawable.highlighted_card_custom_background, requireContext().theme)!!)
+        }
+    } else {
+        null
+    }
 
     private fun getDescription() = if (binding.inputBottomsheetRowsWithDescription.isChecked()) "A description" else null
 }

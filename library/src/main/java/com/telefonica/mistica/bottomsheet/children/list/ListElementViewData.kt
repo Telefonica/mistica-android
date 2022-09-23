@@ -22,6 +22,7 @@ internal sealed class ListElementViewData(
 
 sealed class AssetViewData {
     data class Image(val drawableRes: Drawable): AssetViewData()
+    data class SmallImage(val drawableRes: Drawable): AssetViewData()
     data class SmallIcon(@DrawableRes val id: Int): AssetViewData()
     data class LargeIcon(@DrawableRes val id: Int): AssetViewData()
 }
