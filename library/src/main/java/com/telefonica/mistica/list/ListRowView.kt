@@ -1,7 +1,6 @@
 package com.telefonica.mistica.list
 
 import android.content.Context
-import android.content.res.ColorStateList
 import android.content.res.TypedArray
 import android.graphics.drawable.Drawable
 import android.text.TextUtils
@@ -13,7 +12,6 @@ import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.annotation.AttrRes
 import androidx.annotation.DrawableRes
 import androidx.annotation.IntDef
 import androidx.annotation.LayoutRes
@@ -105,6 +103,7 @@ class ListRowView @JvmOverloads constructor(
     @Retention(AnnotationRetention.SOURCE)
     @IntDef(
         TYPE_IMAGE,
+        TYPE_IMAGE_SMALL,
         TYPE_SMALL_ICON,
         TYPE_LARGE_ICON
     )
@@ -224,14 +223,34 @@ class ListRowView @JvmOverloads constructor(
 
     fun setAssetDrawable(drawable: Drawable? = null) {
         if (drawable != null) {
-            if (assetType == TYPE_IMAGE) {
-                assetCircularImageView.setImageDrawable(drawable)
-                assetCircularImageView.visibility = VISIBLE
-                assetImageView.visibility = GONE
-            } else {
-                assetImageView.setImageDrawable(drawable)
-                assetCircularImageView.visibility = GONE
-                assetImageView.visibility = VISIBLE
+            when (assetType) {
+                TYPE_IMAGE_SMALL -> {
+                    assetImageView.setImageDrawable(drawable)
+                    assetCircularImageView.visibility = GONE
+                    assetImageView.visibility = VISIBLE
+                    assetImageLayout.visibility = VISIBLE
+                }
+                TYPE_IMAGE -> {
+                    assetCircularImageView.setImageDrawable(drawable)
+                    assetCircularImageView.visibility = VISIBLE
+                    assetImageView.visibility = GONE
+                    assetImageLayout.visibility = VISIBLE
+                }
+                TYPE_SMALL_ICON -> {
+                    assetImageView.setImageDrawable(drawable)
+                    assetCircularImageView.visibility = GONE
+                    assetImageView.visibility = VISIBLE
+                    assetImageLayout.visibility = VISIBLE
+                }
+                TYPE_LARGE_ICON -> {
+                    assetImageView.setImageDrawable(drawable)
+                    assetCircularImageView.visibility = GONE
+                    assetImageView.visibility = VISIBLE
+                    assetImageLayout.visibility = VISIBLE
+                }
+                else -> {
+                    assetImageLayout.visibility = GONE
+                }
             }
             assetImageLayout.visibility = VISIBLE
         } else {
@@ -246,6 +265,10 @@ class ListRowView @JvmOverloads constructor(
 
     private fun configureAsset() {
         when (assetType) {
+            TYPE_IMAGE_SMALL -> {
+                assetImageView.setSize(24)
+                assetImageLayout.setBackgroundResource(0)
+            }
             TYPE_IMAGE -> {
                 assetImageLayout.setBackgroundResource(0)
             }
@@ -496,6 +519,7 @@ class ListRowView @JvmOverloads constructor(
         const val TYPE_IMAGE = 0
         const val TYPE_SMALL_ICON = 1
         const val TYPE_LARGE_ICON = 2
+        const val TYPE_IMAGE_SMALL = 3
 
         @BindingAdapter(
             value = ["listRowBadgeCount", "listRowBadgeDescription"],
