@@ -12,7 +12,6 @@ import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.list.ListRowView
 import com.telefonica.mistica.list.ListRowView.AssetType
 import com.telefonica.mistica.list.ListRowView.Companion.TYPE_IMAGE
-import com.telefonica.mistica.list.ListRowView.Companion.TYPE_IMAGE_SMALL
 import com.telefonica.mistica.list.ListRowView.Companion.TYPE_LARGE_ICON
 import com.telefonica.mistica.list.ListRowView.Companion.TYPE_SMALL_ICON
 import com.telefonica.mistica.list.MisticaRecyclerView
@@ -309,13 +308,6 @@ class ListsCatalogFragment : Fragment() {
                     withInverseBackground = withInverseBackground,
                 )
             },
-            {
-                it.configureView(
-                    withAsset = true,
-                    withAssetType = TYPE_IMAGE_SMALL,
-                    withInverseBackground = withInverseBackground,
-                )
-            },
         )
 
         @SuppressLint("SetTextI18n")
@@ -389,7 +381,7 @@ class ListsCatalogFragment : Fragment() {
 
         private fun getAssetResource(withAsset: Boolean, withAssetType: Int): Int? =
             if (withAsset) {
-                if (withAssetType == TYPE_IMAGE || withAssetType == TYPE_IMAGE_SMALL) {
+                if (withAssetType == TYPE_IMAGE) {
                     R.drawable.highlighted_card_custom_background
                 } else {
                     R.drawable.ic_lists
