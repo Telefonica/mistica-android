@@ -31,6 +31,7 @@ data class RowWithCheckBox(
 
 sealed class Asset {
     data class Image(val drawableRes: Drawable) : Asset()
+    data class SmallImage(val drawableRes: Drawable) : Asset()
     data class SmallIcon(@DrawableRes val id: Int) : Asset()
     data class LargeIcon(@DrawableRes val id: Int) : Asset()
 }

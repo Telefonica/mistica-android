@@ -23,6 +23,7 @@ internal fun RowWithCheckBox.mapToViewData(childrenId: String, onBottomSheetClic
 
 internal fun Asset.mapToAssetViewData(): AssetViewData = when (this) {
     is Asset.Image -> AssetViewData.Image(drawableRes)
+    is Asset.SmallImage -> AssetViewData.SmallImage(drawableRes)
     is Asset.LargeIcon -> AssetViewData.LargeIcon(id)
     is Asset.SmallIcon -> AssetViewData.SmallIcon(id)
 }

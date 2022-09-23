@@ -75,6 +75,10 @@ private fun ListRowView.setAsset(asset: AssetViewData?) {
             this.setAssetType(TYPE_SMALL_ICON)
             this.setAssetResource(asset.id)
         }
+        is AssetViewData.SmallImage -> {
+            this.setAssetType(TYPE_SMALL_ICON)
+            this.setAssetDrawable(asset.drawableRes)
+        }
         null -> {}
     }
 }
