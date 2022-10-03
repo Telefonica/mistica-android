@@ -1,13 +1,13 @@
-package com.telefonica.mistica.bottomsheet
+package com.telefonica.mistica.sheet
 
-import com.telefonica.mistica.bottomsheet.children.list.AssetViewData
-import com.telefonica.mistica.bottomsheet.children.list.ListElementViewData.RowWithCheckBoxViewData
-import com.telefonica.mistica.bottomsheet.children.list.OnClickListener
+import com.telefonica.mistica.sheet.children.list.AssetViewData
+import com.telefonica.mistica.sheet.children.list.ListElementViewData.RowWithCheckBoxViewData
+import com.telefonica.mistica.sheet.children.list.OnClickListener
 
-internal fun List<RowWithCheckBox>.mapToViewData(childrenId: String, onBottomSheetClicked: InternalOnBottomSheetClicked): List<RowWithCheckBoxViewData> = this
+internal fun List<RowWithCheckBox>.mapToViewData(childrenId: String, onBottomSheetClicked: InternalOnSheetTapped): List<RowWithCheckBoxViewData> = this
     .map { it.mapToViewData(childrenId, onBottomSheetClicked) }
 
-internal fun RowWithCheckBox.mapToViewData(childrenId: String, onBottomSheetClicked: InternalOnBottomSheetClicked): RowWithCheckBoxViewData =
+internal fun RowWithCheckBox.mapToViewData(childrenId: String, onBottomSheetClicked: InternalOnSheetTapped): RowWithCheckBoxViewData =
     RowWithCheckBoxViewData(
         id = id,
         onClickListener = object: OnClickListener {

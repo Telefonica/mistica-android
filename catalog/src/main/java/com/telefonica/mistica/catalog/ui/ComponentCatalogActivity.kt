@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.catalog.ui.fragment.BadgesCatalogFragment
-import com.telefonica.mistica.catalog.ui.fragment.BottomSheetCatalogFragment
+import com.telefonica.mistica.catalog.ui.fragment.SheetCatalogFragment
 import com.telefonica.mistica.catalog.ui.fragment.ButtonsCatalogFragment
 import com.telefonica.mistica.catalog.ui.fragment.CalloutsCatalogFragment
 import com.telefonica.mistica.catalog.ui.fragment.ControlsCatalogFragment
@@ -70,7 +70,7 @@ class ComponentCatalogActivity : AppCompatActivity() {
             Section.EMPTY_STATE -> EmptyStateScreenCatalogFragment(themeOverride)
             Section.EMPTY_STATE_CARD -> EmptyStateCardCatalogFragment()
             Section.CALLOUTS -> CalloutsCatalogFragment()
-            Section.SHEET -> BottomSheetCatalogFragment()
+            Section.SHEET -> SheetCatalogFragment()
             else -> OthersCatalogFragment()
         }
 

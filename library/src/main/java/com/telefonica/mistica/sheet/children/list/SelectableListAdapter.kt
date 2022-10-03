@@ -1,4 +1,4 @@
-package com.telefonica.mistica.bottomsheet.children.list
+package com.telefonica.mistica.sheet.children.list
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
