@@ -15,18 +15,40 @@ data class Header(
 )
 
 sealed class Children(open val id: String) {
-    data class ListWithCheckbox(
+    data class ListSingleSelection(
         override val id: String,
-        val elements: List<RowWithCheckBox>,
+        val elements: List<RowSelectable>,
+    ) : Children(id = id)
+
+    data class ListActions(
+        override val id: String,
+        val elements: List<RowAction>,
+    ) : Children(id = id)
+
+    data class ListInformative(
+        override val id: String,
+        val elements: List<RowInformative>,
     ) : Children(id = id)
 }
 
-data class RowWithCheckBox(
+data class RowSelectable(
     val id: String,
     val title: String,
     val description: String? = null,
     val asset: Asset? = null,
     val selected: Boolean = false,
+)
+
+data class RowAction(
+    val id: String,
+    val title: String,
+    val asset: Asset,
+)
+
+data class RowInformative(
+    val id: String,
+    val title: String,
+    val description: String? = null,
 )
 
 sealed class Asset {

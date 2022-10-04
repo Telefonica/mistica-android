@@ -10,7 +10,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.telefonica.mistica.R
 import com.telefonica.mistica.list.MisticaRecyclerView
 import com.telefonica.mistica.list.layout.configureWithFullWidthLayout
-import com.telefonica.mistica.sheet.Children.ListWithCheckbox
+import com.telefonica.mistica.sheet.Children.ListSingleSelection
 import com.telefonica.mistica.sheet.children.list.SelectableListAdapter
 
 open class SheetView(
@@ -118,9 +118,9 @@ class Sheet(val context: Context){
 
     fun withList(
         id: String,
-        elements: List<RowWithCheckBox>,
+        elements: List<RowSelectable>,
     ): Sheet = this.apply {
-        val listContent = ListWithCheckbox(id = id, elements = elements)
+        val listContent = ListSingleSelection(id = id, elements = elements)
         sheetModel = sheetModel.copy(content = sheetModel.content.toMutableList().also { it.add(listContent) })
     }
 
@@ -156,10 +156,10 @@ internal interface InternalOnSheetTapped {
 }
 
 private fun Children.toView(context: Context, onSheetTapped: InternalOnSheetTapped): View = when (this) {
-    is ListWithCheckbox -> this.toView(context, onSheetTapped)
+    is ListSingleSelection -> this.toView(context, onSheetTapped)
 }
 
-private fun ListWithCheckbox.toView(context: Context, onSheetTapped: InternalOnSheetTapped): View =
+private fun ListSingleSelection.toView(context: Context, onSheetTapped: InternalOnSheetTapped): View =
     MisticaRecyclerView(context).also {
         it.configureWithFullWidthLayout()
         it.adapter = SelectableListAdapter(this.elements.mapToViewData(this.id, onSheetTapped))

@@ -9,8 +9,9 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.catalog.databinding.ScreenFragmentSheetCatalogBinding
+import com.telefonica.mistica.input.DropDownInput
 import com.telefonica.mistica.sheet.Asset
-import com.telefonica.mistica.sheet.RowWithCheckBox
+import com.telefonica.mistica.sheet.RowSelectable
 import com.telefonica.mistica.sheet.Sheet
 import com.telefonica.mistica.sheet.SheetView
 import com.telefonica.mistica.sheet.onSheetTapped
@@ -42,9 +43,11 @@ class SheetCatalogFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        configureChildrenTypeSelector(view)
+
         binding.buttonShow.setOnClickListener {
             val elements = mutableListOf(
-                RowWithCheckBox(
+                RowSelectable(
                     id ="0",
                     title = "Title",
                     asset = getIcon(),
@@ -55,7 +58,7 @@ class SheetCatalogFragment : Fragment() {
 
             for (i in 0 until max(1, (binding.inputSheetNumberOfElements.text ?: "1").toInt())) {
                 elements.add(
-                    RowWithCheckBox(
+                    RowSelectable(
                         id ="$i",
                         title = "Another ($i)",
                         asset = getIcon(),
@@ -101,6 +104,37 @@ class SheetCatalogFragment : Fragment() {
 
     }
 
+    private fun configureChildrenTypeSelector(view: View) {
+        with(binding.sheetType.dropDown) {
+            setAdapter(
+                DropDownInput.Adapter(
+                    view.context,
+                    R.layout.dropdown_menu_popup_item,
+                    ComponentType.values().map { it.name }
+                ))
+            setOnItemClickListener { _, _, position, _ ->
+                binding.buttonShow.visibility = View.VISIBLE
+                when (ComponentType.values().get(position)) {
+                    ComponentType.Single_Selection -> {
+                        binding.sectionSingleSelection.visibility = View.VISIBLE
+                        binding.sectionAction.visibility = View.GONE
+                        binding.sectionInformative.visibility = View.GONE
+                    }
+                    ComponentType.Action -> {
+                        binding.sectionSingleSelection.visibility = View.GONE
+                        binding.sectionAction.visibility = View.VISIBLE
+                        binding.sectionInformative.visibility = View.GONE
+                    }
+                    ComponentType.Informative -> {
+                        binding.sectionSingleSelection.visibility = View.GONE
+                        binding.sectionAction.visibility = View.GONE
+                        binding.sectionInformative.visibility = View.VISIBLE
+                    }
+                }
+            }
+        }
+    }
+
     private fun getIcon() = if (binding.inputSheetRowsWithIcons.isChecked()) {
         if (binding.inputSheetRowsWithSmallIcons.isChecked()) {
             Asset.SmallImage(ResourcesCompat.getDrawable(resources, R.drawable.ic_sheets, requireContext().theme)!!)
@@ -112,4 +146,10 @@ class SheetCatalogFragment : Fragment() {
     }
 
     private fun getDescription() = if (binding.inputSheetRowsWithDescription.isChecked()) "A description" else null
+
+    private enum class ComponentType {
+        Single_Selection,
+        Action,
+        Informative,
+    }
 }

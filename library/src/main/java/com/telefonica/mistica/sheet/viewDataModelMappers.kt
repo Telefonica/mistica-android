@@ -4,10 +4,10 @@ import com.telefonica.mistica.sheet.children.list.AssetViewData
 import com.telefonica.mistica.sheet.children.list.ListElementViewData.RowWithCheckBoxViewData
 import com.telefonica.mistica.sheet.children.list.OnClickListener
 
-internal fun List<RowWithCheckBox>.mapToViewData(childrenId: String, onBottomSheetClicked: InternalOnSheetTapped): List<RowWithCheckBoxViewData> = this
+internal fun List<RowSelectable>.mapToViewData(childrenId: String, onBottomSheetClicked: InternalOnSheetTapped): List<RowWithCheckBoxViewData> = this
     .map { it.mapToViewData(childrenId, onBottomSheetClicked) }
 
-internal fun RowWithCheckBox.mapToViewData(childrenId: String, onBottomSheetClicked: InternalOnSheetTapped): RowWithCheckBoxViewData =
+internal fun RowSelectable.mapToViewData(childrenId: String, onBottomSheetClicked: InternalOnSheetTapped): RowWithCheckBoxViewData =
     RowWithCheckBoxViewData(
         id = id,
         onClickListener = object: OnClickListener {
