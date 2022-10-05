@@ -1,4 +1,4 @@
-package com.telefonica.mistica.sheet.children.list
+package com.telefonica.mistica.sheet.children.list.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,6 +6,9 @@ import androidx.appcompat.widget.AppCompatRadioButton
 import androidx.recyclerview.widget.RecyclerView
 import com.telefonica.mistica.R
 import com.telefonica.mistica.list.ListRowView
+import com.telefonica.mistica.sheet.children.list.ListElementViewData
+import com.telefonica.mistica.sheet.children.list.ListViewHolder
+import com.telefonica.mistica.sheet.children.list.setAsset
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 import kotlin.properties.Delegates

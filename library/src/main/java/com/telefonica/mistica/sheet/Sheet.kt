@@ -10,8 +10,12 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.telefonica.mistica.R
 import com.telefonica.mistica.list.MisticaRecyclerView
 import com.telefonica.mistica.list.layout.configureWithFullWidthLayout
+import com.telefonica.mistica.sheet.Children.ListActions
+import com.telefonica.mistica.sheet.Children.ListInformative
 import com.telefonica.mistica.sheet.Children.ListSingleSelection
-import com.telefonica.mistica.sheet.children.list.SelectableListAdapter
+import com.telefonica.mistica.sheet.children.list.adapter.ActionsListAdapter
+import com.telefonica.mistica.sheet.children.list.adapter.InformativeListAdapter
+import com.telefonica.mistica.sheet.children.list.adapter.SelectableListAdapter
 
 open class SheetView(
     context: Context,
@@ -116,11 +120,27 @@ class Sheet(val context: Context){
         sheetModel = sheetModel.copy(header = Header(title, subtitle, description))
     }
 
-    fun withList(
+    fun withSelectableList(
         id: String,
         elements: List<RowSelectable>,
     ): Sheet = this.apply {
         val listContent = ListSingleSelection(id = id, elements = elements)
+        sheetModel = sheetModel.copy(content = sheetModel.content.toMutableList().also { it.add(listContent) })
+    }
+
+    fun withActionsList(
+        id: String,
+        elements: List<RowAction>,
+    ): Sheet = this.apply {
+        val listContent = ListActions(id = id, elements = elements)
+        sheetModel = sheetModel.copy(content = sheetModel.content.toMutableList().also { it.add(listContent) })
+    }
+
+    fun withInformativeList(
+        id: String,
+        elements: List<RowInformative>,
+    ): Sheet = this.apply {
+        val listContent = ListInformative(id = id, elements = elements)
         sheetModel = sheetModel.copy(content = sheetModel.content.toMutableList().also { it.add(listContent) })
     }
 
@@ -157,12 +177,26 @@ internal interface InternalOnSheetTapped {
 
 private fun Children.toView(context: Context, onSheetTapped: InternalOnSheetTapped): View = when (this) {
     is ListSingleSelection -> this.toView(context, onSheetTapped)
+    is ListActions -> this.toView(context, onSheetTapped)
+    is ListInformative -> this.toView(context, onSheetTapped)
 }
 
 private fun ListSingleSelection.toView(context: Context, onSheetTapped: InternalOnSheetTapped): View =
     MisticaRecyclerView(context).also {
         it.configureWithFullWidthLayout()
-        it.adapter = SelectableListAdapter(this.elements.mapToViewData(this.id, onSheetTapped))
+        it.adapter = SelectableListAdapter(this.elements.mapToSelectableViewData(this.id, onSheetTapped))
+    }
+
+private fun ListActions.toView(context: Context, onSheetTapped: InternalOnSheetTapped): View =
+    MisticaRecyclerView(context).also {
+        it.configureWithFullWidthLayout()
+        it.adapter = ActionsListAdapter(this.elements.mapToActionViewData(this.id, onSheetTapped))
+    }
+
+private fun ListInformative.toView(context: Context, onSheetTapped: InternalOnSheetTapped): View =
+    MisticaRecyclerView(context).also {
+        it.configureWithFullWidthLayout()
+        it.adapter = InformativeListAdapter(this.elements.mapToInformativeViewData(this.id, onSheetTapped))
     }
 
 private fun TextView.setTextOrHide(text: String?) {

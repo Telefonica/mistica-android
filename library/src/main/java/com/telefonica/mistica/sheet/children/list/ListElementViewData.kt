@@ -18,6 +18,26 @@ internal sealed class ListElementViewData(
         id = id,
         onClickListener = onClickListener,
     )
+
+    data class RowInformativeViewData(
+        override val id: String,
+        override val onClickListener: OnClickListener,
+        val title: String,
+        val description: String? = null,
+    ): ListElementViewData(
+        id = id,
+        onClickListener = onClickListener,
+    )
+
+    data class RowActionViewData(
+        override val id: String,
+        override val onClickListener: OnClickListener,
+        val title: String,
+        val asset: AssetViewData? = null,
+    ): ListElementViewData(
+        id = id,
+        onClickListener = onClickListener,
+    )
 }
 
 sealed class AssetViewData {

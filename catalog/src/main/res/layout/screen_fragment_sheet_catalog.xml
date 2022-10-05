@@ -109,6 +109,14 @@
 				android:orientation="vertical"
 				android:visibility="gone">
 
+
+			<com.telefonica.mistica.input.CheckBoxInput
+					android:id="@+id/input_sheet_rows_with_small_icons_action"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginEnd="8dp"
+					android:layout_marginStart="8dp"
+					app:inputCheckText="Use small icons" />
 		</LinearLayout>
 
 

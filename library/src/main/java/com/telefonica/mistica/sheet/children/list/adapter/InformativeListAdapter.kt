@@ -1,12 +1,15 @@
-package com.telefonica.mistica.sheet.children.list
+package com.telefonica.mistica.sheet.children.list.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.telefonica.mistica.R
 import com.telefonica.mistica.list.ListRowView
+import com.telefonica.mistica.sheet.children.list.ListElementViewData
+import com.telefonica.mistica.sheet.children.list.ListElementViewData.RowInformativeViewData
+import com.telefonica.mistica.sheet.children.list.ListViewHolder
 
-internal class InformativeListAdapter(val items: List<ListElementViewData.RowWithCheckBoxViewData>) : RecyclerView.Adapter<ListViewHolder>() {
+internal class InformativeListAdapter(val items: List<RowInformativeViewData>) : RecyclerView.Adapter<ListViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder =
         ListViewHolder(
@@ -22,16 +25,15 @@ internal class InformativeListAdapter(val items: List<ListElementViewData.RowWit
         val item = items[position]
         rowView.setTitle(item.title)
         rowView.setSubtitle(item.description)
-        rowView.setAsset(item.asset)
         rowView.setBackgroundType(ListRowView.BackgroundType.TYPE_NORMAL)
         rowView.setOnClickListener {
-            onItemClicked(position, item)
+            onItemClicked(item)
         }
     }
 
     override fun getItemCount(): Int = items.size
 
-    private fun onItemClicked(position: Int, viewData: ListElementViewData.RowWithCheckBoxViewData) {
+    private fun onItemClicked(viewData: ListElementViewData) {
         viewData.onClickListener.onClicked(viewData.id)
     }
 }
