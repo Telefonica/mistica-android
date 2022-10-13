@@ -42,7 +42,7 @@ data class RowSelectable(
 data class RowAction(
     val id: String,
     val title: String,
-    val asset: Asset,
+    val asset: Drawable?,
 )
 
 data class RowInformative(

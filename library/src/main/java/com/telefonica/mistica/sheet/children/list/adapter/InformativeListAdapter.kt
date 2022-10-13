@@ -7,12 +7,11 @@ import com.telefonica.mistica.R
 import com.telefonica.mistica.list.ListRowView
 import com.telefonica.mistica.sheet.children.list.ListElementViewData
 import com.telefonica.mistica.sheet.children.list.ListElementViewData.RowInformativeViewData
-import com.telefonica.mistica.sheet.children.list.ListViewHolder
 
-internal class InformativeListAdapter(val items: List<RowInformativeViewData>) : RecyclerView.Adapter<ListViewHolder>() {
+internal class InformativeListAdapter(val items: List<RowInformativeViewData>) : RecyclerView.Adapter<SelectableListViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder =
-        ListViewHolder(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SelectableListViewHolder =
+        SelectableListViewHolder(
             LayoutInflater.from(parent.context).inflate(
                 R.layout.sheet_list_row_informative,
                 parent,
@@ -20,7 +19,7 @@ internal class InformativeListAdapter(val items: List<RowInformativeViewData>) :
             ) as ListRowView
         )
 
-    override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: SelectableListViewHolder, position: Int) {
         val rowView: ListRowView = holder.rowView
         val item = items[position]
         rowView.setTitle(item.title)

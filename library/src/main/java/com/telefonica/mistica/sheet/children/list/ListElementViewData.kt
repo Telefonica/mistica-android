@@ -12,7 +12,7 @@ internal sealed class ListElementViewData(
         override val onClickListener: OnClickListener,
         val title: String,
         val description: String? = null,
-        val asset: AssetViewData? = null,
+        val asset: SelectableListAssetViewData? = null,
         val selected: Boolean = false,
     ): ListElementViewData(
         id = id,
@@ -33,18 +33,18 @@ internal sealed class ListElementViewData(
         override val id: String,
         override val onClickListener: OnClickListener,
         val title: String,
-        val asset: AssetViewData? = null,
+        val asset: Drawable? = null,
     ): ListElementViewData(
         id = id,
         onClickListener = onClickListener,
     )
 }
 
-sealed class AssetViewData {
-    data class Image(val drawableRes: Drawable): AssetViewData()
-    data class SmallImage(val drawableRes: Drawable): AssetViewData()
-    data class SmallIcon(@DrawableRes val id: Int): AssetViewData()
-    data class LargeIcon(@DrawableRes val id: Int): AssetViewData()
+sealed class SelectableListAssetViewData {
+    data class Image(val drawableRes: Drawable): SelectableListAssetViewData()
+    data class SmallImage(val drawableRes: Drawable): SelectableListAssetViewData()
+    data class SmallIcon(@DrawableRes val id: Int): SelectableListAssetViewData()
+    data class LargeIcon(@DrawableRes val id: Int): SelectableListAssetViewData()
 }
 
 interface OnClickListener {

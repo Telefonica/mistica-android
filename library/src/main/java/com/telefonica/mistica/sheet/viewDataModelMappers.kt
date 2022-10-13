@@ -1,10 +1,10 @@
 package com.telefonica.mistica.sheet
 
-import com.telefonica.mistica.sheet.children.list.AssetViewData
 import com.telefonica.mistica.sheet.children.list.ListElementViewData.RowActionViewData
 import com.telefonica.mistica.sheet.children.list.ListElementViewData.RowInformativeViewData
 import com.telefonica.mistica.sheet.children.list.ListElementViewData.RowWithCheckBoxViewData
 import com.telefonica.mistica.sheet.children.list.OnClickListener
+import com.telefonica.mistica.sheet.children.list.SelectableListAssetViewData
 
 internal fun List<RowSelectable>.mapToSelectableViewData(childrenId: String, onBottomSheetClicked: InternalOnSheetTapped): List<RowWithCheckBoxViewData> = this
     .map { it.mapToViewData(childrenId, onBottomSheetClicked) }
@@ -50,12 +50,12 @@ internal fun RowAction.mapToViewData(childrenId: String, onBottomSheetClicked: I
             }
         },
         title = title,
-        asset = asset.mapToAssetViewData(),
+        asset = asset,
     )
 
-internal fun Asset.mapToAssetViewData(): AssetViewData = when (this) {
-    is Asset.Image -> AssetViewData.Image(drawableRes)
-    is Asset.SmallImage -> AssetViewData.SmallImage(drawableRes)
-    is Asset.LargeIcon -> AssetViewData.LargeIcon(id)
-    is Asset.SmallIcon -> AssetViewData.SmallIcon(id)
+internal fun Asset.mapToAssetViewData(): SelectableListAssetViewData = when (this) {
+    is Asset.Image -> SelectableListAssetViewData.Image(drawableRes)
+    is Asset.SmallImage -> SelectableListAssetViewData.SmallImage(drawableRes)
+    is Asset.LargeIcon -> SelectableListAssetViewData.LargeIcon(id)
+    is Asset.SmallIcon -> SelectableListAssetViewData.SmallIcon(id)
 }

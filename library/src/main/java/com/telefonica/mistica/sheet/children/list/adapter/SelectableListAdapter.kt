@@ -7,13 +7,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.telefonica.mistica.R
 import com.telefonica.mistica.list.ListRowView
 import com.telefonica.mistica.sheet.children.list.ListElementViewData
-import com.telefonica.mistica.sheet.children.list.ListViewHolder
 import com.telefonica.mistica.sheet.children.list.setAsset
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 import kotlin.properties.Delegates
 
-internal class SelectableListAdapter(val items: List<ListElementViewData.RowWithCheckBoxViewData>) : RecyclerView.Adapter<ListViewHolder>() {
+internal class SelectableListAdapter(val items: List<ListElementViewData.RowWithCheckBoxViewData>) : RecyclerView.Adapter<SelectableListViewHolder>() {
 
     private var selectedPosition by Delegates.observable(items.indexOfFirst { it.selected }) { property, oldPos, newPos ->
         if (newPos != oldPos && newPos in items.indices) {
@@ -24,8 +23,8 @@ internal class SelectableListAdapter(val items: List<ListElementViewData.RowWith
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder =
-        ListViewHolder(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SelectableListViewHolder =
+        SelectableListViewHolder(
             LayoutInflater.from(parent.context).inflate(
                 R.layout.sheet_list_row_selectable_item,
                 parent,
@@ -33,7 +32,7 @@ internal class SelectableListAdapter(val items: List<ListElementViewData.RowWith
             ) as ListRowView
         )
 
-    override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: SelectableListViewHolder, position: Int) {
         val rowView: ListRowView = holder.rowView
         val item = items[position]
         rowView.setTitle(item.title)

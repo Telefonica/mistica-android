@@ -1,5 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.telefonica.mistica.list.ListRowView xmlns:android="http://schemas.android.com/apk/res/android"
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
 		xmlns:app="http://schemas.android.com/apk/res-auto"
+		xmlns:tools="http://schemas.android.com/tools"
 		android:layout_width="match_parent"
-		android:layout_height="wrap_content" />
+		android:layout_height="wrap_content"
+		android:paddingTop="16dp"
+		android:paddingBottom="16dp"
+		tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout"
+		>
+
+
+	<FrameLayout
+			android:id="@+id/sheet_row_informative_asset_image_layout"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="16dp"
+			android:visibility="gone"
+			app:layout_constraintLeft_toLeftOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			tools:visibility="visible"
+			>
+
+		<ImageView
+				android:id="@+id/sheet_row_informative_asset_image_default"
+				android:layout_width="24dp"
+				android:layout_height="24dp"
+				android:layout_gravity="top"
+				android:importantForAccessibility="no"
+				android:visibility="gone"
+				tools:src="@tools:sample/avatars"
+				tools:visibility="visible"
+				/>
+
+		<ImageView
+				android:id="@+id/sheet_row_informative_asset_image_small"
+				android:layout_width="16dp"
+				android:layout_height="16dp"
+				android:layout_gravity="top"
+				android:importantForAccessibility="no"
+				android:visibility="gone"
+				tools:src="@tools:sample/avatars"
+				tools:visibility="visible"
+				/>
+
+		<ImageView
+				android:id="@+id/sheet_row_informative_asset_image_bullet"
+				android:layout_width="24dp"
+				android:layout_height="24dp"
+				android:layout_gravity="top"
+				android:importantForAccessibility="no"
+				android:visibility="gone"
+				tools:src="@tools:sample/avatars"
+				tools:visibility="visible"
+				/>
+
+	</FrameLayout>
+
+	<LinearLayout
+			android:id="@+id/sheet_row_informative_texts_container"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="8dp"
+			android:orientation="vertical"
+			app:layout_constraintLeft_toRightOf="@id/sheet_row_informative_asset_image_layout"
+			app:layout_constraintTop_toTopOf="parent"
+			>
+
+		<TextView
+				android:id="@+id/sheet_row_informative_title_text"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textAppearance="@style/AppTheme.TextAppearance.Preset3"
+				android:textColor="?colorTextPrimary"
+				tools:text="Title"
+				/>
+
+		<TextView
+				android:id="@+id/sheet_row_informative_description_text"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="2dp"
+				android:layout_marginBottom="2dp"
+				android:minHeight="20dp"
+				android:textAppearance="@style/AppTheme.TextAppearance.Preset2"
+				android:textColor="?colorTextSecondary"
+				android:visibility="gone"
+				tools:text="Description"
+				tools:visibility="visible"
+				/>
+
+	</LinearLayout>
+
+</merge>

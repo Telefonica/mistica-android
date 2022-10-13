@@ -1,5 +1,6 @@
 package com.telefonica.mistica.catalog.ui.fragment
 
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -212,10 +213,10 @@ class SheetCatalogFragment : Fragment() {
         null
     }
 
-    private fun getActionIcon() = if (binding.inputSheetRowsWithSmallIconsAction.isChecked()) {
-        Asset.SmallImage(ResourcesCompat.getDrawable(resources, R.drawable.ic_sheets, requireContext().theme)!!)
+    private fun getActionIcon(): Drawable? = if (binding.inputSheetRowsWithIconsAction.isChecked()) {
+        ResourcesCompat.getDrawable(resources, R.drawable.ic_sheets, requireContext().theme)!!
     } else {
-        Asset.Image(ResourcesCompat.getDrawable(resources, R.drawable.highlighted_card_custom_background, requireContext().theme)!!)
+        null
     }
 
     private fun getDescription() = if (binding.inputSheetRowsWithDescription.isChecked()) "A description" else null

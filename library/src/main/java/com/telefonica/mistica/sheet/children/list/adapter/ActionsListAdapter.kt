@@ -1,33 +1,36 @@
 package com.telefonica.mistica.sheet.children.list.adapter
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.telefonica.mistica.R
-import com.telefonica.mistica.list.ListRowView
 import com.telefonica.mistica.sheet.children.list.ListElementViewData
 import com.telefonica.mistica.sheet.children.list.ListElementViewData.RowActionViewData
-import com.telefonica.mistica.sheet.children.list.ListViewHolder
-import com.telefonica.mistica.sheet.children.list.setAsset
 
-internal class ActionsListAdapter(val items: List<RowActionViewData>) : RecyclerView.Adapter<ListViewHolder>() {
+internal class ActionsListAdapter(val items: List<RowActionViewData>) : RecyclerView.Adapter<ActionsListViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder =
-        ListViewHolder(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ActionsListViewHolder =
+        ActionsListViewHolder(
             LayoutInflater.from(parent.context).inflate(
-                R.layout.sheet_list_row_informative,
+                R.layout.sheet_list_row_action,
                 parent,
                 false
-            ) as ListRowView
+            ) as ConstraintLayout
         )
 
-    override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-        val rowView: ListRowView = holder.rowView
+    override fun onBindViewHolder(holder: ActionsListViewHolder, position: Int) {
         val item = items[position]
-        rowView.setTitle(item.title)
-        rowView.setAsset(item.asset)
-        rowView.setBackgroundType(ListRowView.BackgroundType.TYPE_NORMAL)
-        rowView.setOnClickListener {
+        holder.text.text = item.title
+        if (item.asset != null) {
+            holder.icon.setImageDrawable(item.asset)
+            holder.icon.visibility = View.VISIBLE
+        } else {
+            holder.icon.visibility = View.GONE
+        }
+
+        holder.layout.setOnClickListener {
             onItemClicked(item)
         }
     }
