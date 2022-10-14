@@ -196,7 +196,7 @@ private fun ListActions.toView(context: Context, onSheetTapped: InternalOnSheetT
 private fun ListInformative.toView(context: Context, onSheetTapped: InternalOnSheetTapped): View =
     MisticaRecyclerView(context).also {
         it.configureWithFullWidthLayout()
-        it.adapter = InformativeListAdapter(this.elements.mapToInformativeViewData(this.id, onSheetTapped))
+        it.adapter = InformativeListAdapter(this.elements.mapToInformativeViewData())
     }
 
 private fun TextView.setTextOrHide(text: String?) {

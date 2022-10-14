@@ -35,7 +35,7 @@ data class RowSelectable(
     val id: String,
     val title: String,
     val description: String? = null,
-    val asset: Asset? = null,
+    val asset: SelectableAsset? = null,
     val selected: Boolean = false,
 )
 
@@ -49,11 +49,19 @@ data class RowInformative(
     val id: String,
     val title: String,
     val description: String? = null,
+    val icon: InformativeIcon
 )
 
-sealed class Asset {
-    data class Image(val drawableRes: Drawable) : Asset()
-    data class SmallImage(val drawableRes: Drawable) : Asset()
-    data class SmallIcon(@DrawableRes val id: Int) : Asset()
-    data class LargeIcon(@DrawableRes val id: Int) : Asset()
+sealed class SelectableAsset {
+    data class Image(val drawableRes: Drawable) : SelectableAsset()
+    data class SmallImage(val drawableRes: Drawable) : SelectableAsset()
+    data class SmallIcon(@DrawableRes val id: Int) : SelectableAsset()
+    data class LargeIcon(@DrawableRes val id: Int) : SelectableAsset()
+}
+
+sealed class InformativeIcon {
+    object Bullet: InformativeIcon()
+    data class Icon(val drawableRes: Drawable) : InformativeIcon()
+    data class SmallIcon(val drawableRes: Drawable) : InformativeIcon()
+
 }

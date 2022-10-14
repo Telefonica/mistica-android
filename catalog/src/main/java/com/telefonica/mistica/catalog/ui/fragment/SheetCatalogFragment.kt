@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.catalog.databinding.ScreenFragmentSheetCatalogBinding
 import com.telefonica.mistica.input.DropDownInput
-import com.telefonica.mistica.sheet.Asset
+import com.telefonica.mistica.sheet.SelectableAsset
 import com.telefonica.mistica.sheet.RowAction
 import com.telefonica.mistica.sheet.RowInformative
 import com.telefonica.mistica.sheet.RowSelectable
@@ -205,9 +205,9 @@ class SheetCatalogFragment : Fragment() {
 
     private fun getIcon() = if (binding.inputSheetRowsWithIcons.isChecked()) {
         if (binding.inputSheetRowsWithSmallIcons.isChecked()) {
-            Asset.SmallImage(ResourcesCompat.getDrawable(resources, R.drawable.ic_sheets, requireContext().theme)!!)
+            SelectableAsset.SmallImage(ResourcesCompat.getDrawable(resources, R.drawable.ic_sheets, requireContext().theme)!!)
         } else {
-            Asset.Image(ResourcesCompat.getDrawable(resources, R.drawable.highlighted_card_custom_background, requireContext().theme)!!)
+            SelectableAsset.Image(ResourcesCompat.getDrawable(resources, R.drawable.highlighted_card_custom_background, requireContext().theme)!!)
         }
     } else {
         null

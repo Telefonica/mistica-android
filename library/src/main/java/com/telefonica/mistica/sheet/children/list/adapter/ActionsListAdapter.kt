@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.telefonica.mistica.R
-import com.telefonica.mistica.sheet.children.list.ListElementViewData
 import com.telefonica.mistica.sheet.children.list.ListElementViewData.RowActionViewData
 
 internal class ActionsListAdapter(val items: List<RowActionViewData>) : RecyclerView.Adapter<ActionsListViewHolder>() {
@@ -37,7 +36,7 @@ internal class ActionsListAdapter(val items: List<RowActionViewData>) : Recycler
 
     override fun getItemCount(): Int = items.size
 
-    private fun onItemClicked(viewData: ListElementViewData) {
+    private fun onItemClicked(viewData: RowActionViewData) {
         viewData.onClickListener.onClicked(viewData.id)
     }
 }

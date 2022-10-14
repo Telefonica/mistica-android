@@ -16,7 +16,7 @@
 			android:layout_marginTop="8dp"
 			android:importantForAccessibility="no"
 			android:layout_gravity="center"
-			app:srcCompat="@drawable/bottomsheet_handler"
+			app:srcCompat="@drawable/sheet_handler"
 			/>
 
 	<TextView
