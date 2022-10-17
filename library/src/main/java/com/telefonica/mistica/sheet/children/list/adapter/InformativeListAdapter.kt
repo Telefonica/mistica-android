@@ -24,7 +24,12 @@ internal class InformativeListAdapter(val items: List<RowInformativeViewData>) :
     override fun onBindViewHolder(holder: InformativeListViewHolder, position: Int) {
         val item = items[position]
         holder.text.text = item.title
-        holder.description.text = item.description
+        if (item.description != null) {
+            holder.description.text = item.description
+            holder.description.visibility = View.VISIBLE
+        } else {
+            holder.description.visibility = View.GONE
+        }
 
         when (item.icon) {
             Bullet -> {

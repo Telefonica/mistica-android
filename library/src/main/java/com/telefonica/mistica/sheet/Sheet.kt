@@ -5,6 +5,8 @@ import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.coordinatorlayout.widget.CoordinatorLayout
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.telefonica.mistica.R
@@ -188,14 +190,14 @@ private fun ListSingleSelection.toView(context: Context, onSheetTapped: Internal
     }
 
 private fun ListActions.toView(context: Context, onSheetTapped: InternalOnSheetTapped): View =
-    MisticaRecyclerView(context).also {
-        it.configureWithFullWidthLayout()
+    RecyclerView(context).also {
+        it.layoutManager = LinearLayoutManager(context)
         it.adapter = ActionsListAdapter(this.elements.mapToActionViewData(this.id, onSheetTapped))
     }
 
 private fun ListInformative.toView(context: Context): View =
-    MisticaRecyclerView(context).also {
-        it.configureWithFullWidthLayout()
+    RecyclerView(context).also {
+        it.layoutManager = LinearLayoutManager(context)
         it.adapter = InformativeListAdapter(this.elements.mapToInformativeViewData())
     }
 
