@@ -189,7 +189,11 @@ class SheetCatalogFragment : Fragment() {
             RowAction(
                 id = "$numElements",
                 title = "Delete",
-                asset =  ResourcesCompat.getDrawable(resources, R.drawable.ic_sheet_action_destructive_demo, requireContext().theme),
+                asset =  if (binding.inputSheetRowsWithIconsAction.isChecked()) {
+                    ResourcesCompat.getDrawable(resources, R.drawable.ic_sheet_action_destructive_demo, requireContext().theme)
+                } else {
+                    null
+                } ,
                 style = RowActionStyle.Destructive
             )
         )
