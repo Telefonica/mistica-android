@@ -111,7 +111,7 @@ class SheetCatalogFragment : Fragment() {
                 id = "0",
                 title = "Title",
                 asset = getIcon(),
-                description = getDescription(),
+                description = getSelectableRowsDescription(),
                 selected = true,
             )
         )
@@ -123,7 +123,7 @@ class SheetCatalogFragment : Fragment() {
                     title = "Another ($i)",
                     asset = getIcon(),
                     selected = false,
-                    description = getDescription(),
+                    description = getSelectableRowsDescription(),
                 )
             )
         }
@@ -136,7 +136,7 @@ class SheetCatalogFragment : Fragment() {
             RowInformative(
                 id = "0",
                 title = "Title",
-                description = getDescription(),
+                description = getInformativeRowsDescription(),
                 icon = getInformativeIcon(),
             )
         )
@@ -146,7 +146,7 @@ class SheetCatalogFragment : Fragment() {
                 RowInformative(
                     id = "$i",
                     title = "Another ($i)",
-                    description = getDescription(),
+                    description = getInformativeRowsDescription(),
                     icon = getInformativeIcon(),
                 )
             )
@@ -259,7 +259,9 @@ class SheetCatalogFragment : Fragment() {
         null
     }
 
-    private fun getDescription() = if (binding.inputSheetRowsWithDescription.isChecked()) "A description" else null
+    private fun getSelectableRowsDescription() = if (binding.inputSheetRowsWithDescription.isChecked()) "A description" else null
+
+    private fun getInformativeRowsDescription() = if (binding.inputSheetActionRowsWithDescription.isChecked()) "A description" else null
 
     private enum class ComponentType {
         Single_Selection,
