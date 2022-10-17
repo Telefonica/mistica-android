@@ -5,6 +5,7 @@ import com.telefonica.mistica.sheet.children.list.ListElementViewData.RowActionV
 import com.telefonica.mistica.sheet.children.list.ListElementViewData.RowInformativeViewData
 import com.telefonica.mistica.sheet.children.list.ListElementViewData.RowWithCheckBoxViewData
 import com.telefonica.mistica.sheet.children.list.OnClickListener
+import com.telefonica.mistica.sheet.children.list.RowActionStyleViewData
 import com.telefonica.mistica.sheet.children.list.SelectableListAssetViewData
 
 internal fun List<RowSelectable>.mapToSelectableViewData(childrenId: String, onBottomSheetClicked: InternalOnSheetTapped): List<RowWithCheckBoxViewData> = this
@@ -48,6 +49,10 @@ internal fun RowAction.mapToViewData(childrenId: String, onBottomSheetClicked: I
         },
         title = title,
         asset = asset,
+        rowActionStyle = when (style) {
+            RowActionStyle.Default -> RowActionStyleViewData.Default
+            RowActionStyle.Destructive -> RowActionStyleViewData.Destructive
+        }
     )
 
 internal fun SelectableAsset.mapToAssetViewData(): SelectableListAssetViewData = when (this) {

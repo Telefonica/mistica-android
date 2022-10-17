@@ -178,7 +178,7 @@ internal interface InternalOnSheetTapped {
 private fun Children.toView(context: Context, onSheetTapped: InternalOnSheetTapped): View = when (this) {
     is ListSingleSelection -> this.toView(context, onSheetTapped)
     is ListActions -> this.toView(context, onSheetTapped)
-    is ListInformative -> this.toView(context, onSheetTapped)
+    is ListInformative -> this.toView(context)
 }
 
 private fun ListSingleSelection.toView(context: Context, onSheetTapped: InternalOnSheetTapped): View =
@@ -193,7 +193,7 @@ private fun ListActions.toView(context: Context, onSheetTapped: InternalOnSheetT
         it.adapter = ActionsListAdapter(this.elements.mapToActionViewData(this.id, onSheetTapped))
     }
 
-private fun ListInformative.toView(context: Context, onSheetTapped: InternalOnSheetTapped): View =
+private fun ListInformative.toView(context: Context): View =
     MisticaRecyclerView(context).also {
         it.configureWithFullWidthLayout()
         it.adapter = InformativeListAdapter(this.elements.mapToInformativeViewData())

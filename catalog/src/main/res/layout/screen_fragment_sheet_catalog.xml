@@ -129,6 +129,14 @@
 				android:orientation="vertical"
 				android:visibility="gone">
 
+			<com.telefonica.mistica.input.DropDownInput
+					android:id="@+id/informative_icon_type"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					android:layout_marginBottom="16dp"
+					app:inputHint="Icon type" />
+
 		</LinearLayout>
 
 		<com.telefonica.mistica.button.Button

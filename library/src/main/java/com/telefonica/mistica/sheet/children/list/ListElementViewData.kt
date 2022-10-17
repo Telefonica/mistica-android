@@ -21,7 +21,7 @@ internal sealed class ListElementViewData(
         override val id: String,
         val title: String,
         val description: String? = null,
-        val icon: InformativeIconViewData
+        val icon: InformativeIconViewData,
     ): ListElementViewData(
         id = id,
     )
@@ -30,11 +30,14 @@ internal sealed class ListElementViewData(
         override val id: String,
         val onClickListener: OnClickListener,
         val title: String,
-        val asset: Drawable? = null,
+        val rowActionStyle: RowActionStyleViewData = RowActionStyleViewData.Default,
+        val asset: Drawable?,
     ): ListElementViewData(
         id = id,
     )
 }
+
+enum class RowActionStyleViewData {Default, Destructive}
 
 sealed class SelectableListAssetViewData {
     data class Image(val drawableRes: Drawable): SelectableListAssetViewData()

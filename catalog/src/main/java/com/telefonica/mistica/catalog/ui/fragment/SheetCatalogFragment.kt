@@ -11,10 +11,12 @@ import androidx.fragment.app.Fragment
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.catalog.databinding.ScreenFragmentSheetCatalogBinding
 import com.telefonica.mistica.input.DropDownInput
-import com.telefonica.mistica.sheet.SelectableAsset
+import com.telefonica.mistica.sheet.InformativeIcon
 import com.telefonica.mistica.sheet.RowAction
+import com.telefonica.mistica.sheet.RowActionStyle
 import com.telefonica.mistica.sheet.RowInformative
 import com.telefonica.mistica.sheet.RowSelectable
+import com.telefonica.mistica.sheet.SelectableAsset
 import com.telefonica.mistica.sheet.Sheet
 import com.telefonica.mistica.sheet.SheetView
 import com.telefonica.mistica.sheet.onSheetTapped
@@ -46,6 +48,7 @@ class SheetCatalogFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         configureChildrenTypeSelector(view)
+        configureInformativeIconTypeSelector(view)
 
         binding.buttonShow.setOnClickListener {
             buildAndShowSheet()
@@ -134,6 +137,7 @@ class SheetCatalogFragment : Fragment() {
                 id = "0",
                 title = "Title",
                 description = getDescription(),
+                icon = getInformativeIcon(),
             )
         )
 
@@ -143,11 +147,22 @@ class SheetCatalogFragment : Fragment() {
                     id = "$i",
                     title = "Another ($i)",
                     description = getDescription(),
+                    icon = getInformativeIcon(),
                 )
             )
         }
 
         return elements
+    }
+
+    private fun getInformativeIcon(): InformativeIcon = try {
+        when (InformativeIconType.valueOf(binding.informativeIconType.dropDown.text.toString())) {
+            InformativeIconType.Bullet -> InformativeIcon.Bullet
+            InformativeIconType.Small -> InformativeIcon.SmallIcon(ResourcesCompat.getDrawable(resources, R.drawable.ic_sheets, requireContext().theme)!!)
+            InformativeIconType.Regular -> InformativeIcon.Icon(ResourcesCompat.getDrawable(resources, R.drawable.ic_sheets, requireContext().theme)!!)
+        }
+    } catch (e: Exception) {
+        InformativeIcon.Bullet
     }
 
     private fun buildActionsListElements(): List<RowAction> {
@@ -159,7 +174,8 @@ class SheetCatalogFragment : Fragment() {
             )
         )
 
-        for (i in 0 until max(1, (binding.inputSheetNumberOfElements.text ?: "1").toInt())) {
+        val numElements = max(1, (binding.inputSheetNumberOfElements.text ?: "1").toInt())
+        for (i in 0 until numElements - 1) {
             elements.add(
                 RowAction(
                     id = "$i",
@@ -168,6 +184,15 @@ class SheetCatalogFragment : Fragment() {
                 )
             )
         }
+
+        elements.add(
+            RowAction(
+                id = "$numElements",
+                title = "Delete",
+                asset =  ResourcesCompat.getDrawable(resources, R.drawable.ic_sheet_action_destructive_demo, requireContext().theme),
+                style = RowActionStyle.Destructive
+            )
+        )
 
         return elements
     }
@@ -203,6 +228,17 @@ class SheetCatalogFragment : Fragment() {
         }
     }
 
+    private fun configureInformativeIconTypeSelector(view: View) {
+        with(binding.informativeIconType.dropDown) {
+            setAdapter(
+                DropDownInput.Adapter(
+                    view.context,
+                    R.layout.dropdown_menu_popup_item,
+                    InformativeIconType.values().map { it.name }
+                ))
+        }
+    }
+
     private fun getIcon() = if (binding.inputSheetRowsWithIcons.isChecked()) {
         if (binding.inputSheetRowsWithSmallIcons.isChecked()) {
             SelectableAsset.SmallImage(ResourcesCompat.getDrawable(resources, R.drawable.ic_sheets, requireContext().theme)!!)
@@ -226,4 +262,7 @@ class SheetCatalogFragment : Fragment() {
         Action,
         Informative,
     }
+
+    private enum class InformativeIconType {Bullet, Small, Regular}
+
 }

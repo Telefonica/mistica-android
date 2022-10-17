@@ -42,6 +42,7 @@ data class RowSelectable(
 data class RowAction(
     val id: String,
     val title: String,
+    val style: RowActionStyle = RowActionStyle.Default,
     val asset: Drawable?,
 )
 
@@ -63,5 +64,6 @@ sealed class InformativeIcon {
     object Bullet: InformativeIcon()
     data class Icon(val drawableRes: Drawable) : InformativeIcon()
     data class SmallIcon(val drawableRes: Drawable) : InformativeIcon()
-
 }
+
+enum class RowActionStyle { Default, Destructive }

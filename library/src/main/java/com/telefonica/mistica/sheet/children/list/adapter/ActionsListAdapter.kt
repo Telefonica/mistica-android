@@ -7,6 +7,8 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.telefonica.mistica.R
 import com.telefonica.mistica.sheet.children.list.ListElementViewData.RowActionViewData
+import com.telefonica.mistica.sheet.children.list.RowActionStyleViewData
+import com.telefonica.mistica.util.getThemeColor
 
 internal class ActionsListAdapter(val items: List<RowActionViewData>) : RecyclerView.Adapter<ActionsListViewHolder>() {
 
@@ -28,7 +30,10 @@ internal class ActionsListAdapter(val items: List<RowActionViewData>) : Recycler
         } else {
             holder.icon.visibility = View.GONE
         }
-
+        when (item.rowActionStyle) {
+            RowActionStyleViewData.Default -> holder.text.setTextColor(holder.text.context.getThemeColor(R.attr.colorTextPrimary))
+            RowActionStyleViewData.Destructive -> holder.text.setTextColor(holder.text.context.getThemeColor(R.attr.colorTextLinkDanger))
+        }
         holder.layout.setOnClickListener {
             onItemClicked(item)
         }
