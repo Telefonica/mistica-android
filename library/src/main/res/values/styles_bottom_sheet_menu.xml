@@ -3,17 +3,17 @@
 	<style name="BottomSheetWithBackground" parent="@style/Widget.Design.BottomSheet.Modal">
 		<item name="android:background">@drawable/bottom_sheet_background</item>
 	</style>
-	<style name="BaseBottomSheetDialog">
+	<style name="BaseSheetDialog">
 		<item name="android:windowIsFloating">true</item>
 		<item name="bottomSheetStyle">@style/BottomSheetWithBackground</item>
 		<item name="android:windowBackground">@android:color/transparent</item>
-		<item name="android:windowAnimationStyle">@style/BottomSheetDialogAnimation</item>
+		<item name="android:windowAnimationStyle">@style/SheetDialogAnimation</item>
 	</style>
 
-	<style name="BottomSheetDialogTheme" parent="BaseBottomSheetDialog" />
+	<style name="SheetDialogTheme" parent="BaseSheetDialog" />
 
-	<style name="BottomSheetDialogAnimation">
-		<item name="android:windowEnterAnimation">@anim/mistica_bottom_sheet_slide_in_animation</item>
-		<item name="android:windowExitAnimation">@anim/mistica_bottom_sheet_slide_out_animation</item>
+	<style name="SheetDialogAnimation">
+		<item name="android:windowEnterAnimation">@anim/mistica_sheet_slide_in_animation</item>
+		<item name="android:windowExitAnimation">@anim/mistica_sheet_slide_out_animation</item>
 	</style>
 </resources>

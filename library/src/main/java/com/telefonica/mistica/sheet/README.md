@@ -1,4 +1,4 @@
-# Bottom Sheet
+# Sheet
 
 Bottom sheets are surfaces containing supplementary content that are anchored to the bottom of the screen.
 
@@ -6,10 +6,10 @@ Bottom sheets are surfaces containing supplementary content that are anchored to
     <img width="25%" src="../../../../../../../../doc/images/bottom_sheet/bottom_sheet.gif">
 </p>
 
-To use it, use `com.telefonica.mistica.bottomsheet.BottomSheet`
+To use it, use `com.telefonica.mistica.sheet.Sheet`
 
 ```kotlin
-BottomSheet(context)
+Sheet(context)
     .withHeader(
         title = "Title",
         subtitle = "Subtitle",
@@ -19,10 +19,10 @@ BottomSheet(context)
         id = "list-0",
         elements = listOf()
     )
-    .withOnBottomSheetClickedListener(object: OnBottomSheetClicked {
-        override fun onTapped(bottomSheet: BottomSheetView,  childrenId: String, itemId: String) {
+    .withOnSheetTappedListener(object: OnSheetTapped {
+        override fun onTapped(sheet: SheetView,  childrenId: String, itemId: String) {
             Toast
-                .makeText(this@BottomSheetCatalogFragment.context, "Onclicked: [Children: $childrenId, item:$itemId]", Toast.LENGTH_SHORT)
+                .makeText(context, "Onclicked: [Children: $childrenId, item:$itemId]", Toast.LENGTH_SHORT)
                 .show()
             MainScope().launch {
                 delay(500)
@@ -32,12 +32,12 @@ BottomSheet(context)
     })
     .withOnCancelListener {
         Toast
-            .makeText(this@BottomSheetCatalogFragment.context, "onCancel", Toast.LENGTH_SHORT)
+            .makeText(context, "onCancel", Toast.LENGTH_SHORT)
             .show()
     }
     .withOnDismissListener {
         Toast
-            .makeText(this@BottomSheetCatalogFragment.context, "onDismiss", Toast.LENGTH_SHORT)
+            .makeText(context, "onDismiss", Toast.LENGTH_SHORT)
             .show()
     }
     .show()

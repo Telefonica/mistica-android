@@ -1,9 +1,9 @@
-package com.telefonica.mistica.bottomsheet
+package com.telefonica.mistica.sheet
 
 import android.graphics.drawable.Drawable
 import androidx.annotation.DrawableRes
 
-data class BottomSheetModel(
+data class SheetModel(
     val header: Header = Header(),
     val content: List<Children> = emptyList()
 )

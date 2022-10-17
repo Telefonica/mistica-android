@@ -1,4 +1,4 @@
-package com.telefonica.mistica.bottomsheet.children.list
+package com.telefonica.mistica.sheet.children.list
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -27,7 +27,7 @@ internal class SelectableListAdapter(val items: List<ListElementViewData.RowWith
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder =
         ListViewHolder(
             LayoutInflater.from(parent.context).inflate(
-                R.layout.bottom_sheet_list_row_item,
+                R.layout.sheet_list_row_selectable_item,
                 parent,
                 false
             ) as ListRowView

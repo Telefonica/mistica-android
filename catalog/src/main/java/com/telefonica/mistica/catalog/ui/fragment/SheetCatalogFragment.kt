@@ -7,21 +7,21 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
-import com.telefonica.mistica.bottomsheet.Asset
-import com.telefonica.mistica.bottomsheet.BottomSheet
-import com.telefonica.mistica.bottomsheet.BottomSheetView
-import com.telefonica.mistica.bottomsheet.OnBottomSheetClicked
-import com.telefonica.mistica.bottomsheet.RowWithCheckBox
 import com.telefonica.mistica.catalog.R
-import com.telefonica.mistica.catalog.databinding.ScreenFragmentBottomSheetCatalogBinding
+import com.telefonica.mistica.catalog.databinding.ScreenFragmentSheetCatalogBinding
+import com.telefonica.mistica.sheet.Asset
+import com.telefonica.mistica.sheet.RowWithCheckBox
+import com.telefonica.mistica.sheet.Sheet
+import com.telefonica.mistica.sheet.SheetView
+import com.telefonica.mistica.sheet.onSheetTapped
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlin.math.max
 
-class BottomSheetCatalogFragment() : Fragment() {
+class SheetCatalogFragment : Fragment() {
 
-    private var _binding: ScreenFragmentBottomSheetCatalogBinding? = null
+    private var _binding: ScreenFragmentSheetCatalogBinding? = null
     private val binding get() = _binding!!
 
 
@@ -30,7 +30,7 @@ class BottomSheetCatalogFragment() : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = ScreenFragmentBottomSheetCatalogBinding.inflate(inflater, container, false)
+        _binding = ScreenFragmentSheetCatalogBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -53,7 +53,7 @@ class BottomSheetCatalogFragment() : Fragment() {
                 )
             )
 
-            for (i in 0 until max(1, (binding.inputBottomsheetNumberOfElements.text ?: "1").toInt())) {
+            for (i in 0 until max(1, (binding.inputSheetNumberOfElements.text ?: "1").toInt())) {
                 elements.add(
                     RowWithCheckBox(
                         id ="$i",
@@ -65,35 +65,35 @@ class BottomSheetCatalogFragment() : Fragment() {
                 )
             }
 
-            BottomSheet(this.requireContext())
+            Sheet(this.requireContext())
                 .withHeader(
-                    title = binding.inputBottomsheetTitle.text,
-                    subtitle = binding.inputBottomsheetSubtitle.text,
-                    description = binding.inputBottomsheetDescription.text,
+                    title = binding.inputSheetTitle.text,
+                    subtitle = binding.inputSheetSubtitle.text,
+                    description = binding.inputSheetDescription.text,
                 )
                 .withList(
                     id = "0",
                     elements = elements
                 )
-                .withOnBottomSheetClickedListener(object: OnBottomSheetClicked {
-                    override fun onTapped(bottomSheet: BottomSheetView,  childrenId: String, itemId: String) {
+                .withOnSheetTappedListener(object: onSheetTapped {
+                    override fun onTapped(sheetView: SheetView, childrenId: String, itemId: String) {
                         Toast
-                            .makeText(this@BottomSheetCatalogFragment.context, "Onclicked: [Children: $childrenId, item:$itemId]", Toast.LENGTH_SHORT)
+                            .makeText(this@SheetCatalogFragment.context, "Onclicked: [Children: $childrenId, item:$itemId]", Toast.LENGTH_SHORT)
                             .show()
                         MainScope().launch {
                             delay(500)
-                            bottomSheet.dismiss()
+                            sheetView.dismiss()
                         }
                     }
                 })
                 .withOnCancelListener {
                     Toast
-                        .makeText(this@BottomSheetCatalogFragment.context, "onCancel", Toast.LENGTH_SHORT)
+                        .makeText(this@SheetCatalogFragment.context, "onCancel", Toast.LENGTH_SHORT)
                         .show()
                 }
                 .withOnDismissListener {
                     Toast
-                        .makeText(this@BottomSheetCatalogFragment.context, "onDismiss", Toast.LENGTH_SHORT)
+                        .makeText(this@SheetCatalogFragment.context, "onDismiss", Toast.LENGTH_SHORT)
                         .show()
                 }
                 .show()
@@ -101,8 +101,8 @@ class BottomSheetCatalogFragment() : Fragment() {
 
     }
 
-    private fun getIcon() = if (binding.inputBottomsheetRowsWithIcons.isChecked()) {
-        if (binding.inputBottomsheetRowsWithSmallIcons.isChecked()) {
+    private fun getIcon() = if (binding.inputSheetRowsWithIcons.isChecked()) {
+        if (binding.inputSheetRowsWithSmallIcons.isChecked()) {
             Asset.SmallImage(ResourcesCompat.getDrawable(resources, R.drawable.ic_sheets, requireContext().theme)!!)
         } else {
             Asset.Image(ResourcesCompat.getDrawable(resources, R.drawable.highlighted_card_custom_background, requireContext().theme)!!)
@@ -111,5 +111,5 @@ class BottomSheetCatalogFragment() : Fragment() {
         null
     }
 
-    private fun getDescription() = if (binding.inputBottomsheetRowsWithDescription.isChecked()) "A description" else null
+    private fun getDescription() = if (binding.inputSheetRowsWithDescription.isChecked()) "A description" else null
 }
