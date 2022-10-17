@@ -40,7 +40,8 @@
 			android:visibility="gone"
 			tools:src="@tools:sample/avatars"
 			tools:visibility="visible"
-			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintTop_toTopOf="@id/sheet_row_informative_title_text"
+			app:layout_constraintBottom_toBottomOf="@id/sheet_row_informative_title_text"
 			app:layout_constraintStart_toStartOf="parent"
 			/>
 
