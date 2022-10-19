@@ -3,6 +3,7 @@ package com.telefonica.mistica.sheet
 import android.content.Context
 import android.view.View
 import android.widget.LinearLayout
+import android.widget.Space
 import android.widget.TextView
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -57,12 +58,14 @@ open class SheetView(
         val title = root.findViewById<TextView>(R.id.title)
         val subtitle = root.findViewById<TextView>(R.id.subtitle)
         val description = root.findViewById<TextView>(R.id.description)
+        val titleSpace =  root.findViewById<Space>(R.id.title_space)
 
         val titleText = sheetModel.header.title
         val subtitleText = sheetModel.header.subtitle
         val descriptionText = sheetModel.header.description
 
-        title.setTextOrHideKeepingTheSpace(titleText)
+        title.setTextOrHide(titleText)
+        titleSpace.setSpaceOrGone(titleText)
         subtitle.setTextOrHide(subtitleText)
         description.setTextOrHide(descriptionText)
     }
@@ -209,10 +212,10 @@ private fun TextView.setTextOrHide(text: String?) {
     }
 }
 
-private fun TextView.setTextOrHideKeepingTheSpace(text: String?) {
+private fun Space.setSpaceOrGone(text: String?) {
     if (text.isNullOrEmpty()) {
-        this.visibility = View.INVISIBLE
+        this.visibility = View.VISIBLE
     } else {
-        this.text = text
+        this.visibility = View.GONE
     }
 }

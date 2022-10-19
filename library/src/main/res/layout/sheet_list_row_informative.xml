@@ -42,7 +42,7 @@
 			android:visibility="gone"
 			tools:src="@tools:sample/avatars"
 			tools:visibility="visible"
-			android:layout_marginTop="4dp"
+			android:layout_marginTop="2dp"
 			app:layout_constraintTop_toTopOf="@id/sheet_row_informative_title_text"
 			app:layout_constraintStart_toStartOf="parent"
 			/>
@@ -78,6 +78,23 @@
 			android:layout_marginTop="4dp"
 			app:layout_constraintTop_toBottomOf="@+id/sheet_row_informative_title_text"
 			app:layout_constraintStart_toStartOf="@+id/sheet_row_informative_title_text"
+			/>
+
+
+	<androidx.constraintlayout.widget.Barrier
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			app:constraint_referenced_ids="sheet_row_informative_title_text,sheet_row_informative_subtitle_text"
+			android:id="@+id/sheet_row_action_text_barrier"
+			app:barrierDirection="bottom"
+			/>
+
+	<Space
+			android:id="@+id/sheet_row_informative_bottom_extra_space"
+			android:layout_width="match_parent"
+			android:layout_height="8dp"
+			android:visibility="visible"
+			app:layout_constraintTop_toBottomOf="@+id/sheet_row_action_text_barrier"
 			/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
