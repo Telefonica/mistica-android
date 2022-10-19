@@ -120,7 +120,7 @@ class SheetCatalogFragment : Fragment() {
             elements.add(
                 RowSelectable(
                     id = "$i",
-                    title = "Another ($i)",
+                    title = "Description ($i)",
                     asset = getIcon(),
                     selected = false,
                     description = getSelectableRowsDescription(),
@@ -145,7 +145,7 @@ class SheetCatalogFragment : Fragment() {
             elements.add(
                 RowInformative(
                     id = "$i",
-                    title = "Another ($i)",
+                    title = "Description",
                     description = getInformativeRowsDescription(),
                     icon = getInformativeIcon(),
                 )
@@ -166,20 +166,14 @@ class SheetCatalogFragment : Fragment() {
     }
 
     private fun buildActionsListElements(): List<RowAction> {
-        val elements = mutableListOf(
-            RowAction(
-                id = "0",
-                title = "Title",
-                asset = getActionIcon()
-            )
-        )
+        val elements = mutableListOf<RowAction>()
 
         val numElements = max(1, (binding.inputSheetNumberOfElements.text ?: "1").toInt())
-        for (i in 0 until numElements - 1) {
+        for (i in 0 until numElements ) {
             elements.add(
                 RowAction(
                     id = "$i",
-                    title = "Another ($i)",
+                    title = "Action Label",
                     asset = getActionIcon()
                 )
             )

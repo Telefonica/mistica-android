@@ -68,6 +68,7 @@
 					android:textColor="?colorTextSecondary"
 					/>
 			<androidx.core.widget.NestedScrollView
+					android:paddingTop="4dp"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:fillViewport="true"
