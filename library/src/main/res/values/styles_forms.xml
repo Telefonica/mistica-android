@@ -14,6 +14,7 @@
         <item name="errorTextAppearance">@style/AppTheme.Forms.TextInputLayout.Error</item>
         <item name="helperTextTextAppearance">@style/AppTheme.Forms.TextInputLayout.Helper</item>
         <item name="errorIconDrawable">@null</item>
+        <item name="android:textColorHint">?colorTextSecondary</item>
     </style>
 
     <style name="AppTheme.Forms.TextInputLayout.EditText.TextArea">
@@ -29,9 +30,18 @@
     <style name="AppTheme.Forms.TextInputLayout.Error" parent="TextAppearance.Design.Error">
         <item name="android:textColor">?attr/colorError</item>
         <item name="colorError">?colorError</item>
+        <!-- Preset1 font style -->
+        <item name="android:textSize">12sp</item>
+        <item name="lineHeight">16sp</item>
+        <item name="fontFamily">?font_family_regular</item>
     </style>
 
-    <style name="AppTheme.Forms.TextInputLayout.Hint" parent="TextAppearance.Design.Hint" />
+    <style name="AppTheme.Forms.TextInputLayout.Hint" parent="TextAppearance.Design.Hint">
+        <!-- Preset1 font style -->
+        <item name="android:textSize">12sp</item>
+        <item name="lineHeight">16sp</item>
+        <item name="fontFamily">?font_family_regular</item>
+    </style>
 
     <style name="AppTheme.Forms.TextInputLayout.Helper" parent="AppTheme.TextAppearance.Preset1" />
 
