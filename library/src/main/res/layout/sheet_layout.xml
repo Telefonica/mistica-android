@@ -16,7 +16,7 @@
 			android:layout_marginTop="8dp"
 			android:importantForAccessibility="no"
 			android:layout_gravity="center"
-			app:srcCompat="@drawable/bottomsheet_handler"
+			app:srcCompat="@drawable/sheet_handler"
 			/>
 
 	<TextView
@@ -28,6 +28,13 @@
 			android:paddingBottom="8dp"
 			tools:text="Title"
 			android:textAppearance="@style/AppTheme.TextAppearance.Preset4"
+			/>
+
+	<Space
+			android:id="@+id/title_space"
+			android:layout_width="match_parent"
+			android:layout_height="24dp"
+			android:visibility="gone"
 			/>
 
 	<androidx.core.widget.NestedScrollView
@@ -68,9 +75,11 @@
 					android:textColor="?colorTextSecondary"
 					/>
 			<androidx.core.widget.NestedScrollView
+					android:paddingTop="4dp"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:fillViewport="true"
+					android:paddingBottom="16dp"
 					>
 				<LinearLayout
 						android:id="@+id/container"
