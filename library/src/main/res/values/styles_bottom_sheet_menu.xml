@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<style name="BottomSheetWithBackground" parent="@style/Widget.Design.BottomSheet.Modal">
-		<item name="android:background">@drawable/bottom_sheet_background</item>
+		<item name="android:background">@drawable/sheet_background</item>
 	</style>
 	<style name="BaseSheetDialog">
 		<item name="android:windowIsFloating">true</item>

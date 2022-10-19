@@ -56,6 +56,23 @@
 				app:inputHint="Number of elements"
 				app:inputText="4" />
 
+		<com.telefonica.mistica.input.DropDownInput
+				android:id="@+id/sheet_type"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="8dp"
+				android:layout_marginBottom="16dp"
+				app:inputHint="Children type" />
+
+	<LinearLayout
+			android:id="@+id/section_single_selection"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:gravity="center_horizontal"
+			android:orientation="vertical"
+			android:visibility="gone"
+			>
+
 		<com.telefonica.mistica.input.CheckBoxInput
 				android:id="@+id/input_sheet_rows_with_icons"
 				android:layout_width="match_parent"
@@ -80,12 +97,61 @@
 				android:layout_marginStart="8dp"
 				app:inputCheckText="Rows with description" />
 
+	</LinearLayout>
+
+		<LinearLayout
+				android:id="@+id/section_action"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:gravity="center_horizontal"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+
+			<com.telefonica.mistica.input.CheckBoxInput
+					android:id="@+id/input_sheet_rows_with_icons_action"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginEnd="8dp"
+					android:layout_marginStart="8dp"
+					app:inputCheckText="With icons" />
+		</LinearLayout>
+
+
+
+		<LinearLayout
+				android:id="@+id/section_informative"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:gravity="center_horizontal"
+				android:orientation="vertical"
+				android:visibility="gone">
+
+			<com.telefonica.mistica.input.DropDownInput
+					android:id="@+id/informative_icon_type"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					android:layout_marginBottom="16dp"
+					app:inputHint="Icon type" />
+
+			<com.telefonica.mistica.input.CheckBoxInput
+					android:id="@+id/input_sheet_action_rows_with_description"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginEnd="8dp"
+					android:layout_marginStart="8dp"
+					app:inputCheckText="Rows with description" />
+
+		</LinearLayout>
+
 		<com.telefonica.mistica.button.Button
 				android:id="@+id/button_show"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_marginTop="12dp"
 				android:text="Show Feedback"
+				android:visibility="gone"
 				/>
 
 	</LinearLayout>

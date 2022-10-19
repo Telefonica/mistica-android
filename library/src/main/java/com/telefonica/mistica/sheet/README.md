@@ -41,5 +41,45 @@ Sheet(context)
             .show()
     }
     .show()
+```
 
+There are different sheet components:
+
+## Selection
+A list of selectable row items:
+```kotlin
+mutableListOf(
+    RowSelectable(
+        id = "0",
+        title = "Title",
+        asset = getIcon(),
+        description = getDescription(),
+        selected = true,
+    )
+)
+```
+
+## Informative
+A list of description items with a title, a description and an icon that can be a bullet, small or bigger icon:
+```kotlin
+mutableListOf(
+    RowInformative(
+        id = "0",
+        title = "Title",
+        description = getDescription(),
+        icon = getInformativeIcon(),
+    )
+)
+```
+
+## Action
+A list of different actions with a name, an icon (optional) and a style (regular or destructive)
+```kotlin
+mutableListOf(
+    RowAction(
+        id = "0",
+        title = "Title",
+        asset = getActionIcon()
+    )
+)
 ```

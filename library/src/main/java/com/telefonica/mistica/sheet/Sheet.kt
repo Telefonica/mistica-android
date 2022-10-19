@@ -3,15 +3,22 @@ package com.telefonica.mistica.sheet
 import android.content.Context
 import android.view.View
 import android.widget.LinearLayout
+import android.widget.Space
 import android.widget.TextView
 import androidx.coordinatorlayout.widget.CoordinatorLayout
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.telefonica.mistica.R
 import com.telefonica.mistica.list.MisticaRecyclerView
 import com.telefonica.mistica.list.layout.configureWithFullWidthLayout
-import com.telefonica.mistica.sheet.Children.ListWithCheckbox
-import com.telefonica.mistica.sheet.children.list.SelectableListAdapter
+import com.telefonica.mistica.sheet.Children.ListActions
+import com.telefonica.mistica.sheet.Children.ListInformative
+import com.telefonica.mistica.sheet.Children.ListSingleSelection
+import com.telefonica.mistica.sheet.children.list.adapter.ActionsListAdapter
+import com.telefonica.mistica.sheet.children.list.adapter.InformativeListAdapter
+import com.telefonica.mistica.sheet.children.list.adapter.SelectableListAdapter
 
 open class SheetView(
     context: Context,
@@ -51,12 +58,14 @@ open class SheetView(
         val title = root.findViewById<TextView>(R.id.title)
         val subtitle = root.findViewById<TextView>(R.id.subtitle)
         val description = root.findViewById<TextView>(R.id.description)
+        val titleSpace =  root.findViewById<Space>(R.id.title_space)
 
         val titleText = sheetModel.header.title
         val subtitleText = sheetModel.header.subtitle
         val descriptionText = sheetModel.header.description
 
-        title.setTextOrHideKeepingTheSpace(titleText)
+        title.setTextOrHide(titleText)
+        titleSpace.setSpaceOrGone(titleText)
         subtitle.setTextOrHide(subtitleText)
         description.setTextOrHide(descriptionText)
     }
@@ -116,11 +125,27 @@ class Sheet(val context: Context){
         sheetModel = sheetModel.copy(header = Header(title, subtitle, description))
     }
 
-    fun withList(
+    fun withSelectableList(
         id: String,
-        elements: List<RowWithCheckBox>,
+        elements: List<RowSelectable>,
     ): Sheet = this.apply {
-        val listContent = ListWithCheckbox(id = id, elements = elements)
+        val listContent = ListSingleSelection(id = id, elements = elements)
+        sheetModel = sheetModel.copy(content = sheetModel.content.toMutableList().also { it.add(listContent) })
+    }
+
+    fun withActionsList(
+        id: String,
+        elements: List<RowAction>,
+    ): Sheet = this.apply {
+        val listContent = ListActions(id = id, elements = elements)
+        sheetModel = sheetModel.copy(content = sheetModel.content.toMutableList().also { it.add(listContent) })
+    }
+
+    fun withInformativeList(
+        id: String,
+        elements: List<RowInformative>,
+    ): Sheet = this.apply {
+        val listContent = ListInformative(id = id, elements = elements)
         sheetModel = sheetModel.copy(content = sheetModel.content.toMutableList().also { it.add(listContent) })
     }
 
@@ -156,13 +181,27 @@ internal interface InternalOnSheetTapped {
 }
 
 private fun Children.toView(context: Context, onSheetTapped: InternalOnSheetTapped): View = when (this) {
-    is ListWithCheckbox -> this.toView(context, onSheetTapped)
+    is ListSingleSelection -> this.toView(context, onSheetTapped)
+    is ListActions -> this.toView(context, onSheetTapped)
+    is ListInformative -> this.toView(context)
 }
 
-private fun ListWithCheckbox.toView(context: Context, onSheetTapped: InternalOnSheetTapped): View =
+private fun ListSingleSelection.toView(context: Context, onSheetTapped: InternalOnSheetTapped): View =
     MisticaRecyclerView(context).also {
         it.configureWithFullWidthLayout()
-        it.adapter = SelectableListAdapter(this.elements.mapToViewData(this.id, onSheetTapped))
+        it.adapter = SelectableListAdapter(this.elements.mapToSelectableViewData(this.id, onSheetTapped))
+    }
+
+private fun ListActions.toView(context: Context, onSheetTapped: InternalOnSheetTapped): View =
+    RecyclerView(context).also {
+        it.layoutManager = LinearLayoutManager(context)
+        it.adapter = ActionsListAdapter(this.elements.mapToActionViewData(this.id, onSheetTapped))
+    }
+
+private fun ListInformative.toView(context: Context): View =
+    RecyclerView(context).also {
+        it.layoutManager = LinearLayoutManager(context)
+        it.adapter = InformativeListAdapter(this.elements.mapToInformativeViewData())
     }
 
 private fun TextView.setTextOrHide(text: String?) {
@@ -173,10 +212,10 @@ private fun TextView.setTextOrHide(text: String?) {
     }
 }
 
-private fun TextView.setTextOrHideKeepingTheSpace(text: String?) {
+private fun Space.setSpaceOrGone(text: String?) {
     if (text.isNullOrEmpty()) {
-        this.visibility = View.INVISIBLE
+        this.visibility = View.VISIBLE
     } else {
-        this.text = text
+        this.visibility = View.GONE
     }
 }
