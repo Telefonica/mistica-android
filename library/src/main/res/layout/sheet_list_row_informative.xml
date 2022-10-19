@@ -42,8 +42,8 @@
 			android:visibility="gone"
 			tools:src="@tools:sample/avatars"
 			tools:visibility="visible"
+			android:layout_marginTop="4dp"
 			app:layout_constraintTop_toTopOf="@id/sheet_row_informative_title_text"
-			app:layout_constraintBottom_toBottomOf="@id/sheet_row_informative_title_text"
 			app:layout_constraintStart_toStartOf="parent"
 			/>
 
