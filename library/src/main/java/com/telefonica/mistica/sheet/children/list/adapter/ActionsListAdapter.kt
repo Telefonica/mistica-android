@@ -3,6 +3,7 @@ package com.telefonica.mistica.sheet.children.list.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.telefonica.mistica.R
@@ -37,6 +38,7 @@ internal class ActionsListAdapter(val items: List<RowActionViewData>) : Recycler
         holder.layout.setOnClickListener {
             onItemClicked(item)
         }
+        holder.layout.background = AppCompatResources.getDrawable(holder.layout.context, R.drawable.list_row_background)
     }
 
     override fun getItemCount(): Int = items.size
