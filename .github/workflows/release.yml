@@ -24,25 +24,7 @@ jobs:
           ORG_GRADLE_PROJECT_signingKeyId: ${{ secrets.ORG_GRADLE_PROJECT_SIGNINGKEYID }}
         with:
           args: "bash ./gradlew :library:publishReleasePublicationToSonatypeRepository -DLIBRARY_VERSION=${{ github.event.release.tag_name }}
-          :library-compose:publishReleaseComposePublicationToSonatypeRepository -DLIBRARY_VERSION=${{ github.event.release.tag_name }}"
-
-      - name: Release catalog
-        uses: docker://docker.tuenti.io/android/novum_android_api31:2
-        env:
-          MOBILE_MAVENCENTRAL_USER: ${{ secrets.MOBILE_MAVENCENTRAL_USER }}
-          MOBILE_MAVENCENTRAL_PASSWORD: ${{ secrets.MOBILE_MAVENCENTRAL_PASSWORD }}
-          ORG_GRADLE_PROJECT_signingKey: ${{ secrets.ORG_GRADLE_PROJECT_SIGNINGKEY }}
-          ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.ORG_GRADLE_PROJECT_SIGNINGPASSWORD }}
-          ORG_GRADLE_PROJECT_signingKeyId: ${{ secrets.ORG_GRADLE_PROJECT_SIGNINGKEYID }}
-        with:
-          args: "bash ./gradlew :catalog:publishCatalogPublicationToSonatypeRepository -DLIBRARY_VERSION=${{ github.event.release.tag_name }}
-          :catalog-compose:publishCatalogComposePublicationToSonatypeRepository -DLIBRARY_VERSION=${{ github.event.release.tag_name }}"
-
-      - name: Close and promote staging repository
-        uses: docker://docker.tuenti.io/android/novum_android_api31:2
-        env:
-          MOBILE_MAVENCENTRAL_USER: ${{ secrets.MOBILE_MAVENCENTRAL_USER }}
-          MOBILE_MAVENCENTRAL_PASSWORD: ${{ secrets.MOBILE_MAVENCENTRAL_PASSWORD }}
-        with:
-          args: 'bash ./gradlew closeAndReleaseRepository'
-
+          :library-compose:publishReleaseComposePublicationToSonatypeRepository -DLIBRARY_VERSION=${{ github.event.release.tag_name }}
+          :catalog:publishCatalogPublicationToSonatypeRepository -DLIBRARY_VERSION=${{ github.event.release.tag_name }}
+          :catalog-compose:publishCatalogComposePublicationToSonatypeRepository -DLIBRARY_VERSION=${{ github.event.release.tag_name }}
+          --max-workers 1 closeAndReleaseStagingRepository"
