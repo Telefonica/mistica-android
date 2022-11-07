@@ -16,16 +16,18 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import coil.compose.rememberImagePainter
+import coil.compose.rememberAsyncImagePainter
+import coil.request.ImageRequest
 import coil.transform.CircleCropTransformation
 import com.telefonica.mistica.compose.catalog.R
 import com.telefonica.mistica.compose.list.BackgroundType
-import com.telefonica.mistica.compose.shape.Chevron
-import com.telefonica.mistica.compose.tag.Tag
-import com.telefonica.mistica.compose.shape.Circle
 import com.telefonica.mistica.compose.list.ListRowItem
+import com.telefonica.mistica.compose.shape.Chevron
+import com.telefonica.mistica.compose.shape.Circle
+import com.telefonica.mistica.compose.tag.Tag
 import com.telefonica.mistica.compose.theme.MisticaTheme
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_PROMO
 
@@ -132,7 +134,7 @@ fun samples() = listOf(
     ),
 
     ListItem(
-        headline = Tag(content ="PROMO").withStyle(TYPE_PROMO),
+        headline = Tag(content = "PROMO").withStyle(TYPE_PROMO),
         title = TITLE,
         subtitle = SUBTITLE,
         action = { Chevron() },
@@ -273,11 +275,11 @@ fun Avatar() {
 @Composable
 fun Avatar(url: String) {
     Image(
-        painter = rememberImagePainter(
-            data = url,
-            builder = {
-                transformations(CircleCropTransformation())
-            }
+        painter = rememberAsyncImagePainter(
+            ImageRequest.Builder(LocalContext.current)
+                .data(url)
+                .apply { transformations(CircleCropTransformation()) }
+                .build()
         ),
         contentDescription = null,
         modifier = Modifier.size(40.dp)
