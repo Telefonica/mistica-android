@@ -16,6 +16,7 @@
         <item name="colorNavigationBarBackground">@color/vivo_color_purple</item>
         <item name="colorBackgroundAlternative">@color/vivo_color_grey_1</item>
         <item name="colorBackgroundFeedbackBottom">@color/vivo_color_purple</item>
+        <item name="colorCustomTabsBackground">@color/vivo_color_purple</item>
 
         <item name="colorSkeletonWave">@color/vivo_color_grey_2</item>
 

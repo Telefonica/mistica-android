@@ -16,6 +16,7 @@
         <item name="colorNavigationBarBackground">@color/telefonica_color_blue</item>
         <item name="colorBackgroundAlternative">@color/telefonica_color_grey_1</item>
         <item name="colorBackgroundFeedbackBottom">@color/telefonica_color_blue</item>
+        <item name="colorCustomTabsBackground">@color/telefonica_color_blue</item>
 
         <item name="colorSkeletonWave">@color/telefonica_color_grey_2</item>
 
