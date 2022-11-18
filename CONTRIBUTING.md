@@ -67,8 +67,14 @@ To create or modify components on this repository, follow the next steps:
 5. Add your component to the catalog, by including it and its variants inside `catalog` module, so other developers can quickly test it.
    - Add a new entry to the main section list.
    - Add a new fragment to show the different component variants.
-6. Once your code is ready and the PR approved you can generate a new version of the library with the latests changes using the available github action: **Release library** The library uses the x.y.z **versioning pattern** (example: 1.1.0) where each number should be incremented considering the following rules:
+
+
+## Release a new version
+To release a new version of the libraries you just need to create a GitHub release in https://github.com/Telefonica/mistica-android/releases clicking in `Draft a new release`. Create a new tag with the specific version number and click on `Generate release notes` to complete the release notes automatically. Clicking on `Publish release` the release will be created and the libraries will be updated.
+
+The library uses the x.y.z **versioning pattern** (example: 1.1.0) where each number should be incremented considering the following rules:
 X -> Breaking changes
 Y -> New components or features
 Z -> Minor modifications or fixes
-7. When the action finish, you will need to review the release draft and publish it when you're done.
+
+You can find more information here https://semver.org/
