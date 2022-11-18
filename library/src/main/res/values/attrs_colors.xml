@@ -14,6 +14,7 @@
         <attr name="colorNavigationBarBackground" format="color|reference" />
         <attr name="colorBackgroundAlternative" format="color|reference" />
         <attr name="colorBackgroundFeedbackBottom" format="color|reference" />
+        <attr name="colorCustomTabsBackground" format="color|reference" />
 
         <attr name="colorSkeletonWave" format="color|reference" />
 

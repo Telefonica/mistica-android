@@ -16,6 +16,7 @@
         <item name="colorNavigationBarBackground">@color/o2_color_blue_primary</item>
         <item name="colorBackgroundAlternative">@color/o2_color_grey_1</item>
         <item name="colorBackgroundFeedbackBottom">@color/o2_color_blue_primary</item>
+        <item name="colorCustomTabsBackground">@color/o2_color_blue_primary</item>
 
         <item name="colorSkeletonWave">@color/o2_color_grey_2</item>
 

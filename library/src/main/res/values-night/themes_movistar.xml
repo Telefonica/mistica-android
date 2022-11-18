@@ -13,6 +13,7 @@
         <item name="colorNavigationBarBackground">@color/movistar_color_darkModeBlack</item>
         <item name="colorBackgroundAlternative">@color/movistar_color_darkModeGrey</item>
         <item name="colorBackgroundFeedbackBottom">@color/movistar_color_darkModeBlack</item>
+        <item name="colorCustomTabsBackground">@color/movistar_color_darkModeBlack</item>
 
         <item name="colorSkeletonWave">@color/movistar_color_grey_5_30_alpha</item>
 

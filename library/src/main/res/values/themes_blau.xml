@@ -16,6 +16,7 @@
 		<item name="colorNavigationBarBackground">@color/blau_color_blue_primary</item>
 		<item name="colorBackgroundAlternative">@color/blau_color_blue_primary20</item>
 		<item name="colorBackgroundFeedbackBottom">@color/blau_color_blue_primary</item>
+		<item name="colorCustomTabsBackground">@color/blau_color_blue_primary</item>
 
 		<item name="colorSkeletonWave">@color/blau_color_grey_2</item>
 

@@ -16,6 +16,7 @@
 		<item name="colorNavigationBarBackground">@color/movistar_color_blue</item>
 		<item name="colorBackgroundAlternative">@color/movistar_color_grey_1</item>
 		<item name="colorBackgroundFeedbackBottom">@color/movistar_color_blue</item>
+		<item name="colorCustomTabsBackground">@color/movistar_color_white</item>
 
 		<item name="colorSkeletonWave">@color/movistar_color_grey_2</item>
 

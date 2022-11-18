@@ -12,6 +12,7 @@
 		<item name="colorNavigationBarBackground">@color/blau_color_darkModeBlack</item>
 		<item name="colorBackgroundAlternative">@color/blau_color_darkModeGrey</item>
 		<item name="colorBackgroundFeedbackBottom">@color/blau_color_darkModeBlack</item>
+		<item name="colorCustomTabsBackground">@color/blau_color_darkModeBlack</item>
 
 		<item name="colorSkeletonWave">@color/blau_color_grey_5</item>
 
