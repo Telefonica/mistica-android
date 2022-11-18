@@ -76,3 +76,5 @@ The library uses the x.y.z **versioning pattern** (example: 1.1.0) where each nu
 X -> Breaking changes
 Y -> New components or features
 Z -> Minor modifications or fixes
+
+You can find more information here https://semver.org/lang/es/
