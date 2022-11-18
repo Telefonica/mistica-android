@@ -77,4 +77,4 @@ X -> Breaking changes
 Y -> New components or features
 Z -> Minor modifications or fixes
 
-You can find more information here https://semver.org/lang/es/
+You can find more information here https://semver.org/
