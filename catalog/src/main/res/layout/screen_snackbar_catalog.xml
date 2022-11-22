@@ -1,48 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:viewBindingIgnore="true"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center_horizontal"
-    android:orientation="vertical"
-    android:padding="16dp">
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		xmlns:tools="http://schemas.android.com/tools"
+		tools:viewBindingIgnore="true"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:gravity="center_horizontal"
+		android:orientation="vertical"
+		android:padding="16dp"
+		>
 
-    <com.telefonica.mistica.title.TitleView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="start"
-        app:title="SnackBar Tester" />
+	<com.telefonica.mistica.title.TitleView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="start"
+			app:title="SnackBar Tester"
+			/>
 
-    <com.telefonica.mistica.input.TextInput
-        android:id="@+id/input_snackbar_message"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:inputType="text"
-        app:inputHint="SnackBar Message Text" />
+	<com.telefonica.mistica.input.TextInput
+			android:id="@+id/input_snackbar_message"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="8dp"
+			android:inputType="text"
+			app:inputHint="SnackBar Message Text"
+			/>
 
-    <com.telefonica.mistica.input.TextInput
-        android:id="@+id/input_snackbar_action"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:inputType="text"
-        app:inputHint="SnackBar Action Text" />
+	<com.telefonica.mistica.input.TextInput
+			android:id="@+id/input_snackbar_action"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="8dp"
+			android:inputType="text"
+			app:inputHint="SnackBar Action Text"
+			/>
 
-    <com.telefonica.mistica.input.DropDownInput
-        android:id="@+id/dropdown_snackbar_type"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        app:inputHint="SnackBar Type" />
+	<com.telefonica.mistica.input.DropDownInput
+			android:id="@+id/dropdown_snackbar_type"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="8dp"
+			app:inputHint="SnackBar Type"
+			/>
 
-    <com.telefonica.mistica.button.Button
-        android:id="@+id/button_create_snackbar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="Test!" />
+	<RadioGroup
+			android:id="@+id/radio_group_snackbar_lenght"
+			android:layout_marginTop="12dp"
+			android:layout_width="match_parent"
+			android:orientation="horizontal"
+			android:gravity="center"
+			android:layout_height="wrap_content"
+			>
+
+		<RadioButton
+				android:id="@+id/radio_button_5_sec"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="5 seconds"
+				android:checked="true"
+				/>
+
+		<RadioButton
+				android:id="@+id/radio_button_10_sec"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="10 seconds"
+				/>
+
+	</RadioGroup>
+
+	<TextView
+			android:layout_width="wrap_content"
+			android:gravity="center"
+			android:text="Time only applies if no action set"
+			android:layout_height="wrap_content"
+			/>
+
+	<com.telefonica.mistica.button.Button
+			android:id="@+id/button_create_snackbar"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="12dp"
+			android:text="Test!"
+			/>
 
 </LinearLayout>

@@ -41,18 +41,20 @@ open class SnackbarBuilder(view: View?, text: String) {
         this.callback = callback
     }
 
-    open fun showInformative(): Snackbar {
+    @JvmOverloads
+    open fun showInformative(snackbarLenght: SnackbarLenght = SnackbarLenght.LENGTH_5): Snackbar {
         val spannable = getSpannable(R.attr.colorTextPrimaryInverse)
-        val snackbar = createSnackbar(spannable)
+        val snackbar = createSnackbar(spannable, snackbarLenght)
         setBackgroundColor(snackbar, R.attr.colorFeedbackInfoBackground)
         setActionTextColor(snackbar, R.attr.colorTextLinkSnackbar)
         snackbar.show()
         return snackbar
     }
 
-    open fun showCritical(): Snackbar {
+    @JvmOverloads
+    open fun showCritical(snackbarLenght: SnackbarLenght = SnackbarLenght.LENGTH_5): Snackbar {
         val spannable = getSpannable(R.attr.colorTextPrimaryInverse)
-        val snackbar = createSnackbar(spannable)
+        val snackbar = createSnackbar(spannable, snackbarLenght)
         setBackgroundColor(snackbar, R.attr.colorFeedbackErrorBackground)
         setActionTextColor(snackbar, R.attr.colorTextPrimaryInverse)
         snackbar.show()
@@ -81,14 +83,11 @@ open class SnackbarBuilder(view: View?, text: String) {
     }
 
     @Suppress("DEPRECATION")
-    private fun createSnackbar(text: CharSequence): Snackbar {
-        var duration = Snackbar.LENGTH_INDEFINITE
-        if (!areSticky()) {
-            duration = if (actionText != null) {
-                DURATION_WITH_ACTION
-            } else {
-                DURATION_WITHOUT_ACTION
-            }
+    private fun createSnackbar(text: CharSequence, snackbarLenght: SnackbarLenght): Snackbar {
+        val duration = when {
+            areSticky() -> Snackbar.LENGTH_INDEFINITE
+            actionText != null -> SnackbarLenght.LENGTH_10.duration()
+            else -> snackbarLenght.duration()
         }
         val snackbar = Snackbar.make(view, text, duration)
         setTextStyles(snackbar)
@@ -112,8 +111,22 @@ open class SnackbarBuilder(view: View?, text: String) {
     }
 
     companion object {
+        private const val MAX_TEXT_LINES = 4
+    }
+}
+
+enum class SnackbarLenght {
+    LENGTH_5,
+    LENGTH_10;
+
+    fun duration(): Int =
+        when (this) {
+            LENGTH_5 -> DURATION_WITHOUT_ACTION
+            LENGTH_10 -> DURATION_WITH_ACTION
+        }
+
+    companion object {
         private const val DURATION_WITH_ACTION = 10000
         private const val DURATION_WITHOUT_ACTION = 5000
-        private const val MAX_TEXT_LINES = 4
     }
 }
