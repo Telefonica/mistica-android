@@ -21,6 +21,8 @@ Builder allows SnackBar customization:
 * `withCallback(Callback callback)`
   * Adds a callback for dismiss action. Dismiss action by definition will only work when using a coordinator layout as anchor view for the SnackBar.
 
-Finally, depending on the type of SnackBar, use one of the following to display it:
+Finally, depending on the type of SnackBar, use one of the following to display it. These methods allow an argument to choose the duration of 5 second or 10.
+5 is the default.
 * `showInformative()`
+* `showInformative(SnackbarLenght.LENGTH_10)`
 * `showCritical()`
