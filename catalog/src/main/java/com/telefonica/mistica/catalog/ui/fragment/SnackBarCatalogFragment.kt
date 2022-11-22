@@ -55,8 +55,8 @@ class SnackBarCatalogFragment : Fragment() {
                     }
                 }
                 val duration = when {
-                    snackbarLenght10.isChecked -> SnackbarLenght.LENGTH_10
-                    else -> SnackbarLenght.LENGTH_5
+                    snackbarLenght10.isChecked -> SnackbarLenght.LONG
+                    else -> SnackbarLenght.SHORT
                 }
                 when (SnackBarType.valueOf(dropDownInput.dropDown.text.toString())) {
                     SnackBarType.INFORMATIVE -> showInformative(duration)

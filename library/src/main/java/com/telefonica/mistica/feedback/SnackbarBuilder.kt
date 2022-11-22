@@ -42,7 +42,7 @@ open class SnackbarBuilder(view: View?, text: String) {
     }
 
     @JvmOverloads
-    open fun showInformative(snackbarLenght: SnackbarLenght = SnackbarLenght.LENGTH_5): Snackbar {
+    open fun showInformative(snackbarLenght: SnackbarLenght = SnackbarLenght.SHORT): Snackbar {
         val spannable = getSpannable(R.attr.colorTextPrimaryInverse)
         val snackbar = createSnackbar(spannable, snackbarLenght)
         setBackgroundColor(snackbar, R.attr.colorFeedbackInfoBackground)
@@ -52,7 +52,7 @@ open class SnackbarBuilder(view: View?, text: String) {
     }
 
     @JvmOverloads
-    open fun showCritical(snackbarLenght: SnackbarLenght = SnackbarLenght.LENGTH_5): Snackbar {
+    open fun showCritical(snackbarLenght: SnackbarLenght = SnackbarLenght.SHORT): Snackbar {
         val spannable = getSpannable(R.attr.colorTextPrimaryInverse)
         val snackbar = createSnackbar(spannable, snackbarLenght)
         setBackgroundColor(snackbar, R.attr.colorFeedbackErrorBackground)
@@ -86,7 +86,7 @@ open class SnackbarBuilder(view: View?, text: String) {
     private fun createSnackbar(text: CharSequence, snackbarLenght: SnackbarLenght): Snackbar {
         val duration = when {
             areSticky() -> Snackbar.LENGTH_INDEFINITE
-            actionText != null -> SnackbarLenght.LENGTH_10.duration()
+            actionText != null -> SnackbarLenght.LONG.duration()
             else -> snackbarLenght.duration()
         }
         val snackbar = Snackbar.make(view, text, duration)
@@ -116,13 +116,13 @@ open class SnackbarBuilder(view: View?, text: String) {
 }
 
 enum class SnackbarLenght {
-    LENGTH_5,
-    LENGTH_10;
+    SHORT,
+    LONG;
 
     fun duration(): Int =
         when (this) {
-            LENGTH_5 -> DURATION_WITHOUT_ACTION
-            LENGTH_10 -> DURATION_WITH_ACTION
+            SHORT -> DURATION_WITHOUT_ACTION
+            LONG -> DURATION_WITH_ACTION
         }
 
     companion object {
