@@ -44,7 +44,7 @@
 			/>
 
 	<RadioGroup
-			android:id="@+id/radio_group_snackbar_lenght"
+			android:id="@+id/radio_group_snackbar_length"
 			android:layout_marginTop="12dp"
 			android:layout_width="match_parent"
 			android:orientation="horizontal"

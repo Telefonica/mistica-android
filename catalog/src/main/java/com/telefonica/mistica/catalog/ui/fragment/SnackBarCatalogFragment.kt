@@ -11,7 +11,7 @@ import android.widget.RadioButton
 import androidx.fragment.app.Fragment
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.feedback.SnackbarBuilder
-import com.telefonica.mistica.feedback.SnackbarLenght
+import com.telefonica.mistica.feedback.SnackbarLength
 import com.telefonica.mistica.input.DropDownInput
 import com.telefonica.mistica.input.TextInput
 
@@ -33,7 +33,7 @@ class SnackBarCatalogFragment : Fragment() {
         val inputAction: TextInput = view.findViewById(R.id.input_snackbar_action)
         val dropDownInput: DropDownInput = view.findViewById(R.id.dropdown_snackbar_type)
         val createButton: Button = view.findViewById(R.id.button_create_snackbar)
-        val snackbarLenght10: RadioButton = view.findViewById(R.id.radio_button_10_sec)
+        val snackbarLength10: RadioButton = view.findViewById(R.id.radio_button_10_sec)
 
         with(dropDownInput.dropDown) {
             setAdapter(
@@ -55,8 +55,8 @@ class SnackBarCatalogFragment : Fragment() {
                     }
                 }
                 val duration = when {
-                    snackbarLenght10.isChecked -> SnackbarLenght.LONG
-                    else -> SnackbarLenght.SHORT
+                    snackbarLength10.isChecked -> SnackbarLength.LONG
+                    else -> SnackbarLength.SHORT
                 }
                 when (SnackBarType.valueOf(dropDownInput.dropDown.text.toString())) {
                     SnackBarType.INFORMATIVE -> showInformative(duration)

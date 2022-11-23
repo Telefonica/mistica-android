@@ -42,9 +42,9 @@ open class SnackbarBuilder(view: View?, text: String) {
     }
 
     @JvmOverloads
-    open fun showInformative(snackbarLenght: SnackbarLenght = SnackbarLenght.SHORT): Snackbar {
+    open fun showInformative(snackbarLength: SnackbarLength = SnackbarLength.SHORT): Snackbar {
         val spannable = getSpannable(R.attr.colorTextPrimaryInverse)
-        val snackbar = createSnackbar(spannable, snackbarLenght)
+        val snackbar = createSnackbar(spannable, snackbarLength)
         setBackgroundColor(snackbar, R.attr.colorFeedbackInfoBackground)
         setActionTextColor(snackbar, R.attr.colorTextLinkSnackbar)
         snackbar.show()
@@ -52,9 +52,9 @@ open class SnackbarBuilder(view: View?, text: String) {
     }
 
     @JvmOverloads
-    open fun showCritical(snackbarLenght: SnackbarLenght = SnackbarLenght.SHORT): Snackbar {
+    open fun showCritical(snackbarLength: SnackbarLength = SnackbarLength.SHORT): Snackbar {
         val spannable = getSpannable(R.attr.colorTextPrimaryInverse)
-        val snackbar = createSnackbar(spannable, snackbarLenght)
+        val snackbar = createSnackbar(spannable, snackbarLength)
         setBackgroundColor(snackbar, R.attr.colorFeedbackErrorBackground)
         setActionTextColor(snackbar, R.attr.colorTextPrimaryInverse)
         snackbar.show()
@@ -83,11 +83,11 @@ open class SnackbarBuilder(view: View?, text: String) {
     }
 
     @Suppress("DEPRECATION")
-    private fun createSnackbar(text: CharSequence, snackbarLenght: SnackbarLenght): Snackbar {
+    private fun createSnackbar(text: CharSequence, snackbarLength: SnackbarLength): Snackbar {
         val duration = when {
             areSticky() -> Snackbar.LENGTH_INDEFINITE
-            actionText != null -> SnackbarLenght.LONG.duration()
-            else -> snackbarLenght.duration()
+            actionText != null -> SnackbarLength.LONG.duration()
+            else -> snackbarLength.duration()
         }
         val snackbar = Snackbar.make(view, text, duration)
         setTextStyles(snackbar)
@@ -115,7 +115,7 @@ open class SnackbarBuilder(view: View?, text: String) {
     }
 }
 
-enum class SnackbarLenght {
+enum class SnackbarLength {
     SHORT,
     LONG;
 
