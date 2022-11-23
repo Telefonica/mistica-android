@@ -2,12 +2,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:viewBindingIgnore="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    tools:viewBindingIgnore="true">
 
     <com.telefonica.mistica.title.TitleView
         android:layout_width="wrap_content"
@@ -37,6 +37,35 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         app:inputHint="SnackBar Type" />
+
+    <RadioGroup
+        android:id="@+id/radio_group_snackbar_length"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radio_button_5_sec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="5 seconds" />
+
+        <RadioButton
+            android:id="@+id/radio_button_10_sec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10 seconds" />
+
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Time only applies if no action set" />
 
     <com.telefonica.mistica.button.Button
         android:id="@+id/button_create_snackbar"
