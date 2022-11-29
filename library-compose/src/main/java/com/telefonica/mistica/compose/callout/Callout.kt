@@ -73,6 +73,7 @@ fun Callout(
                 }
                 description?.let {
                     Text(
+                        modifier = Modifier.padding(top = 4.dp),
                         text = it,
                         style = MisticaTheme.typography.preset2,
                         color = MisticaTheme.colors.textSecondary
