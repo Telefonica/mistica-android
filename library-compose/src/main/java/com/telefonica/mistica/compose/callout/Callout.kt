@@ -28,7 +28,7 @@ fun Callout(
     title: String?,
     description: String?,
     buttonConfig: CalloutButtonConfig,
-    @DrawableRes iconRes: Int?,
+    @DrawableRes iconRes: Int? = null,
     dismissable: Boolean,
     onDismiss: (() -> Unit)? = null,
     inverse: Boolean,

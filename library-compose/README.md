@@ -112,7 +112,7 @@ There is a Mística-compose catalog in the [Demo app](https://github.com/Telefon
 | Tabs						|     |     |
 | Empty States				|  ✅ | AndroidView   |
 | Empty State Cards			|  ✅ | AndroidView   |
-| Callout					|     |     |    						
+| Callout					|  ✅  |   Composable  |
 | Carousel					|  ✅️ |  Composable   |
 | Title                     | ✅  | Composable    |
 
