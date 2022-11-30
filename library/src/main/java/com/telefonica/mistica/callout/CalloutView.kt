@@ -21,6 +21,7 @@ import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
 import com.telefonica.mistica.button.Button
+import com.telefonica.mistica.util.getThemeColor
 
 @BindingMethods(
     BindingMethod(
@@ -116,6 +117,7 @@ class CalloutView @JvmOverloads constructor(
         LayoutInflater.from(context).inflate(R.layout.callout_view, this, true)
 
         icon = findViewById(R.id.callout_icon)
+        icon.setColorFilter(context.getThemeColor(R.attr.colorNeutralHigh))
         title = findViewById(R.id.callout_title)
         description = findViewById(R.id.callout_description)
         buttonsContainer = findViewById(R.id.callout_buttons_container)

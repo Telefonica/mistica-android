@@ -41,6 +41,7 @@ import androidx.navigation.compose.rememberNavController
 import com.telefonica.mistica.compose.input.DropDownInput
 import com.telefonica.mistica.compose.catalog.R
 import com.telefonica.mistica.compose.catalog.ui.components.Buttons
+import com.telefonica.mistica.compose.catalog.ui.components.Callouts
 import com.telefonica.mistica.compose.catalog.ui.components.DataCards
 import com.telefonica.mistica.compose.catalog.ui.components.Carousels
 import com.telefonica.mistica.compose.catalog.ui.components.EmptyStateCards
@@ -162,6 +163,7 @@ fun CatalogNavHost(
         composable(NavigationRoutes.EMPTY_STATE_SCREEN) { EmptyStateScreens() }
         composable(NavigationRoutes.STEPPER) { Steppers() }
         composable(NavigationRoutes.TITLES) { Titles() }
+        composable(NavigationRoutes.CALLOUTS) { Callouts() }
     }
 }
 
@@ -237,6 +239,11 @@ fun Catalog(
             name = "Titles",
             icon = R.drawable.ic_texts,
             navigation = NavigationRoutes.TITLES
+        ),
+        ComponentScreen(
+            name = "Callouts",
+            icon = R.drawable.ic_callout,
+            navigation = NavigationRoutes.CALLOUTS
         ),
     )
     Column {
@@ -314,4 +321,5 @@ object NavigationRoutes {
     const val EMPTY_STATE_CARD = "empty-state-card"
     const val STEPPER = "stepper"
     const val TITLES = "titles"
+    const val CALLOUTS = "callouts"
 }
