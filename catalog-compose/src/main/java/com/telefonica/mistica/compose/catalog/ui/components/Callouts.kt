@@ -3,6 +3,7 @@ package com.telefonica.mistica.compose.catalog.ui.components
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -34,7 +35,8 @@ fun Callouts() {
         modifier = Modifier
             .fillMaxSize()
             .verticalScroll(rememberScrollState())
-            .padding(vertical = 16.dp),
+            .padding(vertical = 16.dp)
+            .background(MisticaTheme.colors.background),
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         var inverse by remember { mutableStateOf(false) }
@@ -114,7 +116,7 @@ fun Callouts() {
         var isShown by remember { mutableStateOf(true) }
 
         if (isShown) {
-            Column(
+            Box(
                 modifier = Modifier
                     .padding(vertical = 8.dp)
                     .fillMaxWidth()
@@ -122,25 +124,23 @@ fun Callouts() {
                         if (inverse) {
                             MisticaTheme.colors.backgroundBrand
                         } else {
-                            MisticaTheme.colors.backgroundContainer
+                            MisticaTheme.colors.background
                         }
                     ),
             ) {
-                AnimatedVisibility(visible = isShown) {
-                    Callout(
-                        modifier = Modifier.fillMaxWidth().padding(16.dp),
-                        title = title.takeIf { it.isNotBlank() },
-                        description = description.takeIf { it.isNotBlank() },
-                        buttonConfig = buttonConfig,
-                        iconRes = if (showIcon) R.drawable.ic_callout else null,
-                        dismissable = dismissable,
-                        inverse = inverse,
-                        onDismiss = { isShown = false },
-                        primaryButtonText = primaryButtonText.takeIf { it.isNotBlank() },
-                        secondaryButtonText = secondaryButtonText.takeIf { it.isNotBlank() },
-                        linkText = linkText.takeIf { it.isNotBlank() },
-                    )
-                }
+                Callout(
+                    modifier = Modifier.fillMaxWidth().padding(16.dp),
+                    title = title.takeIf { it.isNotBlank() },
+                    description = description.takeIf { it.isNotBlank() },
+                    buttonConfig = buttonConfig,
+                    iconRes = if (showIcon) R.drawable.ic_callout else null,
+                    dismissable = dismissable,
+                    inverse = inverse,
+                    onDismiss = { isShown = false },
+                    primaryButtonText = primaryButtonText.takeIf { it.isNotBlank() },
+                    secondaryButtonText = secondaryButtonText.takeIf { it.isNotBlank() },
+                    linkText = linkText.takeIf { it.isNotBlank() },
+                )
             }
         } else {
             Button(

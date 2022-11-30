@@ -64,7 +64,7 @@ class CalloutsCatalogFragment : Fragment() {
                 if (inverse) {
                     setBackgroundColor(context.getThemeColor(R.attr.colorBackgroundBrand))
                 } else {
-                    setBackgroundColor(context.getThemeColor(R.attr.colorBackgroundContainer))
+                    setBackgroundColor(context.getThemeColor(R.attr.colorBackground))
                 }
             }
             setTitle(view.findViewById<TextInput>(R.id.title_input).text.toString())
