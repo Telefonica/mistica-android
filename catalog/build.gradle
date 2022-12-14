@@ -25,6 +25,12 @@ android {
     viewBinding {
         enabled = true
     }
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion compose_version
+    }
 }
 
 task sourceJar(type: Jar) {
@@ -35,6 +41,7 @@ task sourceJar(type: Jar) {
 dependencies {
 
     implementation project(':library')
+    implementation 'androidx.activity:activity-compose:1.4.0'
 
     testImplementation 'junit:junit:4.13'
 }

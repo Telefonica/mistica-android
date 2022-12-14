@@ -10,7 +10,7 @@ Mistica is a framework that contains reusable UI components and utilities.
 
 ## Compose support
 
-There is a currently work in progress compose version of the library. Check the documentation [here](library-compose)
+There is a currently work in progress compose version of the library. Check the documentation [here](library/src/main/java/com/telefonica/mistica/compose)
 
 ## Installation
 

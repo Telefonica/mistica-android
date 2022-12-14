@@ -5,7 +5,7 @@ import android.view.View
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.viewinterop.AndroidView
-import com.telefonica.mistica.compose.R
+import com.telefonica.mistica.R
 
 @Composable
 fun Button(

@@ -72,7 +72,7 @@ Mística-compose supports a subset of the Mística elements. The objective is to
 * [Title](./src/main/java/com/telefonica/mistica/compose/title)
 
 ## Fonts
-Mística-compose supports the same fonts supported in Mística. See [MisticaTypography](https://github.com/Telefonica/mistica-android/library-compose/src/main/java/com/telefonica/mistica/compose/theme/text/MisticaTypography.kt)
+Mística-compose supports the same fonts supported in Mística. See [MisticaTypography](https://github.com/Telefonica/mistica-android/library/src/main/java/com/telefonica/mistica/compose/theme/text/MisticaTypography.kt)
 
 Example of use:
 ```kotlin
@@ -117,7 +117,7 @@ There is a Mística-compose catalog in the [Demo app](https://github.com/Telefon
 | Title                     | ✅  | Composable    |
 
 ***Note**: Not every text input type have been migrated, see [text input](https://github
-.com/Telefonica/mistica-android/tree/master/library-compose/src/main/java/com/telefonica/mistica/compose/input/README.md) section to see which ones are migrated.
+.com/Telefonica/mistica-android/tree/master/library/src/main/java/com/telefonica/mistica/compose/input/README.md) section to see which ones are migrated.
 
 ### Brands
 | Brand | Available |
