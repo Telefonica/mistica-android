@@ -15,18 +15,14 @@ import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.PagerState
 import com.telefonica.mistica.catalog.R.drawable.carousel_card_image_sample
 import com.telefonica.mistica.catalog.databinding.CarouselFragmentCatalogBinding
-import com.telefonica.mistica.catalog.ui.common.mapToComposeBrand
 import com.telefonica.mistica.compose.card.Action
 import com.telefonica.mistica.compose.card.mediacard.MediaCard
 import com.telefonica.mistica.compose.card.mediacard.MediaCardImage
 import com.telefonica.mistica.compose.carousel.CarouselState
 import com.telefonica.mistica.compose.tag.Tag
-import com.telefonica.mistica.compose.theme.brand.TelefonicaBrand
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_PROMO
 
-class CarouselFragment(
-    @StyleRes private val themeOverride: Int? = null,
-) : Fragment() {
+class CarouselFragment() : Fragment() {
 
     private lateinit var binding: CarouselFragmentCatalogBinding
 

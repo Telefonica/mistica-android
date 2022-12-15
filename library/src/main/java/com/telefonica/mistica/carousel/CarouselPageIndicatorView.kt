@@ -2,10 +2,7 @@ package com.telefonica.mistica.carousel
 
 import android.content.Context
 import android.util.AttributeSet
-import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.carousel.CarouselPagerIndicator
 import com.telefonica.mistica.compose.carousel.CarouselState
 import com.telefonica.mistica.compose.composeview.AbstractMisticaComposeView
@@ -36,10 +33,7 @@ class CarouselPageIndicatorView @JvmOverloads constructor(
         Theme {
             CarouselPagerIndicator(
                 carouselState = carouselState,
-                modifier = Modifier
-                    .padding(16.dp),
                 pagerCount = pageCount,
-                debug = true,
             )
         }
     }
