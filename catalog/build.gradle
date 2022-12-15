@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    compileSdkVersion 31
+    compileSdkVersion 33
 
     defaultConfig {
         minSdkVersion 21
-        targetSdkVersion 31
+        targetSdkVersion 33
 
         buildConfigField "String", "APPCENTER_KEY", "\"" + System.env.APPCENTER_KEY + "\""
     }
@@ -29,7 +29,7 @@ android {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion compose_version
+        kotlinCompilerExtensionVersion compose_compiler_version
     }
 }
 
@@ -41,7 +41,6 @@ task sourceJar(type: Jar) {
 dependencies {
 
     implementation project(':library')
-    implementation 'androidx.activity:activity-compose:1.4.0'
 
     testImplementation 'junit:junit:4.13'
 }

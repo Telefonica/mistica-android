@@ -15,7 +15,7 @@ class ScrollContentIndicatorCatalogFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View =
         inflater.inflate(R.layout.screen_scroll_content_indicator_catalog, container, false)
 
@@ -36,6 +36,7 @@ class ScrollContentIndicatorCatalogFragment : Fragment() {
                     showHideButton.text = "Hide"
                     scrollContentIndicator.visibility = View.VISIBLE
                 }
+                else -> {}
             }
         }
     }
