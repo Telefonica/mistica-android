@@ -6,9 +6,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.catalog.ui.fragment.BadgesCatalogFragment
-import com.telefonica.mistica.catalog.ui.fragment.SheetCatalogFragment
 import com.telefonica.mistica.catalog.ui.fragment.ButtonsCatalogFragment
 import com.telefonica.mistica.catalog.ui.fragment.CalloutsCatalogFragment
+import com.telefonica.mistica.catalog.ui.fragment.CarouselFragment
 import com.telefonica.mistica.catalog.ui.fragment.ControlsCatalogFragment
 import com.telefonica.mistica.catalog.ui.fragment.DataCardFragment
 import com.telefonica.mistica.catalog.ui.fragment.EmptyStateCardCatalogFragment
@@ -23,6 +23,7 @@ import com.telefonica.mistica.catalog.ui.fragment.MediaCardsFragment
 import com.telefonica.mistica.catalog.ui.fragment.OthersCatalogFragment
 import com.telefonica.mistica.catalog.ui.fragment.PopOverCatalogFragment
 import com.telefonica.mistica.catalog.ui.fragment.ScrollContentIndicatorCatalogFragment
+import com.telefonica.mistica.catalog.ui.fragment.SheetCatalogFragment
 import com.telefonica.mistica.catalog.ui.fragment.SnackBarCatalogFragment
 import com.telefonica.mistica.catalog.ui.fragment.SteppersCatalogFragment
 import com.telefonica.mistica.catalog.ui.fragment.TabsCatalogFragment
@@ -71,6 +72,7 @@ class ComponentCatalogActivity : AppCompatActivity() {
             Section.EMPTY_STATE_CARD -> EmptyStateCardCatalogFragment()
             Section.CALLOUTS -> CalloutsCatalogFragment()
             Section.SHEET -> SheetCatalogFragment()
+            Section.CAROUSEL -> CarouselFragment()
             else -> OthersCatalogFragment()
         }
 
@@ -112,4 +114,5 @@ enum class Section {
     EMPTY_STATE_CARD,
     CALLOUTS,
     SHEET,
+    CAROUSEL,
 }

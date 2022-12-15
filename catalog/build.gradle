@@ -42,6 +42,7 @@ dependencies {
 
     implementation project(':library')
     implementation 'androidx.activity:activity-compose:1.4.0'
+    implementation "com.google.accompanist:accompanist-pager:$accompanist_version"
 
     testImplementation 'junit:junit:4.13'
 }
