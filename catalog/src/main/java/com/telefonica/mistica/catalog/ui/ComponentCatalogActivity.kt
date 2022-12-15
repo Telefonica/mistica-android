@@ -72,7 +72,7 @@ class ComponentCatalogActivity : AppCompatActivity() {
             Section.EMPTY_STATE_CARD -> EmptyStateCardCatalogFragment()
             Section.CALLOUTS -> CalloutsCatalogFragment()
             Section.SHEET -> SheetCatalogFragment()
-            Section.CAROUSEL -> CarouselFragment()
+            Section.CAROUSEL -> CarouselFragment(themeOverride)
             else -> OthersCatalogFragment()
         }
 

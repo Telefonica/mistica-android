@@ -5,18 +5,16 @@ import android.util.AttributeSet
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.AbstractComposeView
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.carousel.CarouselPagerIndicator
 import com.telefonica.mistica.compose.carousel.CarouselState
-import com.telefonica.mistica.compose.theme.MisticaTheme
-import com.telefonica.mistica.compose.theme.brand.MovistarBrand
+import com.telefonica.mistica.compose.composeview.AbstractMisticaComposeView
 
 class CarouselPageIndicatorView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0,
-) : AbstractComposeView(
+) : AbstractMisticaComposeView(
     context,
     attrs,
     defStyleAttr,
@@ -35,7 +33,7 @@ class CarouselPageIndicatorView @JvmOverloads constructor(
 
     @Composable
     override fun Content() {
-        MisticaTheme(brand = MovistarBrand) {
+        Theme {
             CarouselPagerIndicator(
                 carouselState = carouselState,
                 modifier = Modifier

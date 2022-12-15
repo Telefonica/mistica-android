@@ -3,15 +3,15 @@ package com.telefonica.mistica.carousel
 import android.content.Context
 import android.util.AttributeSet
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.platform.AbstractComposeView
 import com.telefonica.mistica.compose.carousel.Carousel
 import com.telefonica.mistica.compose.carousel.CarouselState
+import com.telefonica.mistica.compose.composeview.AbstractMisticaComposeView
 
 class CarouselView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0,
-) : AbstractComposeView(
+) : AbstractMisticaComposeView(
     context,
     attrs,
     defStyleAttr,
@@ -35,11 +35,13 @@ class CarouselView @JvmOverloads constructor(
 
     @Composable
     override fun Content() {
-        Carousel(
-            itemCount = itemCount,
-            carouselState = carouselState,
-        ) {
-            body(it)
+        Theme {
+            Carousel(
+                itemCount = itemCount,
+                carouselState = carouselState,
+            ) {
+                body(it)
+            }
         }
     }
 

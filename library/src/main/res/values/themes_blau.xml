@@ -132,5 +132,8 @@
 		<item name="feedbackScreenInfoIcon">@drawable/feedback_info</item>
 
 		<item name="stepperFinishedStepAnimation">@raw/feedback_success</item>
+
+		<!-- Compose -->
+		<item name="composeBrand">blau</item>
 	</style>
 </resources>

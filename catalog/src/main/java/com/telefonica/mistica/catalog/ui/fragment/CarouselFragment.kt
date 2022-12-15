@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.StyleRes
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.runtime.Composable
@@ -14,16 +15,18 @@ import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.PagerState
 import com.telefonica.mistica.catalog.R.drawable.carousel_card_image_sample
 import com.telefonica.mistica.catalog.databinding.CarouselFragmentCatalogBinding
+import com.telefonica.mistica.catalog.ui.common.mapToComposeBrand
 import com.telefonica.mistica.compose.card.Action
 import com.telefonica.mistica.compose.card.mediacard.MediaCard
 import com.telefonica.mistica.compose.card.mediacard.MediaCardImage
 import com.telefonica.mistica.compose.carousel.CarouselState
 import com.telefonica.mistica.compose.tag.Tag
-import com.telefonica.mistica.compose.theme.MisticaTheme
-import com.telefonica.mistica.compose.theme.brand.MovistarBrand
+import com.telefonica.mistica.compose.theme.brand.TelefonicaBrand
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_PROMO
 
-class CarouselFragment : Fragment() {
+class CarouselFragment(
+    @StyleRes private val themeOverride: Int? = null,
+) : Fragment() {
 
     private lateinit var binding: CarouselFragmentCatalogBinding
 
@@ -55,19 +58,17 @@ class CarouselFragment : Fragment() {
 
 @Composable
 private fun CarouselItem(page: Int) {
-    MisticaTheme(brand = MovistarBrand) {
-        MediaCard(
-            modifier = Modifier
-                .height(500.dp)
-                .fillMaxWidth(),
-            image = MediaCardImage.MediaCardImageResource(carousel_card_image_sample),
-            tag = Tag("HEADLINE").withStyle(TYPE_PROMO),
-            title = "Page ${page + 1} ",
-            subtitle = "(position ${page})",
-            description = "Description",
-            primaryButton = Action("Primary") {},
-            linkButton = Action("Link") {}
-        )
-    }
+    MediaCard(
+        modifier = Modifier
+            .height(500.dp)
+            .fillMaxWidth(),
+        image = MediaCardImage.MediaCardImageResource(carousel_card_image_sample),
+        tag = Tag("HEADLINE").withStyle(TYPE_PROMO),
+        title = "Page ${page + 1} ",
+        subtitle = "(position ${page})",
+        description = "Description",
+        primaryButton = Action("Primary") {},
+        linkButton = Action("Link") {}
+    )
 }
 

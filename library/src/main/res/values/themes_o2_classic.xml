@@ -134,6 +134,9 @@
         <!-- Stepper -->
         <item name="stepperFinishedStepAnimation">@raw/feedback_success_o2</item>
 
+        <!-- Compose -->
+        <item name="composeBrand">o2_classic</item>
+
     </style>
 
 </resources>
