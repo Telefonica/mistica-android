@@ -16,6 +16,7 @@
         android:layout_marginTop="36dp"
         tools:ignore="ContentDescription"
         android:paddingStart="16dp"
+		android:paddingEnd="16dp"
         android:src="@drawable/ic_mistica_logo_text" />
 
     <com.telefonica.mistica.input.DropDownInput

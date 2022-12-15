@@ -87,12 +87,12 @@ class TabsCatalogFragment : Fragment() {
 
         fun addTab(label: String) {
             labels.add(label)
-            notifyDataSetChanged()
+            notifyItemInserted(labels.lastIndex)
         }
 
         fun removeTab() {
-            labels.removeAt(labels.size - 1)
-            notifyDataSetChanged()
+            labels.removeAt(labels.lastIndex)
+            notifyItemRemoved(labels.lastIndex)
         }
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
