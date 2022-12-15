@@ -99,6 +99,7 @@ class CalloutView @JvmOverloads constructor(
         BUTTONS_CONFIG_PRIMARY_SECONDARY,
         BUTTONS_CONFIG_SECONDARY,
         BUTTONS_CONFIG_SECONDARY_LINK,
+        BUTTONS_CONFIG_LINK
     )
     annotation class ButtonsConfig
 
@@ -299,6 +300,7 @@ class CalloutView @JvmOverloads constructor(
                 linkButton.visibility = VISIBLE
                 linkButton.layoutParams = marginStart(-8f)
             }
+            BUTTONS_CONFIG_NONE -> {}
         }
     }
 

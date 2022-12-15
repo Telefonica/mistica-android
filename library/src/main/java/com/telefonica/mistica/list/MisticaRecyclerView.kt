@@ -24,11 +24,11 @@ class MisticaRecyclerView : RecyclerView {
         init()
     }
 
-    constructor(context: Context, @Nullable attrs: AttributeSet) : super(context, attrs) {
+    constructor(context: Context, attrs: AttributeSet?) : super(context, attrs) {
         init(attrs)
     }
 
-    constructor(context: Context, @Nullable attrs: AttributeSet, defStyleAttr: Int) : super(
+    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(
         context,
         attrs,
         defStyleAttr
@@ -43,7 +43,7 @@ class MisticaRecyclerView : RecyclerView {
     )
     annotation class ListLayoutType
 
-    fun init(@Nullable attrs: AttributeSet? = null) {
+    fun init(attrs: AttributeSet? = null) {
         var initialType: Int = TYPE_FULL_WIDTH
         if (attrs != null) {
             val styledAttrs = context.theme.obtainStyledAttributes(
