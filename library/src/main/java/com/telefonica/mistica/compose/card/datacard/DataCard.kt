@@ -3,7 +3,7 @@ package com.telefonica.mistica.compose.card.datacard
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.telefonica.mistica.compose.R
+import com.telefonica.mistica.R
 import com.telefonica.mistica.compose.card.Action
 import com.telefonica.mistica.compose.card.Card
 import com.telefonica.mistica.compose.card.CardActions

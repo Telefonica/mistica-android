@@ -8,7 +8,7 @@ import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
-import com.telefonica.mistica.compose.R
+import com.telefonica.mistica.R
 import com.telefonica.mistica.compose.card.Action
 import com.telefonica.mistica.compose.card.Card
 import com.telefonica.mistica.compose.card.CardActions
