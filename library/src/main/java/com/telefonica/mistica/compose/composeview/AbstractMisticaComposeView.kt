@@ -47,7 +47,7 @@ abstract class AbstractMisticaComposeView @JvmOverloads constructor(
     annotation class BrandConfig
 
     @BrandConfig
-    var brandConfig: Int = BRAND_VALUE_TELEFONICA
+    private var brandConfig: Int = BRAND_VALUE_TELEFONICA
 
     var customBrand: Brand? = null
 
