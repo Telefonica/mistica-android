@@ -2,22 +2,24 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:viewBindingIgnore="true"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context="com.telefonica.mistica.catalog.ui.CatalogMainActivity">
+    tools:context="com.telefonica.mistica.catalog.ui.CatalogMainActivity"
+    tools:viewBindingIgnore="true"
+    >
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:layout_marginTop="36dp"
-        tools:ignore="ContentDescription"
         android:paddingStart="16dp"
-		android:paddingEnd="16dp"
-        android:src="@drawable/ic_mistica_logo_text" />
+        android:paddingEnd="16dp"
+        android:src="@drawable/ic_mistica_logo_text"
+        tools:ignore="ContentDescription"
+        />
 
     <com.telefonica.mistica.input.DropDownInput
         android:id="@+id/drop_down_themes"
@@ -26,12 +28,14 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginRight="16dp"
-        app:inputHint="Theme Override" />
+        app:inputHint="Theme Override"
+        />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list_sections"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="16dp"
+        />
 
 </LinearLayout>
