@@ -233,20 +233,20 @@ class ProgressButton : FrameLayout {
             interpolator = getCubicBezierInterpolator()
             duration = ANIMATION_DURATION
             addListener(object : Animator.AnimatorListener {
-                override fun onAnimationRepeat(animator: Animator?) {}
+                override fun onAnimationRepeat(animator: Animator) {}
 
-                override fun onAnimationEnd(animator: Animator?) {
+                override fun onAnimationEnd(animator: Animator) {
                     setVisibilityAndColors()
                     if (!isLoading) {
                         buttonBackground.isClickable = true
                     }
                 }
 
-                override fun onAnimationCancel(animator: Animator?) {
-                    animator?.end()
+                override fun onAnimationCancel(animator: Animator) {
+                    animator.end()
                 }
 
-                override fun onAnimationStart(animator: Animator?) {
+                override fun onAnimationStart(animator: Animator) {
                     if (!buttonLoading.text.isNullOrBlank()) {
                         setProgressBarHorizontalPosition()
                     }

@@ -97,7 +97,7 @@ open class SheetView(
                 override fun onSlide(bottomSheet: View, slideOffset: Float) {}
             })
 
-            context?.resources?.displayMetrics?.heightPixels?.let { height ->
+            context.resources?.displayMetrics?.heightPixels?.let { height ->
                 behavior.maxHeight = (height * 0.7).toInt()
             }
         }
@@ -112,7 +112,7 @@ class Sheet(val context: Context){
 
     private var sheetModel: SheetModel = SheetModel()
     private var onSheetTapped: onSheetTapped = object: onSheetTapped {
-        override fun onTapped(sheet: SheetView, childrenId: String, itemId: String) {}
+        override fun onTapped(sheetView: SheetView, childrenId: String, itemId: String) {}
     }
     private var onDismiss: () -> Unit = {}
     private var onCancel: () -> Unit = {}

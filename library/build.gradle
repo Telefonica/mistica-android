@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    compileSdkVersion 31
+    compileSdkVersion 33
 
     defaultConfig {
         minSdkVersion 21
-        targetSdkVersion 31
+        targetSdkVersion 33
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -43,7 +43,7 @@ android {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion compose_version
+        kotlinCompilerExtensionVersion compose_compiler_version
     }
 }
 
@@ -58,11 +58,11 @@ dependencies {
     api 'androidx.constraintlayout:constraintlayout-solver:2.0.4'
     api 'androidx.recyclerview:recyclerview:1.1.0'
 
-    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.core:core-ktx:1.9.0'
     implementation "androidx.compose.ui:ui:$compose_version"
     implementation "androidx.compose.material:material:$compose_version"
     implementation "androidx.compose.ui:ui-tooling-preview:$compose_version"
-    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.1'
+    api "androidx.compose.runtime:runtime:$compose_version"
     implementation 'androidx.activity:activity-compose:1.4.0'
     implementation "com.google.android.material:compose-theme-adapter:1.1.5"
     implementation "com.google.accompanist:accompanist-pager:$accompanist_version"

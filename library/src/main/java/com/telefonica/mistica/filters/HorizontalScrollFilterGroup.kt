@@ -43,10 +43,12 @@ class HorizontalScrollFilterGroup @JvmOverloads constructor(
     }
 
     fun setOnCheckedChangeListener(onCheckedChange: (chipGroup: ChipGroup, checkedChipId: Int) -> Unit) {
-        chipGroup.setOnCheckedChangeListener { chipGroup, id ->
+        chipGroup.setOnCheckedStateChangeListener { chipGroup, checkedIds ->
             chipGroup.makeCheckedChipNonCheckable()
-            chipGroup.scrollToShowChip(id)
-            onCheckedChange(chipGroup, id)
+            checkedIds.firstOrNull()?.let {
+                chipGroup.scrollToShowChip(it)
+                onCheckedChange(chipGroup, it)
+            }
         }
     }
 
