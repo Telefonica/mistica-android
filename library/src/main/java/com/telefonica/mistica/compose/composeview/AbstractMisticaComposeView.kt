@@ -49,8 +49,6 @@ abstract class AbstractMisticaComposeView @JvmOverloads constructor(
     @BrandConfig
     private var brandConfig: Int = BRAND_VALUE_TELEFONICA
 
-    var customBrand: Brand? = null
-
     init {
         if (attrs != null) {
             val styledAttrs = context.theme.obtainStyledAttributes(attrs, R.styleable.AbstractMisticaComposeView, defStyleAttr, 0)
@@ -65,7 +63,7 @@ abstract class AbstractMisticaComposeView @JvmOverloads constructor(
         }
     }
 
-    private fun calculateBrand(): Brand = customBrand ?: brandConfig.mapToComposeBrand()
+    private fun calculateBrand(): Brand = MisticaComposeCustomBrand.customBrand ?: brandConfig.mapToComposeBrand()
 
     companion object {
         const val BRAND_VALUE_MOVISTAR = 0
