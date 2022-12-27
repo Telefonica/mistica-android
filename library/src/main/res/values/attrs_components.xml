@@ -281,4 +281,16 @@
         <attr name="calloutDismissable" format="boolean"/>
         <attr name="calloutInverse" format="boolean"/>
     </declare-styleable>
+
+    <declare-styleable name="AbstractMisticaComposeView">
+        <attr name="composeBrand" format="enum">
+            <enum name="movistar" value="0" />
+            <enum name="movistar_prominent" value="1" />
+            <enum name="o2" value="2" />
+            <enum name="o2_classic" value="3" />
+            <enum name="vivo" value="4" />
+            <enum name="telefonica" value="5" />
+            <enum name="blau" value="6" />
+        </attr>
+    </declare-styleable>
 </resources>

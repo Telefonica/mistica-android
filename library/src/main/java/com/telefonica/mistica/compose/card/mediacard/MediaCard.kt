@@ -62,7 +62,6 @@ private fun CardImage(mediaCardImage: MediaCardImage) {
             contentScale = ContentScale.FillHeight
         )
     }
-
 }
 
 @Preview

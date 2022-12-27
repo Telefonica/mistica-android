@@ -38,12 +38,11 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.telefonica.mistica.compose.input.DropDownInput
 import com.telefonica.mistica.compose.catalog.R
 import com.telefonica.mistica.compose.catalog.ui.components.Buttons
 import com.telefonica.mistica.compose.catalog.ui.components.Callouts
-import com.telefonica.mistica.compose.catalog.ui.components.DataCards
 import com.telefonica.mistica.compose.catalog.ui.components.Carousels
+import com.telefonica.mistica.compose.catalog.ui.components.DataCards
 import com.telefonica.mistica.compose.catalog.ui.components.EmptyStateCards
 import com.telefonica.mistica.compose.catalog.ui.components.EmptyStateScreens
 import com.telefonica.mistica.compose.catalog.ui.components.Feedbacks
@@ -54,6 +53,7 @@ import com.telefonica.mistica.compose.catalog.ui.components.Steppers
 import com.telefonica.mistica.compose.catalog.ui.components.Tags
 import com.telefonica.mistica.compose.catalog.ui.components.Texts
 import com.telefonica.mistica.compose.catalog.ui.components.Titles
+import com.telefonica.mistica.compose.input.DropDownInput
 import com.telefonica.mistica.compose.theme.MisticaTheme
 import com.telefonica.mistica.compose.theme.brand.BlauBrand
 import com.telefonica.mistica.compose.theme.brand.Brand
@@ -246,6 +246,7 @@ fun Catalog(
             navigation = NavigationRoutes.CALLOUTS
         ),
     )
+        .sortedBy { it.name }
     Column {
 
         Image(

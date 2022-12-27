@@ -21,6 +21,7 @@
         <ignore path="**/res/layout/screen_component_catalog.xml" />
     </issue>
     <issue id="IconLocation">
+        <ignore path="**/res/drawable/carousel_card_image_sample.png" />
         <ignore path="**/res/drawable/highlighted_card_custom_background.png" />
         <ignore path="**/res/drawable/highlighted_card_fill_mode_example.png" />
         <ignore path="**/res/drawable/media_card_sample_image.png" />
