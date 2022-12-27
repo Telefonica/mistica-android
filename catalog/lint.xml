@@ -4,7 +4,7 @@
     <issue id="HardcodedText" severity="ignore">
         <ignore path="**_catalog.xml" />
     </issue>
-    <issue id="GradleDependency" severity="ignore" />
+    <issue id="GradleDependency" severity="ignore" />cd a
     <issue id="VectorRaster">
         <ignore path="**/res/drawable/empty_state_card_image.xml" />
         <ignore path="**/res/drawable/empty_state_screen_image.xml" />
