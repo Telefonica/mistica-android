@@ -117,8 +117,8 @@ launcher
 | Carousel					|  ✅️ |  Composable   |
 | Title                     | ✅  | Composable    |
 
-***Note**: Not every text input type have been migrated, see [text input](https://github
-.com/Telefonica/mistica-android/tree/main/library/src/main/java/com/telefonica/mistica/compose/input/README.md) section to see which ones are migrated.
+***Note**: Not every text input type have been migrated, see [text input](https://github.com/Telefonica/mistica-android/tree/main/library/src/main/java/com/telefonica/mistica/compose/input/README.md) section to see which ones are migrated.
+
 
 ### Brands
 | Brand | Available |
