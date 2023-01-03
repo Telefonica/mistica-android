@@ -51,7 +51,7 @@ publishing {
                 scm {
                     connection = 'scm:git:github.com/Telefonica/mistica-android.git'
                     developerConnection = 'scm:git:ssh://github.com/Telefonica/mistica-android.git'
-                    url = 'https://github.com/Telefonica/mistica-android/tree/master'
+                    url = 'https://github.com/Telefonica/mistica-android/tree/main'
                 }
                 withXml {
                     def dependenciesNode = asNode().appendNode('dependencies')
@@ -93,7 +93,7 @@ publishing {
                 scm {
                     connection = 'scm:git:github.com/Telefonica/mistica-android.git'
                     developerConnection = 'scm:git:ssh://github.com/Telefonica/mistica-android.git'
-                    url = 'https://github.com/Telefonica/mistica-android/tree/master'
+                    url = 'https://github.com/Telefonica/mistica-android/tree/main'
                 }
                 withXml {
                     def dependenciesNode = asNode().appendNode('dependencies')
@@ -143,7 +143,7 @@ publishing {
                 scm {
                     connection = 'scm:git:github.com/Telefonica/mistica-android.git'
                     developerConnection = 'scm:git:ssh://github.com/Telefonica/mistica-android.git'
-                    url = 'https://github.com/Telefonica/mistica-android/tree/master'
+                    url = 'https://github.com/Telefonica/mistica-android/tree/main'
                 }
                 withXml {
                     def dependenciesNode = asNode().appendNode('dependencies')

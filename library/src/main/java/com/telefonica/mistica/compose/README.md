@@ -83,7 +83,8 @@ Text(
 ```
 
 ## Demo app
-There is a Mística-compose catalog in the [Demo app](https://github.com/Telefonica/mistica-android/blob/master/README.md#demo-app) Search for Compose in your launcher
+There is a Mística-compose catalog in the [Demo app](https://github.com/Telefonica/mistica-android/blob/main/README.md#demo-app) Search for Compose in your 
+launcher
 
 ## Current state
 
@@ -116,7 +117,8 @@ There is a Mística-compose catalog in the [Demo app](https://github.com/Telefon
 | Carousel					|  ✅️ |  Composable   |
 | Title                     | ✅  | Composable    |
 
-***Note**: Not every text input type have been migrated, see [text input](https://github.com/Telefonica/mistica-android/tree/master/library/src/main/java/com/telefonica/mistica/compose/input/README.md) section to see which ones are migrated.
+***Note**: Not every text input type have been migrated, see [text input](https://github.com/Telefonica/mistica-android/tree/main/library/src/main/java/com/telefonica/mistica/compose/input/README.md) section to see which ones are migrated.
+
 
 ### Brands
 | Brand | Available |

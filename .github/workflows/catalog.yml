@@ -2,7 +2,7 @@ name: "Generate catalog app"
 on:
   pull_request:
     branches:
-      - master
+      - main
     types: [closed]
 jobs:
   catalog:
