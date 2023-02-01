@@ -23,7 +23,7 @@ android {
 }
 
 static def versionCodeDate() {
-    return (new Date().toTimestamp().getTime() / 60).toInteger()
+    return (new Date().getTime() / 1000).toInteger()
 }
 
 appcenter {
