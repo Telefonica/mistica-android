@@ -19,10 +19,12 @@ class PopOverCatalogFragment : Fragment() {
 
     lateinit var dropDownInput: DropDownInput
 
+    private var mainPopover: PopOver? = null
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         return layoutInflater.inflate(R.layout.screen_popovers_catalog, container, false)
@@ -34,6 +36,7 @@ class PopOverCatalogFragment : Fragment() {
         val inputTitle: TextInput = view.findViewById(R.id.input_popover_title)
         val inputMessage: TextInput = view.findViewById(R.id.input_popover_message)
         val createButton: Button = view.findViewById(R.id.button_create_popover)
+        val hideButton: Button = view.findViewById(R.id.button_hide_no_animation)
         val createButtonOnTop: Button = view.findViewById(R.id.button_create_popover_on_top)
         val addImage: CheckBoxInput = view.findViewById(R.id.input_popover_checkbox_image)
         dropDownInput = view.findViewById(R.id.popover_position)
@@ -45,6 +48,9 @@ class PopOverCatalogFragment : Fragment() {
                 inputMessage,
                 addImage
             )
+        }
+        hideButton.setOnClickListener {
+            mainPopover?.hide(animated = false)
         }
         createButtonOnTop.setOnClickListener {
             createPopOverOnView(
@@ -71,19 +77,18 @@ class PopOverCatalogFragment : Fragment() {
         it: View,
         inputTitle: TextInput,
         inputMessage: TextInput,
-        addImage: CheckBoxInput
+        addImage: CheckBoxInput,
     ) {
         it.hideKeyboard()
-        val popover = PopOver(requireActivity(), it)
+        mainPopover = PopOver(requireActivity(), it)
             .setTitle(inputTitle.text.toString())
             .setDescription(inputMessage.text.toString())
             .setPosition(getPositionFromDropDown())
-
-        if (addImage.isChecked()) {
-            popover.setImage(R.drawable.ic_popovers)
-        }
-
-        popover.show(requireActivity())
+            .apply {
+                if (addImage.isChecked()) {
+                    setImage(R.drawable.ic_popovers)
+                }
+            }.show(requireActivity())
     }
 
     private fun getPositionFromDropDown(): PopOverView.Position {

@@ -58,18 +58,24 @@ open class PopOver(
     open fun setDismissButtonContentDescription(contentDescription: String): PopOver =
         apply { popOverData = popOverData.copy(dismissButtonContentDescription = contentDescription) }
 
-    open fun hide() {
+    @JvmOverloads
+    open fun hide(animated: Boolean = true) {
         if (popOverView == null) {
             return
         }
-        val animator = ObjectAnimator.ofFloat<View>(popOverView, View.ALPHA, 1f, 0f)
-        animator.addListener(object : AnimatorListenerAdapter() {
-            override fun onAnimationEnd(animation: Animator) {
-                popOverView?.removeWithoutAnimation()
-                popOverView = null
-            }
-        })
-        animator.start()
+        if (animated) {
+            val animator = ObjectAnimator.ofFloat<View>(popOverView, View.ALPHA, 1f, 0f)
+            animator.addListener(object : AnimatorListenerAdapter() {
+                override fun onAnimationEnd(animation: Animator) {
+                    popOverView?.removeWithoutAnimation()
+                    popOverView = null
+                }
+            })
+            animator.start()
+        } else {
+            popOverView?.removeWithoutAnimation()
+            popOverView = null
+        }
     }
 
     open fun updateCurrentTooltip(targetView: View) {
