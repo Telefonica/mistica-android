@@ -67,14 +67,12 @@ open class PopOver(
             val animator = ObjectAnimator.ofFloat<View>(popOverView, View.ALPHA, 1f, 0f)
             animator.addListener(object : AnimatorListenerAdapter() {
                 override fun onAnimationEnd(animation: Animator) {
-                    popOverView?.removeWithoutAnimation()
-                    popOverView = null
+                    hidePopoverView()
                 }
             })
             animator.start()
         } else {
-            popOverView?.removeWithoutAnimation()
-            popOverView = null
+            hidePopoverView()
         }
     }
 
@@ -92,6 +90,11 @@ open class PopOver(
 
     private fun setNewTargetView(newTargetView: View) {
         this.targetView = newTargetView
+    }
+
+    private fun hidePopoverView() {
+        popOverView?.removeWithoutAnimation()
+        popOverView = null
     }
 
     private fun show(container: ViewGroup, targetView: View?): PopOverView? {
