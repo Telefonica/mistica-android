@@ -98,7 +98,7 @@ class MisticaTypography(
         fontWeight: FontWeight = FontWeight.Light
     ) =
         buildBaseStyle().copy(
-            fontSize = 22.sp,
+            fontSize = 20.sp,
             lineHeight = 24.sp,
             fontWeight = fontWeight,
         )

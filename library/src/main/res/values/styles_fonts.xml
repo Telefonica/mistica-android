@@ -27,7 +27,7 @@
     </style>
 
     <style name="AppTheme.TextAppearance.Preset5">
-        <item name="android:textSize">22sp</item>
+        <item name="android:textSize">20sp</item>
         <item name="lineHeight">24sp</item>
         <item name="android:fontFamily">?preset5Font</item>
         <item name="android:textStyle">?preset5Style</item>
