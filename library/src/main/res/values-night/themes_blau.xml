@@ -54,6 +54,7 @@
 
 		<!-- Text Links -->
 		<item name="colorTextLink">@color/blau_color_purple</item>
+		<item name="colorTextLinkInverse">@color/blau_color_purple_30</item>
 
 		<!-- Control colors -->
 		<item name="colorControl">@color/blau_color_grey_5</item>
