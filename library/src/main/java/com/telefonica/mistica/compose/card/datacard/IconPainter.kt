@@ -5,8 +5,10 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
@@ -34,23 +36,39 @@ sealed class IconPainter {
         val iconRes: Int,
         val iconTint: Color?,
         val backgroundColor: Color,
+        val isCircular: Boolean,
     ) : IconPainter() {
         @Composable
         override fun Paint() {
             Box(
                 modifier = Modifier.padding(top = 8.dp, bottom = 8.dp),
             ) {
-                Circle(
-                    color = backgroundColor
-                ) {
-                    Image(
-                        painter = painterResource(id = iconRes),
-                        contentDescription = null,
-                        colorFilter = iconTint?.let { ColorFilter.tint(iconTint) },
-                        contentScale = ContentScale.Crop
-                    )
+                if (isCircular) {
+                    Circle(
+                        color = backgroundColor
+                    ) {
+                        Image()
+                    }
+                } else {
+                    Box(
+                        modifier = Modifier
+                            .size(24.dp)
+                            .wrapContentSize(align = Alignment.Center)
+                    ) {
+                        Image()
+                    }
                 }
             }
+        }
+
+        @Composable
+        private fun Image() {
+            Image(
+                painter = painterResource(id = iconRes),
+                contentDescription = null,
+                colorFilter = iconTint?.let { ColorFilter.tint(iconTint) },
+                contentScale = ContentScale.Crop
+            )
         }
     }
 
@@ -105,10 +123,12 @@ fun resourceIconPainter(
     @DrawableRes iconRes: Int,
     iconTint: Color? = null,
     backgroundColor: Color = MisticaTheme.colors.neutralLow,
+    isCircular: Boolean = true,
 ) = IconPainter.ResourceIconPainter(
     iconRes = iconRes,
     iconTint = iconTint,
-    backgroundColor = backgroundColor
+    backgroundColor = backgroundColor,
+    isCircular = isCircular
 )
 
 fun textIconPainter(
@@ -120,7 +140,6 @@ fun textIconPainter(
     colorBackground = colorBackground,
     colorForeground = colorForeground,
 )
-
 
 fun imageIconPainter(url: String) = IconPainter.ImageIconPainter(url)
 

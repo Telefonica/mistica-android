@@ -12,6 +12,10 @@ Implemented as a custom view, `com.telefonica.mistica.card.datacard.DataCardView
 ```xml
     <declare-styleable name="CardView">
         <attr name="cardIcon" format="reference" />
+        <attr name="cardIconType" format="enum">
+            <enum name="icon" value="0" />
+            <enum name="circularIcon" value="1" />
+        </attr>
         <attr name="cardTag" format="string" />
         <attr name="cardTitle" format="string" />
         <attr name="cardSubtitle" format="string" />
