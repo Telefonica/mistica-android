@@ -2,7 +2,7 @@
 <resources>
     <dimen name="button_horizontal_padding">16dp</dimen>
     <dimen name="button_height">48dp</dimen>
-    <dimen name="button_min_width">156dp</dimen>
+    <dimen name="button_min_width">136dp</dimen>
     <dimen name="button_vertical_inset">0dp</dimen>
     <dimen name="button_icon_size">24dp</dimen>
     <dimen name="button_icon_padding">8dp</dimen>
