@@ -149,6 +149,7 @@ object BlauBrand : Brand {
         textButtonSecondaryInverseSelected = BlauPaletteColor.blau_color_blue_secondary60,
         textButtonSecondarySelected = BlauPaletteColor.blau_color_blue_secondary60,
         textLink = BlauPaletteColor.blau_color_purple,
+        textLinkInverse = BlauPaletteColor.blau_color_purple_30,
         textNavigationBarPrimary = BlauPaletteColor.blau_color_grey_2,
         textNavigationBarSecondary = BlauPaletteColor.blau_color_grey_4,
         textPrimary = BlauPaletteColor.blau_color_grey_2,
