@@ -10,6 +10,7 @@ import androidx.annotation.AttrRes
 import androidx.fragment.app.Fragment
 import com.telefonica.mistica.card.datacard.DataCardView
 import com.telefonica.mistica.card.datacard.DataCardView.IconType.Companion.TYPE_CIRCULAR_ICON
+import com.telefonica.mistica.card.datacard.DataCardView.IconType.Companion.TYPE_CIRCULAR_IMAGE
 import com.telefonica.mistica.card.datacard.DataCardView.IconType.Companion.TYPE_ICON
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.input.CheckBoxInput
@@ -38,8 +39,7 @@ class DataCardFragment : Fragment() {
     @TagStyle
     private var tagStyle = TYPE_PROMO
 
-    @DataCardView.IconType
-    private var iconType = TYPE_ICON
+    private var iconType: IconTypes = IconTypes.ICON
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -78,7 +78,7 @@ class DataCardFragment : Fragment() {
             )
             setText(IconTypes.ICON.name)
             setOnItemClickListener { _, _, _, _ ->
-                iconType = IconTypes.valueOf(text.toString()).iconType
+                iconType = IconTypes.valueOf(text.toString())
                 updateDataCardView(view)
             }
         }
@@ -102,14 +102,11 @@ class DataCardFragment : Fragment() {
                 setCardAdditionalContent(null)
             }
             if (view.findViewById<CheckBoxInput>(R.id.show_icon_checkbox).isChecked()) {
-                setIconType(iconType)
+                setIconType(iconType.iconType)
                 when (iconType) {
-                    TYPE_ICON -> {
-                        setIcon(R.drawable.ic_tags)
-                    }
-                    TYPE_CIRCULAR_ICON -> {
-                        setIcon(R.drawable.media_card_sample_image)
-                    }
+                    IconTypes.ICON -> setIcon(R.drawable.ic_lightning_light)
+                    IconTypes.CIRCULAR_ICON -> setIcon(R.drawable.ic_lightning_light)
+                    IconTypes.CIRCULAR_IMAGE -> setIcon(R.drawable.media_card_sample_image)
                 }
             } else {
                 removeIcon()
@@ -139,5 +136,6 @@ class DataCardFragment : Fragment() {
     private enum class IconTypes(@AttrRes val iconType: Int) {
         ICON(TYPE_ICON),
         CIRCULAR_ICON(TYPE_CIRCULAR_ICON),
+        CIRCULAR_IMAGE(TYPE_CIRCULAR_IMAGE),
     }
 }

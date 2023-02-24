@@ -12,12 +12,15 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.IntDef
 import androidx.annotation.StringRes
 import androidx.appcompat.content.res.AppCompatResources
+import androidx.core.graphics.drawable.DrawableCompat
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
 import com.telefonica.mistica.card.CardView
 import com.telefonica.mistica.card.datacard.DataCardView.IconType.Companion.TYPE_CIRCULAR_ICON
+import com.telefonica.mistica.card.datacard.DataCardView.IconType.Companion.TYPE_CIRCULAR_IMAGE
 import com.telefonica.mistica.card.datacard.DataCardView.IconType.Companion.TYPE_ICON
+import com.telefonica.mistica.util.getThemeColor
 
 @BindingMethods(
     BindingMethod(
@@ -46,18 +49,20 @@ class DataCardView @JvmOverloads constructor(
     @IntDef(
         TYPE_ICON,
         TYPE_CIRCULAR_ICON,
+        TYPE_CIRCULAR_IMAGE
     )
     annotation class IconType {
         companion object {
             const val TYPE_ICON = 0
             const val TYPE_CIRCULAR_ICON = 1
+            const val TYPE_CIRCULAR_IMAGE = 2
         }
     }
 
     private lateinit var imageLayout: FrameLayout
     private lateinit var assetCircularImageView: ImageView
     private lateinit var iconImageView: ImageView
-    private var iconType: Int = TYPE_CIRCULAR_ICON
+    private var iconType: Int = TYPE_CIRCULAR_IMAGE
 
     override fun handleAttrsAndInflateLayout(
         attrs: AttributeSet?,
@@ -95,14 +100,23 @@ class DataCardView @JvmOverloads constructor(
     }
 
     fun setIcon(icon: Drawable) {
-        if (iconType == TYPE_CIRCULAR_ICON) {
-            assetCircularImageView.setImageDrawable(icon)
-            assetCircularImageView.visibility = View.VISIBLE
-            iconImageView.visibility = View.GONE
-        } else {
-            iconImageView.setImageDrawable(icon)
-            assetCircularImageView.visibility = View.GONE
-            iconImageView.visibility = View.VISIBLE
+        when (iconType) {
+            TYPE_CIRCULAR_IMAGE -> {
+                assetCircularImageView.setImageDrawable(icon)
+                assetCircularImageView.visibility = View.VISIBLE
+                iconImageView.visibility = View.GONE
+            }
+            TYPE_ICON,
+            TYPE_CIRCULAR_ICON,
+            -> {
+                iconImageView.setImageDrawable(icon)
+                iconImageView.visibility = View.VISIBLE
+                assetCircularImageView.visibility = View.GONE
+
+                if (iconType == TYPE_CIRCULAR_ICON) {
+                    DrawableCompat.setTint(DrawableCompat.wrap(icon), context.getThemeColor(R.attr.colorBrand))
+                }
+            }
         }
 
         imageLayout.visibility = View.VISIBLE
@@ -116,6 +130,21 @@ class DataCardView @JvmOverloads constructor(
 
     fun setIconType(@IconType type: Int) {
         iconType = type
+        configureAsset()
+    }
+
+    private fun configureAsset() {
+        when (iconType) {
+            TYPE_CIRCULAR_IMAGE -> {
+                imageLayout.setBackgroundResource(0)
+            }
+            TYPE_ICON -> {
+                imageLayout.setBackgroundResource(0)
+            }
+            TYPE_CIRCULAR_ICON -> {
+                imageLayout.setBackgroundResource(R.drawable.bg_datacard_icon)
+            }
+        }
     }
 
     fun removeIcon() {

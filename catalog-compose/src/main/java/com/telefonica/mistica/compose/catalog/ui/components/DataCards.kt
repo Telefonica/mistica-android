@@ -29,6 +29,7 @@ import com.telefonica.mistica.compose.card.datacard.resourceIconPainter
 import com.telefonica.mistica.compose.catalog.R
 import com.telefonica.mistica.compose.input.DropDownInput
 import com.telefonica.mistica.compose.tag.Tag
+import com.telefonica.mistica.compose.theme.MisticaTheme
 import com.telefonica.mistica.tag.TagView
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_PROMO
 
@@ -47,7 +48,7 @@ fun DataCards() {
 
     var withAditionalContent: Boolean by remember { mutableStateOf(false) }
     var withIcon: Boolean by remember { mutableStateOf(false) }
-    var iconType: Int by remember { mutableStateOf(TYPE_ICON) }
+    var iconType: IconTypes by remember { mutableStateOf(IconTypes.ICON) }
 
     Column(
         modifier = Modifier
@@ -96,8 +97,8 @@ fun DataCards() {
                 .fillMaxWidth()
                 .padding(40.dp, 8.dp),
             items = IconTypes.values().map { it.name },
-            currentItemIndex = iconType,
-            onItemSelected = { index -> iconType = index },
+            currentItemIndex = IconTypes.values().indexOf(iconType),
+            onItemSelected = { index -> iconType = IconTypes.values()[index] },
             hint = "Icon type",
         )
 
@@ -107,9 +108,14 @@ fun DataCards() {
                 .fillMaxWidth(),
             iconPainter = if (withIcon) {
                 when (iconType) {
-                    TYPE_ICON -> resourceIconPainter(iconRes = R.drawable.ic_tags, isCircular = false)
-                    TYPE_CIRCULAR_ICON -> resourceIconPainter(iconRes = R.drawable.card_image_sample, isCircular = true)
-                    else -> noIcon()
+                    IconTypes.ICON -> resourceIconPainter(iconRes = R.drawable.ic_lightning_light, isCircular = false)
+                    IconTypes.CIRCULAR_ICON -> resourceIconPainter(
+                        iconRes = R.drawable.ic_lightning_light,
+                        isCircular = true,
+                        backgroundColor = MisticaTheme.colors.brandLow,
+                        iconTint = MisticaTheme.colors.brand
+                    )
+                    IconTypes.CIRCULAR_IMAGE -> resourceIconPainter(iconRes = R.drawable.card_image_sample, isCircular = true)
                 }
             } else {
                 noIcon()
@@ -145,6 +151,7 @@ private enum class TagColors(@AttrRes val tagStyle: Int) {
 private enum class IconTypes(@AttrRes val iconType: Int) {
     ICON(TYPE_ICON),
     CIRCULAR_ICON(TYPE_CIRCULAR_ICON),
+    CIRCULAR_IMAGE(TYPE_CIRCULAR_ICON),
 }
 
 private fun String.getOrNullIfEmpty(): String? = if (this.isEmpty()) null else this

@@ -199,6 +199,7 @@
         <attr name="cardIconType" format="enum">
             <enum name="icon" value="0" />
             <enum name="circularIcon" value="1" />
+            <enum name="circularImage" value="2" />
         </attr>
     </declare-styleable>
 
