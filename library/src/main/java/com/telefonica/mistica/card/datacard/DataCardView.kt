@@ -112,10 +112,6 @@ class DataCardView @JvmOverloads constructor(
                 iconImageView.setImageDrawable(icon)
                 iconImageView.visibility = View.VISIBLE
                 assetCircularImageView.visibility = View.GONE
-
-                if (iconType == TYPE_CIRCULAR_ICON) {
-                    DrawableCompat.setTint(DrawableCompat.wrap(icon), context.getThemeColor(R.attr.colorBrand))
-                }
             }
         }
 
