@@ -9,6 +9,10 @@ import android.widget.Toast
 import androidx.annotation.AttrRes
 import androidx.fragment.app.Fragment
 import com.telefonica.mistica.card.datacard.DataCardView
+import com.telefonica.mistica.card.datacard.DataCardView.IconType.Companion.TYPE_CIRCULAR_ICON
+import com.telefonica.mistica.card.datacard.DataCardView.IconType.Companion.TYPE_CIRCULAR_IMAGE
+import com.telefonica.mistica.card.datacard.DataCardView.IconType.Companion.TYPE_ICON
+import com.telefonica.mistica.card.datacard.DataCardView.IconType.Companion.TYPE_SQUARE_IMAGE
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.input.CheckBoxInput
 import com.telefonica.mistica.input.DropDownInput
@@ -36,11 +40,19 @@ class DataCardFragment : Fragment() {
     @TagStyle
     private var tagStyle = TYPE_PROMO
 
+    private var iconType: IconTypes = IconTypes.ICON
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         view.findViewById<Button>(R.id.data_card_button_update)
             .setOnClickListener { updateDataCardView(view) }
-        with(view.findViewById<DropDownInput>(R.id.tagColorSelector).dropDown) {
+        configureTagStyleSelector(view)
+        configureIconTypeSelector(view)
+        updateDataCardView(view)
+    }
+
+    private fun configureTagStyleSelector(view: View) {
+        with(view.findViewById<DropDownInput>(R.id.tag_color_selector).dropDown) {
             setAdapter(
                 DropDownInput.Adapter(
                     view.context,
@@ -54,7 +66,23 @@ class DataCardFragment : Fragment() {
                 updateDataCardView(view)
             }
         }
-        updateDataCardView(view)
+    }
+
+    private fun configureIconTypeSelector(view: View) {
+        with(view.findViewById<DropDownInput>(R.id.icon_type_selector).dropDown) {
+            setAdapter(
+                DropDownInput.Adapter(
+                    view.context,
+                    R.layout.dropdown_menu_popup_item,
+                    IconTypes.values().map { it.name }
+                )
+            )
+            setText(IconTypes.ICON.name)
+            setOnItemClickListener { _, _, _, _ ->
+                iconType = IconTypes.valueOf(text.toString())
+                updateDataCardView(view)
+            }
+        }
     }
 
     private fun updateDataCardView(view: View) {
@@ -75,7 +103,13 @@ class DataCardFragment : Fragment() {
                 setCardAdditionalContent(null)
             }
             if (view.findViewById<CheckBoxInput>(R.id.show_icon_checkbox).isChecked()) {
-                setIcon(R.drawable.media_card_sample_image)
+                setIconType(iconType.iconType)
+                when (iconType) {
+                    IconTypes.ICON -> setIcon(R.drawable.ic_lightning_light)
+                    IconTypes.CIRCULAR_ICON -> setIcon(R.drawable.ic_lightning_light)
+                    IconTypes.CIRCULAR_IMAGE -> setIcon(R.drawable.media_card_sample_image)
+                    IconTypes.SQUARE_IMAGE -> setIcon(R.drawable.media_card_sample_image)
+                }
             } else {
                 removeIcon()
             }
@@ -99,5 +133,12 @@ class DataCardFragment : Fragment() {
         WARNING(TYPE_WARNING),
         ERROR(TYPE_ERROR),
         INVERSE(TYPE_INVERSE),
+    }
+
+    private enum class IconTypes(@AttrRes val iconType: Int) {
+        ICON(TYPE_ICON),
+        CIRCULAR_ICON(TYPE_CIRCULAR_ICON),
+        CIRCULAR_IMAGE(TYPE_CIRCULAR_IMAGE),
+        SQUARE_IMAGE(TYPE_SQUARE_IMAGE),
     }
 }

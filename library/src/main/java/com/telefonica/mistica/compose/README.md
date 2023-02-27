@@ -1,6 +1,7 @@
 # Jetpack Compose support
 
-[Jetpack compose](https://developer.android.com/jetpack/compose) is a toolkit to develop native UI in Android. Newer and more powerful than Android Views it has became the default system in newer Telefónica Android applications.
+[Jetpack compose](https://developer.android.com/jetpack/compose) is a toolkit to develop native UI in Android. Newer and more powerful than Android Views it has
+became the default system in newer Telefónica Android applications.
 
 ## Installation
 
@@ -17,7 +18,6 @@ dependencies {
 }
 ```
 
-
 In case you also want to include also the components catalog in your application:
 
 ```groovy
@@ -30,7 +30,9 @@ dependencies {
 ```
 
 ## Configuration
-The goal of the team is to provide a fully compose implementation of the library, but currently there are still wrapped views inside `AndroidView` composables. So it is still needed to add [the brand theme in the Manifest](../README.md#configuration)
+
+The goal of the team is to provide a fully compose implementation of the library, but currently there are still wrapped views inside `AndroidView` composables.
+So it is still needed to add [the brand theme in the Manifest](../README.md#configuration)
 
 Also, wrap your outer composable with the `MisticaTheme`
 
@@ -47,34 +49,26 @@ where `brand` is the implementation of the app brand and `darkTheme` a flag that
 
 ```kotlin
 override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContent {
-            MisticaTheme(brand = MovistarBrand) {
-                ...
-            }
+    super.onCreate(savedInstanceState)
+    setContent {
+        MisticaTheme(brand = MovistarBrand) {
+            ...
         }
     }
+}
 ```
 
 ## Composable components
+
 Mística-compose supports a subset of the Mística elements. The objective is to support all of them in a near future.
 
-* [Badges](./src/main/java/com/telefonica/mistica/compose/badge)
-* [Buttons](./src/main/java/com/telefonica/mistica/compose/button)
-* [Feedbacks](./src/main/java/com/telefonica/mistica/compose/feedback)
-* [Lists](./src/main/java/com/telefonica/mistica/compose/list)
-* [Tags](./src/main/java/com/telefonica/mistica/compose/tag)
-* [Carousel](./src/main/java/com/telefonica/mistica/compose/carousel)
-* [Empty States](./src/main/java/com/telefonica/mistica/compose/emptystate/screen)
-* [Empty State Cards](./src/main/java/com/telefonica/mistica/compose/emptystate/card)
-* [Inputs](./src/main/java/com/telefonica/mistica/compose/input)
-* [Steppers](./src/main/java/com/telefonica/mistica/compose/stepper)
-* [Title](./src/main/java/com/telefonica/mistica/compose/title)
-
 ## Fonts
-Mística-compose supports the same fonts supported in Mística. See [MisticaTypography](https://github.com/Telefonica/mistica-android/library/src/main/java/com/telefonica/mistica/compose/theme/text/MisticaTypography.kt)
+
+Mística-compose supports the same fonts supported in Mística.
+See [MisticaTypography](https://github.com/Telefonica/mistica-android/library/src/main/java/com/telefonica/mistica/compose/theme/text/MisticaTypography.kt)
 
 Example of use:
+
 ```kotlin
 Text(
     text = "Preset 1",
@@ -83,50 +77,54 @@ Text(
 ```
 
 ## Demo app
-There is a Mística-compose catalog in the [Demo app](https://github.com/Telefonica/mistica-android/blob/main/README.md#demo-app) Search for Compose in your 
+
+There is a Mística-compose catalog in the [Demo app](https://github.com/Telefonica/mistica-android/blob/main/README.md#demo-app) Search for Compose in your
 launcher
 
 ## Current state
 
 ### Components
-| Component | Available | Implementation |
-| ------------- | ------------- | ------------- |
-| Buttons					|  ✅  |  Composable   |
-| Inputs					|  ✅*  |  Composable   |
-| Snackbars					|     |     |    				
-| Screen Feedbacks			|  ✅  |  AndroidView   |
-| Load Error Feedback		|     |     |    							
-| Pop Overs					|     |     |    				
-| Badges					|  ✅  |  Composable   |
-| Scroll Content Indicator	|     |     |    								
-| Tags						|  ✅  |  Composable   |
-| Lists						|  ✅️ |  Composable   |
-| Headers					|     |     |    				
-| Sections					|     |     |    				
-| Filters					|     |     |    				
-| Highlighted Cards			|     |     |    						
-| Controls					|     |     |    				
-| Media Cards				|  ✅️ |  Composable   |
-| Data Cards				|  ✅️ |  Composable   |
-| Indeterminate Stepper		|  ✅️ |  AndroidView  |
-| Determinate Stepper		|     |     |
-| Tabs						|     |     |
-| Empty States				|  ✅ | AndroidView   |
-| Empty State Cards			|  ✅ | AndroidView   |
-| Callout					|  ✅  |   Composable  |
-| Carousel					|  ✅️ |  Composable   |
-| Title                     | ✅  | Composable    |
 
-***Note**: Not every text input type have been migrated, see [text input](https://github.com/Telefonica/mistica-android/tree/main/library/src/main/java/com/telefonica/mistica/compose/input/README.md) section to see which ones are migrated.
+| Component                                        | Available | Implementation |
+|--------------------------------------------------|-----------|----------------|
+| [Buttons](./button/README.md)                    | ✅         | Composable    |
+| [Inputs](./input/README.md)                      | ✅*        | Composable     |
+| Snackbars                                        |           |                |    				
+| [Screen Feedbacks](./feedback/README.md)         | ✅         | AndroidView    |
+| Load Error Feedback                              |           |                |    							
+| Pop Overs                                        |           |                |    				
+| [Badges](./badge/README.md)                      | ✅         | Composable     |
+| Scroll Content Indicator                         |           |                |    								
+| [Tags](./tag/README.md)                          | ✅         | Composable     |
+| [Lists](./list/README.md)                        | ✅️        | Composable     |
+| Headers                                          |           |                |    				
+| Sections                                         |           |                |    				
+| Filters                                          |           |                |    				
+| Highlighted Cards                                |           |                |    						
+| Controls                                         |           |                |    				
+| [Media Cards](./card/mediacard/README.md)        | ✅️        | Composable     |
+| [Data Cards](./card/datacard/README.md)          | ✅️        | Composable     |
+| [Indeterminate Stepper](./stepper/README.md)     | ✅️        | AndroidView    |
+| Determinate Stepper                              |           |                |
+| Tabs                                             |           |                |
+| [Empty States](./emptystate/screen/README.md)    | ✅         | AndroidView    |
+| [Empty State Cards](./emptystate/card/README.md) | ✅         | AndroidView    |
+| [Callout](./callout/README.md)                   | ✅         | Composable     |
+| [Carousel](./carousel/README.md)                 | ✅️        | Composable     |
+| [Title](./title/README.md)                       | ✅         | Composable     |
 
+***Note**: Not every text input type have been migrated,
+see [text input](https://github.com/Telefonica/mistica-android/tree/main/library/src/main/java/com/telefonica/mistica/compose/input/README.md) section to see
+which ones are migrated.
 
 ### Brands
-| Brand | Available |
-| ------------- | ------------- |
-| Movistar                  |  ✅  |
-| Movistar Prominent        |  ✅  |
-| O2                        |  ✅  |
-| O2 Classic                |  ✅  |
-| Vivo                      |  ✅  |
-| Blau                      |  ✅  |
-| Telefónica                |  ✅  |
+
+| Brand              | Available |
+|--------------------|-----------|
+| Movistar           | ✅         |
+| Movistar Prominent | ✅         |
+| O2                 | ✅         |
+| O2 Classic         | ✅         |
+| Vivo               | ✅         |
+| Blau               | ✅         |
+| Telefónica         | ✅         |
