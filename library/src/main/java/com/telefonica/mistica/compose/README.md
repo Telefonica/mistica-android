@@ -91,7 +91,7 @@ launcher
 ### Components
 | Component | Available | Implementation |
 | ------------- | ------------- | ------------- |
-| Buttons					|  ✅  |  AndroidView   |
+| Buttons					|  ✅  |  Composable   |
 | Inputs					|  ✅*  |  Composable   |
 | Snackbars					|     |     |    				
 | Screen Feedbacks			|  ✅  |  AndroidView   |
