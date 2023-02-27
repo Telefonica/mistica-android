@@ -29,7 +29,7 @@
             app:inputType="text" />
 
         <com.telefonica.mistica.input.DropDownInput
-            android:id="@+id/tagColorSelector"
+            android:id="@+id/tag_color_selector"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
@@ -95,6 +95,13 @@
             android:layout_height="wrap_content"
             app:inputCheckText="With icon"
             app:inputChecked="false" />
+
+        <com.telefonica.mistica.input.DropDownInput
+                android:id="@+id/icon_type_selector"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:inputHint="Select Icon Type" />
 
         <FrameLayout
             android:layout_width="match_parent"

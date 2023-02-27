@@ -6,20 +6,34 @@ import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.FrameLayout
 import android.widget.ImageView
 import androidx.annotation.DrawableRes
+import androidx.annotation.IntDef
 import androidx.annotation.StringRes
 import androidx.appcompat.content.res.AppCompatResources
+import androidx.core.graphics.drawable.DrawableCompat
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
 import com.telefonica.mistica.card.CardView
+import com.telefonica.mistica.card.datacard.DataCardView.IconType.Companion.TYPE_CIRCULAR_ICON
+import com.telefonica.mistica.card.datacard.DataCardView.IconType.Companion.TYPE_CIRCULAR_IMAGE
+import com.telefonica.mistica.card.datacard.DataCardView.IconType.Companion.TYPE_ICON
+import com.telefonica.mistica.card.datacard.DataCardView.IconType.Companion.TYPE_SQUARE_IMAGE
+import com.telefonica.mistica.util.convertDpToPx
+import com.telefonica.mistica.util.getThemeColor
 
 @BindingMethods(
     BindingMethod(
         type = DataCardView::class,
         attribute = "cardIcon",
-        method = "setCardIcon"
+        method = "setIcon"
+    ),
+    BindingMethod(
+        type = DataCardView::class,
+        attribute = "cardIconType",
+        method = "setIconType"
     ),
     BindingMethod(
         type = DataCardView::class,
@@ -30,18 +44,39 @@ import com.telefonica.mistica.card.CardView
 class DataCardView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
-    defStyleAttr: Int = 0
+    defStyleAttr: Int = 0,
 ) : CardView(context, attrs, defStyleAttr) {
 
+    @Retention(AnnotationRetention.SOURCE)
+    @IntDef(
+        TYPE_ICON,
+        TYPE_CIRCULAR_ICON,
+        TYPE_CIRCULAR_IMAGE,
+        TYPE_SQUARE_IMAGE
+    )
+    annotation class IconType {
+        companion object {
+            const val TYPE_ICON = 0
+            const val TYPE_CIRCULAR_ICON = 1
+            const val TYPE_CIRCULAR_IMAGE = 2
+            const val TYPE_SQUARE_IMAGE = 3
+        }
+    }
+
+    private lateinit var imageLayout: FrameLayout
+    private lateinit var assetCircularImageView: ImageView
     private lateinit var iconImageView: ImageView
+    private var iconType: Int = TYPE_CIRCULAR_IMAGE
 
     override fun handleAttrsAndInflateLayout(
         attrs: AttributeSet?,
         defStyleAttr: Int,
-        defStyleRes: Int
+        defStyleRes: Int,
     ): View {
 
         val rootView = LayoutInflater.from(context).inflate(R.layout.data_card_view, this, true)
+        imageLayout = findViewById(R.id.data_card_image_layout)
+        assetCircularImageView = findViewById(R.id.data_card_circular_icon)
         iconImageView = findViewById(R.id.data_card_icon)
 
         if (attrs != null) {
@@ -53,6 +88,12 @@ class DataCardView @JvmOverloads constructor(
                     0
                 )
             setSubtitle(styledAttrs.getText(R.styleable.DataCardView_cardSubtitle))
+            setIconType(
+                styledAttrs.getInt(
+                    R.styleable.DataCardView_cardIconType,
+                    TYPE_CIRCULAR_ICON
+                )
+            )
             styledAttrs.getResourceId(R.styleable.DataCardView_cardIcon, TypedValue.TYPE_NULL)
                 .takeIf { it != TypedValue.TYPE_NULL }
                 ?.let { AppCompatResources.getDrawable(context, it) }
@@ -63,17 +104,62 @@ class DataCardView @JvmOverloads constructor(
     }
 
     fun setIcon(icon: Drawable) {
-        iconImageView.setImageDrawable(icon)
-        iconImageView.visibility = View.VISIBLE
+        when (iconType) {
+            TYPE_CIRCULAR_IMAGE -> {
+                assetCircularImageView.setImageDrawable(icon)
+                assetCircularImageView.visibility = View.VISIBLE
+                iconImageView.visibility = View.GONE
+            }
+            TYPE_ICON,
+            TYPE_CIRCULAR_ICON,
+            -> {
+                iconImageView.setImageDrawable(icon)
+                iconImageView.visibility = View.VISIBLE
+                assetCircularImageView.visibility = View.GONE
+            }
+            TYPE_SQUARE_IMAGE -> {
+                iconImageView.setImageDrawable(icon)
+                iconImageView.visibility = View.VISIBLE
+                assetCircularImageView.visibility = View.GONE
+            }
+        }
+
+        imageLayout.visibility = View.VISIBLE
     }
 
     fun setIcon(@DrawableRes iconRes: Int) {
-        iconImageView.setImageResource(iconRes)
-        iconImageView.visibility = View.VISIBLE
+        AppCompatResources.getDrawable(context, iconRes)?.let {
+            setIcon(it)
+        }
+    }
+
+    fun setIconType(@IconType type: Int) {
+        iconType = type
+        configureAsset()
+    }
+
+    private fun configureAsset() {
+        when (iconType) {
+            TYPE_CIRCULAR_IMAGE -> {
+                imageLayout.setBackgroundResource(0)
+            }
+            TYPE_ICON -> {
+                imageLayout.setBackgroundResource(0)
+                iconImageView.setSize(24)
+            }
+            TYPE_CIRCULAR_ICON -> {
+                imageLayout.setBackgroundResource(R.drawable.bg_datacard_icon)
+                iconImageView.setSize(24)
+            }
+            TYPE_SQUARE_IMAGE -> {
+                imageLayout.setBackgroundResource(0)
+                iconImageView.setSize(40)
+            }
+        }
     }
 
     fun removeIcon() {
-        iconImageView.visibility = View.GONE
+        imageLayout.visibility = View.GONE
     }
 
     fun setSubtitle(text: CharSequence?) {
@@ -82,5 +168,14 @@ class DataCardView @JvmOverloads constructor(
 
     fun setSubtitle(@StringRes textRes: Int?) {
         textRes?.let { setSubtitle(context.getString(it)) }
+    }
+
+    private fun ImageView.setSize(dpsSize: Int) {
+        val pxSize: Int = context.convertDpToPx(dpsSize)
+        layoutParams.apply {
+            height = pxSize
+            width = pxSize
+            layoutParams = this
+        }
     }
 }

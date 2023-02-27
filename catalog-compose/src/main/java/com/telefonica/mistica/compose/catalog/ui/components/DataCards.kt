@@ -1,5 +1,6 @@
 package com.telefonica.mistica.compose.catalog.ui.components
 
+import androidx.annotation.AttrRes
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -9,8 +10,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Checkbox
-import androidx.compose.material.DropdownMenu
-import androidx.compose.material.DropdownMenuItem
 import androidx.compose.material.OutlinedTextField
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -21,29 +20,26 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.telefonica.mistica.card.datacard.DataCardView.IconType.Companion.TYPE_CIRCULAR_ICON
+import com.telefonica.mistica.card.datacard.DataCardView.IconType.Companion.TYPE_ICON
+import com.telefonica.mistica.card.datacard.DataCardView.IconType.Companion.TYPE_SQUARE_IMAGE
 import com.telefonica.mistica.compose.card.Action
 import com.telefonica.mistica.compose.card.datacard.DataCard
+import com.telefonica.mistica.compose.card.datacard.IconType
 import com.telefonica.mistica.compose.card.datacard.noIcon
 import com.telefonica.mistica.compose.card.datacard.resourceIconPainter
 import com.telefonica.mistica.compose.catalog.R
+import com.telefonica.mistica.compose.input.DropDownInput
 import com.telefonica.mistica.compose.tag.Tag
+import com.telefonica.mistica.compose.theme.MisticaTheme
+import com.telefonica.mistica.tag.TagView
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_PROMO
 
 @Composable
 fun DataCards() {
 
     var tag: String by remember { mutableStateOf("tag") }
-    var tagType: Int by remember { mutableStateOf(TYPE_PROMO) }
-    var tagTypeDropDownExpanded: Boolean by remember { mutableStateOf(false) }
-    var tagTypeItems = listOf(
-        "PROMO",
-        "ACTIVE",
-        "INACTIVE",
-        "SUCCESS",
-        "WARNING",
-        "ERROR",
-        "INVERSE",
-    )
+    var tagStyle: Int by remember { mutableStateOf(TYPE_PROMO) }
 
     var preTitle: String by remember { mutableStateOf("preTitle") }
     var title: String by remember { mutableStateOf("title") }
@@ -54,6 +50,7 @@ fun DataCards() {
 
     var withAditionalContent: Boolean by remember { mutableStateOf(false) }
     var withIcon: Boolean by remember { mutableStateOf(false) }
+    var iconType: IconTypes by remember { mutableStateOf(IconTypes.ICON) }
 
     Column(
         modifier = Modifier
@@ -65,16 +62,16 @@ fun DataCards() {
     ) {
 
         OutlinedTextField(value = tag, onValueChange = { tag = it }, label = { Text("Tag") })
-        DropdownMenu(expanded = tagTypeDropDownExpanded, onDismissRequest = { tagTypeDropDownExpanded = false }) {
-            tagTypeItems.forEachIndexed { index, s ->
-                DropdownMenuItem(onClick = {
-                    tagType = index
-                    tagTypeDropDownExpanded = false
-                }) {
-                    Text(s)
-                }
-            }
-        }
+
+        DropDownInput(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(40.dp, 8.dp),
+            items = TagColors.values().map { it.name },
+            currentItemIndex = tagStyle,
+            onItemSelected = { index -> tagStyle = index },
+            hint = "Tag style",
+        )
 
         OutlinedTextField(value = preTitle, onValueChange = { preTitle = it }, label = { Text("PreTitle") })
         OutlinedTextField(value = title, onValueChange = { title = it }, label = { Text("Title") })
@@ -97,12 +94,36 @@ fun DataCards() {
             Checkbox(checked = withIcon, onCheckedChange = { withIcon = !withIcon })
         }
 
+        DropDownInput(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(40.dp, 8.dp),
+            items = IconTypes.values().map { it.name },
+            currentItemIndex = IconTypes.values().indexOf(iconType),
+            onItemSelected = { index -> iconType = IconTypes.values()[index] },
+            hint = "Icon type",
+        )
+
         DataCard(
             modifier = Modifier
                 .padding(24.dp)
                 .fillMaxWidth(),
-            iconPainter = if (withIcon) resourceIconPainter(iconRes = R.drawable.card_image_sample) else noIcon(),
-            tag = if (tag.isNotEmpty()) Tag(tag).withStyle(tagType) else null,
+            iconPainter = if (withIcon) {
+                when (iconType) {
+                    IconTypes.ICON -> resourceIconPainter(iconRes = R.drawable.ic_lightning_light, iconType = IconType.ICON)
+                    IconTypes.CIRCULAR_ICON -> resourceIconPainter(
+                        iconRes = R.drawable.ic_lightning_light,
+                        iconType = IconType.CIRCULAR_ASSET,
+                        backgroundColor = MisticaTheme.colors.brandLow,
+                        iconTint = MisticaTheme.colors.brand
+                    )
+                    IconTypes.CIRCULAR_IMAGE -> resourceIconPainter(iconRes = R.drawable.card_image_sample, iconType = IconType.CIRCULAR_ASSET)
+                    IconTypes.SQUARE_IMAGE -> resourceIconPainter(iconRes = R.drawable.card_image_sample, iconType = IconType.SQUARE_IMAGE)
+                }
+            } else {
+                noIcon()
+            },
+            tag = if (tag.isNotEmpty()) Tag(tag).withStyle(tagStyle) else null,
             preTitle = preTitle.getOrNullIfEmpty(),
             title = title.getOrNullIfEmpty(),
             subtitle = subtitle.getOrNullIfEmpty(),
@@ -118,6 +139,23 @@ fun DataCards() {
             },
         )
     }
+}
+
+private enum class TagColors(@AttrRes val tagStyle: Int) {
+    PROMO(TYPE_PROMO),
+    ACTIVE(TagView.TYPE_ACTIVE),
+    INACTIVE(TagView.TYPE_INACTIVE),
+    SUCCESS(TagView.TYPE_SUCCESS),
+    WARNING(TagView.TYPE_WARNING),
+    ERROR(TagView.TYPE_ERROR),
+    INVERSE(TagView.TYPE_INVERSE),
+}
+
+private enum class IconTypes(@AttrRes val iconType: Int) {
+    ICON(TYPE_ICON),
+    CIRCULAR_ICON(TYPE_CIRCULAR_ICON),
+    CIRCULAR_IMAGE(TYPE_CIRCULAR_ICON),
+    SQUARE_IMAGE(TYPE_SQUARE_IMAGE),
 }
 
 private fun String.getOrNullIfEmpty(): String? = if (this.isEmpty()) null else this
