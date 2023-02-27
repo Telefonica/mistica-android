@@ -36,26 +36,39 @@ sealed class IconPainter {
         val iconRes: Int,
         val iconTint: Color?,
         val backgroundColor: Color,
-        val isCircular: Boolean,
+        val iconType: IconType = IconType.CIRCULAR_ASSET,
     ) : IconPainter() {
         @Composable
         override fun Paint() {
             Box(
                 modifier = Modifier.padding(top = 8.dp, bottom = 8.dp),
             ) {
-                if (isCircular) {
-                    Circle(
-                        color = backgroundColor
-                    ) {
-                        Image()
+                when (iconType) {
+                    IconType.ICON -> {
+                        Box(
+                            modifier = Modifier
+                                .size(24.dp)
+                                .wrapContentSize(align = Alignment.Center)
+                        ) {
+                            Image()
+                        }
                     }
-                } else {
-                    Box(
-                        modifier = Modifier
-                            .size(24.dp)
-                            .wrapContentSize(align = Alignment.Center)
-                    ) {
-                        Image()
+                    IconType.CIRCULAR_ASSET,
+                    -> {
+                        Circle(
+                            color = backgroundColor
+                        ) {
+                            Image()
+                        }
+                    }
+                    IconType.SQUARE_IMAGE -> {
+                        Box(
+                            modifier = Modifier
+                                .size(40.dp)
+                                .wrapContentSize(align = Alignment.Center)
+                        ) {
+                            Image()
+                        }
                     }
                 }
             }
@@ -123,12 +136,12 @@ fun resourceIconPainter(
     @DrawableRes iconRes: Int,
     iconTint: Color? = null,
     backgroundColor: Color = MisticaTheme.colors.neutralLow,
-    isCircular: Boolean = true,
+    iconType: IconType = IconType.CIRCULAR_ASSET,
 ) = IconPainter.ResourceIconPainter(
     iconRes = iconRes,
     iconTint = iconTint,
     backgroundColor = backgroundColor,
-    isCircular = isCircular
+    iconType = iconType
 )
 
 fun textIconPainter(
@@ -145,3 +158,8 @@ fun imageIconPainter(url: String) = IconPainter.ImageIconPainter(url)
 
 fun noIcon() = IconPainter.NoIconPainter
 
+enum class IconType {
+    ICON,
+    CIRCULAR_ASSET,
+    SQUARE_IMAGE,
+}

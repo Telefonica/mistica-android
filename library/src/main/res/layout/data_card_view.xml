@@ -37,6 +37,7 @@
 					android:layout_gravity="center"
 					android:importantForAccessibility="no"
 					android:visibility="gone"
+					android:scaleType="centerCrop"
 					tools:src="@tools:sample/avatars"
 					tools:visibility="visible"
 					/>

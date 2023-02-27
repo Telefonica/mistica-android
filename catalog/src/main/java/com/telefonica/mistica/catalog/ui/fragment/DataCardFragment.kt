@@ -12,6 +12,7 @@ import com.telefonica.mistica.card.datacard.DataCardView
 import com.telefonica.mistica.card.datacard.DataCardView.IconType.Companion.TYPE_CIRCULAR_ICON
 import com.telefonica.mistica.card.datacard.DataCardView.IconType.Companion.TYPE_CIRCULAR_IMAGE
 import com.telefonica.mistica.card.datacard.DataCardView.IconType.Companion.TYPE_ICON
+import com.telefonica.mistica.card.datacard.DataCardView.IconType.Companion.TYPE_SQUARE_IMAGE
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.input.CheckBoxInput
 import com.telefonica.mistica.input.DropDownInput
@@ -107,6 +108,7 @@ class DataCardFragment : Fragment() {
                     IconTypes.ICON -> setIcon(R.drawable.ic_lightning_light)
                     IconTypes.CIRCULAR_ICON -> setIcon(R.drawable.ic_lightning_light)
                     IconTypes.CIRCULAR_IMAGE -> setIcon(R.drawable.media_card_sample_image)
+                    IconTypes.SQUARE_IMAGE -> setIcon(R.drawable.media_card_sample_image)
                 }
             } else {
                 removeIcon()
@@ -137,5 +139,6 @@ class DataCardFragment : Fragment() {
         ICON(TYPE_ICON),
         CIRCULAR_ICON(TYPE_CIRCULAR_ICON),
         CIRCULAR_IMAGE(TYPE_CIRCULAR_IMAGE),
+        SQUARE_IMAGE(TYPE_SQUARE_IMAGE),
     }
 }

@@ -22,8 +22,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.card.datacard.DataCardView.IconType.Companion.TYPE_CIRCULAR_ICON
 import com.telefonica.mistica.card.datacard.DataCardView.IconType.Companion.TYPE_ICON
+import com.telefonica.mistica.card.datacard.DataCardView.IconType.Companion.TYPE_SQUARE_IMAGE
 import com.telefonica.mistica.compose.card.Action
 import com.telefonica.mistica.compose.card.datacard.DataCard
+import com.telefonica.mistica.compose.card.datacard.IconType
 import com.telefonica.mistica.compose.card.datacard.noIcon
 import com.telefonica.mistica.compose.card.datacard.resourceIconPainter
 import com.telefonica.mistica.compose.catalog.R
@@ -108,14 +110,15 @@ fun DataCards() {
                 .fillMaxWidth(),
             iconPainter = if (withIcon) {
                 when (iconType) {
-                    IconTypes.ICON -> resourceIconPainter(iconRes = R.drawable.ic_lightning_light, isCircular = false)
+                    IconTypes.ICON -> resourceIconPainter(iconRes = R.drawable.ic_lightning_light, iconType = IconType.ICON)
                     IconTypes.CIRCULAR_ICON -> resourceIconPainter(
                         iconRes = R.drawable.ic_lightning_light,
-                        isCircular = true,
+                        iconType = IconType.CIRCULAR_ASSET,
                         backgroundColor = MisticaTheme.colors.brandLow,
                         iconTint = MisticaTheme.colors.brand
                     )
-                    IconTypes.CIRCULAR_IMAGE -> resourceIconPainter(iconRes = R.drawable.card_image_sample, isCircular = true)
+                    IconTypes.CIRCULAR_IMAGE -> resourceIconPainter(iconRes = R.drawable.card_image_sample, iconType = IconType.CIRCULAR_ASSET)
+                    IconTypes.SQUARE_IMAGE -> resourceIconPainter(iconRes = R.drawable.card_image_sample, iconType = IconType.SQUARE_IMAGE)
                 }
             } else {
                 noIcon()
@@ -152,6 +155,7 @@ private enum class IconTypes(@AttrRes val iconType: Int) {
     ICON(TYPE_ICON),
     CIRCULAR_ICON(TYPE_CIRCULAR_ICON),
     CIRCULAR_IMAGE(TYPE_CIRCULAR_ICON),
+    SQUARE_IMAGE(TYPE_SQUARE_IMAGE),
 }
 
 private fun String.getOrNullIfEmpty(): String? = if (this.isEmpty()) null else this

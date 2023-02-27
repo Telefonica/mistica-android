@@ -16,6 +16,7 @@ Implemented as a custom view, `com.telefonica.mistica.card.datacard.DataCardView
             <enum name="icon" value="0" />
             <enum name="circularIcon" value="1" />
             <enum name="circularImage" value="2" />
+			<enum name="squareImage" value="3" />
         </attr>
         <attr name="cardTag" format="string" />
         <attr name="cardTitle" format="string" />

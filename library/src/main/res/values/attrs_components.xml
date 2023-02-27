@@ -200,6 +200,7 @@
             <enum name="icon" value="0" />
             <enum name="circularIcon" value="1" />
             <enum name="circularImage" value="2" />
+            <enum name="squareImage" value="3" />
         </attr>
     </declare-styleable>
 

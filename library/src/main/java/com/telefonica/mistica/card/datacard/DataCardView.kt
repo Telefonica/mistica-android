@@ -20,6 +20,8 @@ import com.telefonica.mistica.card.CardView
 import com.telefonica.mistica.card.datacard.DataCardView.IconType.Companion.TYPE_CIRCULAR_ICON
 import com.telefonica.mistica.card.datacard.DataCardView.IconType.Companion.TYPE_CIRCULAR_IMAGE
 import com.telefonica.mistica.card.datacard.DataCardView.IconType.Companion.TYPE_ICON
+import com.telefonica.mistica.card.datacard.DataCardView.IconType.Companion.TYPE_SQUARE_IMAGE
+import com.telefonica.mistica.util.convertDpToPx
 import com.telefonica.mistica.util.getThemeColor
 
 @BindingMethods(
@@ -49,13 +51,15 @@ class DataCardView @JvmOverloads constructor(
     @IntDef(
         TYPE_ICON,
         TYPE_CIRCULAR_ICON,
-        TYPE_CIRCULAR_IMAGE
+        TYPE_CIRCULAR_IMAGE,
+        TYPE_SQUARE_IMAGE
     )
     annotation class IconType {
         companion object {
             const val TYPE_ICON = 0
             const val TYPE_CIRCULAR_ICON = 1
             const val TYPE_CIRCULAR_IMAGE = 2
+            const val TYPE_SQUARE_IMAGE = 3
         }
     }
 
@@ -113,6 +117,11 @@ class DataCardView @JvmOverloads constructor(
                 iconImageView.visibility = View.VISIBLE
                 assetCircularImageView.visibility = View.GONE
             }
+            TYPE_SQUARE_IMAGE -> {
+                iconImageView.setImageDrawable(icon)
+                iconImageView.visibility = View.VISIBLE
+                assetCircularImageView.visibility = View.GONE
+            }
         }
 
         imageLayout.visibility = View.VISIBLE
@@ -136,9 +145,15 @@ class DataCardView @JvmOverloads constructor(
             }
             TYPE_ICON -> {
                 imageLayout.setBackgroundResource(0)
+                iconImageView.setSize(24)
             }
             TYPE_CIRCULAR_ICON -> {
                 imageLayout.setBackgroundResource(R.drawable.bg_datacard_icon)
+                iconImageView.setSize(24)
+            }
+            TYPE_SQUARE_IMAGE -> {
+                imageLayout.setBackgroundResource(0)
+                iconImageView.setSize(40)
             }
         }
     }
@@ -153,5 +168,14 @@ class DataCardView @JvmOverloads constructor(
 
     fun setSubtitle(@StringRes textRes: Int?) {
         textRes?.let { setSubtitle(context.getString(it)) }
+    }
+
+    private fun ImageView.setSize(dpsSize: Int) {
+        val pxSize: Int = context.convertDpToPx(dpsSize)
+        layoutParams.apply {
+            height = pxSize
+            width = pxSize
+            layoutParams = this
+        }
     }
 }
