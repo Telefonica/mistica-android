@@ -36,6 +36,8 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.R
 
+private val iconSpacing = 10.dp
+
 @Composable
 fun Button(
     modifier: Modifier = Modifier,
@@ -48,7 +50,6 @@ fun Button(
     onClickListener: () -> Unit,
 ) {
 
-    val iconSpacing = 10.dp
     val density = LocalDensity.current
 
     val style = buttonStyle.getButtonStyleCompose()
@@ -68,7 +69,7 @@ fun Button(
                 }
                 .height(size.minHeight)
                 .applyWidth(originalWidth),
-            contentPadding = PaddingValues(16.dp, 0.dp, 16.dp, 0.dp),
+            contentPadding = PaddingValues(horizontal = 16.dp, vertical = 0.dp),
             onClick = onClickListener,
             enabled = enabled,
             colors = style.buttonColors,
@@ -90,13 +91,15 @@ fun Button(
                             color = textColor,
                             strokeWidth = size.progressBarStroke,
                         )
-                        Spacer(modifier = Modifier.width(iconSpacing))
-                        Text(
-                            modifier = Modifier.align(Alignment.CenterVertically),
-                            text = loadingText,
-                            color = textColor,
-                            style = size.textStyle
-                        )
+                        loadingText.takeIf { it.isNotEmpty() }?.let {
+                            Spacer(modifier = Modifier.width(iconSpacing))
+                            Text(
+                                modifier = Modifier.align(Alignment.CenterVertically),
+                                text = it,
+                                color = textColor,
+                                style = size.textStyle
+                            )
+                        }
                     }
                 }
                 androidx.compose.animation.AnimatedVisibility(
