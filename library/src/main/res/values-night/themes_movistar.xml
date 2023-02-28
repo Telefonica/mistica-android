@@ -85,10 +85,4 @@
 
     </style>
 
-    <!-- Prominent in dark mode has exactly the same colors as non prominent theme -->
-    <style name="MisticaMovistarProminentOverride" />
-
-    <!-- Just a copy of the above. As themes do not support multiple inheritance. -->
-    <style name="MisticaTheme.Movistar.Prominent" />
-
 </resources>

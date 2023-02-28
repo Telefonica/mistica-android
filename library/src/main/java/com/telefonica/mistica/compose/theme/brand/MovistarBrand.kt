@@ -176,42 +176,6 @@ object MovistarBrand : Brand {
         get() = FontWeight.Bold
 }
 
-object MovistarProminentBrand : Brand {
-
-    override val compatibilityTheme: Int
-        get() = R.style.MisticaTheme_Movistar_Prominent
-
-    override val lightColors = MovistarBrand.lightColors.copy(
-        brand = MovistarPaletteColor.movistar_prominent_color_blue,
-        backgroundBrand = MovistarPaletteColor.movistar_prominent_color_blue,
-        navigationBarBackground = MovistarPaletteColor.movistar_prominent_color_blue,
-        brandHigh = MovistarPaletteColor.movistar_prominent_color_blue_dark,
-        dividerInverse = MovistarPaletteColor.movistar_prominent_color_blue_dark,
-        gradientBackgroundFirst = MovistarPaletteColor.movistar_prominent_color_blue,
-        gradientBackgroundSecond = MovistarPaletteColor.movistar_prominent_color_blue,
-        gradientBackgroundThird = MovistarPaletteColor.movistar_prominent_color_blue,
-        gradientBackgroundFourth = MovistarPaletteColor.movistar_prominent_color_blue,
-        loginLoadingGradientFirst = MovistarPaletteColor.movistar_prominent_color_blue_dark,
-        loginLoadingGradientSecond = MovistarPaletteColor.movistar_prominent_color_blue_dark,
-        loginLoadingGradientThird = MovistarPaletteColor.movistar_prominent_color_blue_dark,
-        loginLoadingGradientFourth = MovistarPaletteColor.movistar_prominent_color_blue_dark,
-    )
-
-    override val darkColors: MisticaColors = MovistarBrand.darkColors
-
-    override val preset5FontWeight: FontWeight
-        get() = MovistarBrand.preset5FontWeight
-
-    override val preset6FontWeight: FontWeight
-        get() = MovistarBrand.preset6FontWeight
-
-    override val preset7FontWeight: FontWeight
-        get() = MovistarBrand.preset7FontWeight
-
-    override val preset8FontWeight: FontWeight
-        get() = MovistarBrand.preset8FontWeight
-}
-
 private object MovistarPaletteColor {
     val movistar_color_blue = Color(0xFF019DF4)
     val movistar_color_blue_10 = Color(0xFFE6F5FD)
@@ -255,15 +219,6 @@ private object MovistarPaletteColor {
     val movistar_color_grey_5 = Color(0xFF86888C)
     val movistar_color_grey_6 = Color(0xFF313235)
     val movistar_color_white = Color(0xFFFFFFFF)
-
-    // Prominent Color Palette
-    val movistar_prominent_color_blue = Color(0xFF0B2739)
-    val movistar_prominent_color_blue_10 = Color(0xFFE6F5FD)
-    val movistar_prominent_color_blue_40 = Color(0xFF4DBAF7)
-    val movistar_prominent_color_blue_dark = Color(0xFF081F2D)
-    val movistar_prominent_color_blue_light_20 = Color(0xFFCED3D7)
-    val movistar_prominent_color_blue_light_50 = Color(0xFF85939C)
-    val movistar_prominent_color_blue_light_70 = Color(0xFF546874)
 
     // Android specific palette for colors with custom alpha
     val movistar_color_white_5_alpha = Color(0x0DFFFFFF)

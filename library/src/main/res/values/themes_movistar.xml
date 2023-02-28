@@ -149,30 +149,4 @@
 		<item name="composeBrand">movistar</item>
 	</style>
 
-	<style name="MisticaMovistarProminentOverride">
-		<!-- General -->
-		<item name="colorPrimary">@color/movistar_prominent_color_blue</item>
-		<item name="colorPrimaryDark">@color/movistar_prominent_color_blue_dark</item>
-		<item name="colorBrand">@color/movistar_prominent_color_blue</item>
-		<item name="colorBackgroundBrand">@color/movistar_prominent_color_blue</item>
-		<item name="colorNavigationBarBackground">@color/movistar_prominent_color_blue</item>
-		<item name="colorBrandHigh">@color/movistar_prominent_color_blue_dark</item>
-		<item name="colorDividerInverse">@color/movistar_prominent_color_blue_dark</item>
-	</style>
-
-	<!-- Just a copy of the above. As themes do not support multiple inheritance. -->
-	<style name="MisticaTheme.Movistar.Prominent">
-		<!-- General -->
-		<item name="colorPrimary">@color/movistar_prominent_color_blue</item>
-		<item name="colorPrimaryDark">@color/movistar_prominent_color_blue_dark</item>
-		<item name="colorBrand">@color/movistar_prominent_color_blue</item>
-		<item name="colorBackgroundBrand">@color/movistar_prominent_color_blue</item>
-		<item name="colorNavigationBarBackground">@color/movistar_prominent_color_blue</item>
-		<item name="colorBrandHigh">@color/movistar_prominent_color_blue_dark</item>
-		<item name="colorDividerInverse">@color/movistar_prominent_color_blue_dark</item>
-
-		<!-- Compose -->
-		<item name="composeBrand">movistar_prominent</item>
-	</style>
-
 </resources>

@@ -42,13 +42,6 @@
 
     <color name="movistar_color_white">#FFFFFF</color>
 
-    <!-- Prominent Color Palette -->
-    <color name="movistar_prominent_color_blue">#0B2739</color>
-    <color name="movistar_prominent_color_blue_dark">#081F2D</color>
-    <color name="movistar_prominent_color_blue_light_20">#CED3D7</color>
-    <color name="movistar_prominent_color_blue_light_50">#85939C</color>
-    <color name="movistar_prominent_color_blue_light_70">#546874</color>
-
     <!--  Android specific palette for colors with custom alpha -->
     <color name="movistar_color_white_5_alpha">#0DFFFFFF</color>
     <color name="movistar_color_white_20_alpha">#33FFFFFF</color>

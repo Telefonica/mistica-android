@@ -122,7 +122,6 @@ which ones are migrated.
 | Brand              | Available |
 |--------------------|-----------|
 | Movistar           | ✅         |
-| Movistar Prominent | ✅         |
 | O2                 | ✅         |
 | O2 Classic         | ✅         |
 | Vivo               | ✅         |
