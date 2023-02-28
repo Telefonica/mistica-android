@@ -1,6 +1,8 @@
 package com.telefonica.mistica.compose.button
 
 import androidx.annotation.DrawableRes
+import androidx.compose.animation.core.CubicBezierEasing
+import androidx.compose.animation.core.tween
 import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutVertically
 import androidx.compose.foundation.Image
@@ -38,6 +40,7 @@ import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.R
 
 private val iconSpacing = 10.dp
+private val easing = CubicBezierEasing(0.77f, 0f, 0.175f, 1f)
 
 @Composable
 fun Button(
@@ -81,8 +84,8 @@ fun Button(
                 androidx.compose.animation.AnimatedVisibility(
                     modifier = Modifier.fillMaxHeight(),
                     visible = isLoading,
-                    enter = slideInVertically { it },
-                    exit = slideOutVertically { it },
+                    enter = slideInVertically(tween(easing = easing)) { it },
+                    exit = slideOutVertically(tween(easing = easing)) { it },
                 ) {
                     Row {
                         CircularProgressIndicator(
@@ -108,8 +111,8 @@ fun Button(
                 androidx.compose.animation.AnimatedVisibility(
                     modifier = Modifier.fillMaxHeight(),
                     visible = !isLoading,
-                    enter = slideInVertically { -it },
-                    exit = slideOutVertically { -it },
+                    enter = slideInVertically(tween(easing = easing)) { -it },
+                    exit = slideOutVertically(tween(easing = easing)) { -it },
                 ) {
                     Row {
                         icon?.let {
@@ -127,7 +130,9 @@ fun Button(
                             modifier = Modifier.align(Alignment.CenterVertically),
                             text = text,
                             color = textColor,
-                            style = size.textStyle
+                            style = size.textStyle,
+                            maxLines = 1,
+                            overflow = TextOverflow.Ellipsis,
                         )
                     }
                 }
