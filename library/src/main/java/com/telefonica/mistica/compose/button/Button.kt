@@ -29,6 +29,7 @@ import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
@@ -61,15 +62,15 @@ fun Button(
     CompositionLocalProvider(LocalRippleTheme provides style.rippleTheme) {
         androidx.compose.material.Button(
             modifier = modifier
-                .defaultMinSize(size.minWidth, size.minHeight)
+                .defaultMinSize(size.minWidth, size.height)
                 .onGloballyPositioned {
                     if (originalWidth == null) {
                         originalWidth = with(density) { it.size.width.toDp() }
                     }
                 }
-                .height(size.minHeight)
+                .height(size.height)
                 .applyWidth(originalWidth),
-            contentPadding = PaddingValues(horizontal = 16.dp, vertical = 0.dp),
+            contentPadding = PaddingValues(horizontal = size.contentPadding, vertical = 0.dp),
             onClick = onClickListener,
             enabled = enabled,
             colors = style.buttonColors,
@@ -97,7 +98,9 @@ fun Button(
                                 modifier = Modifier.align(Alignment.CenterVertically),
                                 text = it,
                                 color = textColor,
-                                style = size.textStyle
+                                style = size.textStyle,
+                                maxLines = 1,
+                                overflow = TextOverflow.Ellipsis,
                             )
                         }
                     }
