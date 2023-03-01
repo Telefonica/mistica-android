@@ -68,7 +68,7 @@ private fun Buttons(
             .filter(filter)
             .forEach {
                 CatalogButton(
-                    name = it.name,
+                    name = it.name.lowercase().capitalize(),
                     style = it,
                     isLoading = false,
                 )
@@ -82,7 +82,7 @@ private fun Buttons(
 
                 var isLoading by remember(it.name) { mutableStateOf(false) }
                 CatalogButton(
-                    name = "${it.name} Progress",
+                    name = "${it.name} Progress".lowercase().capitalize(),
                     style = it,
                     isLoading = isLoading,
                     loadingText = "Loading",
@@ -96,7 +96,7 @@ private fun Buttons(
                 )
 
                 CatalogButton(
-                    name = "${it.name} Disabled",
+                    name = "${it.name} Disabled".lowercase().capitalize(),
                     style = it,
                     enabled = false,
                     isLoading = false,
