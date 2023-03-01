@@ -20,6 +20,21 @@ android {
     lintOptions {
         warningsAsErrors true
     }
+
+    signingConfigs {
+        debug {
+            storeFile file('../keystores/debug.keystore')
+            storePassword 'androidenterprise'
+            keyAlias 'androidenterprise'
+            keyPassword 'androidenterprise'
+        }
+    }
+
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.debug
+        }
+    }
 }
 
 static def versionCodeDate() {
@@ -49,7 +64,7 @@ dependencies {
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation "androidx.appcompat:appcompat:$androidx_appcompat_version"
-    
+
     implementation project(':catalog')
     implementation project(':catalog-compose')
     implementation project(':library')
