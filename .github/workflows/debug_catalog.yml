@@ -15,13 +15,19 @@ jobs:
         with:
           args: 'bash ./gradlew clean check appCenterAssembleAndUploadDebug -Dappcenter_app_name=Mistica-Catalog -Dappcenter_notify=false -Dappcenter_notes="Testing catalog for PR #${{ github.event.number }}"'
 
+      - name: Get version URL
+        id: url-request
+        uses: fjogeleit/http-request-action@v1
+        with:
+          url: 'https://api.appcenter.ms/v0.1/sdk/apps/41f5c96b-1f56-440a-9119-410e160e81de/releases/private/latest'
+          method: 'GET'
+          customHeaders: '{"X-API-Token": ${{ secrets.APPCENTER_API_TOKEN }}}'
+
       - name: Post comment with catalog URL
         uses: actions/github-script@v6
         with:
           script: |
-            const body = `📱 New catalog generated: https://install.appcenter.ms/orgs/tuenti-organization/apps/mistica-catalog/distribution_groups/public
-            Check PR number in the release notes #${{ github.event.number }}
-            `;
+            const body = `📱 New catalog for testing generated: ${{ steps.url-request.response.download_url }}}`;
 
             github.rest.issues.createComment({
               issue_number: context.issue.number,
