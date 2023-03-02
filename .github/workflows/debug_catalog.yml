@@ -23,20 +23,13 @@ jobs:
           method: 'GET'
           customHeaders: '{"X-API-Token": "${{ secrets.APPCENTER_API_TOKEN }}"}'
 
-      - name: Print response
-        run: |
-          echo ${{ steps.url-request.outputs.response }}
-          echo ${{ fromJson(steps.url-request.outputs.response).download_url }}
-
       - name: Post comment with catalog URL
         uses: actions/github-script@v6
         with:
           script: |
-            const body = `📱 New catalog for testing generated: ${{ fromJson(steps.url-request.outputs.response).download_url }}`;
-
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: body
+              body: `📱 New catalog for testing generated: ${{ fromJson(steps.url-request.outputs.response).download_url }}`
             })
