@@ -35,7 +35,7 @@ appcenter {
     apiToken = System.env.APPCENTER_API_TOKEN ?: ""
     ownerName = "Tuenti-Organization"
     distributionGroups = ["Public"]
-    releaseNotes = System.getProperty("appcenter_notes", "# Library version: ${version} \\n See https://github.com/Telefonica/mistica-android/releases for more info.")
+    releaseNotes = System.getProperty("appcenter_notes", "# Library version: ${version} \n See https://github.com/Telefonica/mistica-android/releases for more info.")
 
     notifyTesters = System.getProperty("appcenter_notify", "true")
     apps {
