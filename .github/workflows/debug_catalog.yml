@@ -2,18 +2,18 @@ name: "Generate debug catalog app"
 on:
   pull_request:
 jobs:
-  catalog:
+  debug-catalog:
     runs-on: self-hosted-novum
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Publish catalog
         uses: docker://docker.tuenti.io/android/novum_android_api31:2
         env:
           APPCENTER_API_TOKEN: ${{ secrets.APPCENTER_API_TOKEN }}
         with:
-          args: 'bash ./gradlew clean check appCenterAssembleAndUploadDebug -Dappcenter_app_name=Mistica-Catalog -Dappcenter_notify=false -Dappcenter_notes='Testing catalog for PR #${{ github.event.number }}''
+          args: 'bash ./gradlew clean check appCenterAssembleAndUploadDebug -Dappcenter_app_name=Mistica-Catalog -Dappcenter_notify=false -Dappcenter_notes="Testing catalog for PR #${{ github.event.number }}"'
 
       - name: Post comment with catalog URL
         uses: actions/github-script@v6
