@@ -13,7 +13,7 @@ jobs:
         env:
           APPCENTER_API_TOKEN: ${{ secrets.APPCENTER_API_TOKEN }}
         with:
-          args: 'bash ./gradlew clean check appCenterAssembleAndUploadDebug -Dappcenter_app_name=Mistica-Catalog -Dappcenter_notify=false -Dappcenter_notes="Testing catalog for PR #${{ github.event.number }} ${{ env.GITHUB_SHA }}"'
+          args: 'bash ./gradlew clean check appCenterAssembleAndUploadDebug -Dappcenter_app_name=Mistica-Catalog -Dappcenter_notify=false -Dappcenter_notes="Testing catalog for PR #${{ github.event.number }} ${{ github.sha }}"'
 
       - name: Get version URL
         id: url-request
@@ -23,11 +23,16 @@ jobs:
           method: 'GET'
           customHeaders: '{"X-API-Token": "${{ secrets.APPCENTER_API_TOKEN }}"}'
 
+      - name: Print response
+        run: |
+          echo ${{ steps.url-request.outputs.response }}
+          echo ${{ fromJson(steps.url-request.outputs.response).download_url }}
+
       - name: Post comment with catalog URL
         uses: actions/github-script@v6
         with:
           script: |
-            const body = `📱 New catalog for testing generated: ${{ steps.url-request.response.download_url }}}`;
+            const body = `📱 New catalog for testing generated: ${{ fromJson(steps.url-request.outputs.response).download_url }}`;
 
             github.rest.issues.createComment({
               issue_number: context.issue.number,
