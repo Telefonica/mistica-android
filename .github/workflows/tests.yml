@@ -1,13 +1,18 @@
 name: "Run tests"
 on:
   pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   tests:
-    runs-on: self-hosted-novum
+    runs-on: [self-hosted, cdorunner-life-novum, Linux]
     steps:
     - name: Checkout repo
-      uses: actions/checkout@v2
-    
+      uses: actions/checkout@v3
+
     - name: "Build Android project"
       uses: docker://docker.tuenti.io/android/novum_android_api31:2
       with:

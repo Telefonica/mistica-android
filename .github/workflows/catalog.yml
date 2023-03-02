@@ -6,7 +6,7 @@ on:
     types: [closed]
 jobs:
   catalog:
-    runs-on: self-hosted-novum
+    runs-on: [self-hosted, cdorunner-life-novum, Linux]
     steps:
     - name: Check pull request status
       if: "!github.event.pull_request.merged == true"
@@ -14,7 +14,7 @@ jobs:
 
     - name: Checkout repo
       if: github.event.pull_request.merged == true
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Publish catalog
       if: github.event.pull_request.merged == true

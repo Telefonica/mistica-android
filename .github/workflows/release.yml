@@ -4,10 +4,10 @@ on:
     types: [published]
 jobs:
   promote:
-    runs-on: self-hosted-novum
+    runs-on: [self-hosted, cdorunner-life-novum, Linux]
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Build library
         uses: docker://docker.tuenti.io/android/novum_android_api31:2
