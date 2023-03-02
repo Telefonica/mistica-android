@@ -19,7 +19,7 @@ jobs:
     - name: Publish catalog
       if: github.event.pull_request.merged == true
       uses: docker://docker.tuenti.io/android/novum_android_api31:2
-      with:
-        args: 'bash ./gradlew clean check appCenterAssembleAndUploadDebug'
       env:
         APPCENTER_API_TOKEN: ${{ secrets.APPCENTER_API_TOKEN }}
+      with:
+        args: 'bash ./gradlew clean check appCenterAssembleAndUploadDebug -Dappcenter_app_name=Mistica'

@@ -1,0 +1,27 @@
+name: "Generate debug catalog app"
+on:
+  pull_request:
+jobs:
+  catalog:
+    runs-on: self-hosted-novum
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Publish catalog
+        uses: docker://docker.tuenti.io/android/novum_android_api31:2
+        env:
+          APPCENTER_API_TOKEN: ${{ secrets.APPCENTER_API_TOKEN }}
+        with:
+          args: 'bash ./gradlew clean check appCenterAssembleAndUploadDebug -Dappcenter_app_name=Mistica-Catalog -Dappcenter_notes=Testing catalog for PR #${{ github.event.number }}'
+
+      - name: Post comment with catalog URL
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: 'New catalog generated: https://install.appcenter.ms/orgs/tuenti-organization/apps/mistica-catalog/distribution_groups/public'
+            })
