@@ -7,6 +7,9 @@
     <color name="movistar_color_blue_40">#4DBAF7</color>
     <color name="movistar_color_blue_55">#008EDD</color>
 
+    <color name="movistar_color_blue_dark">#0B2739</color>
+    <color name="movistar_color_blue_dark_60_alpha">#990B2739</color>
+
     <color name="movistar_color_green">#5CB615</color>
     <color name="movistar_color_green_10">#EFF8E8</color>
     <color name="movistar_color_green_20">#CEE9B9</color>
@@ -44,6 +47,8 @@
 
     <!--  Android specific palette for colors with custom alpha -->
     <color name="movistar_color_white_5_alpha">#0DFFFFFF</color>
+    <color name="movistar_color_white_8_alpha">#14FFFFFF</color>
+    <color name="movistar_color_white_15_alpha">#26FFFFFF</color>
     <color name="movistar_color_white_20_alpha">#33FFFFFF</color>
     <color name="movistar_color_white_50_alpha">#80FFFFFF</color>
     <color name="movistar_color_grey_5_30_alpha">#4D86888C</color>
@@ -57,7 +62,13 @@
     <color name="movistar_color_green_30_40_alpha">#66ADDA8A</color>
 
     <!-- Dark Mode Color Palette -->
-    <color name="movistar_color_darkModeBlack">#191919</color>
-    <color name="movistar_color_darkModeGrey">#242424</color>
+    <color name="movistar_color_darkModeBlack">#061824</color>
+    <color name="movistar_color_darkModeGrey">#092130</color>
+    <color name="movistar_color_darkModeGrey2">#EAEBEE</color>
+    <color name="movistar_color_darkModeGrey3">#CED4D7</color>
+    <color name="movistar_color_darkModeGrey4">#85939C</color>
+    <color name="movistar_color_darkModeGrey5">#6D7D88</color>
+    <color name="movistar_color_darkModeGrey6">#3C5261</color>
     <color name="movistar_color_darkModeGrey_80_alpha">#CC242424</color>
+
 </resources>
