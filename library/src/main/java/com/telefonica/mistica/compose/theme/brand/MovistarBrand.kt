@@ -109,8 +109,8 @@ object MovistarBrand : Brand {
             backgroundContainer = MovistarPaletteColor.movistar_color_darkModeGrey,
             backgroundFeedbackBottom = MovistarPaletteColor.movistar_color_darkModeBlack,
             backgroundOverlay = MovistarPaletteColor.movistar_color_darkModeGrey_80_alpha,
-            backgroundSkeleton = MovistarPaletteColor.movistar_color_darkModeGrey6,
-            backgroundSkeletonInverse = MovistarPaletteColor.movistar_color_darkModeGrey6,
+            backgroundSkeleton = MovistarPaletteColor.movistar_color_blue_dark,
+            backgroundSkeletonInverse = MovistarPaletteColor.movistar_color_blue_dark,
             border = MovistarPaletteColor.movistar_color_darkModeGrey,
             borderLight = MovistarPaletteColor.movistar_color_darkModeBlack,
             brandHigh = MovistarPaletteColor.movistar_color_darkModeGrey,
@@ -136,13 +136,13 @@ object MovistarBrand : Brand {
             navigationBarDivider = MovistarPaletteColor.movistar_color_darkModeBlack,
             neutralHigh = MovistarPaletteColor.movistar_color_darkModeGrey2,
             neutralMedium = MovistarPaletteColor.movistar_color_darkModeGrey5,
-            neutralLow = MovistarPaletteColor.movistar_color_darkModeGrey,
-            skeletonWave = MovistarPaletteColor.movistar_color_darkModeGrey,
-            brandLow = MovistarPaletteColor.movistar_color_darkModeGrey,
-            errorLow = MovistarPaletteColor.movistar_color_darkModeGrey,
-            promoLow = MovistarPaletteColor.movistar_color_darkModeGrey,
-            successLow = MovistarPaletteColor.movistar_color_darkModeGrey,
-            warningLow = MovistarPaletteColor.movistar_color_darkModeGrey,
+            neutralLow = MovistarPaletteColor.movistar_color_blue_dark,
+            skeletonWave = MovistarPaletteColor.movistar_color_blue_dark,
+            brandLow = MovistarPaletteColor.movistar_color_blue_dark,
+            errorLow = MovistarPaletteColor.movistar_color_blue_dark,
+            promoLow = MovistarPaletteColor.movistar_color_blue_dark,
+            successLow = MovistarPaletteColor.movistar_color_blue_dark,
+            warningLow = MovistarPaletteColor.movistar_color_blue_dark,
             textAppBar = MovistarPaletteColor.movistar_color_darkModeGrey5,
             textAppBarSelected = MovistarPaletteColor.movistar_color_darkModeGrey2,
             textButtonPrimary = MovistarPaletteColor.movistar_color_darkModeGrey2,
@@ -242,7 +242,7 @@ private object MovistarPaletteColor {
 
     // Dark Mode Color Palette
     val movistar_color_darkModeBlack = Color(0xFF061824)
-    val movistar_color_darkModeGrey = Color(0xFF092130)
+    val movistar_color_darkModeGrey = Color(0xFF081F2E)
     val movistar_color_darkModeGrey2 = Color(0xFFEAEBEE)
     val movistar_color_darkModeGrey3 = Color(0xFFCED4D7)
     val movistar_color_darkModeGrey4 = Color(0xFF85939C)

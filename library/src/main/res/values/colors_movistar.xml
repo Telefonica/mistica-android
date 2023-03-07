@@ -63,7 +63,7 @@
 
     <!-- Dark Mode Color Palette -->
     <color name="movistar_color_darkModeBlack">#061824</color>
-    <color name="movistar_color_darkModeGrey">#092130</color>
+    <color name="movistar_color_darkModeGrey">#081F2E</color>
     <color name="movistar_color_darkModeGrey2">#EAEBEE</color>
     <color name="movistar_color_darkModeGrey3">#CED4D7</color>
     <color name="movistar_color_darkModeGrey4">#85939C</color>
