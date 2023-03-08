@@ -10,9 +10,9 @@
 		<item name="colorBackground">@color/movistar_color_white</item>
 		<item name="colorBackgroundContainer">@color/movistar_color_white</item>
 		<item name="colorBackgroundBrand">@color/movistar_color_blue</item>
-		<item name="colorBackgroundOverlay">@color/movistar_color_grey_6_60_alpha</item>
+		<item name="colorBackgroundOverlay">@color/movistar_color_blue_dark_60_alpha</item>
 		<item name="colorBackgroundSkeleton">@color/movistar_color_grey_2</item>
-		<item name="colorBackgroundSkeletonInverse">@color/movistar_color_blue_55</item>
+		<item name="colorBackgroundSkeletonInverse">@color/movistar_color_white_20_alpha</item>
 		<item name="colorNavigationBarBackground">@color/movistar_color_blue</item>
 		<item name="colorBackgroundAlternative">@color/movistar_color_grey_1</item>
 		<item name="colorBackgroundFeedbackBottom">@color/movistar_color_blue</item>
@@ -39,9 +39,9 @@
 		<item name="colorButtonPrimaryBackgroundSelectedInverse">@color/movistar_color_blue_30</item>
 
 		<item name="colorButtonSecondaryBackground">@color/movistar_color_blue</item>
-		<item name="colorButtonSecondaryBackgroundSelected">@color/movistar_color_blue_55</item>
+		<item name="colorButtonSecondaryBackgroundSelected">@color/movistar_color_blue_10</item>
 		<item name="colorButtonSecondaryBorderInverse">@color/movistar_color_white</item>
-		<item name="colorButtonSecondaryBorderSelectedInverse">@color/movistar_color_blue_30</item>
+		<item name="colorButtonSecondaryBorderSelectedInverse">@color/movistar_color_white</item>
 
 		<item name="colorTextButtonPrimary">@color/movistar_color_white</item>
 		<item name="colorTextButtonPrimaryInverse">@color/movistar_color_blue</item>
@@ -67,19 +67,19 @@
 
 		<!-- Divider colors -->
 		<item name="colorDivider">@color/movistar_color_grey_2</item>
-		<item name="colorDividerInverse">@color/movistar_color_blue_55</item>
+		<item name="colorDividerInverse">@color/movistar_color_white_20_alpha</item>
 		<item name="colorNavigationBarDivider">@color/movistar_color_blue</item>
 
 		<!-- Feedback colors -->
 		<item name="colorBadge">@color/movistar_color_pepper_55</item>
 		<item name="colorFeedbackErrorBackground">@color/movistar_color_pepper</item>
-		<item name="colorFeedbackInfoBackground">@color/movistar_color_grey_6</item>
+		<item name="colorFeedbackInfoBackground">@color/movistar_color_blue_dark</item>
 
 		<!-- Global colors -->
 		<item name="colorBrand">@color/movistar_color_blue</item>
 		<item name="colorBrandHigh">@color/movistar_color_blue_55</item>
 		<item name="colorInverse">@color/movistar_color_white</item>
-		<item name="colorNeutralHigh">@color/movistar_color_grey_6</item>
+		<item name="colorNeutralHigh">@color/movistar_color_blue_dark</item>
 		<item name="colorNeutralLow">@color/movistar_color_grey_1</item>
 		<item name="colorNeutralMedium">@color/movistar_color_grey_5</item>
 		<item name="colorPromo">@color/movistar_color_purple</item>
@@ -93,15 +93,15 @@
 		<item name="brandLow">@color/movistar_color_blue_10</item>
 
 		<item name="successHigh">@color/movistar_color_green_70</item>
-		<item name="warningHigh">@color/movistar_color_egg_80</item>
 		<item name="errorHigh">@color/movistar_color_pepper_70</item>
+		<item name="warningHigh">@color/movistar_color_egg_80</item>
 		<item name="promoHigh">@color/movistar_color_purple_70</item>
 
 		<!-- Texts colors -->
-		<item name="colorTextPrimary">@color/movistar_color_grey_6</item>
+		<item name="colorTextPrimary">@color/movistar_color_blue_dark</item>
 		<item name="colorTextPrimaryInverse">@color/movistar_color_white</item>
 		<item name="colorTextSecondary">@color/movistar_color_grey_5</item>
-		<item name="colorTextSecondaryInverse">@color/movistar_color_white</item>
+		<item name="colorTextSecondaryInverse">@color/movistar_color_blue_10</item>
 
 		<!-- State colors -->
 		<item name="colorError">@color/movistar_color_pepper</item>
