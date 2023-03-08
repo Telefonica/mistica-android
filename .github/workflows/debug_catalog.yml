@@ -15,15 +15,27 @@ jobs:
         with:
           args: 'bash ./gradlew clean check appCenterAssembleAndUploadDebug -Dappcenter_app_name=Mistica-Catalog -Dappcenter_notify=false -Dappcenter_notes="Testing catalog for PR #${{ github.event.number }} ${{ github.sha }}"'
 
+      - name: Get version ID
+        id: id-request
+        uses: fjogeleit/http-request-action@v1
+        with:
+          url: 'https://api.appcenter.ms/v0.1/apps/Tuenti-Organization/Mistica-Catalog/releases?published_only=true&top=1'
+          method: 'GET'
+          customHeaders: '{"X-API-Token": "${{ secrets.APPCENTER_API_TOKEN }}"}'
+
+      - name: Show ID Response
+        run: |
+          echo ${{ steps.id-request.outputs.response }}
+
       - name: Get version URL
         id: url-request
         uses: fjogeleit/http-request-action@v1
         with:
-          url: 'https://api.appcenter.ms/v0.1/sdk/apps/41f5c96b-1f56-440a-9119-410e160e81de/releases/private/latest'
+          url: 'https://api.appcenter.ms/v0.1/apps/Tuenti-Organization/Mistica-Catalog/releases/${{ fromJson(steps.id-request.outputs.response)[0].id }}'
           method: 'GET'
           customHeaders: '{"X-API-Token": "${{ secrets.APPCENTER_API_TOKEN }}"}'
 
-      - name: Show Response
+      - name: Show version Response
         run: |
           echo ${{ steps.url-request.outputs.response }}
 
