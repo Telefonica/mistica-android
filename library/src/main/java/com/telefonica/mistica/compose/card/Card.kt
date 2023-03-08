@@ -30,6 +30,7 @@ fun Card(
 ) {
 
     androidx.compose.material.Card(
+        backgroundColor = MisticaTheme.colors.backgroundContainer,
         modifier = modifier
             .focusable()
             .widthIn(min = 184.dp),
