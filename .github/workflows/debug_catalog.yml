@@ -23,10 +23,6 @@ jobs:
           method: 'GET'
           customHeaders: '{"X-API-Token": "${{ secrets.APPCENTER_API_TOKEN }}"}'
 
-      - name: Show ID Response
-        run: |
-          echo ${{ steps.id-request.outputs.response }}
-
       - name: Get version URL
         id: url-request
         uses: fjogeleit/http-request-action@v1
@@ -34,10 +30,6 @@ jobs:
           url: 'https://api.appcenter.ms/v0.1/apps/Tuenti-Organization/Mistica-Catalog/releases/${{ fromJson(steps.id-request.outputs.response)[0].id }}'
           method: 'GET'
           customHeaders: '{"X-API-Token": "${{ secrets.APPCENTER_API_TOKEN }}"}'
-
-      - name: Show version Response
-        run: |
-          echo ${{ steps.url-request.outputs.response }}
 
       - name: Post comment with catalog URL
         uses: actions/github-script@v6
