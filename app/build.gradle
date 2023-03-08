@@ -25,6 +25,28 @@ android {
     lintOptions {
         warningsAsErrors true
     }
+
+    signingConfigs {
+        debug {
+            storeFile file('../keystores/debug.keystore')
+            storePassword 'androidenterprise'
+            keyAlias 'androidenterprise'
+            keyPassword 'androidenterprise'
+        }
+    }
+
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.debug
+        }
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "MisticaCatalog-${buildType.name}-${versionCode}.apk"
+        }
+    }
+
 }
 
 static def versionCodeDate() {
