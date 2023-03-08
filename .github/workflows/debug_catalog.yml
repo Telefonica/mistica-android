@@ -24,8 +24,8 @@ jobs:
           customHeaders: '{"X-API-Token": "${{ secrets.APPCENTER_API_TOKEN }}"}'
 
       - name: Show Response
-          run: |
-            echo ${{ steps.url-request.outputs.response }}
+        run: |
+          echo ${{ steps.url-request.outputs.response }}
 
       - name: Post comment with catalog URL
         uses: actions/github-script@v6
