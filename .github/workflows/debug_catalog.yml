@@ -1,0 +1,43 @@
+name: "Generate debug catalog app"
+on:
+  pull_request:
+jobs:
+  debug-catalog:
+    runs-on: self-hosted-novum
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Publish catalog
+        uses: docker://docker.tuenti.io/android/novum_android_api31:2
+        env:
+          APPCENTER_API_TOKEN: ${{ secrets.APPCENTER_API_TOKEN }}
+        with:
+          args: 'bash ./gradlew clean check appCenterAssembleAndUploadDebug -Dappcenter_app_name=Mistica-Catalog -Dappcenter_notify=false -Dappcenter_notes="Testing catalog for PR #${{ github.event.number }} ${{ github.sha }}"'
+
+      - name: Get version ID
+        id: id-request
+        uses: fjogeleit/http-request-action@v1
+        with:
+          url: 'https://api.appcenter.ms/v0.1/apps/Tuenti-Organization/Mistica-Catalog/releases?published_only=true&top=1'
+          method: 'GET'
+          customHeaders: '{"X-API-Token": "${{ secrets.APPCENTER_API_TOKEN }}"}'
+
+      - name: Get version URL
+        id: url-request
+        uses: fjogeleit/http-request-action@v1
+        with:
+          url: 'https://api.appcenter.ms/v0.1/apps/Tuenti-Organization/Mistica-Catalog/releases/${{ fromJson(steps.id-request.outputs.response)[0].id }}'
+          method: 'GET'
+          customHeaders: '{"X-API-Token": "${{ secrets.APPCENTER_API_TOKEN }}"}'
+
+      - name: Post comment with catalog URL
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `📱 New catalog for testing generated: ${{ fromJson(steps.url-request.outputs.response).download_url }}`
+            })

@@ -4,6 +4,9 @@ plugins {
     id 'com.betomorrow.appcenter'
 }
 
+def appCenterProjects = new Properties()
+file("appcenter_projects.properties").withInputStream { appCenterProjects.load(it) }
+
 android {
     compileSdkVersion 33
 
@@ -14,7 +17,9 @@ android {
         versionCode versionCodeDate()
         versionName "1.0.0"
 
-        buildConfigField "String", "APPCENTER_KEY", "\"" + System.env.APPCENTER_KEY + "\""
+        buildConfigField "String", "APPCENTER_KEY", "\"" +
+                appCenterProjects.getProperty(System.getProperty("appcenter_app_name", "")) +
+                "\""
     }
 
     lintOptions {
@@ -35,6 +40,13 @@ android {
             signingConfig signingConfigs.debug
         }
     }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "MisticaCatalog-${buildType.name}-${versionCode}.apk"
+        }
+    }
+
 }
 
 static def versionCodeDate() {
@@ -45,12 +57,12 @@ appcenter {
     apiToken = System.env.APPCENTER_API_TOKEN ?: ""
     ownerName = "Tuenti-Organization"
     distributionGroups = ["Public"]
-    releaseNotes = "# Library version: ${version} \n See https://github.com/Telefonica/mistica-android/releases for more info."
+    releaseNotes = System.getProperty("appcenter_notes", "# Library version: ${version} \n See https://github.com/Telefonica/mistica-android/releases for more info.")
 
-    notifyTesters = true
+    notifyTesters = System.getProperty("appcenter_notify", "true")
     apps {
         debug {
-            appName = "mistica"
+            appName = System.getProperty("appcenter_app_name", "")
         }
     }
     uploadMappingFiles = false

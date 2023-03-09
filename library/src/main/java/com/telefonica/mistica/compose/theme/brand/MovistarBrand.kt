@@ -17,12 +17,12 @@ object MovistarBrand : Brand {
         backgroundBrand = MovistarPaletteColor.movistar_color_blue,
         backgroundContainer = MovistarPaletteColor.movistar_color_white,
         backgroundFeedbackBottom = MovistarPaletteColor.movistar_color_blue,
-        backgroundOverlay = MovistarPaletteColor.movistar_color_grey_6_60_alpha,
+        backgroundOverlay = MovistarPaletteColor.movistar_color_blue_dark_60_alpha,
         backgroundSkeleton = MovistarPaletteColor.movistar_color_grey_1,
-        backgroundSkeletonInverse = MovistarPaletteColor.movistar_color_blue_55,
+        backgroundSkeletonInverse = MovistarPaletteColor.movistar_color_white_20_alpha,
         badge = MovistarPaletteColor.movistar_color_pepper_55,
         border = MovistarPaletteColor.movistar_color_grey_3,
-        borderDark = MovistarPaletteColor.movistar_color_grey_5,
+        borderDark = MovistarPaletteColor.movistar_color_darkModeGrey4,
         borderLight = MovistarPaletteColor.movistar_color_grey_1,
         borderSelected = MovistarPaletteColor.movistar_color_blue,
         brand = MovistarPaletteColor.movistar_color_blue,
@@ -36,19 +36,19 @@ object MovistarBrand : Brand {
         buttonPrimaryBackgroundSelected = MovistarPaletteColor.movistar_color_blue_55,
         buttonPrimaryBackgroundSelectedInverse = MovistarPaletteColor.movistar_color_blue_30,
         buttonSecondaryBackground = MovistarPaletteColor.movistar_color_blue,
-        buttonSecondaryBackgroundSelected = MovistarPaletteColor.movistar_color_blue_55,
+        buttonSecondaryBackgroundSelected = MovistarPaletteColor.movistar_color_blue_10,
         buttonSecondaryBorderInverse = MovistarPaletteColor.movistar_color_white,
-        buttonSecondaryBorderSelectedInverse = MovistarPaletteColor.movistar_color_blue_30,
+        buttonSecondaryBorderSelectedInverse = MovistarPaletteColor.movistar_color_white,
         carouselIndicatorActiveColor = MovistarPaletteColor.movistar_color_blue,
         carouselIndicatorInactiveColor = MovistarPaletteColor.movistar_color_grey_3,
         control = MovistarPaletteColor.movistar_color_grey_3,
         controlActive = MovistarPaletteColor.movistar_color_blue,
         controlError = MovistarPaletteColor.movistar_color_pepper,
         divider = MovistarPaletteColor.movistar_color_grey_2,
-        dividerInverse = MovistarPaletteColor.movistar_color_blue_55,
+        dividerInverse = MovistarPaletteColor.movistar_color_white_20_alpha,
         error = MovistarPaletteColor.movistar_color_pepper,
         feedbackErrorBackground = MovistarPaletteColor.movistar_color_pepper,
-        feedbackInfoBackground = MovistarPaletteColor.movistar_color_grey_6,
+        feedbackInfoBackground = MovistarPaletteColor.movistar_color_blue_dark,
         gradientBackgroundFirst = MovistarPaletteColor.movistar_color_blue,
         gradientBackgroundFourth = MovistarPaletteColor.movistar_color_blue,
         gradientBackgroundSecond = MovistarPaletteColor.movistar_color_blue,
@@ -63,7 +63,7 @@ object MovistarBrand : Brand {
         loginLoadingGradientThird = MovistarPaletteColor.movistar_color_blue_55,
         navigationBarBackground = MovistarPaletteColor.movistar_color_blue,
         navigationBarDivider = MovistarPaletteColor.movistar_color_blue,
-        neutralHigh = MovistarPaletteColor.movistar_color_grey_6,
+        neutralHigh = MovistarPaletteColor.movistar_color_blue_dark,
         neutralLow = MovistarPaletteColor.movistar_color_grey_1,
         neutralMedium = MovistarPaletteColor.movistar_color_grey_5,
         promo = MovistarPaletteColor.movistar_color_purple,
@@ -89,10 +89,10 @@ object MovistarBrand : Brand {
         textLinkSnackbar = MovistarPaletteColor.movistar_color_blue_30,
         textNavigationBarPrimary = MovistarPaletteColor.movistar_color_white,
         textNavigationBarSecondary = MovistarPaletteColor.movistar_color_blue_20,
-        textPrimary = MovistarPaletteColor.movistar_color_grey_6,
+        textPrimary = MovistarPaletteColor.movistar_color_blue_dark,
         textPrimaryInverse = MovistarPaletteColor.movistar_color_white,
         textSecondary = MovistarPaletteColor.movistar_color_grey_5,
-        textSecondaryInverse = MovistarPaletteColor.movistar_color_white,
+        textSecondaryInverse = MovistarPaletteColor.movistar_color_blue_10,
         errorHigh = MovistarPaletteColor.movistar_color_pepper_70,
         promoHigh = MovistarPaletteColor.movistar_color_purple_70,
         successHigh = MovistarPaletteColor.movistar_color_green_70,
@@ -109,54 +109,56 @@ object MovistarBrand : Brand {
             backgroundContainer = MovistarPaletteColor.movistar_color_darkModeGrey,
             backgroundFeedbackBottom = MovistarPaletteColor.movistar_color_darkModeBlack,
             backgroundOverlay = MovistarPaletteColor.movistar_color_darkModeGrey_80_alpha,
-            backgroundSkeleton = MovistarPaletteColor.movistar_color_grey_6,
-            backgroundSkeletonInverse = MovistarPaletteColor.movistar_color_grey_6,
+            backgroundSkeleton = MovistarPaletteColor.movistar_color_blue_dark,
+            backgroundSkeletonInverse = MovistarPaletteColor.movistar_color_blue_dark,
             border = MovistarPaletteColor.movistar_color_darkModeGrey,
             borderLight = MovistarPaletteColor.movistar_color_darkModeBlack,
-            brandHigh = MovistarPaletteColor.movistar_color_grey_6,
-            buttonLinkBackgroundSelected = MovistarPaletteColor.movistar_color_white_5_alpha,
-            buttonLinkBackgroundSelectedInverse = MovistarPaletteColor.movistar_color_white_5_alpha,
+            brandHigh = MovistarPaletteColor.movistar_color_darkModeGrey,
+            buttonLinkBackgroundSelected = MovistarPaletteColor.movistar_color_white_8_alpha,
+            buttonLinkBackgroundSelectedInverse = MovistarPaletteColor.movistar_color_white_8_alpha,
             buttonPrimaryBackgroundInverse = MovistarPaletteColor.movistar_color_blue,
             buttonPrimaryBackgroundSelectedInverse = MovistarPaletteColor.movistar_color_blue_55,
-            buttonSecondaryBorderInverse = MovistarPaletteColor.movistar_color_blue,
-            buttonSecondaryBorderSelectedInverse = MovistarPaletteColor.movistar_color_blue_55,
+            buttonSecondaryBorderInverse = MovistarPaletteColor.movistar_color_white,
+            buttonSecondaryBorderSelectedInverse = MovistarPaletteColor.movistar_color_white,
             carouselIndicatorActiveColor = MovistarPaletteColor.movistar_color_blue,
             carouselIndicatorInactiveColor = MovistarPaletteColor.movistar_color_grey_3,
-            control = MovistarPaletteColor.movistar_color_grey_6,
+            control = MovistarPaletteColor.movistar_color_darkModeGrey6,
             divider = MovistarPaletteColor.movistar_color_white_5_alpha,
             dividerInverse = MovistarPaletteColor.movistar_color_white_5_alpha,
-            inverse = MovistarPaletteColor.movistar_color_grey_2,
+            inverse = MovistarPaletteColor.movistar_color_darkModeGrey2,
             loadingBar = MovistarPaletteColor.movistar_color_blue,
-            loadingBarBackground = MovistarPaletteColor.movistar_color_grey_6,
+            loadingBarBackground = MovistarPaletteColor.movistar_color_darkModeGrey6,
             loginLoadingGradientFirst = MovistarPaletteColor.movistar_color_grey_6,
             loginLoadingGradientFourth = MovistarPaletteColor.movistar_color_grey_6,
             loginLoadingGradientSecond = MovistarPaletteColor.movistar_color_grey_6,
             loginLoadingGradientThird = MovistarPaletteColor.movistar_color_grey_6,
             navigationBarBackground = MovistarPaletteColor.movistar_color_darkModeBlack,
             navigationBarDivider = MovistarPaletteColor.movistar_color_darkModeBlack,
-            neutralHigh = MovistarPaletteColor.movistar_color_grey_2,
-            neutralLow = MovistarPaletteColor.movistar_color_grey_6,
-            skeletonWave = MovistarPaletteColor.movistar_color_grey_5_30_alpha,
-            brandLow = MovistarPaletteColor.movistar_color_darkModeGrey,
-            errorLow = MovistarPaletteColor.movistar_color_darkModeGrey,
-            promoLow = MovistarPaletteColor.movistar_color_darkModeGrey,
-            successLow = MovistarPaletteColor.movistar_color_darkModeGrey,
-            warningLow = MovistarPaletteColor.movistar_color_darkModeGrey,
-            textAppBar = MovistarPaletteColor.movistar_color_grey_5,
-            textAppBarSelected = MovistarPaletteColor.movistar_color_grey_2,
-            textButtonPrimary = MovistarPaletteColor.movistar_color_grey_2,
-            textButtonPrimaryInverse = MovistarPaletteColor.movistar_color_grey_2,
-            textButtonPrimaryInverseSelected = MovistarPaletteColor.movistar_color_grey_2,
-            textButtonSecondary = MovistarPaletteColor.movistar_color_grey_2,
-            textButtonSecondaryInverse = MovistarPaletteColor.movistar_color_grey_2,
-            textButtonSecondaryInverseSelected = MovistarPaletteColor.movistar_color_green_60,
+            neutralHigh = MovistarPaletteColor.movistar_color_darkModeGrey2,
+            neutralMedium = MovistarPaletteColor.movistar_color_darkModeGrey5,
+            neutralLow = MovistarPaletteColor.movistar_color_blue_dark,
+            skeletonWave = MovistarPaletteColor.movistar_color_blue_dark,
+            brandLow = MovistarPaletteColor.movistar_color_blue_dark,
+            errorLow = MovistarPaletteColor.movistar_color_blue_dark,
+            promoLow = MovistarPaletteColor.movistar_color_blue_dark,
+            successLow = MovistarPaletteColor.movistar_color_blue_dark,
+            warningLow = MovistarPaletteColor.movistar_color_blue_dark,
+            textAppBar = MovistarPaletteColor.movistar_color_darkModeGrey5,
+            textAppBarSelected = MovistarPaletteColor.movistar_color_darkModeGrey2,
+            textButtonPrimary = MovistarPaletteColor.movistar_color_darkModeGrey2,
+            textButtonPrimaryInverse = MovistarPaletteColor.movistar_color_darkModeGrey2,
+            textButtonPrimaryInverseSelected = MovistarPaletteColor.movistar_color_darkModeGrey2,
+            textButtonSecondary = MovistarPaletteColor.movistar_color_darkModeGrey2,
+            textButtonSecondarySelected = MovistarPaletteColor.movistar_color_darkModeGrey4,
+            textButtonSecondaryInverse = MovistarPaletteColor.movistar_color_darkModeGrey2,
+            textButtonSecondaryInverseSelected = MovistarPaletteColor.movistar_color_darkModeGrey4,
             textLinkInverse = MovistarPaletteColor.movistar_color_blue,
-            textNavigationBarPrimary = MovistarPaletteColor.movistar_color_grey_2,
-            textNavigationBarSecondary = MovistarPaletteColor.movistar_color_grey_4,
-            textPrimary = MovistarPaletteColor.movistar_color_grey_2,
-            textPrimaryInverse = MovistarPaletteColor.movistar_color_grey_2,
-            textSecondary = MovistarPaletteColor.movistar_color_grey_4,
-            textSecondaryInverse = MovistarPaletteColor.movistar_color_grey_4,
+            textNavigationBarPrimary = MovistarPaletteColor.movistar_color_darkModeGrey2,
+            textNavigationBarSecondary = MovistarPaletteColor.movistar_color_darkModeGrey4,
+            textPrimary = MovistarPaletteColor.movistar_color_darkModeGrey2,
+            textPrimaryInverse = MovistarPaletteColor.movistar_color_darkModeGrey2,
+            textSecondary = MovistarPaletteColor.movistar_color_darkModeGrey4,
+            textSecondaryInverse = MovistarPaletteColor.movistar_color_darkModeGrey4,
             errorHigh = MovistarPaletteColor.movistar_color_pepper_40,
             promoHigh = MovistarPaletteColor.movistar_color_purple_40,
             successHigh = MovistarPaletteColor.movistar_color_green_40,
@@ -176,42 +178,6 @@ object MovistarBrand : Brand {
         get() = FontWeight.Bold
 }
 
-object MovistarProminentBrand : Brand {
-
-    override val compatibilityTheme: Int
-        get() = R.style.MisticaTheme_Movistar_Prominent
-
-    override val lightColors = MovistarBrand.lightColors.copy(
-        brand = MovistarPaletteColor.movistar_prominent_color_blue,
-        backgroundBrand = MovistarPaletteColor.movistar_prominent_color_blue,
-        navigationBarBackground = MovistarPaletteColor.movistar_prominent_color_blue,
-        brandHigh = MovistarPaletteColor.movistar_prominent_color_blue_dark,
-        dividerInverse = MovistarPaletteColor.movistar_prominent_color_blue_dark,
-        gradientBackgroundFirst = MovistarPaletteColor.movistar_prominent_color_blue,
-        gradientBackgroundSecond = MovistarPaletteColor.movistar_prominent_color_blue,
-        gradientBackgroundThird = MovistarPaletteColor.movistar_prominent_color_blue,
-        gradientBackgroundFourth = MovistarPaletteColor.movistar_prominent_color_blue,
-        loginLoadingGradientFirst = MovistarPaletteColor.movistar_prominent_color_blue_dark,
-        loginLoadingGradientSecond = MovistarPaletteColor.movistar_prominent_color_blue_dark,
-        loginLoadingGradientThird = MovistarPaletteColor.movistar_prominent_color_blue_dark,
-        loginLoadingGradientFourth = MovistarPaletteColor.movistar_prominent_color_blue_dark,
-    )
-
-    override val darkColors: MisticaColors = MovistarBrand.darkColors
-
-    override val preset5FontWeight: FontWeight
-        get() = MovistarBrand.preset5FontWeight
-
-    override val preset6FontWeight: FontWeight
-        get() = MovistarBrand.preset6FontWeight
-
-    override val preset7FontWeight: FontWeight
-        get() = MovistarBrand.preset7FontWeight
-
-    override val preset8FontWeight: FontWeight
-        get() = MovistarBrand.preset8FontWeight
-}
-
 private object MovistarPaletteColor {
     val movistar_color_blue = Color(0xFF019DF4)
     val movistar_color_blue_10 = Color(0xFFE6F5FD)
@@ -219,6 +185,9 @@ private object MovistarPaletteColor {
     val movistar_color_blue_40 = Color(0xFF4DBAF7)
     val movistar_color_blue_55 = Color(0xFF008EDD)
     val movistar_color_blue_20 = Color(0xFFB3E1FB)
+
+    val movistar_color_blue_dark = Color(0xFF0B2739)
+    val movistar_color_blue_dark_60_alpha = Color(0x990B2739)
 
     val movistar_color_green = Color(0xFF5CB615)
     val movistar_color_green_10 = Color(0xFFEFF8E8)
@@ -256,17 +225,10 @@ private object MovistarPaletteColor {
     val movistar_color_grey_6 = Color(0xFF313235)
     val movistar_color_white = Color(0xFFFFFFFF)
 
-    // Prominent Color Palette
-    val movistar_prominent_color_blue = Color(0xFF0B2739)
-    val movistar_prominent_color_blue_10 = Color(0xFFE6F5FD)
-    val movistar_prominent_color_blue_40 = Color(0xFF4DBAF7)
-    val movistar_prominent_color_blue_dark = Color(0xFF081F2D)
-    val movistar_prominent_color_blue_light_20 = Color(0xFFCED3D7)
-    val movistar_prominent_color_blue_light_50 = Color(0xFF85939C)
-    val movistar_prominent_color_blue_light_70 = Color(0xFF546874)
-
     // Android specific palette for colors with custom alpha
     val movistar_color_white_5_alpha = Color(0x0DFFFFFF)
+    val movistar_color_white_8_alpha = Color(0x14FFFFFF)
+    val movistar_color_white_15_alpha = Color(0x26FFFFFF)
     val movistar_color_white_20_alpha = Color(0x33FFFFFF)
     val movistar_color_white_50_alpha = Color(0x80FFFFFF)
     val movistar_color_grey_5_30_alpha = Color(0x4D86888C)
@@ -279,7 +241,12 @@ private object MovistarPaletteColor {
     val movistar_color_blue_30_25_alpha = Color(0x4080CEF9)
 
     // Dark Mode Color Palette
-    val movistar_color_darkModeBlack = Color(0xFF191919)
-    val movistar_color_darkModeGrey = Color(0xFF242424)
+    val movistar_color_darkModeBlack = Color(0xFF061824)
+    val movistar_color_darkModeGrey = Color(0xFF081F2E)
+    val movistar_color_darkModeGrey2 = Color(0xFFEAEBEE)
+    val movistar_color_darkModeGrey3 = Color(0xFFCED4D7)
+    val movistar_color_darkModeGrey4 = Color(0xFF85939C)
+    val movistar_color_darkModeGrey5 = Color(0xFF6D7D88)
+    val movistar_color_darkModeGrey6 = Color(0xFF3C5261)
     val movistar_color_darkModeGrey_80_alpha = Color(0xCC242424)
 }

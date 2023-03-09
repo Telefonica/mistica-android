@@ -36,7 +36,6 @@ class CatalogMainActivity : AppCompatActivity() {
 
         val styles: List<Pair<String, Int>> = listOf(
             "Movistar" to R.style.MisticaTheme_Movistar,
-            "Movistar Priority" to R.style.MisticaTheme_Movistar_Prominent,
             "O2" to R.style.MisticaTheme_O2,
             "O2 Classic" to R.style.MisticaTheme_O2Classic,
             "Vivo" to R.style.MisticaTheme_Vivo,

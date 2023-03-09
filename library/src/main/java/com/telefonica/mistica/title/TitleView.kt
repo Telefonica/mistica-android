@@ -40,7 +40,7 @@ import com.telefonica.mistica.util.setTextPreset
 class TitleView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
-    defStyleAttr: Int = 0
+    defStyleAttr: Int = 0,
 ) : ConstraintLayout(context, attrs, defStyleAttr) {
 
     @Retention(AnnotationRetention.SOURCE)
@@ -50,14 +50,14 @@ class TitleView @JvmOverloads constructor(
     )
     annotation class TitleStyle
 
-    private var lintTextView: TextView
+    private var linkTextView: TextView
     private var titleTextView: TextView
 
     init {
         LayoutInflater.from(context).inflate(R.layout.title, this, true)
 
         titleTextView = findViewById(R.id.title_text)
-        lintTextView = findViewById(R.id.link_text)
+        linkTextView = findViewById(R.id.link_text)
 
         if (attrs != null) {
             val styledAttrs =
@@ -71,11 +71,13 @@ class TitleView @JvmOverloads constructor(
             titleTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.TitleView_title))
             setTitleStyle(styledAttrs.getInt(R.styleable.TitleView_titleStyle, -1))
 
-            lintTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.TitleView_link))
+            linkTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.TitleView_link))
 
             styledAttrs.recycle()
         }
     }
+
+    fun getTitle(): String = titleTextView.text.toString()
 
     fun setTitle(text: CharSequence?) {
         titleTextView.setTextAndVisibility(text)
@@ -93,12 +95,14 @@ class TitleView @JvmOverloads constructor(
         titleTextView.isAllCaps = styleConfig.isAllCaps
     }
 
+    fun getLink(): String = linkTextView.text.toString()
+
     fun setLink(text: CharSequence?) {
-        lintTextView.setTextAndVisibility(text)
+        linkTextView.setTextAndVisibility(text)
     }
 
     fun setOnLinkClickedListener(listener: () -> Unit) {
-        lintTextView.setOnClickListener { listener.invoke() }
+        linkTextView.setOnClickListener { listener.invoke() }
     }
 
     companion object {
