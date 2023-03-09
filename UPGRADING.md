@@ -4,7 +4,8 @@
 
 ### Dark mode support
 
-2.0.0 is the first version of Mistica that supports [dark mode](https://developer.android.com/guide/topics/ui/look-and-feel/darktheme) in Android 10 (API level 29) and higher. In order to do so, every Mistica theme passes from extending `Theme.MaterialComponents.Light.NoActionBar` to extend `Theme.MaterialComponents.DayNight.NoActionBar`. This means that if you're using `MisticaTheme` or any of the brand variants(`MisticaTheme.Movistar`, `MisticaTheme.O2`, `MisticaTheme.O2Classic` or `MisticaTheme.Vivo`) in your app, the moment you use the 2.x version of Mistica your app will support dark mode and automatically change the colors of the Mistica components when the device is set to dark mode. 
+2.0.0 is the first version of Mistica that supports [dark mode](https://developer.android.com/guide/topics/ui/look-and-feel/darktheme) in Android 10 (API 
+level 29) and higher. In order to do so, every Mistica theme passes from extending `Theme.MaterialComponents.Light.NoActionBar` to extend `Theme.MaterialComponents.DayNight.NoActionBar`. This means that if you're using `MisticaTheme` or any of the brand variants(`MisticaTheme.Movistar`, `MisticaTheme.O2` or `MisticaTheme.Vivo`) in your app, the moment you use the 2.x version of Mistica your app will support dark mode and automatically change the colors of the Mistica components when the device is set to dark mode. 
 
 If your app still doesn't support dark mode you will want to read the official documentation https://developer.android.com/guide/topics/ui/look-and-feel/darktheme and adapt your app accordingly before using Mistica 2.x.
 

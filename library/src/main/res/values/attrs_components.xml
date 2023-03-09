@@ -292,7 +292,6 @@
         <attr name="composeBrand" format="enum">
             <enum name="movistar" value="0" />
             <enum name="o2" value="2" />
-            <enum name="o2_classic" value="3" />
             <enum name="vivo" value="4" />
             <enum name="telefonica" value="5" />
             <enum name="blau" value="6" />
