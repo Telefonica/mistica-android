@@ -104,7 +104,7 @@
         <item name="backgroundTint">@color/button_primary_background_inverse_selector</item>
         <item name="android:textColor">@color/text_button_primary_inverse_selector</item>
         <item name="iconTint">@color/text_button_primary_inverse_selector</item>
-        <item name="rippleColor">?attr/colorButtonPrimaryBackgroundSelectedInverse</item>
+        <item name="rippleColor">?attr/colorButtonPrimaryBackgroundInverseSelected</item>
     </style>
 
     <style name="AppTheme.Button.PrimaryButtonInverse.Small">

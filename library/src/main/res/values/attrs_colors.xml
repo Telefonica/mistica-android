@@ -19,26 +19,26 @@
         <attr name="colorSkeletonWave" format="color|reference" />
 
         <!-- Border colors -->
-        <attr name="colorBorderLight" format="color|reference" />
+        <attr name="colorBorderLow" format="color|reference" />
         <attr name="colorBorder" format="color|reference" />
-        <attr name="colorBorderDark" format="color|reference" />
+        <attr name="colorBorderHigh" format="color|reference" />
         <attr name="colorBorderSelected" format="color|reference" />
 
         <!-- Button colors -->
         <attr name="colorButtonDangerBackground" format="color|reference" />
         <attr name="colorButtonDangerBackgroundSelected" format="color|reference" />
         <attr name="colorButtonLinkBackgroundSelected" format="color|reference" />
-        <attr name="colorButtonLinkBackgroundSelectedInverse" format="color|reference" />
+        <attr name="colorButtonLinkBackgroundInverseSelected" format="color|reference" />
 
         <attr name="colorButtonPrimaryBackground" format="color|reference" />
         <attr name="colorButtonPrimaryBackgroundInverse" format="color|reference" />
         <attr name="colorButtonPrimaryBackgroundSelected" format="color|reference" />
-        <attr name="colorButtonPrimaryBackgroundSelectedInverse" format="color|reference" />
-        <attr name="colorButtonSecondaryBackground" format="color|reference" />
+        <attr name="colorButtonPrimaryBackgroundInverseSelected" format="color|reference" />
+        <attr name="colorButtonSecondaryBorder" format="color|reference" />
         <attr name="colorButtonSecondaryBackgroundSelected" format="color|reference" />
         <attr name="colorButtonSecondaryBackgroundSelectedInverse" format="color|reference" />
         <attr name="colorButtonSecondaryBorderInverse" format="color|reference" />
-        <attr name="colorButtonSecondaryBorderSelectedInverse" format="color|reference" />
+        <attr name="colorButtonSecondaryBorderInverseSelected" format="color|reference" />
         <attr name="colorTextButtonPrimary" format="color|reference" />
         <attr name="colorTextButtonPrimaryInverse" format="color|reference" />
         <attr name="colorTextButtonPrimaryInverseSelected" format="color|reference" />

@@ -6,11 +6,13 @@ import androidx.compose.runtime.setValue
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.runtime.structuralEqualityPolicy
 import androidx.compose.ui.graphics.Color
+
 class MisticaColors(
     appBarBackground: Color = Color.Unspecified,
     background: Color = Color.Unspecified,
     backgroundAlternative: Color = Color.Unspecified,
     backgroundBrand: Color = Color.Unspecified,
+    backgroundBrandSecondary: Color = Color.Unspecified,
     backgroundContainer: Color = Color.Unspecified,
     backgroundFeedbackBottom: Color = Color.Unspecified,
     backgroundOverlay: Color = Color.Unspecified,
@@ -18,24 +20,24 @@ class MisticaColors(
     backgroundSkeletonInverse: Color = Color.Unspecified,
     badge: Color = Color.Unspecified,
     border: Color = Color.Unspecified,
-    borderDark: Color = Color.Unspecified,
-    borderLight: Color = Color.Unspecified,
+    borderHigh: Color = Color.Unspecified,
+    borderLow: Color = Color.Unspecified,
     borderSelected: Color = Color.Unspecified,
     brand: Color = Color.Unspecified,
     brandHigh: Color = Color.Unspecified,
     buttonDangerBackground: Color = Color.Unspecified,
     buttonDangerBackgroundSelected: Color = Color.Unspecified,
     buttonLinkBackgroundSelected: Color = Color.Unspecified,
-    buttonLinkBackgroundSelectedInverse: Color = Color.Unspecified,
+    buttonLinkBackgroundInverseSelected: Color = Color.Unspecified,
     buttonPrimaryBackground: Color = Color.Unspecified,
     buttonPrimaryBackgroundInverse: Color = Color.Unspecified,
     buttonPrimaryBackgroundSelected: Color = Color.Unspecified,
-    buttonPrimaryBackgroundSelectedInverse: Color = Color.Unspecified,
-    buttonSecondaryBackground: Color = Color.Unspecified,
+    buttonPrimaryBackgroundInverseSelected: Color = Color.Unspecified,
+    buttonSecondaryBorder: Color = Color.Unspecified,
     buttonSecondaryBackgroundSelected: Color = Color.Unspecified,
     buttonSecondaryBackgroundSelectedInverse: Color = Color.Unspecified,
     buttonSecondaryBorderInverse: Color = Color.Unspecified,
-    buttonSecondaryBorderSelectedInverse: Color = Color.Unspecified,
+    buttonSecondaryBorderInverseSelected: Color = Color.Unspecified,
     carouselIndicatorActiveColor: Color = Color.Unspecified,
     carouselIndicatorInactiveColor: Color = Color.Unspecified,
     control: Color = Color.Unspecified,
@@ -104,6 +106,8 @@ class MisticaColors(
         internal set
     var backgroundBrand by mutableStateOf(backgroundBrand, structuralEqualityPolicy())
         internal set
+    var backgroundBrandSecondary by mutableStateOf(backgroundBrand, structuralEqualityPolicy())
+        internal set
     var backgroundOverlay by mutableStateOf(backgroundOverlay, structuralEqualityPolicy())
         internal set
     var backgroundSkeleton by mutableStateOf(backgroundSkeleton, structuralEqualityPolicy())
@@ -118,11 +122,11 @@ class MisticaColors(
         internal set
     var skeletonWave by mutableStateOf(skeletonWave, structuralEqualityPolicy())
         internal set
-    var borderLight by mutableStateOf(borderLight, structuralEqualityPolicy())
+    var borderLow by mutableStateOf(borderLow, structuralEqualityPolicy())
         internal set
     var border by mutableStateOf(border, structuralEqualityPolicy())
         internal set
-    var borderDark by mutableStateOf(borderDark, structuralEqualityPolicy())
+    var borderHigh by mutableStateOf(borderHigh, structuralEqualityPolicy())
         internal set
     var borderSelected by mutableStateOf(borderSelected, structuralEqualityPolicy())
         internal set
@@ -132,7 +136,7 @@ class MisticaColors(
         internal set
     var buttonLinkBackgroundSelected by mutableStateOf(buttonLinkBackgroundSelected, structuralEqualityPolicy())
         internal set
-    var buttonLinkBackgroundSelectedInverse by mutableStateOf(buttonLinkBackgroundSelectedInverse, structuralEqualityPolicy())
+    var buttonLinkBackgroundInverseSelected by mutableStateOf(buttonLinkBackgroundInverseSelected, structuralEqualityPolicy())
         internal set
     var buttonPrimaryBackground by mutableStateOf(buttonPrimaryBackground, structuralEqualityPolicy())
         internal set
@@ -140,17 +144,17 @@ class MisticaColors(
         internal set
     var buttonPrimaryBackgroundSelected by mutableStateOf(buttonPrimaryBackgroundSelected, structuralEqualityPolicy())
         internal set
-    var buttonPrimaryBackgroundSelectedInverse by mutableStateOf(buttonPrimaryBackgroundSelectedInverse, structuralEqualityPolicy())
-        internal set
-    var buttonSecondaryBackground by mutableStateOf(buttonSecondaryBackground, structuralEqualityPolicy())
+    var buttonPrimaryBackgroundInverseSelected by mutableStateOf(buttonPrimaryBackgroundInverseSelected, structuralEqualityPolicy())
         internal set
     var buttonSecondaryBackgroundSelected by mutableStateOf(buttonSecondaryBackgroundSelected, structuralEqualityPolicy())
         internal set
     var buttonSecondaryBackgroundSelectedInverse by mutableStateOf(buttonSecondaryBackgroundSelectedInverse, structuralEqualityPolicy())
         internal set
+    var buttonSecondaryBorder by mutableStateOf(buttonSecondaryBorder, structuralEqualityPolicy())
+        internal set
     var buttonSecondaryBorderInverse by mutableStateOf(buttonSecondaryBorderInverse, structuralEqualityPolicy())
         internal set
-    var buttonSecondaryBorderSelectedInverse by mutableStateOf(buttonSecondaryBorderSelectedInverse, structuralEqualityPolicy())
+    var buttonSecondaryBorderInverseSelected by mutableStateOf(buttonSecondaryBorderInverseSelected, structuralEqualityPolicy())
         internal set
     var textButtonPrimary by mutableStateOf(textButtonPrimary, structuralEqualityPolicy())
         internal set
@@ -278,6 +282,7 @@ class MisticaColors(
         background: Color = this.background,
         backgroundAlternative: Color = this.backgroundAlternative,
         backgroundBrand: Color = this.backgroundBrand,
+        backgroundBrandSecondary: Color = this.backgroundBrandSecondary,
         backgroundContainer: Color = this.backgroundContainer,
         backgroundFeedbackBottom: Color = this.backgroundFeedbackBottom,
         backgroundOverlay: Color = this.backgroundOverlay,
@@ -285,24 +290,24 @@ class MisticaColors(
         backgroundSkeletonInverse: Color = this.backgroundSkeletonInverse,
         badge: Color = this.badge,
         border: Color = this.border,
-        borderDark: Color = this.borderDark,
-        borderLight: Color = this.borderLight,
+        borderHigh: Color = this.borderHigh,
+        borderLow: Color = this.borderLow,
         borderSelected: Color = this.borderSelected,
         brand: Color = this.brand,
         brandHigh: Color = this.brandHigh,
         buttonDangerBackground: Color = this.buttonDangerBackground,
         buttonDangerBackgroundSelected: Color = this.buttonDangerBackgroundSelected,
         buttonLinkBackgroundSelected: Color = this.buttonLinkBackgroundSelected,
-        buttonLinkBackgroundSelectedInverse: Color = this.buttonLinkBackgroundSelectedInverse,
+        buttonLinkBackgroundInverseSelected: Color = this.buttonLinkBackgroundInverseSelected,
         buttonPrimaryBackground: Color = this.buttonPrimaryBackground,
         buttonPrimaryBackgroundInverse: Color = this.buttonPrimaryBackgroundInverse,
         buttonPrimaryBackgroundSelected: Color = this.buttonPrimaryBackgroundSelected,
-        buttonPrimaryBackgroundSelectedInverse: Color = this.buttonPrimaryBackgroundSelectedInverse,
-        buttonSecondaryBackground: Color = this.buttonSecondaryBackground,
+        buttonPrimaryBackgroundInverseSelected: Color = this.buttonPrimaryBackgroundInverseSelected,
+        buttonSecondaryBorder: Color = this.buttonSecondaryBorder,
         buttonSecondaryBackgroundSelected: Color = this.buttonSecondaryBackgroundSelected,
         buttonSecondaryBackgroundSelectedInverse: Color = this.buttonSecondaryBackgroundSelectedInverse,
         buttonSecondaryBorderInverse: Color = this.buttonSecondaryBorderInverse,
-        buttonSecondaryBorderSelectedInverse: Color = this.buttonSecondaryBorderSelectedInverse,
+        buttonSecondaryBorderInverseSelected: Color = this.buttonSecondaryBorderInverseSelected,
         carouselIndicatorActiveColor: Color = this.carouselIndicatorActiveColor,
         carouselIndicatorInactiveColor: Color = this.carouselIndicatorInactiveColor,
         control: Color = this.control,
@@ -367,6 +372,7 @@ class MisticaColors(
         background = background,
         backgroundAlternative = backgroundAlternative,
         backgroundBrand = backgroundBrand,
+        backgroundBrandSecondary = backgroundBrandSecondary,
         backgroundContainer = backgroundContainer,
         backgroundFeedbackBottom = backgroundFeedbackBottom,
         backgroundOverlay = backgroundOverlay,
@@ -374,24 +380,24 @@ class MisticaColors(
         backgroundSkeletonInverse = backgroundSkeletonInverse,
         badge = badge,
         border = border,
-        borderDark = borderDark,
-        borderLight = borderLight,
+        borderHigh = borderHigh,
+        borderLow = borderLow,
         borderSelected = borderSelected,
         brand = brand,
         brandHigh = brandHigh,
         buttonDangerBackground = buttonDangerBackground,
         buttonDangerBackgroundSelected = buttonDangerBackgroundSelected,
         buttonLinkBackgroundSelected = buttonLinkBackgroundSelected,
-        buttonLinkBackgroundSelectedInverse = buttonLinkBackgroundSelectedInverse,
+        buttonLinkBackgroundInverseSelected = buttonLinkBackgroundInverseSelected,
         buttonPrimaryBackground = buttonPrimaryBackground,
         buttonPrimaryBackgroundInverse = buttonPrimaryBackgroundInverse,
         buttonPrimaryBackgroundSelected = buttonPrimaryBackgroundSelected,
-        buttonPrimaryBackgroundSelectedInverse = buttonPrimaryBackgroundSelectedInverse,
-        buttonSecondaryBackground = buttonSecondaryBackground,
+        buttonPrimaryBackgroundInverseSelected = buttonPrimaryBackgroundInverseSelected,
+        buttonSecondaryBorder = buttonSecondaryBorder,
         buttonSecondaryBackgroundSelected = buttonSecondaryBackgroundSelected,
         buttonSecondaryBackgroundSelectedInverse = buttonSecondaryBackgroundSelectedInverse,
         buttonSecondaryBorderInverse = buttonSecondaryBorderInverse,
-        buttonSecondaryBorderSelectedInverse = buttonSecondaryBorderSelectedInverse,
+        buttonSecondaryBorderInverseSelected = buttonSecondaryBorderInverseSelected,
         carouselIndicatorActiveColor = carouselIndicatorActiveColor,
         carouselIndicatorInactiveColor = carouselIndicatorInactiveColor,
         control = control,
@@ -458,6 +464,7 @@ class MisticaColors(
         background = other.background
         backgroundAlternative = other.backgroundAlternative
         backgroundBrand = other.backgroundBrand
+        backgroundBrandSecondary = other.backgroundBrandSecondary
         backgroundContainer = other.backgroundContainer
         backgroundFeedbackBottom = other.backgroundFeedbackBottom
         backgroundOverlay = other.backgroundOverlay
@@ -465,24 +472,24 @@ class MisticaColors(
         backgroundSkeletonInverse = other.backgroundSkeletonInverse
         badge = other.badge
         border = other.border
-        borderDark = other.borderDark
-        borderLight = other.borderLight
+        borderHigh = other.borderHigh
+        borderLow = other.borderLow
         borderSelected = other.borderSelected
         brand = other.brand
         brandHigh = other.brandHigh
         buttonDangerBackground = other.buttonDangerBackground
         buttonDangerBackgroundSelected = other.buttonDangerBackgroundSelected
         buttonLinkBackgroundSelected = other.buttonLinkBackgroundSelected
-        buttonLinkBackgroundSelectedInverse = other.buttonLinkBackgroundSelectedInverse
+        buttonLinkBackgroundInverseSelected = other.buttonLinkBackgroundInverseSelected
         buttonPrimaryBackground = other.buttonPrimaryBackground
         buttonPrimaryBackgroundInverse = other.buttonPrimaryBackgroundInverse
         buttonPrimaryBackgroundSelected = other.buttonPrimaryBackgroundSelected
-        buttonPrimaryBackgroundSelectedInverse = other.buttonPrimaryBackgroundSelectedInverse
-        buttonSecondaryBackground = other.buttonSecondaryBackground
+        buttonPrimaryBackgroundInverseSelected = other.buttonPrimaryBackgroundInverseSelected
+        buttonSecondaryBorder = other.buttonSecondaryBorder
         buttonSecondaryBackgroundSelected = other.buttonSecondaryBackgroundSelected
         buttonSecondaryBackgroundSelectedInverse = other.buttonSecondaryBackgroundSelectedInverse
         buttonSecondaryBorderInverse = other.buttonSecondaryBorderInverse
-        buttonSecondaryBorderSelectedInverse = other.buttonSecondaryBorderSelectedInverse
+        buttonSecondaryBorderInverseSelected = other.buttonSecondaryBorderInverseSelected
         carouselIndicatorActiveColor = other.carouselIndicatorActiveColor
         carouselIndicatorInactiveColor = other.carouselIndicatorInactiveColor
         control = other.control

@@ -21,9 +21,9 @@
         <item name="colorSkeletonWave">@color/o2_color_grey_2</item>
 
         <!-- Border colors -->
-        <item name="colorBorderLight">@color/o2_color_grey_1</item>
+        <item name="colorBorderLow">@color/o2_color_grey_1</item>
         <item name="colorBorder">@color/o2_color_grey_3</item>
-        <item name="colorBorderDark">@color/o2_color_grey_5</item>
+        <item name="colorBorderHigh">@color/o2_color_grey_5</item>
         <item name="colorBorderSelected">@color/o2_color_blue_primary</item>
 
         <!-- Button colors -->
@@ -31,18 +31,18 @@
         <item name="colorButtonDangerBackgroundSelected">@color/o2_color_pepper_60</item>
 
         <item name="colorButtonLinkBackgroundSelected">@color/o2_color_blue_primary_10</item>
-        <item name="colorButtonLinkBackgroundSelectedInverse">@color/o2_color_white_20_alpha</item>
+        <item name="colorButtonLinkBackgroundInverseSelected">@color/o2_color_white_20_alpha</item>
 
         <item name="colorButtonPrimaryBackground">@color/o2_color_blue_primary</item>
         <item name="colorButtonPrimaryBackgroundInverse">@color/o2_color_white</item>
         <item name="colorButtonPrimaryBackgroundSelected">@color/o2_color_blue_primary_70</item>
-        <item name="colorButtonPrimaryBackgroundSelectedInverse">@color/o2_color_blue_primary_30</item>
+        <item name="colorButtonPrimaryBackgroundInverseSelected">@color/o2_color_blue_primary_30</item>
 
-        <item name="colorButtonSecondaryBackground">@color/o2_color_blue_primary</item>
+        <item name="colorButtonSecondaryBorder">@color/o2_color_blue_primary</item>
         <item name="colorButtonSecondaryBackgroundSelected">@color/o2_color_blue_primary_70</item>
         <item name="colorButtonSecondaryBackgroundSelectedInverse">@color/o2_color_white_15_alpha</item>
         <item name="colorButtonSecondaryBorderInverse">@color/o2_color_white</item>
-        <item name="colorButtonSecondaryBorderSelectedInverse">@color/o2_color_blue_primary_30</item>
+        <item name="colorButtonSecondaryBorderInverseSelected">@color/o2_color_blue_primary_30</item>
 
         <item name="colorTextButtonPrimary">@color/o2_color_white</item>
         <item name="colorTextButtonPrimaryInverse">@color/o2_color_blue_primary</item>

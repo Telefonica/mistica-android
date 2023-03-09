@@ -19,22 +19,22 @@
         <item name="colorSkeletonWave">@color/vivo_color_grey_5_30_alpha</item>
 
         <!-- Border colors -->
-        <item name="colorBorderLight">@color/vivo_color_darkModeBlack</item>
+        <item name="colorBorderLow">@color/vivo_color_darkModeBlack</item>
         <item name="colorBorder">@color/vivo_color_darkModeGrey</item>
         <item name="colorBorderSelected">@color/vivo_color_purple_light80</item>
 
         <!-- Button colors -->
 
         <item name="colorButtonLinkBackgroundSelected">@color/vivo_color_white_5_alpha</item>
-        <item name="colorButtonLinkBackgroundSelectedInverse">@color/vivo_color_white_5_alpha</item>
+        <item name="colorButtonLinkBackgroundInverseSelected">@color/vivo_color_white_5_alpha</item>
 
         <item name="colorButtonPrimaryBackground">@color/vivo_color_purple_light80</item>
         <item name="colorButtonPrimaryBackgroundInverse">@color/vivo_color_purple_light80</item>
-        <item name="colorButtonPrimaryBackgroundSelectedInverse">@color/vivo_color_purple_dark</item>
+        <item name="colorButtonPrimaryBackgroundInverseSelected">@color/vivo_color_purple_dark</item>
 
-        <item name="colorButtonSecondaryBackground">@color/vivo_color_purple_light80</item>
+        <item name="colorButtonSecondaryBorder">@color/vivo_color_purple_light80</item>
         <item name="colorButtonSecondaryBorderInverse">@color/vivo_color_purple_light80</item>
-        <item name="colorButtonSecondaryBorderSelectedInverse">@color/vivo_color_purple_dark</item>
+        <item name="colorButtonSecondaryBorderInverseSelected">@color/vivo_color_purple_dark</item>
 
         <item name="colorTextButtonPrimary">@color/vivo_color_grey_2</item>
         <item name="colorTextButtonPrimaryInverse">@color/vivo_color_grey_2</item>

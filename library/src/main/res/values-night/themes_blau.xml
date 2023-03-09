@@ -17,20 +17,20 @@
 		<item name="colorSkeletonWave">@color/blau_color_grey_5</item>
 
 		<!-- Border colors -->
-		<item name="colorBorderLight">@color/blau_color_darkModeBlack</item>
+		<item name="colorBorderLow">@color/blau_color_darkModeBlack</item>
 		<item name="colorBorder">@color/blau_color_darkModeGrey</item>
 
 		<!-- Button colors -->
 
 		<item name="colorButtonLinkBackgroundSelected">@color/blau_color_purple_30_alpha</item>
-		<item name="colorButtonLinkBackgroundSelectedInverse">@color/blau_color_purple_30_alpha</item>
+		<item name="colorButtonLinkBackgroundInverseSelected">@color/blau_color_purple_30_alpha</item>
 
 		<item name="colorButtonPrimaryBackgroundInverse">@color/blau_color_blue_primary</item>
-		<item name="colorButtonPrimaryBackgroundSelectedInverse">@color/blau_color_blue_secondary60</item>
+		<item name="colorButtonPrimaryBackgroundInverseSelected">@color/blau_color_blue_secondary60</item>
 
 		<item name="colorButtonSecondaryBackgroundSelectedInverse">@color/blau_color_white_15_alpha</item>
 		<item name="colorButtonSecondaryBorderInverse">@color/blau_color_blue_primary</item>
-		<item name="colorButtonSecondaryBorderSelectedInverse">@color/blau_color_blue_secondary60</item>
+		<item name="colorButtonSecondaryBorderInverseSelected">@color/blau_color_blue_secondary60</item>
 
 		<item name="colorTextButtonPrimary">@color/blau_color_grey_2</item>
 		<item name="colorTextButtonPrimaryInverse">@color/blau_color_grey_2</item>
