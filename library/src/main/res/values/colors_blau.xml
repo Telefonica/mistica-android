@@ -44,6 +44,7 @@
 	<color name="blau_color_blue_secondary_75_alpha">#BF0072BC</color>
 	<color name="blau_color_white_30_alpha">#4DFFFFFF</color>
 	<color name="blau_color_white_20_alpha">#33FFFFFF</color>
+	<color name="blau_color_white_15_alpha">#26FFFFFF</color>
 	<color name="blau_color_white_5_alpha">#0DFFFFFF</color>
 	<color name="blau_color_purple_30_alpha">#4D7814B3</color>
 

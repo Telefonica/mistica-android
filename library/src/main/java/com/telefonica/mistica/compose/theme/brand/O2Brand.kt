@@ -36,6 +36,7 @@ object O2Brand : Brand {
         buttonPrimaryBackgroundSelectedInverse = O2PaletteColor.o2_color_blue_primary_30,
         buttonSecondaryBackground = O2PaletteColor.o2_color_blue_primary,
         buttonSecondaryBackgroundSelected = O2PaletteColor.o2_color_blue_primary_70,
+        buttonSecondaryBackgroundSelectedInverse = O2PaletteColor.o2_color_white_15_alpha,
         buttonSecondaryBorderInverse = O2PaletteColor.o2_color_white,
         buttonSecondaryBorderSelectedInverse = O2PaletteColor.o2_color_blue_primary_30,
         carouselIndicatorActiveColor = O2PaletteColor.o2_color_blue_primary,
@@ -215,6 +216,7 @@ private object O2PaletteColor {
 
     // Android specific palette for colors with custom alpha
     val o2_color_white_5_alpha = Color(0x0DFFFFFF)
+    val o2_color_white_15_alpha = Color(0x26FFFFFF)
     val o2_color_white_20_alpha = Color(0x33FFFFFF)
     val o2_color_white_50_alpha = Color(0x80FFFFFF)
     val o2_color_grey_5_30_alpha = Color(0x4D707070)

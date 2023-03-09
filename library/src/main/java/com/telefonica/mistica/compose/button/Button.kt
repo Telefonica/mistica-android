@@ -78,7 +78,7 @@ fun Button(
             enabled = enabled,
             colors = style.buttonColors,
             border = if (enabled) style.border else style.disabledBorder,
-            elevation = ButtonDefaults.elevation(0.dp, 0.dp, 0.dp, 0.dp, 0.dp)
+            elevation = ButtonDefaults.elevation(0.dp, 0.dp, 0.dp, 0.dp, 0.dp),
         ) {
             Box(contentAlignment = Alignment.Center) {
                 androidx.compose.animation.AnimatedVisibility(

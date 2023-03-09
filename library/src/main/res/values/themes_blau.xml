@@ -40,6 +40,7 @@
 
 		<item name="colorButtonSecondaryBackground">@color/blau_color_blue_secondary</item>
 		<item name="colorButtonSecondaryBackgroundSelected">@color/blau_color_blue_secondary60</item>
+		<item name="colorButtonSecondaryBackgroundSelectedInverse">@color/blau_color_white_20_alpha</item>
 		<item name="colorButtonSecondaryBorderInverse">@color/blau_color_white</item>
 		<item name="colorButtonSecondaryBorderSelectedInverse">@color/blau_color_blue_primary30</item>
 
