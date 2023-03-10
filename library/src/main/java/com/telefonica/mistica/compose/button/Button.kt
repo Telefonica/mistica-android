@@ -1,11 +1,46 @@
 package com.telefonica.mistica.compose.button
 
-import android.view.LayoutInflater
-import android.view.View
+import androidx.annotation.DrawableRes
+import androidx.compose.animation.core.CubicBezierEasing
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.slideInVertically
+import androidx.compose.animation.slideOutVertically
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.defaultMinSize
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.material.ButtonDefaults
+import androidx.compose.material.CircularProgressIndicator
+import androidx.compose.material.Text
+import androidx.compose.material.ripple.LocalRippleTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.viewinterop.AndroidView
+import androidx.compose.ui.graphics.ColorFilter
+import androidx.compose.ui.layout.onGloballyPositioned
+import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewParameter
+import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.R
+
+private val iconSpacing = 10.dp
+private val easing = CubicBezierEasing(0.77f, 0f, 0.175f, 1f)
 
 @Composable
 fun Button(
@@ -15,43 +50,99 @@ fun Button(
     buttonStyle: ButtonStyle = ButtonStyle.PRIMARY,
     isLoading: Boolean = false,
     enabled: Boolean = true,
+    @DrawableRes icon: Int? = null,
     onClickListener: () -> Unit,
 ) {
-    fun View.updateButton() {
-        findViewById<com.telefonica.mistica.button.ProgressButton>(R.id.button).apply {
-            setText(text)
-            setLoadingText(loadingText)
-            setIsLoading(isLoading)
-            isEnabled = enabled
-            setOnClickListener { onClickListener() }
+
+    val density = LocalDensity.current
+
+    val style = buttonStyle.getButtonStyleCompose()
+    val size = buttonStyle.getButtonSizeCompose()
+    val textColor = if (enabled) style.textColor else style.disabledTextColor
+
+    var originalWidth: Dp? by remember { mutableStateOf(null) }
+
+    CompositionLocalProvider(LocalRippleTheme provides style.rippleTheme) {
+        androidx.compose.material.Button(
+            modifier = modifier
+                .defaultMinSize(size.minWidth, size.height)
+                .onGloballyPositioned {
+                    if (originalWidth == null) {
+                        originalWidth = with(density) { it.size.width.toDp() }
+                    }
+                }
+                .height(size.height)
+                .applyWidth(originalWidth),
+            contentPadding = PaddingValues(horizontal = size.contentPadding, vertical = 0.dp),
+            onClick = onClickListener,
+            enabled = enabled,
+            colors = style.buttonColors,
+            border = if (enabled) style.border else style.disabledBorder,
+            elevation = ButtonDefaults.elevation(0.dp, 0.dp, 0.dp, 0.dp, 0.dp),
+        ) {
+            Box(contentAlignment = Alignment.Center) {
+                androidx.compose.animation.AnimatedVisibility(
+                    modifier = Modifier.fillMaxHeight(),
+                    visible = isLoading,
+                    enter = slideInVertically(tween(easing = easing)) { it },
+                    exit = slideOutVertically(tween(easing = easing)) { it },
+                ) {
+                    Row {
+                        CircularProgressIndicator(
+                            modifier = Modifier
+                                .size(size.progressBarSize)
+                                .align(Alignment.CenterVertically),
+                            color = textColor,
+                            strokeWidth = size.progressBarStroke,
+                        )
+                        loadingText.takeIf { it.isNotEmpty() }?.let {
+                            Spacer(modifier = Modifier.width(iconSpacing))
+                            Text(
+                                modifier = Modifier.align(Alignment.CenterVertically),
+                                text = it,
+                                color = textColor,
+                                style = size.textStyle,
+                                maxLines = 1,
+                                overflow = TextOverflow.Ellipsis,
+                            )
+                        }
+                    }
+                }
+                androidx.compose.animation.AnimatedVisibility(
+                    modifier = Modifier.fillMaxHeight(),
+                    visible = !isLoading,
+                    enter = slideInVertically(tween(easing = easing)) { -it },
+                    exit = slideOutVertically(tween(easing = easing)) { -it },
+                ) {
+                    Row {
+                        icon?.let {
+                            Image(
+                                painterResource(id = it),
+                                null,
+                                modifier = Modifier
+                                    .size(size.iconSize)
+                                    .align(Alignment.CenterVertically),
+                                colorFilter = ColorFilter.tint(style.textColor)
+                            )
+                            Spacer(modifier = Modifier.width(iconSpacing))
+                        }
+                        Text(
+                            modifier = Modifier.align(Alignment.CenterVertically),
+                            text = text,
+                            color = textColor,
+                            style = size.textStyle,
+                            maxLines = 1,
+                            overflow = TextOverflow.Ellipsis,
+                        )
+                    }
+                }
+            }
         }
     }
-
-    AndroidView(
-        modifier = modifier,
-        factory = { context ->
-            val view = LayoutInflater.from(context).inflate(getButtonStyle(buttonStyle), null)
-            view.updateButton()
-            view
-        },
-        update = { view -> view.updateButton() }
-    )
 }
 
-private fun getButtonStyle(style: ButtonStyle) = when (style) {
-    ButtonStyle.DANGER -> R.layout.button_danger_wrapper
-    ButtonStyle.DANGER_SMALL -> R.layout.button_danger_small_wrapper
-    ButtonStyle.LINK_INVERSE -> R.layout.button_link_inverse_wrapper
-    ButtonStyle.LINK -> R.layout.button_link_wrapper
-    ButtonStyle.PRIMARY_INVERSE -> R.layout.button_primary_inverse_wrapper
-    ButtonStyle.PRIMARY_SMALL_INVERSE -> R.layout.button_primary_small_inverse_wrapper
-    ButtonStyle.PRIMARY_SMALL -> R.layout.button_primary_small_wrapper
-    ButtonStyle.PRIMARY -> R.layout.button_primary_wrapper
-    ButtonStyle.SECONDARY_INVERSE -> R.layout.button_secondary_inverse_wrapper
-    ButtonStyle.SECONDARY_SMALL_INVERSE -> R.layout.button_secondary_small_inverse_wrapper
-    ButtonStyle.SECONDARY_SMALL -> R.layout.button_secondary_small_wrapper
-    ButtonStyle.SECONDARY -> R.layout.button_secondary_wrapper
-}
+private fun Modifier.applyWidth(originalWidth: Dp?): Modifier =
+    originalWidth?.let { width(it) } ?: this
 
 enum class ButtonStyle {
     PRIMARY,
@@ -66,4 +157,38 @@ enum class ButtonStyle {
     SECONDARY_INVERSE,
     SECONDARY_SMALL_INVERSE,
     LINK_INVERSE
+}
+
+@Preview
+@Composable
+fun ButtonPreview(@PreviewParameter(PreviewBooleanProvider::class) enabled: Boolean) {
+    Button(text = "Text", loadingText = "Loading", enabled = enabled, isLoading = false) {}
+}
+
+@Preview
+@Composable
+fun ProgressButtonNewPreview() {
+    Button(text = "Text", loadingText = "Loading", isLoading = true) {}
+}
+
+@Preview
+@Composable
+fun ProgressButtonNoTextPreview() {
+    Button(text = "Text", isLoading = true) {}
+}
+
+@Preview
+@Composable
+fun ProgressButtonIconPreview() {
+    Button(text = "Text", icon = R.drawable.icn_creditcard) {}
+}
+
+@Preview
+@Composable
+fun ProgressButtonIconSmallPreview() {
+    Button(text = "Text", icon = R.drawable.icn_creditcard, buttonStyle = ButtonStyle.PRIMARY_SMALL) {}
+}
+
+class PreviewBooleanProvider : PreviewParameterProvider<Boolean> {
+    override val values = sequenceOf(false, true)
 }

@@ -40,6 +40,7 @@
 
         <item name="colorButtonSecondaryBackground">@color/telefonica_color_blue</item>
         <item name="colorButtonSecondaryBackgroundSelected">@color/telefonica_color_blue_70</item>
+        <item name="colorButtonSecondaryBackgroundSelectedInverse">@color/telefonica_color_white_15_alpha</item>
         <item name="colorButtonSecondaryBorderInverse">@color/telefonica_color_blue</item>
         <item name="colorButtonSecondaryBorderSelectedInverse">@color/telefonica_color_blue_70</item>
 

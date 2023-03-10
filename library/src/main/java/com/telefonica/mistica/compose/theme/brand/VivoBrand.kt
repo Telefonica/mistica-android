@@ -36,6 +36,7 @@ object VivoBrand : Brand {
         buttonPrimaryBackgroundSelectedInverse = VivoPaletteColor.vivo_color_purple_light50,
         buttonSecondaryBackground = VivoPaletteColor.vivo_color_purple,
         buttonSecondaryBackgroundSelected = VivoPaletteColor.vivo_color_purple_dark,
+        buttonSecondaryBackgroundSelectedInverse = VivoPaletteColor.vivo_color_white_15_alpha,
         buttonSecondaryBorderInverse = VivoPaletteColor.vivo_color_white,
         buttonSecondaryBorderSelectedInverse = VivoPaletteColor.vivo_color_purple_light50,
         carouselIndicatorActiveColor = VivoPaletteColor.vivo_color_purple,
@@ -208,6 +209,7 @@ private object VivoPaletteColor {
     // Android specific palette for colors with custom alpha
     val vivo_color_blue_30_alpha = Color(0x4D00ABDB)
     val vivo_color_white_5_alpha = Color(0x0DFFFFFF)
+    val vivo_color_white_15_alpha = Color(0x26FFFFFF)
     val vivo_color_white_20_alpha = Color(0x33FFFFFF)
     val vivo_color_white_50_alpha = Color(0x80FFFFFF)
     val vivo_color_grey_5_30_alpha = Color(0x4D666666)

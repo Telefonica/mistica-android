@@ -87,7 +87,7 @@ launcher
 
 | Component                                        | Available | Implementation |
 |--------------------------------------------------|-----------|----------------|
-| [Buttons](./button/README.md)                    | ✅         | AndroidView    |
+| [Buttons](./button/README.md)                    | ✅         | Composable    |
 | [Inputs](./input/README.md)                      | ✅*        | Composable     |
 | Snackbars                                        |           |                |    				
 | [Screen Feedbacks](./feedback/README.md)         | ✅         | AndroidView    |

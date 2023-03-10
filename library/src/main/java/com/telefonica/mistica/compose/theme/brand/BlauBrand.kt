@@ -36,6 +36,7 @@ object BlauBrand : Brand {
         buttonPrimaryBackgroundSelectedInverse = BlauPaletteColor.blau_color_blue_primary30,
         buttonSecondaryBackground = BlauPaletteColor.blau_color_blue_secondary,
         buttonSecondaryBackgroundSelected = BlauPaletteColor.blau_color_blue_secondary60,
+        buttonSecondaryBackgroundSelectedInverse = BlauPaletteColor.blau_color_white_20_alpha,
         buttonSecondaryBorderInverse = BlauPaletteColor.blau_color_white,
         buttonSecondaryBorderSelectedInverse = BlauPaletteColor.blau_color_blue_primary30,
         carouselIndicatorActiveColor = BlauPaletteColor.blau_color_blue_secondary,
@@ -117,6 +118,7 @@ object BlauBrand : Brand {
         buttonLinkBackgroundSelectedInverse = BlauPaletteColor.blau_color_purple_30_alpha,
         buttonPrimaryBackgroundInverse = BlauPaletteColor.blau_color_blue_primary,
         buttonPrimaryBackgroundSelectedInverse = BlauPaletteColor.blau_color_blue_secondary60,
+        buttonSecondaryBackgroundSelectedInverse = BlauPaletteColor.blau_color_white_15_alpha,
         buttonSecondaryBorderInverse = BlauPaletteColor.blau_color_blue_primary,
         buttonSecondaryBorderSelectedInverse = BlauPaletteColor.blau_color_blue_secondary60,
         carouselIndicatorActiveColor = BlauPaletteColor.blau_color_blue_secondary,
@@ -208,6 +210,7 @@ private object BlauPaletteColor {
     val blau_color_blue_secondary_75_alpha = Color(0xBF0072BC)
     val blau_color_white_30_alpha = Color(0x4DFFFFFF)
     val blau_color_white_20_alpha = Color(0x33FFFFFF)
+    val blau_color_white_15_alpha = Color(0x26FFFFFF)
     val blau_color_white_5_alpha = Color(0x0DFFFFFF)
     val blau_color_purple_30_alpha = Color(0x4D7814B3)
 

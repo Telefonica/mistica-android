@@ -36,6 +36,7 @@ object TelefonicaBrand : Brand {
         buttonPrimaryBackgroundSelectedInverse = TelefonicaPaletteColor.telefonica_color_blue_30,
         buttonSecondaryBackground = TelefonicaPaletteColor.telefonica_color_blue,
         buttonSecondaryBackgroundSelected = TelefonicaPaletteColor.telefonica_color_blue_70,
+        buttonSecondaryBackgroundSelectedInverse = TelefonicaPaletteColor.telefonica_color_white_10_alpha,
         buttonSecondaryBorderInverse = TelefonicaPaletteColor.telefonica_color_white,
         buttonSecondaryBorderSelectedInverse = TelefonicaPaletteColor.telefonica_color_blue_30,
         carouselIndicatorActiveColor = TelefonicaPaletteColor.telefonica_color_blue,
@@ -126,6 +127,7 @@ object TelefonicaBrand : Brand {
         buttonPrimaryBackgroundSelectedInverse = TelefonicaPaletteColor.telefonica_color_blue_70,
         buttonSecondaryBackground = TelefonicaPaletteColor.telefonica_color_blue,
         buttonSecondaryBackgroundSelected = TelefonicaPaletteColor.telefonica_color_blue_70,
+        buttonSecondaryBackgroundSelectedInverse = TelefonicaPaletteColor.telefonica_color_white_15_alpha,
         buttonSecondaryBorderInverse = TelefonicaPaletteColor.telefonica_color_blue,
         buttonSecondaryBorderSelectedInverse = TelefonicaPaletteColor.telefonica_color_blue_70,
         carouselIndicatorActiveColor = TelefonicaPaletteColor.telefonica_color_blue,
@@ -229,6 +231,8 @@ private object TelefonicaPaletteColor {
 
     // Android specific palette for colors with custom alpha
     val telefonica_color_white_5_alpha = Color(0x0DFFFFFF)
+    val telefonica_color_white_10_alpha = Color(0x1AFFFFFF)
+    val telefonica_color_white_15_alpha = Color(0x26FFFFFF)
     val telefonica_color_white_20_alpha = Color(0x33FFFFFF)
     val telefonica_color_grey_6_80_alpha = Color(0xCC58617A)
 

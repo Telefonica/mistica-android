@@ -33,6 +33,7 @@ class MisticaColors(
     buttonPrimaryBackgroundSelectedInverse: Color = Color.Unspecified,
     buttonSecondaryBackground: Color = Color.Unspecified,
     buttonSecondaryBackgroundSelected: Color = Color.Unspecified,
+    buttonSecondaryBackgroundSelectedInverse: Color = Color.Unspecified,
     buttonSecondaryBorderInverse: Color = Color.Unspecified,
     buttonSecondaryBorderSelectedInverse: Color = Color.Unspecified,
     carouselIndicatorActiveColor: Color = Color.Unspecified,
@@ -144,6 +145,8 @@ class MisticaColors(
     var buttonSecondaryBackground by mutableStateOf(buttonSecondaryBackground, structuralEqualityPolicy())
         internal set
     var buttonSecondaryBackgroundSelected by mutableStateOf(buttonSecondaryBackgroundSelected, structuralEqualityPolicy())
+        internal set
+    var buttonSecondaryBackgroundSelectedInverse by mutableStateOf(buttonSecondaryBackgroundSelectedInverse, structuralEqualityPolicy())
         internal set
     var buttonSecondaryBorderInverse by mutableStateOf(buttonSecondaryBorderInverse, structuralEqualityPolicy())
         internal set
@@ -297,6 +300,7 @@ class MisticaColors(
         buttonPrimaryBackgroundSelectedInverse: Color = this.buttonPrimaryBackgroundSelectedInverse,
         buttonSecondaryBackground: Color = this.buttonSecondaryBackground,
         buttonSecondaryBackgroundSelected: Color = this.buttonSecondaryBackgroundSelected,
+        buttonSecondaryBackgroundSelectedInverse: Color = this.buttonSecondaryBackgroundSelectedInverse,
         buttonSecondaryBorderInverse: Color = this.buttonSecondaryBorderInverse,
         buttonSecondaryBorderSelectedInverse: Color = this.buttonSecondaryBorderSelectedInverse,
         carouselIndicatorActiveColor: Color = this.carouselIndicatorActiveColor,
@@ -385,6 +389,7 @@ class MisticaColors(
         buttonPrimaryBackgroundSelectedInverse = buttonPrimaryBackgroundSelectedInverse,
         buttonSecondaryBackground = buttonSecondaryBackground,
         buttonSecondaryBackgroundSelected = buttonSecondaryBackgroundSelected,
+        buttonSecondaryBackgroundSelectedInverse = buttonSecondaryBackgroundSelectedInverse,
         buttonSecondaryBorderInverse = buttonSecondaryBorderInverse,
         buttonSecondaryBorderSelectedInverse = buttonSecondaryBorderSelectedInverse,
         carouselIndicatorActiveColor = carouselIndicatorActiveColor,
@@ -475,6 +480,7 @@ class MisticaColors(
         buttonPrimaryBackgroundSelectedInverse = other.buttonPrimaryBackgroundSelectedInverse
         buttonSecondaryBackground = other.buttonSecondaryBackground
         buttonSecondaryBackgroundSelected = other.buttonSecondaryBackgroundSelected
+        buttonSecondaryBackgroundSelectedInverse = other.buttonSecondaryBackgroundSelectedInverse
         buttonSecondaryBorderInverse = other.buttonSecondaryBorderInverse
         buttonSecondaryBorderSelectedInverse = other.buttonSecondaryBorderSelectedInverse
         carouselIndicatorActiveColor = other.carouselIndicatorActiveColor
