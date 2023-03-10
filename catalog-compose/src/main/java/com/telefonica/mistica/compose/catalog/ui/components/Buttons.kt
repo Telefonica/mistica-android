@@ -74,7 +74,7 @@ private fun Buttons(
                 )
 
                 CatalogButton(
-                    name = it.name,
+                    name = it.name.lowercase().capitalize(),
                     style = it,
                     isLoading = false,
                     icon = R.drawable.icn_creditcard
