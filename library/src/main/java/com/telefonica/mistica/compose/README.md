@@ -106,7 +106,7 @@ launcher
 | [Data Cards](./card/datacard/README.md)          | ✅️        | Composable     |
 | [Indeterminate Stepper](./stepper/README.md)     | ✅️        | AndroidView    |
 | Determinate Stepper                              |           |                |
-| Tabs                                             |           |                |
+| [Tabs](./tabs/README.md)                         | ✅         | Composable     |
 | [Empty States](./emptystate/screen/README.md)    | ✅         | AndroidView    |
 | [Empty State Cards](./emptystate/card/README.md) | ✅         | AndroidView    |
 | [Callout](./callout/README.md)                   | ✅         | Composable     |

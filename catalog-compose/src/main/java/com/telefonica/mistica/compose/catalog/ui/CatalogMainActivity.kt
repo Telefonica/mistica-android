@@ -50,6 +50,7 @@ import com.telefonica.mistica.compose.catalog.ui.components.Inputs
 import com.telefonica.mistica.compose.catalog.ui.components.Lists
 import com.telefonica.mistica.compose.catalog.ui.components.MediaCards
 import com.telefonica.mistica.compose.catalog.ui.components.Steppers
+import com.telefonica.mistica.compose.catalog.ui.components.TabsCatalog
 import com.telefonica.mistica.compose.catalog.ui.components.Tags
 import com.telefonica.mistica.compose.catalog.ui.components.Texts
 import com.telefonica.mistica.compose.catalog.ui.components.Titles
@@ -163,6 +164,7 @@ fun CatalogNavHost(
         composable(NavigationRoutes.STEPPER) { Steppers() }
         composable(NavigationRoutes.TITLES) { Titles() }
         composable(NavigationRoutes.CALLOUTS) { Callouts() }
+        composable(NavigationRoutes.TABS) { TabsCatalog() }
     }
 }
 
@@ -244,6 +246,11 @@ fun Catalog(
             icon = R.drawable.ic_callout,
             navigation = NavigationRoutes.CALLOUTS
         ),
+        ComponentScreen(
+            name = "Tabs",
+            icon = R.drawable.ic_tab,
+            navigation = NavigationRoutes.TABS
+        ),
     )
         .sortedBy { it.name }
     Column {
@@ -321,4 +328,5 @@ object NavigationRoutes {
     const val STEPPER = "stepper"
     const val TITLES = "titles"
     const val CALLOUTS = "callouts"
+    const val TABS = "tabs"
 }
