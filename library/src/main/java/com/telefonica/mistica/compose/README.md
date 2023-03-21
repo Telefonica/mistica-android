@@ -32,7 +32,7 @@ dependencies {
 ## Configuration
 
 The goal of the team is to provide a fully compose implementation of the library, but currently there are still wrapped views inside `AndroidView` composables.
-So it is still needed to add [the brand theme in the Manifest](../README.md#configuration)
+So it is still needed to add [the brand theme in the Manifest](../../../../../../../../README.md#configuration)
 
 Also, wrap your outer composable with the `MisticaTheme`
 
