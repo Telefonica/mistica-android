@@ -22,4 +22,4 @@ And your app will be forced to always use light themes.
 
 ### SectionTitleView replaced by TitleView component
 
-`SectionTitleView` has been replaced by [TitleView](https://https://github.com/Telefonica/mistica-android/blob/main/library/src/main/java/com/telefonica/mistica/title/README.md) component.
+`SectionTitleView` has been replaced by [TitleView](https://github.com/Telefonica/mistica-android/blob/main/library/src/main/java/com/telefonica/mistica/title/README.md) component.
