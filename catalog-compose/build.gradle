@@ -40,21 +40,26 @@ android {
 
 dependencies {
     implementation project(':library')
-
+    def composeBom = platform("androidx.compose:compose-bom:$compose_bom_version")
+    implementation composeBom
     implementation 'androidx.core:core-ktx:1.9.0'
-    implementation "androidx.compose.ui:ui:$compose_version"
-    implementation "androidx.compose.material:material:$compose_version"
-    implementation "androidx.compose.ui:ui-tooling-preview:$compose_version"
+    implementation "androidx.compose.ui:ui"
+    implementation "androidx.compose.material:material"
+    implementation "androidx.compose.ui:ui-tooling-preview"
     implementation "androidx.activity:activity-compose:$androidx_activity_compose_version"
     implementation "com.google.android.material:compose-theme-adapter:1.2.1"
     implementation "androidx.navigation:navigation-compose:2.5.3"
     implementation "com.google.accompanist:accompanist-pager:$accompanist_version"
     implementation "io.coil-kt:coil-compose:$coil_version"
+
     testImplementation 'junit:junit:4.13.2'
+
+    androidTestImplementation composeBom
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
-    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
-    debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
+    androidTestImplementation "androidx.compose.ui:ui-test-junit4"
+
+    debugImplementation "androidx.compose.ui:ui-tooling"
 }
 
 apply from: "${rootProject.projectDir}/mavencentral.gradle"
