@@ -12,9 +12,9 @@ repositories {
     mavenCentral()
 }
 dependencies {
-    ...
+    // ...
     implementation 'com.telefonica:mistica-compose:$version'
-    ...
+    // ...
 }
 ```
 
@@ -22,10 +22,10 @@ In case you also want to include also the components catalog in your application
 
 ```groovy
 dependencies {
-    ...
+    // ...
     implementation 'com.telefonica:mistica-compose:$version'
     implementation 'com.telefonica:mistica-compose-catalog:$version'
-    ...
+    // ...
 }
 ```
 
@@ -52,7 +52,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContent {
         MisticaTheme(brand = MovistarBrand) {
-            ...
+            // ...
         }
     }
 }
@@ -65,7 +65,7 @@ Mística-compose supports a subset of the Mística elements. The objective is to
 ## Fonts
 
 Mística-compose supports the same fonts supported in Mística.
-See [MisticaTypography](https://github.com/Telefonica/mistica-android/library/src/main/java/com/telefonica/mistica/compose/theme/text/MisticaTypography.kt)
+See [MisticaTypography](https://github.com/Telefonica/mistica-android/blob/main/library/src/main/java/com/telefonica/mistica/compose/theme/text/MisticaTypography.kt#L14)
 
 Example of use:
 
@@ -87,7 +87,7 @@ launcher
 
 | Component                                        | Available | Implementation |
 |--------------------------------------------------|-----------|----------------|
-| [Buttons](./button/README.md)                    | ✅         | Composable    |
+| [Buttons](./button/README.md)                    | ✅         | Composable     |
 | [Inputs](./input/README.md)                      | ✅*        | Composable     |
 | Snackbars                                        |           |                |    				
 | [Screen Feedbacks](./feedback/README.md)         | ✅         | AndroidView    |
