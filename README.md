@@ -79,7 +79,6 @@ Just set your App or any specific activity to use any of the following:
 * [Pop Overs](library/src/main/java/com/telefonica/mistica/feedback/popover)
 * [Screen Feedbacks](library/src/main/java/com/telefonica/mistica/feedback/screen)
 * [Scroll Content Indicator](library/src/main/java/com/telefonica/mistica/contentindicator)
-* [Sections](library/src/main/java/com/telefonica/mistica/section)
 * [Sheet](library/src/main/java/com/telefonica/mistica/sheet)
 * [Snackbars](library/src/main/java/com/telefonica/mistica/feedback)
 * [Steppers](library/src/main/java/com/telefonica/mistica/stepper)
