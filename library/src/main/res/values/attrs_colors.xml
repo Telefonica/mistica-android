@@ -35,6 +35,7 @@
         <attr name="colorButtonPrimaryBackgroundSelected" format="color|reference" />
         <attr name="colorButtonPrimaryBackgroundInverseSelected" format="color|reference" />
         <attr name="colorButtonSecondaryBorder" format="color|reference" />
+        <attr name="colorButtonSecondaryBorderSelected" format="color|reference" />
         <attr name="colorButtonSecondaryBackgroundSelected" format="color|reference" />
         <attr name="colorButtonSecondaryBackgroundSelectedInverse" format="color|reference" />
         <attr name="colorButtonSecondaryBorderInverse" format="color|reference" />

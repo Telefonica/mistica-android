@@ -39,6 +39,7 @@
         <item name="colorButtonPrimaryBackgroundInverseSelected">@color/vivo_color_purple_light50</item>
 
         <item name="colorButtonSecondaryBorder">@color/vivo_color_purple</item>
+        <item name="colorButtonSecondaryBorderSelected">@color/vivo_color_purple_dark</item>
         <item name="colorButtonSecondaryBackgroundSelected">@color/vivo_color_purple_dark</item>
         <item name="colorButtonSecondaryBackgroundSelectedInverse">@color/vivo_color_white_15_alpha</item>
         <item name="colorButtonSecondaryBorderInverse">@color/vivo_color_white</item>

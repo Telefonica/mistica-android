@@ -67,7 +67,7 @@
         <item name="backgroundTint">@android:color/transparent</item>
         <item name="android:textColor">@color/text_button_secondary_selector</item>
         <item name="iconTint">@color/text_button_secondary_selector</item>
-        <item name="strokeColor">@color/button_secondary_background_selector</item>
+        <item name="strokeColor">@color/button_secondary_border_selector</item>
         <item name="strokeWidth">@dimen/button_outline_stroke_width</item>
         <item name="rippleColor">@android:color/transparent</item>
     </style>

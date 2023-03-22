@@ -41,6 +41,9 @@
 
         <item name="colorTextButtonSecondary">@color/movistar_color_darkModeGrey2</item>
         <item name="colorTextButtonSecondarySelected">@color/movistar_color_darkModeGrey4</item>
+
+        <item name="colorButtonSecondaryBorder">@color/blau_color_white</item>
+        <item name="colorButtonSecondaryBorderSelected">@color/blau_color_white</item>
         <item name="colorButtonSecondaryBackgroundSelectedInverse">@color/movistar_color_white_15_alpha</item>
         <item name="colorTextButtonSecondaryInverse">@color/movistar_color_darkModeGrey2</item>
         <item name="colorTextButtonSecondaryInverseSelected">@color/movistar_color_darkModeGrey4</item>

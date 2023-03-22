@@ -38,7 +38,8 @@
         <item name="colorButtonPrimaryBackgroundSelected">@color/telefonica_color_blue_70</item>
         <item name="colorButtonPrimaryBackgroundInverseSelected">@color/telefonica_color_blue_70</item>
 
-        <item name="colorButtonSecondaryBorder">@color/telefonica_color_blue</item>
+        <item name="colorButtonSecondaryBorder">@color/telefonica_color_white</item>
+        <item name="colorButtonSecondaryBorderSelected">@color/telefonica_color_white</item>
         <item name="colorButtonSecondaryBackgroundSelected">@color/telefonica_color_blue_70</item>
         <item name="colorButtonSecondaryBackgroundSelectedInverse">@color/telefonica_color_white_15_alpha</item>
         <item name="colorButtonSecondaryBorderInverse">@color/telefonica_color_blue</item>

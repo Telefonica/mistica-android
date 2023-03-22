@@ -39,6 +39,7 @@
 		<item name="colorButtonPrimaryBackgroundInverseSelected">@color/movistar_color_blue_30</item>
 
 		<item name="colorButtonSecondaryBorder">@color/movistar_color_blue</item>
+		<item name="colorButtonSecondaryBorderSelected">@color/movistar_color_blue_55</item>
 		<item name="colorButtonSecondaryBackgroundSelected">@color/movistar_color_blue_10</item>
 		<item name="colorButtonSecondaryBackgroundSelectedInverse">@color/movistar_color_white_20_alpha</item>
 		<item name="colorButtonSecondaryBorderInverse">@color/movistar_color_white</item>

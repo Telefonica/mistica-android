@@ -33,7 +33,8 @@
         <item name="colorButtonPrimaryBackgroundSelected">@color/o2_color_darkModeO2BluePrimaryDark</item>
         <item name="colorButtonPrimaryBackgroundInverseSelected">@color/o2_color_darkModeO2BluePrimaryDark</item>
 
-        <item name="colorButtonSecondaryBorder">@color/o2_color_darkModeO2BluePrimary</item>
+        <item name="colorButtonSecondaryBorder">@color/o2_color_white</item>
+        <item name="colorButtonSecondaryBorderSelected">@color/o2_color_white</item>
         <item name="colorButtonSecondaryBackgroundSelected">@color/o2_color_darkModeO2BluePrimaryDark</item>
         <item name="colorButtonSecondaryBorderInverse">@color/o2_color_darkModeO2BluePrimary</item>
         <item name="colorButtonSecondaryBorderInverseSelected">@color/o2_color_darkModeO2BluePrimaryDark</item>
