@@ -54,13 +54,9 @@
         <item name="brandLow">@color/vivo_color_darkModeGrey</item>
 
         <item name="successHigh">@color/vivo_color_green_light30</item>
-        <item name="successHighInverse">@color/vivo_color_green_dark</item>
         <item name="warningHigh">@color/vivo_color_orange_light40</item>
-        <item name="warningHighInverse">@color/vivo_color_orange_dark</item>
         <item name="errorHigh">@color/vivo_color_pepper_light40</item>
-        <item name="errorHighInverse">@color/vivo_color_pepper_dark_80</item>
         <item name="promoHigh">@color/vivo_color_purple_light50</item>
-        <item name="promoHighInverse">@color/vivo_color_purple</item>
 
         <!-- Text Links -->
         <item name="colorTextLink">@color/vivo_color_purple_light50</item>
@@ -87,7 +83,6 @@
         <item name="colorNeutralHigh">@color/vivo_color_grey_2</item>
         <item name="colorNeutralLow">@color/vivo_color_darkModeGrey6</item>
         <item name="colorNeutralMedium">@color/vivo_color_grey_5</item>
-        <item name="colorNeutralMediumInverse">@color/vivo_color_grey_5</item>
         <item name="colorPromo">@color/vivo_color_purple_light80</item>
 
         <!-- Texts colors -->

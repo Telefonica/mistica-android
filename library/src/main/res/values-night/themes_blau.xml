@@ -51,13 +51,9 @@
 		<item name="brandLow">@color/blau_color_darkModeGrey</item>
 
 		<item name="successHigh">@color/blau_color_green_30</item>
-		<item name="successHighInverse">@color/blau_color_green_70</item>
 		<item name="warningHigh">@color/blau_color_yellow_40</item>
-		<item name="warningHighInverse">@color/blau_color_yellow_70</item>
 		<item name="errorHigh">@color/blau_color_red_40</item>
-		<item name="errorHighInverse">@color/blau_color_red_70</item>
 		<item name="promoHigh">@color/blau_color_purple_30</item>
-		<item name="promoHighInverse">@color/blau_color_purple</item>
 
 		<!-- Text Links -->
 		<item name="colorTextLink">@color/blau_color_purple_30</item>
@@ -82,7 +78,6 @@
 		<item name="colorInverse">@color/blau_color_grey_2</item>
 		<item name="colorNeutralHigh">@color/blau_color_grey_2</item>
 		<item name="colorNeutralMedium">@color/blau_color_grey_5</item>
-		<item name="colorNeutralMediumInverse">@color/blau_color_grey_5</item>
 		<item name="colorNeutralLow">@color/blau_color_darkModeGrey6</item>
 
 		<!-- Texts colors -->
