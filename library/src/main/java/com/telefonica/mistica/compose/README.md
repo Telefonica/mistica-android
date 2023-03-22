@@ -123,7 +123,6 @@ which ones are migrated.
 |--------------------|-----------|
 | Movistar           | ✅         |
 | O2                 | ✅         |
-| O2 Classic         | ✅         |
 | Vivo               | ✅         |
 | Blau               | ✅         |
 | Telefónica         | ✅         |
