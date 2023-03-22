@@ -12,9 +12,9 @@ repositories {
     mavenCentral()
 }
 dependencies {
-    // ...
+    ...
     implementation 'com.telefonica:mistica-compose:$version'
-    // ...
+    ...
 }
 ```
 
@@ -22,10 +22,10 @@ In case you also want to include also the components catalog in your application
 
 ```groovy
 dependencies {
-    // ...
+    ...
     implementation 'com.telefonica:mistica-compose:$version'
     implementation 'com.telefonica:mistica-compose-catalog:$version'
-    // ...
+    ...
 }
 ```
 
@@ -52,7 +52,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContent {
         MisticaTheme(brand = MovistarBrand) {
-            // ...
+            ...
         }
     }
 }
