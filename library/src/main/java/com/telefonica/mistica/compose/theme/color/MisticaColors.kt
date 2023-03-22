@@ -25,6 +25,7 @@ class MisticaColors(
     borderSelected: Color = Color.Unspecified,
     brand: Color = Color.Unspecified,
     brandHigh: Color = Color.Unspecified,
+    brandHighInverse: Color = Color.Unspecified,
     buttonDangerBackground: Color = Color.Unspecified,
     buttonDangerBackgroundSelected: Color = Color.Unspecified,
     buttonLinkBackgroundSelected: Color = Color.Unspecified,
@@ -65,6 +66,7 @@ class MisticaColors(
     neutralHigh: Color = Color.Unspecified,
     neutralLow: Color = Color.Unspecified,
     neutralMedium: Color = Color.Unspecified,
+    neutralMediumInverse: Color = Color.Unspecified,
     promo: Color = Color.Unspecified,
     skeletonWave: Color = Color.Unspecified,
     success: Color = Color.Unspecified,
@@ -93,9 +95,13 @@ class MisticaColors(
     textSecondary: Color = Color.Unspecified,
     textSecondaryInverse: Color = Color.Unspecified,
     errorHigh: Color = Color.Unspecified,
+    errorHighInverse: Color = Color.Unspecified,
     promoHigh: Color = Color.Unspecified,
+    promoHighInverse: Color = Color.Unspecified,
     successHigh: Color = Color.Unspecified,
+    successHighInverse: Color = Color.Unspecified,
     warningHigh: Color = Color.Unspecified,
+    warningHighInverse: Color = Color.Unspecified,
     warning: Color = Color.Unspecified,
 ) {
     var appBarBackground by mutableStateOf(appBarBackground, structuralEqualityPolicy())
@@ -106,7 +112,7 @@ class MisticaColors(
         internal set
     var backgroundBrand by mutableStateOf(backgroundBrand, structuralEqualityPolicy())
         internal set
-    var backgroundBrandSecondary by mutableStateOf(backgroundBrand, structuralEqualityPolicy())
+    var backgroundBrandSecondary by mutableStateOf(backgroundBrandSecondary, structuralEqualityPolicy())
         internal set
     var backgroundOverlay by mutableStateOf(backgroundOverlay, structuralEqualityPolicy())
         internal set
@@ -204,6 +210,8 @@ class MisticaColors(
         internal set
     var brandHigh by mutableStateOf(brandHigh, structuralEqualityPolicy())
         internal set
+    var brandHighInverse by mutableStateOf(brandHighInverse, structuralEqualityPolicy())
+        internal set
     var inverse by mutableStateOf(inverse, structuralEqualityPolicy())
         internal set
     var neutralHigh by mutableStateOf(neutralHigh, structuralEqualityPolicy())
@@ -211,6 +219,8 @@ class MisticaColors(
     var neutralLow by mutableStateOf(neutralLow, structuralEqualityPolicy())
         internal set
     var neutralMedium by mutableStateOf(neutralMedium, structuralEqualityPolicy())
+        internal set
+    var neutralMediumInverse by mutableStateOf(neutralMediumInverse, structuralEqualityPolicy())
         internal set
     var promo by mutableStateOf(promo, structuralEqualityPolicy())
         internal set
@@ -266,11 +276,19 @@ class MisticaColors(
         internal set
     var successHigh by mutableStateOf(successHigh, structuralEqualityPolicy())
         internal set
+    var successHighInverse by mutableStateOf(successHighInverse, structuralEqualityPolicy())
+        internal set
     var warningHigh by mutableStateOf(warningHigh, structuralEqualityPolicy())
+        internal set
+    var warningHighInverse by mutableStateOf(warningHighInverse, structuralEqualityPolicy())
         internal set
     var errorHigh by mutableStateOf(errorHigh, structuralEqualityPolicy())
         internal set
+    var errorHighInverse by mutableStateOf(errorHighInverse, structuralEqualityPolicy())
+        internal set
     var promoHigh by mutableStateOf(promoHigh, structuralEqualityPolicy())
+        internal set
+    var promoHighInverse by mutableStateOf(promoHighInverse, structuralEqualityPolicy())
         internal set
     var carouselIndicatorActiveColor by mutableStateOf(carouselIndicatorActiveColor, structuralEqualityPolicy())
         internal set
@@ -295,6 +313,7 @@ class MisticaColors(
         borderSelected: Color = this.borderSelected,
         brand: Color = this.brand,
         brandHigh: Color = this.brandHigh,
+        brandHighInverse: Color = this.brandHighInverse,
         buttonDangerBackground: Color = this.buttonDangerBackground,
         buttonDangerBackgroundSelected: Color = this.buttonDangerBackgroundSelected,
         buttonLinkBackgroundSelected: Color = this.buttonLinkBackgroundSelected,
@@ -335,6 +354,7 @@ class MisticaColors(
         neutralHigh: Color = this.neutralHigh,
         neutralLow: Color = this.neutralLow,
         neutralMedium: Color = this.neutralMedium,
+        neutralMediumInverse: Color = this.neutralMediumInverse,
         promo: Color = this.promo,
         skeletonWave: Color = this.skeletonWave,
         success: Color = this.success,
@@ -363,9 +383,13 @@ class MisticaColors(
         textSecondary: Color = this.textSecondary,
         textSecondaryInverse: Color = this.textSecondaryInverse,
         errorHigh: Color = this.errorHigh,
+        errorHighInverse: Color = this.errorHighInverse,
         promoHigh: Color = this.promoHigh,
+        promoHighInverse: Color = this.promoHighInverse,
         successHigh: Color = this.successHigh,
+        successHighInverse: Color = this.successHighInverse,
         warningHigh: Color = this.warningHigh,
+        warningHighInverse: Color = this.warningHighInverse,
         warning: Color = this.warning,
     ): MisticaColors = MisticaColors(
         appBarBackground = appBarBackground,
@@ -385,6 +409,7 @@ class MisticaColors(
         borderSelected = borderSelected,
         brand = brand,
         brandHigh = brandHigh,
+        brandHighInverse = brandHighInverse,
         buttonDangerBackground = buttonDangerBackground,
         buttonDangerBackgroundSelected = buttonDangerBackgroundSelected,
         buttonLinkBackgroundSelected = buttonLinkBackgroundSelected,
@@ -425,6 +450,7 @@ class MisticaColors(
         neutralHigh = neutralHigh,
         neutralLow = neutralLow,
         neutralMedium = neutralMedium,
+        neutralMediumInverse = neutralMediumInverse,
         promo = promo,
         skeletonWave = skeletonWave,
         success = success,
@@ -453,9 +479,13 @@ class MisticaColors(
         textSecondary = textSecondary,
         textSecondaryInverse = textSecondaryInverse,
         errorHigh = errorHigh,
+        errorHighInverse = errorHighInverse,
         promoHigh = promoHigh,
+        promoHighInverse = promoHighInverse,
         successHigh = successHigh,
+        successHighInverse = successHighInverse,
         warningHigh = warningHigh,
+        warningHighInverse = warningHighInverse,
         warning = warning,
     )
 
@@ -477,6 +507,7 @@ class MisticaColors(
         borderSelected = other.borderSelected
         brand = other.brand
         brandHigh = other.brandHigh
+        brandHighInverse = other.brandHighInverse
         buttonDangerBackground = other.buttonDangerBackground
         buttonDangerBackgroundSelected = other.buttonDangerBackgroundSelected
         buttonLinkBackgroundSelected = other.buttonLinkBackgroundSelected
@@ -517,6 +548,7 @@ class MisticaColors(
         neutralHigh = other.neutralHigh
         neutralLow = other.neutralLow
         neutralMedium = other.neutralMedium
+        neutralMediumInverse = other.neutralMediumInverse
         promo = other.promo
         skeletonWave = other.skeletonWave
         success = other.success
@@ -545,9 +577,13 @@ class MisticaColors(
         textSecondary = other.textSecondary
         textSecondaryInverse = other.textSecondaryInverse
         errorHigh = other.errorHigh
+        errorHighInverse = other.errorHighInverse
         promoHigh = other.promoHigh
+        promoHighInverse = other.promoHighInverse
         successHigh = other.successHigh
+        successHighInverse = other.successHighInverse
         warningHigh = other.warningHigh
+        warningHighInverse = other.warningHighInverse
         warning = other.warning
     }
 }
