@@ -32,7 +32,7 @@ dependencies {
 ## Configuration
 
 The goal of the team is to provide a fully compose implementation of the library, but currently there are still wrapped views inside `AndroidView` composables.
-So it is still needed to add [the brand theme in the Manifest](../README.md#configuration)
+So it is still needed to add [the brand theme in the Manifest](../../../../../../../../README.md#configuration)
 
 Also, wrap your outer composable with the `MisticaTheme`
 
@@ -65,7 +65,7 @@ Mística-compose supports a subset of the Mística elements. The objective is to
 ## Fonts
 
 Mística-compose supports the same fonts supported in Mística.
-See [MisticaTypography](https://github.com/Telefonica/mistica-android/library/src/main/java/com/telefonica/mistica/compose/theme/text/MisticaTypography.kt)
+See [MisticaTypography](https://github.com/Telefonica/mistica-android/blob/main/library/src/main/java/com/telefonica/mistica/compose/theme/text/MisticaTypography.kt#L14)
 
 Example of use:
 
@@ -87,7 +87,7 @@ launcher
 
 | Component                                        | Available | Implementation |
 |--------------------------------------------------|-----------|----------------|
-| [Buttons](./button/README.md)                    | ✅         | Composable    |
+| [Buttons](./button/README.md)                    | ✅         | Composable     |
 | [Inputs](./input/README.md)                      | ✅*        | Composable     |
 | Snackbars                                        |           |                |    				
 | [Screen Feedbacks](./feedback/README.md)         | ✅         | AndroidView    |

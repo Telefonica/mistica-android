@@ -20,6 +20,6 @@ AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
 And your app will be forced to always use light themes.
 
-### SectionTitleView changes
+### SectionTitleView replaced by TitleView component
 
-Instead of setting the text for the view with `android:text` you should use `app:sectionTitle` in the [SectionTitleView](https://github.com/Telefonica/mistica-android/blob/2.0.0/library/src/main/java/com/telefonica/mistica/section/README.md) component.
+`SectionTitleView` has been replaced by [TitleView](https://github.com/Telefonica/mistica-android/blob/main/library/src/main/java/com/telefonica/mistica/title/README.md) component.

@@ -3,7 +3,7 @@ There are two types of steppers:
 ### Indeterminate
 
 <p align="center">
-   <img src="../../../../../../../../doc/images/steppers/indeterminate_stepper.png" />
+   <img src="../../../../../../../../../doc/images/steppers/indeterminate_stepper.png" />
 </p>
 
 Compose version of `com.telefonica.mistica.stepper.IndeterminateStepperView`. Use `progress: Int` param to determine the current progress of the stepper. If
