@@ -62,9 +62,9 @@ abstract class AbstractMisticaComposeView @JvmOverloads constructor(
     companion object {
         const val BRAND_VALUE_MOVISTAR = 0
         const val BRAND_VALUE_O2 = 1
-        const val BRAND_VALUE_VIVO = 3
-        const val BRAND_VALUE_TELEFONICA = 4
-        const val BRAND_VALUE_BLAU = 5
+        const val BRAND_VALUE_VIVO = 2
+        const val BRAND_VALUE_TELEFONICA = 3
+        const val BRAND_VALUE_BLAU = 4
     }
 }
 
