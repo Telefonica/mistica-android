@@ -67,6 +67,7 @@ object BlauBrand : Brand {
         neutralHigh = BlauPaletteColor.blau_color_grey_6,
         neutralLow = BlauPaletteColor.blau_color_grey_2,
         neutralMedium = BlauPaletteColor.blau_color_grey_5,
+        neutralMediumInverse = BlauPaletteColor.blau_color_grey_5,
         promo = BlauPaletteColor.blau_color_purple,
         skeletonWave = BlauPaletteColor.blau_color_grey_2,
         success = BlauPaletteColor.blau_color_green,
@@ -95,9 +96,13 @@ object BlauBrand : Brand {
         textSecondary = BlauPaletteColor.blau_color_grey_5,
         textSecondaryInverse = BlauPaletteColor.blau_color_white,
         errorHigh = BlauPaletteColor.blau_color_red_70,
+        errorHighInverse = BlauPaletteColor.blau_color_red_70,
         promoHigh = BlauPaletteColor.blau_color_purple,
+        promoHighInverse = BlauPaletteColor.blau_color_purple,
         successHigh = BlauPaletteColor.blau_color_green_70,
+        successHighInverse = BlauPaletteColor.blau_color_green_70,
         warningHigh = BlauPaletteColor.blau_color_yellow_70,
+        warningHighInverse = BlauPaletteColor.blau_color_yellow_70,
         warning = BlauPaletteColor.blau_color_yellow,
     )
 
@@ -137,6 +142,7 @@ object BlauBrand : Brand {
         neutralHigh = BlauPaletteColor.blau_color_grey_2,
         neutralLow = BlauPaletteColor.blau_color_darkModeGrey6,
         neutralMedium = BlauPaletteColor.blau_color_grey_5,
+        neutralMediumInverse = BlauPaletteColor.blau_color_grey_5,
         skeletonWave = BlauPaletteColor.blau_color_grey_5,
         brandLow = BlauPaletteColor.blau_color_darkModeGrey,
         errorLow = BlauPaletteColor.blau_color_darkModeGrey,
@@ -161,9 +167,13 @@ object BlauBrand : Brand {
         textSecondary = BlauPaletteColor.blau_color_grey_4,
         textSecondaryInverse = BlauPaletteColor.blau_color_grey_4,
         errorHigh = BlauPaletteColor.blau_color_red_40,
+        errorHighInverse = BlauPaletteColor.blau_color_red_70,
         promoHigh = BlauPaletteColor.blau_color_purple_30,
+        promoHighInverse = BlauPaletteColor.blau_color_purple,
         successHigh = BlauPaletteColor.blau_color_green_30,
+        successHighInverse = BlauPaletteColor.blau_color_green_70,
         warningHigh = BlauPaletteColor.blau_color_yellow_40,
+        warningHighInverse = BlauPaletteColor.blau_color_yellow_70,
     )
 }
 

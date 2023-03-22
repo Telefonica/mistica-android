@@ -67,6 +67,7 @@ object VivoBrand : Brand {
         neutralHigh = VivoPaletteColor.vivo_color_grey_6,
         neutralLow = VivoPaletteColor.vivo_color_grey_1,
         neutralMedium = VivoPaletteColor.vivo_color_grey_5,
+        neutralMediumInverse = VivoPaletteColor.vivo_color_grey_5,
         promo = VivoPaletteColor.vivo_color_purple,
         skeletonWave = VivoPaletteColor.vivo_color_grey_2,
         success = VivoPaletteColor.vivo_color_green,
@@ -95,9 +96,13 @@ object VivoBrand : Brand {
         textSecondary = VivoPaletteColor.vivo_color_grey_5,
         textSecondaryInverse = VivoPaletteColor.vivo_color_white,
         errorHigh = VivoPaletteColor.vivo_color_pepper_dark_80,
+        errorHighInverse = VivoPaletteColor.vivo_color_pepper_dark_80,
         promoHigh = VivoPaletteColor.vivo_color_purple,
+        promoHighInverse = VivoPaletteColor.vivo_color_purple,
         successHigh = VivoPaletteColor.vivo_color_green_dark,
+        successHighInverse = VivoPaletteColor.vivo_color_green_dark,
         warningHigh = VivoPaletteColor.vivo_color_orange_dark,
+        warningHighInverse = VivoPaletteColor.vivo_color_orange_dark,
         warning = VivoPaletteColor.vivo_color_orange,
     )
 
@@ -139,6 +144,8 @@ object VivoBrand : Brand {
         navigationBarDivider = VivoPaletteColor.vivo_color_darkModeBlack,
         neutralHigh = VivoPaletteColor.vivo_color_grey_2,
         neutralLow = VivoPaletteColor.vivo_color_darkModeGrey6,
+        neutralMedium = VivoPaletteColor.vivo_color_grey_5,
+        neutralMediumInverse = VivoPaletteColor.vivo_color_grey_5,
         promo = VivoPaletteColor.vivo_color_purple_light80,
         skeletonWave = VivoPaletteColor.vivo_color_grey_5_30_alpha,
         brandLow = VivoPaletteColor.vivo_color_darkModeGrey,
@@ -164,9 +171,13 @@ object VivoBrand : Brand {
         textSecondary = VivoPaletteColor.vivo_color_grey_4,
         textSecondaryInverse = VivoPaletteColor.vivo_color_grey_4,
         errorHigh = VivoPaletteColor.vivo_color_pepper_light40,
+        errorHighInverse = VivoPaletteColor.vivo_color_pepper_dark_80,
         promoHigh = VivoPaletteColor.vivo_color_purple_light50,
+        promoHighInverse = VivoPaletteColor.vivo_color_purple,
         successHigh = VivoPaletteColor.vivo_color_green_light30,
+        successHighInverse = VivoPaletteColor.vivo_color_green_dark,
         warningHigh = VivoPaletteColor.vivo_color_orange_light40,
+        warningHighInverse = VivoPaletteColor.vivo_color_orange_dark,
     )
 }
 

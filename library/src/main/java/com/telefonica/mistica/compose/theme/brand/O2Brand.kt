@@ -67,6 +67,7 @@ object O2Brand : Brand {
         neutralHigh = O2PaletteColor.o2_color_grey_6,
         neutralLow = O2PaletteColor.o2_color_grey_1,
         neutralMedium = O2PaletteColor.o2_color_grey_5,
+        neutralMediumInverse = O2PaletteColor.o2_color_grey_5,
         promo = O2PaletteColor.o2_color_purple,
         skeletonWave = O2PaletteColor.o2_color_grey_2,
         success = O2PaletteColor.o2_color_green,
@@ -95,9 +96,13 @@ object O2Brand : Brand {
         textSecondary = O2PaletteColor.o2_color_grey_5,
         textSecondaryInverse = O2PaletteColor.o2_color_white,
         errorHigh = O2PaletteColor.o2_color_pepper_60,
+        errorHighInverse = O2PaletteColor.o2_color_pepper_60,
         promoHigh = O2PaletteColor.o2_color_purple,
+        promoHighInverse = O2PaletteColor.o2_color_purple,
         successHigh = O2PaletteColor.o2_color_green_80,
+        successHighInverse = O2PaletteColor.o2_color_green_80,
         warningHigh = O2PaletteColor.o2_color_orange_75,
+        warningHighInverse = O2PaletteColor.o2_color_orange_75,
         warning = O2PaletteColor.o2_color_orange,
     )
 
@@ -141,6 +146,8 @@ object O2Brand : Brand {
         navigationBarDivider = O2PaletteColor.o2_color_darkModeBlack,
         neutralHigh = O2PaletteColor.o2_color_grey_2,
         neutralLow = O2PaletteColor.o2_color_darkModeGrey6,
+        neutralMedium = O2PaletteColor.o2_color_grey_5,
+        neutralMediumInverse = O2PaletteColor.o2_color_grey_5,
         skeletonWave = O2PaletteColor.o2_color_grey_5_30_alpha,
         brandLow = O2PaletteColor.o2_color_darkModeGrey,
         errorLow = O2PaletteColor.o2_color_darkModeGrey,
@@ -165,9 +172,13 @@ object O2Brand : Brand {
         textSecondary = O2PaletteColor.o2_color_grey_4,
         textSecondaryInverse = O2PaletteColor.o2_color_grey_4,
         errorHigh = O2PaletteColor.o2_color_pepper_40,
+        errorHighInverse = O2PaletteColor.o2_color_pepper_60,
         promoHigh = O2PaletteColor.o2_color_purple_30,
+        promoHighInverse = O2PaletteColor.o2_color_purple,
         successHigh = O2PaletteColor.o2_color_green_40,
+        successHighInverse = O2PaletteColor.o2_color_green_80,
         warningHigh = O2PaletteColor.o2_color_orange_40,
+        warningHighInverse = O2PaletteColor.o2_color_orange_75,
     )
 }
 

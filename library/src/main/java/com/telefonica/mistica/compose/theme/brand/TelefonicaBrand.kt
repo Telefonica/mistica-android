@@ -67,6 +67,7 @@ object TelefonicaBrand : Brand {
         neutralHigh = TelefonicaPaletteColor.telefonica_color_grey_9,
         neutralLow = TelefonicaPaletteColor.telefonica_color_grey_1,
         neutralMedium = TelefonicaPaletteColor.telefonica_color_grey_5,
+        neutralMediumInverse = TelefonicaPaletteColor.telefonica_color_grey_5,
         promo = TelefonicaPaletteColor.telefonica_color_orchid,
         skeletonWave = TelefonicaPaletteColor.telefonica_color_grey_2,
         success = TelefonicaPaletteColor.telefonica_color_turquoise,
@@ -95,9 +96,13 @@ object TelefonicaBrand : Brand {
         textSecondary = TelefonicaPaletteColor.telefonica_color_grey_5,
         textSecondaryInverse = TelefonicaPaletteColor.telefonica_color_white,
         errorHigh = TelefonicaPaletteColor.telefonica_color_coral_70,
+        errorHighInverse = TelefonicaPaletteColor.telefonica_color_coral_70,
         promoHigh = TelefonicaPaletteColor.telefonica_color_orchid_70,
+        promoHighInverse = TelefonicaPaletteColor.telefonica_color_orchid_70,
         successHigh = TelefonicaPaletteColor.telefonica_color_turquoise_70,
+        successHighInverse = TelefonicaPaletteColor.telefonica_color_turquoise_70,
         warningHigh = TelefonicaPaletteColor.telefonica_color_ambar_70,
+        warningHighInverse = TelefonicaPaletteColor.telefonica_color_ambar_70,
         warning = TelefonicaPaletteColor.telefonica_color_ambar,
     )
 
@@ -159,6 +164,7 @@ object TelefonicaBrand : Brand {
         neutralHigh = TelefonicaPaletteColor.telefonica_color_grey_2,
         neutralLow = TelefonicaPaletteColor.telefonica_color_darkModeGrey6,
         neutralMedium = TelefonicaPaletteColor.telefonica_color_grey_5,
+        neutralMediumInverse = TelefonicaPaletteColor.telefonica_color_grey_5,
         promo = TelefonicaPaletteColor.telefonica_color_orchid,
         skeletonWave = TelefonicaPaletteColor.telefonica_color_grey_5,
         success = TelefonicaPaletteColor.telefonica_color_turquoise,
@@ -186,9 +192,13 @@ object TelefonicaBrand : Brand {
         textSecondary = TelefonicaPaletteColor.telefonica_color_grey_4,
         textSecondaryInverse = TelefonicaPaletteColor.telefonica_color_grey_4,
         errorHigh = TelefonicaPaletteColor.telefonica_color_coral_40,
+        errorHighInverse = TelefonicaPaletteColor.telefonica_color_coral_70,
         promoHigh = TelefonicaPaletteColor.telefonica_color_orchid_40,
+        promoHighInverse = TelefonicaPaletteColor.telefonica_color_orchid_70,
         successHigh = TelefonicaPaletteColor.telefonica_color_turquoise_40,
+        successHighInverse = TelefonicaPaletteColor.telefonica_color_turquoise_70,
         warningHigh = TelefonicaPaletteColor.telefonica_color_ambar_40,
+        warningHighInverse = TelefonicaPaletteColor.telefonica_color_ambar_70,
         warning = TelefonicaPaletteColor.telefonica_color_ambar,
     )
 }

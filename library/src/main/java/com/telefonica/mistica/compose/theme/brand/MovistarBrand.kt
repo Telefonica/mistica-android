@@ -68,6 +68,7 @@ object MovistarBrand : Brand {
         neutralHigh = MovistarPaletteColor.movistar_color_blue_dark,
         neutralLow = MovistarPaletteColor.movistar_color_grey_1,
         neutralMedium = MovistarPaletteColor.movistar_color_grey_5,
+        neutralMediumInverse = MovistarPaletteColor.movistar_color_grey_5,
         promo = MovistarPaletteColor.movistar_color_purple,
         skeletonWave = MovistarPaletteColor.movistar_color_grey_2,
         success = MovistarPaletteColor.movistar_color_green,
@@ -96,9 +97,13 @@ object MovistarBrand : Brand {
         textSecondary = MovistarPaletteColor.movistar_color_grey_5,
         textSecondaryInverse = MovistarPaletteColor.movistar_color_blue_10,
         errorHigh = MovistarPaletteColor.movistar_color_pepper_70,
+        errorHighInverse = MovistarPaletteColor.movistar_color_pepper_70,
         promoHigh = MovistarPaletteColor.movistar_color_purple_70,
+        promoHighInverse = MovistarPaletteColor.movistar_color_purple_70,
         successHigh = MovistarPaletteColor.movistar_color_green_70,
+        successHighInverse = MovistarPaletteColor.movistar_color_green_70,
         warningHigh = MovistarPaletteColor.movistar_color_egg_80,
+        warningHighInverse = MovistarPaletteColor.movistar_color_egg_80,
         warning = MovistarPaletteColor.movistar_color_egg,
     )
 
@@ -140,6 +145,7 @@ object MovistarBrand : Brand {
             navigationBarDivider = MovistarPaletteColor.movistar_color_darkModeBlack,
             neutralHigh = MovistarPaletteColor.movistar_color_darkModeGrey2,
             neutralMedium = MovistarPaletteColor.movistar_color_darkModeGrey5,
+            neutralMediumInverse = MovistarPaletteColor.movistar_color_grey_5,
             neutralLow = MovistarPaletteColor.movistar_color_blue_dark,
             skeletonWave = MovistarPaletteColor.movistar_color_blue_dark,
             brandLow = MovistarPaletteColor.movistar_color_blue_dark,
@@ -164,9 +170,13 @@ object MovistarBrand : Brand {
             textSecondary = MovistarPaletteColor.movistar_color_darkModeGrey4,
             textSecondaryInverse = MovistarPaletteColor.movistar_color_darkModeGrey4,
             errorHigh = MovistarPaletteColor.movistar_color_pepper_40,
+            errorHighInverse = MovistarPaletteColor.movistar_color_pepper_70,
             promoHigh = MovistarPaletteColor.movistar_color_purple_40,
+            promoHighInverse = MovistarPaletteColor.movistar_color_purple_70,
             successHigh = MovistarPaletteColor.movistar_color_green_40,
+            successHighInverse = MovistarPaletteColor.movistar_color_green_70,
             warningHigh = MovistarPaletteColor.movistar_color_egg_40,
+            warningHighInverse = MovistarPaletteColor.movistar_color_egg_80,
         )
 
     override val preset5FontWeight: FontWeight
