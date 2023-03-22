@@ -25,7 +25,6 @@ class MisticaColors(
     borderSelected: Color = Color.Unspecified,
     brand: Color = Color.Unspecified,
     brandHigh: Color = Color.Unspecified,
-    brandHighInverse: Color = Color.Unspecified,
     buttonDangerBackground: Color = Color.Unspecified,
     buttonDangerBackgroundSelected: Color = Color.Unspecified,
     buttonLinkBackgroundSelected: Color = Color.Unspecified,
@@ -210,8 +209,6 @@ class MisticaColors(
         internal set
     var brandHigh by mutableStateOf(brandHigh, structuralEqualityPolicy())
         internal set
-    var brandHighInverse by mutableStateOf(brandHighInverse, structuralEqualityPolicy())
-        internal set
     var inverse by mutableStateOf(inverse, structuralEqualityPolicy())
         internal set
     var neutralHigh by mutableStateOf(neutralHigh, structuralEqualityPolicy())
@@ -313,7 +310,6 @@ class MisticaColors(
         borderSelected: Color = this.borderSelected,
         brand: Color = this.brand,
         brandHigh: Color = this.brandHigh,
-        brandHighInverse: Color = this.brandHighInverse,
         buttonDangerBackground: Color = this.buttonDangerBackground,
         buttonDangerBackgroundSelected: Color = this.buttonDangerBackgroundSelected,
         buttonLinkBackgroundSelected: Color = this.buttonLinkBackgroundSelected,
@@ -409,7 +405,6 @@ class MisticaColors(
         borderSelected = borderSelected,
         brand = brand,
         brandHigh = brandHigh,
-        brandHighInverse = brandHighInverse,
         buttonDangerBackground = buttonDangerBackground,
         buttonDangerBackgroundSelected = buttonDangerBackgroundSelected,
         buttonLinkBackgroundSelected = buttonLinkBackgroundSelected,
@@ -507,7 +502,6 @@ class MisticaColors(
         borderSelected = other.borderSelected
         brand = other.brand
         brandHigh = other.brandHigh
-        brandHighInverse = other.brandHighInverse
         buttonDangerBackground = other.buttonDangerBackground
         buttonDangerBackgroundSelected = other.buttonDangerBackgroundSelected
         buttonLinkBackgroundSelected = other.buttonLinkBackgroundSelected
