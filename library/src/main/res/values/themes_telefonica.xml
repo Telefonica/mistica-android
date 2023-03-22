@@ -84,6 +84,7 @@
         <item name="colorNeutralHigh">@color/telefonica_color_grey_9</item>
         <item name="colorNeutralLow">@color/telefonica_color_grey_1</item>
         <item name="colorNeutralMedium">@color/telefonica_color_grey_5</item>
+        <item name="colorNeutralMediumInverse">@color/telefonica_color_grey_5</item>
         <item name="colorPromo">@color/telefonica_color_orchid</item>
         <item name="colorHighlight">@color/telefonica_color_coral_40</item>
 
@@ -95,9 +96,13 @@
         <item name="brandLow">@color/telefonica_color_grey_1</item>
 
         <item name="successHigh">@color/telefonica_color_turquoise_70</item>
+        <item name="successHighInverse">@color/telefonica_color_turquoise_70</item>
         <item name="warningHigh">@color/telefonica_color_ambar_70</item>
+        <item name="warningHighInverse">@color/telefonica_color_ambar_70</item>
         <item name="errorHigh">@color/telefonica_color_coral_70</item>
+        <item name="errorHighInverse">@color/telefonica_color_coral_70</item>
         <item name="promoHigh">@color/telefonica_color_orchid_70</item>
+        <item name="promoHighInverse">@color/telefonica_color_orchid_70</item>
 
         <!-- Texts colors -->
         <item name="colorTextPrimary">@color/telefonica_color_grey_9</item>

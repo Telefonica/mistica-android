@@ -56,9 +56,13 @@
         <item name="brandLow">@color/o2_color_darkModeGrey</item>
 
         <item name="successHigh">@color/o2_color_green_40</item>
+        <item name="successHighInverse">@color/o2_color_green_80</item>
         <item name="warningHigh">@color/o2_color_orange_40</item>
+        <item name="warningHighInverse">@color/o2_color_orange_75</item>
         <item name="errorHigh">@color/o2_color_pepper_40</item>
+        <item name="errorHighInverse">@color/o2_color_pepper_60</item>
         <item name="promoHigh">@color/o2_color_purple_30</item>
+        <item name="promoHighInverse">@color/o2_color_purple</item>
 
         <!-- Text Links -->
         <item name="colorTextLink">@color/o2_color_blue_primary_30</item>
@@ -84,6 +88,8 @@
         <item name="colorInverse">@color/o2_color_grey_2</item>
         <item name="colorNeutralHigh">@color/o2_color_grey_2</item>
         <item name="colorNeutralLow">@color/o2_color_darkModeGrey6</item>
+        <item name="colorNeutralMedium">@color/o2_color_grey_5</item>
+        <item name="colorNeutralMediumInverse">@color/o2_color_grey_5</item>
 
         <!-- Texts colors -->
         <item name="colorTextPrimary">@color/o2_color_grey_2</item>

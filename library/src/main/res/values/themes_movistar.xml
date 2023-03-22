@@ -84,6 +84,7 @@
 		<item name="colorNeutralHigh">@color/movistar_color_blue_dark</item>
 		<item name="colorNeutralLow">@color/movistar_color_grey_1</item>
 		<item name="colorNeutralMedium">@color/movistar_color_grey_5</item>
+		<item name="colorNeutralMediumInverse">@color/movistar_color_grey_5</item>
 		<item name="colorPromo">@color/movistar_color_purple</item>
 		<item name="colorHighlight">@color/movistar_color_pink</item>
 
@@ -95,9 +96,13 @@
 		<item name="brandLow">@color/movistar_color_blue_10</item>
 
 		<item name="successHigh">@color/movistar_color_green_70</item>
+		<item name="successHighInverse">@color/movistar_color_green_70</item>
 		<item name="errorHigh">@color/movistar_color_pepper_70</item>
+		<item name="errorHighInverse">@color/movistar_color_pepper_70</item>
 		<item name="warningHigh">@color/movistar_color_egg_80</item>
+		<item name="warningHighInverse">@color/movistar_color_egg_80</item>
 		<item name="promoHigh">@color/movistar_color_purple_70</item>
+		<item name="promoHighInverse">@color/movistar_color_purple_70</item>
 
 		<!-- Texts colors -->
 		<item name="colorTextPrimary">@color/movistar_color_blue_dark</item>
