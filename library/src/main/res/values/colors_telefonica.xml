@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <resources>
     <color name="telefonica_color_blue">#0066FF</color>
+    <color name="telefonica_color_blue_10">#E5F0FF</color>
     <color name="telefonica_color_blue_30">#80B3FF</color>
     <color name="telefonica_color_blue_70">#0356C9</color>
 

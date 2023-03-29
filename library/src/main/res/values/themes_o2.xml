@@ -102,7 +102,7 @@
         <item name="colorTextPrimary">@color/o2_color_grey_6</item>
         <item name="colorTextPrimaryInverse">@color/o2_color_white</item>
         <item name="colorTextSecondary">@color/o2_color_grey_5</item>
-        <item name="colorTextSecondaryInverse">@color/o2_color_white</item>
+        <item name="colorTextSecondaryInverse">@color/o2_color_blue_primary_15</item>
 
         <!-- State colors -->
         <item name="colorError">@color/o2_color_pepper</item>

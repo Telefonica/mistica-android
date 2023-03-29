@@ -100,7 +100,7 @@
 		<item name="colorTextPrimary">@color/blau_color_grey_6</item>
 		<item name="colorTextPrimaryInverse">@color/blau_color_white</item>
 		<item name="colorTextSecondary">@color/blau_color_grey_5</item>
-		<item name="colorTextSecondaryInverse">@color/blau_color_white</item>
+		<item name="colorTextSecondaryInverse">@color/blau_color_blue_primary20</item>
 
 		<!-- State colors -->
 		<item name="colorError">@color/blau_color_red</item>

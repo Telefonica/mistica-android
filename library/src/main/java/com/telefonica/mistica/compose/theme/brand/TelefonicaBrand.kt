@@ -92,7 +92,7 @@ object TelefonicaBrand : Brand {
         textPrimary = TelefonicaPaletteColor.telefonica_color_grey_9,
         textPrimaryInverse = TelefonicaPaletteColor.telefonica_color_white,
         textSecondary = TelefonicaPaletteColor.telefonica_color_grey_5,
-        textSecondaryInverse = TelefonicaPaletteColor.telefonica_color_white,
+        textSecondaryInverse = TelefonicaPaletteColor.telefonica_color_blue_10,
         errorHigh = TelefonicaPaletteColor.telefonica_color_coral_70,
         promoHigh = TelefonicaPaletteColor.telefonica_color_orchid_70,
         successHigh = TelefonicaPaletteColor.telefonica_color_turquoise_70,
@@ -193,6 +193,7 @@ object TelefonicaBrand : Brand {
 
 private object TelefonicaPaletteColor {
     val telefonica_color_blue = Color(0xFF0066FF)
+    val telefonica_color_blue_10 = Color(0xFFE5F0FF)
     val telefonica_color_blue_30 = Color(0xFF80B3FF)
     val telefonica_color_blue_70 = Color(0xFF0356C9)
 
