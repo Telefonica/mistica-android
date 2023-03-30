@@ -11,7 +11,7 @@ jobs:
     - name: "Build Android project"
       uses: docker://docker.tuenti.io/android/novum_android_api31:2
       with:
-        args: 'bash ./gradlew clean check assemble lint'
+        args: 'bash ./gradlew clean check assemble'
 
     - name: Upload Lint results
       uses: github/codeql-action/upload-sarif@v2
