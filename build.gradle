@@ -25,6 +25,23 @@ buildscript {
 plugins {
     id 'org.jetbrains.kotlin.android' version '1.5.21' apply false
     id 'io.github.gradle-nexus.publish-plugin' version '1.1.0' apply false
+    id("io.gitlab.arturbosch.detekt").version("1.18.1")
+}
+
+detekt {
+    input = files(rootProject.rootDir)
+    config = files("$projectDir/detekt.yml")
+    failFast = true
+    buildUponDefaultConfig = true
+    basePath = projectDir
+    reports {
+        html.enabled = true
+        xml.enabled = true
+        sarif.enabled = true
+        xml.destination = file("$buildDir/reports/detekt/detekt-checkstyle.xml")
+        html.destination = file("$buildDir/reports/detekt/detekt-report.html")
+        sarif.destination = file("$buildDir/reports/detekt/detekt-report.sarif")
+    }
 }
 
 allprojects {

@@ -22,6 +22,10 @@ android {
                 "\""
     }
 
+    lint {
+        sarifReport true
+    }
+
     lintOptions {
         warningsAsErrors true
     }
