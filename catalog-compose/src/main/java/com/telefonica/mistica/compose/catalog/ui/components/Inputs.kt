@@ -9,8 +9,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.Icon
-import androidx.compose.material.IconToggleButton
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -19,7 +17,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.input.OffsetMapping
 import androidx.compose.ui.text.input.PasswordVisualTransformation
@@ -28,9 +25,9 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.button.Button
 import com.telefonica.mistica.compose.button.ButtonStyle
-import com.telefonica.mistica.compose.catalog.R
 import com.telefonica.mistica.compose.input.DropDownInput
 import com.telefonica.mistica.compose.input.EmailInput
+import com.telefonica.mistica.compose.input.PasswordVisibleIcon
 import com.telefonica.mistica.compose.input.PhoneInput
 import com.telefonica.mistica.compose.input.TextInput
 import com.telefonica.mistica.compose.theme.MisticaTheme
@@ -232,25 +229,6 @@ private fun PasswordTextInput() {
             )
         },
     )
-}
-
-@Composable
-fun PasswordVisibleIcon(
-    passwordVisible: Boolean,
-    onIconClicked: (Boolean) -> Unit,
-    showContentDescription: String? = null,
-    hideContentDescription: String? = null,
-) {
-    IconToggleButton(checked = passwordVisible, onCheckedChange = onIconClicked) {
-        Icon(
-            painter = if (passwordVisible) {
-                painterResource(id = R.drawable.icn_visibility_off)
-            } else {
-                painterResource(id = R.drawable.icn_visibility)
-            },
-            contentDescription = if (passwordVisible) hideContentDescription else showContentDescription,
-        )
-    }
 }
 
 object PhoneVisualTransformation : VisualTransformation {
