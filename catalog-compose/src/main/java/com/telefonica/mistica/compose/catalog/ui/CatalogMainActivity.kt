@@ -48,6 +48,7 @@ import com.telefonica.mistica.compose.catalog.ui.components.EmptyStateScreens
 import com.telefonica.mistica.compose.catalog.ui.components.Feedbacks
 import com.telefonica.mistica.compose.catalog.ui.components.Inputs
 import com.telefonica.mistica.compose.catalog.ui.components.Lists
+import com.telefonica.mistica.compose.catalog.ui.components.LoadErrorFeedbacks
 import com.telefonica.mistica.compose.catalog.ui.components.MediaCards
 import com.telefonica.mistica.compose.catalog.ui.components.Steppers
 import com.telefonica.mistica.compose.catalog.ui.components.TabsCatalog
@@ -154,6 +155,7 @@ fun CatalogNavHost(
         composable(NavigationRoutes.TEXTS) { Texts() }
         composable(NavigationRoutes.FEEDBACKS) { Feedbacks() }
         composable(NavigationRoutes.LISTS) { Lists() }
+        composable(NavigationRoutes.LOAD_ERROR_FEEDBACKS) { LoadErrorFeedbacks() }
         composable(NavigationRoutes.TAGS) { Tags() }
         composable(NavigationRoutes.DATA_CARDS) { DataCards() }
         composable(NavigationRoutes.MEDIA_CARDS) { MediaCards() }
@@ -199,6 +201,11 @@ fun Catalog(
             name = "Lists",
             icon = R.drawable.ic_lists,
             navigation = NavigationRoutes.LISTS
+        ),
+        ComponentScreen(
+            name = "Load Error Feedback",
+            icon = R.drawable.ic_load_feedback_error,
+            navigation = NavigationRoutes.LOAD_ERROR_FEEDBACKS
         ),
         ComponentScreen(
             name = "Tags",
@@ -317,6 +324,7 @@ object NavigationRoutes {
     const val TEXTS = "texts"
     const val FEEDBACKS = "feedbacks"
     const val LISTS = "lists"
+    const val LOAD_ERROR_FEEDBACKS = "feedbacks"
     const val TAGS = "tags"
     const val DATA_CARDS = "data-cards"
     const val MEDIA_CARDS = "media-cards"

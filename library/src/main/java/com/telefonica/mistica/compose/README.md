@@ -85,33 +85,33 @@ launcher
 
 ### Components
 
-| Component                                        | Available | Implementation |
-|--------------------------------------------------|-----------|----------------|
-| [Buttons](./button/README.md)                    | ✅         | Composable     |
-| [Inputs](./input/README.md)                      | ✅*        | Composable     |
-| Snackbars                                        |           |                |    				
-| [Screen Feedbacks](./feedback/README.md)         | ✅         | AndroidView    |
-| Load Error Feedback                              |           |                |    							
-| Pop Overs                                        |           |                |    				
-| [Badges](./badge/README.md)                      | ✅         | Composable     |
-| Scroll Content Indicator                         |           |                |    								
-| [Tags](./tag/README.md)                          | ✅         | Composable     |
-| [Lists](./list/README.md)                        | ✅️        | Composable     |
-| Headers                                          |           |                |    				
-| Sections                                         |           |                |    				
-| Filters                                          |           |                |    				
-| Highlighted Cards                                |           |                |    						
-| Controls                                         |           |                |    				
-| [Media Cards](./card/mediacard/README.md)        | ✅️        | Composable     |
-| [Data Cards](./card/datacard/README.md)          | ✅️        | Composable     |
-| [Indeterminate Stepper](./stepper/README.md)     | ✅️        | AndroidView    |
-| Determinate Stepper                              |           |                |
-| [Tabs](./tabs/README.md)                         | ✅         | Composable     |
-| [Empty States](./emptystate/screen/README.md)    | ✅         | AndroidView    |
-| [Empty State Cards](./emptystate/card/README.md) | ✅         | AndroidView    |
-| [Callout](./callout/README.md)                   | ✅         | Composable     |
-| [Carousel](./carousel/README.md)                 | ✅️        | Composable     |
-| [Title](./title/README.md)                       | ✅         | Composable     |
+| Component                                             | Available | Implementation |
+|-------------------------------------------------------|-----------|----------------|
+| [Buttons](./button/README.md)                         | ✅        | Composable     |
+| [Inputs](./input/README.md)                           | ✅*       | Composable     |
+| Snackbars                                             |           |                |    				
+| [Screen Feedbacks](./feedback/README.md)              | ✅        | AndroidView    |
+| [Load Error Feedback](feedback/error/README.md)       | ✅        | Composable     |    							
+| Pop Overs                                             |           |                |    				
+| [Badges](./badge/README.md)                           | ✅        | Composable     |
+| Scroll Content Indicator                              |           |                |    								
+| [Tags](./tag/README.md)                               | ✅        | Composable     |
+| [Lists](./list/README.md)                             | ✅️        | Composable     |
+| Headers                                               |           |                |    				
+| Sections                                              |           |                |    				
+| Filters                                               |           |                |    				
+| Highlighted Cards                                     |           |                |    						
+| Controls                                              |           |                |    				
+| [Media Cards](./card/mediacard/README.md)             | ✅️        | Composable     |
+| [Data Cards](./card/datacard/README.md)               | ✅️        | Composable     |
+| [Indeterminate Stepper](./stepper/README.md)          | ✅️        | AndroidView    |
+| Determinate Stepper                                   |           |                |
+| [Tabs](./tabs/README.md)                              | ✅        | Composable     |
+| [Empty States](./emptystate/screen/README.md)         | ✅        | AndroidView    |
+| [Empty State Cards](./emptystate/card/README.md)      | ✅        | AndroidView    |
+| [Callout](./callout/README.md)                        | ✅        | Composable     |
+| [Carousel](./carousel/README.md)                      | ✅️        | Composable     |
+| [Title](./title/README.md)                            | ✅        | Composable     |
 
 ***Note**: Not every text input type have been migrated,
 see [text input](https://github.com/Telefonica/mistica-android/tree/main/library/src/main/java/com/telefonica/mistica/compose/input/README.md) section to see
