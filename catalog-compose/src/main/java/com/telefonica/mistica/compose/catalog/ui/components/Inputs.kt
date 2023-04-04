@@ -19,7 +19,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.input.OffsetMapping
-import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.TransformedText
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
@@ -27,7 +26,7 @@ import com.telefonica.mistica.compose.button.Button
 import com.telefonica.mistica.compose.button.ButtonStyle
 import com.telefonica.mistica.compose.input.DropDownInput
 import com.telefonica.mistica.compose.input.EmailInput
-import com.telefonica.mistica.compose.input.PasswordVisibleIcon
+import com.telefonica.mistica.compose.input.PasswordInput
 import com.telefonica.mistica.compose.input.PhoneInput
 import com.telefonica.mistica.compose.input.TextInput
 import com.telefonica.mistica.compose.theme.MisticaTheme
@@ -56,7 +55,7 @@ fun Inputs() {
         Title("Text input with transformation")
         TextInputWithTransformation()
         Title("Password input")
-        PasswordTextInput()
+        PasswordInputSample()
         Title("Phone input")
         PhoneInputSample()
         Title("Email input")
@@ -165,6 +164,25 @@ private fun TextInputWithHelperText(
 }
 
 @Composable
+private fun PasswordInputSample() {
+    var text by remember {
+        mutableStateOf("")
+    }
+
+    PasswordInput(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(top = 8.dp, start = 16.dp, end = 16.dp)
+        ,
+        value = text,
+        onValueChange = {
+            text = it
+        },
+        label = "Type Something"
+    )
+}
+
+@Composable
 private fun PhoneInputSample() {
     var text by remember {
         mutableStateOf("")
@@ -200,34 +218,6 @@ private fun TextInputWithTransformation() {
         },
         label = "Your name",
         visualTransformation = PhoneVisualTransformation
-    )
-}
-
-@Composable
-private fun PasswordTextInput() {
-    var text by remember {
-        mutableStateOf("")
-    }
-    var passwordVisible by remember {
-        mutableStateOf(false)
-    }
-
-    TextInput(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(top = 8.dp, start = 16.dp, end = 16.dp),
-        value = text,
-        onValueChange = { text = it },
-        label = "Password",
-        visualTransformation = if (passwordVisible) VisualTransformation.None else PasswordVisualTransformation(),
-        trailingIcon = {
-            PasswordVisibleIcon(
-                passwordVisible = passwordVisible,
-                onIconClicked = { passwordVisible = !passwordVisible },
-                showContentDescription = "Show",
-                hideContentDescription = "Hide",
-            )
-        },
     )
 }
 
