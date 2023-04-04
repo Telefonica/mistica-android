@@ -17,12 +17,13 @@ LoadErrorFeedback(
     descriptionText = "Something went wrong, this is the description of the failure. Try to retry if you want.",
     isLoading = isLoading,
     buttonText = "Retry",
-    buttonLoadingText = "Loading"
-) {
-    isLoading = true
-    scope.launch {
-        delay(1000)
-        MainScope().launch { isLoading = false }
+    buttonLoadingText = "Loading",
+    onButtonClick = {
+        isLoading = true
+        scope.launch {
+            delay(1000)
+            MainScope().launch { isLoading = false }
+        }
     }
-}
+)
 ```

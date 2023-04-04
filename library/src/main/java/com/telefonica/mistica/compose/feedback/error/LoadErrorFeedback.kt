@@ -1,4 +1,4 @@
-package com.telefonica.mistica.compose.feedback
+package com.telefonica.mistica.compose.feedback.error
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
@@ -21,15 +21,16 @@ fun LoadErrorFeedback(
     isLoading: Boolean = false,
     buttonText: String? = null,
     buttonLoadingText: String = "",
-    loadingAction: () -> Unit,
+    onButtonClick: () -> Unit,
 ) {
 
-    Column(modifier = Modifier.padding(16.dp)) {
+    Column(
+        modifier = Modifier.padding(16.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
         titleText?.let {
             Text(
-                modifier = Modifier
-                    .padding(8.dp)
-                    .align(Alignment.CenterHorizontally),
+                modifier = Modifier.padding(8.dp),
                 text = it,
                 textAlign = TextAlign.Center,
                 style = MisticaTheme.typography.preset4Light,
@@ -38,7 +39,6 @@ fun LoadErrorFeedback(
         }
         descriptionText?.let {
             Text(
-                modifier = Modifier.align(Alignment.CenterHorizontally),
                 text = it,
                 textAlign = TextAlign.Center,
                 style = MisticaTheme.typography.preset2,
@@ -47,12 +47,10 @@ fun LoadErrorFeedback(
         }
         buttonText?.let {
             Button(
-                modifier = Modifier
-                    .padding(top = 24.dp)
-                    .align(Alignment.CenterHorizontally),
+                modifier = Modifier.padding(top = 24.dp),
                 text = it,
                 loadingText = buttonLoadingText,
-                onClickListener = loadingAction,
+                onClickListener = onButtonClick,
                 isLoading = isLoading,
                 buttonStyle = ButtonStyle.SECONDARY
             )

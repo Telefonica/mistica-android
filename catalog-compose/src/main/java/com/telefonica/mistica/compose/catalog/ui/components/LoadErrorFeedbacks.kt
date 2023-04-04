@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.OutlinedTextField
@@ -18,7 +19,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.button.Button
-import com.telefonica.mistica.compose.feedback.LoadErrorFeedback
+import com.telefonica.mistica.compose.feedback.error.LoadErrorFeedback
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -41,25 +42,25 @@ fun LoadErrorFeedbacks() {
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         OutlinedTextField(
-            modifier = Modifier.padding(horizontal = 50.dp),
+            modifier = Modifier.fillMaxWidth().padding(horizontal = 50.dp),
             value = title,
             onValueChange = { title = it },
             label = { Text("Title") }
         )
         OutlinedTextField(
-            modifier = Modifier.padding(horizontal = 50.dp),
+            modifier = Modifier.fillMaxWidth().padding(horizontal = 50.dp),
             value = description,
             onValueChange = { description = it },
             label = { Text("Description") }
         )
         OutlinedTextField(
-            modifier = Modifier.padding(horizontal = 50.dp),
+            modifier = Modifier.fillMaxWidth().padding(horizontal = 50.dp),
             value = buttonText,
             onValueChange = { buttonText = it },
             label = { Text("Button Text") }
         )
         OutlinedTextField(
-            modifier = Modifier.padding(horizontal = 50.dp),
+            modifier = Modifier.fillMaxWidth().padding(horizontal = 50.dp),
             value = buttonLoadingText,
             onValueChange = { buttonLoadingText = it },
             label = { Text("Button Loading Text") }
