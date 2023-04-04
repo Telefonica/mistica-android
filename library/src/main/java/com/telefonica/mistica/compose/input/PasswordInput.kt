@@ -55,7 +55,17 @@ fun PasswordInput(
     )
 }
 
-@Preview
+@Preview(showBackground = true)
+@Composable
+fun PreviewEmptyPasswordInput() {
+    PasswordInput(
+        value = "",
+        onValueChange = {},
+        label = "empty",
+    )
+}
+
+@Preview(showBackground = true)
 @Composable
 fun PreviewPasswordInput() {
     PasswordInput(
