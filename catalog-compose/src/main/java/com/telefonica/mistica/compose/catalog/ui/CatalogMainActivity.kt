@@ -324,7 +324,7 @@ object NavigationRoutes {
     const val TEXTS = "texts"
     const val FEEDBACKS = "feedbacks"
     const val LISTS = "lists"
-    const val LOAD_ERROR_FEEDBACKS = "feedbacks"
+    const val LOAD_ERROR_FEEDBACKS = "load-error-feedbacks"
     const val TAGS = "tags"
     const val DATA_CARDS = "data-cards"
     const val MEDIA_CARDS = "media-cards"
