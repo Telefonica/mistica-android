@@ -39,5 +39,8 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `📱 New catalog for testing generated: ${{ fromJson(steps.url-request.outputs.response).download_url }}`
+              body: `📱 New catalog for testing generated: ${{ fromJson(steps.url-request.outputs.response).download_url }}
+            
+              If the URL returns an error, go to https://install.appcenter.ms/orgs/tuenti-organization/apps/mistica-catalog/distribution_groups/public and 
+              download the version for PR #${{ github.event.number }}`
             })
