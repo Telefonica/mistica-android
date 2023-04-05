@@ -39,7 +39,7 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `📱 New catalog for testing generated: ${{ fromJson(steps.url-request.outputs.response).download_url }}
+              body: `📱 New catalog for testing generated: [Download](${{ fromJson(steps.url-request.outputs.response).download_url }})
             
-              :exclamation:If the URL returns an error, go to https://install.appcenter.ms/orgs/tuenti-organization/apps/mistica-catalog/distribution_groups/public and download the version for PR #${{ github.event.number }}`
+              :exclamation:If the URL returns an error, go to [here](https://install.appcenter.ms/orgs/tuenti-organization/apps/mistica-catalog/distribution_groups/public) and download the version for PR #${{ github.event.number }}`
             })
