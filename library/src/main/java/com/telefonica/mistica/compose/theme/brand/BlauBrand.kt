@@ -94,7 +94,7 @@ object BlauBrand : Brand {
         textPrimary = BlauPaletteColor.blau_color_grey_6,
         textPrimaryInverse = BlauPaletteColor.blau_color_white,
         textSecondary = BlauPaletteColor.blau_color_grey_5,
-        textSecondaryInverse = BlauPaletteColor.blau_color_white,
+        textSecondaryInverse = BlauPaletteColor.blau_color_blue_primary20,
         errorHigh = BlauPaletteColor.blau_color_red_70,
         errorHighInverse = BlauPaletteColor.blau_color_red_70,
         promoHigh = BlauPaletteColor.blau_color_purple,

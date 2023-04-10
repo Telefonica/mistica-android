@@ -12,3 +12,10 @@ jobs:
       uses: docker://docker.tuenti.io/android/novum_android_api31:2
       with:
         args: 'bash ./gradlew clean check assemble'
+
+    - name: Upload Lint results
+      uses: github/codeql-action/upload-sarif@v2
+      if: success() || failure()
+      with:
+        sarif_file: app/build/reports/lint-results-debug.sarif
+        category: lint

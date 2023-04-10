@@ -94,7 +94,7 @@ object O2Brand : Brand {
         textPrimary = O2PaletteColor.o2_color_grey_6,
         textPrimaryInverse = O2PaletteColor.o2_color_white,
         textSecondary = O2PaletteColor.o2_color_grey_5,
-        textSecondaryInverse = O2PaletteColor.o2_color_white,
+        textSecondaryInverse = O2PaletteColor.o2_color_blue_primary_15,
         errorHigh = O2PaletteColor.o2_color_pepper_60,
         errorHighInverse = O2PaletteColor.o2_color_pepper_60,
         promoHigh = O2PaletteColor.o2_color_purple,

@@ -94,7 +94,7 @@ object VivoBrand : Brand {
         textPrimary = VivoPaletteColor.vivo_color_grey_6,
         textPrimaryInverse = VivoPaletteColor.vivo_color_white,
         textSecondary = VivoPaletteColor.vivo_color_grey_5,
-        textSecondaryInverse = VivoPaletteColor.vivo_color_white,
+        textSecondaryInverse = VivoPaletteColor.vivo_color_purple_light20,
         errorHigh = VivoPaletteColor.vivo_color_pepper_dark_80,
         errorHighInverse = VivoPaletteColor.vivo_color_pepper_dark_80,
         promoHigh = VivoPaletteColor.vivo_color_purple,

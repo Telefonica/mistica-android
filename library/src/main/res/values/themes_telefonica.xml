@@ -108,7 +108,7 @@
         <item name="colorTextPrimary">@color/telefonica_color_grey_9</item>
         <item name="colorTextPrimaryInverse">@color/telefonica_color_white</item>
         <item name="colorTextSecondary">@color/telefonica_color_grey_5</item>
-        <item name="colorTextSecondaryInverse">@color/telefonica_color_white</item>
+        <item name="colorTextSecondaryInverse">@color/telefonica_color_blue_10</item>
 
         <!-- State colors -->
         <item name="colorError">@color/telefonica_color_coral</item>
