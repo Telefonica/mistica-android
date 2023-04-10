@@ -21,9 +21,9 @@
         <item name="colorSkeletonWave">@color/vivo_color_grey_2</item>
 
         <!-- Border colors -->
-        <item name="colorBorderLight">@color/vivo_color_grey_1</item>
+        <item name="colorBorderLow">@color/vivo_color_grey_1</item>
         <item name="colorBorder">@color/vivo_color_grey_3</item>
-        <item name="colorBorderDark">@color/vivo_color_grey_5</item>
+        <item name="colorBorderHigh">@color/vivo_color_grey_5</item>
         <item name="colorBorderSelected">@color/vivo_color_purple</item>
 
         <!-- Button colors -->
@@ -31,18 +31,19 @@
         <item name="colorButtonDangerBackgroundSelected">@color/vivo_color_pepper_dark</item>
 
         <item name="colorButtonLinkBackgroundSelected">@color/vivo_color_purple_light10</item>
-        <item name="colorButtonLinkBackgroundSelectedInverse">@color/vivo_color_white_20_alpha</item>
+        <item name="colorButtonLinkBackgroundInverseSelected">@color/vivo_color_white_20_alpha</item>
 
         <item name="colorButtonPrimaryBackground">@color/vivo_color_purple</item>
         <item name="colorButtonPrimaryBackgroundInverse">@color/vivo_color_white</item>
         <item name="colorButtonPrimaryBackgroundSelected">@color/vivo_color_purple_dark</item>
-        <item name="colorButtonPrimaryBackgroundSelectedInverse">@color/vivo_color_purple_light50</item>
+        <item name="colorButtonPrimaryBackgroundInverseSelected">@color/vivo_color_purple_light50</item>
 
-        <item name="colorButtonSecondaryBackground">@color/vivo_color_purple</item>
+        <item name="colorButtonSecondaryBorder">@color/vivo_color_purple</item>
+        <item name="colorButtonSecondaryBorderSelected">@color/vivo_color_purple_dark</item>
         <item name="colorButtonSecondaryBackgroundSelected">@color/vivo_color_purple_dark</item>
         <item name="colorButtonSecondaryBackgroundSelectedInverse">@color/vivo_color_white_15_alpha</item>
         <item name="colorButtonSecondaryBorderInverse">@color/vivo_color_white</item>
-        <item name="colorButtonSecondaryBorderSelectedInverse">@color/vivo_color_purple_light50</item>
+        <item name="colorButtonSecondaryBorderInverseSelected">@color/vivo_color_purple_light50</item>
 
         <item name="colorTextButtonPrimary">@color/vivo_color_white</item>
         <item name="colorTextButtonPrimaryInverse">@color/vivo_color_purple</item>
@@ -61,9 +62,13 @@
         <item name="brandLow">@color/vivo_color_purple_light10</item>
 
         <item name="successHigh">@color/vivo_color_green_dark</item>
+        <item name="successHighInverse">@color/vivo_color_green_dark</item>
         <item name="warningHigh">@color/vivo_color_orange_dark</item>
+        <item name="warningHighInverse">@color/vivo_color_orange_dark</item>
         <item name="errorHigh">@color/vivo_color_pepper_dark_80</item>
+        <item name="errorHighInverse">@color/vivo_color_pepper_dark_80</item>
         <item name="promoHigh">@color/vivo_color_purple</item>
+        <item name="promoHighInverse">@color/vivo_color_purple</item>
 
         <!-- Text Links -->
         <item name="colorTextLink">@color/vivo_color_purple</item>
@@ -96,6 +101,7 @@
         <item name="colorInverse">@color/vivo_color_white</item>
         <item name="colorNeutralHigh">@color/vivo_color_grey_6</item>
         <item name="colorNeutralMedium">@color/vivo_color_grey_5</item>
+        <item name="colorNeutralMediumInverse">@color/vivo_color_grey_5</item>
         <item name="colorNeutralLow">@color/vivo_color_grey_1</item>
         <item name="colorPromo">@color/vivo_color_purple</item>
         <item name="colorHighlight">@color/vivo_color_pink</item>
