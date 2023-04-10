@@ -11,9 +11,9 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -26,6 +26,7 @@ import com.telefonica.mistica.compose.button.Button
 import com.telefonica.mistica.compose.button.ButtonStyle
 import com.telefonica.mistica.compose.input.DropDownInput
 import com.telefonica.mistica.compose.input.EmailInput
+import com.telefonica.mistica.compose.input.PasswordInput
 import com.telefonica.mistica.compose.input.PhoneInput
 import com.telefonica.mistica.compose.input.TextInput
 import com.telefonica.mistica.compose.theme.MisticaTheme
@@ -53,6 +54,8 @@ fun Inputs() {
         TextInputWithHelperText()
         Title("Text input with transformation")
         TextInputWithTransformation()
+        Title("Password input")
+        PasswordInputSample()
         Title("Phone input")
         PhoneInputSample()
         Title("Email input")
@@ -157,6 +160,25 @@ private fun TextInputWithHelperText(
         helperText = "This is a helper text",
         label = "Type Something",
         isInverse = isInverse
+    )
+}
+
+@Composable
+private fun PasswordInputSample() {
+    var text by remember {
+        mutableStateOf("")
+    }
+
+    PasswordInput(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(top = 8.dp, start = 16.dp, end = 16.dp)
+        ,
+        value = text,
+        onValueChange = {
+            text = it
+        },
+        label = "Type Something"
     )
 }
 

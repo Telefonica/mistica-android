@@ -26,13 +26,14 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.VisualTransformation
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.common.ui.alpha
 import com.telefonica.mistica.compose.theme.MisticaTheme
 
 @Composable
 internal fun TextInputImpl(
-    modifier: Modifier,
+    modifier: Modifier = Modifier,
     value: String,
     onValueChange: (String) -> Unit,
     label: String,
@@ -211,3 +212,43 @@ private data class TextInputColors(
 )
 
 private val LocalTextInputColors = compositionLocalOf { TextInputColors() }
+
+@Preview(showBackground = true)
+@Composable
+fun PreviewTextInput() {
+    TextInputImpl(
+        value = "value",
+        onValueChange = {},
+        label = "label",
+        helperText = "helperText",
+        isError = false,
+        errorText = "",
+        trailingIcon = { },
+        isInverse = false,
+        enabled = true,
+        readOnly = false,
+        onClick = { },
+        visualTransformation = VisualTransformation.None,
+        keyboardOptions = FoundationKeyboardOptions(),
+    )
+}
+
+@Preview(showBackground = true)
+@Composable
+fun PreviewEmptyTextInput() {
+    TextInputImpl(
+        value = "",
+        onValueChange = {},
+        label = "label",
+        helperText = "helperText",
+        isError = false,
+        errorText = "",
+        trailingIcon = { },
+        isInverse = false,
+        enabled = true,
+        readOnly = false,
+        onClick = { },
+        visualTransformation = VisualTransformation.None,
+        keyboardOptions = FoundationKeyboardOptions(),
+    )
+}
