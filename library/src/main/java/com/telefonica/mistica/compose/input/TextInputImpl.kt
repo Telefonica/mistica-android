@@ -183,8 +183,10 @@ private fun Underline(
             )
         }
         Spacer(modifier = Modifier.weight(1f))
-        Box(Modifier.padding(top = 4.dp, start = 14.dp, end = 14.dp)) {
-            underlineEnd?.invoke()
+        underlineEnd?.let {
+            Box(Modifier.padding(top = 4.dp, start = 14.dp, end = 14.dp)) {
+                underlineEnd.invoke()
+            }
         }
     }
 }
