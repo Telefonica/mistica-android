@@ -83,7 +83,7 @@ internal fun TextInputImpl(
                 onClick = onClick,
                 visualTransformation = visualTransformation,
                 keyboardOptions = keyboardOptions,
-                isMultiLine = isTextArea,
+                singleLine = !isTextArea,
                 modifier = Modifier.then(
                     if (isTextArea) {
                         Modifier.height(152.dp)
@@ -115,7 +115,7 @@ private fun TextBox(
     onClick: (() -> Unit)?,
     visualTransformation: VisualTransformation,
     keyboardOptions: FoundationKeyboardOptions,
-    isMultiLine: Boolean = false,
+    singleLine: Boolean = false,
 ) {
     val interactionSource = remember {
         MutableInteractionSource()
@@ -156,8 +156,8 @@ private fun TextBox(
             errorIndicatorColor = Color.Transparent,
             errorCursorColor = MisticaTheme.colors.controlActive,
         ),
-        singleLine = !isMultiLine,
-        maxLines = if (isMultiLine) Int.MAX_VALUE else 1,
+        singleLine = singleLine,
+        maxLines = if (singleLine) 1 else  Int.MAX_VALUE,
         visualTransformation = visualTransformation,
     )
 }
