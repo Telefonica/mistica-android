@@ -3,12 +3,16 @@ package com.telefonica.mistica.compose.theme.brand
 import androidx.compose.ui.graphics.Color
 import com.telefonica.mistica.R
 import com.telefonica.mistica.compose.theme.color.MisticaColors
+import kotlinx.parcelize.IgnoredOnParcel
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 object O2Brand : Brand {
 
     override val compatibilityTheme: Int
         get() = R.style.MisticaTheme_O2
 
+    @IgnoredOnParcel
     override val lightColors = MisticaColors(
         appBarBackground = O2PaletteColor.o2_color_white,
         background = O2PaletteColor.o2_color_white,

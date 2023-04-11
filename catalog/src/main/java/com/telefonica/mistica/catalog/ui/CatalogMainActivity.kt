@@ -11,6 +11,12 @@ import androidx.annotation.StyleRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.telefonica.mistica.catalog.R
+import com.telefonica.mistica.compose.theme.brand.BlauBrand
+import com.telefonica.mistica.compose.theme.brand.Brand
+import com.telefonica.mistica.compose.theme.brand.MovistarBrand
+import com.telefonica.mistica.compose.theme.brand.O2Brand
+import com.telefonica.mistica.compose.theme.brand.TelefonicaBrand
+import com.telefonica.mistica.compose.theme.brand.VivoBrand
 import com.telefonica.mistica.input.DropDownInput
 import com.telefonica.mistica.list.ListRowView
 import com.telefonica.mistica.list.ListRowView.Companion.TYPE_SMALL_ICON
@@ -19,7 +25,8 @@ import com.telefonica.mistica.list.layout.configureWithFullWidthLayout
 class CatalogMainActivity : AppCompatActivity() {
 
     @StyleRes
-    private var themeOverride: Int? = null
+    private var classicThemeOverride: Int? = null
+    private var composeThemeOverride: Brand = DEFAULT_COMPOSE_BRAND
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,12 +41,12 @@ class CatalogMainActivity : AppCompatActivity() {
 
     private fun configureThemeDropDown() {
 
-        val styles: List<Pair<String, Int>> = listOf(
-            "Movistar" to R.style.MisticaTheme_Movistar,
-            "O2" to R.style.MisticaTheme_O2,
-            "Vivo" to R.style.MisticaTheme_Vivo,
-            "Telefonica" to R.style.MisticaTheme_Telefonica,
-            "Blau" to R.style.MisticaTheme_Blau,
+        val styles: List<Triple<String, Int, Brand>> = listOf(
+            Triple("Movistar", R.style.MisticaTheme_Movistar, MovistarBrand),
+            Triple("O2", R.style.MisticaTheme_O2, O2Brand),
+            Triple("Vivo", R.style.MisticaTheme_Vivo, VivoBrand),
+            Triple("Telefonica", R.style.MisticaTheme_Telefonica, TelefonicaBrand),
+            Triple("Blau", R.style.MisticaTheme_Blau, BlauBrand)
         )
 
         findViewById<DropDownInput>(R.id.drop_down_themes)?.apply {
@@ -52,7 +59,8 @@ class CatalogMainActivity : AppCompatActivity() {
             )
             dropDown.onItemClickListener =
                 AdapterView.OnItemClickListener { _, _, position, _ ->
-                    themeOverride = styles[position].second
+                    classicThemeOverride = styles[position].second
+                    composeThemeOverride = styles[position].third
                 }
         }
     }
@@ -112,9 +120,8 @@ class CatalogMainActivity : AppCompatActivity() {
                     Intent(this@CatalogMainActivity, ComponentCatalogActivity::class.java)
                         .putExtra(ComponentCatalogActivity.EXTRA_SECTION, section.sectionToOpen)
                         .apply {
-                            themeOverride?.let {
-                                putExtra(ComponentCatalogActivity.EXTRA_THEME, it)
-                            }
+                            classicThemeOverride?.let { putExtra(ComponentCatalogActivity.EXTRA_CLASSIC_THEME, it) }
+                            putExtra(ComponentCatalogActivity.EXTRA_COMPOSE_THEME, composeThemeOverride)
                             context.startActivity(this)
                         }
                 }
@@ -124,6 +131,9 @@ class CatalogMainActivity : AppCompatActivity() {
         }
 
         override fun getItemCount(): Int = sections.size
+    }
 
+    companion object {
+        val DEFAULT_COMPOSE_BRAND = MovistarBrand
     }
 }

@@ -1,10 +1,11 @@
 package com.telefonica.mistica.compose.theme.brand
 
+import android.os.Parcelable
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import com.telefonica.mistica.compose.theme.color.MisticaColors
 
-interface Brand {
+interface Brand: Parcelable {
     val compatibilityTheme: Int
     val lightColors: MisticaColors
     val darkColors: MisticaColors

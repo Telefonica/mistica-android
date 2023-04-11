@@ -3,12 +3,16 @@ package com.telefonica.mistica.compose.theme.brand
 import androidx.compose.ui.graphics.Color
 import com.telefonica.mistica.R
 import com.telefonica.mistica.compose.theme.color.MisticaColors
+import kotlinx.parcelize.IgnoredOnParcel
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 object BlauBrand : Brand {
 
     override val compatibilityTheme: Int
         get() = R.style.MisticaTheme_Blau
 
+    @IgnoredOnParcel
     override val lightColors = MisticaColors(
         appBarBackground = BlauPaletteColor.blau_color_white,
         background = BlauPaletteColor.blau_color_white,

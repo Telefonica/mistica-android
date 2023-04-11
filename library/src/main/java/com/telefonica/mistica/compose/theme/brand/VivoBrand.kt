@@ -3,12 +3,16 @@ package com.telefonica.mistica.compose.theme.brand
 import androidx.compose.ui.graphics.Color
 import com.telefonica.mistica.R
 import com.telefonica.mistica.compose.theme.color.MisticaColors
+import kotlinx.parcelize.IgnoredOnParcel
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 object VivoBrand : Brand {
 
     override val compatibilityTheme: Int
         get() = R.style.MisticaTheme_Vivo
 
+    @IgnoredOnParcel
     override val lightColors = MisticaColors(
         appBarBackground = VivoPaletteColor.vivo_color_white,
         background = VivoPaletteColor.vivo_color_white,
