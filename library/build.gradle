@@ -85,7 +85,7 @@ dependencies {
     testImplementation "androidx.compose.ui:ui-test-junit4"
     testImplementation "org.mockito.kotlin:mockito-kotlin:4.0.0"
 
-    debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
+    debugImplementation "androidx.compose.ui:ui-tooling"
 }
 
 apply from: "${rootProject.projectDir}/mavencentral.gradle"
