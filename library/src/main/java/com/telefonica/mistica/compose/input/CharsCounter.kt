@@ -7,10 +7,15 @@ import androidx.compose.ui.text.style.TextAlign
 import com.telefonica.mistica.compose.theme.MisticaTheme
 
 @Composable
-internal fun CharsCounter(current: Int, max: LimitCharacters.Limited, modifier: Modifier = Modifier) {
+internal fun CharsCounter(
+    current: Int,
+    max: LimitCharacters.Limited,
+    modifier: Modifier = Modifier,
+    isError: Boolean = false,
+) {
     Text(
         text = "$current/${max.characterLimit}",
-        color = MisticaTheme.colors.textSecondary,
+        color = if (isError) MisticaTheme.colors.error else MisticaTheme.colors.textSecondary,
         textAlign = TextAlign.End,
         style = MisticaTheme.typography.preset1,
         modifier = modifier,

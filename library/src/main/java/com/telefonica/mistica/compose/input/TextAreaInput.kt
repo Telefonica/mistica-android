@@ -52,7 +52,11 @@ fun TextAreaInput(
         visualTransformation = visualTransformation,
         underlineEnd = {
             if (maxChars is LimitCharacters.Limited) {
-                CharsCounter(current = currentChars, max = maxChars)
+                CharsCounter(
+                    current = currentChars,
+                    max = maxChars,
+                    isError = isError
+                )
             }
         },
         keyboardOptions = keyboardOptions.copy(imeAction = ImeAction.None)
