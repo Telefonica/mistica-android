@@ -26,8 +26,10 @@ import com.telefonica.mistica.compose.button.Button
 import com.telefonica.mistica.compose.button.ButtonStyle
 import com.telefonica.mistica.compose.input.DropDownInput
 import com.telefonica.mistica.compose.input.EmailInput
+import com.telefonica.mistica.compose.input.LimitCharacters
 import com.telefonica.mistica.compose.input.PasswordInput
 import com.telefonica.mistica.compose.input.PhoneInput
+import com.telefonica.mistica.compose.input.TextAreaInput
 import com.telefonica.mistica.compose.input.TextInput
 import com.telefonica.mistica.compose.theme.MisticaTheme
 
@@ -64,6 +66,8 @@ fun Inputs() {
         EmailInputWithValidation()
         Title("Phone input with validation")
         PhoneInputWithValidation()
+        Title("Text Area input")
+        TextAreaInputSample()
         Title("Dropdown")
         DropDownSample()
         Title("Disable Dropdown")
@@ -326,6 +330,26 @@ private fun ColumnScope.PhoneInputWithValidation() {
             isError = text.isEmpty()
         },
         buttonStyle = ButtonStyle.PRIMARY_SMALL
+    )
+}
+
+@Composable
+fun TextAreaInputSample() {
+    var text by remember {
+        mutableStateOf("")
+    }
+
+    TextAreaInput(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(top = 8.dp, start = 16.dp, end = 16.dp),
+        value = text,
+        onValueChange = {
+            text = it
+        },
+        label = "Type Something",
+        helperText = "Helper Text",
+        maxChars = LimitCharacters.Limited(200),
     )
 }
 
