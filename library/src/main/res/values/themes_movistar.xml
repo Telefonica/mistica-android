@@ -154,6 +154,9 @@
 
 		<!-- Compose -->
 		<item name="composeBrand">movistar</item>
+
+		<!-- Title -->
+		<item name="titleStyle">title2</item>
 	</style>
 
 </resources>

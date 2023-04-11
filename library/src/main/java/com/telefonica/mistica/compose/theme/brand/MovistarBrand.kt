@@ -4,6 +4,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import com.telefonica.mistica.R
 import com.telefonica.mistica.compose.theme.color.MisticaColors
+import com.telefonica.mistica.compose.title.TitleStyle
 
 object MovistarBrand : Brand {
 
@@ -190,6 +191,9 @@ object MovistarBrand : Brand {
 
     override val preset8FontWeight: FontWeight
         get() = FontWeight.Bold
+
+    override val titleStyle: TitleStyle
+        get() = TitleStyle.TITLE_2
 }
 
 private object MovistarPaletteColor {
