@@ -8,7 +8,7 @@
 				android:exported="false"
 				/>
 		<activity
-				android:name="com.telefonica.mistica.catalog.ui.activity.FeedbackScreenCatalogActivity"
+				android:name="com.telefonica.mistica.catalog.ui.classic.activity.FeedbackScreenCatalogActivity"
 				android:exported="false"
 				/>
 		<activity
@@ -16,7 +16,7 @@
 				android:exported="false"
 				/>
 		<activity
-				android:name="com.telefonica.mistica.catalog.ui.activity.EmptyStateScreenCatalogActivity"
+				android:name="com.telefonica.mistica.catalog.ui.classic.activity.EmptyStateScreenCatalogActivity"
 				android:exported="false"
 				/>
 	</application>
