@@ -25,7 +25,7 @@ fun TextAreaInput(
     enabled: Boolean = true,
     readOnly: Boolean = false,
     onClick: (() -> Unit)? = null,
-    maxChars: Int = Int.MAX_VALUE,
+    maxChars: LimitCharacters = LimitCharacters.Unlimited,
     visualTransformation: VisualTransformation = VisualTransformation.None,
     keyboardOptions: KeyboardOptions = KeyboardOptions.Default,
 ) {
@@ -37,9 +37,7 @@ fun TextAreaInput(
         modifier = modifier,
         value = value,
         onValueChange = { newValue ->
-            val text = if (newValue.length > maxChars) newValue.substring(startIndex = 0, endIndex = maxChars) else newValue
-            currentChars = text.length
-            onValueChange(text)
+            currentChars = doOnValueChange(maxChars, newValue, onValueChange)
         },
         label = label,
         helperText = helperText,
@@ -53,13 +51,32 @@ fun TextAreaInput(
         isTextArea = true,
         visualTransformation = visualTransformation,
         underlineEnd = {
-            if (maxChars < Int.MAX_VALUE) {
+            if (maxChars is LimitCharacters.Limited) {
                 CharsCounter(current = currentChars, max = maxChars)
             }
         },
         keyboardOptions = keyboardOptions.copy(imeAction = ImeAction.None)
             .toFoundationKeyboardOptions(KeyboardType.Text),
     )
+}
+
+private fun doOnValueChange(
+    maxChars: LimitCharacters,
+    newValue: String,
+    onValueChange: (String) -> Unit,
+): Int {
+    return if (maxChars is LimitCharacters.Limited) {
+        val text = if (newValue.length > maxChars.characterLimit) {
+            newValue.substring(startIndex = 0, endIndex = maxChars.characterLimit)
+        } else {
+            newValue
+        }
+        onValueChange(text)
+        text.length
+    } else {
+        onValueChange(newValue)
+        newValue.length
+    }
 }
 
 @Preview(showBackground = true)

@@ -26,6 +26,7 @@ import com.telefonica.mistica.compose.button.Button
 import com.telefonica.mistica.compose.button.ButtonStyle
 import com.telefonica.mistica.compose.input.DropDownInput
 import com.telefonica.mistica.compose.input.EmailInput
+import com.telefonica.mistica.compose.input.LimitCharacters
 import com.telefonica.mistica.compose.input.PasswordInput
 import com.telefonica.mistica.compose.input.PhoneInput
 import com.telefonica.mistica.compose.input.TextAreaInput
@@ -348,7 +349,7 @@ fun TextAreaInputSample() {
         },
         label = "Type Something",
         helperText = "Helper Text",
-        maxChars = 200,
+        maxChars = LimitCharacters.Limited(200),
     )
 }
 

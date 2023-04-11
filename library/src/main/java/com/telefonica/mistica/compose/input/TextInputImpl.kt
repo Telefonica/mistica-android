@@ -157,7 +157,7 @@ private fun TextBox(
             errorCursorColor = MisticaTheme.colors.controlActive,
         ),
         singleLine = singleLine,
-        maxLines = if (singleLine) 1 else  Int.MAX_VALUE,
+        maxLines = if (singleLine) 1 else Int.MAX_VALUE,
         visualTransformation = visualTransformation,
     )
 }
@@ -218,17 +218,6 @@ private fun UnderlineText(
         text = text,
         style = MisticaTheme.typography.preset1,
         color = color
-    )
-}
-
-@Composable
-fun CharsCounter(current: Int, max: Int, modifier: Modifier = Modifier) {
-    Text(
-        text = "$current/$max",
-        color = MisticaTheme.colors.textSecondary,
-        textAlign = TextAlign.End,
-        style = MisticaTheme.typography.preset1,
-        modifier = modifier,
     )
 }
 
