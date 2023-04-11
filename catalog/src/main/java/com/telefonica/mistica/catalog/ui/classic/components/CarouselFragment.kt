@@ -21,7 +21,7 @@ import com.telefonica.mistica.compose.carousel.CarouselState
 import com.telefonica.mistica.compose.tag.Tag
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_PROMO
 
-class CarouselFragment() : Fragment() {
+class CarouselFragment : Fragment() {
 
     private lateinit var binding: CarouselFragmentCatalogBinding
 
@@ -29,7 +29,7 @@ class CarouselFragment() : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View? {
+    ): View {
         super.onCreateView(inflater, container, savedInstanceState)
         binding = CarouselFragmentCatalogBinding.inflate(layoutInflater)
         return binding.root

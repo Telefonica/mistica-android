@@ -5,6 +5,7 @@
     tools:viewBindingIgnore="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?colorBackground"
     android:orientation="vertical">
 
     <LinearLayout
@@ -24,7 +25,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:background="?colorBackground"
             android:gravity="center_horizontal"
             android:orientation="vertical">
 

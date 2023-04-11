@@ -2,9 +2,13 @@ package com.telefonica.mistica.catalog.ui
 
 import android.os.Bundle
 import androidx.annotation.StyleRes
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.telefonica.mistica.catalog.R
+import androidx.fragment.app.FragmentActivity
+import androidx.viewpager2.adapter.FragmentStateAdapter
+import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
+import com.telefonica.mistica.catalog.databinding.ScreenComponentCatalogBinding
 import com.telefonica.mistica.catalog.ui.classic.components.BadgesCatalogFragment
 import com.telefonica.mistica.catalog.ui.classic.components.ButtonsCatalogFragment
 import com.telefonica.mistica.catalog.ui.classic.components.CalloutsCatalogFragment
@@ -30,8 +34,11 @@ import com.telefonica.mistica.catalog.ui.classic.components.TabsCatalogFragment
 import com.telefonica.mistica.catalog.ui.classic.components.TagsCatalogFragment
 import com.telefonica.mistica.catalog.ui.classic.components.TextPresetsCatalogFragment
 import com.telefonica.mistica.catalog.ui.classic.components.TitleCatalogFragment
+import com.telefonica.mistica.catalog.ui.compose.components.ButtonsComposeFragment
 
-class ComponentCatalogActivity : AppCompatActivity() {
+class ComponentCatalogActivity : FragmentActivity() {
+
+    private lateinit var binding: ScreenComponentCatalogBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -45,9 +52,32 @@ class ComponentCatalogActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.screen_component_catalog)
+        binding = ScreenComponentCatalogBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val fragment: Fragment = when (intent.getSerializableExtra(EXTRA_SECTION)) {
+        binding.componentViewPager.apply {
+            offscreenPageLimit = 2
+            registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+                override fun onPageSelected(position: Int) {
+                    binding.componentTabs.getTabAt(position)?.select()
+                }
+            })
+            adapter = ComponentPageAdapter(listOf(ButtonsCatalogFragment(), ButtonsComposeFragment()), this@ComponentCatalogActivity)
+        }
+
+        binding.componentTabs.addOnTabSelectedListener(object : OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+                tab?.let { binding.componentViewPager.currentItem = tab.position }
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab?) {
+            }
+
+            override fun onTabReselected(tab: TabLayout.Tab?) {
+            }
+        })
+
+        when (intent.getSerializableExtra(EXTRA_SECTION)) {
             Section.TEXTS -> TextPresetsCatalogFragment()
             Section.TITLES -> TitleCatalogFragment()
             Section.BUTTONS -> ButtonsCatalogFragment()
@@ -76,9 +106,15 @@ class ComponentCatalogActivity : AppCompatActivity() {
             else -> OthersCatalogFragment()
         }
 
-        supportFragmentManager.beginTransaction().apply {
-            replace(R.id.catalog_container, fragment)
-        }.commit()
+    }
+
+    @Deprecated("Deprecated in Java")
+    override fun onBackPressed() {
+        if (binding.componentViewPager.currentItem == 0) {
+            finish()
+        } else {
+            binding.componentViewPager.currentItem = binding.componentViewPager.currentItem - 1
+        }
     }
 
     companion object {
@@ -86,7 +122,16 @@ class ComponentCatalogActivity : AppCompatActivity() {
         const val EXTRA_THEME = "extra_theme"
 
         private const val NO_THEME_OVERRIDE = -1
+
+        private const val CLASSIC_TAB_POS = 0
+        private const val COMPOSE_TAB_POS = 1
     }
+}
+
+class ComponentPageAdapter(private val fragmentList: List<Fragment>, fa: FragmentActivity) : FragmentStateAdapter(fa) {
+    override fun getItemCount(): Int = fragmentList.size
+
+    override fun createFragment(position: Int): Fragment = fragmentList[position]
 }
 
 enum class Section {
