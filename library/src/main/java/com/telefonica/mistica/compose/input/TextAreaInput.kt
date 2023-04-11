@@ -55,7 +55,7 @@ fun TextAreaInput(
                 CharsCounter(
                     current = currentChars,
                     max = maxChars,
-                    isError = isError
+                    isError = isError,
                 )
             }
         },
