@@ -163,7 +163,7 @@ private fun TextBox(
 }
 
 @Composable
-private fun Underline(
+internal fun Underline(
     isError: Boolean,
     errorText: String?,
     helperText: String?,
