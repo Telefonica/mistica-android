@@ -20,38 +20,63 @@ fun Titles() {
             .verticalScroll(scrollState)
             .padding(16.dp)
     ) {
+        DefaultTitles()
         TitleStyle.values().forEach {
-            Titles(it)
+            TitlesWithStyleOverridden(it)
         }
     }
 }
 
 @Composable
-private fun Titles(
-    style: TitleStyle
+private fun DefaultTitles() {
+    Title(
+        modifier = Modifier.padding(bottom = 8.dp),
+        text = "Short default title",
+    )
+    Title(
+        modifier = Modifier.padding(bottom = 8.dp),
+        text = "Short default title",
+        linkText = "Some link",
+        onLinkClicked = {}
+    )
+    Title(
+        modifier = Modifier.padding(bottom = 8.dp),
+        text = "Some default title that can get really long and almost fill the whole line",
+    )
+    Title(
+        modifier = Modifier.padding(bottom = 8.dp),
+        text = "Some default title that can get really long and almost fill the whole line",
+        linkText = "Some link",
+        onLinkClicked = {}
+    )
+}
+
+@Composable
+private fun TitlesWithStyleOverridden(
+    style: TitleStyle,
 ) {
     Title(
         modifier = Modifier.padding(bottom = 8.dp),
         style = style,
-        text = "Short title",
+        text = "Short title $style",
     )
     Title(
         modifier = Modifier.padding(bottom = 8.dp),
         style = style,
-        text = "Short title",
+        text = "Short title $style",
         linkText = "Some link",
         onLinkClicked = {}
     )
     Title(
         modifier = Modifier.padding(bottom = 8.dp),
         style = style,
-        text = "Some title that can get really long and almost fill the whole line",
+        text = "Some title $style that can get really long and almost fill the whole line",
     )
     Title(
         modifier = Modifier.padding(bottom = 8.dp),
         style = style,
         linkText = "Some link",
-        text = "Some title that can get really long and almost fill the whole line",
+        text = "Some title $style that can get really long and almost fill the whole line",
         onLinkClicked = {}
     )
 }
