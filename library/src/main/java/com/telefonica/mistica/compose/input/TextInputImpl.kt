@@ -47,7 +47,7 @@ internal fun TextInputImpl(
 ) {
     Column(
         modifier = modifier
-            .alpha(enabled)
+            .alpha(enabled),
     ) {
         TextBox(
             value = value,
@@ -144,7 +144,7 @@ private fun TextInputLabel(
     text: String,
     isMinimized: Boolean,
     isError: Boolean,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
     Text(
         text = text,
