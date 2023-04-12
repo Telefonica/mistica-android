@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">Mística</string>
-    <string name="compose_activity">Mística</string>
+	<string name="app_name" translatable="false">Mística</string>
+	<string name="compose_activity" translatable="false">Mística</string>
 </resources>
