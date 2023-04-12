@@ -142,5 +142,8 @@
 
 		<!-- Compose -->
 		<item name="composeBrand">blau</item>
+
+		<!-- Title -->
+		<item name="titleStyle">title1</item>
 	</style>
 </resources>

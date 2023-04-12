@@ -4,6 +4,7 @@ import android.os.Parcelable
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import com.telefonica.mistica.compose.theme.color.MisticaColors
+import com.telefonica.mistica.compose.title.TitleStyle
 
 interface Brand: Parcelable {
     val compatibilityTheme: Int
@@ -19,4 +20,6 @@ interface Brand: Parcelable {
         get() = FontWeight.Light
     val preset8FontWeight: FontWeight
         get() = FontWeight.Light
+    val titleStyle: TitleStyle
+        get() = TitleStyle.TITLE_1
 }

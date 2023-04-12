@@ -19,6 +19,8 @@ import com.telefonica.mistica.compose.theme.color.LocalMisticaColors
 import com.telefonica.mistica.compose.theme.color.MisticaColors
 import com.telefonica.mistica.compose.theme.text.LocalMisticaTypography
 import com.telefonica.mistica.compose.theme.text.MisticaTypography
+import com.telefonica.mistica.compose.theme.values.LocalMisticaValues
+import com.telefonica.mistica.compose.theme.values.MisticaValues
 
 @Composable
 fun MisticaTheme(
@@ -55,9 +57,18 @@ fun MisticaTheme(
         )
     }
 
+    val values = remember {
+        MisticaValues()
+    }.apply {
+        updateWith(
+            titleStyle = brand.titleStyle
+        )
+    }
+
     CompositionLocalProvider(
         LocalMisticaColors provides rememberedColors,
         LocalMisticaTypography provides typography,
+        LocalMisticaValues provides values
     ) {
         MaterialTheme(
             colors = if (darkTheme) {
@@ -72,7 +83,7 @@ fun MisticaTheme(
                 background = LocalMisticaColors.current.background,
                 error = LocalMisticaColors.current.error,
 
-            ),
+                ),
             typography = Typography(
                 body1 = LocalMisticaTypography.current.preset3
             ),
@@ -98,4 +109,9 @@ object MisticaTheme {
         @Composable
         @ReadOnlyComposable
         get() = LocalMisticaTypography.current
+
+    val values: MisticaValues
+        @Composable
+        @ReadOnlyComposable
+        get() = LocalMisticaValues.current
 }
