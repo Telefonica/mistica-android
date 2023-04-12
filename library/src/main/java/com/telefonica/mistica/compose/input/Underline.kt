@@ -29,28 +29,28 @@ internal fun Underline(
     underlineEnd: @Composable (() -> Unit)?,
 ) {
     val colors = if (isInverse) {
-        TextInputColors(
+        UnderlineTextColors(
             errorTextColor = MisticaTheme.colors.textPrimaryInverse,
             helperTextColor = MisticaTheme.colors.textPrimaryInverse,
         )
     } else {
-        TextInputColors(
+        UnderlineTextColors(
             errorTextColor = MisticaTheme.colors.error,
             helperTextColor = MisticaTheme.colors.textSecondary,
         )
     }
-    CompositionLocalProvider(LocalTextInputColors provides colors) {
+    CompositionLocalProvider(LocalUnderlineTextColors provides colors) {
         Row(modifier = Modifier.fillMaxWidth()) {
             Box {
                 UnderlineTextAnimatedVisibility(
                     visible = !isError && helperText != null,
                     text = helperText,
-                    color = LocalTextInputColors.current.helperTextColor,
+                    color = LocalUnderlineTextColors.current.helperTextColor,
                 )
                 UnderlineTextAnimatedVisibility(
                     visible = isError && errorText != null,
                     text = errorText,
-                    color = LocalTextInputColors.current.errorTextColor,
+                    color = LocalUnderlineTextColors.current.errorTextColor,
                 )
             }
             Spacer(modifier = Modifier.weight(1f))
@@ -93,12 +93,12 @@ private fun UnderlineText(
     )
 }
 
-private data class TextInputColors(
+private data class UnderlineTextColors(
     val errorTextColor: Color = Color.Unspecified,
     val helperTextColor: Color = Color.Unspecified,
 )
 
-private val LocalTextInputColors = compositionLocalOf { TextInputColors() }
+private val LocalUnderlineTextColors = compositionLocalOf { UnderlineTextColors() }
 
 @Preview(showBackground = true)
 @Composable
