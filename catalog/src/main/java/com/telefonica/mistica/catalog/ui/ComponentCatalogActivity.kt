@@ -2,6 +2,7 @@ package com.telefonica.mistica.catalog.ui
 
 import android.os.Build
 import android.os.Bundle
+import androidx.annotation.StyleRes
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.Composable
@@ -12,7 +13,8 @@ import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
 import com.telefonica.mistica.catalog.databinding.ScreenComponentCatalogBinding
-import com.telefonica.mistica.catalog.ui.CatalogMainActivity.Companion.DEFAULT_COMPOSE_BRAND
+import com.telefonica.mistica.catalog.ui.CatalogMainActivity.Companion.DEFAULT_CLASSIC_THEME
+import com.telefonica.mistica.catalog.ui.CatalogMainActivity.Companion.DEFAULT_COMPOSE_THEME
 import com.telefonica.mistica.catalog.ui.classic.components.BadgesCatalogFragment
 import com.telefonica.mistica.catalog.ui.classic.components.ButtonsCatalogFragment
 import com.telefonica.mistica.catalog.ui.classic.components.CalloutsCatalogFragment
@@ -61,16 +63,17 @@ class ComponentCatalogActivity : FragmentActivity() {
 
     private lateinit var binding: ScreenComponentCatalogBinding
 
-    private var classicThemeOverride: Int? = null
-    private lateinit var composeThemeOverride: Brand
+    @StyleRes
+    private var classicThemeOverride: Int = DEFAULT_CLASSIC_THEME
+    private var composeThemeOverride: Brand = DEFAULT_COMPOSE_THEME
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setUpThemes()
 
         binding = ScreenComponentCatalogBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setUpThemes()
         setUpViews()
         showComponentCatalog()
     }
@@ -122,16 +125,14 @@ class ComponentCatalogActivity : FragmentActivity() {
     }
 
     private fun setUpThemes() {
-        classicThemeOverride = intent.getIntExtra(EXTRA_CLASSIC_THEME, NO_THEME_OVERRIDE).takeIf { it != NO_THEME_OVERRIDE }
+        classicThemeOverride = intent.getIntExtra(EXTRA_CLASSIC_THEME, DEFAULT_CLASSIC_THEME)
         composeThemeOverride = (if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             intent.getParcelableExtra(EXTRA_COMPOSE_THEME, Brand::class.java)
         } else {
             intent.getParcelableExtra(EXTRA_COMPOSE_THEME)
-        }) ?: DEFAULT_COMPOSE_BRAND
+        }) ?: DEFAULT_COMPOSE_THEME
 
-        classicThemeOverride?.let {
-            setTheme(it)
-        }
+        setTheme(classicThemeOverride)
     }
 
     private fun setUpViews() {
@@ -148,6 +149,7 @@ class ComponentCatalogActivity : FragmentActivity() {
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 tab?.let { binding.componentViewPager.currentItem = tab.position }
             }
+
             override fun onTabUnselected(tab: TabLayout.Tab?) {}
             override fun onTabReselected(tab: TabLayout.Tab?) {}
         })
@@ -157,8 +159,6 @@ class ComponentCatalogActivity : FragmentActivity() {
         const val EXTRA_SECTION = "extra_section"
         const val EXTRA_CLASSIC_THEME = "extra_classic_theme"
         const val EXTRA_COMPOSE_THEME = "extra_compose_theme"
-
-        private const val NO_THEME_OVERRIDE = -1
 
         private const val CLASSIC_TAB_POS = 0
         private const val COMPOSE_TAB_POS = 1

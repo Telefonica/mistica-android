@@ -25,8 +25,8 @@ import com.telefonica.mistica.list.layout.configureWithFullWidthLayout
 class CatalogMainActivity : AppCompatActivity() {
 
     @StyleRes
-    private var classicThemeOverride: Int? = null
-    private var composeThemeOverride: Brand = DEFAULT_COMPOSE_BRAND
+    private var classicThemeOverride: Int = DEFAULT_CLASSIC_THEME
+    private var composeThemeOverride: Brand = DEFAULT_COMPOSE_THEME
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -120,7 +120,7 @@ class CatalogMainActivity : AppCompatActivity() {
                     Intent(this@CatalogMainActivity, ComponentCatalogActivity::class.java)
                         .putExtra(ComponentCatalogActivity.EXTRA_SECTION, section.sectionToOpen)
                         .apply {
-                            classicThemeOverride?.let { putExtra(ComponentCatalogActivity.EXTRA_CLASSIC_THEME, it) }
+                            putExtra(ComponentCatalogActivity.EXTRA_CLASSIC_THEME, classicThemeOverride)
                             putExtra(ComponentCatalogActivity.EXTRA_COMPOSE_THEME, composeThemeOverride)
                             context.startActivity(this)
                         }
@@ -134,6 +134,7 @@ class CatalogMainActivity : AppCompatActivity() {
     }
 
     companion object {
-        val DEFAULT_COMPOSE_BRAND = MovistarBrand
+        val DEFAULT_CLASSIC_THEME = R.style.MisticaTheme_Telefonica
+        val DEFAULT_COMPOSE_THEME = TelefonicaBrand
     }
 }
