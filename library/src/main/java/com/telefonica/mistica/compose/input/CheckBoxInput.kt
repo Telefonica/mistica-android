@@ -15,6 +15,7 @@ fun CheckBoxInput(
     links: List<TextLink> = emptyList(),
     errorText: String? = null,
     checked: Boolean = false,
+    isInverse: Boolean = false,
     enabled: Boolean = true,
     onCheckedChange: (Boolean) -> Unit = {},
 ) {
@@ -31,6 +32,7 @@ fun CheckBoxInput(
             isError = errorText?.isNotEmpty() ?: false,
             errorText = errorText,
             helperText = null,
+            isInverse = isInverse,
             underlineEnd = null,
         )
     }
