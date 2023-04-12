@@ -143,6 +143,9 @@
 
         <!-- Compose -->
         <item name="composeBrand">o2</item>
+
+        <!-- Title -->
+        <item name="titleStyle">title1</item>
     </style>
 
 </resources>

@@ -14,10 +14,10 @@ import com.telefonica.mistica.compose.theme.MisticaTheme
 @Composable
 fun Title(
     modifier: Modifier = Modifier,
-    style: TitleStyle,
+    style: TitleStyle = MisticaTheme.values.titleStyle,
     text: String,
     linkText: String? = null,
-    onLinkClicked: (() -> Unit)? = null
+    onLinkClicked: (() -> Unit)? = null,
 ) {
     Row(
         modifier = modifier,
@@ -77,7 +77,7 @@ private fun TitleText(
 private fun Link(
     modifier: Modifier,
     text: String,
-    onClick: (() -> Unit)? = null
+    onClick: (() -> Unit)? = null,
 ) {
     val linkModifier = if (onClick != null) {
         modifier.then(Modifier.clickable { onClick() })
