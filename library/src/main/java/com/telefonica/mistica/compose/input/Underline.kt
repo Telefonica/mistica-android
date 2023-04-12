@@ -99,3 +99,27 @@ private data class TextInputColors(
 )
 
 private val LocalTextInputColors = compositionLocalOf { TextInputColors() }
+
+@Preview(showBackground = true)
+@Composable
+fun PreviewUnderlineErrorText() {
+    Underline(
+        isError = true,
+        errorText = "Error",
+        helperText = "Helper text",
+        isInverse = false,
+        underlineEnd = null,
+    )
+}
+
+@Preview(showBackground = true)
+@Composable
+fun PreviewUnderlineHelperText() {
+    Underline(
+        isError = false,
+        errorText = null,
+        helperText = "Helper text",
+        isInverse = false,
+        underlineEnd = null,
+    )
+}
