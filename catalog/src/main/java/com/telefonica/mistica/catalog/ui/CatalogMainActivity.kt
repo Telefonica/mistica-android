@@ -57,6 +57,7 @@ class CatalogMainActivity : AppCompatActivity() {
                     styles.map { it.first }
                 )
             )
+
             dropDown.onItemClickListener =
                 AdapterView.OnItemClickListener { _, _, position, _ ->
                     classicThemeOverride = styles[position].second

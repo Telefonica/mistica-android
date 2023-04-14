@@ -12,7 +12,7 @@ jobs:
       - name: Build library
         uses: docker://docker.tuenti.io/android/novum_android_api31:2
         with:
-          args: 'bash ./gradlew clean :library:assembleRelease :catalog:assembleRelease :catalog-compose:assembleRelease'
+          args: 'bash ./gradlew clean :library:assembleRelease :catalog:assembleRelease
 
       - name: Release library
         uses: docker://docker.tuenti.io/android/novum_android_api31:2
@@ -25,5 +25,4 @@ jobs:
         with:
           args: "bash ./gradlew :library:publishReleasePublicationToSonatypeRepository -DLIBRARY_VERSION=${{ github.event.release.tag_name }}
           :catalog:publishCatalogPublicationToSonatypeRepository -DLIBRARY_VERSION=${{ github.event.release.tag_name }}
-          :catalog-compose:publishCatalogComposePublicationToSonatypeRepository -DLIBRARY_VERSION=${{ github.event.release.tag_name }}
           --max-workers 1 closeAndReleaseStagingRepository"

@@ -1,4 +1,3 @@
 include ':app'
 include ':library'
 include ':catalog'
-include ':catalog-compose'
