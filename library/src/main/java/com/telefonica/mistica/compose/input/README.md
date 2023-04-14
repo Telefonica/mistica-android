@@ -11,7 +11,5 @@ Current Composable input types:
 * `EmailInput`
 * `PasswordInput`
 * `TextAreaInput`
+* `CheckBoxInput`
 * `DropDownInput` (Implemented with `AndroidView`)
-
-**Note**: not every input component is migrated yet to compose. Those components that need to be migrated at some point are:
-* Check Box Input (from `com.telefonica.mistica.input.CheckBoxInput`)
