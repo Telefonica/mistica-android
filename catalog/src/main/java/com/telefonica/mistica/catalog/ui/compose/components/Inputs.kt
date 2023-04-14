@@ -24,6 +24,7 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.button.Button
 import com.telefonica.mistica.compose.button.ButtonStyle
+import com.telefonica.mistica.compose.input.CheckBoxInput
 import com.telefonica.mistica.compose.input.DropDownInput
 import com.telefonica.mistica.compose.input.EmailInput
 import com.telefonica.mistica.compose.input.LimitCharacters
@@ -31,6 +32,7 @@ import com.telefonica.mistica.compose.input.PasswordInput
 import com.telefonica.mistica.compose.input.PhoneInput
 import com.telefonica.mistica.compose.input.TextAreaInput
 import com.telefonica.mistica.compose.input.TextInput
+import com.telefonica.mistica.compose.input.TextLink
 import com.telefonica.mistica.compose.theme.MisticaTheme
 
 @Composable
@@ -68,6 +70,8 @@ fun Inputs() {
         PhoneInputWithValidation()
         Title("Text Area input")
         TextAreaInputSample()
+        Title("Check Box input")
+        CheckBoxInputSample()
         Title("Dropdown")
         DropDownSample()
         Title("Disable Dropdown")
@@ -350,6 +354,34 @@ fun TextAreaInputSample() {
         label = "Type Something",
         helperText = "Helper Text",
         maxChars = LimitCharacters.Limited(200),
+    )
+}
+
+@Composable
+fun CheckBoxInputSample() {
+    val message =
+        "I have read and agree to the promotion's Legal Grounds and Privacy Policy legal warning. (Tap on links to show error)."
+    var errorText by remember { mutableStateOf("") }
+    val links = listOf(
+        TextLink(
+            link = "Legal Grounds",
+            onLinkTapped = { errorText = "Error Text! Tapped on Legal Grounds" },
+        ),
+        TextLink(
+            link = "Privacy Policy",
+            onLinkTapped = { errorText = "Error Text! Tapped on Privacy Policy" },
+        ),
+    )
+    var checked by remember { mutableStateOf(false) }
+    CheckBoxInput(
+        checked = checked,
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(top = 8.dp, start = 16.dp, end = 16.dp),
+        text = message,
+        errorText = errorText,
+        links = links,
+        onCheckedChange = { checked = !checked },
     )
 }
 
