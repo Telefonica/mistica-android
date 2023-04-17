@@ -8,9 +8,9 @@ _Provide a description of the implementation. A list of steps would be ideal._
 * _Step 3_
 
 ### ☑️ Checks
-- [ ] I updated the documentation (readmes, wikis, etc). If no need to update documentation explain why.
+- [ ] I updated the documentation, including readmes and wikis. If this is a breaking change, update [UPGRADING.md](./UPGRADING.md) to inform users how to proceed. If no updates are necessary, indicate so.
 - [ ] Tested with dark mode.
-- [ ] Tested with API 21.
+- [ ] Tested with API 23.
 
 ### :test_tube: How can I test this?
 _If it cannot be tested explain why._
