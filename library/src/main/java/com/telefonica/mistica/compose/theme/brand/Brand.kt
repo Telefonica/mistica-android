@@ -1,12 +1,11 @@
 package com.telefonica.mistica.compose.theme.brand
 
-import android.os.Parcelable
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import com.telefonica.mistica.compose.theme.color.MisticaColors
 import com.telefonica.mistica.compose.title.TitleStyle
 
-interface Brand: Parcelable {
+interface Brand {
     val compatibilityTheme: Int
     val lightColors: MisticaColors
     val darkColors: MisticaColors
@@ -23,3 +22,5 @@ interface Brand: Parcelable {
     val titleStyle: TitleStyle
         get() = TitleStyle.TITLE_1
 }
+
+enum class BrandType { BLAU, MOVISTAR, O2, TELEFONICA, VIVO }

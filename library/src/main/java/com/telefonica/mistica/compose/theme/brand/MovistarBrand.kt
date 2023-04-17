@@ -5,16 +5,12 @@ import androidx.compose.ui.text.font.FontWeight
 import com.telefonica.mistica.R
 import com.telefonica.mistica.compose.theme.color.MisticaColors
 import com.telefonica.mistica.compose.title.TitleStyle
-import kotlinx.parcelize.IgnoredOnParcel
-import kotlinx.parcelize.Parcelize
 
-@Parcelize
 object MovistarBrand : Brand {
 
     override val compatibilityTheme: Int
         get() = R.style.MisticaTheme_Movistar
 
-    @IgnoredOnParcel
     override val lightColors = MisticaColors(
         appBarBackground = MovistarPaletteColor.movistar_color_white,
         background = MovistarPaletteColor.movistar_color_white,

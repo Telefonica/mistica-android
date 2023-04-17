@@ -1,3 +1,5 @@
+@file:Suppress("DEPRECATION")
+
 package com.telefonica.mistica.catalog.ui
 
 import android.os.Build
@@ -14,6 +16,7 @@ import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
 import com.telefonica.mistica.catalog.databinding.ScreenComponentCatalogBinding
 import com.telefonica.mistica.catalog.ui.CatalogMainActivity.Companion.DEFAULT_CLASSIC_THEME
+import com.telefonica.mistica.catalog.ui.CatalogMainActivity.Companion.DEFAULT_BRAND_TYPE
 import com.telefonica.mistica.catalog.ui.CatalogMainActivity.Companion.DEFAULT_COMPOSE_THEME
 import com.telefonica.mistica.catalog.ui.classic.components.BadgesCatalogFragment
 import com.telefonica.mistica.catalog.ui.classic.components.ButtonsCatalogFragment
@@ -57,7 +60,14 @@ import com.telefonica.mistica.catalog.ui.compose.components.TabsCatalog
 import com.telefonica.mistica.catalog.ui.compose.components.Tags
 import com.telefonica.mistica.catalog.ui.compose.components.Texts
 import com.telefonica.mistica.catalog.ui.compose.components.Titles
+import com.telefonica.mistica.compose.theme.brand.BlauBrand
 import com.telefonica.mistica.compose.theme.brand.Brand
+import com.telefonica.mistica.compose.theme.brand.BrandType
+import com.telefonica.mistica.compose.theme.brand.BrandType.*
+import com.telefonica.mistica.compose.theme.brand.MovistarBrand
+import com.telefonica.mistica.compose.theme.brand.O2Brand
+import com.telefonica.mistica.compose.theme.brand.TelefonicaBrand
+import com.telefonica.mistica.compose.theme.brand.VivoBrand
 
 class ComponentCatalogActivity : FragmentActivity() {
 
@@ -126,11 +136,13 @@ class ComponentCatalogActivity : FragmentActivity() {
 
     private fun setUpThemes() {
         classicThemeOverride = intent.getIntExtra(EXTRA_CLASSIC_THEME, DEFAULT_CLASSIC_THEME)
-        composeThemeOverride = (if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            intent.getParcelableExtra(EXTRA_COMPOSE_THEME, Brand::class.java)
-        } else {
-            intent.getParcelableExtra(EXTRA_COMPOSE_THEME)
-        }) ?: DEFAULT_COMPOSE_THEME
+        composeThemeOverride = when ((intent.getSerializableExtra(EXTRA_COMPOSE_THEME) ?: DEFAULT_BRAND_TYPE) as BrandType) {
+            MOVISTAR -> MovistarBrand
+            O2 -> O2Brand
+            VIVO -> VivoBrand
+            TELEFONICA -> TelefonicaBrand
+            BLAU -> BlauBrand
+        }
 
         setTheme(classicThemeOverride)
     }
