@@ -30,6 +30,7 @@ fun Feedbacks(
     var subtitle: String by remember { mutableStateOf("") }
     var errorReference: String by remember { mutableStateOf("") }
     var firstButtonText: String? by remember { mutableStateOf(null) }
+    var firstButtonLoadingText: String? by remember { mutableStateOf(null) }
     var secondButtonText: String? by remember { mutableStateOf(null) }
     var isFirstButtonLoading: Boolean by remember { mutableStateOf(false) }
     var type: Int by remember { mutableStateOf(FeedbackScreenView.TYPE_INFO) }
@@ -41,6 +42,7 @@ fun Feedbacks(
             subtitle = subtitle,
             errorReference = errorReference,
             firstButtonText = firstButtonText,
+            firstButtonLoadingText = firstButtonLoadingText,
             secondButtonText = secondButtonText,
             firstButtonOnClick = {},
             secondButtonOnClick = {},
@@ -57,6 +59,7 @@ fun Feedbacks(
             OutlinedTextField(value = subtitle, onValueChange = { subtitle = it }, label = { Text("Subtitle") })
             OutlinedTextField(value = errorReference, onValueChange = { errorReference = it }, label = { Text("Error Reference") })
             OutlinedTextField(value = firstButtonText ?: "", onValueChange = { firstButtonText = it }, label = { Text("First Button") })
+            OutlinedTextField(value = firstButtonLoadingText ?: "", onValueChange = { firstButtonLoadingText = it }, label = { Text("First Button Loading") })
             OutlinedTextField(value = secondButtonText ?: "", onValueChange = { secondButtonText = it }, label = { Text("Second Button") })
             Row {
                 Text("First button loading")

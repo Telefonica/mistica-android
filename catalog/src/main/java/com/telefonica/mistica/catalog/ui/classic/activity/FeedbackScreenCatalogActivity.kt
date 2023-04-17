@@ -20,6 +20,7 @@ class FeedbackScreenCatalogActivity : AppCompatActivity() {
     @LayoutRes
     var customContentLayout: Int? = null
     var firstButtonText: String? = null
+    var firstButtonLoadingText: String? = null
     var secondButtonText: String? = null
     var showSecondButtonAsLink: Boolean? = null
     var showLoadingInButton: Boolean? = null
@@ -42,6 +43,7 @@ class FeedbackScreenCatalogActivity : AppCompatActivity() {
             errorReference?.let { setFeedbackErrorReference(it) }
             customContentLayout?.let { setCustomContentLayout(it) }
             firstButtonText?.let { setFeedbackFirstButtonText(it) }
+            firstButtonLoadingText?.let { setFeedbackFirstButtonLoadingText(it) }
             secondButtonText?.let { setFeedbackSecondButtonText(it) }
             showSecondButtonAsLink?.let { setFeedbackSecondButtonAsLink(it) }
             setFirstButtonOnClick(View.OnClickListener {
@@ -69,6 +71,7 @@ class FeedbackScreenCatalogActivity : AppCompatActivity() {
         ).takeIf { it != INVALID_DEFAULT_VALUE }
         firstButtonText = intent.getStringExtra(EXTRA_FIRST_BUTTON_TEXT)
         secondButtonText = intent.getStringExtra(EXTRA_SECOND_BUTTON_TEXT)
+        firstButtonLoadingText = intent.getStringExtra(EXTRA_FIRST_BUTTON_LOADING_TEXT)
         showSecondButtonAsLink = intent.getBooleanExtra(
             EXTRA_SHOW_SECOND_BUTTON_AS_LINK,
             SHOW_SECOND_BUTTON_AS_LINK_DEFAULT_VALUE
@@ -90,6 +93,7 @@ class FeedbackScreenCatalogActivity : AppCompatActivity() {
         const val EXTRA_ERROR_REFERENCE = "extra_error_reference"
         const val EXTRA_CUSTOM_CONTENT = "extra_custom_content"
         const val EXTRA_FIRST_BUTTON_TEXT = "extra_first_button_text"
+        const val EXTRA_FIRST_BUTTON_LOADING_TEXT = "extra_first_button_loading_text"
         const val EXTRA_SECOND_BUTTON_TEXT = "extra_second_button_text"
         const val EXTRA_SHOW_SECOND_BUTTON_AS_LINK = "extra_second_button_as_link"
         const val EXTRA_SHOW_LOADING_IN_BUTTON = "extra_show_loading_in_button"

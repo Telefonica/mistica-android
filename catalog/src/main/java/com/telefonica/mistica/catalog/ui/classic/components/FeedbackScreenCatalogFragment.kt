@@ -39,6 +39,7 @@ class FeedbackScreenCatalogFragment(
         val inputSubtitle: TextInput = view.findViewById(R.id.input_feedback_subtitle)
         val inputErrorReference: TextInput = view.findViewById(R.id.input_feedback_error_reference)
         val inputFirstButtonText: TextInput = view.findViewById(R.id.input_feedback_first_button)
+        val inputFirstButtonLoadingText: TextInput = view.findViewById(R.id.input_feedback_first_loading_button)
         val inputSecondButtonText: TextInput = view.findViewById(R.id.input_feedback_second_button)
         val checkBoxSecondButtonAsLink: CheckBoxInput = view.findViewById(R.id.check_feedback_second_button_as_link)
         val checkBoxShowLoadingInButton: CheckBoxInput = view.findViewById(R.id.check_feedback_show_loading_in_button)
@@ -63,6 +64,7 @@ class FeedbackScreenCatalogFragment(
                 subtitle = inputSubtitle.toNullableString(),
                 errorReference = inputErrorReference.toNullableString(),
                 firstButtonText = inputFirstButtonText.toNullableString(),
+                firstButtonLoadingText = inputFirstButtonLoadingText.toNullableString(),
                 secondButtonText = inputSecondButtonText.toNullableString(),
                 showSecondButtonAsLink = checkBoxSecondButtonAsLink.isChecked(),
                 showLoadingInButton = checkBoxShowLoadingInButton.isChecked()
@@ -78,6 +80,7 @@ class FeedbackScreenCatalogFragment(
         errorReference: String?,
         @LayoutRes customContentLayout: Int = FeedbackScreenCatalogActivity.INVALID_DEFAULT_VALUE,
         firstButtonText: String?,
+        firstButtonLoadingText: String?,
         secondButtonText: String?,
         showSecondButtonAsLink: Boolean = FeedbackScreenCatalogActivity.SHOW_SECOND_BUTTON_AS_LINK_DEFAULT_VALUE,
         showLoadingInButton: Boolean = FeedbackScreenCatalogActivity.SHOW_LOADING_IN_BUTTON_DEFAULT_VALUE
@@ -88,6 +91,7 @@ class FeedbackScreenCatalogFragment(
             putExtra(FeedbackScreenCatalogActivity.EXTRA_SUBTITLE, subtitle)
             putExtra(FeedbackScreenCatalogActivity.EXTRA_ERROR_REFERENCE, errorReference)
             putExtra(FeedbackScreenCatalogActivity.EXTRA_FIRST_BUTTON_TEXT, firstButtonText)
+            putExtra(FeedbackScreenCatalogActivity.EXTRA_FIRST_BUTTON_LOADING_TEXT, firstButtonLoadingText)
             putExtra(FeedbackScreenCatalogActivity.EXTRA_SECOND_BUTTON_TEXT, secondButtonText)
             putExtra(FeedbackScreenCatalogActivity.EXTRA_CUSTOM_CONTENT, customContentLayout)
             putExtra(

@@ -63,6 +63,7 @@ class FeedbackScreenView : ConstraintLayout {
     @LayoutRes
     private var customContentLayout: Int? = null
     private var firstButtonText: CharSequence = ""
+    private var firstButtonLoadingText: CharSequence = ""
     private var secondButtonText: CharSequence = ""
     private var secondButtonAsLink: Boolean = false
     private var isIconAnimated: Boolean = false
@@ -126,6 +127,11 @@ class FeedbackScreenView : ConstraintLayout {
         firstButton.visibility = if (text.isBlank()) View.GONE else View.VISIBLE
     }
 
+    fun setFeedbackFirstButtonLoadingText(text: CharSequence) {
+        firstButtonLoadingText = text
+        firstButton.setLoadingText(text)
+    }
+
     fun setFeedbackSecondButtonText(text: CharSequence) {
         secondButtonText = text
         secondButton.text = text
@@ -182,6 +188,8 @@ class FeedbackScreenView : ConstraintLayout {
                 .takeIf { it != TypedValue.TYPE_NULL }
             styledAttrs.getText(R.styleable.FeedbackScreen_feedbackFirstButtonText)
                 ?.let { firstButtonText = it }
+            styledAttrs.getText(R.styleable.FeedbackScreen_feedbackFirstButtonLoadingText)
+                ?.let { firstButtonLoadingText = it }
             styledAttrs.getText(R.styleable.FeedbackScreen_feedbackSecondButtonText)
                 ?.let { secondButtonText = it }
             secondButtonAsLink =
@@ -315,6 +323,7 @@ class FeedbackScreenView : ConstraintLayout {
 
         firstButton = findViewById(R.id.first_button)
         setFeedbackFirstButtonText(firstButtonText)
+        setFeedbackFirstButtonLoadingText(firstButtonLoadingText)
         firstButtonClickListener?.let { setFirstButtonOnClick(it) }
         firstButton.setIsLoading(isLoading)
 

@@ -63,6 +63,14 @@
             app:inputHint="Feedback First Button Text" />
 
         <com.telefonica.mistica.input.TextInput
+			android:id="@+id/input_feedback_first_loading_button"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="8dp"
+			android:inputType="text"
+			app:inputHint="Feedback First Button Loading Text" />
+
+        <com.telefonica.mistica.input.TextInput
             android:id="@+id/input_feedback_second_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

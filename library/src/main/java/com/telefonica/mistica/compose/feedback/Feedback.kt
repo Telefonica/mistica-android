@@ -19,6 +19,7 @@ fun Feedback(
     subtitle: String = "",
     errorReference: String = "",
     firstButtonText: String?,
+    firstButtonLoadingText: String? = null,
     secondButtonText: String? = null,
     firstButtonOnClick: (() -> Unit)?,
     secondButtonOnClick: (() -> Unit)? = null,
@@ -45,6 +46,7 @@ fun Feedback(
                 setFeedbackSubtitle(subtitle)
                 setFeedbackErrorReference(errorReference)
                 firstButtonText?.let { setFeedbackFirstButtonText(firstButtonText) }
+                firstButtonLoadingText?.let { setFeedbackFirstButtonLoadingText(firstButtonLoadingText) }
                 secondButtonText?.let { setFeedbackSecondButtonText(secondButtonText) }
                 firstButtonOnClick?.let { setFirstButtonOnClick { firstButtonOnClick() } }
                 secondButtonOnClick?.let { setSecondButtonOnClick { secondButtonOnClick() } }
