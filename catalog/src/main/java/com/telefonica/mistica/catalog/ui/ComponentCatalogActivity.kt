@@ -87,32 +87,84 @@ class ComponentCatalogActivity : FragmentActivity() {
 
     private fun showComponentCatalog() {
         when (intent.getSerializableExtra(EXTRA_SECTION)) {
-            Section.TEXTS -> setPageAdapterWithTabs(TextPresetsCatalogFragment()) { Texts() }
-            Section.TITLES -> setPageAdapterWithTabs(TitleCatalogFragment()) { Titles() }
-            Section.BUTTONS -> setPageAdapterWithTabs(ButtonsCatalogFragment()) { Buttons() }
-            Section.INPUTS -> setPageAdapterWithTabs(InputsCatalogFragment()) { Inputs() }
-            Section.SNACKBARS -> setPageAdapterWithTabs(SnackBarCatalogFragment(), null)
-            Section.FEEDBACKS -> setPageAdapterWithTabs(FeedbackScreenCatalogFragment(classicThemeOverride)) { Feedbacks() }
-            Section.LOAD_ERROR_FEEDBACK -> setPageAdapterWithTabs(LoadErrorFeedbackCatalogFragment()) { LoadErrorFeedbacks() }
-            Section.POPOVERS -> setPageAdapterWithTabs(PopOverCatalogFragment(), null)
-            Section.BADGES -> setPageAdapterWithTabs(BadgesCatalogFragment(), null)
-            Section.OTHERS -> setPageAdapterWithTabs(OthersCatalogFragment(), null)
-            Section.SCROLL_CONTENT_INDICATOR -> setPageAdapterWithTabs(ScrollContentIndicatorCatalogFragment(), null)
-            Section.TAG -> setPageAdapterWithTabs(TagsCatalogFragment()) { Tags() }
-            Section.LISTS -> setPageAdapterWithTabs(ListsCatalogFragment()) { Lists() }
-            Section.MEDIA_CARDS -> setPageAdapterWithTabs(MediaCardsFragment()) { MediaCards() }
-            Section.DATA_CARDS -> setPageAdapterWithTabs(DataCardFragment()) { DataCards() }
-            Section.HEADERS -> setPageAdapterWithTabs(HeadersCatalogFragment(), null)
-            Section.HIGHLIGHTED_CARDS -> setPageAdapterWithTabs(HighlightedCardsCatalogFragment(), null)
-            Section.CONTROLS -> setPageAdapterWithTabs(ControlsCatalogFragment(), null)
-            Section.STEPPERS -> setPageAdapterWithTabs(SteppersCatalogFragment()) { Steppers() }
-            Section.TABS -> setPageAdapterWithTabs(TabsCatalogFragment()) { TabsCatalog() }
-            Section.EMPTY_STATE -> setPageAdapterWithTabs(EmptyStateScreenCatalogFragment(classicThemeOverride)) { EmptyStateScreens() }
-            Section.EMPTY_STATE_CARD -> setPageAdapterWithTabs(EmptyStateCardCatalogFragment()) { EmptyStateCards() }
-            Section.CALLOUTS -> setPageAdapterWithTabs(CalloutsCatalogFragment()) { Callouts() }
-            Section.SHEET -> setPageAdapterWithTabs(SheetCatalogFragment(), null)
-            Section.CAROUSEL -> setPageAdapterWithTabs(CarouselFragment()) { Carousels() }
-            else -> setPageAdapterWithTabs(OthersCatalogFragment(), null)
+            Section.TEXTS -> setPageAdapterWithTabs(
+                classicComponent = TextPresetsCatalogFragment(),
+                composeComponent = { Texts() })
+            Section.TITLES -> setPageAdapterWithTabs(
+                classicComponent = TitleCatalogFragment(),
+                composeComponent = { Titles() })
+            Section.BUTTONS -> setPageAdapterWithTabs(
+                classicComponent = ButtonsCatalogFragment(),
+                composeComponent = { Buttons() })
+            Section.INPUTS -> setPageAdapterWithTabs(
+                classicComponent = InputsCatalogFragment(),
+                composeComponent = { Inputs() })
+            Section.SNACKBARS -> setPageAdapterWithTabs(
+                classicComponent = SnackBarCatalogFragment(),
+                composeComponent = null)
+            Section.FEEDBACKS -> setPageAdapterWithTabs(
+                classicComponent = FeedbackScreenCatalogFragment(classicThemeOverride),
+                composeComponent = { Feedbacks() })
+            Section.LOAD_ERROR_FEEDBACK -> setPageAdapterWithTabs(
+                classicComponent = LoadErrorFeedbackCatalogFragment(),
+                composeComponent = { LoadErrorFeedbacks() })
+            Section.POPOVERS -> setPageAdapterWithTabs(
+                classicComponent = PopOverCatalogFragment(),
+                composeComponent = null)
+            Section.BADGES -> setPageAdapterWithTabs(
+                classicComponent = BadgesCatalogFragment(),
+                composeComponent = null)
+            Section.OTHERS -> setPageAdapterWithTabs(
+                classicComponent = OthersCatalogFragment(),
+                composeComponent = null)
+            Section.SCROLL_CONTENT_INDICATOR -> setPageAdapterWithTabs(
+                classicComponent = ScrollContentIndicatorCatalogFragment(),
+                composeComponent = null)
+            Section.TAG -> setPageAdapterWithTabs(
+                classicComponent = TagsCatalogFragment(),
+                composeComponent = { Tags() })
+            Section.LISTS -> setPageAdapterWithTabs(
+                classicComponent = ListsCatalogFragment(),
+                composeComponent = { Lists() })
+            Section.MEDIA_CARDS -> setPageAdapterWithTabs(
+                classicComponent = MediaCardsFragment(),
+                composeComponent = { MediaCards() })
+            Section.DATA_CARDS -> setPageAdapterWithTabs(
+                classicComponent = DataCardFragment(),
+                composeComponent = { DataCards() })
+            Section.HEADERS -> setPageAdapterWithTabs(
+                classicComponent = HeadersCatalogFragment(),
+                composeComponent = null)
+            Section.HIGHLIGHTED_CARDS -> setPageAdapterWithTabs(
+                classicComponent = HighlightedCardsCatalogFragment(),
+                composeComponent = null)
+            Section.CONTROLS -> setPageAdapterWithTabs(
+                classicComponent = ControlsCatalogFragment(),
+                composeComponent = null)
+            Section.STEPPERS -> setPageAdapterWithTabs(
+                classicComponent = SteppersCatalogFragment(),
+                composeComponent = { Steppers() })
+            Section.TABS -> setPageAdapterWithTabs(
+                classicComponent = TabsCatalogFragment(),
+                composeComponent = { TabsCatalog() })
+            Section.EMPTY_STATE -> setPageAdapterWithTabs(
+                classicComponent = EmptyStateScreenCatalogFragment(classicThemeOverride),
+                composeComponent = { EmptyStateScreens() })
+            Section.EMPTY_STATE_CARD -> setPageAdapterWithTabs(
+                classicComponent = EmptyStateCardCatalogFragment(),
+                composeComponent = { EmptyStateCards() })
+            Section.CALLOUTS -> setPageAdapterWithTabs(
+                classicComponent = CalloutsCatalogFragment(),
+                composeComponent = { Callouts() })
+            Section.SHEET -> setPageAdapterWithTabs(
+                classicComponent = SheetCatalogFragment(),
+                composeComponent = null)
+            Section.CAROUSEL -> setPageAdapterWithTabs(
+                classicComponent = CarouselFragment(),
+                composeComponent = { Carousels() })
+            else -> setPageAdapterWithTabs(
+                classicComponent = OthersCatalogFragment(),
+                composeComponent = null)
         }
     }
 
