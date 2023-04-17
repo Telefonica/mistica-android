@@ -82,7 +82,6 @@ dependencies {
     implementation "androidx.appcompat:appcompat:$androidx_appcompat_version"
 
     implementation project(':catalog')
-    implementation project(':catalog-compose')
     implementation project(':library')
 
     testImplementation 'junit:junit:4.13'

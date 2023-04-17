@@ -13,11 +13,11 @@ android {
         targetSdkVersion 33
 
         buildConfigField "String", "APPCENTER_KEY", "\"" + System.env.APPCENTER_KEY + "\""
+        vectorDrawables {
+            useSupportLibrary true
+        }
     }
 
-    buildFeatures {
-        dataBinding true
-    }
 
     lintOptions {
         warningsAsErrors true
@@ -39,12 +39,21 @@ task sourceJar(type: Jar) {
 }
 
 dependencies {
-
     implementation project(':library')
-    implementation 'androidx.activity:activity-compose:1.4.0'
+
+    implementation platform("androidx.compose:compose-bom:$compose_bom_version")
     implementation "com.google.accompanist:accompanist-pager:$accompanist_version"
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation "androidx.compose.ui:ui"
+    implementation "androidx.compose.material:material"
+    implementation "androidx.compose.ui:ui-tooling-preview"
+    implementation "androidx.activity:activity-compose:$androidx_activity_compose_version"
+    implementation "com.google.android.material:compose-theme-adapter:1.2.1"
+    implementation "androidx.navigation:navigation-compose:2.5.3"
+    implementation "io.coil-kt:coil-compose:$coil_version"
 
     testImplementation 'junit:junit:4.13'
+    debugImplementation "androidx.compose.ui:ui-tooling"
 }
 
 apply from: "${rootProject.projectDir}/mavencentral.gradle"
