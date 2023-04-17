@@ -35,6 +35,7 @@
         <attr name="feedbackCustomContentLayout" format="reference" />
         <attr name="feedbackErrorReference" format="string" />
         <attr name="feedbackFirstButtonText" format="string" />
+        <attr name="feedbackFirstButtonLoadingText" format="string" />
         <attr name="feedbackSecondButtonText" format="string" />
         <attr name="feedbackSecondButtonAsLink" format="boolean" />
 
