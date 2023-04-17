@@ -1,6 +1,5 @@
 package com.telefonica.mistica.catalog.ui.compose.components
 
-import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -172,8 +171,8 @@ fun samples() = listOf(
     ),
 )
 
-@ExperimentalFoundationApi
-@ExperimentalMaterialApi
+
+@OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun Lists() {
     val samples = samples()

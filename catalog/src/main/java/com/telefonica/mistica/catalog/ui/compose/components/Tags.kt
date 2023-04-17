@@ -1,6 +1,5 @@
 package com.telefonica.mistica.catalog.ui.compose.components
 
-import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -27,7 +26,6 @@ import com.telefonica.mistica.compose.theme.MisticaTheme
 import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 import com.telefonica.mistica.tag.TagView
 
-@ExperimentalFoundationApi
 @Composable
 fun Tags() {
     val customText = remember { mutableStateOf(TextFieldValue("Promotion")) }
@@ -113,7 +111,6 @@ fun Tags() {
     }
 }
 
-@ExperimentalFoundationApi
 @Preview(showBackground = true)
 @Composable
 fun TagPreview() {

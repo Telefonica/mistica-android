@@ -15,7 +15,7 @@ class ComponentComposeFragment(private val theme: Brand, private val component: 
         return ComposeView(requireContext()).apply {
             setContent {
                 MisticaTheme(theme) {
-                    component.invoke()
+                    component()
                 }
             }
         }

@@ -2,11 +2,8 @@
 
 package com.telefonica.mistica.catalog.ui
 
-import android.os.Build
 import android.os.Bundle
 import androidx.annotation.StyleRes
-import androidx.compose.foundation.ExperimentalFoundationApi
-import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.Composable
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
@@ -15,8 +12,8 @@ import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
 import com.telefonica.mistica.catalog.databinding.ScreenComponentCatalogBinding
-import com.telefonica.mistica.catalog.ui.CatalogMainActivity.Companion.DEFAULT_CLASSIC_THEME
 import com.telefonica.mistica.catalog.ui.CatalogMainActivity.Companion.DEFAULT_BRAND_TYPE
+import com.telefonica.mistica.catalog.ui.CatalogMainActivity.Companion.DEFAULT_CLASSIC_THEME
 import com.telefonica.mistica.catalog.ui.CatalogMainActivity.Companion.DEFAULT_COMPOSE_THEME
 import com.telefonica.mistica.catalog.ui.classic.components.BadgesCatalogFragment
 import com.telefonica.mistica.catalog.ui.classic.components.ButtonsCatalogFragment
@@ -88,7 +85,6 @@ class ComponentCatalogActivity : FragmentActivity() {
         showComponentCatalog()
     }
 
-    @OptIn(ExperimentalFoundationApi::class, ExperimentalMaterialApi::class)
     private fun showComponentCatalog() {
         when (intent.getSerializableExtra(EXTRA_SECTION)) {
             Section.TEXTS -> setPageAdapterWithTabs(TextPresetsCatalogFragment()) { Texts() }

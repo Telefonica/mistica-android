@@ -1,6 +1,5 @@
 package com.telefonica.mistica.catalog.ui.compose.components
 
-import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
@@ -22,7 +21,6 @@ import com.telefonica.mistica.compose.carousel.rememberCarouselState
 import com.telefonica.mistica.compose.tag.Tag
 import com.telefonica.mistica.tag.TagView
 
-@ExperimentalFoundationApi
 @Composable
 fun Carousels() {
     val carouselState = rememberCarouselState()
