@@ -13,6 +13,7 @@ var showFeedback by remember { mutableStateOf(false) }
 var title: String by remember { mutableStateOf("") }
 var subtitle: String by remember { mutableStateOf("") }
 var firstButtonText: String? by remember { mutableStateOf(null) }
+var firstButtonLoadingText: String? by remember { mutableStateOf(null) }
 var secondButtonText: String? by remember { mutableStateOf(null) }
 var isFirstButtonLoading: Boolean by remember { mutableStateOf(false) }
 var type: Int by remember { mutableStateOf(FeedbackScreenView.TYPE_INFO) }
@@ -23,6 +24,7 @@ if (showFeedback) {
         title = title,
         subtitle = subtitle,
         firstButtonText = firstButtonText,
+        firstButtonLoadingText = firstButtonLoadingText,
         secondButtonText = secondButtonText,
         firstButtonOnClick = {},
         secondButtonOnClick = {},
