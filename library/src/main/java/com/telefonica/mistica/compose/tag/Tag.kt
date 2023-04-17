@@ -2,7 +2,6 @@ package com.telefonica.mistica.compose.tag
 
 import android.annotation.SuppressLint
 import androidx.annotation.DrawableRes
-import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -38,7 +37,6 @@ import com.telefonica.mistica.tag.TagView.Companion.TYPE_INVERSE
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_PROMO
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_SUCCESS
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_WARNING
-import java.util.Locale
 
 @Composable
 fun Tag(
@@ -115,7 +113,6 @@ class Tag constructor(
     }
 }
 
-@ExperimentalFoundationApi
 @Preview(showBackground = true)
 @Composable
 internal fun TagPreview() {

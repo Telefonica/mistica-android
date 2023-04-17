@@ -22,3 +22,5 @@ interface Brand {
     val titleStyle: TitleStyle
         get() = TitleStyle.TITLE_1
 }
+
+enum class BrandType { BLAU, MOVISTAR, O2, TELEFONICA, VIVO }
