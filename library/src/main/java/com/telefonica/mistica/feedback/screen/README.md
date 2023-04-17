@@ -24,6 +24,7 @@ In order to configure it for the specific purpose, it supports both **attribute 
     <attr name="feedbackErrorReference" format="string"/>
     <attr name="feedbackCustomContentLayout" format="reference"/>
     <attr name="feedbackFirstButtonText" format="string"/>
+	<attr name="feedbackFirstButtonLoadingText" format="string"/>
     <attr name="feedbackSecondButtonText" format="string"/>
     <attr name="feedbackSecondButtonAsLink" format="boolean"/>
 
@@ -44,6 +45,8 @@ In order to configure it for the specific purpose, it supports both **attribute 
 `feedbackCustomContentLayout` -> (Optional) Allows specifying a layout resource that will be inflated, showing its contents below the feedback subtitle.
 
 `feedbackFirstButtonText` -> (Optional) Allows specifying a Text for the first feedback button. A primary button will be displayed if text is not empty.
+
+`feedbackFirstButtonLoadingText` -> (Optional) Allows specifying a Text for the first feedback button loading state, showing this text when loading state is reached.
 
 `feedbackSecondButtonText` -> (Optional) Allows specifying a Text for the second feedback button. A secondary button will be displayed if text is not empty.
 
