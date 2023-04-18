@@ -52,7 +52,7 @@ class EmptyStateScreenCatalogActivity : AppCompatActivity() {
                     setIsLoading(true)
                     handler.postDelayed({ setIsLoading(false) }, RETRY_DELAY)
                 } else {
-                    finish()
+                    showToast(context, "Primary button clicked!")
                 }
             }
             setSecondaryButtonOnClick { showToast(context, "Secondary button clicked!") }
