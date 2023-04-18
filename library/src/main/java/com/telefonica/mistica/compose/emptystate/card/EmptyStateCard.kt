@@ -16,11 +16,13 @@ fun EmptyStateCard(
     title: String,
     subtitle: String,
     primaryButtonText: String? = null,
+    primaryButtonLoadingText: String? = null,
     onPrimaryButtonClickListener: (() -> Unit)? = null,
     secondaryButtonText: String? = null,
     onSecondaryButtonClickListener: (() -> Unit)? = null,
     linkButtonText: String? = null,
     onLinkButtonClickListener: (() -> Unit)? = null,
+    isPrimaryButtonLoading: Boolean = false
 ) {
     fun EmptyStateCardView.update(): EmptyStateCardView = apply {
         setImage(imageResId)
@@ -32,6 +34,7 @@ fun EmptyStateCard(
 
         setButtonsConfig(buttonConfig.toInt())
         primaryButtonText?.let { setPrimaryButtonText(it) }
+        primaryButtonLoadingText?.let { setPrimaryButtonLoadingText(it) }
         onPrimaryButtonClickListener?.let { setPrimaryButtonOnClick{ it() } }
 
         secondaryButtonText?.let { setSecondaryButtonText(it) }
@@ -39,6 +42,8 @@ fun EmptyStateCard(
 
         linkButtonText?.let { setLinkButtonText(it) }
         onLinkButtonClickListener?.let { setLinkButtonOnClick{ it() } }
+
+        setIsLoading(isPrimaryButtonLoading)
     }
 
     AndroidView(

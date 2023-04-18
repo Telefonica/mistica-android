@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -18,12 +19,15 @@ import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.button.Button
 import com.telefonica.mistica.compose.feedback.Feedback
 import com.telefonica.mistica.feedback.screen.view.FeedbackScreenView
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 @Composable
 fun Feedbacks(
 
 ) {
 
+    val retryDelay = 2000L
     var showFeedback by remember { mutableStateOf(false) }
 
     var title: String by remember { mutableStateOf("") }
@@ -32,8 +36,10 @@ fun Feedbacks(
     var firstButtonText: String? by remember { mutableStateOf(null) }
     var firstButtonLoadingText: String? by remember { mutableStateOf(null) }
     var secondButtonText: String? by remember { mutableStateOf(null) }
+    var showFirstButtonLoading: Boolean by remember { mutableStateOf(false) }
     var isFirstButtonLoading: Boolean by remember { mutableStateOf(false) }
     var type: Int by remember { mutableStateOf(FeedbackScreenView.TYPE_INFO) }
+    val coroutineScope = rememberCoroutineScope()
 
     if (showFeedback) {
         Feedback(
@@ -44,7 +50,15 @@ fun Feedbacks(
             firstButtonText = firstButtonText,
             firstButtonLoadingText = firstButtonLoadingText,
             secondButtonText = secondButtonText,
-            firstButtonOnClick = {},
+            firstButtonOnClick = {
+                if (showFirstButtonLoading) {
+                    isFirstButtonLoading = true
+                    coroutineScope.launch {
+                        delay(retryDelay)
+                        isFirstButtonLoading = false
+                    }
+                }
+            },
             secondButtonOnClick = {},
             isFirstButtonLoading = isFirstButtonLoading,
             onBackPressed = { showFeedback = false }
@@ -63,7 +77,7 @@ fun Feedbacks(
             OutlinedTextField(value = secondButtonText ?: "", onValueChange = { secondButtonText = it }, label = { Text("Second Button") })
             Row {
                 Text("First button loading")
-                Checkbox(checked = isFirstButtonLoading, onCheckedChange = { isFirstButtonLoading = it })
+                Checkbox(checked = showFirstButtonLoading, onCheckedChange = { showFirstButtonLoading = it })
             }
             Row {
                 Text("Info")

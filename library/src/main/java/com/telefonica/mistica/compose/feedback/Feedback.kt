@@ -33,31 +33,32 @@ fun Feedback(
         BackHandler(onBack = onBackPressed)
     }
 
+    fun FeedbackScreenView.update(): FeedbackScreenView = apply {
+        layoutParams = ViewGroup.LayoutParams(
+            ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT
+        )
+        shouldAnimateOnAttachedToWindow = false
+        setFeedbackType(type)
+        setFeedbackTitle(title)
+        setFeedbackSubtitle(subtitle)
+        setFeedbackErrorReference(errorReference)
+        firstButtonText?.let { setFeedbackFirstButtonText(firstButtonText) }
+        firstButtonLoadingText?.let { setFeedbackFirstButtonLoadingText(firstButtonLoadingText) }
+        secondButtonText?.let { setFeedbackSecondButtonText(secondButtonText) }
+        firstButtonOnClick?.let { setFirstButtonOnClick { firstButtonOnClick() } }
+        secondButtonOnClick?.let { setSecondButtonOnClick { secondButtonOnClick() } }
+        setFeedbackSecondButtonAsLink(secondButtonAsLink)
+        setIsLoading(isFirstButtonLoading)
+        if (shouldPerformTheAnimation) {
+            animateViews()
+            shouldPerformTheAnimation = false
+        }
+    }
+
     AndroidView(
         modifier = modifier,
-        factory = { context ->
-            FeedbackScreenView(context).apply {
-                layoutParams = ViewGroup.LayoutParams(
-                    ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT
-                )
-                shouldAnimateOnAttachedToWindow = false
-                setFeedbackType(type)
-                setFeedbackTitle(title)
-                setFeedbackSubtitle(subtitle)
-                setFeedbackErrorReference(errorReference)
-                firstButtonText?.let { setFeedbackFirstButtonText(firstButtonText) }
-                firstButtonLoadingText?.let { setFeedbackFirstButtonLoadingText(firstButtonLoadingText) }
-                secondButtonText?.let { setFeedbackSecondButtonText(secondButtonText) }
-                firstButtonOnClick?.let { setFirstButtonOnClick { firstButtonOnClick() } }
-                secondButtonOnClick?.let { setSecondButtonOnClick { secondButtonOnClick() } }
-                setFeedbackSecondButtonAsLink(secondButtonAsLink)
-                setIsLoading(isFirstButtonLoading)
-                if (shouldPerformTheAnimation) {
-                    animateViews()
-                    shouldPerformTheAnimation = false
-                }
-            }
-        }
+        factory = { context -> FeedbackScreenView(context).update() },
+        update = { it.update() }
     )
 
 }

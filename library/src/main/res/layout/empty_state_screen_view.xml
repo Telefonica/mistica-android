@@ -58,7 +58,7 @@
 				android:layout_marginStart="0dp"
 				>
 
-			<com.telefonica.mistica.button.Button
+			<com.telefonica.mistica.button.ProgressButton
 					android:id="@+id/empty_state_screen_primary_button"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"

@@ -17,10 +17,12 @@ fun EmptyStateScreen(
     subtitle: String,
     primaryButtonText: String? = null,
     onPrimaryButtonClickListener: (() -> Unit)? = null,
+    primaryButtonLoadingText: String? = null,
     secondaryButtonText: String? = null,
     onSecondaryButtonClickListener: (() -> Unit)? = null,
     linkButtonText: String? = null,
     onLinkButtonClickListener: (() -> Unit)? = null,
+    isPrimaryButtonLoading: Boolean = false
 ) {
     fun EmptyStateScreenView.update(): EmptyStateScreenView = apply {
         setImage(imageResId)
@@ -34,11 +36,15 @@ fun EmptyStateScreen(
         primaryButtonText?.let { setPrimaryButtonText(it) }
         onPrimaryButtonClickListener?.let { setPrimaryButtonOnClick{ it() } }
 
+        primaryButtonLoadingText?.let { setPrimaryButtonLoadingText(it) }
+
         secondaryButtonText?.let { setSecondaryButtonText(it) }
         onSecondaryButtonClickListener?.let { setSecondaryButtonOnClick{ it() } }
 
         linkButtonText?.let { setLinkButtonText(it) }
         onLinkButtonClickListener?.let { setLinkButtonOnClick{ it() } }
+
+        setIsLoading(isPrimaryButtonLoading)
     }
 
     AndroidView(

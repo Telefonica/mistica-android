@@ -59,12 +59,22 @@
 				/>
 
 		<com.telefonica.mistica.input.TextInput
-				android:id="@+id/primary_buton_text_input"
+				android:id="@+id/primary_button_text_input"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_margin="8dp"
 				app:inputHint="Primary Button text"
 				app:inputText="Explore Marketplace"
+				app:inputType="text"
+				/>
+
+		<com.telefonica.mistica.input.TextInput
+				android:id="@+id/primary_button_text_loading_input"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_margin="8dp"
+				app:inputHint="Primary Button Loading text"
+				app:inputText=""
 				app:inputType="text"
 				/>
 

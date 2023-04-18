@@ -233,6 +233,7 @@
             <enum name="secondary_link" value="5" />
         </attr>
         <attr name="emptyStateScreenPrimaryButtonText" format="string" />
+        <attr name="emptyStateScreenPrimaryButtonLoadingText" format="string" />
         <attr name="emptyStateScreenPrimaryButtonOnClick" format="string" />
         <attr name="emptyStateScreenSecondaryButtonText" format="string" />
         <attr name="emptyStateScreenSecondaryButtonOnClick" format="string" />
@@ -259,6 +260,7 @@
             <enum name="link" value="6" />
         </attr>
         <attr name="emptyStateCardPrimaryButtonText" format="string" />
+        <attr name="emptyStateCardPrimaryButtonLoadingText" format="string" />
         <attr name="emptyStateCardPrimaryButtonOnClick" format="string" />
         <attr name="emptyStateCardSecondaryButtonText" format="string" />
         <attr name="emptyStateCardSecondaryButtonOnClick" format="string" />

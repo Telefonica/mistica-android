@@ -65,7 +65,11 @@ class EmptyStateScreenCatalogFragment(
             )
             putExtra(
                 EmptyStateScreenCatalogActivity.EXTRA_PRIMARY_BUTTON_TEXT,
-                catalogView.findViewById<TextInput>(R.id.primary_buton_text_input).text.toString()
+                catalogView.findViewById<TextInput>(R.id.primary_button_text_input).text.toString()
+            )
+            putExtra(
+                EmptyStateScreenCatalogActivity.EXTRA_PRIMARY_BUTTON_LOADING_TEXT,
+                catalogView.findViewById<TextInput>(R.id.primary_button_text_loading_input).text.toString()
             )
             putExtra(
                 EmptyStateScreenCatalogActivity.EXTRA_SECONDARY_BUTTON_TEXT,
