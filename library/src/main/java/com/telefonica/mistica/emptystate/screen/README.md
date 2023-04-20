@@ -35,6 +35,7 @@ configuration and databinding for all properties**.
         <enum name="secondary_link" value="5" />
     </attr>
     <attr name="emptyStateScreenPrimaryButtonText" format="string" />
+	<attr name="emptyStateScreenPrimaryButtonLoadingText" format="string" />
     <attr name="emptyStateScreenPrimaryButtonOnClick" format="string" />
     <attr name="emptyStateScreenSecondaryButtonText" format="string" />
     <attr name="emptyStateScreenSecondaryButtonOnClick" format="string" />

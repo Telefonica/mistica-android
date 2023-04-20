@@ -51,10 +51,18 @@ class EmptyStateCardCatalogFragment : Fragment() {
         setButtonsConfig(
             CardButtonsConfig.valueOf(catalogView.findViewById<DropDownInput>(R.id.buttons_config_dropdown).dropDown.text.toString()).buttonsConfig
         )
-        setPrimaryButtonText(catalogView.findViewById<TextInput>(R.id.primary_buton_text_input).text.toString())
+        setPrimaryButtonText(catalogView.findViewById<TextInput>(R.id.primary_button_text_input).text.toString())
+        setPrimaryButtonLoadingText(catalogView.findViewById<TextInput>(R.id.primary_button_text_loading_input).text.toString())
         setSecondaryButtonText(catalogView.findViewById<TextInput>(R.id.secondary_buton_text_input).text.toString())
         setLinkButtonText(catalogView.findViewById<TextInput>(R.id.link_buton_text_input).text.toString())
-        setPrimaryButtonOnClick { showToast(context, "Primary button clicked!") }
+        setPrimaryButtonOnClick {
+            if (catalogView.findViewById<TextInput>(R.id.primary_button_text_loading_input).text.toString().isNotEmpty()) {
+                setIsLoading(true)
+                handler.postDelayed({ setIsLoading(false) }, RETRY_DELAY)
+            } else {
+                showToast(context, "Primary button clicked!")
+            }
+        }
         setSecondaryButtonOnClick { showToast(context, "Secondary button clicked!") }
         setLinkButtonOnClick { showToast(context, "Link button clicked!") }
     }
@@ -96,5 +104,9 @@ class EmptyStateCardCatalogFragment : Fragment() {
         BUTTONS_CONFIG_SECONDARY(EmptyStateCardView.BUTTONS_CONFIG_SECONDARY),
         BUTTONS_CONFIG_SECONDARY_LINK(EmptyStateCardView.BUTTONS_CONFIG_SECONDARY_LINK),
         LINK(EmptyStateCardView.LINK),
+    }
+
+    private companion object {
+        const val RETRY_DELAY = 2000L
     }
 }

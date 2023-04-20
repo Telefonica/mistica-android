@@ -18,6 +18,7 @@ import androidx.appcompat.content.res.AppCompatResources
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
+import com.telefonica.mistica.button.ProgressButton
 import com.telefonica.mistica.util.convertDpToPx
 
 @BindingMethods(
@@ -110,7 +111,7 @@ class EmptyStateScreenView @JvmOverloads constructor(
     private var title: TextView
     private var subtitle: TextView
     private var buttonsContainer: LinearLayout
-    private var primaryButton: Button
+    private var primaryButton: ProgressButton
     private var secondaryButton: Button
     private var linkButton: Button
 
@@ -149,6 +150,7 @@ class EmptyStateScreenView @JvmOverloads constructor(
 
             buttonsConfig = styledAttrs.getInteger(R.styleable.EmptyStateScreenView_emptyStateScreenButtonsConfig, buttonsConfig)
             styledAttrs.getString(R.styleable.EmptyStateScreenView_emptyStateScreenPrimaryButtonText)?.let { setPrimaryButtonText(it) }
+            styledAttrs.getString(R.styleable.EmptyStateScreenView_emptyStateScreenPrimaryButtonLoadingText)?.let { setPrimaryButtonLoadingText(it) }
             styledAttrs.getString(R.styleable.EmptyStateScreenView_emptyStateScreenSecondaryButtonText)?.let { setSecondaryButtonText(it) }
             styledAttrs.getString(R.styleable.EmptyStateScreenView_emptyStateScreenLinkButtonText)?.let { setLinkButtonText(it) }
 
@@ -213,7 +215,11 @@ class EmptyStateScreenView @JvmOverloads constructor(
     }
 
     fun setPrimaryButtonText(text: String) {
-        primaryButton.text = text
+        primaryButton.setText(text)
+    }
+
+    fun setPrimaryButtonLoadingText(text: String) {
+        primaryButton.setLoadingText(text)
     }
 
     fun setPrimaryButtonOnClick(clickListener: OnClickListener) {
@@ -255,6 +261,10 @@ class EmptyStateScreenView @JvmOverloads constructor(
             width = imageWidth
             height = imageHeight
         }
+    }
+
+    fun setIsLoading(isLoading: Boolean) {
+        primaryButton.setIsLoading(isLoading)
     }
 
     companion object {

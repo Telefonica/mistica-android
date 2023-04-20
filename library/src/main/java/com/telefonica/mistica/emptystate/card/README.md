@@ -34,6 +34,7 @@ configuration and databinding for all properties**.
         <enum name="link" value="6" />
     </attr>
     <attr name="emptyStateCardPrimaryButtonText" format="string" />
+	<attr name="emptyStateCardPrimaryButtonLoadingText" format="string" />
     <attr name="emptyStateCardPrimaryButtonOnClick" format="string" />
     <attr name="emptyStateCardSecondaryButtonText" format="string" />
     <attr name="emptyStateCardSecondaryButtonOnClick" format="string" />
