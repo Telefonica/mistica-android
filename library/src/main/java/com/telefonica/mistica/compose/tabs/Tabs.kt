@@ -38,6 +38,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.SubcomposeLayout
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.debugInspectorInfo
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
@@ -63,8 +64,16 @@ fun Tabs(
 
     val composableTabs: @Composable @UiComposable () -> Unit = @Composable {
         tabs.forEachIndexed { index, tab ->
+
+            val boxModifier = if (tab.tabId != null) {
+                Modifier
+                    .testTag(tab.tabId)
+            } else {
+                Modifier
+            }
+
             Box(
-                modifier = Modifier
+                modifier = boxModifier
                     .height(56.dp)
                     .widthIn(
                         min = if (isTablet) 208.dp else Dp.Unspecified,
@@ -265,6 +274,7 @@ fun Tabs(
 
 data class Tab(
     val text: String,
+    val tabId: String? = null,
     @DrawableRes val iconResource: Int? = null,
     val iconContentDescription: String? = null,
 )
