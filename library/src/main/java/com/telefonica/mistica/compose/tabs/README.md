@@ -21,6 +21,7 @@ fun Tabs(
 ```kotlin
 data class Tab(
     val text: String,
+    val tabId: String? = null,
     @DrawableRes val iconResource: Int? = null,
     val iconContentDescription: String? = null,
 )
@@ -31,7 +32,7 @@ data class Tab(
 ```kotlin
 fun TabsExample() {
     var currentIndex by remember { mutableStateOf(0) }
-    var tabs by remember {
+    val tabs by remember {
         mutableStateOf(
             listOf(
                 Tab("Tab1"),
