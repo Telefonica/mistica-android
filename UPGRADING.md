@@ -1,5 +1,15 @@
 # Upgrading guide
 
+## Removed 'catalog-compose' component
+
+From version 8.3.0 and higher 'catalog-compose' has been removed and migrated into 'catalog' module.
+Note that if your project is implementing 'catalog-compose', please consider to change it into 'catalog' module which now supports both XML and Compose catalog components.
+
+~~debugImplementation "com.telefonica:mistica-catalog-compose:$mistica_version"~~
+```groovy
+debugImplementation "com.telefonica:mistica-catalog:$mistica_version"
+```
+
 ## Upgrade from 1.x to 2.x
 
 ### Dark mode support
