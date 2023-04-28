@@ -1,8 +1,10 @@
 package com.telefonica.mistica.compose.theme.brand
 
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.R
 import com.telefonica.mistica.compose.theme.color.MisticaColors
+import com.telefonica.mistica.compose.theme.values.MisticaValues
 
 object VivoBrand : Brand {
 
@@ -179,6 +181,12 @@ object VivoBrand : Brand {
         warningHigh = VivoPaletteColor.vivo_color_orange_light40,
         warningHighInverse = VivoPaletteColor.vivo_color_orange_dark,
     )
+
+    override val values: MisticaValues
+        get() = super.values.copy(
+            containerBorderRadius = 8.dp,
+            sheetBorderRadius = 8.dp,
+        )
 }
 
 private object VivoPaletteColor {
