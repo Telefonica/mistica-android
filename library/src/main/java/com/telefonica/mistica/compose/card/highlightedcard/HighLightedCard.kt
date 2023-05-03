@@ -143,7 +143,7 @@ fun HighLightedCard(
                     MisticaTheme.colors.textSecondaryInverse
                 else
                     MisticaTheme.colors.textSecondary,
-                text = title
+                text = message
             )
 
             if (showCloseButton){
