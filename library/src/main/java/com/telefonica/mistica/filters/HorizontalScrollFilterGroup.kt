@@ -11,9 +11,10 @@ import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
 import com.telefonica.mistica.R
 import com.telefonica.mistica.util.children
+import com.telefonica.mistica.util.getDimension
 
 class HorizontalScrollFilterGroup @JvmOverloads constructor(
-    context: Context,
+    private val context: Context,
     attrs: AttributeSet? = null,
     defStyle: Int = 0
 ) : FrameLayout(context, attrs, defStyle) {
@@ -29,6 +30,8 @@ class HorizontalScrollFilterGroup @JvmOverloads constructor(
     }
 
     fun addFilter(filter: Chip) {
+        filter.shapeAppearanceModel = filter.shapeAppearanceModel.withCornerSize(context.getDimension(R.attr.indicatorBorderRadius))
+
         chipGroup.addView(filter)
 
         if (filter.isChecked) {

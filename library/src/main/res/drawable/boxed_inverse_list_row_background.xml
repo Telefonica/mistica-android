@@ -6,14 +6,14 @@
         <shape>
             <!-- A color needs to be defined for the the mask to work, but it doesn't matter which color is used -->
             <solid android:color="#000000" />
-            <corners android:radius="@dimen/list_row_corner_radius" />
+            <corners android:radius="?containerBorderRadius" />
         </shape>
     </item>
 
     <item android:id="@android:id/background">
         <shape>
             <solid android:color="?colorBackgroundBrand" />
-            <corners android:radius="@dimen/list_row_corner_radius" />
+            <corners android:radius="?containerBorderRadius" />
         </shape>
     </item>
 </ripple>

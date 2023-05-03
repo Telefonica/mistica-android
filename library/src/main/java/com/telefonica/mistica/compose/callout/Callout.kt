@@ -42,7 +42,7 @@ fun Callout(
 ) {
     Box(
         modifier = modifier
-            .clip(shape = RoundedCornerShape(8.dp))
+            .clip(shape = RoundedCornerShape(MisticaTheme.values.containerBorderRadius))
             .background(
                 if (inverse) {
                     MisticaTheme.colors.backgroundContainer
