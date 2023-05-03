@@ -154,7 +154,6 @@
         <item name="legacyDisplayBorderRadius">0dp</item>
         <item name="popupBorderRadius">0dp</item>
         <item name="checkboxBorderRadius">0dp</item>
-        <item name="sheetBorderRadius">8dp</item>
         <item name="barBorderRadius">0dp</item>
     </style>
 

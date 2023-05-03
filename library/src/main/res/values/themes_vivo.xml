@@ -146,10 +146,6 @@
 
         <!-- Title -->
         <item name="titleStyle">title1</item>
-
-        <!-- Border radius -->
-        <item name="containerBorderRadius">8dp</item>
-        <item name="sheetBorderRadius">8dp</item>
     </style>
 
 </resources>

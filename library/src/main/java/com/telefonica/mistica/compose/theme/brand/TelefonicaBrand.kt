@@ -212,7 +212,6 @@ object TelefonicaBrand : Brand {
             legacyDisplayBorderRadius = 0.dp,
             popupBorderRadius = 0.dp,
             checkboxBorderRadius = 0.dp,
-            sheetBorderRadius = 8.dp,
             barBorderRadius = 0.dp,
         )
 }

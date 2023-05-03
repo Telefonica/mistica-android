@@ -26,12 +26,12 @@ interface Brand {
             titleStyle = TitleStyle.TITLE_1,
             buttonBorderRadius = 4.dp,
             inputBorderRadius = 8.dp,
-            containerBorderRadius = 16.dp,
+            containerBorderRadius = 8.dp,
             legacyDisplayBorderRadius = 16.dp,
             popupBorderRadius = 8.dp,
             checkboxBorderRadius = 2.dp,
             indicatorBorderRadius = 999.dp,
-            sheetBorderRadius = 16.dp,
+            sheetBorderRadius = 8.dp,
             barBorderRadius = 999.dp
         )
 }
