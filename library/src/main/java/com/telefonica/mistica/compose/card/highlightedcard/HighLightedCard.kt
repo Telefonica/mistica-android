@@ -26,53 +26,6 @@ import com.telefonica.mistica.compose.button.Button
 import com.telefonica.mistica.compose.button.ButtonStyle
 import com.telefonica.mistica.compose.theme.MisticaTheme
 
-enum class HighLightCardImageConfig {
-    FIT,
-    FILL,
-    NONE,
-}
-
-data class HighLightCardButtonSettings(
-    val buttonText: String = "",
-    val buttonStyle: ButtonStyle? = null
-){
-    fun getButtonStyle(inverse: Boolean): ButtonStyle? {
-        return buttonStyle?.let { style ->
-            return if (!inverse) {
-                style
-            } else {
-                when (style){
-                    ButtonStyle.PRIMARY -> ButtonStyle.PRIMARY_INVERSE
-                    ButtonStyle.PRIMARY_SMALL -> ButtonStyle.PRIMARY_SMALL_INVERSE
-                    ButtonStyle.SECONDARY -> ButtonStyle.SECONDARY_INVERSE
-                    ButtonStyle.SECONDARY_SMALL -> ButtonStyle.SECONDARY_SMALL_INVERSE
-                    ButtonStyle.LINK -> ButtonStyle.LINK_INVERSE
-                    else -> style
-                }
-            }
-        }
-    }
-}
-
-data class HighLightCardImageSettings(
-    val imageVector: ImageVector? = null,
-    val bitmap: ImageBitmap? = null,
-    @DrawableRes val drawableResource: Int? = null,
-    val config: HighLightCardImageConfig = HighLightCardImageConfig.NONE,
-){
-    val withImage: Boolean
-        get() = this.config != HighLightCardImageConfig.NONE && (this.imageVector != null || this.bitmap != null || this.drawableResource != null)
-}
-
-data class HighLightCardCustomBackgroundSettings(
-    val imageVector: ImageVector? = null,
-    val bitmap: ImageBitmap? = null,
-    @DrawableRes val drawableResource: Int? = null,
-){
-    val withCustomBackground: Boolean
-        get() = this.imageVector != null || this.bitmap != null || this.drawableResource != null
-}
-
 @Composable
 fun HighLightedCard(
     modifier: Modifier = Modifier,
@@ -271,3 +224,51 @@ private fun HighLightCardButton(
         )
     }
 }
+
+enum class HighLightCardImageConfig {
+    FIT,
+    FILL,
+    NONE,
+}
+
+data class HighLightCardButtonSettings(
+    val buttonText: String = "",
+    val buttonStyle: ButtonStyle? = null
+){
+    fun getButtonStyle(inverse: Boolean): ButtonStyle? {
+        return buttonStyle?.let { style ->
+            return if (!inverse) {
+                style
+            } else {
+                when (style){
+                    ButtonStyle.PRIMARY -> ButtonStyle.PRIMARY_INVERSE
+                    ButtonStyle.PRIMARY_SMALL -> ButtonStyle.PRIMARY_SMALL_INVERSE
+                    ButtonStyle.SECONDARY -> ButtonStyle.SECONDARY_INVERSE
+                    ButtonStyle.SECONDARY_SMALL -> ButtonStyle.SECONDARY_SMALL_INVERSE
+                    ButtonStyle.LINK -> ButtonStyle.LINK_INVERSE
+                    else -> style
+                }
+            }
+        }
+    }
+}
+
+data class HighLightCardImageSettings(
+    val imageVector: ImageVector? = null,
+    val bitmap: ImageBitmap? = null,
+    @DrawableRes val drawableResource: Int? = null,
+    val config: HighLightCardImageConfig = HighLightCardImageConfig.NONE,
+){
+    val withImage: Boolean
+        get() = this.config != HighLightCardImageConfig.NONE && (this.imageVector != null || this.bitmap != null || this.drawableResource != null)
+}
+
+data class HighLightCardCustomBackgroundSettings(
+    val imageVector: ImageVector? = null,
+    val bitmap: ImageBitmap? = null,
+    @DrawableRes val drawableResource: Int? = null,
+){
+    val withCustomBackground: Boolean
+        get() = this.imageVector != null || this.bitmap != null || this.drawableResource != null
+}
+
