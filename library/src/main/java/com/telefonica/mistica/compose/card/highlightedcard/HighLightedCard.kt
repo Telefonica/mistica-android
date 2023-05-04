@@ -77,7 +77,7 @@ data class HighLightCardCustomBackgroundSettings(
 fun HighLightedCard(
     modifier: Modifier = Modifier,
     title: String = "",
-    message: String = "",
+    content: String = "",
     button: HighLightCardButtonSettings = HighLightCardButtonSettings(),
     image: HighLightCardImageSettings = HighLightCardImageSettings(),
     customBackground: HighLightCardCustomBackgroundSettings = HighLightCardCustomBackgroundSettings(),
@@ -143,7 +143,7 @@ fun HighLightedCard(
                     MisticaTheme.colors.textSecondaryInverse
                 else
                     MisticaTheme.colors.textSecondary,
-                text = message
+                text = content
             )
 
             if (showCloseButton){
