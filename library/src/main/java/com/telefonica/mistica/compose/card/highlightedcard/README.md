@@ -54,7 +54,7 @@ data class HighLightCardCustomBackgroundSettings(
 
 ```
 
-Its use is very simple, below is a series of composables (Preview) in which we can see each of its uses (the most common)
+Use HighlightedCard composable. There are some examples below
 
 ```kotlin
 @Preview(name = "Only Title and text")
