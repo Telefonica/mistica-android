@@ -15,8 +15,10 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.CircularProgressIndicator
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.ripple.LocalRippleTheme
 import androidx.compose.runtime.Composable
@@ -38,6 +40,7 @@ import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.R
+import com.telefonica.mistica.compose.theme.MisticaTheme
 
 private val iconSpacing = 10.dp
 private val easing = CubicBezierEasing(0.77f, 0f, 0.175f, 1f)
@@ -79,6 +82,7 @@ fun Button(
             colors = style.buttonColors,
             border = if (enabled) style.border else style.disabledBorder,
             elevation = ButtonDefaults.elevation(0.dp, 0.dp, 0.dp, 0.dp, 0.dp),
+            shape = RoundedCornerShape(MisticaTheme.values.buttonBorderRadius)
         ) {
             Box(contentAlignment = Alignment.Center) {
                 androidx.compose.animation.AnimatedVisibility(

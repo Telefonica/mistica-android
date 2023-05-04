@@ -11,7 +11,7 @@ import com.google.android.material.chip.Chip
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.filters.HorizontalScrollFilterGroup
 
-class OthersCatalogFragment : Fragment() {
+class FiltersCatalogFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,

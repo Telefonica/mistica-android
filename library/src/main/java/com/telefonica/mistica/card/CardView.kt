@@ -16,6 +16,7 @@ import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
 import com.telefonica.mistica.tag.TagStyle
 import com.telefonica.mistica.tag.TagView
+import com.telefonica.mistica.util.getDimension
 
 @BindingMethods(
     BindingMethod(
@@ -85,7 +86,7 @@ abstract class CardView @JvmOverloads constructor(
         isClickable = true
         isFocusable = true
         cardElevation = 0F
-        radius = resources.getDimension(R.dimen.card_corner_radius)
+        radius = context.getDimension(R.attr.containerBorderRadius)
         minimumWidth = resources.getDimension(R.dimen.card_min_width).toInt()
         background = AppCompatResources.getDrawable(context, R.drawable.card_view_background)
 

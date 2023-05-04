@@ -1,8 +1,10 @@
 package com.telefonica.mistica.compose.theme.brand
 
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.R
 import com.telefonica.mistica.compose.theme.color.MisticaColors
+import com.telefonica.mistica.compose.theme.values.MisticaValues
 
 object TelefonicaBrand : Brand {
 
@@ -201,6 +203,17 @@ object TelefonicaBrand : Brand {
         warningHighInverse = TelefonicaPaletteColor.telefonica_color_ambar_70,
         warning = TelefonicaPaletteColor.telefonica_color_ambar,
     )
+
+    override val values: MisticaValues
+        get() = super.values.copy(
+            buttonBorderRadius = 999.dp,
+            inputBorderRadius = 0.dp,
+            containerBorderRadius = 0.dp,
+            legacyDisplayBorderRadius = 0.dp,
+            popupBorderRadius = 0.dp,
+            checkboxBorderRadius = 0.dp,
+            barBorderRadius = 0.dp,
+        )
 }
 
 private object TelefonicaPaletteColor {

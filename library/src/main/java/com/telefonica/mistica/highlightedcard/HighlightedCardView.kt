@@ -20,10 +20,10 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
+import com.telefonica.mistica.util.getDimension
 import com.telefonica.mistica.util.getThemeColor
 import com.telefonica.mistica.util.hide
 import com.telefonica.mistica.util.show
-
 
 @BindingMethods(
     BindingMethod(
@@ -95,7 +95,7 @@ import com.telefonica.mistica.util.show
 class HighlightedCardView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
-    defStyleAttr: Int = 0
+    defStyleAttr: Int = 0,
 ) : ConstraintLayout(context, attrs, defStyleAttr) {
 
     @Retention(AnnotationRetention.SOURCE)
@@ -114,7 +114,6 @@ class HighlightedCardView @JvmOverloads constructor(
         IMAGE_STYLE_NO_IMAGE
     )
     annotation class ImageStyle
-
 
     private val titleTextView: TextView
     private val contentTextView: TextView
@@ -363,7 +362,7 @@ class HighlightedCardView @JvmOverloads constructor(
         val paint = Paint()
         val rect = Rect(0, 0, bitmap.width, bitmap.height)
         val rectF = RectF(rect)
-        val roundPx = resources.getDimension(R.dimen.highlighted_card_corner_radius)
+        val roundPx = context.getDimension(R.attr.containerBorderRadius)
         paint.isAntiAlias = true
         canvas.drawARGB(0, 0, 0, 0)
         paint.color = color
@@ -382,6 +381,5 @@ class HighlightedCardView @JvmOverloads constructor(
         const val IMAGE_STYLE_MODE_FIT = 0
         const val IMAGE_STYLE_MODE_FILL = 1
         const val IMAGE_STYLE_NO_IMAGE = 2
-
     }
 }
