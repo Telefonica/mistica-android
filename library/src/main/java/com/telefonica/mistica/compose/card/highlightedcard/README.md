@@ -33,14 +33,19 @@ data class HighLightCardButtonSettings(
     }
 }
 
+sealed class HighLightedCardImage{
+    object None: HighLightedCardImage()
+    data class CardBitmap(val bitmap: ImageBitmap): HighLightedCardImage()
+    data class CardImageVector(val imageVector: ImageVector): HighLightedCardImage()
+    data class CardResource(@DrawableRes val resourceId: Int): HighLightedCardImage()
+}
+
 data class HighLightCardImageSettings(
-    val imageVector: ImageVector? = null,
-    val bitmap: ImageBitmap? = null,
-    @DrawableRes val drawableResource: Int? = null,
+    val picture: HighLightedCardImage = HighLightedCardImage.None,
     val config: HighLightCardImageConfig = HighLightCardImageConfig.NONE,
 ){
     val withImage: Boolean
-        get() = this.config != HighLightCardImageConfig.NONE && (this.imageVector != null || this.bitmap != null || this.drawableResource != null)
+        get() = this.config != HighLightCardImageConfig.NONE
 }
 
 data class HighLightCardCustomBackgroundSettings(
@@ -214,7 +219,7 @@ fun PreviewHighLightedCardTitleTextCloseButtonButtonLinkAndImageFit(){
                 message = "use our tools to solve technical issue",
                 showCloseButton = true,
                 button = HighLightCardButtonSettings("Start tests", ButtonStyle.SECONDARY),
-                image = HighLightCardImageSettings(drawableResource = R.drawable.icn_creditcard, config = HighLightCardImageConfig.FIT)
+                image = HighLightCardImageSettings(HighLightedCardImage.CardResource(R.drawable.icn_creditcard), config = HighLightCardImageConfig.FIT)
             )
         }
     }
@@ -233,7 +238,7 @@ fun PreviewHighLightedCardTitleTextCloseButtonButtonLinkAndImageFill(){
                 message = "use our tools to solve technical issue",
                 showCloseButton = true,
                 button = HighLightCardButtonSettings("Start tests", ButtonStyle.LINK),
-                image = HighLightCardImageSettings(drawableResource = R.drawable.icn_creditcard, config = HighLightCardImageConfig.FILL)
+                image = HighLightCardImageSettings(HighLightedCardImage.CardResource(R.drawable.icn_creditcard), config = HighLightCardImageConfig.FILL)
             )
         }
     }
@@ -252,7 +257,7 @@ fun PreviewHighLightedCardTitleTextCloseButtonButtonLinkAndImageFillBackground()
                 showCloseButton = true,
                 button = HighLightCardButtonSettings("Start tests", ButtonStyle.LINK),
                 image = HighLightCardImageSettings(
-                    drawableResource = R.drawable.icn_creditcard,
+                    HighLightedCardImage.CardResource(R.drawable.icn_creditcard),
                     config = HighLightCardImageConfig.FILL
                 ),
                 customBackground = HighLightCardCustomBackgroundSettings(
