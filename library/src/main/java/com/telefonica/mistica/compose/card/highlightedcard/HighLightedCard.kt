@@ -256,8 +256,6 @@ sealed class HighLightedCardImage{
     object None: HighLightedCardImage()
     data class CardBitmap(val bitmap: ImageBitmap): HighLightedCardImage()
     data class CardImageVector(val imageVector: ImageVector): HighLightedCardImage()
-
-
     data class CardResource(@DrawableRes val resourceId: Int): HighLightedCardImage()
 }
 
