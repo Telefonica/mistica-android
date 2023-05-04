@@ -184,24 +184,23 @@ private fun HighLightCardBackground(modifier: Modifier, backgroundSettings: High
 @Composable
 private fun HighLightCardImage(modifier: Modifier, imageSettings: HighLightCardImageSettings){
     if (imageSettings.withImage){
-        if (imageSettings.imageVector != null){
-            Image(
+        when (imageSettings.picture){
+            is HighLightedCardImage.CardImageVector -> Image(
                 modifier = modifier,
-                imageVector = imageSettings.imageVector,
+                imageVector = imageSettings.picture.imageVector,
                 contentDescription = null
             )
-        } else if(imageSettings.bitmap != null){
-            Image(
+            is HighLightedCardImage.CardBitmap -> Image(
                 modifier = modifier,
-                bitmap = imageSettings.bitmap,
+                bitmap = imageSettings.picture.bitmap,
                 contentDescription = null
             )
-        }else if (imageSettings.drawableResource != null){
-            Image(
+            is HighLightedCardImage.CardResource -> Image(
                 modifier = modifier,
-                painter = painterResource(id = imageSettings.drawableResource),
+                painter = painterResource(id = imageSettings.picture.resourceId),
                 contentDescription = null
             )
+            else -> {}
         }
     }
 }
@@ -253,14 +252,21 @@ data class HighLightCardButtonSettings(
     }
 }
 
+sealed class HighLightedCardImage{
+    object None: HighLightedCardImage()
+    data class CardBitmap(val bitmap: ImageBitmap): HighLightedCardImage()
+    data class CardImageVector(val imageVector: ImageVector): HighLightedCardImage()
+
+
+    data class CardResource(@DrawableRes val resourceId: Int): HighLightedCardImage()
+}
+
 data class HighLightCardImageSettings(
-    val imageVector: ImageVector? = null,
-    val bitmap: ImageBitmap? = null,
-    @DrawableRes val drawableResource: Int? = null,
+    val picture: HighLightedCardImage = HighLightedCardImage.None,
     val config: HighLightCardImageConfig = HighLightCardImageConfig.NONE,
 ){
     val withImage: Boolean
-        get() = this.config != HighLightCardImageConfig.NONE && (this.imageVector != null || this.bitmap != null || this.drawableResource != null)
+        get() = this.config != HighLightCardImageConfig.NONE
 }
 
 data class HighLightCardCustomBackgroundSettings(
