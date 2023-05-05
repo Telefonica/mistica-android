@@ -106,6 +106,7 @@ object TelefonicaBrand : Brand {
         warningHigh = TelefonicaPaletteColor.telefonica_color_ambar_70,
         warningHighInverse = TelefonicaPaletteColor.telefonica_color_ambar_70,
         warning = TelefonicaPaletteColor.telefonica_color_ambar,
+        closeButtonOverlayColor = TelefonicaPaletteColor.telefonica_color_blue_30
     )
 
     override val darkColors = MisticaColors(
@@ -202,6 +203,7 @@ object TelefonicaBrand : Brand {
         warningHigh = TelefonicaPaletteColor.telefonica_color_ambar_40,
         warningHighInverse = TelefonicaPaletteColor.telefonica_color_ambar_70,
         warning = TelefonicaPaletteColor.telefonica_color_ambar,
+        closeButtonOverlayColor = TelefonicaPaletteColor.telefonica_color_blue_30
     )
 
     override val values: MisticaValues

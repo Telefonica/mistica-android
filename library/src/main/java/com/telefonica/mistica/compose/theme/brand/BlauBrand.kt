@@ -104,6 +104,7 @@ object BlauBrand : Brand {
         warningHigh = BlauPaletteColor.blau_color_yellow_70,
         warningHighInverse = BlauPaletteColor.blau_color_yellow_70,
         warning = BlauPaletteColor.blau_color_yellow,
+        closeButtonOverlayColor = BlauPaletteColor.blau_color_blue_primary30
     )
 
     override val darkColors = lightColors.copy(
@@ -174,6 +175,7 @@ object BlauBrand : Brand {
         successHighInverse = BlauPaletteColor.blau_color_green_70,
         warningHigh = BlauPaletteColor.blau_color_yellow_40,
         warningHighInverse = BlauPaletteColor.blau_color_yellow_70,
+        closeButtonOverlay = BlauPaletteColor.blau_color_blue_primary30
     )
 }
 

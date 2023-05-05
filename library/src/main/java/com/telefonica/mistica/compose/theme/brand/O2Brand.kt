@@ -104,6 +104,7 @@ object O2Brand : Brand {
         warningHigh = O2PaletteColor.o2_color_orange_75,
         warningHighInverse = O2PaletteColor.o2_color_orange_75,
         warning = O2PaletteColor.o2_color_orange,
+        closeButtonOverlayColor = O2PaletteColor.o2_color_blue_primary_30
     )
 
     override val darkColors = lightColors.copy(
@@ -179,6 +180,7 @@ object O2Brand : Brand {
         successHighInverse = O2PaletteColor.o2_color_green_80,
         warningHigh = O2PaletteColor.o2_color_orange_40,
         warningHighInverse = O2PaletteColor.o2_color_orange_75,
+        closeButtonOverlay = O2PaletteColor.o2_color_blue_primary_30
     )
 }
 

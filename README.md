@@ -84,6 +84,7 @@ Just set your App or any specific activity to use any of the following:
 * [Tabs](library/src/main/java/com/telefonica/mistica/tabs)
 * [Tags](library/src/main/java/com/telefonica/mistica/tag)
 * [Title](library/src/main/java/com/telefonica/mistica/title)
+* [HighLightedCard (Compose version)](library/src/main/java/com/telefonica/mistica/compose/card/highlightedcard)
 
 ## Text Presets Styles
 

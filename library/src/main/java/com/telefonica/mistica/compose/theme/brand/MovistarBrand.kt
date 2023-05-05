@@ -107,6 +107,7 @@ object MovistarBrand : Brand {
         warningHigh = MovistarPaletteColor.movistar_color_egg_80,
         warningHighInverse = MovistarPaletteColor.movistar_color_egg_80,
         warning = MovistarPaletteColor.movistar_color_egg,
+        closeButtonOverlayColor = MovistarPaletteColor.movistar_color_blue_30
     )
 
     override val darkColors =
@@ -179,6 +180,7 @@ object MovistarBrand : Brand {
             successHighInverse = MovistarPaletteColor.movistar_color_green_70,
             warningHigh = MovistarPaletteColor.movistar_color_egg_40,
             warningHighInverse = MovistarPaletteColor.movistar_color_egg_80,
+            closeButtonOverlay = MovistarPaletteColor.movistar_color_blue_30
         )
 
     override val preset5FontWeight: FontWeight

@@ -104,6 +104,7 @@ object VivoBrand : Brand {
         warningHigh = VivoPaletteColor.vivo_color_orange_dark,
         warningHighInverse = VivoPaletteColor.vivo_color_orange_dark,
         warning = VivoPaletteColor.vivo_color_orange,
+        closeButtonOverlayColor = VivoPaletteColor.vivo_color_purple_light20_25_alpha
     )
 
     override val darkColors = lightColors.copy(
@@ -178,6 +179,7 @@ object VivoBrand : Brand {
         successHighInverse = VivoPaletteColor.vivo_color_green_dark,
         warningHigh = VivoPaletteColor.vivo_color_orange_light40,
         warningHighInverse = VivoPaletteColor.vivo_color_orange_dark,
+        closeButtonOverlay = VivoPaletteColor.vivo_color_purple_light20_40_alpha
     )
 }
 
