@@ -60,9 +60,7 @@ fun MisticaTheme(
     val values = remember {
         MisticaValues()
     }.apply {
-        updateWith(
-            titleStyle = brand.titleStyle
-        )
+        updateWith(brand.values)
     }
 
     CompositionLocalProvider(

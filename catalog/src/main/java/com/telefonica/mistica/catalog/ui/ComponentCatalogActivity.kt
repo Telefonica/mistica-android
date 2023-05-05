@@ -30,7 +30,7 @@ import com.telefonica.mistica.catalog.ui.classic.components.InputsCatalogFragmen
 import com.telefonica.mistica.catalog.ui.classic.components.ListsCatalogFragment
 import com.telefonica.mistica.catalog.ui.classic.components.LoadErrorFeedbackCatalogFragment
 import com.telefonica.mistica.catalog.ui.classic.components.MediaCardsFragment
-import com.telefonica.mistica.catalog.ui.classic.components.OthersCatalogFragment
+import com.telefonica.mistica.catalog.ui.classic.components.FiltersCatalogFragment
 import com.telefonica.mistica.catalog.ui.classic.components.PopOverCatalogFragment
 import com.telefonica.mistica.catalog.ui.classic.components.ScrollContentIndicatorCatalogFragment
 import com.telefonica.mistica.catalog.ui.classic.components.SheetCatalogFragment
@@ -114,8 +114,8 @@ class ComponentCatalogActivity : FragmentActivity() {
             Section.BADGES -> setPageAdapterWithTabs(
                 classicComponent = BadgesCatalogFragment(),
                 composeComponent = null)
-            Section.OTHERS -> setPageAdapterWithTabs(
-                classicComponent = OthersCatalogFragment(),
+            Section.FILTERS -> setPageAdapterWithTabs(
+                classicComponent = FiltersCatalogFragment(),
                 composeComponent = null)
             Section.SCROLL_CONTENT_INDICATOR -> setPageAdapterWithTabs(
                 classicComponent = ScrollContentIndicatorCatalogFragment(),
@@ -163,7 +163,7 @@ class ComponentCatalogActivity : FragmentActivity() {
                 classicComponent = CarouselFragment(),
                 composeComponent = { Carousels() })
             else -> setPageAdapterWithTabs(
-                classicComponent = OthersCatalogFragment(),
+                classicComponent = FiltersCatalogFragment(),
                 composeComponent = null)
         }
     }
@@ -249,7 +249,7 @@ enum class Section {
     MEDIA_CARDS,
     DATA_CARDS,
     CONTROLS,
-    OTHERS,
+    FILTERS,
     STEPPERS,
     TABS,
     EMPTY_STATE,

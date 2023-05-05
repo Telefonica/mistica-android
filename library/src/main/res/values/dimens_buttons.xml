@@ -6,7 +6,6 @@
     <dimen name="button_vertical_inset">0dp</dimen>
     <dimen name="button_icon_size">24dp</dimen>
     <dimen name="button_icon_padding">8dp</dimen>
-    <dimen name="button_corner_radius">4dp</dimen>
     <dimen name="button_outline_stroke_width">1.5dp</dimen>
     <dimen name="button_max_animation_translation">32dp</dimen>
 

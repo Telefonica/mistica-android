@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.OutlinedTextField
 import androidx.compose.material.Text
 import androidx.compose.material.TextField
 import androidx.compose.material.TextFieldDefaults
@@ -105,7 +106,11 @@ private fun TextBox(
     TextField(
         modifier = modifier
             .fillMaxWidth()
-            .border(width = 1.dp, color = MisticaTheme.colors.border, shape = RoundedCornerShape(8.dp)),
+            .border(
+                width = 1.dp,
+                color = MisticaTheme.colors.border,
+                shape = RoundedCornerShape(MisticaTheme.values.inputBorderRadius)
+            ),
         enabled = enabled,
         readOnly = readOnly,
         value = value,
@@ -124,7 +129,7 @@ private fun TextBox(
         keyboardOptions = keyboardOptions,
         isError = isError,
         trailingIcon = trailingIcon,
-        shape = MaterialTheme.shapes.small,
+        shape = RoundedCornerShape(MisticaTheme.values.inputBorderRadius),
         colors = TextFieldDefaults.textFieldColors(
             backgroundColor = MisticaTheme.colors.backgroundContainer,
             focusedIndicatorColor = Color.Transparent,

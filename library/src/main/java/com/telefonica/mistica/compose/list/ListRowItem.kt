@@ -37,8 +37,6 @@ import com.telefonica.mistica.compose.tag.Tag
 import com.telefonica.mistica.compose.theme.MisticaTheme
 import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 
-private val B0XED_CORNER_RADIUS = 8.dp
-
 @ExperimentalMaterialApi
 @Composable
 fun ListRowItem(
@@ -64,7 +62,7 @@ fun ListRowItem(
             .padding(horizontal = 16.dp, vertical = 8.dp)
     }
         .fillMaxWidth()
-        .clip(shape = RoundedCornerShape(B0XED_CORNER_RADIUS))
+        .clip(shape = RoundedCornerShape(MisticaTheme.values.containerBorderRadius))
         .makeClickableIfNeeded(onClick)
 
     val rowModifier = when (backgroundType) {
@@ -73,12 +71,12 @@ fun ListRowItem(
             .border(
                 width = 1.dp,
                 color = MisticaTheme.colors.border,
-                shape = RoundedCornerShape(B0XED_CORNER_RADIUS),
+                shape = RoundedCornerShape(MisticaTheme.values.containerBorderRadius),
             )
         BackgroundType.TYPE_BOXED_INVERSE -> Modifier
             .background(
                 color = MisticaTheme.colors.backgroundBrand,
-                shape = RoundedCornerShape(B0XED_CORNER_RADIUS),
+                shape = RoundedCornerShape(MisticaTheme.values.containerBorderRadius),
             )
     }
         .fillMaxWidth()
