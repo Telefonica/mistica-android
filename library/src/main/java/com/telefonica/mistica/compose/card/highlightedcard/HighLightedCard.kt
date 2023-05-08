@@ -82,19 +82,7 @@ fun HighLightedCard(
                 pictureComposable,
                 backgroundComposable,
             ) = createRefs()
-/*
-            HighLightCardBackground(
-                modifier = modifier.constrainAs(backgroundComposable){
-                    top.linkTo(parent.top)
-                    start.linkTo(parent.start)
-                    end.linkTo(parent.end)
-                    bottom.linkTo(parent.bottom)
-                    width = Dimension.fillToConstraints
-                    height = Dimension.fillToConstraints
-                },
-                backgroundSettings = customBackground
-            )
-*/
+
             Text(
                 modifier = Modifier.constrainAs(titleComposable){
                     top.linkTo(parent.top, verticalMargin)
@@ -189,26 +177,6 @@ private fun getBackgroundBitmap(resources: Resources, backgroundSettings: HighLi
     return imageBitmap
 
 
-}
-@Composable
-private fun HighLightCardBackground(modifier: Modifier, backgroundSettings: HighLightCardCustomBackgroundSettings){
-    if (backgroundSettings.withCustomBackground){
-        if(backgroundSettings.bitmap != null){
-            Image(
-                modifier = modifier,
-                contentScale = ContentScale.Inside,
-                bitmap = backgroundSettings.bitmap,
-                contentDescription = null
-            )
-        }else if (backgroundSettings.drawableResource != null){
-            Image(
-                modifier = modifier,
-                contentScale = ContentScale.Inside,
-                painter = painterResource(id = backgroundSettings.drawableResource),
-                contentDescription = null
-            )
-        }
-    }
 }
 
 @Composable
