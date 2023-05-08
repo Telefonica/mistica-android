@@ -80,7 +80,6 @@ fun HighLightedCard(
                 closeButtonComposable,
                 actionButtonComposable,
                 pictureComposable,
-                backgroundComposable,
             ) = createRefs()
 
             Text(
