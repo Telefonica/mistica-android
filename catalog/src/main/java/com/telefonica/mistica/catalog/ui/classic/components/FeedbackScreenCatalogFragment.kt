@@ -70,7 +70,7 @@ class FeedbackScreenCatalogFragment(
                 secondButtonText = inputSecondButtonText.toNullableString(),
                 showSecondButtonAsLink = checkBoxSecondButtonAsLink.isChecked(),
                 showLoadingInButton = checkBoxShowLoadingInButton.isChecked(),
-                customIcon = selectedType.getCustomIcon(),
+                customIcon = R.drawable.feedback_error_light,
             )
         }
     }
@@ -116,8 +116,5 @@ class FeedbackScreenCatalogFragment(
         INFO(FeedbackScreenView.TYPE_INFO),
         CUSTOM(FeedbackScreenView.TYPE_CUSTOM)
     }
-
-    private fun Type.getCustomIcon(): Int? =
-        if (this == Type.CUSTOM) R.drawable.feedback_error_light else null
-
+    
 }
