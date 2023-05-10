@@ -1,15 +1,14 @@
 package com.telefonica.mistica.catalog.ui.compose.components
 
+import android.widget.Toast
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -27,6 +26,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ImageBitmap
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.imageResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -46,6 +46,7 @@ import com.telefonica.mistica.compose.theme.MisticaTheme
 @Preview(showSystemUi = true)
 @Composable
 fun HighlightedCards() {
+    val context = LocalContext.current
     var cardTitle by remember { mutableStateOf("Card Title Text") }
     var cardContent by remember { mutableStateOf("Card Title Content") }
     var buttonConfig by remember { mutableStateOf(HighLightCardButtonSettings(buttonText = "Start Here")) }
@@ -71,10 +72,25 @@ fun HighlightedCards() {
             button = buttonConfig,
             image = imageConfig,
             customBackground = HighLightCardCustomBackgroundSettings(
-                bitmap = if (showBackground) ImageBitmap.imageResource(id = R.drawable.highlighted_card_custom_background) else null
+                bitmap = if (showBackground)
+                    ImageBitmap.imageResource(
+                        id = R.drawable.highlighted_card_custom_background
+                    )
+                else
+                    null
             ),
             showCloseButton = showCloseButton,
-            inverseDisplay = inverseDisplay
+            inverseDisplay = inverseDisplay,
+            onCloseButton = Toast.makeText(
+                context,
+                "Close clicked!",
+                Toast.LENGTH_LONG
+            )::show,
+            onButtonClick = Toast.makeText(
+                context,
+                "Action Clicked!",
+                Toast.LENGTH_LONG
+            )::show
         )
 
         Column(
@@ -148,7 +164,10 @@ fun HighlightedCards() {
                     .clickable { showBackground = !showBackground },
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Checkbox(checked = showBackground, onCheckedChange = { showBackground = !showBackground })
+                Checkbox(
+                    checked = showBackground,
+                    onCheckedChange = { showBackground = !showBackground }
+                )
                 Text(text = "Custom Background")
             }
         }
@@ -177,7 +196,10 @@ fun HighLightedImageType(imageConfig: HighLightCardImageConfig, onImageTypeSelec
                     .clickable { onImageTypeSelected(HighLightCardImageConfig.NONE) },
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                RadioButton(selected = imageConfig == HighLightCardImageConfig.NONE, onClick = { onImageTypeSelected(HighLightCardImageConfig.NONE) })
+                RadioButton(
+                    selected = imageConfig == HighLightCardImageConfig.NONE,
+                    onClick = { onImageTypeSelected(HighLightCardImageConfig.NONE) }
+                )
                 Text(text = "No Image")
             }
 
@@ -187,7 +209,10 @@ fun HighLightedImageType(imageConfig: HighLightCardImageConfig, onImageTypeSelec
                     .clickable { onImageTypeSelected(HighLightCardImageConfig.FIT) },
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                RadioButton(selected = imageConfig == HighLightCardImageConfig.FIT, onClick = { onImageTypeSelected(HighLightCardImageConfig.FIT) })
+                RadioButton(
+                    selected = imageConfig == HighLightCardImageConfig.FIT,
+                    onClick = { onImageTypeSelected(HighLightCardImageConfig.FIT) }
+                )
                 Text(text = "Fit Image")
             }
 
@@ -197,7 +222,10 @@ fun HighLightedImageType(imageConfig: HighLightCardImageConfig, onImageTypeSelec
                     .clickable { onImageTypeSelected(HighLightCardImageConfig.FILL) },
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                RadioButton(selected = imageConfig == HighLightCardImageConfig.FILL, onClick = { onImageTypeSelected(HighLightCardImageConfig.FILL) })
+                RadioButton(
+                    selected = imageConfig == HighLightCardImageConfig.FILL,
+                    onClick = { onImageTypeSelected(HighLightCardImageConfig.FILL) }
+                )
                 Text(text = "Fill Image")
             }
         }
@@ -223,10 +251,17 @@ fun HighLightedCardButtonType(buttonConfig: HighLightCardButtonSettings, onButto
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .clickable { onButtonTypeSelected(buttonConfig.copy(buttonStyle = null)) },
+                    .clickable {
+                        onButtonTypeSelected(buttonConfig.copy(buttonStyle = null))
+                    },
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                RadioButton(selected = buttonConfig.buttonStyle == null, onClick = { onButtonTypeSelected(buttonConfig.copy(buttonStyle = null)) })
+                RadioButton(
+                    selected = buttonConfig.buttonStyle == null,
+                    onClick = {
+                        onButtonTypeSelected(buttonConfig.copy(buttonStyle = null))
+                    }
+                )
                 Text(text = "None")
             }
 
@@ -236,7 +271,12 @@ fun HighLightedCardButtonType(buttonConfig: HighLightCardButtonSettings, onButto
                     .clickable { onButtonTypeSelected(buttonConfig.copy(buttonStyle = ButtonStyle.PRIMARY)) },
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                RadioButton(selected = buttonConfig.buttonStyle == ButtonStyle.PRIMARY, onClick = { onButtonTypeSelected(buttonConfig.copy(buttonStyle = ButtonStyle.PRIMARY)) })
+                RadioButton(
+                    selected = buttonConfig.buttonStyle == ButtonStyle.PRIMARY,
+                    onClick = {
+                        onButtonTypeSelected(buttonConfig.copy(buttonStyle = ButtonStyle.PRIMARY))
+                    }
+                )
                 Text(text = "Primary")
             }
 
@@ -246,7 +286,12 @@ fun HighLightedCardButtonType(buttonConfig: HighLightCardButtonSettings, onButto
                     .clickable { onButtonTypeSelected(buttonConfig.copy(buttonStyle = ButtonStyle.SECONDARY)) },
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                RadioButton(selected = buttonConfig.buttonStyle == ButtonStyle.SECONDARY, onClick = { onButtonTypeSelected(buttonConfig.copy(buttonStyle = ButtonStyle.SECONDARY)) })
+                RadioButton(
+                    selected = buttonConfig.buttonStyle == ButtonStyle.SECONDARY,
+                    onClick = {
+                        onButtonTypeSelected(buttonConfig.copy(buttonStyle = ButtonStyle.SECONDARY))
+                    }
+                )
                 Text(text = "Secondary")
             }
 
@@ -256,7 +301,12 @@ fun HighLightedCardButtonType(buttonConfig: HighLightCardButtonSettings, onButto
                     .clickable { onButtonTypeSelected(buttonConfig.copy(buttonStyle = ButtonStyle.LINK)) },
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                RadioButton(selected = buttonConfig.buttonStyle == ButtonStyle.LINK, onClick = { onButtonTypeSelected(buttonConfig.copy(buttonStyle = ButtonStyle.LINK)) })
+                RadioButton(
+                    selected = buttonConfig.buttonStyle == ButtonStyle.LINK,
+                    onClick = {
+                        onButtonTypeSelected(buttonConfig.copy(buttonStyle = ButtonStyle.LINK))
+                    }
+                )
                 Text(text = "Link")
             }
 
