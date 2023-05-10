@@ -56,9 +56,11 @@ class FeedbackScreenCatalogFragment(
             setText(Type.SUCCESS.name)
         }
 
+
         createButton.setOnClickListener {
+            val selectedType = Type.valueOf(typeDropDown.dropDown.text.toString())
             showFeedbackActivity(
-                type = Type.valueOf(typeDropDown.dropDown.text.toString()).type,
+                type = selectedType.type,
                 context = view.context,
                 title = inputTitle.toNullableString(),
                 subtitle = inputSubtitle.toNullableString(),
@@ -67,7 +69,8 @@ class FeedbackScreenCatalogFragment(
                 firstButtonLoadingText = inputFirstButtonLoadingText.toNullableString(),
                 secondButtonText = inputSecondButtonText.toNullableString(),
                 showSecondButtonAsLink = checkBoxSecondButtonAsLink.isChecked(),
-                showLoadingInButton = checkBoxShowLoadingInButton.isChecked()
+                showLoadingInButton = checkBoxShowLoadingInButton.isChecked(),
+                customIcon = R.drawable.feedback_error_light,
             )
         }
     }
@@ -83,7 +86,9 @@ class FeedbackScreenCatalogFragment(
         firstButtonLoadingText: String?,
         secondButtonText: String?,
         showSecondButtonAsLink: Boolean = FeedbackScreenCatalogActivity.SHOW_SECOND_BUTTON_AS_LINK_DEFAULT_VALUE,
-        showLoadingInButton: Boolean = FeedbackScreenCatalogActivity.SHOW_LOADING_IN_BUTTON_DEFAULT_VALUE
+        showLoadingInButton: Boolean = FeedbackScreenCatalogActivity.SHOW_LOADING_IN_BUTTON_DEFAULT_VALUE,
+        customIcon: Int? = null,
+        customAnimation: Int? = null
     ) {
         Intent(context, FeedbackScreenCatalogActivity::class.java).apply {
             putExtra(FeedbackScreenCatalogActivity.EXTRA_TYPE, type)
@@ -94,14 +99,10 @@ class FeedbackScreenCatalogFragment(
             putExtra(FeedbackScreenCatalogActivity.EXTRA_FIRST_BUTTON_LOADING_TEXT, firstButtonLoadingText)
             putExtra(FeedbackScreenCatalogActivity.EXTRA_SECOND_BUTTON_TEXT, secondButtonText)
             putExtra(FeedbackScreenCatalogActivity.EXTRA_CUSTOM_CONTENT, customContentLayout)
-            putExtra(
-                FeedbackScreenCatalogActivity.EXTRA_SHOW_SECOND_BUTTON_AS_LINK,
-                showSecondButtonAsLink
-            )
-            putExtra(
-                FeedbackScreenCatalogActivity.EXTRA_SHOW_LOADING_IN_BUTTON,
-                showLoadingInButton
-            )
+            putExtra(FeedbackScreenCatalogActivity.EXTRA_SHOW_SECOND_BUTTON_AS_LINK, showSecondButtonAsLink)
+            putExtra(FeedbackScreenCatalogActivity.EXTRA_SHOW_LOADING_IN_BUTTON, showLoadingInButton)
+            putExtra(FeedbackScreenCatalogActivity.EXTRA_CUSTOM_ICON, customIcon)
+            putExtra(FeedbackScreenCatalogActivity.EXTRA_CUSTOM_ANIMATION, customAnimation)
             themeOverride?.let { putExtra(FeedbackScreenCatalogActivity.EXTRA_THEME, it) }
             context.startActivity(this)
         }
@@ -112,6 +113,8 @@ class FeedbackScreenCatalogFragment(
     private enum class Type(@FeedbackType val type: Int) {
         SUCCESS(FeedbackScreenView.TYPE_SUCCESS),
         ERROR(FeedbackScreenView.TYPE_ERROR),
-        INFO(FeedbackScreenView.TYPE_INFO)
+        INFO(FeedbackScreenView.TYPE_INFO),
+        CUSTOM(FeedbackScreenView.TYPE_CUSTOM)
     }
+    
 }

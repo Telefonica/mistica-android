@@ -18,8 +18,10 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.annotation.AttrRes
 import androidx.annotation.ColorInt
+import androidx.annotation.DrawableRes
 import androidx.annotation.IntDef
 import androidx.annotation.LayoutRes
+import androidx.annotation.RawRes
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.graphics.drawable.DrawableCompat
@@ -41,7 +43,8 @@ class FeedbackScreenView : ConstraintLayout {
     @IntDef(
         TYPE_SUCCESS,
         TYPE_ERROR,
-        TYPE_INFO
+        TYPE_INFO,
+        TYPE_CUSTOM
     )
     annotation class FeedbackType
 
@@ -71,6 +74,9 @@ class FeedbackScreenView : ConstraintLayout {
 
     private var firstButtonClickListener: OnClickListener? = null
     private var secondButtonClickListener: OnClickListener? = null
+
+    private var customAnimation: Int? = null
+    private var customIcon: Int? = null
 
     constructor(context: Context) : super(context) {
         init(context)
@@ -169,6 +175,14 @@ class FeedbackScreenView : ConstraintLayout {
         }
     }
 
+    fun setCustomIcon(customIcon: Int) {
+        this.customIcon = customIcon
+    }
+
+    fun setCustomAnimation(customAnimation: Int) {
+        this.customAnimation = customAnimation
+    }
+
     private fun init(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) {
         LayoutInflater.from(context).inflate(R.layout.screen_feedback, this, true)
 
@@ -225,13 +239,16 @@ class FeedbackScreenView : ConstraintLayout {
                 getBooleanThemeRes(R.attr.feedbackScreenSuccessWithGradient) -> GradientBackgroundFactory.getBackground(
                     context
                 )
+
                 getBooleanThemeRes(R.attr.feedbackScreenSuccessInverse) -> ColorDrawable(
                     context.getThemeColor(
                         R.attr.colorBackgroundBrand
                     )
                 )
+
                 else -> ColorDrawable(context.getThemeColor(R.attr.colorBackground))
             }
+
             else -> ColorDrawable(context.getThemeColor(R.attr.colorBackground))
         }.let {
             background = it
@@ -245,14 +262,22 @@ class FeedbackScreenView : ConstraintLayout {
                 imageAttr = R.attr.feedbackScreenSuccessIcon,
                 colorAttr = R.attr.colorInverse,
             )
+
             TYPE_ERROR -> configureIcon(
                 animationAttr = R.attr.feedbackScreenErrorAnimation,
                 imageAttr = R.attr.feedbackScreenErrorIcon,
                 colorAttr = R.attr.colorError
             )
+
             TYPE_INFO -> configureIcon(
                 animationAttr = R.attr.feedbackScreenInfoAnimation,
                 imageAttr = R.attr.feedbackScreenInfoIcon,
+                colorAttr = R.attr.colorBrand
+            )
+
+            TYPE_CUSTOM -> configureIconAsResource(
+                animationResource = customAnimation ?: context.getThemeRes(R.attr.feedbackScreenInfoAnimation, false),
+                imageResource = customIcon  ?: context.getThemeRes(R.attr.feedbackScreenInfoIcon, false),
                 colorAttr = R.attr.colorBrand
             )
         }
@@ -265,6 +290,15 @@ class FeedbackScreenView : ConstraintLayout {
     ) {
         val animationResource: Int? = context.getThemeRes(animationAttr, false)
         val imageResource: Int? = context.getThemeRes(imageAttr, false)
+
+        configureIconAsResource(animationResource, imageResource, colorAttr)
+    }
+
+    private fun configureIconAsResource(
+        @RawRes animationResource: Int?,
+        @DrawableRes imageResource: Int?,
+        @AttrRes colorAttr: Int,
+    ) {
         when {
             animationResource != null -> {
                 icon.setAnimation(animationResource)
@@ -280,6 +314,7 @@ class FeedbackScreenView : ConstraintLayout {
                 )
                 icon.visibility = View.VISIBLE
             }
+
             imageResource != null -> {
                 val unwrappedDrawable = AppCompatResources.getDrawable(context, imageResource)!!
                 val drawable = DrawableCompat.wrap(unwrappedDrawable)
@@ -287,6 +322,7 @@ class FeedbackScreenView : ConstraintLayout {
                 icon.setImageDrawable(drawable)
                 icon.visibility = View.VISIBLE
             }
+
             else -> icon.visibility = View.GONE
         }
         isIconAnimated = animationResource != null
@@ -413,6 +449,7 @@ class FeedbackScreenView : ConstraintLayout {
         const val TYPE_SUCCESS = 0
         const val TYPE_ERROR = 1
         const val TYPE_INFO = 2
+        const val TYPE_CUSTOM = 3
 
         const val TEXTS_ANIMATION_DURATION = 800L
         const val TEXTS_ANIMATION_DELAY = 200L
