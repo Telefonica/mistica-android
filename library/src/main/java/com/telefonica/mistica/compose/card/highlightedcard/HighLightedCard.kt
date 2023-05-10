@@ -55,12 +55,12 @@ fun HighLightedCard(
     val resources = LocalContext.current.resources
     androidx.compose.material.Card(
         modifier = modifier.defaultMinSize(minHeight = 100.dp),
-        shape = RoundedCornerShape(8.dp),
+        shape = RoundedCornerShape(1.dp),
         elevation = 0.dp,
         backgroundColor = if (inverseDisplay)
-            MisticaTheme.colors.buttonPrimaryBackground
+            MisticaTheme.colors.backgroundBrand
         else
-            MisticaTheme.colors.buttonPrimaryBackgroundInverse,
+            MisticaTheme.colors.backgroundContainer,
         border = BorderStroke(width = 1.dp, color = MisticaTheme.colors.border)
     ) {
         ConstraintLayout(
@@ -86,7 +86,7 @@ fun HighLightedCard(
                 modifier = Modifier.constrainAs(titleComposable){
                     top.linkTo(parent.top, verticalMargin)
                     start.linkTo(parent.start, 16.dp)
-                    end.linkTo(if(image.withImage) pictureComposable.start else parent.end)
+                    end.linkTo(if(image.withImage) pictureComposable.start else parent.end, 8.dp)
                     width = Dimension.fillToConstraints
                 },
                 maxLines = 2,
@@ -100,9 +100,9 @@ fun HighLightedCard(
 
             Text(
                 modifier = Modifier.constrainAs(messageComposable){
-                    top.linkTo(titleComposable.bottom)
+                    top.linkTo(titleComposable.bottom, 8.dp)
                     start.linkTo(titleComposable.start)
-                    end.linkTo(if(image.withImage) pictureComposable.start else parent.end)
+                    end.linkTo(titleComposable.end)
                     width = Dimension.fillToConstraints
                 },
                 style = MisticaTheme.typography.preset2,

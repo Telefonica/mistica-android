@@ -3,10 +3,13 @@ package com.telefonica.mistica.catalog.ui.compose.components
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -37,6 +40,7 @@ import com.telefonica.mistica.compose.card.highlightedcard.HighLightCardImageCon
 import com.telefonica.mistica.compose.card.highlightedcard.HighLightCardImageSettings
 import com.telefonica.mistica.compose.card.highlightedcard.HighLightedCard
 import com.telefonica.mistica.compose.card.highlightedcard.HighLightedCardImage
+import com.telefonica.mistica.compose.input.TextInput
 import com.telefonica.mistica.compose.theme.MisticaTheme
 
 @Preview(showSystemUi = true)
@@ -87,28 +91,26 @@ fun HighlightedCards() {
                 .verticalScroll(
                     state = scrollState,
                     enabled = true,
-                )
+                ),
+            verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
             Text(text = "HIGHLIGHTED CARD TESTER")
 
-            OutlinedTextField(
+            TextInput(
                 value = cardTitle,
                 modifier = Modifier.fillMaxWidth(),
-                label = { Text(text = "Title", modifier = Modifier.background(color = MaterialTheme.colors.background)) },
+                label = "Title",
                 onValueChange = { tx -> cardTitle = tx }
             )
-
-            OutlinedTextField(
+            TextInput(
                 value = cardContent,
                 modifier = Modifier.fillMaxWidth(),
-                label = { Text(text = "Message", modifier = Modifier.background(color = MaterialTheme.colors.background)) },
+                label = "Message",
                 onValueChange = { tx -> cardContent = tx }
             )
-
             HighLightedCardButtonType(buttonConfig) { newButtonConfig ->
                 buttonConfig = newButtonConfig
             }
-
             HighLightedImageType(imageConfig.config) { imageSettings ->
                 imageConfig = imageConfig.copy(
                     config = imageSettings,
