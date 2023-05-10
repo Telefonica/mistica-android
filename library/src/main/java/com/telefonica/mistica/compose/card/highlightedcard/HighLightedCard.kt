@@ -18,6 +18,7 @@ import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.graphics.Color
@@ -183,18 +184,21 @@ private fun HighLightCardImage(modifier: Modifier, imageSettings: HighLightCardI
     if (imageSettings.withImage){
         when (imageSettings.picture){
             is HighLightedCardImage.CardImageVector -> Image(
+                alignment = Alignment.BottomEnd,
                 modifier = modifier,
                 imageVector = imageSettings.picture.imageVector,
                 contentDescription = null,
                 contentScale = if (imageSettings.config == HighLightCardImageConfig.FILL) ContentScale.FillHeight else ContentScale.Fit,
             )
             is HighLightedCardImage.CardBitmap -> Image(
+                alignment = Alignment.BottomEnd,
                 modifier = modifier,
                 bitmap = imageSettings.picture.bitmap,
                 contentDescription = null,
                 contentScale = if (imageSettings.config == HighLightCardImageConfig.FILL) ContentScale.FillHeight else ContentScale.Fit,
             )
             is HighLightedCardImage.CardResource -> Image(
+                alignment = Alignment.BottomEnd,
                 modifier = modifier,
                 painter = painterResource(id = imageSettings.picture.resourceId),
                 contentDescription = null,
