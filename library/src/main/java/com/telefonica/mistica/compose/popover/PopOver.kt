@@ -65,13 +65,17 @@ fun PopOver(
 ) {
     CustomPopup(
         popupState = popupState,
-        onDismissRequest = onDismissRequest
+        onDismissRequest = onDismissRequest,
+        modifier = Modifier.fillMaxWidth()
     ) {
         androidx.compose.material.Card(
             modifier = Modifier
                 .padding(horizontal = 16.dp)
                 .fillMaxWidth()
-                .wrapContentHeight(),
+                .wrapContentHeight()
+                .graphicsLayer {
+                    shadowElevation = 2.dp.toPx()
+                },
             shape = MaterialTheme.shapes.medium,
             border = BorderStroke(1.dp, MisticaTheme.colors.border),
             backgroundColor = MisticaTheme.colors.background
@@ -80,20 +84,21 @@ fun PopOver(
                 modifier = Modifier
                     .padding(start = 16.dp, top = 8.dp, end = 8.dp, bottom = 16.dp)
                     .fillMaxWidth()
-//                    .wrapContentSize(Alignment.Center)
-//                    .clip(RoundedCornerShape(8.dp))
+                    .wrapContentSize(Alignment.Center)
                     .background(Color.Transparent),
             ) {
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .align(Alignment.CenterStart)
+                        .align(Alignment.CenterStart),
+                    verticalAlignment = Alignment.CenterVertically
                 ) {
                     if (imageRes != null) {
                         Image(
                             painter = painterResource(id = imageRes),
                             contentDescription = null,
-                            modifier = Modifier.size(40.dp)
+                            modifier = Modifier
+                                .size(40.dp)
                         )
                     }
                     Column(
