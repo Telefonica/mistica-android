@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!-- Code generated automatically, DO NOT EDIT manually -->
+	<style name="MisticaTheme.Blau" parent="MisticaTheme.Blau_Base"/>
+	<style name="MisticaTheme.Blau_Base">
+		<item name="colorBackgroundBrand">
+			@color/blau_color_blauBluePrimary
+		</item>
+		<item name="colorBackgroundBrandSecondary">
+			@color/blau_color_blauBluePrimary
+		</item>
+		<item name="colorAppBarBackground">
+			@color/blau_color_white
+		</item>
+		<item name="colorBackground">
+			@color/blau_color_white
+		</item>
+		<item name="colorBackgroundContainer">
+			@color/blau_color_white
+		</item>
+		<item name="colorBackgroundContainerHover">
+			@color/blau_color_grey0
+		</item>
+		<item name="colorBackgroundContainerPressed">
+			@color/blau_color_grey1
+		</item>
+		<item name="colorBackgroundContainerBrand">
+			@color/blau_color_blauBluePrimary
+		</item>
+		<item name="colorBackgroundContainerBrandHover">
+			@color/blau_color_blauBluePrimary60
+		</item>
+		<item name="colorBackgroundContainerBrandPressed">
+			@color/blau_color_blauBluePrimary70
+		</item>
+		<item name="colorBackgroundContainerBrandOverInverse">
+			@color/blau_color_blauBlueSecondary
+		</item>
+		<item name="colorBackgroundContainerBrandOverInverseHover">
+			@color/blau_color_blauBlueSecondary50
+		</item>
+		<item name="colorBackgroundContainerBrandOverInversePressed">
+			@color/blau_color_blauBlueSecondary60
+		</item>
+		<item name="colorBackgroundContainerAlternative">
+			@color/blau_color_blauBluePrimary20
+		</item>
+		<item name="colorBackgroundContainerAlternativeHover">
+			@color/blau_color_grey5
+		</item>
+		<item name="colorBackgroundContainerAlternativePressed">
+			@color/blau_color_grey5
+		</item>
+		<item name="colorBackgroundOverlay">
+			@color/blau_color_blauBlueSecondary
+		</item>
+		<item name="colorBackgroundSkeleton">
+			@color/blau_color_grey2
+		</item>
+		<item name="colorBackgroundSkeletonInverse">
+			@color/blau_color_blauBlueSecondary
+		</item>
+		<item name="colorNavigationBarBackground">
+			@color/blau_color_blauBluePrimary
+		</item>
+		<item name="colorBackgroundAlternative">
+			@color/blau_color_blauBluePrimary20
+		</item>
+		<item name="colorBackgroundFeedbackBottom">
+			@color/blau_color_blauBluePrimary
+		</item>
+		<item name="colorSkeletonWave">
+			@color/blau_color_grey2
+		</item>
+		<item name="colorBorderLow">
+			@color/blau_color_grey1
+		</item>
+		<item name="colorBorder">
+			@color/blau_color_grey2
+		</item>
+		<item name="colorBorderHigh">
+			@color/blau_color_grey5
+		</item>
+		<item name="colorBorderSelected">
+			@color/blau_color_blauBlueSecondary60
+		</item>
+		<item name="colorButtonDangerBackground">
+			@color/blau_color_blauRed
+		</item>
+		<item name="colorButtonDangerBackgroundSelected">
+			@color/blau_color_blauRed70
+		</item>
+		<item name="colorButtonDangerBackgroundHover">
+			@color/blau_color_blauRed70
+		</item>
+		<item name="colorButtonLinkBackgroundSelected">
+			@color/blau_color_blauPurple10
+		</item>
+		<item name="colorButtonLinkBackgroundInverseSelected">
+			@color/blau_color_white
+		</item>
+		<item name="colorButtonPrimaryBackground">
+			@color/blau_color_blauBlueSecondary
+		</item>
+		<item name="colorButtonPrimaryBackgroundInverse">
+			@color/blau_color_white
+		</item>
+		<item name="colorButtonPrimaryBackgroundSelected">
+			@color/blau_color_blauBlueSecondary60
+		</item>
+		<item name="colorButtonPrimaryBackgroundHover">
+			@color/blau_color_blauBlueSecondary60
+		</item>
+		<item name="colorButtonPrimaryBackgroundInverseSelected">
+			@color/blau_color_blauBluePrimary30
+		</item>
+		<item name="colorButtonSecondaryBorder">
+			@color/blau_color_blauBlueSecondary
+		</item>
+		<item name="colorButtonSecondaryBorderSelected">
+			@color/blau_color_blauBlueSecondary60
+		</item>
+		<item name="colorButtonSecondaryBorderInverse">
+			@color/blau_color_white
+		</item>
+		<item name="colorButtonSecondaryBackgroundHover">
+			@color/blau_color_blauBlueSecondary10
+		</item>
+		<item name="colorButtonSecondaryBackgroundSelected">
+			@color/blau_color_blauBlueSecondary10
+		</item>
+		<item name="colorButtonSecondaryBorderInverseSelected">
+			@color/blau_color_white
+		</item>
+		<item name="colorButtonSecondaryBackgroundInverseHover">
+			@color/blau_color_white
+		</item>
+		<item name="colorButtonSecondaryBackgroundInverseSelected">
+			@color/blau_color_white
+		</item>
+		<item name="colorTextButtonPrimary">
+			@color/blau_color_white
+		</item>
+		<item name="colorTextButtonPrimaryInverse">
+			@color/blau_color_blauBlueSecondary
+		</item>
+		<item name="colorTextButtonPrimaryInverseSelected">
+			@color/blau_color_blauBlueSecondary60
+		</item>
+		<item name="colorTextButtonSecondary">
+			@color/blau_color_blauBlueSecondary
+		</item>
+		<item name="colorTextButtonSecondarySelected">
+			@color/blau_color_blauBlueSecondary60
+		</item>
+		<item name="colorTextButtonSecondaryInverse">
+			@color/blau_color_white
+		</item>
+		<item name="colorTextButtonSecondaryInverseSelected">
+			@color/blau_color_white
+		</item>
+		<item name="colorTextLink">
+			@color/blau_color_blauPurple
+		</item>
+		<item name="colorTextLinkInverse">
+			@color/blau_color_white
+		</item>
+		<item name="colorTextLinkDanger">
+			@color/blau_color_blauRed
+		</item>
+		<item name="colorTextLinkSnackbar">
+			@color/blau_color_blauPurple30
+		</item>
+		<item name="colorControl">
+			@color/blau_color_grey2
+		</item>
+		<item name="colorControlActive">
+			@color/blau_color_blauBlueSecondary
+		</item>
+		<item name="colorControlError">
+			@color/blau_color_blauRed
+		</item>
+		<item name="colorLoadingBar">
+			@color/blau_color_blauBlueSecondary
+		</item>
+		<item name="colorLoadingBarBackground">
+			@color/blau_color_blauBlueSecondary10
+		</item>
+		<item name="colorToggleAndroidInactive">
+			@color/blau_color_grey2
+		</item>
+		<item name="colorToggleAndroidBackgroundActive">
+			@color/blau_color_blauBlueSecondary10
+		</item>
+		<item name="colorIosControlKnob">
+			@color/blau_color_white
+		</item>
+		<item name="colorDivider">
+			@color/blau_color_grey2
+		</item>
+		<item name="colorDividerInverse">
+			@color/blau_color_white
+		</item>
+		<item name="colorNavigationBarDivider">
+			@color/blau_color_blauBluePrimary
+		</item>
+		<item name="colorBadge">
+			@color/blau_color_blauRed
+		</item>
+		<item name="colorFeedbackErrorBackground">
+			@color/blau_color_blauRed
+		</item>
+		<item name="colorFeedbackInfoBackground">
+			@color/blau_color_grey6
+		</item>
+		<item name="colorBrand">
+			@color/blau_color_blauBluePrimary
+		</item>
+		<item name="colorBrandHigh">
+			@color/blau_color_blauBlueSecondary
+		</item>
+		<item name="colorInverse">
+			@color/blau_color_white
+		</item>
+		<item name="colorNeutralHigh">
+			@color/blau_color_grey6
+		</item>
+		<item name="colorNeutralMedium">
+			@color/blau_color_grey5
+		</item>
+		<item name="colorNeutralMediumInverse">
+			@color/blau_color_grey5
+		</item>
+		<item name="colorNeutralLow">
+			@color/blau_color_grey2
+		</item>
+		<item name="colorNeutralLowAlternative">
+			@color/blau_color_grey2
+		</item>
+		<item name="colorTextPrimary">
+			@color/blau_color_grey6
+		</item>
+		<item name="colorTextPrimaryInverse">
+			@color/blau_color_white
+		</item>
+		<item name="colorTextSecondary">
+			@color/blau_color_grey5
+		</item>
+		<item name="colorTextSecondaryInverse">
+			@color/blau_color_blauBluePrimary20
+		</item>
+		<item name="colorError">
+			@color/blau_color_blauRed
+		</item>
+		<item name="colorSuccess">
+			@color/blau_color_blauGreen
+		</item>
+		<item name="colorWarning">
+			@color/blau_color_blauYellow
+		</item>
+		<item name="colorPromo">
+			@color/blau_color_blauPurple
+		</item>
+		<item name="colorHighlight">
+			@color/blau_color_blauBluePrimary
+		</item>
+		<item name="colorSuccessLow">
+			@color/blau_color_blauGreen10
+		</item>
+		<item name="colorWarningLow">
+			@color/blau_color_blauYellow10
+		</item>
+		<item name="colorErrorLow">
+			@color/blau_color_blauRed10
+		</item>
+		<item name="colorPromoLow">
+			@color/blau_color_blauPurple10
+		</item>
+		<item name="colorBrandLow">
+			@color/blau_color_blauBlueSecondary10
+		</item>
+		<item name="colorSuccessHigh">
+			@color/blau_color_blauGreen70
+		</item>
+		<item name="colorWarningHigh">
+			@color/blau_color_blauYellow70
+		</item>
+		<item name="colorErrorHigh">
+			@color/blau_color_blauRed70
+		</item>
+		<item name="colorPromoHigh">
+			@color/blau_color_blauPurple
+		</item>
+		<item name="colorSuccessHighInverse">
+			@color/blau_color_blauGreen70
+		</item>
+		<item name="colorWarningHighInverse">
+			@color/blau_color_blauYellow70
+		</item>
+		<item name="colorErrorHighInverse">
+			@color/blau_color_blauRed70
+		</item>
+		<item name="colorPromoHighInverse">
+			@color/blau_color_blauPurple
+		</item>
+		<item name="colorTextNavigationBarPrimary">
+			@color/blau_color_white
+		</item>
+		<item name="colorTextNavigationBarSecondary">
+			@color/blau_color_blauBlueSecondary20
+		</item>
+		<item name="colorTextNavigationSearchBarHint">
+			@color/blau_color_blauBlueSecondary20
+		</item>
+		<item name="colorTextNavigationSearchBarText">
+			@color/blau_color_white
+		</item>
+		<item name="colorTextAppBar">
+			@color/blau_color_grey5
+		</item>
+		<item name="colorTextAppBarSelected">
+			@color/blau_color_blauBlueSecondary60
+		</item>
+		<item name="colorCustomTabsBackground">
+			@color/blau_color_blauBluePrimary
+		</item>
+	</style>
+</resources>

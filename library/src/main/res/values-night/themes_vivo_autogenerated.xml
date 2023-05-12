@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!-- Code generated automatically, DO NOT EDIT manually -->
+	<style name="MisticaTheme.Vivo" parent="MisticaTheme.Vivo_Base">
+		<item name="colorBackground">
+			@color/vivo_color_darkModeBlack
+		</item>
+		<item name="colorBackgroundAlternative">
+			@color/vivo_color_darkModeBlack
+		</item>
+		<item name="colorBackgroundBrand">
+			@color/vivo_color_darkModeBlack
+		</item>
+		<item name="colorBackgroundBrandSecondary">
+			@color/vivo_color_darkModeBlack
+		</item>
+		<item name="colorBackgroundContainer">
+			@color/vivo_color_darkModeGrey
+		</item>
+		<item name="colorBackgroundContainerHover">
+			@color/vivo_color_darkModeGrey7
+		</item>
+		<item name="colorBackgroundContainerPressed">
+			@color/vivo_color_darkModeGrey8
+		</item>
+		<item name="colorBackgroundContainerBrand">
+			@color/vivo_color_darkModeGrey
+		</item>
+		<item name="colorBackgroundContainerBrandHover">
+			@color/vivo_color_darkModeGrey7
+		</item>
+		<item name="colorBackgroundContainerBrandPressed">
+			@color/vivo_color_darkModeGrey8
+		</item>
+		<item name="colorBackgroundContainerBrandOverInverse">
+			@color/vivo_color_darkModeGrey
+		</item>
+		<item name="colorBackgroundContainerBrandOverInverseHover">
+			@color/vivo_color_darkModeGrey7
+		</item>
+		<item name="colorBackgroundContainerBrandOverInversePressed">
+			@color/vivo_color_darkModeGrey8
+		</item>
+		<item name="colorBackgroundContainerAlternative">
+			@color/vivo_color_darkModeGrey
+		</item>
+		<item name="colorBackgroundContainerAlternativeHover">
+			@color/vivo_color_darkModeGrey7
+		</item>
+		<item name="colorBackgroundContainerAlternativePressed">
+			@color/vivo_color_darkModeGrey8
+		</item>
+		<item name="colorBackgroundOverlay">
+			@color/vivo_color_darkModeGrey
+		</item>
+		<item name="colorBackgroundSkeleton">
+			@color/vivo_color_darkModeGrey6
+		</item>
+		<item name="colorBackgroundSkeletonInverse">
+			@color/vivo_color_darkModeGrey6
+		</item>
+		<item name="colorBackgroundFeedbackBottom">
+			@color/vivo_color_darkModeBlack
+		</item>
+		<item name="colorAppBarBackground">
+			@color/vivo_color_darkModeGrey
+		</item>
+		<item name="colorNavigationBarBackground">
+			@color/vivo_color_darkModeBlack
+		</item>
+		<item name="colorSkeletonWave">
+			@color/vivo_color_grey5
+		</item>
+		<item name="colorBorderLow">
+			@color/vivo_color_darkModeBlack
+		</item>
+		<item name="colorBorder">
+			@color/vivo_color_darkModeGrey
+		</item>
+		<item name="colorBorderHigh">
+			@color/vivo_color_grey5
+		</item>
+		<item name="colorBorderSelected">
+			@color/vivo_color_vivoPurple
+		</item>
+		<item name="colorButtonDangerBackground">
+			@color/vivo_color_pepper
+		</item>
+		<item name="colorButtonDangerBackgroundSelected">
+			@color/vivo_color_pepperDark
+		</item>
+		<item name="colorButtonDangerBackgroundHover">
+			@color/vivo_color_pepperDark
+		</item>
+		<item name="colorButtonLinkBackgroundSelected">
+			@color/vivo_color_white
+		</item>
+		<item name="colorButtonLinkBackgroundInverseSelected">
+			@color/vivo_color_white
+		</item>
+		<item name="colorButtonPrimaryBackground">
+			@color/vivo_color_vivoPurpleLight80
+		</item>
+		<item name="colorButtonPrimaryBackgroundInverse">
+			@color/vivo_color_vivoPurpleLight80
+		</item>
+		<item name="colorButtonPrimaryBackgroundSelected">
+			@color/vivo_color_vivoPurpleDark
+		</item>
+		<item name="colorButtonPrimaryBackgroundHover">
+			@color/vivo_color_vivoPurpleDark
+		</item>
+		<item name="colorButtonPrimaryBackgroundInverseSelected">
+			@color/vivo_color_vivoPurpleDark
+		</item>
+		<item name="colorButtonSecondaryBackgroundHover">
+			@color/vivo_color_white
+		</item>
+		<item name="colorButtonSecondaryBackgroundSelected">
+			@color/vivo_color_white
+		</item>
+		<item name="colorButtonSecondaryBorder">
+			@color/vivo_color_white
+		</item>
+		<item name="colorButtonSecondaryBorderSelected">
+			@color/vivo_color_white
+		</item>
+		<item name="colorButtonSecondaryBorderInverse">
+			@color/vivo_color_white
+		</item>
+		<item name="colorButtonSecondaryBorderInverseSelected">
+			@color/vivo_color_white
+		</item>
+		<item name="colorButtonSecondaryBackgroundInverseHover">
+			@color/vivo_color_white
+		</item>
+		<item name="colorButtonSecondaryBackgroundInverseSelected">
+			@color/vivo_color_white
+		</item>
+		<item name="colorTextButtonPrimary">
+			@color/vivo_color_grey2
+		</item>
+		<item name="colorTextButtonPrimaryInverse">
+			@color/vivo_color_grey2
+		</item>
+		<item name="colorTextButtonPrimaryInverseSelected">
+			@color/vivo_color_grey2
+		</item>
+		<item name="colorTextButtonSecondary">
+			@color/vivo_color_grey2
+		</item>
+		<item name="colorTextButtonSecondarySelected">
+			@color/vivo_color_grey2
+		</item>
+		<item name="colorTextButtonSecondaryInverse">
+			@color/vivo_color_grey2
+		</item>
+		<item name="colorTextButtonSecondaryInverseSelected">
+			@color/vivo_color_grey2
+		</item>
+		<item name="colorTextLink">
+			@color/vivo_color_vivoPurpleLight50
+		</item>
+		<item name="colorTextLinkInverse">
+			@color/vivo_color_vivoPurpleLight50
+		</item>
+		<item name="colorTextLinkDanger">
+			@color/vivo_color_pepper
+		</item>
+		<item name="colorTextLinkSnackbar">
+			@color/vivo_color_vivoPurpleLight50
+		</item>
+		<item name="colorControl">
+			@color/vivo_color_darkModeGrey6
+		</item>
+		<item name="colorControlActive">
+			@color/vivo_color_vivoPurpleLight80
+		</item>
+		<item name="colorControlError">
+			@color/vivo_color_pepper
+		</item>
+		<item name="colorLoadingBar">
+			@color/vivo_color_vivoPurpleLight80
+		</item>
+		<item name="colorLoadingBarBackground">
+			@color/vivo_color_darkModeGrey6
+		</item>
+		<item name="colorToggleAndroidInactive">
+			@color/vivo_color_grey4
+		</item>
+		<item name="colorToggleAndroidBackgroundActive">
+			@color/vivo_color_vivoPurpleLight50
+		</item>
+		<item name="colorIosControlKnob">
+			@color/vivo_color_grey2
+		</item>
+		<item name="colorDivider">
+			@color/vivo_color_white
+		</item>
+		<item name="colorDividerInverse">
+			@color/vivo_color_white
+		</item>
+		<item name="colorNavigationBarDivider">
+			@color/vivo_color_darkModeBlack
+		</item>
+		<item name="colorBadge">
+			@color/vivo_color_pepperDark
+		</item>
+		<item name="colorFeedbackErrorBackground">
+			@color/vivo_color_pepper
+		</item>
+		<item name="colorFeedbackInfoBackground">
+			@color/vivo_color_grey6
+		</item>
+		<item name="colorBrand">
+			@color/vivo_color_vivoPurpleLight80
+		</item>
+		<item name="colorBrandHigh">
+			@color/vivo_color_white
+		</item>
+		<item name="colorInverse">
+			@color/vivo_color_grey2
+		</item>
+		<item name="colorNeutralHigh">
+			@color/vivo_color_grey2
+		</item>
+		<item name="colorNeutralMedium">
+			@color/vivo_color_grey5
+		</item>
+		<item name="colorNeutralMediumInverse">
+			@color/vivo_color_grey5
+		</item>
+		<item name="colorNeutralLow">
+			@color/vivo_color_darkModeGrey6
+		</item>
+		<item name="colorNeutralLowAlternative">
+			@color/vivo_color_darkModeGrey6
+		</item>
+		<item name="colorTextPrimary">
+			@color/vivo_color_grey2
+		</item>
+		<item name="colorTextPrimaryInverse">
+			@color/vivo_color_grey2
+		</item>
+		<item name="colorTextSecondary">
+			@color/vivo_color_grey4
+		</item>
+		<item name="colorTextSecondaryInverse">
+			@color/vivo_color_grey4
+		</item>
+		<item name="colorSuccess">
+			@color/vivo_color_vivoGreen
+		</item>
+		<item name="colorWarning">
+			@color/vivo_color_orange
+		</item>
+		<item name="colorError">
+			@color/vivo_color_pepper
+		</item>
+		<item name="colorPromo">
+			@color/vivo_color_vivoPurpleLight80
+		</item>
+		<item name="colorHighlight">
+			@color/vivo_color_pink
+		</item>
+		<item name="colorSuccessLow">
+			@color/vivo_color_darkModeGrey6
+		</item>
+		<item name="colorWarningLow">
+			@color/vivo_color_darkModeGrey6
+		</item>
+		<item name="colorErrorLow">
+			@color/vivo_color_darkModeGrey6
+		</item>
+		<item name="colorPromoLow">
+			@color/vivo_color_darkModeGrey6
+		</item>
+		<item name="colorBrandLow">
+			@color/vivo_color_darkModeGrey6
+		</item>
+		<item name="colorSuccessHigh">
+			@color/vivo_color_vivoGreenLight30
+		</item>
+		<item name="colorWarningHigh">
+			@color/vivo_color_orangeLight40
+		</item>
+		<item name="colorErrorHigh">
+			@color/vivo_color_pepperLight40
+		</item>
+		<item name="colorPromoHigh">
+			@color/vivo_color_vivoPurpleLight50
+		</item>
+		<item name="colorSuccessHighInverse">
+			@color/vivo_color_vivoGreenDark
+		</item>
+		<item name="colorWarningHighInverse">
+			@color/vivo_color_orangeDark
+		</item>
+		<item name="colorErrorHighInverse">
+			@color/vivo_color_pepperDark80
+		</item>
+		<item name="colorPromoHighInverse">
+			@color/vivo_color_vivoPurple
+		</item>
+		<item name="colorTextNavigationBarPrimary">
+			@color/vivo_color_grey2
+		</item>
+		<item name="colorTextNavigationBarSecondary">
+			@color/vivo_color_grey4
+		</item>
+		<item name="colorTextNavigationSearchBarHint">
+			@color/vivo_color_grey4
+		</item>
+		<item name="colorTextNavigationSearchBarText">
+			@color/vivo_color_grey2
+		</item>
+		<item name="colorTextAppBar">
+			@color/vivo_color_grey5
+		</item>
+		<item name="colorTextAppBarSelected">
+			@color/vivo_color_grey2
+		</item>
+		<item name="colorCustomTabsBackground">
+			@color/vivo_color_darkModeBlack
+		</item>
+	</style>
+</resources>

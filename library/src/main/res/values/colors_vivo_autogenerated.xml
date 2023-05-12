@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!-- Code generated automatically, DO NOT EDIT manually -->
+	<color name="vivo_color_vivoPurple">
+		#660099
+	</color>
+	<color name="vivo_color_vivoPurpleDark">
+		#461E5F
+	</color>
+	<color name="vivo_color_vivoPurpleLight10">
+		#EFE5F4
+	</color>
+	<color name="vivo_color_vivoPurpleLight20">
+		#E0CCEB
+	</color>
+	<color name="vivo_color_vivoPurpleLight50">
+		#B280CC
+	</color>
+	<color name="vivo_color_vivoPurpleLight80">
+		#8433AD
+	</color>
+	<color name="vivo_color_vivoPurpleLight90">
+		#751AA3
+	</color>
+	<color name="vivo_color_vivoPurpleDark50">
+		#550080
+	</color>
+	<color name="vivo_color_vivoPurpleDark80">
+		#39184E
+	</color>
+	<color name="vivo_color_vivoPurpleDark90">
+		#2B123A
+	</color>
+	<color name="vivo_color_vivoGreen">
+		#99CC33
+	</color>
+	<color name="vivo_color_vivoGreenDark">
+		#225C3D
+	</color>
+	<color name="vivo_color_vivoGreenLight10">
+		#EDF8E8
+	</color>
+	<color name="vivo_color_vivoGreen25">
+		#D6EBAD
+	</color>
+	<color name="vivo_color_vivoGreenLight30">
+		#91AE9E
+	</color>
+	<color name="vivo_color_vivoBlue">
+		#00ABDB
+	</color>
+	<color name="vivo_color_orange">
+		#FF9900
+	</color>
+	<color name="vivo_color_orange25">
+		#FFD699
+	</color>
+	<color name="vivo_color_orangeDark">
+		#972A1D
+	</color>
+	<color name="vivo_color_orangeLight10">
+		#FFEFE1
+	</color>
+	<color name="vivo_color_orangeLight40">
+		#FFB84C
+	</color>
+	<color name="vivo_color_pink">
+		#EB3D7D
+	</color>
+	<color name="vivo_color_pepper">
+		#CC1F59
+	</color>
+	<color name="vivo_color_pepperDark">
+		#B71D63
+	</color>
+	<color name="vivo_color_pepperDark80">
+		#8F2052
+	</color>
+	<color name="vivo_color_pepperLight10">
+		#FCE4EF
+	</color>
+	<color name="vivo_color_pepperLight30">
+		#F7B1CB
+	</color>
+	<color name="vivo_color_pepperLight40">
+		#DB628B
+	</color>
+	<color name="vivo_color_grey0">
+		#FAFAFA
+	</color>
+	<color name="vivo_color_grey1">
+		#F6F6F6
+	</color>
+	<color name="vivo_color_grey2">
+		#EEEEEE
+	</color>
+	<color name="vivo_color_grey3">
+		#DDDDDD
+	</color>
+	<color name="vivo_color_grey4">
+		#999999
+	</color>
+	<color name="vivo_color_grey5">
+		#666666
+	</color>
+	<color name="vivo_color_grey6">
+		#000000
+	</color>
+	<color name="vivo_color_white">
+		#FFFFFF
+	</color>
+	<color name="vivo_color_darkModeBlack">
+		#191919
+	</color>
+	<color name="vivo_color_darkModeGrey">
+		#242424
+	</color>
+	<color name="vivo_color_darkModeGrey6">
+		#313235
+	</color>
+	<color name="vivo_color_darkModeGrey7">
+		#303030
+	</color>
+	<color name="vivo_color_darkModeGrey8">
+		#3D3D3D
+	</color>
+</resources>
