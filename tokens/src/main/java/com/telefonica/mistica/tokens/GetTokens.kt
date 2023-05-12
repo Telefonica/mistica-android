@@ -38,7 +38,7 @@ class GetTokens {
 
             "style" {
                 attribute("name", "MisticaTheme.${brand.capitalize()}")
-                attribute("parent", "MisticaTheme.${brand.capitalize()}_Base")
+                attribute("parent", "MisticaTheme.${brand.capitalize()}_Customizations")
 
                 tokens.dark.forEach { color ->
                     val colorName = if (color.key == "controlActivated") {
@@ -64,7 +64,7 @@ class GetTokens {
 
             "style" {
                 attribute("name", "MisticaTheme.${brand.capitalize()}")
-                attribute("parent", "MisticaTheme.${brand.capitalize()}_Base")
+                attribute("parent", "MisticaTheme.${brand.capitalize()}_Customizations")
             }
 
             "style" {

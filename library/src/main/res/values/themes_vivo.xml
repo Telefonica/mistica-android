@@ -1,33 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="MisticaTheme.Vivo" parent="MisticaTheme.Vivo_Base" />
+	<style name="MisticaTheme.Vivo_Customizations" parent="MisticaTheme.Vivo_Base">
+		<!-- Gradients (assistant, pin fingerprint screens) -->
+		<item name="colorGradientBackgroundFirst">?colorBackgroundBrand</item>
+		<item name="colorGradientBackgroundSecond">?colorBackgroundBrand</item>
+		<item name="colorGradientBackgroundThird">?colorBackgroundBrand</item>
+		<item name="colorGradientBackgroundFourth">?colorBackgroundBrand</item>
+		<item name="colorLoginLoadingGradientFirst">?colorBackgroundBrand</item>
+		<item name="colorLoginLoadingGradientSecond">?colorBackgroundBrand</item>
+		<item name="colorLoginLoadingGradientThird">?colorBackgroundBrand</item>
+		<item name="colorLoginLoadingGradientFourth">?colorBackgroundBrand</item>
 
-    <style name="MisticaTheme.Vivo_Base">
+		<!-- Feedbacks -->
+		<item name="feedbackScreenSuccessWithGradient">false</item>
+		<item name="feedbackScreenSuccessInverse">true</item>
+		<item name="feedbackScreenSuccessAnimation">@raw/feedback_success_vivo</item>
 
-        <!-- Gradients (assistant, pin fingerprint screens) -->
-        <item name="colorGradientBackgroundFirst">?colorBackgroundBrand</item>
-        <item name="colorGradientBackgroundSecond">?colorBackgroundBrand</item>
-        <item name="colorGradientBackgroundThird">?colorBackgroundBrand</item>
-        <item name="colorGradientBackgroundFourth">?colorBackgroundBrand</item>
-        <item name="colorLoginLoadingGradientFirst">?colorBackgroundBrand</item>
-        <item name="colorLoginLoadingGradientSecond">?colorBackgroundBrand</item>
-        <item name="colorLoginLoadingGradientThird">?colorBackgroundBrand</item>
-        <item name="colorLoginLoadingGradientFourth">?colorBackgroundBrand</item>
+		<!-- Stepper -->
+		<item name="stepperFinishedStepAnimation">@raw/feedback_success</item>
 
-        <!-- Feedbacks -->
-        <item name="feedbackScreenSuccessWithGradient">false</item>
-        <item name="feedbackScreenSuccessInverse">true</item>
-        <item name="feedbackScreenSuccessAnimation">@raw/feedback_success_vivo</item>
+		<!-- Compose -->
+		<item name="composeBrand">vivo</item>
 
-        <!-- Stepper -->
-        <item name="stepperFinishedStepAnimation">@raw/feedback_success</item>
-
-        <!-- Compose -->
-        <item name="composeBrand">vivo</item>
-
-        <!-- Title -->
-        <item name="titleStyle">title1</item>
-    </style>
+		<!-- Title -->
+		<item name="titleStyle">title1</item>
+	</style>
 
 </resources>

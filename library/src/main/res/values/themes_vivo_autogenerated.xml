@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<!-- Code generated automatically, DO NOT EDIT manually -->
-	<style name="MisticaTheme.Vivo" parent="MisticaTheme.Vivo_Base"/>
+	<style name="MisticaTheme.Vivo" parent="MisticaTheme.Vivo_Customizations"/>
 	<style name="MisticaTheme.Vivo_Base">
 		<item name="colorBackground">
 			@color/vivo_color_white

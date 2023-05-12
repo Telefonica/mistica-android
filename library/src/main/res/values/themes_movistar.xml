@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-	<style name="MisticaTheme.Movistar_Base">
+	<style name="MisticaTheme.Movistar_Customizations" parent="MisticaTheme.Movistar_Base">
 
 		<!-- Gradients (assistant, pin fingerprint screens) -->
 		<item name="colorGradientBackgroundFirst">?colorBackgroundBrand</item>

@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-	<style name="MisticaTheme.Blau" parent="MisticaTheme.Blau_Base" />
-
-	<style name="MisticaTheme.Blau_Base">
-
+	<style name="MisticaTheme.Blau_Customizations" parent="MisticaTheme.Blau_Base">
 		<!-- Gradients (assistant, pin fingerprint screens) -->
 		<item name="colorGradientBackgroundFirst">?colorBackgroundBrand</item>
 		<item name="colorGradientBackgroundSecond">?colorBackgroundBrand</item>

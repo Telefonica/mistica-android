@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<!-- Code generated automatically, DO NOT EDIT manually -->
-	<style name="MisticaTheme.Movistar" parent="MisticaTheme.Movistar_Base"/>
+	<style name="MisticaTheme.Movistar" parent="MisticaTheme.Movistar_Customizations"/>
 	<style name="MisticaTheme.Movistar_Base">
 		<item name="colorBackground">
 			@color/movistar_color_white

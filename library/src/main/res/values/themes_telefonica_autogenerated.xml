@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<!-- Code generated automatically, DO NOT EDIT manually -->
-	<style name="MisticaTheme.Telefonica" parent="MisticaTheme.Telefonica_Base"/>
+	<style name="MisticaTheme.Telefonica" parent="MisticaTheme.Telefonica_Customizations"/>
 	<style name="MisticaTheme.Telefonica_Base">
 		<item name="colorAppBarBackground">
 			@color/telefonica_color_white

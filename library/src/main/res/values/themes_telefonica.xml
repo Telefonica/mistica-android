@@ -1,44 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="MisticaTheme.Telefonica" parent="MisticaTheme.Telefonica_Base" />
+	<style name="MisticaTheme.Telefonica_Customizations" parent="MisticaTheme.Telefonica_Base">
+		<!-- Gradients (assistant, pin fingerprint screens) -->
+		<item name="colorGradientBackgroundFirst">?colorBackgroundBrand</item>
+		<item name="colorGradientBackgroundSecond">?colorBackgroundBrand</item>
+		<item name="colorGradientBackgroundThird">?colorBackgroundBrand</item>
+		<item name="colorGradientBackgroundFourth">?colorBackgroundBrand</item>
+		<item name="colorLoginLoadingGradientFirst">?colorBrandHigh</item>
+		<item name="colorLoginLoadingGradientSecond">?colorBrandHigh</item>
+		<item name="colorLoginLoadingGradientThird">?colorBrandHigh</item>
+		<item name="colorLoginLoadingGradientFourth">?colorBrandHigh</item>
 
-    <style name="MisticaTheme.Telefonica_Base">
+		<!-- Feedbacks -->
+		<item name="feedbackScreenSuccessWithGradient">false</item>
+		<item name="feedbackScreenSuccessInverse">true</item>
+		<item name="feedbackScreenSuccessAnimation">@raw/feedback_success</item>
+		<item name="feedbackScreenErrorAnimation">@raw/feedback_error_telefonica</item>
+		<item name="feedbackScreenInfoIcon">@drawable/feedback_info_telefonica</item>
 
-        <!-- Gradients (assistant, pin fingerprint screens) -->
-        <item name="colorGradientBackgroundFirst">?colorBackgroundBrand</item>
-        <item name="colorGradientBackgroundSecond">?colorBackgroundBrand</item>
-        <item name="colorGradientBackgroundThird">?colorBackgroundBrand</item>
-        <item name="colorGradientBackgroundFourth">?colorBackgroundBrand</item>
-        <item name="colorLoginLoadingGradientFirst">?colorBrandHigh</item>
-        <item name="colorLoginLoadingGradientSecond">?colorBrandHigh</item>
-        <item name="colorLoginLoadingGradientThird">?colorBrandHigh</item>
-        <item name="colorLoginLoadingGradientFourth">?colorBrandHigh</item>
+		<!-- Stepper -->
+		<item name="stepperFinishedStepAnimation">@raw/feedback_success</item>
 
-        <!-- Feedbacks -->
-        <item name="feedbackScreenSuccessWithGradient">false</item>
-        <item name="feedbackScreenSuccessInverse">true</item>
-        <item name="feedbackScreenSuccessAnimation">@raw/feedback_success</item>
-        <item name="feedbackScreenErrorAnimation">@raw/feedback_error_telefonica</item>
-        <item name="feedbackScreenInfoIcon">@drawable/feedback_info_telefonica</item>
+		<!-- Compose -->
+		<item name="composeBrand">telefonica</item>
 
-        <!-- Stepper -->
-        <item name="stepperFinishedStepAnimation">@raw/feedback_success</item>
+		<!-- Title -->
+		<item name="titleStyle">title1</item>
 
-        <!-- Compose -->
-        <item name="composeBrand">telefonica</item>
-
-        <!-- Title -->
-        <item name="titleStyle">title1</item>
-
-        <!-- Border radius -->
-        <item name="buttonBorderRadius">999dp</item>
-        <item name="inputBorderRadius">0dp</item>
-        <item name="containerBorderRadius">0dp</item>
-        <item name="legacyDisplayBorderRadius">0dp</item>
-        <item name="popupBorderRadius">0dp</item>
-        <item name="checkboxBorderRadius">0dp</item>
-        <item name="barBorderRadius">0dp</item>
-    </style>
+		<!-- Border radius -->
+		<item name="buttonBorderRadius">999dp</item>
+		<item name="inputBorderRadius">0dp</item>
+		<item name="containerBorderRadius">0dp</item>
+		<item name="legacyDisplayBorderRadius">0dp</item>
+		<item name="popupBorderRadius">0dp</item>
+		<item name="checkboxBorderRadius">0dp</item>
+		<item name="barBorderRadius">0dp</item>
+	</style>
 
 </resources>
