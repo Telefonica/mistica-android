@@ -40,10 +40,10 @@
 			@color/telefonica_color_grey1
 		</item>
 		<item name="colorBackgroundContainerAlternativeHover">
-			@color/telefonica_color_grey5
+			@color/telefonica_color_grey5_10_alpha
 		</item>
 		<item name="colorBackgroundContainerAlternativePressed">
-			@color/telefonica_color_grey5
+			@color/telefonica_color_grey5_20_alpha
 		</item>
 		<item name="colorBackgroundBrand">
 			@color/telefonica_color_telefonicaBlue
@@ -52,7 +52,7 @@
 			@color/telefonica_color_telefonicaBlue
 		</item>
 		<item name="colorBackgroundOverlay">
-			@color/telefonica_color_grey6
+			@color/telefonica_color_grey6_80_alpha
 		</item>
 		<item name="colorBackgroundSkeleton">
 			@color/telefonica_color_grey2
@@ -97,7 +97,7 @@
 			@color/telefonica_color_grey1
 		</item>
 		<item name="colorButtonLinkBackgroundInverseSelected">
-			@color/telefonica_color_white
+			@color/telefonica_color_white_8_alpha
 		</item>
 		<item name="colorButtonPrimaryBackground">
 			@color/telefonica_color_telefonicaBlue
@@ -133,10 +133,10 @@
 			@color/telefonica_color_white
 		</item>
 		<item name="colorButtonSecondaryBackgroundInverseHover">
-			@color/telefonica_color_white
+			@color/telefonica_color_white_10_alpha
 		</item>
 		<item name="colorButtonSecondaryBackgroundInverseSelected">
-			@color/telefonica_color_white
+			@color/telefonica_color_white_10_alpha
 		</item>
 		<item name="colorTextButtonPrimary">
 			@color/telefonica_color_white
@@ -199,7 +199,7 @@
 			@color/telefonica_color_grey2
 		</item>
 		<item name="colorDividerInverse">
-			@color/telefonica_color_white
+			@color/telefonica_color_white_20_alpha
 		</item>
 		<item name="colorNavigationBarDivider">
 			@color/telefonica_color_telefonicaBlue

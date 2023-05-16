@@ -139,4 +139,28 @@
 	<color name="o2_color_darkModeO2BluePrimaryDark">
 		#000099
 	</color>
+	<color name="o2_color_grey5_10_alpha">
+		#1A707070
+	</color>
+	<color name="o2_color_grey5_20_alpha">
+		#33707070
+	</color>
+	<color name="o2_color_grey6_60_alpha">
+		#99000033
+	</color>
+	<color name="o2_color_white_8_alpha">
+		#14FFFFFF
+	</color>
+	<color name="o2_color_white_15_alpha">
+		#26FFFFFF
+	</color>
+	<color name="o2_color_white_20_alpha">
+		#33FFFFFF
+	</color>
+	<color name="o2_color_darkModeGrey_80_alpha">
+		#CC242424
+	</color>
+	<color name="o2_color_white_5_alpha">
+		#0DFFFFFF
+	</color>
 </resources>

@@ -46,13 +46,13 @@
 			@color/movistar_color_grey1
 		</item>
 		<item name="colorBackgroundContainerAlternativeHover">
-			@color/movistar_color_grey5
+			@color/movistar_color_grey5_10_alpha
 		</item>
 		<item name="colorBackgroundContainerAlternativePressed">
-			@color/movistar_color_grey5
+			@color/movistar_color_grey5_20_alpha
 		</item>
 		<item name="colorBackgroundOverlay">
-			@color/movistar_color_movistarBlueDark
+			@color/movistar_color_movistarBlueDark_60_alpha
 		</item>
 		<item name="colorBackgroundSkeleton">
 			@color/movistar_color_grey2
@@ -97,7 +97,7 @@
 			@color/movistar_color_movistarBlue10
 		</item>
 		<item name="colorButtonLinkBackgroundInverseSelected">
-			@color/movistar_color_white
+			@color/movistar_color_white_20_alpha
 		</item>
 		<item name="colorButtonPrimaryBackground">
 			@color/movistar_color_movistarBlue
@@ -133,10 +133,10 @@
 			@color/movistar_color_white
 		</item>
 		<item name="colorButtonSecondaryBackgroundInverseHover">
-			@color/movistar_color_white
+			@color/movistar_color_white_20_alpha
 		</item>
 		<item name="colorButtonSecondaryBackgroundInverseSelected">
-			@color/movistar_color_white
+			@color/movistar_color_white_20_alpha
 		</item>
 		<item name="colorTextButtonPrimary">
 			@color/movistar_color_white
@@ -199,7 +199,7 @@
 			@color/movistar_color_grey2
 		</item>
 		<item name="colorDividerInverse">
-			@color/movistar_color_movistarBlue55
+			@color/movistar_color_movistarBlue55_20_alpha
 		</item>
 		<item name="colorNavigationBarDivider">
 			@color/movistar_color_movistarBlue

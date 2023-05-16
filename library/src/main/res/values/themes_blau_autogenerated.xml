@@ -46,13 +46,13 @@
 			@color/blau_color_blauBluePrimary20
 		</item>
 		<item name="colorBackgroundContainerAlternativeHover">
-			@color/blau_color_grey5
+			@color/blau_color_grey5_10_alpha
 		</item>
 		<item name="colorBackgroundContainerAlternativePressed">
-			@color/blau_color_grey5
+			@color/blau_color_grey5_20_alpha
 		</item>
 		<item name="colorBackgroundOverlay">
-			@color/blau_color_blauBlueSecondary
+			@color/blau_color_blauBlueSecondary_75_alpha
 		</item>
 		<item name="colorBackgroundSkeleton">
 			@color/blau_color_grey2
@@ -97,7 +97,7 @@
 			@color/blau_color_blauPurple10
 		</item>
 		<item name="colorButtonLinkBackgroundInverseSelected">
-			@color/blau_color_white
+			@color/blau_color_white_15_alpha
 		</item>
 		<item name="colorButtonPrimaryBackground">
 			@color/blau_color_blauBlueSecondary
@@ -133,10 +133,10 @@
 			@color/blau_color_white
 		</item>
 		<item name="colorButtonSecondaryBackgroundInverseHover">
-			@color/blau_color_white
+			@color/blau_color_white_20_alpha
 		</item>
 		<item name="colorButtonSecondaryBackgroundInverseSelected">
-			@color/blau_color_white
+			@color/blau_color_white_20_alpha
 		</item>
 		<item name="colorTextButtonPrimary">
 			@color/blau_color_white
@@ -199,7 +199,7 @@
 			@color/blau_color_grey2
 		</item>
 		<item name="colorDividerInverse">
-			@color/blau_color_white
+			@color/blau_color_white_20_alpha
 		</item>
 		<item name="colorNavigationBarDivider">
 			@color/blau_color_blauBluePrimary

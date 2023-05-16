@@ -46,13 +46,13 @@
 			@color/o2_color_grey1
 		</item>
 		<item name="colorBackgroundContainerAlternativeHover">
-			@color/o2_color_grey5
+			@color/o2_color_grey5_10_alpha
 		</item>
 		<item name="colorBackgroundContainerAlternativePressed">
-			@color/o2_color_grey5
+			@color/o2_color_grey5_20_alpha
 		</item>
 		<item name="colorBackgroundOverlay">
-			@color/o2_color_grey6
+			@color/o2_color_grey6_60_alpha
 		</item>
 		<item name="colorBackgroundSkeleton">
 			@color/o2_color_grey2
@@ -97,7 +97,7 @@
 			@color/o2_color_o2BluePrimary10
 		</item>
 		<item name="colorButtonLinkBackgroundInverseSelected">
-			@color/o2_color_white
+			@color/o2_color_white_8_alpha
 		</item>
 		<item name="colorButtonPrimaryBackground">
 			@color/o2_color_o2BluePrimary
@@ -133,10 +133,10 @@
 			@color/o2_color_o2BluePrimary30
 		</item>
 		<item name="colorButtonSecondaryBackgroundInverseHover">
-			@color/o2_color_white
+			@color/o2_color_white_15_alpha
 		</item>
 		<item name="colorButtonSecondaryBackgroundInverseSelected">
-			@color/o2_color_white
+			@color/o2_color_white_15_alpha
 		</item>
 		<item name="colorTextButtonPrimary">
 			@color/o2_color_white
@@ -199,7 +199,7 @@
 			@color/o2_color_grey2
 		</item>
 		<item name="colorDividerInverse">
-			@color/o2_color_white
+			@color/o2_color_white_20_alpha
 		</item>
 		<item name="colorNavigationBarDivider">
 			@color/o2_color_o2BluePrimary

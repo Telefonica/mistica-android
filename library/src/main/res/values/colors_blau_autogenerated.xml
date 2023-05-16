@@ -130,4 +130,28 @@
 	<color name="blau_color_darkModeGrey8">
 		#3D3D3D
 	</color>
+	<color name="blau_color_grey5_10_alpha">
+		#1A808285
+	</color>
+	<color name="blau_color_grey5_20_alpha">
+		#33808285
+	</color>
+	<color name="blau_color_blauBlueSecondary_75_alpha">
+		#BF0072BC
+	</color>
+	<color name="blau_color_white_15_alpha">
+		#26FFFFFF
+	</color>
+	<color name="blau_color_white_20_alpha">
+		#33FFFFFF
+	</color>
+	<color name="blau_color_darkModeGrey_80_alpha">
+		#CC242424
+	</color>
+	<color name="blau_color_blauPurple_30_alpha">
+		#4D7814B3
+	</color>
+	<color name="blau_color_white_5_alpha">
+		#0DFFFFFF
+	</color>
 </resources>

@@ -124,4 +124,31 @@
 	<color name="vivo_color_darkModeGrey8">
 		#3D3D3D
 	</color>
+	<color name="vivo_color_grey5_10_alpha">
+		#1A666666
+	</color>
+	<color name="vivo_color_grey5_20_alpha">
+		#33666666
+	</color>
+	<color name="vivo_color_grey6_60_alpha">
+		#99000000
+	</color>
+	<color name="vivo_color_white_10_alpha">
+		#1AFFFFFF
+	</color>
+	<color name="vivo_color_white_15_alpha">
+		#26FFFFFF
+	</color>
+	<color name="vivo_color_white_20_alpha">
+		#33FFFFFF
+	</color>
+	<color name="vivo_color_darkModeGrey_80_alpha">
+		#CC242424
+	</color>
+	<color name="vivo_color_white_8_alpha">
+		#14FFFFFF
+	</color>
+	<color name="vivo_color_white_5_alpha">
+		#0DFFFFFF
+	</color>
 </resources>
