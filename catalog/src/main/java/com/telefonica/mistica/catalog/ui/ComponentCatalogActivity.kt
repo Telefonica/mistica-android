@@ -48,6 +48,7 @@ import com.telefonica.mistica.catalog.ui.compose.components.DataCards
 import com.telefonica.mistica.catalog.ui.compose.components.EmptyStateCards
 import com.telefonica.mistica.catalog.ui.compose.components.EmptyStateScreens
 import com.telefonica.mistica.catalog.ui.compose.components.Feedbacks
+import com.telefonica.mistica.catalog.ui.compose.components.HighlightedCards
 import com.telefonica.mistica.catalog.ui.compose.components.Inputs
 import com.telefonica.mistica.catalog.ui.compose.components.Lists
 import com.telefonica.mistica.catalog.ui.compose.components.LoadErrorFeedbacks
@@ -137,7 +138,7 @@ class ComponentCatalogActivity : FragmentActivity() {
                 composeComponent = null)
             Section.HIGHLIGHTED_CARDS -> setPageAdapterWithTabs(
                 classicComponent = HighlightedCardsCatalogFragment(),
-                composeComponent = null)
+                composeComponent = { HighlightedCards() })
             Section.CONTROLS -> setPageAdapterWithTabs(
                 classicComponent = ControlsCatalogFragment(),
                 composeComponent = null)

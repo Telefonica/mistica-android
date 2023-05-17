@@ -5,6 +5,8 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.IntrinsicSize
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.absolutePadding
@@ -25,6 +27,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -51,6 +54,8 @@ fun ListRowItem(
     headline: Tag? = null,
     trailing: @Composable (() -> Unit)? = null,
     onClick: (() -> Unit)? = null,
+    bottom: @Composable (() -> Unit)? = null,
+    contentPadding: PaddingValues = PaddingValues(horizontal = 16.dp, vertical = 8.dp),
 ) {
     val badgeVisible by remember { mutableStateOf(isBadgeVisible) }
 
@@ -58,8 +63,7 @@ fun ListRowItem(
         BackgroundType.TYPE_NORMAL -> modifier
         BackgroundType.TYPE_BOXED,
         BackgroundType.TYPE_BOXED_INVERSE,
-        -> modifier
-            .padding(horizontal = 16.dp, vertical = 8.dp)
+        -> modifier.padding(contentPadding)
     }
         .fillMaxWidth()
         .clip(shape = RoundedCornerShape(MisticaTheme.values.containerBorderRadius))
@@ -71,6 +75,10 @@ fun ListRowItem(
             .border(
                 width = 1.dp,
                 color = MisticaTheme.colors.border,
+                shape = RoundedCornerShape(MisticaTheme.values.containerBorderRadius),
+            )
+            .background(
+                color = MisticaTheme.colors.backgroundContainer,
                 shape = RoundedCornerShape(MisticaTheme.values.containerBorderRadius),
             )
         BackgroundType.TYPE_BOXED_INVERSE -> Modifier
@@ -104,7 +112,7 @@ fun ListRowItem(
         modifier = boxModifier.testTag(ListRowItemTestTags.LIST_ROW_ITEM)
     ) {
         Row(
-            modifier = rowModifier
+            modifier = rowModifier.height(IntrinsicSize.Min)
         ) {
             if (icon != null) {
                 icon()
@@ -150,6 +158,10 @@ fun ListRowItem(
                             .padding(vertical = 2.dp)
                             .defaultMinSize(minHeight = 20.dp),
                     )
+                }
+                bottom?.let {
+                    Spacer(modifier = Modifier.height(2.dp))
+                    bottom()
                 }
             }
 
@@ -209,7 +221,7 @@ fun ListRowItemPreview() {
                 description = "Description",
                 icon = {
                     Icon(
-                        painterResource(id = R.drawable.list_row_background),
+                        painterResource(id = R.drawable.icn_arrow),
                         contentDescription = null
                     )
                 },
@@ -231,6 +243,29 @@ fun ListRowItemPreview() {
                     Checkbox(
                         checked = checkedState.value,
                         onCheckedChange = { checkedState.value = it }
+                    )
+                }
+            )
+            ListRowItem(
+                backgroundType = BackgroundType.TYPE_BOXED,
+                title = "Title",
+                subtitle = "Subtitle",
+                description = "Description",
+                icon = {
+                    Circle {}
+                },
+                trailing = {
+                    Checkbox(
+                        checked = checkedState.value,
+                        onCheckedChange = { checkedState.value = it }
+                    )
+                },
+                bottom = {
+                    Box(
+                        modifier = Modifier
+                            .height(40.dp)
+                            .fillMaxWidth()
+                            .background(Color.Green)
                     )
                 }
             )
