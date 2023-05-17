@@ -1,17 +1,20 @@
 name: "Run tests"
 on:
   pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   tests:
-    runs-on: self-hosted-novum
+    runs-on: ubuntu-latest
     steps:
     - name: Checkout repo
       uses: actions/checkout@v2
     
     - name: "Build Android project"
-      uses: docker://docker.tuenti.io/android/novum_android_api31:2
-      with:
-        args: 'bash ./gradlew clean check assemble'
+      run : 'bash ./gradlew clean check assemble'
 
     - name: Upload Lint results
       uses: github/codeql-action/upload-sarif@v2
