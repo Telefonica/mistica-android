@@ -13,7 +13,6 @@ jobs:
         run: 'bash ./gradlew clean :library:assembleRelease :catalog:assembleRelease'
 
       - name: Release library
-        uses: docker://docker.tuenti.io/android/novum_android_api31:2
         env:
           MOBILE_MAVENCENTRAL_USER: ${{ secrets.MOBILE_MAVENCENTRAL_USER }}
           MOBILE_MAVENCENTRAL_PASSWORD: ${{ secrets.MOBILE_MAVENCENTRAL_PASSWORD }}
