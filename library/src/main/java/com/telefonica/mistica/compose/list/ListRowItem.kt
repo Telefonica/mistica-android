@@ -27,6 +27,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -220,7 +221,7 @@ fun ListRowItemPreview() {
                 description = "Description",
                 icon = {
                     Icon(
-                        painterResource(id = R.drawable.list_row_background),
+                        painterResource(id = R.drawable.icn_arrow),
                         contentDescription = null
                     )
                 },
@@ -242,6 +243,29 @@ fun ListRowItemPreview() {
                     Checkbox(
                         checked = checkedState.value,
                         onCheckedChange = { checkedState.value = it }
+                    )
+                }
+            )
+            ListRowItem(
+                backgroundType = BackgroundType.TYPE_BOXED,
+                title = "Title",
+                subtitle = "Subtitle",
+                description = "Description",
+                icon = {
+                    Circle {}
+                },
+                trailing = {
+                    Checkbox(
+                        checked = checkedState.value,
+                        onCheckedChange = { checkedState.value = it }
+                    )
+                },
+                bottom = {
+                    Box(
+                        modifier = Modifier
+                            .height(40.dp)
+                            .fillMaxWidth()
+                            .background(Color.Green)
                     )
                 }
             )
