@@ -5,6 +5,8 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.IntrinsicSize
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.absolutePadding
@@ -51,6 +53,8 @@ fun ListRowItem(
     headline: Tag? = null,
     trailing: @Composable (() -> Unit)? = null,
     onClick: (() -> Unit)? = null,
+    bottom: @Composable (() -> Unit)? = null,
+    contentPadding: PaddingValues = PaddingValues(horizontal = 16.dp, vertical = 8.dp),
 ) {
     val badgeVisible by remember { mutableStateOf(isBadgeVisible) }
 
@@ -58,8 +62,7 @@ fun ListRowItem(
         BackgroundType.TYPE_NORMAL -> modifier
         BackgroundType.TYPE_BOXED,
         BackgroundType.TYPE_BOXED_INVERSE,
-        -> modifier
-            .padding(horizontal = 16.dp, vertical = 8.dp)
+        -> modifier.padding(contentPadding)
     }
         .fillMaxWidth()
         .clip(shape = RoundedCornerShape(MisticaTheme.values.containerBorderRadius))
@@ -71,6 +74,10 @@ fun ListRowItem(
             .border(
                 width = 1.dp,
                 color = MisticaTheme.colors.border,
+                shape = RoundedCornerShape(MisticaTheme.values.containerBorderRadius),
+            )
+            .background(
+                color = MisticaTheme.colors.backgroundContainer,
                 shape = RoundedCornerShape(MisticaTheme.values.containerBorderRadius),
             )
         BackgroundType.TYPE_BOXED_INVERSE -> Modifier
@@ -104,7 +111,7 @@ fun ListRowItem(
         modifier = boxModifier.testTag(ListRowItemTestTags.LIST_ROW_ITEM)
     ) {
         Row(
-            modifier = rowModifier
+            modifier = rowModifier.height(IntrinsicSize.Min)
         ) {
             if (icon != null) {
                 icon()
@@ -150,6 +157,10 @@ fun ListRowItem(
                             .padding(vertical = 2.dp)
                             .defaultMinSize(minHeight = 20.dp),
                     )
+                }
+                bottom?.let {
+                    Spacer(modifier = Modifier.height(2.dp))
+                    bottom()
                 }
             }
 

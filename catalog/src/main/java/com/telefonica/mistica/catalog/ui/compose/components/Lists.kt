@@ -1,19 +1,27 @@
 package com.telefonica.mistica.catalog.ui.compose.components
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Divider
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Icon
 import androidx.compose.material.Switch
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -63,6 +71,12 @@ fun samples() = listOf(
         subtitle = SUBTITLE,
         action = { Chevron() },
     ),
+    ListItem(
+        title = TITLE,
+        subtitle = SUBTITLE,
+        action = { Chevron() },
+        bottom =  { CustomFragment() },
+    ),
 
     ListItem(
         title = TITLE,
@@ -97,6 +111,13 @@ fun samples() = listOf(
         action = { Chevron() },
         icon = { ListIcon() },
     ),
+    ListItem(
+        title = TITLE,
+        subtitle = SUBTITLE,
+        action = { Chevron() },
+        icon = { ListIcon() },
+        bottom =  { CustomFragment() },
+    ),
 
     ListItem(
         title = TITLE,
@@ -130,6 +151,13 @@ fun samples() = listOf(
         subtitle = SUBTITLE,
         action = { Chevron() },
         icon = { ListIcon() },
+    ),
+    ListItem(
+        title = TITLE,
+        subtitle = SUBTITLE,
+        action = { Chevron() },
+        icon = { ListIcon() },
+        bottom =  { CustomFragment() },
     ),
 
     ListItem(
@@ -169,8 +197,17 @@ fun samples() = listOf(
         badge = "1",
         icon = { Avatar() },
     ),
+    ListItem(
+        title = TITLE,
+        subtitle = SUBTITLE,
+        description = DESCRIPTION,
+        action = { Switch(checked = true, onCheckedChange = {}) },
+        isBadgeVisible = true,
+        badge = "1",
+        icon = { Avatar() },
+        bottom =  { CustomFragment() },
+    ),
 )
-
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
@@ -192,6 +229,7 @@ fun Lists() {
                 description = item.description,
                 trailing = item.action,
                 onClick = item.onClick,
+                bottom = item.bottom,
             )
             Divider(
                 modifier = Modifier.padding(horizontal = 16.dp),
@@ -212,6 +250,7 @@ fun Lists() {
                 description = item.description,
                 trailing = item.action,
                 onClick = item.onClick,
+                bottom = item.bottom,
             )
         }
         items(samples.map {
@@ -231,6 +270,7 @@ fun Lists() {
                 description = item.description,
                 trailing = item.action,
                 onClick = item.onClick,
+                bottom = item.bottom,
             )
         }
     }
@@ -247,6 +287,7 @@ data class ListItem(
     val headline: Tag? = null,
     val action: @Composable (() -> Unit)? = null,
     val onClick: () -> Unit = {},
+    val bottom: @Composable (() -> Unit)? = null,
 )
 
 @Composable
@@ -283,4 +324,28 @@ fun Avatar(url: String) {
         contentDescription = null,
         modifier = Modifier.size(40.dp)
     )
+}
+
+@Composable
+private fun CustomFragment() {
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .border(
+                width = 1.dp,
+                color = MisticaTheme.colors.border,
+                shape = RoundedCornerShape(MisticaTheme.values.containerBorderRadius)
+            )
+            .background(
+                color = Color.LightGray,
+                shape = RoundedCornerShape(MisticaTheme.values.containerBorderRadius)
+            )
+    ) {
+        Text(
+            modifier = Modifier
+                .padding(vertical = 16.dp, horizontal = 8.dp)
+                .align(Alignment.Center),
+            text = "Custom Fragment"
+        )
+    }
 }
