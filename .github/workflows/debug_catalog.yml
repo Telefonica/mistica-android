@@ -3,17 +3,16 @@ on:
   pull_request:
 jobs:
   debug-catalog:
-    runs-on: self-hosted-novum
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
 
       - name: Publish catalog
-        uses: docker://docker.tuenti.io/android/novum_android_api31:2
         env:
           APPCENTER_API_TOKEN: ${{ secrets.APPCENTER_API_TOKEN }}
-        with:
-          args: 'bash ./gradlew clean check appCenterAssembleAndUploadDebug -Dappcenter_app_name=Mistica-Catalog -Dappcenter_notify=false -Dappcenter_notes="Testing catalog for PR #${{ github.event.number }} ${{ github.sha }}"'
+        run: 'bash ./gradlew clean check appCenterAssembleAndUploadDebug -Dappcenter_app_name=Mistica-Catalog -Dappcenter_notify=false 
+          -Dappcenter_notes="Testing catalog for PR #${{ github.event.number }} ${{ github.sha }}"'
 
       - name: Get version ID
         id: id-request
