@@ -2,7 +2,6 @@ package com.telefonica.mistica.catalog.ui.compose.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -25,7 +24,6 @@ import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.compose.button.Button
 import com.telefonica.mistica.compose.popover.PopOver
-import com.telefonica.mistica.compose.popover.PopupState
 import com.telefonica.mistica.compose.theme.MisticaTheme
 
 @Composable
@@ -34,9 +32,6 @@ fun PopOvers() {
     var title: String by remember { mutableStateOf("Title of the pop over") }
     var subtitle: String by remember { mutableStateOf("Popover long description text") }
     var addImage by remember { mutableStateOf(true) }
-    val popupState: PopupState = remember {
-        PopupState(false)
-    }
 
     Column(
         modifier = Modifier
@@ -70,28 +65,21 @@ fun PopOvers() {
             Text("Add Image")
         }
 
-        Box(
+        PopOver(
             modifier = Modifier
                 .fillMaxWidth()
-                .wrapContentHeight()
+                .wrapContentHeight(),
+            imageRes = if (addImage) R.drawable.ic_popovers else null,
+            title = title,
+            subtitle = subtitle
         ) {
-            PopOver(
-                imageRes = if (addImage) R.drawable.ic_popovers else null,
-                title = title,
-                subtitle = subtitle,
-                popupState = popupState,
-                onDismissRequest = {
-                    popupState.isVisible = false
-                }
-            )
-
             Button(
                 modifier = Modifier
                     .padding(horizontal = 16.dp)
                     .fillMaxWidth(),
                 text = "Test",
                 onClickListener = {
-                    popupState.isVisible = !popupState.isVisible
+                    it.showAlignTop()
                 }
             )
         }

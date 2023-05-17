@@ -81,6 +81,8 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'com.airbnb.android:lottie:3.2.2'
 
+    implementation "com.github.skydoves:balloon-compose:1.5.3"
+
     testImplementation composeBom
     testImplementation 'junit:junit:4.13.2'
     testImplementation "androidx.compose.ui:ui-test-junit4"
