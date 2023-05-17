@@ -75,7 +75,7 @@ fun samples() = listOf(
         title = TITLE,
         subtitle = SUBTITLE,
         action = { Chevron() },
-        bottom =  { CustomFragment() },
+        bottom =  { CustomSlot() },
     ),
 
     ListItem(
@@ -116,7 +116,7 @@ fun samples() = listOf(
         subtitle = SUBTITLE,
         action = { Chevron() },
         icon = { ListIcon() },
-        bottom =  { CustomFragment() },
+        bottom =  { CustomSlot() },
     ),
 
     ListItem(
@@ -157,7 +157,7 @@ fun samples() = listOf(
         subtitle = SUBTITLE,
         action = { Chevron() },
         icon = { ListIcon() },
-        bottom =  { CustomFragment() },
+        bottom =  { CustomSlot() },
     ),
 
     ListItem(
@@ -205,7 +205,7 @@ fun samples() = listOf(
         isBadgeVisible = true,
         badge = "1",
         icon = { Avatar() },
-        bottom =  { CustomFragment() },
+        bottom =  { CustomSlot() },
     ),
 )
 
