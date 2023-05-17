@@ -327,7 +327,7 @@ fun Avatar(url: String) {
 }
 
 @Composable
-private fun CustomFragment() {
+private fun CustomSlot() {
     Box(
         modifier = Modifier
             .fillMaxWidth()
@@ -345,7 +345,7 @@ private fun CustomFragment() {
             modifier = Modifier
                 .padding(vertical = 16.dp, horizontal = 8.dp)
                 .align(Alignment.Center),
-            text = "Custom Fragment"
+            text = "Custom Slot"
         )
     }
 }
