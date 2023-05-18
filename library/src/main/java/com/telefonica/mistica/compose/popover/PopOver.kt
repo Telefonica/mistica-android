@@ -23,6 +23,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.skydoves.balloon.ArrowPositionRules
@@ -56,10 +57,13 @@ fun PopOver(
         dismissWhenOverlayClicked = false
     }
 
+    val popOverWindow = PopOverWindow(null, null)
     var window: BalloonWindow? by remember { mutableStateOf(null) }
 
     Balloon(
-        modifier = modifier,
+        modifier = modifier.onGloballyPositioned {
+            popOverWindow.coordinates = it
+        },
         builder = builder,
         balloonContent = {
             Box(
@@ -114,6 +118,7 @@ fun PopOver(
         }
     ) { balloonWindow ->
         window = balloonWindow
-        popoverWindow(PopOverWindow(balloonWindow))
+        popOverWindow.balloonWindow = balloonWindow
+        popoverWindow(popOverWindow)
     }
 }

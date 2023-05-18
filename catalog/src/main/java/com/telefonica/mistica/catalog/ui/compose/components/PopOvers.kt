@@ -23,6 +23,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.compose.button.Button
+import com.telefonica.mistica.compose.input.DropDownInput
 import com.telefonica.mistica.compose.popover.PopOver
 import com.telefonica.mistica.compose.theme.MisticaTheme
 
@@ -32,6 +33,8 @@ fun PopOvers() {
     var title: String by remember { mutableStateOf("Title of the pop over") }
     var subtitle: String by remember { mutableStateOf("Popover long description text") }
     var addImage by remember { mutableStateOf(true) }
+    val orientationItems = remember { listOf("AUTO", "TOP", "BOTTOM") }
+    var selectedItemIndex by remember { mutableStateOf<Int?>(0) }
 
     Column(
         modifier = Modifier
@@ -71,7 +74,7 @@ fun PopOvers() {
                 .wrapContentHeight(),
             imageRes = if (addImage) R.drawable.ic_popovers else null,
             title = title,
-            subtitle = subtitle
+            subtitle = subtitle,
         ) {
             Button(
                 modifier = Modifier
@@ -79,9 +82,25 @@ fun PopOvers() {
                     .fillMaxWidth(),
                 text = "Test",
                 onClickListener = {
-                    it.showAlignTop()
+                    when (selectedItemIndex) {
+                        0 -> it.showAlignAuto()
+                        1 -> it.showAlignTop()
+                        else -> it.showAlignBottom()
+                    }
                 }
             )
         }
+
+        DropDownInput(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = 8.dp, start = 16.dp, end = 16.dp),
+            hint = "Force PopOver position",
+            currentItemIndex = selectedItemIndex,
+            items = orientationItems,
+            onItemSelected = {
+                selectedItemIndex = it
+            }
+        )
     }
 }
