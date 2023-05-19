@@ -32,6 +32,7 @@ import com.skydoves.balloon.BalloonSizeSpec
 import com.skydoves.balloon.compose.Balloon
 import com.skydoves.balloon.compose.BalloonWindow
 import com.skydoves.balloon.compose.rememberBalloonBuilder
+import com.skydoves.balloon.compose.setBackgroundColor
 import com.telefonica.mistica.R
 import com.telefonica.mistica.compose.theme.MisticaTheme
 
@@ -43,16 +44,18 @@ fun PopOver(
     subtitle: String,
     popoverWindow: @Composable (popoverWindow: PopOverWindow) -> Unit,
 ) {
+    val colorBackground = MisticaTheme.colors.background
     val builder = rememberBalloonBuilder {
-        setArrowSize(11)
+        setArrowSize(12)
         setArrowPosition(0.5f)
         setArrowPositionRules(ArrowPositionRules.ALIGN_ANCHOR)
-        setArrowDrawableResource(R.drawable.icn_arrow_popover_up)
+        setArrowDrawableResource(R.drawable.icn_arrow_popover)
         setWidth(BalloonSizeSpec.WRAP)
         setHeight(BalloonSizeSpec.WRAP)
         setCornerRadius(8f)
-        setBackgroundColorResource(R.color.cardview_light_background)
+        setBackgroundColor(colorBackground)
         setBalloonAnimation(BalloonAnimation.NONE)
+        setElevation(9)
         dismissWhenTouchOutside = false
         dismissWhenOverlayClicked = false
     }
