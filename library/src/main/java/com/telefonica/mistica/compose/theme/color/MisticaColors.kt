@@ -102,6 +102,7 @@ class MisticaColors(
     warningHigh: Color = Color.Unspecified,
     warningHighInverse: Color = Color.Unspecified,
     warning: Color = Color.Unspecified,
+    closeButtonOverlayColor: Color = Color.Unspecified
 ) {
     var appBarBackground by mutableStateOf(appBarBackground, structuralEqualityPolicy())
         internal set
@@ -292,6 +293,8 @@ class MisticaColors(
     var carouselIndicatorInactiveColor by mutableStateOf(carouselIndicatorInactiveColor, structuralEqualityPolicy())
         internal set
 
+    var closeButtonOverlay by mutableStateOf(closeButtonOverlayColor, structuralEqualityPolicy())
+        internal set
     fun copy(
         appBarBackground: Color = this.appBarBackground,
         background: Color = this.background,
@@ -387,6 +390,7 @@ class MisticaColors(
         warningHigh: Color = this.warningHigh,
         warningHighInverse: Color = this.warningHighInverse,
         warning: Color = this.warning,
+        closeButtonOverlay: Color = this.closeButtonOverlay
     ): MisticaColors = MisticaColors(
         appBarBackground = appBarBackground,
         background = background,
@@ -482,6 +486,7 @@ class MisticaColors(
         warningHigh = warningHigh,
         warningHighInverse = warningHighInverse,
         warning = warning,
+        closeButtonOverlayColor = closeButtonOverlay
     )
 
     internal fun updateColorsFrom(other: MisticaColors) {
@@ -579,6 +584,7 @@ class MisticaColors(
         warningHigh = other.warningHigh
         warningHighInverse = other.warningHighInverse
         warning = other.warning
+        closeButtonOverlay = other.closeButtonOverlay
     }
 }
 

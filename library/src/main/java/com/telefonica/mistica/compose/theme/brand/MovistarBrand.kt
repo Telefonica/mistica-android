@@ -4,6 +4,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import com.telefonica.mistica.R
 import com.telefonica.mistica.compose.theme.color.MisticaColors
+import com.telefonica.mistica.compose.theme.values.MisticaValues
 import com.telefonica.mistica.compose.title.TitleStyle
 
 object MovistarBrand : Brand {
@@ -106,6 +107,7 @@ object MovistarBrand : Brand {
         warningHigh = MovistarPaletteColor.movistar_color_egg_80,
         warningHighInverse = MovistarPaletteColor.movistar_color_egg_80,
         warning = MovistarPaletteColor.movistar_color_egg,
+        closeButtonOverlayColor = MovistarPaletteColor.movistar_color_blue_30
     )
 
     override val darkColors =
@@ -178,6 +180,7 @@ object MovistarBrand : Brand {
             successHighInverse = MovistarPaletteColor.movistar_color_green_70,
             warningHigh = MovistarPaletteColor.movistar_color_egg_40,
             warningHighInverse = MovistarPaletteColor.movistar_color_egg_80,
+            closeButtonOverlay = MovistarPaletteColor.movistar_color_blue_30
         )
 
     override val preset5FontWeight: FontWeight
@@ -192,8 +195,8 @@ object MovistarBrand : Brand {
     override val preset8FontWeight: FontWeight
         get() = FontWeight.Bold
 
-    override val titleStyle: TitleStyle
-        get() = TitleStyle.TITLE_2
+    override val values: MisticaValues
+        get() = super.values.copy(titleStyle = TitleStyle.TITLE_2)
 }
 
 private object MovistarPaletteColor {

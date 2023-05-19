@@ -146,6 +146,15 @@
 
         <!-- Title -->
         <item name="titleStyle">title1</item>
+
+        <!-- Border radius -->
+        <item name="buttonBorderRadius">999dp</item>
+        <item name="inputBorderRadius">0dp</item>
+        <item name="containerBorderRadius">0dp</item>
+        <item name="legacyDisplayBorderRadius">0dp</item>
+        <item name="popupBorderRadius">0dp</item>
+        <item name="checkboxBorderRadius">0dp</item>
+        <item name="barBorderRadius">0dp</item>
     </style>
 
 </resources>

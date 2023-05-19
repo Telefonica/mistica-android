@@ -10,7 +10,7 @@
         <item name="android:paddingEnd">@dimen/button_horizontal_padding</item>
         <item name="android:minWidth">@dimen/button_min_width</item>
         <item name="iconSize">@dimen/button_icon_size</item>
-        <item name="cornerRadius">@dimen/button_corner_radius</item>
+        <item name="cornerRadius">?buttonBorderRadius</item>
         <item name="iconGravity">textStart</item>
         <item name="android:maxLines">1</item>
         <item name="android:ellipsize">end</item>
@@ -26,7 +26,7 @@
         <item name="android:paddingEnd">@dimen/button_horizontal_padding</item>
         <item name="android:minWidth">@dimen/button_min_width</item>
         <item name="iconSize">@dimen/button_icon_size</item>
-        <item name="cornerRadius">@dimen/button_corner_radius</item>
+        <item name="cornerRadius">?buttonBorderRadius</item>
         <item name="iconGravity">textStart</item>
         <item name="android:maxLines">1</item>
         <item name="android:ellipsize">end</item>
@@ -42,7 +42,7 @@
         <item name="android:insetTop">@dimen/button_vertical_inset</item>
         <item name="android:insetBottom">@dimen/button_vertical_inset</item>
         <item name="iconSize">@dimen/button_small_icon_size</item>
-        <item name="cornerRadius">@dimen/button_corner_radius</item>
+        <item name="cornerRadius">?buttonBorderRadius</item>
         <item name="iconGravity">textStart</item>
         <item name="android:maxLines">1</item>
         <item name="android:ellipsize">end</item>
