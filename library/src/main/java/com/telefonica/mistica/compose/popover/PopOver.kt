@@ -49,7 +49,7 @@ fun PopOver(
         setArrowSize(12)
         setArrowPosition(0.5f)
         setArrowPositionRules(ArrowPositionRules.ALIGN_ANCHOR)
-        setArrowDrawableResource(R.drawable.icn_arrow_popover)
+        setArrowDrawableResource(R.drawable.icn_arrow_popover_compose)
         setWidth(BalloonSizeSpec.WRAP)
         setHeight(BalloonSizeSpec.WRAP)
         setCornerRadius(8f)
