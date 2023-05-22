@@ -8,13 +8,15 @@ concurrency:
 
 jobs:
   tests:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted-novum
     steps:
     - name: Checkout repo
       uses: actions/checkout@v2
     
     - name: "Build Android project"
-      run : 'bash ./gradlew clean check assemble'
+      uses: docker://docker.tuenti.io/android/novum_android_api31:2
+      with:
+        args: 'bash ./gradlew clean check assemble'
 
     - name: Upload Lint results
       uses: github/codeql-action/upload-sarif@v2
