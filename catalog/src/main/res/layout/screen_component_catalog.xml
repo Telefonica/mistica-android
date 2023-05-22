@@ -42,4 +42,19 @@
 			android:background="?colorBackground"
 			/>
 
+	<androidx.compose.ui.platform.ComposeView
+			android:id="@+id/input_options"
+			android:layout_width="match_parent"
+			app:layout_constraintTop_toTopOf="parent"
+			android:layout_height="wrap_content"
+			/>
+
+	<androidx.constraintlayout.widget.Group
+			android:id="@+id/tab_layout_view_group"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			app:constraint_referenced_ids="component_tabs, component_view_pager"
+			android:visibility="gone"
+			/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

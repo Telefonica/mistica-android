@@ -29,6 +29,7 @@
             <enum name="success" value="0" />
             <enum name="error" value="1" />
             <enum name="info" value="2" />
+            <enum name="custom" value="3" />
         </attr>
         <attr name="feedbackTitle" format="string" />
         <attr name="feedbackSubtitle" format="string" />
@@ -38,6 +39,7 @@
         <attr name="feedbackFirstButtonLoadingText" format="string" />
         <attr name="feedbackSecondButtonText" format="string" />
         <attr name="feedbackSecondButtonAsLink" format="boolean" />
+        <attr name="shouldAnimateOnAttached" format="boolean" />
 
         <attr name="feedbackFirstButtonOnClick" format="string" />
         <attr name="feedbackSecondButtonOnClick" format="string" />

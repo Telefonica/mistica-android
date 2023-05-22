@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <merge xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		xmlns:tools="http://schemas.android.com/tools"
+		>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -24,6 +26,9 @@
                 android:scaleType="center"
                 app:layout_constraintStart_toStartOf="parent"
                 app:lottie_enableMergePathsForKitKatAndAbove="true"
+				tools:background="?colorBrand"
+				tools:layout_height="48dp"
+				tools:layout_width="48dp"
                 app:lottie_progress="0" />
 
             <TextView

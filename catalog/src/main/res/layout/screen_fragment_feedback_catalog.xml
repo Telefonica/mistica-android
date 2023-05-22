@@ -78,7 +78,21 @@
             android:inputType="text"
             app:inputHint="Feedback Second Button Text" />
 
-        <com.telefonica.mistica.input.CheckBoxInput
+		<com.telefonica.mistica.input.DropDownInput
+				android:id="@+id/dropdown_custom_animation"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="8dp"
+				app:inputHint="Custom Animation" />
+
+		<com.telefonica.mistica.input.DropDownInput
+				android:id="@+id/dropdown_custom_icon"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="8dp"
+				app:inputHint="Custom Icon" />
+
+		<com.telefonica.mistica.input.CheckBoxInput
             android:id="@+id/check_feedback_second_button_as_link"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

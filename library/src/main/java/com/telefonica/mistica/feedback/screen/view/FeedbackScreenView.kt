@@ -70,7 +70,7 @@ class FeedbackScreenView : ConstraintLayout {
     private var secondButtonText: CharSequence = ""
     private var secondButtonAsLink: Boolean = false
     private var isIconAnimated: Boolean = false
-    var shouldAnimateOnAttachedToWindow: Boolean = true
+    private var shouldAnimateOnAttachedToWindow: Boolean = true
 
     private var firstButtonClickListener: OnClickListener? = null
     private var secondButtonClickListener: OnClickListener? = null
@@ -125,6 +125,10 @@ class FeedbackScreenView : ConstraintLayout {
     fun setCustomContentLayout(@LayoutRes layout: Int) {
         customContentLayout = layout
         configureCustomContentView()
+    }
+
+    fun setShouldAnimateOnAttached(animate: Boolean) {
+        shouldAnimateOnAttachedToWindow = animate
     }
 
     fun setFeedbackFirstButtonText(text: CharSequence) {
@@ -208,6 +212,8 @@ class FeedbackScreenView : ConstraintLayout {
                 ?.let { secondButtonText = it }
             secondButtonAsLink =
                 styledAttrs.getBoolean(R.styleable.FeedbackScreen_feedbackSecondButtonAsLink, false)
+            shouldAnimateOnAttachedToWindow =
+                styledAttrs.getBoolean(R.styleable.FeedbackScreen_shouldAnimateOnAttached, true)
             styledAttrs.recycle()
         }
 
@@ -277,7 +283,7 @@ class FeedbackScreenView : ConstraintLayout {
 
             TYPE_CUSTOM -> configureIconAsResource(
                 animationResource = customAnimation ?: context.getThemeRes(R.attr.feedbackScreenInfoAnimation, false),
-                imageResource = customIcon  ?: context.getThemeRes(R.attr.feedbackScreenInfoIcon, false),
+                imageResource = customIcon ?: context.getThemeRes(R.attr.feedbackScreenInfoIcon, false),
                 colorAttr = R.attr.colorBrand
             )
         }
@@ -304,14 +310,13 @@ class FeedbackScreenView : ConstraintLayout {
                 icon.setAnimation(animationResource)
                 icon.addValueCallback(
                     KeyPath("**"),
-                    LottieProperty.COLOR_FILTER,
-                    {
-                        PorterDuffColorFilter(
-                            context.getThemeColor(colorAttr),
-                            PorterDuff.Mode.SRC_ATOP
-                        )
-                    }
-                )
+                    LottieProperty.COLOR_FILTER
+                ) {
+                    PorterDuffColorFilter(
+                        context.getThemeColor(colorAttr),
+                        PorterDuff.Mode.SRC_ATOP
+                    )
+                }
                 icon.visibility = View.VISIBLE
             }
 
