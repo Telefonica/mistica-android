@@ -30,8 +30,8 @@ import com.telefonica.mistica.compose.theme.MisticaTheme
 @Composable
 fun PopOvers() {
 
-    var title: String by remember { mutableStateOf("Title of the pop over") }
-    var subtitle: String by remember { mutableStateOf("Popover long description text") }
+    var title: String by remember { mutableStateOf("Title of the pop over very long, testing how it works when...") }
+    var subtitle: String by remember { mutableStateOf("Popover long description text, testing if the description is shown when it is very long") }
     var addImage by remember { mutableStateOf(true) }
     val orientationItems = remember { listOf("AUTO", "TOP", "BOTTOM") }
     var selectedItemIndex by remember { mutableStateOf<Int?>(0) }
@@ -69,9 +69,9 @@ fun PopOvers() {
         }
 
         PopOver(
-            modifier = Modifier
-                .fillMaxWidth()
-                .wrapContentHeight(),
+//            modifier = Modifier
+//                .fillMaxWidth()
+//                .wrapContentHeight(),
             imageRes = if (addImage) R.drawable.ic_popovers else null,
             title = title,
             subtitle = subtitle,

@@ -17,6 +17,7 @@ import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.key
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -63,65 +64,75 @@ fun PopOver(
     val popOverWindow = PopOverWindow(null, null)
     var window: BalloonWindow? by remember { mutableStateOf(null) }
 
-    Balloon(
-        modifier = modifier.onGloballyPositioned {
-            popOverWindow.coordinates = it
-        },
-        builder = builder,
-        balloonContent = {
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(start = 16.dp, top = 16.dp, end = 8.dp, bottom = 16.dp)
-                    .background(Color.Transparent),
-            ) {
-                Row(
+    key("$title$subtitle") {
+        Balloon(
+            modifier = modifier
+                .onGloballyPositioned {
+                    popOverWindow.coordinates = it
+                },
+            builder = builder,
+            balloonContent = {
+                Box(
                     modifier = Modifier
+                        .wrapContentHeight()
                         .fillMaxWidth()
-                        .align(Alignment.CenterStart),
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.Start
+                        .padding(start = 16.dp, top = 8.dp, end = 8.dp, bottom = 16.dp)
+                        .background(Color.Transparent),
                 ) {
-                    if (imageRes != null) {
-                        Image(
-                            painter = painterResource(id = imageRes),
-                            contentDescription = null,
-                            modifier = Modifier
-                                .size(40.dp)
-                        )
-                    }
-                    Column(
+                    Row(
                         modifier = Modifier
-                            .wrapContentHeight()
-                            .padding(start = 16.dp)
+                            .fillMaxWidth()
+                            .align(Alignment.TopStart),
+                        horizontalArrangement = Arrangement.Start
                     ) {
-                        Text(
-                            text = title,
-                            style = MisticaTheme.typography.preset3
-                        )
-                        Text(
-                            text = subtitle,
-                            style = MisticaTheme.typography.preset2,
-                            color = MisticaTheme.colors.textSecondary
-                        )
-                    }
-                }
-                Spacer(modifier = Modifier.fillMaxWidth())
-                Image(
-                    painter = painterResource(id = R.drawable.icn_cross),
-                    contentDescription = null,
-                    modifier = Modifier
-                        .wrapContentSize()
-                        .align(Alignment.TopEnd)
-                        .clickable {
-                            window?.dismiss()
+                        if (imageRes != null) {
+                            Image(
+                                painter = painterResource(id = imageRes),
+                                contentDescription = null,
+                                modifier = Modifier
+                                    .padding(top = 8.dp)
+                                    .size(40.dp)
+                            )
                         }
-                )
+                        Column(
+                            modifier = Modifier
+                                .wrapContentHeight()
+                                .fillMaxWidth()
+                                .padding(start = 16.dp, end = 14.dp, top = 8.dp)
+                        ) {
+                            Text(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(bottom = 4.dp),
+                                text = title,
+                                style = MisticaTheme.typography.preset3,
+                                maxLines = 2,
+                            )
+                            Text(
+                                modifier = Modifier.fillMaxWidth(),
+                                text = subtitle,
+                                style = MisticaTheme.typography.preset2,
+                                color = MisticaTheme.colors.textSecondary
+                            )
+                        }
+                    }
+                    Spacer(modifier = Modifier.fillMaxWidth())
+                    Image(
+                        painter = painterResource(id = R.drawable.icn_cross),
+                        contentDescription = null,
+                        modifier = Modifier
+                            .wrapContentSize()
+                            .align(Alignment.TopEnd)
+                            .clickable {
+                                window?.dismiss()
+                            }
+                    )
+                }
             }
+        ) { balloonWindow ->
+            window = balloonWindow
+            popOverWindow.balloonWindow = balloonWindow
+            popoverWindow(popOverWindow)
         }
-    ) { balloonWindow ->
-        window = balloonWindow
-        popOverWindow.balloonWindow = balloonWindow
-        popoverWindow(popOverWindow)
     }
 }
