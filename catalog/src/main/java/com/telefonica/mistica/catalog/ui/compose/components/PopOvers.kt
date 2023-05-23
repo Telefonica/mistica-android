@@ -30,11 +30,11 @@ import com.telefonica.mistica.compose.theme.MisticaTheme
 @Composable
 fun PopOvers() {
 
-    var title: String by remember { mutableStateOf("Title of the pop over very long, testing how it works when...") }
-    var subtitle: String by remember { mutableStateOf("Popover long description text, testing if the description is shown when it is very long") }
+    var title: String by remember { mutableStateOf("Title of the pop over") }
+    var subtitle: String by remember { mutableStateOf("Popover long description text") }
     var addImage by remember { mutableStateOf(true) }
-    val orientationItems = remember { listOf("AUTO", "TOP", "BOTTOM") }
-    var selectedItemIndex by remember { mutableStateOf<Int?>(0) }
+    val orientationItems = remember { PopoverPosition.values().map { it.name } }
+    var selectedItemIndex by remember { mutableStateOf(0) }
 
     Column(
         modifier = Modifier
@@ -44,6 +44,28 @@ fun PopOvers() {
             .verticalScroll(rememberScrollState()),
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
+        PopOver(
+            modifier = Modifier
+                .fillMaxWidth()
+                .wrapContentHeight(),
+            imageRes = if (addImage) R.drawable.ic_popovers else null,
+            title = title,
+            subtitle = subtitle,
+        ) {
+            Button(
+                modifier = Modifier
+                    .padding(horizontal = 16.dp)
+                    .fillMaxWidth(),
+                text = "Test",
+                onClickListener = {
+                    when (PopoverPosition.getPositionByName(orientationItems[selectedItemIndex])) {
+                        PopoverPosition.AUTO -> it.showAlignAuto()
+                        PopoverPosition.TOP -> it.showAlignTop()
+                        PopoverPosition.BOTTOM -> it.showAlignBottom()
+                    }
+                }
+            )
+        }
         Text(
             text = "POPOVER TESTER",
             style = MisticaTheme.typography.preset1Medium,
@@ -67,11 +89,10 @@ fun PopOvers() {
             Checkbox(checked = addImage, onCheckedChange = { addImage = !addImage })
             Text("Add Image")
         }
-
         PopOver(
-//            modifier = Modifier
-//                .fillMaxWidth()
-//                .wrapContentHeight(),
+            modifier = Modifier
+                .fillMaxWidth()
+                .wrapContentHeight(),
             imageRes = if (addImage) R.drawable.ic_popovers else null,
             title = title,
             subtitle = subtitle,
@@ -82,15 +103,14 @@ fun PopOvers() {
                     .fillMaxWidth(),
                 text = "Test",
                 onClickListener = {
-                    when (selectedItemIndex) {
-                        0 -> it.showAlignAuto()
-                        1 -> it.showAlignTop()
-                        else -> it.showAlignBottom()
+                    when (PopoverPosition.getPositionByName(orientationItems[selectedItemIndex])) {
+                        PopoverPosition.AUTO -> it.showAlignAuto()
+                        PopoverPosition.TOP -> it.showAlignTop()
+                        PopoverPosition.BOTTOM -> it.showAlignBottom()
                     }
                 }
             )
         }
-
         DropDownInput(
             modifier = Modifier
                 .fillMaxWidth()
@@ -102,5 +122,13 @@ fun PopOvers() {
                 selectedItemIndex = it
             }
         )
+    }
+}
+
+enum class PopoverPosition {
+    AUTO, TOP, BOTTOM;
+
+    companion object {
+        fun getPositionByName(name: String) = values().first { it.name == name }
     }
 }
