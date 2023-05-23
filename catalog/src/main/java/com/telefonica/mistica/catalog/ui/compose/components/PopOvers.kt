@@ -44,28 +44,6 @@ fun PopOvers() {
             .verticalScroll(rememberScrollState()),
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
-        PopOver(
-            modifier = Modifier
-                .fillMaxWidth()
-                .wrapContentHeight(),
-            imageRes = if (addImage) R.drawable.ic_popovers else null,
-            title = title,
-            subtitle = subtitle,
-        ) {
-            Button(
-                modifier = Modifier
-                    .padding(horizontal = 16.dp)
-                    .fillMaxWidth(),
-                text = "Test",
-                onClickListener = {
-                    when (PopoverPosition.getPositionByName(orientationItems[selectedItemIndex])) {
-                        PopoverPosition.AUTO -> it.showAlignAuto()
-                        PopoverPosition.TOP -> it.showAlignTop()
-                        PopoverPosition.BOTTOM -> it.showAlignBottom()
-                    }
-                }
-            )
-        }
         Text(
             text = "POPOVER TESTER",
             style = MisticaTheme.typography.preset1Medium,
