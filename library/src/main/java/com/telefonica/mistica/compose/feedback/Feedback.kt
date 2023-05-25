@@ -71,18 +71,3 @@ fun Feedback(
     )
 
 }
-
-@Preview
-@Composable
-fun FeedbackPreview() {
-    Feedback(
-        type = FeedbackScreenView.TYPE_INFO,
-        title = "This is a title",
-        subtitle = "This is the feedback description",
-        errorReference = "Error reference: #95001",
-        firstButtonText = "Feedback First Button Text",
-        firstButtonLoadingText = "Feedback First Button Loading Text",
-        secondButtonText = "Feedback Second Button Text",
-        firstButtonOnClick = { }
-    )
-}

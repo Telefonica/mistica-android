@@ -1,6 +1,9 @@
 package com.telefonica.mistica.catalog.ui.compose.components
 
+import android.content.Context
+import android.content.Intent
 import androidx.annotation.DrawableRes
+import androidx.annotation.LayoutRes
 import androidx.annotation.RawRes
 import androidx.annotation.StyleRes
 import androidx.compose.foundation.clickable
@@ -35,7 +38,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import com.telefonica.mistica.catalog.R
-import com.telefonica.mistica.catalog.ui.showFeedbackActivity
+import com.telefonica.mistica.catalog.ui.classic.activity.FeedbackScreenCatalogActivity
 import com.telefonica.mistica.compose.feedback.Feedback
 import com.telefonica.mistica.feedback.screen.view.FeedbackScreenView
 import kotlinx.coroutines.delay
@@ -248,4 +251,40 @@ private enum class CustomFeedbackIcon(@DrawableRes val resource: Int?) {
     NONE(null),
     ERROR_LIGHT(R.drawable.feedback_error_light),
     INFO_O2(R.drawable.feedback_info_o2),
+}
+
+private fun showFeedbackActivity(
+    context: Context,
+    @FeedbackScreenView.FeedbackType type: Int,
+    title: String?,
+    subtitle: String?,
+    errorReference: String?,
+    @LayoutRes customContentLayout: Int = FeedbackScreenCatalogActivity.INVALID_DEFAULT_VALUE,
+    firstButtonText: String?,
+    firstButtonLoadingText: String?,
+    secondButtonText: String?,
+    showSecondButtonAsLink: Boolean = FeedbackScreenCatalogActivity.SHOW_SECOND_BUTTON_AS_LINK_DEFAULT_VALUE,
+    showLoadingInButton: Boolean = FeedbackScreenCatalogActivity.SHOW_LOADING_IN_BUTTON_DEFAULT_VALUE,
+    customAnimation: Int? = null,
+    customIcon: Int? = null,
+    shouldAnimateOnAttached: Boolean,
+    @StyleRes themeOverride: Int? = null,
+) {
+    Intent(context, FeedbackScreenCatalogActivity::class.java).apply {
+        putExtra(FeedbackScreenCatalogActivity.EXTRA_TYPE, type)
+        putExtra(FeedbackScreenCatalogActivity.EXTRA_TITLE, title)
+        putExtra(FeedbackScreenCatalogActivity.EXTRA_SUBTITLE, subtitle)
+        putExtra(FeedbackScreenCatalogActivity.EXTRA_ERROR_REFERENCE, errorReference)
+        putExtra(FeedbackScreenCatalogActivity.EXTRA_FIRST_BUTTON_TEXT, firstButtonText)
+        putExtra(FeedbackScreenCatalogActivity.EXTRA_FIRST_BUTTON_LOADING_TEXT, firstButtonLoadingText)
+        putExtra(FeedbackScreenCatalogActivity.EXTRA_SECOND_BUTTON_TEXT, secondButtonText)
+        putExtra(FeedbackScreenCatalogActivity.EXTRA_CUSTOM_CONTENT, customContentLayout)
+        putExtra(FeedbackScreenCatalogActivity.EXTRA_SHOW_SECOND_BUTTON_AS_LINK, showSecondButtonAsLink)
+        putExtra(FeedbackScreenCatalogActivity.EXTRA_SHOW_LOADING_IN_BUTTON, showLoadingInButton)
+        putExtra(FeedbackScreenCatalogActivity.EXTRA_CUSTOM_ICON, customIcon)
+        putExtra(FeedbackScreenCatalogActivity.EXTRA_CUSTOM_ANIMATION, customAnimation)
+        putExtra(FeedbackScreenCatalogActivity.EXTRA_SHOULD_ANIMATE_ON_ATTACHED, shouldAnimateOnAttached)
+        themeOverride?.let { putExtra(FeedbackScreenCatalogActivity.EXTRA_THEME, it) }
+        context.startActivity(this)
+    }
 }

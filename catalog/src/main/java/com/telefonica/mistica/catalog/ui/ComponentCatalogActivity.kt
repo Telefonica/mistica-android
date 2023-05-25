@@ -225,8 +225,8 @@ class ComponentCatalogActivity : FragmentActivity() {
     private fun setSingleInputLauncher(
         component: (@Composable () -> Unit),
     ) {
-        binding.inputOptions.visibility = View.VISIBLE
-        binding.inputOptions.setContent {
+        binding.singleInputOptions.visibility = View.VISIBLE
+        binding.singleInputOptions.setContent {
             MisticaTheme(composeThemeOverride) {
                 component()
             }
@@ -310,40 +310,3 @@ enum class Section {
     CAROUSEL,
 }
 
-
-
-fun showFeedbackActivity(
-    context: Context,
-    @FeedbackScreenView.FeedbackType type: Int,
-    title: String?,
-    subtitle: String?,
-    errorReference: String?,
-    @LayoutRes customContentLayout: Int = FeedbackScreenCatalogActivity.INVALID_DEFAULT_VALUE,
-    firstButtonText: String?,
-    firstButtonLoadingText: String?,
-    secondButtonText: String?,
-    showSecondButtonAsLink: Boolean = FeedbackScreenCatalogActivity.SHOW_SECOND_BUTTON_AS_LINK_DEFAULT_VALUE,
-    showLoadingInButton: Boolean = FeedbackScreenCatalogActivity.SHOW_LOADING_IN_BUTTON_DEFAULT_VALUE,
-    customAnimation: Int? = null,
-    customIcon: Int? = null,
-    shouldAnimateOnAttached: Boolean,
-    @StyleRes themeOverride: Int? = null,
-) {
-    Intent(context, FeedbackScreenCatalogActivity::class.java).apply {
-        putExtra(FeedbackScreenCatalogActivity.EXTRA_TYPE, type)
-        putExtra(FeedbackScreenCatalogActivity.EXTRA_TITLE, title)
-        putExtra(FeedbackScreenCatalogActivity.EXTRA_SUBTITLE, subtitle)
-        putExtra(FeedbackScreenCatalogActivity.EXTRA_ERROR_REFERENCE, errorReference)
-        putExtra(FeedbackScreenCatalogActivity.EXTRA_FIRST_BUTTON_TEXT, firstButtonText)
-        putExtra(FeedbackScreenCatalogActivity.EXTRA_FIRST_BUTTON_LOADING_TEXT, firstButtonLoadingText)
-        putExtra(FeedbackScreenCatalogActivity.EXTRA_SECOND_BUTTON_TEXT, secondButtonText)
-        putExtra(FeedbackScreenCatalogActivity.EXTRA_CUSTOM_CONTENT, customContentLayout)
-        putExtra(FeedbackScreenCatalogActivity.EXTRA_SHOW_SECOND_BUTTON_AS_LINK, showSecondButtonAsLink)
-        putExtra(FeedbackScreenCatalogActivity.EXTRA_SHOW_LOADING_IN_BUTTON, showLoadingInButton)
-        putExtra(FeedbackScreenCatalogActivity.EXTRA_CUSTOM_ICON, customIcon)
-        putExtra(FeedbackScreenCatalogActivity.EXTRA_CUSTOM_ANIMATION, customAnimation)
-        putExtra(FeedbackScreenCatalogActivity.EXTRA_SHOULD_ANIMATE_ON_ATTACHED, shouldAnimateOnAttached)
-        themeOverride?.let { putExtra(FeedbackScreenCatalogActivity.EXTRA_THEME, it) }
-        context.startActivity(this)
-    }
-}
