@@ -28,9 +28,9 @@ In order to configure it for the specific purpose, it supports both **attribute 
 	<attr name="feedbackFirstButtonLoadingText" format="string"/>
     <attr name="feedbackSecondButtonText" format="string"/>
     <attr name="feedbackSecondButtonAsLink" format="boolean"/>
-
     <attr name="feedbackFirstButtonOnClick" format="string"/>
     <attr name="feedbackSecondButtonOnClick" format="string"/>
+	<attr name="shouldAnimateOnAttached" format="boolean" />
 </declare-styleable>
 ```
 ## Fields information

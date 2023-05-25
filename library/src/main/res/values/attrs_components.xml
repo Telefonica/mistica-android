@@ -39,10 +39,9 @@
         <attr name="feedbackFirstButtonLoadingText" format="string" />
         <attr name="feedbackSecondButtonText" format="string" />
         <attr name="feedbackSecondButtonAsLink" format="boolean" />
-        <attr name="shouldAnimateOnAttached" format="boolean" />
-
         <attr name="feedbackFirstButtonOnClick" format="string" />
         <attr name="feedbackSecondButtonOnClick" format="string" />
+        <attr name="shouldAnimateOnAttached" format="boolean" />
     </declare-styleable>
 
     <declare-styleable name="LoadErrorFeedback">
