@@ -107,6 +107,55 @@ To compile the app manually run the [App](app) module in Android Studio.
     <img width="25%" src="./doc/images/catalog/catalog.png">
 </p>
 
+## Working with this project locally
+
+In case you are making a change in the library that yoy want to test in other client app but you don't want to release a new version or even an snapshot, 
+then a local deployment of the lib can be done on your machine. 
+
+Some small changes that **shouldn't be committed** are needed:
+- Comment `signing` section inside [`mavencentral.gradle`](mavencentral.gradle) file. The reason is because you probably won't have the secrets for signing the library aar and because they aren't actually needed for this kind of local deployment.
+
+```groovy
+/*
+signing {
+    def signingKeyId = findProperty("signingKeyId")
+    def signingKey = findProperty("signingKey")
+    def signingPassword = findProperty("signingPassword")
+    useInMemoryPgpKeys(signingKeyId, signingKey, signingPassword)
+    sign publishing.publications
+}
+*/
+```
+
+- Set a preferred SNAPSHOT version for your local release in [`mavencentral.gradle`](mavencentral.gradle):
+
+```groovy
+PUBLISH_VERSION = '1.0.0-SNAPSHOT'
+```
+
+- Build the artifacts:
+
+```bash
+./gradlew clean :library:assembleRelease :catalog:assembleRelease
+```
+
+- Release the artifacts to your local maven repository (`~.m2`directory). Note the `ToMavenLocal` suffix:
+
+```bash
+./gradlew :library:publishReleasePublicationToMavenLocal :catalog:publishCatalogPublicationToMavenLocal
+```
+
+No you can go back to your client app repository, add `mavenLocal()` to the list of repositories on `build.gradle`, sync your project and the dependency should be resolved with the artifact including your local changes:
+
+```groovy
+allprojects {
+    repositories {
+        mavenLocal() // It is recommended to place it on first place
+        // ... your other repositories
+    }
+}
+```
+
 ## Library size
 
 Library aar size is around **270 KB**, without including transitive dependencies (Lottie, material and kotlin).
