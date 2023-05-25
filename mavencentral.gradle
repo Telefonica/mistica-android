@@ -118,7 +118,6 @@ publishing {
     }
 }
 
-/*
 signing {
     def signingKeyId = findProperty("signingKeyId")
     def signingKey = findProperty("signingKey")
@@ -126,4 +125,3 @@ signing {
     useInMemoryPgpKeys(signingKeyId, signingKey, signingPassword)
     sign publishing.publications
 }
-*/
