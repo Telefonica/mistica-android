@@ -109,8 +109,7 @@ To compile the app manually run the [App](app) module in Android Studio.
 
 ## Working with this project locally
 
-In case you are making a change in the library that yoy want to test in other client app but you don't want to release a new version or even an snapshot, 
-then a local deployment of the lib can be done on your machine. 
+In case you are making a change in the library that yoy want to test in other client app but you don't want to release a new version or even an snapshot, then a local deployment of the lib can be done on your machine. 
 
 Some small changes that **shouldn't be committed** are needed:
 - Comment `signing` section inside [`mavencentral.gradle`](mavencentral.gradle) file. The reason is because you probably won't have the secrets for signing the library aar and because they aren't actually needed for this kind of local deployment.
