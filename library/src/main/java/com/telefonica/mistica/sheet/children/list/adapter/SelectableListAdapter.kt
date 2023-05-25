@@ -14,7 +14,7 @@ import kotlin.properties.Delegates
 
 internal class SelectableListAdapter(val items: List<ListElementViewData.RowWithCheckBoxViewData>) : RecyclerView.Adapter<SelectableListViewHolder>() {
 
-    private var selectedPosition by Delegates.observable(items.indexOfFirst { it.selected }) { property, oldPos, newPos ->
+    private var selectedPosition by Delegates.observable(items.indexOfFirst { it.selected }) { _, oldPos, newPos ->
         if (newPos != oldPos && newPos in items.indices) {
             MainScope().launch {
                 notifyItemChanged(oldPos)
