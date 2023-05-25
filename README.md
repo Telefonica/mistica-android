@@ -144,7 +144,7 @@ PUBLISH_VERSION = '1.0.0-SNAPSHOT'
 ./gradlew :library:publishReleasePublicationToMavenLocal :catalog:publishCatalogPublicationToMavenLocal
 ```
 
-No you can go back to your client app repository, add `mavenLocal()` to the list of repositories on `build.gradle`, sync your project and the dependency should be resolved with the artifact including your local changes:
+- Now you can go back to your client app repository, add `mavenLocal()` to the list of repositories on `build.gradle`
 
 ```groovy
 allprojects {
@@ -154,6 +154,8 @@ allprojects {
     }
 }
 ```
+
+- Update the version of mistica to the one the snapshot was released with, sync your project and the dependency should be resolved with the artifact including your local changes.
 
 ## Library size
 
