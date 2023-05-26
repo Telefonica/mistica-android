@@ -18,7 +18,7 @@ import java.io.File
 class GenerateCompose {
 
     private val colorClass = ClassName("androidx.compose.ui.graphics", "Color")
-    private val misticaColorsClass = ClassName("", MISTICA_COLORS)
+    private val misticaColorsClass = ClassName("com.telefonica.mistica.compose.theme.color", MISTICA_COLORS)
     private val mutableStateOf = MemberName("androidx.compose.runtime", "mutableStateOf")
     private val structuralEqualityPolicy = MemberName("androidx.compose.runtime", "structuralEqualityPolicy")
 
