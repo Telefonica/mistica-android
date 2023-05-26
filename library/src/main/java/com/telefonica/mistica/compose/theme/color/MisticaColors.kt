@@ -1,6 +1,7 @@
 // Code generated automatically, DO NOT EDIT manually
 package com.telefonica.mistica.compose.theme.color
 
+import MisticaColors
 import androidx.compose.runtime.ProvidableCompositionLocal
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -542,9 +543,6 @@ public class MisticaColors(
       structuralEqualityPolicy())
     internal set
 
-  internal val LocalMisticaColors: ProvidableCompositionLocal<MisticaColors> =
-      staticCompositionLocalOf { MisticaColors() }
-
   public fun copy(
     background: Color = this.background,
     backgroundAlternative: Color = this.backgroundAlternative,
@@ -845,3 +843,6 @@ public class MisticaColors(
     loginLoadingGradientFourth = other.loginLoadingGradientFourth
   }
 }
+
+internal val LocalMisticaColors: ProvidableCompositionLocal<MisticaColors> =
+    staticCompositionLocalOf { MisticaColors() }
