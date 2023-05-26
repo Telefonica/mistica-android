@@ -1,7 +1,6 @@
 // Code generated automatically, DO NOT EDIT manually
 package com.telefonica.mistica.compose.theme.color
 
-import MisticaColors
 import androidx.compose.runtime.ProvidableCompositionLocal
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf

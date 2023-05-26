@@ -3,6 +3,7 @@ package com.telefonica.mistica.tokens
 import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import com.telefonica.mistica.tokens.compose.GenerateCompose
 import com.telefonica.mistica.tokens.dto.TokensDTO
 
 class GenerateTokens {

@@ -1,4 +1,4 @@
-package com.telefonica.mistica.tokens
+package com.telefonica.mistica.tokens.xml
 
 import com.squareup.moshi.JsonAdapter
 import com.telefonica.mistica.tokens.GenerateTokens.Companion.ALPHA_REGEX
