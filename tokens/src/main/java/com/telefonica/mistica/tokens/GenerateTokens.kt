@@ -13,7 +13,8 @@ class GenerateTokens {
             .build()
         val jsonAdapter: JsonAdapter<TokensDTO> = moshi.adapter(TokensDTO::class.java)
 
-        GenerateXML().invoke(jsonAdapter)
+//        GenerateXML().invoke(jsonAdapter)
+        GenerateCompose().invoke(jsonAdapter)
     }
 
     companion object {
