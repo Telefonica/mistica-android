@@ -1,157 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<!-- Code generated automatically, DO NOT EDIT manually. Use Import design tokens GitHub Action. -->
-	<color name="blau_color_blauBluePrimary">
-		#00B6F1
-	</color>
-	<color name="blau_color_blauBluePrimary10">
-		#F7FDFF
-	</color>
-	<color name="blau_color_blauBluePrimary20">
-		#E5F6FD
-	</color>
-	<color name="blau_color_blauBluePrimary30">
-		#B3E9FB
-	</color>
-	<color name="blau_color_blauBluePrimary60">
-		#00A2D6
-	</color>
-	<color name="blau_color_blauBluePrimary70">
-		#008FBD
-	</color>
-	<color name="blau_color_blauBlueSecondary">
-		#0072BC
-	</color>
-	<color name="blau_color_blauBlueSecondary10">
-		#E5F1F9
-	</color>
-	<color name="blau_color_blauBlueSecondary20">
-		#B2D4EC
-	</color>
-	<color name="blau_color_blauBlueSecondary30">
-		#80B7DF
-	</color>
-	<color name="blau_color_blauBlueSecondary50">
-		#0066AD
-	</color>
-	<color name="blau_color_blauBlueSecondary60">
-		#005A99
-	</color>
-	<color name="blau_color_blauPurple">
-		#7814B3
-	</color>
-	<color name="blau_color_blauPurple10">
-		#F1E7F7
-	</color>
-	<color name="blau_color_blauPurple30">
-		#BB89D9
-	</color>
-	<color name="blau_color_blauYellow">
-		#FFA922
-	</color>
-	<color name="blau_color_blauYellow10">
-		#FFF6E9
-	</color>
-	<color name="blau_color_blauYellow40">
-		#FFC364
-	</color>
-	<color name="blau_color_blauYellow60">
-		#F09500
-	</color>
-	<color name="blau_color_blauYellow70">
-		#996614
-	</color>
-	<color name="blau_color_blauGreen">
-		#30D300
-	</color>
-	<color name="blau_color_blauGreen10">
-		#EAFBE5
-	</color>
-	<color name="blau_color_blauGreen30">
-		#97E980
-	</color>
-	<color name="blau_color_blauGreen70">
-		#1D7F00
-	</color>
-	<color name="blau_color_blauRed">
-		#F64417
-	</color>
-	<color name="blau_color_blauRed10">
-		#FEECE8
-	</color>
-	<color name="blau_color_blauRed20">
-		#FCC7B9
-	</color>
-	<color name="blau_color_blauRed30">
-		#FA9E87
-	</color>
-	<color name="blau_color_blauRed40">
-		#F97C5D
-	</color>
-	<color name="blau_color_blauRed70">
-		#C93712
-	</color>
-	<color name="blau_color_grey0">
-		#F6FCFE
-	</color>
-	<color name="blau_color_grey1">
-		#F5F9FA
-	</color>
-	<color name="blau_color_grey2">
-		#E7E7E7
-	</color>
-	<color name="blau_color_grey3">
-		#B8B8B8
-	</color>
-	<color name="blau_color_grey4">
-		#A0A0A0
-	</color>
-	<color name="blau_color_grey5">
-		#808285
-	</color>
-	<color name="blau_color_grey6">
-		#000000
-	</color>
-	<color name="blau_color_white">
-		#FFFFFF
-	</color>
-	<color name="blau_color_darkModeBlack">
-		#191919
-	</color>
-	<color name="blau_color_darkModeGrey">
-		#242424
-	</color>
-	<color name="blau_color_darkModeGrey6">
-		#313235
-	</color>
-	<color name="blau_color_darkModeGrey7">
-		#303030
-	</color>
-	<color name="blau_color_darkModeGrey8">
-		#3D3D3D
-	</color>
-	<color name="blau_color_grey5_10_alpha">
-		#1A808285
-	</color>
-	<color name="blau_color_grey5_20_alpha">
-		#33808285
-	</color>
-	<color name="blau_color_blauBlueSecondary_75_alpha">
-		#BF0072BC
-	</color>
-	<color name="blau_color_white_15_alpha">
-		#26FFFFFF
-	</color>
-	<color name="blau_color_white_20_alpha">
-		#33FFFFFF
-	</color>
-	<color name="blau_color_darkModeGrey_80_alpha">
-		#CC242424
-	</color>
-	<color name="blau_color_blauPurple_30_alpha">
-		#4D7814B3
-	</color>
-	<color name="blau_color_white_5_alpha">
-		#0DFFFFFF
-	</color>
+	<color name="blau_color_blauBluePrimary">#00B6F1</color>
+	<color name="blau_color_blauBluePrimary10">#F7FDFF</color>
+	<color name="blau_color_blauBluePrimary20">#E5F6FD</color>
+	<color name="blau_color_blauBluePrimary30">#B3E9FB</color>
+	<color name="blau_color_blauBluePrimary60">#00A2D6</color>
+	<color name="blau_color_blauBluePrimary70">#008FBD</color>
+	<color name="blau_color_blauBlueSecondary">#0072BC</color>
+	<color name="blau_color_blauBlueSecondary10">#E5F1F9</color>
+	<color name="blau_color_blauBlueSecondary20">#B2D4EC</color>
+	<color name="blau_color_blauBlueSecondary30">#80B7DF</color>
+	<color name="blau_color_blauBlueSecondary50">#0066AD</color>
+	<color name="blau_color_blauBlueSecondary60">#005A99</color>
+	<color name="blau_color_blauPurple">#7814B3</color>
+	<color name="blau_color_blauPurple10">#F1E7F7</color>
+	<color name="blau_color_blauPurple30">#BB89D9</color>
+	<color name="blau_color_blauYellow">#FFA922</color>
+	<color name="blau_color_blauYellow10">#FFF6E9</color>
+	<color name="blau_color_blauYellow40">#FFC364</color>
+	<color name="blau_color_blauYellow60">#F09500</color>
+	<color name="blau_color_blauYellow70">#996614</color>
+	<color name="blau_color_blauGreen">#30D300</color>
+	<color name="blau_color_blauGreen10">#EAFBE5</color>
+	<color name="blau_color_blauGreen30">#97E980</color>
+	<color name="blau_color_blauGreen70">#1D7F00</color>
+	<color name="blau_color_blauRed">#F64417</color>
+	<color name="blau_color_blauRed10">#FEECE8</color>
+	<color name="blau_color_blauRed20">#FCC7B9</color>
+	<color name="blau_color_blauRed30">#FA9E87</color>
+	<color name="blau_color_blauRed40">#F97C5D</color>
+	<color name="blau_color_blauRed70">#C93712</color>
+	<color name="blau_color_grey0">#F6FCFE</color>
+	<color name="blau_color_grey1">#F5F9FA</color>
+	<color name="blau_color_grey2">#E7E7E7</color>
+	<color name="blau_color_grey3">#B8B8B8</color>
+	<color name="blau_color_grey4">#A0A0A0</color>
+	<color name="blau_color_grey5">#808285</color>
+	<color name="blau_color_grey6">#000000</color>
+	<color name="blau_color_white">#FFFFFF</color>
+	<color name="blau_color_darkModeBlack">#191919</color>
+	<color name="blau_color_darkModeGrey">#242424</color>
+	<color name="blau_color_darkModeGrey6">#313235</color>
+	<color name="blau_color_darkModeGrey7">#303030</color>
+	<color name="blau_color_darkModeGrey8">#3D3D3D</color>
+	<color name="blau_color_grey5_10_alpha">#1A808285</color>
+	<color name="blau_color_grey5_20_alpha">#33808285</color>
+	<color name="blau_color_blauBlueSecondary_75_alpha">#BF0072BC</color>
+	<color name="blau_color_white_15_alpha">#26FFFFFF</color>
+	<color name="blau_color_white_20_alpha">#33FFFFFF</color>
+	<color name="blau_color_darkModeGrey_80_alpha">#CC242424</color>
+	<color name="blau_color_blauPurple_30_alpha">#4D7814B3</color>
+	<color name="blau_color_white_5_alpha">#0DFFFFFF</color>
 </resources>

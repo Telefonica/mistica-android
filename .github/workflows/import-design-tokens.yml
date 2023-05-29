@@ -20,12 +20,6 @@ jobs:
           ref: ${{github.event.inputs.ref}}
           token: ${{ secrets.FLOW_GITHUB_TOKEN }}
 
-      - uses: actions/setup-java@v3
-        with:
-          distribution: 'liberica'
-          java-version: '18'
-          cache: 'gradle'
-
       - name: Generate skins from design tokens
         run: ./gradlew run
 

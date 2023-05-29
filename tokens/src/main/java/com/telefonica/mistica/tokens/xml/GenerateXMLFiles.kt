@@ -8,6 +8,7 @@ import com.telefonica.mistica.tokens.GenerateTokens.Companion.MISTICA_TOKENS_DIR
 import com.telefonica.mistica.tokens.common.GetColorNameWithAlpha
 import com.telefonica.mistica.tokens.common.GetColorsWithAlpha
 import com.telefonica.mistica.tokens.dto.TokensDTO
+import org.redundent.kotlin.xml.PrintOptions
 import org.redundent.kotlin.xml.XmlVersion
 import org.redundent.kotlin.xml.xml
 import java.io.File
@@ -56,7 +57,7 @@ class GenerateXMLFiles {
             }
         }
 
-        File("$VALUES_DIR/${COLORS_FILE.format(brand)}").writeText(colorsXml.toString())
+        File("$VALUES_DIR/${COLORS_FILE.format(brand)}").writeText(colorsXml.toString(PrintOptions(singleLineTextElements = true)))
     }
 
     private fun generateLightThemesFiles(tokens: TokensDTO, brand: String) {
@@ -97,7 +98,7 @@ class GenerateXMLFiles {
             }
         }
 
-        File("$VALUES_DIR/${THEMES_FILE.format(brand)}").writeText(lightThemesXml.toString())
+        File("$VALUES_DIR/${THEMES_FILE.format(brand)}").writeText(lightThemesXml.toString(PrintOptions(singleLineTextElements = true)))
     }
 
     private fun generateDarkThemesFiles(tokens: TokensDTO, brand: String) {
@@ -123,7 +124,7 @@ class GenerateXMLFiles {
             }
         }
 
-        File("$VALUES_NIGHT_DIR/${THEMES_FILE.format(brand)}").writeText(darkThemesXml.toString())
+        File("$VALUES_NIGHT_DIR/${THEMES_FILE.format(brand)}").writeText(darkThemesXml.toString(PrintOptions(singleLineTextElements = true)))
     }
 
     companion object {

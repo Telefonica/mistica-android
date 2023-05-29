@@ -3,326 +3,112 @@
 	<!-- Code generated automatically, DO NOT EDIT manually. Use Import design tokens GitHub Action. -->
 	<style name="MisticaTheme.O2" parent="MisticaTheme.O2_Customizations"/>
 	<style name="MisticaTheme.O2_Base">
-		<item name="colorBackground">
-			@color/o2_color_white
-		</item>
-		<item name="colorBackgroundAlternative">
-			@color/o2_color_grey1
-		</item>
-		<item name="colorBackgroundBrand">
-			@color/o2_color_o2BluePrimary
-		</item>
-		<item name="colorBackgroundBrandSecondary">
-			@color/o2_color_o2BluePrimary
-		</item>
-		<item name="colorBackgroundContainer">
-			@color/o2_color_white
-		</item>
-		<item name="colorBackgroundContainerHover">
-			@color/o2_color_grey0
-		</item>
-		<item name="colorBackgroundContainerPressed">
-			@color/o2_color_grey1
-		</item>
-		<item name="colorBackgroundContainerBrand">
-			@color/o2_color_o2BluePrimary
-		</item>
-		<item name="colorBackgroundContainerBrandHover">
-			@color/o2_color_o2BluePrimary60
-		</item>
-		<item name="colorBackgroundContainerBrandPressed">
-			@color/o2_color_o2BluePrimary70
-		</item>
-		<item name="colorBackgroundContainerBrandOverInverse">
-			@color/o2_color_o2BluePrimary70
-		</item>
-		<item name="colorBackgroundContainerBrandOverInverseHover">
-			@color/o2_color_o2BluePrimary80
-		</item>
-		<item name="colorBackgroundContainerBrandOverInversePressed">
-			@color/o2_color_o2BluePrimary90
-		</item>
-		<item name="colorBackgroundContainerAlternative">
-			@color/o2_color_grey1
-		</item>
-		<item name="colorBackgroundContainerAlternativeHover">
-			@color/o2_color_grey5_10_alpha
-		</item>
-		<item name="colorBackgroundContainerAlternativePressed">
-			@color/o2_color_grey5_20_alpha
-		</item>
-		<item name="colorBackgroundOverlay">
-			@color/o2_color_grey6_60_alpha
-		</item>
-		<item name="colorBackgroundSkeleton">
-			@color/o2_color_grey2
-		</item>
-		<item name="colorBackgroundSkeletonInverse">
-			@color/o2_color_o2BluePrimary70
-		</item>
-		<item name="colorBackgroundFeedbackBottom">
-			@color/o2_color_o2BluePrimary
-		</item>
-		<item name="colorAppBarBackground">
-			@color/o2_color_white
-		</item>
-		<item name="colorNavigationBarBackground">
-			@color/o2_color_o2BluePrimary
-		</item>
-		<item name="colorSkeletonWave">
-			@color/o2_color_grey2
-		</item>
-		<item name="colorBorderLow">
-			@color/o2_color_grey1
-		</item>
-		<item name="colorBorder">
-			@color/o2_color_grey3
-		</item>
-		<item name="colorBorderHigh">
-			@color/o2_color_grey5
-		</item>
-		<item name="colorBorderSelected">
-			@color/o2_color_o2BluePrimary
-		</item>
-		<item name="colorButtonDangerBackground">
-			@color/o2_color_pepper
-		</item>
-		<item name="colorButtonDangerBackgroundSelected">
-			@color/o2_color_pepper60
-		</item>
-		<item name="colorButtonDangerBackgroundHover">
-			@color/o2_color_pepper60
-		</item>
-		<item name="colorButtonLinkBackgroundSelected">
-			@color/o2_color_o2BluePrimary10
-		</item>
-		<item name="colorButtonLinkBackgroundInverseSelected">
-			@color/o2_color_white_8_alpha
-		</item>
-		<item name="colorButtonPrimaryBackground">
-			@color/o2_color_o2BluePrimary
-		</item>
-		<item name="colorButtonPrimaryBackgroundInverse">
-			@color/o2_color_white
-		</item>
-		<item name="colorButtonPrimaryBackgroundSelected">
-			@color/o2_color_o2BluePrimary70
-		</item>
-		<item name="colorButtonPrimaryBackgroundHover">
-			@color/o2_color_o2BluePrimary70
-		</item>
-		<item name="colorButtonPrimaryBackgroundInverseSelected">
-			@color/o2_color_o2BluePrimary30
-		</item>
-		<item name="colorButtonSecondaryBorder">
-			@color/o2_color_o2BluePrimary
-		</item>
-		<item name="colorButtonSecondaryBorderSelected">
-			@color/o2_color_o2BluePrimary70
-		</item>
-		<item name="colorButtonSecondaryBackgroundHover">
-			@color/o2_color_o2BluePrimary10
-		</item>
-		<item name="colorButtonSecondaryBackgroundSelected">
-			@color/o2_color_o2BluePrimary10
-		</item>
-		<item name="colorButtonSecondaryBorderInverse">
-			@color/o2_color_white
-		</item>
-		<item name="colorButtonSecondaryBorderInverseSelected">
-			@color/o2_color_o2BluePrimary30
-		</item>
-		<item name="colorButtonSecondaryBackgroundInverseHover">
-			@color/o2_color_white_15_alpha
-		</item>
-		<item name="colorButtonSecondaryBackgroundInverseSelected">
-			@color/o2_color_white_15_alpha
-		</item>
-		<item name="colorTextButtonPrimary">
-			@color/o2_color_white
-		</item>
-		<item name="colorTextButtonPrimaryInverse">
-			@color/o2_color_o2BluePrimary
-		</item>
-		<item name="colorTextButtonPrimaryInverseSelected">
-			@color/o2_color_o2BluePrimary70
-		</item>
-		<item name="colorTextButtonSecondary">
-			@color/o2_color_o2BluePrimary
-		</item>
-		<item name="colorTextButtonSecondarySelected">
-			@color/o2_color_o2BluePrimary70
-		</item>
-		<item name="colorTextButtonSecondaryInverse">
-			@color/o2_color_white
-		</item>
-		<item name="colorTextButtonSecondaryInverseSelected">
-			@color/o2_color_white
-		</item>
-		<item name="colorTextLink">
-			@color/o2_color_o2BluePrimary
-		</item>
-		<item name="colorTextLinkInverse">
-			@color/o2_color_white
-		</item>
-		<item name="colorTextLinkDanger">
-			@color/o2_color_pepper
-		</item>
-		<item name="colorTextLinkSnackbar">
-			@color/o2_color_o2BluePrimary30
-		</item>
-		<item name="colorControl">
-			@color/o2_color_grey3
-		</item>
-		<item name="colorControlActive">
-			@color/o2_color_o2BluePrimary
-		</item>
-		<item name="colorControlError">
-			@color/o2_color_pepper
-		</item>
-		<item name="colorLoadingBar">
-			@color/o2_color_o2BluePrimary
-		</item>
-		<item name="colorLoadingBarBackground">
-			@color/o2_color_grey1
-		</item>
-		<item name="colorToggleAndroidInactive">
-			@color/o2_color_grey2
-		</item>
-		<item name="colorToggleAndroidBackgroundActive">
-			@color/o2_color_o2BluePrimary15
-		</item>
-		<item name="colorIosControlKnob">
-			@color/o2_color_white
-		</item>
-		<item name="colorDivider">
-			@color/o2_color_grey2
-		</item>
-		<item name="colorDividerInverse">
-			@color/o2_color_white_20_alpha
-		</item>
-		<item name="colorNavigationBarDivider">
-			@color/o2_color_o2BluePrimary
-		</item>
-		<item name="colorBadge">
-			@color/o2_color_pepper60
-		</item>
-		<item name="colorFeedbackErrorBackground">
-			@color/o2_color_pepper
-		</item>
-		<item name="colorFeedbackInfoBackground">
-			@color/o2_color_grey6
-		</item>
-		<item name="colorBrand">
-			@color/o2_color_o2BluePrimary
-		</item>
-		<item name="colorBrandHigh">
-			@color/o2_color_o2BluePrimary70
-		</item>
-		<item name="colorInverse">
-			@color/o2_color_white
-		</item>
-		<item name="colorNeutralHigh">
-			@color/o2_color_grey6
-		</item>
-		<item name="colorNeutralMedium">
-			@color/o2_color_grey5
-		</item>
-		<item name="colorNeutralMediumInverse">
-			@color/o2_color_grey5
-		</item>
-		<item name="colorNeutralLow">
-			@color/o2_color_grey1
-		</item>
-		<item name="colorNeutralLowAlternative">
-			@color/o2_color_grey2
-		</item>
-		<item name="colorTextPrimary">
-			@color/o2_color_grey6
-		</item>
-		<item name="colorTextPrimaryInverse">
-			@color/o2_color_white
-		</item>
-		<item name="colorTextSecondary">
-			@color/o2_color_grey5
-		</item>
-		<item name="colorTextSecondaryInverse">
-			@color/o2_color_o2BluePrimary15
-		</item>
-		<item name="colorSuccess">
-			@color/o2_color_o2Green
-		</item>
-		<item name="colorWarning">
-			@color/o2_color_o2Orange
-		</item>
-		<item name="colorError">
-			@color/o2_color_pepper
-		</item>
-		<item name="colorPromo">
-			@color/o2_color_o2Purple
-		</item>
-		<item name="colorHighlight">
-			@color/o2_color_o2Pink
-		</item>
-		<item name="colorSuccessLow">
-			@color/o2_color_o2Green10
-		</item>
-		<item name="colorWarningLow">
-			@color/o2_color_o2Orange10
-		</item>
-		<item name="colorErrorLow">
-			@color/o2_color_pepper10
-		</item>
-		<item name="colorPromoLow">
-			@color/o2_color_o2Purple10
-		</item>
-		<item name="colorBrandLow">
-			@color/o2_color_o2BluePrimary10
-		</item>
-		<item name="colorSuccessHigh">
-			@color/o2_color_o2Green80
-		</item>
-		<item name="colorWarningHigh">
-			@color/o2_color_o2Orange75
-		</item>
-		<item name="colorErrorHigh">
-			@color/o2_color_pepper60
-		</item>
-		<item name="colorPromoHigh">
-			@color/o2_color_o2Purple
-		</item>
-		<item name="colorSuccessHighInverse">
-			@color/o2_color_o2Green80
-		</item>
-		<item name="colorWarningHighInverse">
-			@color/o2_color_o2Orange75
-		</item>
-		<item name="colorErrorHighInverse">
-			@color/o2_color_pepper60
-		</item>
-		<item name="colorPromoHighInverse">
-			@color/o2_color_o2Purple
-		</item>
-		<item name="colorTextNavigationBarPrimary">
-			@color/o2_color_white
-		</item>
-		<item name="colorTextNavigationBarSecondary">
-			@color/o2_color_o2BluePrimary30
-		</item>
-		<item name="colorTextNavigationSearchBarHint">
-			@color/o2_color_o2BluePrimary30
-		</item>
-		<item name="colorTextNavigationSearchBarText">
-			@color/o2_color_white
-		</item>
-		<item name="colorTextAppBar">
-			@color/o2_color_grey4
-		</item>
-		<item name="colorTextAppBarSelected">
-			@color/o2_color_o2BluePrimary
-		</item>
-		<item name="colorCustomTabsBackground">
-			@color/o2_color_o2BluePrimary
-		</item>
+		<item name="colorBackground">@color/o2_color_white</item>
+		<item name="colorBackgroundAlternative">@color/o2_color_grey1</item>
+		<item name="colorBackgroundBrand">@color/o2_color_o2BluePrimary</item>
+		<item name="colorBackgroundBrandSecondary">@color/o2_color_o2BluePrimary</item>
+		<item name="colorBackgroundContainer">@color/o2_color_white</item>
+		<item name="colorBackgroundContainerHover">@color/o2_color_grey0</item>
+		<item name="colorBackgroundContainerPressed">@color/o2_color_grey1</item>
+		<item name="colorBackgroundContainerBrand">@color/o2_color_o2BluePrimary</item>
+		<item name="colorBackgroundContainerBrandHover">@color/o2_color_o2BluePrimary60</item>
+		<item name="colorBackgroundContainerBrandPressed">@color/o2_color_o2BluePrimary70</item>
+		<item name="colorBackgroundContainerBrandOverInverse">@color/o2_color_o2BluePrimary70</item>
+		<item name="colorBackgroundContainerBrandOverInverseHover">@color/o2_color_o2BluePrimary80</item>
+		<item name="colorBackgroundContainerBrandOverInversePressed">@color/o2_color_o2BluePrimary90</item>
+		<item name="colorBackgroundContainerAlternative">@color/o2_color_grey1</item>
+		<item name="colorBackgroundContainerAlternativeHover">@color/o2_color_grey5_10_alpha</item>
+		<item name="colorBackgroundContainerAlternativePressed">@color/o2_color_grey5_20_alpha</item>
+		<item name="colorBackgroundOverlay">@color/o2_color_grey6_60_alpha</item>
+		<item name="colorBackgroundSkeleton">@color/o2_color_grey2</item>
+		<item name="colorBackgroundSkeletonInverse">@color/o2_color_o2BluePrimary70</item>
+		<item name="colorBackgroundFeedbackBottom">@color/o2_color_o2BluePrimary</item>
+		<item name="colorAppBarBackground">@color/o2_color_white</item>
+		<item name="colorNavigationBarBackground">@color/o2_color_o2BluePrimary</item>
+		<item name="colorSkeletonWave">@color/o2_color_grey2</item>
+		<item name="colorBorderLow">@color/o2_color_grey1</item>
+		<item name="colorBorder">@color/o2_color_grey3</item>
+		<item name="colorBorderHigh">@color/o2_color_grey5</item>
+		<item name="colorBorderSelected">@color/o2_color_o2BluePrimary</item>
+		<item name="colorButtonDangerBackground">@color/o2_color_pepper</item>
+		<item name="colorButtonDangerBackgroundSelected">@color/o2_color_pepper60</item>
+		<item name="colorButtonDangerBackgroundHover">@color/o2_color_pepper60</item>
+		<item name="colorButtonLinkBackgroundSelected">@color/o2_color_o2BluePrimary10</item>
+		<item name="colorButtonLinkBackgroundInverseSelected">@color/o2_color_white_8_alpha</item>
+		<item name="colorButtonPrimaryBackground">@color/o2_color_o2BluePrimary</item>
+		<item name="colorButtonPrimaryBackgroundInverse">@color/o2_color_white</item>
+		<item name="colorButtonPrimaryBackgroundSelected">@color/o2_color_o2BluePrimary70</item>
+		<item name="colorButtonPrimaryBackgroundHover">@color/o2_color_o2BluePrimary70</item>
+		<item name="colorButtonPrimaryBackgroundInverseSelected">@color/o2_color_o2BluePrimary30</item>
+		<item name="colorButtonSecondaryBorder">@color/o2_color_o2BluePrimary</item>
+		<item name="colorButtonSecondaryBorderSelected">@color/o2_color_o2BluePrimary70</item>
+		<item name="colorButtonSecondaryBackgroundHover">@color/o2_color_o2BluePrimary10</item>
+		<item name="colorButtonSecondaryBackgroundSelected">@color/o2_color_o2BluePrimary10</item>
+		<item name="colorButtonSecondaryBorderInverse">@color/o2_color_white</item>
+		<item name="colorButtonSecondaryBorderInverseSelected">@color/o2_color_o2BluePrimary30</item>
+		<item name="colorButtonSecondaryBackgroundInverseHover">@color/o2_color_white_15_alpha</item>
+		<item name="colorButtonSecondaryBackgroundInverseSelected">@color/o2_color_white_15_alpha</item>
+		<item name="colorTextButtonPrimary">@color/o2_color_white</item>
+		<item name="colorTextButtonPrimaryInverse">@color/o2_color_o2BluePrimary</item>
+		<item name="colorTextButtonPrimaryInverseSelected">@color/o2_color_o2BluePrimary70</item>
+		<item name="colorTextButtonSecondary">@color/o2_color_o2BluePrimary</item>
+		<item name="colorTextButtonSecondarySelected">@color/o2_color_o2BluePrimary70</item>
+		<item name="colorTextButtonSecondaryInverse">@color/o2_color_white</item>
+		<item name="colorTextButtonSecondaryInverseSelected">@color/o2_color_white</item>
+		<item name="colorTextLink">@color/o2_color_o2BluePrimary</item>
+		<item name="colorTextLinkInverse">@color/o2_color_white</item>
+		<item name="colorTextLinkDanger">@color/o2_color_pepper</item>
+		<item name="colorTextLinkSnackbar">@color/o2_color_o2BluePrimary30</item>
+		<item name="colorControl">@color/o2_color_grey3</item>
+		<item name="colorControlActive">@color/o2_color_o2BluePrimary</item>
+		<item name="colorControlError">@color/o2_color_pepper</item>
+		<item name="colorLoadingBar">@color/o2_color_o2BluePrimary</item>
+		<item name="colorLoadingBarBackground">@color/o2_color_grey1</item>
+		<item name="colorToggleAndroidInactive">@color/o2_color_grey2</item>
+		<item name="colorToggleAndroidBackgroundActive">@color/o2_color_o2BluePrimary15</item>
+		<item name="colorIosControlKnob">@color/o2_color_white</item>
+		<item name="colorDivider">@color/o2_color_grey2</item>
+		<item name="colorDividerInverse">@color/o2_color_white_20_alpha</item>
+		<item name="colorNavigationBarDivider">@color/o2_color_o2BluePrimary</item>
+		<item name="colorBadge">@color/o2_color_pepper60</item>
+		<item name="colorFeedbackErrorBackground">@color/o2_color_pepper</item>
+		<item name="colorFeedbackInfoBackground">@color/o2_color_grey6</item>
+		<item name="colorBrand">@color/o2_color_o2BluePrimary</item>
+		<item name="colorBrandHigh">@color/o2_color_o2BluePrimary70</item>
+		<item name="colorInverse">@color/o2_color_white</item>
+		<item name="colorNeutralHigh">@color/o2_color_grey6</item>
+		<item name="colorNeutralMedium">@color/o2_color_grey5</item>
+		<item name="colorNeutralMediumInverse">@color/o2_color_grey5</item>
+		<item name="colorNeutralLow">@color/o2_color_grey1</item>
+		<item name="colorNeutralLowAlternative">@color/o2_color_grey2</item>
+		<item name="colorTextPrimary">@color/o2_color_grey6</item>
+		<item name="colorTextPrimaryInverse">@color/o2_color_white</item>
+		<item name="colorTextSecondary">@color/o2_color_grey5</item>
+		<item name="colorTextSecondaryInverse">@color/o2_color_o2BluePrimary15</item>
+		<item name="colorSuccess">@color/o2_color_o2Green</item>
+		<item name="colorWarning">@color/o2_color_o2Orange</item>
+		<item name="colorError">@color/o2_color_pepper</item>
+		<item name="colorPromo">@color/o2_color_o2Purple</item>
+		<item name="colorHighlight">@color/o2_color_o2Pink</item>
+		<item name="colorSuccessLow">@color/o2_color_o2Green10</item>
+		<item name="colorWarningLow">@color/o2_color_o2Orange10</item>
+		<item name="colorErrorLow">@color/o2_color_pepper10</item>
+		<item name="colorPromoLow">@color/o2_color_o2Purple10</item>
+		<item name="colorBrandLow">@color/o2_color_o2BluePrimary10</item>
+		<item name="colorSuccessHigh">@color/o2_color_o2Green80</item>
+		<item name="colorWarningHigh">@color/o2_color_o2Orange75</item>
+		<item name="colorErrorHigh">@color/o2_color_pepper60</item>
+		<item name="colorPromoHigh">@color/o2_color_o2Purple</item>
+		<item name="colorSuccessHighInverse">@color/o2_color_o2Green80</item>
+		<item name="colorWarningHighInverse">@color/o2_color_o2Orange75</item>
+		<item name="colorErrorHighInverse">@color/o2_color_pepper60</item>
+		<item name="colorPromoHighInverse">@color/o2_color_o2Purple</item>
+		<item name="colorTextNavigationBarPrimary">@color/o2_color_white</item>
+		<item name="colorTextNavigationBarSecondary">@color/o2_color_o2BluePrimary30</item>
+		<item name="colorTextNavigationSearchBarHint">@color/o2_color_o2BluePrimary30</item>
+		<item name="colorTextNavigationSearchBarText">@color/o2_color_white</item>
+		<item name="colorTextAppBar">@color/o2_color_grey4</item>
+		<item name="colorTextAppBarSelected">@color/o2_color_o2BluePrimary</item>
+		<item name="colorCustomTabsBackground">@color/o2_color_o2BluePrimary</item>
 	</style>
 </resources>
