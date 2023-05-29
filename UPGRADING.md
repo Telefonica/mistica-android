@@ -36,3 +36,26 @@ Note that if your project is implementing 'catalog-compose', please consider to 
 ```groovy
 debugImplementation "com.telefonica:mistica-catalog:$mistica_version"
 ```
+
+## Upgrade to version 9.0.0
+
+### Some colors have been renamed and deleted
+
+In order to align the color names with the one defined by UX team, some colors have been renamed. Some examples:
+- `buttonSecondaryBackgroundSelectedInverse` -> `buttonSecondaryBackgroundInverseSelected`
+- In XML implementation:
+  - `promoLow` -> `colorPromoLow`
+  - `brandLow` -> `colorBrandLow`
+  - `successLow` -> `colorSuccessLow`
+  - `warningLow` -> `colorWarningLow`
+  - `errorLow` -> `colorErrorLow`
+  - `promoHigh` -> `colorPromoHigh`
+  - `successHigh` -> `colorSuccessHigh`
+  - `warningHigh` -> `colorWarningHigh`
+  - `errorHigh` -> `colorErrorHigh`
+- In compose implementation:
+  - `controlActive` ->`controlActivated`
+
+Other colors have been removed because UX team has decided to remove them from the design system. Some examples:
+- `carouselIndicatorActiveColor` -> `controlActivated`
+- `carouselIndicatorInactiveColor` -> `control`

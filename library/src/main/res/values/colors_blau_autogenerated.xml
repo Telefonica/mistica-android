@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<!-- Code generated automatically, DO NOT EDIT manually -->
+	<!-- Code generated automatically, DO NOT EDIT manually. Use Import design tokens GitHub Action. -->
 	<color name="blau_color_blauBluePrimary">
 		#00B6F1
 	</color>

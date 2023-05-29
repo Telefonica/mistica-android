@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<!-- Code generated automatically, DO NOT EDIT manually -->
+	<!-- Code generated automatically, DO NOT EDIT manually. Use Import design tokens GitHub Action. -->
 	<color name="telefonica_color_telefonicaBlue">
 		#0066FF
 	</color>
