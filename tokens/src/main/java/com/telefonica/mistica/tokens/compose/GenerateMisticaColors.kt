@@ -11,14 +11,17 @@ import com.squareup.kotlinpoet.PropertySpec
 import com.squareup.kotlinpoet.TypeSpec
 import com.squareup.moshi.JsonAdapter
 import com.telefonica.mistica.tokens.GenerateTokens
-import com.telefonica.mistica.tokens.compose.GenerateCompose.Companion.MISTICA_COLORS
+import com.telefonica.mistica.tokens.compose.GenerateComposeFiles.Companion.MISTICA_COLORS
+import com.telefonica.mistica.tokens.compose.GenerateComposeFiles.Companion.colorClass
+import com.telefonica.mistica.tokens.compose.GenerateComposeFiles.Companion.misticaColorsClass
 import com.telefonica.mistica.tokens.dto.TokensDTO
 import java.io.File
 
+/**
+ * Generates the `MisticaColors.kt` file, which contains all the colors defined in Mistica.
+ */
 class GenerateMisticaColors {
 
-    private val colorClass = ClassName("androidx.compose.ui.graphics", "Color")
-    private val misticaColorsClass = ClassName("com.telefonica.mistica.compose.theme.color", MISTICA_COLORS)
     private val mutableStateOf = MemberName("androidx.compose.runtime", "mutableStateOf")
     private val structuralEqualityPolicy = MemberName("androidx.compose.runtime", "structuralEqualityPolicy")
 

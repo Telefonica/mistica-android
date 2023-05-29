@@ -3,9 +3,9 @@ package com.telefonica.mistica.tokens
 import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
-import com.telefonica.mistica.tokens.compose.GenerateCompose
+import com.telefonica.mistica.tokens.compose.GenerateComposeFiles
 import com.telefonica.mistica.tokens.dto.TokensDTO
-import com.telefonica.mistica.tokens.xml.GenerateXML
+import com.telefonica.mistica.tokens.xml.GenerateXMLFiles
 
 class GenerateTokens {
 
@@ -15,8 +15,8 @@ class GenerateTokens {
             .build()
         val jsonAdapter: JsonAdapter<TokensDTO> = moshi.adapter(TokensDTO::class.java)
 
-        GenerateXML().invoke(jsonAdapter)
-        GenerateCompose().invoke(jsonAdapter)
+        GenerateXMLFiles().invoke(jsonAdapter)
+        GenerateComposeFiles().invoke(jsonAdapter)
     }
 
     companion object {

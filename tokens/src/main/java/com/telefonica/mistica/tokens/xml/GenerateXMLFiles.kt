@@ -12,7 +12,7 @@ import org.redundent.kotlin.xml.XmlVersion
 import org.redundent.kotlin.xml.xml
 import java.io.File
 
-class GenerateXML {
+class GenerateXMLFiles {
 
     private val getColorsWithAlpha = GetColorsWithAlpha()
     private val getColorNameWithAlpha = GetColorNameWithAlpha()

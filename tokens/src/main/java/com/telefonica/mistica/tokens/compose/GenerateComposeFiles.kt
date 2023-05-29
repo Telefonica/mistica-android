@@ -1,12 +1,13 @@
 package com.telefonica.mistica.tokens.compose
 
+import com.squareup.kotlinpoet.ClassName
 import com.squareup.moshi.JsonAdapter
 import com.telefonica.mistica.tokens.GenerateTokens.Companion.BRANDS
 import com.telefonica.mistica.tokens.GenerateTokens.Companion.MISTICA_TOKENS_DIR
 import com.telefonica.mistica.tokens.dto.TokensDTO
 import java.io.File
 
-class GenerateCompose {
+class GenerateComposeFiles {
 
     operator fun invoke(jsonAdapter: JsonAdapter<TokensDTO>) {
         GenerateMisticaColors().invoke(jsonAdapter)
@@ -25,5 +26,7 @@ class GenerateCompose {
     companion object {
         const val LIBRARY_CODE_PATH = "../library/src/main/java/"
         const val MISTICA_COLORS = "MisticaColors"
+        val misticaColorsClass = ClassName("com.telefonica.mistica.compose.theme.color", MISTICA_COLORS)
+        val colorClass = ClassName("androidx.compose.ui.graphics", "Color")
     }
 }
