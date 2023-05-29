@@ -8,7 +8,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.runtime.structuralEqualityPolicy
 import androidx.compose.ui.graphics.Color
-import kotlin.Unit
 
 public class MisticaColors(
   background: Color = Color.Unspecified,
@@ -659,10 +658,10 @@ public class MisticaColors(
     loginLoadingGradientSecond: Color = this.loginLoadingGradientSecond,
     loginLoadingGradientThird: Color = this.loginLoadingGradientThird,
     loginLoadingGradientFourth: Color = this.loginLoadingGradientFourth,
-  ) = MisticaColors(background = background, backgroundAlternative = backgroundAlternative,
-      backgroundBrand = backgroundBrand, backgroundBrandSecondary = backgroundBrandSecondary,
-      backgroundContainer = backgroundContainer, backgroundContainerHover =
-      backgroundContainerHover, backgroundContainerPressed = backgroundContainerPressed,
+  ): MisticaColors = MisticaColors(background = background, backgroundAlternative =
+      backgroundAlternative, backgroundBrand = backgroundBrand, backgroundBrandSecondary =
+      backgroundBrandSecondary, backgroundContainer = backgroundContainer, backgroundContainerHover
+      = backgroundContainerHover, backgroundContainerPressed = backgroundContainerPressed,
       backgroundContainerBrand = backgroundContainerBrand, backgroundContainerBrandHover =
       backgroundContainerBrandHover, backgroundContainerBrandPressed =
       backgroundContainerBrandPressed, backgroundContainerBrandOverInverse =
@@ -724,7 +723,7 @@ public class MisticaColors(
       loginLoadingGradientThird = loginLoadingGradientThird, loginLoadingGradientFourth =
       loginLoadingGradientFourth)
 
-  public fun updateColorsFrom(other: MisticaColors): Unit {
+  public fun updateColorsFrom(other: MisticaColors) {
     background = other.background
     backgroundAlternative = other.backgroundAlternative
     backgroundBrand = other.backgroundBrand

@@ -109,6 +109,7 @@ class GenerateMisticaColors {
 
         return FunSpec.builder("copy")
             .addParameters(parameters)
+            .returns(misticaColorsClass)
             .addStatement("return %T($constructorParameters)", misticaColorsClass)
             .build()
     }
