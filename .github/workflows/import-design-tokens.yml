@@ -21,7 +21,7 @@ jobs:
           token: ${{ secrets.FLOW_GITHUB_TOKEN }}
 
       - name: Generate skins from design tokens
-        run: ./gradlew run
+        run: ./gradlew generateMisticaTokens
 
       - name: Remove mistica-design repo
         run: rm -r .github/mistica-design
