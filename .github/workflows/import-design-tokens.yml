@@ -32,5 +32,6 @@ jobs:
           token: ${{ secrets.FLOW_GITHUB_TOKEN }}
           commit-message: 'Update design tokens'
           title: 'Update design tokens'
+          body: 'This PR was automatically created by the import-design-tokens GitHub Action.'
           branch: 'import-design-tokens'
-          team-reviewers: 'Android'
+          team-reviewers: 'Android', 'mistica-design'
