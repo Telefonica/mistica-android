@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build library
-        run: 'bash ./gradlew clean :library:assembleRelease'
+        run: 'bash ./gradlew clean :library:assembleRelease :catalog:assembleRelease'
 
       - name: Release snapshot
         env:
@@ -22,4 +22,6 @@ jobs:
           ORG_GRADLE_PROJECT_signingKey: ${{ secrets.ORG_GRADLE_PROJECT_SIGNINGKEY }}
           ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.ORG_GRADLE_PROJECT_SIGNINGPASSWORD }}
           ORG_GRADLE_PROJECT_signingKeyId: ${{ secrets.ORG_GRADLE_PROJECT_SIGNINGKEYID }}
-        run: "bash ./gradlew publishReleasePublicationToSonatypeRepository -DSNAPSHOT_VERSION=${{ github.event.inputs.snapshotVersion }} publishNoopPublicationToSonatypeRepository -DSNAPSHOT_VERSION=${{ github.event.inputs.snapshotVersion }}"
+        run: "bash ./gradlew :library:publishReleasePublicationToSonatypeRepository -DSNAPSHOT_VERSION=${{ github.event.inputs.snapshotVersion }}
+          :catalog:publishCatalogPublicationToSonatypeRepository -DSNAPSHOT_VERSION=${{ github.event.inputs.snapshotVersion }}
+          --max-workers 1 closeAndReleaseStagingRepository"

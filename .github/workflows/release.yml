@@ -4,25 +4,21 @@ on:
     types: [published]
 jobs:
   promote:
-    runs-on: self-hosted-novum
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
 
       - name: Build library
-        uses: docker://docker.tuenti.io/android/novum_android_api31:2
-        with:
-          args: 'bash ./gradlew clean :library:assembleRelease :catalog:assembleRelease'
+        run: 'bash ./gradlew clean :library:assembleRelease :catalog:assembleRelease'
 
       - name: Release library
-        uses: docker://docker.tuenti.io/android/novum_android_api31:2
         env:
           MOBILE_MAVENCENTRAL_USER: ${{ secrets.MOBILE_MAVENCENTRAL_USER }}
           MOBILE_MAVENCENTRAL_PASSWORD: ${{ secrets.MOBILE_MAVENCENTRAL_PASSWORD }}
           ORG_GRADLE_PROJECT_signingKey: ${{ secrets.ORG_GRADLE_PROJECT_SIGNINGKEY }}
           ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.ORG_GRADLE_PROJECT_SIGNINGPASSWORD }}
           ORG_GRADLE_PROJECT_signingKeyId: ${{ secrets.ORG_GRADLE_PROJECT_SIGNINGKEYID }}
-        with:
-          args: "bash ./gradlew :library:publishReleasePublicationToSonatypeRepository -DLIBRARY_VERSION=${{ github.event.release.tag_name }}
+        run: "bash ./gradlew :library:publishReleasePublicationToSonatypeRepository -DLIBRARY_VERSION=${{ github.event.release.tag_name }}
           :catalog:publishCatalogPublicationToSonatypeRepository -DLIBRARY_VERSION=${{ github.event.release.tag_name }}
           --max-workers 1 closeAndReleaseStagingRepository"

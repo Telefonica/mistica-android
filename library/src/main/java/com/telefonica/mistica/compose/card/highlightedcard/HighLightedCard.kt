@@ -1,11 +1,16 @@
 package com.telefonica.mistica.compose.card.highlightedcard
 
+import android.content.res.Resources
+import android.graphics.BitmapFactory
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.FloatingActionButton
 import androidx.compose.material.FloatingActionButtonDefaults
 import androidx.compose.material.Icon
@@ -13,12 +18,20 @@ import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ImageBitmap
+import androidx.compose.ui.graphics.PaintingStyle.Companion.Fill
+import androidx.compose.ui.graphics.asImageBitmap
+import androidx.compose.ui.graphics.drawscope.DrawStyle
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
@@ -39,18 +52,28 @@ fun HighLightedCard(
     onCloseButton: () -> Unit = {},
     onButtonClick: () -> Unit = {}
 ){
+    val verticalMargin = 24.dp
+    val resources = LocalContext.current.resources
     androidx.compose.material.Card(
-        modifier = modifier,
-        shape = RoundedCornerShape(8.dp),
+        modifier = modifier.defaultMinSize(minHeight = 100.dp),
+        shape = RoundedCornerShape(1.dp),
         elevation = 0.dp,
         backgroundColor = if (inverseDisplay)
-            MisticaTheme.colors.buttonPrimaryBackground
+            MisticaTheme.colors.backgroundBrand
         else
-            MisticaTheme.colors.buttonPrimaryBackgroundInverse,
+            MisticaTheme.colors.backgroundContainer,
         border = BorderStroke(width = 1.dp, color = MisticaTheme.colors.border)
     ) {
         ConstraintLayout(
-            modifier = modifier.padding(bottom = if(button.buttonStyle != null) 0.dp else 16.dp)
+            modifier = modifier.drawBehind {
+                val bitmap = getBackgroundBitmap(resources, customBackground)
+                if (bitmap != null)
+                    drawImage(
+                        image = bitmap,
+                        dstSize = IntSize(this.size.width.toInt(), this.size.height.toInt())
+
+                    )
+            }
         ) {
             val (
                 titleComposable,
@@ -58,26 +81,16 @@ fun HighLightedCard(
                 closeButtonComposable,
                 actionButtonComposable,
                 pictureComposable,
-                backgroundComposable,
             ) = createRefs()
-
-            HighLightCardBackground(
-                modifier = modifier.constrainAs(backgroundComposable){
-                    top.linkTo(parent.top)
-                    start.linkTo(parent.start)
-                    end.linkTo(parent.end)
-                    bottom.linkTo(parent.bottom)
-                    width = Dimension.fillToConstraints
-                    height = Dimension.fillToConstraints
-                },
-                backgroundSettings = customBackground
-            )
 
             Text(
                 modifier = Modifier.constrainAs(titleComposable){
-                    top.linkTo(parent.top, 16.dp)
+                    top.linkTo(parent.top, verticalMargin)
                     start.linkTo(parent.start, 16.dp)
+                    end.linkTo(if(image.withImage) pictureComposable.start else parent.end, 8.dp)
+                    width = Dimension.fillToConstraints
                 },
+                maxLines = 2,
                 style = MisticaTheme.typography.preset4Light,
                 color = if(inverseDisplay)
                     MisticaTheme.colors.textPrimaryInverse
@@ -88,10 +101,14 @@ fun HighLightedCard(
 
             Text(
                 modifier = Modifier.constrainAs(messageComposable){
-                    top.linkTo(titleComposable.bottom)
+                    top.linkTo(titleComposable.bottom, 8.dp)
                     start.linkTo(titleComposable.start)
+                    end.linkTo(titleComposable.end)
+                    width = Dimension.fillToConstraints
                 },
                 style = MisticaTheme.typography.preset2,
+                maxLines = 10,
+                overflow = TextOverflow.Visible,
                 color = if(inverseDisplay)
                     MisticaTheme.colors.textSecondaryInverse
                 else
@@ -99,18 +116,42 @@ fun HighLightedCard(
                 text = content
             )
 
+            HighLightCardButton(
+                modifier = Modifier
+                    .constrainAs(actionButtonComposable) {
+                        top.linkTo(messageComposable.bottom, 16.dp)
+                        start.linkTo(titleComposable.start)
+                        bottom.linkTo(parent.bottom)
+                    }
+                    .padding(bottom = verticalMargin),
+                inverseDisplay = inverseDisplay,
+                buttonConfig = button,
+                onButtonClick = onButtonClick
+            )
+
+            HighLightCardImage(
+                modifier = Modifier.constrainAs(pictureComposable){
+                    top.linkTo(parent.top)
+                    bottom.linkTo(parent.bottom)
+                    end.linkTo(parent.end)
+                    height = Dimension.fillToConstraints
+                    width = Dimension.wrapContent
+                },
+                imageSettings = image
+            )
+
             if (showCloseButton){
                 FloatingActionButton(
                     modifier = Modifier
-                        .size(32.dp)
+                        .size(24.dp)
                         .constrainAs(closeButtonComposable) {
                             top.linkTo(parent.top, 8.dp)
                             end.linkTo(parent.end, 8.dp)
                         },
-                    backgroundColor = if(customBackground.withCustomBackground || inverseDisplay)
-                            MisticaTheme.colors.backgroundContainer.copy(alpha = 0.7f)
-                        else
-                            Color.Transparent,
+                    backgroundColor = if(customBackground.withCustomBackground || inverseDisplay || image.withImage)
+                        MisticaTheme.colors.background.copy(alpha = 0.7f)
+                    else
+                        Color.Transparent,
                     elevation = FloatingActionButtonDefaults.elevation(0.dp),
                     onClick = onCloseButton
                 ) {
@@ -121,64 +162,21 @@ fun HighLightedCard(
                     )
                 }
             }
-
-            HighLightCardButton(
-                modifier = Modifier
-                    .constrainAs(actionButtonComposable) {
-                        top.linkTo(messageComposable.bottom, 16.dp)
-                        start.linkTo(titleComposable.start)
-                        bottom.linkTo(parent.bottom)
-                    }
-                    .padding(bottom = 16.dp),
-                inverseDisplay = inverseDisplay,
-                buttonConfig = button,
-                onButtonClick = onButtonClick
-            )
-
-            HighLightCardImage(
-                modifier = Modifier.constrainAs(pictureComposable){
-                    top.linkTo(
-                        if (image.config == HighLightCardImageConfig.FIT && showCloseButton)
-                            closeButtonComposable.bottom
-                        else
-                            parent.top
-                    )
-                    bottom.linkTo(parent.bottom)
-                    end.linkTo(parent.end)
-                    height = Dimension.fillToConstraints
-                },
-                imageSettings = image
-            )
         }
     }
 }
 
-@Composable
-private fun HighLightCardBackground(modifier: Modifier, backgroundSettings: HighLightCardCustomBackgroundSettings){
-    if (backgroundSettings.withCustomBackground){
-        if (backgroundSettings.imageVector != null){
-            Image(
-                modifier = modifier,
-                contentScale = ContentScale.FillBounds,
-                imageVector = backgroundSettings.imageVector,
-                contentDescription = null
-            )
-        } else if(backgroundSettings.bitmap != null){
-            Image(
-                modifier = modifier,
-                contentScale = ContentScale.FillBounds,
-                bitmap = backgroundSettings.bitmap,
-                contentDescription = null
-            )
-        }else if (backgroundSettings.drawableResource != null){
-            Image(
-                modifier = modifier,
-                contentScale = ContentScale.FillBounds,
-                painter = painterResource(id = backgroundSettings.drawableResource),
-                contentDescription = null
-            )
-        }
-    }
+private fun getBackgroundBitmap(resources: Resources, backgroundSettings: HighLightCardCustomBackgroundSettings): ImageBitmap?{
+    var imageBitmap: ImageBitmap? = null
+
+    if (backgroundSettings.drawableResource != null)
+        imageBitmap = BitmapFactory.decodeResource(resources, backgroundSettings.drawableResource).asImageBitmap()
+    if (backgroundSettings.bitmap != null)
+        imageBitmap = backgroundSettings.bitmap
+
+    return imageBitmap
+
+
 }
 
 @Composable
@@ -186,19 +184,25 @@ private fun HighLightCardImage(modifier: Modifier, imageSettings: HighLightCardI
     if (imageSettings.withImage){
         when (imageSettings.picture){
             is HighLightedCardImage.CardImageVector -> Image(
+                alignment = Alignment.BottomEnd,
                 modifier = modifier,
                 imageVector = imageSettings.picture.imageVector,
-                contentDescription = null
+                contentDescription = null,
+                contentScale = if (imageSettings.config == HighLightCardImageConfig.FILL) ContentScale.FillHeight else ContentScale.Fit,
             )
             is HighLightedCardImage.CardBitmap -> Image(
+                alignment = Alignment.BottomEnd,
                 modifier = modifier,
                 bitmap = imageSettings.picture.bitmap,
-                contentDescription = null
+                contentDescription = null,
+                contentScale = if (imageSettings.config == HighLightCardImageConfig.FILL) ContentScale.FillHeight else ContentScale.Fit,
             )
             is HighLightedCardImage.CardResource -> Image(
+                alignment = Alignment.BottomEnd,
                 modifier = modifier,
                 painter = painterResource(id = imageSettings.picture.resourceId),
-                contentDescription = null
+                contentDescription = null,
+                contentScale = if (imageSettings.config == HighLightCardImageConfig.FILL) ContentScale.FillHeight else ContentScale.Fit,
             )
             else -> {}
         }
@@ -221,6 +225,8 @@ private fun HighLightCardButton(
             buttonStyle = buttonStyle,
             onClickListener = onButtonClick
         )
+    }else{
+        Spacer(modifier = modifier)
     }
 }
 
@@ -256,6 +262,8 @@ sealed class HighLightedCardImage{
     object None: HighLightedCardImage()
     data class CardBitmap(val bitmap: ImageBitmap): HighLightedCardImage()
     data class CardImageVector(val imageVector: ImageVector): HighLightedCardImage()
+
+
     data class CardResource(@DrawableRes val resourceId: Int): HighLightedCardImage()
 }
 
@@ -268,11 +276,10 @@ data class HighLightCardImageSettings(
 }
 
 data class HighLightCardCustomBackgroundSettings(
-    val imageVector: ImageVector? = null,
     val bitmap: ImageBitmap? = null,
     @DrawableRes val drawableResource: Int? = null,
 ){
     val withCustomBackground: Boolean
-        get() = this.imageVector != null || this.bitmap != null || this.drawableResource != null
+        get() = this.bitmap != null || this.drawableResource != null
 }
 
