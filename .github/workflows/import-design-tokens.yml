@@ -34,4 +34,4 @@ jobs:
           title: 'Update design tokens'
           body: 'This PR was automatically created by the import-design-tokens GitHub Action.'
           branch: 'import-design-tokens'
-          team-reviewers: 'Android', 'mistica-design'
+          team-reviewers: 'Android,mistica-design'
