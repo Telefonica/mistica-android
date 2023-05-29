@@ -10,6 +10,7 @@ import com.squareup.kotlinpoet.ParameterizedTypeName.Companion.parameterizedBy
 import com.squareup.kotlinpoet.PropertySpec
 import com.squareup.kotlinpoet.TypeSpec
 import com.telefonica.mistica.tokens.GenerateTokens
+import com.telefonica.mistica.tokens.compose.GenerateCompose.Companion.MISTICA_COLORS
 import java.io.File
 
 class GenerateMisticaColors {
@@ -101,6 +102,5 @@ class GenerateMisticaColors {
 
     private companion object {
         const val LIBRARY_CODE_PATH = "../library/src/main/java/"
-        const val MISTICA_COLORS = "MisticaColors"
     }
 }
