@@ -29,11 +29,11 @@ jobs:
       - name: Generate skins from design tokens
         run: ./gradlew run
 
-#      - name: Create Pull Request
-#        uses: peter-evans/create-pull-request@v5
-#        with:
-#          token: ${{ secrets.FLOW_GITHUB_TOKEN }}
-#          commit-message: 'update design tokens'
-#          title: 'update design tokens'
-#          branch: 'import-design-tokens'
-#          team-reviewers: 'Android'
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.FLOW_GITHUB_TOKEN }}
+          commit-message: 'Update design tokens'
+          title: 'Update design tokens'
+          branch: 'import-design-tokens'
+          team-reviewers: 'Android'
