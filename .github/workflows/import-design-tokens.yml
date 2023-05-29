@@ -23,6 +23,9 @@ jobs:
       - name: Generate skins from design tokens
         run: ./gradlew run
 
+      - name: Remove mistica-design repo
+        run: rm -r .github/mistica-design
+
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
