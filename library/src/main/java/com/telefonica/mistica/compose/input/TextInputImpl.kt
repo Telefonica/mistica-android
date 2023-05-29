@@ -10,8 +10,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.OutlinedTextField
 import androidx.compose.material.Text
 import androidx.compose.material.TextField
 import androidx.compose.material.TextFieldDefaults
@@ -136,7 +134,7 @@ private fun TextBox(
             unfocusedIndicatorColor = Color.Transparent,
             disabledIndicatorColor = Color.Transparent,
             errorIndicatorColor = Color.Transparent,
-            errorCursorColor = MisticaTheme.colors.controlActive,
+            errorCursorColor = MisticaTheme.colors.controlActivated,
         ),
         singleLine = singleLine,
         maxLines = if (singleLine) 1 else Int.MAX_VALUE,
@@ -155,7 +153,7 @@ private fun TextInputLabel(
         text = text,
         color = when {
             isError && isMinimized -> MisticaTheme.colors.error
-            isMinimized -> MisticaTheme.colors.controlActive
+            isMinimized -> MisticaTheme.colors.controlActivated
             else -> MisticaTheme.colors.textSecondary
         },
         modifier = modifier,

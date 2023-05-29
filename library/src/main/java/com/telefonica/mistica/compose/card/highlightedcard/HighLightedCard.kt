@@ -108,7 +108,7 @@ fun HighLightedCard(
                             end.linkTo(parent.end, 8.dp)
                         },
                     backgroundColor = if(customBackground.withCustomBackground || inverseDisplay)
-                            MisticaTheme.colors.closeButtonOverlay.copy(alpha = 0.7f)
+                            MisticaTheme.colors.backgroundContainer.copy(alpha = 0.7f)
                         else
                             Color.Transparent,
                     elevation = FloatingActionButtonDefaults.elevation(0.dp),
