@@ -74,8 +74,8 @@ class FeedbackScreenView : ConstraintLayout {
     private var firstButtonClickListener: OnClickListener? = null
     private var secondButtonClickListener: OnClickListener? = null
 
-    private var customAnimation: Int? = null
-    private var customIcon: Int? = null
+    @RawRes private var customAnimation: Int? = null
+    @DrawableRes private var customIcon: Int? = null
 
     constructor(context: Context) : super(context) {
         init(context)
@@ -213,6 +213,12 @@ class FeedbackScreenView : ConstraintLayout {
                 styledAttrs.getBoolean(R.styleable.FeedbackScreen_feedbackSecondButtonAsLink, false)
             shouldAnimateOnAttachedToWindow =
                 styledAttrs.getBoolean(R.styleable.FeedbackScreen_shouldAnimateOnAttached, true)
+            styledAttrs.getResourceId(R.styleable.FeedbackScreen_customAnimation, 0).takeIf { it != 0 }.let {
+                customAnimation = it
+            }
+            styledAttrs.getResourceId(R.styleable.FeedbackScreen_customIcon, 0).takeIf { it != 0 }.let {
+                customIcon = it
+            }
             styledAttrs.recycle()
         }
 

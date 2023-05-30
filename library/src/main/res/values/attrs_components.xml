@@ -41,6 +41,8 @@
         <attr name="feedbackFirstButtonOnClick" format="string" />
         <attr name="feedbackSecondButtonOnClick" format="string" />
         <attr name="shouldAnimateOnAttached" format="boolean" />
+        <attr name="customAnimation" format="reference" />
+        <attr name="customIcon" format="reference" />
     </declare-styleable>
 
     <declare-styleable name="LoadErrorFeedback">
