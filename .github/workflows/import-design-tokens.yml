@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           repository: Telefonica/mistica-design
-          path: '.github/mistica-design'
+          path: './temp/mistica-design'
           ref: ${{github.event.inputs.ref}}
           token: ${{ secrets.FLOW_GITHUB_TOKEN }}
 
@@ -24,7 +24,7 @@ jobs:
         run: ./gradlew generateMisticaTokens
 
       - name: Remove mistica-design repo
-        run: rm -r .github/mistica-design
+        run: rm -r ./temp/mistica-design
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
