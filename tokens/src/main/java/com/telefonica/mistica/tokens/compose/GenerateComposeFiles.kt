@@ -2,15 +2,18 @@ package com.telefonica.mistica.tokens.compose
 
 import com.squareup.kotlinpoet.ClassName
 import com.squareup.moshi.JsonAdapter
-import com.telefonica.mistica.tokens.GenerateTokens.Companion.BRANDS
-import com.telefonica.mistica.tokens.GenerateTokens.Companion.MISTICA_TOKENS_DIR
+import com.telefonica.mistica.tokens.TokensGenerator.Companion.BRANDS
+import com.telefonica.mistica.tokens.TokensGenerator.Companion.MISTICA_TOKENS_DIR
 import com.telefonica.mistica.tokens.dto.TokensDTO
 import java.io.File
 
-class GenerateComposeFiles {
+class GenerateComposeFiles(
+    private val generateMisticaColors: GenerateMisticaColors = GenerateMisticaColors(),
+    private val generateBrandColors: GenerateBrandColors = GenerateBrandColors(),
+) {
 
     operator fun invoke(jsonAdapter: JsonAdapter<TokensDTO>) {
-        GenerateMisticaColors().invoke(jsonAdapter)
+        generateMisticaColors(jsonAdapter)
 
         BRANDS.forEach { brand ->
             val json = File("${MISTICA_TOKENS_DIR}/$brand.json").readText()
@@ -18,7 +21,7 @@ class GenerateComposeFiles {
             if (tokens == null) {
                 throw Exception("Invalid JSON")
             } else {
-                GenerateBrandColors().invoke(tokens, brand)
+                generateBrandColors(tokens, brand)
             }
         }
     }

@@ -1,14 +1,14 @@
 package com.telefonica.mistica.tokens.common
 
-import com.telefonica.mistica.tokens.GenerateTokens
+import com.telefonica.mistica.tokens.TokensGenerator
 import com.telefonica.mistica.tokens.dto.ColorDTO
 import com.telefonica.mistica.tokens.dto.TokensDTO
 import java.util.Locale
 import kotlin.math.roundToInt
 
-class GetColorsWithAlpha {
-
-    private val getColorNameWithAlpha = GetColorNameWithAlpha()
+class GetColorsWithAlpha(
+    private val getColorNameWithAlpha: GetColorNameWithAlpha = GetColorNameWithAlpha(),
+) {
 
     operator fun invoke(tokens: TokensDTO, brand: String): List<Pair<String, String>> {
         val colorsWithAlpha = mutableSetOf<Pair<String, String>>()
@@ -35,13 +35,13 @@ class GetColorsWithAlpha {
         brand: String,
     ): Pair<String, String>? {
         if (color.value.contains("rgba(")) {
-            val alpha = GenerateTokens.ALPHA_REGEX.find(color.value)?.value?.toDouble()
+            val alpha = TokensGenerator.ALPHA_REGEX.find(color.value)?.value?.toDouble()
 
             val colorValue = tokens.global.palette[color.description]?.value
             if (alpha != null && colorValue != null) {
                 val alphaHex = alpha.toHex()
                 val colorName = getColorNameWithAlpha(brand, color.description, alpha)
-                val colorWithAlpha = "#" + alphaHex + colorValue.removePrefix("#")
+                val colorWithAlpha = "#$alphaHex${colorValue.removePrefix("#")}"
                 return colorName to colorWithAlpha
             }
         }

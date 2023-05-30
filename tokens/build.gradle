@@ -4,7 +4,7 @@ plugins {
     id 'application'
 }
 
-mainClassName = 'com.telefonica.mistica.tokens.TokensGeneratorKt'
+mainClassName = 'com.telefonica.mistica.tokens.MainKt'
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8
@@ -22,5 +22,5 @@ task generateMisticaTokens(type: JavaExec) {
     group = "Execution"
     description = "Run the main class with JavaExecTask"
     classpath = sourceSets.main.runtimeClasspath
-    main = 'com.telefonica.mistica.tokens.TokensGeneratorKt'
+    main = 'com.telefonica.mistica.tokens.MainKt'
 }
