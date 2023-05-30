@@ -18,7 +18,6 @@ In order to configure it for the specific purpose, it supports both **attribute 
         <enum name="success" value="0"/>
         <enum name="error" value="1"/>
 		<enum name="info" value="2"/>
-		<enum name="custom" value="3"/>
     </attr>
     <attr name="feedbackTitle" format="string"/>
     <attr name="feedbackSubtitle" format="string"/>

@@ -235,7 +235,6 @@ private enum class Type(@FeedbackScreenView.FeedbackType val type: Int) {
     SUCCESS(FeedbackScreenView.TYPE_SUCCESS),
     ERROR(FeedbackScreenView.TYPE_ERROR),
     INFO(FeedbackScreenView.TYPE_INFO),
-    CUSTOM(FeedbackScreenView.TYPE_CUSTOM)
 }
 
 private enum class CustomFeedbackAnimation(@RawRes val resource: Int?) {

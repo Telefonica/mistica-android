@@ -43,8 +43,7 @@ class FeedbackScreenView : ConstraintLayout {
     @IntDef(
         TYPE_SUCCESS,
         TYPE_ERROR,
-        TYPE_INFO,
-        TYPE_CUSTOM
+        TYPE_INFO
     )
     annotation class FeedbackType
 
@@ -275,17 +274,12 @@ class FeedbackScreenView : ConstraintLayout {
                 colorAttr = R.attr.colorError
             )
 
-            TYPE_INFO -> configureIcon(
-                animationAttr = R.attr.feedbackScreenInfoAnimation,
-                imageAttr = R.attr.feedbackScreenInfoIcon,
-                colorAttr = R.attr.colorBrand
-            )
-
-            TYPE_CUSTOM -> configureIconAsResource(
+            TYPE_INFO -> configureIconAsResource(
                 animationResource = customAnimation ?: context.getThemeRes(R.attr.feedbackScreenInfoAnimation, false),
                 imageResource = customIcon ?: context.getThemeRes(R.attr.feedbackScreenInfoIcon, false),
                 colorAttr = R.attr.colorBrand
             )
+
         }
     }
 
@@ -454,7 +448,6 @@ class FeedbackScreenView : ConstraintLayout {
         const val TYPE_SUCCESS = 0
         const val TYPE_ERROR = 1
         const val TYPE_INFO = 2
-        const val TYPE_CUSTOM = 3
 
         const val TEXTS_ANIMATION_DURATION = 800L
         const val TEXTS_ANIMATION_DELAY = 200L
