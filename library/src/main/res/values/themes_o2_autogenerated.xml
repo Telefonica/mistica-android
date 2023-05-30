@@ -110,5 +110,15 @@
 		<item name="colorTextAppBar">@color/o2_color_grey4</item>
 		<item name="colorTextAppBarSelected">@color/o2_color_o2BluePrimary</item>
 		<item name="colorCustomTabsBackground">@color/o2_color_o2BluePrimary</item>
+		<item name="avatarBorderRadius">50%</item>
+		<item name="barBorderRadius">999dp</item>
+		<item name="buttonBorderRadius">4dp</item>
+		<item name="checkboxBorderRadius">2dp</item>
+		<item name="containerBorderRadius">8dp</item>
+		<item name="indicatorBorderRadius">999dp</item>
+		<item name="inputBorderRadius">8dp</item>
+		<item name="legacyDisplayBorderRadius">16dp</item>
+		<item name="popupBorderRadius">8dp</item>
+		<item name="sheetBorderRadius">8dp</item>
 	</style>
 </resources>

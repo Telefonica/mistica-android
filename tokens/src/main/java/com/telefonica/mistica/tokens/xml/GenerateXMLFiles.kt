@@ -33,7 +33,6 @@ class GenerateXMLFiles(
                 generateDarkThemesFiles(tokens, brand)
             }
         }
-
     }
 
     private fun generateColorsFiles(tokens: TokensDTO, brand: String) {
@@ -94,6 +93,15 @@ class GenerateXMLFiles(
                             attribute("name", colorName)
                             -"@color/${brand}_color_${color.value.description}"
                         }
+                    }
+                }
+
+                tokens.radius.forEach { (key, radius) ->
+                    val value = if (radius.value == "circle") "50%" else "${radius.value}dp"
+
+                    "item" {
+                        attribute("name", "${key}BorderRadius")
+                        -value
                     }
                 }
             }

@@ -68,7 +68,7 @@ class GenerateAttributesFile {
         tokens.radius.forEach { (key, _) ->
             "attr" {
                 attribute("name", "${key}BorderRadius")
-                attribute("format", "dimension")
+                attribute("format", "dimension|fraction")
             }
         }
     }

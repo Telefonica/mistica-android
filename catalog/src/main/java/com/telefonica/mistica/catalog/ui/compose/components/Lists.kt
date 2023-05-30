@@ -334,11 +334,11 @@ private fun CustomSlot() {
             .border(
                 width = 1.dp,
                 color = MisticaTheme.colors.border,
-                shape = RoundedCornerShape(MisticaTheme.values.containerBorderRadius)
+                shape = RoundedCornerShape(MisticaTheme.radius.containerBorderRadius)
             )
             .background(
                 color = Color.LightGray,
-                shape = RoundedCornerShape(MisticaTheme.values.containerBorderRadius)
+                shape = RoundedCornerShape(MisticaTheme.radius.containerBorderRadius)
             )
     ) {
         Text(

@@ -107,7 +107,7 @@ private fun TextBox(
             .border(
                 width = 1.dp,
                 color = MisticaTheme.colors.border,
-                shape = RoundedCornerShape(MisticaTheme.values.inputBorderRadius)
+                shape = RoundedCornerShape(MisticaTheme.radius.inputBorderRadius)
             ),
         enabled = enabled,
         readOnly = readOnly,
@@ -127,7 +127,7 @@ private fun TextBox(
         keyboardOptions = keyboardOptions,
         isError = isError,
         trailingIcon = trailingIcon,
-        shape = RoundedCornerShape(MisticaTheme.values.inputBorderRadius),
+        shape = RoundedCornerShape(MisticaTheme.radius.inputBorderRadius),
         colors = TextFieldDefaults.textFieldColors(
             backgroundColor = MisticaTheme.colors.backgroundContainer,
             focusedIndicatorColor = Color.Transparent,

@@ -82,7 +82,7 @@ fun Button(
             colors = style.buttonColors,
             border = if (enabled) style.border else style.disabledBorder,
             elevation = ButtonDefaults.elevation(0.dp, 0.dp, 0.dp, 0.dp, 0.dp),
-            shape = RoundedCornerShape(MisticaTheme.values.buttonBorderRadius)
+            shape = RoundedCornerShape(MisticaTheme.radius.buttonBorderRadius)
         ) {
             Box(contentAlignment = Alignment.Center) {
                 androidx.compose.animation.AnimatedVisibility(

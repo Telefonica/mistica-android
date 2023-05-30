@@ -110,5 +110,15 @@
 		<item name="colorTextAppBar">@color/telefonica_color_grey4</item>
 		<item name="colorTextAppBarSelected">@color/telefonica_color_telefonicaBlue</item>
 		<item name="colorCustomTabsBackground">@color/telefonica_color_telefonicaBlue</item>
+		<item name="avatarBorderRadius">50%</item>
+		<item name="barBorderRadius">0dp</item>
+		<item name="buttonBorderRadius">999dp</item>
+		<item name="checkboxBorderRadius">0dp</item>
+		<item name="containerBorderRadius">0dp</item>
+		<item name="indicatorBorderRadius">999dp</item>
+		<item name="inputBorderRadius">0dp</item>
+		<item name="legacyDisplayBorderRadius">0dp</item>
+		<item name="popupBorderRadius">0dp</item>
+		<item name="sheetBorderRadius">8dp</item>
 	</style>
 </resources>
