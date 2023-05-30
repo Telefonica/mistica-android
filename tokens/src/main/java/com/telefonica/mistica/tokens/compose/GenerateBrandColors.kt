@@ -60,17 +60,17 @@ class GenerateBrandColors(
 
         var colorsConstructor = "${GenerateComposeFiles.MISTICA_COLORS}("
 
-        colors.forEach { color ->
-            var colorValue = "${brand}_color_${color.value.description}"
+        colors.forEach { (key, color) ->
+            var colorValue = "${brand}_color_${color.description}"
 
-            if (color.value.value.contains("rgba(")) {
-                val alpha = TokensGenerator.ALPHA_REGEX.find(color.value.value)?.value?.toDouble()
+            if (color.value.contains("rgba(")) {
+                val alpha = TokensGenerator.ALPHA_REGEX.find(color.value)?.value?.toDouble()
                 if (alpha != null) {
-                    colorValue = getColorNameWithAlpha(brand, color.value.description, alpha)
-                    colorsConstructor += "${color.key} = $paletteClassName.$colorValue,\n"
+                    colorValue = getColorNameWithAlpha(brand, color.description, alpha)
+                    colorsConstructor += "$key = $paletteClassName.$colorValue,\n"
                 }
             } else {
-                colorsConstructor += "${color.key} = $paletteClassName.$colorValue,\n"
+                colorsConstructor += "$key = $paletteClassName.$colorValue,\n"
             }
         }
 
@@ -83,11 +83,11 @@ class GenerateBrandColors(
     ): MutableList<PropertySpec> {
         val properties = mutableListOf<PropertySpec>()
 
-        tokens.global.palette.forEach { color ->
-            val colorName = "${brand}_color_${color.key}"
+        tokens.global.palette.forEach { (key, color) ->
+            val colorName = "${brand}_color_${key}"
 
             val property = PropertySpec.builder(colorName, colorClass)
-                .initializer("%T(%L)", colorClass, color.value.value.toHexColor())
+                .initializer("%T(%L)", colorClass, color.value.toHexColor())
                 .build()
             properties.add(property)
         }

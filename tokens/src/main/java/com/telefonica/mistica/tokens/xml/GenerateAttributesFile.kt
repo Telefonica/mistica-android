@@ -65,9 +65,9 @@ class GenerateAttributesFile {
 
     private fun Node.getBorderRadiusAttributes(tokens: TokensDTO) {
         attribute("name", "BorderRadius")
-        tokens.radius.forEach { radius ->
+        tokens.radius.forEach { (key, _) ->
             "attr" {
-                attribute("name", "${radius.key}BorderRadius")
+                attribute("name", "${key}BorderRadius")
                 attribute("format", "dimension")
             }
         }
