@@ -245,6 +245,7 @@ private enum class CustomFeedbackAnimation(@RawRes val resource: Int?) {
 
 private enum class CustomFeedbackIcon(@DrawableRes val resource: Int?) {
     NONE(null),
+    LIFEGUARD_LIGHT(R.drawable.ic_lifeguard_float_light),
     ERROR_LIGHT(R.drawable.feedback_error_light),
     INFO_O2(R.drawable.feedback_info_o2),
 }
