@@ -10,4 +10,6 @@ object O2Brand : Brand {
     override val lightColors = O2BrandColors.lightColors
 
     override val darkColors = O2BrandColors.darkColors
+
+    override val radius = O2BrandRadius.radius
 }

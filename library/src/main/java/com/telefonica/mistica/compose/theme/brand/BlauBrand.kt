@@ -10,4 +10,6 @@ object BlauBrand : Brand {
     override val lightColors = BlauBrandColors.lightColors
 
     override val darkColors = BlauBrandColors.darkColors
+
+    override val radius = BlauBrandRadius.radius
 }
