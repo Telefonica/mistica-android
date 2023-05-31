@@ -40,17 +40,6 @@
         <item name="preset6Style">normal</item>
         <item name="preset7Style">normal</item>
         <item name="preset8Style">normal</item>
-
-        <!-- Border radius -->
-        <item name="buttonBorderRadius">4dp</item>
-        <item name="inputBorderRadius">8dp</item>
-        <item name="containerBorderRadius">8dp</item>
-        <item name="legacyDisplayBorderRadius">16dp</item>
-        <item name="popupBorderRadius">8dp</item>
-        <item name="checkboxBorderRadius">2dp</item>
-        <item name="indicatorBorderRadius">999dp</item>
-        <item name="sheetBorderRadius">8dp</item>
-        <item name="barBorderRadius">999dp</item>
     </style>
 
 </resources>

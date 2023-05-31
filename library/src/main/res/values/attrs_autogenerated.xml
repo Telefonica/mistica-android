@@ -120,15 +120,15 @@
 		<attr name="colorLoginLoadingGradientFourth" format="color|reference"/>
 	</declare-styleable>
 	<declare-styleable name="BorderRadius">
-		<attr name="avatarBorderRadius" format="dimension"/>
-		<attr name="barBorderRadius" format="dimension"/>
-		<attr name="buttonBorderRadius" format="dimension"/>
-		<attr name="checkboxBorderRadius" format="dimension"/>
-		<attr name="containerBorderRadius" format="dimension"/>
-		<attr name="indicatorBorderRadius" format="dimension"/>
-		<attr name="inputBorderRadius" format="dimension"/>
-		<attr name="legacyDisplayBorderRadius" format="dimension"/>
-		<attr name="popupBorderRadius" format="dimension"/>
-		<attr name="sheetBorderRadius" format="dimension"/>
+		<attr name="avatarBorderRadius" format="dimension|fraction"/>
+		<attr name="barBorderRadius" format="dimension|fraction"/>
+		<attr name="buttonBorderRadius" format="dimension|fraction"/>
+		<attr name="checkboxBorderRadius" format="dimension|fraction"/>
+		<attr name="containerBorderRadius" format="dimension|fraction"/>
+		<attr name="indicatorBorderRadius" format="dimension|fraction"/>
+		<attr name="inputBorderRadius" format="dimension|fraction"/>
+		<attr name="legacyDisplayBorderRadius" format="dimension|fraction"/>
+		<attr name="popupBorderRadius" format="dimension|fraction"/>
+		<attr name="sheetBorderRadius" format="dimension|fraction"/>
 	</declare-styleable>
 </resources>

@@ -10,4 +10,6 @@ object VivoBrand : Brand {
     override val lightColors = VivoBrandColors.lightColors
 
     override val darkColors = VivoBrandColors.darkColors
+
+    override val radius = VivoBrandRadius.radius
 }

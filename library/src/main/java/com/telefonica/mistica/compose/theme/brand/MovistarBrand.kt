@@ -28,4 +28,6 @@ object MovistarBrand : Brand {
 
     override val values: MisticaValues
         get() = super.values.copy(titleStyle = TitleStyle.TITLE_2)
+
+    override val radius = MovistarBrandRadius.radius
 }

@@ -10,10 +10,13 @@ import java.io.File
 class GenerateComposeFiles(
     private val generateMisticaColors: GenerateMisticaColors = GenerateMisticaColors(),
     private val generateBrandColors: GenerateBrandColors = GenerateBrandColors(),
+    private val generateMisticaRadius: GenerateMisticaRadius = GenerateMisticaRadius(),
+    private val generateBrandRadius: GenerateBrandRadius = GenerateBrandRadius(),
 ) {
 
     operator fun invoke(jsonAdapter: JsonAdapter<TokensDTO>) {
         generateMisticaColors(jsonAdapter)
+        generateMisticaRadius(jsonAdapter)
 
         BRANDS.forEach { brand ->
             val json = File("${MISTICA_TOKENS_DIR}/$brand.json").readText()
@@ -22,6 +25,7 @@ class GenerateComposeFiles(
                 throw Exception("Invalid JSON")
             } else {
                 generateBrandColors(tokens, brand)
+                generateBrandRadius(tokens, brand)
             }
         }
     }
@@ -31,5 +35,8 @@ class GenerateComposeFiles(
         const val MISTICA_COLORS = "MisticaColors"
         val misticaColorsClass = ClassName("com.telefonica.mistica.compose.theme.color", MISTICA_COLORS)
         val colorClass = ClassName("androidx.compose.ui.graphics", "Color")
+        val misticaRadiusClass = ClassName("com.telefonica.mistica.compose.theme.values", "MisticaRadius")
+        val dpClass = ClassName("androidx.compose.ui.unit", "Dp")
+        val intClass = ClassName("kotlin", "Int")
     }
 }
