@@ -11,5 +11,13 @@ object VivoBrand : Brand {
 
     override val darkColors = VivoBrandColors.darkColors
 
+    override val preset5FontWeight = VivoBrandFontWeights.text5FontWeight
+
+    override val preset6FontWeight = VivoBrandFontWeights.text6FontWeight
+
+    override val preset7FontWeight = VivoBrandFontWeights.text7FontWeight
+
+    override val preset8FontWeight = VivoBrandFontWeights.text8FontWeight
+
     override val radius = VivoBrandRadius.radius
 }

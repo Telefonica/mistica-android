@@ -11,5 +11,13 @@ object O2Brand : Brand {
 
     override val darkColors = O2BrandColors.darkColors
 
+    override val preset5FontWeight = O2BrandFontWeights.text5FontWeight
+
+    override val preset6FontWeight = O2BrandFontWeights.text6FontWeight
+
+    override val preset7FontWeight = O2BrandFontWeights.text7FontWeight
+
+    override val preset8FontWeight = O2BrandFontWeights.text8FontWeight
+
     override val radius = O2BrandRadius.radius
 }

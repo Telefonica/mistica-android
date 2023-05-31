@@ -14,13 +14,9 @@ interface Brand {
     val fontFamily: FontFamily
         get() = FontFamily.SansSerif
     val preset5FontWeight: FontWeight
-        get() = FontWeight.Light
     val preset6FontWeight: FontWeight
-        get() = FontWeight.Light
     val preset7FontWeight: FontWeight
-        get() = FontWeight.Light
     val preset8FontWeight: FontWeight
-        get() = FontWeight.Light
     val values: MisticaValues
         get() = MisticaValues(
             titleStyle = TitleStyle.TITLE_1,

@@ -12,5 +12,13 @@ object TelefonicaBrand : Brand {
 
     override val darkColors = TelefonicaBrandColors.darkColors
 
+    override val preset5FontWeight = TelefonicaBrandFontWeights.text5FontWeight
+
+    override val preset6FontWeight = TelefonicaBrandFontWeights.text6FontWeight
+
+    override val preset7FontWeight = TelefonicaBrandFontWeights.text7FontWeight
+
+    override val preset8FontWeight = TelefonicaBrandFontWeights.text8FontWeight
+
     override val radius: MisticaRadius = TelefonicaBrandRadius.radius
 }
