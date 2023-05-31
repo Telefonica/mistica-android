@@ -8,29 +8,29 @@
     <style name="AppTheme.TextAppearance.Preset8">
         <item name="android:textSize">32sp</item>
         <item name="lineHeight">40sp</item>
-        <item name="android:fontFamily">?preset8Font</item>
-        <item name="android:textStyle">?preset8Style</item>
+        <item name="android:fontFamily">?text8Font</item>
+        <item name="android:textStyle">?text8Style</item>
     </style>
 
     <style name="AppTheme.TextAppearance.Preset7">
         <item name="android:textSize">28sp</item>
         <item name="lineHeight">32sp</item>
-        <item name="android:fontFamily">?preset7Font</item>
-        <item name="android:textStyle">?preset7Style</item>
+        <item name="android:fontFamily">?text7Font</item>
+        <item name="android:textStyle">?text7Style</item>
     </style>
 
     <style name="AppTheme.TextAppearance.Preset6">
         <item name="android:textSize">24sp</item>
         <item name="lineHeight">32sp</item>
-        <item name="android:fontFamily">?preset6Font</item>
-        <item name="android:textStyle">?preset6Style</item>
+        <item name="android:fontFamily">?text6Font</item>
+        <item name="android:textStyle">?text6Style</item>
     </style>
 
     <style name="AppTheme.TextAppearance.Preset5">
         <item name="android:textSize">20sp</item>
         <item name="lineHeight">24sp</item>
-        <item name="android:fontFamily">?preset5Font</item>
-        <item name="android:textStyle">?preset5Style</item>
+        <item name="android:fontFamily">?text5Font</item>
+        <item name="android:textStyle">?text5Style</item>
     </style>
 
     <style name="AppTheme.TextAppearance.Preset4">
