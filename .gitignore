@@ -10,3 +10,4 @@ gen/
 build/
 */.idea
 *.iml
+my.secrets

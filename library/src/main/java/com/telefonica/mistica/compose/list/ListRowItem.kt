@@ -66,7 +66,7 @@ fun ListRowItem(
         -> modifier.padding(contentPadding)
     }
         .fillMaxWidth()
-        .clip(shape = RoundedCornerShape(MisticaTheme.values.containerBorderRadius))
+        .clip(shape = RoundedCornerShape(MisticaTheme.radius.containerBorderRadius))
         .makeClickableIfNeeded(onClick)
 
     val rowModifier = when (backgroundType) {
@@ -75,16 +75,16 @@ fun ListRowItem(
             .border(
                 width = 1.dp,
                 color = MisticaTheme.colors.border,
-                shape = RoundedCornerShape(MisticaTheme.values.containerBorderRadius),
+                shape = RoundedCornerShape(MisticaTheme.radius.containerBorderRadius),
             )
             .background(
                 color = MisticaTheme.colors.backgroundContainer,
-                shape = RoundedCornerShape(MisticaTheme.values.containerBorderRadius),
+                shape = RoundedCornerShape(MisticaTheme.radius.containerBorderRadius),
             )
         BackgroundType.TYPE_BOXED_INVERSE -> Modifier
             .background(
                 color = MisticaTheme.colors.backgroundBrand,
-                shape = RoundedCornerShape(MisticaTheme.values.containerBorderRadius),
+                shape = RoundedCornerShape(MisticaTheme.radius.containerBorderRadius),
             )
     }
         .fillMaxWidth()

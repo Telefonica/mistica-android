@@ -33,7 +33,7 @@ internal fun TextWithLinks(
                     tag = textLink.link,
                     start = offset,
                     end = offset,
-                ).firstOrNull()?.let { annotation ->
+                ).firstOrNull()?.let {
                     textLink.onLinkTapped()
                 }
             }
