@@ -1,4 +1,4 @@
-# Feedbacks
+[# Feedbacks
 
 <p align="center">
     <img src="../../../../../../../../../doc/images/screen_feedbacks/feedbacks.gif">
@@ -18,7 +18,6 @@ In order to configure it for the specific purpose, it supports both **attribute 
         <enum name="success" value="0"/>
         <enum name="error" value="1"/>
 		<enum name="info" value="2"/>
-		<enum name="custom" value="3"/>
     </attr>
     <attr name="feedbackTitle" format="string"/>
     <attr name="feedbackSubtitle" format="string"/>
@@ -28,9 +27,9 @@ In order to configure it for the specific purpose, it supports both **attribute 
 	<attr name="feedbackFirstButtonLoadingText" format="string"/>
     <attr name="feedbackSecondButtonText" format="string"/>
     <attr name="feedbackSecondButtonAsLink" format="boolean"/>
-
     <attr name="feedbackFirstButtonOnClick" format="string"/>
     <attr name="feedbackSecondButtonOnClick" format="string"/>
+	<attr name="shouldAnimateOnAttached" format="boolean" />
 </declare-styleable>
 ```
 ## Fields information
@@ -56,3 +55,5 @@ In order to configure it for the specific purpose, it supports both **attribute 
 `feedbackFirstButtonOnClick` -> (Optional) Click action associated to first feedback button.
 
 `feedbackSecondButtonOnClick` -> (Optional) Click action associated to second feedback button.
+
+`shouldAnimateOnAttached` -> (Optional) By default, the view will animate its entry when attached to the view hierarchy. This can be disabled by setting this field to false.

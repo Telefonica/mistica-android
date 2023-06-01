@@ -2,7 +2,11 @@
 
 package com.telefonica.mistica.catalog.ui
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import androidx.annotation.LayoutRes
 import androidx.annotation.StyleRes
 import androidx.compose.runtime.Composable
 import androidx.fragment.app.Fragment
@@ -15,6 +19,7 @@ import com.telefonica.mistica.catalog.databinding.ScreenComponentCatalogBinding
 import com.telefonica.mistica.catalog.ui.CatalogMainActivity.Companion.DEFAULT_BRAND_TYPE
 import com.telefonica.mistica.catalog.ui.CatalogMainActivity.Companion.DEFAULT_CLASSIC_THEME
 import com.telefonica.mistica.catalog.ui.CatalogMainActivity.Companion.DEFAULT_COMPOSE_THEME
+import com.telefonica.mistica.catalog.ui.classic.activity.FeedbackScreenCatalogActivity
 import com.telefonica.mistica.catalog.ui.classic.components.BadgesCatalogFragment
 import com.telefonica.mistica.catalog.ui.classic.components.ButtonsCatalogFragment
 import com.telefonica.mistica.catalog.ui.classic.components.CalloutsCatalogFragment
@@ -23,14 +28,13 @@ import com.telefonica.mistica.catalog.ui.classic.components.ControlsCatalogFragm
 import com.telefonica.mistica.catalog.ui.classic.components.DataCardFragment
 import com.telefonica.mistica.catalog.ui.classic.components.EmptyStateCardCatalogFragment
 import com.telefonica.mistica.catalog.ui.classic.components.EmptyStateScreenCatalogFragment
-import com.telefonica.mistica.catalog.ui.classic.components.FeedbackScreenCatalogFragment
+import com.telefonica.mistica.catalog.ui.classic.components.FiltersCatalogFragment
 import com.telefonica.mistica.catalog.ui.classic.components.HeadersCatalogFragment
 import com.telefonica.mistica.catalog.ui.classic.components.HighlightedCardsCatalogFragment
 import com.telefonica.mistica.catalog.ui.classic.components.InputsCatalogFragment
 import com.telefonica.mistica.catalog.ui.classic.components.ListsCatalogFragment
 import com.telefonica.mistica.catalog.ui.classic.components.LoadErrorFeedbackCatalogFragment
 import com.telefonica.mistica.catalog.ui.classic.components.MediaCardsFragment
-import com.telefonica.mistica.catalog.ui.classic.components.FiltersCatalogFragment
 import com.telefonica.mistica.catalog.ui.classic.components.PopOverCatalogFragment
 import com.telefonica.mistica.catalog.ui.classic.components.ScrollContentIndicatorCatalogFragment
 import com.telefonica.mistica.catalog.ui.classic.components.SheetCatalogFragment
@@ -58,6 +62,7 @@ import com.telefonica.mistica.catalog.ui.compose.components.TabsCatalog
 import com.telefonica.mistica.catalog.ui.compose.components.Tags
 import com.telefonica.mistica.catalog.ui.compose.components.Texts
 import com.telefonica.mistica.catalog.ui.compose.components.Titles
+import com.telefonica.mistica.compose.theme.MisticaTheme
 import com.telefonica.mistica.compose.theme.brand.BlauBrand
 import com.telefonica.mistica.compose.theme.brand.Brand
 import com.telefonica.mistica.compose.theme.brand.BrandType
@@ -66,6 +71,7 @@ import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 import com.telefonica.mistica.compose.theme.brand.O2Brand
 import com.telefonica.mistica.compose.theme.brand.TelefonicaBrand
 import com.telefonica.mistica.compose.theme.brand.VivoBrand
+import com.telefonica.mistica.feedback.screen.view.FeedbackScreenView
 
 class ComponentCatalogActivity : FragmentActivity() {
 
@@ -91,85 +97,118 @@ class ComponentCatalogActivity : FragmentActivity() {
             Section.TEXTS -> setPageAdapterWithTabs(
                 classicComponent = TextPresetsCatalogFragment(),
                 composeComponent = { Texts() })
+
             Section.TITLES -> setPageAdapterWithTabs(
                 classicComponent = TitleCatalogFragment(),
                 composeComponent = { Titles() })
+
             Section.BUTTONS -> setPageAdapterWithTabs(
                 classicComponent = ButtonsCatalogFragment(),
                 composeComponent = { Buttons() })
+
             Section.INPUTS -> setPageAdapterWithTabs(
                 classicComponent = InputsCatalogFragment(),
                 composeComponent = { Inputs() })
+
             Section.SNACKBARS -> setPageAdapterWithTabs(
                 classicComponent = SnackBarCatalogFragment(),
-                composeComponent = null)
-            Section.FEEDBACKS -> setPageAdapterWithTabs(
-                classicComponent = FeedbackScreenCatalogFragment(classicThemeOverride),
-                composeComponent = { Feedbacks() })
+                composeComponent = null
+            )
+
+            Section.FEEDBACKS -> setSingleInputLauncher { Feedbacks(classicThemeOverride) }
+
             Section.LOAD_ERROR_FEEDBACK -> setPageAdapterWithTabs(
                 classicComponent = LoadErrorFeedbackCatalogFragment(),
                 composeComponent = { LoadErrorFeedbacks() })
+
             Section.POPOVERS -> setPageAdapterWithTabs(
                 classicComponent = PopOverCatalogFragment(),
-                composeComponent = null)
+                composeComponent = null
+            )
+
             Section.BADGES -> setPageAdapterWithTabs(
                 classicComponent = BadgesCatalogFragment(),
-                composeComponent = null)
+                composeComponent = null
+            )
+
             Section.FILTERS -> setPageAdapterWithTabs(
                 classicComponent = FiltersCatalogFragment(),
-                composeComponent = null)
+                composeComponent = null
+            )
+
             Section.SCROLL_CONTENT_INDICATOR -> setPageAdapterWithTabs(
                 classicComponent = ScrollContentIndicatorCatalogFragment(),
-                composeComponent = null)
+                composeComponent = null
+            )
+
             Section.TAG -> setPageAdapterWithTabs(
                 classicComponent = TagsCatalogFragment(),
                 composeComponent = { Tags() })
+
             Section.LISTS -> setPageAdapterWithTabs(
                 classicComponent = ListsCatalogFragment(),
                 composeComponent = { Lists() })
+
             Section.MEDIA_CARDS -> setPageAdapterWithTabs(
                 classicComponent = MediaCardsFragment(),
                 composeComponent = { MediaCards() })
+
             Section.DATA_CARDS -> setPageAdapterWithTabs(
                 classicComponent = DataCardFragment(),
                 composeComponent = { DataCards() })
+
             Section.HEADERS -> setPageAdapterWithTabs(
                 classicComponent = HeadersCatalogFragment(),
-                composeComponent = null)
+                composeComponent = null
+            )
+
             Section.HIGHLIGHTED_CARDS -> setPageAdapterWithTabs(
                 classicComponent = HighlightedCardsCatalogFragment(),
                 composeComponent = { HighlightedCards() })
+
             Section.CONTROLS -> setPageAdapterWithTabs(
                 classicComponent = ControlsCatalogFragment(),
-                composeComponent = null)
+                composeComponent = null
+            )
+
             Section.STEPPERS -> setPageAdapterWithTabs(
                 classicComponent = SteppersCatalogFragment(),
                 composeComponent = { Steppers() })
+
             Section.TABS -> setPageAdapterWithTabs(
                 classicComponent = TabsCatalogFragment(),
                 composeComponent = { TabsCatalog() })
+
             Section.EMPTY_STATE -> setPageAdapterWithTabs(
                 classicComponent = EmptyStateScreenCatalogFragment(classicThemeOverride),
                 composeComponent = { EmptyStateScreens() })
+
             Section.EMPTY_STATE_CARD -> setPageAdapterWithTabs(
                 classicComponent = EmptyStateCardCatalogFragment(),
                 composeComponent = { EmptyStateCards() })
+
             Section.CALLOUTS -> setPageAdapterWithTabs(
                 classicComponent = CalloutsCatalogFragment(),
                 composeComponent = { Callouts() })
+
             Section.SHEET -> setPageAdapterWithTabs(
                 classicComponent = SheetCatalogFragment(),
-                composeComponent = null)
+                composeComponent = null
+            )
+
             Section.CAROUSEL -> setPageAdapterWithTabs(
                 classicComponent = CarouselFragment(),
                 composeComponent = { Carousels() })
+
             else -> setPageAdapterWithTabs(
                 classicComponent = FiltersCatalogFragment(),
-                composeComponent = null)
+                composeComponent = null
+            )
         }
     }
 
     private fun setPageAdapterWithTabs(classicComponent: Fragment?, composeComponent: (@Composable () -> Unit)?) {
+        binding.tabLayoutViewGroup.visibility = View.VISIBLE
         if (classicComponent == null && composeComponent == null) throw ExceptionInInitializerError("At least one of the components must be not null.")
 
         val adapterList: List<Fragment> = buildList {
@@ -181,6 +220,17 @@ class ComponentCatalogActivity : FragmentActivity() {
         }
 
         binding.componentViewPager.adapter = ComponentPageAdapter(adapterList, this)
+    }
+
+    private fun setSingleInputLauncher(
+        component: (@Composable () -> Unit),
+    ) {
+        binding.singleInputOptions.visibility = View.VISIBLE
+        binding.singleInputOptions.setContent {
+            MisticaTheme(composeThemeOverride) {
+                component()
+            }
+        }
     }
 
     private fun setUpThemes() {
@@ -259,3 +309,4 @@ enum class Section {
     SHEET,
     CAROUSEL,
 }
+

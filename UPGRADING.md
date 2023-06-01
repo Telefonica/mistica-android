@@ -59,3 +59,7 @@ In order to align the color names with the one defined by UX team, some colors h
 Other colors have been removed because UX team has decided to remove them from the design system. Some examples:
 - `carouselIndicatorActiveColor` -> `controlActivated`
 - `carouselIndicatorInactiveColor` -> `control`
+
+### Changes in FeedbackScreenView
+- `TYPE_CUSTOM` has been removed. Use `TYPE_INFO` instead, it allows custom icon or animation.
+- `shouldAnimateOnAttachedToWindow` is now private. Use method `setShouldAnimateOnAttachedToWindow()` or xml attribute `app:shouldAnimateOnAttached` instead.
