@@ -52,7 +52,7 @@ fun Tag(
             .wrapContentSize()
             .defaultMinSize(minWidth = 48.dp)
             .height(28.dp),
-        shape = RoundedCornerShape(MisticaTheme.values.indicatorBorderRadius),
+        shape = RoundedCornerShape(MisticaTheme.radius.indicatorBorderRadius),
         color = background,
     ) {
         Row(

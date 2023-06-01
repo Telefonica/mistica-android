@@ -1,0 +1,28 @@
+plugins {
+    id 'java-library'
+    id 'org.jetbrains.kotlin.jvm'
+    id 'application'
+}
+
+mainClassName = 'com.telefonica.mistica.tokens.MainKt'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+dependencies {
+    implementation("com.squareup.moshi:moshi:1.14.0")
+    implementation("com.squareup.moshi:moshi-kotlin:1.14.0")
+    implementation("org.redundent:kotlin-xml-builder:1.9.0")
+    implementation("com.squareup:kotlinpoet:1.14.0")
+
+    testImplementation 'junit:junit:4.13.2'
+}
+
+task generateMisticaTokens(type: JavaExec) {
+    group = "Execution"
+    description = "Run the main class with JavaExecTask"
+    classpath = sourceSets.main.runtimeClasspath
+    main = 'com.telefonica.mistica.tokens.MainKt'
+}

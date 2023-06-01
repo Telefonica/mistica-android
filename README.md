@@ -157,6 +157,14 @@ allprojects {
 
 - Update the version of mistica to the one the snapshot was released with, sync your project and the dependency should be resolved with the artifact including your local changes.
 
+## Design tokens
+We have several tokens that are defined by the UX team (colors, radius and text presets) in a [JSON format](https://github.com/Telefonica/mistica-design/tree/production/tokens). Using these files, we generate XML and Kotlin files that are used in the library.
+
+You should not modify manually the generated files. All the generated files have a comment at the beginning to identify them.
+
+### How to update the design tokens
+The expected workflow is that UX team runs a GitHub action in their repository, which will invoke our `Import design tokens` action. This action will upload the generated files and create a new PR with the changes.
+
 ## Library size
 
 Library aar size is around **270 KB**, without including transitive dependencies (Lottie, material and kotlin).

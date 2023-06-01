@@ -1,45 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <declare-styleable name="Fonts">
-        <attr name="font_family_light" format="string"/>
-        <attr name="font_family_regular" format="string"/>
-        <attr name="font_family_medium" format="string"/>
-    </declare-styleable>
-
-    <declare-styleable name="PresetFonts">
-        <attr name="preset5Font" format="string"/>
-        <attr name="preset6Font" format="string"/>
-        <attr name="preset7Font" format="string"/>
-        <attr name="preset8Font" format="string"/>
-    </declare-styleable>
-
-    <declare-styleable name="PresetStyles">
-        <!-- Important:
-        These constants are the same as "android:textStyle" flag values
-        and they have been replicated for each type of preset because
-        it's not possible to reference the original values out of android:textStyle usage.
-        -->
-        <attr name="preset5Style" format="reference">
-            <flag name="normal" value="0" />
-            <flag name="bold" value="1" />
-            <flag name="italic" value="2" />
-        </attr>
-        <attr name="preset6Style" format="reference">
-            <flag name="normal" value="0" />
-            <flag name="bold" value="1" />
-            <flag name="italic" value="2" />
-        </attr>
-        <attr name="preset7Style" format="reference">
-            <flag name="normal" value="0" />
-            <flag name="bold" value="1" />
-            <flag name="italic" value="2" />
-        </attr>
-        <attr name="preset8Style" format="reference">
-            <flag name="normal" value="0" />
-            <flag name="bold" value="1" />
-            <flag name="italic" value="2" />
-        </attr>
-    </declare-styleable>
+	<declare-styleable name="Fonts">
+		<attr name="font_family_light" format="string" />
+		<attr name="font_family_regular" format="string" />
+		<attr name="font_family_medium" format="string" />
+	</declare-styleable>
 
 </resources>

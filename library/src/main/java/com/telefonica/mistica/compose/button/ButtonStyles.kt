@@ -106,7 +106,7 @@ private fun secondaryInverseConfig() =
     secondary(
         textColor = MisticaTheme.colors.textButtonSecondaryInverse,
         strokeColor = MisticaTheme.colors.buttonSecondaryBorderInverse,
-        rippleTheme = MisticaRippleTheme(MisticaTheme.colors.buttonSecondaryBackgroundSelectedInverse)
+        rippleTheme = MisticaRippleTheme(MisticaTheme.colors.buttonSecondaryBackgroundInverseSelected)
     )
 
 @Composable
