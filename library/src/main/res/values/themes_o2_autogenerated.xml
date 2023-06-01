@@ -110,6 +110,7 @@
 		<item name="colorTextAppBar">@color/o2_color_grey4</item>
 		<item name="colorTextAppBarSelected">@color/o2_color_o2BluePrimary</item>
 		<item name="colorCustomTabsBackground">@color/o2_color_o2BluePrimary</item>
+		<!-- Border radius -->
 		<item name="avatarBorderRadius">50%</item>
 		<item name="barBorderRadius">999dp</item>
 		<item name="buttonBorderRadius">4dp</item>
@@ -120,5 +121,21 @@
 		<item name="legacyDisplayBorderRadius">16dp</item>
 		<item name="popupBorderRadius">8dp</item>
 		<item name="sheetBorderRadius">8dp</item>
+		<!-- Preset fonts -->
+		<item name="cardTitleFont">?font_family_light</item>
+		<item name="text5Font">?font_family_light</item>
+		<item name="text6Font">?font_family_light</item>
+		<item name="text7Font">?font_family_light</item>
+		<item name="text8Font">?font_family_light</item>
+		<item name="text9Font">?font_family_light</item>
+		<item name="text10Font">?font_family_light</item>
+		<!-- Preset styles -->
+		<item name="cardTitleStyle">normal</item>
+		<item name="text5Style">normal</item>
+		<item name="text6Style">normal</item>
+		<item name="text7Style">normal</item>
+		<item name="text8Style">normal</item>
+		<item name="text9Style">normal</item>
+		<item name="text10Style">normal</item>
 	</style>
 </resources>

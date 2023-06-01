@@ -12,6 +12,7 @@ class GenerateComposeFiles(
     private val generateBrandColors: GenerateBrandColors = GenerateBrandColors(),
     private val generateMisticaRadius: GenerateMisticaRadius = GenerateMisticaRadius(),
     private val generateBrandRadius: GenerateBrandRadius = GenerateBrandRadius(),
+    private val generateBrandFontWeights: GenerateBrandFontWeights = GenerateBrandFontWeights(),
 ) {
 
     operator fun invoke(jsonAdapter: JsonAdapter<TokensDTO>) {
@@ -26,6 +27,7 @@ class GenerateComposeFiles(
             } else {
                 generateBrandColors(tokens, brand)
                 generateBrandRadius(tokens, brand)
+                generateBrandFontWeights(tokens, brand)
             }
         }
     }
