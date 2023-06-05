@@ -1,4 +1,4 @@
-package com.telefonica.mistica.compose.common.ui
+package com.telefonica.mistica.compose.ui
 
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha

@@ -15,11 +15,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.telefonica.mistica.compose.common.ui.alpha
 import com.telefonica.mistica.compose.theme.MisticaTheme
+import com.telefonica.mistica.compose.ui.alpha
 import androidx.compose.foundation.text.KeyboardOptions as FoundationKeyboardOptions
 
 @Composable
@@ -100,6 +101,7 @@ private fun TextBox(
 
     TextField(
         modifier = modifier
+            .testTag(TextInputTestTags.TEXT_INPUT)
             .fillMaxWidth()
             .border(
                 width = 1.dp,
