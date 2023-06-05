@@ -11,17 +11,13 @@ public object VivoBrandColors {
       backgroundBrand = VivoPaletteColor.vivo_color_vivoPurple,
       backgroundBrandSecondary = VivoPaletteColor.vivo_color_vivoPurple,
       backgroundContainer = VivoPaletteColor.vivo_color_white,
-      backgroundContainerHover = VivoPaletteColor.vivo_color_grey0,
-      backgroundContainerPressed = VivoPaletteColor.vivo_color_grey1,
+      backgroundContainerHover = VivoPaletteColor.vivo_color_darkModeBlack_3_alpha,
+      backgroundContainerPressed = VivoPaletteColor.vivo_color_darkModeBlack_5_alpha,
       backgroundContainerBrand = VivoPaletteColor.vivo_color_vivoPurple,
-      backgroundContainerBrandHover = VivoPaletteColor.vivo_color_vivoPurpleDark50,
-      backgroundContainerBrandPressed = VivoPaletteColor.vivo_color_vivoPurpleDark,
+      backgroundContainerBrandHover = VivoPaletteColor.vivo_color_darkModeBlack_20_alpha,
+      backgroundContainerBrandPressed = VivoPaletteColor.vivo_color_darkModeBlack_40_alpha,
       backgroundContainerBrandOverInverse = VivoPaletteColor.vivo_color_vivoPurpleDark,
-      backgroundContainerBrandOverInverseHover = VivoPaletteColor.vivo_color_vivoPurpleDark80,
-      backgroundContainerBrandOverInversePressed = VivoPaletteColor.vivo_color_vivoPurpleDark90,
       backgroundContainerAlternative = VivoPaletteColor.vivo_color_grey1,
-      backgroundContainerAlternativeHover = VivoPaletteColor.vivo_color_grey5_10_alpha,
-      backgroundContainerAlternativePressed = VivoPaletteColor.vivo_color_grey5_20_alpha,
       backgroundOverlay = VivoPaletteColor.vivo_color_grey6_60_alpha,
       backgroundSkeleton = VivoPaletteColor.vivo_color_grey2,
       backgroundSkeletonInverse = VivoPaletteColor.vivo_color_vivoPurpleDark,
@@ -33,6 +29,8 @@ public object VivoBrandColors {
       border = VivoPaletteColor.vivo_color_grey3,
       borderHigh = VivoPaletteColor.vivo_color_grey5,
       borderSelected = VivoPaletteColor.vivo_color_vivoPurple,
+      coverBackgroundHover = VivoPaletteColor.vivo_color_darkModeBlack_25_alpha,
+      coverBackgroundPressed = VivoPaletteColor.vivo_color_darkModeBlack_35_alpha,
       buttonDangerBackground = VivoPaletteColor.vivo_color_pepper,
       buttonDangerBackgroundSelected = VivoPaletteColor.vivo_color_pepperDark,
       buttonDangerBackgroundHover = VivoPaletteColor.vivo_color_pepperDark,
@@ -121,17 +119,13 @@ public object VivoBrandColors {
       backgroundBrand = VivoPaletteColor.vivo_color_darkModeBlack,
       backgroundBrandSecondary = VivoPaletteColor.vivo_color_darkModeBlack,
       backgroundContainer = VivoPaletteColor.vivo_color_darkModeGrey,
-      backgroundContainerHover = VivoPaletteColor.vivo_color_darkModeGrey7,
-      backgroundContainerPressed = VivoPaletteColor.vivo_color_darkModeGrey8,
+      backgroundContainerHover = VivoPaletteColor.vivo_color_white_3_alpha,
+      backgroundContainerPressed = VivoPaletteColor.vivo_color_white_5_alpha,
       backgroundContainerBrand = VivoPaletteColor.vivo_color_darkModeGrey,
-      backgroundContainerBrandHover = VivoPaletteColor.vivo_color_darkModeGrey7,
-      backgroundContainerBrandPressed = VivoPaletteColor.vivo_color_darkModeGrey8,
+      backgroundContainerBrandHover = VivoPaletteColor.vivo_color_white_3_alpha,
+      backgroundContainerBrandPressed = VivoPaletteColor.vivo_color_white_5_alpha,
       backgroundContainerBrandOverInverse = VivoPaletteColor.vivo_color_darkModeGrey,
-      backgroundContainerBrandOverInverseHover = VivoPaletteColor.vivo_color_darkModeGrey7,
-      backgroundContainerBrandOverInversePressed = VivoPaletteColor.vivo_color_darkModeGrey8,
       backgroundContainerAlternative = VivoPaletteColor.vivo_color_darkModeGrey,
-      backgroundContainerAlternativeHover = VivoPaletteColor.vivo_color_darkModeGrey7,
-      backgroundContainerAlternativePressed = VivoPaletteColor.vivo_color_darkModeGrey8,
       backgroundOverlay = VivoPaletteColor.vivo_color_darkModeGrey_80_alpha,
       backgroundSkeleton = VivoPaletteColor.vivo_color_darkModeGrey6,
       backgroundSkeletonInverse = VivoPaletteColor.vivo_color_darkModeGrey6,
@@ -143,6 +137,8 @@ public object VivoBrandColors {
       border = VivoPaletteColor.vivo_color_darkModeGrey,
       borderHigh = VivoPaletteColor.vivo_color_grey5,
       borderSelected = VivoPaletteColor.vivo_color_vivoPurple,
+      coverBackgroundHover = VivoPaletteColor.vivo_color_darkModeBlack_25_alpha,
+      coverBackgroundPressed = VivoPaletteColor.vivo_color_darkModeBlack_35_alpha,
       buttonDangerBackground = VivoPaletteColor.vivo_color_pepper,
       buttonDangerBackgroundSelected = VivoPaletteColor.vivo_color_pepperDark,
       buttonDangerBackgroundHover = VivoPaletteColor.vivo_color_pepperDark,
@@ -241,12 +237,6 @@ private object VivoPaletteColor {
 
   public val vivo_color_vivoPurpleLight90: Color = Color(0xFF751AA3)
 
-  public val vivo_color_vivoPurpleDark50: Color = Color(0xFF550080)
-
-  public val vivo_color_vivoPurpleDark80: Color = Color(0xFF39184E)
-
-  public val vivo_color_vivoPurpleDark90: Color = Color(0xFF2B123A)
-
   public val vivo_color_vivoGreen: Color = Color(0xFF99CC33)
 
   public val vivo_color_vivoGreenDark: Color = Color(0xFF225C3D)
@@ -283,8 +273,6 @@ private object VivoPaletteColor {
 
   public val vivo_color_pepperLight40: Color = Color(0xFFDB628B)
 
-  public val vivo_color_grey0: Color = Color(0xFFFAFAFA)
-
   public val vivo_color_grey1: Color = Color(0xFFF6F6F6)
 
   public val vivo_color_grey2: Color = Color(0xFFEEEEEE)
@@ -305,15 +293,19 @@ private object VivoPaletteColor {
 
   public val vivo_color_darkModeGrey6: Color = Color(0xFF313235)
 
-  public val vivo_color_darkModeGrey7: Color = Color(0xFF303030)
+  public val vivo_color_darkModeBlack_3_alpha: Color = Color(0x08191919)
 
-  public val vivo_color_darkModeGrey8: Color = Color(0xFF3D3D3D)
+  public val vivo_color_darkModeBlack_5_alpha: Color = Color(0x0D191919)
 
-  public val vivo_color_grey5_10_alpha: Color = Color(0x1A666666)
+  public val vivo_color_darkModeBlack_20_alpha: Color = Color(0x33191919)
 
-  public val vivo_color_grey5_20_alpha: Color = Color(0x33666666)
+  public val vivo_color_darkModeBlack_40_alpha: Color = Color(0x66191919)
 
   public val vivo_color_grey6_60_alpha: Color = Color(0x99000000)
+
+  public val vivo_color_darkModeBlack_25_alpha: Color = Color(0x40191919)
+
+  public val vivo_color_darkModeBlack_35_alpha: Color = Color(0x59191919)
 
   public val vivo_color_white_10_alpha: Color = Color(0x1AFFFFFF)
 
@@ -321,9 +313,11 @@ private object VivoPaletteColor {
 
   public val vivo_color_white_20_alpha: Color = Color(0x33FFFFFF)
 
+  public val vivo_color_white_3_alpha: Color = Color(0x08FFFFFF)
+
+  public val vivo_color_white_5_alpha: Color = Color(0x0DFFFFFF)
+
   public val vivo_color_darkModeGrey_80_alpha: Color = Color(0xCC242424)
 
   public val vivo_color_white_8_alpha: Color = Color(0x14FFFFFF)
-
-  public val vivo_color_white_5_alpha: Color = Color(0x0DFFFFFF)
 }
