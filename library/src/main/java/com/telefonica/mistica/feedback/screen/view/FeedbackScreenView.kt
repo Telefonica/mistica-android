@@ -228,6 +228,8 @@ class FeedbackScreenView : ConstraintLayout {
         errorReference = findViewById(R.id.error_reference)
         customContentContainer = findViewById(R.id.custom_content)
         buttonsContainer = findViewById(R.id.buttons_container)
+        firstButton = findViewById(R.id.first_button)
+        secondButton = findViewById(if (secondButtonAsLink) R.id.link_button else R.id.second_button)
     }
 
     override fun onAttachedToWindow() {
