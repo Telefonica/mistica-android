@@ -17,6 +17,7 @@
 		<item name="feedbackScreenSuccessInverse">true</item>
 		<item name="feedbackScreenSuccessAnimation">@raw/feedback_success_vivo</item>
 		<item name="feedbackScreenErrorAnimation">@raw/feedback_error</item>
+		<item name="feedbackScreenInfoIcon">@drawable/feedback_info</item>
 
 		<!-- Stepper -->
 		<item name="stepperFinishedStepAnimation">@raw/feedback_success</item>
