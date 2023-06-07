@@ -239,7 +239,11 @@ private object MovistarPaletteColor {
 
   public val movistar_color_movistarGreen10: Color = Color(0xFFEFF8E8)
 
+  public val movistar_color_movistarGreen30: Color = Color(0xFFADDA8A)
+
   public val movistar_color_movistarGreen40: Color = Color(0xFF8DCC5B)
+
+  public val movistar_color_movistarGreen60: Color = Color(0xFF499110)
 
   public val movistar_color_movistarGreen70: Color = Color(0xFF407F0F)
 

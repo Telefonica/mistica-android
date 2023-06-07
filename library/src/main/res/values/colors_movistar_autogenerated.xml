@@ -9,7 +9,9 @@
 	<color name="movistar_color_movistarBlue55">#008EDD</color>
 	<color name="movistar_color_movistarGreen">#5CB615</color>
 	<color name="movistar_color_movistarGreen10">#EFF8E8</color>
+	<color name="movistar_color_movistarGreen30">#ADDA8A</color>
 	<color name="movistar_color_movistarGreen40">#8DCC5B</color>
+	<color name="movistar_color_movistarGreen60">#499110</color>
 	<color name="movistar_color_movistarGreen70">#407F0F</color>
 	<color name="movistar_color_pepper">#FF374A</color>
 	<color name="movistar_color_pepper10">#FFEBED</color>
