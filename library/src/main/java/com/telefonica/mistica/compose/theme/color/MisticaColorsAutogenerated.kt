@@ -21,11 +21,7 @@ public class MisticaColors(
   backgroundContainerBrandHover: Color = Color.Unspecified,
   backgroundContainerBrandPressed: Color = Color.Unspecified,
   backgroundContainerBrandOverInverse: Color = Color.Unspecified,
-  backgroundContainerBrandOverInverseHover: Color = Color.Unspecified,
-  backgroundContainerBrandOverInversePressed: Color = Color.Unspecified,
   backgroundContainerAlternative: Color = Color.Unspecified,
-  backgroundContainerAlternativeHover: Color = Color.Unspecified,
-  backgroundContainerAlternativePressed: Color = Color.Unspecified,
   backgroundOverlay: Color = Color.Unspecified,
   backgroundSkeleton: Color = Color.Unspecified,
   backgroundSkeletonInverse: Color = Color.Unspecified,
@@ -37,6 +33,8 @@ public class MisticaColors(
   border: Color = Color.Unspecified,
   borderHigh: Color = Color.Unspecified,
   borderSelected: Color = Color.Unspecified,
+  coverBackgroundHover: Color = Color.Unspecified,
+  coverBackgroundPressed: Color = Color.Unspecified,
   buttonDangerBackground: Color = Color.Unspecified,
   buttonDangerBackgroundSelected: Color = Color.Unspecified,
   buttonDangerBackgroundHover: Color = Color.Unspecified,
@@ -168,24 +166,8 @@ public class MisticaColors(
       mutableStateOf(backgroundContainerBrandOverInverse, structuralEqualityPolicy())
     internal set
 
-  public var backgroundContainerBrandOverInverseHover: Color by
-      mutableStateOf(backgroundContainerBrandOverInverseHover, structuralEqualityPolicy())
-    internal set
-
-  public var backgroundContainerBrandOverInversePressed: Color by
-      mutableStateOf(backgroundContainerBrandOverInversePressed, structuralEqualityPolicy())
-    internal set
-
   public var backgroundContainerAlternative: Color by mutableStateOf(backgroundContainerAlternative,
       structuralEqualityPolicy())
-    internal set
-
-  public var backgroundContainerAlternativeHover: Color by
-      mutableStateOf(backgroundContainerAlternativeHover, structuralEqualityPolicy())
-    internal set
-
-  public var backgroundContainerAlternativePressed: Color by
-      mutableStateOf(backgroundContainerAlternativePressed, structuralEqualityPolicy())
     internal set
 
   public var backgroundOverlay: Color by mutableStateOf(backgroundOverlay,
@@ -224,6 +206,14 @@ public class MisticaColors(
     internal set
 
   public var borderSelected: Color by mutableStateOf(borderSelected, structuralEqualityPolicy())
+    internal set
+
+  public var coverBackgroundHover: Color by mutableStateOf(coverBackgroundHover,
+      structuralEqualityPolicy())
+    internal set
+
+  public var coverBackgroundPressed: Color by mutableStateOf(coverBackgroundPressed,
+      structuralEqualityPolicy())
     internal set
 
   public var buttonDangerBackground: Color by mutableStateOf(buttonDangerBackground,
@@ -553,12 +543,7 @@ public class MisticaColors(
     backgroundContainerBrandHover: Color = this.backgroundContainerBrandHover,
     backgroundContainerBrandPressed: Color = this.backgroundContainerBrandPressed,
     backgroundContainerBrandOverInverse: Color = this.backgroundContainerBrandOverInverse,
-    backgroundContainerBrandOverInverseHover: Color = this.backgroundContainerBrandOverInverseHover,
-    backgroundContainerBrandOverInversePressed: Color =
-        this.backgroundContainerBrandOverInversePressed,
     backgroundContainerAlternative: Color = this.backgroundContainerAlternative,
-    backgroundContainerAlternativeHover: Color = this.backgroundContainerAlternativeHover,
-    backgroundContainerAlternativePressed: Color = this.backgroundContainerAlternativePressed,
     backgroundOverlay: Color = this.backgroundOverlay,
     backgroundSkeleton: Color = this.backgroundSkeleton,
     backgroundSkeletonInverse: Color = this.backgroundSkeletonInverse,
@@ -570,6 +555,8 @@ public class MisticaColors(
     border: Color = this.border,
     borderHigh: Color = this.borderHigh,
     borderSelected: Color = this.borderSelected,
+    coverBackgroundHover: Color = this.coverBackgroundHover,
+    coverBackgroundPressed: Color = this.coverBackgroundPressed,
     buttonDangerBackground: Color = this.buttonDangerBackground,
     buttonDangerBackgroundSelected: Color = this.buttonDangerBackgroundSelected,
     buttonDangerBackgroundHover: Color = this.buttonDangerBackgroundHover,
@@ -665,19 +652,16 @@ public class MisticaColors(
       backgroundContainerBrand = backgroundContainerBrand, backgroundContainerBrandHover =
       backgroundContainerBrandHover, backgroundContainerBrandPressed =
       backgroundContainerBrandPressed, backgroundContainerBrandOverInverse =
-      backgroundContainerBrandOverInverse, backgroundContainerBrandOverInverseHover =
-      backgroundContainerBrandOverInverseHover, backgroundContainerBrandOverInversePressed =
-      backgroundContainerBrandOverInversePressed, backgroundContainerAlternative =
-      backgroundContainerAlternative, backgroundContainerAlternativeHover =
-      backgroundContainerAlternativeHover, backgroundContainerAlternativePressed =
-      backgroundContainerAlternativePressed, backgroundOverlay = backgroundOverlay,
-      backgroundSkeleton = backgroundSkeleton, backgroundSkeletonInverse =
-      backgroundSkeletonInverse, backgroundFeedbackBottom = backgroundFeedbackBottom,
-      appBarBackground = appBarBackground, navigationBarBackground = navigationBarBackground,
-      skeletonWave = skeletonWave, borderLow = borderLow, border = border, borderHigh = borderHigh,
-      borderSelected = borderSelected, buttonDangerBackground = buttonDangerBackground,
-      buttonDangerBackgroundSelected = buttonDangerBackgroundSelected, buttonDangerBackgroundHover =
-      buttonDangerBackgroundHover, buttonLinkBackgroundSelected = buttonLinkBackgroundSelected,
+      backgroundContainerBrandOverInverse, backgroundContainerAlternative =
+      backgroundContainerAlternative, backgroundOverlay = backgroundOverlay, backgroundSkeleton =
+      backgroundSkeleton, backgroundSkeletonInverse = backgroundSkeletonInverse,
+      backgroundFeedbackBottom = backgroundFeedbackBottom, appBarBackground = appBarBackground,
+      navigationBarBackground = navigationBarBackground, skeletonWave = skeletonWave, borderLow =
+      borderLow, border = border, borderHigh = borderHigh, borderSelected = borderSelected,
+      coverBackgroundHover = coverBackgroundHover, coverBackgroundPressed = coverBackgroundPressed,
+      buttonDangerBackground = buttonDangerBackground, buttonDangerBackgroundSelected =
+      buttonDangerBackgroundSelected, buttonDangerBackgroundHover = buttonDangerBackgroundHover,
+      buttonLinkBackgroundSelected = buttonLinkBackgroundSelected,
       buttonLinkBackgroundInverseSelected = buttonLinkBackgroundInverseSelected,
       buttonPrimaryBackground = buttonPrimaryBackground, buttonPrimaryBackgroundInverse =
       buttonPrimaryBackgroundInverse, buttonPrimaryBackgroundSelected =
@@ -735,11 +719,7 @@ public class MisticaColors(
     backgroundContainerBrandHover = other.backgroundContainerBrandHover
     backgroundContainerBrandPressed = other.backgroundContainerBrandPressed
     backgroundContainerBrandOverInverse = other.backgroundContainerBrandOverInverse
-    backgroundContainerBrandOverInverseHover = other.backgroundContainerBrandOverInverseHover
-    backgroundContainerBrandOverInversePressed = other.backgroundContainerBrandOverInversePressed
     backgroundContainerAlternative = other.backgroundContainerAlternative
-    backgroundContainerAlternativeHover = other.backgroundContainerAlternativeHover
-    backgroundContainerAlternativePressed = other.backgroundContainerAlternativePressed
     backgroundOverlay = other.backgroundOverlay
     backgroundSkeleton = other.backgroundSkeleton
     backgroundSkeletonInverse = other.backgroundSkeletonInverse
@@ -751,6 +731,8 @@ public class MisticaColors(
     border = other.border
     borderHigh = other.borderHigh
     borderSelected = other.borderSelected
+    coverBackgroundHover = other.coverBackgroundHover
+    coverBackgroundPressed = other.coverBackgroundPressed
     buttonDangerBackground = other.buttonDangerBackground
     buttonDangerBackgroundSelected = other.buttonDangerBackgroundSelected
     buttonDangerBackgroundHover = other.buttonDangerBackgroundHover

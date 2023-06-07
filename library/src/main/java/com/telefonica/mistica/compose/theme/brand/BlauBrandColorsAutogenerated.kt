@@ -11,17 +11,13 @@ public object BlauBrandColors {
       appBarBackground = BlauPaletteColor.blau_color_white,
       background = BlauPaletteColor.blau_color_white,
       backgroundContainer = BlauPaletteColor.blau_color_white,
-      backgroundContainerHover = BlauPaletteColor.blau_color_grey0,
-      backgroundContainerPressed = BlauPaletteColor.blau_color_grey1,
+      backgroundContainerHover = BlauPaletteColor.blau_color_blauBluePrimary_3_alpha,
+      backgroundContainerPressed = BlauPaletteColor.blau_color_blauBluePrimary_5_alpha,
       backgroundContainerBrand = BlauPaletteColor.blau_color_blauBluePrimary,
-      backgroundContainerBrandHover = BlauPaletteColor.blau_color_blauBluePrimary60,
-      backgroundContainerBrandPressed = BlauPaletteColor.blau_color_blauBluePrimary70,
+      backgroundContainerBrandHover = BlauPaletteColor.blau_color_darkModeBlack_20_alpha,
+      backgroundContainerBrandPressed = BlauPaletteColor.blau_color_darkModeBlack_40_alpha,
       backgroundContainerBrandOverInverse = BlauPaletteColor.blau_color_blauBlueSecondary,
-      backgroundContainerBrandOverInverseHover = BlauPaletteColor.blau_color_blauBlueSecondary50,
-      backgroundContainerBrandOverInversePressed = BlauPaletteColor.blau_color_blauBlueSecondary60,
       backgroundContainerAlternative = BlauPaletteColor.blau_color_blauBluePrimary20,
-      backgroundContainerAlternativeHover = BlauPaletteColor.blau_color_grey5_10_alpha,
-      backgroundContainerAlternativePressed = BlauPaletteColor.blau_color_grey5_20_alpha,
       backgroundOverlay = BlauPaletteColor.blau_color_blauBlueSecondary_75_alpha,
       backgroundSkeleton = BlauPaletteColor.blau_color_grey2,
       backgroundSkeletonInverse = BlauPaletteColor.blau_color_blauBlueSecondary,
@@ -33,6 +29,8 @@ public object BlauBrandColors {
       border = BlauPaletteColor.blau_color_grey2,
       borderHigh = BlauPaletteColor.blau_color_grey5,
       borderSelected = BlauPaletteColor.blau_color_blauBlueSecondary60,
+      coverBackgroundHover = BlauPaletteColor.blau_color_darkModeBlack_25_alpha,
+      coverBackgroundPressed = BlauPaletteColor.blau_color_darkModeBlack_35_alpha,
       buttonDangerBackground = BlauPaletteColor.blau_color_blauRed,
       buttonDangerBackgroundSelected = BlauPaletteColor.blau_color_blauRed70,
       buttonDangerBackgroundHover = BlauPaletteColor.blau_color_blauRed70,
@@ -121,17 +119,13 @@ public object BlauBrandColors {
       backgroundBrand = BlauPaletteColor.blau_color_darkModeBlack,
       backgroundBrandSecondary = BlauPaletteColor.blau_color_darkModeBlack,
       backgroundContainer = BlauPaletteColor.blau_color_darkModeGrey,
-      backgroundContainerHover = BlauPaletteColor.blau_color_darkModeGrey7,
-      backgroundContainerPressed = BlauPaletteColor.blau_color_darkModeGrey8,
+      backgroundContainerHover = BlauPaletteColor.blau_color_white_3_alpha,
+      backgroundContainerPressed = BlauPaletteColor.blau_color_white_5_alpha,
       backgroundContainerBrand = BlauPaletteColor.blau_color_darkModeGrey,
-      backgroundContainerBrandHover = BlauPaletteColor.blau_color_darkModeGrey7,
-      backgroundContainerBrandPressed = BlauPaletteColor.blau_color_darkModeGrey8,
-      backgroundContainerBrandOverInverseHover = BlauPaletteColor.blau_color_darkModeGrey7,
-      backgroundContainerBrandOverInversePressed = BlauPaletteColor.blau_color_darkModeGrey8,
+      backgroundContainerBrandHover = BlauPaletteColor.blau_color_white_3_alpha,
+      backgroundContainerBrandPressed = BlauPaletteColor.blau_color_white_5_alpha,
       backgroundContainerBrandOverInverse = BlauPaletteColor.blau_color_darkModeGrey,
       backgroundContainerAlternative = BlauPaletteColor.blau_color_darkModeGrey,
-      backgroundContainerAlternativeHover = BlauPaletteColor.blau_color_darkModeGrey7,
-      backgroundContainerAlternativePressed = BlauPaletteColor.blau_color_darkModeGrey8,
       backgroundOverlay = BlauPaletteColor.blau_color_darkModeGrey_80_alpha,
       backgroundSkeleton = BlauPaletteColor.blau_color_darkModeGrey,
       backgroundSkeletonInverse = BlauPaletteColor.blau_color_darkModeGrey,
@@ -143,6 +137,8 @@ public object BlauBrandColors {
       border = BlauPaletteColor.blau_color_darkModeGrey,
       borderHigh = BlauPaletteColor.blau_color_grey5,
       borderSelected = BlauPaletteColor.blau_color_blauBlueSecondary60,
+      coverBackgroundHover = BlauPaletteColor.blau_color_darkModeBlack_25_alpha,
+      coverBackgroundPressed = BlauPaletteColor.blau_color_darkModeBlack_35_alpha,
       buttonDangerBackground = BlauPaletteColor.blau_color_blauRed,
       buttonDangerBackgroundSelected = BlauPaletteColor.blau_color_blauRed70,
       buttonDangerBackgroundHover = BlauPaletteColor.blau_color_blauRed70,
@@ -172,7 +168,7 @@ public object BlauBrandColors {
       textLinkInverse = BlauPaletteColor.blau_color_blauPurple30,
       textLinkDanger = BlauPaletteColor.blau_color_blauRed,
       textLinkSnackbar = BlauPaletteColor.blau_color_blauPurple30,
-      control = BlauPaletteColor.blau_color_darkModeGrey,
+      control = BlauPaletteColor.blau_color_darkModeGrey6,
       controlActivated = BlauPaletteColor.blau_color_blauBlueSecondary,
       controlError = BlauPaletteColor.blau_color_blauRed,
       loadingBar = BlauPaletteColor.blau_color_blauBluePrimary,
@@ -235,10 +231,6 @@ private object BlauPaletteColor {
 
   public val blau_color_blauBluePrimary30: Color = Color(0xFFB3E9FB)
 
-  public val blau_color_blauBluePrimary60: Color = Color(0xFF00A2D6)
-
-  public val blau_color_blauBluePrimary70: Color = Color(0xFF008FBD)
-
   public val blau_color_blauBlueSecondary: Color = Color(0xFF0072BC)
 
   public val blau_color_blauBlueSecondary10: Color = Color(0xFFE5F1F9)
@@ -246,8 +238,6 @@ private object BlauPaletteColor {
   public val blau_color_blauBlueSecondary20: Color = Color(0xFFB2D4EC)
 
   public val blau_color_blauBlueSecondary30: Color = Color(0xFF80B7DF)
-
-  public val blau_color_blauBlueSecondary50: Color = Color(0xFF0066AD)
 
   public val blau_color_blauBlueSecondary60: Color = Color(0xFF005A99)
 
@@ -287,8 +277,6 @@ private object BlauPaletteColor {
 
   public val blau_color_blauRed70: Color = Color(0xFFC93712)
 
-  public val blau_color_grey0: Color = Color(0xFFF6FCFE)
-
   public val blau_color_grey1: Color = Color(0xFFF5F9FA)
 
   public val blau_color_grey2: Color = Color(0xFFE7E7E7)
@@ -309,23 +297,29 @@ private object BlauPaletteColor {
 
   public val blau_color_darkModeGrey6: Color = Color(0xFF313235)
 
-  public val blau_color_darkModeGrey7: Color = Color(0xFF303030)
+  public val blau_color_blauBluePrimary_3_alpha: Color = Color(0x0800B6F1)
 
-  public val blau_color_darkModeGrey8: Color = Color(0xFF3D3D3D)
+  public val blau_color_blauBluePrimary_5_alpha: Color = Color(0x0D00B6F1)
 
-  public val blau_color_grey5_10_alpha: Color = Color(0x1A808285)
+  public val blau_color_darkModeBlack_20_alpha: Color = Color(0x33191919)
 
-  public val blau_color_grey5_20_alpha: Color = Color(0x33808285)
+  public val blau_color_darkModeBlack_40_alpha: Color = Color(0x66191919)
 
   public val blau_color_blauBlueSecondary_75_alpha: Color = Color(0xBF0072BC)
+
+  public val blau_color_darkModeBlack_25_alpha: Color = Color(0x40191919)
+
+  public val blau_color_darkModeBlack_35_alpha: Color = Color(0x59191919)
 
   public val blau_color_white_15_alpha: Color = Color(0x26FFFFFF)
 
   public val blau_color_white_20_alpha: Color = Color(0x33FFFFFF)
 
+  public val blau_color_white_3_alpha: Color = Color(0x08FFFFFF)
+
+  public val blau_color_white_5_alpha: Color = Color(0x0DFFFFFF)
+
   public val blau_color_darkModeGrey_80_alpha: Color = Color(0xCC242424)
 
   public val blau_color_blauPurple_30_alpha: Color = Color(0x4D7814B3)
-
-  public val blau_color_white_5_alpha: Color = Color(0x0DFFFFFF)
 }

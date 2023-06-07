@@ -6,10 +6,7 @@
 	<color name="movistar_color_movistarBlue20">#B3E1FB</color>
 	<color name="movistar_color_movistarBlue30">#80CEF9</color>
 	<color name="movistar_color_movistarBlue40">#4DBAF7</color>
-	<color name="movistar_color_movistarBlue50">#0195E4</color>
 	<color name="movistar_color_movistarBlue55">#008EDD</color>
-	<color name="movistar_color_movistarBlue60">#0085CC</color>
-	<color name="movistar_color_movistarBlue70">#0074B3</color>
 	<color name="movistar_color_movistarGreen">#5CB615</color>
 	<color name="movistar_color_movistarGreen10">#EFF8E8</color>
 	<color name="movistar_color_movistarGreen40">#8DCC5B</color>
@@ -28,7 +25,6 @@
 	<color name="movistar_color_purple10">#F6ECF6</color>
 	<color name="movistar_color_purple40">#BD78BD</color>
 	<color name="movistar_color_purple70">#712B71</color>
-	<color name="movistar_color_grey0">#fafafa</color>
 	<color name="movistar_color_grey1">#F6F6F6</color>
 	<color name="movistar_color_grey2">#EEEEEE</color>
 	<color name="movistar_color_grey3">#DDDDDD</color>
@@ -44,15 +40,17 @@
 	<color name="movistar_color_darkModeGrey4">#85939C</color>
 	<color name="movistar_color_darkModeGrey5">#6D7D88</color>
 	<color name="movistar_color_darkModeGrey6">#3C5261</color>
-	<color name="movistar_color_darkModeGrey7">#112E41</color>
-	<color name="movistar_color_darkModeGrey8">#1C3B4F</color>
-	<color name="movistar_color_grey5_10_alpha">#1A86888C</color>
-	<color name="movistar_color_grey5_20_alpha">#3386888C</color>
+	<color name="movistar_color_darkModeBlack_3_alpha">#08061824</color>
+	<color name="movistar_color_darkModeBlack_5_alpha">#0D061824</color>
+	<color name="movistar_color_darkModeBlack_10_alpha">#1A061824</color>
+	<color name="movistar_color_darkModeBlack_20_alpha">#33061824</color>
 	<color name="movistar_color_movistarBlueDark_60_alpha">#990B2739</color>
+	<color name="movistar_color_darkModeBlack_25_alpha">#40061824</color>
+	<color name="movistar_color_darkModeBlack_35_alpha">#59061824</color>
 	<color name="movistar_color_white_20_alpha">#33FFFFFF</color>
-	<color name="movistar_color_movistarBlue55_20_alpha">#33008EDD</color>
+	<color name="movistar_color_white_3_alpha">#08FFFFFF</color>
+	<color name="movistar_color_white_5_alpha">#0DFFFFFF</color>
 	<color name="movistar_color_darkModeGrey_80_alpha">#CC081F2E</color>
 	<color name="movistar_color_white_8_alpha">#14FFFFFF</color>
 	<color name="movistar_color_white_15_alpha">#26FFFFFF</color>
-	<color name="movistar_color_white_5_alpha">#0DFFFFFF</color>
 </resources>
