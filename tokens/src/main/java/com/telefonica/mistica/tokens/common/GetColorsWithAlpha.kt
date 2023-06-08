@@ -10,17 +10,17 @@ class GetColorsWithAlpha(
     private val getColorNameWithAlpha: GetColorNameWithAlpha = GetColorNameWithAlpha(),
 ) {
 
-    operator fun invoke(tokens: TokensDTO, brand: String): List<Pair<String, String>> {
+    operator fun invoke(tokens: TokensDTO, brandName: String): List<Pair<String, String>> {
         val colorsWithAlpha = mutableSetOf<Pair<String, String>>()
         tokens.light.values.forEach { color ->
-            val colorWithAlpha = getAlphaColor(color, tokens, brand)
+            val colorWithAlpha = getAlphaColor(color, tokens, brandName)
             if (colorWithAlpha != null) {
                 colorsWithAlpha.add(colorWithAlpha)
             }
         }
 
         tokens.dark.values.forEach { color ->
-            val colorWithAlpha = getAlphaColor(color, tokens, brand)
+            val colorWithAlpha = getAlphaColor(color, tokens, brandName)
             if (colorWithAlpha != null) {
                 colorsWithAlpha.add(colorWithAlpha)
             }
@@ -32,7 +32,7 @@ class GetColorsWithAlpha(
     private fun getAlphaColor(
         color: ColorDTO,
         tokens: TokensDTO,
-        brand: String,
+        brandName: String,
     ): Pair<String, String>? {
         if (color.value.contains("rgba(")) {
             val alpha = TokensGenerator.ALPHA_REGEX.find(color.value)?.value?.toDouble()
@@ -40,7 +40,7 @@ class GetColorsWithAlpha(
             val colorValue = tokens.global.palette[color.description]?.value
             if (alpha != null && colorValue != null) {
                 val alphaHex = alpha.toHex()
-                val colorName = getColorNameWithAlpha(brand, color.description, alpha)
+                val colorName = getColorNameWithAlpha(brandName, color.description, alpha)
                 val colorWithAlpha = "#$alphaHex${colorValue.removePrefix("#")}"
                 return colorName to colorWithAlpha
             }

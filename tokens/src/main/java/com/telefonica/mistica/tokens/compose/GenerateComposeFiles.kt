@@ -20,14 +20,14 @@ class GenerateComposeFiles(
         generateMisticaRadius(jsonAdapter)
 
         BRANDS.forEach { brand ->
-            val json = File("${MISTICA_TOKENS_DIR}/$brand.json").readText()
+            val json = File("${MISTICA_TOKENS_DIR}/${brand.file}.json").readText()
             val tokens = jsonAdapter.fromJson(json)
             if (tokens == null) {
                 throw Exception("Invalid JSON")
             } else {
-                generateBrandColors(tokens, brand)
-                generateBrandRadius(tokens, brand)
-                generateBrandFontWeights(tokens, brand)
+                generateBrandColors(tokens, brand.name)
+                generateBrandRadius(tokens, brand.name)
+                generateBrandFontWeights(tokens, brand.name)
             }
         }
     }

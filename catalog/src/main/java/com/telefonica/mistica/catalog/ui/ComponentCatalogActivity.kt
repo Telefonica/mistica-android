@@ -2,11 +2,8 @@
 
 package com.telefonica.mistica.catalog.ui
 
-import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import androidx.annotation.LayoutRes
 import androidx.annotation.StyleRes
 import androidx.compose.runtime.Composable
 import androidx.fragment.app.Fragment
@@ -19,7 +16,6 @@ import com.telefonica.mistica.catalog.databinding.ScreenComponentCatalogBinding
 import com.telefonica.mistica.catalog.ui.CatalogMainActivity.Companion.DEFAULT_BRAND_TYPE
 import com.telefonica.mistica.catalog.ui.CatalogMainActivity.Companion.DEFAULT_CLASSIC_THEME
 import com.telefonica.mistica.catalog.ui.CatalogMainActivity.Companion.DEFAULT_COMPOSE_THEME
-import com.telefonica.mistica.catalog.ui.classic.activity.FeedbackScreenCatalogActivity
 import com.telefonica.mistica.catalog.ui.classic.components.BadgesCatalogFragment
 import com.telefonica.mistica.catalog.ui.classic.components.ButtonsCatalogFragment
 import com.telefonica.mistica.catalog.ui.classic.components.CalloutsCatalogFragment
@@ -71,7 +67,7 @@ import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 import com.telefonica.mistica.compose.theme.brand.O2Brand
 import com.telefonica.mistica.compose.theme.brand.TelefonicaBrand
 import com.telefonica.mistica.compose.theme.brand.VivoBrand
-import com.telefonica.mistica.feedback.screen.view.FeedbackScreenView
+import com.telefonica.mistica.compose.theme.brand.VivoNewBrand
 
 class ComponentCatalogActivity : FragmentActivity() {
 
@@ -239,6 +235,7 @@ class ComponentCatalogActivity : FragmentActivity() {
             MOVISTAR -> MovistarBrand
             O2 -> O2Brand
             VIVO -> VivoBrand
+            VIVO_NEW -> VivoNewBrand
             TELEFONICA -> TelefonicaBrand
             BLAU -> BlauBrand
         }
