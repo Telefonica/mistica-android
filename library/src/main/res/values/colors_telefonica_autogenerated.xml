@@ -5,10 +5,7 @@
 	<color name="telefonica_color_telefonicaBlue10">#E5F0FF</color>
 	<color name="telefonica_color_telefonicaBlue20">#B2D1FF</color>
 	<color name="telefonica_color_telefonicaBlue30">#80B3FF</color>
-	<color name="telefonica_color_telefonicaBlue60">#015CE4</color>
 	<color name="telefonica_color_telefonicaBlue70">#0356C9</color>
-	<color name="telefonica_color_telefonicaBlue80">#034BB0</color>
-	<color name="telefonica_color_telefonicaBlue90">#024097</color>
 	<color name="telefonica_color_ambar">#EAC344</color>
 	<color name="telefonica_color_ambar10">#FDF9EC</color>
 	<color name="telefonica_color_ambar40">#F0D57C</color>
@@ -26,7 +23,6 @@
 	<color name="telefonica_color_turquoise10">#EEF9FA</color>
 	<color name="telefonica_color_turquoise40">#8BD4D9</color>
 	<color name="telefonica_color_turquoise70">#3E888D</color>
-	<color name="telefonica_color_grey0">#FAFBFF</color>
 	<color name="telefonica_color_grey1">#F2F4FF</color>
 	<color name="telefonica_color_grey2">#D1D5E4</color>
 	<color name="telefonica_color_grey3">#B0B6CA</color>
@@ -40,15 +36,18 @@
 	<color name="telefonica_color_darkModeBlack">#191919</color>
 	<color name="telefonica_color_darkModeGrey">#242424</color>
 	<color name="telefonica_color_darkModeGrey6">#313235</color>
-	<color name="telefonica_color_darkModeGrey7">#303030</color>
-	<color name="telefonica_color_darkModeGrey8">#3D3D3D</color>
-	<color name="telefonica_color_grey5_10_alpha">#1A6E7894</color>
-	<color name="telefonica_color_grey5_20_alpha">#336E7894</color>
+	<color name="telefonica_color_telefonicaBlue_3_alpha">#080066FF</color>
+	<color name="telefonica_color_telefonicaBlue_5_alpha">#0D0066FF</color>
+	<color name="telefonica_color_darkModeBlack_20_alpha">#33191919</color>
+	<color name="telefonica_color_darkModeBlack_40_alpha">#66191919</color>
 	<color name="telefonica_color_grey6_80_alpha">#CC58617A</color>
+	<color name="telefonica_color_darkModeBlack_25_alpha">#40191919</color>
+	<color name="telefonica_color_darkModeBlack_35_alpha">#59191919</color>
 	<color name="telefonica_color_white_8_alpha">#14FFFFFF</color>
 	<color name="telefonica_color_white_10_alpha">#1AFFFFFF</color>
 	<color name="telefonica_color_white_20_alpha">#33FFFFFF</color>
+	<color name="telefonica_color_white_3_alpha">#08FFFFFF</color>
+	<color name="telefonica_color_white_5_alpha">#0DFFFFFF</color>
 	<color name="telefonica_color_darkModeGrey_80_alpha">#CC242424</color>
 	<color name="telefonica_color_white_15_alpha">#26FFFFFF</color>
-	<color name="telefonica_color_white_5_alpha">#0DFFFFFF</color>
 </resources>

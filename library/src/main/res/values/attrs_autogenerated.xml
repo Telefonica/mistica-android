@@ -13,11 +13,7 @@
 		<attr name="colorBackgroundContainerBrandHover" format="color|reference"/>
 		<attr name="colorBackgroundContainerBrandPressed" format="color|reference"/>
 		<attr name="colorBackgroundContainerBrandOverInverse" format="color|reference"/>
-		<attr name="colorBackgroundContainerBrandOverInverseHover" format="color|reference"/>
-		<attr name="colorBackgroundContainerBrandOverInversePressed" format="color|reference"/>
 		<attr name="colorBackgroundContainerAlternative" format="color|reference"/>
-		<attr name="colorBackgroundContainerAlternativeHover" format="color|reference"/>
-		<attr name="colorBackgroundContainerAlternativePressed" format="color|reference"/>
 		<attr name="colorBackgroundOverlay" format="color|reference"/>
 		<attr name="colorBackgroundSkeleton" format="color|reference"/>
 		<attr name="colorBackgroundSkeletonInverse" format="color|reference"/>
@@ -29,6 +25,8 @@
 		<attr name="colorBorder" format="color|reference"/>
 		<attr name="colorBorderHigh" format="color|reference"/>
 		<attr name="colorBorderSelected" format="color|reference"/>
+		<attr name="colorCoverBackgroundHover" format="color|reference"/>
+		<attr name="colorCoverBackgroundPressed" format="color|reference"/>
 		<attr name="colorButtonDangerBackground" format="color|reference"/>
 		<attr name="colorButtonDangerBackgroundSelected" format="color|reference"/>
 		<attr name="colorButtonDangerBackgroundHover" format="color|reference"/>
