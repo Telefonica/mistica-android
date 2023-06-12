@@ -228,6 +228,12 @@ class FeedbackScreenView : ConstraintLayout {
         errorReference = findViewById(R.id.error_reference)
         customContentContainer = findViewById(R.id.custom_content)
         buttonsContainer = findViewById(R.id.buttons_container)
+
+        @LayoutRes val buttonsLayout: Int =
+            if (isInversePresentation()) R.layout.screen_feedback_buttons_inverse else R.layout.screen_feedback_buttons
+        val buttonsView = LayoutInflater.from(context).inflate(buttonsLayout, buttonsContainer, true)
+        firstButton = buttonsView.findViewById(R.id.first_button)
+        secondButton = buttonsView.findViewById(if (secondButtonAsLink) R.id.link_button else R.id.second_button)
     }
 
     override fun onAttachedToWindow() {
