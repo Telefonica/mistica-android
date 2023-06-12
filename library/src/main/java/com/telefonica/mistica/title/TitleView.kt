@@ -110,7 +110,7 @@ class TitleView @JvmOverloads constructor(
         const val TITLE_2 = 1
 
         private val TITLE_1_STYLE_CONFIG = TitleStyleConfig(
-            preset = R.style.AppTheme_TextAppearance_Preset1,
+            preset = R.style.AppTheme_TextAppearance_PresetTitle1,
             colorAttrRes = R.attr.colorTextSecondary,
             isAllCaps = true,
         )

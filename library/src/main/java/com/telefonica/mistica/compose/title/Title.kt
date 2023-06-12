@@ -54,7 +54,7 @@ private fun TitleText(
 
     when (style) {
         TitleStyle.TITLE_1 -> {
-            preset = MisticaTheme.typography.preset1
+            preset = MisticaTheme.typography.presetTitle1
             textColor = MisticaTheme.colors.textSecondary
             isAllCaps = true
         }
