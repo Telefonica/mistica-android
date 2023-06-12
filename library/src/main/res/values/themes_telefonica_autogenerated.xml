@@ -121,6 +121,10 @@
 		<item name="sheetBorderRadius">8dp</item>
 		<!-- Preset fonts -->
 		<item name="cardTitleFont">?font_family_regular</item>
+		<item name="buttonFont">?font_family_medium</item>
+		<item name="linkFont">?font_family_medium</item>
+		<item name="title1Font">?font_family_medium</item>
+		<item name="indicatorFont">?font_family_medium</item>
 		<item name="text5Font">?font_family_regular</item>
 		<item name="text6Font">?font_family_regular</item>
 		<item name="text7Font">?font_family_regular</item>
@@ -128,12 +132,16 @@
 		<item name="text9Font">?font_family_regular</item>
 		<item name="text10Font">?font_family_regular</item>
 		<!-- Preset styles -->
-		<item name="cardTitleStyle">normal</item>
-		<item name="text5Style">normal</item>
-		<item name="text6Style">normal</item>
-		<item name="text7Style">normal</item>
-		<item name="text8Style">normal</item>
-		<item name="text9Style">normal</item>
-		<item name="text10Style">normal</item>
+		<item name="cardTitleTextStyle">normal</item>
+		<item name="buttonTextStyle">normal</item>
+		<item name="linkTextStyle">normal</item>
+		<item name="title1TextStyle">normal</item>
+		<item name="indicatorTextStyle">normal</item>
+		<item name="text5TextStyle">normal</item>
+		<item name="text6TextStyle">normal</item>
+		<item name="text7TextStyle">normal</item>
+		<item name="text8TextStyle">normal</item>
+		<item name="text9TextStyle">normal</item>
+		<item name="text10TextStyle">normal</item>
 	</style>
 </resources>

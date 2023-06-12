@@ -19,5 +19,13 @@ object VivoBrand : Brand {
 
     override val preset8FontWeight = VivoBrandFontWeights.text8FontWeight
 
+    override val cardTitleFontWeight = VivoBrandFontWeights.cardTitleFontWeight
+
+    override val buttonFontWeight = VivoBrandFontWeights.buttonFontWeight
+
+    override val title1FontWeight = VivoBrandFontWeights.title1FontWeight
+
+    override val indicatorFontWeight = VivoBrandFontWeights.indicatorFontWeight
+
     override val radius = VivoBrandRadius.radius
 }

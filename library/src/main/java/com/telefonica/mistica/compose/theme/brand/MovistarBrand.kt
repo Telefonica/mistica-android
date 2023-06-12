@@ -21,6 +21,14 @@ object MovistarBrand : Brand {
 
     override val preset8FontWeight = MovistarBrandFontWeights.text8FontWeight
 
+    override val cardTitleFontWeight = MovistarBrandFontWeights.cardTitleFontWeight
+
+    override val buttonFontWeight = MovistarBrandFontWeights.buttonFontWeight
+
+    override val title1FontWeight = MovistarBrandFontWeights.title1FontWeight
+
+    override val indicatorFontWeight = MovistarBrandFontWeights.indicatorFontWeight
+
     override val values: MisticaValues
         get() = super.values.copy(titleStyle = TitleStyle.TITLE_2)
 
