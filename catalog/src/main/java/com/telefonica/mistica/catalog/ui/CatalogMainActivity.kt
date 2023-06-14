@@ -107,6 +107,7 @@ class CatalogMainActivity : AppCompatActivity() {
             SectionItem("Titles", R.drawable.ic_texts, Section.TITLES),
             SectionItem("Sheet", R.drawable.ic_sheets, Section.SHEET),
             SectionItem("Carousel", R.drawable.ic_cards, Section.CAROUSEL),
+            SectionItem("Skeletons", R.drawable.ic_lists, Section.SKELETON),
         )
             .sortedBy { it.title }
 

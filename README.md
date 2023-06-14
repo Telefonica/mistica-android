@@ -79,6 +79,7 @@ Just set your App or any specific activity to use any of the following:
 * [Screen Feedbacks](library/src/main/java/com/telefonica/mistica/feedback/screen)
 * [Scroll Content Indicator](library/src/main/java/com/telefonica/mistica/contentindicator)
 * [Sheet](library/src/main/java/com/telefonica/mistica/sheet)
+* [Skeletons](library/src/main/java/com/telefonica/mistica/compose/skeleton)
 * [Snackbars](library/src/main/java/com/telefonica/mistica/feedback)
 * [Steppers](library/src/main/java/com/telefonica/mistica/stepper)
 * [Tabs](library/src/main/java/com/telefonica/mistica/tabs)
