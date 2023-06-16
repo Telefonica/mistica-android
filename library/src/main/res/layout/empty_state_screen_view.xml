@@ -80,6 +80,7 @@
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginStart="16dp"
+					android:layout_gravity="center_vertical"
 					style="@style/AppTheme.Button.LinkButton"
 					tools:text="More info"
 					/>
