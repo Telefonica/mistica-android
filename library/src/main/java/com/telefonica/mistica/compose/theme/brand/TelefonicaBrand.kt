@@ -24,6 +24,8 @@ object TelefonicaBrand : Brand {
 
     override val buttonFontWeight = TelefonicaBrandFontWeights.buttonFontWeight
 
+    override val linkFontWeight = TelefonicaBrandFontWeights.linkFontWeight
+
     override val title1FontWeight = TelefonicaBrandFontWeights.title1FontWeight
 
     override val indicatorFontWeight = TelefonicaBrandFontWeights.indicatorFontWeight

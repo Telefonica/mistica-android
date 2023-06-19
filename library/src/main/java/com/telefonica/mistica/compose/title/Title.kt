@@ -88,7 +88,7 @@ private fun Link(
     Text(
         modifier = linkModifier,
         text = text,
-        style = MisticaTheme.typography.preset2Medium,
+        style = MisticaTheme.typography.presetLink,
         color = MisticaTheme.colors.textLink
     )
 }

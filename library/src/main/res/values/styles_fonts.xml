@@ -102,6 +102,11 @@
         <item name="android:textStyle">?buttonTextStyle</item>
     </style>
 
+    <style name="AppTheme.TextAppearance.PresetLink" parent="AppTheme.TextAppearance.Preset2">
+        <item name="android:fontFamily">?linkFont</item>
+        <item name="android:textStyle">?linkTextStyle</item>
+    </style>
+
     <style name="AppTheme.TextAppearance.PresetTitle1" parent="AppTheme.TextAppearance.Preset1">
         <item name="android:fontFamily">?title1Font</item>
         <item name="android:textStyle">?title1TextStyle</item>

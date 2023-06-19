@@ -19,6 +19,7 @@ interface Brand {
     val preset8FontWeight: FontWeight
     val cardTitleFontWeight: FontWeight
     val buttonFontWeight: FontWeight
+    val linkFontWeight: FontWeight
     val title1FontWeight: FontWeight
     val indicatorFontWeight: FontWeight
     val values: MisticaValues

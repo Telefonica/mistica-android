@@ -23,6 +23,8 @@ object BlauBrand : Brand {
 
     override val buttonFontWeight = BlauBrandFontWeights.buttonFontWeight
 
+    override val linkFontWeight = BlauBrandFontWeights.linkFontWeight
+
     override val title1FontWeight = BlauBrandFontWeights.title1FontWeight
 
     override val indicatorFontWeight = BlauBrandFontWeights.indicatorFontWeight
