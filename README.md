@@ -165,6 +165,14 @@ You should not modify manually the generated files. All the generated files have
 ### How to update the design tokens
 The expected workflow is that UX team runs a GitHub action in their repository, which will invoke our `Import design tokens` action. This action will upload the generated files and create a new PR with the changes.
 
+### What to do if you find an issue in some token
+First of all, you have to find where is the problem, there are two main places:
+- The token is wrong in the [mistica-design repository](https://github.com/Telefonica/mistica-design/tree/production/tokens)
+  - In this case, you have to talk with design core team to fix it and generate the tokens again using the [GitHub Action](https://github.com/Telefonica/mistica-android/actions/workflows/import-design-tokens.yml)
+- The token is ok in the mistica-design repository but wrong in our code. In this case, there are two possible problems:
+  - The tokens are not updated with the last changes of mistica-design repo. To fix it, run the GitHub Action to update them.
+  - There is some issue in the tokens generator code. In this case, you will have to fix it in this repository. 
+
 ## Library size
 
 Library aar size is around **270 KB**, without including transitive dependencies (Lottie, material and kotlin).
