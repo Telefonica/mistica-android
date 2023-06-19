@@ -155,12 +155,12 @@ fun Feedbacks(
                 OutlinedTextField(value = title, onValueChange = { title = it }, label = { Text("Title") })
                 OutlinedTextField(value = subtitle, onValueChange = { subtitle = it }, label = { Text("Subtitle") })
                 OutlinedTextField(value = errorReference, onValueChange = { errorReference = it }, label = { Text("Error Reference") })
-                OutlinedTextField(value = firstButtonText ?: "", onValueChange = { firstButtonText = it }, label = { Text("First Button") })
+                OutlinedTextField(value = firstButtonText, onValueChange = { firstButtonText = it }, label = { Text("First Button") })
                 OutlinedTextField(
                     value = firstButtonLoadingText,
                     onValueChange = { firstButtonLoadingText = it },
                     label = { Text("First Button Loading") })
-                OutlinedTextField(value = secondButtonText ?: "", onValueChange = { secondButtonText = it }, label = { Text("Second Button") })
+                OutlinedTextField(value = secondButtonText, onValueChange = { secondButtonText = it }, label = { Text("Second Button") })
 
                 OutlinedTextField(
                     modifier = Modifier.clickable { customAnimationExpanded = true },
