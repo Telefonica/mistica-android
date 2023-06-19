@@ -131,6 +131,10 @@
 	</declare-styleable>
 	<declare-styleable name="PresetFonts">
 		<attr name="cardTitleFont" format="string"/>
+		<attr name="buttonFont" format="string"/>
+		<attr name="linkFont" format="string"/>
+		<attr name="title1Font" format="string"/>
+		<attr name="indicatorFont" format="string"/>
 		<attr name="text5Font" format="string"/>
 		<attr name="text6Font" format="string"/>
 		<attr name="text7Font" format="string"/>
@@ -143,37 +147,57 @@
         These constants are the same as "android:textStyle" flag values
         and they have been replicated for each type of preset because
         it's not possible to reference the original values out of android:textStyle usage. -->
-		<attr name="cardTitleStyle" format="reference">
+		<attr name="cardTitleTextStyle" format="reference">
 			<flag name="normal" value="0"/>
 			<flag name="bold" value="1"/>
 			<flag name="italic" value="2"/>
 		</attr>
-		<attr name="text5Style" format="reference">
+		<attr name="buttonTextStyle" format="reference">
 			<flag name="normal" value="0"/>
 			<flag name="bold" value="1"/>
 			<flag name="italic" value="2"/>
 		</attr>
-		<attr name="text6Style" format="reference">
+		<attr name="linkTextStyle" format="reference">
 			<flag name="normal" value="0"/>
 			<flag name="bold" value="1"/>
 			<flag name="italic" value="2"/>
 		</attr>
-		<attr name="text7Style" format="reference">
+		<attr name="title1TextStyle" format="reference">
 			<flag name="normal" value="0"/>
 			<flag name="bold" value="1"/>
 			<flag name="italic" value="2"/>
 		</attr>
-		<attr name="text8Style" format="reference">
+		<attr name="indicatorTextStyle" format="reference">
 			<flag name="normal" value="0"/>
 			<flag name="bold" value="1"/>
 			<flag name="italic" value="2"/>
 		</attr>
-		<attr name="text9Style" format="reference">
+		<attr name="text5TextStyle" format="reference">
 			<flag name="normal" value="0"/>
 			<flag name="bold" value="1"/>
 			<flag name="italic" value="2"/>
 		</attr>
-		<attr name="text10Style" format="reference">
+		<attr name="text6TextStyle" format="reference">
+			<flag name="normal" value="0"/>
+			<flag name="bold" value="1"/>
+			<flag name="italic" value="2"/>
+		</attr>
+		<attr name="text7TextStyle" format="reference">
+			<flag name="normal" value="0"/>
+			<flag name="bold" value="1"/>
+			<flag name="italic" value="2"/>
+		</attr>
+		<attr name="text8TextStyle" format="reference">
+			<flag name="normal" value="0"/>
+			<flag name="bold" value="1"/>
+			<flag name="italic" value="2"/>
+		</attr>
+		<attr name="text9TextStyle" format="reference">
+			<flag name="normal" value="0"/>
+			<flag name="bold" value="1"/>
+			<flag name="italic" value="2"/>
+		</attr>
+		<attr name="text10TextStyle" format="reference">
 			<flag name="normal" value="0"/>
 			<flag name="bold" value="1"/>
 			<flag name="italic" value="2"/>

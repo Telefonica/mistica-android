@@ -32,7 +32,7 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_marginBottom="8dp"
-				app:link="Some.link"
+				app:link="Some link"
 				app:title="Short default Title" />
 
 		<com.telefonica.mistica.title.TitleView

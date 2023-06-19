@@ -20,5 +20,15 @@ object TelefonicaBrand : Brand {
 
     override val preset8FontWeight = TelefonicaBrandFontWeights.text8FontWeight
 
+    override val cardTitleFontWeight = TelefonicaBrandFontWeights.cardTitleFontWeight
+
+    override val buttonFontWeight = TelefonicaBrandFontWeights.buttonFontWeight
+
+    override val linkFontWeight = TelefonicaBrandFontWeights.linkFontWeight
+
+    override val title1FontWeight = TelefonicaBrandFontWeights.title1FontWeight
+
+    override val indicatorFontWeight = TelefonicaBrandFontWeights.indicatorFontWeight
+
     override val radius: MisticaRadius = TelefonicaBrandRadius.radius
 }

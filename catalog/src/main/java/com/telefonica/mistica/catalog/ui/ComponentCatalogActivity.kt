@@ -41,6 +41,7 @@ import com.telefonica.mistica.catalog.ui.classic.components.TagsCatalogFragment
 import com.telefonica.mistica.catalog.ui.classic.components.TextPresetsCatalogFragment
 import com.telefonica.mistica.catalog.ui.classic.components.TitleCatalogFragment
 import com.telefonica.mistica.catalog.ui.compose.common.ComponentComposeFragment
+import com.telefonica.mistica.catalog.ui.compose.components.Badges
 import com.telefonica.mistica.catalog.ui.compose.components.Buttons
 import com.telefonica.mistica.catalog.ui.compose.components.Callouts
 import com.telefonica.mistica.catalog.ui.compose.components.Carousels
@@ -58,6 +59,7 @@ import com.telefonica.mistica.catalog.ui.compose.components.TabsCatalog
 import com.telefonica.mistica.catalog.ui.compose.components.Tags
 import com.telefonica.mistica.catalog.ui.compose.components.Texts
 import com.telefonica.mistica.catalog.ui.compose.components.Titles
+import com.telefonica.mistica.compose.badge.Badge
 import com.telefonica.mistica.compose.theme.MisticaTheme
 import com.telefonica.mistica.compose.theme.brand.BlauBrand
 import com.telefonica.mistica.compose.theme.brand.Brand
@@ -124,7 +126,7 @@ class ComponentCatalogActivity : FragmentActivity() {
 
             Section.BADGES -> setPageAdapterWithTabs(
                 classicComponent = BadgesCatalogFragment(),
-                composeComponent = null
+                composeComponent = { Badges() }
             )
 
             Section.FILTERS -> setPageAdapterWithTabs(

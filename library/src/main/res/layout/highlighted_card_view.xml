@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:focusable="false"
-        android:textAppearance="@style/AppTheme.TextAppearance.Preset4.Light"
+        android:textAppearance="@style/AppTheme.TextAppearance.PresetCardTitle"
         app:layout_constraintEnd_toStartOf="@+id/highlighted_card_image"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="parent"
