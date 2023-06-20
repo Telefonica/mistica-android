@@ -13,7 +13,6 @@ import com.telefonica.mistica.tokens.TokensGenerator.Companion.REGULAR
 import com.telefonica.mistica.tokens.common.GetBorderRadiusName
 import com.telefonica.mistica.tokens.common.GetColorNameWithAlpha
 import com.telefonica.mistica.tokens.common.GetColorsWithAlpha
-import com.telefonica.mistica.tokens.dto.ColorDTO
 import com.telefonica.mistica.tokens.dto.TokensDTO
 import org.redundent.kotlin.xml.Node
 import org.redundent.kotlin.xml.PrintOptions
@@ -95,12 +94,7 @@ class GenerateXMLFiles(
     }
 
     private fun Node.colors(tokens: TokensDTO, brandName: String) {
-        map(tokens.light, brandName)
-        map(tokens.dark, brandName)
-    }
-
-    private fun Node.map(colors: Map<String, ColorDTO>, brandName: String) {
-        colors.forEach { color ->
+        tokens.light.forEach { color ->
             val colorName = if (color.key == "controlActivated") {
                 "colorControlActive"
             } else {
@@ -186,9 +180,20 @@ class GenerateXMLFiles(
                         "color${color.key.capitalizeString()}"
                     }
 
-                    "item" {
-                        attribute("name", colorName)
-                        -"@color/${brandName}_color_${color.value.description}"
+                    if (color.value.value.contains("rgba(")) {
+                        val alpha = ALPHA_REGEX.find(color.value.value)?.value?.toDouble()
+                        if (alpha != null) {
+                            val colorValue = getColorNameWithAlpha(brandName, color.value.description, alpha)
+                            "item" {
+                                attribute("name", colorName)
+                                -"@color/$colorValue"
+                            }
+                        }
+                    } else {
+                        "item" {
+                            attribute("name", colorName)
+                            -"@color/${brandName}_color_${color.value.description}"
+                        }
                     }
                 }
             }
