@@ -13,6 +13,7 @@ import com.telefonica.mistica.tokens.TokensGenerator.Companion.REGULAR
 import com.telefonica.mistica.tokens.common.GetBorderRadiusName
 import com.telefonica.mistica.tokens.common.GetColorNameWithAlpha
 import com.telefonica.mistica.tokens.common.GetColorsWithAlpha
+import com.telefonica.mistica.tokens.dto.ColorDTO
 import com.telefonica.mistica.tokens.dto.TokensDTO
 import org.redundent.kotlin.xml.Node
 import org.redundent.kotlin.xml.PrintOptions
@@ -94,7 +95,12 @@ class GenerateXMLFiles(
     }
 
     private fun Node.colors(tokens: TokensDTO, brandName: String) {
-        tokens.light.forEach { color ->
+        map(tokens.light, brandName)
+        map(tokens.dark, brandName)
+    }
+
+    private fun Node.map(colors: Map<String, ColorDTO>, brandName: String) {
+        colors.forEach { color ->
             val colorName = if (color.key == "controlActivated") {
                 "colorControlActive"
             } else {
