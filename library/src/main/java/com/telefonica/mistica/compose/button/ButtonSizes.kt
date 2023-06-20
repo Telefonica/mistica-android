@@ -32,7 +32,7 @@ internal fun ButtonStyle.getButtonSizeCompose(): ButtonSizeConfig =
 
 @Composable
 private fun getDefaultButtonSizeConfig() = ButtonSizeConfig(
-    textStyle = MisticaTheme.typography.preset3Medium,
+    textStyle = MisticaTheme.typography.presetButton,
     height = 48.dp,
     minWidth = 136.dp,
     iconSize = 24.dp,
@@ -43,7 +43,7 @@ private fun getDefaultButtonSizeConfig() = ButtonSizeConfig(
 
 @Composable
 private fun getSmallButtonSizeConfig() = ButtonSizeConfig(
-    textStyle = MisticaTheme.typography.preset2Medium,
+    textStyle = MisticaTheme.typography.presetSmallButton,
     height = 32.dp,
     minWidth = 104.dp,
     iconSize = 16.dp,

@@ -133,7 +133,7 @@ fun Tabs(
                     .misticaTabIndicatorOffset(tabPositions[selectedIndex])
                     .fillMaxWidth()
                     .height(2.dp)
-                    .background(color = MisticaTheme.colors.controlActive)
+                    .background(color = MisticaTheme.colors.controlActivated)
             )
         }
 

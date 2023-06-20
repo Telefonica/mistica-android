@@ -89,14 +89,14 @@ class TagView @JvmOverloads constructor(
     }
 
     private fun Int.getStyle() = when (this) {
-        TYPE_PROMO -> R.attr.promoLow to R.attr.promoHigh
-        TYPE_ACTIVE -> R.attr.brandLow to R.attr.colorBrand
+        TYPE_PROMO -> R.attr.colorPromoLow to R.attr.colorPromoHigh
+        TYPE_ACTIVE -> R.attr.colorBrandLow to R.attr.colorBrand
         TYPE_INACTIVE -> R.attr.colorNeutralLow to R.attr.colorNeutralMedium
-        TYPE_SUCCESS -> R.attr.successLow to R.attr.successHigh
-        TYPE_WARNING -> R.attr.warningLow to R.attr.warningHigh
-        TYPE_ERROR -> R.attr.errorLow to R.attr.errorHigh
+        TYPE_SUCCESS -> R.attr.colorSuccessLow to R.attr.colorSuccessHigh
+        TYPE_WARNING -> R.attr.colorWarningLow to R.attr.colorWarningHigh
+        TYPE_ERROR -> R.attr.colorErrorLow to R.attr.colorErrorHigh
         TYPE_INVERSE -> R.attr.colorInverse to R.attr.colorBrand
-        else -> R.attr.promoLow to R.attr.promoHigh
+        else -> R.attr.colorPromoLow to R.attr.colorPromoHigh
     }
 
     companion object {

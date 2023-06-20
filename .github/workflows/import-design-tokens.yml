@@ -1,0 +1,37 @@
+name: Import design tokens
+on:
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: 'mistica-design repo changeset or branch'
+        required: false
+        default: 'production'
+jobs:
+  import-design-tokens:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Checkout mistica-design repo with the tokens
+        uses: actions/checkout@v3
+        with:
+          repository: Telefonica/mistica-design
+          path: './temp/mistica-design'
+          ref: ${{github.event.inputs.ref}}
+          token: ${{ secrets.NOVUM_PRIVATE_REPOS }}
+
+      - name: Generate skins from design tokens
+        run: ./gradlew generateMisticaTokens
+
+      - name: Remove mistica-design repo
+        run: rm -r ./temp/mistica-design
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.NOVUM_PRIVATE_REPOS }}
+          commit-message: 'Update design tokens'
+          title: 'Update design tokens'
+          body: 'This PR was automatically created by the import-design-tokens GitHub Action.'
+          branch: 'import-design-tokens'
+          team-reviewers: 'Android,mistica-design'

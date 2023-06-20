@@ -19,7 +19,9 @@ import com.telefonica.mistica.compose.theme.color.LocalMisticaColors
 import com.telefonica.mistica.compose.theme.color.MisticaColors
 import com.telefonica.mistica.compose.theme.text.LocalMisticaTypography
 import com.telefonica.mistica.compose.theme.text.MisticaTypography
+import com.telefonica.mistica.compose.theme.values.LocalMisticaRadius
 import com.telefonica.mistica.compose.theme.values.LocalMisticaValues
+import com.telefonica.mistica.compose.theme.values.MisticaRadius
 import com.telefonica.mistica.compose.theme.values.MisticaValues
 
 @Composable
@@ -54,6 +56,12 @@ fun MisticaTheme(
             preset7FontWeight = brand.preset7FontWeight,
             preset6FontWeight = brand.preset6FontWeight,
             preset5FontWeight = brand.preset5FontWeight,
+            presetCardTitleFontWeight = brand.cardTitleFontWeight,
+            presetButtonFontWeight = brand.buttonFontWeight,
+            presetSmallButtonFontWeight = brand.buttonFontWeight,
+            presetLinkFontWeight = brand.linkFontWeight,
+            presetTitle1FontWeight = brand.title1FontWeight,
+            presetIndicatorFontWeight = brand.indicatorFontWeight,
         )
     }
 
@@ -63,10 +71,17 @@ fun MisticaTheme(
         updateWith(brand.values)
     }
 
+    val radius = remember {
+        MisticaRadius()
+    }.apply {
+        updateWith(brand.radius)
+    }
+
     CompositionLocalProvider(
         LocalMisticaColors provides rememberedColors,
         LocalMisticaTypography provides typography,
-        LocalMisticaValues provides values
+        LocalMisticaValues provides values,
+        LocalMisticaRadius provides radius
     ) {
         MaterialTheme(
             colors = if (darkTheme) {
@@ -112,4 +127,9 @@ object MisticaTheme {
         @Composable
         @ReadOnlyComposable
         get() = LocalMisticaValues.current
+
+    val radius: MisticaRadius
+        @Composable
+        @ReadOnlyComposable
+        get() = LocalMisticaRadius.current
 }

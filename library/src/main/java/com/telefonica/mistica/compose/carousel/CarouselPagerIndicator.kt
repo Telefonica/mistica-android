@@ -60,8 +60,8 @@ fun CarouselPagerIndicator(
         }
     }
 
-    val activeColor: Color = MisticaTheme.colors.carouselIndicatorActiveColor
-    val inactiveColor: Color = MisticaTheme.colors.carouselIndicatorInactiveColor
+    val activeColor: Color = MisticaTheme.colors.controlActivated
+    val inactiveColor: Color = MisticaTheme.colors.control
 
     log("starting with - ${carouselState.currentPage}")
 

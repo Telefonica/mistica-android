@@ -27,7 +27,7 @@
         android:paddingStart="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:textAppearance="@style/AppTheme.TextAppearance.Preset2.Medium"
+        android:textAppearance="@style/AppTheme.TextAppearance.PresetLink"
         app:layout_constraintBaseline_toBaselineOf="@id/title_text"
         android:textColor="?colorTextLink"
         android:visibility="gone"

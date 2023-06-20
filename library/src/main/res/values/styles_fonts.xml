@@ -8,29 +8,29 @@
     <style name="AppTheme.TextAppearance.Preset8">
         <item name="android:textSize">32sp</item>
         <item name="lineHeight">40sp</item>
-        <item name="android:fontFamily">?preset8Font</item>
-        <item name="android:textStyle">?preset8Style</item>
+        <item name="android:fontFamily">?text8Font</item>
+        <item name="android:textStyle">?text8TextStyle</item>
     </style>
 
     <style name="AppTheme.TextAppearance.Preset7">
         <item name="android:textSize">28sp</item>
         <item name="lineHeight">32sp</item>
-        <item name="android:fontFamily">?preset7Font</item>
-        <item name="android:textStyle">?preset7Style</item>
+        <item name="android:fontFamily">?text7Font</item>
+        <item name="android:textStyle">?text7TextStyle</item>
     </style>
 
     <style name="AppTheme.TextAppearance.Preset6">
         <item name="android:textSize">24sp</item>
         <item name="lineHeight">32sp</item>
-        <item name="android:fontFamily">?preset6Font</item>
-        <item name="android:textStyle">?preset6Style</item>
+        <item name="android:fontFamily">?text6Font</item>
+        <item name="android:textStyle">?text6TextStyle</item>
     </style>
 
     <style name="AppTheme.TextAppearance.Preset5">
         <item name="android:textSize">20sp</item>
         <item name="lineHeight">24sp</item>
-        <item name="android:fontFamily">?preset5Font</item>
-        <item name="android:textStyle">?preset5Style</item>
+        <item name="android:fontFamily">?text5Font</item>
+        <item name="android:textStyle">?text5TextStyle</item>
     </style>
 
     <style name="AppTheme.TextAppearance.Preset4">
@@ -85,6 +85,36 @@
         <item name="android:textSize">10sp</item>
         <item name="lineHeight">14sp</item>
         <item name="android:fontFamily">?font_family_regular</item>
+    </style>
+
+    <style name="AppTheme.TextAppearance.PresetCardTitle" parent="AppTheme.TextAppearance.Preset4">
+        <item name="android:fontFamily">?cardTitleFont</item>
+        <item name="android:textStyle">?cardTitleTextStyle</item>
+    </style>
+
+    <style name="AppTheme.TextAppearance.PresetButton" parent="AppTheme.TextAppearance.Preset3">
+        <item name="android:fontFamily">?buttonFont</item>
+        <item name="android:textStyle">?buttonTextStyle</item>
+    </style>
+
+    <style name="AppTheme.TextAppearance.PresetSmallButton" parent="AppTheme.TextAppearance.Preset2">
+        <item name="android:fontFamily">?buttonFont</item>
+        <item name="android:textStyle">?buttonTextStyle</item>
+    </style>
+
+    <style name="AppTheme.TextAppearance.PresetLink" parent="AppTheme.TextAppearance.Preset2">
+        <item name="android:fontFamily">?linkFont</item>
+        <item name="android:textStyle">?linkTextStyle</item>
+    </style>
+
+    <style name="AppTheme.TextAppearance.PresetTitle1" parent="AppTheme.TextAppearance.Preset1">
+        <item name="android:fontFamily">?title1Font</item>
+        <item name="android:textStyle">?title1TextStyle</item>
+    </style>
+
+    <style name="AppTheme.TextAppearance.PresetIndicator" parent="AppTheme.TextAppearance.Preset2">
+        <item name="android:fontFamily">?indicatorFont</item>
+        <item name="android:textStyle">?indicatorTextStyle</item>
     </style>
 
 </resources>

@@ -4,27 +4,23 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.interaction.collectIsFocusedAsState
 import androidx.compose.foundation.interaction.collectIsPressedAsState
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.OutlinedTextField
 import androidx.compose.material.Text
 import androidx.compose.material.TextField
 import androidx.compose.material.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.telefonica.mistica.compose.common.ui.alpha
 import com.telefonica.mistica.compose.theme.MisticaTheme
+import com.telefonica.mistica.compose.ui.alpha
 import androidx.compose.foundation.text.KeyboardOptions as FoundationKeyboardOptions
 
 @Composable
@@ -105,38 +101,36 @@ private fun TextBox(
 
     TextField(
         modifier = modifier
+            .testTag(TextInputTestTags.TEXT_INPUT)
             .fillMaxWidth()
             .border(
                 width = 1.dp,
                 color = MisticaTheme.colors.border,
-                shape = RoundedCornerShape(MisticaTheme.values.inputBorderRadius)
+                shape = RoundedCornerShape(MisticaTheme.radius.inputBorderRadius)
             ),
         enabled = enabled,
         readOnly = readOnly,
         value = value,
         onValueChange = onValueChange,
         label = {
-            Box(modifier = Modifier.fillMaxSize()) {
-                TextInputLabel(
-                    text = label,
-                    isMinimized = interactionSource.collectIsFocusedAsState().value,
-                    isError = isError,
-                    modifier = Modifier.align(Alignment.TopStart),
-                )
-            }
+            TextInputLabel(
+                text = label,
+                isMinimized = interactionSource.collectIsFocusedAsState().value,
+                isError = isError,
+            )
         },
         interactionSource = interactionSource,
         keyboardOptions = keyboardOptions,
         isError = isError,
         trailingIcon = trailingIcon,
-        shape = RoundedCornerShape(MisticaTheme.values.inputBorderRadius),
+        shape = RoundedCornerShape(MisticaTheme.radius.inputBorderRadius),
         colors = TextFieldDefaults.textFieldColors(
             backgroundColor = MisticaTheme.colors.backgroundContainer,
             focusedIndicatorColor = Color.Transparent,
             unfocusedIndicatorColor = Color.Transparent,
             disabledIndicatorColor = Color.Transparent,
             errorIndicatorColor = Color.Transparent,
-            errorCursorColor = MisticaTheme.colors.controlActive,
+            errorCursorColor = MisticaTheme.colors.controlActivated,
         ),
         singleLine = singleLine,
         maxLines = if (singleLine) 1 else Int.MAX_VALUE,
@@ -155,7 +149,7 @@ private fun TextInputLabel(
         text = text,
         color = when {
             isError && isMinimized -> MisticaTheme.colors.error
-            isMinimized -> MisticaTheme.colors.controlActive
+            isMinimized -> MisticaTheme.colors.controlActivated
             else -> MisticaTheme.colors.textSecondary
         },
         modifier = modifier,

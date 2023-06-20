@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!-- Code generated automatically, DO NOT EDIT manually. Use Import design tokens GitHub Action. -->
+	<declare-styleable name="Colors">
+		<attr name="colorBackground" format="color|reference"/>
+		<attr name="colorBackgroundAlternative" format="color|reference"/>
+		<attr name="colorBackgroundBrand" format="color|reference"/>
+		<attr name="colorBackgroundBrandSecondary" format="color|reference"/>
+		<attr name="colorBackgroundContainer" format="color|reference"/>
+		<attr name="colorBackgroundContainerHover" format="color|reference"/>
+		<attr name="colorBackgroundContainerPressed" format="color|reference"/>
+		<attr name="colorBackgroundContainerBrand" format="color|reference"/>
+		<attr name="colorBackgroundContainerBrandHover" format="color|reference"/>
+		<attr name="colorBackgroundContainerBrandPressed" format="color|reference"/>
+		<attr name="colorBackgroundContainerBrandOverInverse" format="color|reference"/>
+		<attr name="colorBackgroundContainerAlternative" format="color|reference"/>
+		<attr name="colorBackgroundOverlay" format="color|reference"/>
+		<attr name="colorBackgroundSkeleton" format="color|reference"/>
+		<attr name="colorBackgroundSkeletonInverse" format="color|reference"/>
+		<attr name="colorBackgroundFeedbackBottom" format="color|reference"/>
+		<attr name="colorAppBarBackground" format="color|reference"/>
+		<attr name="colorNavigationBarBackground" format="color|reference"/>
+		<attr name="colorSkeletonWave" format="color|reference"/>
+		<attr name="colorBorderLow" format="color|reference"/>
+		<attr name="colorBorder" format="color|reference"/>
+		<attr name="colorBorderHigh" format="color|reference"/>
+		<attr name="colorBorderSelected" format="color|reference"/>
+		<attr name="colorCoverBackgroundHover" format="color|reference"/>
+		<attr name="colorCoverBackgroundPressed" format="color|reference"/>
+		<attr name="colorButtonDangerBackground" format="color|reference"/>
+		<attr name="colorButtonDangerBackgroundSelected" format="color|reference"/>
+		<attr name="colorButtonDangerBackgroundHover" format="color|reference"/>
+		<attr name="colorButtonLinkBackgroundSelected" format="color|reference"/>
+		<attr name="colorButtonLinkBackgroundInverseSelected" format="color|reference"/>
+		<attr name="colorButtonPrimaryBackground" format="color|reference"/>
+		<attr name="colorButtonPrimaryBackgroundInverse" format="color|reference"/>
+		<attr name="colorButtonPrimaryBackgroundSelected" format="color|reference"/>
+		<attr name="colorButtonPrimaryBackgroundHover" format="color|reference"/>
+		<attr name="colorButtonPrimaryBackgroundInverseSelected" format="color|reference"/>
+		<attr name="colorButtonSecondaryBorder" format="color|reference"/>
+		<attr name="colorButtonSecondaryBorderSelected" format="color|reference"/>
+		<attr name="colorButtonSecondaryBackgroundHover" format="color|reference"/>
+		<attr name="colorButtonSecondaryBackgroundSelected" format="color|reference"/>
+		<attr name="colorButtonSecondaryBorderInverse" format="color|reference"/>
+		<attr name="colorButtonSecondaryBorderInverseSelected" format="color|reference"/>
+		<attr name="colorButtonSecondaryBackgroundInverseHover" format="color|reference"/>
+		<attr name="colorButtonSecondaryBackgroundInverseSelected" format="color|reference"/>
+		<attr name="colorTextButtonPrimary" format="color|reference"/>
+		<attr name="colorTextButtonPrimaryInverse" format="color|reference"/>
+		<attr name="colorTextButtonPrimaryInverseSelected" format="color|reference"/>
+		<attr name="colorTextButtonSecondary" format="color|reference"/>
+		<attr name="colorTextButtonSecondarySelected" format="color|reference"/>
+		<attr name="colorTextButtonSecondaryInverse" format="color|reference"/>
+		<attr name="colorTextButtonSecondaryInverseSelected" format="color|reference"/>
+		<attr name="colorTextLink" format="color|reference"/>
+		<attr name="colorTextLinkInverse" format="color|reference"/>
+		<attr name="colorTextLinkDanger" format="color|reference"/>
+		<attr name="colorTextLinkSnackbar" format="color|reference"/>
+		<attr name="colorControl" format="color|reference"/>
+		<!-- We cannot use colorControlActivated in Android because it overlaps with a framework attribute -->
+		<attr name="colorControlActive" format="color|reference"/>
+		<attr name="colorControlError" format="color|reference"/>
+		<attr name="colorLoadingBar" format="color|reference"/>
+		<attr name="colorLoadingBarBackground" format="color|reference"/>
+		<attr name="colorToggleAndroidInactive" format="color|reference"/>
+		<attr name="colorToggleAndroidBackgroundActive" format="color|reference"/>
+		<attr name="colorIosControlKnob" format="color|reference"/>
+		<attr name="colorDivider" format="color|reference"/>
+		<attr name="colorDividerInverse" format="color|reference"/>
+		<attr name="colorNavigationBarDivider" format="color|reference"/>
+		<attr name="colorBadge" format="color|reference"/>
+		<attr name="colorFeedbackErrorBackground" format="color|reference"/>
+		<attr name="colorFeedbackInfoBackground" format="color|reference"/>
+		<attr name="colorBrand" format="color|reference"/>
+		<attr name="colorBrandHigh" format="color|reference"/>
+		<attr name="colorInverse" format="color|reference"/>
+		<attr name="colorNeutralHigh" format="color|reference"/>
+		<attr name="colorNeutralMedium" format="color|reference"/>
+		<attr name="colorNeutralMediumInverse" format="color|reference"/>
+		<attr name="colorNeutralLow" format="color|reference"/>
+		<attr name="colorNeutralLowAlternative" format="color|reference"/>
+		<attr name="colorTextPrimary" format="color|reference"/>
+		<attr name="colorTextPrimaryInverse" format="color|reference"/>
+		<attr name="colorTextSecondary" format="color|reference"/>
+		<attr name="colorTextSecondaryInverse" format="color|reference"/>
+		<attr name="colorSuccess" format="color|reference"/>
+		<attr name="colorWarning" format="color|reference"/>
+		<attr name="colorError" format="color|reference"/>
+		<attr name="colorPromo" format="color|reference"/>
+		<attr name="colorHighlight" format="color|reference"/>
+		<attr name="colorSuccessLow" format="color|reference"/>
+		<attr name="colorWarningLow" format="color|reference"/>
+		<attr name="colorErrorLow" format="color|reference"/>
+		<attr name="colorPromoLow" format="color|reference"/>
+		<attr name="colorBrandLow" format="color|reference"/>
+		<attr name="colorSuccessHigh" format="color|reference"/>
+		<attr name="colorWarningHigh" format="color|reference"/>
+		<attr name="colorErrorHigh" format="color|reference"/>
+		<attr name="colorPromoHigh" format="color|reference"/>
+		<attr name="colorSuccessHighInverse" format="color|reference"/>
+		<attr name="colorWarningHighInverse" format="color|reference"/>
+		<attr name="colorErrorHighInverse" format="color|reference"/>
+		<attr name="colorPromoHighInverse" format="color|reference"/>
+		<attr name="colorTextNavigationBarPrimary" format="color|reference"/>
+		<attr name="colorTextNavigationBarSecondary" format="color|reference"/>
+		<attr name="colorTextNavigationSearchBarHint" format="color|reference"/>
+		<attr name="colorTextNavigationSearchBarText" format="color|reference"/>
+		<attr name="colorTextAppBar" format="color|reference"/>
+		<attr name="colorTextAppBarSelected" format="color|reference"/>
+		<attr name="colorCustomTabsBackground" format="color|reference"/>
+		<attr name="colorGradientBackgroundFirst" format="color|reference"/>
+		<attr name="colorGradientBackgroundSecond" format="color|reference"/>
+		<attr name="colorGradientBackgroundThird" format="color|reference"/>
+		<attr name="colorGradientBackgroundFourth" format="color|reference"/>
+		<attr name="colorLoginLoadingGradientFirst" format="color|reference"/>
+		<attr name="colorLoginLoadingGradientSecond" format="color|reference"/>
+		<attr name="colorLoginLoadingGradientThird" format="color|reference"/>
+		<attr name="colorLoginLoadingGradientFourth" format="color|reference"/>
+	</declare-styleable>
+	<declare-styleable name="BorderRadius">
+		<attr name="avatarBorderRadius" format="dimension|fraction"/>
+		<attr name="barBorderRadius" format="dimension|fraction"/>
+		<attr name="buttonBorderRadius" format="dimension|fraction"/>
+		<attr name="checkboxBorderRadius" format="dimension|fraction"/>
+		<attr name="containerBorderRadius" format="dimension|fraction"/>
+		<attr name="indicatorBorderRadius" format="dimension|fraction"/>
+		<attr name="inputBorderRadius" format="dimension|fraction"/>
+		<attr name="legacyDisplayBorderRadius" format="dimension|fraction"/>
+		<attr name="popupBorderRadius" format="dimension|fraction"/>
+		<attr name="sheetBorderRadius" format="dimension|fraction"/>
+	</declare-styleable>
+	<declare-styleable name="PresetFonts">
+		<attr name="cardTitleFont" format="string"/>
+		<attr name="buttonFont" format="string"/>
+		<attr name="linkFont" format="string"/>
+		<attr name="title1Font" format="string"/>
+		<attr name="indicatorFont" format="string"/>
+		<attr name="text5Font" format="string"/>
+		<attr name="text6Font" format="string"/>
+		<attr name="text7Font" format="string"/>
+		<attr name="text8Font" format="string"/>
+		<attr name="text9Font" format="string"/>
+		<attr name="text10Font" format="string"/>
+	</declare-styleable>
+	<declare-styleable name="PresetStyles">
+		<!-- Important:
+        These constants are the same as "android:textStyle" flag values
+        and they have been replicated for each type of preset because
+        it's not possible to reference the original values out of android:textStyle usage. -->
+		<attr name="cardTitleTextStyle" format="reference">
+			<flag name="normal" value="0"/>
+			<flag name="bold" value="1"/>
+			<flag name="italic" value="2"/>
+		</attr>
+		<attr name="buttonTextStyle" format="reference">
+			<flag name="normal" value="0"/>
+			<flag name="bold" value="1"/>
+			<flag name="italic" value="2"/>
+		</attr>
+		<attr name="linkTextStyle" format="reference">
+			<flag name="normal" value="0"/>
+			<flag name="bold" value="1"/>
+			<flag name="italic" value="2"/>
+		</attr>
+		<attr name="title1TextStyle" format="reference">
+			<flag name="normal" value="0"/>
+			<flag name="bold" value="1"/>
+			<flag name="italic" value="2"/>
+		</attr>
+		<attr name="indicatorTextStyle" format="reference">
+			<flag name="normal" value="0"/>
+			<flag name="bold" value="1"/>
+			<flag name="italic" value="2"/>
+		</attr>
+		<attr name="text5TextStyle" format="reference">
+			<flag name="normal" value="0"/>
+			<flag name="bold" value="1"/>
+			<flag name="italic" value="2"/>
+		</attr>
+		<attr name="text6TextStyle" format="reference">
+			<flag name="normal" value="0"/>
+			<flag name="bold" value="1"/>
+			<flag name="italic" value="2"/>
+		</attr>
+		<attr name="text7TextStyle" format="reference">
+			<flag name="normal" value="0"/>
+			<flag name="bold" value="1"/>
+			<flag name="italic" value="2"/>
+		</attr>
+		<attr name="text8TextStyle" format="reference">
+			<flag name="normal" value="0"/>
+			<flag name="bold" value="1"/>
+			<flag name="italic" value="2"/>
+		</attr>
+		<attr name="text9TextStyle" format="reference">
+			<flag name="normal" value="0"/>
+			<flag name="bold" value="1"/>
+			<flag name="italic" value="2"/>
+		</attr>
+		<attr name="text10TextStyle" format="reference">
+			<flag name="normal" value="0"/>
+			<flag name="bold" value="1"/>
+			<flag name="italic" value="2"/>
+		</attr>
+	</declare-styleable>
+</resources>

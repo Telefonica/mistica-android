@@ -26,6 +26,7 @@ class FeedbackScreenCatalogActivity : AppCompatActivity() {
     var showLoadingInButton: Boolean? = null
     var customIcon: Int? = null
     var customAnimation: Int? = null
+    var shouldAnimateOnAttached: Boolean = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -58,6 +59,10 @@ class FeedbackScreenCatalogActivity : AppCompatActivity() {
             })
             customIcon?.let { setCustomIcon(it) }
             customAnimation?.let { setCustomAnimation(it) }
+            setShouldAnimateOnAttached(shouldAnimateOnAttached)
+            if (!shouldAnimateOnAttached){
+                animateViews()
+            }
         }
     }
 
@@ -86,12 +91,14 @@ class FeedbackScreenCatalogActivity : AppCompatActivity() {
         )
         customIcon = intent.getIntExtra(EXTRA_CUSTOM_ICON, 0).takeIf { it != 0 }
         customAnimation = intent.getIntExtra(EXTRA_CUSTOM_ANIMATION, 0).takeIf { it != 0 }
+        shouldAnimateOnAttached = intent.getBooleanExtra(EXTRA_SHOULD_ANIMATE_ON_ATTACHED, SHOULD_ANIMATE_ON_ATTACHED_DEFAULT_VALUE)
     }
 
     companion object {
         const val INVALID_DEFAULT_VALUE = -1
         const val SHOW_SECOND_BUTTON_AS_LINK_DEFAULT_VALUE = false
         const val SHOW_LOADING_IN_BUTTON_DEFAULT_VALUE = false
+        const val SHOULD_ANIMATE_ON_ATTACHED_DEFAULT_VALUE = false
 
         const val EXTRA_TYPE = "extra_type"
         const val EXTRA_TITLE = "extra_title"
@@ -105,6 +112,7 @@ class FeedbackScreenCatalogActivity : AppCompatActivity() {
         const val EXTRA_SHOW_LOADING_IN_BUTTON = "extra_show_loading_in_button"
         const val EXTRA_CUSTOM_ICON = "extra_custom_icon"
         const val EXTRA_CUSTOM_ANIMATION = "extra_custom_animation"
+        const val EXTRA_SHOULD_ANIMATE_ON_ATTACHED = "should_animate_on_attached"
         const val EXTRA_THEME = "extra_theme"
 
         private const val NO_THEME_OVERRIDE = -1

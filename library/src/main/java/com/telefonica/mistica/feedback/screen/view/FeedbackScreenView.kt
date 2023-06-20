@@ -43,8 +43,7 @@ class FeedbackScreenView : ConstraintLayout {
     @IntDef(
         TYPE_SUCCESS,
         TYPE_ERROR,
-        TYPE_INFO,
-        TYPE_CUSTOM
+        TYPE_INFO
     )
     annotation class FeedbackType
 
@@ -70,13 +69,13 @@ class FeedbackScreenView : ConstraintLayout {
     private var secondButtonText: CharSequence = ""
     private var secondButtonAsLink: Boolean = false
     private var isIconAnimated: Boolean = false
-    var shouldAnimateOnAttachedToWindow: Boolean = true
+    private var shouldAnimateOnAttachedToWindow: Boolean = true
 
     private var firstButtonClickListener: OnClickListener? = null
     private var secondButtonClickListener: OnClickListener? = null
 
-    private var customAnimation: Int? = null
-    private var customIcon: Int? = null
+    @RawRes private var customAnimation: Int? = null
+    @DrawableRes private var customIcon: Int? = null
 
     constructor(context: Context) : super(context) {
         init(context)
@@ -125,6 +124,10 @@ class FeedbackScreenView : ConstraintLayout {
     fun setCustomContentLayout(@LayoutRes layout: Int) {
         customContentLayout = layout
         configureCustomContentView()
+    }
+
+    fun setShouldAnimateOnAttached(animate: Boolean) {
+        shouldAnimateOnAttachedToWindow = animate
     }
 
     fun setFeedbackFirstButtonText(text: CharSequence) {
@@ -208,6 +211,14 @@ class FeedbackScreenView : ConstraintLayout {
                 ?.let { secondButtonText = it }
             secondButtonAsLink =
                 styledAttrs.getBoolean(R.styleable.FeedbackScreen_feedbackSecondButtonAsLink, false)
+            shouldAnimateOnAttachedToWindow =
+                styledAttrs.getBoolean(R.styleable.FeedbackScreen_shouldAnimateOnAttached, true)
+            styledAttrs.getResourceId(R.styleable.FeedbackScreen_customAnimation, 0).takeIf { it != 0 }.let {
+                customAnimation = it
+            }
+            styledAttrs.getResourceId(R.styleable.FeedbackScreen_customIcon, 0).takeIf { it != 0 }.let {
+                customIcon = it
+            }
             styledAttrs.recycle()
         }
 
@@ -217,6 +228,12 @@ class FeedbackScreenView : ConstraintLayout {
         errorReference = findViewById(R.id.error_reference)
         customContentContainer = findViewById(R.id.custom_content)
         buttonsContainer = findViewById(R.id.buttons_container)
+
+        @LayoutRes val buttonsLayout: Int =
+            if (isInversePresentation()) R.layout.screen_feedback_buttons_inverse else R.layout.screen_feedback_buttons
+        val buttonsView = LayoutInflater.from(context).inflate(buttonsLayout, buttonsContainer, true)
+        firstButton = buttonsView.findViewById(R.id.first_button)
+        secondButton = buttonsView.findViewById(if (secondButtonAsLink) R.id.link_button else R.id.second_button)
     }
 
     override fun onAttachedToWindow() {
@@ -269,17 +286,12 @@ class FeedbackScreenView : ConstraintLayout {
                 colorAttr = R.attr.colorError
             )
 
-            TYPE_INFO -> configureIcon(
-                animationAttr = R.attr.feedbackScreenInfoAnimation,
-                imageAttr = R.attr.feedbackScreenInfoIcon,
+            TYPE_INFO -> configureIconAsResource(
+                animationResource = customAnimation ?: context.getThemeRes(R.attr.feedbackScreenInfoAnimation, false),
+                imageResource = customIcon ?: context.getThemeRes(R.attr.feedbackScreenInfoIcon, false),
                 colorAttr = R.attr.colorBrand
             )
 
-            TYPE_CUSTOM -> configureIconAsResource(
-                animationResource = customAnimation ?: context.getThemeRes(R.attr.feedbackScreenInfoAnimation, false),
-                imageResource = customIcon  ?: context.getThemeRes(R.attr.feedbackScreenInfoIcon, false),
-                colorAttr = R.attr.colorBrand
-            )
         }
     }
 
@@ -304,14 +316,13 @@ class FeedbackScreenView : ConstraintLayout {
                 icon.setAnimation(animationResource)
                 icon.addValueCallback(
                     KeyPath("**"),
-                    LottieProperty.COLOR_FILTER,
-                    {
-                        PorterDuffColorFilter(
-                            context.getThemeColor(colorAttr),
-                            PorterDuff.Mode.SRC_ATOP
-                        )
-                    }
-                )
+                    LottieProperty.COLOR_FILTER
+                ) {
+                    PorterDuffColorFilter(
+                        context.getThemeColor(colorAttr),
+                        PorterDuff.Mode.SRC_ATOP
+                    )
+                }
                 icon.visibility = View.VISIBLE
             }
 
@@ -449,7 +460,6 @@ class FeedbackScreenView : ConstraintLayout {
         const val TYPE_SUCCESS = 0
         const val TYPE_ERROR = 1
         const val TYPE_INFO = 2
-        const val TYPE_CUSTOM = 3
 
         const val TEXTS_ANIMATION_DURATION = 800L
         const val TEXTS_ANIMATION_DELAY = 200L

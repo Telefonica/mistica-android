@@ -1,151 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="MisticaTheme.Vivo" parent="MisticaTheme.Vivo_Base" />
+	<style name="MisticaTheme.Vivo_Customizations" parent="MisticaTheme.Vivo_Base">
+		<!-- Gradients (assistant, pin fingerprint screens) -->
+		<item name="colorGradientBackgroundFirst">?colorBackgroundBrand</item>
+		<item name="colorGradientBackgroundSecond">?colorBackgroundBrand</item>
+		<item name="colorGradientBackgroundThird">?colorBackgroundBrand</item>
+		<item name="colorGradientBackgroundFourth">?colorBackgroundBrand</item>
+		<item name="colorLoginLoadingGradientFirst">?colorBackgroundBrand</item>
+		<item name="colorLoginLoadingGradientSecond">?colorBackgroundBrand</item>
+		<item name="colorLoginLoadingGradientThird">?colorBackgroundBrand</item>
+		<item name="colorLoginLoadingGradientFourth">?colorBackgroundBrand</item>
 
-    <style name="MisticaTheme.Vivo_Base">
+		<!-- Feedbacks -->
+		<item name="feedbackScreenSuccessWithGradient">false</item>
+		<item name="feedbackScreenSuccessInverse">true</item>
+		<item name="feedbackScreenSuccessAnimation">@raw/feedback_success_vivo</item>
+		<item name="feedbackScreenErrorAnimation">@raw/feedback_error</item>
+		<item name="feedbackScreenInfoIcon">@drawable/feedback_info</item>
 
-        <!-- Background colors -->
-        <item name="colorAppBarBackground">@color/vivo_color_white</item>
-        <item name="colorBackground">@color/vivo_color_white</item>
-        <item name="colorBackgroundContainer">@color/vivo_color_white</item>
-        <item name="colorBackgroundBrand">@color/vivo_color_purple</item>
-        <item name="colorBackgroundOverlay">@color/vivo_color_grey_6_60_alpha</item>
-        <item name="colorBackgroundSkeleton">@color/vivo_color_grey_2</item>
-        <item name="colorBackgroundSkeletonInverse">@color/vivo_color_white_20_alpha</item>
-        <item name="colorNavigationBarBackground">@color/vivo_color_purple</item>
-        <item name="colorBackgroundAlternative">@color/vivo_color_grey_1</item>
-        <item name="colorBackgroundFeedbackBottom">@color/vivo_color_purple</item>
-        <item name="colorCustomTabsBackground">@color/vivo_color_purple</item>
+		<!-- Stepper -->
+		<item name="stepperFinishedStepAnimation">@raw/feedback_success</item>
 
-        <item name="colorSkeletonWave">@color/vivo_color_grey_2</item>
+		<!-- Compose -->
+		<item name="composeBrand">vivo</item>
 
-        <!-- Border colors -->
-        <item name="colorBorderLow">@color/vivo_color_grey_1</item>
-        <item name="colorBorder">@color/vivo_color_grey_3</item>
-        <item name="colorBorderHigh">@color/vivo_color_grey_5</item>
-        <item name="colorBorderSelected">@color/vivo_color_purple</item>
-
-        <!-- Button colors -->
-        <item name="colorButtonDangerBackground">@color/vivo_color_pepper</item>
-        <item name="colorButtonDangerBackgroundSelected">@color/vivo_color_pepper_dark</item>
-
-        <item name="colorButtonLinkBackgroundSelected">@color/vivo_color_purple_light10</item>
-        <item name="colorButtonLinkBackgroundInverseSelected">@color/vivo_color_white_20_alpha</item>
-
-        <item name="colorButtonPrimaryBackground">@color/vivo_color_purple</item>
-        <item name="colorButtonPrimaryBackgroundInverse">@color/vivo_color_white</item>
-        <item name="colorButtonPrimaryBackgroundSelected">@color/vivo_color_purple_dark</item>
-        <item name="colorButtonPrimaryBackgroundInverseSelected">@color/vivo_color_purple_light50</item>
-
-        <item name="colorButtonSecondaryBorder">@color/vivo_color_purple</item>
-        <item name="colorButtonSecondaryBorderSelected">@color/vivo_color_purple_dark</item>
-        <item name="colorButtonSecondaryBackgroundSelected">@color/vivo_color_purple_dark</item>
-        <item name="colorButtonSecondaryBackgroundSelectedInverse">@color/vivo_color_white_15_alpha</item>
-        <item name="colorButtonSecondaryBorderInverse">@color/vivo_color_white</item>
-        <item name="colorButtonSecondaryBorderInverseSelected">@color/vivo_color_purple_light50</item>
-
-        <item name="colorTextButtonPrimary">@color/vivo_color_white</item>
-        <item name="colorTextButtonPrimaryInverse">@color/vivo_color_purple</item>
-        <item name="colorTextButtonPrimaryInverseSelected">@color/vivo_color_purple</item>
-
-        <item name="colorTextButtonSecondary">@color/vivo_color_purple</item>
-        <item name="colorTextButtonSecondarySelected">@color/vivo_color_purple_dark</item>
-        <item name="colorTextButtonSecondaryInverse">@color/vivo_color_white</item>
-        <item name="colorTextButtonSecondaryInverseSelected">@color/vivo_color_white</item>
-
-        <!-- Tag colors -->
-        <item name="successLow">@color/vivo_color_green_light10</item>
-        <item name="warningLow">@color/vivo_color_orange_light10</item>
-        <item name="errorLow">@color/vivo_color_pepper_light10</item>
-        <item name="promoLow">@color/vivo_color_purple_light10</item>
-        <item name="brandLow">@color/vivo_color_purple_light10</item>
-
-        <item name="successHigh">@color/vivo_color_green_dark</item>
-        <item name="successHighInverse">@color/vivo_color_green_dark</item>
-        <item name="warningHigh">@color/vivo_color_orange_dark</item>
-        <item name="warningHighInverse">@color/vivo_color_orange_dark</item>
-        <item name="errorHigh">@color/vivo_color_pepper_dark_80</item>
-        <item name="errorHighInverse">@color/vivo_color_pepper_dark_80</item>
-        <item name="promoHigh">@color/vivo_color_purple</item>
-        <item name="promoHighInverse">@color/vivo_color_purple</item>
-
-        <!-- Text Links -->
-        <item name="colorTextLink">@color/vivo_color_purple</item>
-        <item name="colorTextLinkInverse">@color/vivo_color_white</item>
-        <item name="colorTextLinkDanger">@color/vivo_color_pepper</item>
-        <item name="colorTextLinkSnackbar">@color/vivo_color_purple_light50</item>
-
-        <!-- Control colors -->
-        <item name="colorControl">@color/vivo_color_grey_3</item>
-        <item name="colorControlActive">@color/vivo_color_purple</item>
-        <item name="colorControlError">@color/vivo_color_pepper</item>
-        <item name="colorLoadingBar">@color/vivo_color_pink</item>
-        <item name="colorLoadingBarBackground">@color/vivo_color_pepper_light30</item>
-
-        <!-- Divider colors -->
-        <item name="colorDivider">@color/vivo_color_grey_2</item>
-        <item name="colorDividerInverse">@color/vivo_color_white_20_alpha</item>
-        <item name="colorNavigationBarDivider">@color/vivo_color_purple</item>
-
-        <!-- Feedback colors -->
-        <item name="colorBadge">@color/vivo_color_pepper_dark</item>
-        <item name="colorFeedbackErrorBackground">@color/vivo_color_pepper</item>
-        <item name="colorFeedbackInfoBackground">@color/vivo_color_grey_6</item>
-        <item name="feedbackScreenErrorAnimation">@raw/feedback_error</item>
-        <item name="feedbackScreenInfoIcon">@drawable/feedback_info</item>
-
-        <!-- Global colors -->
-        <item name="colorBrand">@color/vivo_color_purple</item>
-        <item name="colorBrandHigh">@color/vivo_color_purple_dark</item>
-        <item name="colorInverse">@color/vivo_color_white</item>
-        <item name="colorNeutralHigh">@color/vivo_color_grey_6</item>
-        <item name="colorNeutralMedium">@color/vivo_color_grey_5</item>
-        <item name="colorNeutralMediumInverse">@color/vivo_color_grey_5</item>
-        <item name="colorNeutralLow">@color/vivo_color_grey_1</item>
-        <item name="colorPromo">@color/vivo_color_purple</item>
-        <item name="colorHighlight">@color/vivo_color_pink</item>
-
-        <!-- Texts colors -->
-        <item name="colorTextPrimary">@color/vivo_color_grey_6</item>
-        <item name="colorTextPrimaryInverse">@color/vivo_color_white</item>
-        <item name="colorTextSecondary">@color/vivo_color_grey_5</item>
-        <item name="colorTextSecondaryInverse">@color/vivo_color_purple_light20</item>
-
-        <!-- State colors -->
-        <item name="colorError">@color/vivo_color_pepper</item>
-        <item name="colorSuccess">@color/vivo_color_green</item>
-        <item name="colorWarning">@color/vivo_color_orange</item>
-
-        <!-- Bars text colors -->
-        <item name="colorTextNavigationBarPrimary">@color/vivo_color_white</item>
-        <item name="colorTextNavigationBarSecondary">@color/vivo_color_purple_light50</item>
-        <item name="colorTextAppBar">@color/vivo_color_grey_4</item>
-        <item name="colorTextAppBarSelected">@color/vivo_color_purple</item>
-
-        <!-- Gradients (assistant, pin fingerprint screens) -->
-        <item name="colorGradientBackgroundFirst">?colorBackgroundBrand</item>
-        <item name="colorGradientBackgroundSecond">?colorBackgroundBrand</item>
-        <item name="colorGradientBackgroundThird">?colorBackgroundBrand</item>
-        <item name="colorGradientBackgroundFourth">?colorBackgroundBrand</item>
-        <item name="colorLoginLoadingGradientFirst">?colorBackgroundBrand</item>
-        <item name="colorLoginLoadingGradientSecond">?colorBackgroundBrand</item>
-        <item name="colorLoginLoadingGradientThird">?colorBackgroundBrand</item>
-        <item name="colorLoginLoadingGradientFourth">?colorBackgroundBrand</item>
-
-        <!-- Feedbacks -->
-        <item name="feedbackScreenSuccessWithGradient">false</item>
-        <item name="feedbackScreenSuccessInverse">true</item>
-        <item name="feedbackScreenSuccessAnimation">@raw/feedback_success_vivo</item>
-
-        <!-- Stepper -->
-        <item name="stepperFinishedStepAnimation">@raw/feedback_success</item>
-
-        <!-- Compose -->
-        <item name="composeBrand">vivo</item>
-
-        <!-- Title -->
-        <item name="titleStyle">title1</item>
-    </style>
+		<!-- Title -->
+		<item name="titleStyle">title1</item>
+	</style>
 
 </resources>

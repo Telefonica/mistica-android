@@ -1,6 +1,5 @@
 package com.telefonica.mistica.compose.input
 
-import androidx.annotation.VisibleForTesting
 import androidx.compose.material.Icon
 import androidx.compose.material.IconToggleButton
 import androidx.compose.runtime.Composable
@@ -16,10 +15,6 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import com.telefonica.mistica.R
-import java.lang.reflect.Modifier.PRIVATE
-
-@VisibleForTesting(otherwise = PRIVATE)
-internal const val TOGGLE_VISIBILITY_TEST_TAG = "ToggleVisibility"
 
 @Composable
 fun PasswordInput(
@@ -75,7 +70,7 @@ private fun PasswordVisibleIcon(
     IconToggleButton(
         checked = passwordVisible,
         onCheckedChange = onIconClicked,
-        modifier = Modifier.testTag(TOGGLE_VISIBILITY_TEST_TAG),
+        modifier = Modifier.testTag(TextInputTestTags.PASSWORD_VISIBILITY_TOGGLE),
     ) {
         Icon(
             painter = if (passwordVisible) {

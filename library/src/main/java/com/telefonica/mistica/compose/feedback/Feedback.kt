@@ -2,6 +2,8 @@ package com.telefonica.mistica.compose.feedback
 
 import android.view.ViewGroup
 import androidx.activity.compose.BackHandler
+import androidx.annotation.DrawableRes
+import androidx.annotation.RawRes
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -25,7 +27,10 @@ fun Feedback(
     secondButtonOnClick: (() -> Unit)? = null,
     isFirstButtonLoading: Boolean = false,
     secondButtonAsLink: Boolean = false,
-    onBackPressed: (() -> Unit)? = null
+    onBackPressed: (() -> Unit)? = null,
+    shouldAnimateOnAttached: Boolean = true,
+    @RawRes customAnimation: Int? = null,
+    @DrawableRes customIcon: Int? = null,
 ) {
     var shouldPerformTheAnimation by remember { mutableStateOf(true) }
 
@@ -37,7 +42,7 @@ fun Feedback(
         layoutParams = ViewGroup.LayoutParams(
             ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT
         )
-        shouldAnimateOnAttachedToWindow = false
+        setShouldAnimateOnAttached(shouldAnimateOnAttached)
         setFeedbackType(type)
         setFeedbackTitle(title)
         setFeedbackSubtitle(subtitle)
@@ -49,6 +54,9 @@ fun Feedback(
         secondButtonOnClick?.let { setSecondButtonOnClick { secondButtonOnClick() } }
         setFeedbackSecondButtonAsLink(secondButtonAsLink)
         setIsLoading(isFirstButtonLoading)
+        customAnimation?.let { setCustomAnimation(it) }
+        customIcon?.let { setCustomIcon(it) }
+        setFeedbackType(type)
         if (shouldPerformTheAnimation) {
             animateViews()
             shouldPerformTheAnimation = false
