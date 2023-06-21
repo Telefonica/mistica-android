@@ -54,6 +54,7 @@ import com.telefonica.mistica.catalog.ui.compose.components.Inputs
 import com.telefonica.mistica.catalog.ui.compose.components.Lists
 import com.telefonica.mistica.catalog.ui.compose.components.LoadErrorFeedbacks
 import com.telefonica.mistica.catalog.ui.compose.components.MediaCards
+import com.telefonica.mistica.catalog.ui.compose.components.PopOvers
 import com.telefonica.mistica.catalog.ui.compose.components.Steppers
 import com.telefonica.mistica.catalog.ui.compose.components.TabsCatalog
 import com.telefonica.mistica.catalog.ui.compose.components.Tags
@@ -121,7 +122,7 @@ class ComponentCatalogActivity : FragmentActivity() {
 
             Section.POPOVERS -> setPageAdapterWithTabs(
                 classicComponent = PopOverCatalogFragment(),
-                composeComponent = null
+                composeComponent = { PopOvers() }
             )
 
             Section.BADGES -> setPageAdapterWithTabs(
