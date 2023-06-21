@@ -13,6 +13,7 @@ import com.telefonica.mistica.tokens.TokensGenerator.Companion.REGULAR
 import com.telefonica.mistica.tokens.common.GetBorderRadiusName
 import com.telefonica.mistica.tokens.common.GetColorNameWithAlpha
 import com.telefonica.mistica.tokens.common.GetColorsWithAlpha
+import com.telefonica.mistica.tokens.dto.ColorDTO
 import com.telefonica.mistica.tokens.dto.TokensDTO
 import org.redundent.kotlin.xml.Node
 import org.redundent.kotlin.xml.PrintOptions
@@ -83,7 +84,7 @@ class GenerateXMLFiles(
             "style" {
                 attribute("name", "MisticaTheme.${brandName.capitalizeString()}_Base")
 
-                colors(tokens, brandName)
+                mapColors(tokens.light, brandName)
                 borderRadius(tokens)
                 presetFonts(tokens)
                 presetStyles(tokens)
@@ -91,32 +92,6 @@ class GenerateXMLFiles(
         }
 
         File("$VALUES_DIR/${THEMES_FILE.format(brandName)}").writeText(lightThemesXml.toString(PrintOptions(singleLineTextElements = true)))
-    }
-
-    private fun Node.colors(tokens: TokensDTO, brandName: String) {
-        tokens.light.forEach { color ->
-            val colorName = if (color.key == "controlActivated") {
-                "colorControlActive"
-            } else {
-                "color${color.key.capitalizeString()}"
-            }
-
-            if (color.value.value.contains("rgba(")) {
-                val alpha = ALPHA_REGEX.find(color.value.value)?.value?.toDouble()
-                if (alpha != null) {
-                    val colorValue = getColorNameWithAlpha(brandName, color.value.description, alpha)
-                    "item" {
-                        attribute("name", colorName)
-                        -"@color/$colorValue"
-                    }
-                }
-            } else {
-                "item" {
-                    attribute("name", colorName)
-                    -"@color/${brandName}_color_${color.value.description}"
-                }
-            }
-        }
     }
 
     private fun Node.borderRadius(tokens: TokensDTO) {
@@ -173,22 +148,37 @@ class GenerateXMLFiles(
                 attribute("name", "MisticaTheme.${brandName.capitalizeString()}")
                 attribute("parent", "MisticaTheme.${brandName.capitalizeString()}_Customizations")
 
-                tokens.dark.forEach { color ->
-                    val colorName = if (color.key == "controlActivated") {
-                        "colorControlActive"
-                    } else {
-                        "color${color.key.capitalizeString()}"
-                    }
-
-                    "item" {
-                        attribute("name", colorName)
-                        -"@color/${brandName}_color_${color.value.description}"
-                    }
-                }
+                mapColors(tokens.dark, brandName)
             }
         }
 
         File("$VALUES_NIGHT_DIR/${THEMES_FILE.format(brandName)}").writeText(darkThemesXml.toString(PrintOptions(singleLineTextElements = true)))
+    }
+
+    private fun Node.mapColors(colors: Map<String, ColorDTO>, brandName: String) {
+        colors.forEach { color ->
+            val colorName = if (color.key == "controlActivated") {
+                "colorControlActive"
+            } else {
+                "color${color.key.capitalizeString()}"
+            }
+
+            if (color.value.value.contains("rgba(")) {
+                val alpha = ALPHA_REGEX.find(color.value.value)?.value?.toDouble()
+                if (alpha != null) {
+                    val colorValue = getColorNameWithAlpha(brandName, color.value.description, alpha)
+                    "item" {
+                        attribute("name", colorName)
+                        -"@color/$colorValue"
+                    }
+                }
+            } else {
+                "item" {
+                    attribute("name", colorName)
+                    -"@color/${brandName}_color_${color.value.description}"
+                }
+            }
+        }
     }
 
     companion object {
