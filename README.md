@@ -4,7 +4,7 @@
 [![Platform](https://img.shields.io/badge/Platform-Android-brightgreen)](https://github.com/Telefonica/mistica-android)
 [![Version](https://maven-badges.herokuapp.com/maven-central/com.telefonica/mistica/badge.png)](https://search.maven.org/artifact/com.telefonica/mistica)
 [![Support](https://img.shields.io/badge/Support-%3E%3D%20Android%205.0-brightgreen)](https://github.com/Telefonica/mistica-android)
-[![Kotlin version badge](https://img.shields.io/badge/kotlin-1.7-blue.svg)](https://kotlinlang.org/docs/reference/whatsnew13.html)
+[![Kotlin version badge](https://img.shields.io/badge/kotlin-1.8.20-blue.svg)](https://kotlinlang.org/docs/whatsnew1820.html)
 
 Mistica is a framework that contains reusable UI components and utilities.
 
