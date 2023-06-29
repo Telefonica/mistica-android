@@ -1,5 +1,6 @@
 package com.telefonica.mistica.catalog.ui.compose.components
 
+import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -80,83 +81,83 @@ fun samples() = listOf(
 
     ListItem(
         title = TITLE,
-        icon = { ListIcon() },
+        iconResId = R.drawable.ic_lists,
     ),
     ListItem(
         title = TITLE,
         action = { Chevron() },
-        icon = { ListIcon() },
+        iconResId = R.drawable.ic_lists
     ),
     ListItem(
         title = TITLE,
         action = { Chevron() },
         isBadgeVisible = true,
-        icon = { ListIcon() },
+        iconResId = R.drawable.ic_lists
     ),
     ListItem(
         title = TITLE,
         action = { Chevron() },
         isBadgeVisible = true,
         badge = "1",
-        icon = { ListIcon() },
+        iconResId = R.drawable.ic_lists
     ),
     ListItem(
         title = TITLE,
         subtitle = SUBTITLE,
-        icon = { ListIcon() },
-    ),
-    ListItem(
-        title = TITLE,
-        subtitle = SUBTITLE,
-        action = { Chevron() },
-        icon = { ListIcon() },
+        iconResId = R.drawable.ic_lists
     ),
     ListItem(
         title = TITLE,
         subtitle = SUBTITLE,
         action = { Chevron() },
-        icon = { ListIcon() },
+        iconResId = R.drawable.ic_lists
+    ),
+    ListItem(
+        title = TITLE,
+        subtitle = SUBTITLE,
+        action = { Chevron() },
+        iconResId = R.drawable.ic_lists,
         bottom =  { CustomSlot() },
     ),
 
     ListItem(
         title = TITLE,
-        icon = { ListIcon() },
+        iconResId = R.drawable.ic_lists
     ),
     ListItem(
         title = TITLE,
         action = { Chevron() },
-        icon = { ListIcon() },
+        iconResId = R.drawable.ic_lists
     ),
     ListItem(
         title = TITLE,
         action = { Chevron() },
         isBadgeVisible = true,
-        icon = { ListIcon() },
+        iconResId = R.drawable.ic_lists
     ),
     ListItem(
         title = TITLE,
         action = { Chevron() },
         isBadgeVisible = true,
         badge = "1",
-        icon = { ListIcon() },
+        iconResId = R.drawable.ic_lists
     ),
     ListItem(
         title = TITLE,
         subtitle = SUBTITLE,
-        icon = { ListIcon() },
-    ),
-    ListItem(
-        title = TITLE,
-        subtitle = SUBTITLE,
-        action = { Chevron() },
-        icon = { ListIcon() },
+        iconResId = R.drawable.ic_lists
     ),
     ListItem(
         title = TITLE,
         subtitle = SUBTITLE,
         action = { Chevron() },
-        icon = { ListIcon() },
+        iconResId = R.drawable.ic_lists
+    ),
+    ListItem(
+        title = TITLE,
+        subtitle = SUBTITLE,
+        action = { Chevron() },
+        iconResId = R.drawable.ic_lists,
         bottom =  { CustomSlot() },
     ),
 
@@ -165,7 +166,7 @@ fun samples() = listOf(
         title = TITLE,
         subtitle = SUBTITLE,
         action = { Chevron() },
-        icon = { ListIcon() },
+        iconResId = R.drawable.ic_lists
     ),
     ListItem(
         headline = Tag("PROMO").withStyle(TYPE_PROMO),
@@ -175,7 +176,8 @@ fun samples() = listOf(
         action = { Chevron() },
         isBadgeVisible = true,
         badge = "1",
-        icon = { Avatar() },
+        iconResId = R.drawable.list_row_drawable,
+        showCircleIcon = false
     ),
     ListItem(
         headline = Tag("PROMO").withStyle(TYPE_PROMO),
@@ -185,7 +187,8 @@ fun samples() = listOf(
         action = { Avatar("https://www.fotoaparat.cz/imgs/a/26/2639/0n1wjdf0-cr-em13-09-1200x627x9.jpg") },
         isBadgeVisible = true,
         badge = "1",
-        icon = { Avatar() },
+        iconResId = R.drawable.list_row_drawable,
+        showCircleIcon = false
     ),
     ListItem(
         headline = Tag("PROMO").withStyle(TYPE_PROMO),
@@ -195,7 +198,8 @@ fun samples() = listOf(
         action = { Switch(checked = true, onCheckedChange = {}) },
         isBadgeVisible = true,
         badge = "1",
-        icon = { Avatar() },
+        iconResId = R.drawable.list_row_drawable,
+        showCircleIcon = false
     ),
     ListItem(
         title = TITLE,
@@ -204,7 +208,8 @@ fun samples() = listOf(
         action = { Switch(checked = true, onCheckedChange = {}) },
         isBadgeVisible = true,
         badge = "1",
-        icon = { Avatar() },
+        iconResId = R.drawable.list_row_drawable,
+        showCircleIcon = false,
         bottom =  { CustomSlot() },
     ),
 )
@@ -222,7 +227,8 @@ fun Lists() {
                 backgroundType = item.backgroundType,
                 badge = item.badge,
                 isBadgeVisible = item.isBadgeVisible,
-                icon = item.icon,
+                iconResId = item.iconResId,
+                showIconCircle = item.showCircleIcon,
                 headline = item.headline,
                 title = item.title,
                 subtitle = item.subtitle,
@@ -243,7 +249,8 @@ fun Lists() {
                 backgroundType = item.backgroundType,
                 badge = item.badge,
                 isBadgeVisible = item.isBadgeVisible,
-                icon = item.icon,
+                iconResId = item.iconResId,
+                showIconCircle = item.showCircleIcon,
                 headline = item.headline,
                 title = item.title,
                 subtitle = item.subtitle,
@@ -263,7 +270,8 @@ fun Lists() {
                 backgroundType = item.backgroundType,
                 badge = item.badge,
                 isBadgeVisible = item.isBadgeVisible,
-                icon = item.icon,
+                iconResId = item.iconResId,
+                showIconCircle = item.showCircleIcon,
                 headline = item.headline,
                 title = item.title,
                 subtitle = item.subtitle,
@@ -277,7 +285,8 @@ fun Lists() {
 }
 
 data class ListItem(
-    val icon: @Composable (() -> Unit)? = null,
+    @DrawableRes val iconResId: Int? = null,
+    val showCircleIcon: Boolean = true,
     val title: String? = null,
     val subtitle: String? = null,
     val description: String? = null,

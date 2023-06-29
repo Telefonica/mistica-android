@@ -1,5 +1,7 @@
 package com.telefonica.mistica.compose.list
 
+import androidx.annotation.DrawableRes
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -18,7 +20,6 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Checkbox
 import androidx.compose.material.ExperimentalMaterialApi
-import androidx.compose.material.Icon
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -42,6 +43,50 @@ import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 
 @ExperimentalMaterialApi
 @Composable
+@Suppress("DEPRECATION")
+fun ListRowItem(
+    modifier: Modifier = Modifier,
+    @DrawableRes iconResId: Int? = null,
+    showIconCircle: Boolean = false,
+    title: String? = null,
+    subtitle: String? = null,
+    description: String? = null,
+    backgroundType: BackgroundType = BackgroundType.TYPE_NORMAL,
+    badge: String? = null,
+    isBadgeVisible: Boolean = false,
+    headline: Tag? = null,
+    trailing: @Composable (() -> Unit)? = null,
+    onClick: (() -> Unit)? = null,
+    bottom: @Composable (() -> Unit)? = null,
+    contentPadding: PaddingValues = PaddingValues(horizontal = 16.dp, vertical = 8.dp),
+) {
+    ListRowItem(
+        modifier = modifier,
+        icon = {
+            when (showIconCircle) {
+                true -> Circle {
+                    ListRowIcon(iconResId = iconResId)
+                }
+                false -> ListRowIcon(iconResId = iconResId)
+            }
+        },
+        title = title,
+        subtitle = subtitle,
+        description = description,
+        backgroundType = backgroundType,
+        badge = badge,
+        isBadgeVisible = isBadgeVisible,
+        headline = headline,
+        trailing = trailing,
+        onClick = onClick,
+        bottom = bottom,
+        contentPadding = contentPadding
+    )
+}
+
+@ExperimentalMaterialApi
+@Composable
+@Deprecated("Use new ListRowItem function with 'iconResId' and 'showIconCircle' params")
 fun ListRowItem(
     modifier: Modifier = Modifier,
     icon: @Composable (() -> Unit)? = null,
@@ -115,7 +160,9 @@ fun ListRowItem(
             modifier = rowModifier.height(IntrinsicSize.Min)
         ) {
             if (icon != null) {
-                icon()
+                Box(modifier = Modifier.testTag(ListRowItemTestTags.LIST_ROW_ITEM_ICON)) {
+                    icon()
+                }
                 Spacer(modifier = Modifier.width(16.dp))
             }
 
@@ -184,6 +231,13 @@ fun ListRowItem(
     }
 }
 
+@Composable
+private fun ListRowIcon(@DrawableRes iconResId: Int?) {
+    if (iconResId != null) {
+        Image(painter = painterResource(id = iconResId), contentDescription = null)
+    }
+}
+
 private fun Modifier.makeClickableIfNeeded(onClick: (() -> Unit)?): Modifier =
     if (onClick != null) {
         clickable(onClick = onClick)
@@ -193,6 +247,7 @@ private fun Modifier.makeClickableIfNeeded(onClick: (() -> Unit)?): Modifier =
 
 object ListRowItemTestTags {
     const val LIST_ROW_ITEM = "list_row_item"
+    const val LIST_ROW_ITEM_ICON = "list_row_item_icon"
     const val LIST_ROW_ITEM_DESCRIPTION = "list_row_item_description"
     const val LIST_ROW_ITEM_SUBTITLE = "list_row_item_subtitle"
     const val LIST_ROW_ITEM_TITLE = "list_row_item_title"
@@ -207,6 +262,7 @@ fun ListRowItemPreview() {
         Column {
             ListRowItem(
                 headline = Tag("Promo"),
+                iconResId = null,
                 isBadgeVisible = true,
                 title = "Title",
                 subtitle = "Subtitle",
@@ -219,26 +275,15 @@ fun ListRowItemPreview() {
                 badge = "2",
                 subtitle = "Subtitle",
                 description = "Description",
-                icon = {
-                    Icon(
-                        painterResource(id = R.drawable.icn_arrow),
-                        contentDescription = null
-                    )
-                },
+                iconResId = R.drawable.icn_arrow,
                 trailing = { Chevron() }
             )
             ListRowItem(
                 title = "Title",
                 subtitle = "Subtitle",
                 description = "Description",
-                icon = {
-                    Circle {
-                        Icon(
-                            painterResource(id = R.drawable.icn_arrow),
-                            contentDescription = null
-                        )
-                    }
-                },
+                iconResId = R.drawable.icn_arrow,
+                showIconCircle = true,
                 trailing = {
                     Checkbox(
                         checked = checkedState.value,
@@ -251,9 +296,7 @@ fun ListRowItemPreview() {
                 title = "Title",
                 subtitle = "Subtitle",
                 description = "Description",
-                icon = {
-                    Circle {}
-                },
+                showIconCircle = true,
                 trailing = {
                     Checkbox(
                         checked = checkedState.value,
