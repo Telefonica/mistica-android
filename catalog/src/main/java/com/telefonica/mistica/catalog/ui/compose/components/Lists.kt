@@ -32,6 +32,7 @@ import coil.request.ImageRequest
 import coil.transform.CircleCropTransformation
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.compose.list.BackgroundType
+import com.telefonica.mistica.compose.list.ListIconConfig
 import com.telefonica.mistica.compose.list.ListRowItem
 import com.telefonica.mistica.compose.shape.Chevron
 import com.telefonica.mistica.compose.shape.Circle
@@ -81,83 +82,83 @@ fun samples() = listOf(
 
     ListItem(
         title = TITLE,
-        iconResId = R.drawable.ic_lists,
+        iconConfig = ListIconConfig(iconResId = R.drawable.ic_lists),
     ),
     ListItem(
         title = TITLE,
         action = { Chevron() },
-        iconResId = R.drawable.ic_lists
+        iconConfig = ListIconConfig(iconResId = R.drawable.ic_lists)
     ),
     ListItem(
         title = TITLE,
         action = { Chevron() },
         isBadgeVisible = true,
-        iconResId = R.drawable.ic_lists
+        iconConfig = ListIconConfig(iconResId = R.drawable.ic_lists)
     ),
     ListItem(
         title = TITLE,
         action = { Chevron() },
         isBadgeVisible = true,
         badge = "1",
-        iconResId = R.drawable.ic_lists
+        iconConfig = ListIconConfig(iconResId = R.drawable.ic_lists)
     ),
     ListItem(
         title = TITLE,
         subtitle = SUBTITLE,
-        iconResId = R.drawable.ic_lists
-    ),
-    ListItem(
-        title = TITLE,
-        subtitle = SUBTITLE,
-        action = { Chevron() },
-        iconResId = R.drawable.ic_lists
+        iconConfig = ListIconConfig(iconResId = R.drawable.ic_lists)
     ),
     ListItem(
         title = TITLE,
         subtitle = SUBTITLE,
         action = { Chevron() },
-        iconResId = R.drawable.ic_lists,
+        iconConfig = ListIconConfig(iconResId = R.drawable.ic_lists)
+    ),
+    ListItem(
+        title = TITLE,
+        subtitle = SUBTITLE,
+        action = { Chevron() },
+        iconConfig = ListIconConfig(iconResId = R.drawable.ic_lists),
         bottom =  { CustomSlot() },
     ),
 
     ListItem(
         title = TITLE,
-        iconResId = R.drawable.ic_lists
+        iconConfig = ListIconConfig(iconResId = R.drawable.ic_lists)
     ),
     ListItem(
         title = TITLE,
         action = { Chevron() },
-        iconResId = R.drawable.ic_lists
+        iconConfig = ListIconConfig(iconResId = R.drawable.ic_lists)
     ),
     ListItem(
         title = TITLE,
         action = { Chevron() },
         isBadgeVisible = true,
-        iconResId = R.drawable.ic_lists
+        iconConfig = ListIconConfig(iconResId = R.drawable.ic_lists)
     ),
     ListItem(
         title = TITLE,
         action = { Chevron() },
         isBadgeVisible = true,
         badge = "1",
-        iconResId = R.drawable.ic_lists
+        iconConfig = ListIconConfig(iconResId = R.drawable.ic_lists)
     ),
     ListItem(
         title = TITLE,
         subtitle = SUBTITLE,
-        iconResId = R.drawable.ic_lists
-    ),
-    ListItem(
-        title = TITLE,
-        subtitle = SUBTITLE,
-        action = { Chevron() },
-        iconResId = R.drawable.ic_lists
+        iconConfig = ListIconConfig(iconResId = R.drawable.ic_lists)
     ),
     ListItem(
         title = TITLE,
         subtitle = SUBTITLE,
         action = { Chevron() },
-        iconResId = R.drawable.ic_lists,
+        iconConfig = ListIconConfig(iconResId = R.drawable.ic_lists)
+    ),
+    ListItem(
+        title = TITLE,
+        subtitle = SUBTITLE,
+        action = { Chevron() },
+        iconConfig = ListIconConfig(iconResId = R.drawable.ic_lists),
         bottom =  { CustomSlot() },
     ),
 
@@ -166,7 +167,7 @@ fun samples() = listOf(
         title = TITLE,
         subtitle = SUBTITLE,
         action = { Chevron() },
-        iconResId = R.drawable.ic_lists
+        iconConfig = ListIconConfig(iconResId = R.drawable.ic_lists)
     ),
     ListItem(
         headline = Tag("PROMO").withStyle(TYPE_PROMO),
@@ -176,8 +177,7 @@ fun samples() = listOf(
         action = { Chevron() },
         isBadgeVisible = true,
         badge = "1",
-        iconResId = R.drawable.list_row_drawable,
-        showCircleIcon = false
+        iconConfig = ListIconConfig(iconResId = R.drawable.list_row_drawable, showIconCircle = false),
     ),
     ListItem(
         headline = Tag("PROMO").withStyle(TYPE_PROMO),
@@ -187,8 +187,7 @@ fun samples() = listOf(
         action = { Avatar("https://www.fotoaparat.cz/imgs/a/26/2639/0n1wjdf0-cr-em13-09-1200x627x9.jpg") },
         isBadgeVisible = true,
         badge = "1",
-        iconResId = R.drawable.list_row_drawable,
-        showCircleIcon = false
+        iconConfig = ListIconConfig(iconResId = R.drawable.list_row_drawable, showIconCircle = false),
     ),
     ListItem(
         headline = Tag("PROMO").withStyle(TYPE_PROMO),
@@ -198,8 +197,7 @@ fun samples() = listOf(
         action = { Switch(checked = true, onCheckedChange = {}) },
         isBadgeVisible = true,
         badge = "1",
-        iconResId = R.drawable.list_row_drawable,
-        showCircleIcon = false
+        iconConfig = ListIconConfig(iconResId = R.drawable.list_row_drawable, showIconCircle = false),
     ),
     ListItem(
         title = TITLE,
@@ -208,8 +206,7 @@ fun samples() = listOf(
         action = { Switch(checked = true, onCheckedChange = {}) },
         isBadgeVisible = true,
         badge = "1",
-        iconResId = R.drawable.list_row_drawable,
-        showCircleIcon = false,
+        iconConfig = ListIconConfig(iconResId = R.drawable.list_row_drawable, showIconCircle = false),
         bottom =  { CustomSlot() },
     ),
 )
@@ -227,8 +224,7 @@ fun Lists() {
                 backgroundType = item.backgroundType,
                 badge = item.badge,
                 isBadgeVisible = item.isBadgeVisible,
-                iconResId = item.iconResId,
-                showIconCircle = item.showCircleIcon,
+                iconConfig = item.iconConfig,
                 headline = item.headline,
                 title = item.title,
                 subtitle = item.subtitle,
@@ -249,8 +245,7 @@ fun Lists() {
                 backgroundType = item.backgroundType,
                 badge = item.badge,
                 isBadgeVisible = item.isBadgeVisible,
-                iconResId = item.iconResId,
-                showIconCircle = item.showCircleIcon,
+                iconConfig = item.iconConfig,
                 headline = item.headline,
                 title = item.title,
                 subtitle = item.subtitle,
@@ -270,8 +265,7 @@ fun Lists() {
                 backgroundType = item.backgroundType,
                 badge = item.badge,
                 isBadgeVisible = item.isBadgeVisible,
-                iconResId = item.iconResId,
-                showIconCircle = item.showCircleIcon,
+                iconConfig = item.iconConfig,
                 headline = item.headline,
                 title = item.title,
                 subtitle = item.subtitle,
@@ -285,8 +279,7 @@ fun Lists() {
 }
 
 data class ListItem(
-    @DrawableRes val iconResId: Int? = null,
-    val showCircleIcon: Boolean = true,
+    val iconConfig: ListIconConfig? = null,
     val title: String? = null,
     val subtitle: String? = null,
     val description: String? = null,

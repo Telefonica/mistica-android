@@ -45,9 +45,7 @@ import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 @Composable
 fun ListRowItem(
     modifier: Modifier = Modifier,
-    @DrawableRes iconResId: Int? = null,
-    showIconCircle: Boolean = false,
-    iconContentDescription: String? = null,
+    iconConfig: ListIconConfig? = null,
     title: String? = null,
     subtitle: String? = null,
     description: String? = null,
@@ -62,14 +60,7 @@ fun ListRowItem(
 ) {
     ListRowItemImpl(
         modifier = modifier,
-        icon = {
-            when (showIconCircle) {
-                true -> Circle {
-                    ListRowIcon(iconResId = iconResId, contentDescription = iconContentDescription)
-                }
-                false -> ListRowIcon(iconResId = iconResId, contentDescription = iconContentDescription)
-            }
-        },
+        icon = { iconConfig?.Draw() },
         title = title,
         subtitle = subtitle,
         description = description,
@@ -290,6 +281,25 @@ object ListRowItemTestTags {
     const val LIST_ROW_ITEM_TITLE = "list_row_item_title"
 }
 
+data class ListIconConfig(
+    @DrawableRes val iconResId: Int? = null,
+    val showIconCircle: Boolean = false,
+    val iconContentDescription: String? = null,
+) {
+
+    @Composable
+    fun Draw() {
+        when (showIconCircle) {
+            true -> Circle {
+                ListRowIcon(iconResId = iconResId, contentDescription = iconContentDescription)
+            }
+
+            false -> ListRowIcon(iconResId = iconResId, contentDescription = iconContentDescription)
+        }
+    }
+
+}
+
 @ExperimentalMaterialApi
 @Preview(showBackground = true)
 @Composable
@@ -299,7 +309,7 @@ fun ListRowItemPreview() {
         Column {
             ListRowItem(
                 headline = Tag("Promo"),
-                iconResId = null,
+                iconConfig = null,
                 isBadgeVisible = true,
                 title = "Title",
                 subtitle = "Subtitle",
@@ -312,15 +322,14 @@ fun ListRowItemPreview() {
                 badge = "2",
                 subtitle = "Subtitle",
                 description = "Description",
-                iconResId = R.drawable.icn_arrow,
+                iconConfig = ListIconConfig(iconResId = R.drawable.icn_arrow),
                 trailing = { Chevron() }
             )
             ListRowItem(
                 title = "Title",
                 subtitle = "Subtitle",
                 description = "Description",
-                iconResId = R.drawable.icn_arrow,
-                showIconCircle = true,
+                iconConfig = ListIconConfig(iconResId = R.drawable.icn_arrow, showIconCircle = true),
                 trailing = {
                     Checkbox(
                         checked = checkedState.value,
@@ -333,7 +342,7 @@ fun ListRowItemPreview() {
                 title = "Title",
                 subtitle = "Subtitle",
                 description = "Description",
-                showIconCircle = true,
+                iconConfig = ListIconConfig(showIconCircle = true),
                 trailing = {
                     Checkbox(
                         checked = checkedState.value,

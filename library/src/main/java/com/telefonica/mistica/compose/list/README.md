@@ -45,7 +45,7 @@ Following the order in the image, the types are: normal, boxed and boxed-inverse
 
 ## Icon
 The icon to be showed at the start of the component.
-We can configure it by next params
+We can configure it by create a ListIconConfig object
 - iconResId: Drawable icon resource
 - showIconCircle: Draw an outer circle around the icon. 
 - iconContentDescription: Accessibility description
@@ -54,10 +54,12 @@ We can configure it by next params
 
 ```kotlin
   ListRowItem(
-  title = "Title",
-  iconResId = R.drawable.ic_lists,
-  showIconCircle = true,
-  iconContentDescription = "Some accessibility description"
+    title = "Title",
+    iconConfig = ListIconConfig(
+        iconResId = R.drawable.ic_lists,
+        showIconCircle = true,
+        iconContentDescription = "Some accessibility description"
+    )
 )
 ```
 ## Headline
