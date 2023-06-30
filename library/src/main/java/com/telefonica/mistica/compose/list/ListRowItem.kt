@@ -43,11 +43,11 @@ import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 
 @ExperimentalMaterialApi
 @Composable
-@Suppress("DEPRECATION")
 fun ListRowItem(
     modifier: Modifier = Modifier,
     @DrawableRes iconResId: Int? = null,
     showIconCircle: Boolean = false,
+    iconContentDescription: String? = null,
     title: String? = null,
     subtitle: String? = null,
     description: String? = null,
@@ -60,14 +60,14 @@ fun ListRowItem(
     bottom: @Composable (() -> Unit)? = null,
     contentPadding: PaddingValues = PaddingValues(horizontal = 16.dp, vertical = 8.dp),
 ) {
-    ListRowItem(
+    ListRowItemImpl(
         modifier = modifier,
         icon = {
             when (showIconCircle) {
                 true -> Circle {
-                    ListRowIcon(iconResId = iconResId)
+                    ListRowIcon(iconResId = iconResId, contentDescription = iconContentDescription)
                 }
-                false -> ListRowIcon(iconResId = iconResId)
+                false -> ListRowIcon(iconResId = iconResId, contentDescription = iconContentDescription)
             }
         },
         title = title,
@@ -86,8 +86,42 @@ fun ListRowItem(
 
 @ExperimentalMaterialApi
 @Composable
-@Deprecated("Use new ListRowItem function with 'iconResId' and 'showIconCircle' params")
+@Deprecated("Use new ListRowItem function with 'iconResId', 'showIconCircle' and 'iconContentDescription' params")
 fun ListRowItem(
+    modifier: Modifier = Modifier,
+    icon: @Composable (() -> Unit)? = null,
+    title: String? = null,
+    subtitle: String? = null,
+    description: String? = null,
+    backgroundType: BackgroundType = BackgroundType.TYPE_NORMAL,
+    badge: String? = null,
+    isBadgeVisible: Boolean = false,
+    headline: Tag? = null,
+    trailing: @Composable (() -> Unit)? = null,
+    onClick: (() -> Unit)? = null,
+    bottom: @Composable (() -> Unit)? = null,
+    contentPadding: PaddingValues = PaddingValues(horizontal = 16.dp, vertical = 8.dp),
+) {
+    ListRowItemImpl(
+        modifier = modifier,
+        icon = icon,
+        title = title,
+        subtitle = subtitle,
+        description = description,
+        backgroundType = backgroundType,
+        badge = badge,
+        isBadgeVisible = isBadgeVisible,
+        headline = headline,
+        trailing = trailing,
+        onClick = onClick,
+        bottom = bottom,
+        contentPadding = contentPadding
+    )
+}
+
+@ExperimentalMaterialApi
+@Composable
+private fun ListRowItemImpl(
     modifier: Modifier = Modifier,
     icon: @Composable (() -> Unit)? = null,
     title: String? = null,
@@ -232,9 +266,12 @@ fun ListRowItem(
 }
 
 @Composable
-private fun ListRowIcon(@DrawableRes iconResId: Int?) {
+private fun ListRowIcon(
+    @DrawableRes iconResId: Int?,
+    contentDescription: String?
+) {
     if (iconResId != null) {
-        Image(painter = painterResource(id = iconResId), contentDescription = null)
+        Image(painter = painterResource(id = iconResId), contentDescription = contentDescription)
     }
 }
 
