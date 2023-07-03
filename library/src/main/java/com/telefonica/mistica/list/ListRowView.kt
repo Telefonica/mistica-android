@@ -1,6 +1,7 @@
 package com.telefonica.mistica.list
 
 import android.content.Context
+import android.content.res.ColorStateList
 import android.content.res.TypedArray
 import android.graphics.drawable.Drawable
 import android.text.TextUtils
@@ -12,6 +13,7 @@ import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.annotation.AttrRes
 import androidx.annotation.DrawableRes
 import androidx.annotation.IntDef
 import androidx.annotation.LayoutRes

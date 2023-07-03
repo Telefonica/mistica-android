@@ -56,7 +56,7 @@ Any `@Composable` could be used as `icon` but the system design specifications o
             painterResource(id = R.drawable.ic_lists),
             contentDescription = null
           )
-      }
+       }
      }
   )
 ```
