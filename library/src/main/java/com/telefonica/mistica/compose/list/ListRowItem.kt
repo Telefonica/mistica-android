@@ -103,7 +103,6 @@ fun ListRowItem(
         BackgroundType.TYPE_NORMAL,
         BackgroundType.TYPE_BOXED,
         -> MisticaTheme.colors.textPrimary
-
         BackgroundType.TYPE_BOXED_INVERSE -> MisticaTheme.colors.textPrimaryInverse
     }
 
@@ -111,7 +110,6 @@ fun ListRowItem(
         BackgroundType.TYPE_NORMAL,
         BackgroundType.TYPE_BOXED,
         -> MisticaTheme.colors.textSecondary
-
         BackgroundType.TYPE_BOXED_INVERSE -> MisticaTheme.colors.textSecondaryInverse
     }
 
