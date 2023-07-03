@@ -115,7 +115,9 @@ fun ListRowItem(
             modifier = rowModifier.height(IntrinsicSize.Min)
         ) {
             if (icon != null) {
-                icon()
+                Box(modifier = Modifier.testTag(ListRowItemTestTags.LIST_ROW_ITEM_ICON)) {
+                    icon()
+                }
                 Spacer(modifier = Modifier.width(16.dp))
             }
 
@@ -193,6 +195,7 @@ private fun Modifier.makeClickableIfNeeded(onClick: (() -> Unit)?): Modifier =
 
 object ListRowItemTestTags {
     const val LIST_ROW_ITEM = "list_row_item"
+    const val LIST_ROW_ITEM_ICON = "list_row_item_icon"
     const val LIST_ROW_ITEM_DESCRIPTION = "list_row_item_description"
     const val LIST_ROW_ITEM_SUBTITLE = "list_row_item_subtitle"
     const val LIST_ROW_ITEM_TITLE = "list_row_item_title"
