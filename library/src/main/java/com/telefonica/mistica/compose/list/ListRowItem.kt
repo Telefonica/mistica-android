@@ -20,6 +20,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Checkbox
 import androidx.compose.material.ExperimentalMaterialApi
+import androidx.compose.material.Icon
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -82,6 +83,7 @@ fun ListRowItem(
                 color = MisticaTheme.colors.backgroundContainer,
                 shape = RoundedCornerShape(MisticaTheme.radius.containerBorderRadius),
             )
+
         BackgroundType.TYPE_BOXED_INVERSE -> Modifier
             .background(
                 color = MisticaTheme.colors.backgroundBrand,
@@ -89,16 +91,19 @@ fun ListRowItem(
             )
     }
         .fillMaxWidth()
-        .defaultMinSize(minHeight = when(description) {
-            null -> 72.dp
-            else -> 80.dp
-        })
+        .defaultMinSize(
+            minHeight = when (description) {
+                null -> 72.dp
+                else -> 80.dp
+            }
+        )
         .padding(16.dp)
 
     val textColorPrimary = when (backgroundType) {
         BackgroundType.TYPE_NORMAL,
         BackgroundType.TYPE_BOXED,
         -> MisticaTheme.colors.textPrimary
+
         BackgroundType.TYPE_BOXED_INVERSE -> MisticaTheme.colors.textPrimaryInverse
     }
 
@@ -106,6 +111,7 @@ fun ListRowItem(
         BackgroundType.TYPE_NORMAL,
         BackgroundType.TYPE_BOXED,
         -> MisticaTheme.colors.textSecondary
+
         BackgroundType.TYPE_BOXED_INVERSE -> MisticaTheme.colors.textSecondaryInverse
     }
 
@@ -190,7 +196,7 @@ fun ListRowItem(
 @Composable
 private fun ListRowIcon(
     @DrawableRes iconResId: Int?,
-    contentDescription: String?
+    contentDescription: String?,
 ) {
     if (iconResId != null) {
         Image(painter = painterResource(id = iconResId), contentDescription = contentDescription)
@@ -240,7 +246,12 @@ fun ListRowItemPreview() {
         Column {
             ListRowItem(
                 headline = Tag("Promo"),
-                iconConfig = null,
+                icon = {
+                    Icon(
+                        painterResource(id = R.drawable.icn_arrow),
+                        contentDescription = null
+                    )
+                },
                 isBadgeVisible = true,
                 title = "Title",
                 subtitle = "Subtitle",
@@ -253,14 +264,23 @@ fun ListRowItemPreview() {
                 badge = "2",
                 subtitle = "Subtitle",
                 description = "Description",
-                iconConfig = ListIconConfig(iconResId = R.drawable.icn_arrow),
+                icon = {
+                    Circle {
+                        Icon(
+                            painterResource(id = R.drawable.icn_arrow),
+                            contentDescription = null
+                        )
+                    }
+                },
                 trailing = { Chevron() }
             )
             ListRowItem(
                 title = "Title",
                 subtitle = "Subtitle",
                 description = "Description",
-                iconConfig = ListIconConfig(iconResId = R.drawable.icn_arrow, showIconCircle = true),
+                icon = {
+                    Circle {}
+                },
                 trailing = {
                     Checkbox(
                         checked = checkedState.value,
@@ -273,7 +293,9 @@ fun ListRowItemPreview() {
                 title = "Title",
                 subtitle = "Subtitle",
                 description = "Description",
-                iconConfig = ListIconConfig(showIconCircle = true),
+                icon = {
+                    Circle {}
+                },
                 trailing = {
                     Checkbox(
                         checked = checkedState.value,
