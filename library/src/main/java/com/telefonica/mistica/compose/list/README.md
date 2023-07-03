@@ -8,8 +8,6 @@ This component is designed to be used inside lists, that in Compose are built us
 fun ListRowItem(
     modifier: Modifier = Modifier,
     icon: @Composable (() -> Unit)? = null,
-    showIconCircle: Boolean = false,
-    iconContentDescription: String? = null,
     title: String? = null,
     subtitle: String? = null,
     description: String? = null,
@@ -26,7 +24,7 @@ The general structure is divided in 3 zones as described in the following pictur
 
 ![image](https://user-images.githubusercontent.com/944814/143044758-3443c06b-e25a-4658-88ba-5201b87790d1.png)
 
-- Section A is dedicated to show a `@Composable in the left side of the component.
+- Section A is dedicated to show a `@Composable` in the left side of the component.
 - Section B is dedicated to show `title`, `subtitle` or `description` parameters. It's possible to add a `headline` appearing above the `title`.
 - Section C is dedicated to show extra content in the right side of the row, in this zone you could show an inline `badge` or add any `@Composable` with the parameter `action`.
 
@@ -51,16 +49,16 @@ Any `@Composable` could be used as `icon` but the system design specifications o
 
 ```kotlin
   ListRowItem(
-    title = "Title",
-    icon = {
+   title = "Title",
+   icon = {
         Circle {
-            Icon(
-                painterResource(id = R.drawable.ic_lists),
-                contentDescription = null
-            )
+          Icon(
+            painterResource(id = R.drawable.ic_lists), 
+            contentDescription = null
+          )
         }
     }
-)
+  )
 ```
 ## Headline
 Any `@Composable` could be used as `headline`.

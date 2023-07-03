@@ -83,7 +83,6 @@ fun ListRowItem(
                 color = MisticaTheme.colors.backgroundContainer,
                 shape = RoundedCornerShape(MisticaTheme.radius.containerBorderRadius),
             )
-
         BackgroundType.TYPE_BOXED_INVERSE -> Modifier
             .background(
                 color = MisticaTheme.colors.backgroundBrand,
@@ -91,12 +90,10 @@ fun ListRowItem(
             )
     }
         .fillMaxWidth()
-        .defaultMinSize(
-            minHeight = when (description) {
-                null -> 72.dp
-                else -> 80.dp
-            }
-        )
+        .defaultMinSize(minHeight = when(description) {
+            null -> 72.dp
+            else -> 80.dp
+        })
         .padding(16.dp)
 
     val textColorPrimary = when (backgroundType) {
@@ -191,16 +188,6 @@ fun ListRowItem(
     }
 }
 
-@Composable
-private fun ListRowIcon(
-    @DrawableRes iconResId: Int?,
-    contentDescription: String?,
-) {
-    if (iconResId != null) {
-        Image(painter = painterResource(id = iconResId), contentDescription = contentDescription)
-    }
-}
-
 private fun Modifier.makeClickableIfNeeded(onClick: (() -> Unit)?): Modifier =
     if (onClick != null) {
         clickable(onClick = onClick)
@@ -216,25 +203,6 @@ object ListRowItemTestTags {
     const val LIST_ROW_ITEM_TITLE = "list_row_item_title"
 }
 
-data class ListIconConfig(
-    @DrawableRes val iconResId: Int? = null,
-    val showIconCircle: Boolean = false,
-    val iconContentDescription: String? = null,
-) {
-
-    @Composable
-    fun Draw() {
-        when (showIconCircle) {
-            true -> Circle {
-                ListRowIcon(iconResId = iconResId, contentDescription = iconContentDescription)
-            }
-
-            false -> ListRowIcon(iconResId = iconResId, contentDescription = iconContentDescription)
-        }
-    }
-
-}
-
 @ExperimentalMaterialApi
 @Preview(showBackground = true)
 @Composable
@@ -244,12 +212,6 @@ fun ListRowItemPreview() {
         Column {
             ListRowItem(
                 headline = Tag("Promo"),
-                icon = {
-                    Icon(
-                        painterResource(id = R.drawable.icn_arrow),
-                        contentDescription = null
-                    )
-                },
                 isBadgeVisible = true,
                 title = "Title",
                 subtitle = "Subtitle",
@@ -263,12 +225,10 @@ fun ListRowItemPreview() {
                 subtitle = "Subtitle",
                 description = "Description",
                 icon = {
-                    Circle {
-                        Icon(
-                            painterResource(id = R.drawable.icn_arrow),
-                            contentDescription = null
-                        )
-                    }
+                    Icon(
+                        painterResource(id = R.drawable.icn_arrow),
+                        contentDescription = null
+                    )
                 },
                 trailing = { Chevron() }
             )
@@ -277,7 +237,12 @@ fun ListRowItemPreview() {
                 subtitle = "Subtitle",
                 description = "Description",
                 icon = {
-                    Circle {}
+                    Circle {
+                        Icon(
+                            painterResource(id = R.drawable.icn_arrow),
+                            contentDescription = null
+                        )
+                    }
                 },
                 trailing = {
                     Checkbox(
