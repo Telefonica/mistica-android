@@ -49,15 +49,15 @@ Any `@Composable` could be used as `icon` but the system design specifications o
 
 ```kotlin
   ListRowItem(
-   title = "Title",
-   icon = {
+      title = "Title",
+      icon = {
         Circle {
           Icon(
-            painterResource(id = R.drawable.ic_lists), 
+            painterResource(id = R.drawable.ic_lists),
             contentDescription = null
           )
-        }
-    }
+      }
+     }
   )
 ```
 ## Headline
