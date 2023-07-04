@@ -6,6 +6,8 @@ import com.telefonica.mistica.tokens.TokensGenerator.Companion.MISTICA_TOKENS_DI
 import com.telefonica.mistica.tokens.common.GetBorderRadiusName
 import com.telefonica.mistica.tokens.dto.TokensDTO
 import com.telefonica.mistica.tokens.xml.GenerateXMLFiles.Companion.ATTRS_FILE
+import com.telefonica.mistica.tokens.xml.GenerateXMLFiles.Companion.FONT_SUFFIX
+import com.telefonica.mistica.tokens.xml.GenerateXMLFiles.Companion.TEXT_STYLE_SUFFIX
 import com.telefonica.mistica.tokens.xml.GenerateXMLFiles.Companion.VALUES_DIR
 import com.telefonica.mistica.tokens.xml.GenerateXMLFiles.Companion.capitalizeString
 import org.redundent.kotlin.xml.Node
@@ -91,7 +93,7 @@ class GenerateAttributesFile(
         attribute("name", "PresetFonts")
         tokens.text.weight.forEach { (key, _) ->
             ATTR {
-                attribute("name", "${key}Font")
+                attribute("name", "$key$FONT_SUFFIX")
                 attribute("format", "string")
             }
         }
@@ -107,7 +109,7 @@ class GenerateAttributesFile(
         )
         tokens.text.weight.forEach { (key, _) ->
             ATTR {
-                attribute("name", "${key}Style")
+                attribute("name", "$key$TEXT_STYLE_SUFFIX")
                 attribute("format", "reference")
                 FLAG {
                     attribute("name", "normal")

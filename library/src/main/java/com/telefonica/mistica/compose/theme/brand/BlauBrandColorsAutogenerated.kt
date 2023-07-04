@@ -80,7 +80,7 @@ public object BlauBrandColors {
       neutralHigh = BlauPaletteColor.blau_color_grey6,
       neutralMedium = BlauPaletteColor.blau_color_grey5,
       neutralMediumInverse = BlauPaletteColor.blau_color_grey5,
-      neutralLow = BlauPaletteColor.blau_color_grey2,
+      neutralLow = BlauPaletteColor.blau_color_grey1,
       neutralLowAlternative = BlauPaletteColor.blau_color_grey2,
       textPrimary = BlauPaletteColor.blau_color_grey6,
       textPrimaryInverse = BlauPaletteColor.blau_color_white,

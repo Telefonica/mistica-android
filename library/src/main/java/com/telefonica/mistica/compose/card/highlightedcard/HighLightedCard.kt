@@ -88,7 +88,7 @@ fun HighLightedCard(
                     width = Dimension.fillToConstraints
                 },
                 maxLines = 2,
-                style = MisticaTheme.typography.preset4Light,
+                style = MisticaTheme.typography.presetCardTitle,
                 color = if(inverseDisplay)
                     MisticaTheme.colors.textPrimaryInverse
                 else

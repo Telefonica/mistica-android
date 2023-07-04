@@ -77,7 +77,7 @@ fun Tag(
                 modifier = Modifier
                     .testTag(TagTestTags.TAG_TEXT)
                     .padding(start = if (icon != null) 4.dp else 0.dp),
-                style = MisticaTheme.typography.preset2Medium,
+                style = MisticaTheme.typography.presetIndicator,
                 color = textColor,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,

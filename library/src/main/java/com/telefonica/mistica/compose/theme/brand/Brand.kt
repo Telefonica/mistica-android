@@ -17,6 +17,11 @@ interface Brand {
     val preset6FontWeight: FontWeight
     val preset7FontWeight: FontWeight
     val preset8FontWeight: FontWeight
+    val cardTitleFontWeight: FontWeight
+    val buttonFontWeight: FontWeight
+    val linkFontWeight: FontWeight
+    val title1FontWeight: FontWeight
+    val indicatorFontWeight: FontWeight
     val values: MisticaValues
         get() = MisticaValues(
             titleStyle = TitleStyle.TITLE_1,

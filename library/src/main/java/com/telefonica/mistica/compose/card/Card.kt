@@ -114,7 +114,7 @@ internal fun CardContent(
             Text(
                 modifier = Modifier.padding(top = 8.dp),
                 text = title,
-                style = MisticaTheme.typography.preset4,
+                style = MisticaTheme.typography.presetCardTitle,
             )
         }
         subtitle?.let {

@@ -60,6 +60,24 @@ class MisticaTypography(
     var system by mutableStateOf(buildSystem(), structuralEqualityPolicy())
         private set
 
+    var presetCardTitle by mutableStateOf(buildPresetCardTitle(), structuralEqualityPolicy())
+        private set
+
+    var presetButton by mutableStateOf(buildPresetButton(), structuralEqualityPolicy())
+        private set
+
+    var presetSmallButton by mutableStateOf(buildPresetSmallButton(), structuralEqualityPolicy())
+        private set
+
+    var presetLink by mutableStateOf(buildPresetLink(), structuralEqualityPolicy())
+        private set
+
+    var presetTitle1 by mutableStateOf(buildPresetTitle1(), structuralEqualityPolicy())
+        private set
+
+    var presetIndicator by mutableStateOf(buildPresetIndicator(), structuralEqualityPolicy())
+        private set
+
     private fun buildBaseStyle(): TextStyle =
         TextStyle(
             letterSpacing = 0.sp,
@@ -168,12 +186,54 @@ class MisticaTypography(
             fontWeight = FontWeight.Normal,
         )
 
+    private fun buildPresetCardTitle(
+        fontWeight: FontWeight = FontWeight.Medium
+    ) = buildPreset4().copy(
+        fontWeight = fontWeight
+    )
+
+    private fun buildPresetButton(
+        fontWeight: FontWeight = FontWeight.Medium
+    ) = buildPreset3().copy(
+        fontWeight = fontWeight
+    )
+
+    private fun buildPresetSmallButton(
+        fontWeight: FontWeight = FontWeight.Medium
+    ) = buildPreset2().copy(
+        fontWeight = fontWeight
+    )
+
+    private fun buildPresetLink(
+        fontWeight: FontWeight = FontWeight.Medium
+    ) = buildPreset2().copy(
+        fontWeight = fontWeight
+    )
+
+    private fun buildPresetTitle1(
+        fontWeight: FontWeight = FontWeight.Medium
+    ) = buildPreset1().copy(
+        fontWeight = fontWeight
+    )
+
+    private fun buildPresetIndicator(
+        fontWeight: FontWeight = FontWeight.Medium
+    ) = buildPreset2().copy(
+        fontWeight = fontWeight
+    )
+
     fun updateWith(
         fontFamily: FontFamily,
         preset8FontWeight: FontWeight,
         preset7FontWeight: FontWeight,
         preset6FontWeight: FontWeight,
         preset5FontWeight: FontWeight,
+        presetCardTitleFontWeight: FontWeight,
+        presetButtonFontWeight: FontWeight,
+        presetSmallButtonFontWeight: FontWeight,
+        presetLinkFontWeight: FontWeight,
+        presetTitle1FontWeight: FontWeight,
+        presetIndicatorFontWeight: FontWeight,
     ) {
         this.fontFamily = fontFamily
         preset8 = buildPreset8(fontWeight = preset8FontWeight)
@@ -191,6 +251,12 @@ class MisticaTypography(
         preset1 = buildPreset1()
         preset1Medium = buildPreset1Medium()
         system = buildSystem()
+        presetCardTitle = buildPresetCardTitle(fontWeight = presetCardTitleFontWeight)
+        presetButton = buildPresetButton(fontWeight = presetButtonFontWeight)
+        presetSmallButton = buildPresetSmallButton(fontWeight = presetSmallButtonFontWeight)
+        presetLink = buildPresetLink(fontWeight = presetLinkFontWeight)
+        presetTitle1 = buildPresetTitle1(fontWeight = presetTitle1FontWeight)
+        presetIndicator = buildPresetIndicator(fontWeight = presetIndicatorFontWeight)
     }
 }
 
