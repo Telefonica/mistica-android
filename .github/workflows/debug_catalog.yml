@@ -34,11 +34,7 @@ jobs:
 
       - name: Get version URL
         id: url-request
-        uses: fjogeleit/http-request-action@v1
-        with:
-          url: 'https://api.appcenter.ms/v0.1/apps/Tuenti-Organization/Mistica-Catalog/releases/${{ fromJson(steps.id-request.outputs.response)[0].id }}'
-          method: 'GET'
-          customHeaders: '{"X-API-Token": "${{ secrets.APPCENTER_API_TOKEN }}"}'
+        run: echo "appcenter_url=https://install.appcenter.ms/orgs/tuenti-organization/apps/mistica-catalog/distribution_groups/public/releases/${{ fromJson(steps.id-request.outputs.response)[0].id }}" >> $GITHUB_OUTPUT
 
       - name: Post comment with catalog URL
         uses: actions/github-script@v6
@@ -48,7 +44,5 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `📱 New catalog for testing generated: [Download](${{ fromJson(steps.url-request.outputs.response).download_url }})
-            
-              :exclamation:If the URL returns an error, go to [here](https://install.appcenter.ms/orgs/tuenti-organization/apps/mistica-catalog/distribution_groups/public) and download the version for PR #${{ github.event.number }}`
+              body: `📱 New catalog for testing generated: [Download](${{ steps.url-request.outputs.appcenter_url }})`
             })
