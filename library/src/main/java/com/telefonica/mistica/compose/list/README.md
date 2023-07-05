@@ -42,7 +42,13 @@ enum class BackgroundType {
 Following the order in the image, the types are: normal, boxed and boxed-inverse. Take into account that `normal` is full width.
 
 ## Icon
-Any `@Composable` could be used as `icon` but the system design specifications only allow as legal uses including here icons or rounded images.
+Image to be showed at the first section of list row.
+There are 4 types of icons:
+- `NormalIcon`: it's a normal icon, it should be a `Drawable` with a `description` parameter.
+- `CircleIcon`: it's a circle icon, it should be a `Drawable` with a `description` parameter. It's possible to define the `backgroundColor` of the circle.
+- `SmallAsset`: it's a circle icon, it could be a `Drawable` resource or a external url with a `description` parameter inside.
+- `LargeAsset`: it's a custom image, it could be a `Drawable` resource or a external url with a `description` parameter inside. It's possible to define the
+  `aspectRatio` of the image and the `contentScale` type
 
 ![image](https://user-images.githubusercontent.com/944814/143047368-3494885c-6324-4b4b-bcc0-4177525208bf.png)
 
@@ -50,14 +56,10 @@ Any `@Composable` could be used as `icon` but the system design specifications o
 ```kotlin
   ListRowItem(
       title = "Title",
-      icon = {
-        Circle {
-          Icon(
-            painterResource(id = R.drawable.ic_lists),
-            contentDescription = null
-          )
-       }
-     }
+      listRowIcon = ListRowIcon.NormalIcon(
+          iconResId = R.drawable.icn_arrow,
+          description = null
+      )
   )
 ```
 ## Headline
@@ -69,14 +71,11 @@ Any `@Composable` could be used as `headline`.
   ListRowItem(
       title = "Title",
       headline = { Tag() },
-      icon = {
-        Circle {
-          Icon(
-            painterResource(id = R.drawable.ic_lists),
-            contentDescription = null
-          )
-       }
-     }
+      listRowIcon = ListRowIcon.CircleIcon(
+        iconResId = R.drawable.icn_arrow,
+        backgroundColor = MisticaTheme.colors.neutralLow,
+        description = null
+      )
   )
 ```
 

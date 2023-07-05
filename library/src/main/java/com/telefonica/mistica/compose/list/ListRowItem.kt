@@ -76,6 +76,7 @@ fun ListRowItem(
 
 @ExperimentalMaterialApi
 @Composable
+@Deprecated(replaceWith = ReplaceWith("ListRowItem"), message = "Use new ListRowItem with ListRowIcon param instead")
 fun ListRowItem(
     modifier: Modifier = Modifier,
     icon: @Composable (() -> Unit)? = null,

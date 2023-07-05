@@ -94,65 +94,98 @@ fun samples() = listOf(
         action = { Chevron() },
         isBadgeVisible = true,
         badge = "1",
-        listRowIcon = ListRowIcon.CircleIcon(iconResId = R.drawable.ic_lists, backgroundColor = MisticaTheme.colors.backgroundAlternative),
+        listRowIcon = ListRowIcon.CircleIcon(
+            iconResId = R.drawable.ic_lists,
+            backgroundColor = MisticaTheme.colors.backgroundAlternative
+        ),
     ),
     ListItem(
         title = TITLE,
         subtitle = SUBTITLE,
-        listRowIcon = ListRowIcon.CircleIcon(iconResId = R.drawable.ic_lists, backgroundColor = MisticaTheme.colors.backgroundAlternative),
+        listRowIcon = ListRowIcon.CircleIcon(
+            iconResId = R.drawable.ic_lists,
+            backgroundColor = MisticaTheme.colors.backgroundAlternative
+        ),
     ),
     ListItem(
         title = TITLE,
         subtitle = SUBTITLE,
         action = { Chevron() },
-        listRowIcon = ListRowIcon.CircleIcon(iconResId = R.drawable.ic_lists, backgroundColor = MisticaTheme.colors.backgroundAlternative),
+        listRowIcon = ListRowIcon.CircleIcon(
+            iconResId = R.drawable.ic_lists,
+            backgroundColor = MisticaTheme.colors.backgroundAlternative
+        ),
     ),
     ListItem(
         title = TITLE,
         subtitle = SUBTITLE,
         action = { Chevron() },
-        listRowIcon = ListRowIcon.CircleIcon(iconResId = R.drawable.ic_lists, backgroundColor = MisticaTheme.colors.backgroundAlternative),
+        listRowIcon = ListRowIcon.CircleIcon(
+            iconResId = R.drawable.ic_lists,
+            backgroundColor = MisticaTheme.colors.backgroundAlternative
+        ),
         bottom = { CustomSlot() },
     ),
 
     ListItem(
         title = TITLE,
-        listRowIcon = ListRowIcon.CircleIcon(iconResId = R.drawable.ic_lists, backgroundColor = MisticaTheme.colors.backgroundAlternative),
+        listRowIcon = ListRowIcon.CircleIcon(
+            iconResId = R.drawable.ic_lists,
+            backgroundColor = MisticaTheme.colors.backgroundAlternative
+        ),
     ),
     ListItem(
         title = TITLE,
         action = { Chevron() },
-        listRowIcon = ListRowIcon.CircleIcon(iconResId = R.drawable.ic_lists, backgroundColor = MisticaTheme.colors.backgroundAlternative),
+        listRowIcon = ListRowIcon.CircleIcon(
+            iconResId = R.drawable.ic_lists,
+            backgroundColor = MisticaTheme.colors.backgroundAlternative
+        ),
     ),
     ListItem(
         title = TITLE,
         action = { Chevron() },
         isBadgeVisible = true,
-        listRowIcon = ListRowIcon.CircleIcon(iconResId = R.drawable.ic_lists, backgroundColor = MisticaTheme.colors.backgroundAlternative),
+        listRowIcon = ListRowIcon.CircleIcon(
+            iconResId = R.drawable.ic_lists,
+            backgroundColor = MisticaTheme.colors.backgroundAlternative
+        ),
     ),
     ListItem(
         title = TITLE,
         action = { Chevron() },
         isBadgeVisible = true,
         badge = "1",
-        listRowIcon = ListRowIcon.CircleIcon(iconResId = R.drawable.ic_lists, backgroundColor = MisticaTheme.colors.backgroundAlternative),
+        listRowIcon = ListRowIcon.CircleIcon(
+            iconResId = R.drawable.ic_lists,
+            backgroundColor = MisticaTheme.colors.backgroundAlternative
+        ),
     ),
     ListItem(
         title = TITLE,
         subtitle = SUBTITLE,
-        listRowIcon = ListRowIcon.CircleIcon(iconResId = R.drawable.ic_lists, backgroundColor = MisticaTheme.colors.backgroundAlternative),
+        listRowIcon = ListRowIcon.CircleIcon(
+            iconResId = R.drawable.ic_lists,
+            backgroundColor = MisticaTheme.colors.backgroundAlternative
+        ),
     ),
     ListItem(
         title = TITLE,
         subtitle = SUBTITLE,
         action = { Chevron() },
-        listRowIcon = ListRowIcon.CircleIcon(iconResId = R.drawable.ic_lists, backgroundColor = MisticaTheme.colors.backgroundAlternative),
+        listRowIcon = ListRowIcon.CircleIcon(
+            iconResId = R.drawable.ic_lists,
+            backgroundColor = MisticaTheme.colors.backgroundAlternative
+        ),
     ),
     ListItem(
         title = TITLE,
         subtitle = SUBTITLE,
         action = { Chevron() },
-        listRowIcon = ListRowIcon.CircleIcon(iconResId = R.drawable.ic_lists, backgroundColor = MisticaTheme.colors.backgroundAlternative),
+        listRowIcon = ListRowIcon.CircleIcon(
+            iconResId = R.drawable.ic_lists,
+            backgroundColor = MisticaTheme.colors.backgroundAlternative
+        ),
         bottom = { CustomSlot() },
     ),
 
@@ -161,7 +194,10 @@ fun samples() = listOf(
         title = TITLE,
         subtitle = SUBTITLE,
         action = { Chevron() },
-        listRowIcon = ListRowIcon.CircleIcon(iconResId = R.drawable.ic_lists, backgroundColor = MisticaTheme.colors.backgroundAlternative),
+        listRowIcon = ListRowIcon.CircleIcon(
+            iconResId = R.drawable.ic_lists,
+            backgroundColor = MisticaTheme.colors.backgroundAlternative
+        ),
     ),
     ListItem(
         headline = Tag("PROMO").withStyle(TYPE_PROMO),
