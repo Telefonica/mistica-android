@@ -44,6 +44,74 @@ import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 @Composable
 fun ListRowItem(
     modifier: Modifier = Modifier,
+    listRowIcon: ListRowIcon? = null,
+    title: String? = null,
+    subtitle: String? = null,
+    description: String? = null,
+    backgroundType: BackgroundType = BackgroundType.TYPE_NORMAL,
+    badge: String? = null,
+    isBadgeVisible: Boolean = false,
+    headline: Tag? = null,
+    trailing: @Composable (() -> Unit)? = null,
+    onClick: (() -> Unit)? = null,
+    bottom: @Composable (() -> Unit)? = null,
+    contentPadding: PaddingValues = PaddingValues(horizontal = 16.dp, vertical = 8.dp),
+) {
+    ListRowItemImp(
+        modifier = modifier,
+        icon = { listRowIcon?.Draw() },
+        title = title,
+        subtitle = subtitle,
+        description = description,
+        backgroundType = backgroundType,
+        badge = badge,
+        isBadgeVisible = isBadgeVisible,
+        headline = headline,
+        trailing = trailing,
+        onClick = onClick,
+        bottom = bottom,
+        contentPadding = contentPadding
+    )
+}
+
+@ExperimentalMaterialApi
+@Composable
+fun ListRowItem(
+    modifier: Modifier = Modifier,
+    icon: @Composable (() -> Unit)? = null,
+    title: String? = null,
+    subtitle: String? = null,
+    description: String? = null,
+    backgroundType: BackgroundType = BackgroundType.TYPE_NORMAL,
+    badge: String? = null,
+    isBadgeVisible: Boolean = false,
+    headline: Tag? = null,
+    trailing: @Composable (() -> Unit)? = null,
+    onClick: (() -> Unit)? = null,
+    bottom: @Composable (() -> Unit)? = null,
+    contentPadding: PaddingValues = PaddingValues(horizontal = 16.dp, vertical = 8.dp),
+) {
+    ListRowItemImp(
+        modifier = modifier,
+        icon = icon,
+        title = title,
+        subtitle = subtitle,
+        description = description,
+        backgroundType = backgroundType,
+        badge = badge,
+        isBadgeVisible = isBadgeVisible,
+        headline = headline,
+        trailing = trailing,
+        onClick = onClick,
+        bottom = bottom,
+        contentPadding = contentPadding
+    )
+}
+
+@ExperimentalMaterialApi
+@Composable
+fun ListRowItemImp(
+    modifier: Modifier = Modifier,
     icon: @Composable (() -> Unit)? = null,
     title: String? = null,
     subtitle: String? = null,
@@ -209,6 +277,7 @@ fun ListRowItemPreview() {
         val checkedState = remember { mutableStateOf(true) }
         Column {
             ListRowItem(
+                listRowIcon = null,
                 headline = Tag("Promo"),
                 isBadgeVisible = true,
                 title = "Title",
@@ -222,26 +291,21 @@ fun ListRowItemPreview() {
                 badge = "2",
                 subtitle = "Subtitle",
                 description = "Description",
-                icon = {
-                    Icon(
-                        painterResource(id = R.drawable.icn_arrow),
-                        contentDescription = null
-                    )
-                },
+                listRowIcon = ListRowIcon.NormalIcon(
+                    iconResId = R.drawable.icn_arrow,
+                    description = null
+                ),
                 trailing = { Chevron() }
             )
             ListRowItem(
                 title = "Title",
                 subtitle = "Subtitle",
                 description = "Description",
-                icon = {
-                    Circle {
-                        Icon(
-                            painterResource(id = R.drawable.icn_arrow),
-                            contentDescription = null
-                        )
-                    }
-                },
+                listRowIcon = ListRowIcon.CircleIcon(
+                    iconResId = R.drawable.icn_arrow,
+                    backgroundColor = MisticaTheme.colors.neutralLow,
+                    description = null
+                ),
                 trailing = {
                     Checkbox(
                         checked = checkedState.value,
@@ -254,9 +318,7 @@ fun ListRowItemPreview() {
                 title = "Title",
                 subtitle = "Subtitle",
                 description = "Description",
-                icon = {
-                    Circle {}
-                },
+                listRowIcon = ListRowIcon.CircleIcon(backgroundColor = MisticaTheme.colors.neutralLow),
                 trailing = {
                     Checkbox(
                         checked = checkedState.value,

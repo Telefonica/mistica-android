@@ -12,6 +12,9 @@ import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.list.ListRowView
 import com.telefonica.mistica.list.ListRowView.AssetType
 import com.telefonica.mistica.list.ListRowView.Companion.TYPE_IMAGE
+import com.telefonica.mistica.list.ListRowView.Companion.TYPE_IMAGE_16_9
+import com.telefonica.mistica.list.ListRowView.Companion.TYPE_IMAGE_1_1
+import com.telefonica.mistica.list.ListRowView.Companion.TYPE_IMAGE_7_10
 import com.telefonica.mistica.list.ListRowView.Companion.TYPE_LARGE_ICON
 import com.telefonica.mistica.list.ListRowView.Companion.TYPE_SMALL_ICON
 import com.telefonica.mistica.list.MisticaRecyclerView
@@ -265,11 +268,64 @@ class ListsCatalogFragment : Fragment() {
             {
                 it.configureView(
                     withAsset = true,
-                    withAssetType = TYPE_LARGE_ICON,
+                    withAssetType = TYPE_IMAGE_1_1,
                     withAction = true,
                     withSubtitle = true,
                     withHeadline = true,
                     withInverseBackground = withInverseBackground,
+                )
+            },
+            {
+                it.configureView(
+                    withAsset = true,
+                    withAssetType = TYPE_IMAGE_7_10,
+                    withAction = true,
+                    withSubtitle = true,
+                    withHeadline = true,
+                    withInverseBackground = withInverseBackground,
+                )
+            },
+            {
+                it.configureView(
+                    withAsset = true,
+                    withAssetType = TYPE_IMAGE_16_9,
+                    withAction = true,
+                    withSubtitle = true,
+                    withHeadline = true,
+                    withInverseBackground = withInverseBackground,
+                )
+            },
+            {
+                it.configureView(
+                    withAsset = true,
+                    withAssetType = TYPE_IMAGE_1_1,
+                    withAction = true,
+                    withSubtitle = true,
+                    withHeadline = true,
+                    withInverseBackground = withInverseBackground,
+                    withUrlIcon = IMAGE_URL,
+                )
+            },
+            {
+                it.configureView(
+                    withAsset = true,
+                    withAssetType = TYPE_IMAGE_7_10,
+                    withAction = true,
+                    withSubtitle = true,
+                    withHeadline = true,
+                    withInverseBackground = withInverseBackground,
+                    withUrlIcon = IMAGE_URL,
+                )
+            },
+            {
+                it.configureView(
+                    withAsset = true,
+                    withAssetType = TYPE_IMAGE_16_9,
+                    withAction = true,
+                    withSubtitle = true,
+                    withHeadline = true,
+                    withInverseBackground = withInverseBackground,
+                    withUrlIcon = IMAGE_URL,
                 )
             },
             {
@@ -327,6 +383,7 @@ class ListsCatalogFragment : Fragment() {
             withSubtitleMaxLines: Int? = null,
             withBadgeDescription: String? = null,
             withInverseBackground: Boolean,
+            withUrlIcon: String? = null
         ) {
             if (withHeadline) {
                 setHeadlineLayout(R.layout.list_row_tag_headline)
@@ -356,7 +413,11 @@ class ListsCatalogFragment : Fragment() {
             )
 
             setAssetType(withAssetType)
-            setAssetResource(getAssetResource(withAsset, withAssetType))
+            withUrlIcon?.let {
+                setAssetUrl(it)
+            } ?: run {
+                setAssetResource(getAssetResource(withAsset, withAssetType))
+            }
 
             if (withAction) {
                 setActionLayout(
@@ -379,12 +440,16 @@ class ListsCatalogFragment : Fragment() {
             }
         }
 
-        private fun getAssetResource(withAsset: Boolean, withAssetType: Int): Int? =
+        private fun getAssetResource(withAsset: Boolean, @AssetType withAssetType: Int): Int? =
             if (withAsset) {
-                if (withAssetType == TYPE_IMAGE) {
-                    R.drawable.highlighted_card_custom_background
-                } else {
-                    R.drawable.ic_lists
+                when (withAssetType) {
+                    TYPE_IMAGE -> R.drawable.highlighted_card_custom_background
+                    TYPE_IMAGE_1_1,
+                    TYPE_IMAGE_16_9,
+                    TYPE_IMAGE_7_10,
+                    -> R.drawable.highlighted_card_custom_background
+
+                    else -> R.drawable.ic_lists
                 }
             } else {
                 null
@@ -392,4 +457,9 @@ class ListsCatalogFragment : Fragment() {
     }
 
     class ListViewHolder(val rowView: ListRowView) : RecyclerView.ViewHolder(rowView)
+
+    private companion object {
+        const val IMAGE_URL = "https://www.fotoaparat.cz/imgs/a/26/2639/0n1wjdf0-cr-em13-09-1200x627x9.jpg"
+    }
+
 }

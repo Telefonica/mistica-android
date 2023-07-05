@@ -1,11 +1,11 @@
 package com.telefonica.mistica.list
 
 import android.content.Context
-import android.content.res.ColorStateList
 import android.content.res.TypedArray
 import android.graphics.drawable.Drawable
 import android.text.TextUtils
 import android.util.AttributeSet
+import android.util.Log
 import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
@@ -13,16 +13,18 @@ import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.annotation.AttrRes
 import androidx.annotation.DrawableRes
 import androidx.annotation.IntDef
 import androidx.annotation.LayoutRes
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
+import androidx.core.view.isVisible
 import androidx.databinding.BindingAdapter
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
+import coil.Coil
+import coil.load
 import com.telefonica.mistica.R
 import com.telefonica.mistica.badge.Badge
 import com.telefonica.mistica.util.convertDpToPx
@@ -106,7 +108,10 @@ class ListRowView @JvmOverloads constructor(
     @IntDef(
         TYPE_IMAGE,
         TYPE_SMALL_ICON,
-        TYPE_LARGE_ICON
+        TYPE_LARGE_ICON,
+        TYPE_IMAGE_1_1,
+        TYPE_IMAGE_7_10,
+        TYPE_IMAGE_16_9
     )
     annotation class AssetType
 
@@ -127,6 +132,7 @@ class ListRowView @JvmOverloads constructor(
     private val textsContainer: LinearLayout
     private val assetImageView: ImageView
     private val assetCircularImageView: ImageView
+    private val assetRoundedImageView: ImageView
     private val assetImageLayout: FrameLayout
     private val headlineContainer: FrameLayout
     private val titleTextView: TextView
@@ -150,6 +156,7 @@ class ListRowView @JvmOverloads constructor(
         textsContainer = findViewById(R.id.row_texts_container)
         assetImageView = findViewById(R.id.row_asset_image)
         assetCircularImageView = findViewById(R.id.row_asset_circular_image)
+        assetRoundedImageView = findViewById(R.id.row_asset_rounded_image)
         assetImageLayout = findViewById(R.id.row_asset_image_layout)
         headlineContainer = findViewById(R.id.row_headline)
         titleTextView = findViewById(R.id.row_title_text)
@@ -222,21 +229,41 @@ class ListRowView @JvmOverloads constructor(
         setAssetDrawable(resource?.let { AppCompatResources.getDrawable(context, it) })
     }
 
+    fun setAssetUrl(url: String) {
+        assetRoundedImageView.load(url) {
+            listener(onSuccess = { _, _ ->
+                assetImageLayout.visibility = VISIBLE
+                updateIconVisibility()
+            }, onError = { _, _ ->
+                assetImageLayout.visibility = GONE
+            })
+        }
+    }
+
     fun setAssetDrawable(drawable: Drawable? = null) {
         if (drawable != null) {
-            if (assetType == TYPE_IMAGE) {
-                assetCircularImageView.setImageDrawable(drawable)
-                assetCircularImageView.visibility = VISIBLE
-                assetImageView.visibility = GONE
-            } else {
-                assetImageView.setImageDrawable(drawable)
-                assetCircularImageView.visibility = GONE
-                assetImageView.visibility = VISIBLE
+            when (assetType) {
+                TYPE_IMAGE ->
+                    assetCircularImageView.setImageDrawable(drawable)
+
+                TYPE_IMAGE_1_1,
+                TYPE_IMAGE_7_10,
+                TYPE_IMAGE_16_9,
+                -> assetRoundedImageView.setImageDrawable(drawable)
+
+                else -> assetImageView.setImageDrawable(drawable)
             }
+            updateIconVisibility()
             assetImageLayout.visibility = VISIBLE
         } else {
             assetImageLayout.visibility = GONE
         }
+    }
+
+    private fun updateIconVisibility() {
+        assetCircularImageView.isVisible = assetType == TYPE_IMAGE
+        assetRoundedImageView.isVisible = assetType == TYPE_IMAGE_1_1 || assetType == TYPE_IMAGE_7_10 || assetType == TYPE_IMAGE_16_9
+        assetImageView.isVisible = assetType == TYPE_SMALL_ICON || assetType == TYPE_LARGE_ICON
     }
 
     fun setAssetType(@AssetType type: Int) {
@@ -249,14 +276,20 @@ class ListRowView @JvmOverloads constructor(
             TYPE_IMAGE -> {
                 assetImageLayout.setBackgroundResource(0)
             }
+
             TYPE_SMALL_ICON -> {
                 assetImageView.setSize(24)
                 assetImageLayout.setBackgroundResource(0)
             }
+
             TYPE_LARGE_ICON -> {
                 assetImageView.setSize(24)
                 assetImageLayout.setBackgroundResource(R.drawable.bg_list_image)
             }
+
+            TYPE_IMAGE_1_1 -> assetRoundedImageView.setSize(80, 80)
+            TYPE_IMAGE_7_10 -> assetRoundedImageView.setSize(80, 116)
+            TYPE_IMAGE_16_9 -> assetRoundedImageView.setSize(138, 80)
         }
         recalculateAssetPosition()
     }
@@ -477,6 +510,16 @@ class ListRowView @JvmOverloads constructor(
         }
     }
 
+    private fun ImageView.setSize(dpWidth: Int, dpHeight: Int) {
+        val pxWidth: Int = context.convertDpToPx(dpWidth)
+        val pxHeight: Int = context.convertDpToPx(dpHeight)
+        layoutParams.apply {
+            height = pxHeight
+            width = pxWidth
+            layoutParams = this
+        }
+    }
+
     private fun View.isVisible(): Boolean =
         visibility == View.VISIBLE
 
@@ -496,6 +539,9 @@ class ListRowView @JvmOverloads constructor(
         const val TYPE_IMAGE = 0
         const val TYPE_SMALL_ICON = 1
         const val TYPE_LARGE_ICON = 2
+        const val TYPE_IMAGE_1_1 = 3
+        const val TYPE_IMAGE_7_10 = 4
+        const val TYPE_IMAGE_16_9 = 5
 
         @BindingAdapter(
             value = ["listRowBadgeCount", "listRowBadgeDescription"],
