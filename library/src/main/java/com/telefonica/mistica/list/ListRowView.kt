@@ -5,7 +5,6 @@ import android.content.res.TypedArray
 import android.graphics.drawable.Drawable
 import android.text.TextUtils
 import android.util.AttributeSet
-import android.util.Log
 import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
@@ -23,7 +22,6 @@ import androidx.core.view.isVisible
 import androidx.databinding.BindingAdapter
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
-import coil.Coil
 import coil.load
 import com.telefonica.mistica.R
 import com.telefonica.mistica.badge.Badge
