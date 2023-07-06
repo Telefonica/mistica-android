@@ -1,10 +1,8 @@
 package com.telefonica.mistica.compose.list
 
-import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentSize
@@ -16,37 +14,32 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import coil.compose.rememberAsyncImagePainter
-import coil.request.ImageRequest
 import com.telefonica.mistica.compose.shape.Circle
 
 sealed class ListRowIcon(val contentDescription: String?) {
 
     data class NormalIcon(
-        @DrawableRes val iconResId: Int? = null,
+        val painter: Painter? = null,
         private val description: String? = null,
     ) : ListRowIcon(description)
 
     data class CircleIcon(
-        @DrawableRes val iconResId: Int? = null,
-        private val description: String? = null,
+        val painter: Painter? = null,
         val backgroundColor: Color = Color.Transparent,
+        private val description: String? = null,
     ) : ListRowIcon(description)
 
     data class SmallAsset(
-        val iconUrl: String? = null,
-        @DrawableRes val iconResId: Int? = null,
+        val painter: Painter? = null,
         private val description: String? = null,
     ) : ListRowIcon(description)
 
     data class LargeAsset(
-        val iconUrl: String? = null,
-        @DrawableRes val iconResId: Int? = null,
+        val painter: Painter? = null,
         val aspectRatio: AspectRatio = AspectRatio.RATIO_1_1,
         val contentScale: ContentScale = ContentScale.Crop,
         private val description: String? = null,
@@ -75,9 +68,9 @@ sealed class ListRowIcon(val contentDescription: String?) {
                 .size(40.dp)
                 .wrapContentSize(align = Alignment.Center)
         ) {
-            iconResId?.let {
+            painter?.let {
                 Icon(
-                    painter = painterResource(id = iconResId),
+                    painter = painter,
                     modifier = Modifier.size(24.dp),
                     contentDescription = contentDescription
                 )
@@ -91,9 +84,9 @@ sealed class ListRowIcon(val contentDescription: String?) {
         Circle(
             color = backgroundColor,
         ) {
-            iconResId?.let {
+           painter?.let {
                 Icon(
-                    painter = painterResource(id = iconResId),
+                    painter = painter,
                     contentDescription = contentDescription
                 )
             }
@@ -102,16 +95,6 @@ sealed class ListRowIcon(val contentDescription: String?) {
 
     @Composable
     private fun SmallAsset.DrawSmallAsset() {
-        val painter = when {
-            iconResId != null -> painterResource(iconResId)
-            iconUrl != null -> rememberAsyncImagePainter(
-                ImageRequest.Builder(LocalContext.current)
-                    .data(iconUrl)
-                    .build()
-            )
-
-            else -> null
-        }
         painter?.let {
             Image(
                 painter = painter,
@@ -126,16 +109,6 @@ sealed class ListRowIcon(val contentDescription: String?) {
 
     @Composable
     private fun LargeAsset.DrawLargeAsset() {
-        val painter = when {
-            iconResId != null -> painterResource(iconResId)
-            iconUrl != null -> rememberAsyncImagePainter(
-                ImageRequest.Builder(LocalContext.current)
-                    .data(iconUrl)
-                    .build()
-            )
-
-            else -> null
-        }
         painter?.let {
             Image(
                 painter = painter,

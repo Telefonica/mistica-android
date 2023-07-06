@@ -21,6 +21,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberAsyncImagePainter
 import coil.request.ImageRequest
@@ -76,18 +77,18 @@ fun samples() = listOf(
 
     ListItem(
         title = TITLE,
-        listRowIcon = ListRowIcon.CircleIcon(iconResId = R.drawable.ic_lists),
+        listRowIcon = ListRowIcon.CircleIcon(painterResource(id = R.drawable.ic_lists)),
     ),
     ListItem(
         title = TITLE,
         action = { Chevron() },
-        listRowIcon = ListRowIcon.CircleIcon(iconResId = R.drawable.ic_lists),
+        listRowIcon = ListRowIcon.CircleIcon(painterResource(id = R.drawable.ic_lists)),
     ),
     ListItem(
         title = TITLE,
         action = { Chevron() },
         isBadgeVisible = true,
-        listRowIcon = ListRowIcon.CircleIcon(iconResId = R.drawable.ic_lists),
+        listRowIcon = ListRowIcon.CircleIcon(painterResource(id = R.drawable.ic_lists)),
     ),
     ListItem(
         title = TITLE,
@@ -95,7 +96,7 @@ fun samples() = listOf(
         isBadgeVisible = true,
         badge = "1",
         listRowIcon = ListRowIcon.CircleIcon(
-            iconResId = R.drawable.ic_lists,
+            painterResource(id = R.drawable.ic_lists),
             backgroundColor = MisticaTheme.colors.backgroundAlternative
         ),
     ),
@@ -103,16 +104,7 @@ fun samples() = listOf(
         title = TITLE,
         subtitle = SUBTITLE,
         listRowIcon = ListRowIcon.CircleIcon(
-            iconResId = R.drawable.ic_lists,
-            backgroundColor = MisticaTheme.colors.backgroundAlternative
-        ),
-    ),
-    ListItem(
-        title = TITLE,
-        subtitle = SUBTITLE,
-        action = { Chevron() },
-        listRowIcon = ListRowIcon.CircleIcon(
-            iconResId = R.drawable.ic_lists,
+            painterResource(id = R.drawable.ic_lists),
             backgroundColor = MisticaTheme.colors.backgroundAlternative
         ),
     ),
@@ -121,7 +113,16 @@ fun samples() = listOf(
         subtitle = SUBTITLE,
         action = { Chevron() },
         listRowIcon = ListRowIcon.CircleIcon(
-            iconResId = R.drawable.ic_lists,
+            painterResource(id = R.drawable.ic_lists),
+            backgroundColor = MisticaTheme.colors.backgroundAlternative
+        ),
+    ),
+    ListItem(
+        title = TITLE,
+        subtitle = SUBTITLE,
+        action = { Chevron() },
+        listRowIcon = ListRowIcon.CircleIcon(
+            painterResource(id = R.drawable.ic_lists),
             backgroundColor = MisticaTheme.colors.backgroundAlternative
         ),
         bottom = { CustomSlot() },
@@ -130,7 +131,7 @@ fun samples() = listOf(
     ListItem(
         title = TITLE,
         listRowIcon = ListRowIcon.CircleIcon(
-            iconResId = R.drawable.ic_lists,
+            painterResource(id = R.drawable.ic_lists),
             backgroundColor = MisticaTheme.colors.backgroundAlternative
         ),
     ),
@@ -138,7 +139,7 @@ fun samples() = listOf(
         title = TITLE,
         action = { Chevron() },
         listRowIcon = ListRowIcon.CircleIcon(
-            iconResId = R.drawable.ic_lists,
+            painterResource(id = R.drawable.ic_lists),
             backgroundColor = MisticaTheme.colors.backgroundAlternative
         ),
     ),
@@ -147,7 +148,7 @@ fun samples() = listOf(
         action = { Chevron() },
         isBadgeVisible = true,
         listRowIcon = ListRowIcon.CircleIcon(
-            iconResId = R.drawable.ic_lists,
+            painterResource(id = R.drawable.ic_lists),
             backgroundColor = MisticaTheme.colors.backgroundAlternative
         ),
     ),
@@ -157,7 +158,7 @@ fun samples() = listOf(
         isBadgeVisible = true,
         badge = "1",
         listRowIcon = ListRowIcon.CircleIcon(
-            iconResId = R.drawable.ic_lists,
+            painterResource(id = R.drawable.ic_lists),
             backgroundColor = MisticaTheme.colors.backgroundAlternative
         ),
     ),
@@ -165,16 +166,7 @@ fun samples() = listOf(
         title = TITLE,
         subtitle = SUBTITLE,
         listRowIcon = ListRowIcon.CircleIcon(
-            iconResId = R.drawable.ic_lists,
-            backgroundColor = MisticaTheme.colors.backgroundAlternative
-        ),
-    ),
-    ListItem(
-        title = TITLE,
-        subtitle = SUBTITLE,
-        action = { Chevron() },
-        listRowIcon = ListRowIcon.CircleIcon(
-            iconResId = R.drawable.ic_lists,
+            painterResource(id = R.drawable.ic_lists),
             backgroundColor = MisticaTheme.colors.backgroundAlternative
         ),
     ),
@@ -183,7 +175,16 @@ fun samples() = listOf(
         subtitle = SUBTITLE,
         action = { Chevron() },
         listRowIcon = ListRowIcon.CircleIcon(
-            iconResId = R.drawable.ic_lists,
+            painterResource(id = R.drawable.ic_lists),
+            backgroundColor = MisticaTheme.colors.backgroundAlternative
+        ),
+    ),
+    ListItem(
+        title = TITLE,
+        subtitle = SUBTITLE,
+        action = { Chevron() },
+        listRowIcon = ListRowIcon.CircleIcon(
+            painterResource(id = R.drawable.ic_lists),
             backgroundColor = MisticaTheme.colors.backgroundAlternative
         ),
         bottom = { CustomSlot() },
@@ -195,7 +196,7 @@ fun samples() = listOf(
         subtitle = SUBTITLE,
         action = { Chevron() },
         listRowIcon = ListRowIcon.CircleIcon(
-            iconResId = R.drawable.ic_lists,
+            painterResource(id = R.drawable.ic_lists),
             backgroundColor = MisticaTheme.colors.backgroundAlternative
         ),
     ),
@@ -207,7 +208,7 @@ fun samples() = listOf(
         action = { Chevron() },
         isBadgeVisible = true,
         badge = "1",
-        listRowIcon = ListRowIcon.SmallAsset(iconResId = R.drawable.list_row_drawable),
+        listRowIcon = ListRowIcon.SmallAsset(painter = painterResource(id = R.drawable.list_row_drawable)),
     ),
     ListItem(
         headline = Tag("PROMO").withStyle(TYPE_PROMO),
@@ -217,7 +218,7 @@ fun samples() = listOf(
         action = { Avatar(IMAGE_URL) },
         isBadgeVisible = true,
         badge = "1",
-        listRowIcon = ListRowIcon.SmallAsset(iconResId = R.drawable.list_row_drawable),
+        listRowIcon = ListRowIcon.SmallAsset(painter = painterResource(id = R.drawable.list_row_drawable)),
     ),
     ListItem(
         headline = Tag("PROMO").withStyle(TYPE_PROMO),
@@ -227,7 +228,7 @@ fun samples() = listOf(
         action = { Switch(checked = true, onCheckedChange = {}) },
         isBadgeVisible = true,
         badge = "1",
-        listRowIcon = ListRowIcon.SmallAsset(iconResId = R.drawable.list_row_drawable),
+        listRowIcon = ListRowIcon.SmallAsset(painter = painterResource(id = R.drawable.list_row_drawable)),
     ),
     ListItem(
         title = TITLE,
@@ -236,7 +237,7 @@ fun samples() = listOf(
         action = { Switch(checked = true, onCheckedChange = {}) },
         isBadgeVisible = true,
         badge = "1",
-        listRowIcon = ListRowIcon.SmallAsset(iconUrl = IMAGE_URL),
+        listRowIcon = ListRowIcon.SmallAsset(painter = painterResource(id = R.drawable.list_row_drawable)),
         bottom = { CustomSlot() },
     ),
     ListItem(
@@ -247,7 +248,7 @@ fun samples() = listOf(
         isBadgeVisible = true,
         badge = "1",
         listRowIcon = ListRowIcon.LargeAsset(
-            iconResId = R.drawable.list_row_drawable,
+            painter = painterResource(id = R.drawable.list_row_drawable),
             aspectRatio = ListRowIcon.AspectRatio.RATIO_1_1
         ),
     ),
@@ -259,7 +260,7 @@ fun samples() = listOf(
         isBadgeVisible = true,
         badge = "1",
         listRowIcon = ListRowIcon.LargeAsset(
-            iconResId = R.drawable.list_row_drawable,
+            painter = painterResource(id = R.drawable.list_row_drawable),
             aspectRatio = ListRowIcon.AspectRatio.RATIO_16_9,
             contentScale = ContentScale.Crop
         ),
@@ -272,47 +273,10 @@ fun samples() = listOf(
         isBadgeVisible = true,
         badge = "1",
         listRowIcon = ListRowIcon.LargeAsset(
-            iconResId = R.drawable.list_row_drawable,
+            painter = painterResource(id = R.drawable.list_row_drawable),
             aspectRatio = ListRowIcon.AspectRatio.RATIO_7_10
         ),
-    ),
-    ListItem(
-        title = TITLE,
-        subtitle = SUBTITLE,
-        description = DESCRIPTION,
-        action = { Switch(checked = true, onCheckedChange = {}) },
-        isBadgeVisible = true,
-        badge = "1",
-        listRowIcon = ListRowIcon.LargeAsset(
-            iconUrl = IMAGE_URL,
-            aspectRatio = ListRowIcon.AspectRatio.RATIO_1_1
-        ),
-    ),
-    ListItem(
-        title = TITLE,
-        subtitle = SUBTITLE,
-        description = DESCRIPTION,
-        action = { Switch(checked = true, onCheckedChange = {}) },
-        isBadgeVisible = true,
-        badge = "1",
-        listRowIcon = ListRowIcon.LargeAsset(
-            iconUrl = IMAGE_URL,
-            aspectRatio = ListRowIcon.AspectRatio.RATIO_16_9,
-            contentScale = ContentScale.Crop
-        ),
-    ),
-    ListItem(
-        title = TITLE,
-        subtitle = SUBTITLE,
-        description = DESCRIPTION,
-        action = { Switch(checked = true, onCheckedChange = {}) },
-        isBadgeVisible = true,
-        badge = "1",
-        listRowIcon = ListRowIcon.LargeAsset(
-            iconUrl = IMAGE_URL,
-            aspectRatio = ListRowIcon.AspectRatio.RATIO_7_10
-        ),
-    ),
+    )
 )
 
 const val IMAGE_URL = "https://www.fotoaparat.cz/imgs/a/26/2639/0n1wjdf0-cr-em13-09-1200x627x9.jpg"

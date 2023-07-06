@@ -227,14 +227,37 @@ class ListRowView @JvmOverloads constructor(
         setAssetDrawable(resource?.let { AppCompatResources.getDrawable(context, it) })
     }
 
-    fun setAssetUrl(url: String) {
-        assetRoundedImageView.load(url) {
-            listener(onSuccess = { _, _ ->
-                assetImageLayout.visibility = VISIBLE
-                updateIconVisibility()
-            }, onError = { _, _ ->
-                assetImageLayout.visibility = GONE
-            })
+    fun setAssetUrl(
+        url: String,
+        scaleType: ImageView.ScaleType = ImageView.ScaleType.CENTER_CROP,
+        placeholder: Drawable? = null,
+        errorDrawable: Drawable? = null,
+        onSuccess: (() -> Unit)? = null,
+        onError: (() -> Unit)? = null,
+    ) {
+        assetImageLayout.visibility = VISIBLE
+        updateIconVisibility()
+
+        when (assetType) {
+            TYPE_IMAGE -> assetCircularImageView
+            TYPE_IMAGE_1_1,
+            TYPE_IMAGE_7_10,
+            TYPE_IMAGE_16_9 -> assetRoundedImageView
+            else -> assetImageView
+        }.also { imageView ->
+            imageView.load(url) {
+                listener(
+                    onSuccess = { _, _ ->
+                        imageView.scaleType = scaleType
+                        onSuccess?.invoke()
+                    }, onError = { _, _ ->
+                        imageView.setImageDrawable(errorDrawable)
+                        imageView.scaleType = ImageView.ScaleType.FIT_CENTER
+                        onError?.invoke()
+                    }, onStart = {
+                        imageView.setImageDrawable(placeholder)
+                    })
+            }
         }
     }
 

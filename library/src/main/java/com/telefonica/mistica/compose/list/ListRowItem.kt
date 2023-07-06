@@ -18,7 +18,6 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Checkbox
 import androidx.compose.material.ExperimentalMaterialApi
-import androidx.compose.material.Icon
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -35,7 +34,6 @@ import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.R
 import com.telefonica.mistica.compose.badge.Badge
 import com.telefonica.mistica.compose.shape.Chevron
-import com.telefonica.mistica.compose.shape.Circle
 import com.telefonica.mistica.compose.tag.Tag
 import com.telefonica.mistica.compose.theme.MisticaTheme
 import com.telefonica.mistica.compose.theme.brand.MovistarBrand
@@ -150,6 +148,7 @@ fun ListRowItemImp(
                 color = MisticaTheme.colors.backgroundContainer,
                 shape = RoundedCornerShape(MisticaTheme.radius.containerBorderRadius),
             )
+
         BackgroundType.TYPE_BOXED_INVERSE -> Modifier
             .background(
                 color = MisticaTheme.colors.backgroundBrand,
@@ -157,10 +156,12 @@ fun ListRowItemImp(
             )
     }
         .fillMaxWidth()
-        .defaultMinSize(minHeight = when(description) {
-            null -> 72.dp
-            else -> 80.dp
-        })
+        .defaultMinSize(
+            minHeight = when (description) {
+                null -> 72.dp
+                else -> 80.dp
+            }
+        )
         .padding(16.dp)
 
     val textColorPrimary = when (backgroundType) {
@@ -293,7 +294,7 @@ fun ListRowItemPreview() {
                 subtitle = "Subtitle",
                 description = "Description",
                 listRowIcon = ListRowIcon.NormalIcon(
-                    iconResId = R.drawable.icn_arrow,
+                    painter = painterResource(id = R.drawable.icn_arrow),
                     description = null
                 ),
                 trailing = { Chevron() }
@@ -303,7 +304,7 @@ fun ListRowItemPreview() {
                 subtitle = "Subtitle",
                 description = "Description",
                 listRowIcon = ListRowIcon.CircleIcon(
-                    iconResId = R.drawable.icn_arrow,
+                    painter = painterResource(id = R.drawable.icn_arrow),
                     backgroundColor = MisticaTheme.colors.neutralLow,
                     description = null
                 ),

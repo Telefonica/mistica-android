@@ -1,11 +1,13 @@
 package com.telefonica.mistica.catalog.ui.classic.components
 
 import android.annotation.SuppressLint
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.telefonica.mistica.catalog.R
@@ -353,6 +355,78 @@ class ListsCatalogFragment : Fragment() {
                 it.configureView(
                     withAsset = true,
                     withAssetType = TYPE_IMAGE,
+                    withAction = true,
+                    withSubtitle = true,
+                    withHeadline = true,
+                    withInverseBackground = withInverseBackground,
+                    withUrlIcon = "fail_image_url",
+                    withErrorIcon =  AppCompatResources.getDrawable(it.context, R.drawable.ic_error)
+                )
+            },
+            {
+                it.configureView(
+                    withAsset = true,
+                    withAssetType = TYPE_LARGE_ICON,
+                    withAction = true,
+                    withSubtitle = true,
+                    withHeadline = true,
+                    withInverseBackground = withInverseBackground,
+                    withUrlIcon = "fail_image_url",
+                    withErrorIcon =  AppCompatResources.getDrawable(it.context, R.drawable.ic_error)
+                )
+            },
+            {
+                it.configureView(
+                    withAsset = true,
+                    withAssetType = TYPE_SMALL_ICON,
+                    withAction = true,
+                    withSubtitle = true,
+                    withHeadline = true,
+                    withInverseBackground = withInverseBackground,
+                    withUrlIcon = "fail_image_url",
+                    withErrorIcon =  AppCompatResources.getDrawable(it.context, R.drawable.ic_error)
+                )
+            },
+            {
+                it.configureView(
+                    withAsset = true,
+                    withAssetType = TYPE_IMAGE_1_1,
+                    withAction = true,
+                    withSubtitle = true,
+                    withHeadline = true,
+                    withInverseBackground = withInverseBackground,
+                    withUrlIcon = "fail_image_url",
+                    withErrorIcon =  AppCompatResources.getDrawable(it.context, R.drawable.ic_error)
+                )
+            },
+            {
+                it.configureView(
+                    withAsset = true,
+                    withAssetType = TYPE_IMAGE_7_10,
+                    withAction = true,
+                    withSubtitle = true,
+                    withHeadline = true,
+                    withInverseBackground = withInverseBackground,
+                    withUrlIcon = "fail_image_url",
+                    withErrorIcon =  AppCompatResources.getDrawable(it.context, R.drawable.ic_error)
+                )
+            },
+            {
+                it.configureView(
+                    withAsset = true,
+                    withAssetType = TYPE_IMAGE_16_9,
+                    withAction = true,
+                    withSubtitle = true,
+                    withHeadline = true,
+                    withInverseBackground = withInverseBackground,
+                    withUrlIcon = "fail_image_url",
+                    withErrorIcon =  AppCompatResources.getDrawable(it.context, R.drawable.ic_error)
+                )
+            },
+            {
+                it.configureView(
+                    withAsset = true,
+                    withAssetType = TYPE_IMAGE,
                     withLongDescription = false,
                     withInverseBackground = withInverseBackground,
                 )
@@ -383,7 +457,8 @@ class ListsCatalogFragment : Fragment() {
             withSubtitleMaxLines: Int? = null,
             withBadgeDescription: String? = null,
             withInverseBackground: Boolean,
-            withUrlIcon: String? = null
+            withUrlIcon: String? = null,
+            withErrorIcon: Drawable? = null,
         ) {
             if (withHeadline) {
                 setHeadlineLayout(R.layout.list_row_tag_headline)
@@ -414,7 +489,7 @@ class ListsCatalogFragment : Fragment() {
 
             setAssetType(withAssetType)
             withUrlIcon?.let {
-                setAssetUrl(it)
+                setAssetUrl(it, errorDrawable = withErrorIcon)
             } ?: run {
                 setAssetResource(getAssetResource(withAsset, withAssetType))
             }
