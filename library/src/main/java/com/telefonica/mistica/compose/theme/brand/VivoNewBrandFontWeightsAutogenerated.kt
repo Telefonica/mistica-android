@@ -8,6 +8,8 @@ public object VivoNewBrandFontWeights {
 
   public val buttonFontWeight: FontWeight = FontWeight.Normal
 
+  public val tabsLabelFontWeight: FontWeight = FontWeight.Normal
+
   public val linkFontWeight: FontWeight = FontWeight.Normal
 
   public val title1FontWeight: FontWeight = FontWeight.Normal

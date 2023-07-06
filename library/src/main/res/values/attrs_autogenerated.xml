@@ -132,6 +132,7 @@
 	<declare-styleable name="PresetFonts">
 		<attr name="cardTitleFont" format="string"/>
 		<attr name="buttonFont" format="string"/>
+		<attr name="tabsLabelFont" format="string"/>
 		<attr name="linkFont" format="string"/>
 		<attr name="title1Font" format="string"/>
 		<attr name="indicatorFont" format="string"/>
@@ -153,6 +154,11 @@
 			<flag name="italic" value="2"/>
 		</attr>
 		<attr name="buttonTextStyle" format="reference">
+			<flag name="normal" value="0"/>
+			<flag name="bold" value="1"/>
+			<flag name="italic" value="2"/>
+		</attr>
+		<attr name="tabsLabelTextStyle" format="reference">
 			<flag name="normal" value="0"/>
 			<flag name="bold" value="1"/>
 			<flag name="italic" value="2"/>
@@ -202,5 +208,8 @@
 			<flag name="bold" value="1"/>
 			<flag name="italic" value="2"/>
 		</attr>
+	</declare-styleable>
+	<declare-styleable name="PresetSizes">
+		<attr name="tabsLabelTextSize" format="dimension"/>
 	</declare-styleable>
 </resources>

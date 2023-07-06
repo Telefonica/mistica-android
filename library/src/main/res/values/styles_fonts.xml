@@ -117,4 +117,10 @@
         <item name="android:textStyle">?indicatorTextStyle</item>
     </style>
 
+    <style name="AppTheme.TextAppearance.PresetTabsLabel" parent="AppTheme.TextAppearance.Preset3">
+        <item name="android:textSize">?tabsLabelTextSize</item>
+        <item name="android:fontFamily">?tabsLabelFont</item>
+        <item name="android:textStyle">?tabsLabelTextStyle</item>
+    </style>
+
 </resources>

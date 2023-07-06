@@ -7,6 +7,7 @@ import com.telefonica.mistica.tokens.common.GetBorderRadiusName
 import com.telefonica.mistica.tokens.dto.TokensDTO
 import com.telefonica.mistica.tokens.xml.GenerateXMLFiles.Companion.ATTRS_FILE
 import com.telefonica.mistica.tokens.xml.GenerateXMLFiles.Companion.FONT_SUFFIX
+import com.telefonica.mistica.tokens.xml.GenerateXMLFiles.Companion.TEXT_SIZE_SUFFIX
 import com.telefonica.mistica.tokens.xml.GenerateXMLFiles.Companion.TEXT_STYLE_SUFFIX
 import com.telefonica.mistica.tokens.xml.GenerateXMLFiles.Companion.VALUES_DIR
 import com.telefonica.mistica.tokens.xml.GenerateXMLFiles.Companion.capitalizeString
@@ -45,6 +46,10 @@ class GenerateAttributesFile(
 
                 DECLARE_STYLEABLE {
                     getPresetStylesAttributes(tokens)
+                }
+
+                DECLARE_STYLEABLE {
+                    getPresetSizesAttributes(tokens)
                 }
             }
 
@@ -123,6 +128,16 @@ class GenerateAttributesFile(
                     attribute("name", "italic")
                     attribute("value", "2")
                 }
+            }
+        }
+    }
+
+    private fun Node.getPresetSizesAttributes(tokens: TokensDTO) {
+        attribute("name", "PresetSizes")
+        tokens.text.size.forEach { (key, _) ->
+            ATTR {
+                attribute("name", "$key$TEXT_SIZE_SUFFIX")
+                attribute("format", "dimension")
             }
         }
     }

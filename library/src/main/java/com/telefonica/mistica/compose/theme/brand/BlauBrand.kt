@@ -29,5 +29,9 @@ object BlauBrand : Brand {
 
     override val indicatorFontWeight = BlauBrandFontWeights.indicatorFontWeight
 
+    override val tabsLabelFontWeight = BlauBrandFontWeights.tabsLabelFontWeight
+
+    override val tabsLabelFontSize = BlauBrandFontSizes.tabsLabelFontSize
+
     override val radius = BlauBrandRadius.radius
 }

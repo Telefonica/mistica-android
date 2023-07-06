@@ -62,6 +62,8 @@ fun MisticaTheme(
             presetLinkFontWeight = brand.linkFontWeight,
             presetTitle1FontWeight = brand.title1FontWeight,
             presetIndicatorFontWeight = brand.indicatorFontWeight,
+            presetTabsLabelFontWeight = brand.tabsLabelFontWeight,
+            presetTabsLabelFontSize = brand.tabsLabelFontSize,
         )
     }
 
