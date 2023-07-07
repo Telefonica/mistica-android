@@ -2,6 +2,7 @@ package com.telefonica.mistica.compose.theme.brand
 
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.TextUnit
 import com.telefonica.mistica.compose.theme.color.MisticaColors
 import com.telefonica.mistica.compose.theme.values.MisticaRadius
 import com.telefonica.mistica.compose.theme.values.MisticaValues
@@ -22,6 +23,8 @@ interface Brand {
     val linkFontWeight: FontWeight
     val title1FontWeight: FontWeight
     val indicatorFontWeight: FontWeight
+    val tabsLabelFontWeight: FontWeight
+    val tabsLabelFontSize: TextUnit
     val values: MisticaValues
         get() = MisticaValues(
             titleStyle = TitleStyle.TITLE_1,

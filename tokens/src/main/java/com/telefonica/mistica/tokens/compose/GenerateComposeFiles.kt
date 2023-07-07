@@ -13,6 +13,7 @@ class GenerateComposeFiles(
     private val generateMisticaRadius: GenerateMisticaRadius = GenerateMisticaRadius(),
     private val generateBrandRadius: GenerateBrandRadius = GenerateBrandRadius(),
     private val generateBrandFontWeights: GenerateBrandFontWeights = GenerateBrandFontWeights(),
+    private val generateBrandFontSizes: GenerateBrandFontSizes = GenerateBrandFontSizes(),
 ) {
 
     operator fun invoke(jsonAdapter: JsonAdapter<TokensDTO>) {
@@ -28,6 +29,7 @@ class GenerateComposeFiles(
                 generateBrandColors(tokens, brand.name)
                 generateBrandRadius(tokens, brand.name)
                 generateBrandFontWeights(tokens, brand.name)
+                generateBrandFontSizes(tokens, brand.name)
             }
         }
     }

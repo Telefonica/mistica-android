@@ -29,5 +29,9 @@ object O2Brand : Brand {
 
     override val indicatorFontWeight = O2BrandFontWeights.indicatorFontWeight
 
+    override val tabsLabelFontWeight = O2BrandFontWeights.tabsLabelFontWeight
+
+    override val tabsLabelFontSize = O2BrandFontSizes.tabsLabelFontSize
+
     override val radius = O2BrandRadius.radius
 }

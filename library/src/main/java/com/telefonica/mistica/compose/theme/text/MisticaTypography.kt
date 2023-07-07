@@ -9,6 +9,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.sp
 
 class MisticaTypography(
@@ -78,6 +79,9 @@ class MisticaTypography(
     var presetIndicator by mutableStateOf(buildPresetIndicator(), structuralEqualityPolicy())
         private set
 
+    var presetTabsLabel by mutableStateOf(buildPresetTabsLabel(), structuralEqualityPolicy())
+        private set
+
     private fun buildBaseStyle(): TextStyle =
         TextStyle(
             letterSpacing = 0.sp,
@@ -86,7 +90,7 @@ class MisticaTypography(
         )
 
     private fun buildPreset8(
-        fontWeight: FontWeight = FontWeight.Light
+        fontWeight: FontWeight = FontWeight.Light,
     ) =
         buildBaseStyle().copy(
             fontSize = 32.sp,
@@ -95,7 +99,7 @@ class MisticaTypography(
         )
 
     private fun buildPreset7(
-        fontWeight: FontWeight = FontWeight.Light
+        fontWeight: FontWeight = FontWeight.Light,
     ) =
         buildBaseStyle().copy(
             fontSize = 28.sp,
@@ -104,7 +108,7 @@ class MisticaTypography(
         )
 
     private fun buildPreset6(
-        fontWeight: FontWeight = FontWeight.Light
+        fontWeight: FontWeight = FontWeight.Light,
     ) =
         buildBaseStyle().copy(
             fontSize = 24.sp,
@@ -113,7 +117,7 @@ class MisticaTypography(
         )
 
     private fun buildPreset5(
-        fontWeight: FontWeight = FontWeight.Light
+        fontWeight: FontWeight = FontWeight.Light,
     ) =
         buildBaseStyle().copy(
             fontSize = 20.sp,
@@ -187,39 +191,47 @@ class MisticaTypography(
         )
 
     private fun buildPresetCardTitle(
-        fontWeight: FontWeight = FontWeight.Medium
+        fontWeight: FontWeight = FontWeight.Medium,
     ) = buildPreset4().copy(
         fontWeight = fontWeight
     )
 
     private fun buildPresetButton(
-        fontWeight: FontWeight = FontWeight.Medium
+        fontWeight: FontWeight = FontWeight.Medium,
     ) = buildPreset3().copy(
         fontWeight = fontWeight
     )
 
     private fun buildPresetSmallButton(
-        fontWeight: FontWeight = FontWeight.Medium
+        fontWeight: FontWeight = FontWeight.Medium,
     ) = buildPreset2().copy(
         fontWeight = fontWeight
     )
 
     private fun buildPresetLink(
-        fontWeight: FontWeight = FontWeight.Medium
+        fontWeight: FontWeight = FontWeight.Medium,
     ) = buildPreset2().copy(
         fontWeight = fontWeight
     )
 
     private fun buildPresetTitle1(
-        fontWeight: FontWeight = FontWeight.Medium
+        fontWeight: FontWeight = FontWeight.Medium,
     ) = buildPreset1().copy(
         fontWeight = fontWeight
     )
 
     private fun buildPresetIndicator(
-        fontWeight: FontWeight = FontWeight.Medium
+        fontWeight: FontWeight = FontWeight.Medium,
     ) = buildPreset2().copy(
         fontWeight = fontWeight
+    )
+
+    private fun buildPresetTabsLabel(
+        fontWeight: FontWeight = FontWeight.Medium,
+        fontSize: TextUnit = 16.sp,
+    ) = buildPreset3().copy(
+        fontWeight = fontWeight,
+        fontSize = fontSize
     )
 
     fun updateWith(
@@ -234,6 +246,8 @@ class MisticaTypography(
         presetLinkFontWeight: FontWeight,
         presetTitle1FontWeight: FontWeight,
         presetIndicatorFontWeight: FontWeight,
+        presetTabsLabelFontWeight: FontWeight,
+        presetTabsLabelFontSize: TextUnit,
     ) {
         this.fontFamily = fontFamily
         preset8 = buildPreset8(fontWeight = preset8FontWeight)
@@ -257,6 +271,7 @@ class MisticaTypography(
         presetLink = buildPresetLink(fontWeight = presetLinkFontWeight)
         presetTitle1 = buildPresetTitle1(fontWeight = presetTitle1FontWeight)
         presetIndicator = buildPresetIndicator(fontWeight = presetIndicatorFontWeight)
+        presetTabsLabel = buildPresetTabsLabel(fontWeight = presetTabsLabelFontWeight, fontSize = presetTabsLabelFontSize)
     }
 }
 

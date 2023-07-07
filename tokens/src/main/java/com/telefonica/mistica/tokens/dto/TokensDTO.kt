@@ -21,11 +21,22 @@ data class RadiusDTO(
 
 data class TextDTO(
     val weight: Map<String, TextWeightDTO>,
+    val size: Map<String, TextSizeDTO>,
 )
 
 data class TextWeightDTO(
     val value: String,
     val type: String,
+)
+
+data class TextSizeDTO(
+    val value: SizeValueDTO,
+    val type: String,
+)
+
+data class SizeValueDTO(
+    val mobile: Int,
+    val desktop: Int,
 )
 
 data class GlobalDTO(

@@ -112,7 +112,7 @@ fun Tabs(
                         modifier = Modifier
                             .wrapContentSize(),
                         text = tab.text,
-                        style = MisticaTheme.typography.preset3,
+                        style = MisticaTheme.typography.presetTabsLabel,
                         color = if (isSelected) {
                             MisticaTheme.colors.textPrimary
                         } else {
@@ -305,7 +305,7 @@ private class TabPosition constructor(val left: Dp, val width: Dp) {
 }
 
 private fun Modifier.misticaTabIndicatorOffset(
-    currentTabPosition: TabPosition
+    currentTabPosition: TabPosition,
 ): Modifier = composed(
     inspectorInfo = debugInspectorInfo {
         name = "tabIndicatorOffset"
@@ -336,7 +336,7 @@ private enum class Slots {
 
 private class ScrollableTabData(
     private val scrollState: ScrollState,
-    private val coroutineScope: CoroutineScope
+    private val coroutineScope: CoroutineScope,
 ) {
     private var selectedTab: Int? = null
 
@@ -344,7 +344,7 @@ private class ScrollableTabData(
         density: Density,
         edgeOffset: Int,
         tabPositions: List<TabPosition>,
-        selectedTab: Int
+        selectedTab: Int,
     ) {
         if (this.selectedTab != selectedTab) {
             this.selectedTab = selectedTab
@@ -368,7 +368,7 @@ private class ScrollableTabData(
     private fun TabPosition.calculateTabOffset(
         density: Density,
         edgeOffset: Int,
-        tabPositions: List<TabPosition>
+        tabPositions: List<TabPosition>,
     ): Int = with(density) {
         val totalTabRowWidth = tabPositions.last().right.roundToPx() + edgeOffset
         val visibleWidth = totalTabRowWidth - scrollState.maxValue

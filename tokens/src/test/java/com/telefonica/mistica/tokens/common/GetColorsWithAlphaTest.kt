@@ -62,7 +62,8 @@ class GetColorsWithAlphaTest {
             ),
             radius = emptyMap(),
             text = TextDTO(
-                weight = emptyMap()
+                weight = emptyMap(),
+                size = emptyMap()
             ),
             global = GlobalDTO(
                 palette = mapOf(

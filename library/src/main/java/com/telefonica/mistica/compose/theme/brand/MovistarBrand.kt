@@ -31,6 +31,10 @@ object MovistarBrand : Brand {
 
     override val indicatorFontWeight = MovistarBrandFontWeights.indicatorFontWeight
 
+    override val tabsLabelFontWeight = MovistarBrandFontWeights.tabsLabelFontWeight
+
+    override val tabsLabelFontSize = MovistarBrandFontSizes.tabsLabelFontSize
+
     override val values: MisticaValues
         get() = super.values.copy(titleStyle = TitleStyle.TITLE_2)
 

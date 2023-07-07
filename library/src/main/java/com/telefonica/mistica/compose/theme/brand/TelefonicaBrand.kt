@@ -30,5 +30,9 @@ object TelefonicaBrand : Brand {
 
     override val indicatorFontWeight = TelefonicaBrandFontWeights.indicatorFontWeight
 
+    override val tabsLabelFontWeight = TelefonicaBrandFontWeights.tabsLabelFontWeight
+
+    override val tabsLabelFontSize = TelefonicaBrandFontSizes.tabsLabelFontSize
+
     override val radius: MisticaRadius = TelefonicaBrandRadius.radius
 }

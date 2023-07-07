@@ -8,6 +8,8 @@ public object O2BrandFontWeights {
 
   public val buttonFontWeight: FontWeight = FontWeight.Medium
 
+  public val tabsLabelFontWeight: FontWeight = FontWeight.Medium
+
   public val linkFontWeight: FontWeight = FontWeight.Medium
 
   public val title1FontWeight: FontWeight = FontWeight.Medium
