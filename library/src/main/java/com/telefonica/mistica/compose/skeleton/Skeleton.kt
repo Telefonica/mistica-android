@@ -41,7 +41,7 @@ fun LineSkeleton(
     Box(
         modifier = modifier
             .fillMaxWidth()
-            .clip(shape = RoundedCornerShape(8.dp))
+            .clip(shape = RoundedCornerShape(MisticaTheme.radius.containerBorderRadius))
             .background(skeletonColor)
             .height(8.dp)
     )
@@ -130,7 +130,7 @@ fun RectangleSkeleton(
     Box(
         modifier = modifier
             .fillMaxWidth()
-            .clip(shape = RoundedCornerShape(8.dp))
+            .clip(shape = RoundedCornerShape(MisticaTheme.radius.containerBorderRadius))
             .background(skeletonColor)
     )
 }
