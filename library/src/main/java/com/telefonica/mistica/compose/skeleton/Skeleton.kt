@@ -34,8 +34,10 @@ import com.telefonica.mistica.compose.theme.MisticaTheme
 fun LineSkeleton(
     infiniteTransition: InfiniteTransition,
     modifier: Modifier = Modifier,
-) {
-    val skeletonColor by skeletonColorTransition(infiniteTransition)
+    style: SkeletonStyle = SkeletonStyle.Default,
+
+    ) {
+    val skeletonColor by skeletonColorTransition(infiniteTransition, style)
     Box(
         modifier = modifier
             .fillMaxWidth()
@@ -48,21 +50,30 @@ fun LineSkeleton(
 @Composable
 fun TextSkeleton(
     infiniteTransition: InfiniteTransition,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    style: SkeletonStyle = SkeletonStyle.Default,
 ) {
     Column(
         modifier = modifier.wrapContentHeight()
     ) {
-        LineSkeleton(infiniteTransition = infiniteTransition, modifier = Modifier.fillMaxWidth())
         LineSkeleton(
-            infiniteTransition = infiniteTransition, modifier = Modifier
-                .fillMaxWidth()
-                .padding(top = 16.dp)
+            infiniteTransition = infiniteTransition,
+            modifier = Modifier.fillMaxWidth(),
+            style = style
         )
         LineSkeleton(
-            infiniteTransition = infiniteTransition, modifier = Modifier
+            infiniteTransition = infiniteTransition,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = 16.dp),
+            style = style,
+        )
+        LineSkeleton(
+            infiniteTransition = infiniteTransition,
+            modifier = Modifier
                 .fillMaxWidth(0.75F)
-                .padding(top = 16.dp)
+                .padding(top = 16.dp),
+            style = style,
         )
     }
 }
@@ -71,8 +82,9 @@ fun TextSkeleton(
 fun CircleSkeleton(
     infiniteTransition: InfiniteTransition,
     modifier: Modifier = Modifier,
+    style: SkeletonStyle = SkeletonStyle.Default,
 ) {
-    val skeletonColor by skeletonColorTransition(infiniteTransition)
+    val skeletonColor by skeletonColorTransition(infiniteTransition, style)
     Box(
         modifier = modifier
             .clip(shape = CircleShape)
@@ -86,19 +98,24 @@ fun CircleSkeleton(
 fun RowSkeleton(
     infiniteTransition: InfiniteTransition,
     modifier: Modifier = Modifier,
+    style: SkeletonStyle = SkeletonStyle.Default,
 ) {
     Row(
         modifier = modifier
             .fillMaxWidth()
             .wrapContentHeight(),
     ) {
-        CircleSkeleton(infiniteTransition = infiniteTransition)
+        CircleSkeleton(
+            infiniteTransition = infiniteTransition,
+            style = style,
+        )
         LineSkeleton(
             infiniteTransition = infiniteTransition,
             modifier = Modifier
                 .fillMaxWidth()
                 .align(Alignment.CenterVertically)
-                .padding(start = 16.dp)
+                .padding(start = 16.dp),
+            style = style,
         )
     }
 }
@@ -107,8 +124,9 @@ fun RowSkeleton(
 fun RectangleSkeleton(
     infiniteTransition: InfiniteTransition,
     modifier: Modifier = Modifier,
+    style: SkeletonStyle = SkeletonStyle.Default,
 ) {
-    val skeletonColor by skeletonColorTransition(infiniteTransition)
+    val skeletonColor by skeletonColorTransition(infiniteTransition, style)
     Box(
         modifier = modifier
             .fillMaxWidth()
@@ -117,18 +135,22 @@ fun RectangleSkeleton(
     )
 }
 
-
 @Composable
-private fun skeletonColorTransition(infiniteTransition: InfiniteTransition) =
+private fun skeletonColorTransition(infiniteTransition: InfiniteTransition, style: SkeletonStyle) =
     infiniteTransition.animateColor(
-        initialValue = MisticaTheme.colors.backgroundSkeleton.copy(alpha = 0.5f),
-        targetValue = MisticaTheme.colors.backgroundSkeleton,
+        initialValue = style.toColor().copy(alpha = 0.5f),
+        targetValue = style.toColor(),
         animationSpec = infiniteRepeatable(
             animation = tween(1500, easing = LinearEasing),
             repeatMode = RepeatMode.Reverse
         )
     )
 
+@Composable
+private fun SkeletonStyle.toColor() = when (this) {
+    SkeletonStyle.Default -> MisticaTheme.colors.backgroundSkeleton
+    SkeletonStyle.Inverse -> MisticaTheme.colors.backgroundSkeletonInverse
+}
 
 @Composable
 @Preview
@@ -141,7 +163,6 @@ fun SkeletonPreview() {
             .fillMaxSize()
             .padding(16.dp)
     ) {
-
 
         Text("Line")
         LineSkeleton(
@@ -165,4 +186,9 @@ fun SkeletonPreview() {
             modifier = Modifier.height(100.dp)
         )
     }
+}
+
+enum class SkeletonStyle {
+    Default,
+    Inverse,
 }
