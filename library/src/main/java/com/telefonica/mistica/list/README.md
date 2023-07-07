@@ -26,6 +26,9 @@ Implemented as a custom view, `com.telefonica.mistica.ListRowView` can be used i
 		<enum name="image" value="0" />
 		<enum name="smallIcon" value="1" />
 		<enum name="largeIcon" value="2" />
+		<enum name="image_1_1" value="3" />
+		<enum name="image_7_10" value="4" />
+		<enum name="image_16_9" value="5" />
 	</attr>
 	<attr name="listRowBackgroundType" format="enum">
 		<enum name="normal" value="0" />
