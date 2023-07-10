@@ -55,6 +55,7 @@ import com.telefonica.mistica.catalog.ui.compose.components.Lists
 import com.telefonica.mistica.catalog.ui.compose.components.LoadErrorFeedbacks
 import com.telefonica.mistica.catalog.ui.compose.components.MediaCards
 import com.telefonica.mistica.catalog.ui.compose.components.PopOvers
+import com.telefonica.mistica.catalog.ui.compose.components.Skeletons
 import com.telefonica.mistica.catalog.ui.compose.components.Steppers
 import com.telefonica.mistica.catalog.ui.compose.components.TabsCatalog
 import com.telefonica.mistica.catalog.ui.compose.components.Tags
@@ -199,6 +200,10 @@ class ComponentCatalogActivity : FragmentActivity() {
                 classicComponent = CarouselFragment(),
                 composeComponent = { Carousels() })
 
+            Section.SKELETON -> setPageAdapterWithTabs(
+                classicComponent = null,
+                composeComponent = { Skeletons() })
+
             else -> setPageAdapterWithTabs(
                 classicComponent = FiltersCatalogFragment(),
                 composeComponent = null
@@ -308,5 +313,6 @@ enum class Section {
     CALLOUTS,
     SHEET,
     CAROUSEL,
+    SKELETON,
 }
 
