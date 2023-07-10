@@ -33,7 +33,7 @@ fun LoadErrorFeedback(
                 modifier = Modifier.padding(8.dp),
                 text = it,
                 textAlign = TextAlign.Center,
-                style = MisticaTheme.typography.preset4Light,
+                style = MisticaTheme.typography.presetCardTitle,
                 color = MisticaTheme.colors.textPrimary
             )
         }
