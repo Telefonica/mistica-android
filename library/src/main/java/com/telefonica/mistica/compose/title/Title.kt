@@ -7,8 +7,11 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
+import com.telefonica.mistica.compose.button.Button
+import com.telefonica.mistica.compose.button.ButtonStyle
 import com.telefonica.mistica.compose.theme.MisticaTheme
 
 @Composable
@@ -20,7 +23,7 @@ fun Title(
     onLinkClicked: (() -> Unit)? = null,
 ) {
     Row(
-        modifier = modifier,
+        modifier = modifier.testTag(TitleTestTag.TITLE),
     ) {
         TitleText(
             modifier = Modifier
@@ -66,7 +69,7 @@ private fun TitleText(
     }
 
     Text(
-        modifier = modifier,
+        modifier = modifier.testTag(TitleTestTag.TITLE_TEXT),
         text = if (isAllCaps) text.uppercase() else text,
         style = preset,
         color = textColor
@@ -79,21 +82,22 @@ private fun Link(
     text: String,
     onClick: (() -> Unit)? = null,
 ) {
-    val linkModifier = if (onClick != null) {
-        modifier.then(Modifier.clickable { onClick() })
-    } else {
-        modifier
-    }
 
-    Text(
-        modifier = linkModifier,
+    Button(
+        modifier = modifier.testTag(TitleTestTag.TITLE_LINK),
         text = text,
-        style = MisticaTheme.typography.presetLink,
-        color = MisticaTheme.colors.textLink
+        buttonStyle = ButtonStyle.LINK,
+        onClickListener = { onClick?.invoke() }
     )
 }
 
 enum class TitleStyle {
     TITLE_1,
     TITLE_2
+}
+
+object TitleTestTag {
+    const val TITLE = "title"
+    const val TITLE_TEXT = "title_text"
+    const val TITLE_LINK = "title_link"
 }
