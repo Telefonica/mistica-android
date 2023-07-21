@@ -9,7 +9,7 @@
 		>
 
 	<ImageView
-			android:id="@+id/empty_state_screen_image"
+			android:id="@+id/empty_state_image"
 			android:layout_width="wrap_content"
 			android:layout_height="112dp"
 			android:scaleType="fitStart"
@@ -20,7 +20,7 @@
 			/>
 
 	<TextView
-			android:id="@+id/empty_state_screen_title"
+			android:id="@+id/empty_state_title"
 			style="@style/AppTheme.TextAppearance.Preset4"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
@@ -31,7 +31,7 @@
 			/>
 
 	<TextView
-			android:id="@+id/empty_state_screen_subtitle"
+			android:id="@+id/empty_state_subtitle"
 			style="@style/AppTheme.TextAppearance.Preset2"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
@@ -56,7 +56,7 @@
 			>
 
 		<com.telefonica.mistica.button.ProgressButton
-				android:id="@+id/empty_state_screen_primary_button"
+				android:id="@+id/empty_state_primary_button"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_marginStart="16dp"
@@ -65,7 +65,7 @@
 				/>
 
 		<com.telefonica.mistica.button.Button
-				android:id="@+id/empty_state_screen_secondary_button"
+				android:id="@+id/empty_state_secondary_button"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_marginStart="16dp"
@@ -74,7 +74,7 @@
 				/>
 
 		<com.telefonica.mistica.button.Button
-				android:id="@+id/empty_state_screen_link_button"
+				android:id="@+id/empty_state_link_button"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_marginStart="24dp"
