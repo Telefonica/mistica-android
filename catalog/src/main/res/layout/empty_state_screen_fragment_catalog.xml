@@ -98,13 +98,13 @@
 				app:inputType="text"
 				/>
 
-		<com.telefonica.mistica.button.Button
+		<com.telefonica.mistica.button.TestingButton
 				android:id="@+id/show_button"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_marginTop="16dp"
 				android:layout_marginBottom="16dp"
-				android:text="Show"
+				app:text="Show"
 				/>
 
 	</LinearLayout>

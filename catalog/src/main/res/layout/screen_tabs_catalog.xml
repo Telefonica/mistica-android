@@ -39,22 +39,22 @@
         android:layout_marginStart="8dp"
         app:inputCheckText="Add Icon" />
 
-    <com.telefonica.mistica.button.Button
+    <com.telefonica.mistica.button.TestingButton
         android:id="@+id/add_tab_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Add Tab" />
+        app:text="Add Tab" />
 
-    <com.telefonica.mistica.button.Button
+    <com.telefonica.mistica.button.TestingButton
         android:id="@+id/remove_tab_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="12dp"
-        android:text="Remove Tab" />
+        app:text="Remove Tab" />
 
 </LinearLayout>

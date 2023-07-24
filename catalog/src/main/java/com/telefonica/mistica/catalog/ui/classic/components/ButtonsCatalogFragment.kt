@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.telefonica.mistica.button.ProgressButton
+import com.telefonica.mistica.button.TestingButton
 import com.telefonica.mistica.catalog.R
 
 class ButtonsCatalogFragment : Fragment() {
@@ -35,7 +36,7 @@ class ButtonsCatalogFragment : Fragment() {
             R.id.secondary_small_inverse_progress,
             R.id.link_inverse_progress
         )
-            .map { view.findViewById<ProgressButton>(it) }
+            .map { view.findViewById<TestingButton>(it) }
             .forEach { button ->
                 button.setLoadingText("Loading")
                 button.setOnClickListener {

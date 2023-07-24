@@ -1,250 +1,278 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:viewBindingIgnore="true"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		xmlns:tools="http://schemas.android.com/tools"
+		tools:viewBindingIgnore="true"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical"
+		>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:padding="16dp">
+	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:gravity="center_horizontal"
+			android:orientation="vertical"
+			android:padding="16dp"
+			>
 
-        <com.telefonica.mistica.title.TitleView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            app:title="Buttons" />
+		<com.telefonica.mistica.title.TitleView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="start"
+				app:title="Buttons"
+				/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:gravity="center_horizontal"
-            android:orientation="vertical">
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="8dp"
+				android:gravity="center_horizontal"
+				android:orientation="vertical"
+				>
 
-            <com.telefonica.mistica.button.Button
-                style="@style/AppTheme.Button.DefaultButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Primary" />
+			<com.telefonica.mistica.button.TestingButton
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					app:text="Primary"
+					/>
 
-            <com.telefonica.mistica.button.Button
-                style="@style/AppTheme.Button.DefaultButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Primary Icon"
-                app:icon="@drawable/icn_creditcard" />
+			<com.telefonica.mistica.button.TestingButton
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					app:text="Primary Icon"
+					app:icon="@drawable/icn_creditcard"
+					/>
 
-            <com.telefonica.mistica.button.ProgressButton
-                android:id="@+id/primary_progress"
-                style="@style/AppTheme.Button.DefaultButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Primary Progress" />
+			<com.telefonica.mistica.button.TestingButton
+					android:id="@+id/primary_progress"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					app:text="Primary Progress"
+					/>
 
-            <com.telefonica.mistica.button.Button
-                style="@style/AppTheme.Button.DefaultButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:enabled="false"
-                android:text="Primary Disabled" />
+			<com.telefonica.mistica.button.TestingButton
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					app:enabled="false"
+					app:text="Primary Disabled"
+					/>
 
-            <com.telefonica.mistica.button.Button
-                style="@style/AppTheme.Button.DefaultButton.Small"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Primary Small" />
+			<com.telefonica.mistica.button.TestingButton
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					app:text="Primary Small"
+					app:style="PRIMARY_SMALL"
+					/>
 
-            <com.telefonica.mistica.button.Button
-                style="@style/AppTheme.Button.DefaultButton.Small"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Primary Small Icon"
-                app:icon="@drawable/icn_creditcard" />
+			<com.telefonica.mistica.button.TestingButton
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					app:text="Primary Small Icon"
+					app:icon="@drawable/icn_creditcard"
+					app:style="PRIMARY_SMALL"
+					/>
 
-            <com.telefonica.mistica.button.ProgressButton
-                android:id="@+id/primary_small_progress"
-                style="@style/AppTheme.Button.DefaultButton.Small"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Primary Small Progress" />
+			<com.telefonica.mistica.button.TestingButton
+					android:id="@+id/primary_small_progress"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					app:text="Primary Small Progress"
+					app:style="PRIMARY_SMALL"
+					/>
 
-            <com.telefonica.mistica.button.Button
-                style="@style/AppTheme.Button.DefaultButton.Small"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:enabled="false"
-                android:text="Primary Small Disabled" />
+			<com.telefonica.mistica.button.TestingButton
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					app:enabled="false"
+					app:text="Primary Small Disabled"
+					app:style="PRIMARY_SMALL"
+					/>
 
-            <com.telefonica.mistica.button.Button
-                style="@style/AppTheme.Button.SecondaryButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Secondary" />
+			<com.telefonica.mistica.button.TestingButton
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					app:text="Secondary"
+					app:style="SECONDARY"
+					/>
 
-            <com.telefonica.mistica.button.Button
-                style="@style/AppTheme.Button.SecondaryButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Secondary Icon"
-                app:icon="@drawable/icn_creditcard" />
+			<com.telefonica.mistica.button.TestingButton
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					app:text="Secondary Icon"
+					app:style="SECONDARY"
+					app:icon="@drawable/icn_creditcard"
+					/>
 
-            <com.telefonica.mistica.button.ProgressButton
-                android:id="@+id/secondary_progress"
-                style="@style/AppTheme.Button.SecondaryButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Secondary Progress" />
+			<com.telefonica.mistica.button.TestingButton
+					android:id="@+id/secondary_progress"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					app:text="Secondary Progress"
+					app:style="SECONDARY"
+					/>
 
-            <com.telefonica.mistica.button.Button
-                style="@style/AppTheme.Button.SecondaryButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:enabled="false"
-                android:text="Secondary Disabled" />
+			<com.telefonica.mistica.button.TestingButton
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					app:enabled="false"
+					app:text="Secondary Disabled"
+					app:style="SECONDARY"
+					/>
 
-            <com.telefonica.mistica.button.Button
-                style="@style/AppTheme.Button.SecondaryButton.Small"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Secondary Small" />
+			<com.telefonica.mistica.button.TestingButton
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					app:text="Secondary Small"
+					app:style="PRIMARY_SMALL"
+					/>
 
-            <com.telefonica.mistica.button.Button
-                style="@style/AppTheme.Button.SecondaryButton.Small"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Secondary Small Icon"
-                app:icon="@drawable/icn_creditcard" />
+			<com.telefonica.mistica.button.TestingButton
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					app:text="Secondary Small Icon"
+					app:style="PRIMARY_SMALL"
+					app:icon="@drawable/icn_creditcard"
+					/>
 
-            <com.telefonica.mistica.button.ProgressButton
-                android:id="@+id/secondary_small_progress"
-                style="@style/AppTheme.Button.SecondaryButton.Small"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Secondary Small Progress" />
+			<com.telefonica.mistica.button.TestingButton
+					android:id="@+id/secondary_small_progress"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					app:text="Secondary Small Progress"
+					app:style="PRIMARY_SMALL"
+					/>
 
-            <com.telefonica.mistica.button.Button
-                style="@style/AppTheme.Button.SecondaryButton.Small"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:enabled="false"
-                android:text="Secondary Small Disabled" />
+			<com.telefonica.mistica.button.TestingButton
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					app:enabled="false"
+					app:text="Secondary Small Disabled"
+					app:style="PRIMARY_SMALL"
+					/>
 
-            <com.telefonica.mistica.button.Button
-                style="@style/AppTheme.Button.DangerButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Danger" />
+			<com.telefonica.mistica.button.TestingButton
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					app:text="Danger"
+					app:style="DANGER"
+					/>
 
-            <com.telefonica.mistica.button.Button
-                style="@style/AppTheme.Button.DangerButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Danger Icon"
-                app:icon="@drawable/icn_creditcard" />
+			<com.telefonica.mistica.button.TestingButton
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					app:text="Danger Icon"
+					app:icon="@drawable/icn_creditcard"
+					app:style="DANGER"
+					/>
 
-            <com.telefonica.mistica.button.ProgressButton
-                android:id="@+id/danger_progress"
-                style="@style/AppTheme.Button.DangerButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Danger Progress" />
+			<com.telefonica.mistica.button.TestingButton
+					android:id="@+id/danger_progress"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					app:text="Danger Progress"
+					app:style="DANGER"
+					/>
 
-            <com.telefonica.mistica.button.Button
-                style="@style/AppTheme.Button.DangerButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:enabled="false"
-                android:text="Danger Disabled" />
+			<com.telefonica.mistica.button.TestingButton
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					app:enabled="false"
+					app:text="Danger Disabled"
+					app:style="DANGER"
+					/>
 
-            <com.telefonica.mistica.button.Button
-                style="@style/AppTheme.Button.DangerButton.Small"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Danger Small" />
+			<com.telefonica.mistica.button.TestingButton
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					app:text="Danger Small"
+					app:style="DANGER_SMALL"
+					/>
 
-            <com.telefonica.mistica.button.Button
-                style="@style/AppTheme.Button.DangerButton.Small"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Danger Small Icon"
-                app:icon="@drawable/icn_creditcard" />
+			<com.telefonica.mistica.button.TestingButton
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					app:text="Danger Small Icon"
+					app:icon="@drawable/icn_creditcard"
+					app:style="DANGER_SMALL"
+					/>
 
-            <com.telefonica.mistica.button.ProgressButton
-                android:id="@+id/danger_small_progress"
-                style="@style/AppTheme.Button.DangerButton.Small"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Danger Small Progress" />
+			<com.telefonica.mistica.button.TestingButton
+					android:id="@+id/danger_small_progress"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					app:text="Danger Small Progress"
+					app:style="DANGER_SMALL"
+					/>
 
-            <com.telefonica.mistica.button.Button
-                style="@style/AppTheme.Button.DangerButton.Small"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:enabled="false"
-                android:text="Danger Small Disabled" />
+			<com.telefonica.mistica.button.TestingButton
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					app:enabled="false"
+					app:text="Danger Small Disabled"
+					app:style="DANGER_SMALL"
+					/>
 
-            <com.telefonica.mistica.button.Button
-                style="@style/AppTheme.Button.LinkButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Link" />
+			<com.telefonica.mistica.button.TestingButton
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					app:text="Link"
+					app:style="LINK"
+					/>
 
-            <com.telefonica.mistica.button.Button
-                style="@style/AppTheme.Button.LinkButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Link Icon"
-                app:icon="@drawable/icn_creditcard"
-                app:iconTint="@color/text_button_link_selector" />
+			<com.telefonica.mistica.button.TestingButton
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					app:text="Link Icon"
+					app:icon="@drawable/icn_creditcard"
+					app:iconTint="@color/text_button_link_selector"
+					app:style="LINK"
+					/>
 
-            <com.telefonica.mistica.button.ProgressButton
-                android:id="@+id/link_progress"
-                style="@style/AppTheme.Button.LinkButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Link Progress" />
+			<com.telefonica.mistica.button.TestingButton
+					android:id="@+id/link_progress"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					app:text="Link Progress"
+					app:style="LINK"
+					/>
 
-            <com.telefonica.mistica.button.Button
-                style="@style/AppTheme.Button.LinkButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:enabled="false"
-                android:text="Link Disabled" />
+			<com.telefonica.mistica.button.TestingButton
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					app:enabled="false"
+					app:text="Link Disabled"
+					app:style="LINK"
+					/>
 
-        </LinearLayout>
+		</LinearLayout>
 
         <com.telefonica.mistica.title.TitleView
             android:layout_width="wrap_content"
@@ -253,177 +281,200 @@
             android:layout_marginTop="8dp"
             app:title="Inverse Buttons" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:background="?attr/colorBackgroundBrand"
-            android:gravity="center_horizontal"
-            android:orientation="vertical">
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="8dp"
+				android:background="?attr/colorBackgroundBrand"
+				android:gravity="center_horizontal"
+				android:orientation="vertical"
+				>
 
-            <com.telefonica.mistica.button.Button
-                style="@style/AppTheme.Button.PrimaryButtonInverse"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Primary" />
+			<com.telefonica.mistica.button.TestingButton
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="16dp"
+					app:text="Primary"
+					app:style="PRIMARY_INVERSE"
+					/>
 
-            <com.telefonica.mistica.button.Button
-                style="@style/AppTheme.Button.PrimaryButtonInverse"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Primary Icon"
-                app:icon="@drawable/icn_creditcard"
-                app:iconTint="@color/text_button_primary_inverse_selector" />
+			<com.telefonica.mistica.button.TestingButton
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					app:text="Primary Icon"
+					app:icon="@drawable/icn_creditcard"
+					app:iconTint="@color/text_button_primary_inverse_selector"
+					app:style="PRIMARY_INVERSE"
+					/>
 
-            <com.telefonica.mistica.button.ProgressButton
-                android:id="@+id/primary_inverse_progress"
-                style="@style/AppTheme.Button.PrimaryButtonInverse"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Primary Progress" />
+			<com.telefonica.mistica.button.TestingButton
+					android:id="@+id/primary_inverse_progress"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					app:text="Primary Progress"
+					app:style="PRIMARY_INVERSE"
+					/>
 
-            <com.telefonica.mistica.button.Button
-                style="@style/AppTheme.Button.PrimaryButtonInverse"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:enabled="false"
-                android:text="Primary Disabled" />
+			<com.telefonica.mistica.button.TestingButton
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					app:enabled="false"
+					app:text="Primary Disabled"
+					app:style="PRIMARY_INVERSE"
+					/>
 
-            <com.telefonica.mistica.button.Button
-                style="@style/AppTheme.Button.PrimaryButtonInverse.Small"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Primary Small" />
+			<com.telefonica.mistica.button.TestingButton
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					app:text="Primary Small"
+					app:style="PRIMARY_SMALL_INVERSE"
+					/>
 
-            <com.telefonica.mistica.button.Button
-                style="@style/AppTheme.Button.PrimaryButtonInverse.Small"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Primary Small Icon"
-                app:icon="@drawable/icn_creditcard"
-                app:iconTint="@color/text_button_primary_inverse_selector" />
+			<com.telefonica.mistica.button.TestingButton
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					app:text="Primary Small Icon"
+					app:icon="@drawable/icn_creditcard"
+					app:iconTint="@color/text_button_primary_inverse_selector"
+					app:style="PRIMARY_SMALL_INVERSE"
+					/>
 
-            <com.telefonica.mistica.button.ProgressButton
-                android:id="@+id/primary_small_inverse_progress"
-                style="@style/AppTheme.Button.PrimaryButtonInverse.Small"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Primary Small Progress" />
+			<com.telefonica.mistica.button.TestingButton
+					android:id="@+id/primary_small_inverse_progress"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					app:text="Primary Small Progress"
+					app:style="PRIMARY_SMALL_INVERSE"
+					/>
 
-            <com.telefonica.mistica.button.Button
-                style="@style/AppTheme.Button.PrimaryButtonInverse.Small"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:enabled="false"
-                android:text="Primary Small Disabled" />
+			<com.telefonica.mistica.button.TestingButton
+					style="@style/AppTheme.Button.PrimaryButtonInverse.Small"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					app:enabled="false"
+					app:text="Primary Small Disabled"
+					app:style="PRIMARY_SMALL_INVERSE"
+					/>
 
-            <com.telefonica.mistica.button.Button
-                style="@style/AppTheme.Button.SecondaryButtonInverse"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Secondary" />
+			<com.telefonica.mistica.button.TestingButton
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					app:text="Secondary"
+					app:style="SECONDARY_INVERSE"
+					/>
 
-            <com.telefonica.mistica.button.Button
-                style="@style/AppTheme.Button.SecondaryButtonInverse"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Secondary Icon"
-                app:icon="@drawable/icn_creditcard"
-                app:iconTint="@color/text_button_secondary_inverse_selector" />
+			<com.telefonica.mistica.button.TestingButton
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					app:text="Secondary Icon"
+					app:icon="@drawable/icn_creditcard"
+					app:iconTint="@color/text_button_secondary_inverse_selector"
+					app:style="SECONDARY_INVERSE"
+					/>
 
-            <com.telefonica.mistica.button.ProgressButton
-                android:id="@+id/secondary_inverse_progress"
-                style="@style/AppTheme.Button.SecondaryButtonInverse"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Secondary Progress" />
+			<com.telefonica.mistica.button.TestingButton
+					android:id="@+id/secondary_inverse_progress"
+					style="@style/AppTheme.Button.SecondaryButtonInverse"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					app:text="Secondary Progress"
+					app:style="SECONDARY_INVERSE"
+					/>
 
-            <com.telefonica.mistica.button.Button
-                style="@style/AppTheme.Button.SecondaryButtonInverse"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:enabled="false"
-                android:text="Secondary Disabled" />
+			<com.telefonica.mistica.button.TestingButton
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					app:enabled="false"
+					app:text="Secondary Disabled"
+					app:style="SECONDARY_INVERSE"
+					/>
 
-            <com.telefonica.mistica.button.Button
-                style="@style/AppTheme.Button.SecondaryButtonInverse.Small"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Secondary Small" />
+			<com.telefonica.mistica.button.TestingButton
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					app:text="Secondary Small"
+					app:style="SECONDARY_SMALL_INVERSE"
+					/>
 
-            <com.telefonica.mistica.button.Button
-                style="@style/AppTheme.Button.SecondaryButtonInverse.Small"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Secondary Small Icon"
-                app:icon="@drawable/icn_creditcard"
-                app:iconTint="@color/text_button_secondary_inverse_selector" />
+			<com.telefonica.mistica.button.TestingButton
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					app:text="Secondary Small Icon"
+					app:icon="@drawable/icn_creditcard"
+					app:iconTint="@color/text_button_secondary_inverse_selector"
+					app:style="SECONDARY_SMALL_INVERSE"
+					/>
 
-            <com.telefonica.mistica.button.ProgressButton
-                android:id="@+id/secondary_small_inverse_progress"
-                style="@style/AppTheme.Button.SecondaryButtonInverse.Small"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Secondary Small Progress" />
+			<com.telefonica.mistica.button.TestingButton
+					android:id="@+id/secondary_small_inverse_progress"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					app:text="Secondary Small Progress"
+					app:style="SECONDARY_SMALL_INVERSE"
+					/>
 
-            <com.telefonica.mistica.button.Button
-                style="@style/AppTheme.Button.SecondaryButtonInverse.Small"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:enabled="false"
-                android:text="Secondary Small Disabled" />
+			<com.telefonica.mistica.button.TestingButton
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					app:enabled="false"
+					app:text="Secondary Small Disabled"
+					app:style="SECONDARY_SMALL_INVERSE"
+					/>
 
-            <com.telefonica.mistica.button.Button
-                style="@style/AppTheme.Button.LinkButtonInverse"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Link" />
+			<com.telefonica.mistica.button.TestingButton
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					app:text="Link"
+					app:style="LINK_INVERSE"
+					/>
 
-            <com.telefonica.mistica.button.Button
-                style="@style/AppTheme.Button.LinkButtonInverse"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Link Icon"
-                app:icon="@drawable/icn_creditcard"
-                app:iconTint="@color/text_button_link_inverse_selector" />
+			<com.telefonica.mistica.button.TestingButton
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					app:text="Link Icon"
+					app:icon="@drawable/icn_creditcard"
+					app:iconTint="@color/text_button_link_inverse_selector"
+					app:style="LINK_INVERSE"
+					/>
 
-            <com.telefonica.mistica.button.ProgressButton
-                android:id="@+id/link_inverse_progress"
-                style="@style/AppTheme.Button.LinkButtonInverse"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Link Progress" />
+			<com.telefonica.mistica.button.TestingButton
+					android:id="@+id/link_inverse_progress"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					app:text="Link Progress"
+					app:style="LINK_INVERSE"
+					/>
 
-            <com.telefonica.mistica.button.Button
-                style="@style/AppTheme.Button.LinkButtonInverse"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:enabled="false"
-                android:text="Link Disabled" />
+			<com.telefonica.mistica.button.TestingButton
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					android:layout_marginBottom="8dp"
+					app:style="LINK_INVERSE"
+					app:enabled="false"
+					app:text="Link Disabled"
+					/>
 
-        </LinearLayout>
+		</LinearLayout>
 
-    </LinearLayout>
+	</LinearLayout>
 
 </ScrollView>

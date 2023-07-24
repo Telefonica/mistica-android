@@ -123,12 +123,12 @@
 					/>
 		</LinearLayout>
 
-		<com.telefonica.mistica.button.Button
+		<com.telefonica.mistica.button.TestingButton
 				android:id="@+id/update_button"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_margin="16dp"
-				android:text="Update"
+				app:text="Update"
 				/>
 
 	</LinearLayout>

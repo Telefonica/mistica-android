@@ -145,12 +145,12 @@
 
 		</LinearLayout>
 
-		<com.telefonica.mistica.button.Button
+		<com.telefonica.mistica.button.TestingButton
 				android:id="@+id/button_show"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_marginTop="12dp"
-				android:text="Show Feedback"
+				app:text="Show Feedback"
 				android:visibility="gone"
 				/>
 

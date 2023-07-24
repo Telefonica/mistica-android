@@ -6,6 +6,24 @@
 
     <declare-styleable name="ProgressButton">
         <attr name="isLoading" format="boolean" />
+        <attr name="text" format="string" />
+        <attr name="loadingText" format="string" />
+        <attr name="style" format="enum">
+            <enum name="PRIMARY" value="0" />
+            <enum name="PRIMARY_SMALL" value="1" />
+            <enum name="SECONDARY" value="2" />
+            <enum name="SECONDARY_SMALL" value="3" />
+            <enum name="DANGER" value="4" />
+            <enum name="DANGER_SMALL" value="5" />
+            <enum name="LINK" value="6" />
+            <enum name="PRIMARY_INVERSE" value="7" />
+            <enum name="PRIMARY_SMALL_INVERSE" value="8" />
+            <enum name="SECONDARY_INVERSE" value="9" />
+            <enum name="SECONDARY_SMALL_INVERSE" value="10" />
+            <enum name="LINK_INVERSE" value="11" />
+        </attr>
+        <attr name="enabled" format="boolean" />
+        <attr name="icon" format="reference" />
     </declare-styleable>
 
 	<declare-styleable name="TagView">

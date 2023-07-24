@@ -168,13 +168,13 @@
                 app:inputHint="Email"
                 app:inputType="email" />
 
-            <com.telefonica.mistica.button.Button
+            <com.telefonica.mistica.button.TestingButton
                 android:id="@+id/button_text_input_email"
-                style="@style/AppTheme.Button.DefaultButton.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Validate email" />
+                app:text="Validate email"
+                app:style="PRIMARY_SMALL"/>
 
             <com.telefonica.mistica.title.TitleView
                 android:layout_width="wrap_content"
@@ -191,13 +191,13 @@
                 app:inputHint="Phone"
                 app:inputType="phone" />
 
-            <com.telefonica.mistica.button.Button
+            <com.telefonica.mistica.button.TestingButton
                 android:id="@+id/button_text_input_phone"
-                style="@style/AppTheme.Button.DefaultButton.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Validate phone" />
+                app:text="Validate phone"
+                app:style="PRIMARY_SMALL"/>
 
             <com.telefonica.mistica.title.TitleView
                 android:layout_width="wrap_content"
@@ -213,13 +213,13 @@
                 android:layout_marginBottom="8dp"
                 app:inputHint="Custom text" />
 
-            <com.telefonica.mistica.button.Button
+            <com.telefonica.mistica.button.TestingButton
                 android:id="@+id/button_text_input_custom"
-                style="@style/AppTheme.Button.DefaultButton.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Validate" />
+                app:text="Validate"
+                app:style="PRIMARY_SMALL"/>
 
             <com.telefonica.mistica.title.TitleView
                 android:layout_width="wrap_content"
