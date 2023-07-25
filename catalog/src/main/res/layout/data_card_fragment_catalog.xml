@@ -115,7 +115,7 @@
                 android:layout_height="wrap_content" />
         </FrameLayout>
 
-        <com.telefonica.mistica.button.TestingButton
+        <com.telefonica.mistica.button.Button
             android:id="@+id/data_card_button_update"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

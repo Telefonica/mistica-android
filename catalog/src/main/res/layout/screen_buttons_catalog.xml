@@ -31,13 +31,13 @@
 				android:orientation="vertical"
 				>
 
-			<com.telefonica.mistica.button.TestingButton
+			<com.telefonica.mistica.button.Button
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					app:text="Primary"
 					/>
 
-			<com.telefonica.mistica.button.TestingButton
+			<com.telefonica.mistica.button.Button
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginTop="8dp"
@@ -45,7 +45,7 @@
 					app:icon="@drawable/icn_creditcard"
 					/>
 
-			<com.telefonica.mistica.button.TestingButton
+			<com.telefonica.mistica.button.Button
 					android:id="@+id/primary_progress"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
@@ -53,7 +53,7 @@
 					app:text="Primary Progress"
 					/>
 
-			<com.telefonica.mistica.button.TestingButton
+			<com.telefonica.mistica.button.Button
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginTop="8dp"
@@ -61,7 +61,7 @@
 					app:text="Primary Disabled"
 					/>
 
-			<com.telefonica.mistica.button.TestingButton
+			<com.telefonica.mistica.button.Button
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginTop="8dp"
@@ -69,7 +69,7 @@
 					app:style="PRIMARY_SMALL"
 					/>
 
-			<com.telefonica.mistica.button.TestingButton
+			<com.telefonica.mistica.button.Button
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginTop="8dp"
@@ -78,7 +78,7 @@
 					app:style="PRIMARY_SMALL"
 					/>
 
-			<com.telefonica.mistica.button.TestingButton
+			<com.telefonica.mistica.button.Button
 					android:id="@+id/primary_small_progress"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
@@ -87,7 +87,7 @@
 					app:style="PRIMARY_SMALL"
 					/>
 
-			<com.telefonica.mistica.button.TestingButton
+			<com.telefonica.mistica.button.Button
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginTop="8dp"
@@ -96,7 +96,7 @@
 					app:style="PRIMARY_SMALL"
 					/>
 
-			<com.telefonica.mistica.button.TestingButton
+			<com.telefonica.mistica.button.Button
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginTop="8dp"
@@ -104,7 +104,7 @@
 					app:style="SECONDARY"
 					/>
 
-			<com.telefonica.mistica.button.TestingButton
+			<com.telefonica.mistica.button.Button
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginTop="8dp"
@@ -113,7 +113,7 @@
 					app:icon="@drawable/icn_creditcard"
 					/>
 
-			<com.telefonica.mistica.button.TestingButton
+			<com.telefonica.mistica.button.Button
 					android:id="@+id/secondary_progress"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
@@ -122,7 +122,7 @@
 					app:style="SECONDARY"
 					/>
 
-			<com.telefonica.mistica.button.TestingButton
+			<com.telefonica.mistica.button.Button
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginTop="8dp"
@@ -131,7 +131,7 @@
 					app:style="SECONDARY"
 					/>
 
-			<com.telefonica.mistica.button.TestingButton
+			<com.telefonica.mistica.button.Button
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginTop="8dp"
@@ -139,7 +139,7 @@
 					app:style="PRIMARY_SMALL"
 					/>
 
-			<com.telefonica.mistica.button.TestingButton
+			<com.telefonica.mistica.button.Button
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginTop="8dp"
@@ -148,7 +148,7 @@
 					app:icon="@drawable/icn_creditcard"
 					/>
 
-			<com.telefonica.mistica.button.TestingButton
+			<com.telefonica.mistica.button.Button
 					android:id="@+id/secondary_small_progress"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
@@ -157,7 +157,7 @@
 					app:style="PRIMARY_SMALL"
 					/>
 
-			<com.telefonica.mistica.button.TestingButton
+			<com.telefonica.mistica.button.Button
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginTop="8dp"
@@ -166,7 +166,7 @@
 					app:style="PRIMARY_SMALL"
 					/>
 
-			<com.telefonica.mistica.button.TestingButton
+			<com.telefonica.mistica.button.Button
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginTop="8dp"
@@ -174,7 +174,7 @@
 					app:style="DANGER"
 					/>
 
-			<com.telefonica.mistica.button.TestingButton
+			<com.telefonica.mistica.button.Button
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginTop="8dp"
@@ -183,7 +183,7 @@
 					app:style="DANGER"
 					/>
 
-			<com.telefonica.mistica.button.TestingButton
+			<com.telefonica.mistica.button.Button
 					android:id="@+id/danger_progress"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
@@ -192,7 +192,7 @@
 					app:style="DANGER"
 					/>
 
-			<com.telefonica.mistica.button.TestingButton
+			<com.telefonica.mistica.button.Button
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginTop="8dp"
@@ -201,7 +201,7 @@
 					app:style="DANGER"
 					/>
 
-			<com.telefonica.mistica.button.TestingButton
+			<com.telefonica.mistica.button.Button
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginTop="8dp"
@@ -209,7 +209,7 @@
 					app:style="DANGER_SMALL"
 					/>
 
-			<com.telefonica.mistica.button.TestingButton
+			<com.telefonica.mistica.button.Button
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginTop="8dp"
@@ -218,7 +218,7 @@
 					app:style="DANGER_SMALL"
 					/>
 
-			<com.telefonica.mistica.button.TestingButton
+			<com.telefonica.mistica.button.Button
 					android:id="@+id/danger_small_progress"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
@@ -227,7 +227,7 @@
 					app:style="DANGER_SMALL"
 					/>
 
-			<com.telefonica.mistica.button.TestingButton
+			<com.telefonica.mistica.button.Button
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginTop="8dp"
@@ -236,7 +236,7 @@
 					app:style="DANGER_SMALL"
 					/>
 
-			<com.telefonica.mistica.button.TestingButton
+			<com.telefonica.mistica.button.Button
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginTop="8dp"
@@ -244,7 +244,7 @@
 					app:style="LINK"
 					/>
 
-			<com.telefonica.mistica.button.TestingButton
+			<com.telefonica.mistica.button.Button
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginTop="8dp"
@@ -254,7 +254,7 @@
 					app:style="LINK"
 					/>
 
-			<com.telefonica.mistica.button.TestingButton
+			<com.telefonica.mistica.button.Button
 					android:id="@+id/link_progress"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
@@ -263,7 +263,7 @@
 					app:style="LINK"
 					/>
 
-			<com.telefonica.mistica.button.TestingButton
+			<com.telefonica.mistica.button.Button
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginTop="8dp"
@@ -290,7 +290,7 @@
 				android:orientation="vertical"
 				>
 
-			<com.telefonica.mistica.button.TestingButton
+			<com.telefonica.mistica.button.Button
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginTop="16dp"
@@ -298,7 +298,7 @@
 					app:style="PRIMARY_INVERSE"
 					/>
 
-			<com.telefonica.mistica.button.TestingButton
+			<com.telefonica.mistica.button.Button
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginTop="8dp"
@@ -308,7 +308,7 @@
 					app:style="PRIMARY_INVERSE"
 					/>
 
-			<com.telefonica.mistica.button.TestingButton
+			<com.telefonica.mistica.button.Button
 					android:id="@+id/primary_inverse_progress"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
@@ -317,7 +317,7 @@
 					app:style="PRIMARY_INVERSE"
 					/>
 
-			<com.telefonica.mistica.button.TestingButton
+			<com.telefonica.mistica.button.Button
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginTop="8dp"
@@ -326,7 +326,7 @@
 					app:style="PRIMARY_INVERSE"
 					/>
 
-			<com.telefonica.mistica.button.TestingButton
+			<com.telefonica.mistica.button.Button
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginTop="8dp"
@@ -334,7 +334,7 @@
 					app:style="PRIMARY_SMALL_INVERSE"
 					/>
 
-			<com.telefonica.mistica.button.TestingButton
+			<com.telefonica.mistica.button.Button
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginTop="8dp"
@@ -344,7 +344,7 @@
 					app:style="PRIMARY_SMALL_INVERSE"
 					/>
 
-			<com.telefonica.mistica.button.TestingButton
+			<com.telefonica.mistica.button.Button
 					android:id="@+id/primary_small_inverse_progress"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
@@ -353,7 +353,7 @@
 					app:style="PRIMARY_SMALL_INVERSE"
 					/>
 
-			<com.telefonica.mistica.button.TestingButton
+			<com.telefonica.mistica.button.Button
 					style="@style/AppTheme.Button.PrimaryButtonInverse.Small"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
@@ -363,7 +363,7 @@
 					app:style="PRIMARY_SMALL_INVERSE"
 					/>
 
-			<com.telefonica.mistica.button.TestingButton
+			<com.telefonica.mistica.button.Button
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginTop="8dp"
@@ -371,7 +371,7 @@
 					app:style="SECONDARY_INVERSE"
 					/>
 
-			<com.telefonica.mistica.button.TestingButton
+			<com.telefonica.mistica.button.Button
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginTop="8dp"
@@ -381,7 +381,7 @@
 					app:style="SECONDARY_INVERSE"
 					/>
 
-			<com.telefonica.mistica.button.TestingButton
+			<com.telefonica.mistica.button.Button
 					android:id="@+id/secondary_inverse_progress"
 					style="@style/AppTheme.Button.SecondaryButtonInverse"
 					android:layout_width="wrap_content"
@@ -391,7 +391,7 @@
 					app:style="SECONDARY_INVERSE"
 					/>
 
-			<com.telefonica.mistica.button.TestingButton
+			<com.telefonica.mistica.button.Button
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginTop="8dp"
@@ -400,7 +400,7 @@
 					app:style="SECONDARY_INVERSE"
 					/>
 
-			<com.telefonica.mistica.button.TestingButton
+			<com.telefonica.mistica.button.Button
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginTop="8dp"
@@ -408,7 +408,7 @@
 					app:style="SECONDARY_SMALL_INVERSE"
 					/>
 
-			<com.telefonica.mistica.button.TestingButton
+			<com.telefonica.mistica.button.Button
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginTop="8dp"
@@ -418,7 +418,7 @@
 					app:style="SECONDARY_SMALL_INVERSE"
 					/>
 
-			<com.telefonica.mistica.button.TestingButton
+			<com.telefonica.mistica.button.Button
 					android:id="@+id/secondary_small_inverse_progress"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
@@ -427,7 +427,7 @@
 					app:style="SECONDARY_SMALL_INVERSE"
 					/>
 
-			<com.telefonica.mistica.button.TestingButton
+			<com.telefonica.mistica.button.Button
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginTop="8dp"
@@ -436,7 +436,7 @@
 					app:style="SECONDARY_SMALL_INVERSE"
 					/>
 
-			<com.telefonica.mistica.button.TestingButton
+			<com.telefonica.mistica.button.Button
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginTop="8dp"
@@ -444,7 +444,7 @@
 					app:style="LINK_INVERSE"
 					/>
 
-			<com.telefonica.mistica.button.TestingButton
+			<com.telefonica.mistica.button.Button
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginTop="8dp"
@@ -454,7 +454,7 @@
 					app:style="LINK_INVERSE"
 					/>
 
-			<com.telefonica.mistica.button.TestingButton
+			<com.telefonica.mistica.button.Button
 					android:id="@+id/link_inverse_progress"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
@@ -463,7 +463,7 @@
 					app:style="LINK_INVERSE"
 					/>
 
-			<com.telefonica.mistica.button.TestingButton
+			<com.telefonica.mistica.button.Button
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginTop="8dp"

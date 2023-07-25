@@ -39,7 +39,7 @@
         android:layout_marginStart="8dp"
         app:inputCheckText="Add Icon" />
 
-    <com.telefonica.mistica.button.TestingButton
+    <com.telefonica.mistica.button.Button
         android:id="@+id/add_tab_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -48,7 +48,7 @@
         android:layout_marginTop="8dp"
         app:text="Add Tab" />
 
-    <com.telefonica.mistica.button.TestingButton
+    <com.telefonica.mistica.button.Button
         android:id="@+id/remove_tab_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

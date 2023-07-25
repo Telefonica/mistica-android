@@ -56,16 +56,16 @@
 			android:layout_marginStart="0dp"
 			>
 
-		<com.telefonica.mistica.button.ProgressButton
+		<com.telefonica.mistica.button.Button
 				android:id="@+id/empty_state_screen_primary_button"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_marginStart="16dp"
-				style="@style/AppTheme.Button.DefaultButton.Small"
 				tools:text="Explore Marketplace"
+				app:style="PRIMARY_SMALL"
 				/>
 
-		<com.telefonica.mistica.button.TestingButton
+		<com.telefonica.mistica.button.Button
 				android:id="@+id/empty_state_screen_secondary_button"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
@@ -74,7 +74,7 @@
 				app:style="PRIMARY_SMALL"
 				/>
 
-		<com.telefonica.mistica.button.TestingButton
+		<com.telefonica.mistica.button.Button
 				android:id="@+id/empty_state_screen_link_button"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"

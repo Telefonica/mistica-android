@@ -98,7 +98,7 @@
 				app:inputType="text"
 				/>
 
-		<com.telefonica.mistica.button.TestingButton
+		<com.telefonica.mistica.button.Button
 				android:id="@+id/show_button"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"

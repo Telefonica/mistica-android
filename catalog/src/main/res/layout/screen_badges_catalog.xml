@@ -30,25 +30,25 @@
             android:contentDescription="image" />
     </FrameLayout>
 
-    <Button
+    <com.telefonica.mistica.button.Button
         android:id="@+id/button_add_non_numeric_badge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:text="Toggle" />
+        app:text="Toggle" />
 
-    <Button
+    <com.telefonica.mistica.button.Button
         android:id="@+id/button_add_numeric_badge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Toggle With Number > 0" />
+        app:text="Toggle With Number > 0" />
 
-    <Button
+    <com.telefonica.mistica.button.Button
         android:id="@+id/button_remove_badge_if_numeric_with_count_zero"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Remove when number = 0" />
+        app:text="Remove when number = 0" />
 
 </LinearLayout>

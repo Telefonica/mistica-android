@@ -1,26 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merge xmlns:android="http://schemas.android.com/apk/res/android">
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		>
 
-    <com.telefonica.mistica.button.ProgressButton
-        android:id="@+id/first_button"
-        style="@style/AppTheme.Button.DefaultButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+	<com.telefonica.mistica.button.Button
+			android:id="@+id/first_button"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			app:style="PRIMARY"
+			/>
 
-    <com.telefonica.mistica.button.Button
-        android:id="@+id/second_button"
-        style="@style/AppTheme.Button.SecondaryButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:visibility="gone" />
+	<com.telefonica.mistica.button.Button
+			android:id="@+id/second_button"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="16dp"
+			android:visibility="gone"
+			app:style="SECONDARY"
+			/>
 
-    <com.telefonica.mistica.button.Button
-        android:id="@+id/link_button"
-        style="@style/AppTheme.Button.LinkButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:visibility="gone" />
+	<com.telefonica.mistica.button.Button
+			android:id="@+id/link_button"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="16dp"
+			android:visibility="gone"
+			app:style="LINK"
+			/>
 
 </merge>

@@ -50,7 +50,6 @@
     <!--    Primary-->
     <com.telefonica.mistica.button.Button
         android:id="@+id/highlighted_card_button_primary"
-        style="@style/AppTheme.Button.DefaultButton.Small"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -60,11 +59,11 @@
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/highlighted_card_content"
         tools:text="Update"
-        tools:visibility="visible" />
+        tools:visibility="visible"
+        app:style="PRIMARY_SMALL"/>
 
     <com.telefonica.mistica.button.Button
         android:id="@+id/highlighted_card_button_primary_inverse"
-        style="@style/AppTheme.Button.PrimaryButtonInverse.Small"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -73,12 +72,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/highlighted_card_content"
-        tools:text="Update" />
+        tools:text="Update"
+        app:style="PRIMARY_SMALL_INVERSE"/>
 
     <!--    Secondary-->
     <com.telefonica.mistica.button.Button
         android:id="@+id/highlighted_card_button_secondary"
-        style="@style/AppTheme.Button.SecondaryButton.Small"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -87,11 +86,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/highlighted_card_content"
-        tools:text="Update" />
+        tools:text="Update"
+        app:style="SECONDARY_SMALL"/>
 
     <com.telefonica.mistica.button.Button
         android:id="@+id/highlighted_card_button_secondary_inverse"
-        style="@style/AppTheme.Button.SecondaryButtonInverse.Small"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -100,12 +99,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/highlighted_card_content"
-        tools:text="Update" />
+        tools:text="Update"
+        app:style="SECONDARY_SMALL_INVERSE"/>
 
     <!--    Link-->
     <com.telefonica.mistica.button.Button
         android:id="@+id/highlighted_card_button_link"
-        style="@style/AppTheme.Button.LinkButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -116,11 +115,11 @@
         app:layout_constraintTop_toBottomOf="@+id/highlighted_card_content"
         app:layout_goneMarginBottom="24dp"
         app:layout_goneMarginTop="0dp"
-        tools:text="Update" />
+        tools:text="Update"
+        app:style="LINK"/>
 
     <com.telefonica.mistica.button.Button
         android:id="@+id/highlighted_card_button_link_inverse"
-        style="@style/AppTheme.Button.LinkButtonInverse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -130,7 +129,8 @@
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/highlighted_card_content"
         tools:text="Update"
-        tools:visibility="gone" />
+        tools:visibility="gone"
+        app:style="LINK_INVERSE"/>
 
     <ImageView
         android:id="@+id/highlighted_card_image"

@@ -168,7 +168,7 @@
                 app:inputHint="Email"
                 app:inputType="email" />
 
-            <com.telefonica.mistica.button.TestingButton
+            <com.telefonica.mistica.button.Button
                 android:id="@+id/button_text_input_email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -191,7 +191,7 @@
                 app:inputHint="Phone"
                 app:inputType="phone" />
 
-            <com.telefonica.mistica.button.TestingButton
+            <com.telefonica.mistica.button.Button
                 android:id="@+id/button_text_input_phone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -213,7 +213,7 @@
                 android:layout_marginBottom="8dp"
                 app:inputHint="Custom text" />
 
-            <com.telefonica.mistica.button.TestingButton
+            <com.telefonica.mistica.button.Button
                 android:id="@+id/button_text_input_custom"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

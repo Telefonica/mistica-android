@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merge xmlns:android="http://schemas.android.com/apk/res/android">
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        >
 
     <TextView
         android:id="@+id/load_error_feedback_title"
@@ -20,11 +22,11 @@
         android:textAppearance="@style/AppTheme.TextAppearance.Preset2"
         android:textColor="?colorTextSecondary" />
 
-    <com.telefonica.mistica.button.ProgressButton
+    <com.telefonica.mistica.button.Button
         android:id="@+id/load_error_feedback_button"
-        style="@style/AppTheme.Button.SecondaryButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="@string/generic_retry" />
+        app:text="@string/generic_retry"
+        app:style="SECONDARY"/>
 </merge>
