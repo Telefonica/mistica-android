@@ -7,7 +7,7 @@
         android:id="@+id/first_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:style="SECONDARY_INVERSE"/>
+        app:style="PRIMARY_INVERSE"/>
 
     <com.telefonica.mistica.button.Button
         android:id="@+id/second_button"

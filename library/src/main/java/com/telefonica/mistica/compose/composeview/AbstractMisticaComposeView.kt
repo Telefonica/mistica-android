@@ -3,8 +3,13 @@ package com.telefonica.mistica.compose.composeview
 import android.content.Context
 import android.util.AttributeSet
 import androidx.annotation.IntDef
+import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.ExperimentalComposeUiApi
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.AbstractComposeView
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.testTagsAsResourceId
 import com.telefonica.mistica.R
 import com.telefonica.mistica.compose.composeview.AbstractMisticaComposeView.Companion.BRAND_VALUE_BLAU
 import com.telefonica.mistica.compose.composeview.AbstractMisticaComposeView.Companion.BRAND_VALUE_MOVISTAR
@@ -53,10 +58,19 @@ abstract class AbstractMisticaComposeView @JvmOverloads constructor(
         }
     }
 
+    @OptIn(ExperimentalComposeUiApi::class)
     @Composable
-    open fun Theme(brand: Brand = calculateBrand(), body: @Composable () -> Unit) {
+    open fun Theme(
+        brand: Brand = calculateBrand(),
+        testTagsAsResourceId: Boolean = true,
+        body: @Composable () -> Unit,
+    ) {
         MisticaTheme(brand) {
-            body()
+            Surface(modifier = Modifier.semantics {
+                this.testTagsAsResourceId = testTagsAsResourceId
+            }) {
+                body()
+            }
         }
     }
 

@@ -176,7 +176,6 @@ object ButtonTestTag {
     const val BUTTON_TEXT_LOADING = "button_text_loading"
     const val BUTTON_ICON = "button_icon"
     const val BUTTON_PROGRESS = "button_progress"
-
 }
 
 @Preview
