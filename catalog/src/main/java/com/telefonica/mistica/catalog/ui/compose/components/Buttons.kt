@@ -35,9 +35,6 @@ import kotlinx.coroutines.launch
 fun Buttons() {
     Column(
         modifier = Modifier
-            .semantics {
-                testTagsAsResourceId = true
-            }
             .fillMaxSize()
             .verticalScroll(rememberScrollState()),
         verticalArrangement = Arrangement.spacedBy(8.dp),
