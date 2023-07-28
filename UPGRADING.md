@@ -63,3 +63,14 @@ Other colors have been removed because UX team has decided to remove them from t
 ### Changes in FeedbackScreenView
 - `TYPE_CUSTOM` has been removed. Use `TYPE_INFO` instead, it allows custom icon or animation.
 - `shouldAnimateOnAttachedToWindow` is now private. Use method `setShouldAnimateOnAttached()` or xml attribute `app:shouldAnimateOnAttached` instead.
+
+## Upgrade to version 9.1.0
+9.1.0 version change the xml tag implementation.
+
+Please replace set functions by property access syntax
+- `button.setText("some text")` -> `button.text = "some text"`
+- `button.setTagStyle(TYPE_INVERSE)` -> `button.style = TYPE_INVERSE`
+- `button.setTagIcon(R.drawable.icon)` -> `button.icon = R.drawable.icon`
+
+- Please replace android xml attributes by Mistica attributes
+- `android:text="some text"` -> `app:text="some text"`
