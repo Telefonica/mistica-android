@@ -9,7 +9,7 @@ Button which is composed of the following elements
 - `text` [String] : Text to show in normal state
 - `loadingText` [String] - Text to show in loading state
 - `isLoading` [Boolean] - Flag to show/hide loading state
-- LINK_INVERSE [Enum] - Value to set the button style PRIMARY
+- `style` [Enum] - Value to set the button style PRIMARY
     - PRIMARY
     - PRIMARY_SMALL
     - SECONDARY

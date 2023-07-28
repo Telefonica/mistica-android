@@ -7,6 +7,7 @@ import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.AbstractComposeView
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.testTagsAsResourceId
@@ -66,9 +67,12 @@ abstract class AbstractMisticaComposeView @JvmOverloads constructor(
         body: @Composable () -> Unit,
     ) {
         MisticaTheme(brand) {
-            Surface(modifier = Modifier.semantics {
-                this.testTagsAsResourceId = testTagsAsResourceId
-            }) {
+            Surface(
+                color = Color.Transparent,
+                modifier = Modifier
+                    .semantics {
+                        this.testTagsAsResourceId = testTagsAsResourceId
+                    }) {
                 body()
             }
         }
