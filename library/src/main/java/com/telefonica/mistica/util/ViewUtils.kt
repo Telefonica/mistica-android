@@ -6,6 +6,7 @@ import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
+import com.telefonica.mistica.tag.TagView
 
 fun ViewGroup.children(): Iterable<View> = (0 until childCount)
     .map { index -> getChildAt(index) }
@@ -41,6 +42,15 @@ fun View.setAlpha(enabled: Boolean) {
         ENABLED_ALPHA
     } else {
         DISABLED_ALPHA
+    }
+}
+
+fun TagView.setTextAndVisibility(newText: CharSequence?) {
+    if (newText?.isNotBlank() == true) {
+        this.text = newText.toString()
+        visibility = VISIBLE
+    } else {
+        visibility = GONE
     }
 }
 

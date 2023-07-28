@@ -1,15 +1,15 @@
 package com.telefonica.mistica.tag
 
 import android.content.Context
-import android.graphics.drawable.Drawable
 import android.util.AttributeSet
 import androidx.annotation.IntDef
-import androidx.appcompat.view.ContextThemeWrapper
-import androidx.core.graphics.BlendModeColorFilterCompat
-import androidx.core.graphics.BlendModeCompat
-import androidx.core.graphics.drawable.DrawableCompat
-import com.google.android.material.textview.MaterialTextView
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import com.telefonica.mistica.R
+import com.telefonica.mistica.compose.composeview.AbstractMisticaComposeView
+import com.telefonica.mistica.compose.tag.Tag
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_ACTIVE
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_ERROR
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_INACTIVE
@@ -17,9 +17,6 @@ import com.telefonica.mistica.tag.TagView.Companion.TYPE_INVERSE
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_PROMO
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_SUCCESS
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_WARNING
-import com.telefonica.mistica.util.convertDpToPx
-import com.telefonica.mistica.util.getThemeColor
-import java.util.Locale
 
 @Retention(AnnotationRetention.SOURCE)
 @IntDef(
@@ -37,66 +34,39 @@ class TagView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0,
-) : MaterialTextView(
-    ContextThemeWrapper(context, R.style.AppTheme_Widgets_Tag),
+) : AbstractMisticaComposeView(
+    context,
     attrs,
     defStyleAttr
 ) {
 
     @TagStyle
-    private var currentStyle = TYPE_PROMO
+    var style by mutableStateOf(TYPE_PROMO)
+    var text: String by mutableStateOf("")
+    var icon: Int? by mutableStateOf(null)
 
     init {
-        if (attrs != null) {
+        attrs?.let {
             val styledAttrs = context.theme.obtainStyledAttributes(attrs, R.styleable.TagView, defStyleAttr, 0)
-
-            val style = styledAttrs.getInt(R.styleable.TagView_tagStyle, currentStyle)
-            val icon = styledAttrs.getDrawable(R.styleable.TagView_tagIcon)
-            setTagStyle(style, icon)
-
-            styledAttrs.recycle()
+            try {
+                style = styledAttrs.getInt(R.styleable.TagView_tagStyle, TYPE_PROMO)
+                icon = styledAttrs.getResourceId(R.styleable.TagView_tagIcon, 0).takeIf { it != 0 }
+                text = styledAttrs.getString(R.styleable.TagView_tagText) ?: ""
+            } finally {
+                styledAttrs.recycle()
+            }
         }
     }
 
-    @JvmOverloads
-    fun setTagStyle(@TagStyle style: Int, icon: Drawable? = null) {
-        currentStyle = style
-        val (tagBackground, tagTextColor) = style.getStyle()
-        background.colorFilter = BlendModeColorFilterCompat.createBlendModeColorFilterCompat(context.getThemeColor(tagBackground), BlendModeCompat.SRC_IN)
-        setTextColor(context.getThemeColor(tagTextColor))
-
-        if (icon != null) {
-            setTagIcon(icon)
+    @Composable
+    override fun Content() {
+        Theme {
+            Tag(
+                text = text,
+                style = style,
+                icon = icon
+            )
         }
-    }
-
-    fun setTagIcon(drawable: Drawable) {
-
-        DrawableCompat.setTint(DrawableCompat.wrap(drawable), context.getThemeColor(currentStyle.getStyle().second))
-
-        val iconSize = context.convertDpToPx(16)
-        val fixedMargin = context.convertDpToPx(1.5F)
-        drawable.setBounds(0, fixedMargin, iconSize, iconSize + fixedMargin)
-
-        setCompoundDrawablesRelative(drawable, null, null, null)
-        compoundDrawablePadding = context.convertDpToPx(4)
-
-        setPadding(context.convertDpToPx(8), paddingTop, paddingRight, paddingBottom)
-    }
-
-    override fun setText(text: CharSequence?, type: BufferType?) {
-        super.setText(text?.toString(), type)
-    }
-
-    private fun Int.getStyle() = when (this) {
-        TYPE_PROMO -> R.attr.colorPromoLow to R.attr.colorPromoHigh
-        TYPE_ACTIVE -> R.attr.colorBrandLow to R.attr.colorBrand
-        TYPE_INACTIVE -> R.attr.colorNeutralLow to R.attr.colorNeutralMedium
-        TYPE_SUCCESS -> R.attr.colorSuccessLow to R.attr.colorSuccessHigh
-        TYPE_WARNING -> R.attr.colorWarningLow to R.attr.colorWarningHigh
-        TYPE_ERROR -> R.attr.colorErrorLow to R.attr.colorErrorHigh
-        TYPE_INVERSE -> R.attr.colorInverse to R.attr.colorBrand
-        else -> R.attr.colorPromoLow to R.attr.colorPromoHigh
     }
 
     companion object {

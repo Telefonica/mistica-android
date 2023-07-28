@@ -10,7 +10,8 @@
 
 	<declare-styleable name="TagView">
 		<attr name="tagIcon" format="reference" />
-		<attr name="tagStyle" />
+        <attr name="tagStyle" />
+        <attr name="tagText" format="string"/>
 	</declare-styleable>
 
 	<!-- This attribute is being reused by CardView and TagView -->
