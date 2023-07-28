@@ -65,9 +65,9 @@ class LoadErrorFeedbackView @JvmOverloads constructor(
         gravity = Gravity.CENTER
         orientation = VERTICAL
 
-        titleTextView = findViewById(R.id.load_error_feedback_title)
-        descriptionTextView = findViewById(R.id.load_error_feedback_description)
-        button = findViewById(R.id.load_error_feedback_button)
+        titleTextView = findViewById(R.id.error_feedback_title)
+        descriptionTextView = findViewById(R.id.error_feedback_description)
+        button = findViewById(R.id.error_feedback_button)
         isFocusable = true
 
         if (attrs != null) {
