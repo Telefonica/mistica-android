@@ -1,10 +1,25 @@
-# Tags
+# com.telefonica.mistica.tag.TagView
 
 <p align="center">
    <img width="50%" src="../../../../../../../../doc/images/tags/tags.png" />
 </p>
 
-Implemented as a custom view, `com.telefonica.mistica.tag.TagView` can be used like a regular `TextView`, allowing same kind of configuration.
+Tag which is composed of the following elements
+- Text
+- Icon
+- Style
+
+## Xml Attributes
+- `text` [String] : Text to show inside the tag element
+- `icon` [Int] - Icon drawable resource
+- `style` [Int] - Style of the tag element. It can be one of the following values:
+    - `promo`
+    - `active`
+    - `inactive`
+    - `success`
+    - `warning`
+    - `error`
+    - `inverse`
 
 ## How to use
 
@@ -12,7 +27,7 @@ Implemented as a custom view, `com.telefonica.mistica.tag.TagView` can be used l
 	<com.telefonica.mistica.tag.TagView
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:text="Active"
+			app:tagText="Active"
 			app:tagStyle="active"
 			app:tagIcon="@drawable/icon"
 			/>
@@ -22,6 +37,7 @@ Implemented as a custom view, `com.telefonica.mistica.tag.TagView` can be used l
 	<declare-styleable name="TagView">
 		<attr name="tagIcon" format="reference" />
 		<attr name="tagStyle" />
+        <attr name="tagText" format="string" />
 	</declare-styleable>
 	<attr name="tagStyle" format="enum">
 		<enum name="promo" value="0" />

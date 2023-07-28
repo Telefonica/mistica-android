@@ -23,7 +23,7 @@
 				android:layout_height="wrap_content"
 				android:layout_columnWeight="1"
 				android:layout_gravity="center"
-				android:text="Inverse"
+				app:tagText="Inverse"
 				app:tagStyle="inverse"
 				tools:text="@tools:sample/full_names"
 				/>
@@ -43,7 +43,7 @@
 				android:layout_height="wrap_content"
 				android:layout_columnWeight="1"
 				android:layout_gravity="center"
-				android:text="Promotion"
+				app:tagText="Promotion"
 				tools:text="@tools:sample/full_names"
 				/>
 
@@ -52,7 +52,7 @@
 				android:layout_height="wrap_content"
 				android:layout_columnWeight="1"
 				android:layout_gravity="center"
-				android:text="Active"
+				app:tagText="Active"
 				app:tagStyle="active"
 				tools:text="@tools:sample/full_names"
 				/>
@@ -62,7 +62,7 @@
 				android:layout_height="wrap_content"
 				android:layout_columnWeight="1"
 				android:layout_gravity="center"
-				android:text="Inactive"
+				app:tagText="Inactive"
 				app:tagStyle="inactive"
 				tools:text="@tools:sample/full_names"
 				/>
@@ -72,7 +72,7 @@
 				android:layout_height="wrap_content"
 				android:layout_columnWeight="1"
 				android:layout_gravity="center"
-				android:text="Success"
+				app:tagText="Success"
 				app:tagStyle="success"
 				tools:text="@tools:sample/full_names"
 				/>
@@ -82,7 +82,7 @@
 				android:layout_height="wrap_content"
 				android:layout_columnWeight="1"
 				android:layout_gravity="center"
-				android:text="Warning"
+				app:tagText="Warning"
 				app:tagStyle="warning"
 				tools:text="@tools:sample/full_names"
 				/>
@@ -92,7 +92,7 @@
 				android:layout_height="wrap_content"
 				android:layout_columnWeight="1"
 				android:layout_gravity="center"
-				android:text="Error"
+				app:tagText="Error"
 				app:tagStyle="error"
 				tools:text="@tools:sample/full_names"
 				/>
@@ -112,9 +112,9 @@
 				android:layout_height="wrap_content"
 				android:layout_columnWeight="1"
 				android:layout_gravity="center"
-				android:text="Inverse"
+				app:tagText="Inverse"
 				app:tagStyle="inverse"
-				app:tagIcon="@drawable/icn_cross"
+				app:tagIcon="@android:drawable/ic_lock_power_off"
 				tools:text="@tools:sample/full_names"
 				/>
 
@@ -133,8 +133,8 @@
 				android:layout_height="wrap_content"
 				android:layout_columnWeight="1"
 				android:layout_gravity="center"
-				android:text="Promotion"
-				app:tagIcon="@drawable/icn_cross"
+				app:tagText="Promotion"
+				app:tagIcon="@android:drawable/ic_lock_power_off"
 				tools:text="@tools:sample/full_names"
 				/>
 
@@ -143,8 +143,8 @@
 				android:layout_height="wrap_content"
 				android:layout_columnWeight="1"
 				android:layout_gravity="center"
-				android:text="Active"
-				app:tagIcon="@drawable/icn_cross"
+				app:tagText="Active"
+				app:tagIcon="@android:drawable/ic_lock_power_off"
 				app:tagStyle="active"
 				tools:text="@tools:sample/full_names"
 				/>
@@ -154,8 +154,8 @@
 				android:layout_height="wrap_content"
 				android:layout_columnWeight="1"
 				android:layout_gravity="center"
-				android:text="Inactive"
-				app:tagIcon="@drawable/icn_cross"
+				app:tagText="Inactive"
+				app:tagIcon="@android:drawable/ic_lock_power_off"
 				app:tagStyle="inactive"
 				tools:text="@tools:sample/full_names"
 				/>
@@ -165,8 +165,8 @@
 				android:layout_height="wrap_content"
 				android:layout_columnWeight="1"
 				android:layout_gravity="center"
-				android:text="Success"
-				app:tagIcon="@drawable/icn_cross"
+				app:tagText="Success"
+				app:tagIcon="@android:drawable/ic_lock_power_off"
 				app:tagStyle="success"
 				tools:text="@tools:sample/full_names"
 				/>
@@ -176,8 +176,8 @@
 				android:layout_height="wrap_content"
 				android:layout_columnWeight="1"
 				android:layout_gravity="center"
-				android:text="Warning"
-				app:tagIcon="@drawable/icn_cross"
+				app:tagText="Warning"
+				app:tagIcon="@android:drawable/ic_lock_power_off"
 				app:tagStyle="warning"
 				tools:text="@tools:sample/full_names"
 				/>
@@ -187,8 +187,8 @@
 				android:layout_height="wrap_content"
 				android:layout_columnWeight="1"
 				android:layout_gravity="center"
-				android:text="Error"
-				app:tagIcon="@drawable/icn_cross"
+				app:tagText="Error"
+				app:tagIcon="@android:drawable/ic_lock_power_off"
 				app:tagStyle="error"
 				tools:text="@tools:sample/full_names"
 				/>
@@ -205,7 +205,7 @@
 			android:id="@+id/regular_tag"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:text="Promotion"
+			app:tagText="Promotion"
 			android:layout_marginTop="16dp"
 			android:layout_gravity="center"
 			tools:text="@tools:sample/full_names"
@@ -217,8 +217,8 @@
 			android:layout_height="wrap_content"
 			android:layout_marginTop="8dp"
 			android:layout_gravity="center"
-			android:text="Promotion"
-			app:tagIcon="@drawable/icn_cross"
+			app:tagText="Promotion"
+			app:tagIcon="@android:drawable/ic_lock_power_off"
 			tools:text="@tools:sample/full_names"
 			/>
 
@@ -236,7 +236,7 @@
 				android:id="@+id/inverse_tag"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:text="Promotion"
+				app:tagText="Promotion"
 				app:tagStyle="inverse"
 				tools:text="@tools:sample/full_names"
 				/>
@@ -246,9 +246,9 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_marginTop="8dp"
-				android:text="Promotion"
+				app:tagText="Promotion"
 				app:tagStyle="inverse"
-				app:tagIcon="@drawable/icn_cross"
+				app:tagIcon="@android:drawable/ic_lock_power_off"
 				tools:text="@tools:sample/full_names"
 				/>
 

@@ -17,6 +17,7 @@ import com.telefonica.mistica.R
 import com.telefonica.mistica.tag.TagStyle
 import com.telefonica.mistica.tag.TagView
 import com.telefonica.mistica.util.getDimension
+import com.telefonica.mistica.util.setTextAndVisibility
 
 @BindingMethods(
     BindingMethod(
@@ -133,7 +134,7 @@ abstract class CardView @JvmOverloads constructor(
     }
 
     fun setTagStyle(@TagStyle style: Int) {
-        cardContentView.tagTextView.setTagStyle(style)
+        cardContentView.tagTextView.style = style
     }
 
     fun setTitle(text: CharSequence?) {

@@ -66,7 +66,9 @@ fun Tag(
                 Image(
                     painter = painterResource(id = icon),
                     contentDescription = null,
-                    modifier = Modifier.size(16.dp),
+                    modifier = Modifier
+                        .testTag(TagTestTags.TAG_ICON)
+                        .size(16.dp),
                     colorFilter = ColorFilter.tint(textColor),
                     contentScale = ContentScale.Fit
                 )
@@ -89,6 +91,7 @@ fun Tag(
 object TagTestTags {
     const val TAG = "tag"
     const val TAG_TEXT = "tag_text"
+    const val TAG_ICON = "tag_icon"
 }
 
 class Tag constructor(

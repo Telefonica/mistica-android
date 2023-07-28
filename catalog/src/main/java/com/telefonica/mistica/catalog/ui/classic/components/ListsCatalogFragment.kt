@@ -463,7 +463,7 @@ class ListsCatalogFragment : Fragment() {
             if (withHeadline) {
                 setHeadlineLayout(R.layout.list_row_tag_headline)
                 (getHeadline()!! as TagView).apply {
-                    setTagStyle(if (withInverseBackground) TYPE_INVERSE else withHeadlineStyle)
+                    style = (if (withInverseBackground) TYPE_INVERSE else withHeadlineStyle)
                     text = "Headline"
                 }
             } else {
