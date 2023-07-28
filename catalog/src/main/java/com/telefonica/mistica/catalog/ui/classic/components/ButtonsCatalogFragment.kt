@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.telefonica.mistica.button.ProgressButton
+import com.telefonica.mistica.button.Button
 import com.telefonica.mistica.catalog.R
 
 class ButtonsCatalogFragment : Fragment() {
@@ -13,7 +13,7 @@ class ButtonsCatalogFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         return layoutInflater.inflate(R.layout.screen_buttons_catalog, container, false)
@@ -35,12 +35,12 @@ class ButtonsCatalogFragment : Fragment() {
             R.id.secondary_small_inverse_progress,
             R.id.link_inverse_progress
         )
-            .map { view.findViewById<ProgressButton>(it) }
+            .map { view.findViewById<Button>(it) }
             .forEach { button ->
-                button.setLoadingText("Loading")
+                button.loadingText = "Loading"
                 button.setOnClickListener {
-                    button.showLoading()
-                    button.postDelayed({ button.hideLoading() }, LOADING_TIME)
+                    button.isLoading = true
+                    button.postDelayed({ button.isLoading = false }, LOADING_TIME)
                 }
             }
     }

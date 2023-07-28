@@ -1,19 +1,32 @@
-# Buttons
+# com.telefonica.mistica.Button
+Button which is composed of the following elements
+- Text
+- Loading Text
+- Icon
+- Progress bar
 
-Following classes should be used to place buttons in the app:
-* `com.telefonica.mistica.Button` --> Simple button with primary style applied by default
-* `com.telefonica.mistica.ProgressButton` --> In case of the need of a loading state (a button with progress), this one can be used to show an spinner (with an optional loading text) with an animation. `app:isLoading` attribute can be used in order to set it as loading on xml layouts, also with databinding.
+## Xml Attributes
+- `text` [String] : Text to show in normal state
+- `loadingText` [String] - Text to show in loading state
+- `isLoading` [Boolean] - Flag to show/hide loading state
+- `style` [Enum] - Value to set the button style PRIMARY
+    - PRIMARY
+    - PRIMARY_SMALL
+    - SECONDARY
+    - SECONDARY_SMALL
+    - DANGER
+    - DANGER_SMALL
+    - LINK
+    - PRIMARY_INVERSE
+    - PRIMARY_SMALL_INVERSE
+    - SECONDARY_INVERSE
+    - SECONDARY_SMALL_INVERSE
+    - LINK_INVERSE
+- `enabled` [Boolean] - Flag to enabled/disabled view
+- `icon` [Int] - Icon drawable resource
 
-Buttons are based on material components, so all material functionalities are applicable on them.
-
-In order to change appearance of them, just set the required style (styles for all kind of buttons are available on [styles_buttons.xml](../../../../../../../../library/src/main/res/values/styles_buttons.xml)).
-
-<p align="center">
-    <img src="../../../../../../../../doc/images/buttons/buttons_tuenti.gif">
-    <img src="../../../../../../../../doc/images/buttons/buttons_movistar.gif">
-</p>
-<p align="center">
-    <img src="../../../../../../../../doc/images/buttons/buttons_o2.gif">
-    <img src="../../../../../../../../doc/images/buttons/buttons_vivo.gif">
-</p>
-
+## Functions
+We can modify all element attributes by code
+In addition we have next functions
+- setOnClickListener
+- setEnabled

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<item name="button" type="id" />
+	<item name="button_text" type="id" />
+	<item name="button_text_loading" type="id" />
+	<item name="button_icon" type="id" />
+	<item name="button_progress" type="id" />
+</resources>

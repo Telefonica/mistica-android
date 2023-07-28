@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <merge xmlns:android="http://schemas.android.com/apk/res/android"
 		xmlns:tools="http://schemas.android.com/tools"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
 		tools:parentTag="ScrollView"
 		>
 
@@ -58,7 +59,7 @@
 				android:layout_marginStart="0dp"
 				>
 
-			<com.telefonica.mistica.button.ProgressButton
+			<com.telefonica.mistica.button.Button
 					android:id="@+id/empty_state_screen_primary_button"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
@@ -71,7 +72,7 @@
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginStart="24dp"
-					style="@style/AppTheme.Button.SecondaryButton"
+					app:style="SECONDARY"
 					tools:text="Secondary Action"
 					/>
 
@@ -81,7 +82,7 @@
 					android:layout_height="wrap_content"
 					android:layout_marginStart="16dp"
 					android:layout_gravity="center_vertical"
-					style="@style/AppTheme.Button.LinkButton"
+					app:style="LINK"
 					tools:text="More info"
 					/>
 

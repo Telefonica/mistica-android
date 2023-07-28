@@ -12,7 +12,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewTreeObserver
 import android.view.animation.PathInterpolator
-import android.widget.Button
 import android.widget.FrameLayout
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -29,7 +28,7 @@ import com.airbnb.lottie.LottieAnimationView
 import com.airbnb.lottie.LottieProperty
 import com.airbnb.lottie.model.KeyPath
 import com.telefonica.mistica.R
-import com.telefonica.mistica.button.ProgressButton
+import com.telefonica.mistica.button.Button
 import com.telefonica.mistica.feedback.screen.haptics.HapticFeedbackType
 import com.telefonica.mistica.feedback.screen.haptics.performHapticFeedback
 import com.telefonica.mistica.util.background.GradientBackgroundFactory
@@ -53,7 +52,7 @@ class FeedbackScreenView : ConstraintLayout {
     private lateinit var errorReference: TextView
     private lateinit var customContentContainer: FrameLayout
     private lateinit var buttonsContainer: LinearLayout
-    private lateinit var firstButton: ProgressButton
+    private lateinit var firstButton: Button
     private lateinit var secondButton: Button
 
     private var type: Int = TYPE_INFO
@@ -74,8 +73,10 @@ class FeedbackScreenView : ConstraintLayout {
     private var firstButtonClickListener: OnClickListener? = null
     private var secondButtonClickListener: OnClickListener? = null
 
-    @RawRes private var customAnimation: Int? = null
-    @DrawableRes private var customIcon: Int? = null
+    @RawRes
+    private var customAnimation: Int? = null
+    @DrawableRes
+    private var customIcon: Int? = null
 
     constructor(context: Context) : super(context) {
         init(context)
@@ -132,18 +133,18 @@ class FeedbackScreenView : ConstraintLayout {
 
     fun setFeedbackFirstButtonText(text: CharSequence) {
         firstButtonText = text
-        firstButton.setText(text)
+        firstButton.text = text.toString()
         firstButton.visibility = if (text.isBlank()) View.GONE else View.VISIBLE
     }
 
     fun setFeedbackFirstButtonLoadingText(text: CharSequence) {
         firstButtonLoadingText = text
-        firstButton.setLoadingText(text)
+        firstButton.loadingText = text.toString()
     }
 
     fun setFeedbackSecondButtonText(text: CharSequence) {
         secondButtonText = text
-        secondButton.text = text
+        secondButton.text = text.toString()
         secondButton.visibility = if (text.isBlank()) View.GONE else View.VISIBLE
     }
 
@@ -171,7 +172,7 @@ class FeedbackScreenView : ConstraintLayout {
     fun setIsLoading(isLoading: Boolean) {
         val wasLoading = this.isLoading
         this.isLoading = isLoading
-        firstButton.setIsLoading(isLoading)
+        firstButton.isLoading = isLoading
         if (wasLoading && !isLoading) {
             icon.playAnimation()
             executeHapticFeedback()
@@ -372,7 +373,7 @@ class FeedbackScreenView : ConstraintLayout {
         setFeedbackFirstButtonText(firstButtonText)
         setFeedbackFirstButtonLoadingText(firstButtonLoadingText)
         firstButtonClickListener?.let { setFirstButtonOnClick(it) }
-        firstButton.setIsLoading(isLoading)
+        firstButton.isLoading = isLoading
 
         secondButton =
             findViewById(if (secondButtonAsLink) R.id.link_button else R.id.second_button)
