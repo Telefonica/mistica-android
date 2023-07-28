@@ -8,9 +8,11 @@ import androidx.annotation.AttrRes
 import androidx.annotation.IntDef
 import androidx.annotation.StyleRes
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.view.isVisible
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
+import com.telefonica.mistica.button.Button
 import com.telefonica.mistica.util.getThemeColor
 import com.telefonica.mistica.util.setTextAndVisibility
 import com.telefonica.mistica.util.setTextPreset
@@ -50,14 +52,14 @@ class TitleView @JvmOverloads constructor(
     )
     annotation class TitleStyle
 
-    private var linkTextView: TextView
+    private var linkTextView: Button
     private var titleTextView: TextView
 
     init {
         LayoutInflater.from(context).inflate(R.layout.title, this, true)
 
         titleTextView = findViewById(R.id.title_text)
-        linkTextView = findViewById(R.id.link_text)
+        linkTextView = findViewById(R.id.title_link)
 
         if (attrs != null) {
             val styledAttrs =
@@ -70,8 +72,12 @@ class TitleView @JvmOverloads constructor(
 
             titleTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.TitleView_title))
             setTitleStyle(styledAttrs.getInt(R.styleable.TitleView_titleStyle, -1))
-
-            linkTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.TitleView_link))
+            if (styledAttrs.getText(R.styleable.TitleView_link)?.isNotBlank() == true) {
+                linkTextView.text = styledAttrs.getText(R.styleable.TitleView_link)
+                linkTextView.isVisible = true
+            } else {
+                linkTextView.isVisible = false
+            }
 
             styledAttrs.recycle()
         }
@@ -98,7 +104,12 @@ class TitleView @JvmOverloads constructor(
     fun getLink(): String = linkTextView.text.toString()
 
     fun setLink(text: CharSequence?) {
-        linkTextView.setTextAndVisibility(text)
+        if (text?.isNotBlank() == true) {
+            linkTextView.text = text
+            linkTextView.isVisible = true
+        } else {
+            linkTextView.isVisible = false
+        }
     }
 
     fun setOnLinkClickedListener(listener: () -> Unit) {

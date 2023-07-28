@@ -1,14 +1,14 @@
 package com.telefonica.mistica.compose.title
 
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.unit.dp
+import com.telefonica.mistica.compose.button.Button
+import com.telefonica.mistica.compose.button.ButtonStyle
 import com.telefonica.mistica.compose.theme.MisticaTheme
 
 @Composable
@@ -20,7 +20,7 @@ fun Title(
     onLinkClicked: (() -> Unit)? = null,
 ) {
     Row(
-        modifier = modifier,
+        modifier = modifier.testTag(TitleTestTag.TITLE),
     ) {
         TitleText(
             modifier = Modifier
@@ -31,12 +31,11 @@ fun Title(
         )
 
         linkText?.let {
-            Link(
-                modifier = Modifier
-                    .padding(start = 16.dp)
-                    .alignByBaseline(),
-                text = it,
-                onClick = onLinkClicked
+            Button(
+                modifier = modifier.testTag(TitleTestTag.TITLE_LINK),
+                text = text,
+                buttonStyle = ButtonStyle.LINK,
+                onClickListener = { onLinkClicked?.invoke() }
             )
         }
     }
@@ -66,34 +65,20 @@ private fun TitleText(
     }
 
     Text(
-        modifier = modifier,
+        modifier = modifier.testTag(TitleTestTag.TITLE_TEXT),
         text = if (isAllCaps) text.uppercase() else text,
         style = preset,
         color = textColor
     )
 }
 
-@Composable
-private fun Link(
-    modifier: Modifier,
-    text: String,
-    onClick: (() -> Unit)? = null,
-) {
-    val linkModifier = if (onClick != null) {
-        modifier.then(Modifier.clickable { onClick() })
-    } else {
-        modifier
-    }
-
-    Text(
-        modifier = linkModifier,
-        text = text,
-        style = MisticaTheme.typography.presetLink,
-        color = MisticaTheme.colors.textLink
-    )
-}
-
 enum class TitleStyle {
     TITLE_1,
     TITLE_2
+}
+
+object TitleTestTag {
+    const val TITLE = "title"
+    const val TITLE_TEXT = "title_text"
+    const val TITLE_LINK = "title_link"
 }
