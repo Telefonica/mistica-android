@@ -128,13 +128,13 @@ class EmptyStateCardView @JvmOverloads constructor(
             context.convertDpToPx(24),
         )
 
-        image = findViewById(R.id.empty_state_screen_image)
-        title = findViewById(R.id.empty_state_screen_title)
-        subtitle = findViewById(R.id.empty_state_screen_subtitle)
+        image = findViewById(R.id.empty_state_image)
+        title = findViewById(R.id.empty_state_title)
+        subtitle = findViewById(R.id.empty_state_subtitle)
         buttonsContainer = findViewById(R.id.buttons_container)
-        primaryButton = findViewById(R.id.empty_state_screen_primary_button)
-        secondaryButton = findViewById(R.id.empty_state_screen_secondary_button)
-        linkButton = findViewById(R.id.empty_state_screen_link_button)
+        primaryButton = findViewById(R.id.empty_state_primary_button)
+        secondaryButton = findViewById(R.id.empty_state_secondary_button)
+        linkButton = findViewById(R.id.empty_state_link_button)
 
         @ButtonsConfig
         var buttonsConfig: Int = BUTTONS_CONFIG_NONE
