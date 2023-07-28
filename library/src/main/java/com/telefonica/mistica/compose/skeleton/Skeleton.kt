@@ -26,6 +26,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.theme.MisticaTheme
@@ -40,6 +41,7 @@ fun LineSkeleton(
     val skeletonColor by skeletonColorTransition(infiniteTransition, style)
     Box(
         modifier = modifier
+            .testTag(SkeletonTestTags.SKELETON_LINE)
             .fillMaxWidth()
             .clip(shape = RoundedCornerShape(MisticaTheme.radius.containerBorderRadius))
             .background(skeletonColor)
@@ -54,7 +56,9 @@ fun TextSkeleton(
     style: SkeletonStyle = SkeletonStyle.Default,
 ) {
     Column(
-        modifier = modifier.wrapContentHeight()
+        modifier = modifier
+            .testTag(SkeletonTestTags.SKELETON_TEXT)
+            .wrapContentHeight()
     ) {
         LineSkeleton(
             infiniteTransition = infiniteTransition,
@@ -87,6 +91,7 @@ fun CircleSkeleton(
     val skeletonColor by skeletonColorTransition(infiniteTransition, style)
     Box(
         modifier = modifier
+            .testTag(SkeletonTestTags.SKELETON_CIRCLE)
             .clip(shape = CircleShape)
             .background(skeletonColor)
             .size(40.dp)
@@ -102,6 +107,7 @@ fun RowSkeleton(
 ) {
     Row(
         modifier = modifier
+            .testTag(SkeletonTestTags.SKELETON_ROW)
             .fillMaxWidth()
             .wrapContentHeight(),
     ) {
@@ -129,6 +135,7 @@ fun RectangleSkeleton(
     val skeletonColor by skeletonColorTransition(infiniteTransition, style)
     Box(
         modifier = modifier
+            .testTag(SkeletonTestTags.SKELETON_RECTANGLE)
             .fillMaxWidth()
             .clip(shape = RoundedCornerShape(MisticaTheme.radius.containerBorderRadius))
             .background(skeletonColor)
@@ -191,4 +198,12 @@ fun SkeletonPreview() {
 enum class SkeletonStyle {
     Default,
     Inverse,
+}
+
+object SkeletonTestTags {
+    const val SKELETON_LINE = "skeleton_line"
+    const val SKELETON_TEXT = "skeleton_text"
+    const val SKELETON_CIRCLE = "skeleton_circle"
+    const val SKELETON_ROW = "skeleton_row"
+    const val SKELETON_RECTANGLE = "skeleton_rectangle"
 }
