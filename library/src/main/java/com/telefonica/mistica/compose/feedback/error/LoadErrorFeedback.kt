@@ -6,6 +6,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -25,12 +26,16 @@ fun LoadErrorFeedback(
 ) {
 
     Column(
-        modifier = Modifier.padding(16.dp),
+        modifier = Modifier
+            .testTag(ErrorFeedbackTestTags.ERROR_FEEDBACK)
+            .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         titleText?.let {
             Text(
-                modifier = Modifier.padding(8.dp),
+                modifier = Modifier
+                    .testTag(ErrorFeedbackTestTags.ERROR_FEEDBACK_TITLE)
+                    .padding(8.dp),
                 text = it,
                 textAlign = TextAlign.Center,
                 style = MisticaTheme.typography.presetCardTitle,
@@ -39,6 +44,7 @@ fun LoadErrorFeedback(
         }
         descriptionText?.let {
             Text(
+                modifier = Modifier.testTag(ErrorFeedbackTestTags.ERROR_FEEDBACK_DESCRIPTION),
                 text = it,
                 textAlign = TextAlign.Center,
                 style = MisticaTheme.typography.preset2,
@@ -47,7 +53,9 @@ fun LoadErrorFeedback(
         }
         buttonText?.let {
             Button(
-                modifier = Modifier.padding(top = 24.dp),
+                modifier = Modifier
+                    .testTag(ErrorFeedbackTestTags.ERROR_FEEDBACK_BUTTON)
+                    .padding(top = 24.dp),
                 text = it,
                 loadingText = buttonLoadingText,
                 onClickListener = onButtonClick,
@@ -57,6 +65,13 @@ fun LoadErrorFeedback(
         }
     }
 
+}
+
+object ErrorFeedbackTestTags {
+    const val ERROR_FEEDBACK = "error_feedback"
+    const val ERROR_FEEDBACK_TITLE = "error_feedback_title"
+    const val ERROR_FEEDBACK_DESCRIPTION = "error_feedback_description"
+    const val ERROR_FEEDBACK_BUTTON = "error_feedback_button"
 }
 
 @Preview

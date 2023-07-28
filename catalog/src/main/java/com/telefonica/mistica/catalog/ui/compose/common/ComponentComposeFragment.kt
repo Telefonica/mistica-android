@@ -21,11 +21,9 @@ class ComponentComposeFragment(private val theme: Brand, private val component: 
         return ComposeView(requireContext()).apply {
             setContent {
                 MisticaTheme(theme) {
-                    Surface(
-                        modifier = Modifier.semantics {
-                            testTagsAsResourceId = true
-                        }
-                    ) {
+                    Surface(modifier = Modifier.semantics {
+                        testTagsAsResourceId = true
+                    }) {
                         component()
                     }
                 }
