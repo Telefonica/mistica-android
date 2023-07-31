@@ -79,3 +79,6 @@ Please replace set functions by property access syntax
 Please replace android xml attributes by Mistica attributes
 - `android:text="some text"` -> `app:text="some text"`
 - `android:enabled="false"` -> `app:enabled="false"`
+
+Styles
+- Removed all related xml button styles. Replace all by `app:style="XXXX"` attribute

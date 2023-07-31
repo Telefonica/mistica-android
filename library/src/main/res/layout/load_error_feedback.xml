@@ -24,9 +24,9 @@
 
     <com.telefonica.mistica.button.Button
         android:id="@+id/load_error_feedback_button"
-        style="@style/AppTheme.Button.SecondaryButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        app:text="@string/generic_retry" />
+        app:text="@string/generic_retry"
+            app:style="SECONDARY"/>
 </merge>

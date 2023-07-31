@@ -18,8 +18,6 @@
 
         <item name="android:textAppearance">@style/AppTheme.TextAppearance.Preset3</item>
 
-        <item name="materialButtonStyle">@style/AppTheme.Button.DefaultButton</item>
-
         <item name="snackbarStyle">@style/Widget.MaterialComponents.Snackbar</item>
         <item name="maxActionInlineWidth" tools:ignore="PrivateResource">
             @dimen/design_snackbar_action_inline_max_width
