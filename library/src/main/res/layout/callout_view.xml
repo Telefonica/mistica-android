@@ -80,7 +80,7 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_marginEnd="16dp"
-				style="@style/AppTheme.Button.DefaultButton.Small"
+				app:style="PRIMARY_SMALL"
 				tools:text="Primary"
 				/>
 
@@ -89,7 +89,7 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_marginEnd="16dp"
-				style="@style/AppTheme.Button.SecondaryButton.Small"
+				app:style="SECONDARY_SMALL"
 				tools:text="Secondary"
 				/>
 
@@ -97,7 +97,7 @@
 				android:id="@+id/callout_link_button"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				style="@style/AppTheme.Button.LinkButton"
+				app:style="LINK"
 				tools:text="Link"
 				tools:visibility="gone"
 				/>

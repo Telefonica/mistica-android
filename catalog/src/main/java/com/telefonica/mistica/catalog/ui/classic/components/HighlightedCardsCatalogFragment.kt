@@ -6,9 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.telefonica.mistica.button.Button
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.highlightedcard.HighlightedCardView
 import com.telefonica.mistica.input.CheckBoxInput

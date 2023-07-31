@@ -12,7 +12,7 @@ import androidx.annotation.StringRes
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
-import com.telefonica.mistica.button.ProgressButton
+import com.telefonica.mistica.button.Button
 import com.telefonica.mistica.util.convertDpToPx
 
 @BindingMethods(
@@ -55,7 +55,7 @@ class LoadErrorFeedbackView @JvmOverloads constructor(
 
     private val titleTextView: TextView
     private val descriptionTextView: TextView
-    private val button: ProgressButton
+    private val button: Button
 
     init {
         LayoutInflater.from(context).inflate(R.layout.load_error_feedback, this, true)
@@ -110,7 +110,7 @@ class LoadErrorFeedbackView @JvmOverloads constructor(
     }
 
     fun setIsLoading(loading: Boolean) {
-        button.setIsLoading(loading)
+        button.isLoading = loading
     }
 
     fun setButtonOnClick(listener: OnClickListener?) {
@@ -118,7 +118,7 @@ class LoadErrorFeedbackView @JvmOverloads constructor(
     }
 
     fun setButtonText(text: CharSequence) {
-        button.setText(text)
+        button.text = text.toString()
     }
 
     fun setButtonText(@StringRes textId: Int) = setButtonText(context.getString(textId))

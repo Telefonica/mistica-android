@@ -18,7 +18,6 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.CircularProgressIndicator
-import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.ripple.LocalRippleTheme
 import androidx.compose.runtime.Composable
@@ -32,6 +31,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
@@ -68,6 +68,7 @@ fun Button(
     CompositionLocalProvider(LocalRippleTheme provides style.rippleTheme) {
         androidx.compose.material.Button(
             modifier = modifier
+                .testTag(ButtonTestTag.BUTTON)
                 .defaultMinSize(size.minWidth, size.height)
                 .onGloballyPositioned {
                     if (originalWidth == null) {
@@ -94,6 +95,7 @@ fun Button(
                     Row {
                         CircularProgressIndicator(
                             modifier = Modifier
+                                .testTag(ButtonTestTag.BUTTON_PROGRESS)
                                 .size(size.progressBarSize)
                                 .align(Alignment.CenterVertically),
                             color = textColor,
@@ -102,7 +104,9 @@ fun Button(
                         loadingText.takeIf { it.isNotEmpty() }?.let {
                             Spacer(modifier = Modifier.width(iconSpacing))
                             Text(
-                                modifier = Modifier.align(Alignment.CenterVertically),
+                                modifier = Modifier
+                                    .testTag(ButtonTestTag.BUTTON_TEXT_LOADING)
+                                    .align(Alignment.CenterVertically),
                                 text = it,
                                 color = textColor,
                                 style = size.textStyle,
@@ -124,6 +128,7 @@ fun Button(
                                 painterResource(id = it),
                                 null,
                                 modifier = Modifier
+                                    .testTag(ButtonTestTag.BUTTON_ICON)
                                     .size(size.iconSize)
                                     .align(Alignment.CenterVertically),
                                 colorFilter = ColorFilter.tint(style.textColor)
@@ -131,7 +136,9 @@ fun Button(
                             Spacer(modifier = Modifier.width(iconSpacing))
                         }
                         Text(
-                            modifier = Modifier.align(Alignment.CenterVertically),
+                            modifier = Modifier
+                                .testTag(ButtonTestTag.BUTTON_TEXT)
+                                .align(Alignment.CenterVertically),
                             text = text,
                             color = textColor,
                             style = size.textStyle,
@@ -161,6 +168,14 @@ enum class ButtonStyle {
     SECONDARY_INVERSE,
     SECONDARY_SMALL_INVERSE,
     LINK_INVERSE
+}
+
+object ButtonTestTag {
+    const val BUTTON = "button"
+    const val BUTTON_TEXT = "button_text"
+    const val BUTTON_TEXT_LOADING = "button_text_loading"
+    const val BUTTON_ICON = "button_icon"
+    const val BUTTON_PROGRESS = "button_progress"
 }
 
 @Preview

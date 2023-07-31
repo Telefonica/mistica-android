@@ -8,7 +8,6 @@ import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.ColorInt
@@ -20,6 +19,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
+import com.telefonica.mistica.button.Button
 import com.telefonica.mistica.util.getDimension
 import com.telefonica.mistica.util.getThemeColor
 import com.telefonica.mistica.util.hide
@@ -344,7 +344,7 @@ class HighlightedCardView @JvmOverloads constructor(
         }
 
         button?.setOnClickListener(buttonClickListener)
-        button?.text = buttonText
+        button?.text = buttonText ?: ""
         if (this.button != button) {
             button?.visibility = View.VISIBLE
             this.button?.visibility = View.GONE

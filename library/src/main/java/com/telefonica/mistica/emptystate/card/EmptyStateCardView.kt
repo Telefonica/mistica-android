@@ -7,7 +7,6 @@ import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -17,7 +16,7 @@ import androidx.appcompat.content.res.AppCompatResources
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
-import com.telefonica.mistica.button.ProgressButton
+import com.telefonica.mistica.button.Button
 import com.telefonica.mistica.util.convertDpToPx
 
 @BindingMethods(
@@ -111,7 +110,7 @@ class EmptyStateCardView @JvmOverloads constructor(
     private var title: TextView
     private var subtitle: TextView
     private var buttonsContainer: LinearLayout
-    private var primaryButton: ProgressButton
+    private var primaryButton: Button
     private var secondaryButton: Button
     private var linkButton: Button
 
@@ -236,11 +235,11 @@ class EmptyStateCardView @JvmOverloads constructor(
     }
 
     fun setPrimaryButtonText(text: String) {
-        primaryButton.setText(text)
+        primaryButton.text = text
     }
 
     fun setPrimaryButtonLoadingText(text: String) {
-        primaryButton.setLoadingText(text)
+        primaryButton.loadingText = text
     }
 
     fun setPrimaryButtonOnClick(clickListener: OnClickListener) {
@@ -283,7 +282,7 @@ class EmptyStateCardView @JvmOverloads constructor(
     }
 
     fun setIsLoading(isLoading: Boolean) {
-        primaryButton.setIsLoading(isLoading)
+        primaryButton.isLoading = isLoading
     }
 
     companion object {
