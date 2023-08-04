@@ -33,6 +33,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
@@ -45,7 +46,6 @@ import com.telefonica.mistica.compose.theme.MisticaTheme
 import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 
 private val iconSpacing = 10.dp
-private val chevronSpacing = 2.dp
 private val easing = CubicBezierEasing(0.77f, 0f, 0.175f, 1f)
 
 @Composable
@@ -143,7 +143,7 @@ fun Button(
                             overflow = TextOverflow.Ellipsis,
                         )
                         if (hasChevron) {
-                            Spacer(modifier = Modifier.width(chevronSpacing))
+                            Spacer(modifier = Modifier.width(dimensionResource(id = R.dimen.button_chevron_padding)))
                             CompositionLocalProvider(
                                 LocalContentAlpha provides if (enabled) ContentAlpha.high else ContentAlpha.disabled,
                             ) {
