@@ -18,7 +18,6 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.CircularProgressIndicator
-import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.ripple.LocalRippleTheme
 import androidx.compose.runtime.Composable
@@ -41,8 +40,10 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.R
 import com.telefonica.mistica.compose.theme.MisticaTheme
+import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 
 private val iconSpacing = 10.dp
+private val chevronSpacing = 2.dp
 private val easing = CubicBezierEasing(0.77f, 0f, 0.175f, 1f)
 
 @Composable
@@ -54,6 +55,7 @@ fun Button(
     isLoading: Boolean = false,
     enabled: Boolean = true,
     @DrawableRes icon: Int? = null,
+    hasChevron: Boolean = false,
     onClickListener: () -> Unit,
 ) {
 
@@ -138,6 +140,16 @@ fun Button(
                             maxLines = 1,
                             overflow = TextOverflow.Ellipsis,
                         )
+                        if (hasChevron) {
+                            Spacer(modifier = Modifier.width(chevronSpacing))
+                            Image(
+                                painterResource(id = R.drawable.icn_chevron),
+                                null,
+                                modifier = Modifier
+                                    .align(Alignment.CenterVertically),
+                                colorFilter = ColorFilter.tint(style.textColor)
+                            )
+                        }
                     }
                 }
             }
@@ -166,31 +178,54 @@ enum class ButtonStyle {
 @Preview
 @Composable
 fun ButtonPreview(@PreviewParameter(PreviewBooleanProvider::class) enabled: Boolean) {
-    Button(text = "Text", loadingText = "Loading", enabled = enabled, isLoading = false) {}
+    MisticaTheme(brand = MovistarBrand) {
+        Button(text = "Text", loadingText = "Loading", enabled = enabled, isLoading = false) {}
+    }
 }
 
 @Preview
 @Composable
 fun ProgressButtonNewPreview() {
-    Button(text = "Text", loadingText = "Loading", isLoading = true) {}
+    MisticaTheme(brand = MovistarBrand) {
+        Button(text = "Text", loadingText = "Loading", isLoading = true) {}
+    }
 }
 
 @Preview
 @Composable
 fun ProgressButtonNoTextPreview() {
-    Button(text = "Text", isLoading = true) {}
+    MisticaTheme(brand = MovistarBrand) {
+        Button(text = "Text", isLoading = true) {}
+    }
 }
 
 @Preview
 @Composable
 fun ProgressButtonIconPreview() {
-    Button(text = "Text", icon = R.drawable.icn_creditcard) {}
+    MisticaTheme(brand = MovistarBrand) {
+        Button(text = "Text", icon = R.drawable.icn_creditcard) {}
+    }
 }
 
 @Preview
 @Composable
 fun ProgressButtonIconSmallPreview() {
-    Button(text = "Text", icon = R.drawable.icn_creditcard, buttonStyle = ButtonStyle.PRIMARY_SMALL) {}
+    MisticaTheme(brand = MovistarBrand) {
+        Button(text = "Text", icon = R.drawable.icn_creditcard, buttonStyle = ButtonStyle.PRIMARY_SMALL) {}
+    }
+}
+
+@Preview
+@Composable
+fun LinkWithChevronPreview() {
+    MisticaTheme(brand = MovistarBrand) {
+        Button(
+            text = "Text",
+            hasChevron = true,
+            buttonStyle = ButtonStyle.LINK,
+            onClickListener = {},
+        )
+    }
 }
 
 class PreviewBooleanProvider : PreviewParameterProvider<Boolean> {
