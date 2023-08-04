@@ -306,4 +306,8 @@
             <enum name="vivoNew" value="5" />
         </attr>
     </declare-styleable>
+
+    <declare-styleable name="Button">
+        <attr name="hasChevron" format="boolean" />
+    </declare-styleable>
 </resources>

@@ -244,6 +244,23 @@
                 android:enabled="false"
                 android:text="Link Disabled" />
 
+            <com.telefonica.mistica.button.Button
+                style="@style/AppTheme.Button.LinkButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Link With chevron"
+                app:hasChevron="true" />
+
+            <com.telefonica.mistica.button.Button
+                style="@style/AppTheme.Button.LinkButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:enabled="false"
+                android:text="Link With chevron Disabled"
+                app:hasChevron="true" />
+
         </LinearLayout>
 
         <com.telefonica.mistica.title.TitleView
@@ -418,9 +435,26 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
                 android:enabled="false"
                 android:text="Link Disabled" />
+
+            <com.telefonica.mistica.button.Button
+                style="@style/AppTheme.Button.LinkButtonInverse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Link With chevron"
+                app:hasChevron="true" />
+
+            <com.telefonica.mistica.button.Button
+                style="@style/AppTheme.Button.LinkButtonInverse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:enabled="false"
+                android:text="Link With chevron Disabled"
+                app:hasChevron="true" />
 
         </LinearLayout>
 
