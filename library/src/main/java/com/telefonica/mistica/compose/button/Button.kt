@@ -18,6 +18,8 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.CircularProgressIndicator
+import androidx.compose.material.ContentAlpha
+import androidx.compose.material.LocalContentAlpha
 import androidx.compose.material.Text
 import androidx.compose.material.ripple.LocalRippleTheme
 import androidx.compose.runtime.Composable
@@ -142,13 +144,17 @@ fun Button(
                         )
                         if (hasChevron) {
                             Spacer(modifier = Modifier.width(chevronSpacing))
-                            Image(
-                                painterResource(id = R.drawable.icn_chevron),
-                                null,
-                                modifier = Modifier
-                                    .align(Alignment.CenterVertically),
-                                colorFilter = ColorFilter.tint(style.textColor)
-                            )
+                            CompositionLocalProvider(
+                                LocalContentAlpha provides if (enabled) ContentAlpha.high else ContentAlpha.disabled,
+                            ) {
+                                Image(
+                                    painterResource(id = R.drawable.icn_chevron),
+                                    null,
+                                    modifier = Modifier
+                                        .align(Alignment.CenterVertically),
+                                    colorFilter = ColorFilter.tint(style.textColor.copy(LocalContentAlpha.current)),
+                                )
+                            }
                         }
                     }
                 }
