@@ -249,7 +249,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Link With chevron"
+                android:text="Link With Chevron"
                 app:hasChevron="true" />
 
             <com.telefonica.mistica.button.Button
@@ -258,7 +258,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:enabled="false"
-                android:text="Link With chevron Disabled"
+                android:text="Link With Chevron Disabled"
                 app:hasChevron="true" />
 
         </LinearLayout>
@@ -443,7 +443,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Link With chevron"
+                android:text="Link With Chevron"
                 app:hasChevron="true" />
 
             <com.telefonica.mistica.button.Button
@@ -453,7 +453,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 android:enabled="false"
-                android:text="Link With chevron Disabled"
+                android:text="Link With Chevron Disabled"
                 app:hasChevron="true" />
 
         </LinearLayout>

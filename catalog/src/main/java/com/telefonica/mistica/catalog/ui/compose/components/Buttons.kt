@@ -104,7 +104,7 @@ private fun Buttons(
 
                 if (it in listOf(ButtonStyle.LINK, ButtonStyle.LINK_INVERSE)) {
                     CatalogButton(
-                        name = "Link with chevron Enabled".lowercase().replaceFirstChar(Char::titlecase),
+                        name = "Link With Chevron".lowercase().replaceFirstChar(Char::titlecase),
                         style = it,
                         hasChevron = true,
                         enabled = true,
@@ -112,7 +112,7 @@ private fun Buttons(
                     )
 
                     CatalogButton(
-                        name = "Link with chevron Disabled".lowercase().replaceFirstChar(Char::titlecase),
+                        name = "Link With Chevron Disabled".lowercase().replaceFirstChar(Char::titlecase),
                         style = it,
                         hasChevron = true,
                         enabled = false,
