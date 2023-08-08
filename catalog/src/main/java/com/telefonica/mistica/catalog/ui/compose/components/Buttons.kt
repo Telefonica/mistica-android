@@ -106,7 +106,7 @@ private fun Buttons(
                     CatalogButton(
                         name = "Link With Chevron".lowercase().replaceFirstChar(Char::titlecase),
                         style = it,
-                        hasChevron = true,
+                        withChevron = true,
                         enabled = true,
                         isLoading = false,
                     )
@@ -114,7 +114,7 @@ private fun Buttons(
                     CatalogButton(
                         name = "Link With Chevron Disabled".lowercase().replaceFirstChar(Char::titlecase),
                         style = it,
-                        hasChevron = true,
+                        withChevron = true,
                         enabled = false,
                         isLoading = false,
                     )
@@ -129,7 +129,7 @@ private fun CatalogButton(
     style: ButtonStyle,
     enabled: Boolean = true,
     isLoading: Boolean,
-    hasChevron: Boolean = false,
+    withChevron: Boolean = false,
     loadingText: String = "",
     onClickListener: () -> Unit = {},
     @DrawableRes icon: Int? = null,
@@ -141,7 +141,7 @@ private fun CatalogButton(
         isLoading = isLoading,
         enabled = enabled,
         icon = icon,
-        hasChevron = hasChevron,
+        withChevron = withChevron,
         onClickListener = onClickListener,
     )
 }

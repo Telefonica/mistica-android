@@ -57,7 +57,7 @@ fun Button(
     isLoading: Boolean = false,
     enabled: Boolean = true,
     @DrawableRes icon: Int? = null,
-    hasChevron: Boolean = false,
+    withChevron: Boolean = false,
     onClickListener: () -> Unit,
 ) {
 
@@ -142,7 +142,7 @@ fun Button(
                             maxLines = 1,
                             overflow = TextOverflow.Ellipsis,
                         )
-                        if (hasChevron) {
+                        if (withChevron) {
                             Spacer(modifier = Modifier.width(dimensionResource(id = R.dimen.button_chevron_padding)))
                             CompositionLocalProvider(
                                 LocalContentAlpha provides if (enabled) ContentAlpha.high else ContentAlpha.disabled,
@@ -227,7 +227,7 @@ fun LinkWithChevronPreview() {
     MisticaTheme(brand = MovistarBrand) {
         Button(
             text = "Text",
-            hasChevron = true,
+            withChevron = true,
             buttonStyle = ButtonStyle.LINK,
             onClickListener = {},
         )

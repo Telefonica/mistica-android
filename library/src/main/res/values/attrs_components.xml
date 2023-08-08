@@ -308,6 +308,6 @@
     </declare-styleable>
 
     <declare-styleable name="Button">
-        <attr name="hasChevron" format="boolean" />
+        <attr name="withChevron" format="boolean" />
     </declare-styleable>
 </resources>

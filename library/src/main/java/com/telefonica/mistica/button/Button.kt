@@ -26,8 +26,8 @@ class Button @JvmOverloads constructor(
                 0,
                 0,
             )
-        val hasChevron = styledAttrs.getBoolean(R.styleable.Button_hasChevron, false)
-        if (hasChevron) {
+        val withChevron = styledAttrs.getBoolean(R.styleable.Button_withChevron, false)
+        if (withChevron) {
             val chevronImage = ContextCompat.getDrawable(context, R.drawable.icn_chevron)
             chevronImage?.setTint(currentTextColor)
             compoundDrawablePadding = resources.getDimensionPixelSize(R.dimen.button_chevron_padding)
