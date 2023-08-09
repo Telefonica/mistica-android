@@ -1,6 +1,7 @@
 package com.telefonica.mistica.compose.button
 
 import androidx.annotation.DrawableRes
+import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.CubicBezierEasing
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.slideInVertically
@@ -10,6 +11,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.height
@@ -30,6 +32,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.platform.LocalDensity
@@ -89,74 +92,108 @@ fun Button(
             shape = RoundedCornerShape(MisticaTheme.radius.buttonBorderRadius)
         ) {
             Box(contentAlignment = Alignment.Center) {
-                androidx.compose.animation.AnimatedVisibility(
-                    modifier = Modifier.fillMaxHeight(),
-                    visible = isLoading,
-                    enter = slideInVertically(tween(easing = easing)) { it },
-                    exit = slideOutVertically(tween(easing = easing)) { it },
+                LoadingContent(isLoading, size, textColor, loadingText)
+                ButtonContent(isLoading, icon, size, style, text, textColor, withChevron, enabled)
+            }
+        }
+    }
+}
+
+@Composable
+private fun LoadingContent(
+    isLoading: Boolean,
+    size: ButtonSizeConfig,
+    textColor: Color,
+    loadingText: String,
+) {
+    AnimatedVisibility(
+        modifier = Modifier.fillMaxHeight(),
+        visible = isLoading,
+        enter = slideInVertically(tween(easing = easing)) { it },
+        exit = slideOutVertically(tween(easing = easing)) { it },
+    ) {
+        Row {
+            CircularProgressIndicator(
+                modifier = Modifier
+                    .size(size.progressBarSize)
+                    .align(Alignment.CenterVertically),
+                color = textColor,
+                strokeWidth = size.progressBarStroke,
+            )
+            loadingText.takeIf { it.isNotEmpty() }?.let {
+                Spacer(modifier = Modifier.width(iconSpacing))
+                Text(
+                    modifier = Modifier.align(Alignment.CenterVertically),
+                    text = it,
+                    color = textColor,
+                    style = size.textStyle,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
+                )
+            }
+        }
+    }
+}
+
+@Composable
+private fun ButtonContent(
+    isLoading: Boolean,
+    icon: Int?,
+    size: ButtonSizeConfig,
+    style: ButtonStyleConfig,
+    text: String,
+    textColor: Color,
+    withChevron: Boolean,
+    enabled: Boolean,
+) {
+    var textHeight by remember { mutableStateOf(0.dp) }
+    val density = LocalDensity.current
+    AnimatedVisibility(
+        modifier = Modifier.fillMaxHeight(),
+        visible = !isLoading,
+        enter = slideInVertically(tween(easing = easing)) { -it },
+        exit = slideOutVertically(tween(easing = easing)) { -it },
+    ) {
+        Row {
+            icon?.let {
+                Image(
+                    painterResource(id = it),
+                    null,
+                    modifier = Modifier
+                        .size(size.iconSize)
+                        .align(Alignment.CenterVertically),
+                    colorFilter = ColorFilter.tint(style.textColor)
+                )
+                Spacer(modifier = Modifier.width(iconSpacing))
+            }
+            Text(
+                modifier = Modifier
+                    .align(Alignment.CenterVertically)
+                    .onGloballyPositioned {
+                        textHeight = with(density) {
+                            it.size.height.toDp()
+                        }
+                    },
+                text = text,
+                color = textColor,
+                style = size.textStyle,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
+            )
+            if (withChevron) {
+                Spacer(modifier = Modifier.width(dimensionResource(id = R.dimen.button_chevron_padding)))
+                CompositionLocalProvider(
+                    LocalContentAlpha provides if (enabled) ContentAlpha.high else ContentAlpha.disabled,
                 ) {
-                    Row {
-                        CircularProgressIndicator(
-                            modifier = Modifier
-                                .size(size.progressBarSize)
-                                .align(Alignment.CenterVertically),
-                            color = textColor,
-                            strokeWidth = size.progressBarStroke,
-                        )
-                        loadingText.takeIf { it.isNotEmpty() }?.let {
-                            Spacer(modifier = Modifier.width(iconSpacing))
-                            Text(
-                                modifier = Modifier.align(Alignment.CenterVertically),
-                                text = it,
-                                color = textColor,
-                                style = size.textStyle,
-                                maxLines = 1,
-                                overflow = TextOverflow.Ellipsis,
-                            )
-                        }
-                    }
-                }
-                androidx.compose.animation.AnimatedVisibility(
-                    modifier = Modifier.fillMaxHeight(),
-                    visible = !isLoading,
-                    enter = slideInVertically(tween(easing = easing)) { -it },
-                    exit = slideOutVertically(tween(easing = easing)) { -it },
-                ) {
-                    Row {
-                        icon?.let {
-                            Image(
-                                painterResource(id = it),
-                                null,
-                                modifier = Modifier
-                                    .size(size.iconSize)
-                                    .align(Alignment.CenterVertically),
-                                colorFilter = ColorFilter.tint(style.textColor)
-                            )
-                            Spacer(modifier = Modifier.width(iconSpacing))
-                        }
-                        Text(
-                            modifier = Modifier.align(Alignment.CenterVertically),
-                            text = text,
-                            color = textColor,
-                            style = size.textStyle,
-                            maxLines = 1,
-                            overflow = TextOverflow.Ellipsis,
-                        )
-                        if (withChevron) {
-                            Spacer(modifier = Modifier.width(dimensionResource(id = R.dimen.button_chevron_padding)))
-                            CompositionLocalProvider(
-                                LocalContentAlpha provides if (enabled) ContentAlpha.high else ContentAlpha.disabled,
-                            ) {
-                                Image(
-                                    painterResource(id = R.drawable.icn_chevron),
-                                    null,
-                                    modifier = Modifier
-                                        .align(Alignment.CenterVertically),
-                                    colorFilter = ColorFilter.tint(style.textColor.copy(LocalContentAlpha.current)),
-                                )
-                            }
-                        }
-                    }
+                    Image(
+                        painterResource(id = R.drawable.icn_chevron),
+                        null,
+                        modifier = Modifier
+                            .height(textHeight)
+                            .aspectRatio(8f/20f)
+                            .align(Alignment.CenterVertically),
+                        colorFilter = ColorFilter.tint(style.textColor.copy(LocalContentAlpha.current)),
+                    )
                 }
             }
         }
