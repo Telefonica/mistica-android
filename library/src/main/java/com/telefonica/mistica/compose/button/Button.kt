@@ -50,6 +50,7 @@ import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 
 private val iconSpacing = 10.dp
 private val easing = CubicBezierEasing(0.77f, 0f, 0.175f, 1f)
+private const val CHEVRON_ASPECT_RATIO = 8f/20f
 
 @Composable
 fun Button(
@@ -190,7 +191,7 @@ private fun ButtonContent(
                         null,
                         modifier = Modifier
                             .height(textHeight)
-                            .aspectRatio(8f/20f)
+                            .aspectRatio(CHEVRON_ASPECT_RATIO)
                             .align(Alignment.CenterVertically),
                         colorFilter = ColorFilter.tint(style.textColor.copy(LocalContentAlpha.current)),
                     )
