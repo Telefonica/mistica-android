@@ -11,7 +11,11 @@ import com.telefonica.mistica.compose.button.Button
 import com.telefonica.mistica.compose.button.ButtonStyle
 import com.telefonica.mistica.compose.composeview.AbstractMisticaComposeView
 
-class MisticaButton : AbstractMisticaComposeView {
+class MisticaButton @JvmOverloads constructor(
+    context: Context,
+    attrs: AttributeSet? = null,
+    defStyleAttr: Int = 0,
+) : AbstractMisticaComposeView(context, attrs, defStyleAttr) {
 
     private var text: String by mutableStateOf("")
     private var loadingText: String by mutableStateOf("")
@@ -23,26 +27,7 @@ class MisticaButton : AbstractMisticaComposeView {
     private var isEnable: Boolean by mutableStateOf(true)
     private var withChevron: Boolean by mutableStateOf(true)
 
-    constructor(context: Context) : super(context) {
-        init()
-    }
-
-    constructor(context: Context, attrs: AttributeSet?) : super(context, attrs) {
-        init(attrs = attrs)
-    }
-
-    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(
-        context,
-        attrs,
-        defStyleAttr
-    ) {
-        init(attrs = attrs)
-    }
-
-    fun init(
-        attrs: AttributeSet? = null,
-        defStyleAttr: Int = 0,
-    ) {
+     init {
         attrs?.let {
             val textTypedArray = context.obtainStyledAttributes(attrs, intArrayOf(android.R.attr.text))
             val enabledTypedArray = context.obtainStyledAttributes(attrs, intArrayOf(android.R.attr.enabled))
