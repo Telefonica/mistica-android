@@ -20,12 +20,11 @@ class MisticaButton @JvmOverloads constructor(
     private var text: String by mutableStateOf("")
     private var loadingText: String by mutableStateOf("")
     private var isLoading: Boolean by mutableStateOf(false)
-    private var style: ButtonStyle by mutableStateOf(ButtonStyle.LINK)
+    private var style: ButtonStyle by mutableStateOf(ButtonStyle.PRIMARY)
     private var icon: Int? by mutableStateOf(null)
-
-    private var onClick: () -> Unit by mutableStateOf({})
     private var isEnable: Boolean by mutableStateOf(true)
     private var withChevron: Boolean by mutableStateOf(true)
+    private var onClick: () -> Unit by mutableStateOf({})
 
      init {
         attrs?.let {
