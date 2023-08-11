@@ -46,6 +46,7 @@ class LinkButton : AbstractMisticaComposeView {
     ) {
         attrs?.let {
             val textTypedArray = context.obtainStyledAttributes(attrs, intArrayOf(android.R.attr.text))
+            val enabledTypedArray = context.obtainStyledAttributes(attrs, intArrayOf(android.R.attr.enabled))
             val styledAttrs = context.theme.obtainStyledAttributes(
                 attrs,
                 R.styleable.Button,
@@ -58,10 +59,11 @@ class LinkButton : AbstractMisticaComposeView {
                 isLoading = styledAttrs.getBoolean(R.styleable.Button_isLoading, false)
                 isInverse = styledAttrs.getBoolean(R.styleable.Button_isInverse, false)
                 style = if (isInverse) ButtonStyle.LINK_INVERSE else ButtonStyle.LINK
-                isEnable = styledAttrs.getBoolean(R.styleable.Button_enabled, true)
+                isEnable = enabledTypedArray.getBoolean(0, false)
                 icon = styledAttrs.getResourceId(R.styleable.Button_icon, 0).takeIf { it != 0 }
                 withChevron = styledAttrs.getBoolean(R.styleable.Button_withChevron, false)
             } finally {
+                enabledTypedArray.recycle()
                 textTypedArray.recycle()
                 styledAttrs.recycle()
             }
@@ -75,6 +77,18 @@ class LinkButton : AbstractMisticaComposeView {
 
     override fun setOnClickListener(listener: OnClickListener?) {
         onClick = { listener?.onClick(this) }
+    }
+
+    fun updateLoadingText(text: String) {
+        loadingText = text
+    }
+
+    fun showLoading() {
+        isLoading = true
+    }
+
+    fun hideLoading() {
+        isLoading = false
     }
 
     @Composable

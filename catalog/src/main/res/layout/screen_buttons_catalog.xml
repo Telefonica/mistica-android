@@ -226,8 +226,7 @@
                 app:icon="@drawable/icn_creditcard"
                 app:iconTint="@color/text_button_link_selector" />
 
-            <com.telefonica.mistica.button.ProgressButton
-                style="@style/AppTheme.Button.LinkButton"
+            <com.telefonica.mistica.button.LinkButton
                 android:id="@+id/link_progress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -419,8 +418,7 @@
                 app:iconTint="@color/text_button_link_inverse_selector"
                 app:isInverse="true" />
 
-            <com.telefonica.mistica.button.ProgressButton
-                style="@style/AppTheme.Button.LinkButtonInverse"
+            <com.telefonica.mistica.button.LinkButton
                 android:id="@+id/link_inverse_progress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
