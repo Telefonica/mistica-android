@@ -70,9 +70,9 @@ class ProgressButton : FrameLayout {
         if (attrs != null) {
             val theme = context.theme
             val styledAttrs =
-                theme.obtainStyledAttributes(attrs, R.styleable.ProgressButton, defStyleAttr, 0)
+                theme.obtainStyledAttributes(attrs, R.styleable.Button, defStyleAttr, 0)
             try {
-                isLoading = styledAttrs.getBoolean(R.styleable.ProgressButton_isLoading, false)
+                isLoading = styledAttrs.getBoolean(R.styleable.Button_isLoading, false)
             } finally {
                 styledAttrs.recycle()
             }
