@@ -63,3 +63,7 @@ Other colors have been removed because UX team has decided to remove them from t
 ### Changes in FeedbackScreenView
 - `TYPE_CUSTOM` has been removed. Use `TYPE_INFO` instead, it allows custom icon or animation.
 - `shouldAnimateOnAttachedToWindow` is now private. Use method `setShouldAnimateOnAttached()` or xml attribute `app:shouldAnimateOnAttached` instead.
+
+## Upgrade to version 9.3.0
+MisticaButton is a wrapper to be used in traditional views that uses under the hood the Button() composable.
+We should start migrating the links from Button to MisticaButton when not using compose as the latest one adds the ability to set a chevron. 
