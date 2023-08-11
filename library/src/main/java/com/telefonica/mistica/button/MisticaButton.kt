@@ -16,7 +16,6 @@ class MisticaButton : AbstractMisticaComposeView {
     private var text: String by mutableStateOf("")
     private var loadingText: String by mutableStateOf("")
     private var isLoading: Boolean by mutableStateOf(false)
-    private var isInverse: Boolean by mutableStateOf(false)
     private var style: ButtonStyle by mutableStateOf(ButtonStyle.LINK)
     private var icon: Int? by mutableStateOf(null)
 
@@ -57,7 +56,6 @@ class MisticaButton : AbstractMisticaComposeView {
                 text = textTypedArray.getText(0).toString()
                 loadingText = styledAttrs.getString(R.styleable.Button_loadingText) ?: ""
                 isLoading = styledAttrs.getBoolean(R.styleable.Button_isLoading, false)
-                isInverse = styledAttrs.getBoolean(R.styleable.Button_isInverse, false)
                 style = styledAttrs.getInt(R.styleable.Button_style, 0).toButtonStyle()
                 isEnable = enabledTypedArray.getBoolean(0, true)
                 icon = styledAttrs.getResourceId(R.styleable.Button_icon, 0).takeIf { it != 0 }

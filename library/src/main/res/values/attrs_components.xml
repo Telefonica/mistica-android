@@ -305,7 +305,6 @@
 
     <declare-styleable name="Button">
         <attr name="isLoading" format="boolean" />
-        <attr name="isInverse" format="boolean" />
         <attr name="loadingText" format="string" />
         <attr name="style" format="enum">
             <enum name="PRIMARY" value="0" />
