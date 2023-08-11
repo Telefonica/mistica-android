@@ -212,50 +212,54 @@
                 android:enabled="false"
                 android:text="Danger Small Disabled" />
 
-            <com.telefonica.mistica.button.LinkButton
+            <com.telefonica.mistica.button.MisticaButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Link" />
+                android:text="Link"
+                app:style="LINK" />
 
-            <com.telefonica.mistica.button.LinkButton
+            <com.telefonica.mistica.button.MisticaButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="Link Icon"
                 app:icon="@drawable/icn_creditcard"
-                app:iconTint="@color/text_button_link_selector" />
+                app:iconTint="@color/text_button_link_selector"
+                app:style="LINK" />
 
-            <com.telefonica.mistica.button.LinkButton
+            <com.telefonica.mistica.button.MisticaButton
                 android:id="@+id/link_progress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Link Progress" />
+                android:text="Link Progress"
+                app:style="LINK" />
 
-            <com.telefonica.mistica.button.LinkButton
+            <com.telefonica.mistica.button.MisticaButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:enabled="false"
-                android:text="Link Disabled" />
+                android:text="Link Disabled"
+                app:style="LINK" />
 
-            <com.telefonica.mistica.button.LinkButton
+            <com.telefonica.mistica.button.MisticaButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="Link With Chevron"
-                app:withChevron="true"
-                app:buttonStyle="@style/AppTheme.Button.LinkButton" />
+                app:style="LINK"
+                app:withChevron="true" />
 
-            <com.telefonica.mistica.button.LinkButton
+            <com.telefonica.mistica.button.MisticaButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:enabled="false"
                 android:text="Link With Chevron Disabled"
-                app:withChevron="true"
-                app:buttonStyle="@style/AppTheme.Button.LinkButton" />
+                app:style="LINK"
+                app:withChevron="true" />
 
         </LinearLayout>
 
@@ -402,47 +406,52 @@
                 android:enabled="false"
                 android:text="Secondary Small Disabled" />
 
-            <com.telefonica.mistica.button.LinkButton
+            <com.telefonica.mistica.button.MisticaButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="Link"
-                app:isInverse="true" />
+                app:isInverse="true"
+                app:style="LINK_INVERSE" />
 
-            <com.telefonica.mistica.button.LinkButton
+            <com.telefonica.mistica.button.MisticaButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="Link Icon"
                 app:icon="@drawable/icn_creditcard"
                 app:iconTint="@color/text_button_link_inverse_selector"
-                app:isInverse="true" />
+                app:isInverse="true"
+                app:style="LINK_INVERSE" />
 
-            <com.telefonica.mistica.button.LinkButton
+            <com.telefonica.mistica.button.MisticaButton
                 android:id="@+id/link_inverse_progress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="Link Progress"
-                app:isInverse="true" />
+                app:isInverse="true"
+                app:style="LINK_INVERSE" />
 
-            <com.telefonica.mistica.button.LinkButton
+            <com.telefonica.mistica.button.MisticaButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:enabled="false"
                 android:text="Link Disabled"
-                app:isInverse="true" />
+                app:isInverse="true"
+                app:style="LINK_INVERSE" />
 
-            <com.telefonica.mistica.button.LinkButton
+            <com.telefonica.mistica.button.MisticaButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="Link With Chevron"
                 app:isInverse="true"
+                app:style="LINK_INVERSE"
                 app:withChevron="true" />
 
-            <com.telefonica.mistica.button.LinkButton
+            <com.telefonica.mistica.button.MisticaButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -450,6 +459,7 @@
                 android:enabled="false"
                 android:text="Link With Chevron Disabled"
                 app:isInverse="true"
+                app:style="LINK_INVERSE"
                 app:withChevron="true" />
 
         </LinearLayout>

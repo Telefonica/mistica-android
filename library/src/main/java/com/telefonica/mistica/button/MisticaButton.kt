@@ -11,7 +11,7 @@ import com.telefonica.mistica.compose.button.Button
 import com.telefonica.mistica.compose.button.ButtonStyle
 import com.telefonica.mistica.compose.composeview.AbstractMisticaComposeView
 
-class LinkButton : AbstractMisticaComposeView {
+class MisticaButton : AbstractMisticaComposeView {
 
     private var text: String by mutableStateOf("")
     private var loadingText: String by mutableStateOf("")
@@ -58,8 +58,8 @@ class LinkButton : AbstractMisticaComposeView {
                 loadingText = styledAttrs.getString(R.styleable.Button_loadingText) ?: ""
                 isLoading = styledAttrs.getBoolean(R.styleable.Button_isLoading, false)
                 isInverse = styledAttrs.getBoolean(R.styleable.Button_isInverse, false)
-                style = if (isInverse) ButtonStyle.LINK_INVERSE else ButtonStyle.LINK
-                isEnable = enabledTypedArray.getBoolean(0, false)
+                style = styledAttrs.getInt(R.styleable.Button_style, 0).toButtonStyle()
+                isEnable = enabledTypedArray.getBoolean(0, true)
                 icon = styledAttrs.getResourceId(R.styleable.Button_icon, 0).takeIf { it != 0 }
                 withChevron = styledAttrs.getBoolean(R.styleable.Button_withChevron, false)
             } finally {
@@ -106,4 +106,20 @@ class LinkButton : AbstractMisticaComposeView {
             )
         }
     }
+}
+
+private fun Int?.toButtonStyle(): ButtonStyle = when (this) {
+    0 -> ButtonStyle.PRIMARY
+    1 -> ButtonStyle.PRIMARY_SMALL
+    2 -> ButtonStyle.SECONDARY
+    3 -> ButtonStyle.SECONDARY_SMALL
+    4 -> ButtonStyle.DANGER
+    5 -> ButtonStyle.DANGER_SMALL
+    6 -> ButtonStyle.LINK
+    7 -> ButtonStyle.PRIMARY_INVERSE
+    8 -> ButtonStyle.PRIMARY_SMALL_INVERSE
+    9 -> ButtonStyle.SECONDARY_INVERSE
+    10 -> ButtonStyle.SECONDARY_SMALL_INVERSE
+    11 -> ButtonStyle.LINK_INVERSE
+    else -> ButtonStyle.PRIMARY
 }
