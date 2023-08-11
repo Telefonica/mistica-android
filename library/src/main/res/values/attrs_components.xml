@@ -321,7 +321,6 @@
             <enum name="SECONDARY_SMALL_INVERSE" value="10" />
             <enum name="LINK_INVERSE" value="11" />
         </attr>
-        <attr name="enabled" format="boolean" />
         <attr name="icon" format="reference" />
         <attr name="withChevron" format="boolean" />
     </declare-styleable>
