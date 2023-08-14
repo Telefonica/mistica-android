@@ -17,7 +17,7 @@ class MisticaButton @JvmOverloads constructor(
     defStyleAttr: Int = 0,
 ) : AbstractMisticaComposeView(context, attrs, defStyleAttr) {
 
-    private var text: String by mutableStateOf("")
+    var text: String by mutableStateOf("")
     private var loadingText: String by mutableStateOf("")
     private var isLoading: Boolean by mutableStateOf(false)
     private var style: ButtonStyle by mutableStateOf(ButtonStyle.PRIMARY)
@@ -71,6 +71,10 @@ class MisticaButton @JvmOverloads constructor(
 
     fun hideLoading() {
         isLoading = false
+    }
+
+    fun showChevron() {
+        withChevron = true
     }
 
     @Composable

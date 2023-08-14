@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.catalog.databinding.ScreenFragmentSheetCatalogBinding
 import com.telefonica.mistica.input.DropDownInput
+import com.telefonica.mistica.sheet.ActionButton
 import com.telefonica.mistica.sheet.InformativeIcon
 import com.telefonica.mistica.sheet.RowAction
 import com.telefonica.mistica.sheet.RowActionStyle
@@ -71,13 +72,19 @@ class SheetCatalogFragment : Fragment() {
                         id = "0",
                         elements = buildSelectableListElements()
                     )
-                    ComponentType.Action -> it.withActionsList(
+                    ComponentType.ActionList -> it.withActionsList(
                         id = "0",
                         elements = buildActionsListElements()
                     )
                     ComponentType.Informative -> it.withInformativeList(
                         id = "0",
                         elements = buildInformativeListElements()
+                    )
+                    ComponentType.BottomActions -> it.withBottomActions(
+                        id ="bottom-actions-0",
+                        primaryButton = samplePrimaryActionButton(),
+                        secondaryButton = sampleSecondaryActionButton(),
+                        linkButton = sampleLinkActionButton(),
                     )
                 }
             }
@@ -155,6 +162,31 @@ class SheetCatalogFragment : Fragment() {
         return elements
     }
 
+    private fun samplePrimaryActionButton() = ActionButton(
+        title = binding.inputSheetActionPrimaryButtonTitle.text.toString(),
+    )
+
+    private fun sampleSecondaryActionButton(): ActionButton? {
+        val secondaryButtonText = binding.inputSheetActionSecondaryButtonTitle.text.toString()
+        if (secondaryButtonText.isNotBlank()) {
+            return ActionButton(
+                title = secondaryButtonText,
+            )
+        }
+        return null
+    }
+
+    private fun sampleLinkActionButton(): ActionButton? {
+        val linkButtonText = binding.inputSheetActionLinkButtonTitle.text.toString()
+        if (linkButtonText.isNotBlank()) {
+            return ActionButton(
+                title = linkButtonText,
+                withChevron = true,
+            )
+        }
+        return null
+    }
+
     private fun getInformativeIcon(): InformativeIcon = try {
         when (InformativeIconType.valueOf(binding.informativeIconType.dropDown.text.toString())) {
             InformativeIconType.Bullet -> InformativeIcon.Bullet
@@ -205,21 +237,34 @@ class SheetCatalogFragment : Fragment() {
                 ))
             setOnItemClickListener { _, _, position, _ ->
                 binding.buttonShow.visibility = View.VISIBLE
-                when (ComponentType.values().get(position)) {
+                when (ComponentType.values()[position]) {
                     ComponentType.Single_Selection -> {
                         binding.sectionSingleSelection.visibility = View.VISIBLE
-                        binding.sectionAction.visibility = View.GONE
+                        binding.sectionActionList.visibility = View.GONE
                         binding.sectionInformative.visibility = View.GONE
+                        binding.inputSheetNumberOfElements.visibility = View.VISIBLE
+                        binding.sectionBottomActions.visibility = View.GONE
                     }
-                    ComponentType.Action -> {
+                    ComponentType.ActionList -> {
                         binding.sectionSingleSelection.visibility = View.GONE
-                        binding.sectionAction.visibility = View.VISIBLE
+                        binding.sectionActionList.visibility = View.VISIBLE
                         binding.sectionInformative.visibility = View.GONE
+                        binding.inputSheetNumberOfElements.visibility = View.VISIBLE
+                        binding.sectionBottomActions.visibility = View.GONE
                     }
                     ComponentType.Informative -> {
                         binding.sectionSingleSelection.visibility = View.GONE
-                        binding.sectionAction.visibility = View.GONE
+                        binding.sectionActionList.visibility = View.GONE
                         binding.sectionInformative.visibility = View.VISIBLE
+                        binding.inputSheetNumberOfElements.visibility = View.VISIBLE
+                        binding.sectionBottomActions.visibility = View.GONE
+                    }
+                    ComponentType.BottomActions -> {
+                        binding.sectionSingleSelection.visibility = View.GONE
+                        binding.sectionActionList.visibility = View.GONE
+                        binding.sectionInformative.visibility = View.GONE
+                        binding.inputSheetNumberOfElements.visibility = View.GONE
+                        binding.sectionBottomActions.visibility = View.VISIBLE
                     }
                 }
             }
@@ -259,8 +304,9 @@ class SheetCatalogFragment : Fragment() {
 
     private enum class ComponentType {
         Single_Selection,
-        Action,
+        ActionList,
         Informative,
+        BottomActions,
     }
 
     private enum class InformativeIconType {Bullet, Small, Regular}

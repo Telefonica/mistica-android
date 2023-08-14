@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:paddingStart="16dp"
+		android:paddingEnd="16dp"
+		android:paddingTop="16dp">
+
+	<com.telefonica.mistica.button.Button
+			android:id="@+id/sheet_action_primary_button"
+			style="@style/AppTheme.Button.DefaultButton"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:importantForAccessibility="yes"
+			android:text=""
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintEnd_toEndOf="parent" />
+
+	<com.telefonica.mistica.button.Button
+			android:id="@+id/sheet_action_secondary_button"
+			style="@style/AppTheme.Button.SecondaryButton"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:importantForAccessibility="yes"
+			android:layout_marginTop="16dp"
+			android:text=""
+			app:layout_constraintTop_toBottomOf="@id/sheet_action_primary_button"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintEnd_toEndOf="parent" />
+
+	<com.telefonica.mistica.button.MisticaButton
+			android:id="@+id/sheet_action_link_button"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:importantForAccessibility="yes"
+			android:layout_marginTop="16dp"
+			android:text=""
+			app:layout_constraintTop_toBottomOf="@id/sheet_action_secondary_button"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:style="LINK" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

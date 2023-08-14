@@ -84,6 +84,8 @@ dependencies {
 
     implementation "com.github.skydoves:balloon-compose:1.5.3"
 
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.6.1"
+
     testImplementation 'junit:junit:4.13.2'
     testImplementation "androidx.compose.ui:ui-test-junit4:$compose_ui_version"
     testImplementation "org.mockito.kotlin:mockito-kotlin:4.0.0"

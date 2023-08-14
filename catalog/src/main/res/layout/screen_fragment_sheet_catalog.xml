@@ -2,6 +2,7 @@
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
 		xmlns:app="http://schemas.android.com/apk/res-auto"
+		xmlns:tools="http://schemas.android.com/tools"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		>
@@ -47,15 +48,6 @@
 				app:inputHint="Sheet Description"
 				app:inputText="Description" />
 
-		<com.telefonica.mistica.input.TextInput
-				android:id="@+id/input_sheet_number_of_elements"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_marginTop="8dp"
-				android:inputType="number"
-				app:inputHint="Number of elements"
-				app:inputText="4" />
-
 		<com.telefonica.mistica.input.DropDownInput
 				android:id="@+id/sheet_type"
 				android:layout_width="match_parent"
@@ -63,6 +55,17 @@
 				android:layout_marginTop="8dp"
 				android:layout_marginBottom="16dp"
 				app:inputHint="Children type" />
+
+		<com.telefonica.mistica.input.TextInput
+				android:id="@+id/input_sheet_number_of_elements"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="8dp"
+				android:inputType="number"
+				android:visibility="gone"
+				app:inputHint="Number of elements"
+				app:inputText="4"
+				tools:visibility="visible" />
 
 	<LinearLayout
 			android:id="@+id/section_single_selection"
@@ -100,7 +103,7 @@
 	</LinearLayout>
 
 		<LinearLayout
-				android:id="@+id/section_action"
+				android:id="@+id/section_action_list"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:gravity="center_horizontal"
@@ -145,12 +148,51 @@
 
 		</LinearLayout>
 
+		<LinearLayout
+				android:id="@+id/section_bottom_actions"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:gravity="center_horizontal"
+				android:orientation="vertical"
+				android:visibility="gone"
+				tools:visibility="visible">
+
+			<com.telefonica.mistica.input.TextInput
+					android:id="@+id/input_sheet_action_primary_button_title"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					android:inputType="text"
+					app:inputHint="Primary Button Title"
+					app:inputText="Primary Button" />
+
+			<com.telefonica.mistica.input.TextInput
+					android:id="@+id/input_sheet_action_secondary_button_title"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					android:inputType="text"
+					app:inputHint="Secondary Button Title"
+					app:inputText="Secondary Button" />
+
+			<com.telefonica.mistica.input.TextInput
+					android:id="@+id/input_sheet_action_link_button_title"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					android:inputType="text"
+					app:inputHint="Link Button Title"
+					app:inputText="Link Button" />
+
+		</LinearLayout>
+
 		<com.telefonica.mistica.button.Button
 				android:id="@+id/button_show"
+				style="@style/AppTheme.Button.DefaultButton"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_marginTop="12dp"
-				android:text="Show Feedback"
+				android:text="Show Sheet"
 				android:visibility="gone"
 				/>
 

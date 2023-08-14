@@ -29,6 +29,13 @@ sealed class Children(open val id: String) {
         override val id: String,
         val elements: List<RowInformative>,
     ) : Children(id = id)
+
+    data class BottomActions(
+        override val id: String,
+        val primaryButton: ActionButton,
+        val secondaryButton: ActionButton?,
+        val linkButton: ActionButton?,
+    ) : Children(id = id)
 }
 
 data class RowSelectable(
@@ -51,6 +58,11 @@ data class RowInformative(
     val title: String,
     val description: String? = null,
     val icon: InformativeIcon
+)
+
+data class ActionButton(
+    val title: String,
+    val withChevron: Boolean = false,
 )
 
 sealed class SelectableAsset {
