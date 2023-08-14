@@ -68,3 +68,5 @@ Other colors have been removed because UX team has decided to remove them from t
 MisticaButton is a wrapper to be used in traditional views that uses under the hood the Button() composable.
 We should start migrating the links from Button to MisticaButton when not using compose as the latest one adds the ability to set a chevron.
 Watch out that the new app:style attribute is needed to set the button style (with LINK / LINK_INVERSE for links).
+
+When this new compose wrapper is used on dialogs the ViewTreeLifecycle should be provided.
