@@ -257,14 +257,14 @@ private fun BottomActions.toView(context: Context, onSheetTapped: InternalOnShee
                 onSheetTapped.onTapped(this.id, "PRIMARY")
             }
             secondaryButton.visibility = this.secondaryButton?.let { button ->
-                secondaryButton?.text = this.secondaryButton?.title.orEmpty()
+                secondaryButton?.text = button.title
                 secondaryButton.setOnClickListener {
                     onSheetTapped.onTapped(this.id, "SECONDARY")
                 }
                 View.VISIBLE
             } ?: View.GONE
             linkButton.visibility = this.linkButton?.let { button ->
-                linkButton?.text = this.linkButton?.title.orEmpty()
+                linkButton?.text = button.title
                 linkButton.setOnClickListener {
                     onSheetTapped.onTapped(this.id, "LINK")
                 }
