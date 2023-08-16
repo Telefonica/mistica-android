@@ -1,4 +1,4 @@
-package com.telefonica.mistica.button
+package com.telefonica.mistica.button2
 
 import android.content.Context
 import android.util.AttributeSet
@@ -11,7 +11,7 @@ import com.telefonica.mistica.compose.button.Button
 import com.telefonica.mistica.compose.button.ButtonStyle
 import com.telefonica.mistica.compose.composeview.AbstractMisticaComposeView
 
-class MisticaButton @JvmOverloads constructor(
+class Button @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0,
