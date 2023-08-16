@@ -268,7 +268,7 @@ private fun BottomActions.toView(context: Context, onSheetTapped: InternalOnShee
                 linkButton.setOnClickListener {
                     onSheetTapped.onTapped(this.id, "LINK")
                 }
-                if (button.withChevron) linkButton?.showChevron()
+                if (button.withChevron) linkButton?.withChevron = true
                 View.VISIBLE
             } ?: View.GONE
         }

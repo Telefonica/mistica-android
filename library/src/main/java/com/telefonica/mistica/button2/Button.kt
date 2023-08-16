@@ -23,7 +23,7 @@ class Button @JvmOverloads constructor(
     private var style: ButtonStyle by mutableStateOf(ButtonStyle.PRIMARY)
     private var icon: Int? by mutableStateOf(null)
     private var isEnable: Boolean by mutableStateOf(true)
-    private var withChevron: Boolean by mutableStateOf(true)
+    var withChevron: Boolean by mutableStateOf(true)
     private var onClick: () -> Unit by mutableStateOf({})
 
      init {
@@ -71,10 +71,6 @@ class Button @JvmOverloads constructor(
 
     fun hideLoading() {
         isLoading = false
-    }
-
-    fun showChevron() {
-        withChevron = true
     }
 
     @Composable
