@@ -65,8 +65,9 @@ Other colors have been removed because UX team has decided to remove them from t
 - `shouldAnimateOnAttachedToWindow` is now private. Use method `setShouldAnimateOnAttached()` or xml attribute `app:shouldAnimateOnAttached` instead.
 
 ## Upgrade to version 9.3.0
-MisticaButton is a wrapper to be used in traditional views that uses under the hood the Button() composable.
-We should start migrating the links from Button to MisticaButton when not using compose as the latest one adds the ability to set a chevron.
+button2.Button is a wrapper to be used in traditional views that uses under the hood the Button() composable.
+We should start migrating the links that have to use chevron from button.Button to button2.Button
 Watch out that the new app:style attribute is needed to set the button style (with LINK / LINK_INVERSE for links).
+Later on we'll deprecate the button.Button in favour of button2.Button and start migrating the rest.
 
 When this new compose wrapper is used on dialogs the ViewTreeLifecycle should be provided (see initViewTreeOwners() in Sheet.kt).

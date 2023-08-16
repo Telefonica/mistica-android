@@ -5,6 +5,7 @@ import android.util.AttributeSet
 import com.google.android.material.button.MaterialButton
 import com.telefonica.mistica.util.setAlpha
 
+// This should be deprecated soon, when it's confirmed no problem appears when using button2.Button instead
 class Button @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
