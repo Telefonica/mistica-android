@@ -22,7 +22,6 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.telefonica.mistica.R
 import com.telefonica.mistica.button.Button
-import com.telefonica.mistica.button.MisticaButton
 import com.telefonica.mistica.list.MisticaRecyclerView
 import com.telefonica.mistica.list.layout.configureWithFullWidthLayout
 import com.telefonica.mistica.sheet.Children.BottomActions
@@ -252,7 +251,7 @@ private fun BottomActions.toView(context: Context, onSheetTapped: InternalOnShee
         .also { view ->
             val primaryButton = view.findViewById<Button>(R.id.sheet_action_primary_button)
             val secondaryButton = view.findViewById<Button>(R.id.sheet_action_secondary_button)
-            val linkButton = view.findViewById<MisticaButton>(R.id.sheet_action_link_button)
+            val linkButton = view.findViewById<com.telefonica.mistica.button2.Button>(R.id.sheet_action_link_button)
             primaryButton.text = this.primaryButton.title
             primaryButton.setOnClickListener {
                 onSheetTapped.onTapped(this.id, "PRIMARY")

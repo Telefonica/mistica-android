@@ -30,7 +30,7 @@
 			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintEnd_toEndOf="parent" />
 
-	<com.telefonica.mistica.button.MisticaButton
+	<com.telefonica.mistica.button2.Button
 			android:id="@+id/sheet_action_link_button"
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"
