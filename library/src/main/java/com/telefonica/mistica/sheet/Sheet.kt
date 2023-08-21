@@ -249,31 +249,37 @@ private fun ListInformative.toView(context: Context): View =
 private fun BottomActions.toView(context: Context, onSheetTapped: InternalOnSheetTapped, container: ViewGroup): View {
     return LayoutInflater.from(context).inflate(R.layout.sheet_bottom_actions, container, false)
         .also { view ->
-            val primaryButton = view.findViewById<Button>(R.id.sheet_action_primary_button)
-            val secondaryButton = view.findViewById<Button>(R.id.sheet_action_secondary_button)
-            val linkButton = view.findViewById<com.telefonica.mistica.button2.Button>(R.id.sheet_action_link_button)
-            primaryButton.text = this.primaryButton.title
-            primaryButton.setOnClickListener {
-                onSheetTapped.onTapped(this.id, "PRIMARY")
-            }
-            secondaryButton.visibility = this.secondaryButton?.let { button ->
-                secondaryButton?.text = button.title
-                secondaryButton.setOnClickListener {
-                    onSheetTapped.onTapped(this.id, "SECONDARY")
-                }
-                View.VISIBLE
-            } ?: View.GONE
-            linkButton.visibility = this.linkButton?.let { button ->
-                linkButton?.text = button.title
-                linkButton.setOnClickListener {
-                    onSheetTapped.onTapped(this.id, "LINK")
-                }
-                linkButton?.withChevron = button.withChevron
-                View.VISIBLE
-            } ?: View.GONE
+            setBottomActionsContent(view, onSheetTapped)
         }
 }
 
+private fun BottomActions.setBottomActionsContent(
+    view: View,
+    onSheetTapped: InternalOnSheetTapped,
+) {
+    val primaryButton = view.findViewById<Button>(R.id.sheet_action_primary_button)
+    val secondaryButton = view.findViewById<Button>(R.id.sheet_action_secondary_button)
+    val linkButton = view.findViewById<com.telefonica.mistica.button2.Button>(R.id.sheet_action_link_button)
+    primaryButton.text = this.primaryButton.title
+    primaryButton.setOnClickListener {
+        onSheetTapped.onTapped(this.id, "PRIMARY")
+    }
+    secondaryButton.visibility = this.secondaryButton?.let { button ->
+        secondaryButton?.text = button.title
+        secondaryButton.setOnClickListener {
+            onSheetTapped.onTapped(this.id, "SECONDARY")
+        }
+        View.VISIBLE
+    } ?: View.GONE
+    linkButton.visibility = this.linkButton?.let { button ->
+        linkButton?.text = button.title
+        linkButton.setOnClickListener {
+            onSheetTapped.onTapped(this.id, "LINK")
+        }
+        linkButton?.withChevron = button.withChevron
+        View.VISIBLE
+    } ?: View.GONE
+}
 
 private fun TextView.setTextOrHide(text: String?) {
     if (text.isNullOrEmpty()) {
