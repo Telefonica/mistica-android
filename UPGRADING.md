@@ -70,4 +70,4 @@ We should start migrating the links that have to use chevron from button.Button 
 Watch out that the new app:style attribute is needed to set the button style (with LINK / LINK_INVERSE for links).
 Later on we'll deprecate the button.Button in favour of button2.Button and start migrating the rest.
 
-When this new compose wrapper is used on dialogs the ViewTreeLifecycle should be provided.
+When this new compose wrapper is used on dialogs the ViewTreeLifecycle should be provided (see initViewTreeOwners() in Sheet.kt).
