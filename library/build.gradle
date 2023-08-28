@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'maven-publish'
+    id 'io.github.takahirom.roborazzi'
 }
 
 android {
@@ -51,6 +52,12 @@ android {
         sarifReport true
         checkDependencies true
     }
+
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
 }
 
 task sourceJar(type: Jar) {
@@ -87,6 +94,11 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.6.1"
 
     testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.robolectric:robolectric:4.10.3'
+    testImplementation 'androidx.compose.ui:ui-test-junit4:1.0.5'
+    testImplementation 'androidx.compose.ui:ui-test-manifest:1.0.5'
+    testImplementation 'io.github.takahirom.roborazzi:roborazzi:1.4.0'
+    testImplementation 'io.github.takahirom.roborazzi:roborazzi-compose:1.4.0'
     testImplementation "androidx.compose.ui:ui-test-junit4:$compose_ui_version"
     testImplementation "org.mockito.kotlin:mockito-kotlin:4.0.0"
 
