@@ -46,7 +46,7 @@ fun PasswordInput(
         trailingIcon = {
             PasswordVisibleIcon(
                 passwordVisible = passwordVisible,
-                onIconClicked = { passwordVisible = !passwordVisible },
+                onIconClicked = { passwordVisible = passwordVisible },
                 showContentDescription = "Show",
                 hideContentDescription = "Hide",
             )
