@@ -32,7 +32,7 @@ internal class PasswordInputKtTest {
     }
 
     @Test
-    fun `check the password is initially not visible`() = test {
+    fun checkThePasswordIsInitiallyNotVisible() = test {
         `when PasswordInput`()
 
         `then screenshot is OK`()
@@ -40,7 +40,7 @@ internal class PasswordInputKtTest {
     }
 
     @Test
-    fun `check the password is visible after the visibility button is clicked`() = test {
+    fun checkThePasswordIsVisibleAfterTheVisibilityButtonIsClicked() = test {
         `given PasswordInput`()
 
         `when the visibility button is clicked`()
@@ -50,7 +50,7 @@ internal class PasswordInputKtTest {
     }
 
     @Test
-    fun `check the password is not visible after toggling twice the visibility button`() = test {
+    fun checkThePasswordIsNotVisibleAfterTogglingTwiceTheVisibilityButton() = test {
         `given PasswordInput`()
 
         `when the visibility button is clicked`(times = 2)
