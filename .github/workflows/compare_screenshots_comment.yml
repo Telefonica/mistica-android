@@ -27,8 +27,7 @@ jobs:
         run: |
           # Find all the files ending with _compare.png
           files=$(find . -type f -name "*_compare.png" | grep "screenshots/")
-          line_count=$(echo "$files" | wc -l | tr -d '[:space:]')          
-          if [ "$line_count" -ge 1 ]; then
+          if [ -n "$files" ]; then
             exist_compare_files="true"
           else
             exist_compare_files="false"
