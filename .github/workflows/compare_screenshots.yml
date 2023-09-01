@@ -63,7 +63,8 @@ jobs:
           
           # Iterate over the files and create table rows
           for file in $files; do
-            fileName=$(basename "$file")
+            # Get the file name and insert newlines every 90 characters
+            fileName=$(basename "$file" | sed -r 's/(.{90})/\1<br>/g')
             echo "| $fileName |" >> "$GITHUB_OUTPUT"
           done
           echo "${delimiter}" >> $GITHUB_OUTPUT
