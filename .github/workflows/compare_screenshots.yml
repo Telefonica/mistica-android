@@ -63,8 +63,8 @@ jobs:
           
           # Iterate over the files and create table rows
           for file in $files; do
-            # Get the file name and insert newlines every 100 characters
-            fileName=$(basename "$file" | sed -r 's/(.{100})/\1\n/g' | sed 's/ /&nbsp;/g')
+            # Get the file name and replace spaces
+            fileName=$(basename "$file" | sed 's/ /&nbsp;/g')
             echo "| $fileName |" >> "$GITHUB_OUTPUT"
           done
           echo "${delimiter}" >> $GITHUB_OUTPUT
