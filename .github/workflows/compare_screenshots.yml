@@ -54,17 +54,13 @@ jobs:
           delimiter="$(openssl rand -hex 8)"
           {
             echo "reports<<${delimiter}"
-          
-            # Create markdown table header
             echo "The screenshots failed, check the compare-images artifact"
-            echo "| File name |"
-            echo "|-------|"
+            echo "Files:"
           } >> "$GITHUB_OUTPUT"
-          
-          # Iterate over the files and create table rows
+          # Iterate over the files
           for file in $files; do
             fileName=$(basename "$file")
-            echo "| $fileName |" >> "$GITHUB_OUTPUT"
+            echo "$fileName" >> "$GITHUB_OUTPUT"
           done
           echo "${delimiter}" >> $GITHUB_OUTPUT
 
