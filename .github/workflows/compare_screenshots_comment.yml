@@ -28,7 +28,7 @@ jobs:
           # Find all the files ending with _compare.png
           files=$(find . -type f -name "*_compare.png" | grep "screenshots/")
           exist_compare_files="true"
-          echo "exist_compare_files=$exist_compare_files" >> $GITHUB_OUTPUT
+          echo "exist_compare_files=${exist_compare_files}" >> $GITHUB_OUTPUT
       - id: generate-diff-reports
         name: Generate diff reports
         if: steps.check-if-there-are-compare-files.outputs.exist_compare_files == 'true'
