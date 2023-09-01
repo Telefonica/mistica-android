@@ -1,9 +1,7 @@
 package com.telefonica.mistica.compose.input
 
-import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithTag
-import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.onRoot
 import androidx.compose.ui.test.performClick
 import com.github.takahirom.roborazzi.ExperimentalRoborazziApi
@@ -83,6 +81,7 @@ internal class PasswordInputKtTest {
         }
     }
 
+/*
     private fun TestScope.`then the password is not visible`() {
         composeTestRule.onNodeWithText(textValue).assertDoesNotExist()
     }
@@ -90,6 +89,7 @@ internal class PasswordInputKtTest {
     private fun TestScope.`then the password is visible`() {
         composeTestRule.onNodeWithText(textValue).assertIsDisplayed()
     }
+*/
 
     private fun `then screenshot is OK`() {
         composeTestRule.onRoot()
