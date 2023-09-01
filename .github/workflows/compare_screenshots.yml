@@ -26,7 +26,7 @@ jobs:
         with:
           name: compare-images
           path: '**/screenshots/*_compare.png'
-          retention-days: 30
+          retention-days: 14
 
       - id: check-if-there-are-compare-files
         if: failure()
@@ -63,8 +63,8 @@ jobs:
           
           # Iterate over the files and create table rows
           for file in $files; do
-            # Get the file name and insert newlines every 120 characters
-            fileName=$(basename "$file" | sed -r 's/(.{120})/\1<br>/g')
+            # Get the file name and insert newlines every 110 characters
+            fileName=$(basename "$file" | sed -r 's/(.{110})/\1<br>/g')
             echo "| $fileName |" >> "$GITHUB_OUTPUT"
           done
           echo "${delimiter}" >> $GITHUB_OUTPUT
@@ -86,3 +86,9 @@ jobs:
           issue-number: ${{ github.event.number }}
           body: ${{ steps.generate-comment.outputs.reports }}
           edit-mode: replace
+
+      - uses: izhangzhihao/delete-comment@master
+        if: success()
+        with:
+          delete_user_name: 'github-actions[bot]'
+          issue_number: ${{ github.event.number }}
