@@ -18,28 +18,25 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Verify Screenshots (roborazzi)
-        continue-on-error: true
         run: 'bash ./gradlew verifyRoborazziDebug'
 
       - id: check-if-there-are-compare-files
+        if: always()
         name: Check if there are compare files
         shell: bash
         run: |
           # Find all the files ending with _compare.png
-          mapfile -t files_to_add < <(find . -type f -name "*_compare.png")
-          
-          # Check for invalid file names and add only valid ones
-          exist_valid_files="false"
-          for file in "${files_to_add[@]}"; do
-            if [[ $file =~ ^[a-zA-Z0-9_./-]+$ ]]; then
-              exist_valid_files="true"
-              break
-            fi
-          done
-          echo "exist_valid_files=$exist_valid_files" >> "$GITHUB_OUTPUT"
+          find_output=$(find . -type f -name "*_compare.png")
+          line_count=$(echo "$find_output" | wc -l)          
+          if [ "$line_count" -gt 1 ]; then
+            exist_compare_files="true"
+          else
+            exist_compare_files="false"
+          fi
+          echo "exist_compare_files=$exist_compare_files" >> "$GITHUB_OUTPUT"
       - id: generate-diff-reports
         name: Generate diff reports
-        if: steps.check-if-there-are-compare-files.outputs.exist_valid_files == 'true'
+        if: steps.check-if-there-are-compare-files.outputs.exist_compare_files == 'true'
         env:
           BRANCH_NAME: companion_${{ github.event.workflow_run.head_branch }}
         shell: bash
