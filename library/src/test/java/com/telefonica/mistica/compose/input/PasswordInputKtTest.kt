@@ -1,7 +1,9 @@
 package com.telefonica.mistica.compose.input
 
+import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithTag
+import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.onRoot
 import androidx.compose.ui.test.performClick
 import com.github.takahirom.roborazzi.ExperimentalRoborazziApi
@@ -32,31 +34,31 @@ internal class PasswordInputKtTest {
     }
 
     @Test
-    fun checkThePasswordIsInitiallyNotVisible() = test {
+    fun `check the password is initially not visible`() = test {
         `when PasswordInput`()
 
         `then screenshot is OK`()
-        //`then the password is not visible`()
+        `then the password is not visible`()
     }
 
     @Test
-    fun checkThePasswordIsVisibleAfterTheVisibilityButtonIsClicked() = test {
+    fun `check the password is visible after the visibility button is clicked`() = test {
         `given PasswordInput`()
 
         `when the visibility button is clicked`()
 
         `then screenshot is OK`()
-        //`then the password is visible`()
+        `then the password is visible`()
     }
 
     @Test
-    fun checkThePasswordIsNotVisibleAfterTogglingTwiceTheVisibilityButton() = test {
+    fun `check the password is not visible after toggling twice the visibility button`() = test {
         `given PasswordInput`()
 
         `when the visibility button is clicked`(times = 2)
 
         `then screenshot is OK`()
-        //`then the password is not visible`()
+        `then the password is not visible`()
     }
 
     private fun TestScope.`given PasswordInput`() {
@@ -81,7 +83,6 @@ internal class PasswordInputKtTest {
         }
     }
 
-/*
     private fun TestScope.`then the password is not visible`() {
         composeTestRule.onNodeWithText(textValue).assertDoesNotExist()
     }
@@ -89,7 +90,6 @@ internal class PasswordInputKtTest {
     private fun TestScope.`then the password is visible`() {
         composeTestRule.onNodeWithText(textValue).assertIsDisplayed()
     }
-*/
 
     private fun `then screenshot is OK`() {
         composeTestRule.onRoot()
