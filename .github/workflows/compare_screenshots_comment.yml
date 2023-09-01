@@ -34,12 +34,13 @@ jobs:
           fi
           echo "exist_compare_files=${exist_compare_files}" >> $GITHUB_OUTPUT
 
-      - id: check-output
+      - uses: actions/upload-artifact@v3
         if: failure()
-        name: Checkout output
-        run: |
-          # Find all the files ending with _compare.png in roborazzi folder
-          echo "output: ${{steps.check-if-there-are-compare-files.outputs.exist_compare_files}}"
+        with:
+          name: compare-images
+          path: |
+            **/screenshots/*_compare.png
+          retention-days: 30
 
       - id: generate-diff-reports
         name: Generate diff reports
