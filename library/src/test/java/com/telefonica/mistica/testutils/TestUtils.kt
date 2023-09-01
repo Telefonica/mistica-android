@@ -19,6 +19,6 @@ object TestUtils {
                 }
             }
         }
-        return "Unknown"
+        throw IllegalStateException("Could not find running test method name")
     }
 }
