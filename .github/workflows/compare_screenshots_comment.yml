@@ -26,9 +26,9 @@ jobs:
         shell: bash
         run: |
           # Find all the files ending with _compare.png
-          find_output=$(find . -type f -name "*_compare.png")
-          line_count=$(echo "$find_output" | wc -l)          
-          if [ "$line_count" -gt 1 ]; then
+          files=$(find . -type f -name "*_compare.png" | grep "screenshots/")
+          line_count=$(echo "$files" | wc -l | tr -d '[:space:]')          
+          if [ "$line_count" -ge 1 ]; then
             exist_compare_files="true"
           else
             exist_compare_files="false"
@@ -42,7 +42,7 @@ jobs:
         shell: bash
         run: |
           # Find all the files ending with _compare.png in roborazzi folder
-          files=$(find . -type f -name "*_compare.png" | grep "screenshots/" | grep -E "^[a-zA-Z0-9_./-]+$")
+          files=$(find . -type f -name "*_compare.png" | grep "screenshots/")
           delimiter="$(openssl rand -hex 8)"
           {
             echo "reports<<${delimiter}"
