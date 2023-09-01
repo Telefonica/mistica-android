@@ -18,10 +18,10 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Verify Screenshots (roborazzi)
+        continue-on-error: true
         run: 'bash ./gradlew verifyRoborazziDebug'
 
       - id: check-if-there-are-compare-files
-        if: always()
         name: Check if there are compare files
         shell: bash
         run: |
