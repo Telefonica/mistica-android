@@ -51,22 +51,14 @@ jobs:
         run: |
           # Find all the files ending with _compare.png in screenshots folder
           files=$(find . -type f -name "*_compare.png" | grep "screenshots/")
-          delimiter="$(openssl rand -hex 8)"
-          {
-            echo "reports<<${delimiter}"
-          
-            # Create markdown table header
-            echo "The screenshots failed, check the compare-images artifact"
-            echo "Files:"
-          } >> "$GITHUB_OUTPUT"
-          
-          # Iterate over the files and create table rows
+          echo "reports<<EOF_REPORT" >> $GITHUB_OUTPUT
+          echo "The screenshots failed, check the compare-images artifact" >> $GITHUB_OUTPUT
+          echo "Files:" >> $GITHUB_OUTPUT
+          # Iterate over the files
           for file in $files; do
-            # Get the file name and replace spaces
-            fileName=$(basename "$file" | sed 's/ /&nbsp;/g')
-            echo "$fileName" >> "$GITHUB_OUTPUT"
+            echo "$file" >> $GITHUB_OUTPUT
           done
-          echo "${delimiter}" >> $GITHUB_OUTPUT
+          echo "EOF_REPORT" >> $GITHUB_OUTPUT
 
       - name: Find Comment
         uses: peter-evans/find-comment@v2
