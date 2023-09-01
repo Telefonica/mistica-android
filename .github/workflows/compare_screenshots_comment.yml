@@ -29,6 +29,14 @@ jobs:
           files=$(find . -type f -name "*_compare.png" | grep "screenshots/")
           exist_compare_files="true"
           echo "exist_compare_files=${exist_compare_files}" >> $GITHUB_OUTPUT
+
+      - id: check-output
+        if: always()
+        name: Checkout output
+        run: |
+          # Find all the files ending with _compare.png in roborazzi folder
+          echo "output: ${{steps.check-if-there-are-compare-files.outputs.exist_compare_files}}"
+
       - id: generate-diff-reports
         name: Generate diff reports
         if: steps.check-if-there-are-compare-files.outputs.exist_compare_files == 'true'
