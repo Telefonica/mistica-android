@@ -21,7 +21,7 @@ jobs:
         run: 'bash ./gradlew verifyRoborazziDebug'
 
       - id: check-if-there-are-compare-files
-        if: always()
+        if: failure()
         name: Check if there are compare files
         shell: bash
         run: |
@@ -31,7 +31,7 @@ jobs:
           echo "exist_compare_files=${exist_compare_files}" >> $GITHUB_OUTPUT
 
       - id: check-output
-        if: always()
+        if: failure()
         name: Checkout output
         run: |
           # Find all the files ending with _compare.png in roborazzi folder
@@ -39,7 +39,7 @@ jobs:
 
       - id: generate-diff-reports
         name: Generate diff reports
-        if: steps.check-if-there-are-compare-files.outputs.exist_compare_files == 'true'
+        if: failure() && steps.check-if-there-are-compare-files.outputs.exist_compare_files == 'true'
         env:
           BRANCH_NAME: companion_${{ github.event.workflow_run.head_branch }}
         shell: bash
@@ -67,7 +67,7 @@ jobs:
       - name: Find Comment
         uses: peter-evans/find-comment@v2
         id: fc
-        if: steps.generate-diff-reports.outputs.reports != ''
+        if: failure() && steps.generate-diff-reports.outputs.reports != ''
         with:
           issue-number: ${{ github.event.number }}
           comment-author: 'github-actions[bot]'
@@ -75,7 +75,7 @@ jobs:
 
       - name: Add or update comment on PR
         uses: peter-evans/create-or-update-comment@v3
-        if: steps.generate-diff-reports.outputs.reports != ''
+        if: failure() && steps.generate-diff-reports.outputs.reports != ''
         with:
           comment-id: ${{ steps.fc.outputs.comment-id }}
           issue-number: ${{ github.event.number }}
