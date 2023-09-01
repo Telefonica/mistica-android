@@ -21,6 +21,7 @@ jobs:
         run: 'bash ./gradlew verifyRoborazziDebug'
 
       - id: check-if-there-are-compare-files
+        if: always()
         name: Check if there are compare files
         shell: bash
         run: |
