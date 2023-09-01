@@ -1,11 +1,6 @@
 name: "Generate debug catalog app"
 on:
-  pull_request:
-    paths-ignore:
-      - '**.md'
-      - 'doc/**'
-      - 'tokens/**'
-      - '.github/**'
+  workflow_dispatch:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}

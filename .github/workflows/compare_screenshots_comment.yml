@@ -28,7 +28,7 @@ jobs:
           # Find all the files ending with _compare.png
           files=$(find . -type f -name "*_compare.png" | grep "screenshots/")
           exist_compare_files="true"
-          echo "exist_compare_files=$exist_compare_files" >> "$GITHUB_OUTPUT"
+          echo "exist_compare_files=$exist_compare_files" >> $GITHUB_OUTPUT
       - id: generate-diff-reports
         name: Generate diff reports
         if: steps.check-if-there-are-compare-files.outputs.exist_compare_files == 'true'
@@ -54,7 +54,7 @@ jobs:
             fileName=$(basename "$file" | sed -r 's/(.{20})/\1<br>/g')
             echo "| [$fileName](https://github.com/${{ github.repository }}/blob/$BRANCH_NAME/$file) | ![](https://github.com/${{ github.repository }}/blob/$BRANCH_NAME/$file?raw=true) |" >> "$GITHUB_OUTPUT"
           done
-          echo "${delimiter}" >> "$GITHUB_OUTPUT"
+          echo "${delimiter}" >> $GITHUB_OUTPUT
 
       - name: Find Comment
         uses: peter-evans/find-comment@v2
