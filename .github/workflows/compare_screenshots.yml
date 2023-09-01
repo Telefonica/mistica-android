@@ -57,15 +57,14 @@ jobs:
           
             # Create markdown table header
             echo "The screenshots failed, check the compare-images artifact"
-            echo "| File name |"
-            echo "|-------|"
+            echo "Files:"
           } >> "$GITHUB_OUTPUT"
           
           # Iterate over the files and create table rows
           for file in $files; do
             # Get the file name and replace spaces
             fileName=$(basename "$file" | sed 's/ /&nbsp;/g')
-            echo "| $fileName |" >> "$GITHUB_OUTPUT"
+            echo "$fileName" >> "$GITHUB_OUTPUT"
           done
           echo "${delimiter}" >> $GITHUB_OUTPUT
 
