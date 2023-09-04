@@ -6,12 +6,10 @@ import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.onRoot
 import androidx.compose.ui.test.performClick
-import com.github.takahirom.roborazzi.ExperimentalRoborazziApi
-import com.github.takahirom.roborazzi.InternalRoborazziApi
-import com.github.takahirom.roborazzi.RoborazziContext
 import com.github.takahirom.roborazzi.captureRoboImage
 import com.telefonica.mistica.compose.theme.MisticaTheme
 import com.telefonica.mistica.compose.theme.brand.MovistarBrand
+import com.telefonica.mistica.testutils.ScreenshotUtils
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -23,15 +21,6 @@ import org.robolectric.annotation.GraphicsMode
 internal class PasswordInputKtTest {
     @get:Rule
     val composeTestRule = createComposeRule()
-
-    init {
-        setScreenshotFolder()
-    }
-
-    @OptIn(InternalRoborazziApi::class, ExperimentalRoborazziApi::class)
-    private fun setScreenshotFolder() {
-        RoborazziContext.setRuleOverrideOutputDirectory("screenshots")
-    }
 
     @Test
     fun `check the password is initially not visible`() = test {
@@ -93,7 +82,7 @@ internal class PasswordInputKtTest {
 
     private fun `then screenshot is OK`() {
         composeTestRule.onRoot()
-            .captureRoboImage()
+            .captureRoboImage(ScreenshotUtils.getScreenshotName())
     }
 
     private fun test(block: TestScope.() -> Unit) {
