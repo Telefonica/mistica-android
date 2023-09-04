@@ -1,0 +1,95 @@
+name: Compare Screenshots
+
+on:
+  pull_request:
+
+jobs:
+  Comment-CompareScreenshot:
+
+    permissions:
+      actions: read # for downloading artifacts
+      contents: write # for pushing screenshot-diff to companion branch
+      pull-requests: write # for creating a comment on pull requests
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Verify Screenshots (roborazzi)
+        run: 'bash ./gradlew verifyRoborazziDebug'
+
+      - name: Upload compare images
+        uses: actions/upload-artifact@v3
+        if: failure()
+        with:
+          name: compare-images
+          path: '**/screenshots/*_compare.png'
+          retention-days: 14
+
+      - id: check-if-there-are-compare-files
+        if: failure()
+        name: Check if there are compare files
+        shell: bash
+        run: |
+          # Find all the files ending with _compare.png
+          files=$(find . -type f -name "*_compare.png" | grep "screenshots/")
+          if [ -n "$files" ]; then
+            exist_compare_files="true"
+          else
+            exist_compare_files="false"
+          fi
+          echo "exist_compare_files=${exist_compare_files}" >> $GITHUB_OUTPUT
+
+      - id: generate-comment
+        name: Generate Comment
+        if: failure() && steps.check-if-there-are-compare-files.outputs.exist_compare_files == 'true'
+        env:
+          BRANCH_NAME: companion_${{ github.event.workflow_run.head_branch }}
+        shell: bash
+        run: |
+          # Find all the files ending with _compare.png in screenshots folder
+          files=$(find . -type f -name "*_compare.png" | grep "screenshots/")
+          delimiter="$(openssl rand -hex 8)"
+          {
+            echo "reports<<${delimiter}"
+          
+            # Create markdown table header
+            echo "The screenshots failed, check the compare-images artifact"
+            echo "| File name |"
+            echo "|-------|"
+          } >> "$GITHUB_OUTPUT"
+          
+          # Iterate over the files and create table rows
+          for file in $files; do
+            # Get the file name and insert newlines every 100 characters
+            fileName=$(basename "$file" | sed -r 's/(.{100})/\1<br>/g')
+            echo "| $fileName |" >> "$GITHUB_OUTPUT"
+          done
+          echo "${delimiter}" >> $GITHUB_OUTPUT
+
+      - name: Find Comment
+        uses: peter-evans/find-comment@v2
+        id: fc
+        if: failure() && steps.generate-comment.outputs.reports != ''
+        with:
+          issue-number: ${{ github.event.number }}
+          comment-author: 'github-actions[bot]'
+          body-includes: Snapshot diff report
+
+      - name: Add or update comment on PR
+        uses: peter-evans/create-or-update-comment@v3
+        if: failure() && steps.generate-comment.outputs.reports != ''
+        with:
+          comment-id: ${{ steps.fc.outputs.comment-id }}
+          issue-number: ${{ github.event.number }}
+          body: ${{ steps.generate-comment.outputs.reports }}
+          edit-mode: replace
+
+      - uses: izhangzhihao/delete-comment@master
+        if: success()
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          delete_user_name: 'github-actions[bot]'
+          issue_number: ${{ github.event.number }}
