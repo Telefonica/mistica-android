@@ -25,6 +25,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.onGloballyPositioned
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.skydoves.balloon.ArrowPositionRules
@@ -35,6 +36,10 @@ import com.skydoves.balloon.compose.BalloonWindow
 import com.skydoves.balloon.compose.rememberBalloonBuilder
 import com.skydoves.balloon.compose.setBackgroundColor
 import com.telefonica.mistica.R
+import com.telefonica.mistica.compose.popover.Popover.TestTag.CLOSE_BUTTON
+import com.telefonica.mistica.compose.popover.Popover.TestTag.POPOVER_CONTENT
+import com.telefonica.mistica.compose.popover.Popover.TestTag.POPOVER_SUBTITLE
+import com.telefonica.mistica.compose.popover.Popover.TestTag.POPOVER_TITLE
 import com.telefonica.mistica.compose.theme.MisticaTheme
 
 @Composable
@@ -77,7 +82,8 @@ fun PopOver(
                         .wrapContentHeight()
                         .fillMaxWidth()
                         .padding(start = 16.dp, top = 8.dp, end = 8.dp, bottom = 16.dp)
-                        .background(Color.Transparent),
+                        .background(Color.Transparent)
+                        .testTag(POPOVER_CONTENT),
                 ) {
                     Row(
                         modifier = Modifier
@@ -103,13 +109,16 @@ fun PopOver(
                             Text(
                                 modifier = Modifier
                                     .fillMaxWidth()
-                                    .padding(bottom = 4.dp),
+                                    .padding(bottom = 4.dp)
+                                    .testTag(POPOVER_TITLE),
                                 text = title,
                                 style = MisticaTheme.typography.preset3,
                                 maxLines = 2,
                             )
                             Text(
-                                modifier = Modifier.fillMaxWidth(),
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .testTag(POPOVER_SUBTITLE),
                                 text = subtitle,
                                 style = MisticaTheme.typography.preset2,
                                 color = MisticaTheme.colors.textSecondary
@@ -126,6 +135,7 @@ fun PopOver(
                             .clickable {
                                 window?.dismiss()
                             }
+                            .testTag(CLOSE_BUTTON)
                     )
                 }
             }
@@ -134,5 +144,14 @@ fun PopOver(
             popOverWindow.balloonWindow = balloonWindow
             popoverWindow(popOverWindow)
         }
+    }
+}
+
+object Popover {
+    object TestTag {
+        const val POPOVER_CONTENT = "popover_content"
+        const val POPOVER_TITLE = "popover_title"
+        const val POPOVER_SUBTITLE = "popover_subtitle"
+        const val CLOSE_BUTTON = "close_button"
     }
 }
