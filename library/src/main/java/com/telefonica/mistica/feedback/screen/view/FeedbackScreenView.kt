@@ -343,11 +343,9 @@ class FeedbackScreenView : ConstraintLayout {
     }
 
     private fun configureTexts() {
-        @ColorInt val titleTextColor: Int =
-            context.getThemeColor(if (isInversePresentation()) R.attr.colorTextPrimaryInverse else R.attr.colorTextPrimary)
+        @ColorInt val titleTextColor: Int = context.getThemeColor(if (isInversePresentation()) R.attr.colorTextPrimaryInverse else R.attr.colorTextPrimary)
         title.setTextColor(titleTextColor)
-        @ColorInt val subtitleTextColor: Int =
-            context.getThemeColor(if (isInversePresentation()) R.attr.colorTextPrimaryInverse else R.attr.colorTextSecondary)
+        @ColorInt val subtitleTextColor: Int = context.getThemeColor(if (isInversePresentation()) R.attr.colorTextPrimaryInverse else R.attr.colorTextSecondary)
         subtitle.setTextColor(subtitleTextColor)
         setFeedbackTitle(titleText)
         setFeedbackSubtitle(subtitleText)
