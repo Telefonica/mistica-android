@@ -74,8 +74,11 @@ class FeedbackScreenView : ConstraintLayout {
     private var firstButtonClickListener: OnClickListener? = null
     private var secondButtonClickListener: OnClickListener? = null
 
-    @RawRes private var customAnimation: Int? = null
-    @DrawableRes private var customIcon: Int? = null
+    @RawRes
+    private var customAnimation: Int? = null
+
+    @DrawableRes
+    private var customIcon: Int? = null
 
     constructor(context: Context) : super(context) {
         init(context)
@@ -390,20 +393,35 @@ class FeedbackScreenView : ConstraintLayout {
 
     fun animateViews() {
         if (isIconAnimated) {
-            val animation = AnimatorSet().apply {
+            val titleAnimation = AnimatorSet().apply {
                 playTogether(
                     getFadeInAnim(title),
+                    getTranslationYAnim(title)
+                )
+                interpolator = getCubicBezierInterpolator()
+                duration = TEXTS_ANIMATION_DURATION
+                startDelay = TITLE_ANIMATION_DELAY
+            }
+            val subtitleAnimation = AnimatorSet().apply {
+                playTogether(
                     getFadeInAnim(subtitle),
+                    getTranslationYAnim(subtitle)
+                )
+                interpolator = getCubicBezierInterpolator()
+                duration = TEXTS_ANIMATION_DURATION
+                startDelay = SUBTITLE_ANIMATION_DELAY
+            }
+
+            val extraAnimation = AnimatorSet().apply {
+                playTogether(
                     getFadeInAnim(customContentContainer),
-                    getFadeInAnim(errorReference),
-                    getTranslationYAnim(title),
-                    getTranslationYAnim(subtitle),
                     getTranslationYAnim(customContentContainer),
+                    getFadeInAnim(errorReference),
                     getTranslationYAnim(errorReference),
                 )
                 interpolator = getCubicBezierInterpolator()
                 duration = TEXTS_ANIMATION_DURATION
-                startDelay = TEXTS_ANIMATION_DELAY
+                startDelay = if (subtitleText.isEmpty()) SUBTITLE_ANIMATION_DELAY else EXTRAS_ANIMATION_DELAY
             }
 
             title.alpha = 0F
@@ -411,8 +429,10 @@ class FeedbackScreenView : ConstraintLayout {
             errorReference.alpha = 0F
             customContentContainer.alpha = 0F
 
-            animation.start()
             icon.playAnimation()
+            titleAnimation.start()
+            subtitleAnimation.start()
+            extraAnimation.start()
             executeHapticFeedback()
         }
     }
@@ -457,7 +477,9 @@ class FeedbackScreenView : ConstraintLayout {
         const val TYPE_INFO = 2
 
         const val TEXTS_ANIMATION_DURATION = 800L
-        const val TEXTS_ANIMATION_DELAY = 200L
+        const val TITLE_ANIMATION_DELAY = 600L
+        const val SUBTITLE_ANIMATION_DELAY = 900L
+        const val EXTRAS_ANIMATION_DELAY = 1200L
 
         const val HAPTIC_FEEDBACK_DEFAULT_DELAY = 450L
         const val HAPTIC_FEEDBACK_ERROR_DELAY = 500L
