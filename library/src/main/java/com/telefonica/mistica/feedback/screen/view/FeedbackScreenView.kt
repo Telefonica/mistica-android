@@ -337,9 +337,6 @@ class FeedbackScreenView : ConstraintLayout {
             else -> icon.visibility = View.GONE
         }
         isIconAnimated = animationResource != null
-        icon.addOnLayoutChangeListener { _, _, _, _, _, _, _, _, _ ->
-            icon.translationX = -(icon.width - context.convertDpToPx(64).toFloat()) / 2
-        }
     }
 
     private fun configureTexts() {

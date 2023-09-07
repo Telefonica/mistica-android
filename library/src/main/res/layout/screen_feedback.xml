@@ -14,16 +14,15 @@
             android:layout_height="wrap_content"
             android:focusable="true"
             android:orientation="vertical"
-            android:paddingTop="24dp" >
+            android:paddingTop="64dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp">
 
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/icon"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="24dp"
-                android:scaleType="center"
-                app:layout_constraintStart_toStartOf="parent"
+                android:layout_height="48dp"
+                android:scaleType="fitStart"
                 app:lottie_enableMergePathsForKitKatAndAbove="true"
                 app:lottie_progress="0" />
 
@@ -32,26 +31,20 @@
                 style="@style/AppTheme.TextAppearance.Preset6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="24dp" />
+                android:layout_marginTop="24dp" />
 
             <TextView
                 android:id="@+id/subtitle"
                 style="@style/AppTheme.TextAppearance.Preset3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="24dp" />
+                android:layout_marginTop="16dp" />
 
             <FrameLayout
                 android:id="@+id/custom_content"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginEnd="24dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="16dp"
                 android:visibility="gone" />
 
             <TextView
@@ -59,9 +52,7 @@
                 style="@style/AppTheme.TextAppearance.Preset2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
                 android:layout_marginTop="16dp"
-                android:layout_marginEnd="24dp"
                 android:textColor="?colorTextSecondary"
                 android:visibility="gone" />
 
