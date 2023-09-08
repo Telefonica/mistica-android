@@ -86,9 +86,17 @@ jobs:
           tar cvzf mistica-screenshots-tests-report.tar.gz reports || echo "No screenshots tests reports found"
         shell: bash
 
+      - name: Checkout Telefonica/github-actions repo
+        if: failure()
+        uses: actions/checkout@v3
+        with:
+          repository: Telefonica/github-actions
+          token: "${{ secrets.NOVUM_PRIVATE_REPOS }}"
+          path: .github/shared-actions
+
       - name: Upload reports
         if: failure()
-        uses: Telefonica/github-actions/azure/upload-to-storage@main
+        uses: ./.github/shared-actions/azure/upload-to-storage
         with:
           azure-account-name: devnovum
           azure-account-key: ${{secrets.AZURE_ACCOUNT_KEY}}
