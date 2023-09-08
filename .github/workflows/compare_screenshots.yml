@@ -1,15 +1,11 @@
 name: Compare Screenshots
 
 on:
+  workflow_dispatch:
   pull_request:
 
 jobs:
   Comment-CompareScreenshot:
-
-    permissions:
-      actions: read # for downloading artifacts
-      contents: write # for pushing screenshot-diff to companion branch
-      pull-requests: write # for creating a comment on pull requests
 
     runs-on: ubuntu-latest
 
@@ -20,76 +16,74 @@ jobs:
       - name: Verify Screenshots (roborazzi)
         run: 'bash ./gradlew verifyRoborazziDebug'
 
-      - name: Upload compare images
-        uses: actions/upload-artifact@v3
+      - id: generate-html
+        name: Generate Html Report
         if: failure()
-        with:
-          name: compare-images
-          path: '**/screenshots/*_compare.png'
-          retention-days: 14
-
-      - id: check-if-there-are-compare-files
-        if: failure()
-        name: Check if there are compare files
-        shell: bash
-        run: |
-          # Find all the files ending with _compare.png
-          files=$(find . -type f -name "*_compare.png" | grep "screenshots/")
-          if [ -n "$files" ]; then
-            exist_compare_files="true"
-          else
-            exist_compare_files="false"
-          fi
-          echo "exist_compare_files=${exist_compare_files}" >> $GITHUB_OUTPUT
-
-      - id: generate-comment
-        name: Generate Comment
-        if: failure() && steps.check-if-there-are-compare-files.outputs.exist_compare_files == 'true'
         env:
           BRANCH_NAME: companion_${{ github.event.workflow_run.head_branch }}
         shell: bash
         run: |
-          # Find all the files ending with _compare.png in screenshots folder
-          files=$(find . -type f -name "*_compare.png" | grep "screenshots/")
-          delimiter="$(openssl rand -hex 8)"
+          mkdir reports
+          touch reports/report.html
+          cp */screenshots/*_compare.png reports/
+          files=$(find . -type f -name "*_compare.png" | grep "reports/")
           {
-            echo "reports<<${delimiter}"
-          
-            # Create markdown table header
-            echo "The screenshots failed, check the compare-images artifact"
-            echo "| File name |"
-            echo "|-------|"
-          } >> "$GITHUB_OUTPUT"
-          
-          # Iterate over the files and create table rows
-          for file in $files; do
-            # Get the file name and insert newlines every 100 characters
-            fileName=$(basename "$file" | sed -r 's/(.{100})/\1<br>/g')
-            echo "| $fileName |" >> "$GITHUB_OUTPUT"
-          done
-          echo "${delimiter}" >> $GITHUB_OUTPUT
+            echo '<!doctype html>'
+            echo '<html>'
+              echo '<head>'
+                echo '<title>Screenshots failure report</title>'
+                echo '<link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" rel="stylesheet">'
+                echo '<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">'
+                echo '<meta charset="UTF-8">'
+              echo '</head>'
+              echo '<style>'
+              echo 'body {'
+                echo 'display: flex;'
+                echo 'min-height: 100vh;'
+                echo 'flex-direction: column;'
+              echo '}'
+              echo 'main {'
+                echo 'flex: 1 0 auto;'
+              echo '}'
+              echo '</style>'
+            echo '<body>'
+            echo '<nav>'
+              echo '<div class="nav-wrapper indigo darken-3">'
+                echo '<a href="#" class="brand-logo left">Screenshots failure report</a>'
+                echo '<ul id="nav-mobile" class="right hide-on-med-and-down">'
+                  echo '<li><a href="https://github.com/takahirom/roborazzi">Roborazzi</a></li>'
+                echo '</ul>'
+              echo '</div>'
+            echo '</nav>'
+            echo '<main class="container">'
+              echo '<div class="section">'
+              echo '<table class="highlight responsive-table">'
+                echo '<tr><th>File name</th><th>Comparison</th></tr>'
+          } >> reports/report.html
 
-      - name: Find Comment
-        uses: peter-evans/find-comment@v2
-        id: fc
-        if: failure() && steps.generate-comment.outputs.reports != ''
-        with:
-          issue-number: ${{ github.event.number }}
-          comment-author: 'github-actions[bot]'
-          body-includes: Snapshot diff report
+                for file in $files; do
+                  # Get the file name and insert newlines every 100 characters
+                  fileName=$(basename "$file" | sed -r 's/(.{100})/\1<br>/g')
+                  echo "<tr><td>$(basename "$file")</td><td><img src="$(basename "$file")" /></td></tr>" >> reports/report.html
+                done
+          {
+                echo '</table>'
+              echo '</div>'
+            echo '</main>'
+            echo '<footer class="page-footer indigo darken-3">'
+              echo '<div></div>'
+            echo '</footer>'
+            echo '<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>'
+            echo '</body></html>'
+          } >> reports/report.html
 
-      - name: Add or update comment on PR
-        uses: peter-evans/create-or-update-comment@v3
-        if: failure() && steps.generate-comment.outputs.reports != ''
-        with:
-          comment-id: ${{ steps.fc.outputs.comment-id }}
-          issue-number: ${{ github.event.number }}
-          body: ${{ steps.generate-comment.outputs.reports }}
-          edit-mode: replace
+          echo "Report: "
+          cat reports/report.html
 
-      - uses: izhangzhihao/delete-comment@master
-        if: success()
+      - name: Upload reports
+        uses: actions/upload-artifact@v3
+        if: failure()
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          delete_user_name: 'github-actions[bot]'
-          issue_number: ${{ github.event.number }}
+          name: failure-report
+          path: 'reports/*'
+          retention-days: 14
