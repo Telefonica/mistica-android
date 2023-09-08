@@ -81,6 +81,7 @@ jobs:
           cat reports/report.html
 
       - name: Upload reports
+        if: failure()
         uses: Telefonica/github-actions/azure/upload-to-storage@main
         with:
           azure-account-name: devnovum
