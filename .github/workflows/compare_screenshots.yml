@@ -80,6 +80,12 @@ jobs:
           echo "Report: "
           cat reports/report.html
 
+      - name: Generate screenshots tests reports tar.gz
+        if: failure()
+        run: |
+          tar cvzf mistica-screenshots-tests-report.tar.gz reports || echo "No screenshots tests reports found"
+        shell: bash
+
       - name: Upload reports
         if: failure()
         uses: Telefonica/github-actions/azure/upload-to-storage@main
@@ -87,5 +93,5 @@ jobs:
           azure-account-name: devnovum
           azure-account-key: ${{secrets.AZURE_ACCOUNT_KEY}}
           globs: |
-            ./reports/*
+            mistica-screenshots-tests-report.tar.gz
           generate-summary: true
