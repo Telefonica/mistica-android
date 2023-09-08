@@ -10,10 +10,8 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v2
 
-      - name: "Build Android project"
-        uses: docker://docker.tuenti.io/android/novum_android_api31:2
-        with:
-          args: 'bash ./gradlew clean recordRoborazziDebug'
+      - name: Run Roborazzi Record
+        run: 'bash ./gradlew clean recordRoborazziDebug'
 
       - name: Check Git status
         run: 'git status'
