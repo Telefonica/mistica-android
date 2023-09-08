@@ -25,8 +25,8 @@ jobs:
         run: |
           mkdir reports
           touch reports/report.html
-          cp */screenshots/*_compare.png reports/
-          cp */screenshots/*/*_compare.png reports/
+          cp */screenshots/*_compare.png reports/ > /dev/null 2>&1
+          cp */screenshots/*/*_compare.png reports/ > /dev/null 2>&1
           files=$(find . -type f -name "*_compare.png" | grep "reports/")
           {
             echo '<!doctype html>'
