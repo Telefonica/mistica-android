@@ -1,0 +1,26 @@
+name: "Update screenshot baseline"
+on:
+  workflow_dispatch:
+
+jobs:
+  screenshots_baseline:
+    runs-on: self-hosted-novum
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: "Build Android project"
+        uses: docker://docker.tuenti.io/android/novum_android_api31:2
+        with:
+          args: 'bash ./gradlew clean recordRoborazziDebug'
+
+      - name: Check Git status
+        run: 'git status'
+        shell: bash
+
+      - name: Commit and push screenshots baseline
+        id: commitAndPushScreenshotsBaseline
+        uses: EndBug/add-and-commit@v7
+        with:
+          message: 'Updated screenshots baseline'
+          add: './**/screenshots/*'
