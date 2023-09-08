@@ -81,9 +81,10 @@ jobs:
           cat reports/report.html
 
       - name: Upload reports
-        uses: actions/upload-artifact@v3
-        if: failure()
+        uses: Telefonica/github-actions/azure/upload-to-storage@main
         with:
-          name: failure-report
-          path: 'reports/*'
-          retention-days: 14
+          azure-account-name: devnovum
+          azure-account-key: ${{secrets.AZURE_ACCOUNT_KEY}}
+          globs: |
+            ./reports/*
+          generate-summary: true
