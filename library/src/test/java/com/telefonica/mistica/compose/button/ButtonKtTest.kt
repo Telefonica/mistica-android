@@ -19,80 +19,135 @@ import com.telefonica.mistica.testutils.ScreenshotUtils
 import org.junit.Assert.assertTrue
 import org.junit.Rule
 import org.junit.Test
+import org.junit.experimental.runners.Enclosed
 import org.junit.runner.RunWith
 import org.robolectric.ParameterizedRobolectricTestRunner
+import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.GraphicsMode
 
-@RunWith(ParameterizedRobolectricTestRunner::class)
-@GraphicsMode(GraphicsMode.Mode.NATIVE)
-internal class ButtonKtTest(private val brand: Brand) {
-    @get:Rule
-    val composeTestRule = createComposeRule()
+@RunWith(Enclosed::class)
+internal class ButtonKtTest {
 
-    @Test
-    fun `check the button screenshot`() = test {
-        `when Button`(brand)
+    @RunWith(ParameterizedRobolectricTestRunner::class)
+    @GraphicsMode(GraphicsMode.Mode.NATIVE)
+    internal class ButtonKtTestParametrized(private val brand: Brand) {
+        @get:Rule
+        val composeTestRule = createComposeRule()
 
-        `then screenshot is OK`(brand)
-    }
+        @Test
+        fun `check the button screenshot`() = test {
+            `when Button`(brand)
 
-    @Test
-    fun `check the button is clicked`() = test {
-        `given Button`()
+            `then screenshot is OK`(brand)
+        }
 
-        `when the button is clicked`()
+        @Test
+        fun `check the button is clicked`() = test {
+            `given Button`()
 
-        `then the onClickListener has been invoked`()
-    }
+            `when the button is clicked`()
 
-    private fun TestScope.`given Button`() {
-        `when Button`()
-    }
+            `then the onClickListener has been invoked`()
+        }
 
-    private fun TestScope.`when Button`(brand: Brand = MovistarBrand) {
-        composeTestRule.setContent {
-            MisticaTheme(brand = brand) {
-                Button(
-                    text = textValue,
-                    onClickListener = onClickListener,
-                    modifier = Modifier.padding(16.dp)
-                )
+        private fun TestScope.`given Button`() {
+            `when Button`()
+        }
+
+        private fun TestScope.`when Button`(brand: Brand = MovistarBrand) {
+            composeTestRule.setContent {
+                MisticaTheme(brand = brand) {
+                    Button(
+                        text = textValue,
+                        onClickListener = onClickListener,
+                        modifier = Modifier.padding(16.dp)
+                    )
+                }
             }
+        }
+
+        private fun TestScope.`when the button is clicked`() {
+            composeTestRule.onNodeWithText(textValue).performClick()
+        }
+
+        private fun `then screenshot is OK`(brand: Brand) {
+            composeTestRule.onRoot()
+                .captureRoboImage(ScreenshotUtils.getScreenshotName(brand))
+        }
+
+        private fun TestScope.`then the onClickListener has been invoked`() {
+            assertTrue(clicked)
+        }
+
+        private fun test(block: TestScope.() -> Unit) {
+            TestScope().block()
+        }
+
+        private class TestScope {
+            val textValue = "textValue"
+            var clicked = false
+            val onClickListener: () -> Unit = { clicked = true }
+        }
+
+        companion object {
+            @JvmStatic
+            @ParameterizedRobolectricTestRunner.Parameters(name = "Input: {0}")
+            fun brands() = listOf(
+                arrayOf(MovistarBrand),
+                arrayOf(VivoBrand),
+                arrayOf(O2Brand),
+                arrayOf(BlauBrand),
+                arrayOf(TelefonicaBrand),
+            )
         }
     }
 
-    private fun TestScope.`when the button is clicked`() {
-        composeTestRule.onNodeWithText(textValue).performClick()
-    }
+    @RunWith(RobolectricTestRunner::class)
+    internal class ButtonKtTestNotParametrized {
+        @get:Rule
+        val composeTestRule = createComposeRule()
 
-    private fun `then screenshot is OK`(brand: Brand) {
-        composeTestRule.onRoot()
-            .captureRoboImage(ScreenshotUtils.getScreenshotName(brand))
-    }
+        @Test
+        fun `check the button is clicked`() = test {
+            `given Button`()
 
-    private fun TestScope.`then the onClickListener has been invoked`() {
-        assertTrue(clicked)
-    }
+            `when the button is clicked`()
 
-    private fun test(block: TestScope.() -> Unit) {
-        TestScope().block()
-    }
+            `then the onClickListener has been invoked`()
+        }
 
-    private class TestScope {
-        val textValue = "textValue"
-        var clicked = false
-        val onClickListener: () -> Unit = { clicked = true }
-    }
+        private fun TestScope.`given Button`() {
+            `when Button`()
+        }
 
-    companion object {
-        @JvmStatic
-        @ParameterizedRobolectricTestRunner.Parameters(name = "Input: {0}")
-        fun brands() = listOf(
-            arrayOf(MovistarBrand),
-            arrayOf(VivoBrand),
-            arrayOf(O2Brand),
-            arrayOf(BlauBrand),
-            arrayOf(TelefonicaBrand),
-        )
+        private fun TestScope.`when Button`() {
+            composeTestRule.setContent {
+                MisticaTheme(brand = MovistarBrand) {
+                    Button(
+                        text = textValue,
+                        onClickListener = onClickListener,
+                        modifier = Modifier.padding(16.dp)
+                    )
+                }
+            }
+        }
+
+        private fun TestScope.`when the button is clicked`() {
+            composeTestRule.onNodeWithText(textValue).performClick()
+        }
+
+        private fun TestScope.`then the onClickListener has been invoked`() {
+            assertTrue(clicked)
+        }
+
+        private fun test(block: TestScope.() -> Unit) {
+            TestScope().block()
+        }
+
+        private class TestScope {
+            val textValue = "textValue"
+            var clicked = false
+            val onClickListener: () -> Unit = { clicked = true }
+        }
     }
 }
