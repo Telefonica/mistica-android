@@ -479,7 +479,7 @@ class FeedbackScreenView : ConstraintLayout {
         const val TEXTS_ANIMATION_DURATION = 800L
         const val TITLE_ANIMATION_DELAY = 600L
         const val SUBTITLE_ANIMATION_DELAY = 900L
-        const val EXTRAS_ANIMATION_DELAY = 1200L
+        const val EXTRAS_ANIMATION_DELAY = 1_200L
 
         const val HAPTIC_FEEDBACK_DEFAULT_DELAY = 450L
         const val HAPTIC_FEEDBACK_ERROR_DELAY = 500L
