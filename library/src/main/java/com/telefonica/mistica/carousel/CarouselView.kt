@@ -61,10 +61,8 @@ class CarouselView @JvmOverloads constructor(
 
 @Composable
 private fun CarouselItem(view: View) {
-
-    // Adds view to Compose
     AndroidView(
-        modifier = Modifier.fillMaxSize(), // Occupy the max size in the Compose UI tree
+        modifier = Modifier.fillMaxSize(),
         factory = { context ->
             view
         }
