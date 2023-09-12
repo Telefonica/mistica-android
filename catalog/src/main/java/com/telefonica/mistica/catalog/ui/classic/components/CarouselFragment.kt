@@ -38,7 +38,7 @@ class CarouselFragment : Fragment() {
     private fun getMediaCardsForCaroussel(): List<MediaCardView> {
         val mediaCards = mutableListOf<MediaCardView>()
         for (i in 1..MEDIA_CARDS_CAROUSEL_SIZE) {
-            mediaCards.add(MediaCardView(context!!).apply {
+            mediaCards.add(MediaCardView(requireContext()).apply {
                 setTag("HEADLINE")
                 setCardImage(card_image_sample)
                 setTitle("Page$i")
@@ -46,8 +46,8 @@ class CarouselFragment : Fragment() {
                 setDescription("Description")
                 setPrimaryButtonText("Primary")
                 setLinkButtonText("Link")
-                setPrimaryButtonOnClick { Toast.makeText(context, "primaryButton$i", Toast.LENGTH_SHORT).show() }
-                setLinkButtonOnClick { Toast.makeText(context, "linkButton$i", Toast.LENGTH_SHORT).show() }
+                setPrimaryButtonOnClick { Toast.makeText(requireContext(), "primaryButton$i", Toast.LENGTH_SHORT).show() }
+                setLinkButtonOnClick { Toast.makeText(requireContext(), "linkButton$i", Toast.LENGTH_SHORT).show() }
                 setCardAdditionalContent(null)
             })
         }
