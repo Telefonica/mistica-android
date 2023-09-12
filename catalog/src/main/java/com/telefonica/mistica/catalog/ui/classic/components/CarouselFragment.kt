@@ -4,22 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
+import android.widget.Toast
+import androidx.annotation.DrawableRes
+import com.telefonica.mistica.button.Button
 import androidx.fragment.app.Fragment
-import com.google.accompanist.pager.ExperimentalPagerApi
-import com.google.accompanist.pager.PagerState
+import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.catalog.R.drawable.card_image_sample
 import com.telefonica.mistica.catalog.databinding.CarouselFragmentCatalogBinding
-import com.telefonica.mistica.compose.card.Action
-import com.telefonica.mistica.compose.card.mediacard.MediaCard
-import com.telefonica.mistica.compose.card.mediacard.MediaCardImage
-import com.telefonica.mistica.compose.carousel.CarouselState
-import com.telefonica.mistica.compose.tag.Tag
-import com.telefonica.mistica.tag.TagView.Companion.TYPE_PROMO
+import com.telefonica.mistica.card.mediacard.MediaCardView
 
 class CarouselFragment : Fragment() {
 
@@ -35,35 +27,36 @@ class CarouselFragment : Fragment() {
         return binding.root
     }
 
-    @OptIn(ExperimentalPagerApi::class)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val carouselState = CarouselState(PagerState(0))
-        val pages = 6
         binding.carouselView
-            .setContent { page -> CarouselItem(page) }
-            .setState(carouselState)
-            .setItemCount(pages)
-
-        binding.carouselPageIndicatorView
-            .setState(carouselState)
-            .setPageCount(pages)
+            .setContent(getMediaCardsForCaroussel())
+            .setPagerIndicatorView(binding.carouselPageIndicatorView)
+            .setItemCount(MEDIA_CARDS_CAROUSEL_SIZE)
     }
-}
 
-@Composable
-private fun CarouselItem(page: Int) {
-    MediaCard(
-        modifier = Modifier
-            .height(500.dp)
-            .fillMaxWidth(),
-        image = MediaCardImage.MediaCardImageResource(card_image_sample),
-        tag = Tag("HEADLINE").withStyle(TYPE_PROMO),
-        title = "Page ${page + 1} ",
-        subtitle = "(position ${page})",
-        description = "Description",
-        primaryButton = Action("Primary") {},
-        linkButton = Action("Link") {}
-    )
+    private fun getMediaCardsForCaroussel(): List<MediaCardView> {
+        val mediaCards = mutableListOf<MediaCardView>()
+        for (i in 1..MEDIA_CARDS_CAROUSEL_SIZE) {
+            mediaCards.add(MediaCardView(context!!).apply {
+                setTag("HEADLINE")
+                setCardImage(card_image_sample)
+                setTitle("Page$i")
+                setSubtitle("(position ${i - 1})")
+                setDescription("Description")
+                setPrimaryButtonText("Primary")
+                setLinkButtonText("Link")
+                setPrimaryButtonOnClick { Toast.makeText(context, "primaryButton$i", Toast.LENGTH_SHORT).show() }
+                setLinkButtonOnClick { Toast.makeText(context, "linkButton$i", Toast.LENGTH_SHORT).show() }
+                setCardAdditionalContent(null)
+            })
+        }
+        return mediaCards
+    }
+
+    private companion object {
+        const val MEDIA_CARDS_CAROUSEL_SIZE = 6
+    }
+
 }
 

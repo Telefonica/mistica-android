@@ -2,7 +2,12 @@ package com.telefonica.mistica.carousel
 
 import android.content.Context
 import android.util.AttributeSet
+import android.view.View
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.viewinterop.AndroidView
+import com.google.accompanist.pager.PagerState
 import com.telefonica.mistica.compose.carousel.Carousel
 import com.telefonica.mistica.compose.carousel.CarouselState
 import com.telefonica.mistica.compose.composeview.AbstractMisticaComposeView
@@ -17,20 +22,28 @@ class CarouselView @JvmOverloads constructor(
     defStyleAttr,
 ) {
 
-    private lateinit var carouselState: CarouselState
+    private var carouselState: CarouselState = CarouselState(PagerState(0))
     private var itemCount: Int = 0
-    private lateinit var body: @Composable (Int) -> Unit
+    private var data: List<View>? = null
+    private var pageIndicatorView: CarouselPageIndicatorView? = null
 
-    fun setState(carouselState: CarouselState): CarouselView = this.apply {
-        this.carouselState = carouselState
+    fun setPagerIndicatorView(pageIndicatorView: CarouselPageIndicatorView): CarouselView = this.apply {
+        this.pageIndicatorView = pageIndicatorView
+        initPageIndicator()
     }
 
     fun setItemCount(itemCount: Int): CarouselView = this.apply {
         this.itemCount = itemCount
+        initPageIndicator()
     }
 
-    fun setContent(body: @Composable (Int) -> Unit): CarouselView = this.apply {
-        this.body = body
+    private fun initPageIndicator() {
+        this.pageIndicatorView?.setState(carouselState)
+        this.pageIndicatorView?.setPageCount(itemCount)
+    }
+
+    fun setContent(pages: List<View>): CarouselView = this.apply {
+        data = pages
     }
 
     @Composable
@@ -39,10 +52,22 @@ class CarouselView @JvmOverloads constructor(
             Carousel(
                 itemCount = itemCount,
                 carouselState = carouselState,
-            ) {
-                body(it)
+            ) { position ->
+                data?.get(position)?.let { CarouselItem(it) }
             }
         }
     }
+}
+
+@Composable
+private fun CarouselItem(view: View) {
+
+    // Adds view to Compose
+    AndroidView(
+        modifier = Modifier.fillMaxSize(), // Occupy the max size in the Compose UI tree
+        factory = { context ->
+            view
+        }
+    )
 
 }

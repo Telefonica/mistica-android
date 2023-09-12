@@ -205,7 +205,7 @@ abstract class CardView @JvmOverloads constructor(
         cardContentView.pretitleTextView.setTextAndVisibility(pretitle)
     }
 
-    protected fun setSubtitle(subtitle: String) {
+    fun setSubtitle(subtitle: String) {
         cardContentView.subtitleTextView.setTextAndVisibility(subtitle)
     }
 
