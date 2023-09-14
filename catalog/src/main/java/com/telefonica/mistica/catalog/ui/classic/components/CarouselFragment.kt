@@ -5,13 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.annotation.DrawableRes
-import com.telefonica.mistica.button.Button
 import androidx.fragment.app.Fragment
-import com.telefonica.mistica.catalog.R
+import com.google.accompanist.pager.PagerState
+import com.telefonica.mistica.card.mediacard.MediaCardView
 import com.telefonica.mistica.catalog.R.drawable.card_image_sample
 import com.telefonica.mistica.catalog.databinding.CarouselFragmentCatalogBinding
-import com.telefonica.mistica.card.mediacard.MediaCardView
+import com.telefonica.mistica.compose.carousel.CarouselState
 
 class CarouselFragment : Fragment() {
 
@@ -29,20 +28,25 @@ class CarouselFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val carouselState = CarouselState(PagerState(0))
         binding.carouselView
-            .setContent(getMediaCardsForCaroussel())
-            .setPagerIndicatorView(binding.carouselPageIndicatorView)
+            .setContent(getMediaCardsForCarousel())
+            .setState(carouselState)
             .setItemCount(MEDIA_CARDS_CAROUSEL_SIZE)
+
+        binding.carouselPageIndicatorView
+            .setState(carouselState)
+            .setPageCount(MEDIA_CARDS_CAROUSEL_SIZE)
     }
 
-    private fun getMediaCardsForCaroussel(): List<MediaCardView> {
+    private fun getMediaCardsForCarousel(): List<MediaCardView> {
         val mediaCards = mutableListOf<MediaCardView>()
         for (i in 1..MEDIA_CARDS_CAROUSEL_SIZE) {
             mediaCards.add(MediaCardView(requireContext()).apply {
                 setTag("HEADLINE")
                 setCardImage(card_image_sample)
                 setTitle("Page$i")
-                setSubtitle("(position ${i - 1})")
+                setSubtitleText("(position ${i - 1})")
                 setDescription("Description")
                 setPrimaryButtonText("Primary")
                 setLinkButtonText("Link")

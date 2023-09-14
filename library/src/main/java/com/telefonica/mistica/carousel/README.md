@@ -26,9 +26,9 @@ And they can be configured in the code:
 ```kotlin
 val pages = 6
 binding.carouselView
-    .setContent(getMediaCardsForCaroussel())
+    .setContent(getMediaCardsForCarousel())
     .setPagerIndicatorView(binding.carouselPageIndicatorView)
     .setItemCount(pages)
 
-private fun getMediaCardsForCaroussel(): List<View> { ... }
+private fun getMediaCardsForCarousel(): List<View> { ... }
 ```

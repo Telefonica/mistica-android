@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.viewinterop.AndroidView
-import com.google.accompanist.pager.PagerState
 import com.telefonica.mistica.compose.carousel.Carousel
 import com.telefonica.mistica.compose.carousel.CarouselState
 import com.telefonica.mistica.compose.composeview.AbstractMisticaComposeView
@@ -22,13 +21,20 @@ class CarouselView @JvmOverloads constructor(
     defStyleAttr,
 ) {
 
-    private var carouselState: CarouselState = CarouselState(PagerState(0))
+    private lateinit var carouselState: CarouselState
+
     private var itemCount: Int = 0
+
+    /**If composable is set it will render it by default*/
+    private var body: (@Composable (Int) -> Unit)? = null
+
+    /**If the default body composable body is null a list of View elements will be rendered*/
     private var data: List<View>? = null
+
     private var pageIndicatorView: CarouselPageIndicatorView? = null
 
-    fun setPagerIndicatorView(pageIndicatorView: CarouselPageIndicatorView): CarouselView = this.apply {
-        this.pageIndicatorView = pageIndicatorView
+    fun setState(carouselState: CarouselState): CarouselView = this.apply {
+        this.carouselState = carouselState
         initPageIndicator()
     }
 
@@ -42,8 +48,19 @@ class CarouselView @JvmOverloads constructor(
         this.pageIndicatorView?.setPageCount(itemCount)
     }
 
+    /**A list of views to be rendered in each page of the carousel.
+     * If a composable has been set it will render it by default
+     * @param pages: List of views to be rendered in each page of the carousel
+     */
     fun setContent(pages: List<View>): CarouselView = this.apply {
         data = pages
+    }
+
+    /**If a composable is set it will render it by default
+     * @param body: Composable that will be rendered in the carousel
+     */
+    fun setContent(body: @Composable (Int) -> Unit): CarouselView = this.apply {
+        this.body = body
     }
 
     @Composable
@@ -53,7 +70,7 @@ class CarouselView @JvmOverloads constructor(
                 itemCount = itemCount,
                 carouselState = carouselState,
             ) { position ->
-                data?.get(position)?.let { CarouselItem(it) }
+                body?.let { it(position) } ?: data?.get(position)?.let { CarouselItem(it) }
             }
         }
     }
