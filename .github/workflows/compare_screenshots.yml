@@ -94,7 +94,7 @@ jobs:
           token: "${{ secrets.NOVUM_PRIVATE_REPOS }}"
           path: .github/shared-actions
 
-      - name: Upload reports
+      - name: Upload reports to azure
         if: failure()
         uses: ./.github/shared-actions/azure/upload-to-storage
         with:
@@ -104,7 +104,7 @@ jobs:
             mistica-screenshots-tests-report.tar.gz
           generate-summary: true
 
-      - name: Upload reports
+      - name: Upload reports to github
         uses: actions/upload-artifact@v3
         if: failure()
         with:
