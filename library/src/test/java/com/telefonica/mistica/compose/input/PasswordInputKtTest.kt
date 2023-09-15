@@ -20,7 +20,7 @@ import org.robolectric.annotation.GraphicsMode
 
 @RunWith(RobolectricTestRunner::class)
 @GraphicsMode(GraphicsMode.Mode.NATIVE)
-@Config(qualifiers = RobolectricDeviceQualifiers.PixelC)
+@Config(qualifiers = RobolectricDeviceQualifiers.SmallPhone)
 internal class PasswordInputKtTest {
     @get:Rule
     val composeTestRule = createComposeRule()

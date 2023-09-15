@@ -32,7 +32,7 @@ internal class ButtonKtTest {
 
     @RunWith(ParameterizedRobolectricTestRunner::class)
     @GraphicsMode(GraphicsMode.Mode.NATIVE)
-    @Config(qualifiers = RobolectricDeviceQualifiers.PixelC)
+    @Config(qualifiers = RobolectricDeviceQualifiers.SmallPhone)
     internal class ButtonKtTestParametrized(private val brand: Brand) {
         @get:Rule
         val composeTestRule = createComposeRule()

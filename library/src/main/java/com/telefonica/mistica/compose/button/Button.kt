@@ -175,7 +175,7 @@ private fun ButtonContent(
                             it.size.height.toDp()
                         }
                     },
-                text = text.uppercase(),
+                text = text,
                 color = textColor,
                 style = size.textStyle,
                 maxLines = 1,
