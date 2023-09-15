@@ -31,21 +31,12 @@ class CarouselView @JvmOverloads constructor(
     /**If the default body composable body is null a list of View elements will be rendered*/
     private var data: List<View>? = null
 
-    private var pageIndicatorView: CarouselPageIndicatorView? = null
-
     fun setState(carouselState: CarouselState): CarouselView = this.apply {
         this.carouselState = carouselState
-        initPageIndicator()
     }
 
     fun setItemCount(itemCount: Int): CarouselView = this.apply {
         this.itemCount = itemCount
-        initPageIndicator()
-    }
-
-    private fun initPageIndicator() {
-        this.pageIndicatorView?.setState(carouselState)
-        this.pageIndicatorView?.setPageCount(itemCount)
     }
 
     /**A list of views to be rendered in each page of the carousel.
