@@ -100,5 +100,14 @@ jobs:
         with:
           azure-account-name: devnovum
           azure-account-key: ${{secrets.AZURE_ACCOUNT_KEY}}
-          globs: mistica-screenshots-tests-report.tar.gz
+          globs: |
+            mistica-screenshots-tests-report.tar.gz
           generate-summary: true
+
+      - name: Upload reports
+        uses: actions/upload-artifact@v3
+        if: failure()
+        with:
+          name: failure-report
+          path: 'reports/*'
+          retention-days: 14
