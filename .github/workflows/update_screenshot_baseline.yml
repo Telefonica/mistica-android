@@ -1,7 +1,6 @@
 name: "Update screenshot baseline"
 on:
   workflow_dispatch:
-  push:
 
 jobs:
   screenshots_baseline:
