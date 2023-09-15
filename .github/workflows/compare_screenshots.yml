@@ -64,7 +64,7 @@ jobs:
                 for file in $files; do
                   # Get the file name and insert newlines every 100 characters
                   fileName=$(basename "$file" | sed -r 's/(.{100})/\1<br>/g')
-                  echo "<tr><td>$(basename "$file")</td><td><img src="$(basename "$file")" width="33%" height="33%" /></td></tr>" >> reports/report.html
+                  echo "<tr><td>$(basename "$file")</td><td><img src="$(basename "$file")" width="100%" height="100%" /></td></tr>" >> reports/report.html
                 done
           {
                 echo '</table>'
