@@ -100,6 +100,5 @@ jobs:
         with:
           azure-account-name: devnovum
           azure-account-key: ${{secrets.AZURE_ACCOUNT_KEY}}
-          globs: |
-            mistica-screenshots-tests-report.tar.gz
+          globs: mistica-screenshots-tests-report.tar.gz
           generate-summary: true
