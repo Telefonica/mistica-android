@@ -7,6 +7,7 @@ import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.onRoot
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.unit.dp
+import com.github.takahirom.roborazzi.RobolectricDeviceQualifiers
 import com.github.takahirom.roborazzi.captureRoboImage
 import com.telefonica.mistica.compose.theme.MisticaTheme
 import com.telefonica.mistica.compose.theme.brand.BlauBrand
@@ -23,6 +24,7 @@ import org.junit.experimental.runners.Enclosed
 import org.junit.runner.RunWith
 import org.robolectric.ParameterizedRobolectricTestRunner
 import org.robolectric.RobolectricTestRunner
+import org.robolectric.annotation.Config
 import org.robolectric.annotation.GraphicsMode
 
 @RunWith(Enclosed::class)
@@ -30,6 +32,7 @@ internal class ButtonKtTest {
 
     @RunWith(ParameterizedRobolectricTestRunner::class)
     @GraphicsMode(GraphicsMode.Mode.NATIVE)
+    @Config(qualifiers = RobolectricDeviceQualifiers.Pixel5)
     internal class ButtonKtTestParametrized(private val brand: Brand) {
         @get:Rule
         val composeTestRule = createComposeRule()
