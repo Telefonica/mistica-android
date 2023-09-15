@@ -5,7 +5,7 @@ on:
   pull_request:
 
 jobs:
-  Comment-CompareScreenshot:
+  CompareScreenshots:
 
     runs-on: ubuntu-latest
 
