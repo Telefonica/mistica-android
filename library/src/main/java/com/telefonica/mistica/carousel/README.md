@@ -27,8 +27,17 @@ And they can be configured in the code:
 val pages = 6
 binding.carouselView
     .setContent(getMediaCardsForCarousel())
-    .setPagerIndicatorView(binding.carouselPageIndicatorView)
+    //Alternatively, you can pass a composable function to create the content
+    //.setContent { page -> CarouselItem(page) }
+    .setState(carouselState)
     .setItemCount(pages)
 
+binding.carouselPageIndicatorView
+    .setState(carouselState)
+    .setPageCount(pages)
+
 private fun getMediaCardsForCarousel(): List<View> { ... }
+
+@Composable
+private fun CarouselItem(page: Int) { ... }
 ```
