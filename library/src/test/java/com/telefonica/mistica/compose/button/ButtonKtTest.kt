@@ -25,13 +25,11 @@ import org.junit.runner.RunWith
 import org.robolectric.ParameterizedRobolectricTestRunner
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
-import org.robolectric.annotation.GraphicsMode
 
 @RunWith(Enclosed::class)
 internal class ButtonKtTest {
 
     @RunWith(ParameterizedRobolectricTestRunner::class)
-    @GraphicsMode(GraphicsMode.Mode.NATIVE)
     @Config(qualifiers = RobolectricDeviceQualifiers.Pixel5)
     internal class ButtonKtTestParametrized(private val brand: Brand) {
         @get:Rule
