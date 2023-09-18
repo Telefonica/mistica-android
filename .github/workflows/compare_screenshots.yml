@@ -99,7 +99,7 @@ jobs:
         if: failure()
         uses: ./.github/shared-actions/azure/upload-to-storage
         with:
-          azure-account-name: devnovum
+          azure-account-name: ${{secrets.AZURE_ACCOUNT_NAME}}
           azure-account-key: ${{secrets.AZURE_ACCOUNT_KEY}}
           globs: |
             mistica-screenshots-tests-report.tar.gz
