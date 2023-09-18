@@ -24,16 +24,19 @@ There are two views to create a carousel, the carousel itself and the page indic
 And they can be configured in the code:
 
 ```kotlin
-val carouselState = CarouselState(PagerState(0))
 val pages = 6
 binding.carouselView
-    .setContent { page -> CarouselItem(page) }
+    .setContent(getMediaCardsForCarousel())
+    //Alternatively, you can pass a composable function to create the content
+    //.setContent { page -> CarouselItem(page) }
     .setState(carouselState)
     .setItemCount(pages)
 
 binding.carouselPageIndicatorView
     .setState(carouselState)
     .setPageCount(pages)
+
+private fun getMediaCardsForCarousel(): List<View> { ... }
 
 @Composable
 private fun CarouselItem(page: Int) { ... }
