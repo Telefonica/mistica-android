@@ -22,11 +22,14 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.testTagsAsResourceId
 import androidx.compose.ui.unit.dp
 import com.skydoves.balloon.ArrowPositionRules
 import com.skydoves.balloon.BalloonAnimation
@@ -42,6 +45,7 @@ import com.telefonica.mistica.compose.popover.Popover.TestTag.POPOVER_SUBTITLE
 import com.telefonica.mistica.compose.popover.Popover.TestTag.POPOVER_TITLE
 import com.telefonica.mistica.compose.theme.MisticaTheme
 
+@OptIn(ExperimentalComposeUiApi::class)
 @Composable
 fun PopOver(
     modifier: Modifier = Modifier,
@@ -83,6 +87,7 @@ fun PopOver(
                         .fillMaxWidth()
                         .padding(start = 16.dp, top = 8.dp, end = 8.dp, bottom = 16.dp)
                         .background(Color.Transparent)
+                        .semantics { testTagsAsResourceId = true }
                         .testTag(POPOVER_CONTENT),
                 ) {
                     Row(
