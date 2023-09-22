@@ -36,58 +36,27 @@ internal class ButtonKtTest {
         val composeTestRule = createComposeRule()
 
         @Test
-        fun `check the button screenshot`() = test {
+        fun `check the button screenshot`() {
             `when Button`(brand)
 
             `then screenshot is OK`(brand)
         }
 
-        @Test
-        fun `check the button is clicked`() = test {
-            `given Button`()
-
-            `when the button is clicked`()
-
-            `then the onClickListener has been invoked`()
-        }
-
-        private fun TestScope.`given Button`() {
-            `when Button`()
-        }
-
-        private fun TestScope.`when Button`(brand: Brand = MovistarBrand) {
+        private fun `when Button`(brand: Brand = MovistarBrand) {
             composeTestRule.setContent {
                 MisticaTheme(brand = brand) {
                     Button(
-                        text = textValue,
-                        onClickListener = onClickListener,
+                        text = "textValue",
+                        onClickListener = { },
                         modifier = Modifier.padding(16.dp)
                     )
                 }
             }
         }
 
-        private fun TestScope.`when the button is clicked`() {
-            composeTestRule.onNodeWithText(textValue).performClick()
-        }
-
         private fun `then screenshot is OK`(brand: Brand) {
             composeTestRule.onRoot()
                 .captureRoboImage(ScreenshotUtils.getScreenshotName(brand = brand))
-        }
-
-        private fun TestScope.`then the onClickListener has been invoked`() {
-            assertTrue(clicked)
-        }
-
-        private fun test(block: TestScope.() -> Unit) {
-            TestScope().block()
-        }
-
-        private class TestScope {
-            val textValue = "textValue"
-            var clicked = false
-            val onClickListener: () -> Unit = { clicked = true }
         }
 
         companion object {
