@@ -39,6 +39,7 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.text.toUpperCase
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
@@ -175,7 +176,7 @@ private fun ButtonContent(
                             it.size.height.toDp()
                         }
                     },
-                text = text,
+                text = text.toUpperCase(),
                 color = textColor,
                 style = size.textStyle,
                 maxLines = 1,
