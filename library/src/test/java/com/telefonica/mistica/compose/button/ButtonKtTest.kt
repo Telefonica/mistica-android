@@ -85,7 +85,7 @@ internal class ButtonKtTest {
         }
 
         private class TestScope {
-            val textValue = "textValue"
+            val textValue = "TEXTVALUE"
             var clicked = false
             val onClickListener: () -> Unit = { clicked = true }
         }
@@ -146,7 +146,7 @@ internal class ButtonKtTest {
         }
 
         private class TestScope {
-            val textValue = "textValue"
+            val textValue = "TEXTVALUE"
             var clicked = false
             val onClickListener: () -> Unit = { clicked = true }
         }
