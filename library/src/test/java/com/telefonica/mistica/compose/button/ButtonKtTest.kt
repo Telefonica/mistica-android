@@ -73,7 +73,7 @@ internal class ButtonKtTest {
 
         private fun `then screenshot is OK`(brand: Brand) {
             composeTestRule.onRoot()
-                .captureRoboImage(ScreenshotUtils.getScreenshotName(brand))
+                .captureRoboImage(ScreenshotUtils.getScreenshotName(brand = brand))
         }
 
         private fun TestScope.`then the onClickListener has been invoked`() {
