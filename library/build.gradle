@@ -100,8 +100,8 @@ dependencies {
     testImplementation "androidx.compose.ui:ui-test-junit4:$compose_ui_version"
     testImplementation 'androidx.compose.ui:ui-test-manifest:1.0.5'
     testImplementation 'org.robolectric:robolectric:4.10.3'
-    testImplementation 'io.github.takahirom.roborazzi:roborazzi:1.4.0'
-    testImplementation 'io.github.takahirom.roborazzi:roborazzi-compose:1.4.0'
+    testImplementation 'io.github.takahirom.roborazzi:roborazzi:1.5.0'
+    testImplementation 'io.github.takahirom.roborazzi:roborazzi-compose:1.5.0'
     testImplementation "org.mockito.kotlin:mockito-kotlin:4.0.0"
     testImplementation "androidx.test:rules:1.5.0"
     testImplementation "androidx.test:core-ktx:1.5.0"
