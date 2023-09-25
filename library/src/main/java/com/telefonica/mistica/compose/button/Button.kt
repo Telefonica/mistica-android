@@ -84,7 +84,7 @@ fun Button(
                 }
                 .height(size.height)
                 .applyWidth(originalWidth),
-            contentPadding = PaddingValues(horizontal = size.contentPadding, vertical = 0.dp),
+            contentPadding = PaddingValues(horizontal = size.horizontalPadding, vertical = 0.dp),
             onClick = onClickListener,
             enabled = enabled,
             colors = style.buttonColors,

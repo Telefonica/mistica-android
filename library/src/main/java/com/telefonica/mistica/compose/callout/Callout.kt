@@ -17,6 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.R
 import com.telefonica.mistica.compose.button.Button
@@ -88,27 +89,40 @@ fun Callout(
                         .padding(top = 16.dp),
                 ) {
                     when (buttonConfig) {
-                        CalloutButtonConfig.NONE -> { /* No buttons are shown */ }
+                        CalloutButtonConfig.NONE -> { /* No buttons are shown */
+                        }
                         CalloutButtonConfig.PRIMARY -> {
-                            PrimaryButton(primaryButtonText, onPrimaryButtonClick)
+                            PrimaryButton(text = primaryButtonText, onClick = onPrimaryButtonClick)
                         }
                         CalloutButtonConfig.PRIMARY_AND_LINK -> {
-                            PrimaryButton(primaryButtonText, onPrimaryButtonClick)
-                            LinkButton(linkText, onLinkClicked)
+                            PrimaryButton(
+                                modifier = Modifier.padding(end = 16.dp),
+                                text = primaryButtonText,
+                                onClick = onPrimaryButtonClick
+                            )
+                            LinkButton(text = linkText, onClick = onLinkClicked)
                         }
                         CalloutButtonConfig.SECONDARY -> {
-                            SecondaryButton(secondaryButtonText, onSecondaryButtonClick)
+                            SecondaryButton(text = secondaryButtonText, onClick = onSecondaryButtonClick)
                         }
                         CalloutButtonConfig.PRIMARY_AND_SECONDARY -> {
-                            PrimaryButton(primaryButtonText, onPrimaryButtonClick)
-                            SecondaryButton(secondaryButtonText, onSecondaryButtonClick)
+                            PrimaryButton(
+                                modifier = Modifier.padding(end = 16.dp),
+                                text = primaryButtonText,
+                                onClick = onPrimaryButtonClick
+                            )
+                            SecondaryButton(text = secondaryButtonText, onClick = onSecondaryButtonClick)
                         }
                         CalloutButtonConfig.SECONDARY_AND_LINK -> {
-                            SecondaryButton(secondaryButtonText, onSecondaryButtonClick)
-                            LinkButton(linkText, onLinkClicked)
+                            SecondaryButton(
+                                modifier = Modifier.padding(end = 16.dp),
+                                text = secondaryButtonText,
+                                onClick = onSecondaryButtonClick
+                            )
+                            LinkButton(text = linkText, onClick = onLinkClicked)
                         }
                         CalloutButtonConfig.LINK -> {
-                            LinkButton(linkText, onLinkClicked)
+                            LinkButton(text = linkText, onClick = onLinkClicked)
                         }
                     }
                 }
@@ -117,10 +131,9 @@ fun Callout(
             if (dismissable) {
                 Image(
                     modifier = Modifier
-                        .padding(start = 16.dp)
                         .clickable { onDismiss?.invoke() },
                     painter = painterResource(id = R.drawable.icn_cross),
-                    contentDescription = null
+                    contentDescription = stringResource(id = R.string.close_button_content_description)
                 )
             }
         }
@@ -129,37 +142,41 @@ fun Callout(
 
 @Composable
 private fun PrimaryButton(
+    modifier: Modifier = Modifier,
     text: String?,
-    onClick: (() -> Unit)? = null
+    onClick: (() -> Unit)? = null,
 ) {
-    CalloutButton(text, onClick, ButtonStyle.PRIMARY_SMALL)
+    CalloutButton(modifier, text, onClick, ButtonStyle.PRIMARY_SMALL)
 }
 
 @Composable
 private fun SecondaryButton(
+    modifier: Modifier = Modifier,
     text: String?,
-    onClick: (() -> Unit)? = null
+    onClick: (() -> Unit)? = null,
 ) {
-    CalloutButton(text, onClick, ButtonStyle.SECONDARY_SMALL)
+    CalloutButton(modifier, text, onClick, ButtonStyle.SECONDARY_SMALL)
 }
 
 @Composable
 private fun LinkButton(
+    modifier: Modifier = Modifier,
     text: String?,
-    onClick: (() -> Unit)? = null
+    onClick: (() -> Unit)? = null,
 ) {
-    CalloutButton(text, onClick, ButtonStyle.LINK)
+    CalloutButton(modifier, text, onClick, ButtonStyle.LINK)
 }
 
 @Composable
 private fun CalloutButton(
+    modifier: Modifier = Modifier,
     text: String?,
     onClick: (() -> Unit)?,
     style: ButtonStyle,
 ) {
     text?.let {
         Button(
-            modifier = Modifier.padding(end = 16.dp),
+            modifier = modifier,
             text = text,
             buttonStyle = style,
             onClickListener = { onClick?.invoke() }
