@@ -6,7 +6,7 @@ Screenshot tests compares current screenshots of the app with a set of desired o
 	2. Take screenshots of the app with this reference device and compare them with the baseline. 
 	Then generate reports with differences detected
 
-To perform these tasks we use [Roborazzi](https://github.com/takahirom/roborazziot) library which uses gradle tasks to generate baseline and store screenshots
+To perform these tasks we use [Roborazzi](https://github.com/takahirom/roborazzi) library which uses gradle tasks to generate baseline and store screenshots
 
 ## Add a new screenshot
 To create a new screenshot create a new unitTest with Roboelectric in the test folder of the module to test:
