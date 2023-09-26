@@ -13,9 +13,9 @@ To create a new screenshot create a new unitTest with Roboelectric in the test f
     @RunWith(RobolectricTestRunner::class)
 or
     @RunWith(ParameterizedRobolectricTestRunner::class)
-depending if it's a parametrized test or not, use
+depending if it's a parametrized test or not. Use
     @RunWith(Enclosed::class)
-to mix them (`ButtonKtTest.kt` is an example of this)
+in case multiple of them must be on the same file (`ButtonKtTest.kt` is an example of this).
 
 Then use `captureRoboImage()` function to take the screenshot and use `ScreenshotUtils.getScreenshotName()` to set the name of the test.:
 
@@ -26,11 +26,10 @@ For traditional views run an activity or check `TextInputTest.kt` example on how
 
 ## Check that changes in the screen are detected
 `Compare Screenshots` job will run in each pr and will run the `verifyRoborazziDebug` gradle task that checks the screenshots. In case this fails it will 
-generate a report and upload it to azure.
+generate a report and upload it to azure and/or github artifacts.
 
 ## Access to screenshots test report
-At the bottom of the action that has failed you'll see that a report has been uploaded either to azure or github artifacts (or both), this is still to be 
-determined. 
+At the bottom of the summary of the action that has failed you'll see that a report has been uploaded either to azure or github artifacts (or both). 
 
 Once that compressed file is downloaded an html report is there with the differences detected between the current screenshot (left side) and the 
 newly generated one (right side).
