@@ -73,7 +73,7 @@ import com.telefonica.mistica.util.getDimension
 abstract class CardView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
-    defStyleAttr: Int = 0
+    defStyleAttr: Int = 0,
 ) : CardView(context, attrs, defStyleAttr) {
 
     private val cardContentView: CardContentView
@@ -121,7 +121,7 @@ abstract class CardView @JvmOverloads constructor(
     protected abstract fun handleAttrsAndInflateLayout(
         attrs: AttributeSet? = null,
         defStyleAttr: Int = 0,
-        defStyleRes: Int = 0
+        defStyleRes: Int = 0,
     ): View
 
     fun setTag(text: CharSequence?) {
