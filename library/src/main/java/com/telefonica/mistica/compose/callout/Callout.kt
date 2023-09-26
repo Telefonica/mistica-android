@@ -96,9 +96,9 @@ fun Callout(
                         }
                         CalloutButtonConfig.PRIMARY_AND_LINK -> {
                             PrimaryButton(
-                                modifier = Modifier.padding(end = 16.dp),
                                 text = primaryButtonText,
-                                onClick = onPrimaryButtonClick
+                                modifier = Modifier.padding(end = 16.dp),
+                                onClick = onPrimaryButtonClick,
                             )
                             LinkButton(text = linkText, onClick = onLinkClicked)
                         }
@@ -107,17 +107,17 @@ fun Callout(
                         }
                         CalloutButtonConfig.PRIMARY_AND_SECONDARY -> {
                             PrimaryButton(
-                                modifier = Modifier.padding(end = 16.dp),
                                 text = primaryButtonText,
-                                onClick = onPrimaryButtonClick
+                                modifier = Modifier.padding(end = 16.dp),
+                                onClick = onPrimaryButtonClick,
                             )
                             SecondaryButton(text = secondaryButtonText, onClick = onSecondaryButtonClick)
                         }
                         CalloutButtonConfig.SECONDARY_AND_LINK -> {
                             SecondaryButton(
-                                modifier = Modifier.padding(end = 16.dp),
                                 text = secondaryButtonText,
-                                onClick = onSecondaryButtonClick
+                                modifier = Modifier.padding(end = 16.dp),
+                                onClick = onSecondaryButtonClick,
                             )
                             LinkButton(text = linkText, onClick = onLinkClicked)
                         }
@@ -142,44 +142,46 @@ fun Callout(
 
 @Composable
 private fun PrimaryButton(
-    modifier: Modifier = Modifier,
     text: String?,
+    modifier: Modifier = Modifier,
     onClick: (() -> Unit)? = null,
 ) {
-    CalloutButton(modifier, text, onClick, ButtonStyle.PRIMARY_SMALL)
+    CalloutButton(text = text, onClick = onClick, style = ButtonStyle.PRIMARY_SMALL, modifier = modifier)
 }
 
 @Composable
 private fun SecondaryButton(
-    modifier: Modifier = Modifier,
     text: String?,
+    modifier: Modifier = Modifier,
     onClick: (() -> Unit)? = null,
 ) {
-    CalloutButton(modifier, text, onClick, ButtonStyle.SECONDARY_SMALL)
+    CalloutButton(text, onClick, ButtonStyle.SECONDARY_SMALL, modifier)
 }
 
 @Composable
 private fun LinkButton(
-    modifier: Modifier = Modifier,
     text: String?,
+    modifier: Modifier = Modifier,
     onClick: (() -> Unit)? = null,
 ) {
-    CalloutButton(modifier, text, onClick, ButtonStyle.LINK)
+    CalloutButton(text, onClick, ButtonStyle.LINK, modifier, true)
 }
 
 @Composable
 private fun CalloutButton(
-    modifier: Modifier = Modifier,
     text: String?,
     onClick: (() -> Unit)?,
     style: ButtonStyle,
+    modifier: Modifier = Modifier,
+    invalidatePaddings: Boolean = false,
 ) {
     text?.let {
         Button(
             modifier = modifier,
             text = text,
             buttonStyle = style,
-            onClickListener = { onClick?.invoke() }
+            onClickListener = { onClick?.invoke() },
+            invalidatePaddings = invalidatePaddings,
         )
     }
 }
