@@ -26,10 +26,10 @@ For traditional views run an activity or check `TextInputTest.kt` example on how
 
 ## Check that changes in the screen are detected
 `Compare Screenshots` job will run in each pr and will run the `verifyRoborazziDebug` gradle task that checks the screenshots. In case this fails it will 
-generate a report and upload it to azure and/or github artifacts.
+generate a report and upload it to azure.
 
 ## Access to screenshots test report
-At the bottom of the summary of the action that has failed you'll see that a report has been uploaded either to azure or github artifacts (or both). 
+At the bottom of the summary of the action that has failed you'll see that a report has been uploaded to azure. 
 
 Once that compressed file is downloaded an html report is there with the differences detected between the current screenshot (left side) and the 
 newly generated one (right side).
