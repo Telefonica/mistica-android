@@ -34,7 +34,7 @@ At the bottom of the summary of the action that has failed you'll see that a rep
 Once that compressed file is downloaded an html report is there with the differences detected between the current screenshot (left side) and the 
 newly generated one (right side).
 
-## Update screenshots baseline with a Github action
+## Update screenshots baseline
 Either run the ci job `Update screenshot baseline` that will create the images and perform a commit for you or run the gradle task `recordRoborazziDebug` and
 this way it allows you to check everything is ok before uploading the images.
 
