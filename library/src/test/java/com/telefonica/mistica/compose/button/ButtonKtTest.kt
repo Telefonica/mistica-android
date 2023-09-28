@@ -1,6 +1,7 @@
 package com.telefonica.mistica.compose.button
 
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.Surface
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onRoot
@@ -23,43 +24,55 @@ import org.robolectric.annotation.Config
 
 @RunWith(ParameterizedRobolectricTestRunner::class)
 @Config(qualifiers = RobolectricDeviceQualifiers.Pixel5)
-internal class ButtonKtTest(private val brand: Brand) {
+internal class ButtonKtTest(private val brand: Brand, private val darkTheme: Boolean) {
     @get:Rule
     val composeTestRule = createComposeRule()
 
     @Test
     fun `check the button screenshot`() {
-        `when Button`(brand)
+        `when Button`(brand, darkTheme)
 
-        `then screenshot is OK`(brand)
+        `then screenshot is OK`(brand, darkTheme)
     }
 
-    private fun `when Button`(brand: Brand = MovistarBrand) {
+    private fun `when Button`(brand: Brand = MovistarBrand, darkTheme: Boolean) {
         composeTestRule.setContent {
-            MisticaTheme(brand = brand) {
-                Button(
-                    text = "textValue",
-                    onClickListener = { },
-                    modifier = Modifier.padding(16.dp)
-                )
+            MisticaTheme(brand = brand, darkTheme = darkTheme) {
+                Surface {
+                    Button(
+                        text = "textValue",
+                        onClickListener = { },
+                        modifier = Modifier.padding(16.dp)
+                    )
+                }
             }
         }
     }
 
-    private fun `then screenshot is OK`(brand: Brand) {
+    private fun `then screenshot is OK`(brand: Brand, darkTheme: Boolean) {
         composeTestRule.onRoot()
-            .captureRoboImage(ScreenshotUtils.getScreenshotName(brand = brand))
+            .captureRoboImage(
+                ScreenshotUtils.getScreenshotName(
+                    brand = brand,
+                    extra = if (darkTheme) "_dark" else ""
+                )
+            )
     }
 
     companion object {
         @JvmStatic
         @ParameterizedRobolectricTestRunner.Parameters(name = "Input: {0}")
         fun brands() = listOf(
-            arrayOf(MovistarBrand),
-            arrayOf(VivoBrand),
-            arrayOf(O2Brand),
-            arrayOf(BlauBrand),
-            arrayOf(TelefonicaBrand),
+            arrayOf(MovistarBrand, false),
+            arrayOf(VivoBrand, false),
+            arrayOf(O2Brand, false),
+            arrayOf(BlauBrand, false),
+            arrayOf(TelefonicaBrand, false),
+            arrayOf(MovistarBrand, true),
+            arrayOf(VivoBrand, true),
+            arrayOf(O2Brand, true),
+            arrayOf(BlauBrand, true),
+            arrayOf(TelefonicaBrand, true),
         )
     }
 }
