@@ -104,11 +104,3 @@ jobs:
           globs: |
             mistica-screenshots-tests-report.tar.gz
           generate-summary: true
-
-      - name: Upload reports to github
-        uses: actions/upload-artifact@v3
-        if: failure()
-        with:
-          name: failure-report
-          path: 'reports/*'
-          retention-days: 1
