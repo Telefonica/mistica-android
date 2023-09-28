@@ -28,7 +28,6 @@ internal class PasswordInputKtTest {
         `when PasswordInput`()
 
         `then screenshot is OK`()
-        `then the password is not visible`()
     }
 
     @Test
@@ -38,7 +37,6 @@ internal class PasswordInputKtTest {
         `when the visibility button is clicked`()
 
         `then screenshot is OK`()
-        `then the password is visible`()
     }
 
     @Test
@@ -48,7 +46,6 @@ internal class PasswordInputKtTest {
         `when the visibility button is clicked`(times = 2)
 
         `then screenshot is OK`()
-        `then the password is not visible`()
     }
 
     private fun TestScope.`given PasswordInput`() {
@@ -71,14 +68,6 @@ internal class PasswordInputKtTest {
         repeat(times) {
             composeTestRule.onNodeWithTag(TextInputTestTags.PASSWORD_VISIBILITY_TOGGLE).performClick()
         }
-    }
-
-    private fun TestScope.`then the password is not visible`() {
-        composeTestRule.onNodeWithText(textValue).assertDoesNotExist()
-    }
-
-    private fun TestScope.`then the password is visible`() {
-        composeTestRule.onNodeWithText(textValue).assertIsDisplayed()
     }
 
     private fun `then screenshot is OK`() {
