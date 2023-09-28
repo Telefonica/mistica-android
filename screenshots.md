@@ -15,7 +15,7 @@ or
     @RunWith(ParameterizedRobolectricTestRunner::class)
 depending if it's a parametrized test or not. Use
     @RunWith(Enclosed::class)
-in case multiple of them must be on the same file (`ButtonKtTest.kt` is an example of this).
+in case multiple of them must be on the same file.
 
 Then use `captureRoboImage()` function to take the screenshot and use `ScreenshotUtils.getScreenshotName()` to set the name of the test.:
 
