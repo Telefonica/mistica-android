@@ -38,7 +38,7 @@ class CalloutsCatalogFragment : Fragment() {
                     CalloutButtonsConfig.values().map { it.name },
                 )
             )
-            setText(CalloutButtonsConfig.BUTTONS_CONFIG_PRIMARY.name)
+            setText(CalloutButtonsConfig.PRIMARY.name)
         }
         view.findViewById<Button>(R.id.update_button).setOnClickListener {
             updateCalloutView(view)
@@ -87,12 +87,12 @@ class CalloutsCatalogFragment : Fragment() {
     }
 
     private enum class CalloutButtonsConfig(@CalloutView.ButtonsConfig val buttonsConfig: Int) {
-        BUTTONS_CONFIG_NONE(CalloutView.BUTTONS_CONFIG_NONE),
-        BUTTONS_CONFIG_PRIMARY(CalloutView.BUTTONS_CONFIG_PRIMARY),
-        BUTTONS_CONFIG_PRIMARY_LINK(CalloutView.BUTTONS_CONFIG_PRIMARY_LINK),
-        BUTTONS_CONFIG_PRIMARY_SECONDARY(CalloutView.BUTTONS_CONFIG_PRIMARY_SECONDARY),
-        BUTTONS_CONFIG_SECONDARY(CalloutView.BUTTONS_CONFIG_SECONDARY),
-        BUTTONS_CONFIG_SECONDARY_LINK(CalloutView.BUTTONS_CONFIG_SECONDARY_LINK),
-        BUTTONS_CONFIG_LINK(CalloutView.BUTTONS_CONFIG_LINK),
+        NONE(CalloutView.BUTTONS_CONFIG_NONE),
+        PRIMARY(CalloutView.BUTTONS_CONFIG_PRIMARY),
+        PRIMARY_AND_LINK(CalloutView.BUTTONS_CONFIG_PRIMARY_LINK),
+        PRIMARY_AND_SECONDARY(CalloutView.BUTTONS_CONFIG_PRIMARY_SECONDARY),
+        SECONDARY(CalloutView.BUTTONS_CONFIG_SECONDARY),
+        SECONDARY_AND_LINK(CalloutView.BUTTONS_CONFIG_SECONDARY_LINK),
+        LINK(CalloutView.BUTTONS_CONFIG_LINK),
     }
 }

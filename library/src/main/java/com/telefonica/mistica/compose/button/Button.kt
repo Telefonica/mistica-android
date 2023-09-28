@@ -50,7 +50,7 @@ import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 
 private val iconSpacing = 10.dp
 private val easing = CubicBezierEasing(0.77f, 0f, 0.175f, 1f)
-private const val CHEVRON_ASPECT_RATIO = 8f/20f
+private const val CHEVRON_ASPECT_RATIO = 8f / 20f
 
 @Composable
 fun Button(
@@ -62,6 +62,7 @@ fun Button(
     enabled: Boolean = true,
     @DrawableRes icon: Int? = null,
     withChevron: Boolean = false,
+    invalidatePaddings: Boolean = false,
     onClickListener: () -> Unit,
 ) {
 
@@ -84,7 +85,7 @@ fun Button(
                 }
                 .height(size.height)
                 .applyWidth(originalWidth),
-            contentPadding = PaddingValues(horizontal = size.contentPadding, vertical = 0.dp),
+            contentPadding = PaddingValues(horizontal = if (invalidatePaddings) 0.dp else size.horizontalPadding, vertical = 0.dp),
             onClick = onClickListener,
             enabled = enabled,
             colors = style.buttonColors,

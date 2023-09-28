@@ -109,7 +109,7 @@ fun ListRowItem(
 
 @ExperimentalMaterialApi
 @Composable
-fun ListRowItemImp(
+private fun ListRowItemImp(
     modifier: Modifier = Modifier,
     icon: @Composable (() -> Unit)? = null,
     title: String? = null,
