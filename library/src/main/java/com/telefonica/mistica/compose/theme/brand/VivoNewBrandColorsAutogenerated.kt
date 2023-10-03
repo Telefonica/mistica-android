@@ -9,7 +9,7 @@ public object VivoNewBrandColors {
       VivoNewPaletteColor.vivoNew_color_white,
       backgroundAlternative = VivoNewPaletteColor.vivoNew_color_grey1,
       backgroundBrand = VivoNewPaletteColor.vivoNew_color_vivoPurple,
-      backgroundBrandSecondary = VivoNewPaletteColor.vivoNew_color_vivoPurple,
+      backgroundBrandSecondary = VivoNewPaletteColor.vivoNew_color_vivoPurpleLight90,
       backgroundContainer = VivoNewPaletteColor.vivoNew_color_white,
       backgroundContainerHover = VivoNewPaletteColor.vivoNew_color_darkModeBlack_3_alpha,
       backgroundContainerPressed = VivoNewPaletteColor.vivoNew_color_darkModeBlack_5_alpha,
@@ -115,7 +115,7 @@ public object VivoNewBrandColors {
 
   public val darkColors: MisticaColors = MisticaColors(background =
       VivoNewPaletteColor.vivoNew_color_darkModeBlack,
-      backgroundAlternative = VivoNewPaletteColor.vivoNew_color_darkModeGrey,
+      backgroundAlternative = VivoNewPaletteColor.vivoNew_color_darkModeBlack,
       backgroundBrand = VivoNewPaletteColor.vivoNew_color_darkModeBlack,
       backgroundBrandSecondary = VivoNewPaletteColor.vivoNew_color_darkModeBlack,
       backgroundContainer = VivoNewPaletteColor.vivoNew_color_darkModeGrey,

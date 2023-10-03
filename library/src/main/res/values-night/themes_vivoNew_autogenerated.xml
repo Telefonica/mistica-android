@@ -3,7 +3,7 @@
 	<!-- Code generated automatically, DO NOT EDIT manually. Use Import design tokens GitHub Action. -->
 	<style name="MisticaTheme.VivoNew" parent="MisticaTheme.VivoNew_Customizations">
 		<item name="colorBackground">@color/vivoNew_color_darkModeBlack</item>
-		<item name="colorBackgroundAlternative">@color/vivoNew_color_darkModeGrey</item>
+		<item name="colorBackgroundAlternative">@color/vivoNew_color_darkModeBlack</item>
 		<item name="colorBackgroundBrand">@color/vivoNew_color_darkModeBlack</item>
 		<item name="colorBackgroundBrandSecondary">@color/vivoNew_color_darkModeBlack</item>
 		<item name="colorBackgroundContainer">@color/vivoNew_color_darkModeGrey</item>

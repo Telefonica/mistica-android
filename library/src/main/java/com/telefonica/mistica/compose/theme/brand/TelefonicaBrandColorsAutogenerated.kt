@@ -101,7 +101,7 @@ public object TelefonicaBrandColors {
       warningLow = TelefonicaPaletteColor.telefonica_color_ambar10,
       errorLow = TelefonicaPaletteColor.telefonica_color_coral10,
       promoLow = TelefonicaPaletteColor.telefonica_color_orchid10,
-      brandLow = TelefonicaPaletteColor.telefonica_color_grey1,
+      brandLow = TelefonicaPaletteColor.telefonica_color_telefonicaBlue10,
       successHigh = TelefonicaPaletteColor.telefonica_color_turquoise70,
       warningHigh = TelefonicaPaletteColor.telefonica_color_ambar70,
       errorHigh = TelefonicaPaletteColor.telefonica_color_coral70,

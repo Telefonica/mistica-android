@@ -92,7 +92,7 @@
 		<item name="colorWarningLow">@color/telefonica_color_ambar10</item>
 		<item name="colorErrorLow">@color/telefonica_color_coral10</item>
 		<item name="colorPromoLow">@color/telefonica_color_orchid10</item>
-		<item name="colorBrandLow">@color/telefonica_color_grey1</item>
+		<item name="colorBrandLow">@color/telefonica_color_telefonicaBlue10</item>
 		<item name="colorSuccessHigh">@color/telefonica_color_turquoise70</item>
 		<item name="colorWarningHigh">@color/telefonica_color_ambar70</item>
 		<item name="colorErrorHigh">@color/telefonica_color_coral70</item>
@@ -118,14 +118,16 @@
 		<item name="inputBorderRadius">0dp</item>
 		<item name="legacyDisplayBorderRadius">0dp</item>
 		<item name="popupBorderRadius">0dp</item>
-		<item name="sheetBorderRadius">8dp</item>
+		<item name="sheetBorderRadius">0dp</item>
 		<!-- Preset fonts -->
 		<item name="cardTitleFont">?font_family_regular</item>
 		<item name="buttonFont">?font_family_medium</item>
 		<item name="tabsLabelFont">?font_family_medium</item>
 		<item name="linkFont">?font_family_medium</item>
 		<item name="title1Font">?font_family_medium</item>
+		<item name="title2Font">?font_family_regular</item>
 		<item name="indicatorFont">?font_family_medium</item>
+		<item name="navigationBarFont">?font_family_medium</item>
 		<item name="text5Font">?font_family_regular</item>
 		<item name="text6Font">?font_family_regular</item>
 		<item name="text7Font">?font_family_regular</item>
@@ -138,7 +140,9 @@
 		<item name="tabsLabelTextStyle">normal</item>
 		<item name="linkTextStyle">normal</item>
 		<item name="title1TextStyle">normal</item>
+		<item name="title2TextStyle">normal</item>
 		<item name="indicatorTextStyle">normal</item>
+		<item name="navigationBarTextStyle">normal</item>
 		<item name="text5TextStyle">normal</item>
 		<item name="text6TextStyle">normal</item>
 		<item name="text7TextStyle">normal</item>
@@ -147,5 +151,6 @@
 		<item name="text10TextStyle">normal</item>
 		<!-- Preset sizes -->
 		<item name="tabsLabelTextSize">16sp</item>
+		<item name="title2TextSize">20sp</item>
 	</style>
 </resources>

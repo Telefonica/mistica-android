@@ -125,7 +125,9 @@
 		<item name="tabsLabelFont">?font_family_medium</item>
 		<item name="linkFont">?font_family_medium</item>
 		<item name="title1Font">?font_family_medium</item>
+		<item name="title2Font">?font_family_regular</item>
 		<item name="indicatorFont">?font_family_medium</item>
+		<item name="navigationBarFont">?font_family_medium</item>
 		<item name="text5Font">?font_family_regular</item>
 		<item name="text6Font">?font_family_regular</item>
 		<item name="text7Font">?font_family_regular</item>
@@ -138,7 +140,9 @@
 		<item name="tabsLabelTextStyle">normal</item>
 		<item name="linkTextStyle">normal</item>
 		<item name="title1TextStyle">normal</item>
+		<item name="title2TextStyle">bold</item>
 		<item name="indicatorTextStyle">normal</item>
+		<item name="navigationBarTextStyle">normal</item>
 		<item name="text5TextStyle">bold</item>
 		<item name="text6TextStyle">bold</item>
 		<item name="text7TextStyle">bold</item>
@@ -147,5 +151,6 @@
 		<item name="text10TextStyle">bold</item>
 		<!-- Preset sizes -->
 		<item name="tabsLabelTextSize">16sp</item>
+		<item name="title2TextSize">20sp</item>
 	</style>
 </resources>
