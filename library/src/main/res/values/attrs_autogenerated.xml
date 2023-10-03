@@ -135,7 +135,9 @@
 		<attr name="tabsLabelFont" format="string"/>
 		<attr name="linkFont" format="string"/>
 		<attr name="title1Font" format="string"/>
+		<attr name="title2Font" format="string"/>
 		<attr name="indicatorFont" format="string"/>
+		<attr name="navigationBarFont" format="string"/>
 		<attr name="text5Font" format="string"/>
 		<attr name="text6Font" format="string"/>
 		<attr name="text7Font" format="string"/>
@@ -173,7 +175,17 @@
 			<flag name="bold" value="1"/>
 			<flag name="italic" value="2"/>
 		</attr>
+		<attr name="title2TextStyle" format="reference">
+			<flag name="normal" value="0"/>
+			<flag name="bold" value="1"/>
+			<flag name="italic" value="2"/>
+		</attr>
 		<attr name="indicatorTextStyle" format="reference">
+			<flag name="normal" value="0"/>
+			<flag name="bold" value="1"/>
+			<flag name="italic" value="2"/>
+		</attr>
+		<attr name="navigationBarTextStyle" format="reference">
 			<flag name="normal" value="0"/>
 			<flag name="bold" value="1"/>
 			<flag name="italic" value="2"/>
@@ -211,5 +223,6 @@
 	</declare-styleable>
 	<declare-styleable name="PresetSizes">
 		<attr name="tabsLabelTextSize" format="dimension"/>
+		<attr name="title2TextSize" format="dimension"/>
 	</declare-styleable>
 </resources>
