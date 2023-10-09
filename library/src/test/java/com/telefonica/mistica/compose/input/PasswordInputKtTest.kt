@@ -1,25 +1,21 @@
 package com.telefonica.mistica.compose.input
 
-import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithTag
-import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.onRoot
 import androidx.compose.ui.test.performClick
-import com.github.takahirom.roborazzi.RobolectricDeviceQualifiers
 import com.github.takahirom.roborazzi.captureRoboImage
 import com.telefonica.mistica.compose.theme.MisticaTheme
 import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 import com.telefonica.mistica.testutils.ScreenshotUtils
+import com.telefonica.mistica.testutils.ScreenshotsTest
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
-import org.robolectric.annotation.Config
 
 @RunWith(RobolectricTestRunner::class)
-@Config(qualifiers = RobolectricDeviceQualifiers.Pixel5)
-internal class PasswordInputKtTest {
+internal class PasswordInputKtTest: ScreenshotsTest() {
     @get:Rule
     val composeTestRule = createComposeRule()
 
