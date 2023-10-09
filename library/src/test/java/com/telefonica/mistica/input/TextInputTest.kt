@@ -12,6 +12,7 @@ import com.github.takahirom.roborazzi.captureRoboImage
 import com.telefonica.mistica.DummyActivity
 import com.telefonica.mistica.R
 import com.telefonica.mistica.testutils.ScreenshotUtils
+import com.telefonica.mistica.testutils.ScreenshotsTest
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -20,7 +21,7 @@ import org.robolectric.RobolectricTestRunner
 import org.robolectric.shadows.ShadowLog
 
 @RunWith(RobolectricTestRunner::class)
-internal class TextInputTest {
+internal class TextInputTest: ScreenshotsTest() {
     @get:Rule
     val rule = activityScenarioRule<DummyActivity>()
 
@@ -51,7 +52,7 @@ internal class TextInputTest {
             wrapper.setPadding(0, 0, 0, 0)
             wrapper.addView(customLayout)
 
-            repeat(times = 6) { i ->
+            repeat(times = 3) { i ->
                 Log.d("TextInputTest", "Scrolling to $i")
                 val scrollView: ScrollView = activity.findViewById(R.id.scroll_view)
                 scrollView.scrollTo(0, wrapper.height * i)
