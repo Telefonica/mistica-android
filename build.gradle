@@ -10,7 +10,7 @@ buildscript {
         accompanist_version = "0.30.1"
         coil_version = '2.2.2'
         constraintComposeVersion = '1.0.1'
-        roborazzi_version = "1.5.0"
+        roborazzi_version = "1.4.0"
     }
     repositories {
         google()
