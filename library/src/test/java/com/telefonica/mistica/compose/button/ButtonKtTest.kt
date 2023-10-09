@@ -6,7 +6,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onRoot
 import androidx.compose.ui.unit.dp
-import com.github.takahirom.roborazzi.captureRoboImage
 import com.telefonica.mistica.compose.theme.MisticaTheme
 import com.telefonica.mistica.compose.theme.brand.BlauBrand
 import com.telefonica.mistica.compose.theme.brand.Brand
@@ -14,7 +13,6 @@ import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 import com.telefonica.mistica.compose.theme.brand.O2Brand
 import com.telefonica.mistica.compose.theme.brand.TelefonicaBrand
 import com.telefonica.mistica.compose.theme.brand.VivoBrand
-import com.telefonica.mistica.testutils.ScreenshotUtils
 import com.telefonica.mistica.testutils.ScreenshotsTest
 import org.junit.Rule
 import org.junit.Test
@@ -48,13 +46,7 @@ internal class ButtonKtTest(private val brand: Brand, private val darkTheme: Boo
     }
 
     private fun `then screenshot is OK`(brand: Brand, darkTheme: Boolean) {
-        composeTestRule.onRoot()
-            .captureRoboImage(
-                ScreenshotUtils.getScreenshotName(
-                    brand = brand,
-                    extra = if (darkTheme) "_dark" else ""
-                )
-            )
+        compareScreenshot(composeTestRule.onRoot(), brand, darkTheme)
     }
 
     companion object {

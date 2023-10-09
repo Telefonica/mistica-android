@@ -4,10 +4,8 @@ import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onRoot
 import androidx.compose.ui.test.performClick
-import com.github.takahirom.roborazzi.captureRoboImage
 import com.telefonica.mistica.compose.theme.MisticaTheme
 import com.telefonica.mistica.compose.theme.brand.MovistarBrand
-import com.telefonica.mistica.testutils.ScreenshotUtils
 import com.telefonica.mistica.testutils.ScreenshotsTest
 import org.junit.Rule
 import org.junit.Test
@@ -67,8 +65,7 @@ internal class PasswordInputKtTest: ScreenshotsTest() {
     }
 
     private fun `then screenshot is OK`() {
-        composeTestRule.onRoot()
-            .captureRoboImage(ScreenshotUtils.getScreenshotName())
+        compareScreenshot(composeTestRule.onRoot())
     }
 
     private fun test(block: TestScope.() -> Unit) {

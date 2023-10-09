@@ -8,10 +8,8 @@ import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.ext.junit.rules.activityScenarioRule
-import com.github.takahirom.roborazzi.captureRoboImage
 import com.telefonica.mistica.DummyActivity
 import com.telefonica.mistica.R
-import com.telefonica.mistica.testutils.ScreenshotUtils
 import com.telefonica.mistica.testutils.ScreenshotsTest
 import org.junit.Before
 import org.junit.Rule
@@ -39,7 +37,7 @@ internal class TextInputTest: ScreenshotsTest() {
             wrapper.addView(textInput)
             textInput.text = "Hello android devs!"
 
-            onView(ViewMatchers.withId(R.id.dummy_activity_wrapper)).captureRoboImage(ScreenshotUtils.getScreenshotName())
+            compareScreenshot(onView(ViewMatchers.withId(R.id.dummy_activity_wrapper)))
         }
     }
 
@@ -57,7 +55,7 @@ internal class TextInputTest: ScreenshotsTest() {
                 val scrollView: ScrollView = activity.findViewById(R.id.scroll_view)
                 scrollView.scrollTo(0, wrapper.height * i)
 
-                onView(withId(R.id.dummy_activity_wrapper)).captureRoboImage(ScreenshotUtils.getScreenshotName(extra = "_${i + 1}"))
+                compareScreenshot(onView(withId(R.id.dummy_activity_wrapper)), extra = "_${i + 1}")
             }
         }
     }
