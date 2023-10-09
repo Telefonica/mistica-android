@@ -87,6 +87,14 @@ jobs:
           tar cvzf mistica-screenshots-tests-report.tar.gz reports || echo "No screenshots tests reports found"
         shell: bash
 
+      - name: Checkout Telefonica/github-actions repo
+        if: failure()
+        uses: actions/checkout@v3
+        with:
+          repository: Telefonica/github-actions
+          token: "${{ secrets.NOVUM_PRIVATE_REPOS }}"
+          path: .github/shared-actions
+
       - name: Upload reports to azure
         if: failure()
         uses: ./.github/shared-actions/azure/upload-to-storage
