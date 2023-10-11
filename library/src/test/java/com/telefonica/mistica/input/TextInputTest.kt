@@ -1,12 +1,8 @@
 package com.telefonica.mistica.input
 
-import android.util.Log
-import android.view.LayoutInflater
 import android.widget.FrameLayout
-import android.widget.ScrollView
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.matcher.ViewMatchers
-import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.ext.junit.rules.activityScenarioRule
 import com.telefonica.mistica.DummyActivity
 import com.telefonica.mistica.R
@@ -36,6 +32,19 @@ internal class TextInputTest: ScreenshotsTest() {
             val textInput = TextInput(activity)
             wrapper.addView(textInput)
             textInput.text = "Hello android devs!"
+
+            compareScreenshot(onView(ViewMatchers.withId(R.id.dummy_activity_wrapper)))
+        }
+    }
+
+    @Test
+    fun `check TextInputWithError`() {
+        rule.scenario.onActivity { activity ->
+            val wrapper: FrameLayout = activity.findViewById(R.id.dummy_activity_wrapper)
+            val textInput = TextInput(activity)
+            wrapper.addView(textInput)
+            textInput.text = "Hello android devs!"
+            textInput.error = "Whatever error"
 
             compareScreenshot(onView(ViewMatchers.withId(R.id.dummy_activity_wrapper)))
         }
