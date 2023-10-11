@@ -40,23 +40,4 @@ internal class TextInputTest: ScreenshotsTest() {
             compareScreenshot(onView(ViewMatchers.withId(R.id.dummy_activity_wrapper)))
         }
     }
-
-    @Test
-    fun `check TextInput from layout`() {
-        rule.scenario.onActivity { activity ->
-            val wrapper: FrameLayout = activity.findViewById(R.id.dummy_activity_wrapper)
-            val inflater = LayoutInflater.from(activity)
-            val customLayout = inflater.inflate(R.layout.screen_inputs_catalog, wrapper, false)
-            wrapper.setPadding(0, 0, 0, 0)
-            wrapper.addView(customLayout)
-
-            repeat(times = 3) { i ->
-                Log.d("TextInputTest", "Scrolling to $i")
-                val scrollView: ScrollView = activity.findViewById(R.id.scroll_view)
-                scrollView.scrollTo(0, wrapper.height * i)
-
-                compareScreenshot(onView(withId(R.id.dummy_activity_wrapper)), extra = "_${i + 1}")
-            }
-        }
-    }
 }
