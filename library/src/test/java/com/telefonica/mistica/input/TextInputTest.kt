@@ -49,4 +49,17 @@ internal class TextInputTest: ScreenshotsTest() {
             compareScreenshot(onView(ViewMatchers.withId(R.id.dummy_activity_wrapper)))
         }
     }
+
+    @Test
+    fun `check TextInputDisabled`() {
+        rule.scenario.onActivity { activity ->
+            val wrapper: FrameLayout = activity.findViewById(R.id.dummy_activity_wrapper)
+            val textInput = TextInput(activity)
+            wrapper.addView(textInput)
+            textInput.text = "Hello android devs!"
+            textInput.isEnabled = false
+
+            compareScreenshot(onView(ViewMatchers.withId(R.id.dummy_activity_wrapper)))
+        }
+    }
 }
