@@ -7,7 +7,7 @@ import com.github.takahirom.roborazzi.captureRoboImage
 import com.telefonica.mistica.compose.theme.brand.Brand
 import org.robolectric.annotation.Config
 
-@Config(qualifiers = RobolectricDeviceQualifiers.Pixel5)
+@Config(sdk = [33], qualifiers = RobolectricDeviceQualifiers.Pixel5)
 open class ScreenshotsTest {
     fun compareScreenshot(
         node: SemanticsNodeInteraction,
