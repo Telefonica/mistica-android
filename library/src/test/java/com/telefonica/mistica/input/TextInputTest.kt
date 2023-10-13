@@ -19,37 +19,30 @@ internal class TextInputTest: ScreenshotsTest() {
 
     @Test
     fun `check TextInput`() {
-        rule.scenario.onActivity { activity ->
-            val wrapper: FrameLayout = activity.findViewById(R.id.dummy_activity_wrapper)
-            val textInput = TextInput(activity)
-            wrapper.addView(textInput)
-            textInput.text = "Hello android devs!"
-
-            compareScreenshot(onView(ViewMatchers.withId(R.id.dummy_activity_wrapper)))
-        }
+        checkTextInput()
     }
 
     @Test
     fun `check TextInputWithError`() {
-        rule.scenario.onActivity { activity ->
-            val wrapper: FrameLayout = activity.findViewById(R.id.dummy_activity_wrapper)
-            val textInput = TextInput(activity)
-            wrapper.addView(textInput)
-            textInput.text = "Hello android devs!"
-            textInput.error = "Whatever error"
-
-            compareScreenshot(onView(ViewMatchers.withId(R.id.dummy_activity_wrapper)))
+        checkTextInput {
+            error = "Whatever error"
         }
     }
 
     @Test
     fun `check TextInputDisabled`() {
+        checkTextInput {
+            isEnabled = false
+        }
+    }
+
+    private fun checkTextInput(onTextInput: TextInput.() -> Unit = {}) {
         rule.scenario.onActivity { activity ->
             val wrapper: FrameLayout = activity.findViewById(R.id.dummy_activity_wrapper)
             val textInput = TextInput(activity)
             wrapper.addView(textInput)
             textInput.text = "Hello android devs!"
-            textInput.isEnabled = false
+            textInput.onTextInput()
 
             compareScreenshot(onView(ViewMatchers.withId(R.id.dummy_activity_wrapper)))
         }
