@@ -11,6 +11,7 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
+import org.robolectric.annotation.Config
 
 @RunWith(RobolectricTestRunner::class)
 internal class TextInputTest: ScreenshotsTest() {
@@ -22,6 +23,12 @@ internal class TextInputTest: ScreenshotsTest() {
         checkTextInput()
     }
 
+    @Config(qualifiers = "+night")
+    @Test
+    fun `check TextInput dark`() {
+        checkTextInput()
+    }
+
     @Test
     fun `check TextInputWithError`() {
         checkTextInput {
@@ -29,8 +36,24 @@ internal class TextInputTest: ScreenshotsTest() {
         }
     }
 
+    @Config(qualifiers = "+night")
+    @Test
+    fun `check TextInputWithError dark`() {
+        checkTextInput {
+            error = "Whatever error"
+        }
+    }
+
     @Test
     fun `check TextInputDisabled`() {
+        checkTextInput {
+            isEnabled = false
+        }
+    }
+
+    @Config(qualifiers = "+night")
+    @Test
+    fun `check TextInputDisabled dark`() {
         checkTextInput {
             isEnabled = false
         }
