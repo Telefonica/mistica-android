@@ -1,0 +1,24 @@
+name: "Update screenshot baseline"
+on:
+  workflow_dispatch:
+
+jobs:
+  screenshots_baseline:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Run Roborazzi Record
+        run: 'bash ./gradlew clean recordRoborazziDebug'
+
+      - name: Check Git status
+        run: 'git status'
+        shell: bash
+
+      - name: Commit and push screenshots baseline
+        id: commitAndPushScreenshotsBaseline
+        uses: EndBug/add-and-commit@v7
+        with:
+          message: 'Updated screenshots baseline'
+          add: './**/screenshots/*'
