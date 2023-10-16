@@ -1,16 +1,18 @@
 package com.telefonica.mistica.feedback
 
+import android.annotation.SuppressLint
 import android.content.res.ColorStateList
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
+import android.view.LayoutInflater
 import android.view.View
-import android.widget.TextView
 import androidx.annotation.AttrRes
 import androidx.annotation.StringRes
 import com.google.android.material.snackbar.Snackbar
 import com.telefonica.mistica.R
 import com.telefonica.mistica.feedback.SnackBarBehaviorConfig.areSticky
+import com.telefonica.mistica.feedback.snackbar.CustomSnackbarLayout
 import com.telefonica.mistica.util.getThemeColor
 
 open class SnackbarBuilder(view: View?, text: String) {
@@ -62,7 +64,7 @@ open class SnackbarBuilder(view: View?, text: String) {
     }
 
     private fun setActionTextColor(snackbar: Snackbar, @AttrRes colorRes: Int) {
-        snackbar.setActionTextColor(view.context.getThemeColor(colorRes))
+        snackbar.getCustomLayout().setActionTextColor(view.context.getThemeColor(colorRes))
     }
 
     private fun setBackgroundColor(snackbar: Snackbar, @AttrRes colorRes: Int) {
@@ -82,37 +84,49 @@ open class SnackbarBuilder(view: View?, text: String) {
         return spannable
     }
 
-    @Suppress("DEPRECATION")
     private fun createSnackbar(text: CharSequence, snackbarLength: SnackbarLength): Snackbar {
         val duration = when {
             areSticky() -> Snackbar.LENGTH_INDEFINITE
             actionText != null -> SnackbarLength.LONG.duration()
             else -> snackbarLength.duration()
         }
-        val snackbar = Snackbar.make(view, text, duration)
-        setTextStyles(snackbar)
-        if (actionText != null) {
-            snackbar.setAction(actionText, actionListener)
-        }
+        val snackbar = inflateCustomSnackbar(duration)
+
+        snackbar.getCustomLayout().setText(text)
+        snackbar.setCustomAction(actionText, actionListener)
         if (callback != null) {
-            snackbar.setCallback(callback)
+            snackbar.addCallback(callback)
         }
         return snackbar
     }
 
-    @Suppress("DEPRECATION")
-    private fun setTextStyles(snackbar: Snackbar) {
-        val text = snackbar.view.findViewById<TextView>(R.id.snackbar_text)
-        text.maxLines = MAX_TEXT_LINES
-        text.setTextAppearance(text.context, R.style.AppTheme_TextAppearance_Preset2)
-        val action = snackbar.view.findViewById<TextView>(R.id.snackbar_action)
-        action.setTextAppearance(action.context, R.style.AppTheme_TextAppearance_PresetLink)
-        action.isAllCaps = false
+    @SuppressLint("ShowToast")
+    private fun inflateCustomSnackbar(duration: Int): Snackbar {
+        // Since we are inflating a custom layout, we pass a dummy text and apply the expected one later on to the custom TextView
+        val snackbar = Snackbar.make(view, "", duration)
+        val snackbarLayout = snackbar.view as Snackbar.SnackbarLayout
+
+        snackbarLayout.removeAllViews()
+        val customLayout = LayoutInflater.from(snackbarLayout.context).inflate(R.layout.snackbar_layout, snackbarLayout, false)
+        snackbarLayout.addView(customLayout)
+
+        return snackbar
     }
 
-    companion object {
-        private const val MAX_TEXT_LINES = 4
+    private fun Snackbar.setCustomAction(actionText: String?, actionListener: View.OnClickListener?) {
+        if (actionText != null) {
+            getCustomLayout().setAction(
+                actionText = actionText,
+                listener = {
+                    actionListener?.onClick(it)
+                    dismiss()
+                }
+            )
+        }
     }
+
+    private fun Snackbar.getCustomLayout(): CustomSnackbarLayout =
+        this.view.findViewById(R.id.custom_layout)
 }
 
 enum class SnackbarLength {
