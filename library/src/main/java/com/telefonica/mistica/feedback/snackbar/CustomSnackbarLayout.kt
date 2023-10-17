@@ -28,9 +28,6 @@ class CustomSnackbarLayout @JvmOverloads constructor(
         getText().text = text
     }
 
-    private fun getText(): TextView =
-        findViewById(R.id.custom_snackbar_text)
-
     fun setAction(actionText: CharSequence, listener: OnClickListener) {
         getAction().run {
             visibility = View.VISIBLE
@@ -39,12 +36,13 @@ class CustomSnackbarLayout @JvmOverloads constructor(
         }
     }
 
+    fun setOnDismissClickListener(onDismissed: () -> Unit) {
+        getDismissButton().setOnClickListener { onDismissed() }
+    }
+
     fun setActionTextColor(@ColorInt color: Int) {
         getAction().setTextColor(color)
     }
-
-    private fun getAction(): TextView =
-        findViewById(R.id.custom_snackbar_action)
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)
@@ -60,19 +58,37 @@ class CustomSnackbarLayout @JvmOverloads constructor(
     private fun rearrangeLayout() {
         val text = getText()
         val action = getAction()
+        val dismissButton = getDismissButton()
         val parent = this
 
         val constraintSet = ConstraintSet()
         constraintSet.clone(parent)
 
-        constraintSet.connect(text.id, ConstraintSet.END, parent.id, ConstraintSet.END)
+        constraintSet.connect(text.id, ConstraintSet.END, dismissButton.id, ConstraintSet.START)
         constraintSet.connect(text.id, ConstraintSet.BOTTOM, action.id, ConstraintSet.TOP)
+
+        constraintSet.connect(dismissButton.id, ConstraintSet.START, text.id, ConstraintSet.END)
+        constraintSet.connect(dismissButton.id, ConstraintSet.END, parent.id, ConstraintSet.END)
+        constraintSet.setHorizontalBias(dismissButton.id, 1.0F)
+        constraintSet.setVerticalBias(dismissButton.id, 0.0F)
+        constraintSet.setMargin(dismissButton.id, ConstraintSet.TOP, context.resources.getDimensionPixelSize(R.dimen.mistica_snackbar_padding_vertical))
 
         constraintSet.connect(action.id, ConstraintSet.START, parent.id, ConstraintSet.START)
         constraintSet.connect(action.id, ConstraintSet.BOTTOM, parent.id, ConstraintSet.BOTTOM)
         constraintSet.connect(action.id, ConstraintSet.TOP, text.id, ConstraintSet.BOTTOM)
+        constraintSet.connect(action.id, ConstraintSet.END, parent.id, ConstraintSet.END)
         constraintSet.setHorizontalBias(action.id, 1.0F)
+        constraintSet.setMargin(action.id, ConstraintSet.END, context.resources.getDimensionPixelSize(R.dimen.mistica_snackbar_padding_horizontal))
 
         constraintSet.applyTo(this)
     }
+
+    private fun getText(): TextView =
+        findViewById(R.id.custom_snackbar_text)
+
+    private fun getAction(): TextView =
+        findViewById(R.id.custom_snackbar_action)
+
+    private fun getDismissButton(): View =
+        findViewById(R.id.custom_snackbar_dismiss)
 }

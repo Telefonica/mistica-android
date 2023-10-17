@@ -94,9 +94,11 @@ open class SnackbarBuilder(view: View?, text: String) {
 
         snackbar.getCustomLayout().setText(text)
         snackbar.setCustomAction(actionText, actionListener)
+        snackbar.getCustomLayout().setOnDismissClickListener { snackbar.dismiss() }
         if (callback != null) {
             snackbar.addCallback(callback)
         }
+
         return snackbar
     }
 
