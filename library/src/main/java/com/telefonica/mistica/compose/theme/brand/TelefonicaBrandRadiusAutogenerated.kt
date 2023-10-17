@@ -15,5 +15,5 @@ public object TelefonicaBrandRadius {
       inputBorderRadius = 0.dp,
       legacyDisplayBorderRadius = 0.dp,
       popupBorderRadius = 0.dp,
-      sheetBorderRadius = 8.dp,)
+      sheetBorderRadius = 0.dp,)
 }

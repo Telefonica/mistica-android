@@ -1,0 +1,7 @@
+name: 'Generate HTML Report'
+description: 'Generates HTML report from screenshots'
+runs:
+  using: "composite"
+  steps:
+    - run: ${GITHUB_ACTION_PATH}/scripts/generate-html-report.sh
+      shell: bash

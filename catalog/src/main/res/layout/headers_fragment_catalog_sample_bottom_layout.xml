@@ -13,7 +13,7 @@
 			android:id="@+id/sample_icon"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:src="@drawable/feedback_info_telefonica"
+			android:src="@drawable/feedback_info"
 			app:layout_constraintTop_toTopOf="parent"
 			app:layout_constraintBottom_toBottomOf="parent"
 			app:layout_constraintLeft_toLeftOf="parent"

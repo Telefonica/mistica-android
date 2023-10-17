@@ -1,0 +1,49 @@
+name: Compare Screenshots
+
+on:
+  workflow_dispatch:
+  pull_request:
+
+jobs:
+  CompareScreenshots:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v2
+
+      - name: Verify Screenshots (roborazzi)
+        run: 'bash ./gradlew verifyRoborazziDebug'
+
+      - id: generate-html
+        name: Generate Html Report
+        if: failure()
+        uses: ./.github/actions/generate-html-report
+
+      - name: Generate screenshots tests reports tar.gz
+        if: failure()
+        run: |
+          tar cvzf mistica-screenshots-tests-report.tar.gz reports || echo "No screenshots tests reports found"
+        shell: bash
+
+      - name: Checkout Telefonica/github-actions repo
+        if: failure()
+        uses: actions/checkout@v3
+        with:
+          repository: Telefonica/github-actions
+          token: "${{ secrets.NOVUM_PRIVATE_REPOS }}"
+          path: .github/shared-actions
+
+      - name: Upload reports to azure
+        if: failure()
+        uses: ./.github/shared-actions/azure/upload-to-storage
+        with:
+          azure-account-name: ${{secrets.AZURE_ACCOUNT_NAME}}
+          azure-account-key: ${{secrets.AZURE_ACCOUNT_KEY}}
+          globs: |
+            mistica-screenshots-tests-report.tar.gz
+          generate-summary: true

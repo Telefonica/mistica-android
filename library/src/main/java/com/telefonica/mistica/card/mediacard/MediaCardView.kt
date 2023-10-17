@@ -18,7 +18,6 @@ import com.telefonica.mistica.card.CardView
 import com.telefonica.mistica.util.hide
 import com.telefonica.mistica.util.show
 
-
 @BindingMethods(
     BindingMethod(
         type = MediaCardView::class,
@@ -39,7 +38,7 @@ import com.telefonica.mistica.util.show
 class MediaCardView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
-    defStyleAttr: Int = 0
+    defStyleAttr: Int = 0,
 ) : CardView(context, attrs, defStyleAttr) {
 
     private lateinit var cardImageView: ImageView
@@ -48,7 +47,7 @@ class MediaCardView @JvmOverloads constructor(
     override fun handleAttrsAndInflateLayout(
         attrs: AttributeSet?,
         defStyleAttr: Int,
-        defStyleRes: Int
+        defStyleRes: Int,
     ): View {
 
         val rootView = LayoutInflater.from(context).inflate(R.layout.media_card_view, this, true)
@@ -72,6 +71,10 @@ class MediaCardView @JvmOverloads constructor(
             styledAttrs.recycle()
         }
         return rootView
+    }
+
+    fun setSubtitleText(subtitle: String) {
+        setSubtitle(subtitle)
     }
 
     fun getCardImageView(): ImageView = cardImageView
