@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<dimen name="snackbar_padding_vertical">14dp</dimen>
-	<dimen name="snackbar_padding_horizontal">12dp</dimen>
-	<integer name="snackbar_text_max_lines">4</integer>
-	<dimen name="snackbar_extra_spacing_horizontal">0dp</dimen>
+	<dimen name="mistica_snackbar_padding_vertical">14dp</dimen>
+	<dimen name="mistica_snackbar_padding_horizontal">12dp</dimen>
+	<dimen name="snackbar_maxActionInlineWidth">128dp</dimen>
+	<dimen name="mistica_snackbar_maxActionInlineWidth">128dp</dimen>
+	<integer name="mistica_snackbar_text_max_lines">4</integer>
 </resources>
