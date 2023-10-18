@@ -18,10 +18,11 @@ class Button @JvmOverloads constructor(
 ) : AbstractMisticaComposeView(context, attrs, defStyleAttr) {
 
     var text: String by mutableStateOf("")
+    var icon: Int? by mutableStateOf(null)
+
     private var loadingText: String by mutableStateOf("")
     private var isLoading: Boolean by mutableStateOf(false)
     private var style: ButtonStyle by mutableStateOf(ButtonStyle.PRIMARY)
-    private var icon: Int? by mutableStateOf(null)
     private var isEnable: Boolean by mutableStateOf(true)
     var withChevron: Boolean by mutableStateOf(true)
     private var onClick: () -> Unit by mutableStateOf({})
