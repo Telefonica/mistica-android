@@ -37,7 +37,7 @@ class Button @JvmOverloads constructor(
                 0
             )
             try {
-                text = textTypedArray.getText(0).toString()
+                text = textTypedArray.getText(0)?.toString() ?: ""
                 loadingText = styledAttrs.getString(R.styleable.Button_loadingText) ?: ""
                 isLoading = styledAttrs.getBoolean(R.styleable.Button_isLoading, false)
                 style = styledAttrs.getInt(R.styleable.Button_style, 0).toButtonStyle()
