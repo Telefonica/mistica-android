@@ -92,7 +92,7 @@ open class SnackbarBuilder(view: View?, text: String) {
     private fun createSnackbar(text: CharSequence, snackbarLength: SnackbarLength?): Snackbar {
         val duration = when {
             areSticky() -> SnackbarLength.INDEFINITE
-            snackbarLength == null -> if (actionListener == null) SnackbarLength.SHORT else SnackbarLength.LONG
+            snackbarLength == null -> if (actionText == null) SnackbarLength.SHORT else SnackbarLength.LONG
             else -> snackbarLength
         }.duration()
 
