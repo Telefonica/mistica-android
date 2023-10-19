@@ -62,7 +62,9 @@
 			app:layout_constraintTop_toTopOf="parent"
 			app:layout_constraintBottom_toBottomOf="parent"
 			android:layout_marginEnd="8dp"
-			android:background="?selectableItemBackgroundBorderless">
+			android:background="?selectableItemBackgroundBorderless"
+			android:visibility="gone"
+			tools:visibility="visible">
 		<ImageView
 				android:layout_width="match_parent"
 				android:layout_height="match_parent"

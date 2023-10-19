@@ -10,7 +10,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
 import com.telefonica.mistica.R
 
-class CustomSnackbarLayout @JvmOverloads constructor(
+internal class CustomSnackbarLayout @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0,
@@ -36,12 +36,13 @@ class CustomSnackbarLayout @JvmOverloads constructor(
         }
     }
 
-    fun setOnDismissClickListener(onDismissed: () -> Unit) {
-        getDismissButton().setOnClickListener { onDismissed() }
-    }
-
     fun setActionTextColor(@ColorInt color: Int) {
         getAction().setTextColor(color)
+    }
+
+    fun setOnDismissClickListener(onDismissed: () -> Unit) {
+        getDismissButton().visibility = View.VISIBLE
+        getDismissButton().setOnClickListener { onDismissed() }
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
