@@ -6,6 +6,7 @@ import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.ext.junit.rules.activityScenarioRule
 import com.telefonica.mistica.DummyActivity
 import com.telefonica.mistica.R
+import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 import com.telefonica.mistica.testutils.ScreenshotsTest
 import org.junit.Rule
 import org.junit.Test

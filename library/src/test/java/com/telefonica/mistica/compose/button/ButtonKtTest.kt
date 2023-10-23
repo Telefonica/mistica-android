@@ -20,23 +20,26 @@ import org.junit.runner.RunWith
 import org.robolectric.ParameterizedRobolectricTestRunner
 
 @RunWith(ParameterizedRobolectricTestRunner::class)
-internal class ButtonKtTest(private val brand: Brand, private val darkTheme: Boolean): ScreenshotsTest() {
+internal class ButtonKtTest(private val brand: Brand, private val style: ButtonStyle, private val icon: Boolean, private val darkTheme: Boolean):
+    ScreenshotsTest() {
     @get:Rule
     val composeTestRule = createComposeRule()
 
     @Test
     fun `check the button screenshot`() {
-        `when Button`(brand, darkTheme)
+        `when Button`(brand, style, icon, darkTheme)
 
-        `then screenshot is OK`(brand, darkTheme)
+        `then screenshot is OK`(brand, style, icon, darkTheme)
     }
 
-    private fun `when Button`(brand: Brand = MovistarBrand, darkTheme: Boolean) {
+    private fun `when Button`(brand: Brand = MovistarBrand, style: ButtonStyle, icon: Boolean, darkTheme: Boolean) {
         composeTestRule.setContent {
             MisticaTheme(brand = brand, darkTheme = darkTheme) {
                 Surface {
                     Button(
                         text = "textValue",
+                        buttonStyle = style,
+                        icon = android.R.drawable.ic_lock_power_off.takeIf { icon },
                         onClickListener = { },
                         modifier = Modifier.padding(16.dp)
                     )
@@ -45,24 +48,44 @@ internal class ButtonKtTest(private val brand: Brand, private val darkTheme: Boo
         }
     }
 
-    private fun `then screenshot is OK`(brand: Brand, darkTheme: Boolean) {
-        compareScreenshot(composeTestRule.onRoot(), brand, darkTheme)
+    private fun `then screenshot is OK`(brand: Brand, style: ButtonStyle, icon: Boolean, darkTheme: Boolean) {
+        val iconSuffix = if(icon) {
+            "icon"
+        } else {
+            null
+        }
+        compareScreenshot(composeTestRule.onRoot(), "Button", style.toString(), brand, darkTheme, iconSuffix)
     }
 
     companion object {
         @JvmStatic
         @ParameterizedRobolectricTestRunner.Parameters(name = "Input: {0}")
-        fun brands() = listOf(
-            arrayOf(MovistarBrand, false),
-            arrayOf(VivoBrand, false),
-            arrayOf(O2Brand, false),
-            arrayOf(BlauBrand, false),
-            arrayOf(TelefonicaBrand, false),
-            arrayOf(MovistarBrand, true),
-            arrayOf(VivoBrand, true),
-            arrayOf(O2Brand, true),
-            arrayOf(BlauBrand, true),
-            arrayOf(TelefonicaBrand, true),
-        )
+        fun brands(): List<Array<Any>> {
+            val brands2 = listOf(
+                MovistarBrand,
+                VivoBrand,
+                O2Brand,
+                BlauBrand,
+                TelefonicaBrand,
+            )
+            val themes = listOf(false, true)
+            val buttonStyles = listOf(
+                ButtonStyle.PRIMARY, ButtonStyle.PRIMARY_SMALL, ButtonStyle.SECONDARY, ButtonStyle.SECONDARY_SMALL, ButtonStyle.DANGER,
+                ButtonStyle.DANGER_SMALL, ButtonStyle.LINK, ButtonStyle.PRIMARY_INVERSE, ButtonStyle.PRIMARY_SMALL_INVERSE, ButtonStyle.SECONDARY_INVERSE,
+                ButtonStyle.SECONDARY_SMALL_INVERSE, ButtonStyle.LINK_INVERSE
+            )
+            val icons = listOf(false, true)
+
+            return brands2.flatMap { brand ->
+                buttonStyles.flatMap { buttonStyle ->
+                    icons.flatMap { hasIcon ->
+                        themes.map { darkTheme ->
+                            arrayOf(brand, buttonStyle, hasIcon, darkTheme)
+                        }
+                    }
+                }
+            }
+        }
+
     }
 }
