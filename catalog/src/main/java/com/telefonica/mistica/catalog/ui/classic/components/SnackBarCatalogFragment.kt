@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.RadioButton
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.feedback.SnackbarBuilder
@@ -39,7 +38,6 @@ class SnackBarCatalogFragment : Fragment() {
         val snackbarLength10: RadioButton = view.findViewById(R.id.radio_button_10_sec)
         val snackbarIndefiniteLength: RadioButton = view.findViewById(R.id.radio_button_indefinite_duration)
         val alwaysShowDismiss: CheckBoxInput = view.findViewById(R.id.always_show_dismiss_checkbox)
-        val actionActsAsDismiss: CheckBoxInput = view.findViewById(R.id.action_as_dismiss_checkbox)
 
         with(dropDownInput.dropDown) {
             setAdapter(
@@ -57,17 +55,17 @@ class SnackBarCatalogFragment : Fragment() {
             SnackbarBuilder(view, inputText.text.toString()).apply {
                 inputAction.text.toString().let { actionText ->
                     if (actionText.isNotEmpty()) {
-                        withAction(actionText, buildSnakcbarActionListener(actionActsAsDismiss.isChecked()))
+                        withAction(actionText) { }
                     }
                 }
                 if (alwaysShowDismiss.isChecked()) {
-                    isDismissible()
+                    withDismiss()
                 }
                 val duration = when {
                     snackbarLength5.isChecked -> SnackbarLength.SHORT
                     snackbarLength10.isChecked -> SnackbarLength.LONG
                     snackbarIndefiniteLength.isChecked -> SnackbarLength.INDEFINITE
-                    else -> null
+                    else -> SnackbarLength.SHORT
                 }
                 when (SnackBarType.valueOf(dropDownInput.dropDown.text.toString())) {
                     SnackBarType.INFORMATIVE -> showInformative(duration)
@@ -82,19 +80,6 @@ class SnackBarCatalogFragment : Fragment() {
             context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         inputMethodManager.hideSoftInputFromWindow(windowToken, 0)
     }
-
-    private fun buildSnakcbarActionListener(actionActsAsDismiss: Boolean): View.OnClickListener? =
-        if (actionActsAsDismiss) {
-            null
-        } else {
-            View.OnClickListener {
-                Toast.makeText(
-                    requireContext(),
-                    "Action triggered by Snackbar action",
-                    Toast.LENGTH_SHORT
-                ).show()
-            }
-        }
 
     private enum class SnackBarType {
         INFORMATIVE,

@@ -21,12 +21,14 @@ Builder allows SnackBar customization:
   * Adds an action with the given string resource and the given click listener
 * `withCallback(Callback callback)`
   * Adds a callback for dismiss action. Dismiss action by definition will only work when using a coordinator layout as anchor view for the SnackBar.
-* `isDismissible()`
+* `withDismiss()`
   * Adds a dismiss button to the Snackbar layout. 
 
 Finally, depending on the type of SnackBar, use one of the following methods to display it:
-* `showInformative(snackbarLength: SnackbarLength? = null)`
-* `showCritical(snackbarLength: SnackbarLength? = null)`
+* `showInformative(snackbarLength: SnackbarLength)`
+* `showInformative()`
+* `showCritical(snackbarLength: SnackbarLength)`
+* `showCritical()`
 
 Where `SnackbarLength` has three different possible values:
 * `SHORT`: 5 seconds
@@ -36,3 +38,8 @@ Where `SnackbarLength` has three different possible values:
 If no `SnackbarLength` is provided, the following logic will be applied:
 * If no action is provided: default length will be `SHORT`
 * If an action is provided: default length will be `LONG`
+
+However, if a `SnackbarLength` is provided, the following logic is applied:
+- If `LONG` length is provided and there is no action, `SHORT` will be set instead.
+- If `SHORT` length is provided and there is an action, `LONG` will be set instead.
+- `INFINTE` length is valid with and without an action.

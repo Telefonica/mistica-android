@@ -31,6 +31,15 @@
         android:inputType="text"
         app:inputHint="SnackBar Action Text" />
 
+    <com.telefonica.mistica.input.CheckBoxInput
+        android:id="@+id/always_show_dismiss_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_gravity="start"
+        app:inputChecked="false"
+        app:inputCheckText="Always show dismiss"/>
+
     <com.telefonica.mistica.input.DropDownInput
         android:id="@+id/dropdown_snackbar_type"
         android:layout_width="match_parent"
@@ -38,17 +47,11 @@
         android:layout_marginTop="8dp"
         app:inputHint="SnackBar Type" />
 
-    <com.telefonica.mistica.title.TitleView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:layout_gravity="start"
-            app:title="Duration"/>
-
     <RadioGroup
         android:id="@+id/radio_group_snackbar_length"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
         android:gravity="start"
         android:orientation="vertical">
 
@@ -71,31 +74,6 @@
                 android:layout_height="wrap_content"
                 android:text="Indefinite length" />
     </RadioGroup>
-
-
-    <com.telefonica.mistica.title.TitleView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_gravity="start"
-            app:title="Actions"/>
-
-    <com.telefonica.mistica.input.CheckBoxInput
-            android:id="@+id/always_show_dismiss_checkbox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:layout_gravity="start"
-            app:inputChecked="false"
-            app:inputCheckText="Always show dismiss"/>
-
-    <com.telefonica.mistica.input.CheckBoxInput
-            android:id="@+id/action_as_dismiss_checkbox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:inputChecked="false"
-            android:layout_gravity="start"
-            app:inputCheckText="Action acts as dismiss"/>
 
     <com.telefonica.mistica.button.Button
         android:id="@+id/button_create_snackbar"
