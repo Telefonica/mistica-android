@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import androidx.annotation.AttrRes
 import androidx.annotation.StringRes
+import com.google.android.material.snackbar.BaseTransientBottomBar.BaseCallback
 import com.google.android.material.snackbar.Snackbar
 import com.telefonica.mistica.R
 import com.telefonica.mistica.feedback.SnackBarBehaviorConfig.areSticky
@@ -140,10 +141,22 @@ open class SnackbarBuilder(view: View?, text: String) {
                 actionText = text,
                 listener = {
                     actionListener?.onClick(it)
-                    dismiss()
+                    dispatchDismissedByActionEvent()
                 }
             )
         }
+    }
+
+    private fun Snackbar.dispatchDismissedByActionEvent() {
+        // We are overwriting the Snackbar implementation in order to have support for certain UI elements like the dismiss button.
+        // Given that, we are losing some built in capabilities such as BaseCallback.DISMISS_EVENT_ACTION event.
+        // The correct way to dispatch a BaseCallback.DISMISS_EVENT_ACTION event would be to use Snackbar::dispatchDismiss method.
+        // However that method is protected (we don't have access to it) and invoking Snackbar::dismiss with a registered callback would trigger
+        // the DISMISS_EVENT_MANUAL event. The workaround is to remove the callback if present, manually invoke the callback method and then invoking
+        // a dismiss that won't trigger a second event.
+        removeCallback(callback)
+        callback?.onDismissed(this, BaseCallback.DISMISS_EVENT_ACTION)
+        dismiss()
     }
 
     private fun Snackbar.getCustomLayout(): CustomSnackbarLayout =
