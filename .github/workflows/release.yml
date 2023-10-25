@@ -31,4 +31,4 @@ jobs:
           needs: ${{ toJson(needs) }}
           job: ${{ toJson(job) }}
           steps: ${{ toJson(steps) }}
-          overwrite: "{title: `New version published ${{ github.event.release.tag_name }}`, text:`Release Notes:\n ${{ github.event.release.body }}`}"
+          overwrite: "{title: `New Mistica version published ${{ github.event.release.tag_name }}`, text:`Release Notes:\n ${{ github.event.release.body }}`}"
