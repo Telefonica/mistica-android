@@ -31,41 +31,29 @@
         android:inputType="text"
         app:inputHint="SnackBar Action Text" />
 
+    <com.telefonica.mistica.input.CheckBoxInput
+        android:id="@+id/always_show_dismiss_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_gravity="start"
+        app:inputChecked="false"
+        app:inputCheckText="Always show dismiss"/>
+
+    <com.telefonica.mistica.input.CheckBoxInput
+            android:id="@+id/infinite_length_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_gravity="start"
+            app:inputChecked="false"
+            app:inputCheckText="Infinite length"/>
+
     <com.telefonica.mistica.input.DropDownInput
         android:id="@+id/dropdown_snackbar_type"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         app:inputHint="SnackBar Type" />
-
-    <RadioGroup
-        android:id="@+id/radio_group_snackbar_length"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-        <RadioButton
-            android:id="@+id/radio_button_5_sec"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="5 seconds" />
-
-        <RadioButton
-            android:id="@+id/radio_button_10_sec"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="10 seconds" />
-
-    </RadioGroup>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Time only applies if no action set" />
 
     <com.telefonica.mistica.button.Button
         android:id="@+id/button_create_snackbar"

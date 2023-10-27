@@ -7,11 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
-import android.widget.RadioButton
 import androidx.fragment.app.Fragment
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.feedback.SnackbarBuilder
 import com.telefonica.mistica.feedback.SnackbarLength
+import com.telefonica.mistica.input.CheckBoxInput
 import com.telefonica.mistica.input.DropDownInput
 import com.telefonica.mistica.input.TextInput
 
@@ -33,7 +33,8 @@ class SnackBarCatalogFragment : Fragment() {
         val inputAction: TextInput = view.findViewById(R.id.input_snackbar_action)
         val dropDownInput: DropDownInput = view.findViewById(R.id.dropdown_snackbar_type)
         val createButton: Button = view.findViewById(R.id.button_create_snackbar)
-        val snackbarLength10: RadioButton = view.findViewById(R.id.radio_button_10_sec)
+        val snackbarIndefiniteLength: CheckBoxInput = view.findViewById(R.id.infinite_length_checkbox)
+        val alwaysShowDismiss: CheckBoxInput = view.findViewById(R.id.always_show_dismiss_checkbox)
 
         with(dropDownInput.dropDown) {
             setAdapter(
@@ -51,18 +52,31 @@ class SnackBarCatalogFragment : Fragment() {
             SnackbarBuilder(view, inputText.text.toString()).apply {
                 inputAction.text.toString().let { actionText ->
                     if (actionText.isNotEmpty()) {
-                        withAction(actionText, { })
+                        withAction(actionText) { }
                     }
                 }
-                val duration = when {
-                    snackbarLength10.isChecked -> SnackbarLength.LONG
-                    else -> SnackbarLength.SHORT
+                if (alwaysShowDismiss.isChecked()) {
+                    withDismiss()
                 }
+
+                val withIndefiniteLength = snackbarIndefiniteLength.isChecked()
                 when (SnackBarType.valueOf(dropDownInput.dropDown.text.toString())) {
-                    SnackBarType.INFORMATIVE -> showInformative(duration)
-                    SnackBarType.CRITICAL -> showCritical(duration)
+                    SnackBarType.INFORMATIVE -> show(withIndefiniteLength, SnackbarBuilder::showInformative, SnackbarBuilder::showInformative)
+                    SnackBarType.CRITICAL -> show(withIndefiniteLength, SnackbarBuilder::showCritical, SnackbarBuilder::showCritical)
                 }
             }
+        }
+    }
+
+    private inline fun SnackbarBuilder.show(
+        withIndefiniteLength: Boolean,
+        showWithLength: SnackbarBuilder.(SnackbarLength) -> Unit,
+        showWithoutLength: SnackbarBuilder.() -> Unit,
+    ) {
+        if (withIndefiniteLength) {
+            showWithLength(SnackbarLength.INDEFINITE)
+        } else {
+            showWithoutLength()
         }
     }
 

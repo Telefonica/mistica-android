@@ -1,16 +1,19 @@
 package com.telefonica.mistica.feedback
 
+import android.annotation.SuppressLint
 import android.content.res.ColorStateList
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
+import android.view.LayoutInflater
 import android.view.View
-import android.widget.TextView
 import androidx.annotation.AttrRes
 import androidx.annotation.StringRes
+import com.google.android.material.snackbar.BaseTransientBottomBar.BaseCallback
 import com.google.android.material.snackbar.Snackbar
 import com.telefonica.mistica.R
 import com.telefonica.mistica.feedback.SnackBarBehaviorConfig.areSticky
+import com.telefonica.mistica.feedback.snackbar.CustomSnackbarLayout
 import com.telefonica.mistica.util.getThemeColor
 
 open class SnackbarBuilder(view: View?, text: String) {
@@ -20,6 +23,10 @@ open class SnackbarBuilder(view: View?, text: String) {
     private var actionText: String? = null
     private var actionListener: View.OnClickListener? = null
     private var callback: Snackbar.Callback? = null
+    private var withDismiss = false
+
+    private val hasAction: Boolean
+        get() = actionText != null
 
     constructor(view: View, @StringRes resId: Int) : this(view, view.resources.getString(resId))
 
@@ -39,6 +46,10 @@ open class SnackbarBuilder(view: View?, text: String) {
 
     open fun withCallback(callback: Snackbar.Callback): SnackbarBuilder = apply {
         this.callback = callback
+    }
+
+    open fun withDismiss(): SnackbarBuilder = apply{
+        this.withDismiss = true
     }
 
     @JvmOverloads
@@ -62,7 +73,7 @@ open class SnackbarBuilder(view: View?, text: String) {
     }
 
     private fun setActionTextColor(snackbar: Snackbar, @AttrRes colorRes: Int) {
-        snackbar.setActionTextColor(view.context.getThemeColor(colorRes))
+        snackbar.getCustomLayout().setActionTextColor(view.context.getThemeColor(colorRes))
     }
 
     private fun setBackgroundColor(snackbar: Snackbar, @AttrRes colorRes: Int) {
@@ -82,47 +93,100 @@ open class SnackbarBuilder(view: View?, text: String) {
         return spannable
     }
 
-    @Suppress("DEPRECATION")
     private fun createSnackbar(text: CharSequence, snackbarLength: SnackbarLength): Snackbar {
         val duration = when {
-            areSticky() -> Snackbar.LENGTH_INDEFINITE
-            actionText != null -> SnackbarLength.LONG.duration()
-            else -> snackbarLength.duration()
-        }
-        val snackbar = Snackbar.make(view, text, duration)
-        setTextStyles(snackbar)
-        if (actionText != null) {
-            snackbar.setAction(actionText, actionListener)
-        }
-        if (callback != null) {
-            snackbar.setCallback(callback)
-        }
+            areSticky() -> SnackbarLength.INDEFINITE
+            isInvalidLengthWhenThereIsAction(snackbarLength) ->  SnackbarLength.LONG
+            isInvalidLengthWhenThereIsNoAction(snackbarLength) -> SnackbarLength.SHORT
+            else -> snackbarLength
+        }.duration()
+
+        val snackbar = inflateCustomSnackbar(duration)
+
+        snackbar.getCustomLayout().setText(text)
+        snackbar.setCustomAction()
+        snackbar.showDismissActionIfNeeded(hasInfiniteDuration = snackbarLength == SnackbarLength.INDEFINITE)
+        snackbar.addCallbackIfNeeded()
+
         return snackbar
     }
 
-    @Suppress("DEPRECATION")
-    private fun setTextStyles(snackbar: Snackbar) {
-        val text = snackbar.view.findViewById<TextView>(R.id.snackbar_text)
-        text.maxLines = MAX_TEXT_LINES
-        text.setTextAppearance(text.context, R.style.AppTheme_TextAppearance_Preset2)
-        val action = snackbar.view.findViewById<TextView>(R.id.snackbar_action)
-        action.setTextAppearance(action.context, R.style.AppTheme_TextAppearance_PresetLink)
-        action.isAllCaps = false
+    private fun isInvalidLengthWhenThereIsAction(length: SnackbarLength): Boolean =
+        hasAction && length == SnackbarLength.SHORT
+
+    private fun isInvalidLengthWhenThereIsNoAction(length: SnackbarLength): Boolean =
+        !hasAction && length == SnackbarLength.LONG
+
+    // We are inflating a custom layout instead of reusing existing Snackbar layout implementation because
+    // we need to add a dismiss X button and despite of it being included by Material 3 definition,
+    // that dismiss button is not supported at the moment in the Android Material library.
+    // See: https://github.com/material-components/material-components-android/issues/3049
+    @SuppressLint("ShowToast")
+    private fun inflateCustomSnackbar(duration: Int): Snackbar {
+        // Since we are inflating a custom layout, we pass a dummy text and apply
+        // the expected one later on to our custom TextView
+        val snackbar = Snackbar.make(view, "", duration)
+        val snackbarLayout = snackbar.view as Snackbar.SnackbarLayout
+
+        snackbarLayout.removeAllViews()
+        val customLayout = LayoutInflater.from(snackbarLayout.context).inflate(R.layout.snackbar_layout, snackbarLayout, false)
+        snackbarLayout.addView(customLayout)
+
+        return snackbar
     }
 
-    companion object {
-        private const val MAX_TEXT_LINES = 4
+    private fun Snackbar.setCustomAction() {
+        actionText?.let { text ->
+            getCustomLayout().setAction(
+                actionText = text,
+                listener = {
+                    actionListener?.onClick(it)
+                    dispatchDismissedByActionEvent()
+                }
+            )
+        }
+    }
+
+    private fun Snackbar.dispatchDismissedByActionEvent() {
+        // We are overwriting the Snackbar implementation in order to have support for certain UI elements like the dismiss button.
+        // Given that, we are losing some built in capabilities such as BaseCallback.DISMISS_EVENT_ACTION event.
+        // The correct way to dispatch a BaseCallback.DISMISS_EVENT_ACTION event would be to use Snackbar::dispatchDismiss method.
+        // However that method is protected (we don't have access to it) and invoking Snackbar::dismiss with a registered callback would trigger
+        // the DISMISS_EVENT_MANUAL event. The workaround is to remove the callback if present, manually invoke the callback method and then invoking
+        // a dismiss that won't trigger a second event.
+        removeCallback(callback)
+        callback?.onDismissed(this, BaseCallback.DISMISS_EVENT_ACTION)
+        dismiss()
+    }
+
+    private fun Snackbar.getCustomLayout(): CustomSnackbarLayout =
+        this.view.findViewById(R.id.custom_layout)
+
+    private fun Snackbar.showDismissActionIfNeeded(hasInfiniteDuration: Boolean) {
+        val userShouldBeAbleToDismissSnackbar = !hasAction && hasInfiniteDuration
+
+        if (withDismiss || userShouldBeAbleToDismissSnackbar) {
+            getCustomLayout().setOnDismissClickListener { dismiss() }
+        }
+    }
+
+    private fun Snackbar.addCallbackIfNeeded() {
+        if (callback != null) {
+            addCallback(callback)
+        }
     }
 }
 
 enum class SnackbarLength {
     SHORT,
-    LONG;
+    LONG,
+    INDEFINITE;
 
     fun duration(): Int =
         when (this) {
             SHORT -> DURATION_WITHOUT_ACTION
             LONG -> DURATION_WITH_ACTION
+            INDEFINITE -> Snackbar.LENGTH_INDEFINITE
         }
 
     companion object {
