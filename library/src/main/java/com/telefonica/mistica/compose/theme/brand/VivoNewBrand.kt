@@ -5,7 +5,7 @@ import com.telefonica.mistica.R
 object VivoNewBrand : Brand {
 
     override val compatibilityTheme: Int
-        get() = R.style.MisticaTheme_VivoNew
+        get() = R.style.VivoNew
 
     override val lightColors = VivoNewBrandColors.lightColors
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-	<style name="MisticaTheme.VivoNew_Customizations" parent="MisticaTheme.VivoNew_Base">
+	<style name="VivoNew_Customizations" parent="VivoNew_Base">
 		<!-- Gradients (assistant, pin fingerprint screens) -->
 		<item name="colorGradientBackgroundFirst">?colorBackgroundBrand</item>
 		<item name="colorGradientBackgroundSecond">?colorBackgroundBrand</item>
