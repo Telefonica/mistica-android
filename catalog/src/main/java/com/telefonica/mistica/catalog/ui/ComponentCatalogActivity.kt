@@ -61,17 +61,23 @@ import com.telefonica.mistica.catalog.ui.compose.components.TabsCatalog
 import com.telefonica.mistica.catalog.ui.compose.components.Tags
 import com.telefonica.mistica.catalog.ui.compose.components.Texts
 import com.telefonica.mistica.catalog.ui.compose.components.Titles
-import com.telefonica.mistica.compose.badge.Badge
 import com.telefonica.mistica.compose.theme.MisticaTheme
 import com.telefonica.mistica.compose.theme.brand.BlauBrand
 import com.telefonica.mistica.compose.theme.brand.Brand
 import com.telefonica.mistica.compose.theme.brand.BrandType
-import com.telefonica.mistica.compose.theme.brand.BrandType.*
+import com.telefonica.mistica.compose.theme.brand.BrandType.BLAU
+import com.telefonica.mistica.compose.theme.brand.BrandType.MOVISTAR
+import com.telefonica.mistica.compose.theme.brand.BrandType.O2
+import com.telefonica.mistica.compose.theme.brand.BrandType.TELEFONICA
+import com.telefonica.mistica.compose.theme.brand.BrandType.VIVO
+import com.telefonica.mistica.compose.theme.brand.BrandType.VIVO_NEW
+import com.telefonica.mistica.compose.theme.brand.BrandType.VIVO_NEW_OVERRIDE
 import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 import com.telefonica.mistica.compose.theme.brand.O2Brand
 import com.telefonica.mistica.compose.theme.brand.TelefonicaBrand
 import com.telefonica.mistica.compose.theme.brand.VivoBrand
 import com.telefonica.mistica.compose.theme.brand.VivoNewBrand
+import com.telefonica.mistica.compose.theme.brand.VivoNewOverrideBrand
 
 class ComponentCatalogActivity : FragmentActivity() {
 
@@ -244,6 +250,7 @@ class ComponentCatalogActivity : FragmentActivity() {
             O2 -> O2Brand
             VIVO -> VivoBrand
             VIVO_NEW -> VivoNewBrand
+            VIVO_NEW_OVERRIDE -> VivoNewOverrideBrand
             TELEFONICA -> TelefonicaBrand
             BLAU -> BlauBrand
         }

@@ -300,6 +300,7 @@
             <enum name="telefonica" value="3" />
             <enum name="blau" value="4" />
             <enum name="vivoNew" value="5" />
+            <enum name="vivoNewOverride" value="6" />
         </attr>
     </declare-styleable>
 
