@@ -66,6 +66,8 @@ public class MisticaColors(
   textLinkSnackbar: Color = Color.Unspecified,
   control: Color = Color.Unspecified,
   controlActivated: Color = Color.Unspecified,
+  controlInverse: Color = Color.Unspecified,
+  controlActivatedInverse: Color = Color.Unspecified,
   controlError: Color = Color.Unspecified,
   loadingBar: Color = Color.Unspecified,
   loadingBarBackground: Color = Color.Unspecified,
@@ -334,6 +336,13 @@ public class MisticaColors(
   public var controlActivated: Color by mutableStateOf(controlActivated, structuralEqualityPolicy())
     internal set
 
+  public var controlInverse: Color by mutableStateOf(controlInverse, structuralEqualityPolicy())
+    internal set
+
+  public var controlActivatedInverse: Color by mutableStateOf(controlActivatedInverse,
+      structuralEqualityPolicy())
+    internal set
+
   public var controlError: Color by mutableStateOf(controlError, structuralEqualityPolicy())
     internal set
 
@@ -588,6 +597,8 @@ public class MisticaColors(
     textLinkSnackbar: Color = this.textLinkSnackbar,
     control: Color = this.control,
     controlActivated: Color = this.controlActivated,
+    controlInverse: Color = this.controlInverse,
+    controlActivatedInverse: Color = this.controlActivatedInverse,
     controlError: Color = this.controlError,
     loadingBar: Color = this.loadingBar,
     loadingBarBackground: Color = this.loadingBarBackground,
@@ -681,7 +692,8 @@ public class MisticaColors(
       textButtonSecondaryInverse, textButtonSecondaryInverseSelected =
       textButtonSecondaryInverseSelected, textLink = textLink, textLinkInverse = textLinkInverse,
       textLinkDanger = textLinkDanger, textLinkSnackbar = textLinkSnackbar, control = control,
-      controlActivated = controlActivated, controlError = controlError, loadingBar = loadingBar,
+      controlActivated = controlActivated, controlInverse = controlInverse, controlActivatedInverse
+      = controlActivatedInverse, controlError = controlError, loadingBar = loadingBar,
       loadingBarBackground = loadingBarBackground, toggleAndroidInactive = toggleAndroidInactive,
       toggleAndroidBackgroundActive = toggleAndroidBackgroundActive, iosControlKnob =
       iosControlKnob, divider = divider, dividerInverse = dividerInverse, navigationBarDivider =
@@ -764,6 +776,8 @@ public class MisticaColors(
     textLinkSnackbar = other.textLinkSnackbar
     control = other.control
     controlActivated = other.controlActivated
+    controlInverse = other.controlInverse
+    controlActivatedInverse = other.controlActivatedInverse
     controlError = other.controlError
     loadingBar = other.loadingBar
     loadingBarBackground = other.loadingBarBackground

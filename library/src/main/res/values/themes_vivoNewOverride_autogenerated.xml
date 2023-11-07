@@ -7,7 +7,7 @@
 		<item name="colorBackground">@color/vivoNewOverride_color_white</item>
 		<item name="colorBackgroundAlternative">@color/vivoNewOverride_color_grey1</item>
 		<item name="colorBackgroundBrand">@color/vivoNewOverride_color_vivoPurple</item>
-		<item name="colorBackgroundBrandSecondary">@color/vivoNewOverride_color_vivoPurpleLight90</item>
+		<item name="colorBackgroundBrandSecondary">@color/vivoNewOverride_color_vivoPurpleLight80</item>
 		<item name="colorBackgroundContainer">@color/vivoNewOverride_color_white</item>
 		<item name="colorBackgroundContainerHover">@color/vivoNewOverride_color_darkModeBlack_3_alpha</item>
 		<item name="colorBackgroundContainerPressed">@color/vivoNewOverride_color_darkModeBlack_5_alpha</item>
@@ -60,6 +60,8 @@
 		<item name="colorTextLinkSnackbar">@color/vivoNewOverride_color_vivoPurpleLight20</item>
 		<item name="colorControl">@color/vivoNewOverride_color_grey3</item>
 		<item name="colorControlActive">@color/vivoNewOverride_color_vivoPurple</item>
+		<item name="colorControlInverse">@color/vivoNewOverride_color_white</item>
+		<item name="colorControlActivatedInverse">@color/vivoNewOverride_color_white</item>
 		<item name="colorControlError">@color/vivoNewOverride_color_pepper</item>
 		<item name="colorLoadingBar">@color/vivoNewOverride_color_pink</item>
 		<item name="colorLoadingBarBackground">@color/vivoNewOverride_color_pepperLight30</item>
