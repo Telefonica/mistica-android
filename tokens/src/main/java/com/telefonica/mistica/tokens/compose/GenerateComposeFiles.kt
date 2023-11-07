@@ -4,7 +4,6 @@ import com.squareup.kotlinpoet.ClassName
 import com.squareup.moshi.JsonAdapter
 import com.telefonica.mistica.tokens.TokensGenerator.Companion.BRANDS
 import com.telefonica.mistica.tokens.TokensGenerator.Companion.MISTICA_TOKENS_DIR
-import com.telefonica.mistica.tokens.TokensGenerator.Companion.VIVO_NEW_OVERRIDE
 import com.telefonica.mistica.tokens.dto.TokensDTO
 import java.io.File
 
@@ -21,20 +20,18 @@ class GenerateComposeFiles(
         generateMisticaColors(jsonAdapter)
         generateMisticaRadius(jsonAdapter)
 
-        BRANDS
-            .filter { it.name != VIVO_NEW_OVERRIDE } //TODO: ANDROID-13833 Remove this when VIVO_NEW is main style.
-            .forEach { brand ->
-                val json = File("${MISTICA_TOKENS_DIR}/${brand.file}.json").readText()
-                val tokens = jsonAdapter.fromJson(json)
-                if (tokens == null) {
-                    throw Exception("Invalid JSON")
-                } else {
-                    generateBrandColors(tokens, brand.name)
-                    generateBrandRadius(tokens, brand.name)
-                    generateBrandFontWeights(tokens, brand.name)
-                    generateBrandFontSizes(tokens, brand.name)
-                }
+        BRANDS.forEach { brand ->
+            val json = File("${MISTICA_TOKENS_DIR}/${brand.file}.json").readText()
+            val tokens = jsonAdapter.fromJson(json)
+            if (tokens == null) {
+                throw Exception("Invalid JSON")
+            } else {
+                generateBrandColors(tokens, brand.name)
+                generateBrandRadius(tokens, brand.name)
+                generateBrandFontWeights(tokens, brand.name)
+                generateBrandFontSizes(tokens, brand.name)
             }
+        }
     }
 
     companion object {
