@@ -12,7 +12,6 @@ import com.telefonica.mistica.compose.composeview.AbstractMisticaComposeView.Com
 import com.telefonica.mistica.compose.composeview.AbstractMisticaComposeView.Companion.BRAND_VALUE_TELEFONICA
 import com.telefonica.mistica.compose.composeview.AbstractMisticaComposeView.Companion.BRAND_VALUE_VIVO
 import com.telefonica.mistica.compose.composeview.AbstractMisticaComposeView.Companion.BRAND_VALUE_VIVO_NEW
-import com.telefonica.mistica.compose.composeview.AbstractMisticaComposeView.Companion.BRAND_VALUE_VIVO_NEW_OVERRIDE
 import com.telefonica.mistica.compose.theme.MisticaTheme
 import com.telefonica.mistica.compose.theme.brand.BlauBrand
 import com.telefonica.mistica.compose.theme.brand.Brand
@@ -21,7 +20,6 @@ import com.telefonica.mistica.compose.theme.brand.O2Brand
 import com.telefonica.mistica.compose.theme.brand.TelefonicaBrand
 import com.telefonica.mistica.compose.theme.brand.VivoBrand
 import com.telefonica.mistica.compose.theme.brand.VivoNewBrand
-import com.telefonica.mistica.compose.theme.brand.VivoNewOverrideBrand
 
 abstract class AbstractMisticaComposeView @JvmOverloads constructor(
     context: Context,
@@ -71,7 +69,6 @@ abstract class AbstractMisticaComposeView @JvmOverloads constructor(
         const val BRAND_VALUE_TELEFONICA = 3
         const val BRAND_VALUE_BLAU = 4
         const val BRAND_VALUE_VIVO_NEW = 5
-        const val BRAND_VALUE_VIVO_NEW_OVERRIDE = 6
     }
 }
 
@@ -82,6 +79,5 @@ fun Int.mapToComposeBrand(): Brand = when (this) {
     BRAND_VALUE_TELEFONICA -> TelefonicaBrand
     BRAND_VALUE_BLAU -> BlauBrand
     BRAND_VALUE_VIVO_NEW -> VivoNewBrand
-    BRAND_VALUE_VIVO_NEW_OVERRIDE -> VivoNewOverrideBrand
     else -> TelefonicaBrand
 }
