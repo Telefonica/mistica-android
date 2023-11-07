@@ -30,7 +30,7 @@
 	</style>
 
 	<!-- Just a copy of the above. As themes do no support multiple inheritance -->
-	<style name="VivoNew_Customizations" parent="VivoNew_Base">
+	<style name="VivoNewOverride_Customizations" parent="VivoNewOverride_Base">
 		<!-- Gradients (assistant, pin fingerprint screens) -->
 		<item name="colorGradientBackgroundFirst">?colorBackgroundBrand</item>
 		<item name="colorGradientBackgroundSecond">?colorBackgroundBrand</item>
