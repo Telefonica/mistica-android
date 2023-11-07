@@ -58,6 +58,8 @@
 		<item name="colorTextLinkSnackbar">@color/vivoNew_color_vivoPurpleLight50</item>
 		<item name="colorControl">@color/vivoNew_color_darkModeGrey6</item>
 		<item name="colorControlActive">@color/vivoNew_color_vivoPurpleLight80</item>
+		<item name="colorControlInverse">@color/vivoNew_color_darkModeGrey6</item>
+		<item name="colorControlActivatedInverse">@color/vivoNew_color_vivoPurpleLight80</item>
 		<item name="colorControlError">@color/vivoNew_color_pepper</item>
 		<item name="colorLoadingBar">@color/vivoNew_color_vivoPurpleLight80</item>
 		<item name="colorLoadingBarBackground">@color/vivoNew_color_darkModeGrey6</item>

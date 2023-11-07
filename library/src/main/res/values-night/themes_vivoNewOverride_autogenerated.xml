@@ -59,6 +59,8 @@
 		<item name="colorTextLinkSnackbar">@color/vivoNewOverride_color_vivoPurpleLight50</item>
 		<item name="colorControl">@color/vivoNewOverride_color_darkModeGrey6</item>
 		<item name="colorControlActive">@color/vivoNewOverride_color_vivoPurpleLight80</item>
+		<item name="colorControlInverse">@color/vivoNewOverride_color_darkModeGrey6</item>
+		<item name="colorControlActivatedInverse">@color/vivoNewOverride_color_vivoPurpleLight80</item>
 		<item name="colorControlError">@color/vivoNewOverride_color_pepper</item>
 		<item name="colorLoadingBar">@color/vivoNewOverride_color_vivoPurpleLight80</item>
 		<item name="colorLoadingBarBackground">@color/vivoNewOverride_color_darkModeGrey6</item>

@@ -59,6 +59,8 @@
 		<attr name="colorControl" format="color|reference"/>
 		<!-- We cannot use colorControlActivated in Android because it overlaps with a framework attribute -->
 		<attr name="colorControlActive" format="color|reference"/>
+		<attr name="colorControlInverse" format="color|reference"/>
+		<attr name="colorControlActivatedInverse" format="color|reference"/>
 		<attr name="colorControlError" format="color|reference"/>
 		<attr name="colorLoadingBar" format="color|reference"/>
 		<attr name="colorLoadingBarBackground" format="color|reference"/>

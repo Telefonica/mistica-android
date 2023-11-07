@@ -58,6 +58,8 @@
 		<item name="colorTextLinkSnackbar">@color/telefonica_color_telefonicaBlue30</item>
 		<item name="colorControl">@color/telefonica_color_darkModeGrey6</item>
 		<item name="colorControlActive">@color/telefonica_color_telefonicaBlue</item>
+		<item name="colorControlInverse">@color/telefonica_color_darkModeGrey6</item>
+		<item name="colorControlActivatedInverse">@color/telefonica_color_telefonicaBlue</item>
 		<item name="colorControlError">@color/telefonica_color_coral</item>
 		<item name="colorLoadingBar">@color/telefonica_color_telefonicaBlue</item>
 		<item name="colorLoadingBarBackground">@color/telefonica_color_grey6</item>

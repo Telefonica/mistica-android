@@ -10,7 +10,7 @@ public object VivoNewOverrideBrandColors {
       backgroundAlternative = VivoNewOverridePaletteColor.vivoNewOverride_color_grey1,
       backgroundBrand = VivoNewOverridePaletteColor.vivoNewOverride_color_vivoPurple,
       backgroundBrandSecondary =
-          VivoNewOverridePaletteColor.vivoNewOverride_color_vivoPurpleLight90,
+          VivoNewOverridePaletteColor.vivoNewOverride_color_vivoPurpleLight80,
       backgroundContainer = VivoNewOverridePaletteColor.vivoNewOverride_color_white,
       backgroundContainerHover =
           VivoNewOverridePaletteColor.vivoNewOverride_color_darkModeBlack_3_alpha,
@@ -83,6 +83,8 @@ public object VivoNewOverrideBrandColors {
       textLinkSnackbar = VivoNewOverridePaletteColor.vivoNewOverride_color_vivoPurpleLight20,
       control = VivoNewOverridePaletteColor.vivoNewOverride_color_grey3,
       controlActivated = VivoNewOverridePaletteColor.vivoNewOverride_color_vivoPurple,
+      controlInverse = VivoNewOverridePaletteColor.vivoNewOverride_color_white,
+      controlActivatedInverse = VivoNewOverridePaletteColor.vivoNewOverride_color_white,
       controlError = VivoNewOverridePaletteColor.vivoNewOverride_color_pepper,
       loadingBar = VivoNewOverridePaletteColor.vivoNewOverride_color_pink,
       loadingBarBackground = VivoNewOverridePaletteColor.vivoNewOverride_color_pepperLight30,
@@ -211,6 +213,8 @@ public object VivoNewOverrideBrandColors {
       textLinkSnackbar = VivoNewOverridePaletteColor.vivoNewOverride_color_vivoPurpleLight50,
       control = VivoNewOverridePaletteColor.vivoNewOverride_color_darkModeGrey6,
       controlActivated = VivoNewOverridePaletteColor.vivoNewOverride_color_vivoPurpleLight80,
+      controlInverse = VivoNewOverridePaletteColor.vivoNewOverride_color_darkModeGrey6,
+      controlActivatedInverse = VivoNewOverridePaletteColor.vivoNewOverride_color_vivoPurpleLight80,
       controlError = VivoNewOverridePaletteColor.vivoNewOverride_color_pepper,
       loadingBar = VivoNewOverridePaletteColor.vivoNewOverride_color_vivoPurpleLight80,
       loadingBarBackground = VivoNewOverridePaletteColor.vivoNewOverride_color_darkModeGrey6,
