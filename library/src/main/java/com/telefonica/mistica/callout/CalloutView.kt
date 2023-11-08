@@ -41,6 +41,11 @@ import com.telefonica.mistica.util.getThemeColor
     ),
     BindingMethod(
         type = CalloutView::class,
+        attribute = "calloutImage",
+        method = "setImage",
+    ),
+    BindingMethod(
+        type = CalloutView::class,
         attribute = "calloutButtonsConfig",
         method = "setButtonsConfig",
     ),
@@ -104,6 +109,7 @@ class CalloutView @JvmOverloads constructor(
     annotation class ButtonsConfig
 
     private var icon: ImageView
+    private var image: ImageView
     private var title: TextView
     private var description: TextView
     private var buttonsContainer: View
@@ -119,6 +125,7 @@ class CalloutView @JvmOverloads constructor(
 
         icon = findViewById(R.id.callout_icon)
         icon.setColorFilter(context.getThemeColor(R.attr.colorNeutralHigh))
+        image = findViewById(R.id.callout_image)
         title = findViewById(R.id.callout_title)
         description = findViewById(R.id.callout_description)
         buttonsContainer = findViewById(R.id.callout_buttons_container)
@@ -207,8 +214,19 @@ class CalloutView @JvmOverloads constructor(
         if (iconRes != null) {
             icon.setImageResource(iconRes)
             icon.visibility = VISIBLE
+            image.visibility = GONE
         } else {
             icon.visibility = GONE
+        }
+    }
+
+    fun setImage(@DrawableRes iconRes: Int?) {
+        if (iconRes != null) {
+            image.setImageResource(iconRes)
+            image.visibility = VISIBLE
+            icon.visibility = GONE
+        } else {
+            image.visibility = GONE
         }
     }
 

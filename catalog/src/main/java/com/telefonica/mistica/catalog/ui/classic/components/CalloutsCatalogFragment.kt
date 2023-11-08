@@ -57,6 +57,13 @@ class CalloutsCatalogFragment : Fragment() {
             } else {
                 setIcon(null)
             }
+
+            if (view.findViewById<CheckBoxInput>(R.id.show_image_input).isChecked()) {
+                setImage(R.drawable.ic_callout)
+            } else {
+                setImage(null)
+            }
+
             setDismissable(view.findViewById<CheckBoxInput>(R.id.dismiss_input).isChecked())
             val inverse = view.findViewById<CheckBoxInput>(R.id.inverse_input).isChecked()
             setInverse(inverse)
