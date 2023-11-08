@@ -8,7 +8,9 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -31,6 +33,7 @@ fun Callout(
     description: String?,
     buttonConfig: CalloutButtonConfig,
     @DrawableRes iconRes: Int? = null,
+    @DrawableRes imageRes: Int? = null,
     dismissable: Boolean,
     onDismiss: (() -> Unit)? = null,
     inverse: Boolean,
@@ -57,11 +60,27 @@ fun Callout(
             verticalAlignment = Alignment.Top,
         ) {
             iconRes?.let {
+                if (imageRes == null) {
+                    Image(
+                        modifier = Modifier
+                            .padding(end = 16.dp)
+                            .width(24.dp)
+                            .height(24.dp),
+                        painter = painterResource(id = iconRes),
+                        contentDescription = null,
+                        colorFilter = ColorFilter.tint(MisticaTheme.colors.neutralHigh)
+                    )
+                }
+            }
+
+            imageRes?.let {
                 Image(
-                    modifier = Modifier.padding(end = 16.dp),
-                    painter = painterResource(id = iconRes),
-                    contentDescription = null,
-                    colorFilter = ColorFilter.tint(MisticaTheme.colors.neutralHigh)
+                    modifier = Modifier
+                        .padding(end = 16.dp)
+                        .width(40.dp)
+                        .height(40.dp),
+                    painter = painterResource(id = imageRes),
+                    contentDescription = null
                 )
             }
 
@@ -91,9 +110,11 @@ fun Callout(
                     when (buttonConfig) {
                         CalloutButtonConfig.NONE -> { /* No buttons are shown */
                         }
+
                         CalloutButtonConfig.PRIMARY -> {
                             PrimaryButton(text = primaryButtonText, onClick = onPrimaryButtonClick)
                         }
+
                         CalloutButtonConfig.PRIMARY_AND_LINK -> {
                             PrimaryButton(
                                 text = primaryButtonText,
@@ -102,9 +123,11 @@ fun Callout(
                             )
                             LinkButton(text = linkText, onClick = onLinkClicked)
                         }
+
                         CalloutButtonConfig.SECONDARY -> {
                             SecondaryButton(text = secondaryButtonText, onClick = onSecondaryButtonClick)
                         }
+
                         CalloutButtonConfig.PRIMARY_AND_SECONDARY -> {
                             PrimaryButton(
                                 text = primaryButtonText,
@@ -113,6 +136,7 @@ fun Callout(
                             )
                             SecondaryButton(text = secondaryButtonText, onClick = onSecondaryButtonClick)
                         }
+
                         CalloutButtonConfig.SECONDARY_AND_LINK -> {
                             SecondaryButton(
                                 text = secondaryButtonText,
@@ -121,6 +145,7 @@ fun Callout(
                             )
                             LinkButton(text = linkText, onClick = onLinkClicked)
                         }
+
                         CalloutButtonConfig.LINK -> {
                             LinkButton(text = linkText, onClick = onLinkClicked)
                         }

@@ -56,6 +56,15 @@ fun Callouts() {
             Text("Show icon")
         }
 
+        var showImage by remember { mutableStateOf(false) }
+        Row(
+            modifier = Modifier.padding(horizontal = 16.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Checkbox(checked = showImage, onCheckedChange = { showImage = !showImage })
+            Text("Show image")
+        }
+
         var dismissable by remember { mutableStateOf(false) }
         Row(
             modifier = Modifier.padding(horizontal = 16.dp),
@@ -133,6 +142,7 @@ fun Callouts() {
                     description = description.takeIf { it.isNotBlank() },
                     buttonConfig = buttonConfig,
                     iconRes = if (showIcon) R.drawable.ic_callout else null,
+                    imageRes = if (showImage) R.drawable.ic_callout else null,
                     dismissable = dismissable,
                     inverse = inverse,
                     onDismiss = { isShown = false },
