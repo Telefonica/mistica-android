@@ -59,7 +59,7 @@ internal class ButtonKtTest(private val brand: Brand, private val style: ButtonS
 
     companion object {
         @JvmStatic
-        @ParameterizedRobolectricTestRunner.Parameters(name = "Input: {0}")
+        @ParameterizedRobolectricTestRunner.Parameters(name = "Button {1} {0} icon={2} darkTheme={3}")
         fun brands(): List<Array<Any>> {
             val brands2 = listOf(
                 MovistarBrand,

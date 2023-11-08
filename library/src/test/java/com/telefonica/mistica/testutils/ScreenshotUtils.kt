@@ -11,20 +11,18 @@ object ScreenshotUtils {
             "${component}_${style}"
         }
         val brandValue = if (brand != null) {
-            "${brand::class.java.simpleName}"
+            brand::class.java.simpleName
         } else {
             null
         }
-        val asasda = listOfNotNull(
+        val nonNullParams = listOfNotNull(
             componentOrTestName,
             brandValue,
             extra,
             "dark".takeIf { darkTheme }
         ).joinToString(separator = "_")
-        return """screenshots/
-            $asasda"""
-            .plus(".png").replace("\\s+".toRegex(), "")
 
+        return """screenshots/$nonNullParams""".plus(".png").replace("\\s+".toRegex(), "")
     }
 
 }
