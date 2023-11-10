@@ -118,7 +118,7 @@ class CalloutView @JvmOverloads constructor(
     @IntDef(
         IMAGE_CONFIG_NONE,
         IMAGE_CONFIG_ICON,
-        IMAGE_CONFIG_REGULAR,
+        IMAGE_CONFIG_SQUARE,
         IMAGE_CONFIG_CIRCULAR
     )
     annotation class ImageConfig
@@ -238,7 +238,7 @@ class CalloutView @JvmOverloads constructor(
 
     fun setImage(@DrawableRes imageRes: Int?) {
         if (imageRes != null) {
-            setImageConfig(IMAGE_CONFIG_REGULAR)
+            setImageConfig(IMAGE_CONFIG_SQUARE)
             image.setImageResource(imageRes)
         } else {
             image.visibility = GONE
@@ -358,7 +358,7 @@ class CalloutView @JvmOverloads constructor(
                 image.visibility = GONE
                 circularImage.visibility = GONE
             }
-            IMAGE_CONFIG_REGULAR -> {
+            IMAGE_CONFIG_SQUARE -> {
                 icon.visibility = GONE
                 image.visibility = VISIBLE
                 circularImage.visibility = GONE
@@ -391,7 +391,7 @@ class CalloutView @JvmOverloads constructor(
 
         const val IMAGE_CONFIG_NONE = -1
         const val IMAGE_CONFIG_ICON = 0
-        const val IMAGE_CONFIG_REGULAR = 1
+        const val IMAGE_CONFIG_SQUARE = 1
         const val IMAGE_CONFIG_CIRCULAR = 2
 
         val NO_OP_CALLOUT_LISTENER = {}

@@ -71,7 +71,7 @@ class CalloutsCatalogFragment : Fragment() {
                 CalloutView.IMAGE_CONFIG_ICON -> {
                     setIcon(R.drawable.ic_callout)
                 }
-                CalloutView.IMAGE_CONFIG_REGULAR -> {
+                CalloutView.IMAGE_CONFIG_SQUARE -> {
                     setImage(R.drawable.media_card_sample_image)
                 }
                 CalloutView.IMAGE_CONFIG_CIRCULAR -> {
@@ -121,7 +121,7 @@ class CalloutsCatalogFragment : Fragment() {
     private enum class CalloutImageConfig(@CalloutView.ImageConfig val imageConfig: Int) {
         NONE(CalloutView.IMAGE_CONFIG_NONE),
         ICON(CalloutView.IMAGE_CONFIG_ICON),
-        IMAGE(CalloutView.IMAGE_CONFIG_REGULAR),
+        IMAGE(CalloutView.IMAGE_CONFIG_SQUARE),
         CIRCULAR(CalloutView.IMAGE_CONFIG_CIRCULAR)
     }
 }
