@@ -43,6 +43,20 @@
 				android:layout_width="40dp"
 				android:layout_height="40dp"
 				android:importantForAccessibility="no"
+				android:scaleType="centerCrop"
+				tools:src="@tools:sample/avatars"
+				tools:visibility="gone"
+				/>
+
+		<com.google.android.material.imageview.ShapeableImageView
+				android:id="@+id/data_card_circular_icon"
+				android:layout_width="40dp"
+				android:layout_height="40dp"
+				android:layout_gravity="center"
+				android:importantForAccessibility="no"
+				android:scaleType="centerCrop"
+				android:visibility="gone"
+				app:shapeAppearance="@style/CircleImageView"
 				tools:src="@tools:sample/avatars"
 				tools:visibility="gone"
 				/>

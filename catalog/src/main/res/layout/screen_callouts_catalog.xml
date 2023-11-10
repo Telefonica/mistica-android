@@ -30,27 +30,19 @@
 				/>
 
 		<com.telefonica.mistica.input.CheckBoxInput
-				android:id="@+id/show_icon_input"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_margin="8dp"
-				app:inputCheckText="Show icon"
-				/>
-
-		<com.telefonica.mistica.input.CheckBoxInput
-				android:id="@+id/show_image_input"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_margin="8dp"
-				app:inputCheckText="Show image"
-				/>
-
-		<com.telefonica.mistica.input.CheckBoxInput
 				android:id="@+id/dismiss_input"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_margin="8dp"
 				app:inputCheckText="Is Dismissable"
+				/>
+
+		<com.telefonica.mistica.input.DropDownInput
+				android:id="@+id/image_config_dropdown"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_margin="8dp"
+				app:inputHint="Select icon/image config"
 				/>
 
 		<com.telefonica.mistica.input.TextInput

@@ -19,6 +19,7 @@ import androidx.annotation.IntDef
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
+import com.google.android.material.imageview.ShapeableImageView
 import com.telefonica.mistica.R
 import com.telefonica.mistica.button.Button
 import com.telefonica.mistica.util.getThemeColor
@@ -43,6 +44,11 @@ import com.telefonica.mistica.util.getThemeColor
         type = CalloutView::class,
         attribute = "calloutImage",
         method = "setImage",
+    ),
+    BindingMethod(
+        type = CalloutView::class,
+        attribute = "calloutCircularImage",
+        method = "setCircularImage",
     ),
     BindingMethod(
         type = CalloutView::class,
@@ -108,8 +114,18 @@ class CalloutView @JvmOverloads constructor(
     )
     annotation class ButtonsConfig
 
+    @Retention(AnnotationRetention.SOURCE)
+    @IntDef(
+        IMAGE_CONFIG_NONE,
+        IMAGE_CONFIG_ICON,
+        IMAGE_CONFIG_REGULAR,
+        IMAGE_CONFIG_CIRCULAR
+    )
+    annotation class ImageConfig
+
     private var icon: ImageView
     private var image: ImageView
+    private var circularImage: ShapeableImageView
     private var title: TextView
     private var description: TextView
     private var buttonsContainer: View
@@ -126,6 +142,7 @@ class CalloutView @JvmOverloads constructor(
         icon = findViewById(R.id.callout_icon)
         icon.setColorFilter(context.getThemeColor(R.attr.colorNeutralHigh))
         image = findViewById(R.id.callout_image)
+        circularImage = findViewById(R.id.data_card_circular_icon)
         title = findViewById(R.id.callout_title)
         description = findViewById(R.id.callout_description)
         buttonsContainer = findViewById(R.id.callout_buttons_container)
@@ -212,21 +229,28 @@ class CalloutView @JvmOverloads constructor(
 
     fun setIcon(@DrawableRes iconRes: Int?) {
         if (iconRes != null) {
+            setImageConfig(IMAGE_CONFIG_ICON)
             icon.setImageResource(iconRes)
-            icon.visibility = VISIBLE
-            image.visibility = GONE
         } else {
             icon.visibility = GONE
         }
     }
 
-    fun setImage(@DrawableRes iconRes: Int?) {
-        if (iconRes != null) {
-            image.setImageResource(iconRes)
-            image.visibility = VISIBLE
-            icon.visibility = GONE
+    fun setImage(@DrawableRes imageRes: Int?) {
+        if (imageRes != null) {
+            setImageConfig(IMAGE_CONFIG_REGULAR)
+            image.setImageResource(imageRes)
         } else {
             image.visibility = GONE
+        }
+    }
+
+    fun setCircularImage(@DrawableRes imageRes: Int?) {
+        if (imageRes != null) {
+            setImageConfig(IMAGE_CONFIG_CIRCULAR)
+            circularImage.setImageResource(imageRes)
+        } else {
+            circularImage.visibility = GONE
         }
     }
 
@@ -322,6 +346,31 @@ class CalloutView @JvmOverloads constructor(
         }
     }
 
+    private fun setImageConfig(@ImageConfig imageConfig: Int) {
+        when (imageConfig) {
+            IMAGE_CONFIG_NONE -> {
+                icon.visibility = GONE
+                image.visibility = GONE
+                circularImage.visibility = GONE
+            }
+            IMAGE_CONFIG_ICON -> {
+                icon.visibility = VISIBLE
+                image.visibility = GONE
+                circularImage.visibility = GONE
+            }
+            IMAGE_CONFIG_REGULAR -> {
+                icon.visibility = GONE
+                image.visibility = VISIBLE
+                circularImage.visibility = GONE
+            }
+            IMAGE_CONFIG_CIRCULAR -> {
+                icon.visibility = GONE
+                image.visibility = GONE
+                circularImage.visibility = VISIBLE
+            }
+        }
+    }
+
     private fun marginStart(value: Float): LinearLayout.LayoutParams {
         val layoutParams = LinearLayout.LayoutParams(
             LinearLayout.LayoutParams.WRAP_CONTENT,
@@ -339,6 +388,11 @@ class CalloutView @JvmOverloads constructor(
         const val BUTTONS_CONFIG_SECONDARY = 3
         const val BUTTONS_CONFIG_SECONDARY_LINK = 4
         const val BUTTONS_CONFIG_LINK = 5
+
+        const val IMAGE_CONFIG_NONE = -1
+        const val IMAGE_CONFIG_ICON = 0
+        const val IMAGE_CONFIG_REGULAR = 1
+        const val IMAGE_CONFIG_CIRCULAR = 2
 
         val NO_OP_CALLOUT_LISTENER = {}
         val ANIMATION_INTERPOLATOR = PathInterpolator(0.77f, 0f, 0.175f, 1f)
