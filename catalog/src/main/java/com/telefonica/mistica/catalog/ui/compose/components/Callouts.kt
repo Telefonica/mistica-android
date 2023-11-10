@@ -1,5 +1,6 @@
 package com.telefonica.mistica.catalog.ui.compose.components
 
+import androidx.annotation.AttrRes
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -21,11 +22,16 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.telefonica.mistica.callout.CalloutView
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.catalog.ui.compose.common.DropDown
 import com.telefonica.mistica.compose.button.Button
 import com.telefonica.mistica.compose.callout.Callout
 import com.telefonica.mistica.compose.callout.CalloutButtonConfig
+import com.telefonica.mistica.compose.card.datacard.IconType
+import com.telefonica.mistica.compose.card.datacard.noIcon
+import com.telefonica.mistica.compose.card.datacard.resourceIconPainter
+import com.telefonica.mistica.compose.input.DropDownInput
 import com.telefonica.mistica.compose.theme.MisticaTheme
 
 @Composable
@@ -47,23 +53,16 @@ fun Callouts() {
             Text("Inverse variant")
         }
 
-        var showIcon by remember { mutableStateOf(false) }
-        Row(
-            modifier = Modifier.padding(horizontal = 16.dp),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Checkbox(checked = showIcon, onCheckedChange = { showIcon = !showIcon })
-            Text("Show icon")
-        }
-
-        var showImage by remember { mutableStateOf(false) }
-        Row(
-            modifier = Modifier.padding(horizontal = 16.dp),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Checkbox(checked = showImage, onCheckedChange = { showImage = !showImage })
-            Text("Show image")
-        }
+        var iconType: ImageTypes by remember { mutableStateOf(ImageTypes.ICON) }
+        DropDownInput(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(40.dp, 8.dp),
+            items = ImageTypes.values().map { it.name },
+            currentItemIndex = ImageTypes.values().indexOf(iconType),
+            onItemSelected = { index -> iconType = ImageTypes.values()[index] },
+            hint = "Icon type",
+        )
 
         var dismissable by remember { mutableStateOf(false) }
         Row(
@@ -76,7 +75,9 @@ fun Callouts() {
 
         var title by remember { mutableStateOf("Callout sample title") }
         OutlinedTextField(
-            modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp),
             value = title,
             onValueChange = { title = it },
             label = { Text("Title") }
@@ -84,7 +85,9 @@ fun Callouts() {
 
         var description by remember { mutableStateOf("Callout sample description") }
         OutlinedTextField(
-            modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp),
             value = description,
             onValueChange = { description = it },
             label = { Text("Description") }
@@ -92,14 +95,18 @@ fun Callouts() {
 
         var buttonConfig by remember { mutableStateOf(CalloutButtonConfig.PRIMARY) }
         DropDown(
-            modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp),
             selectedValue = buttonConfig,
             onValueChanged = { buttonConfig = it }
         )
 
         var primaryButtonText by remember { mutableStateOf("Primary Action") }
         OutlinedTextField(
-            modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp),
             value = primaryButtonText,
             onValueChange = { primaryButtonText = it },
             label = { Text("Primary Button text") }
@@ -107,7 +114,9 @@ fun Callouts() {
 
         var secondaryButtonText by remember { mutableStateOf("Secondary Action") }
         OutlinedTextField(
-            modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp),
             value = secondaryButtonText,
             onValueChange = { secondaryButtonText = it },
             label = { Text("Secondary Button text") }
@@ -115,7 +124,9 @@ fun Callouts() {
 
         var linkText by remember { mutableStateOf("Link Action") }
         OutlinedTextField(
-            modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp),
             value = linkText,
             onValueChange = { linkText = it },
             label = { Text("Link Button text") }
@@ -137,12 +148,24 @@ fun Callouts() {
                     ),
             ) {
                 Callout(
-                    modifier = Modifier.fillMaxWidth().padding(16.dp),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(16.dp),
                     title = title.takeIf { it.isNotBlank() },
                     description = description.takeIf { it.isNotBlank() },
                     buttonConfig = buttonConfig,
-                    iconRes = if (showIcon) R.drawable.ic_callout else null,
-                    imageRes = if (showImage) R.drawable.ic_callout else null,
+                    imageConfig = when (iconType) {
+                        ImageTypes.NONE -> CalloutView.IMAGE_CONFIG_NONE
+                        ImageTypes.ICON -> CalloutView.IMAGE_CONFIG_ICON
+                        ImageTypes.SQUARE_IMAGE -> CalloutView.IMAGE_CONFIG_SQUARE
+                        ImageTypes.CIRCULAR_IMAGE -> CalloutView.IMAGE_CONFIG_CIRCULAR
+                    },
+                    imageRes = when (iconType) {
+                        ImageTypes.NONE -> null
+                        ImageTypes.ICON -> R.drawable.ic_callout
+                        ImageTypes.CIRCULAR_IMAGE -> R.drawable.media_card_sample_image
+                        ImageTypes.SQUARE_IMAGE -> R.drawable.card_image_sample
+                    },
                     dismissable = dismissable,
                     inverse = inverse,
                     onDismiss = { isShown = false },
@@ -153,7 +176,9 @@ fun Callouts() {
             }
         } else {
             Button(
-                modifier = Modifier.fillMaxWidth().padding(start = 16.dp, end = 16.dp, top = 8.dp),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(start = 16.dp, end = 16.dp, top = 8.dp),
                 text = "Show callout again",
                 onClickListener = {
                     isShown = true
@@ -163,3 +188,9 @@ fun Callouts() {
     }
 }
 
+private enum class ImageTypes(@AttrRes val iconType: Int) {
+    NONE(CalloutView.IMAGE_CONFIG_NONE),
+    ICON(CalloutView.IMAGE_CONFIG_ICON),
+    SQUARE_IMAGE(CalloutView.IMAGE_CONFIG_SQUARE),
+    CIRCULAR_IMAGE(CalloutView.IMAGE_CONFIG_CIRCULAR),
+}

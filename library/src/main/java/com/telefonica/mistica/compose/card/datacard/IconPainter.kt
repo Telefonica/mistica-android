@@ -37,11 +37,12 @@ sealed class IconPainter {
         val iconTint: Color?,
         val backgroundColor: Color,
         val iconType: IconType = IconType.CIRCULAR_ASSET,
+        val modifier: Modifier = Modifier.padding(top = 8.dp, bottom = 8.dp),
     ) : IconPainter() {
         @Composable
         override fun Paint() {
             Box(
-                modifier = Modifier.padding(top = 8.dp, bottom = 8.dp),
+                modifier = modifier
             ) {
                 when (iconType) {
                     IconType.ICON -> {
@@ -137,11 +138,13 @@ fun resourceIconPainter(
     iconTint: Color? = null,
     backgroundColor: Color = MisticaTheme.colors.neutralLow,
     iconType: IconType = IconType.CIRCULAR_ASSET,
+    modifier: Modifier = Modifier.padding(top = 8.dp, bottom = 8.dp),
 ) = IconPainter.ResourceIconPainter(
     iconRes = iconRes,
     iconTint = iconTint,
     backgroundColor = backgroundColor,
-    iconType = iconType
+    iconType = iconType,
+    modifier = modifier
 )
 
 fun textIconPainter(

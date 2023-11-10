@@ -22,8 +22,13 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.R
+import com.telefonica.mistica.callout.CalloutView
 import com.telefonica.mistica.compose.button.Button
 import com.telefonica.mistica.compose.button.ButtonStyle
+import com.telefonica.mistica.compose.card.datacard.IconPainter
+import com.telefonica.mistica.compose.card.datacard.IconType
+import com.telefonica.mistica.compose.card.datacard.noIcon
+import com.telefonica.mistica.compose.card.datacard.resourceIconPainter
 import com.telefonica.mistica.compose.theme.MisticaTheme
 
 @Composable
@@ -33,6 +38,7 @@ fun Callout(
     description: String?,
     buttonConfig: CalloutButtonConfig,
     @DrawableRes iconRes: Int? = null,
+    @CalloutView.ImageConfig imageConfig: Int = CalloutView.IMAGE_CONFIG_NONE,
     @DrawableRes imageRes: Int? = null,
     dismissable: Boolean,
     onDismiss: (() -> Unit)? = null,
@@ -59,29 +65,43 @@ fun Callout(
             modifier = Modifier.padding(16.dp),
             verticalAlignment = Alignment.Top,
         ) {
-            iconRes?.let {
-                if (imageRes == null) {
-                    Image(
-                        modifier = Modifier
-                            .padding(end = 16.dp)
-                            .width(24.dp)
-                            .height(24.dp),
-                        painter = painterResource(id = iconRes),
-                        contentDescription = null,
-                        colorFilter = ColorFilter.tint(MisticaTheme.colors.neutralHigh)
-                    )
-                }
-            }
 
-            imageRes?.let {
+            if (iconRes != null) {
                 Image(
                     modifier = Modifier
                         .padding(end = 16.dp)
-                        .width(40.dp)
-                        .height(40.dp),
-                    painter = painterResource(id = imageRes),
-                    contentDescription = null
+                        .width(24.dp)
+                        .height(24.dp),
+                    painter = painterResource(id = iconRes),
+                    contentDescription = null,
+                    colorFilter = ColorFilter.tint(MisticaTheme.colors.neutralHigh)
                 )
+            } else if (imageRes != null) {
+                val iconPainter = when (imageConfig) {
+                    CalloutView.IMAGE_CONFIG_ICON -> {
+                        resourceIconPainter(
+                            iconRes = imageRes,
+                            iconType = IconType.ICON,
+                            modifier = Modifier.padding(end = 16.dp)
+                        )
+                    }
+                    CalloutView.IMAGE_CONFIG_SQUARE -> {
+                        resourceIconPainter(
+                            iconRes = imageRes, iconType = IconType.SQUARE_IMAGE,
+                            modifier = Modifier.padding(end = 16.dp)
+                        )
+                    }
+                    CalloutView.IMAGE_CONFIG_CIRCULAR -> {
+                        resourceIconPainter(
+                            iconRes = imageRes,
+                            iconType = IconType.CIRCULAR_ASSET,
+                            modifier = Modifier.padding(end = 16.dp)
+                        )
+                    }
+                    else -> noIcon()
+                }
+
+                iconPainter.Paint()
             }
 
             Column(
