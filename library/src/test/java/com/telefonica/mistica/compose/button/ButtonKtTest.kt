@@ -7,13 +7,10 @@ import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onRoot
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.theme.MisticaTheme
-import com.telefonica.mistica.compose.theme.brand.BlauBrand
 import com.telefonica.mistica.compose.theme.brand.Brand
 import com.telefonica.mistica.compose.theme.brand.MovistarBrand
-import com.telefonica.mistica.compose.theme.brand.O2Brand
-import com.telefonica.mistica.compose.theme.brand.TelefonicaBrand
-import com.telefonica.mistica.compose.theme.brand.VivoBrand
 import com.telefonica.mistica.testutils.ScreenshotsTest
+import com.telefonica.mistica.testutils.TestUtils
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -61,31 +58,19 @@ internal class ButtonKtTest(private val brand: Brand, private val style: ButtonS
         @JvmStatic
         @ParameterizedRobolectricTestRunner.Parameters(name = "Button {1} {0} icon={2} darkTheme={3}")
         fun brands(): List<Array<Any>> {
-            val brands2 = listOf(
-                MovistarBrand,
-                VivoBrand,
-                O2Brand,
-                BlauBrand,
-                TelefonicaBrand,
-            )
-            val themes = listOf(false, true)
-            val buttonStyles = listOf(
-                ButtonStyle.PRIMARY, ButtonStyle.PRIMARY_SMALL, ButtonStyle.SECONDARY, ButtonStyle.SECONDARY_SMALL, ButtonStyle.DANGER,
-                ButtonStyle.DANGER_SMALL, ButtonStyle.LINK, ButtonStyle.PRIMARY_INVERSE, ButtonStyle.PRIMARY_SMALL_INVERSE, ButtonStyle.SECONDARY_INVERSE,
-                ButtonStyle.SECONDARY_SMALL_INVERSE, ButtonStyle.LINK_INVERSE
-            )
+            val allBrands = TestUtils.getAllBrands()
+            val buttonStyles = TestUtils.getAllButtonStyles()
             val icons = listOf(false, true)
-
-            return brands2.flatMap { brand ->
+            val darkTheme = listOf(false, true)
+            return allBrands.flatMap { brand ->
                 buttonStyles.flatMap { buttonStyle ->
                     icons.flatMap { hasIcon ->
-                        themes.map { darkTheme ->
+                        darkTheme.map { darkTheme ->
                             arrayOf(brand, buttonStyle, hasIcon, darkTheme)
                         }
                     }
                 }
             }
         }
-
     }
 }
