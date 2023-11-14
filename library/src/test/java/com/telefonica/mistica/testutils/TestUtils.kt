@@ -35,12 +35,6 @@ object TestUtils {
         TelefonicaBrand,
     )
 
-    fun getAllButtonStyles() = listOf(
-        ButtonStyle.PRIMARY, ButtonStyle.PRIMARY_SMALL, ButtonStyle.SECONDARY, ButtonStyle.SECONDARY_SMALL, ButtonStyle.DANGER,
-        ButtonStyle.DANGER_SMALL, ButtonStyle.LINK, ButtonStyle.PRIMARY_INVERSE, ButtonStyle.PRIMARY_SMALL_INVERSE, ButtonStyle.SECONDARY_INVERSE,
-        ButtonStyle.SECONDARY_SMALL_INVERSE, ButtonStyle.LINK_INVERSE
-    )
-
     fun ButtonStyle.isInverse() = when(this) {
         ButtonStyle.PRIMARY_INVERSE,
         ButtonStyle.PRIMARY_SMALL_INVERSE,

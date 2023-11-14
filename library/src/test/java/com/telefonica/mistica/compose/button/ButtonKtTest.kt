@@ -54,7 +54,7 @@ internal class ButtonKtTest(private val brand: Brand, private val style: ButtonS
     }
 
     private fun `then screenshot is OK`(brand: Brand, style: ButtonStyle, icon: Boolean, darkTheme: Boolean) {
-        val iconSuffix = if(icon) {
+        val iconSuffix = if (icon) {
             "icon"
         } else {
             null
@@ -67,7 +67,7 @@ internal class ButtonKtTest(private val brand: Brand, private val style: ButtonS
         @ParameterizedRobolectricTestRunner.Parameters(name = "Button {1} {0} icon={2} darkTheme={3}")
         fun brands(): List<Array<Any>> {
             val allBrands = TestUtils.getAllBrands()
-            val buttonStyles = TestUtils.getAllButtonStyles()
+            val buttonStyles = ButtonStyle.values().toList()
             val icons = listOf(false, true)
             val darkTheme = listOf(false, true)
             return allBrands.flatMap { brand ->

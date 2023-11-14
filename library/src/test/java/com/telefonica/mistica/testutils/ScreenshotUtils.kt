@@ -22,7 +22,7 @@ object ScreenshotUtils {
             "dark".takeIf { darkTheme }
         ).joinToString(separator = "_")
 
-        return """screenshots/$nonNullParams""".plus(".png").replace("\\s+".toRegex(), "")
+        return "screenshots/$nonNullParams.png".replace("\\s+".toRegex(), "")
     }
 
 }

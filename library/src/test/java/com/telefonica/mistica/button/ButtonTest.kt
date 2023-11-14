@@ -15,7 +15,6 @@ import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 import com.telefonica.mistica.compose.theme.brand.VivoBrand
 import com.telefonica.mistica.testutils.ScreenshotsTest
 import com.telefonica.mistica.testutils.TestUtils.getAllBrands
-import com.telefonica.mistica.testutils.TestUtils.getAllButtonStyles
 import com.telefonica.mistica.testutils.TestUtils.isInverse
 import com.telefonica.mistica.util.getThemeColor
 import org.junit.Rule
@@ -83,7 +82,7 @@ internal class ButtonTest(
         @ParameterizedRobolectricTestRunner.Parameters(name = "ButtonXML {1} {0} icon={2}")
         fun brands(): List<Array<Any>> {
             val allBrands = getAllBrands()
-            val buttonStyles = getAllButtonStyles()
+            val buttonStyles = ButtonStyle.values().toList()
             val icons = listOf(false, true)
             return allBrands.flatMap { brand ->
                 buttonStyles.flatMap { buttonStyle ->
