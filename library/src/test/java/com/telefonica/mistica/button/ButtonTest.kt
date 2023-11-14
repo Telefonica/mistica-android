@@ -16,6 +16,8 @@ import com.telefonica.mistica.compose.theme.brand.VivoBrand
 import com.telefonica.mistica.testutils.ScreenshotsTest
 import com.telefonica.mistica.testutils.TestUtils.getAllBrands
 import com.telefonica.mistica.testutils.TestUtils.getAllButtonStyles
+import com.telefonica.mistica.testutils.TestUtils.isInverse
+import com.telefonica.mistica.util.getThemeColor
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -27,7 +29,7 @@ internal class ButtonTest(
     private val brand: Brand,
     private val style: ButtonStyle,
     private val icon: Boolean,
-): ScreenshotsTest() {
+) : ScreenshotsTest() {
 
     private val intent = Intent(ApplicationProvider.getApplicationContext(), DummyActivity::class.java).apply {
         this.putExtra(EXTRA_THEME, brand.getBaseThemeForBrand())
@@ -46,15 +48,21 @@ internal class ButtonTest(
     fun `check Xml Button dark`() {
         checkXmlButton(brand, style, icon, true)
     }
+
     private fun checkXmlButton(brand: Brand = MovistarBrand, style: ButtonStyle, icon: Boolean, darkTheme: Boolean) {
         rule.scenario.onActivity { activity ->
             val wrapper: FrameLayout = activity.findViewById(R.id.dummy_activity_wrapper)
             val button = Button(activity, null, style.getButtonStyleRef())
             button.text = "textValue"
             var iconSuffix: String? = null
-            if(icon) {
+            if (icon) {
                 button.setIconResource(android.R.drawable.ic_lock_power_off)
                 iconSuffix = "icon"
+            }
+            if (style.isInverse()) {
+                wrapper.setBackgroundColor(activity.getThemeColor(R.attr.colorBackgroundBrand))
+            } else {
+                wrapper.setBackgroundColor(activity.getThemeColor(R.attr.colorBackground))
             }
             wrapper.removeAllViews()
             wrapper.addView(button)
@@ -68,21 +76,6 @@ internal class ButtonTest(
                 extra = iconSuffix
             )
         }
-    }
-
-    fun getStyleResFromButtonStyle(style: ButtonStyle) = when(style) {
-        ButtonStyle.PRIMARY -> R.style.AppTheme_Button_DefaultButton
-        ButtonStyle.PRIMARY_SMALL -> R.style.AppTheme_Button_DefaultButton_Small
-        ButtonStyle.SECONDARY -> R.style.AppTheme_Button_SecondaryButton
-        ButtonStyle.SECONDARY_SMALL -> R.style.AppTheme_Button_SecondaryButton_Small
-        ButtonStyle.DANGER -> R.style.AppTheme_Button_DangerButton
-        ButtonStyle.DANGER_SMALL -> R.style.AppTheme_Button_DangerButton_Small
-        ButtonStyle.LINK -> R.style.AppTheme_Button_LinkButton
-        ButtonStyle.PRIMARY_INVERSE -> R.style.AppTheme_Button_PrimaryButtonInverse
-        ButtonStyle.PRIMARY_SMALL_INVERSE -> R.style.AppTheme_Button_PrimaryButtonInverse_Small
-        ButtonStyle.SECONDARY_INVERSE -> R.style.AppTheme_Button_SecondaryButtonInverse
-        ButtonStyle.SECONDARY_SMALL_INVERSE -> R.style.AppTheme_Button_SecondaryButtonInverse_Small
-        ButtonStyle.LINK_INVERSE -> R.style.AppTheme_Button_LinkButtonInverse
     }
 
     companion object {
@@ -103,7 +96,7 @@ internal class ButtonTest(
     }
 }
 
-fun Brand.getBaseThemeForBrand() = when(this) {
+fun Brand.getBaseThemeForBrand() = when (this) {
     MovistarBrand -> R.style.MisticaTheme_Movistar_test
     VivoBrand -> R.style.MisticaTheme_Vivo_test
     VivoBrand -> R.style.MisticaTheme_O2_test
@@ -111,7 +104,8 @@ fun Brand.getBaseThemeForBrand() = when(this) {
     else -> R.style.MisticaTheme_Telefonica_test
 
 }
-fun ButtonStyle.getButtonStyleRef() = when(this) {
+
+fun ButtonStyle.getButtonStyleRef() = when (this) {
     ButtonStyle.PRIMARY -> R.attr.defaultButtonTest_test
     ButtonStyle.PRIMARY_SMALL -> R.attr.defaultButton_Small_test
     ButtonStyle.SECONDARY -> R.attr.secondaryButton_test

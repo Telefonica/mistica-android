@@ -7,10 +7,12 @@ import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onRoot
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.theme.MisticaTheme
+import com.telefonica.mistica.compose.theme.MisticaTheme.colors
 import com.telefonica.mistica.compose.theme.brand.Brand
 import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 import com.telefonica.mistica.testutils.ScreenshotsTest
 import com.telefonica.mistica.testutils.TestUtils
+import com.telefonica.mistica.testutils.TestUtils.isInverse
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -32,7 +34,13 @@ internal class ButtonKtTest(private val brand: Brand, private val style: ButtonS
     private fun `when Button`(brand: Brand = MovistarBrand, style: ButtonStyle, icon: Boolean, darkTheme: Boolean) {
         composeTestRule.setContent {
             MisticaTheme(brand = brand, darkTheme = darkTheme) {
-                Surface {
+                Surface(
+                    color = if (style.isInverse()) {
+                        colors.backgroundBrand
+                    } else {
+                        colors.background
+                    }
+                ) {
                     Button(
                         text = "textValue",
                         buttonStyle = style,
