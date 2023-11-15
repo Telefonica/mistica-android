@@ -58,7 +58,6 @@
 				android:visibility="gone"
 				app:shapeAppearance="@style/CircleImageView"
 				tools:src="@tools:sample/avatars"
-				tools:visibility="gone"
 				/>
 
 	</FrameLayout>

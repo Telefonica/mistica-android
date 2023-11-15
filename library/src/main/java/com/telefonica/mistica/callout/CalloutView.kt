@@ -114,15 +114,6 @@ class CalloutView @JvmOverloads constructor(
     )
     annotation class ButtonsConfig
 
-    @Retention(AnnotationRetention.SOURCE)
-    @IntDef(
-        IMAGE_CONFIG_NONE,
-        IMAGE_CONFIG_ICON,
-        IMAGE_CONFIG_SQUARE,
-        IMAGE_CONFIG_CIRCULAR
-    )
-    annotation class ImageConfig
-
     private var icon: ImageView
     private var image: ImageView
     private var circularImage: ShapeableImageView
@@ -229,7 +220,7 @@ class CalloutView @JvmOverloads constructor(
 
     fun setIcon(@DrawableRes iconRes: Int?) {
         if (iconRes != null) {
-            setImageConfig(IMAGE_CONFIG_ICON)
+            setImageConfig(CalloutViewImageConfig.IMAGE_CONFIG_ICON)
             icon.setImageResource(iconRes)
         } else {
             icon.visibility = GONE
@@ -238,7 +229,7 @@ class CalloutView @JvmOverloads constructor(
 
     fun setImage(@DrawableRes imageRes: Int?) {
         if (imageRes != null) {
-            setImageConfig(IMAGE_CONFIG_SQUARE)
+            setImageConfig(CalloutViewImageConfig.IMAGE_CONFIG_SQUARE)
             image.setImageResource(imageRes)
         } else {
             image.visibility = GONE
@@ -247,7 +238,7 @@ class CalloutView @JvmOverloads constructor(
 
     fun setCircularImage(@DrawableRes imageRes: Int?) {
         if (imageRes != null) {
-            setImageConfig(IMAGE_CONFIG_CIRCULAR)
+            setImageConfig(CalloutViewImageConfig.IMAGE_CONFIG_CIRCULAR)
             circularImage.setImageResource(imageRes)
         } else {
             circularImage.visibility = GONE
@@ -346,24 +337,24 @@ class CalloutView @JvmOverloads constructor(
         }
     }
 
-    private fun setImageConfig(@ImageConfig imageConfig: Int) {
+    private fun setImageConfig(imageConfig: CalloutViewImageConfig) {
         when (imageConfig) {
-            IMAGE_CONFIG_NONE -> {
+            CalloutViewImageConfig.IMAGE_CONFIG_NONE -> {
                 icon.visibility = GONE
                 image.visibility = GONE
                 circularImage.visibility = GONE
             }
-            IMAGE_CONFIG_ICON -> {
+            CalloutViewImageConfig.IMAGE_CONFIG_ICON -> {
                 icon.visibility = VISIBLE
                 image.visibility = GONE
                 circularImage.visibility = GONE
             }
-            IMAGE_CONFIG_SQUARE -> {
+            CalloutViewImageConfig.IMAGE_CONFIG_SQUARE -> {
                 icon.visibility = GONE
                 image.visibility = VISIBLE
                 circularImage.visibility = GONE
             }
-            IMAGE_CONFIG_CIRCULAR -> {
+            CalloutViewImageConfig.IMAGE_CONFIG_CIRCULAR -> {
                 icon.visibility = GONE
                 image.visibility = GONE
                 circularImage.visibility = VISIBLE
@@ -389,13 +380,15 @@ class CalloutView @JvmOverloads constructor(
         const val BUTTONS_CONFIG_SECONDARY_LINK = 4
         const val BUTTONS_CONFIG_LINK = 5
 
-        const val IMAGE_CONFIG_NONE = -1
-        const val IMAGE_CONFIG_ICON = 0
-        const val IMAGE_CONFIG_SQUARE = 1
-        const val IMAGE_CONFIG_CIRCULAR = 2
-
         val NO_OP_CALLOUT_LISTENER = {}
         val ANIMATION_INTERPOLATOR = PathInterpolator(0.77f, 0f, 0.175f, 1f)
         const val ANIMATION_DURATION = 400L
     }
+}
+
+enum class CalloutViewImageConfig {
+    IMAGE_CONFIG_NONE,
+    IMAGE_CONFIG_ICON,
+    IMAGE_CONFIG_SQUARE,
+    IMAGE_CONFIG_CIRCULAR
 }

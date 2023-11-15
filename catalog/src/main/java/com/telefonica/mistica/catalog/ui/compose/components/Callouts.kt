@@ -1,6 +1,5 @@
 package com.telefonica.mistica.catalog.ui.compose.components
 
-import androidx.annotation.AttrRes
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -22,15 +21,12 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.telefonica.mistica.callout.CalloutView
+import com.telefonica.mistica.callout.CalloutViewImageConfig
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.catalog.ui.compose.common.DropDown
 import com.telefonica.mistica.compose.button.Button
 import com.telefonica.mistica.compose.callout.Callout
 import com.telefonica.mistica.compose.callout.CalloutButtonConfig
-import com.telefonica.mistica.compose.card.datacard.IconType
-import com.telefonica.mistica.compose.card.datacard.noIcon
-import com.telefonica.mistica.compose.card.datacard.resourceIconPainter
 import com.telefonica.mistica.compose.input.DropDownInput
 import com.telefonica.mistica.compose.theme.MisticaTheme
 
@@ -155,12 +151,12 @@ fun Callouts() {
                     description = description.takeIf { it.isNotBlank() },
                     buttonConfig = buttonConfig,
                     imageConfig = when (iconType) {
-                        ImageTypes.NONE -> CalloutView.IMAGE_CONFIG_NONE
-                        ImageTypes.ICON -> CalloutView.IMAGE_CONFIG_ICON
-                        ImageTypes.SQUARE_IMAGE -> CalloutView.IMAGE_CONFIG_SQUARE
-                        ImageTypes.CIRCULAR_IMAGE -> CalloutView.IMAGE_CONFIG_CIRCULAR
+                        ImageTypes.NONE -> CalloutViewImageConfig.IMAGE_CONFIG_NONE
+                        ImageTypes.ICON -> CalloutViewImageConfig.IMAGE_CONFIG_ICON
+                        ImageTypes.SQUARE_IMAGE -> CalloutViewImageConfig.IMAGE_CONFIG_SQUARE
+                        ImageTypes.CIRCULAR_IMAGE -> CalloutViewImageConfig.IMAGE_CONFIG_CIRCULAR
                     },
-                    imageRes = when (iconType) {
+                    iconRes = when (iconType) {
                         ImageTypes.NONE -> null
                         ImageTypes.ICON -> R.drawable.ic_callout
                         ImageTypes.CIRCULAR_IMAGE -> R.drawable.media_card_sample_image
@@ -188,9 +184,9 @@ fun Callouts() {
     }
 }
 
-private enum class ImageTypes(@AttrRes val iconType: Int) {
-    NONE(CalloutView.IMAGE_CONFIG_NONE),
-    ICON(CalloutView.IMAGE_CONFIG_ICON),
-    SQUARE_IMAGE(CalloutView.IMAGE_CONFIG_SQUARE),
-    CIRCULAR_IMAGE(CalloutView.IMAGE_CONFIG_CIRCULAR),
+private enum class ImageTypes(val iconType: CalloutViewImageConfig) {
+    NONE(CalloutViewImageConfig.IMAGE_CONFIG_NONE),
+    ICON(CalloutViewImageConfig.IMAGE_CONFIG_ICON),
+    SQUARE_IMAGE(CalloutViewImageConfig.IMAGE_CONFIG_SQUARE),
+    CIRCULAR_IMAGE(CalloutViewImageConfig.IMAGE_CONFIG_CIRCULAR),
 }

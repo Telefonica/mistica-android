@@ -11,6 +11,7 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.telefonica.mistica.callout.CalloutView
+import com.telefonica.mistica.callout.CalloutViewImageConfig
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.input.CheckBoxInput
 import com.telefonica.mistica.input.DropDownInput
@@ -63,18 +64,18 @@ class CalloutsCatalogFragment : Fragment() {
             }
 
             when (CalloutImageConfig.valueOf(view.findViewById<DropDownInput>(R.id.image_config_dropdown).dropDown.text.toString()).imageConfig) {
-                CalloutView.IMAGE_CONFIG_NONE -> {
+                CalloutViewImageConfig.IMAGE_CONFIG_NONE -> {
                     setIcon(null)
                     setImage(null)
                     setCircularImage(null)
                 }
-                CalloutView.IMAGE_CONFIG_ICON -> {
+                CalloutViewImageConfig.IMAGE_CONFIG_ICON -> {
                     setIcon(R.drawable.ic_callout)
                 }
-                CalloutView.IMAGE_CONFIG_SQUARE -> {
+                CalloutViewImageConfig.IMAGE_CONFIG_SQUARE -> {
                     setImage(R.drawable.media_card_sample_image)
                 }
-                CalloutView.IMAGE_CONFIG_CIRCULAR -> {
+                CalloutViewImageConfig.IMAGE_CONFIG_CIRCULAR -> {
                     setCircularImage(R.drawable.media_card_sample_image)
                 }
             }
@@ -118,10 +119,10 @@ class CalloutsCatalogFragment : Fragment() {
         LINK(CalloutView.BUTTONS_CONFIG_LINK),
     }
 
-    private enum class CalloutImageConfig(@CalloutView.ImageConfig val imageConfig: Int) {
-        NONE(CalloutView.IMAGE_CONFIG_NONE),
-        ICON(CalloutView.IMAGE_CONFIG_ICON),
-        IMAGE(CalloutView.IMAGE_CONFIG_SQUARE),
-        CIRCULAR(CalloutView.IMAGE_CONFIG_CIRCULAR)
+    private enum class CalloutImageConfig(val imageConfig: CalloutViewImageConfig) {
+        NONE(CalloutViewImageConfig.IMAGE_CONFIG_NONE),
+        ICON(CalloutViewImageConfig.IMAGE_CONFIG_ICON),
+        IMAGE(CalloutViewImageConfig.IMAGE_CONFIG_SQUARE),
+        CIRCULAR(CalloutViewImageConfig.IMAGE_CONFIG_CIRCULAR)
     }
 }
