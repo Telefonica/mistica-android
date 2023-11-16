@@ -8,6 +8,7 @@ import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutVertically
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -148,8 +149,6 @@ private fun ButtonContent(
     withChevron: Boolean,
     enabled: Boolean,
 ) {
-    var textHeight by remember { mutableStateOf(0.dp) }
-    val density = LocalDensity.current
     AnimatedVisibility(
         modifier = Modifier.fillMaxHeight(),
         visible = !isLoading,
@@ -170,12 +169,7 @@ private fun ButtonContent(
             }
             Text(
                 modifier = Modifier
-                    .align(Alignment.CenterVertically)
-                    .onGloballyPositioned {
-                        textHeight = with(density) {
-                            it.size.height.toDp()
-                        }
-                    },
+                    .align(Alignment.CenterVertically),
                 text = text,
                 color = textColor,
                 style = size.textStyle,
@@ -183,19 +177,23 @@ private fun ButtonContent(
                 overflow = TextOverflow.Ellipsis,
             )
             if (withChevron) {
-                Spacer(modifier = Modifier.width(dimensionResource(id = R.dimen.button_chevron_padding)))
-                CompositionLocalProvider(
-                    LocalContentAlpha provides if (enabled) ContentAlpha.high else ContentAlpha.disabled,
+                Box(
+                    modifier = Modifier
+                        .height(IntrinsicSize.Min)
+                        .aspectRatio(CHEVRON_ASPECT_RATIO)
+                        .align(Alignment.CenterVertically)
                 ) {
-                    Image(
-                        painterResource(id = R.drawable.icn_chevron),
-                        null,
-                        modifier = Modifier
-                            .height(textHeight)
-                            .aspectRatio(CHEVRON_ASPECT_RATIO)
-                            .align(Alignment.CenterVertically),
-                        colorFilter = ColorFilter.tint(style.textColor.copy(LocalContentAlpha.current)),
-                    )
+                    Spacer(modifier = Modifier.width(dimensionResource(id = R.dimen.button_chevron_padding)))
+                    CompositionLocalProvider(
+                        LocalContentAlpha provides if (enabled) ContentAlpha.high else ContentAlpha.disabled,
+                    ) {
+                        Image(
+                            painterResource(id = R.drawable.icn_chevron),
+                            null,
+                            modifier = Modifier.align(Alignment.Center),
+                            colorFilter = ColorFilter.tint(style.textColor.copy(LocalContentAlpha.current)),
+                        )
+                    }
                 }
             }
         }
