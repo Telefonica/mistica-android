@@ -32,7 +32,7 @@ object TestUtils {
         VivoBrand,
         O2Brand,
         BlauBrand,
-//        TelefonicaBrand,
+        TelefonicaBrand,
     )
 
     fun ButtonStyle.isInverse() = when(this) {
