@@ -30,8 +30,8 @@ object TestUtils {
     fun getAllBrands() = listOf(
         MovistarBrand,
         VivoBrand,
-//        O2Brand,
-//        BlauBrand,
+        O2Brand,
+        BlauBrand,
 //        TelefonicaBrand,
     )
 
