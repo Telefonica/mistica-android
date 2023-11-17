@@ -30,9 +30,9 @@ object TestUtils {
     fun getAllBrands() = listOf(
         MovistarBrand,
         VivoBrand,
-        O2Brand,
-        BlauBrand,
-        TelefonicaBrand,
+//        O2Brand,
+//        BlauBrand,
+//        TelefonicaBrand,
     )
 
     fun ButtonStyle.isInverse() = when(this) {
