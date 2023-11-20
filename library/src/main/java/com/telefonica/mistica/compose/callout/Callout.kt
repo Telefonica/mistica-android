@@ -62,31 +62,10 @@ fun Callout(
         ) {
 
             if (iconRes != null) {
-                val iconPainter = when (imageConfig) {
-                    CalloutViewImageConfig.IMAGE_CONFIG_ICON -> {
-                        resourceIconPainter(
-                            iconRes = iconRes,
-                            iconType = IconType.ICON,
-                            modifier = Modifier.padding(end = 16.dp)
-                        )
-                    }
-                    CalloutViewImageConfig.IMAGE_CONFIG_SQUARE -> {
-                        resourceIconPainter(
-                            iconRes = iconRes, iconType = IconType.SQUARE_IMAGE,
-                            modifier = Modifier.padding(end = 16.dp)
-                        )
-                    }
-                    CalloutViewImageConfig.IMAGE_CONFIG_CIRCULAR -> {
-                        resourceIconPainter(
-                            iconRes = iconRes,
-                            iconType = IconType.CIRCULAR_ASSET,
-                            modifier = Modifier.padding(end = 16.dp)
-                        )
-                    }
-                    else -> noIcon()
-                }
-
-                iconPainter.Paint()
+                Icon(
+                    iconRes = iconRes,
+                    imageConfig = imageConfig
+                )
             }
 
             Column(
@@ -214,6 +193,42 @@ private fun CalloutButton(
             invalidatePaddings = invalidatePaddings,
         )
     }
+}
+
+@Composable
+private fun Icon(
+    @DrawableRes iconRes: Int,
+    imageConfig: CalloutViewImageConfig,
+) {
+    val iconPainter = when (imageConfig) {
+        CalloutViewImageConfig.IMAGE_CONFIG_ICON -> {
+            resourceIconPainter(
+                iconRes = iconRes,
+                iconType = IconType.ICON,
+                modifier = Modifier.padding(end = 16.dp)
+            )
+        }
+
+        CalloutViewImageConfig.IMAGE_CONFIG_SQUARE -> {
+            resourceIconPainter(
+                iconRes = iconRes,
+                iconType = IconType.SQUARE_IMAGE,
+                modifier = Modifier.padding(end = 16.dp)
+            )
+        }
+
+        CalloutViewImageConfig.IMAGE_CONFIG_CIRCULAR -> {
+            resourceIconPainter(
+                iconRes = iconRes,
+                iconType = IconType.CIRCULAR_ASSET,
+                modifier = Modifier.padding(end = 16.dp)
+            )
+        }
+
+        CalloutViewImageConfig.IMAGE_CONFIG_NONE -> noIcon()
+    }
+
+    iconPainter.Paint()
 }
 
 enum class CalloutButtonConfig {
