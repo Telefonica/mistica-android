@@ -272,7 +272,6 @@
     <declare-styleable name="CalloutView">
         <attr name="calloutTitle" format="string"/>
         <attr name="calloutDescription" format="string"/>
-        <attr name="calloutIcon" format="reference"/>
         <attr name="calloutButtonsConfig" format="enum">
             <enum name="none" value="-1"/>
             <enum name="primary" value="0" />
@@ -281,6 +280,13 @@
             <enum name="secondary" value="3" />
             <enum name="secondary_link" value="4" />
             <enum name="link" value="5" />
+        </attr>
+        <attr name="calloutAsset" format="reference"/>
+        <attr name="calloutAssetType" format="enum">
+            <enum name="none" value="-1"/>
+            <enum name="icon" value="0"/>
+            <enum name="squareImage" value="1"/>
+            <enum name="circularImage" value="2"/>
         </attr>
         <attr name="calloutPrimaryButtonText" format="string" />
         <attr name="calloutPrimaryButtonOnClick" format="string" />

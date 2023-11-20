@@ -38,17 +38,12 @@ import com.telefonica.mistica.util.getThemeColor
     BindingMethod(
         type = CalloutView::class,
         attribute = "calloutIcon",
-        method = "setIcon",
+        method = "setAsset",
     ),
     BindingMethod(
         type = CalloutView::class,
         attribute = "calloutImage",
-        method = "setImage",
-    ),
-    BindingMethod(
-        type = CalloutView::class,
-        attribute = "calloutCircularImage",
-        method = "setCircularImage",
+        method = "setAssetType",
     ),
     BindingMethod(
         type = CalloutView::class,
@@ -124,6 +119,8 @@ class CalloutView @JvmOverloads constructor(
     private var secondaryButton: Button
     private var linkButton: Button
     private var closeButton: ImageView
+    private var asset: Int? = null
+    private var assetType: CalloutViewImageConfig
 
     private var onDismissed: () -> Unit = NO_OP_CALLOUT_LISTENER
 
@@ -146,14 +143,10 @@ class CalloutView @JvmOverloads constructor(
         var buttonsConfig: Int = BUTTONS_CONFIG_PRIMARY
         var dismissable = false
         var inverse = false
+        assetType = CalloutViewImageConfig.IMAGE_CONFIG_NONE
 
         if (attrs != null) {
             val styledAttrs = context.theme.obtainStyledAttributes(attrs, R.styleable.CalloutView, defStyleAttr, 0)
-
-            styledAttrs.getResourceId(R.styleable.CalloutView_calloutIcon, TypedValue.TYPE_NULL)
-                .takeIf { it != TypedValue.TYPE_NULL }
-                ?.let { AppCompatResources.getDrawable(context, it) }
-                ?.let { setIconDrawable(it) }
 
             styledAttrs.getString(R.styleable.CalloutView_calloutTitle)?.let { setTitle(it) }
             styledAttrs.getString(R.styleable.CalloutView_calloutDescription)?.let { setDescription(it) }
@@ -162,6 +155,11 @@ class CalloutView @JvmOverloads constructor(
             styledAttrs.getString(R.styleable.CalloutView_calloutPrimaryButtonText)?.let { setPrimaryButtonText(it) }
             styledAttrs.getString(R.styleable.CalloutView_calloutSecondaryButtonText)?.let { setSecondaryButtonText(it) }
             styledAttrs.getString(R.styleable.CalloutView_calloutLinkButtonText)?.let { setLinkButtonText(it) }
+            assetType = CalloutViewImageConfig.getConfigByValue(
+                styledAttrs.getInteger(R.styleable.CalloutView_calloutAssetType, CalloutViewImageConfig.IMAGE_CONFIG_NONE.value)
+            )
+            styledAttrs.getResourceId(R.styleable.CalloutView_calloutAsset, TypedValue.TYPE_NULL).takeIf { it != TypedValue.TYPE_NULL }
+                ?.let { setAsset(it) }
 
             dismissable = styledAttrs.getBoolean(R.styleable.CalloutView_calloutDismissable, false)
             inverse = styledAttrs.getBoolean(R.styleable.CalloutView_calloutInverse, false)
@@ -218,36 +216,62 @@ class CalloutView @JvmOverloads constructor(
         onDismissed = listener
     }
 
-    fun setIcon(@DrawableRes iconRes: Int?) {
-        if (iconRes != null) {
-            setImageConfig(CalloutViewImageConfig.IMAGE_CONFIG_ICON)
-            icon.setImageResource(iconRes)
+    fun setAsset(@DrawableRes assetRes: Int?) {
+        asset = assetRes
+        if (assetRes != null) {
+            when (assetType) {
+                CalloutViewImageConfig.IMAGE_CONFIG_NONE -> noAsset()
+                CalloutViewImageConfig.IMAGE_CONFIG_ICON -> setIcon(assetRes)
+                CalloutViewImageConfig.IMAGE_CONFIG_SQUARE -> setImage(assetRes)
+                CalloutViewImageConfig.IMAGE_CONFIG_CIRCULAR -> setCircularImage(assetRes)
+            }
         } else {
-            icon.visibility = GONE
+            noAsset()
         }
     }
 
-    fun setImage(@DrawableRes imageRes: Int?) {
-        if (imageRes != null) {
-            setImageConfig(CalloutViewImageConfig.IMAGE_CONFIG_SQUARE)
-            image.setImageResource(imageRes)
-        } else {
-            image.visibility = GONE
-        }
+    fun setAssetType(type: CalloutViewImageConfig) {
+        asset?.also {
+            when (type) {
+                CalloutViewImageConfig.IMAGE_CONFIG_NONE -> noAsset()
+                CalloutViewImageConfig.IMAGE_CONFIG_ICON -> {
+                    setIcon(it)
+                    image.visibility = GONE
+                    circularImage.visibility = GONE
+                }
+                CalloutViewImageConfig.IMAGE_CONFIG_SQUARE -> {
+                    setImage(it)
+                    icon.visibility = GONE
+                    circularImage.visibility = GONE
+                }
+                CalloutViewImageConfig.IMAGE_CONFIG_CIRCULAR -> {
+                    setCircularImage(it)
+                    icon.visibility = GONE
+                    image.visibility = GONE
+                }
+            }
+        } ?: noAsset()
     }
 
-    fun setCircularImage(@DrawableRes imageRes: Int?) {
-        if (imageRes != null) {
-            setImageConfig(CalloutViewImageConfig.IMAGE_CONFIG_CIRCULAR)
-            circularImage.setImageResource(imageRes)
-        } else {
-            circularImage.visibility = GONE
-        }
+    private fun noAsset() {
+        icon.visibility = GONE
+        image.visibility = GONE
+        circularImage.visibility = GONE
     }
 
-    fun setIconDrawable(drawable: Drawable) {
-        icon.setImageDrawable(drawable)
-        icon.visibility = VISIBLE
+    private fun setIcon(@DrawableRes iconRes: Int) {
+        setImageConfig(CalloutViewImageConfig.IMAGE_CONFIG_ICON)
+        icon.setImageResource(iconRes)
+    }
+
+    private fun setImage(@DrawableRes imageRes: Int) {
+        setImageConfig(CalloutViewImageConfig.IMAGE_CONFIG_SQUARE)
+        image.setImageResource(imageRes)
+    }
+
+    private fun setCircularImage(@DrawableRes imageRes: Int) {
+        setImageConfig(CalloutViewImageConfig.IMAGE_CONFIG_CIRCULAR)
+        circularImage.setImageResource(imageRes)
     }
 
     fun setTitle(text: String) {
@@ -305,34 +329,40 @@ class CalloutView @JvmOverloads constructor(
                 secondaryButton.visibility = GONE
                 linkButton.visibility = GONE
             }
+
             BUTTONS_CONFIG_PRIMARY_LINK -> {
                 primaryButton.visibility = VISIBLE
                 secondaryButton.visibility = GONE
                 linkButton.visibility = VISIBLE
                 linkButton.layoutParams = marginStart(0f)
             }
+
             BUTTONS_CONFIG_PRIMARY_SECONDARY -> {
                 primaryButton.visibility = VISIBLE
                 secondaryButton.visibility = VISIBLE
                 linkButton.visibility = GONE
             }
+
             BUTTONS_CONFIG_SECONDARY -> {
                 primaryButton.visibility = GONE
                 secondaryButton.visibility = VISIBLE
                 linkButton.visibility = GONE
             }
+
             BUTTONS_CONFIG_SECONDARY_LINK -> {
                 primaryButton.visibility = GONE
                 secondaryButton.visibility = VISIBLE
                 linkButton.visibility = VISIBLE
                 linkButton.layoutParams = marginStart(0f)
             }
+
             BUTTONS_CONFIG_LINK -> {
                 primaryButton.visibility = GONE
                 secondaryButton.visibility = GONE
                 linkButton.visibility = VISIBLE
                 linkButton.layoutParams = marginStart(-8f)
             }
+
             BUTTONS_CONFIG_NONE -> {}
         }
     }
@@ -344,16 +374,19 @@ class CalloutView @JvmOverloads constructor(
                 image.visibility = GONE
                 circularImage.visibility = GONE
             }
+
             CalloutViewImageConfig.IMAGE_CONFIG_ICON -> {
                 icon.visibility = VISIBLE
                 image.visibility = GONE
                 circularImage.visibility = GONE
             }
+
             CalloutViewImageConfig.IMAGE_CONFIG_SQUARE -> {
                 icon.visibility = GONE
                 image.visibility = VISIBLE
                 circularImage.visibility = GONE
             }
+
             CalloutViewImageConfig.IMAGE_CONFIG_CIRCULAR -> {
                 icon.visibility = GONE
                 image.visibility = GONE
@@ -386,9 +419,15 @@ class CalloutView @JvmOverloads constructor(
     }
 }
 
-enum class CalloutViewImageConfig {
-    IMAGE_CONFIG_NONE,
-    IMAGE_CONFIG_ICON,
-    IMAGE_CONFIG_SQUARE,
-    IMAGE_CONFIG_CIRCULAR
+enum class CalloutViewImageConfig(val value: Int) {
+    IMAGE_CONFIG_NONE(-1),
+    IMAGE_CONFIG_ICON(0),
+    IMAGE_CONFIG_SQUARE(1),
+    IMAGE_CONFIG_CIRCULAR(2);
+
+    companion object {
+        fun getConfigByValue(item: Int): CalloutViewImageConfig {
+            return values().firstOrNull { it.value == item } ?: IMAGE_CONFIG_NONE
+        }
+    }
 }

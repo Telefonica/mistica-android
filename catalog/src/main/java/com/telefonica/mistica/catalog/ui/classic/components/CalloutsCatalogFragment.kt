@@ -63,22 +63,23 @@ class CalloutsCatalogFragment : Fragment() {
                 visibility = VISIBLE
             }
 
-            when (CalloutImageConfig.valueOf(view.findViewById<DropDownInput>(R.id.image_config_dropdown).dropDown.text.toString()).imageConfig) {
+            val imageConfig = CalloutImageConfig.valueOf(
+                view.findViewById<DropDownInput>(R.id.image_config_dropdown).dropDown.text.toString()
+            ).imageConfig
+
+            when (imageConfig) {
                 CalloutViewImageConfig.IMAGE_CONFIG_NONE -> {
-                    setIcon(null)
-                    setImage(null)
-                    setCircularImage(null)
+                    setAssetType(imageConfig)
                 }
                 CalloutViewImageConfig.IMAGE_CONFIG_ICON -> {
-                    setIcon(R.drawable.ic_callout)
+                    setAsset(R.drawable.ic_callout)
                 }
-                CalloutViewImageConfig.IMAGE_CONFIG_SQUARE -> {
-                    setImage(R.drawable.media_card_sample_image)
-                }
+                CalloutViewImageConfig.IMAGE_CONFIG_SQUARE,
                 CalloutViewImageConfig.IMAGE_CONFIG_CIRCULAR -> {
-                    setCircularImage(R.drawable.media_card_sample_image)
+                    setAsset(R.drawable.media_card_sample_image)
                 }
             }
+            setAssetType(imageConfig)
 
             setDismissable(view.findViewById<CheckBoxInput>(R.id.dismiss_input).isChecked())
             val inverse = view.findViewById<CheckBoxInput>(R.id.inverse_input).isChecked()
