@@ -49,14 +49,14 @@ fun Callouts() {
             Text("Inverse variant")
         }
 
-        var iconType: ImageTypes by remember { mutableStateOf(ImageTypes.ICON) }
+        var iconType: CalloutViewImageConfig by remember { mutableStateOf(CalloutViewImageConfig.ICON) }
         DropDownInput(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(40.dp, 8.dp),
-            items = ImageTypes.values().map { it.name },
-            currentItemIndex = ImageTypes.values().indexOf(iconType),
-            onItemSelected = { index -> iconType = ImageTypes.values()[index] },
+            items = CalloutViewImageConfig.values().map { it.name },
+            currentItemIndex = CalloutViewImageConfig.values().indexOf(iconType),
+            onItemSelected = { index -> iconType = CalloutViewImageConfig.values()[index] },
             hint = "Icon type",
         )
 
@@ -151,16 +151,16 @@ fun Callouts() {
                     description = description.takeIf { it.isNotBlank() },
                     buttonConfig = buttonConfig,
                     imageConfig = when (iconType) {
-                        ImageTypes.NONE -> CalloutViewImageConfig.IMAGE_CONFIG_NONE
-                        ImageTypes.ICON -> CalloutViewImageConfig.IMAGE_CONFIG_ICON
-                        ImageTypes.SQUARE_IMAGE -> CalloutViewImageConfig.IMAGE_CONFIG_SQUARE
-                        ImageTypes.CIRCULAR_IMAGE -> CalloutViewImageConfig.IMAGE_CONFIG_CIRCULAR
+                        CalloutViewImageConfig.NONE -> CalloutViewImageConfig.NONE
+                        CalloutViewImageConfig.ICON -> CalloutViewImageConfig.ICON
+                        CalloutViewImageConfig.SQUARE_IMAGE -> CalloutViewImageConfig.SQUARE_IMAGE
+                        CalloutViewImageConfig.CIRCULAR_IMAGE -> CalloutViewImageConfig.CIRCULAR_IMAGE
                     },
                     iconRes = when (iconType) {
-                        ImageTypes.NONE -> null
-                        ImageTypes.ICON -> R.drawable.ic_callout
-                        ImageTypes.CIRCULAR_IMAGE -> R.drawable.media_card_sample_image
-                        ImageTypes.SQUARE_IMAGE -> R.drawable.card_image_sample
+                        CalloutViewImageConfig.NONE -> null
+                        CalloutViewImageConfig.ICON -> R.drawable.ic_callout
+                        CalloutViewImageConfig.CIRCULAR_IMAGE -> R.drawable.media_card_sample_image
+                        CalloutViewImageConfig.SQUARE_IMAGE -> R.drawable.card_image_sample
                     },
                     dismissable = dismissable,
                     inverse = inverse,
@@ -182,11 +182,4 @@ fun Callouts() {
             )
         }
     }
-}
-
-private enum class ImageTypes(val iconType: CalloutViewImageConfig) {
-    NONE(CalloutViewImageConfig.IMAGE_CONFIG_NONE),
-    ICON(CalloutViewImageConfig.IMAGE_CONFIG_ICON),
-    SQUARE_IMAGE(CalloutViewImageConfig.IMAGE_CONFIG_SQUARE),
-    CIRCULAR_IMAGE(CalloutViewImageConfig.IMAGE_CONFIG_CIRCULAR),
 }

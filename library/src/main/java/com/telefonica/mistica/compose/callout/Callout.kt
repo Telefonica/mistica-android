@@ -34,7 +34,7 @@ fun Callout(
     description: String?,
     buttonConfig: CalloutButtonConfig,
     @DrawableRes iconRes: Int? = null,
-    imageConfig: CalloutViewImageConfig = CalloutViewImageConfig.IMAGE_CONFIG_NONE,
+    imageConfig: CalloutViewImageConfig = CalloutViewImageConfig.NONE,
     dismissable: Boolean,
     onDismiss: (() -> Unit)? = null,
     inverse: Boolean,
@@ -201,7 +201,7 @@ private fun Icon(
     imageConfig: CalloutViewImageConfig,
 ) {
     val iconPainter = when (imageConfig) {
-        CalloutViewImageConfig.IMAGE_CONFIG_ICON -> {
+        CalloutViewImageConfig.ICON -> {
             resourceIconPainter(
                 iconRes = iconRes,
                 iconType = IconType.ICON,
@@ -209,7 +209,7 @@ private fun Icon(
             )
         }
 
-        CalloutViewImageConfig.IMAGE_CONFIG_SQUARE -> {
+        CalloutViewImageConfig.SQUARE_IMAGE -> {
             resourceIconPainter(
                 iconRes = iconRes,
                 iconType = IconType.SQUARE_IMAGE,
@@ -217,7 +217,7 @@ private fun Icon(
             )
         }
 
-        CalloutViewImageConfig.IMAGE_CONFIG_CIRCULAR -> {
+        CalloutViewImageConfig.CIRCULAR_IMAGE -> {
             resourceIconPainter(
                 iconRes = iconRes,
                 iconType = IconType.CIRCULAR_ASSET,
@@ -225,7 +225,7 @@ private fun Icon(
             )
         }
 
-        CalloutViewImageConfig.IMAGE_CONFIG_NONE -> noIcon()
+        CalloutViewImageConfig.NONE -> noIcon()
     }
 
     iconPainter.Paint()

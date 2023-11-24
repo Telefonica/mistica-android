@@ -23,17 +23,18 @@
 			/>
 
 	<FrameLayout
-		android:id="@+id/callout_image_layout"
+			android:id="@+id/callout_image_layout"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			app:layout_constraintTop_toTopOf="parent"
 			app:layout_constraintStart_toStartOf="parent"
-		android:layout_marginStart="16dp">
+			>
 
 		<ImageView
 				android:id="@+id/callout_icon"
 				android:layout_width="24dp"
 				android:layout_height="24dp"
+				android:layout_marginStart="16dp"
 				android:importantForAccessibility="no"
 				tools:src="@tools:sample/avatars"
 				/>
@@ -42,6 +43,7 @@
 				android:id="@+id/callout_image"
 				android:layout_width="40dp"
 				android:layout_height="40dp"
+				android:layout_marginStart="16dp"
 				android:importantForAccessibility="no"
 				android:scaleType="centerCrop"
 				tools:src="@tools:sample/avatars"
@@ -49,10 +51,11 @@
 				/>
 
 		<com.google.android.material.imageview.ShapeableImageView
-				android:id="@+id/data_card_circular_icon"
+				android:id="@+id/callout_circular_image"
 				android:layout_width="40dp"
 				android:layout_height="40dp"
 				android:layout_gravity="center"
+				android:layout_marginStart="16dp"
 				android:importantForAccessibility="no"
 				android:scaleType="centerCrop"
 				android:visibility="gone"

@@ -46,10 +46,10 @@ class CalloutsCatalogFragment : Fragment() {
                 DropDownInput.Adapter(
                     view.context,
                     R.layout.dropdown_menu_popup_item,
-                    CalloutImageConfig.values().map { it.name },
+                    CalloutViewImageConfig.values().map { it.name },
                 )
             )
-            setText(CalloutImageConfig.ICON.name)
+            setText(CalloutViewImageConfig.ICON.name)
         }
         view.findViewById<Button>(R.id.update_button).setOnClickListener {
             updateCalloutView(view)
@@ -63,23 +63,24 @@ class CalloutsCatalogFragment : Fragment() {
                 visibility = VISIBLE
             }
 
-            val imageConfig = CalloutImageConfig.valueOf(
+            val imageConfig = CalloutViewImageConfig.valueOf(
                 view.findViewById<DropDownInput>(R.id.image_config_dropdown).dropDown.text.toString()
-            ).imageConfig
+            )
 
             when (imageConfig) {
-                CalloutViewImageConfig.IMAGE_CONFIG_NONE -> {
+                CalloutViewImageConfig.NONE -> {
                     setAssetType(imageConfig)
                 }
-                CalloutViewImageConfig.IMAGE_CONFIG_ICON -> {
+                CalloutViewImageConfig.ICON -> {
                     setAsset(R.drawable.ic_callout)
+                    setAssetType(imageConfig)
                 }
-                CalloutViewImageConfig.IMAGE_CONFIG_SQUARE,
-                CalloutViewImageConfig.IMAGE_CONFIG_CIRCULAR -> {
+                CalloutViewImageConfig.SQUARE_IMAGE,
+                CalloutViewImageConfig.CIRCULAR_IMAGE -> {
                     setAsset(R.drawable.media_card_sample_image)
+                    setAssetType(imageConfig)
                 }
             }
-            setAssetType(imageConfig)
 
             setDismissable(view.findViewById<CheckBoxInput>(R.id.dismiss_input).isChecked())
             val inverse = view.findViewById<CheckBoxInput>(R.id.inverse_input).isChecked()
@@ -118,12 +119,5 @@ class CalloutsCatalogFragment : Fragment() {
         SECONDARY(CalloutView.BUTTONS_CONFIG_SECONDARY),
         SECONDARY_AND_LINK(CalloutView.BUTTONS_CONFIG_SECONDARY_LINK),
         LINK(CalloutView.BUTTONS_CONFIG_LINK),
-    }
-
-    private enum class CalloutImageConfig(val imageConfig: CalloutViewImageConfig) {
-        NONE(CalloutViewImageConfig.IMAGE_CONFIG_NONE),
-        ICON(CalloutViewImageConfig.IMAGE_CONFIG_ICON),
-        IMAGE(CalloutViewImageConfig.IMAGE_CONFIG_SQUARE),
-        CIRCULAR(CalloutViewImageConfig.IMAGE_CONFIG_CIRCULAR)
     }
 }
