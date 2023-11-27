@@ -13,7 +13,8 @@ configuration and databinding for all properties**.
 <declare-styleable name="CalloutView">
 	<attr name="calloutTitle" format="string"/>
 	<attr name="calloutDescription" format="string"/>
-	<attr name="calloutIcon" format="reference"/>
+	<attr name="calloutAsset" format="reference"/>
+    <attr name="calloutAssetType" format="enum"/>   
 	<attr name="calloutButtonsConfig" format="enum">
 		<enum name="none" value="-1"/>
 		<enum name="primary" value="0" />

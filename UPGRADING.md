@@ -71,3 +71,6 @@ Watch out that the new app:style attribute is needed to set the button style (wi
 Later on we'll deprecate the button.Button in favour of button2.Button and start migrating the rest.
 
 When this new compose wrapper is used on dialogs the ViewTreeLifecycle should be provided (see initViewTreeOwners() in Sheet.kt).
+
+## Upgrade to version 10.0.0
+`calloutIcon` has been replaced with `calloutAsset` and `calloutAssetType` to allow the use of images and circular images in the `Callout` component
