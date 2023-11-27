@@ -3,18 +3,26 @@ package com.telefonica.mistica.testutils
 import com.telefonica.mistica.compose.theme.brand.Brand
 
 object ScreenshotUtils {
-    fun getScreenshotName(brand: Brand? = null, extra: String = ""): String {
-        return """screenshots/
-            ${TestUtils.findRunningTestMethodName()}
-            ${brandName(brand, prepend = "_")}${extra}.png"""
-            .replace("\\s+".toRegex(), "")
+
+    fun getScreenshotName(component: String?, style: String?, brand: Brand?, darkTheme: Boolean, extra: String?): String {
+        val componentOrTestName = if(component == null) {
+            TestUtils.findRunningTestMethodName()
+        } else {
+            "${component}_${style}"
+        }
+        val brandValue = if (brand != null) {
+            brand::class.java.simpleName
+        } else {
+            null
+        }
+        val nonNullParams = listOfNotNull(
+            componentOrTestName,
+            brandValue,
+            extra,
+            "dark".takeIf { darkTheme }
+        ).joinToString(separator = "_")
+
+        return "screenshots/$nonNullParams.png".replace("\\s+".toRegex(), "")
     }
 
-    private fun brandName(brand: Brand?, prepend: String = "", append: String = ""): String {
-        return if (brand != null) {
-            "$prepend${brand::class.java.simpleName}$append"
-        } else {
-            ""
-        }
-    }
 }

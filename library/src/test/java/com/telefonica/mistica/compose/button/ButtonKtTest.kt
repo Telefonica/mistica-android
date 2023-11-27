@@ -7,36 +7,44 @@ import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onRoot
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.theme.MisticaTheme
-import com.telefonica.mistica.compose.theme.brand.BlauBrand
+import com.telefonica.mistica.compose.theme.MisticaTheme.colors
 import com.telefonica.mistica.compose.theme.brand.Brand
 import com.telefonica.mistica.compose.theme.brand.MovistarBrand
-import com.telefonica.mistica.compose.theme.brand.O2Brand
-import com.telefonica.mistica.compose.theme.brand.TelefonicaBrand
-import com.telefonica.mistica.compose.theme.brand.VivoBrand
 import com.telefonica.mistica.testutils.ScreenshotsTest
+import com.telefonica.mistica.testutils.TestUtils
+import com.telefonica.mistica.testutils.TestUtils.isInverse
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.ParameterizedRobolectricTestRunner
 
 @RunWith(ParameterizedRobolectricTestRunner::class)
-internal class ButtonKtTest(private val brand: Brand, private val darkTheme: Boolean): ScreenshotsTest() {
+internal class ButtonKtTest(private val brand: Brand, private val style: ButtonStyle, private val icon: Boolean, private val darkTheme: Boolean):
+    ScreenshotsTest() {
     @get:Rule
     val composeTestRule = createComposeRule()
 
     @Test
     fun `check the button screenshot`() {
-        `when Button`(brand, darkTheme)
+        `when Button`(brand, style, icon, darkTheme)
 
-        `then screenshot is OK`(brand, darkTheme)
+        `then screenshot is OK`(brand, style, icon, darkTheme)
     }
 
-    private fun `when Button`(brand: Brand = MovistarBrand, darkTheme: Boolean) {
+    private fun `when Button`(brand: Brand = MovistarBrand, style: ButtonStyle, icon: Boolean, darkTheme: Boolean) {
         composeTestRule.setContent {
             MisticaTheme(brand = brand, darkTheme = darkTheme) {
-                Surface {
+                Surface(
+                    color = if (style.isInverse()) {
+                        colors.backgroundBrand
+                    } else {
+                        colors.background
+                    }
+                ) {
                     Button(
                         text = "textValue",
+                        buttonStyle = style,
+                        icon = android.R.drawable.ic_lock_power_off.takeIf { icon },
                         onClickListener = { },
                         modifier = Modifier.padding(16.dp)
                     )
@@ -45,24 +53,32 @@ internal class ButtonKtTest(private val brand: Brand, private val darkTheme: Boo
         }
     }
 
-    private fun `then screenshot is OK`(brand: Brand, darkTheme: Boolean) {
-        compareScreenshot(composeTestRule.onRoot(), brand, darkTheme)
+    private fun `then screenshot is OK`(brand: Brand, style: ButtonStyle, icon: Boolean, darkTheme: Boolean) {
+        val iconSuffix = if (icon) {
+            "icon"
+        } else {
+            null
+        }
+        compareScreenshot(composeTestRule.onRoot(), "Button", style.toString(), brand, darkTheme, iconSuffix)
     }
 
     companion object {
         @JvmStatic
-        @ParameterizedRobolectricTestRunner.Parameters(name = "Input: {0}")
-        fun brands() = listOf(
-            arrayOf(MovistarBrand, false),
-            arrayOf(VivoBrand, false),
-            arrayOf(O2Brand, false),
-            arrayOf(BlauBrand, false),
-            arrayOf(TelefonicaBrand, false),
-            arrayOf(MovistarBrand, true),
-            arrayOf(VivoBrand, true),
-            arrayOf(O2Brand, true),
-            arrayOf(BlauBrand, true),
-            arrayOf(TelefonicaBrand, true),
-        )
+        @ParameterizedRobolectricTestRunner.Parameters(name = "Button {1} {0} icon={2} darkTheme={3}")
+        fun brands(): List<Array<Any>> {
+            val allBrands = TestUtils.getAllBrands()
+            val buttonStyles = ButtonStyle.values().toList()
+            val icons = listOf(false, true)
+            val darkTheme = listOf(false, true)
+            return allBrands.flatMap { brand ->
+                buttonStyles.flatMap { buttonStyle ->
+                    icons.flatMap { hasIcon ->
+                        darkTheme.map { darkTheme ->
+                            arrayOf(brand, buttonStyle, hasIcon, darkTheme)
+                        }
+                    }
+                }
+            }
+        }
     }
 }

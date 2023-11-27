@@ -11,24 +11,32 @@ import org.robolectric.annotation.Config
 open class ScreenshotsTest {
     fun compareScreenshot(
         node: SemanticsNodeInteraction,
+        component: String? = null,
+        style: String? = null,
         brand: Brand? = null,
         darkTheme: Boolean = false,
-        extra: String = "",
+        extra: String? = null,
     ) {
-        node.captureRoboImage(screenshotName(brand, darkTheme, extra))
+        node.captureRoboImage(screenshotName(component, style, brand, darkTheme, extra))
     }
 
     fun compareScreenshot(
         node: ViewInteraction,
+        component: String? = null,
+        style: String? = null,
         brand: Brand? = null,
         darkTheme: Boolean = false,
-        extra: String = "",
+        extra: String? = null,
     ) {
-        node.captureRoboImage(screenshotName(brand, darkTheme, extra))
+        node.captureRoboImage(screenshotName(component, style, brand, darkTheme, extra))
     }
 
-    private fun screenshotName(brand: Brand?, darkTheme: Boolean, extra: String) = ScreenshotUtils.getScreenshotName(
-        brand = brand,
-        extra = if (darkTheme) "_dark$extra" else extra
-    )
+    private fun screenshotName(component: String?, style: String?, brand: Brand?, darkTheme: Boolean, extra: String?) =
+        ScreenshotUtils.getScreenshotName(
+            component = component,
+            style = style,
+            brand = brand,
+            darkTheme = darkTheme,
+            extra = extra
+        )
 }
