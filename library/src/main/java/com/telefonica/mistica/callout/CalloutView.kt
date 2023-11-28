@@ -348,34 +348,6 @@ class CalloutView @JvmOverloads constructor(
         }
     }
 
-    private fun setImageConfig(imageConfig: CalloutViewImageConfig) {
-        when (imageConfig) {
-            CalloutViewImageConfig.NONE -> {
-                icon.visibility = GONE
-                image.visibility = GONE
-                circularImage.visibility = GONE
-            }
-
-            CalloutViewImageConfig.ICON -> {
-                icon.visibility = VISIBLE
-                image.visibility = GONE
-                circularImage.visibility = GONE
-            }
-
-            CalloutViewImageConfig.SQUARE_IMAGE -> {
-                icon.visibility = GONE
-                image.visibility = VISIBLE
-                circularImage.visibility = GONE
-            }
-
-            CalloutViewImageConfig.CIRCULAR_IMAGE -> {
-                icon.visibility = GONE
-                image.visibility = GONE
-                circularImage.visibility = VISIBLE
-            }
-        }
-    }
-
     private fun marginStart(value: Float): LinearLayout.LayoutParams {
         val layoutParams = LinearLayout.LayoutParams(
             LinearLayout.LayoutParams.WRAP_CONTENT,

@@ -150,12 +150,7 @@ fun Callouts() {
                     title = title.takeIf { it.isNotBlank() },
                     description = description.takeIf { it.isNotBlank() },
                     buttonConfig = buttonConfig,
-                    imageConfig = when (iconType) {
-                        CalloutViewImageConfig.NONE -> CalloutViewImageConfig.NONE
-                        CalloutViewImageConfig.ICON -> CalloutViewImageConfig.ICON
-                        CalloutViewImageConfig.SQUARE_IMAGE -> CalloutViewImageConfig.SQUARE_IMAGE
-                        CalloutViewImageConfig.CIRCULAR_IMAGE -> CalloutViewImageConfig.CIRCULAR_IMAGE
-                    },
+                    imageConfig = iconType,
                     iconRes = when (iconType) {
                         CalloutViewImageConfig.NONE -> null
                         CalloutViewImageConfig.ICON -> R.drawable.ic_callout
