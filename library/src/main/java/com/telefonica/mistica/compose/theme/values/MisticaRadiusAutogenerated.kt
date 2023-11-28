@@ -21,6 +21,7 @@ public class MisticaRadius(
   legacyDisplayBorderRadius: Dp = Dp.Unspecified,
   popupBorderRadius: Dp = Dp.Unspecified,
   sheetBorderRadius: Dp = Dp.Unspecified,
+  mediaSmallBorderRadius: Dp = Dp.Unspecified,
 ) {
   public var avatarBorderRadius: Int by mutableStateOf(avatarBorderRadius,
       structuralEqualityPolicy())
@@ -58,6 +59,10 @@ public class MisticaRadius(
   public var sheetBorderRadius: Dp by mutableStateOf(sheetBorderRadius, structuralEqualityPolicy())
     internal set
 
+  public var mediaSmallBorderRadius: Dp by mutableStateOf(mediaSmallBorderRadius,
+      structuralEqualityPolicy())
+    internal set
+
   public fun updateWith(other: MisticaRadius) {
     avatarBorderRadius = other.avatarBorderRadius
     barBorderRadius = other.barBorderRadius
@@ -69,6 +74,7 @@ public class MisticaRadius(
     legacyDisplayBorderRadius = other.legacyDisplayBorderRadius
     popupBorderRadius = other.popupBorderRadius
     sheetBorderRadius = other.sheetBorderRadius
+    mediaSmallBorderRadius = other.mediaSmallBorderRadius
   }
 }
 

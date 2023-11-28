@@ -130,6 +130,7 @@
 		<attr name="legacyDisplayBorderRadius" format="dimension|fraction"/>
 		<attr name="popupBorderRadius" format="dimension|fraction"/>
 		<attr name="sheetBorderRadius" format="dimension|fraction"/>
+		<attr name="mediaSmallBorderRadius" format="dimension|fraction"/>
 	</declare-styleable>
 	<declare-styleable name="PresetFonts">
 		<attr name="cardTitleFont" format="string"/>

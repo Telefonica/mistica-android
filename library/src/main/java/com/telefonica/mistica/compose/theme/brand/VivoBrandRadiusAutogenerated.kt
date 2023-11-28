@@ -15,5 +15,6 @@ public object VivoBrandRadius {
       inputBorderRadius = 8.dp,
       legacyDisplayBorderRadius = 16.dp,
       popupBorderRadius = 8.dp,
-      sheetBorderRadius = 8.dp,)
+      sheetBorderRadius = 8.dp,
+      mediaSmallBorderRadius = 8.dp,)
 }
