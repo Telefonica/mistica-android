@@ -39,22 +39,22 @@
 				tools:src="@tools:sample/avatars"
 				/>
 
-		<ImageView
+		<com.google.android.material.imageview.ShapeableImageView
 				android:id="@+id/callout_image"
 				android:layout_width="40dp"
 				android:layout_height="40dp"
 				android:layout_marginStart="16dp"
 				android:importantForAccessibility="no"
 				android:scaleType="centerCrop"
+				android:visibility="visible"
+				app:shapeAppearance="@style/CalloutRoundedImageView"
 				tools:src="@tools:sample/avatars"
-				tools:visibility="gone"
 				/>
 
 		<com.google.android.material.imageview.ShapeableImageView
 				android:id="@+id/callout_circular_image"
 				android:layout_width="40dp"
 				android:layout_height="40dp"
-				android:layout_gravity="center"
 				android:layout_marginStart="16dp"
 				android:importantForAccessibility="no"
 				android:scaleType="centerCrop"

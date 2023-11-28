@@ -213,7 +213,9 @@ private fun Icon(
             resourceIconPainter(
                 iconRes = iconRes,
                 iconType = IconType.SQUARE_IMAGE,
-                modifier = Modifier.padding(end = 16.dp)
+                modifier = Modifier
+                    .padding(end = 16.dp)
+                    .clip(RoundedCornerShape(MisticaTheme.radius.mediaSmallBorderRadius))
             )
         }
 

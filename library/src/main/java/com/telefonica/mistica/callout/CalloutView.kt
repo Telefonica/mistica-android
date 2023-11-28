@@ -109,7 +109,7 @@ class CalloutView @JvmOverloads constructor(
     annotation class ButtonsConfig
 
     private var icon: ImageView
-    private var image: ImageView
+    private var image: ShapeableImageView
     private var circularImage: ShapeableImageView
     private var title: TextView
     private var description: TextView
