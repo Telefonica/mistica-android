@@ -85,6 +85,7 @@ class Button @JvmOverloads constructor(
                 enabled = isEnable,
                 icon = icon,
                 withChevron = withChevron,
+                invalidatePaddings = true,
                 onClickListener = onClick
             )
         }
