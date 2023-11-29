@@ -26,6 +26,7 @@ class Button @JvmOverloads constructor(
     private var style: ButtonStyle by mutableStateOf(ButtonStyle.PRIMARY)
     private var isEnable: Boolean by mutableStateOf(true)
     private var onClick: () -> Unit by mutableStateOf({})
+    private var invalidatePadding: Boolean by mutableStateOf(false)
 
      init {
         attrs?.let {
@@ -43,6 +44,7 @@ class Button @JvmOverloads constructor(
                 isLoading = styledAttrs.getBoolean(R.styleable.Button_isLoading, false)
                 style = styledAttrs.getInt(R.styleable.Button_style, 0).toButtonStyle()
                 isEnable = enabledTypedArray.getBoolean(0, true)
+                invalidatePadding = styledAttrs.getBoolean(R.styleable.Button_invalidatePadding, false)
                 icon = styledAttrs.getResourceId(R.styleable.Button_icon, 0).takeIf { it != 0 }
                 withChevron = styledAttrs.getBoolean(R.styleable.Button_withChevron, false)
             } finally {
@@ -85,7 +87,7 @@ class Button @JvmOverloads constructor(
                 enabled = isEnable,
                 icon = icon,
                 withChevron = withChevron,
-                invalidatePaddings = true,
+                invalidatePaddings = invalidatePadding,
                 onClickListener = onClick
             )
         }
