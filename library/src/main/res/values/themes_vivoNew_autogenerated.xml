@@ -121,6 +121,7 @@
 		<item name="legacyDisplayBorderRadius">16dp</item>
 		<item name="popupBorderRadius">8dp</item>
 		<item name="sheetBorderRadius">16dp</item>
+		<item name="mediaSmallBorderRadius">8dp</item>
 		<!-- Preset fonts -->
 		<item name="cardTitleFont">?font_family_regular</item>
 		<item name="buttonFont">?font_family_regular</item>
@@ -275,6 +276,7 @@
 		<item name="legacyDisplayBorderRadius">16dp</item>
 		<item name="popupBorderRadius">8dp</item>
 		<item name="sheetBorderRadius">16dp</item>
+		<item name="mediaSmallBorderRadius">8dp</item>
 		<!-- Preset fonts -->
 		<item name="cardTitleFont">?font_family_regular</item>
 		<item name="buttonFont">?font_family_regular</item>

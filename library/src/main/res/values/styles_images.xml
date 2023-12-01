@@ -10,4 +10,9 @@
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">4dp</item>
     </style>
+
+    <style name="CalloutRoundedImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">?mediaSmallBorderRadius</item>
+    </style>
 </resources>

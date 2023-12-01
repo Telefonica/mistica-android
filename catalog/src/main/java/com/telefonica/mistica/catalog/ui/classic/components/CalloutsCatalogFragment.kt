@@ -11,6 +11,7 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.telefonica.mistica.callout.CalloutView
+import com.telefonica.mistica.callout.CalloutViewImageConfig
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.input.CheckBoxInput
 import com.telefonica.mistica.input.DropDownInput
@@ -40,6 +41,16 @@ class CalloutsCatalogFragment : Fragment() {
             )
             setText(CalloutButtonsConfig.PRIMARY.name)
         }
+        with(view.findViewById<DropDownInput>(R.id.image_config_dropdown).dropDown) {
+            setAdapter(
+                DropDownInput.Adapter(
+                    view.context,
+                    R.layout.dropdown_menu_popup_item,
+                    CalloutViewImageConfig.values().map { it.name },
+                )
+            )
+            setText(CalloutViewImageConfig.ICON.name)
+        }
         view.findViewById<Button>(R.id.update_button).setOnClickListener {
             updateCalloutView(view)
         }
@@ -52,11 +63,25 @@ class CalloutsCatalogFragment : Fragment() {
                 visibility = VISIBLE
             }
 
-            if (view.findViewById<CheckBoxInput>(R.id.show_icon_input).isChecked()) {
-                setIcon(R.drawable.ic_callout)
-            } else {
-                setIcon(null)
+            val imageConfig = CalloutViewImageConfig.valueOf(
+                view.findViewById<DropDownInput>(R.id.image_config_dropdown).dropDown.text.toString()
+            )
+
+            when (imageConfig) {
+                CalloutViewImageConfig.NONE -> {
+                    setAssetType(imageConfig)
+                }
+                CalloutViewImageConfig.ICON -> {
+                    setAsset(R.drawable.ic_callout)
+                    setAssetType(imageConfig)
+                }
+                CalloutViewImageConfig.SQUARE_IMAGE,
+                CalloutViewImageConfig.CIRCULAR_IMAGE -> {
+                    setAsset(R.drawable.media_card_sample_image)
+                    setAssetType(imageConfig)
+                }
             }
+
             setDismissable(view.findViewById<CheckBoxInput>(R.id.dismiss_input).isChecked())
             val inverse = view.findViewById<CheckBoxInput>(R.id.inverse_input).isChecked()
             setInverse(inverse)

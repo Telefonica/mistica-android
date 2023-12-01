@@ -15,13 +15,16 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.R
+import com.telefonica.mistica.callout.CalloutViewImageConfig
 import com.telefonica.mistica.compose.button.Button
 import com.telefonica.mistica.compose.button.ButtonStyle
+import com.telefonica.mistica.compose.card.datacard.IconType
+import com.telefonica.mistica.compose.card.datacard.noIcon
+import com.telefonica.mistica.compose.card.datacard.resourceIconPainter
 import com.telefonica.mistica.compose.theme.MisticaTheme
 
 @Composable
@@ -31,6 +34,7 @@ fun Callout(
     description: String?,
     buttonConfig: CalloutButtonConfig,
     @DrawableRes iconRes: Int? = null,
+    imageConfig: CalloutViewImageConfig = CalloutViewImageConfig.NONE,
     dismissable: Boolean,
     onDismiss: (() -> Unit)? = null,
     inverse: Boolean,
@@ -56,12 +60,11 @@ fun Callout(
             modifier = Modifier.padding(16.dp),
             verticalAlignment = Alignment.Top,
         ) {
-            iconRes?.let {
-                Image(
-                    modifier = Modifier.padding(end = 16.dp),
-                    painter = painterResource(id = iconRes),
-                    contentDescription = null,
-                    colorFilter = ColorFilter.tint(MisticaTheme.colors.neutralHigh)
+
+            if (iconRes != null) {
+                Icon(
+                    iconRes = iconRes,
+                    imageConfig = imageConfig
                 )
             }
 
@@ -91,9 +94,11 @@ fun Callout(
                     when (buttonConfig) {
                         CalloutButtonConfig.NONE -> { /* No buttons are shown */
                         }
+
                         CalloutButtonConfig.PRIMARY -> {
                             PrimaryButton(text = primaryButtonText, onClick = onPrimaryButtonClick)
                         }
+
                         CalloutButtonConfig.PRIMARY_AND_LINK -> {
                             PrimaryButton(
                                 text = primaryButtonText,
@@ -102,9 +107,11 @@ fun Callout(
                             )
                             LinkButton(text = linkText, onClick = onLinkClicked)
                         }
+
                         CalloutButtonConfig.SECONDARY -> {
                             SecondaryButton(text = secondaryButtonText, onClick = onSecondaryButtonClick)
                         }
+
                         CalloutButtonConfig.PRIMARY_AND_SECONDARY -> {
                             PrimaryButton(
                                 text = primaryButtonText,
@@ -113,6 +120,7 @@ fun Callout(
                             )
                             SecondaryButton(text = secondaryButtonText, onClick = onSecondaryButtonClick)
                         }
+
                         CalloutButtonConfig.SECONDARY_AND_LINK -> {
                             SecondaryButton(
                                 text = secondaryButtonText,
@@ -121,6 +129,7 @@ fun Callout(
                             )
                             LinkButton(text = linkText, onClick = onLinkClicked)
                         }
+
                         CalloutButtonConfig.LINK -> {
                             LinkButton(text = linkText, onClick = onLinkClicked)
                         }
@@ -184,6 +193,44 @@ private fun CalloutButton(
             invalidatePaddings = invalidatePaddings,
         )
     }
+}
+
+@Composable
+private fun Icon(
+    @DrawableRes iconRes: Int,
+    imageConfig: CalloutViewImageConfig,
+) {
+    val iconPainter = when (imageConfig) {
+        CalloutViewImageConfig.ICON -> {
+            resourceIconPainter(
+                iconRes = iconRes,
+                iconType = IconType.ICON,
+                modifier = Modifier.padding(end = 16.dp)
+            )
+        }
+
+        CalloutViewImageConfig.SQUARE_IMAGE -> {
+            resourceIconPainter(
+                iconRes = iconRes,
+                iconType = IconType.SQUARE_IMAGE,
+                modifier = Modifier
+                    .padding(end = 16.dp)
+                    .clip(RoundedCornerShape(MisticaTheme.radius.mediaSmallBorderRadius))
+            )
+        }
+
+        CalloutViewImageConfig.CIRCULAR_IMAGE -> {
+            resourceIconPainter(
+                iconRes = iconRes,
+                iconType = IconType.CIRCULAR_ASSET,
+                modifier = Modifier.padding(end = 16.dp)
+            )
+        }
+
+        CalloutViewImageConfig.NONE -> noIcon()
+    }
+
+    iconPainter.Paint()
 }
 
 enum class CalloutButtonConfig {
