@@ -17,9 +17,11 @@ import com.telefonica.mistica.list.ListRowView.Companion.TYPE_IMAGE
 import com.telefonica.mistica.list.ListRowView.Companion.TYPE_IMAGE_16_9
 import com.telefonica.mistica.list.ListRowView.Companion.TYPE_IMAGE_1_1
 import com.telefonica.mistica.list.ListRowView.Companion.TYPE_IMAGE_7_10
+import com.telefonica.mistica.list.ListRowView.Companion.TYPE_IMAGE_ROUNDED
 import com.telefonica.mistica.list.ListRowView.Companion.TYPE_LARGE_ICON
 import com.telefonica.mistica.list.ListRowView.Companion.TYPE_SMALL_ICON
 import com.telefonica.mistica.list.MisticaRecyclerView
+import com.telefonica.mistica.list.model.ImageDimensions
 import com.telefonica.mistica.tag.TagStyle
 import com.telefonica.mistica.tag.TagView
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_INVERSE
@@ -438,6 +440,17 @@ class ListsCatalogFragment : Fragment() {
                     withInverseBackground = withInverseBackground,
                 )
             },
+            {
+                it.configureView(
+                    withAsset = true,
+                    withAssetType = TYPE_IMAGE_ROUNDED,
+                    withDimensions = ImageDimensions(width = 64, height = 64),
+                    withAction = true,
+                    withSubtitle = true,
+                    withHeadline = true,
+                    withInverseBackground = withInverseBackground,
+                )
+            },
         )
 
         @SuppressLint("SetTextI18n")
@@ -448,6 +461,7 @@ class ListsCatalogFragment : Fragment() {
             withDescriptionMaxLines: Int? = null,
             withAsset: Boolean = false,
             @AssetType withAssetType: Int = TYPE_SMALL_ICON,
+            withDimensions: ImageDimensions? = null,
             withAction: Boolean = false,
             withBadge: Boolean = false,
             withBadgeNumeric: Int = 0,
@@ -487,7 +501,7 @@ class ListsCatalogFragment : Fragment() {
                 }
             )
 
-            setAssetType(withAssetType)
+            setAssetType(withAssetType, withDimensions)
             withUrlIcon?.let {
                 setAssetUrl(it, errorDrawable = withErrorIcon)
             } ?: run {
@@ -522,6 +536,7 @@ class ListsCatalogFragment : Fragment() {
                     TYPE_IMAGE_1_1,
                     TYPE_IMAGE_16_9,
                     TYPE_IMAGE_7_10,
+                    TYPE_IMAGE_ROUNDED,
                     -> R.drawable.highlighted_card_custom_background
 
                     else -> R.drawable.ic_lists
