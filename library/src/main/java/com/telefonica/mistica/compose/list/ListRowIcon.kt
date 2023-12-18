@@ -19,6 +19,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.shape.Circle
+import com.telefonica.mistica.list.model.ImageDimensions
 
 sealed class ListRowIcon(val contentDescription: String?) {
 
@@ -45,6 +46,13 @@ sealed class ListRowIcon(val contentDescription: String?) {
         private val description: String? = null,
     ) : ListRowIcon(description)
 
+    data class ImageAsset(
+        val painter: Painter? = null,
+        val dimensions: ImageDimensions = ImageDimensions(width = 64, height = 64),
+        val contentScale: ContentScale = ContentScale.Crop,
+        private val description: String? = null,
+    ) : ListRowIcon(description)
+
     enum class AspectRatio(val width: Dp, val height: Dp) {
         RATIO_1_1(80.dp, 80.dp),
         RATIO_7_10(80.dp, 116.dp),
@@ -58,6 +66,7 @@ sealed class ListRowIcon(val contentDescription: String?) {
             is CircleIcon -> DrawCircleIcon()
             is SmallAsset -> DrawSmallAsset()
             is LargeAsset -> DrawLargeAsset()
+            is ImageAsset -> DrawImageAsset()
         }
     }
 
@@ -116,6 +125,21 @@ sealed class ListRowIcon(val contentDescription: String?) {
                 modifier = Modifier
                     .height(aspectRatio.height)
                     .width(aspectRatio.width)
+                    .clip(RoundedCornerShape(4.dp)),
+                contentScale = contentScale,
+            )
+        }
+    }
+
+    @Composable
+    private fun ImageAsset.DrawImageAsset() {
+        painter?.let {
+            Image(
+                painter = painter,
+                contentDescription = contentDescription,
+                modifier = Modifier
+                    .width(dimensions.width.dp)
+                    .height(dimensions.height.dp)
                     .clip(RoundedCornerShape(4.dp)),
                 contentScale = contentScale,
             )

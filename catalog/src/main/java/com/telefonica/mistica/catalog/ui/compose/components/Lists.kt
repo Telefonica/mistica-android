@@ -33,6 +33,7 @@ import com.telefonica.mistica.compose.list.ListRowItem
 import com.telefonica.mistica.compose.shape.Chevron
 import com.telefonica.mistica.compose.tag.Tag
 import com.telefonica.mistica.compose.theme.MisticaTheme
+import com.telefonica.mistica.list.model.ImageDimensions
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_PROMO
 
 const val TITLE = "Title"
@@ -275,6 +276,18 @@ fun samples() = listOf(
         listRowIcon = ListRowIcon.LargeAsset(
             painter = painterResource(id = R.drawable.list_row_drawable),
             aspectRatio = ListRowIcon.AspectRatio.RATIO_7_10
+        ),
+    ),
+    ListItem(
+        title = TITLE,
+        subtitle = SUBTITLE,
+        description = DESCRIPTION,
+        action = { Switch(checked = true, onCheckedChange = {}) },
+        isBadgeVisible = true,
+        badge = "1",
+        listRowIcon = ListRowIcon.ImageAsset(
+            painter = painterResource(id = R.drawable.list_row_drawable),
+            dimensions = ImageDimensions(width = 64, height = 64),
         ),
     )
 )
