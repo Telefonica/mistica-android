@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:padding="16dp"
+		android:orientation="vertical">
+
+	<com.telefonica.mistica.list.ListRowView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			app:listRowActionLayout="@layout/list_row_chevron_action"
+			app:listRowAssetDrawable="@drawable/placeholder"
+			app:listRowBadgeCount="gone"
+			app:listRowBadgeVisible="false"
+			app:listRowDescription="Test Subtitle"
+			app:listRowAssetType="image_rounded"
+			app:listRowIsBoxed="true"
+			app:listRowTitle="Image 32 x 32"
+			app:listRowAssetHeight="32dp"
+			app:listRowAssetWidth="32dp" />
+	<com.telefonica.mistica.list.ListRowView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			app:listRowActionLayout="@layout/list_row_chevron_action"
+			app:listRowAssetDrawable="@drawable/placeholder"
+			app:listRowBadgeCount="gone"
+			app:listRowBadgeVisible="false"
+			app:listRowDescription="Test Subtitle"
+			app:listRowAssetType="image_rounded"
+			app:listRowIsBoxed="true"
+			app:listRowTitle="Image 64 x 64"
+			app:listRowAssetHeight="64dp"
+			app:listRowAssetWidth="64dp" />
+	<com.telefonica.mistica.list.ListRowView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			app:listRowActionLayout="@layout/list_row_chevron_action"
+			app:listRowAssetDrawable="@drawable/placeholder"
+			app:listRowBadgeCount="gone"
+			app:listRowBadgeVisible="false"
+			app:listRowDescription="Test Subtitle"
+			app:listRowAssetType="image_rounded"
+			app:listRowIsBoxed="true"
+			app:listRowTitle="Image 64 x 64 (default sizes)" />
+	<com.telefonica.mistica.list.ListRowView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			app:listRowActionLayout="@layout/list_row_chevron_action"
+			app:listRowAssetDrawable="@drawable/placeholder"
+			app:listRowBadgeCount="gone"
+			app:listRowBadgeVisible="false"
+			app:listRowDescription="Test Subtitle"
+			app:listRowAssetType="image_1_1"
+			app:listRowIsBoxed="true"
+			app:listRowTitle="Image_1_1" />
+</LinearLayout>

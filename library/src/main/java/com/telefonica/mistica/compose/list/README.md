@@ -49,6 +49,8 @@ There are 4 types of icons:
 - `SmallAsset`: it's a circle icon, it could be a `Drawable` resource or a external url with a `description` parameter inside.
 - `LargeAsset`: it's a custom image, it could be a `Drawable` resource or a external url with a `description` parameter inside. It's possible to define the
   `aspectRatio` of the image and the `contentScale` type
+- `ImageAsset`: it's a custom image, it could be a `Drawable` resource or a external url with a `description` parameter inside. It's possible to define the
+  `dimensions` which is of type `ImageDimensions`.
 
 ![image](https://user-images.githubusercontent.com/944814/143047368-3494885c-6324-4b4b-bcc0-4177525208bf.png)
 

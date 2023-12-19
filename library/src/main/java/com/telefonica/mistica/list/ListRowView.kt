@@ -25,6 +25,7 @@ import androidx.databinding.BindingMethods
 import coil.load
 import com.telefonica.mistica.R
 import com.telefonica.mistica.badge.Badge
+import com.telefonica.mistica.list.model.ImageDimensions
 import com.telefonica.mistica.util.convertDpToPx
 import com.telefonica.mistica.util.getThemeColor
 import com.telefonica.mistica.util.setAlpha
@@ -95,6 +96,16 @@ import com.telefonica.mistica.util.setAlpha
         attribute = "listRowActionLayout",
         method = "setActionLayout"
     ),
+    BindingMethod(
+        type = ListRowView::class,
+        attribute = "listRowAssetHeight",
+        method = "setAssetHeight"
+    ),
+    BindingMethod(
+        type = ListRowView::class,
+        attribute = "listRowAssetWidth",
+        method = "setAssetWidth"
+    ),
 )
 class ListRowView @JvmOverloads constructor(
     context: Context,
@@ -109,7 +120,8 @@ class ListRowView @JvmOverloads constructor(
         TYPE_LARGE_ICON,
         TYPE_IMAGE_1_1,
         TYPE_IMAGE_7_10,
-        TYPE_IMAGE_16_9
+        TYPE_IMAGE_16_9,
+        TYPE_IMAGE_ROUNDED,
     )
     annotation class AssetType
 
@@ -143,6 +155,8 @@ class ListRowView @JvmOverloads constructor(
     private var currentHeadlineLayoutRes: Int = HEADLINE_NONE
     private var currentActionLayoutRes: Int = ACTION_NONE
     private var assetType: Int = TYPE_SMALL_ICON
+    private var assetHeight: Float = UNDEFINED
+    private var assetWidth: Float = UNDEFINED
 
     init {
         LayoutInflater.from(context).inflate(R.layout.list_row_item, this, true)
@@ -201,6 +215,18 @@ class ListRowView @JvmOverloads constructor(
                     backgroundTypeDefaultValue
                 )
             )
+            setAssetHeight(
+                styledAttrs.getDimension(
+                    R.styleable.ListRowView_listRowAssetHeight,
+                    UNDEFINED
+                )
+            )
+            setAssetWidth(
+                styledAttrs.getDimension(
+                    R.styleable.ListRowView_listRowAssetWidth,
+                    UNDEFINED
+                )
+            )
             setAssetType(
                 styledAttrs.getInt(
                     R.styleable.ListRowView_listRowAssetType,
@@ -242,7 +268,8 @@ class ListRowView @JvmOverloads constructor(
             TYPE_IMAGE -> assetCircularImageView
             TYPE_IMAGE_1_1,
             TYPE_IMAGE_7_10,
-            TYPE_IMAGE_16_9 -> assetRoundedImageView
+            TYPE_IMAGE_16_9,
+            TYPE_IMAGE_ROUNDED -> assetRoundedImageView
             else -> assetImageView
         }.also { imageView ->
             imageView.load(url) {
@@ -270,6 +297,7 @@ class ListRowView @JvmOverloads constructor(
                 TYPE_IMAGE_1_1,
                 TYPE_IMAGE_7_10,
                 TYPE_IMAGE_16_9,
+                TYPE_IMAGE_ROUNDED
                 -> assetRoundedImageView.setImageDrawable(drawable)
 
                 else -> assetImageView.setImageDrawable(drawable)
@@ -283,13 +311,33 @@ class ListRowView @JvmOverloads constructor(
 
     private fun updateIconVisibility() {
         assetCircularImageView.isVisible = assetType == TYPE_IMAGE
-        assetRoundedImageView.isVisible = assetType == TYPE_IMAGE_1_1 || assetType == TYPE_IMAGE_7_10 || assetType == TYPE_IMAGE_16_9
+        assetRoundedImageView.isVisible = assetType == TYPE_IMAGE_1_1 || assetType == TYPE_IMAGE_7_10
+                || assetType == TYPE_IMAGE_16_9 || assetType == TYPE_IMAGE_ROUNDED
         assetImageView.isVisible = assetType == TYPE_SMALL_ICON || assetType == TYPE_LARGE_ICON
     }
 
-    fun setAssetType(@AssetType type: Int) {
+    fun setAssetType(@AssetType type: Int, dimensions: ImageDimensions? = null) {
         assetType = type
+        dimensions?.let {
+            setAssetHeight(context.convertDpToPx(it.height).toFloat())
+            setAssetWidth(context.convertDpToPx(it.width).toFloat())
+        }
         configureAsset()
+    }
+
+    fun setAssetHeight(height: Float) {
+        assetHeight = if (height > 0) {
+            height
+        } else {
+            resources.getDimension(R.dimen.asset_default_size)
+        }
+    }
+
+    fun setAssetWidth(width: Float) {
+        assetWidth = if (width > 0)
+            width
+        else
+            resources.getDimension(R.dimen.asset_default_size)
     }
 
     private fun configureAsset() {
@@ -311,6 +359,7 @@ class ListRowView @JvmOverloads constructor(
             TYPE_IMAGE_1_1 -> assetRoundedImageView.setSize(80, 80)
             TYPE_IMAGE_7_10 -> assetRoundedImageView.setSize(80, 116)
             TYPE_IMAGE_16_9 -> assetRoundedImageView.setSize(138, 80)
+            TYPE_IMAGE_ROUNDED -> assetRoundedImageView.setSizePx(assetWidth, assetHeight)
         }
         recalculateAssetPosition()
     }
@@ -541,6 +590,14 @@ class ListRowView @JvmOverloads constructor(
         }
     }
 
+    private fun ImageView.setSizePx(pxWidth: Float, pxHeight: Float) {
+        layoutParams.apply {
+            height = pxHeight.toInt()
+            width = pxWidth.toInt()
+            layoutParams = this
+        }
+    }
+
     private fun View.isVisible(): Boolean =
         visibility == View.VISIBLE
 
@@ -555,6 +612,7 @@ class ListRowView @JvmOverloads constructor(
 
     companion object {
         private const val BADGE_GONE = 0
+        private const val UNDEFINED = -1f
         const val ACTION_NONE = -1
         const val HEADLINE_NONE = -1
         const val TYPE_IMAGE = 0
@@ -563,6 +621,7 @@ class ListRowView @JvmOverloads constructor(
         const val TYPE_IMAGE_1_1 = 3
         const val TYPE_IMAGE_7_10 = 4
         const val TYPE_IMAGE_16_9 = 5
+        const val TYPE_IMAGE_ROUNDED = 6
 
         @BindingAdapter(
             value = ["listRowBadgeCount", "listRowBadgeDescription"],

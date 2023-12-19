@@ -69,6 +69,13 @@
             <enum name="image_1_1" value="3" />
             <enum name="image_7_10" value="4" />
             <enum name="image_16_9" value="5" />
+            <enum name="image_rounded" value="6" />
+        </attr>
+        <attr name="listRowAssetHeight" format="dimension">
+                <enum name="none" value="-1" />
+        </attr>
+        <attr name="listRowAssetWidth" format="dimension">
+                <enum name="none" value="-1" />
         </attr>
         <!-- {@deprecated This attribute is deprecated. Use <code>listRowBackgroundType</code> instead } -->
         <attr name="listRowIsBoxed" format="boolean" />
