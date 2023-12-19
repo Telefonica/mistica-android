@@ -40,6 +40,17 @@
 			app:listRowBadgeCount="gone"
 			app:listRowBadgeVisible="false"
 			app:listRowDescription="Test Subtitle"
+			app:listRowAssetType="image_rounded"
+			app:listRowIsBoxed="true"
+			app:listRowTitle="Image 64 x 64 (default sizes)" />
+	<com.telefonica.mistica.list.ListRowView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			app:listRowActionLayout="@layout/list_row_chevron_action"
+			app:listRowAssetDrawable="@drawable/placeholder"
+			app:listRowBadgeCount="gone"
+			app:listRowBadgeVisible="false"
+			app:listRowDescription="Test Subtitle"
 			app:listRowAssetType="image_1_1"
 			app:listRowIsBoxed="true"
 			app:listRowTitle="Image_1_1" />
