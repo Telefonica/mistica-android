@@ -96,6 +96,16 @@ import com.telefonica.mistica.util.setAlpha
         attribute = "listRowActionLayout",
         method = "setActionLayout"
     ),
+    BindingMethod(
+        type = ListRowView::class,
+        attribute = "listRowAssetHeight",
+        method = "setAssetHeight"
+    ),
+    BindingMethod(
+        type = ListRowView::class,
+        attribute = "listRowAssetWidth",
+        method = "setAssetWidth"
+    ),
 )
 class ListRowView @JvmOverloads constructor(
     context: Context,
@@ -145,6 +155,8 @@ class ListRowView @JvmOverloads constructor(
     private var currentHeadlineLayoutRes: Int = HEADLINE_NONE
     private var currentActionLayoutRes: Int = ACTION_NONE
     private var assetType: Int = TYPE_SMALL_ICON
+    private var assetHeight: Int = ASSET_DEFAULT_SIZE
+    private var assetWidth: Int = ASSET_DEFAULT_SIZE
 
     init {
         LayoutInflater.from(context).inflate(R.layout.list_row_item, this, true)
@@ -201,6 +213,18 @@ class ListRowView @JvmOverloads constructor(
                 styledAttrs.getInt(
                     R.styleable.ListRowView_listRowBackgroundType,
                     backgroundTypeDefaultValue
+                )
+            )
+            setAssetHeight(
+                styledAttrs.getInt(
+                    R.styleable.ListRowView_listRowAssetHeight,
+                    ASSET_DEFAULT_SIZE
+                )
+            )
+            setAssetWidth(
+                styledAttrs.getInt(
+                    R.styleable.ListRowView_listRowAssetWidth,
+                    ASSET_DEFAULT_SIZE
                 )
             )
             setAssetType(
@@ -294,10 +318,22 @@ class ListRowView @JvmOverloads constructor(
 
     fun setAssetType(@AssetType type: Int, dimensions: ImageDimensions? = null) {
         assetType = type
-        configureAsset(dimensions)
+        dimensions?.let {
+            setAssetHeight(it.height)
+            setAssetWidth(it.width)
+        }
+        configureAsset()
     }
 
-    private fun configureAsset(dimensions: ImageDimensions? = null) {
+    fun setAssetHeight(height: Int) {
+        assetHeight = height
+    }
+
+    fun setAssetWidth(width: Int) {
+        assetWidth = width
+    }
+
+    private fun configureAsset() {
         when (assetType) {
             TYPE_IMAGE -> {
                 assetImageLayout.setBackgroundResource(0)
@@ -316,8 +352,7 @@ class ListRowView @JvmOverloads constructor(
             TYPE_IMAGE_1_1 -> assetRoundedImageView.setSize(80, 80)
             TYPE_IMAGE_7_10 -> assetRoundedImageView.setSize(80, 116)
             TYPE_IMAGE_16_9 -> assetRoundedImageView.setSize(138, 80)
-            TYPE_IMAGE_ROUNDED -> assetRoundedImageView.setSize(dimensions?.width ?: ASSET_DEFAULT_SIZE,
-                dimensions?.height ?: ASSET_DEFAULT_SIZE)
+            TYPE_IMAGE_ROUNDED -> assetRoundedImageView.setSize(assetWidth, assetHeight)
         }
         recalculateAssetPosition()
     }

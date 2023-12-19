@@ -501,7 +501,11 @@ class ListsCatalogFragment : Fragment() {
                 }
             )
 
-            setAssetType(withAssetType, withDimensions)
+            withDimensions?.let {
+                setAssetHeight(withDimensions.height)
+                setAssetWidth(withDimensions.width)
+            }
+            setAssetType(withAssetType)
             withUrlIcon?.let {
                 setAssetUrl(it, errorDrawable = withErrorIcon)
             } ?: run {
