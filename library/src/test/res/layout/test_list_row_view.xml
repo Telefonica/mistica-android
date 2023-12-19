@@ -17,8 +17,8 @@
 			app:listRowAssetType="image_rounded"
 			app:listRowIsBoxed="true"
 			app:listRowTitle="Image 32 x 32"
-			app:listRowAssetHeight="32"
-			app:listRowAssetWidth="32" />
+			app:listRowAssetHeight="32dp"
+			app:listRowAssetWidth="32dp" />
 	<com.telefonica.mistica.list.ListRowView
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
@@ -30,8 +30,8 @@
 			app:listRowAssetType="image_rounded"
 			app:listRowIsBoxed="true"
 			app:listRowTitle="Image 64 x 64"
-			app:listRowAssetHeight="64"
-			app:listRowAssetWidth="64" />
+			app:listRowAssetHeight="64dp"
+			app:listRowAssetWidth="64dp" />
 	<com.telefonica.mistica.list.ListRowView
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"

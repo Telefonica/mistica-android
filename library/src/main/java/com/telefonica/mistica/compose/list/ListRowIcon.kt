@@ -16,8 +16,10 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.telefonica.mistica.R
 import com.telefonica.mistica.compose.shape.Circle
 import com.telefonica.mistica.list.model.ImageDimensions
 
@@ -48,7 +50,7 @@ sealed class ListRowIcon(val contentDescription: String?) {
 
     data class ImageAsset(
         val painter: Painter? = null,
-        val dimensions: ImageDimensions = ImageDimensions(width = 64, height = 64),
+        val dimensions: ImageDimensions? = null,
         val contentScale: ContentScale = ContentScale.Crop,
         private val description: String? = null,
     ) : ListRowIcon(description)
@@ -138,8 +140,8 @@ sealed class ListRowIcon(val contentDescription: String?) {
                 painter = painter,
                 contentDescription = contentDescription,
                 modifier = Modifier
-                    .width(dimensions.width.dp)
-                    .height(dimensions.height.dp)
+                    .width(dimensions?.width?.dp ?: dimensionResource(id = R.dimen.asset_default_size))
+                    .height(dimensions?.height?.dp ?: dimensionResource(id = R.dimen.asset_default_size))
                     .clip(RoundedCornerShape(4.dp)),
                 contentScale = contentScale,
             )

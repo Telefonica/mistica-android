@@ -155,8 +155,8 @@ class ListRowView @JvmOverloads constructor(
     private var currentHeadlineLayoutRes: Int = HEADLINE_NONE
     private var currentActionLayoutRes: Int = ACTION_NONE
     private var assetType: Int = TYPE_SMALL_ICON
-    private var assetHeight: Int = ASSET_DEFAULT_SIZE
-    private var assetWidth: Int = ASSET_DEFAULT_SIZE
+    private var assetHeight: Float = UNDEFINED
+    private var assetWidth: Float = UNDEFINED
 
     init {
         LayoutInflater.from(context).inflate(R.layout.list_row_item, this, true)
@@ -216,15 +216,15 @@ class ListRowView @JvmOverloads constructor(
                 )
             )
             setAssetHeight(
-                styledAttrs.getInt(
+                styledAttrs.getDimension(
                     R.styleable.ListRowView_listRowAssetHeight,
-                    ASSET_DEFAULT_SIZE
+                    UNDEFINED
                 )
             )
             setAssetWidth(
-                styledAttrs.getInt(
+                styledAttrs.getDimension(
                     R.styleable.ListRowView_listRowAssetWidth,
-                    ASSET_DEFAULT_SIZE
+                    UNDEFINED
                 )
             )
             setAssetType(
@@ -319,18 +319,25 @@ class ListRowView @JvmOverloads constructor(
     fun setAssetType(@AssetType type: Int, dimensions: ImageDimensions? = null) {
         assetType = type
         dimensions?.let {
-            setAssetHeight(it.height)
-            setAssetWidth(it.width)
+            setAssetHeight(context.convertDpToPx(it.height).toFloat())
+            setAssetWidth(context.convertDpToPx(it.width).toFloat())
         }
         configureAsset()
     }
 
-    fun setAssetHeight(height: Int) {
-        assetHeight = height
+    fun setAssetHeight(height: Float) {
+        assetHeight = if (height > 0) {
+            height
+        } else {
+            resources.getDimension(R.dimen.asset_default_size)
+        }
     }
 
-    fun setAssetWidth(width: Int) {
-        assetWidth = width
+    fun setAssetWidth(width: Float) {
+        assetWidth = if (width > 0)
+            width
+        else
+            resources.getDimension(R.dimen.asset_default_size)
     }
 
     private fun configureAsset() {
@@ -352,7 +359,7 @@ class ListRowView @JvmOverloads constructor(
             TYPE_IMAGE_1_1 -> assetRoundedImageView.setSize(80, 80)
             TYPE_IMAGE_7_10 -> assetRoundedImageView.setSize(80, 116)
             TYPE_IMAGE_16_9 -> assetRoundedImageView.setSize(138, 80)
-            TYPE_IMAGE_ROUNDED -> assetRoundedImageView.setSize(assetWidth, assetHeight)
+            TYPE_IMAGE_ROUNDED -> assetRoundedImageView.setSizePx(assetWidth, assetHeight)
         }
         recalculateAssetPosition()
     }
@@ -583,6 +590,14 @@ class ListRowView @JvmOverloads constructor(
         }
     }
 
+    private fun ImageView.setSizePx(pxWidth: Float, pxHeight: Float) {
+        layoutParams.apply {
+            height = pxHeight.toInt()
+            width = pxWidth.toInt()
+            layoutParams = this
+        }
+    }
+
     private fun View.isVisible(): Boolean =
         visibility == View.VISIBLE
 
@@ -597,7 +612,7 @@ class ListRowView @JvmOverloads constructor(
 
     companion object {
         private const val BADGE_GONE = 0
-        private const val ASSET_DEFAULT_SIZE = 64
+        private const val UNDEFINED = -1f
         const val ACTION_NONE = -1
         const val HEADLINE_NONE = -1
         const val TYPE_IMAGE = 0

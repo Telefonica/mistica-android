@@ -71,11 +71,11 @@
             <enum name="image_16_9" value="5" />
             <enum name="image_rounded" value="6" />
         </attr>
-        <attr name="listRowAssetHeight" format="integer">
-            <enum name="undefined" value="64" />
+        <attr name="listRowAssetHeight" format="dimension">
+                <enum name="none" value="-1" />
         </attr>
-        <attr name="listRowAssetWidth" format="integer">
-            <enum name="undefined" value="64" />
+        <attr name="listRowAssetWidth" format="dimension">
+                <enum name="none" value="-1" />
         </attr>
         <!-- {@deprecated This attribute is deprecated. Use <code>listRowBackgroundType</code> instead } -->
         <attr name="listRowIsBoxed" format="boolean" />

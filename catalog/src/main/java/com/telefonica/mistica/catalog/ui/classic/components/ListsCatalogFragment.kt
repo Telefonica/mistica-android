@@ -26,6 +26,7 @@ import com.telefonica.mistica.tag.TagStyle
 import com.telefonica.mistica.tag.TagView
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_INVERSE
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_PROMO
+import com.telefonica.mistica.util.convertDpToPx
 
 class ListsCatalogFragment : Fragment() {
 
@@ -502,8 +503,8 @@ class ListsCatalogFragment : Fragment() {
             )
 
             withDimensions?.let {
-                setAssetHeight(withDimensions.height)
-                setAssetWidth(withDimensions.width)
+                setAssetHeight(context.convertDpToPx(withDimensions.height).toFloat())
+                setAssetWidth(context.convertDpToPx(withDimensions.width).toFloat())
             }
             setAssetType(withAssetType)
             withUrlIcon?.let {
