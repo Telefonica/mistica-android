@@ -309,6 +309,10 @@ class ListRowView @JvmOverloads constructor(
         }
     }
 
+    fun setAssetOnClickListener(clickListener: OnClickListener) {
+        assetImageLayout.setOnClickListener(clickListener)
+    }
+
     private fun updateIconVisibility() {
         assetCircularImageView.isVisible = assetType == TYPE_IMAGE
         assetRoundedImageView.isVisible = assetType == TYPE_IMAGE_1_1 || assetType == TYPE_IMAGE_7_10

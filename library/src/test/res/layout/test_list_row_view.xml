@@ -7,6 +7,7 @@
 		android:orientation="vertical">
 
 	<com.telefonica.mistica.list.ListRowView
+			android:id="@+id/list_row_view_32"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			app:listRowActionLayout="@layout/list_row_chevron_action"
@@ -20,6 +21,7 @@
 			app:listRowAssetHeight="32dp"
 			app:listRowAssetWidth="32dp" />
 	<com.telefonica.mistica.list.ListRowView
+			android:id="@+id/list_row_view_64"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			app:listRowActionLayout="@layout/list_row_chevron_action"
@@ -33,6 +35,7 @@
 			app:listRowAssetHeight="64dp"
 			app:listRowAssetWidth="64dp" />
 	<com.telefonica.mistica.list.ListRowView
+			android:id="@+id/list_row_view_default_sizes"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			app:listRowActionLayout="@layout/list_row_chevron_action"
@@ -44,6 +47,7 @@
 			app:listRowIsBoxed="true"
 			app:listRowTitle="Image 64 x 64 (default sizes)" />
 	<com.telefonica.mistica.list.ListRowView
+			android:id="@+id/list_row_view_image_1_1"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			app:listRowActionLayout="@layout/list_row_chevron_action"

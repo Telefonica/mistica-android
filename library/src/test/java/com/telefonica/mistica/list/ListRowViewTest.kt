@@ -7,6 +7,7 @@ import androidx.test.ext.junit.rules.activityScenarioRule
 import com.telefonica.mistica.DummyActivity
 import com.telefonica.mistica.R
 import com.telefonica.mistica.testutils.ScreenshotsTest
+import org.junit.Assert.assertEquals
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -24,6 +25,22 @@ internal class ListRowViewTest: ScreenshotsTest() {
             activity.layoutInflater.inflate(R.layout.test_list_row_view, wrapper, true)
 
             compareScreenshot(Espresso.onView(ViewMatchers.withId(R.id.dummy_activity_wrapper)))
+        }
+    }
+
+    @Test
+    fun `check ListRowView xml onClick`() {
+        rule.scenario.onActivity { activity ->
+            var clicks = 0
+            val wrapper: FrameLayout = activity.findViewById(R.id.dummy_activity_wrapper)
+            activity.layoutInflater.inflate(R.layout.test_list_row_view, wrapper, true)
+
+            with (activity.findViewById<ListRowView>(R.id.list_row_view_32)) {
+                setOnClickListener { clicks++ }
+                performClick()
+            }
+
+            assertEquals(1, clicks)
         }
     }
 }

@@ -28,17 +28,20 @@ sealed class ListRowIcon(val contentDescription: String?) {
     data class NormalIcon(
         val painter: Painter? = null,
         private val description: String? = null,
+        val modifier: Modifier = Modifier,
     ) : ListRowIcon(description)
 
     data class CircleIcon(
         val painter: Painter? = null,
         val backgroundColor: Color = Color.Transparent,
         private val description: String? = null,
+        val modifier: Modifier = Modifier,
     ) : ListRowIcon(description)
 
     data class SmallAsset(
         val painter: Painter? = null,
         private val description: String? = null,
+        val modifier: Modifier = Modifier,
     ) : ListRowIcon(description)
 
     data class LargeAsset(
@@ -46,6 +49,7 @@ sealed class ListRowIcon(val contentDescription: String?) {
         val aspectRatio: AspectRatio = AspectRatio.RATIO_1_1,
         val contentScale: ContentScale = ContentScale.Crop,
         private val description: String? = null,
+        val modifier: Modifier = Modifier,
     ) : ListRowIcon(description)
 
     data class ImageAsset(
@@ -53,6 +57,7 @@ sealed class ListRowIcon(val contentDescription: String?) {
         val dimensions: ImageDimensions? = null,
         val contentScale: ContentScale = ContentScale.Crop,
         private val description: String? = null,
+        val modifier: Modifier = Modifier,
     ) : ListRowIcon(description)
 
     enum class AspectRatio(val width: Dp, val height: Dp) {
@@ -75,9 +80,9 @@ sealed class ListRowIcon(val contentDescription: String?) {
     @Composable
     private fun NormalIcon.DrawNormalIcon() {
         Box(
-            modifier = Modifier
+            modifier = modifier
                 .size(40.dp)
-                .wrapContentSize(align = Alignment.Center)
+                .wrapContentSize(align = Alignment.Center),
         ) {
             painter?.let {
                 Icon(
@@ -94,6 +99,7 @@ sealed class ListRowIcon(val contentDescription: String?) {
     private fun CircleIcon.DrawCircleIcon() {
         Circle(
             color = backgroundColor,
+            modifier = modifier,
         ) {
            painter?.let {
                 Icon(
@@ -110,7 +116,7 @@ sealed class ListRowIcon(val contentDescription: String?) {
             Image(
                 painter = painter,
                 contentDescription = contentDescription,
-                modifier = Modifier
+                modifier = modifier
                     .size(40.dp)
                     .clip(CircleShape),
                 contentScale = ContentScale.Crop,
@@ -124,7 +130,7 @@ sealed class ListRowIcon(val contentDescription: String?) {
             Image(
                 painter = painter,
                 contentDescription = contentDescription,
-                modifier = Modifier
+                modifier = modifier
                     .height(aspectRatio.height)
                     .width(aspectRatio.width)
                     .clip(RoundedCornerShape(4.dp)),
@@ -139,7 +145,7 @@ sealed class ListRowIcon(val contentDescription: String?) {
             Image(
                 painter = painter,
                 contentDescription = contentDescription,
-                modifier = Modifier
+                modifier = modifier
                     .width(dimensions?.width?.dp ?: dimensionResource(id = R.dimen.asset_default_size))
                     .height(dimensions?.height?.dp ?: dimensionResource(id = R.dimen.asset_default_size))
                     .clip(RoundedCornerShape(4.dp)),

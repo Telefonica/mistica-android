@@ -16,12 +16,13 @@ import com.telefonica.mistica.compose.theme.MisticaTheme
 
 @Composable
 fun Circle(
+    modifier: Modifier = Modifier,
     color: Color = MisticaTheme.colors.neutralLow,
     size: Dp = 40.dp,
     content: @Composable (() -> Unit),
 ) {
     Box(
-        modifier = Modifier
+        modifier = modifier
             .size(size)
             .clip(CircleShape)
             .background(color)
