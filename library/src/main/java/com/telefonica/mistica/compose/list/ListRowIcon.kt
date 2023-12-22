@@ -81,7 +81,7 @@ sealed class ListRowIcon(val contentDescription: String?) {
     private fun NormalIcon.DrawNormalIcon() {
         Box(
             modifier = modifier
-                .size(40.dp)
+                .size(48.dp)
                 .wrapContentSize(align = Alignment.Center),
         ) {
             painter?.let {
