@@ -52,7 +52,7 @@ class ListsCatalogFragment : Fragment() {
         boxedInverseList.adapter = ListAdapter(backgroundType = ListRowView.BackgroundType.TYPE_BOXED_INVERSE)
 
         val clickableRow: MisticaRecyclerView = view.findViewById(R.id.clickable_list)
-        clickableRow.adapter = ClickableListAdapter(backgroundType = ListRowView.BackgroundType.TYPE_NORMAL)
+        clickableRow.adapter = ClickableListAdapter()
     }
 
     class ListAdapter(
@@ -556,9 +556,7 @@ class ListsCatalogFragment : Fragment() {
 
     class ListViewHolder(val rowView: ListRowView) : RecyclerView.ViewHolder(rowView)
 
-    class ClickableListAdapter(
-        @ListRowView.BackgroundType private val backgroundType: Int,
-    ) : RecyclerView.Adapter<ListViewHolder>() {
+    class ClickableListAdapter : RecyclerView.Adapter<ListViewHolder>() {
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
             return ListViewHolder(
                 LayoutInflater.from(parent.context).inflate(
