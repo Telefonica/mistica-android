@@ -50,6 +50,9 @@ class ListsCatalogFragment : Fragment() {
 
         val boxedInverseList: MisticaRecyclerView = view.findViewById(R.id.boxed_inverse_list)
         boxedInverseList.adapter = ListAdapter(backgroundType = ListRowView.BackgroundType.TYPE_BOXED_INVERSE)
+
+        val clickableRow: MisticaRecyclerView = view.findViewById(R.id.clickable_list)
+        clickableRow.adapter = ClickableListAdapter()
     }
 
     class ListAdapter(
@@ -552,6 +555,39 @@ class ListsCatalogFragment : Fragment() {
     }
 
     class ListViewHolder(val rowView: ListRowView) : RecyclerView.ViewHolder(rowView)
+
+    class ClickableListAdapter : RecyclerView.Adapter<ListViewHolder>() {
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
+            return ListViewHolder(
+                LayoutInflater.from(parent.context).inflate(
+                    R.layout.screen_fragment_lists_catalog_item,
+                    parent,
+                    false
+                ) as ListRowView
+            )
+        }
+
+        override fun getItemCount(): Int = 2
+
+        override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
+            with(holder.rowView) {
+                if (position == 0) {
+                    setTitle("Clickable Asset")
+                    setAssetOnClickListener {
+                        Toast.makeText(context, "Asset clicked!", Toast.LENGTH_SHORT).show()
+                    }
+                } else {
+                    setTitle("Clickable Asset in Clickable Row")
+                    setOnClickListener {
+                        Toast.makeText(context, "Row clicked!", Toast.LENGTH_SHORT).show()
+                    }
+                    setAssetOnClickListener {
+                        Toast.makeText(context, "Asset clicked!", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            }
+        }
+    }
 
     private companion object {
         const val IMAGE_URL = "https://www.fotoaparat.cz/imgs/a/26/2639/0n1wjdf0-cr-em13-09-1200x627x9.jpg"

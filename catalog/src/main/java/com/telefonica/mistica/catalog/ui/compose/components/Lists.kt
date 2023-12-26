@@ -1,8 +1,11 @@
 package com.telefonica.mistica.catalog.ui.compose.components
 
+import android.content.Context
+import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -13,6 +16,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Divider
 import androidx.compose.material.ExperimentalMaterialApi
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Switch
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -23,6 +27,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import coil.compose.rememberAsyncImagePainter
 import coil.request.ImageRequest
 import coil.transform.CircleCropTransformation
@@ -298,10 +303,14 @@ const val IMAGE_URL = "https://www.fotoaparat.cz/imgs/a/26/2639/0n1wjdf0-cr-em13
 @Composable
 fun Lists() {
     val samples = samples()
+    val context = LocalContext.current
     LazyColumn(
         modifier = Modifier
             .fillMaxSize(),
     ) {
+        item {
+            SectionTitle("Full Width List")
+        }
         items(samples) { item ->
             ListRowItem(
                 backgroundType = item.backgroundType,
@@ -321,6 +330,9 @@ fun Lists() {
                 color = MisticaTheme.colors.divider
             )
         }
+        item {
+            SectionTitle("Boxed List")
+        }
         items(samples.map {
             it.copy(backgroundType = BackgroundType.TYPE_BOXED)
         }) { item ->
@@ -337,6 +349,9 @@ fun Lists() {
                 onClick = item.onClick,
                 bottom = item.bottom,
             )
+        }
+        item {
+            SectionTitle("Boxed Inverse List")
         }
         items(samples.map {
             it.copy(
@@ -356,6 +371,17 @@ fun Lists() {
                 trailing = item.action,
                 onClick = item.onClick,
                 bottom = item.bottom,
+            )
+        }
+        item {
+            SectionTitle("Clickable Asset")
+            ClickableAssetSample(
+                context = context,
+                onRowClick = {},
+            )
+            ClickableAssetSample(
+                context = context,
+                onRowClick = { Toast.makeText(context, "Row Clicked", Toast.LENGTH_SHORT).show() },
             )
         }
     }
@@ -390,6 +416,15 @@ fun Avatar(url: String) {
 }
 
 @Composable
+private fun SectionTitle(title: String) {
+    Text(
+        text = title.uppercase(),
+        style = MaterialTheme.typography.h6.copy(fontSize = 14.sp),
+        modifier = Modifier.padding(16.dp)
+    )
+}
+
+@Composable
 private fun CustomSlot() {
     Box(
         modifier = Modifier
@@ -411,4 +446,24 @@ private fun CustomSlot() {
             text = "Custom Slot"
         )
     }
+}
+
+@Composable
+@OptIn(ExperimentalMaterialApi::class)
+private fun ClickableAssetSample(context: Context, onRowClick: () -> Unit) {
+    ListRowItem(
+        title = "Clickable Asset in Clickable Row",
+        subtitle = "Subtitle",
+        description = "Description",
+        isBadgeVisible = true,
+        badge = "1",
+        onClick = onRowClick,
+        listRowIcon = ListRowIcon.CircleIcon(
+            painterResource(id = R.drawable.ic_lists),
+            backgroundColor = MisticaTheme.colors.backgroundAlternative,
+            modifier = Modifier.clickable {
+                Toast.makeText(context, "Asset Clicked", Toast.LENGTH_SHORT).show()
+            }
+        ),
+    )
 }
