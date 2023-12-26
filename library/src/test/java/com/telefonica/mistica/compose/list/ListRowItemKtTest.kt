@@ -55,7 +55,7 @@ internal class ListRowItemKtTest: ScreenshotsTest() {
         )
         composeTestRule.onNode(hasTestTag(LIST_ROW_ITEM_ASSET_TAG)).performClick()
 
-        assertEquals( 1, clicked)
+        assertEquals(1, clicked)
     }
 
     @OptIn(ExperimentalMaterialApi::class)
