@@ -1,5 +1,6 @@
 package com.telefonica.mistica.catalog.ui.compose.components
 
+import android.content.Context
 import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -374,19 +375,13 @@ fun Lists() {
         }
         item {
             SectionTitle("Clickable Asset")
-            ListRowItem(
-                title = "Clickable Asset",
-                subtitle = "Subtitle",
-                description = "Description",
-                isBadgeVisible = true,
-                badge = "1",
-                listRowIcon = ListRowIcon.CircleIcon(
-                    painterResource(id = R.drawable.ic_lists),
-                    backgroundColor = MisticaTheme.colors.backgroundAlternative,
-                    modifier = Modifier.clickable {
-                        Toast.makeText(context, "Asset Clicked", Toast.LENGTH_SHORT).show()
-                    }
-                ),
+            ClickableAssetSample(
+                context = context,
+                onRowClick = {},
+            )
+            ClickableAssetSample(
+                context = context,
+                onRowClick = { Toast.makeText(context, "Row Clicked", Toast.LENGTH_SHORT).show() },
             )
         }
     }
@@ -451,4 +446,24 @@ private fun CustomSlot() {
             text = "Custom Slot"
         )
     }
+}
+
+@Composable
+@OptIn(ExperimentalMaterialApi::class)
+private fun ClickableAssetSample(context: Context, onRowClick: () -> Unit) {
+    ListRowItem(
+        title = "Clickable Asset in Clickable Row",
+        subtitle = "Subtitle",
+        description = "Description",
+        isBadgeVisible = true,
+        badge = "1",
+        onClick = onRowClick,
+        listRowIcon = ListRowIcon.CircleIcon(
+            painterResource(id = R.drawable.ic_lists),
+            backgroundColor = MisticaTheme.colors.backgroundAlternative,
+            modifier = Modifier.clickable {
+                Toast.makeText(context, "Asset Clicked", Toast.LENGTH_SHORT).show()
+            }
+        ),
+    )
 }

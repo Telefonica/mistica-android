@@ -567,13 +567,23 @@ class ListsCatalogFragment : Fragment() {
             )
         }
 
-        override fun getItemCount(): Int = 1
+        override fun getItemCount(): Int = 2
 
         override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
             with(holder.rowView) {
-                setTitle("Clickable Asset")
-                setAssetOnClickListener {
-                    Toast.makeText(context, "Asset clicked!", Toast.LENGTH_SHORT).show()
+                if (position == 0) {
+                    setTitle("Clickable Asset")
+                    setAssetOnClickListener {
+                        Toast.makeText(context, "Asset clicked!", Toast.LENGTH_SHORT).show()
+                    }
+                } else {
+                    setTitle("Clickable Asset in Clickable Row")
+                    setOnClickListener {
+                        Toast.makeText(context, "Row clicked!", Toast.LENGTH_SHORT).show()
+                    }
+                    setAssetOnClickListener {
+                        Toast.makeText(context, "Asset clicked!", Toast.LENGTH_SHORT).show()
+                    }
                 }
             }
         }
