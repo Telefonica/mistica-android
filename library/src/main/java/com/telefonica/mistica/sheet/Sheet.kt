@@ -225,7 +225,7 @@ private fun Children.toView(context: Context, onSheetTapped: InternalOnSheetTapp
     is ListSingleSelection -> this.toView(context, onSheetTapped)
     is ListActions -> this.toView(context, onSheetTapped)
     is ListInformative -> this.toView(context)
-    is BottomActions -> this.toView(context, onSheetTapped, container)
+    is BottomActions -> this.toView(onSheetTapped, container)
 }
 
 private fun ListSingleSelection.toView(context: Context, onSheetTapped: InternalOnSheetTapped): View =
@@ -246,8 +246,8 @@ private fun ListInformative.toView(context: Context): View =
         it.adapter = InformativeListAdapter(this.elements.mapToInformativeViewData())
     }
 
-private fun BottomActions.toView(context: Context, onSheetTapped: InternalOnSheetTapped, container: ViewGroup): View {
-    return LayoutInflater.from(context).inflate(R.layout.sheet_bottom_actions, container, false)
+private fun BottomActions.toView(onSheetTapped: InternalOnSheetTapped, container: ViewGroup): View {
+    return LayoutInflater.from(container.context).inflate(R.layout.sheet_bottom_actions, container, false)
         .also { view ->
             setBottomActionsContent(view, onSheetTapped)
         }
