@@ -8,19 +8,23 @@ concurrency:
 
 jobs:
   tests:
-    runs-on: self-hosted-novum
+    runs-on: ubuntu-latest
     steps:
-    - name: Checkout repo
-      uses: actions/checkout@v2
-    
-    - name: "Build Android project"
-      uses: docker://docker.tuenti.io/android/novum_android_api34:4
-      with:
-        args: 'bash ./gradlew clean check assemble'
+      - name: Set up JDK 17
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'temurin'
+          java-version: '17'
 
-    - name: Upload Lint results
-      uses: github/codeql-action/upload-sarif@v2
-      if: success() || failure()
-      with:
-        sarif_file: app/build/reports/lint-results-debug.sarif
-        category: lint
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: "Build Android project"
+        run: 'bash ./gradlew clean check assemble'
+
+      - name: Upload Lint results
+        uses: github/codeql-action/upload-sarif@v2
+        if: success() || failure()
+        with:
+          sarif_file: app/build/reports/lint-results-debug.sarif
+          category: lint
