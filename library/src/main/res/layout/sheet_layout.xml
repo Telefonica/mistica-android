@@ -26,6 +26,7 @@
 			android:paddingStart="16dp"
 			android:paddingTop="20dp"
 			android:paddingBottom="8dp"
+			tools:ignore="RtlSymmetry"
 			tools:text="Title"
 			android:textAppearance="@style/AppTheme.TextAppearance.Preset5"
 			/>
@@ -60,6 +61,7 @@
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:paddingStart="16dp"
+					tools:ignore="RtlSymmetry"
 					tools:text="Subtitle"
 					android:textAppearance="@style/AppTheme.TextAppearance.Preset3"
 					/>
@@ -70,6 +72,7 @@
 					android:layout_height="wrap_content"
 					android:paddingStart="16dp"
 					android:paddingTop="8dp"
+					tools:ignore="RtlSymmetry"
 					tools:text="Description"
 					android:textAppearance="@style/AppTheme.TextAppearance.Preset2"
 					android:textColor="?colorTextSecondary"

@@ -67,6 +67,7 @@
 			tools:text="Title"
 			android:layout_marginStart="8dp"
 			android:paddingEnd="16dp"
+			tools:ignore="RtlSymmetry"
 			/>
 
 	<TextView
