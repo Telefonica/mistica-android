@@ -15,7 +15,6 @@ import android.widget.TextView
 import androidx.annotation.IntDef
 import androidx.annotation.LayoutRes
 import androidx.databinding.*
-import androidx.databinding.adapters.ListenerUtil
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.telefonica.mistica.R
@@ -261,32 +260,5 @@ class TextInput @JvmOverloads constructor(
         const val TYPE_PHONE = 4
 
         const val NO_MAX_LENGTH = 0
-
-        @BindingAdapter(
-            value = ["inputTextAttrChanged"]
-        )
-        @JvmStatic
-        fun setTextWatcher(input: TextInput, listener: InverseBindingListener) {
-            val textWatcher: TextWatcher = object : TextWatcher {
-                override fun afterTextChanged(s: Editable?) {
-                    listener.onChange()
-                }
-
-                override fun beforeTextChanged(
-                    s: CharSequence?,
-                    start: Int,
-                    count: Int,
-                    after: Int
-                ) {
-                }
-
-                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
-            }
-            val oldTextWatcher = ListenerUtil.trackListener(input, textWatcher, R.id.textWatcher)
-            if (oldTextWatcher != null) {
-                input.removeTextChangedListener(oldTextWatcher)
-            }
-            input.addTextChangedListener(textWatcher)
-        }
     }
 }

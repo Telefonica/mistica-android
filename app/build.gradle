@@ -8,12 +8,13 @@ def appCenterProjects = new Properties()
 file("appcenter_projects.properties").withInputStream { appCenterProjects.load(it) }
 
 android {
-    compileSdkVersion 33
+    compileSdk target_sdk_version
+    namespace "com.telefonica.mistica.app"
 
     defaultConfig {
         applicationId "com.telefonica.mistica.app"
-        minSdkVersion 21
-        targetSdkVersion 33
+        minSdkVersion min_sdk_version
+        targetSdkVersion target_sdk_version
         versionCode versionCodeDate()
         versionName "1.0.0"
 
@@ -51,6 +52,18 @@ android {
         }
     }
 
+    buildFeatures {
+        buildConfig true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = '17'
+    }
 }
 
 static def versionCodeDate() {
