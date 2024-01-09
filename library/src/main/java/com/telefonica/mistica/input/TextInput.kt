@@ -262,7 +262,6 @@ class TextInput @JvmOverloads constructor(
 
         const val NO_MAX_LENGTH = 0
 
-
         @BindingAdapter(
             value = ["inputTextAttrChanged"]
         )
@@ -289,6 +288,5 @@ class TextInput @JvmOverloads constructor(
             }
             input.addTextChangedListener(textWatcher)
         }
-
     }
 }
