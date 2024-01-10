@@ -8,6 +8,12 @@ jobs:
   catalog:
     runs-on: ubuntu-latest
     steps:
+      - name: Set up JDK 17
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
       - name: Check pull request status
         if: "!github.event.pull_request.merged == true"
         run: 'echo "Skipping generation, pull request is not merged"'
