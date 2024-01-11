@@ -30,6 +30,9 @@
 		<item name="colorButtonDangerBackground">@color/blau_color_blauRed</item>
 		<item name="colorButtonDangerBackgroundSelected">@color/blau_color_blauRed70</item>
 		<item name="colorButtonDangerBackgroundHover">@color/blau_color_blauRed70</item>
+		<item name="colorButtonLinkDangerBackgroundSelected">@color/blau_color_blauPurple_30_alpha</item>
+		<item name="colorButtonLinkDangerBackgroundInverse">@color/blau_color_blauPurple_1_alpha</item>
+		<item name="colorButtonLinkDangerBackgroundInverseSelected">@color/blau_color_blauPurple_30_alpha</item>
 		<item name="colorButtonLinkBackgroundSelected">@color/blau_color_blauPurple_30_alpha</item>
 		<item name="colorButtonLinkBackgroundInverseSelected">@color/blau_color_blauPurple_30_alpha</item>
 		<item name="colorButtonPrimaryBackground">@color/blau_color_blauBlueSecondary</item>
@@ -61,6 +64,7 @@
 		<item name="colorControlInverse">@color/blau_color_darkModeGrey6</item>
 		<item name="colorControlActivatedInverse">@color/blau_color_blauBlueSecondary</item>
 		<item name="colorControlError">@color/blau_color_blauRed</item>
+		<item name="colorBarTrack">@color/blau_color_darkModeGrey6</item>
 		<item name="colorLoadingBar">@color/blau_color_blauBluePrimary</item>
 		<item name="colorLoadingBarBackground">@color/blau_color_darkModeGrey</item>
 		<item name="colorToggleAndroidInactive">@color/blau_color_grey5</item>

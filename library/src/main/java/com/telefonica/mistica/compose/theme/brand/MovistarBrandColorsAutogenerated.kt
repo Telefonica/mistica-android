@@ -34,6 +34,9 @@ public object MovistarBrandColors {
       buttonDangerBackground = MovistarPaletteColor.movistar_color_pepper,
       buttonDangerBackgroundSelected = MovistarPaletteColor.movistar_color_pepper55,
       buttonDangerBackgroundHover = MovistarPaletteColor.movistar_color_pepper55,
+      buttonLinkDangerBackgroundSelected = MovistarPaletteColor.movistar_color_pepper10,
+      buttonLinkDangerBackgroundInverse = MovistarPaletteColor.movistar_color_white,
+      buttonLinkDangerBackgroundInverseSelected = MovistarPaletteColor.movistar_color_pepper10,
       buttonLinkBackgroundSelected = MovistarPaletteColor.movistar_color_movistarBlue10,
       buttonLinkBackgroundInverseSelected = MovistarPaletteColor.movistar_color_white_20_alpha,
       buttonPrimaryBackground = MovistarPaletteColor.movistar_color_movistarBlue,
@@ -65,6 +68,7 @@ public object MovistarBrandColors {
       controlInverse = MovistarPaletteColor.movistar_color_white,
       controlActivatedInverse = MovistarPaletteColor.movistar_color_white,
       controlError = MovistarPaletteColor.movistar_color_pepper,
+      barTrack = MovistarPaletteColor.movistar_color_grey3,
       loadingBar = MovistarPaletteColor.movistar_color_movistarBlue30,
       loadingBarBackground = MovistarPaletteColor.movistar_color_movistarBlue55,
       toggleAndroidInactive = MovistarPaletteColor.movistar_color_grey2,
@@ -144,6 +148,9 @@ public object MovistarBrandColors {
       buttonDangerBackground = MovistarPaletteColor.movistar_color_pepper,
       buttonDangerBackgroundSelected = MovistarPaletteColor.movistar_color_pepper55,
       buttonDangerBackgroundHover = MovistarPaletteColor.movistar_color_pepper55,
+      buttonLinkDangerBackgroundSelected = MovistarPaletteColor.movistar_color_white_8_alpha,
+      buttonLinkDangerBackgroundInverse = MovistarPaletteColor.movistar_color_white_1_alpha,
+      buttonLinkDangerBackgroundInverseSelected = MovistarPaletteColor.movistar_color_white_8_alpha,
       buttonLinkBackgroundSelected = MovistarPaletteColor.movistar_color_white_8_alpha,
       buttonLinkBackgroundInverseSelected = MovistarPaletteColor.movistar_color_white_8_alpha,
       buttonPrimaryBackground = MovistarPaletteColor.movistar_color_movistarBlue,
@@ -175,6 +182,7 @@ public object MovistarBrandColors {
       controlInverse = MovistarPaletteColor.movistar_color_darkModeGrey6,
       controlActivatedInverse = MovistarPaletteColor.movistar_color_movistarBlue,
       controlError = MovistarPaletteColor.movistar_color_pepper,
+      barTrack = MovistarPaletteColor.movistar_color_darkModeGrey6,
       loadingBar = MovistarPaletteColor.movistar_color_movistarBlue,
       loadingBarBackground = MovistarPaletteColor.movistar_color_darkModeGrey6,
       toggleAndroidInactive = MovistarPaletteColor.movistar_color_darkModeGrey4,
@@ -332,6 +340,8 @@ private object MovistarPaletteColor {
   public val movistar_color_darkModeGrey_80_alpha: Color = Color(0xCC081F2E)
 
   public val movistar_color_white_8_alpha: Color = Color(0x14FFFFFF)
+
+  public val movistar_color_white_1_alpha: Color = Color(0x03FFFFFF)
 
   public val movistar_color_white_15_alpha: Color = Color(0x26FFFFFF)
 }

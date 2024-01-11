@@ -51,4 +51,5 @@
 	<color name="blau_color_white_5_alpha">#0DFFFFFF</color>
 	<color name="blau_color_darkModeGrey_80_alpha">#CC242424</color>
 	<color name="blau_color_blauPurple_30_alpha">#4D7814B3</color>
+	<color name="blau_color_blauPurple_1_alpha">#037814B3</color>
 </resources>

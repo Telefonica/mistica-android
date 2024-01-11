@@ -34,6 +34,9 @@ public object BlauBrandColors {
       buttonDangerBackground = BlauPaletteColor.blau_color_blauRed,
       buttonDangerBackgroundSelected = BlauPaletteColor.blau_color_blauRed70,
       buttonDangerBackgroundHover = BlauPaletteColor.blau_color_blauRed70,
+      buttonLinkDangerBackgroundSelected = BlauPaletteColor.blau_color_blauRed10,
+      buttonLinkDangerBackgroundInverse = BlauPaletteColor.blau_color_white,
+      buttonLinkDangerBackgroundInverseSelected = BlauPaletteColor.blau_color_blauRed10,
       buttonLinkBackgroundSelected = BlauPaletteColor.blau_color_blauPurple10,
       buttonLinkBackgroundInverseSelected = BlauPaletteColor.blau_color_white_15_alpha,
       buttonPrimaryBackground = BlauPaletteColor.blau_color_blauBlueSecondary,
@@ -65,6 +68,7 @@ public object BlauBrandColors {
       controlInverse = BlauPaletteColor.blau_color_white,
       controlActivatedInverse = BlauPaletteColor.blau_color_white,
       controlError = BlauPaletteColor.blau_color_blauRed,
+      barTrack = BlauPaletteColor.blau_color_grey2,
       loadingBar = BlauPaletteColor.blau_color_blauBlueSecondary,
       loadingBarBackground = BlauPaletteColor.blau_color_blauBlueSecondary10,
       toggleAndroidInactive = BlauPaletteColor.blau_color_grey2,
@@ -144,6 +148,9 @@ public object BlauBrandColors {
       buttonDangerBackground = BlauPaletteColor.blau_color_blauRed,
       buttonDangerBackgroundSelected = BlauPaletteColor.blau_color_blauRed70,
       buttonDangerBackgroundHover = BlauPaletteColor.blau_color_blauRed70,
+      buttonLinkDangerBackgroundSelected = BlauPaletteColor.blau_color_blauPurple_30_alpha,
+      buttonLinkDangerBackgroundInverse = BlauPaletteColor.blau_color_blauPurple_1_alpha,
+      buttonLinkDangerBackgroundInverseSelected = BlauPaletteColor.blau_color_blauPurple_30_alpha,
       buttonLinkBackgroundSelected = BlauPaletteColor.blau_color_blauPurple_30_alpha,
       buttonLinkBackgroundInverseSelected = BlauPaletteColor.blau_color_blauPurple_30_alpha,
       buttonPrimaryBackground = BlauPaletteColor.blau_color_blauBlueSecondary,
@@ -175,6 +182,7 @@ public object BlauBrandColors {
       controlInverse = BlauPaletteColor.blau_color_darkModeGrey6,
       controlActivatedInverse = BlauPaletteColor.blau_color_blauBlueSecondary,
       controlError = BlauPaletteColor.blau_color_blauRed,
+      barTrack = BlauPaletteColor.blau_color_darkModeGrey6,
       loadingBar = BlauPaletteColor.blau_color_blauBluePrimary,
       loadingBarBackground = BlauPaletteColor.blau_color_darkModeGrey,
       toggleAndroidInactive = BlauPaletteColor.blau_color_grey5,
@@ -326,4 +334,6 @@ private object BlauPaletteColor {
   public val blau_color_darkModeGrey_80_alpha: Color = Color(0xCC242424)
 
   public val blau_color_blauPurple_30_alpha: Color = Color(0x4D7814B3)
+
+  public val blau_color_blauPurple_1_alpha: Color = Color(0x037814B3)
 }

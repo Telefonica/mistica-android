@@ -30,6 +30,9 @@
 		<item name="colorButtonDangerBackground">@color/telefonica_color_coral</item>
 		<item name="colorButtonDangerBackgroundSelected">@color/telefonica_color_coral80</item>
 		<item name="colorButtonDangerBackgroundHover">@color/telefonica_color_coral80</item>
+		<item name="colorButtonLinkDangerBackgroundSelected">@color/telefonica_color_white_8_alpha</item>
+		<item name="colorButtonLinkDangerBackgroundInverse">@color/telefonica_color_white_1_alpha</item>
+		<item name="colorButtonLinkDangerBackgroundInverseSelected">@color/telefonica_color_white_8_alpha</item>
 		<item name="colorButtonLinkBackgroundSelected">@color/telefonica_color_white_8_alpha</item>
 		<item name="colorButtonLinkBackgroundInverseSelected">@color/telefonica_color_white_8_alpha</item>
 		<item name="colorButtonPrimaryBackground">@color/telefonica_color_telefonicaBlue</item>
@@ -61,6 +64,7 @@
 		<item name="colorControlInverse">@color/telefonica_color_darkModeGrey6</item>
 		<item name="colorControlActivatedInverse">@color/telefonica_color_telefonicaBlue</item>
 		<item name="colorControlError">@color/telefonica_color_coral</item>
+		<item name="colorBarTrack">@color/telefonica_color_darkModeGrey6</item>
 		<item name="colorLoadingBar">@color/telefonica_color_telefonicaBlue</item>
 		<item name="colorLoadingBarBackground">@color/telefonica_color_grey6</item>
 		<item name="colorToggleAndroidInactive">@color/telefonica_color_grey4</item>

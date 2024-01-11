@@ -49,5 +49,6 @@
 	<color name="telefonica_color_white_3_alpha">#08FFFFFF</color>
 	<color name="telefonica_color_white_5_alpha">#0DFFFFFF</color>
 	<color name="telefonica_color_darkModeGrey_80_alpha">#CC242424</color>
+	<color name="telefonica_color_white_1_alpha">#03FFFFFF</color>
 	<color name="telefonica_color_white_15_alpha">#26FFFFFF</color>
 </resources>
