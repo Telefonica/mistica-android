@@ -5,7 +5,9 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:padding="16dp"
-		android:orientation="vertical">
+		android:orientation="vertical"
+		>
+
 	<com.telefonica.mistica.list.MisticaRecyclerView
 			android:id="@+id/test_list"
 			android:layout_width="match_parent"
