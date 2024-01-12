@@ -7,11 +7,12 @@ plugins {
 }
 
 android {
-    compileSdkVersion 33
+    compileSdk target_sdk_version
+    namespace "com.telefonica.mistica"
 
     defaultConfig {
-        minSdkVersion 21
-        targetSdkVersion 33
+        minSdkVersion min_sdk_version
+        targetSdkVersion target_sdk_version
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -32,12 +33,12 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
 
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '17'
     }
 
     buildFeatures {
@@ -69,7 +70,7 @@ tasks.withType(Test) {
 
 task sourceJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
-    classifier "sources"
+    archiveClassifier = "sources"
 }
 
 dependencies {
@@ -77,13 +78,13 @@ dependencies {
     api 'androidx.constraintlayout:constraintlayout:2.0.4'
     api 'androidx.constraintlayout:constraintlayout-solver:2.0.4'
     api 'androidx.recyclerview:recyclerview:1.1.0'
-    api "androidx.compose.runtime:runtime:$compose_core_version"
+    api "androidx.compose.runtime:runtime:$compose_ui_version"
 
     implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.activity:activity-compose:1.4.0'
     implementation "androidx.constraintlayout:constraintlayout-compose:$constraintComposeVersion"
 
-    implementation "androidx.compose.material:material:$compose_core_version"
+    implementation "androidx.compose.material:material:$compose_ui_version"
     implementation "androidx.compose.ui:ui:$compose_ui_version"
     implementation "androidx.compose.ui:ui-tooling-preview:$compose_ui_version"
 
@@ -111,6 +112,7 @@ dependencies {
     testImplementation "androidx.test:core-ktx:1.5.0"
     testImplementation 'androidx.test.ext:junit-ktx:1.1.5'
     testImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    testImplementation project(':library-test-utils')
 
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_ui_version"
 }

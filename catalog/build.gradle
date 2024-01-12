@@ -6,18 +6,18 @@ plugins {
 }
 
 android {
-    compileSdkVersion 33
+    compileSdk target_sdk_version
+    namespace = "com.telefonica.mistica.catalog"
 
     defaultConfig {
-        minSdkVersion 21
-        targetSdkVersion 33
+        minSdkVersion min_sdk_version
+        targetSdkVersion target_sdk_version
 
         buildConfigField "String", "APPCENTER_KEY", "\"" + System.env.APPCENTER_KEY + "\""
         vectorDrawables {
             useSupportLibrary true
         }
     }
-
 
     lintOptions {
         warningsAsErrors true
@@ -27,15 +27,25 @@ android {
     }
     buildFeatures {
         compose true
+        buildConfig true
     }
     composeOptions {
         kotlinCompilerExtensionVersion compose_compiler_version
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = '17'
     }
 }
 
 task sourceJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
-    classifier "sources"
+    archiveClassifier = "sources"
 }
 
 dependencies {
@@ -45,7 +55,7 @@ dependencies {
     implementation "androidx.constraintlayout:constraintlayout-compose:$constraintComposeVersion"
     implementation 'androidx.activity:activity-compose:1.4.0'
     implementation "androidx.navigation:navigation-compose:2.5.3"
-    implementation "androidx.compose.material:material:$compose_core_version"
+    implementation "androidx.compose.material:material:$compose_ui_version"
     implementation "androidx.compose.ui:ui:$compose_ui_version"
     implementation "androidx.compose.ui:ui-tooling-preview:$compose_ui_version"
 

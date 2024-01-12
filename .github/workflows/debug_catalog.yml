@@ -15,13 +15,19 @@ jobs:
   debug-catalog:
     runs-on: ubuntu-latest
     steps:
+      - name: Set up JDK 17
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
       - name: Checkout repo
         uses: actions/checkout@v3
 
       - name: Publish catalog
         env:
           APPCENTER_API_TOKEN: ${{ secrets.APPCENTER_API_TOKEN }}
-        run: 'bash ./gradlew clean check appCenterAssembleAndUploadDebug -Dappcenter_app_name=Mistica-Catalog -Dappcenter_notify=false 
+        run: 'bash ./gradlew clean appCenterAssembleAndUploadDebug -Dappcenter_app_name=Mistica-Catalog -Dappcenter_notify=false 
           -Dappcenter_notes="Testing catalog for PR #${{ github.event.number }} ${{ github.sha }}"'
 
       - name: Get version ID

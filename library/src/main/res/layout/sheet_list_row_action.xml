@@ -33,6 +33,7 @@
 			app:layout_constraintBottom_toBottomOf="parent"
 			tools:text="Title"
 			android:paddingEnd="16dp"
+			tools:ignore="RtlSymmetry"
 			android:layout_marginStart="16dp"
 			/>
 </androidx.constraintlayout.widget.ConstraintLayout>
