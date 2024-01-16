@@ -10,6 +10,8 @@ import com.telefonica.mistica.compose.title.TitleStyle
 
 interface Brand {
     val compatibilityTheme: Int
+    val compatibilityThemeOverrides: List<Int>
+        get() = emptyList()
     val lightColors: MisticaColors
     val darkColors: MisticaColors
     val fontFamily: FontFamily

@@ -33,6 +33,9 @@ fun MisticaTheme(
     val context = LocalContext.current
     LaunchedEffect(key1 = brand) {
         context.setTheme(brand.compatibilityTheme)
+        brand.compatibilityThemeOverrides.forEach {
+            context.theme.applyStyle(it, true)
+        }
     }
 
     val colors = if (darkTheme) {
