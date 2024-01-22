@@ -37,6 +37,9 @@ public object TelefonicaBrandColors {
       buttonDangerBackground = TelefonicaPaletteColor.telefonica_color_coral,
       buttonDangerBackgroundSelected = TelefonicaPaletteColor.telefonica_color_coral80,
       buttonDangerBackgroundHover = TelefonicaPaletteColor.telefonica_color_coral80,
+      buttonLinkDangerBackgroundSelected = TelefonicaPaletteColor.telefonica_color_coral10,
+      buttonLinkDangerBackgroundInverse = TelefonicaPaletteColor.telefonica_color_white,
+      buttonLinkDangerBackgroundInverseSelected = TelefonicaPaletteColor.telefonica_color_coral10,
       buttonLinkBackgroundSelected = TelefonicaPaletteColor.telefonica_color_grey1,
       buttonLinkBackgroundInverseSelected = TelefonicaPaletteColor.telefonica_color_white_8_alpha,
       buttonPrimaryBackground = TelefonicaPaletteColor.telefonica_color_telefonicaBlue,
@@ -71,6 +74,7 @@ public object TelefonicaBrandColors {
       controlInverse = TelefonicaPaletteColor.telefonica_color_white,
       controlActivatedInverse = TelefonicaPaletteColor.telefonica_color_white,
       controlError = TelefonicaPaletteColor.telefonica_color_coral,
+      barTrack = TelefonicaPaletteColor.telefonica_color_grey3,
       loadingBar = TelefonicaPaletteColor.telefonica_color_telefonicaBlue30,
       loadingBarBackground = TelefonicaPaletteColor.telefonica_color_telefonicaBlue70,
       toggleAndroidInactive = TelefonicaPaletteColor.telefonica_color_grey2,
@@ -150,6 +154,10 @@ public object TelefonicaBrandColors {
       buttonDangerBackground = TelefonicaPaletteColor.telefonica_color_coral,
       buttonDangerBackgroundSelected = TelefonicaPaletteColor.telefonica_color_coral80,
       buttonDangerBackgroundHover = TelefonicaPaletteColor.telefonica_color_coral80,
+      buttonLinkDangerBackgroundSelected = TelefonicaPaletteColor.telefonica_color_white_8_alpha,
+      buttonLinkDangerBackgroundInverse = TelefonicaPaletteColor.telefonica_color_white_1_alpha,
+      buttonLinkDangerBackgroundInverseSelected =
+          TelefonicaPaletteColor.telefonica_color_white_8_alpha,
       buttonLinkBackgroundSelected = TelefonicaPaletteColor.telefonica_color_white_8_alpha,
       buttonLinkBackgroundInverseSelected = TelefonicaPaletteColor.telefonica_color_white_8_alpha,
       buttonPrimaryBackground = TelefonicaPaletteColor.telefonica_color_telefonicaBlue,
@@ -184,6 +192,7 @@ public object TelefonicaBrandColors {
       controlInverse = TelefonicaPaletteColor.telefonica_color_darkModeGrey6,
       controlActivatedInverse = TelefonicaPaletteColor.telefonica_color_telefonicaBlue,
       controlError = TelefonicaPaletteColor.telefonica_color_coral,
+      barTrack = TelefonicaPaletteColor.telefonica_color_darkModeGrey6,
       loadingBar = TelefonicaPaletteColor.telefonica_color_telefonicaBlue,
       loadingBarBackground = TelefonicaPaletteColor.telefonica_color_grey6,
       toggleAndroidInactive = TelefonicaPaletteColor.telefonica_color_grey4,
@@ -331,6 +340,8 @@ private object TelefonicaPaletteColor {
   public val telefonica_color_white_5_alpha: Color = Color(0x0DFFFFFF)
 
   public val telefonica_color_darkModeGrey_80_alpha: Color = Color(0xCC242424)
+
+  public val telefonica_color_white_1_alpha: Color = Color(0x03FFFFFF)
 
   public val telefonica_color_white_15_alpha: Color = Color(0x26FFFFFF)
 }

@@ -30,6 +30,9 @@
 		<item name="colorButtonDangerBackground">@color/o2_color_pepper</item>
 		<item name="colorButtonDangerBackgroundSelected">@color/o2_color_pepper60</item>
 		<item name="colorButtonDangerBackgroundHover">@color/o2_color_pepper60</item>
+		<item name="colorButtonLinkDangerBackgroundSelected">@color/o2_color_white_8_alpha</item>
+		<item name="colorButtonLinkDangerBackgroundInverse">@color/o2_color_white_1_alpha</item>
+		<item name="colorButtonLinkDangerBackgroundInverseSelected">@color/o2_color_white_8_alpha</item>
 		<item name="colorButtonLinkBackgroundSelected">@color/o2_color_white_8_alpha</item>
 		<item name="colorButtonLinkBackgroundInverseSelected">@color/o2_color_white_8_alpha</item>
 		<item name="colorButtonPrimaryBackground">@color/o2_color_darkModeO2BluePrimary</item>
@@ -61,6 +64,7 @@
 		<item name="colorControlInverse">@color/o2_color_darkModeGrey6</item>
 		<item name="colorControlActivatedInverse">@color/o2_color_o2BluePrimary30</item>
 		<item name="colorControlError">@color/o2_color_pepper</item>
+		<item name="colorBarTrack">@color/o2_color_darkModeGrey6</item>
 		<item name="colorLoadingBar">@color/o2_color_darkModeO2BluePrimary</item>
 		<item name="colorLoadingBarBackground">@color/o2_color_darkModeGrey6</item>
 		<item name="colorToggleAndroidInactive">@color/o2_color_grey4</item>

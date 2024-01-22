@@ -38,6 +38,9 @@ public class MisticaColors(
   buttonDangerBackground: Color = Color.Unspecified,
   buttonDangerBackgroundSelected: Color = Color.Unspecified,
   buttonDangerBackgroundHover: Color = Color.Unspecified,
+  buttonLinkDangerBackgroundSelected: Color = Color.Unspecified,
+  buttonLinkDangerBackgroundInverse: Color = Color.Unspecified,
+  buttonLinkDangerBackgroundInverseSelected: Color = Color.Unspecified,
   buttonLinkBackgroundSelected: Color = Color.Unspecified,
   buttonLinkBackgroundInverseSelected: Color = Color.Unspecified,
   buttonPrimaryBackground: Color = Color.Unspecified,
@@ -69,6 +72,7 @@ public class MisticaColors(
   controlInverse: Color = Color.Unspecified,
   controlActivatedInverse: Color = Color.Unspecified,
   controlError: Color = Color.Unspecified,
+  barTrack: Color = Color.Unspecified,
   loadingBar: Color = Color.Unspecified,
   loadingBarBackground: Color = Color.Unspecified,
   toggleAndroidInactive: Color = Color.Unspecified,
@@ -230,6 +234,18 @@ public class MisticaColors(
       structuralEqualityPolicy())
     internal set
 
+  public var buttonLinkDangerBackgroundSelected: Color by
+      mutableStateOf(buttonLinkDangerBackgroundSelected, structuralEqualityPolicy())
+    internal set
+
+  public var buttonLinkDangerBackgroundInverse: Color by
+      mutableStateOf(buttonLinkDangerBackgroundInverse, structuralEqualityPolicy())
+    internal set
+
+  public var buttonLinkDangerBackgroundInverseSelected: Color by
+      mutableStateOf(buttonLinkDangerBackgroundInverseSelected, structuralEqualityPolicy())
+    internal set
+
   public var buttonLinkBackgroundSelected: Color by mutableStateOf(buttonLinkBackgroundSelected,
       structuralEqualityPolicy())
     internal set
@@ -344,6 +360,9 @@ public class MisticaColors(
     internal set
 
   public var controlError: Color by mutableStateOf(controlError, structuralEqualityPolicy())
+    internal set
+
+  public var barTrack: Color by mutableStateOf(barTrack, structuralEqualityPolicy())
     internal set
 
   public var loadingBar: Color by mutableStateOf(loadingBar, structuralEqualityPolicy())
@@ -569,6 +588,10 @@ public class MisticaColors(
     buttonDangerBackground: Color = this.buttonDangerBackground,
     buttonDangerBackgroundSelected: Color = this.buttonDangerBackgroundSelected,
     buttonDangerBackgroundHover: Color = this.buttonDangerBackgroundHover,
+    buttonLinkDangerBackgroundSelected: Color = this.buttonLinkDangerBackgroundSelected,
+    buttonLinkDangerBackgroundInverse: Color = this.buttonLinkDangerBackgroundInverse,
+    buttonLinkDangerBackgroundInverseSelected: Color =
+        this.buttonLinkDangerBackgroundInverseSelected,
     buttonLinkBackgroundSelected: Color = this.buttonLinkBackgroundSelected,
     buttonLinkBackgroundInverseSelected: Color = this.buttonLinkBackgroundInverseSelected,
     buttonPrimaryBackground: Color = this.buttonPrimaryBackground,
@@ -600,6 +623,7 @@ public class MisticaColors(
     controlInverse: Color = this.controlInverse,
     controlActivatedInverse: Color = this.controlActivatedInverse,
     controlError: Color = this.controlError,
+    barTrack: Color = this.barTrack,
     loadingBar: Color = this.loadingBar,
     loadingBarBackground: Color = this.loadingBarBackground,
     toggleAndroidInactive: Color = this.toggleAndroidInactive,
@@ -672,6 +696,9 @@ public class MisticaColors(
       coverBackgroundHover = coverBackgroundHover, coverBackgroundPressed = coverBackgroundPressed,
       buttonDangerBackground = buttonDangerBackground, buttonDangerBackgroundSelected =
       buttonDangerBackgroundSelected, buttonDangerBackgroundHover = buttonDangerBackgroundHover,
+      buttonLinkDangerBackgroundSelected = buttonLinkDangerBackgroundSelected,
+      buttonLinkDangerBackgroundInverse = buttonLinkDangerBackgroundInverse,
+      buttonLinkDangerBackgroundInverseSelected = buttonLinkDangerBackgroundInverseSelected,
       buttonLinkBackgroundSelected = buttonLinkBackgroundSelected,
       buttonLinkBackgroundInverseSelected = buttonLinkBackgroundInverseSelected,
       buttonPrimaryBackground = buttonPrimaryBackground, buttonPrimaryBackgroundInverse =
@@ -693,31 +720,31 @@ public class MisticaColors(
       textButtonSecondaryInverseSelected, textLink = textLink, textLinkInverse = textLinkInverse,
       textLinkDanger = textLinkDanger, textLinkSnackbar = textLinkSnackbar, control = control,
       controlActivated = controlActivated, controlInverse = controlInverse, controlActivatedInverse
-      = controlActivatedInverse, controlError = controlError, loadingBar = loadingBar,
-      loadingBarBackground = loadingBarBackground, toggleAndroidInactive = toggleAndroidInactive,
-      toggleAndroidBackgroundActive = toggleAndroidBackgroundActive, iosControlKnob =
-      iosControlKnob, divider = divider, dividerInverse = dividerInverse, navigationBarDivider =
-      navigationBarDivider, badge = badge, feedbackErrorBackground = feedbackErrorBackground,
-      feedbackInfoBackground = feedbackInfoBackground, brand = brand, brandHigh = brandHigh, inverse
-      = inverse, neutralHigh = neutralHigh, neutralMedium = neutralMedium, neutralMediumInverse =
-      neutralMediumInverse, neutralLow = neutralLow, neutralLowAlternative = neutralLowAlternative,
-      textPrimary = textPrimary, textPrimaryInverse = textPrimaryInverse, textSecondary =
-      textSecondary, textSecondaryInverse = textSecondaryInverse, success = success, warning =
-      warning, error = error, promo = promo, highlight = highlight, successLow = successLow,
-      warningLow = warningLow, errorLow = errorLow, promoLow = promoLow, brandLow = brandLow,
-      successHigh = successHigh, warningHigh = warningHigh, errorHigh = errorHigh, promoHigh =
-      promoHigh, successHighInverse = successHighInverse, warningHighInverse = warningHighInverse,
-      errorHighInverse = errorHighInverse, promoHighInverse = promoHighInverse,
-      textNavigationBarPrimary = textNavigationBarPrimary, textNavigationBarSecondary =
-      textNavigationBarSecondary, textNavigationSearchBarHint = textNavigationSearchBarHint,
-      textNavigationSearchBarText = textNavigationSearchBarText, textAppBar = textAppBar,
-      textAppBarSelected = textAppBarSelected, customTabsBackground = customTabsBackground,
-      gradientBackgroundFirst = gradientBackgroundFirst, gradientBackgroundSecond =
-      gradientBackgroundSecond, gradientBackgroundThird = gradientBackgroundThird,
-      gradientBackgroundFourth = gradientBackgroundFourth, loginLoadingGradientFirst =
-      loginLoadingGradientFirst, loginLoadingGradientSecond = loginLoadingGradientSecond,
-      loginLoadingGradientThird = loginLoadingGradientThird, loginLoadingGradientFourth =
-      loginLoadingGradientFourth)
+      = controlActivatedInverse, controlError = controlError, barTrack = barTrack, loadingBar =
+      loadingBar, loadingBarBackground = loadingBarBackground, toggleAndroidInactive =
+      toggleAndroidInactive, toggleAndroidBackgroundActive = toggleAndroidBackgroundActive,
+      iosControlKnob = iosControlKnob, divider = divider, dividerInverse = dividerInverse,
+      navigationBarDivider = navigationBarDivider, badge = badge, feedbackErrorBackground =
+      feedbackErrorBackground, feedbackInfoBackground = feedbackInfoBackground, brand = brand,
+      brandHigh = brandHigh, inverse = inverse, neutralHigh = neutralHigh, neutralMedium =
+      neutralMedium, neutralMediumInverse = neutralMediumInverse, neutralLow = neutralLow,
+      neutralLowAlternative = neutralLowAlternative, textPrimary = textPrimary, textPrimaryInverse =
+      textPrimaryInverse, textSecondary = textSecondary, textSecondaryInverse =
+      textSecondaryInverse, success = success, warning = warning, error = error, promo = promo,
+      highlight = highlight, successLow = successLow, warningLow = warningLow, errorLow = errorLow,
+      promoLow = promoLow, brandLow = brandLow, successHigh = successHigh, warningHigh =
+      warningHigh, errorHigh = errorHigh, promoHigh = promoHigh, successHighInverse =
+      successHighInverse, warningHighInverse = warningHighInverse, errorHighInverse =
+      errorHighInverse, promoHighInverse = promoHighInverse, textNavigationBarPrimary =
+      textNavigationBarPrimary, textNavigationBarSecondary = textNavigationBarSecondary,
+      textNavigationSearchBarHint = textNavigationSearchBarHint, textNavigationSearchBarText =
+      textNavigationSearchBarText, textAppBar = textAppBar, textAppBarSelected = textAppBarSelected,
+      customTabsBackground = customTabsBackground, gradientBackgroundFirst =
+      gradientBackgroundFirst, gradientBackgroundSecond = gradientBackgroundSecond,
+      gradientBackgroundThird = gradientBackgroundThird, gradientBackgroundFourth =
+      gradientBackgroundFourth, loginLoadingGradientFirst = loginLoadingGradientFirst,
+      loginLoadingGradientSecond = loginLoadingGradientSecond, loginLoadingGradientThird =
+      loginLoadingGradientThird, loginLoadingGradientFourth = loginLoadingGradientFourth)
 
   public fun updateColorsFrom(other: MisticaColors) {
     background = other.background
@@ -748,6 +775,9 @@ public class MisticaColors(
     buttonDangerBackground = other.buttonDangerBackground
     buttonDangerBackgroundSelected = other.buttonDangerBackgroundSelected
     buttonDangerBackgroundHover = other.buttonDangerBackgroundHover
+    buttonLinkDangerBackgroundSelected = other.buttonLinkDangerBackgroundSelected
+    buttonLinkDangerBackgroundInverse = other.buttonLinkDangerBackgroundInverse
+    buttonLinkDangerBackgroundInverseSelected = other.buttonLinkDangerBackgroundInverseSelected
     buttonLinkBackgroundSelected = other.buttonLinkBackgroundSelected
     buttonLinkBackgroundInverseSelected = other.buttonLinkBackgroundInverseSelected
     buttonPrimaryBackground = other.buttonPrimaryBackground
@@ -779,6 +809,7 @@ public class MisticaColors(
     controlInverse = other.controlInverse
     controlActivatedInverse = other.controlActivatedInverse
     controlError = other.controlError
+    barTrack = other.barTrack
     loadingBar = other.loadingBar
     loadingBarBackground = other.loadingBarBackground
     toggleAndroidInactive = other.toggleAndroidInactive

@@ -33,6 +33,9 @@ public object O2BrandColors {
       buttonDangerBackground = O2PaletteColor.o2_color_pepper,
       buttonDangerBackgroundSelected = O2PaletteColor.o2_color_pepper60,
       buttonDangerBackgroundHover = O2PaletteColor.o2_color_pepper60,
+      buttonLinkDangerBackgroundSelected = O2PaletteColor.o2_color_pepper10,
+      buttonLinkDangerBackgroundInverse = O2PaletteColor.o2_color_white,
+      buttonLinkDangerBackgroundInverseSelected = O2PaletteColor.o2_color_pepper10,
       buttonLinkBackgroundSelected = O2PaletteColor.o2_color_o2BluePrimary10,
       buttonLinkBackgroundInverseSelected = O2PaletteColor.o2_color_white_8_alpha,
       buttonPrimaryBackground = O2PaletteColor.o2_color_o2BluePrimary,
@@ -64,6 +67,7 @@ public object O2BrandColors {
       controlInverse = O2PaletteColor.o2_color_white,
       controlActivatedInverse = O2PaletteColor.o2_color_white,
       controlError = O2PaletteColor.o2_color_pepper,
+      barTrack = O2PaletteColor.o2_color_grey3,
       loadingBar = O2PaletteColor.o2_color_o2BluePrimary,
       loadingBarBackground = O2PaletteColor.o2_color_grey1,
       toggleAndroidInactive = O2PaletteColor.o2_color_grey2,
@@ -143,6 +147,9 @@ public object O2BrandColors {
       buttonDangerBackground = O2PaletteColor.o2_color_pepper,
       buttonDangerBackgroundSelected = O2PaletteColor.o2_color_pepper60,
       buttonDangerBackgroundHover = O2PaletteColor.o2_color_pepper60,
+      buttonLinkDangerBackgroundSelected = O2PaletteColor.o2_color_white_8_alpha,
+      buttonLinkDangerBackgroundInverse = O2PaletteColor.o2_color_white_1_alpha,
+      buttonLinkDangerBackgroundInverseSelected = O2PaletteColor.o2_color_white_8_alpha,
       buttonLinkBackgroundSelected = O2PaletteColor.o2_color_white_8_alpha,
       buttonLinkBackgroundInverseSelected = O2PaletteColor.o2_color_white_8_alpha,
       buttonPrimaryBackground = O2PaletteColor.o2_color_darkModeO2BluePrimary,
@@ -174,6 +181,7 @@ public object O2BrandColors {
       controlInverse = O2PaletteColor.o2_color_darkModeGrey6,
       controlActivatedInverse = O2PaletteColor.o2_color_o2BluePrimary30,
       controlError = O2PaletteColor.o2_color_pepper,
+      barTrack = O2PaletteColor.o2_color_darkModeGrey6,
       loadingBar = O2PaletteColor.o2_color_darkModeO2BluePrimary,
       loadingBarBackground = O2PaletteColor.o2_color_darkModeGrey6,
       toggleAndroidInactive = O2PaletteColor.o2_color_grey4,
@@ -333,4 +341,6 @@ private object O2PaletteColor {
   public val o2_color_white_5_alpha: Color = Color(0x0DFFFFFF)
 
   public val o2_color_darkModeGrey_80_alpha: Color = Color(0xCC242424)
+
+  public val o2_color_white_1_alpha: Color = Color(0x03FFFFFF)
 }

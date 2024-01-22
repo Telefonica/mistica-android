@@ -55,4 +55,5 @@
 	<color name="o2_color_white_3_alpha">#08FFFFFF</color>
 	<color name="o2_color_white_5_alpha">#0DFFFFFF</color>
 	<color name="o2_color_darkModeGrey_80_alpha">#CC242424</color>
+	<color name="o2_color_white_1_alpha">#03FFFFFF</color>
 </resources>

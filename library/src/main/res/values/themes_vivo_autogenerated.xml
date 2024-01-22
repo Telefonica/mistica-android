@@ -31,6 +31,9 @@
 		<item name="colorButtonDangerBackground">@color/vivo_color_pepper</item>
 		<item name="colorButtonDangerBackgroundSelected">@color/vivo_color_pepperDark</item>
 		<item name="colorButtonDangerBackgroundHover">@color/vivo_color_pepperDark</item>
+		<item name="colorButtonLinkDangerBackgroundSelected">@color/vivo_color_pepperLight10</item>
+		<item name="colorButtonLinkDangerBackgroundInverse">@color/vivo_color_white</item>
+		<item name="colorButtonLinkDangerBackgroundInverseSelected">@color/vivo_color_pepperLight10</item>
 		<item name="colorButtonLinkBackgroundSelected">@color/vivo_color_vivoPurpleLight10</item>
 		<item name="colorButtonLinkBackgroundInverseSelected">@color/vivo_color_white_10_alpha</item>
 		<item name="colorButtonPrimaryBackground">@color/vivo_color_vivoPurple</item>
@@ -62,6 +65,7 @@
 		<item name="colorControlInverse">@color/vivo_color_white</item>
 		<item name="colorControlActivatedInverse">@color/vivo_color_white</item>
 		<item name="colorControlError">@color/vivo_color_pepper</item>
+		<item name="colorBarTrack">@color/vivo_color_grey3</item>
 		<item name="colorLoadingBar">@color/vivo_color_pink</item>
 		<item name="colorLoadingBarBackground">@color/vivo_color_pepperLight30</item>
 		<item name="colorToggleAndroidInactive">@color/vivo_color_grey2</item>

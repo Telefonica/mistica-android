@@ -30,6 +30,9 @@
 		<attr name="colorButtonDangerBackground" format="color|reference"/>
 		<attr name="colorButtonDangerBackgroundSelected" format="color|reference"/>
 		<attr name="colorButtonDangerBackgroundHover" format="color|reference"/>
+		<attr name="colorButtonLinkDangerBackgroundSelected" format="color|reference"/>
+		<attr name="colorButtonLinkDangerBackgroundInverse" format="color|reference"/>
+		<attr name="colorButtonLinkDangerBackgroundInverseSelected" format="color|reference"/>
 		<attr name="colorButtonLinkBackgroundSelected" format="color|reference"/>
 		<attr name="colorButtonLinkBackgroundInverseSelected" format="color|reference"/>
 		<attr name="colorButtonPrimaryBackground" format="color|reference"/>
@@ -62,6 +65,7 @@
 		<attr name="colorControlInverse" format="color|reference"/>
 		<attr name="colorControlActivatedInverse" format="color|reference"/>
 		<attr name="colorControlError" format="color|reference"/>
+		<attr name="colorBarTrack" format="color|reference"/>
 		<attr name="colorLoadingBar" format="color|reference"/>
 		<attr name="colorLoadingBarBackground" format="color|reference"/>
 		<attr name="colorToggleAndroidInactive" format="color|reference"/>

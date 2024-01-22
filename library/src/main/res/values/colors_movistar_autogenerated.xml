@@ -54,5 +54,6 @@
 	<color name="movistar_color_white_5_alpha">#0DFFFFFF</color>
 	<color name="movistar_color_darkModeGrey_80_alpha">#CC081F2E</color>
 	<color name="movistar_color_white_8_alpha">#14FFFFFF</color>
+	<color name="movistar_color_white_1_alpha">#03FFFFFF</color>
 	<color name="movistar_color_white_15_alpha">#26FFFFFF</color>
 </resources>

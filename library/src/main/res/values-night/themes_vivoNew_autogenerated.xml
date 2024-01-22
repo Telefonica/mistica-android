@@ -30,6 +30,9 @@
 		<item name="colorButtonDangerBackground">@color/vivoNew_color_pepper</item>
 		<item name="colorButtonDangerBackgroundSelected">@color/vivoNew_color_pepperDark</item>
 		<item name="colorButtonDangerBackgroundHover">@color/vivoNew_color_pepperDark</item>
+		<item name="colorButtonLinkDangerBackgroundSelected">@color/vivoNew_color_white_8_alpha</item>
+		<item name="colorButtonLinkDangerBackgroundInverse">@color/vivoNew_color_white_1_alpha</item>
+		<item name="colorButtonLinkDangerBackgroundInverseSelected">@color/vivoNew_color_white_8_alpha</item>
 		<item name="colorButtonLinkBackgroundSelected">@color/vivoNew_color_white_8_alpha</item>
 		<item name="colorButtonLinkBackgroundInverseSelected">@color/vivoNew_color_white_8_alpha</item>
 		<item name="colorButtonPrimaryBackground">@color/vivoNew_color_vivoPurpleLight80</item>
@@ -61,6 +64,7 @@
 		<item name="colorControlInverse">@color/vivoNew_color_darkModeGrey6</item>
 		<item name="colorControlActivatedInverse">@color/vivoNew_color_vivoPurpleLight80</item>
 		<item name="colorControlError">@color/vivoNew_color_pepper</item>
+		<item name="colorBarTrack">@color/vivoNew_color_darkModeGrey6</item>
 		<item name="colorLoadingBar">@color/vivoNew_color_vivoPurpleLight80</item>
 		<item name="colorLoadingBarBackground">@color/vivoNew_color_darkModeGrey6</item>
 		<item name="colorToggleAndroidInactive">@color/vivoNew_color_grey4</item>
@@ -139,6 +143,9 @@
 		<item name="colorButtonDangerBackground">@color/vivoNew_color_pepper</item>
 		<item name="colorButtonDangerBackgroundSelected">@color/vivoNew_color_pepperDark</item>
 		<item name="colorButtonDangerBackgroundHover">@color/vivoNew_color_pepperDark</item>
+		<item name="colorButtonLinkDangerBackgroundSelected">@color/vivoNew_color_white_8_alpha</item>
+		<item name="colorButtonLinkDangerBackgroundInverse">@color/vivoNew_color_white_1_alpha</item>
+		<item name="colorButtonLinkDangerBackgroundInverseSelected">@color/vivoNew_color_white_8_alpha</item>
 		<item name="colorButtonLinkBackgroundSelected">@color/vivoNew_color_white_8_alpha</item>
 		<item name="colorButtonLinkBackgroundInverseSelected">@color/vivoNew_color_white_8_alpha</item>
 		<item name="colorButtonPrimaryBackground">@color/vivoNew_color_vivoPurpleLight80</item>
@@ -170,6 +177,7 @@
 		<item name="colorControlInverse">@color/vivoNew_color_darkModeGrey6</item>
 		<item name="colorControlActivatedInverse">@color/vivoNew_color_vivoPurpleLight80</item>
 		<item name="colorControlError">@color/vivoNew_color_pepper</item>
+		<item name="colorBarTrack">@color/vivoNew_color_darkModeGrey6</item>
 		<item name="colorLoadingBar">@color/vivoNew_color_vivoPurpleLight80</item>
 		<item name="colorLoadingBarBackground">@color/vivoNew_color_darkModeGrey6</item>
 		<item name="colorToggleAndroidInactive">@color/vivoNew_color_grey4</item>

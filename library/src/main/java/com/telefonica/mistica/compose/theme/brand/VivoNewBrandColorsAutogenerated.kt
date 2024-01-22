@@ -19,7 +19,7 @@ public object VivoNewBrandColors {
       backgroundContainerBrandOverInverse = VivoNewPaletteColor.vivoNew_color_vivoPurpleDark,
       backgroundContainerAlternative = VivoNewPaletteColor.vivoNew_color_grey1,
       backgroundOverlay = VivoNewPaletteColor.vivoNew_color_grey6_60_alpha,
-      backgroundSkeleton = VivoNewPaletteColor.vivoNew_color_grey2,
+      backgroundSkeleton = VivoNewPaletteColor.vivoNew_color_grey4,
       backgroundSkeletonInverse = VivoNewPaletteColor.vivoNew_color_vivoPurpleDark,
       backgroundFeedbackBottom = VivoNewPaletteColor.vivoNew_color_vivoPurple,
       appBarBackground = VivoNewPaletteColor.vivoNew_color_white,
@@ -34,6 +34,9 @@ public object VivoNewBrandColors {
       buttonDangerBackground = VivoNewPaletteColor.vivoNew_color_pepper,
       buttonDangerBackgroundSelected = VivoNewPaletteColor.vivoNew_color_pepperDark,
       buttonDangerBackgroundHover = VivoNewPaletteColor.vivoNew_color_pepperDark,
+      buttonLinkDangerBackgroundSelected = VivoNewPaletteColor.vivoNew_color_pepperLight10,
+      buttonLinkDangerBackgroundInverse = VivoNewPaletteColor.vivoNew_color_white,
+      buttonLinkDangerBackgroundInverseSelected = VivoNewPaletteColor.vivoNew_color_pepperLight10,
       buttonLinkBackgroundSelected = VivoNewPaletteColor.vivoNew_color_vivoPurpleLight10,
       buttonLinkBackgroundInverseSelected = VivoNewPaletteColor.vivoNew_color_white_10_alpha,
       buttonPrimaryBackground = VivoNewPaletteColor.vivoNew_color_vivoPurple,
@@ -60,17 +63,18 @@ public object VivoNewBrandColors {
       textLinkInverse = VivoNewPaletteColor.vivoNew_color_white,
       textLinkDanger = VivoNewPaletteColor.vivoNew_color_pepper,
       textLinkSnackbar = VivoNewPaletteColor.vivoNew_color_vivoPurpleLight20,
-      control = VivoNewPaletteColor.vivoNew_color_grey3,
+      control = VivoNewPaletteColor.vivoNew_color_grey4,
       controlActivated = VivoNewPaletteColor.vivoNew_color_vivoPurple,
       controlInverse = VivoNewPaletteColor.vivoNew_color_white,
       controlActivatedInverse = VivoNewPaletteColor.vivoNew_color_white,
       controlError = VivoNewPaletteColor.vivoNew_color_pepper,
-      loadingBar = VivoNewPaletteColor.vivoNew_color_pink,
-      loadingBarBackground = VivoNewPaletteColor.vivoNew_color_pepperLight30,
+      barTrack = VivoNewPaletteColor.vivoNew_color_grey3,
+      loadingBar = VivoNewPaletteColor.vivoNew_color_vivoPurple,
+      loadingBarBackground = VivoNewPaletteColor.vivoNew_color_vivoPurpleLight10,
       toggleAndroidInactive = VivoNewPaletteColor.vivoNew_color_grey2,
       toggleAndroidBackgroundActive = VivoNewPaletteColor.vivoNew_color_vivoPurpleLight20,
       iosControlKnob = VivoNewPaletteColor.vivoNew_color_white,
-      divider = VivoNewPaletteColor.vivoNew_color_grey2,
+      divider = VivoNewPaletteColor.vivoNew_color_grey3,
       dividerInverse = VivoNewPaletteColor.vivoNew_color_white_20_alpha,
       navigationBarDivider = VivoNewPaletteColor.vivoNew_color_vivoPurple,
       badge = VivoNewPaletteColor.vivoNew_color_pepperDark,
@@ -112,7 +116,7 @@ public object VivoNewBrandColors {
       textNavigationSearchBarText = VivoNewPaletteColor.vivoNew_color_white,
       textAppBar = VivoNewPaletteColor.vivoNew_color_grey4,
       textAppBarSelected = VivoNewPaletteColor.vivoNew_color_vivoPurple,
-      customTabsBackground = VivoNewPaletteColor.vivoNew_color_vivoPurple,
+      customTabsBackground = VivoNewPaletteColor.vivoNew_color_white,
       )
 
   public val darkColors: MisticaColors = MisticaColors(background =
@@ -144,6 +148,9 @@ public object VivoNewBrandColors {
       buttonDangerBackground = VivoNewPaletteColor.vivoNew_color_pepper,
       buttonDangerBackgroundSelected = VivoNewPaletteColor.vivoNew_color_pepperDark,
       buttonDangerBackgroundHover = VivoNewPaletteColor.vivoNew_color_pepperDark,
+      buttonLinkDangerBackgroundSelected = VivoNewPaletteColor.vivoNew_color_white_8_alpha,
+      buttonLinkDangerBackgroundInverse = VivoNewPaletteColor.vivoNew_color_white_1_alpha,
+      buttonLinkDangerBackgroundInverseSelected = VivoNewPaletteColor.vivoNew_color_white_8_alpha,
       buttonLinkBackgroundSelected = VivoNewPaletteColor.vivoNew_color_white_8_alpha,
       buttonLinkBackgroundInverseSelected = VivoNewPaletteColor.vivoNew_color_white_8_alpha,
       buttonPrimaryBackground = VivoNewPaletteColor.vivoNew_color_vivoPurpleLight80,
@@ -175,6 +182,7 @@ public object VivoNewBrandColors {
       controlInverse = VivoNewPaletteColor.vivoNew_color_darkModeGrey6,
       controlActivatedInverse = VivoNewPaletteColor.vivoNew_color_vivoPurpleLight80,
       controlError = VivoNewPaletteColor.vivoNew_color_pepper,
+      barTrack = VivoNewPaletteColor.vivoNew_color_darkModeGrey6,
       loadingBar = VivoNewPaletteColor.vivoNew_color_vivoPurpleLight80,
       loadingBarBackground = VivoNewPaletteColor.vivoNew_color_darkModeGrey6,
       toggleAndroidInactive = VivoNewPaletteColor.vivoNew_color_grey4,
@@ -283,7 +291,7 @@ private object VivoNewPaletteColor {
 
   public val vivoNew_color_grey3: Color = Color(0xFFDDDDDD)
 
-  public val vivoNew_color_grey4: Color = Color(0xFF999999)
+  public val vivoNew_color_grey4: Color = Color(0xFF949494)
 
   public val vivoNew_color_grey5: Color = Color(0xFF666666)
 
@@ -324,4 +332,6 @@ private object VivoNewPaletteColor {
   public val vivoNew_color_darkModeGrey_80_alpha: Color = Color(0xCC242424)
 
   public val vivoNew_color_white_8_alpha: Color = Color(0x14FFFFFF)
+
+  public val vivoNew_color_white_1_alpha: Color = Color(0x03FFFFFF)
 }

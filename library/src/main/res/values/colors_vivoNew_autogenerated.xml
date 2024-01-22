@@ -29,7 +29,7 @@
 	<color name="vivoNew_color_grey1">#F6F6F6</color>
 	<color name="vivoNew_color_grey2">#EEEEEE</color>
 	<color name="vivoNew_color_grey3">#DDDDDD</color>
-	<color name="vivoNew_color_grey4">#999999</color>
+	<color name="vivoNew_color_grey4">#949494</color>
 	<color name="vivoNew_color_grey5">#666666</color>
 	<color name="vivoNew_color_grey6">#000000</color>
 	<color name="vivoNew_color_white">#FFFFFF</color>
@@ -50,4 +50,5 @@
 	<color name="vivoNew_color_white_5_alpha">#0DFFFFFF</color>
 	<color name="vivoNew_color_darkModeGrey_80_alpha">#CC242424</color>
 	<color name="vivoNew_color_white_8_alpha">#14FFFFFF</color>
+	<color name="vivoNew_color_white_1_alpha">#03FFFFFF</color>
 </resources>
