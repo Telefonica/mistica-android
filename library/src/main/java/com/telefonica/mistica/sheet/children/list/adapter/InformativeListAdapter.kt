@@ -9,6 +9,7 @@ import com.telefonica.mistica.R
 import com.telefonica.mistica.sheet.children.list.InformativeIconViewData
 import com.telefonica.mistica.sheet.children.list.InformativeIconViewData.Bullet
 import com.telefonica.mistica.sheet.children.list.ListElementViewData.RowInformativeViewData
+import com.telefonica.mistica.util.loadRowAsset
 
 internal class InformativeListAdapter(val items: List<RowInformativeViewData>) : RecyclerView.Adapter<InformativeListViewHolder>() {
 

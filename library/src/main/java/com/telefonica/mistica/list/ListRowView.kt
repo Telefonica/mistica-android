@@ -22,12 +22,12 @@ import androidx.core.view.isVisible
 import androidx.databinding.BindingAdapter
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
-import coil.load
 import com.telefonica.mistica.R
 import com.telefonica.mistica.badge.Badge
 import com.telefonica.mistica.list.model.ImageDimensions
 import com.telefonica.mistica.util.convertDpToPx
 import com.telefonica.mistica.util.getThemeColor
+import com.telefonica.mistica.util.loadUrl
 import com.telefonica.mistica.util.setAlpha
 
 @BindingMethods(
@@ -272,7 +272,7 @@ class ListRowView @JvmOverloads constructor(
             TYPE_IMAGE_ROUNDED -> assetRoundedImageView
             else -> assetImageView
         }.also { imageView ->
-            imageView.load(url) {
+            imageView.loadUrl(url) {
                 listener(
                     onSuccess = { _, _ ->
                         imageView.scaleType = scaleType

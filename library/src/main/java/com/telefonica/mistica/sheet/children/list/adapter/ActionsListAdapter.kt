@@ -10,6 +10,7 @@ import com.telefonica.mistica.R
 import com.telefonica.mistica.sheet.children.list.ListElementViewData.RowActionViewData
 import com.telefonica.mistica.sheet.children.list.RowActionStyleViewData
 import com.telefonica.mistica.util.getThemeColor
+import com.telefonica.mistica.util.loadRowAsset
 
 internal class ActionsListAdapter(val items: List<RowActionViewData>) : RecyclerView.Adapter<ActionsListViewHolder>() {
 

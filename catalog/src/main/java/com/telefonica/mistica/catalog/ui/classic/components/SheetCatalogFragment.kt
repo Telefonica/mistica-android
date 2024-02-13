@@ -303,7 +303,7 @@ class SheetCatalogFragment : Fragment() {
             SelectableAsset.SmallImage(rowAsset = DrawableAsset(ResourcesCompat.getDrawable(resources, R.drawable.ic_sheets, requireContext().theme)!!))
         } else {
             if (binding.inputSheetRowsWithImageUrl.isChecked()) {
-                SelectableAsset.Image(rowAsset = UrlAsset("https://picsum.photos/500/500"))
+                SelectableAsset.Image(rowAsset = UrlAsset("https://www.svgrepo.com/show/15601/sun.svg"))
             } else {
                 SelectableAsset.Image(rowAsset = DrawableIdAsset(R.drawable.highlighted_card_custom_background))
             }
