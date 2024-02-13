@@ -5,7 +5,7 @@ import androidx.annotation.DrawableRes
 
 data class SheetModel(
     val header: Header = Header(),
-    val content: List<Children> = emptyList()
+    val content: List<Children> = emptyList(),
 )
 
 data class Header(
@@ -50,14 +50,16 @@ data class RowAction(
     val id: String,
     val title: String,
     val style: RowActionStyle = RowActionStyle.Default,
-    val asset: Drawable?,
+    @Deprecated("Use new field rowAsset. RowAsset will have preference over asset")
+    val asset: Drawable? = null,
+    val rowAsset: RowAsset? = null,
 )
 
 data class RowInformative(
     val id: String,
     val title: String,
     val description: String? = null,
-    val icon: InformativeIcon
+    val icon: InformativeIcon,
 )
 
 data class ActionButton(
@@ -66,16 +68,50 @@ data class ActionButton(
 )
 
 sealed class SelectableAsset {
-    data class Image(val drawableRes: Drawable) : SelectableAsset()
-    data class SmallImage(val drawableRes: Drawable) : SelectableAsset()
-    data class SmallIcon(@DrawableRes val id: Int) : SelectableAsset()
-    data class LargeIcon(@DrawableRes val id: Int) : SelectableAsset()
+    data class Image(
+        @Deprecated("Use new field rowAsset. RowAsset will have preference over asset")
+        val drawableRes: Drawable? = null,
+        val rowAsset: RowAsset? = null,
+    ) : SelectableAsset()
+
+    data class SmallImage(
+        @Deprecated("Use new field rowAsset. RowAsset will have preference over asset")
+        val drawableRes: Drawable? = null,
+        val rowAsset: RowAsset? = null,
+    ) : SelectableAsset()
+
+    data class SmallIcon(
+        @Deprecated("Use new field rowAsset. RowAsset will have preference over asset")
+        @DrawableRes val id: Int? = null,
+        val rowAsset: RowAsset? = null,
+    ) : SelectableAsset()
+
+    data class LargeIcon(
+        @Deprecated("Use new field rowAsset. RowAsset will have preference over asset")
+        @DrawableRes val id: Int? = null,
+        val rowAsset: RowAsset? = null,
+    ) : SelectableAsset()
 }
 
 sealed class InformativeIcon {
-    object Bullet: InformativeIcon()
-    data class Icon(val drawableRes: Drawable) : InformativeIcon()
-    data class SmallIcon(val drawableRes: Drawable) : InformativeIcon()
+    data object Bullet : InformativeIcon()
+    data class Icon(
+        @Deprecated("Use new field rowAsset. RowAsset will have preference over asset")
+        val drawableRes: Drawable? = null,
+        val rowAsset: RowAsset? = null,
+    ) : InformativeIcon()
+
+    data class SmallIcon(
+        @Deprecated("Use new field rowAsset. RowAsset will have preference over asset")
+        val drawableRes: Drawable? = null,
+        val rowAsset: RowAsset? = null,
+    ) : InformativeIcon()
+}
+
+sealed class RowAsset {
+    data class UrlAsset(val url: String) : RowAsset()
+    data class DrawableIdAsset(@DrawableRes val id: Int) : RowAsset()
+    data class DrawableAsset(val drawableRes: Drawable) : RowAsset()
 }
 
 enum class RowActionStyle { Default, Destructive }

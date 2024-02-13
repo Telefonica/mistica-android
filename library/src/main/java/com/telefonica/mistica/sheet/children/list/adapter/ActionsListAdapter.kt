@@ -26,7 +26,7 @@ internal class ActionsListAdapter(val items: List<RowActionViewData>) : Recycler
         val item = items[position]
         holder.text.text = item.title
         if (item.asset != null) {
-            holder.icon.setImageDrawable(item.asset)
+            holder.icon.loadRowAsset(item.asset)
             holder.icon.visibility = View.VISIBLE
         } else {
             holder.icon.visibility = View.GONE
