@@ -86,14 +86,14 @@ sealed class SelectableAsset {
         val rowAsset: RowAsset,
     ) : SelectableAsset() {
         @Deprecated("Use primary constructor providing a RowAsset object instead")
-        constructor(id: Int) : this(RowAsset.DrawableIdAsset(id))
+        constructor(@DrawableRes id: Int) : this(RowAsset.DrawableIdAsset(id))
     }
 
     data class LargeIcon(
         val rowAsset: RowAsset,
     ) : SelectableAsset() {
         @Deprecated("Use primary constructor providing a RowAsset object instead")
-        constructor(id: Int) : this(RowAsset.DrawableIdAsset(id))
+        constructor(@DrawableRes id: Int) : this(RowAsset.DrawableIdAsset(id))
     }
 }
 

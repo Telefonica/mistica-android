@@ -4,7 +4,7 @@ import android.content.Context
 import coil.ImageLoader
 import coil.decode.SvgDecoder
 
-object ImageLoaderProvider {
+internal object ImageLoaderProvider {
 
     private var imageLoader: ImageLoader? = null
 

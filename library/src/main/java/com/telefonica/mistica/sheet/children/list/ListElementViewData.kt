@@ -39,14 +39,14 @@ internal sealed class ListElementViewData(
 
 enum class RowActionStyleViewData { Default, Destructive }
 
-sealed class SelectableListAssetViewData {
+internal sealed class SelectableListAssetViewData {
     data class Image(val asset: RowAssetViewData) : SelectableListAssetViewData()
     data class SmallImage(val asset: RowAssetViewData) : SelectableListAssetViewData()
     data class SmallIcon(val asset: RowAssetViewData) : SelectableListAssetViewData()
     data class LargeIcon(val asset: RowAssetViewData) : SelectableListAssetViewData()
 }
 
-sealed class InformativeIconViewData {
+internal sealed class InformativeIconViewData {
     data object Bullet : InformativeIconViewData()
     data class Icon(val asset: RowAssetViewData) : InformativeIconViewData()
     data class SmallIcon(val asset: RowAssetViewData) : InformativeIconViewData()
@@ -56,7 +56,7 @@ interface OnClickListener {
     fun onClicked(id: String)
 }
 
-sealed class RowAssetViewData {
+internal sealed class RowAssetViewData {
     data class UrlAsset(val url: String) : RowAssetViewData()
     data class DrawableIdAsset(@DrawableRes val id: Int) : RowAssetViewData()
     data class DrawableAsset(val drawableRes: Drawable) : RowAssetViewData()

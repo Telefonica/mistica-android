@@ -5,7 +5,7 @@ import androidx.appcompat.content.res.AppCompatResources
 import coil.request.ImageRequest
 import com.telefonica.mistica.sheet.children.list.RowAssetViewData
 
-fun ImageView.loadRowAsset(rowAsset: RowAssetViewData) {
+internal fun ImageView.loadRowAsset(rowAsset: RowAssetViewData) {
     when (rowAsset) {
         is RowAssetViewData.DrawableAsset -> this.setImageDrawable(rowAsset.drawableRes)
         is RowAssetViewData.DrawableIdAsset -> this.setImageDrawable(AppCompatResources.getDrawable(this.context, rowAsset.id))
@@ -13,7 +13,7 @@ fun ImageView.loadRowAsset(rowAsset: RowAssetViewData) {
     }
 }
 
-fun ImageView.loadUrl(
+internal fun ImageView.loadUrl(
     url: String,
     builder: ImageRequest.Builder.() -> Unit = {},
 ) {
@@ -24,5 +24,5 @@ fun ImageView.loadUrl(
         .apply(builder)
         .build()
 
-    ImageLoaderProvider.get(context).enqueue(request)
+    ImageLoaderProvider.get(context.applicationContext).enqueue(request)
 }

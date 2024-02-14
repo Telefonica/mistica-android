@@ -22,7 +22,7 @@ import coil.request.Options
  * otherwise the data would be represented using ASCII encoding.
  * Link to Spec: https://datatracker.ietf.org/doc/html/rfc2397
  */
-class Base64DataUrlFetcher(
+internal class Base64DataUrlFetcher(
     private val base64Data: String,
     private val resources: Resources,
 ) : Fetcher {
@@ -43,7 +43,7 @@ class Base64DataUrlFetcher(
             null
         }
 
-    class Factory(
+    internal class Factory(
         private val resources: Resources,
     ) : Fetcher.Factory<Uri> {
         override fun create(data: Uri, options: Options, imageLoader: ImageLoader): Fetcher? {
