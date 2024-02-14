@@ -19,7 +19,7 @@ internal fun List<RowInformative>.mapToInformativeViewData(): List<RowInformativ
 internal fun List<RowAction>.mapToActionViewData(childrenId: String, onBottomSheetClicked: InternalOnSheetTapped): List<RowActionViewData> = this
     .map { it.mapToViewData(childrenId, onBottomSheetClicked) }
 
-internal fun RowSelectable.mapToViewData(childrenId: String, onBottomSheetClicked: InternalOnSheetTapped): RowWithCheckBoxViewData =
+private fun RowSelectable.mapToViewData(childrenId: String, onBottomSheetClicked: InternalOnSheetTapped): RowWithCheckBoxViewData =
     RowWithCheckBoxViewData(
         id = id,
         onClickListener = object : OnClickListener {
@@ -33,7 +33,7 @@ internal fun RowSelectable.mapToViewData(childrenId: String, onBottomSheetClicke
         selected = selected,
     )
 
-internal fun RowInformative.mapToSelectableViewData(): RowInformativeViewData =
+private fun RowInformative.mapToSelectableViewData(): RowInformativeViewData =
     RowInformativeViewData(
         id = id,
         title = title,
@@ -41,7 +41,7 @@ internal fun RowInformative.mapToSelectableViewData(): RowInformativeViewData =
         icon = icon.mapToIconViewData()
     )
 
-internal fun RowAction.mapToViewData(childrenId: String, onBottomSheetClicked: InternalOnSheetTapped): RowActionViewData =
+private fun RowAction.mapToViewData(childrenId: String, onBottomSheetClicked: InternalOnSheetTapped): RowActionViewData =
     RowActionViewData(
         id = id,
         onClickListener = object : OnClickListener {
