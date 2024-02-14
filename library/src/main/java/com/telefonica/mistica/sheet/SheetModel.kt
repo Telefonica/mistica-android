@@ -5,7 +5,7 @@ import androidx.annotation.DrawableRes
 
 data class SheetModel(
     val header: Header = Header(),
-    val content: List<Children> = emptyList()
+    val content: List<Children> = emptyList(),
 )
 
 data class Header(
@@ -50,14 +50,16 @@ data class RowAction(
     val id: String,
     val title: String,
     val style: RowActionStyle = RowActionStyle.Default,
-    val asset: Drawable?,
+    @Deprecated("Use new field rowAsset. RowAsset will have preference over asset")
+    val asset: Drawable? = null,
+    val rowAsset: RowAsset? = null,
 )
 
 data class RowInformative(
     val id: String,
     val title: String,
     val description: String? = null,
-    val icon: InformativeIcon
+    val icon: InformativeIcon,
 )
 
 data class ActionButton(
@@ -66,16 +68,56 @@ data class ActionButton(
 )
 
 sealed class SelectableAsset {
-    data class Image(val drawableRes: Drawable) : SelectableAsset()
-    data class SmallImage(val drawableRes: Drawable) : SelectableAsset()
-    data class SmallIcon(@DrawableRes val id: Int) : SelectableAsset()
-    data class LargeIcon(@DrawableRes val id: Int) : SelectableAsset()
+    data class Image(
+        val rowAsset: RowAsset,
+    ) : SelectableAsset() {
+        @Deprecated("Use primary constructor providing a RowAsset object instead")
+        constructor(drawableRes: Drawable) : this(RowAsset.DrawableAsset(drawableRes))
+    }
+
+    data class SmallImage(
+        val rowAsset: RowAsset,
+    ) : SelectableAsset() {
+        @Deprecated("Use primary constructor providing a RowAsset object instead")
+        constructor(drawableRes: Drawable) : this(RowAsset.DrawableAsset(drawableRes))
+    }
+
+    data class SmallIcon(
+        val rowAsset: RowAsset,
+    ) : SelectableAsset() {
+        @Deprecated("Use primary constructor providing a RowAsset object instead")
+        constructor(@DrawableRes id: Int) : this(RowAsset.DrawableIdAsset(id))
+    }
+
+    data class LargeIcon(
+        val rowAsset: RowAsset,
+    ) : SelectableAsset() {
+        @Deprecated("Use primary constructor providing a RowAsset object instead")
+        constructor(@DrawableRes id: Int) : this(RowAsset.DrawableIdAsset(id))
+    }
 }
 
 sealed class InformativeIcon {
-    object Bullet: InformativeIcon()
-    data class Icon(val drawableRes: Drawable) : InformativeIcon()
-    data class SmallIcon(val drawableRes: Drawable) : InformativeIcon()
+    data object Bullet : InformativeIcon()
+    data class Icon(
+        val rowAsset: RowAsset,
+    ) : InformativeIcon() {
+        @Deprecated("Use primary constructor providing a RowAsset object instead")
+        constructor(drawableRes: Drawable) : this(RowAsset.DrawableAsset(drawableRes))
+    }
+
+    data class SmallIcon(
+        val rowAsset: RowAsset,
+    ) : InformativeIcon() {
+        @Deprecated("Use primary constructor providing a RowAsset object instead")
+        constructor(drawableRes: Drawable) : this(RowAsset.DrawableAsset(drawableRes))
+    }
+}
+
+sealed class RowAsset {
+    data class UrlAsset(val url: String) : RowAsset()
+    data class DrawableIdAsset(@DrawableRes val id: Int) : RowAsset()
+    data class DrawableAsset(val drawableRes: Drawable) : RowAsset()
 }
 
 enum class RowActionStyle { Default, Destructive }

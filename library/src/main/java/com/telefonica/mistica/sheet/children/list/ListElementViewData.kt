@@ -13,7 +13,7 @@ internal sealed class ListElementViewData(
         val description: String? = null,
         val asset: SelectableListAssetViewData? = null,
         val selected: Boolean = false,
-    ): ListElementViewData(
+    ) : ListElementViewData(
         id = id,
     )
 
@@ -22,7 +22,7 @@ internal sealed class ListElementViewData(
         val title: String,
         val description: String? = null,
         val icon: InformativeIconViewData,
-    ): ListElementViewData(
+    ) : ListElementViewData(
         id = id,
     )
 
@@ -31,27 +31,33 @@ internal sealed class ListElementViewData(
         val onClickListener: OnClickListener,
         val title: String,
         val rowActionStyle: RowActionStyleViewData = RowActionStyleViewData.Default,
-        val asset: Drawable?,
-    ): ListElementViewData(
+        val asset: RowAssetViewData?,
+    ) : ListElementViewData(
         id = id,
     )
 }
 
-enum class RowActionStyleViewData {Default, Destructive}
+enum class RowActionStyleViewData { Default, Destructive }
 
-sealed class SelectableListAssetViewData {
-    data class Image(val drawableRes: Drawable): SelectableListAssetViewData()
-    data class SmallImage(val drawableRes: Drawable): SelectableListAssetViewData()
-    data class SmallIcon(@DrawableRes val id: Int): SelectableListAssetViewData()
-    data class LargeIcon(@DrawableRes val id: Int): SelectableListAssetViewData()
+internal sealed class SelectableListAssetViewData {
+    data class Image(val asset: RowAssetViewData) : SelectableListAssetViewData()
+    data class SmallImage(val asset: RowAssetViewData) : SelectableListAssetViewData()
+    data class SmallIcon(val asset: RowAssetViewData) : SelectableListAssetViewData()
+    data class LargeIcon(val asset: RowAssetViewData) : SelectableListAssetViewData()
 }
 
-sealed class InformativeIconViewData {
-    object Bullet: InformativeIconViewData()
-    data class Icon(val drawableRes: Drawable): InformativeIconViewData()
-    data class SmallIcon(val drawableRes: Drawable): InformativeIconViewData()
+internal sealed class InformativeIconViewData {
+    data object Bullet : InformativeIconViewData()
+    data class Icon(val asset: RowAssetViewData) : InformativeIconViewData()
+    data class SmallIcon(val asset: RowAssetViewData) : InformativeIconViewData()
 }
 
 interface OnClickListener {
     fun onClicked(id: String)
+}
+
+internal sealed class RowAssetViewData {
+    data class UrlAsset(val url: String) : RowAssetViewData()
+    data class DrawableIdAsset(@DrawableRes val id: Int) : RowAssetViewData()
+    data class DrawableAsset(val drawableRes: Drawable) : RowAssetViewData()
 }

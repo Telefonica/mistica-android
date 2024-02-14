@@ -9,7 +9,7 @@ buildscript {
         androidx_appcompat_version = "1.6.0"
         androidx_activity_compose_version = "1.6.0"
         accompanist_version = "0.32.0"
-        coil_version = '2.2.2'
+        coil_version = '2.5.0'
         constraintComposeVersion = '1.0.1'
         roborazzi_version = "1.7.0"
     }

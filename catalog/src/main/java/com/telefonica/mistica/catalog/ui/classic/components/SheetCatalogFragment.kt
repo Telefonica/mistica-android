@@ -15,6 +15,9 @@ import com.telefonica.mistica.sheet.ActionButton
 import com.telefonica.mistica.sheet.InformativeIcon
 import com.telefonica.mistica.sheet.RowAction
 import com.telefonica.mistica.sheet.RowActionStyle
+import com.telefonica.mistica.sheet.RowAsset.DrawableAsset
+import com.telefonica.mistica.sheet.RowAsset.DrawableIdAsset
+import com.telefonica.mistica.sheet.RowAsset.UrlAsset
 import com.telefonica.mistica.sheet.RowInformative
 import com.telefonica.mistica.sheet.RowSelectable
 import com.telefonica.mistica.sheet.SelectableAsset
@@ -55,6 +58,13 @@ class SheetCatalogFragment : Fragment() {
             buildAndShowSheet()
         }
 
+        binding.inputSheetRowsWithSmallIcons.setOnCheckedChangeListener { _, isChecked ->
+            binding.inputSheetRowsWithImageUrl.visibility = if (isChecked) {
+                View.GONE
+            } else {
+                View.VISIBLE
+            }
+        }
     }
 
     private fun buildAndShowSheet() {
@@ -72,16 +82,19 @@ class SheetCatalogFragment : Fragment() {
                         id = "0",
                         elements = buildSelectableListElements()
                     )
+
                     ComponentType.ActionList -> it.withActionsList(
                         id = "0",
                         elements = buildActionsListElements()
                     )
+
                     ComponentType.Informative -> it.withInformativeList(
                         id = "0",
                         elements = buildInformativeListElements()
                     )
+
                     ComponentType.BottomActions -> it.withBottomActions(
-                        id ="bottom-actions-0",
+                        id = "bottom-actions-0",
                         primaryButton = samplePrimaryActionButton(),
                         secondaryButton = sampleSecondaryActionButton(),
                         linkButton = sampleLinkActionButton(),
@@ -201,12 +214,12 @@ class SheetCatalogFragment : Fragment() {
         val elements = mutableListOf<RowAction>()
 
         val numElements = max(1, (binding.inputSheetNumberOfElements.text ?: "1").toInt())
-        for (i in 0 until numElements ) {
+        for (i in 0 until numElements) {
             elements.add(
                 RowAction(
                     id = "$i",
                     title = "Action Label",
-                    asset = getActionIcon()
+                    rowAsset = getActionIcon()?.let { DrawableAsset(it) }
                 )
             )
         }
@@ -215,11 +228,11 @@ class SheetCatalogFragment : Fragment() {
             RowAction(
                 id = "$numElements",
                 title = "Delete",
-                asset =  if (binding.inputSheetRowsWithIconsAction.isChecked()) {
-                    ResourcesCompat.getDrawable(resources, R.drawable.ic_sheet_action_destructive_demo, requireContext().theme)
+                rowAsset = if (binding.inputSheetRowsWithIconsAction.isChecked()) {
+                    DrawableAsset(ResourcesCompat.getDrawable(resources, R.drawable.ic_sheet_action_destructive_demo, requireContext().theme)!!)
                 } else {
                     null
-                } ,
+                },
                 style = RowActionStyle.Destructive
             )
         )
@@ -233,11 +246,11 @@ class SheetCatalogFragment : Fragment() {
                 DropDownInput.Adapter(
                     view.context,
                     R.layout.dropdown_menu_popup_item,
-                    ComponentType.values().map { it.name }
+                    ComponentType.entries.map { it.name }
                 ))
             setOnItemClickListener { _, _, position, _ ->
                 binding.buttonShow.visibility = View.VISIBLE
-                when (ComponentType.values()[position]) {
+                when (ComponentType.entries[position]) {
                     ComponentType.Single_Selection -> {
                         binding.sectionSingleSelection.visibility = View.VISIBLE
                         binding.sectionActionList.visibility = View.GONE
@@ -245,6 +258,7 @@ class SheetCatalogFragment : Fragment() {
                         binding.inputSheetNumberOfElements.visibility = View.VISIBLE
                         binding.sectionBottomActions.visibility = View.GONE
                     }
+
                     ComponentType.ActionList -> {
                         binding.sectionSingleSelection.visibility = View.GONE
                         binding.sectionActionList.visibility = View.VISIBLE
@@ -252,6 +266,7 @@ class SheetCatalogFragment : Fragment() {
                         binding.inputSheetNumberOfElements.visibility = View.VISIBLE
                         binding.sectionBottomActions.visibility = View.GONE
                     }
+
                     ComponentType.Informative -> {
                         binding.sectionSingleSelection.visibility = View.GONE
                         binding.sectionActionList.visibility = View.GONE
@@ -259,6 +274,7 @@ class SheetCatalogFragment : Fragment() {
                         binding.inputSheetNumberOfElements.visibility = View.VISIBLE
                         binding.sectionBottomActions.visibility = View.GONE
                     }
+
                     ComponentType.BottomActions -> {
                         binding.sectionSingleSelection.visibility = View.GONE
                         binding.sectionActionList.visibility = View.GONE
@@ -277,16 +293,20 @@ class SheetCatalogFragment : Fragment() {
                 DropDownInput.Adapter(
                     view.context,
                     R.layout.dropdown_menu_popup_item,
-                    InformativeIconType.values().map { it.name }
+                    InformativeIconType.entries.map { it.name }
                 ))
         }
     }
 
     private fun getIcon() = if (binding.inputSheetRowsWithIcons.isChecked()) {
         if (binding.inputSheetRowsWithSmallIcons.isChecked()) {
-            SelectableAsset.SmallImage(ResourcesCompat.getDrawable(resources, R.drawable.ic_sheets, requireContext().theme)!!)
+            SelectableAsset.SmallImage(DrawableAsset(ResourcesCompat.getDrawable(resources, R.drawable.ic_sheets, requireContext().theme)!!))
         } else {
-            SelectableAsset.Image(ResourcesCompat.getDrawable(resources, R.drawable.highlighted_card_custom_background, requireContext().theme)!!)
+            if (binding.inputSheetRowsWithImageUrl.isChecked()) {
+                SelectableAsset.Image(UrlAsset("https://www.svgrepo.com/show/15601/sun.svg"))
+            } else {
+                SelectableAsset.Image(DrawableIdAsset(R.drawable.highlighted_card_custom_background))
+            }
         }
     } else {
         null
@@ -309,6 +329,6 @@ class SheetCatalogFragment : Fragment() {
         BottomActions,
     }
 
-    private enum class InformativeIconType {Bullet, Small, Regular}
+    private enum class InformativeIconType { Bullet, Small, Regular }
 
 }

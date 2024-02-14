@@ -10,6 +10,7 @@ import com.telefonica.mistica.R
 import com.telefonica.mistica.sheet.children.list.ListElementViewData.RowActionViewData
 import com.telefonica.mistica.sheet.children.list.RowActionStyleViewData
 import com.telefonica.mistica.util.getThemeColor
+import com.telefonica.mistica.util.loadRowAsset
 
 internal class ActionsListAdapter(val items: List<RowActionViewData>) : RecyclerView.Adapter<ActionsListViewHolder>() {
 
@@ -26,7 +27,7 @@ internal class ActionsListAdapter(val items: List<RowActionViewData>) : Recycler
         val item = items[position]
         holder.text.text = item.title
         if (item.asset != null) {
-            holder.icon.setImageDrawable(item.asset)
+            holder.icon.loadRowAsset(item.asset)
             holder.icon.visibility = View.VISIBLE
         } else {
             holder.icon.visibility = View.GONE

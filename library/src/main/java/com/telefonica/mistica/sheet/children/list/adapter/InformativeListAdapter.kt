@@ -9,6 +9,7 @@ import com.telefonica.mistica.R
 import com.telefonica.mistica.sheet.children.list.InformativeIconViewData
 import com.telefonica.mistica.sheet.children.list.InformativeIconViewData.Bullet
 import com.telefonica.mistica.sheet.children.list.ListElementViewData.RowInformativeViewData
+import com.telefonica.mistica.util.loadRowAsset
 
 internal class InformativeListAdapter(val items: List<RowInformativeViewData>) : RecyclerView.Adapter<InformativeListViewHolder>() {
 
@@ -37,14 +38,16 @@ internal class InformativeListAdapter(val items: List<RowInformativeViewData>) :
                 holder.iconDefault.visibility = View.GONE
                 holder.iconSmall.visibility = View.GONE
             }
+
             is InformativeIconViewData.Icon -> {
-                holder.iconDefault.setImageDrawable(item.icon.drawableRes)
+                holder.iconDefault.loadRowAsset(item.icon.asset)
                 holder.bullet.visibility = View.GONE
                 holder.iconDefault.visibility = View.VISIBLE
                 holder.iconSmall.visibility = View.GONE
             }
+
             is InformativeIconViewData.SmallIcon -> {
-                holder.iconSmall.setImageDrawable(item.icon.drawableRes)
+                holder.iconSmall.loadRowAsset(item.icon.asset)
                 holder.bullet.visibility = View.GONE
                 holder.iconDefault.visibility = View.GONE
                 holder.iconSmall.visibility = View.VISIBLE
@@ -59,5 +62,4 @@ internal class InformativeListAdapter(val items: List<RowInformativeViewData>) :
     }
 
     override fun getItemCount(): Int = items.size
-
 }
