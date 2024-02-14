@@ -69,43 +69,49 @@ data class ActionButton(
 
 sealed class SelectableAsset {
     data class Image(
-        @Deprecated("Use new field rowAsset. RowAsset will have preference over asset")
-        val drawableRes: Drawable? = null,
-        val rowAsset: RowAsset? = null,
-    ) : SelectableAsset()
+        val rowAsset: RowAsset,
+    ) : SelectableAsset() {
+        @Deprecated("Use primary constructor providing a RowAsset object instead")
+        constructor(drawableRes: Drawable) : this(RowAsset.DrawableAsset(drawableRes))
+    }
 
     data class SmallImage(
-        @Deprecated("Use new field rowAsset. RowAsset will have preference over asset")
-        val drawableRes: Drawable? = null,
-        val rowAsset: RowAsset? = null,
-    ) : SelectableAsset()
+        val rowAsset: RowAsset,
+    ) : SelectableAsset() {
+        @Deprecated("Use primary constructor providing a RowAsset object instead")
+        constructor(drawableRes: Drawable) : this(RowAsset.DrawableAsset(drawableRes))
+    }
 
     data class SmallIcon(
-        @Deprecated("Use new field rowAsset. RowAsset will have preference over asset")
-        @DrawableRes val id: Int? = null,
-        val rowAsset: RowAsset? = null,
-    ) : SelectableAsset()
+        val rowAsset: RowAsset,
+    ) : SelectableAsset() {
+        @Deprecated("Use primary constructor providing a RowAsset object instead")
+        constructor(id: Int) : this(RowAsset.DrawableIdAsset(id))
+    }
 
     data class LargeIcon(
-        @Deprecated("Use new field rowAsset. RowAsset will have preference over asset")
-        @DrawableRes val id: Int? = null,
-        val rowAsset: RowAsset? = null,
-    ) : SelectableAsset()
+        val rowAsset: RowAsset,
+    ) : SelectableAsset() {
+        @Deprecated("Use primary constructor providing a RowAsset object instead")
+        constructor(id: Int) : this(RowAsset.DrawableIdAsset(id))
+    }
 }
 
 sealed class InformativeIcon {
     data object Bullet : InformativeIcon()
     data class Icon(
-        @Deprecated("Use new field rowAsset. RowAsset will have preference over asset")
-        val drawableRes: Drawable? = null,
-        val rowAsset: RowAsset? = null,
-    ) : InformativeIcon()
+        val rowAsset: RowAsset,
+    ) : InformativeIcon() {
+        @Deprecated("Use primary constructor providing a RowAsset object instead")
+        constructor(drawableRes: Drawable) : this(RowAsset.DrawableAsset(drawableRes))
+    }
 
     data class SmallIcon(
-        @Deprecated("Use new field rowAsset. RowAsset will have preference over asset")
-        val drawableRes: Drawable? = null,
-        val rowAsset: RowAsset? = null,
-    ) : InformativeIcon()
+        val rowAsset: RowAsset,
+    ) : InformativeIcon() {
+        @Deprecated("Use primary constructor providing a RowAsset object instead")
+        constructor(drawableRes: Drawable) : this(RowAsset.DrawableAsset(drawableRes))
+    }
 }
 
 sealed class RowAsset {

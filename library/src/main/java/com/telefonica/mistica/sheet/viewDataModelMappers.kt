@@ -50,7 +50,7 @@ internal fun RowAction.mapToViewData(childrenId: String, onBottomSheetClicked: I
             }
         },
         title = title,
-        asset = getRowAssetViewDataNullable(asset, rowAsset),
+        asset = getRowAssetViewData(asset, rowAsset),
         rowActionStyle = when (style) {
             RowActionStyle.Default -> RowActionStyleViewData.Default
             RowActionStyle.Destructive -> RowActionStyleViewData.Destructive
@@ -58,40 +58,24 @@ internal fun RowAction.mapToViewData(childrenId: String, onBottomSheetClicked: I
     )
 
 private fun SelectableAsset.mapToAssetViewData(): SelectableListAssetViewData = when (this) {
-    is SelectableAsset.Image -> SelectableListAssetViewData.Image(getRowAssetViewData(drawableRes, rowAsset))
-    is SelectableAsset.SmallImage -> SelectableListAssetViewData.SmallImage(getRowAssetViewData(drawableRes, rowAsset))
-    is SelectableAsset.LargeIcon -> SelectableListAssetViewData.LargeIcon(getRowAssetViewData(id, rowAsset))
-    is SelectableAsset.SmallIcon -> SelectableListAssetViewData.SmallIcon(getRowAssetViewData(id, rowAsset))
+    is SelectableAsset.Image -> SelectableListAssetViewData.Image(rowAsset.mapToRowAssetViewData())
+    is SelectableAsset.SmallImage -> SelectableListAssetViewData.SmallImage(rowAsset.mapToRowAssetViewData())
+    is SelectableAsset.LargeIcon -> SelectableListAssetViewData.LargeIcon(rowAsset.mapToRowAssetViewData())
+    is SelectableAsset.SmallIcon -> SelectableListAssetViewData.SmallIcon(rowAsset.mapToRowAssetViewData())
 }
 
 private fun InformativeIcon.mapToIconViewData(): InformativeIconViewData = when (this) {
     InformativeIcon.Bullet -> InformativeIconViewData.Bullet
-    is InformativeIcon.Icon -> InformativeIconViewData.Icon(getRowAssetViewData(drawableRes, rowAsset))
-    is InformativeIcon.SmallIcon -> InformativeIconViewData.SmallIcon(getRowAssetViewData(drawableRes, rowAsset))
+    is InformativeIcon.Icon -> InformativeIconViewData.Icon(rowAsset.mapToRowAssetViewData())
+    is InformativeIcon.SmallIcon -> InformativeIconViewData.SmallIcon(rowAsset.mapToRowAssetViewData())
 }
 
-private fun getRowAssetViewDataNullable(drawable: Drawable?, asset: RowAsset?): RowAssetViewData? =
+private fun getRowAssetViewData(drawable: Drawable?, asset: RowAsset?): RowAssetViewData? =
     asset?.mapToRowAssetViewData() ?: if (drawable != null) {
         RowAssetViewData.DrawableAsset(drawable)
     } else {
         null
     }
-
-private fun getRowAssetViewData(drawable: Drawable?, asset: RowAsset?): RowAssetViewData =
-    asset?.mapToRowAssetViewData()
-        ?: if (drawable != null) {
-            RowAssetViewData.DrawableAsset(drawable)
-        } else {
-            throw IllegalArgumentException("Both asset and drawable are null")
-        }
-
-private fun getRowAssetViewData(drawable: Int?, asset: RowAsset?): RowAssetViewData =
-    asset?.mapToRowAssetViewData()
-        ?: if (drawable != null) {
-            RowAssetViewData.DrawableIdAsset(drawable)
-        } else {
-            throw IllegalArgumentException("Both asset and drawable are null")
-        }
 
 private fun RowAsset.mapToRowAssetViewData(): RowAssetViewData = when (this) {
     is RowAsset.UrlAsset -> RowAssetViewData.UrlAsset(this.url)
