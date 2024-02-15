@@ -17,6 +17,14 @@ fun Texts() {
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Text(
+            text = "Preset 10",
+            style = MisticaTheme.typography.preset10
+        )
+        Text(
+            text = "Preset 9",
+            style = MisticaTheme.typography.preset9
+        )
+        Text(
             text = "Preset 8",
             style = MisticaTheme.typography.preset8
         )

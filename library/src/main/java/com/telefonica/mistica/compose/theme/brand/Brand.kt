@@ -18,6 +18,8 @@ interface Brand {
     val preset6FontWeight: FontWeight
     val preset7FontWeight: FontWeight
     val preset8FontWeight: FontWeight
+    val preset9FontWeight: FontWeight
+    val preset10FontWeight: FontWeight
     val cardTitleFontWeight: FontWeight
     val buttonFontWeight: FontWeight
     val linkFontWeight: FontWeight

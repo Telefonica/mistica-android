@@ -19,6 +19,10 @@ object O2Brand : Brand {
 
     override val preset8FontWeight = O2BrandFontWeights.text8FontWeight
 
+    override val preset9FontWeight = O2BrandFontWeights.text9FontWeight
+
+    override val preset10FontWeight = O2BrandFontWeights.text10FontWeight
+
     override val cardTitleFontWeight = O2BrandFontWeights.cardTitleFontWeight
 
     override val buttonFontWeight = O2BrandFontWeights.buttonFontWeight

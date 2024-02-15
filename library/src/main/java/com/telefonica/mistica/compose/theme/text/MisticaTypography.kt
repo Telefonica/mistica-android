@@ -16,6 +16,12 @@ class MisticaTypography(
     private var fontFamily: FontFamily = FontFamily.SansSerif,
     private var defaultTextColor: Color = Color.Unspecified,
 ) {
+    var preset10 by mutableStateOf(buildPreset10(), structuralEqualityPolicy())
+        private set
+
+    var preset9 by mutableStateOf(buildPreset9(), structuralEqualityPolicy())
+        private set
+
     var preset8 by mutableStateOf(buildPreset8(), structuralEqualityPolicy())
         private set
 
@@ -87,6 +93,24 @@ class MisticaTypography(
             letterSpacing = 0.sp,
             fontFamily = fontFamily,
             color = defaultTextColor,
+        )
+
+    private fun buildPreset10(
+        fontWeight: FontWeight = FontWeight.Bold,
+    ) =
+        buildBaseStyle().copy(
+            fontSize = 48.sp,
+            lineHeight = 56.sp,
+            fontWeight = fontWeight,
+        )
+
+    private fun buildPreset9(
+        fontWeight: FontWeight = FontWeight.Bold,
+    ) =
+        buildBaseStyle().copy(
+            fontSize = 40.sp,
+            lineHeight = 48.sp,
+            fontWeight = fontWeight,
         )
 
     private fun buildPreset8(
@@ -236,6 +260,8 @@ class MisticaTypography(
 
     fun updateWith(
         fontFamily: FontFamily,
+        preset10FontWeight: FontWeight,
+        preset9FontWeight: FontWeight,
         preset8FontWeight: FontWeight,
         preset7FontWeight: FontWeight,
         preset6FontWeight: FontWeight,
@@ -250,6 +276,8 @@ class MisticaTypography(
         presetTabsLabelFontSize: TextUnit,
     ) {
         this.fontFamily = fontFamily
+        preset10 = buildPreset10(fontWeight = preset10FontWeight)
+        preset9 = buildPreset9(fontWeight = preset9FontWeight)
         preset8 = buildPreset8(fontWeight = preset8FontWeight)
         preset7 = buildPreset7(fontWeight = preset7FontWeight)
         preset6 = buildPreset6(fontWeight = preset6FontWeight)
