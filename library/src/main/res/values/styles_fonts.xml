@@ -5,6 +5,20 @@
         <item name="android:letterSpacing">0.0</item>
     </style>
 
+    <style name="AppTheme.TextAppearance.Preset10">
+        <item name="android:textSize">48sp</item>
+        <item name="lineHeight">56sp</item>
+        <item name="android:fontFamily">?text10Font</item>
+        <item name="android:textStyle">?text10TextStyle</item>
+    </style>
+
+    <style name="AppTheme.TextAppearance.Preset9">
+        <item name="android:textSize">40sp</item>
+        <item name="lineHeight">48sp</item>
+        <item name="android:fontFamily">?text9Font</item>
+        <item name="android:textStyle">?text9TextStyle</item>
+    </style>
+
     <style name="AppTheme.TextAppearance.Preset8">
         <item name="android:textSize">32sp</item>
         <item name="lineHeight">40sp</item>

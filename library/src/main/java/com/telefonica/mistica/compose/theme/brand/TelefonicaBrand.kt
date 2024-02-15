@@ -20,6 +20,10 @@ object TelefonicaBrand : Brand {
 
     override val preset8FontWeight = TelefonicaBrandFontWeights.text8FontWeight
 
+    override val preset9FontWeight = TelefonicaBrandFontWeights.text9FontWeight
+
+    override val preset10FontWeight = TelefonicaBrandFontWeights.text10FontWeight
+
     override val cardTitleFontWeight = TelefonicaBrandFontWeights.cardTitleFontWeight
 
     override val buttonFontWeight = TelefonicaBrandFontWeights.buttonFontWeight

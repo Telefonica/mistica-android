@@ -21,6 +21,10 @@ object MovistarBrand : Brand {
 
     override val preset8FontWeight = MovistarBrandFontWeights.text8FontWeight
 
+    override val preset9FontWeight = MovistarBrandFontWeights.text9FontWeight
+
+    override val preset10FontWeight = MovistarBrandFontWeights.text10FontWeight
+
     override val cardTitleFontWeight = MovistarBrandFontWeights.cardTitleFontWeight
 
     override val buttonFontWeight = MovistarBrandFontWeights.buttonFontWeight

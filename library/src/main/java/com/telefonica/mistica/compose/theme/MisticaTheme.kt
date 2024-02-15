@@ -52,6 +52,8 @@ fun MisticaTheme(
     }.apply {
         updateWith(
             fontFamily = brand.fontFamily,
+            preset10FontWeight = brand.preset10FontWeight,
+            preset9FontWeight = brand.preset9FontWeight,
             preset8FontWeight = brand.preset8FontWeight,
             preset7FontWeight = brand.preset7FontWeight,
             preset6FontWeight = brand.preset6FontWeight,
