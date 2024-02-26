@@ -62,7 +62,7 @@
 		<item name="colorTextLinkSnackbar">@color/vivoNew_color_vivoPurpleLight20</item>
 		<item name="colorControl">@color/vivoNew_color_grey4</item>
 		<item name="colorControlActive">@color/vivoNew_color_vivoPurple</item>
-		<item name="colorControlInverse">@color/vivoNew_color_white</item>
+		<item name="colorControlInverse">@color/vivoNew_color_vivoPurpleLight50</item>
 		<item name="colorControlActivatedInverse">@color/vivoNew_color_white</item>
 		<item name="colorControlError">@color/vivoNew_color_pepper</item>
 		<item name="colorBarTrack">@color/vivoNew_color_grey3</item>
@@ -221,7 +221,7 @@
 		<item name="colorTextLinkSnackbar">@color/vivoNew_color_vivoPurpleLight20</item>
 		<item name="colorControl">@color/vivoNew_color_grey4</item>
 		<item name="colorControlActive">@color/vivoNew_color_vivoPurple</item>
-		<item name="colorControlInverse">@color/vivoNew_color_white</item>
+		<item name="colorControlInverse">@color/vivoNew_color_vivoPurpleLight50</item>
 		<item name="colorControlActivatedInverse">@color/vivoNew_color_white</item>
 		<item name="colorControlError">@color/vivoNew_color_pepper</item>
 		<item name="colorBarTrack">@color/vivoNew_color_grey3</item>

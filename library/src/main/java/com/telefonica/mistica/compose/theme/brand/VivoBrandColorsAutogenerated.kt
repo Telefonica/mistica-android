@@ -65,7 +65,7 @@ public object VivoBrandColors {
       textLinkSnackbar = VivoPaletteColor.vivo_color_vivoPurpleLight50,
       control = VivoPaletteColor.vivo_color_grey3,
       controlActivated = VivoPaletteColor.vivo_color_vivoPurple,
-      controlInverse = VivoPaletteColor.vivo_color_white,
+      controlInverse = VivoPaletteColor.vivo_color_vivoPurpleLight50,
       controlActivatedInverse = VivoPaletteColor.vivo_color_white,
       controlError = VivoPaletteColor.vivo_color_pepper,
       barTrack = VivoPaletteColor.vivo_color_grey3,

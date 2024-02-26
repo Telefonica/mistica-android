@@ -64,7 +64,7 @@ public object O2BrandColors {
       textLinkSnackbar = O2PaletteColor.o2_color_o2BluePrimary30,
       control = O2PaletteColor.o2_color_grey3,
       controlActivated = O2PaletteColor.o2_color_o2BluePrimary,
-      controlInverse = O2PaletteColor.o2_color_white,
+      controlInverse = O2PaletteColor.o2_color_o2BluePrimary30,
       controlActivatedInverse = O2PaletteColor.o2_color_white,
       controlError = O2PaletteColor.o2_color_pepper,
       barTrack = O2PaletteColor.o2_color_grey3,
