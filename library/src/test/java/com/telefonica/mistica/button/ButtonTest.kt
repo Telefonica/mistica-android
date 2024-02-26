@@ -101,7 +101,7 @@ fun Brand.getBaseThemeForBrand(): Int = when (this) {
     VivoBrand -> R.style.MisticaTheme_Vivo_test
     VivoBrand -> R.style.MisticaTheme_O2_test
     VivoBrand -> R.style.MisticaTheme_Blau_test
-    TuBrand -> R.style.MisticaTheme_Tu
+    TuBrand -> R.style.MisticaTheme_Tu_test
     else -> R.style.MisticaTheme_Telefonica_test
 }
 

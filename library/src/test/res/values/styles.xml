@@ -104,5 +104,19 @@
 		<item name="linkButtonInverse_test">@style/AppTheme.Button.LinkButtonInverse</item>
 	</style>
 
+	<style name="MisticaTheme.Tu.test" parent="MisticaTheme.Tu">
+		<item name="defaultButtonTest_test">@style/AppTheme.Button.DefaultButton</item>
+		<item name="defaultButton_Small_test">@style/AppTheme.Button.DefaultButton.Small</item>
+		<item name="secondaryButton_test">@style/AppTheme.Button.SecondaryButton</item>
+		<item name="secondaryButton_Small_test">@style/AppTheme.Button.SecondaryButton.Small</item>
+		<item name="dangerButton_test">@style/AppTheme.Button.DangerButton</item>
+		<item name="dangerButton_Small_test">@style/AppTheme.Button.DangerButton.Small</item>
+		<item name="linkButton_test">@style/AppTheme.Button.LinkButton</item>
+		<item name="primaryButtonInverse_test">@style/AppTheme.Button.PrimaryButtonInverse</item>
+		<item name="primaryButtonInverse_Small_test">@style/AppTheme.Button.PrimaryButtonInverse.Small</item>
+		<item name="secondaryButtonInverse_test">@style/AppTheme.Button.SecondaryButtonInverse</item>
+		<item name="secondaryButtonInverse_Small_test">@style/AppTheme.Button.SecondaryButtonInverse.Small</item>
+		<item name="linkButtonInverse_test">@style/AppTheme.Button.LinkButtonInverse</item>
+	</style>
 
 </resources>
