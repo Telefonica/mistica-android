@@ -65,7 +65,7 @@ public object BlauBrandColors {
       textLinkSnackbar = BlauPaletteColor.blau_color_blauPurple30,
       control = BlauPaletteColor.blau_color_grey2,
       controlActivated = BlauPaletteColor.blau_color_blauBlueSecondary,
-      controlInverse = BlauPaletteColor.blau_color_white,
+      controlInverse = BlauPaletteColor.blau_color_blauBluePrimary30,
       controlActivatedInverse = BlauPaletteColor.blau_color_white,
       controlError = BlauPaletteColor.blau_color_blauRed,
       barTrack = BlauPaletteColor.blau_color_grey2,

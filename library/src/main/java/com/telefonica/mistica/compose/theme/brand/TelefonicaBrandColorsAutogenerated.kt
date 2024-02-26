@@ -71,7 +71,7 @@ public object TelefonicaBrandColors {
       textLinkSnackbar = TelefonicaPaletteColor.telefonica_color_telefonicaBlue30,
       control = TelefonicaPaletteColor.telefonica_color_grey3,
       controlActivated = TelefonicaPaletteColor.telefonica_color_telefonicaBlue,
-      controlInverse = TelefonicaPaletteColor.telefonica_color_white,
+      controlInverse = TelefonicaPaletteColor.telefonica_color_grey1,
       controlActivatedInverse = TelefonicaPaletteColor.telefonica_color_white,
       controlError = TelefonicaPaletteColor.telefonica_color_coral,
       barTrack = TelefonicaPaletteColor.telefonica_color_grey3,
