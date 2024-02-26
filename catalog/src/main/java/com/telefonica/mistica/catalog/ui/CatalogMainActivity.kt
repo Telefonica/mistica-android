@@ -16,6 +16,7 @@ import com.telefonica.mistica.compose.theme.brand.BrandType.BLAU
 import com.telefonica.mistica.compose.theme.brand.BrandType.MOVISTAR
 import com.telefonica.mistica.compose.theme.brand.BrandType.O2
 import com.telefonica.mistica.compose.theme.brand.BrandType.TELEFONICA
+import com.telefonica.mistica.compose.theme.brand.BrandType.TU
 import com.telefonica.mistica.compose.theme.brand.BrandType.VIVO
 import com.telefonica.mistica.compose.theme.brand.BrandType.VIVO_NEW
 import com.telefonica.mistica.compose.theme.brand.MovistarBrand
@@ -50,6 +51,7 @@ class CatalogMainActivity : AppCompatActivity() {
             ComponentStyle("Vivo New", R.style.MisticaTheme_VivoNew, VIVO_NEW),
             ComponentStyle("Telefonica", R.style.MisticaTheme_Telefonica, TELEFONICA),
             ComponentStyle("Blau", R.style.MisticaTheme_Blau, BLAU),
+            ComponentStyle("Tu", R.style.MisticaTheme_Tu, TU),
         )
 
         findViewById<DropDownInput>(R.id.drop_down_themes)?.apply {

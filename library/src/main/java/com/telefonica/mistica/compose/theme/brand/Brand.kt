@@ -34,4 +34,4 @@ interface Brand {
     val radius: MisticaRadius
 }
 
-enum class BrandType { BLAU, MOVISTAR, O2, TELEFONICA, VIVO, VIVO_NEW }
+enum class BrandType { BLAU, MOVISTAR, O2, TELEFONICA, VIVO, VIVO_NEW, TU }
