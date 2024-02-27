@@ -163,25 +163,7 @@ We have several tokens that are defined by the UX team (colors, radius and text 
 
 You should not modify manually the generated files. All the generated files have a comment at the beginning to identify them.
 
-### How to update the design tokens
-The expected workflow is that UX team runs a GitHub action in their repository, which will invoke our `Import design tokens` action. This action will upload the generated files and create a new PR with the changes.
-
-### What to do if you find an issue in some token
-First of all, you have to find where is the problem, there are two main places:
-- The token is wrong in the [mistica-design repository](https://github.com/Telefonica/mistica-design/tree/production/tokens)
-  - In this case, you have to talk with design core team to fix it and generate the tokens again using the [GitHub Action](https://github.com/Telefonica/mistica-android/actions/workflows/import-design-tokens.yml)
-- The token is ok in the mistica-design repository but wrong in our code. In this case, there are two possible problems:
-  - The tokens are not updated with the last changes of mistica-design repo. To fix it, run [the GitHub Action](https://github.com/Telefonica/mistica-android/actions/workflows/import-design-tokens.yml) to update them.
-  - There is some issue in the tokens generator code. In this case, you will have to fix it in this repository. 
-
-### How to add support for new type of tokens
-If the design team adds a new type of token, for example, they want to include some animation duration as a token, we will have to add support for it.
-
-Some points that you should have in mind in this case:
-- Usually a new `key` will be added at the top level of the JSON (light, dark, radius, etc). You will have to update the DTO to deserialize it.
-- Before starting to write code to generate the code and XMLs automatically, you will have to think about how to give support to this new token in Mistica, for example, which attributes you will have to create for example. Once you have this clear, you will be able to start generating that code that could be written manually if this generator didn't exist.
-- As we support XML and Compose, we have to give support to this new token in both systems. For that, we have two main classes [`GenerateXMLFiles`](https://github.com/Telefonica/mistica-android/blob/main/tokens/src/main/java/com/telefonica/mistica/tokens/xml/GenerateXMLFiles.kt) and [`GenerateComposeFiles`](https://github.com/Telefonica/mistica-android/blob/main/tokens/src/main/java/com/telefonica/mistica/tokens/compose/GenerateComposeFiles.kt).  You will have to modify them to add support for the new type of token.
-- To test your development easily, you can download [the tokens files](https://github.com/Telefonica/mistica-design/tree/pre-production/tokens) into `/temp/mistica-design/tokens` directory and run `./gradlew generateMisticaTokens`.
+[There is a more detailed documentation](tokens/README.md) about how to work with this design tokens generation.  
 
 ## Library size
 
