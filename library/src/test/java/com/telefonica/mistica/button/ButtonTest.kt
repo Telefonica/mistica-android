@@ -12,6 +12,7 @@ import com.telefonica.mistica.R
 import com.telefonica.mistica.compose.button.ButtonStyle
 import com.telefonica.mistica.compose.theme.brand.Brand
 import com.telefonica.mistica.compose.theme.brand.MovistarBrand
+import com.telefonica.mistica.compose.theme.brand.TuBrand
 import com.telefonica.mistica.compose.theme.brand.VivoBrand
 import com.telefonica.mistica.testutils.ScreenshotsTest
 import com.telefonica.mistica.testutils.TestUtils.getAllBrands
@@ -95,13 +96,13 @@ internal class ButtonTest(
     }
 }
 
-fun Brand.getBaseThemeForBrand() = when (this) {
+fun Brand.getBaseThemeForBrand(): Int = when (this) {
     MovistarBrand -> R.style.MisticaTheme_Movistar_test
     VivoBrand -> R.style.MisticaTheme_Vivo_test
     VivoBrand -> R.style.MisticaTheme_O2_test
     VivoBrand -> R.style.MisticaTheme_Blau_test
+    TuBrand -> R.style.MisticaTheme_Tu_test
     else -> R.style.MisticaTheme_Telefonica_test
-
 }
 
 fun ButtonStyle.getButtonStyleRef() = when (this) {

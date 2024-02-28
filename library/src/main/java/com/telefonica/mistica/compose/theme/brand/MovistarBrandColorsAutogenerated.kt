@@ -65,7 +65,7 @@ public object MovistarBrandColors {
       textLinkSnackbar = MovistarPaletteColor.movistar_color_movistarBlue30,
       control = MovistarPaletteColor.movistar_color_grey3,
       controlActivated = MovistarPaletteColor.movistar_color_movistarBlue,
-      controlInverse = MovistarPaletteColor.movistar_color_white,
+      controlInverse = MovistarPaletteColor.movistar_color_movistarBlue20,
       controlActivatedInverse = MovistarPaletteColor.movistar_color_white,
       controlError = MovistarPaletteColor.movistar_color_pepper,
       barTrack = MovistarPaletteColor.movistar_color_grey3,

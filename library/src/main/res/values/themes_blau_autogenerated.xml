@@ -62,7 +62,7 @@
 		<item name="colorTextLinkSnackbar">@color/blau_color_blauPurple30</item>
 		<item name="colorControl">@color/blau_color_grey2</item>
 		<item name="colorControlActive">@color/blau_color_blauBlueSecondary</item>
-		<item name="colorControlInverse">@color/blau_color_white</item>
+		<item name="colorControlInverse">@color/blau_color_blauBluePrimary30</item>
 		<item name="colorControlActivatedInverse">@color/blau_color_white</item>
 		<item name="colorControlError">@color/blau_color_blauRed</item>
 		<item name="colorBarTrack">@color/blau_color_grey2</item>
