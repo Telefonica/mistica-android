@@ -170,7 +170,7 @@ private fun ButtonContent(
             Text(
                 modifier = Modifier
                     .align(Alignment.CenterVertically),
-                text = text,
+                text = text.uppercase(),
                 color = textColor,
                 style = size.textStyle,
                 maxLines = 1,
