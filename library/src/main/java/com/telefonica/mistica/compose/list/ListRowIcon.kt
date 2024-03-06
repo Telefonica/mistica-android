@@ -9,6 +9,8 @@ import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Icon
+import androidx.compose.material.LocalContentAlpha
+import androidx.compose.material.LocalContentColor
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -29,6 +31,7 @@ sealed class ListRowIcon(val contentDescription: String?) {
         val painter: Painter? = null,
         private val description: String? = null,
         val modifier: Modifier = Modifier,
+        val tint: Color? = null,
     ) : ListRowIcon(description)
 
     data class CircleIcon(
@@ -36,6 +39,7 @@ sealed class ListRowIcon(val contentDescription: String?) {
         val backgroundColor: Color = Color.Transparent,
         private val description: String? = null,
         val modifier: Modifier = Modifier,
+        val tint: Color? = null,
     ) : ListRowIcon(description)
 
     data class SmallAsset(
@@ -88,7 +92,8 @@ sealed class ListRowIcon(val contentDescription: String?) {
                 Icon(
                     painter = painter,
                     modifier = Modifier.size(24.dp),
-                    contentDescription = contentDescription
+                    contentDescription = contentDescription,
+                    tint = tint ?: LocalContentColor.current.copy(alpha = LocalContentAlpha.current)
                 )
             }
         }
@@ -104,7 +109,8 @@ sealed class ListRowIcon(val contentDescription: String?) {
            painter?.let {
                 Icon(
                     painter = painter,
-                    contentDescription = contentDescription
+                    contentDescription = contentDescription,
+                    tint = tint ?: LocalContentColor.current.copy(alpha = LocalContentAlpha.current)
                 )
             }
         }
