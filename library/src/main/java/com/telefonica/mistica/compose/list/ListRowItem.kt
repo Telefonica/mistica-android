@@ -304,9 +304,10 @@ fun ListRowItemPreview() {
                 subtitle = "Subtitle",
                 description = "Description",
                 listRowIcon = ListRowIcon.CircleIcon(
-                    painter = painterResource(id = R.drawable.icn_arrow),
+                    painter = painterResource(id = R.drawable.icn_creditcard),
                     backgroundColor = MisticaTheme.colors.neutralLow,
-                    description = null
+                    description = null,
+                    tint = Color.Red
                 ),
                 trailing = {
                     Checkbox(
