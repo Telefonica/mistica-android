@@ -15,6 +15,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -73,13 +74,16 @@ fun Callout(
             ) {
                 title?.let {
                     Text(
+                        modifier = Modifier.testTag(CalloutTestTag.TITLE),
                         text = it,
                         style = MisticaTheme.typography.preset3,
                     )
                 }
                 description?.let {
                     Text(
-                        modifier = Modifier.padding(top = 4.dp),
+                        modifier = Modifier
+                            .padding(top = 4.dp)
+                            .testTag(CalloutTestTag.DESCRIPTION),
                         text = it,
                         style = MisticaTheme.typography.preset2,
                         color = MisticaTheme.colors.textSecondary
@@ -140,7 +144,8 @@ fun Callout(
             if (dismissable) {
                 Image(
                     modifier = Modifier
-                        .clickable { onDismiss?.invoke() },
+                        .clickable { onDismiss?.invoke() }
+                        .testTag(CalloutTestTag.CLOSE_BUTTON),
                     painter = painterResource(id = R.drawable.icn_cross),
                     contentDescription = stringResource(id = R.string.close_button_content_description)
                 )
@@ -155,7 +160,12 @@ private fun PrimaryButton(
     modifier: Modifier = Modifier,
     onClick: (() -> Unit)? = null,
 ) {
-    CalloutButton(text = text, onClick = onClick, style = ButtonStyle.PRIMARY_SMALL, modifier = modifier)
+    CalloutButton(
+        text = text,
+        onClick = onClick,
+        style = ButtonStyle.PRIMARY_SMALL,
+        modifier = modifier.testTag(CalloutTestTag.PRIMARY_BUTTON)
+    )
 }
 
 @Composable
@@ -164,7 +174,12 @@ private fun SecondaryButton(
     modifier: Modifier = Modifier,
     onClick: (() -> Unit)? = null,
 ) {
-    CalloutButton(text, onClick, ButtonStyle.SECONDARY_SMALL, modifier)
+    CalloutButton(
+        text = text,
+        onClick = onClick,
+        style = ButtonStyle.SECONDARY_SMALL,
+        modifier = modifier.testTag(CalloutTestTag.SECONDARY_BUTTON)
+    )
 }
 
 @Composable
@@ -173,7 +188,13 @@ private fun LinkButton(
     modifier: Modifier = Modifier,
     onClick: (() -> Unit)? = null,
 ) {
-    CalloutButton(text, onClick, ButtonStyle.LINK, modifier, true)
+    CalloutButton(
+        text = text,
+        onClick = onClick,
+        style = ButtonStyle.LINK,
+        modifier = modifier.testTag(CalloutTestTag.LINK_BUTTON),
+        invalidatePaddings = true
+    )
 }
 
 @Composable
@@ -205,7 +226,9 @@ private fun Icon(
             resourceIconPainter(
                 iconRes = iconRes,
                 iconType = IconType.ICON,
-                modifier = Modifier.padding(end = 16.dp)
+                modifier = Modifier
+                    .padding(end = 16.dp)
+                    .testTag(CalloutTestTag.ICON),
             )
         }
 
@@ -216,6 +239,7 @@ private fun Icon(
                 modifier = Modifier
                     .padding(end = 16.dp)
                     .clip(RoundedCornerShape(MisticaTheme.radius.mediaSmallBorderRadius))
+                    .testTag(CalloutTestTag.ICON),
             )
         }
 
@@ -223,7 +247,9 @@ private fun Icon(
             resourceIconPainter(
                 iconRes = iconRes,
                 iconType = IconType.CIRCULAR_ASSET,
-                modifier = Modifier.padding(end = 16.dp)
+                modifier = Modifier
+                    .padding(end = 16.dp)
+                    .testTag(CalloutTestTag.ICON),
             )
         }
 
@@ -241,4 +267,14 @@ enum class CalloutButtonConfig {
     SECONDARY,
     SECONDARY_AND_LINK,
     LINK,
+}
+
+private object CalloutTestTag {
+    const val ICON = "callout_icon"
+    const val TITLE = "callout_title"
+    const val DESCRIPTION = "callout_description"
+    const val PRIMARY_BUTTON = "callout_primary_button"
+    const val SECONDARY_BUTTON = "callout_secondary_button"
+    const val LINK_BUTTON = "callout_link_button"
+    const val CLOSE_BUTTON = "callout_close_button"
 }
