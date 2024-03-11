@@ -426,7 +426,7 @@ class ListRowView @JvmOverloads constructor(
             )
 
         titleTextView.setTextColor(colorPrimary)
-        subtitleTextView.setTextColor(colorSecondary)
+        subtitleTextView.setTextColor(colorPrimary)
         descriptionTextView.setTextColor(colorSecondary)
     }
 
