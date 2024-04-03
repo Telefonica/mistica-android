@@ -50,6 +50,7 @@ private fun RowAction.mapToViewData(childrenId: String, onBottomSheetClicked: In
             }
         },
         title = title,
+        contentDescription = contentDescription ?: title,
         asset = getRowAssetViewData(asset, rowAsset),
         rowActionStyle = when (style) {
             RowActionStyle.Default -> RowActionStyleViewData.Default

@@ -26,6 +26,7 @@ internal class ActionsListAdapter(val items: List<RowActionViewData>) : Recycler
     override fun onBindViewHolder(holder: ActionsListViewHolder, position: Int) {
         val item = items[position]
         holder.text.text = item.title
+        holder.text.contentDescription = item.contentDescription
         if (item.asset != null) {
             holder.icon.loadRowAsset(item.asset)
             holder.icon.visibility = View.VISIBLE
