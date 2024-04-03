@@ -10,6 +10,7 @@ import android.widget.LinearLayout
 import android.widget.Space
 import android.widget.TextView
 import androidx.coordinatorlayout.widget.CoordinatorLayout
+import androidx.core.view.ViewCompat
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ViewModelStoreOwner
 import androidx.lifecycle.setViewTreeLifecycleOwner
@@ -49,6 +50,8 @@ open class SheetView(
         }
 
         val root = View.inflate(getContext(), R.layout.sheet_layout, null)
+        /* In case no accessibility pane title is specified, Talkback reads twice first element in Bottom Sheet */
+        ViewCompat.setAccessibilityPaneTitle(root, " ")
         setContentView(root)
         setUpBehavior(root)
         fillData(root, sheetModel, context, onSheetTappedWrapped)
@@ -86,6 +89,7 @@ open class SheetView(
         root: View,
         sheetModel: SheetModel,
     ) {
+        val handler = root.findViewById<View>(R.id.handler)
         val title = root.findViewById<TextView>(R.id.title)
         val subtitle = root.findViewById<TextView>(R.id.subtitle)
         val description = root.findViewById<TextView>(R.id.description)
@@ -95,6 +99,7 @@ open class SheetView(
         val subtitleText = sheetModel.header.subtitle
         val descriptionText = sheetModel.header.description
 
+        handler.setOnClickListener { cancel() }
         title.setTextOrHide(titleText)
         titleSpace.setSpaceOrGone(titleText)
         subtitle.setTextOrHide(subtitleText)
