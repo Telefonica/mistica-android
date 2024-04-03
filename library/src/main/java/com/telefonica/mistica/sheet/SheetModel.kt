@@ -49,6 +49,7 @@ data class RowSelectable(
 data class RowAction(
     val id: String,
     val title: String,
+    val contentDescription: String? = null,
     val style: RowActionStyle = RowActionStyle.Default,
     @Deprecated("Use new field rowAsset. RowAsset will have preference over asset")
     val asset: Drawable? = null,

@@ -30,6 +30,7 @@ internal sealed class ListElementViewData(
         override val id: String,
         val onClickListener: OnClickListener,
         val title: String,
+        val contentDescription: String,
         val rowActionStyle: RowActionStyleViewData = RowActionStyleViewData.Default,
         val asset: RowAssetViewData?,
     ) : ListElementViewData(
