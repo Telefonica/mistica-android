@@ -5,6 +5,7 @@ package com.telefonica.mistica.catalog.ui
 import android.os.Bundle
 import android.view.View
 import androidx.annotation.StyleRes
+import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.runtime.Composable
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
@@ -79,7 +80,7 @@ import com.telefonica.mistica.compose.theme.brand.TuBrand
 import com.telefonica.mistica.compose.theme.brand.VivoBrand
 import com.telefonica.mistica.compose.theme.brand.VivoNewBrand
 
-class ComponentCatalogActivity : FragmentActivity() {
+class ComponentCatalogActivity : AppCompatActivity() {
 
     private lateinit var binding: ScreenComponentCatalogBinding
 
