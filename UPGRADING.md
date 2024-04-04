@@ -74,3 +74,7 @@ When this new compose wrapper is used on dialogs the ViewTreeLifecycle should be
 
 ## Upgrade to version 10.0.0
 `calloutIcon` has been replaced with `calloutAsset` and `calloutAssetType` to allow the use of images and circular images in the `Callout` component
+
+## Upgrade to version 11.1.1
+Both `preset9FontWeight` and `preset10FontWeight` have been added to `Brand` interface. 
+We should add these new values to our brand implementations.
