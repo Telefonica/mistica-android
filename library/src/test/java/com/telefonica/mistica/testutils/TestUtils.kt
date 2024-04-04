@@ -7,6 +7,7 @@ import com.telefonica.mistica.compose.theme.brand.O2Brand
 import com.telefonica.mistica.compose.theme.brand.TelefonicaBrand
 import com.telefonica.mistica.compose.theme.brand.TuBrand
 import com.telefonica.mistica.compose.theme.brand.VivoBrand
+import com.telefonica.mistica.compose.theme.brand.VivoNewBrand
 import org.junit.Test
 
 object TestUtils {
@@ -35,6 +36,7 @@ object TestUtils {
         BlauBrand,
         TelefonicaBrand,
         TuBrand,
+        VivoNewBrand,
     )
 
     fun ButtonStyle.isInverse() = when(this) {

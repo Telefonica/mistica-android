@@ -10,10 +10,14 @@ import com.telefonica.mistica.DummyActivity
 import com.telefonica.mistica.DummyActivity.Companion.EXTRA_THEME
 import com.telefonica.mistica.R
 import com.telefonica.mistica.compose.button.ButtonStyle
+import com.telefonica.mistica.compose.theme.brand.BlauBrand
 import com.telefonica.mistica.compose.theme.brand.Brand
 import com.telefonica.mistica.compose.theme.brand.MovistarBrand
+import com.telefonica.mistica.compose.theme.brand.O2Brand
+import com.telefonica.mistica.compose.theme.brand.TelefonicaBrand
 import com.telefonica.mistica.compose.theme.brand.TuBrand
 import com.telefonica.mistica.compose.theme.brand.VivoBrand
+import com.telefonica.mistica.compose.theme.brand.VivoNewBrand
 import com.telefonica.mistica.testutils.ScreenshotsTest
 import com.telefonica.mistica.testutils.TestUtils.getAllBrands
 import com.telefonica.mistica.testutils.TestUtils.isInverse
@@ -83,7 +87,7 @@ internal class ButtonTest(
         @ParameterizedRobolectricTestRunner.Parameters(name = "ButtonXML {1} {0} icon={2}")
         fun brands(): List<Array<Any>> {
             val allBrands = getAllBrands()
-            val buttonStyles = ButtonStyle.values().toList()
+            val buttonStyles = ButtonStyle.entries
             val icons = listOf(false, true)
             return allBrands.flatMap { brand ->
                 buttonStyles.flatMap { buttonStyle ->
@@ -99,10 +103,12 @@ internal class ButtonTest(
 fun Brand.getBaseThemeForBrand(): Int = when (this) {
     MovistarBrand -> R.style.MisticaTheme_Movistar_test
     VivoBrand -> R.style.MisticaTheme_Vivo_test
-    VivoBrand -> R.style.MisticaTheme_O2_test
-    VivoBrand -> R.style.MisticaTheme_Blau_test
+    O2Brand -> R.style.MisticaTheme_O2_test
+    BlauBrand -> R.style.MisticaTheme_Blau_test
+    TelefonicaBrand -> R.style.MisticaTheme_Telefonica_test
     TuBrand -> R.style.MisticaTheme_Tu_test
-    else -> R.style.MisticaTheme_Telefonica_test
+    VivoNewBrand -> R.style.MisticaTheme_VivoNew_test
+    else -> throw IllegalArgumentException("Unexpected brand $this")
 }
 
 fun ButtonStyle.getButtonStyleRef() = when (this) {
