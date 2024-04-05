@@ -64,10 +64,6 @@ android {
     }
 }
 
-tasks.withType(Test) {
-    android.sourceSets.main.res.srcDirs += 'src/test/res'
-}
-
 task sourceJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
     archiveClassifier = "sources"

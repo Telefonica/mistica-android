@@ -12,8 +12,11 @@ import com.telefonica.mistica.DummyActivity
 import com.telefonica.mistica.DummyActivity.Companion.EXTRA_THEME
 import com.telefonica.mistica.R
 import com.telefonica.mistica.compose.button.ButtonStyle
+import com.telefonica.mistica.compose.theme.brand.BlauBrand
 import com.telefonica.mistica.compose.theme.brand.Brand
 import com.telefonica.mistica.compose.theme.brand.MovistarBrand
+import com.telefonica.mistica.compose.theme.brand.O2Brand
+import com.telefonica.mistica.compose.theme.brand.TelefonicaBrand
 import com.telefonica.mistica.compose.theme.brand.TuBrand
 import com.telefonica.mistica.compose.theme.brand.VivoBrand
 import com.telefonica.mistica.testutils.ScreenshotsTest
@@ -106,10 +109,11 @@ internal class ButtonTest(
 private fun Brand.getBaseThemeForBrand(): Int = when (this) {
     MovistarBrand -> R.style.MisticaTheme_Movistar
     VivoBrand -> R.style.MisticaTheme_Vivo
-    VivoBrand -> R.style.MisticaTheme_O2
-    VivoBrand -> R.style.MisticaTheme_Blau
+    O2Brand -> R.style.MisticaTheme_O2
+    BlauBrand -> R.style.MisticaTheme_Blau
     TuBrand -> R.style.MisticaTheme_Tu
-    else -> R.style.MisticaTheme_Telefonica
+    TelefonicaBrand -> R.style.MisticaTheme_Telefonica
+    else -> error("No tests defined for brand $this")
 }
 
 @LayoutRes
