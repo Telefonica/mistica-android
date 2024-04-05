@@ -4,12 +4,16 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalPagerApi::class)
 @Composable
@@ -18,8 +22,18 @@ fun Carousel(
     carouselState: CarouselState = rememberCarouselState(),
     contentPadding: PaddingValues = PaddingValuesWithStartAndEndMargin(carouselState, start = 16.dp, end = 16.dp),
     itemCount: Int,
+    autoPlay: Boolean = false,
+    autoPlaySpeed: Long = 5000L,
+    loop: Boolean = false,
     content: @Composable (page: Int) -> Unit,
 ) {
+    AutoPlay(
+        carouselState = carouselState,
+        itemCount = itemCount,
+        autoPlay = autoPlay,
+        autoPlaySpeed = autoPlaySpeed,
+        loop = loop
+    )
     HorizontalPager(
         state = carouselState.pagerState,
         contentPadding = contentPadding,
@@ -34,6 +48,33 @@ fun Carousel(
             modifier = modifier.padding(start = start, end = end, top = 0.dp, bottom = 0.dp)
         ) {
             content(page)
+        }
+    }
+}
+
+@Composable
+private fun AutoPlay(
+    carouselState: CarouselState,
+    itemCount: Int,
+    autoPlay: Boolean,
+    autoPlaySpeed: Long,
+    loop: Boolean,
+) {
+    val scope = rememberCoroutineScope()
+    LaunchedEffect(autoPlay, autoPlaySpeed, loop, carouselState.currentPage) {
+        if (autoPlay) {
+            delay(autoPlaySpeed)
+
+            val nextPage = carouselState.currentPage + 1
+            if (nextPage < itemCount) {
+                scope.launch {
+                    carouselState.pagerState.animateScrollToPage(nextPage)
+                }
+            } else if (loop) {
+                scope.launch {
+                    carouselState.pagerState.animateScrollToPage(0)
+                }
+            }
         }
     }
 }

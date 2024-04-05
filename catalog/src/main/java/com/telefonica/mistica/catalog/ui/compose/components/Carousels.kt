@@ -31,6 +31,9 @@ fun Carousels() {
         Carousel(
             itemCount = itemCount,
             carouselState = carouselState,
+            autoPlaySpeed = 3000L,
+            autoPlay = true,
+            loop = true,
         ) { page ->
             CarouselItem(page)
         }
