@@ -4,6 +4,9 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -22,17 +25,24 @@ import com.telefonica.mistica.compose.tag.Tag
 import com.telefonica.mistica.tag.TagView
 
 @Composable
-fun Carousels() {
+fun Carousels(
+    isVisible: Boolean
+) {
     val carouselState = rememberCarouselState()
     val itemCount by remember { mutableStateOf(6)}
     Column(
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier
+            .fillMaxSize()
+            .verticalScroll(rememberScrollState())
     ) {
+        repeat(30) {
+            Text(text = "hola")
+        }
         Carousel(
             itemCount = itemCount,
             carouselState = carouselState,
             autoPlaySpeed = 3000L,
-            autoPlay = true,
+            autoPlay = isVisible,
             loop = true,
         ) { page ->
             CarouselItem(page)

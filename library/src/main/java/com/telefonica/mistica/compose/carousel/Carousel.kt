@@ -5,6 +5,10 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.Dp
@@ -12,6 +16,7 @@ import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
+import com.telefonica.mistica.compose.util.VisibilityTracker
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -27,27 +32,36 @@ fun Carousel(
     loop: Boolean = false,
     content: @Composable (page: Int) -> Unit,
 ) {
-    AutoPlay(
-        carouselState = carouselState,
-        itemCount = itemCount,
-        autoPlay = autoPlay,
-        autoPlaySpeed = autoPlaySpeed,
-        loop = loop
-    )
-    HorizontalPager(
-        state = carouselState.pagerState,
-        contentPadding = contentPadding,
-        count = itemCount,
-    ) { page ->
-        val (start, end) = when (page) {
-            0 -> 16.dp to 4.dp
-            itemCount-1 -> 4.dp to 16.dp
-            else -> 4.dp to 4.dp
-        }
-        Box(
-            modifier = modifier.padding(start = start, end = end, top = 0.dp, bottom = 0.dp)
-        ) {
-            content(page)
+    var isVisible by remember {
+        mutableStateOf(false)
+    }
+    VisibilityTracker(
+        onIsFullyVisible = { isVisible = it }
+    ) {
+        AutoPlay(
+            carouselState = carouselState,
+            itemCount = itemCount,
+            autoPlay = autoPlay,
+            autoPlaySpeed = autoPlaySpeed,
+            loop = loop,
+            isVisible = isVisible
+        )
+        HorizontalPager(
+            modifier = modifier,
+            state = carouselState.pagerState,
+            contentPadding = contentPadding,
+            count = itemCount,
+        ) { page ->
+            val (start, end) = when (page) {
+                0 -> 16.dp to 4.dp
+                itemCount - 1 -> 4.dp to 16.dp
+                else -> 4.dp to 4.dp
+            }
+            Box(
+                modifier = modifier.padding(start = start, end = end, top = 0.dp, bottom = 0.dp)
+            ) {
+                content(page)
+            }
         }
     }
 }
@@ -59,10 +73,11 @@ private fun AutoPlay(
     autoPlay: Boolean,
     autoPlaySpeed: Long,
     loop: Boolean,
+    isVisible: Boolean,
 ) {
     val scope = rememberCoroutineScope()
-    LaunchedEffect(autoPlay, autoPlaySpeed, loop, carouselState.currentPage) {
-        if (autoPlay) {
+    LaunchedEffect(isVisible, autoPlay, autoPlaySpeed, loop, carouselState.currentPage) {
+        if (autoPlay && isVisible) {
             delay(autoPlaySpeed)
 
             val nextPage = carouselState.currentPage + 1

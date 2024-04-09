@@ -62,6 +62,8 @@ import com.telefonica.mistica.catalog.ui.compose.components.TabsCatalog
 import com.telefonica.mistica.catalog.ui.compose.components.Tags
 import com.telefonica.mistica.catalog.ui.compose.components.Texts
 import com.telefonica.mistica.catalog.ui.compose.components.Titles
+import com.telefonica.mistica.catalog.ui.domain.ComponentTabType
+import com.telefonica.mistica.catalog.ui.viewmodel.ComponentCatalogViewModel
 import com.telefonica.mistica.compose.theme.MisticaTheme
 import com.telefonica.mistica.compose.theme.brand.BlauBrand
 import com.telefonica.mistica.compose.theme.brand.Brand
@@ -83,6 +85,7 @@ import com.telefonica.mistica.compose.theme.brand.VivoNewBrand
 class ComponentCatalogActivity : AppCompatActivity() {
 
     private lateinit var binding: ScreenComponentCatalogBinding
+    private val viewModel = ComponentCatalogViewModel()
 
     @StyleRes
     private var classicThemeOverride: Int = DEFAULT_CLASSIC_THEME
@@ -94,6 +97,8 @@ class ComponentCatalogActivity : AppCompatActivity() {
 
         binding = ScreenComponentCatalogBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        viewModel.onTabChanged(ComponentTabType.XML)
 
         setUpViews()
         showComponentCatalog()
@@ -205,7 +210,7 @@ class ComponentCatalogActivity : AppCompatActivity() {
 
             Section.CAROUSEL -> setPageAdapterWithTabs(
                 classicComponent = CarouselFragment(),
-                composeComponent = { Carousels() })
+                composeComponent = { Carousels(it) })
 
             Section.SKELETON -> setPageAdapterWithTabs(
                 classicComponent = null,
@@ -218,7 +223,7 @@ class ComponentCatalogActivity : AppCompatActivity() {
         }
     }
 
-    private fun setPageAdapterWithTabs(classicComponent: Fragment?, composeComponent: (@Composable () -> Unit)?) {
+    private fun setPageAdapterWithTabs(classicComponent: Fragment?, composeComponent: (@Composable (isVisible: Boolean) -> Unit)?) {
         binding.tabLayoutViewGroup.visibility = View.VISIBLE
         if (classicComponent == null && composeComponent == null) throw ExceptionInInitializerError("At least one of the components must be not null.")
 
@@ -271,7 +276,12 @@ class ComponentCatalogActivity : AppCompatActivity() {
 
         binding.componentTabs.addOnTabSelectedListener(object : OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab?) {
-                tab?.let { binding.componentViewPager.currentItem = tab.position }
+                tab?.let {
+                    binding.componentViewPager.currentItem = tab.position
+                    viewModel.onTabChanged(
+                        if (tab.position == 0) ComponentTabType.XML else ComponentTabType.COMPOSE
+                    )
+                }
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {}
