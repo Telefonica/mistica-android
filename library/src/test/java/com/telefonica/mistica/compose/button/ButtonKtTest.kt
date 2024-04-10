@@ -67,7 +67,7 @@ internal class ButtonKtTest(private val brand: Brand, private val style: ButtonS
         @ParameterizedRobolectricTestRunner.Parameters(name = "Button {1} {0} icon={2} darkTheme={3}")
         fun brands(): List<Array<Any>> {
             val allBrands = TestUtils.getAllBrands()
-            val buttonStyles = ButtonStyle.values().toList()
+            val buttonStyles = ButtonStyle.entries
             val icons = listOf(false, true)
             val darkTheme = listOf(false, true)
             return allBrands.flatMap { brand ->

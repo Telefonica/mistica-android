@@ -2,6 +2,8 @@ package com.telefonica.mistica.button
 
 import android.content.Intent
 import android.widget.FrameLayout
+import androidx.annotation.LayoutRes
+import androidx.annotation.StyleRes
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.espresso.Espresso
 import androidx.test.espresso.matcher.ViewMatchers
@@ -10,8 +12,11 @@ import com.telefonica.mistica.DummyActivity
 import com.telefonica.mistica.DummyActivity.Companion.EXTRA_THEME
 import com.telefonica.mistica.R
 import com.telefonica.mistica.compose.button.ButtonStyle
+import com.telefonica.mistica.compose.theme.brand.BlauBrand
 import com.telefonica.mistica.compose.theme.brand.Brand
 import com.telefonica.mistica.compose.theme.brand.MovistarBrand
+import com.telefonica.mistica.compose.theme.brand.O2Brand
+import com.telefonica.mistica.compose.theme.brand.TelefonicaBrand
 import com.telefonica.mistica.compose.theme.brand.TuBrand
 import com.telefonica.mistica.compose.theme.brand.VivoBrand
 import com.telefonica.mistica.testutils.ScreenshotsTest
@@ -52,7 +57,11 @@ internal class ButtonTest(
     private fun checkXmlButton(brand: Brand = MovistarBrand, style: ButtonStyle, icon: Boolean, darkTheme: Boolean) {
         rule.scenario.onActivity { activity ->
             val wrapper: FrameLayout = activity.findViewById(R.id.dummy_activity_wrapper)
-            val button = Button(activity, null, style.getButtonStyleRef())
+            val button = activity.layoutInflater.inflate(
+                style.getButtonLayout(),
+                null,
+                false
+            ) as Button
             button.text = "textValue"
             var iconSuffix: String? = null
             if (icon) {
@@ -83,7 +92,7 @@ internal class ButtonTest(
         @ParameterizedRobolectricTestRunner.Parameters(name = "ButtonXML {1} {0} icon={2}")
         fun brands(): List<Array<Any>> {
             val allBrands = getAllBrands()
-            val buttonStyles = ButtonStyle.values().toList()
+            val buttonStyles = ButtonStyle.entries
             val icons = listOf(false, true)
             return allBrands.flatMap { brand ->
                 buttonStyles.flatMap { buttonStyle ->
@@ -96,26 +105,29 @@ internal class ButtonTest(
     }
 }
 
-fun Brand.getBaseThemeForBrand(): Int = when (this) {
-    MovistarBrand -> R.style.MisticaTheme_Movistar_test
-    VivoBrand -> R.style.MisticaTheme_Vivo_test
-    VivoBrand -> R.style.MisticaTheme_O2_test
-    VivoBrand -> R.style.MisticaTheme_Blau_test
-    TuBrand -> R.style.MisticaTheme_Tu_test
-    else -> R.style.MisticaTheme_Telefonica_test
+@StyleRes
+private fun Brand.getBaseThemeForBrand(): Int = when (this) {
+    MovistarBrand -> R.style.MisticaTheme_Movistar
+    VivoBrand -> R.style.MisticaTheme_Vivo
+    O2Brand -> R.style.MisticaTheme_O2
+    BlauBrand -> R.style.MisticaTheme_Blau
+    TuBrand -> R.style.MisticaTheme_Tu
+    TelefonicaBrand -> R.style.MisticaTheme_Telefonica
+    else -> error("No tests defined for brand $this")
 }
 
-fun ButtonStyle.getButtonStyleRef() = when (this) {
-    ButtonStyle.PRIMARY -> R.attr.defaultButtonTest_test
-    ButtonStyle.PRIMARY_SMALL -> R.attr.defaultButton_Small_test
-    ButtonStyle.SECONDARY -> R.attr.secondaryButton_test
-    ButtonStyle.SECONDARY_SMALL -> R.attr.secondaryButton_Small_test
-    ButtonStyle.DANGER -> R.attr.dangerButton_test
-    ButtonStyle.DANGER_SMALL -> R.attr.dangerButton_Small_test
-    ButtonStyle.LINK -> R.attr.linkButton_test
-    ButtonStyle.PRIMARY_INVERSE -> R.attr.primaryButtonInverse_test
-    ButtonStyle.PRIMARY_SMALL_INVERSE -> R.attr.primaryButtonInverse_Small_test
-    ButtonStyle.SECONDARY_INVERSE -> R.attr.secondaryButtonInverse_test
-    ButtonStyle.SECONDARY_SMALL_INVERSE -> R.attr.secondaryButtonInverse_Small_test
-    ButtonStyle.LINK_INVERSE -> R.attr.linkButtonInverse_test
+@LayoutRes
+private fun ButtonStyle.getButtonLayout(): Int = when (this) {
+    ButtonStyle.PRIMARY -> R.layout.primary_button
+    ButtonStyle.PRIMARY_SMALL -> R.layout.primary_button_small
+    ButtonStyle.SECONDARY -> R.layout.secondary_button
+    ButtonStyle.SECONDARY_SMALL -> R.layout.secondary_button_small
+    ButtonStyle.DANGER -> R.layout.danger_button
+    ButtonStyle.DANGER_SMALL -> R.layout.danger_button_small
+    ButtonStyle.LINK -> R.layout.link_button
+    ButtonStyle.PRIMARY_INVERSE -> R.layout.primary_button_inverse
+    ButtonStyle.PRIMARY_SMALL_INVERSE -> R.layout.primary_button_inverse_small
+    ButtonStyle.SECONDARY_INVERSE -> R.layout.secondary_button_inverse
+    ButtonStyle.SECONDARY_SMALL_INVERSE -> R.layout.secondary_button_inverse_small
+    ButtonStyle.LINK_INVERSE -> R.layout.link_button_inverse
 }
