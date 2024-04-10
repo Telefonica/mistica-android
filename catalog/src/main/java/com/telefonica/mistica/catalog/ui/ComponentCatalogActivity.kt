@@ -271,9 +271,7 @@ class ComponentCatalogActivity : AppCompatActivity() {
 
         binding.componentTabs.addOnTabSelectedListener(object : OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab?) {
-                tab?.let {
-                    binding.componentViewPager.currentItem = tab.position
-                }
+                tab?.let { binding.componentViewPager.currentItem = tab.position }
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {}
