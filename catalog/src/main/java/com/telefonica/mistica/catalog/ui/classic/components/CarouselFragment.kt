@@ -4,10 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.google.accompanist.pager.PagerState
 import com.telefonica.mistica.card.mediacard.MediaCardView
+import com.telefonica.mistica.carousel.CarouselView
 import com.telefonica.mistica.catalog.R.drawable.card_image_sample
 import com.telefonica.mistica.catalog.databinding.CarouselFragmentCatalogBinding
 import com.telefonica.mistica.compose.carousel.CarouselState
@@ -37,6 +39,25 @@ class CarouselFragment : Fragment() {
         binding.carouselPageIndicatorView
             .setState(carouselState)
             .setPageCount(MEDIA_CARDS_CAROUSEL_SIZE)
+
+        binding.updateCarousel.setOnClickListener {
+            binding.carouselContainer.removeAllViews()
+            val carousel = CarouselView(requireContext(), null).apply {
+                layoutParams = FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.WRAP_CONTENT)
+                init(carouselState)
+            }
+            binding.carouselContainer.addView(carousel)
+        }
+    }
+
+    private fun CarouselView.init(carouselState: CarouselState) {
+        val autoPlaySpeed = binding.autoPlaySpeed.text.toString().toIntOrNull() ?: 5
+        setContent(getMediaCardsForCarousel())
+            .setState(carouselState)
+            .setItemCount(MEDIA_CARDS_CAROUSEL_SIZE)
+            .setAutoPlay(binding.autoPlay.isChecked())
+            .setAutoPlaySpeed(autoPlaySpeed * 1000L)
+            .setLoop(binding.loop.isChecked())
     }
 
     private fun getMediaCardsForCarousel(): List<MediaCardView> {

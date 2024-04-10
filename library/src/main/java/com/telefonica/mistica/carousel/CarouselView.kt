@@ -24,6 +24,9 @@ class CarouselView @JvmOverloads constructor(
     private lateinit var carouselState: CarouselState
 
     private var itemCount: Int = 0
+    private var autoPlay: Boolean = false
+    private var autoPlaySpeed: Long = 5000L
+    private var loop: Boolean = false
 
     /**If composable is set it will render it by default*/
     private var body: (@Composable (Int) -> Unit)? = null
@@ -33,6 +36,18 @@ class CarouselView @JvmOverloads constructor(
 
     fun setState(carouselState: CarouselState): CarouselView = this.apply {
         this.carouselState = carouselState
+    }
+
+    fun setAutoPlay(autoPlay: Boolean) = apply {
+        this.autoPlay = autoPlay
+    }
+
+    fun setLoop(loop: Boolean) = apply {
+        this.loop = loop
+    }
+
+    fun setAutoPlaySpeed(autoPlaySpeed: Long) = apply {
+        this.autoPlaySpeed = autoPlaySpeed
     }
 
     fun setItemCount(itemCount: Int): CarouselView = this.apply {
@@ -60,6 +75,9 @@ class CarouselView @JvmOverloads constructor(
             Carousel(
                 itemCount = itemCount,
                 carouselState = carouselState,
+                autoPlay = autoPlay,
+                autoPlaySpeed = autoPlaySpeed,
+                loop = loop,
             ) { position ->
                 body?.let { it(position) } ?: data?.get(position)?.let { CarouselItem(it) }
             }
