@@ -98,8 +98,6 @@ class ComponentCatalogActivity : AppCompatActivity() {
         binding = ScreenComponentCatalogBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        viewModel.onTabChanged(ComponentTabType.XML)
-
         setUpViews()
         showComponentCatalog()
     }
@@ -233,6 +231,12 @@ class ComponentCatalogActivity : AppCompatActivity() {
 
             if (composeComponent != null) add(ComponentComposeFragment(composeThemeOverride, composeComponent))
             else binding.componentTabs.removeTabAt(COMPOSE_TAB_POS)
+        }
+
+        if (classicComponent != null) {
+            viewModel.onTabChanged(ComponentTabType.XML)
+        } else {
+            viewModel.onTabChanged(ComponentTabType.COMPOSE)
         }
 
         binding.componentViewPager.adapter = ComponentPageAdapter(adapterList, this)

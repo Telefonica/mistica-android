@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -18,25 +19,48 @@ import com.telefonica.mistica.compose.card.mediacard.MediaCardImage
 import com.telefonica.mistica.compose.carousel.Carousel
 import com.telefonica.mistica.compose.carousel.CarouselPagerIndicator
 import com.telefonica.mistica.compose.carousel.rememberCarouselState
+import com.telefonica.mistica.compose.input.CheckBoxInput
 import com.telefonica.mistica.compose.tag.Tag
 import com.telefonica.mistica.tag.TagView
+
+private const val ITEM_COUNT = 6
 
 @Composable
 fun Carousels(
     isVisible: Boolean
 ) {
     val carouselState = rememberCarouselState()
-    val itemCount by remember { mutableStateOf(6)}
     Column(
         modifier = Modifier
             .fillMaxSize()
     ) {
+        var autoPlay by remember {
+            mutableStateOf(false)
+        }
+        CheckBoxInput(
+            modifier = Modifier.padding(16.dp),
+            text = "Autoplay",
+            checked = autoPlay,
+            onCheckedChange = { autoPlay = it }
+        )
+        var loop by remember {
+            mutableStateOf(false)
+        }
+        CheckBoxInput(
+            modifier = Modifier
+                .padding(horizontal = 16.dp)
+                .padding(bottom = 16.dp),
+            text = "Loop",
+            checked = loop,
+            onCheckedChange = { loop = it }
+        )
+
         Carousel(
-            itemCount = itemCount,
+            itemCount = ITEM_COUNT,
             carouselState = carouselState,
             autoPlaySpeed = 3000L,
-            autoPlay = isVisible,
-            loop = true,
+            autoPlay = isVisible && autoPlay,
+            loop = loop,
         ) { page ->
             CarouselItem(page)
         }
@@ -45,7 +69,7 @@ fun Carousels(
             modifier = Modifier
                 .align(Alignment.CenterHorizontally)
                 .padding(16.dp),
-            pagerCount = itemCount,
+            pagerCount = ITEM_COUNT,
             debug = true,
         )
     }
