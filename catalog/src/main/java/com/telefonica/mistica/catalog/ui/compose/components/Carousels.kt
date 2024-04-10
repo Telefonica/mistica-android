@@ -27,9 +27,7 @@ import com.telefonica.mistica.tag.TagView
 private const val ITEM_COUNT = 6
 
 @Composable
-fun Carousels(
-    isVisible: Boolean
-) {
+fun Carousels() {
     val carouselState = rememberCarouselState()
     Column(
         modifier = Modifier
