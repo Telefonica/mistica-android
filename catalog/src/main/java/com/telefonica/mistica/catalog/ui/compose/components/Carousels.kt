@@ -20,6 +20,7 @@ import com.telefonica.mistica.compose.carousel.Carousel
 import com.telefonica.mistica.compose.carousel.CarouselPagerIndicator
 import com.telefonica.mistica.compose.carousel.rememberCarouselState
 import com.telefonica.mistica.compose.input.CheckBoxInput
+import com.telefonica.mistica.compose.input.TextInput
 import com.telefonica.mistica.compose.tag.Tag
 import com.telefonica.mistica.tag.TagView
 
@@ -55,11 +56,22 @@ fun Carousels(
             onCheckedChange = { loop = it }
         )
 
+        var autoPlaySpeed by remember {
+            mutableStateOf("")
+        }
+        TextInput(
+            modifier = Modifier.padding(horizontal = 16.dp),
+            value = autoPlaySpeed,
+            onValueChange = { autoPlaySpeed = it },
+            label = "Auto play speed in seconds"
+        )
+
         Carousel(
+            modifier = Modifier.padding(top = 8.dp),
             itemCount = ITEM_COUNT,
             carouselState = carouselState,
-            autoPlaySpeed = 3000L,
-            autoPlay = isVisible && autoPlay,
+            autoPlay = autoPlay,
+            autoPlaySpeed = (autoPlaySpeed.toIntOrNull() ?: 5) * 1000L,
             loop = loop,
         ) { page ->
             CarouselItem(page)
