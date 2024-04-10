@@ -34,6 +34,9 @@ modifier: Modifier = Modifier,
 carouselState: CarouselState = rememberCarouselState(),
 contentPadding: PaddingValues = PaddingValuesWithStartAndEndMargin(carouselState, start = 16.dp, end = 16.dp),
 itemCount: Int,
+autoPlay: Boolean = false,
+autoPlaySpeed: Long = 5000L,
+loop: Boolean = false,
 content: @Composable (page: Int) -> Unit,
 ```
 
@@ -41,6 +44,9 @@ content: @Composable (page: Int) -> Unit,
 `PaddingValuesWithStartAndEndMargin` implementation.
 
 `content` is the composable shown inside the Carousel.
+
+Set `autoPlay` to `true` (`false` by default) to make the carousel automatically swipe to the next card after `autoPlaySpeed` milliseconds (5000 by default).
+When the last card is reached and `loop` is set to `true` (`false` by default), the carousel will return to the first card automatically. Note: Cards will only be automatically swiped when carousel is fully visible inside the current viewport.
 
 ## CarouselPagerIndicator composable
 It has the next parameters:
