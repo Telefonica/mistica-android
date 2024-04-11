@@ -19,7 +19,9 @@ import com.telefonica.mistica.compose.util.VisibilityTracker
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-private const val DEFAULT_AUTO_PLAY_SPEED_MILLIS = 5000L
+internal const val DEFAULT_AUTO_PLAY_SPEED_MILLIS = 5000L
+internal const val DEFAULT_AUTO_PLAY = false
+internal const val DEFAULT_LOOP = false
 
 @Composable
 fun Carousel(
@@ -27,9 +29,9 @@ fun Carousel(
     carouselState: CarouselState = rememberCarouselState(),
     contentPadding: PaddingValues = PaddingValuesWithStartAndEndMargin(carouselState, start = 16.dp, end = 16.dp),
     itemCount: Int,
-    autoPlay: Boolean = false,
+    autoPlay: Boolean = DEFAULT_AUTO_PLAY,
     autoPlaySpeed: Long = DEFAULT_AUTO_PLAY_SPEED_MILLIS,
-    loop: Boolean = false,
+    loop: Boolean = DEFAULT_LOOP,
     content: @Composable (page: Int) -> Unit,
 ) {
     var isVisible by remember {
