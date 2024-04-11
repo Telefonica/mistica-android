@@ -304,7 +304,7 @@ internal fun calculateWindowPosition(
     if (shouldMoveTheBulletToTheEdge) {
         log("Moving to the edge - $movementDirection")
         when (movementDirection) {
-            DECREASE -> visibleWindowState.currentSelected--
+            DECREASE -> visibleWindowState.currentSelected = currentSelected
             INCREASE -> visibleWindowState.currentSelected++
             NO_MOVEMENT -> {}
         }
