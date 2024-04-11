@@ -23,8 +23,10 @@ import com.telefonica.mistica.compose.input.CheckBoxInput
 import com.telefonica.mistica.compose.input.TextInput
 import com.telefonica.mistica.compose.tag.Tag
 import com.telefonica.mistica.tag.TagView
+import java.util.concurrent.TimeUnit
 
 private const val ITEM_COUNT = 6
+private const val DEFAULT_AUTO_PLAY_SPEED_SECONDS = 5L
 
 @Composable
 fun Carousels() {
@@ -69,7 +71,7 @@ fun Carousels() {
             itemCount = ITEM_COUNT,
             carouselState = carouselState,
             autoPlay = autoPlay,
-            autoPlaySpeed = (autoPlaySpeed.toIntOrNull() ?: 5) * 1000L,
+            autoPlaySpeed = TimeUnit.SECONDS.toMillis(autoPlaySpeed.toLongOrNull() ?: DEFAULT_AUTO_PLAY_SPEED_SECONDS),
             loop = loop,
         ) { page ->
             CarouselItem(page)

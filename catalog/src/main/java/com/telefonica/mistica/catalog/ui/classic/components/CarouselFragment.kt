@@ -13,6 +13,7 @@ import com.telefonica.mistica.carousel.CarouselView
 import com.telefonica.mistica.catalog.R.drawable.card_image_sample
 import com.telefonica.mistica.catalog.databinding.CarouselFragmentCatalogBinding
 import com.telefonica.mistica.compose.carousel.CarouselState
+import java.util.concurrent.TimeUnit
 
 class CarouselFragment : Fragment() {
 
@@ -51,12 +52,12 @@ class CarouselFragment : Fragment() {
     }
 
     private fun CarouselView.init(carouselState: CarouselState) {
-        val autoPlaySpeed = binding.autoPlaySpeed.text.toString().toIntOrNull() ?: 5
+        val autoPlaySpeedSeconds = binding.autoPlaySpeed.text.toString().toLongOrNull() ?: DEFAULT_AUTO_PLAY_SPEED_SECONDS
         setContent(getMediaCardsForCarousel())
             .setState(carouselState)
             .setItemCount(MEDIA_CARDS_CAROUSEL_SIZE)
             .setAutoPlay(binding.autoPlay.isChecked())
-            .setAutoPlaySpeed(autoPlaySpeed * 1000L)
+            .setAutoPlaySpeed(TimeUnit.SECONDS.toMillis(autoPlaySpeedSeconds))
             .setLoop(binding.loop.isChecked())
     }
 
@@ -81,6 +82,7 @@ class CarouselFragment : Fragment() {
 
     private companion object {
         const val MEDIA_CARDS_CAROUSEL_SIZE = 6
+        const val DEFAULT_AUTO_PLAY_SPEED_SECONDS = 5L
     }
 
 }

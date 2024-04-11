@@ -14,13 +14,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
-import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
 import com.telefonica.mistica.compose.util.VisibilityTracker
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-@OptIn(ExperimentalPagerApi::class)
+private const val DEFAULT_AUTO_PLAY_SPEED_MILLIS = 5000L
+
 @Composable
 fun Carousel(
     modifier: Modifier = Modifier,
@@ -28,7 +28,7 @@ fun Carousel(
     contentPadding: PaddingValues = PaddingValuesWithStartAndEndMargin(carouselState, start = 16.dp, end = 16.dp),
     itemCount: Int,
     autoPlay: Boolean = false,
-    autoPlaySpeed: Long = 5000L,
+    autoPlaySpeed: Long = DEFAULT_AUTO_PLAY_SPEED_MILLIS,
     loop: Boolean = false,
     content: @Composable (page: Int) -> Unit,
 ) {
@@ -58,7 +58,7 @@ fun Carousel(
                 else -> 4.dp to 4.dp
             }
             Box(
-                modifier = modifier.padding(start = start, end = end, top = 0.dp, bottom = 0.dp)
+                modifier = modifier.padding(start = start, end = end)
             ) {
                 content(page)
             }
@@ -94,7 +94,6 @@ private fun AutoPlay(
     }
 }
 
-@OptIn(ExperimentalPagerApi::class)
 data class PaddingValuesWithStartAndEndMargin(
     private val carouselState: CarouselState,
     private val start: Dp = 4.dp,
