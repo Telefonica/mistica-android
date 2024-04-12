@@ -48,6 +48,12 @@ internal fun ButtonStyle.getButtonStyleCompose(): ButtonStyleConfig = when (this
     ButtonStyle.DANGER_SMALL -> danger()
     ButtonStyle.LINK -> link(MisticaTheme.colors.textLink)
     ButtonStyle.LINK_INVERSE -> linkInverse()
+    ButtonStyle.LINK_SMALL -> link()
+    ButtonStyle.LINK_SMALL_INVERSE -> linkInverse()
+    ButtonStyle.DANGER_LINK -> dangerLink()
+    ButtonStyle.DANGER_LINK_INVERSE -> dangerLinkInverse()
+    ButtonStyle.DANGER_LINK_SMALL -> dangerLink()
+    ButtonStyle.DANGER_LINK_SMALL_INVERSE -> dangerLinkInverse()
 }
 
 @Composable
@@ -134,6 +140,30 @@ private fun link(
 @Composable
 private fun linkInverse() = link(
     textColor = MisticaTheme.colors.textLinkInverse,
+)
+
+
+@Composable
+private fun dangerLink(
+    textColor: Color = MisticaTheme.colors.textLinkDanger,
+    backgroundColor: Color = Color.Transparent,
+    selectedBackgroundColor: Color = MisticaTheme.colors.buttonLinkDangerBackgroundSelected,
+    disabledBackgroundColor: Color = Color.Transparent,
+) = primary(
+    buttonColors = ButtonDefaults.buttonColors(
+        backgroundColor = backgroundColor,
+        disabledBackgroundColor = disabledBackgroundColor
+    ),
+    textColor = textColor,
+    disabledTextColor = textColor.disabled(),
+    rippleTheme = MisticaRippleTheme(selectedBackgroundColor),
+)
+
+@Composable
+private fun dangerLinkInverse() = dangerLink(
+    backgroundColor = MisticaTheme.colors.buttonLinkDangerBackgroundInverse,
+    selectedBackgroundColor = MisticaTheme.colors.buttonLinkDangerBackgroundInverseSelected,
+    disabledBackgroundColor = MisticaTheme.colors.buttonLinkDangerBackgroundInverse.disabled(),
 )
 
 private fun Color.disabled() =

@@ -45,7 +45,11 @@ class ButtonsCatalogFragment : Fragment() {
 
         listOf(
             R.id.link_progress,
-            R.id.link_inverse_progress
+            R.id.link_inverse_progress,
+            R.id.danger_link_progress,
+            R.id.danger_link_inverse_progress,
+            R.id.danger_link_small_progress,
+            R.id.danger_link_small_inverse_progress
         )
             .map { view.findViewById<Button>(it) }
             .forEach { button ->

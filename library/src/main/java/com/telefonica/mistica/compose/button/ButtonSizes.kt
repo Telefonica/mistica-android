@@ -26,6 +26,10 @@ internal fun ButtonStyle.getButtonSizeCompose(): ButtonSizeConfig =
         ButtonStyle.SECONDARY_SMALL,
         ButtonStyle.LINK,
         ButtonStyle.LINK_INVERSE,
+        ButtonStyle.LINK_SMALL,
+        ButtonStyle.LINK_SMALL_INVERSE,
+        ButtonStyle.DANGER_LINK_SMALL,
+        ButtonStyle.DANGER_LINK_SMALL_INVERSE,
         -> getSmallButtonSizeConfig()
         else -> getDefaultButtonSizeConfig()
     }
