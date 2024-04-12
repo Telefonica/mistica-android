@@ -72,6 +72,8 @@ fun Inputs() {
         TextAreaInputSample()
         Title("Check Box input")
         CheckBoxInputSample()
+        DisableCheckBoxInputSample(isChecked = true)
+        DisableCheckBoxInputSample(isChecked = false)
         Title("Dropdown")
         DropDownSample()
         Title("Disable Dropdown")
@@ -382,6 +384,22 @@ fun CheckBoxInputSample() {
         errorText = errorText,
         links = links,
         onCheckedChange = { checked = !checked },
+    )
+}
+
+@Composable
+fun DisableCheckBoxInputSample(
+    isChecked: Boolean,
+) {
+    CheckBoxInput(
+        checked = isChecked,
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(top = 8.dp, start = 16.dp, end = 16.dp),
+        text = "This is a disabled checkbox",
+        enabled = false,
+        errorText = null,
+        onCheckedChange = { },
     )
 }
 

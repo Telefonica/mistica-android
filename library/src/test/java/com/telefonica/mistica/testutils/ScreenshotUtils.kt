@@ -8,7 +8,11 @@ object ScreenshotUtils {
         val componentOrTestName = if(component == null) {
             TestUtils.findRunningTestMethodName()
         } else {
-            "${component}_${style}"
+            var componentName = component
+            if (style != null) {
+                componentName += "_$style"
+            }
+            componentName
         }
         val brandValue = if (brand != null) {
             brand::class.java.simpleName
