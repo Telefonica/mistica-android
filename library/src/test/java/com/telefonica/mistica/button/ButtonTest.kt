@@ -130,4 +130,10 @@ private fun ButtonStyle.getButtonLayout(): Int = when (this) {
     ButtonStyle.SECONDARY_INVERSE -> R.layout.secondary_button_inverse
     ButtonStyle.SECONDARY_SMALL_INVERSE -> R.layout.secondary_button_inverse_small
     ButtonStyle.LINK_INVERSE -> R.layout.link_button_inverse
+    ButtonStyle.LINK_SMALL -> R.layout.link_small_button
+    ButtonStyle.LINK_SMALL_INVERSE -> R.layout.link_small_button_inverse
+    ButtonStyle.DANGER_LINK -> R.layout.danger_link_button
+    ButtonStyle.DANGER_LINK_SMALL -> R.layout.danger_link_small_button
+    ButtonStyle.DANGER_LINK_INVERSE -> R.layout.danger_link_button_inverse
+    ButtonStyle.DANGER_LINK_SMALL_INVERSE -> R.layout.danger_link_small_button_inverse
 }
