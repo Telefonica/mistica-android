@@ -1,6 +1,7 @@
 package com.telefonica.mistica.input
 
 import android.content.Context
+import android.content.res.ColorStateList
 import android.graphics.drawable.Drawable
 import android.os.Build
 import android.text.method.MovementMethod
@@ -12,6 +13,7 @@ import androidx.appcompat.widget.AppCompatCheckBox
 import androidx.databinding.*
 import com.google.android.material.textfield.TextInputLayout
 import com.telefonica.mistica.R
+import com.telefonica.mistica.util.getThemeColor
 
 @BindingMethods(
     BindingMethod(
@@ -74,6 +76,7 @@ class CheckBoxInput @JvmOverloads constructor(
         setChecked(initialInputChecked)
         setText(initialInputText)
         configureErrorResetOnCheckChange()
+        setButtonTint()
 
         return findViewById(R.id.text_input_layout)
     }
@@ -83,6 +86,18 @@ class CheckBoxInput @JvmOverloads constructor(
             setErrorEnabled(false)
             onCheckedChangeListener?.onCheckedChanged(buttonView, isChecked)
         }
+    }
+
+    private fun setButtonTint() {
+        val states = arrayOf(
+            intArrayOf(android.R.attr.state_checked),
+            intArrayOf(-android.R.attr.state_checked),
+        )
+        val colors = intArrayOf(
+            context.getThemeColor(R.attr.colorControlActive),
+            context.getThemeColor(R.attr.colorControl),
+        )
+        checkBox.buttonTintList = ColorStateList(states, colors)
     }
 
     fun setChecked(checked: Boolean) {
