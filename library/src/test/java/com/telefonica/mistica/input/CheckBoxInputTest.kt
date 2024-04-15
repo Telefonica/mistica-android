@@ -91,7 +91,7 @@ class CheckBoxInputTest(
         val termsAndConditions = "terms and conditions"
         val message = "Some text with $termsAndConditions"
         return SpannableString(message).apply {
-            setSpan(dummyClickableSpain, message.indexOf(termsAndConditions), message.length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+            setSpan(dummyClickableSpan, message.indexOf(termsAndConditions), message.length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
         }
     }
 
@@ -116,6 +116,6 @@ class CheckBoxInputTest(
             }
         }
 
-        private val dummyClickableSpain = object : ClickableSpan() { override fun onClick(widget: View) {} }
+        private val dummyClickableSpan = object : ClickableSpan() { override fun onClick(widget: View) {} }
     }
 }
