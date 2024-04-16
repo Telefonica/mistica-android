@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="close_button_content_description" comment="Content description for image views that act as buttons for dismissing views">Dismiss</string>
+    <string name="close_button_content_description" comment="Content description for image views that act as buttons for dismissing views">Close window</string>
     <string name="badge_notification_description" comment="Content description for non numeric badge">Contenido nuevo</string>
 </resources>
