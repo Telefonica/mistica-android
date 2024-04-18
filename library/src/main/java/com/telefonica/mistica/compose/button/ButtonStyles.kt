@@ -148,11 +148,10 @@ private fun dangerLink(
     textColor: Color = MisticaTheme.colors.textLinkDanger,
     backgroundColor: Color = Color.Transparent,
     selectedBackgroundColor: Color = MisticaTheme.colors.buttonLinkDangerBackgroundSelected,
-    disabledBackgroundColor: Color = Color.Transparent,
 ) = primary(
     buttonColors = ButtonDefaults.buttonColors(
         backgroundColor = backgroundColor,
-        disabledBackgroundColor = disabledBackgroundColor
+        disabledBackgroundColor = Color.Transparent,
     ),
     textColor = textColor,
     disabledTextColor = textColor.disabled(),
@@ -163,7 +162,6 @@ private fun dangerLink(
 private fun dangerLinkInverse() = dangerLink(
     backgroundColor = MisticaTheme.colors.buttonLinkDangerBackgroundInverse,
     selectedBackgroundColor = MisticaTheme.colors.buttonLinkDangerBackgroundInverseSelected,
-    disabledBackgroundColor = MisticaTheme.colors.buttonLinkDangerBackgroundInverse.disabled(),
 )
 
 private fun Color.disabled() =
