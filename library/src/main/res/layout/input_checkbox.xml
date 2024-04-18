@@ -12,7 +12,7 @@
 			android:layout_width="match_parent"
 			android:checked="true"
 			android:layout_height="wrap_content"
-			android:paddingTop="3dp"
+			android:paddingTop="4dp"
 			tools:text="@tools:sample/lorem/random"/>
 
 </com.google.android.material.textfield.TextInputLayout>
