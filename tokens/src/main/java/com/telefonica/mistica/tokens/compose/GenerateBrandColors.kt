@@ -23,7 +23,7 @@ class GenerateBrandColors(
     private val getColorNameWithAlpha: GetColorNameWithAlpha = GetColorNameWithAlpha(),
 ) {
 
-    operator fun invoke(tokens: TokensDTO, brandName: String, gradientTokensNames: Set<String>) {
+    operator fun invoke(tokens: TokensDTO, brandName: String, gradientTokensNames: List<String>) {
         val paletteClassName = "${brandName.capitalizeString()}PaletteColor"
 
         val lightProperty = PropertySpec.builder("lightColors", misticaColorsClass)

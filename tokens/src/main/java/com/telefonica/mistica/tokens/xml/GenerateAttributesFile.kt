@@ -24,7 +24,7 @@ class GenerateAttributesFile(
     private val getBorderRadiusName: GetBorderRadiusName = GetBorderRadiusName(),
 ) {
 
-    operator fun invoke(jsonAdapter: JsonAdapter<TokensDTO>, gradientTokensNames: Set<String>) {
+    operator fun invoke(jsonAdapter: JsonAdapter<TokensDTO>, gradientTokensNames: List<String>) {
         val json = File("${MISTICA_TOKENS_DIR}/movistar.json").readText()
         val tokens = jsonAdapter.fromJson(json)
 
@@ -58,7 +58,7 @@ class GenerateAttributesFile(
         }
     }
 
-    private fun Node.getColorAttributes(tokens: TokensDTO, gradientTokensNames: Set<String>) {
+    private fun Node.getColorAttributes(tokens: TokensDTO, gradientTokensNames: List<String>) {
         attribute("name", "Colors")
         tokens.light.removeGradientTokens(gradientTokensNames).forEach { color ->
             var key = color.key

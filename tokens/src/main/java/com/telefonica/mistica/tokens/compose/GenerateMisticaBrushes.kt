@@ -13,7 +13,9 @@ import com.squareup.moshi.JsonAdapter
 import com.telefonica.mistica.tokens.TokensGenerator
 import com.telefonica.mistica.tokens.compose.GenerateComposeFiles.Companion.MISTICA_BRUSHES
 import com.telefonica.mistica.tokens.compose.GenerateComposeFiles.Companion.brushClass
+import com.telefonica.mistica.tokens.compose.GenerateComposeFiles.Companion.colorClass
 import com.telefonica.mistica.tokens.compose.GenerateComposeFiles.Companion.misticaBrushesClass
+import com.telefonica.mistica.tokens.compose.GenerateComposeFiles.Companion.solidColorClass
 import com.telefonica.mistica.tokens.dto.TokensDTO
 import java.io.File
 
@@ -25,7 +27,7 @@ class GenerateMisticaBrushes {
     private val mutableStateOf = MemberName("androidx.compose.runtime", "mutableStateOf")
     private val structuralEqualityPolicy = MemberName("androidx.compose.runtime", "structuralEqualityPolicy")
 
-    operator fun invoke(jsonAdapter: JsonAdapter<TokensDTO>, gradientTokensNames: List<String>) {
+    operator fun invoke(gradientTokensNames: List<String>) {
         val colorsClass = TypeSpec.classBuilder(MISTICA_BRUSHES)
             .primaryConstructor(
                 FunSpec.constructorBuilder()
@@ -75,7 +77,7 @@ class GenerateMisticaBrushes {
             ParameterSpec.builder(
                 it,
                 brushClass
-            ).defaultValue("%T(Color.Unspecified)", "SolidColor").build()
+            ).defaultValue("%T(%T.Unspecified)", solidColorClass, colorClass).build()
         }
 
     private fun getUpdateBrushesFunc(colors: List<String>): FunSpec {

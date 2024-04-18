@@ -87,7 +87,7 @@ class GenerateXMLFiles(
     private fun generateLightThemesFiles(
         tokens: TokensDTO,
         brand: Brand,
-        gradientTokensNames: Set<String>,
+        gradientTokensNames: List<String>,
     ) {
 
         fun Node.generateTheme(themeName: String) {
@@ -182,7 +182,7 @@ class GenerateXMLFiles(
     private fun generateDarkThemesFiles(
         tokens: TokensDTO,
         brand: Brand,
-        gradientTokensNames: Set<String>,
+        gradientTokensNames: List<String>,
     ) {
 
         fun Node.generateTheme(themeName: String) {
