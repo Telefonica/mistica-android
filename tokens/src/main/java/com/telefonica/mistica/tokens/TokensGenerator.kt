@@ -16,7 +16,7 @@ class TokensGenerator(
 
     fun generate() {
         val gradientAdapter = PolymorphicJsonAdapterFactory.of(BrushDTO::class.java, "type")
-            .withSubtype(BrushDTO.SolidColorDTO::class.java, BrushDTO.SOLID_TYPE)
+            .withSubtype(BrushDTO.SolidColorDTO::class.java, BrushDTO.COLOR_TYPE)
             .withSubtype(BrushDTO.GradientDTO::class.java, BrushDTO.GRADIENT_TYPE)
 
         val moshi: Moshi = Moshi.Builder()
@@ -37,7 +37,8 @@ class TokensGenerator(
             Brand("telefonica", "telefonica"),
             Brand("vivo", "vivo"),
             Brand("vivoNew", "vivo-new", createDuplicateWithoutInheritMistica = true),
-            Brand("tu", "tu")
+            Brand("tu", "tu"),
+            Brand("o2New", "o2-new"),
         )
 
         val ALPHA_REGEX = "0\\.\\d{1,2}".toRegex()

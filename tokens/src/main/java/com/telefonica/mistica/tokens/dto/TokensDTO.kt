@@ -15,7 +15,7 @@ sealed class BrushDTO(
     class SolidColorDTO(
         val value: String,
         description: String,
-    ) : BrushDTO(SOLID_TYPE, description)
+    ) : BrushDTO(COLOR_TYPE, description)
 
     class GradientDTO(
         val value: GradientSpecificationDTO,
@@ -33,8 +33,8 @@ sealed class BrushDTO(
     }
 
     companion object {
-        const val SOLID_TYPE = "solid"
-        const val GRADIENT_TYPE = "gradient"
+        const val COLOR_TYPE = "color"
+        const val GRADIENT_TYPE = "linear-gradient"
     }
 }
 
