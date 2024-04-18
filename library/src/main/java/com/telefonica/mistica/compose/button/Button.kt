@@ -283,7 +283,6 @@ fun DangerLinkWithChevronPreview() {
     MisticaTheme(brand = MovistarBrand) {
         Button(
             text = "Text",
-            withChevron = true,
             buttonStyle = ButtonStyle.DANGER_LINK,
             onClickListener = {},
         )
