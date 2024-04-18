@@ -9,14 +9,12 @@ import com.squareup.kotlinpoet.ParameterSpec
 import com.squareup.kotlinpoet.ParameterizedTypeName.Companion.parameterizedBy
 import com.squareup.kotlinpoet.PropertySpec
 import com.squareup.kotlinpoet.TypeSpec
-import com.squareup.moshi.JsonAdapter
 import com.telefonica.mistica.tokens.TokensGenerator
 import com.telefonica.mistica.tokens.compose.GenerateComposeFiles.Companion.MISTICA_BRUSHES
 import com.telefonica.mistica.tokens.compose.GenerateComposeFiles.Companion.brushClass
 import com.telefonica.mistica.tokens.compose.GenerateComposeFiles.Companion.colorClass
 import com.telefonica.mistica.tokens.compose.GenerateComposeFiles.Companion.misticaBrushesClass
 import com.telefonica.mistica.tokens.compose.GenerateComposeFiles.Companion.solidColorClass
-import com.telefonica.mistica.tokens.dto.TokensDTO
 import java.io.File
 
 /**

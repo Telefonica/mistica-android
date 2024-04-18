@@ -16,6 +16,7 @@ class GenerateComposeFiles(
     private val generateBrandFontWeights: GenerateBrandFontWeights = GenerateBrandFontWeights(),
     private val generateBrandFontSizes: GenerateBrandFontSizes = GenerateBrandFontSizes(),
     private val generateMisticaBrushes: GenerateMisticaBrushes = GenerateMisticaBrushes(),
+    private val generateBrandBrushes: GenerateBrandBrushes = GenerateBrandBrushes(),
 ) {
 
     operator fun invoke(jsonAdapter: JsonAdapter<TokensDTO>) {
@@ -35,6 +36,7 @@ class GenerateComposeFiles(
 
         brandTokens.forEach { (tokens, brand) ->
             generateBrandColors(tokens, brand.name, gradientTokensNames)
+            generateBrandBrushes(tokens, brand.name, gradientTokensNames)
             generateBrandRadius(tokens, brand.name)
             generateBrandFontWeights(tokens, brand.name)
             generateBrandFontSizes(tokens, brand.name)
@@ -53,5 +55,6 @@ class GenerateComposeFiles(
         val misticaBrushesClass = ClassName("com.telefonica.mistica.compose.theme.color", MISTICA_BRUSHES)
         val brushClass = ClassName("androidx.compose.ui.graphics", "Brush")
         val solidColorClass = ClassName("androidx.compose.ui.graphics", "SolidColor")
+        val angledLinearGradientClass = ClassName("com.telefonica.mistica.compose.theme.color", "AngledLinearGradient")
     }
 }
