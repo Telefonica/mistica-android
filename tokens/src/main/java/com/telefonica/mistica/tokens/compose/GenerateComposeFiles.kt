@@ -5,6 +5,7 @@ import com.squareup.moshi.JsonAdapter
 import com.telefonica.mistica.tokens.TokensGenerator.Companion.BRANDS
 import com.telefonica.mistica.tokens.TokensGenerator.Companion.MISTICA_TOKENS_DIR
 import com.telefonica.mistica.tokens.dto.TokensDTO
+import com.telefonica.mistica.tokens.dto.getGradientTokensNames
 import java.io.File
 
 class GenerateComposeFiles(
@@ -17,20 +18,24 @@ class GenerateComposeFiles(
 ) {
 
     operator fun invoke(jsonAdapter: JsonAdapter<TokensDTO>) {
-        generateMisticaColors(jsonAdapter)
+        val brandTokens = BRANDS.map { brand ->
+            val json = File("${MISTICA_TOKENS_DIR}/${brand.file}.json").readText()
+            val tokens = jsonAdapter.fromJson(json) ?: throw Exception("Invalid JSON")
+            tokens to brand
+        }
+
+        val gradientTokensNames = brandTokens
+            .map { it.first }
+            .getGradientTokensNames()
+
+        generateMisticaColors(jsonAdapter, gradientTokensNames)
         generateMisticaRadius(jsonAdapter)
 
-        BRANDS.forEach { brand ->
-            val json = File("${MISTICA_TOKENS_DIR}/${brand.file}.json").readText()
-            val tokens = jsonAdapter.fromJson(json)
-            if (tokens == null) {
-                throw Exception("Invalid JSON")
-            } else {
-                generateBrandColors(tokens, brand.name)
-                generateBrandRadius(tokens, brand.name)
-                generateBrandFontWeights(tokens, brand.name)
-                generateBrandFontSizes(tokens, brand.name)
-            }
+        brandTokens.forEach { (tokens, brand) ->
+            generateBrandColors(tokens, brand.name, gradientTokensNames)
+            generateBrandRadius(tokens, brand.name)
+            generateBrandFontWeights(tokens, brand.name)
+            generateBrandFontSizes(tokens, brand.name)
         }
     }
 

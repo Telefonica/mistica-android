@@ -3,7 +3,9 @@ package com.telefonica.mistica.tokens
 import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import com.squareup.moshi.adapters.PolymorphicJsonAdapterFactory
 import com.telefonica.mistica.tokens.compose.GenerateComposeFiles
+import com.telefonica.mistica.tokens.dto.BrushDTO
 import com.telefonica.mistica.tokens.dto.TokensDTO
 import com.telefonica.mistica.tokens.xml.GenerateXMLFiles
 
@@ -13,7 +15,12 @@ class TokensGenerator(
 ) {
 
     fun generate() {
+        val gradientAdapter = PolymorphicJsonAdapterFactory.of(BrushDTO::class.java, "type")
+            .withSubtype(BrushDTO.SolidColorDTO::class.java, BrushDTO.SOLID_TYPE)
+            .withSubtype(BrushDTO.GradientDTO::class.java, BrushDTO.GRADIENT_TYPE)
+
         val moshi: Moshi = Moshi.Builder()
+            .add(gradientAdapter)
             .addLast(KotlinJsonAdapterFactory())
             .build()
         val jsonAdapter: JsonAdapter<TokensDTO> = moshi.adapter(TokensDTO::class.java)

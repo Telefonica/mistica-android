@@ -15,6 +15,7 @@ import com.telefonica.mistica.tokens.compose.GenerateComposeFiles.Companion.MIST
 import com.telefonica.mistica.tokens.compose.GenerateComposeFiles.Companion.colorClass
 import com.telefonica.mistica.tokens.compose.GenerateComposeFiles.Companion.misticaColorsClass
 import com.telefonica.mistica.tokens.dto.TokensDTO
+import com.telefonica.mistica.tokens.dto.removeGradientTokens
 import java.io.File
 
 /**
@@ -25,14 +26,14 @@ class GenerateMisticaColors {
     private val mutableStateOf = MemberName("androidx.compose.runtime", "mutableStateOf")
     private val structuralEqualityPolicy = MemberName("androidx.compose.runtime", "structuralEqualityPolicy")
 
-    operator fun invoke(jsonAdapter: JsonAdapter<TokensDTO>) {
+    operator fun invoke(jsonAdapter: JsonAdapter<TokensDTO>, gradientTokensNames: Set<String>) {
         val json = File("${TokensGenerator.MISTICA_TOKENS_DIR}/movistar.json").readText()
         val tokens = jsonAdapter.fromJson(json)
 
         if (tokens == null) {
             throw Exception("Invalid JSON")
         } else {
-            val colors = getColors(tokens)
+            val colors = getColors(tokens, gradientTokensNames)
             val colorsClass = TypeSpec.classBuilder(MISTICA_COLORS)
                 .primaryConstructor(
                     FunSpec.constructorBuilder()
@@ -114,11 +115,12 @@ class GenerateMisticaColors {
             .build()
     }
 
-    private fun getColors(tokens: TokensDTO) = tokens.light.keys.toList() + GRADIENT_COLORS
+    private fun getColors(tokens: TokensDTO, gradientTokensNames: Set<String>) =
+        tokens.light.removeGradientTokens(gradientTokensNames).keys.toList() + LEGACY_GRADIENT_COLORS
 
     private companion object {
         const val LIBRARY_CODE_PATH = "../library/src/main/java/"
-        val GRADIENT_COLORS = listOf(
+        val LEGACY_GRADIENT_COLORS = listOf(
             "gradientBackgroundFirst",
             "gradientBackgroundSecond",
             "gradientBackgroundThird",

@@ -14,8 +14,14 @@ import com.telefonica.mistica.tokens.TokensGenerator.Companion.REGULAR
 import com.telefonica.mistica.tokens.common.GetBorderRadiusName
 import com.telefonica.mistica.tokens.common.GetColorNameWithAlpha
 import com.telefonica.mistica.tokens.common.GetColorsWithAlpha
-import com.telefonica.mistica.tokens.dto.ColorDTO
+import com.telefonica.mistica.tokens.dto.BrushDTO
+import com.telefonica.mistica.tokens.dto.RadiusDTO
+import com.telefonica.mistica.tokens.dto.TextDTO
+import com.telefonica.mistica.tokens.dto.TextSizeDTO
+import com.telefonica.mistica.tokens.dto.TextWeightDTO
 import com.telefonica.mistica.tokens.dto.TokensDTO
+import com.telefonica.mistica.tokens.dto.getGradientTokensNames
+import com.telefonica.mistica.tokens.dto.removeGradientTokens
 import org.redundent.kotlin.xml.Node
 import org.redundent.kotlin.xml.PrintOptions
 import org.redundent.kotlin.xml.XmlVersion
@@ -33,19 +39,24 @@ class GenerateXMLFiles(
 ) {
 
     operator fun invoke(jsonAdapter: JsonAdapter<TokensDTO>) {
-        generateAttributesFile(jsonAdapter)
-
-        BRANDS.forEach { brand ->
+        val brandTokens = BRANDS.map { brand ->
             val json = File("${MISTICA_TOKENS_DIR}/${brand.file}.json").readText()
-            val tokens = jsonAdapter.fromJson(json)
-            if (tokens == null) {
-                throw Exception("Invalid JSON")
-            } else {
-                generateColorsFiles(tokens, brand)
-                generateLightThemesFiles(tokens, brand)
-                generateDarkThemesFiles(tokens, brand)
-            }
+            val tokens = jsonAdapter.fromJson(json) ?: throw Exception("Invalid JSON")
+            tokens to brand
         }
+
+        val gradientTokensNames = brandTokens
+            .map { it.first }
+            .getGradientTokensNames()
+
+        generateAttributesFile(jsonAdapter, gradientTokensNames)
+
+        brandTokens.forEach { (tokens, brand) ->
+            generateColorsFiles(tokens, brand)
+            generateLightThemesFiles(tokens, brand, gradientTokensNames)
+            generateDarkThemesFiles(tokens, brand, gradientTokensNames)
+        }
+
     }
 
     private fun generateColorsFiles(tokens: TokensDTO, brand: Brand) {
@@ -73,7 +84,11 @@ class GenerateXMLFiles(
         File("$VALUES_DIR/${COLORS_FILE.format(brand.name)}").writeText(colorsXml.toString(PrintOptions(singleLineTextElements = true)))
     }
 
-    private fun generateLightThemesFiles(tokens: TokensDTO, brand: Brand) {
+    private fun generateLightThemesFiles(
+        tokens: TokensDTO,
+        brand: Brand,
+        gradientTokensNames: Set<String>,
+    ) {
 
         fun Node.generateTheme(themeName: String) {
             "style" {
@@ -83,11 +98,11 @@ class GenerateXMLFiles(
 
             "style" {
                 attribute("name", "${themeName}_Base")
-                mapColors(tokens.light, brand)
-                borderRadius(tokens)
-                presetFonts(tokens)
-                presetStyles(tokens)
-                presetSizes(tokens)
+                mapColors(tokens.light.removeGradientTokens(gradientTokensNames), brand)
+                borderRadius(tokens.radius)
+                presetFonts(tokens.text)
+                presetStyles(tokens.text.weight)
+                presetSizes(tokens.text.size)
             }
         }
 
@@ -106,9 +121,9 @@ class GenerateXMLFiles(
         File("$VALUES_DIR/${THEMES_FILE.format(brand.name)}").writeText(lightThemesXml.toString(PrintOptions(singleLineTextElements = true)))
     }
 
-    private fun Node.borderRadius(tokens: TokensDTO) {
+    private fun Node.borderRadius(radius: Map<String, RadiusDTO>) {
         comment("Border radius")
-        tokens.radius.forEach { (key, radius) ->
+        radius.forEach { (key, radius) ->
             val value = if (radius.value == CIRCLE_RADIUS) "50%" else "${radius.value}dp"
 
             "item" {
@@ -118,9 +133,9 @@ class GenerateXMLFiles(
         }
     }
 
-    private fun Node.presetFonts(tokens: TokensDTO) {
+    private fun Node.presetFonts(text: TextDTO) {
         comment("Preset fonts")
-        tokens.text.weight.forEach { (key, text) ->
+        text.weight.forEach { (key, text) ->
             val value = when (text.value) {
                 LIGHT -> "?font_family_light"
                 REGULAR -> "?font_family_regular"
@@ -136,9 +151,9 @@ class GenerateXMLFiles(
         }
     }
 
-    private fun Node.presetStyles(tokens: TokensDTO) {
+    private fun Node.presetStyles(weights: Map<String, TextWeightDTO>) {
         comment("Preset styles")
-        tokens.text.weight.forEach { (key, text) ->
+        weights.forEach { (key, text) ->
             val value = when (text.value) {
                 LIGHT, REGULAR, MEDIUM -> "normal"
                 BOLD -> "bold"
@@ -152,9 +167,9 @@ class GenerateXMLFiles(
         }
     }
 
-    private fun Node.presetSizes(tokens: TokensDTO) {
+    private fun Node.presetSizes(sizes: Map<String, TextSizeDTO>) {
         comment("Preset sizes")
-        tokens.text.size.forEach { (key, size) ->
+        sizes.forEach { (key, size) ->
             val value = "${size.value.mobile}sp"
 
             "item" {
@@ -164,13 +179,17 @@ class GenerateXMLFiles(
         }
     }
 
-    private fun generateDarkThemesFiles(tokens: TokensDTO, brand: Brand) {
+    private fun generateDarkThemesFiles(
+        tokens: TokensDTO,
+        brand: Brand,
+        gradientTokensNames: Set<String>,
+    ) {
 
         fun Node.generateTheme(themeName: String) {
             "style" {
                 attribute("name", themeName)
                 attribute("parent", "${themeName}_Customizations")
-                mapColors(tokens.dark, brand)
+                mapColors(tokens.dark.removeGradientTokens(gradientTokensNames), brand)
             }
         }
 
@@ -189,7 +208,7 @@ class GenerateXMLFiles(
         File("$VALUES_NIGHT_DIR/${THEMES_FILE.format(brand.name)}").writeText(darkThemesXml.toString(PrintOptions(singleLineTextElements = true)))
     }
 
-    private fun Node.mapColors(colors: Map<String, ColorDTO>, brand: Brand) {
+    private fun Node.mapColors(colors: Map<String, BrushDTO.SolidColorDTO>, brand: Brand) {
         colors.forEach { color ->
             val colorName = if (color.key == "controlActivated") {
                 "colorControlActive"

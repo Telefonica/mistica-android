@@ -9,8 +9,9 @@ import com.telefonica.mistica.tokens.common.GetColorNameWithAlpha
 import com.telefonica.mistica.tokens.common.GetColorsWithAlpha
 import com.telefonica.mistica.tokens.compose.GenerateComposeFiles.Companion.colorClass
 import com.telefonica.mistica.tokens.compose.GenerateComposeFiles.Companion.misticaColorsClass
-import com.telefonica.mistica.tokens.dto.ColorDTO
+import com.telefonica.mistica.tokens.dto.BrushDTO
 import com.telefonica.mistica.tokens.dto.TokensDTO
+import com.telefonica.mistica.tokens.dto.removeGradientTokens
 import com.telefonica.mistica.tokens.xml.GenerateXMLFiles.Companion.capitalizeString
 import java.io.File
 
@@ -22,15 +23,15 @@ class GenerateBrandColors(
     private val getColorNameWithAlpha: GetColorNameWithAlpha = GetColorNameWithAlpha(),
 ) {
 
-    operator fun invoke(tokens: TokensDTO, brandName: String) {
+    operator fun invoke(tokens: TokensDTO, brandName: String, gradientTokensNames: Set<String>) {
         val paletteClassName = "${brandName.capitalizeString()}PaletteColor"
 
         val lightProperty = PropertySpec.builder("lightColors", misticaColorsClass)
-            .initializer(getColorsConstructor(brandName, tokens.light, paletteClassName))
+            .initializer(getColorsConstructor(brandName, tokens.light.removeGradientTokens(gradientTokensNames), paletteClassName))
             .build()
 
         val darkProperty = PropertySpec.builder("darkColors", misticaColorsClass)
-            .initializer(getColorsConstructor(brandName, tokens.dark, paletteClassName))
+            .initializer(getColorsConstructor(brandName, tokens.dark.removeGradientTokens(gradientTokensNames), paletteClassName))
             .build()
 
         val colorsObject = TypeSpec.objectBuilder("${brandName.capitalizeString()}BrandColors")
@@ -54,7 +55,7 @@ class GenerateBrandColors(
 
     private fun getColorsConstructor(
         brandName: String,
-        colors: Map<String, ColorDTO>,
+        colors: Map<String, BrushDTO.SolidColorDTO>,
         paletteClassName: String,
     ): String {
 
