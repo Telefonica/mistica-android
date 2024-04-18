@@ -15,6 +15,7 @@ class GenerateComposeFiles(
     private val generateBrandRadius: GenerateBrandRadius = GenerateBrandRadius(),
     private val generateBrandFontWeights: GenerateBrandFontWeights = GenerateBrandFontWeights(),
     private val generateBrandFontSizes: GenerateBrandFontSizes = GenerateBrandFontSizes(),
+    private val generateMisticaBrushes: GenerateMisticaBrushes = GenerateMisticaBrushes(),
 ) {
 
     operator fun invoke(jsonAdapter: JsonAdapter<TokensDTO>) {
@@ -29,6 +30,7 @@ class GenerateComposeFiles(
             .getGradientTokensNames()
 
         generateMisticaColors(jsonAdapter, gradientTokensNames)
+        generateMisticaBrushes(jsonAdapter, gradientTokensNames)
         generateMisticaRadius(jsonAdapter)
 
         brandTokens.forEach { (tokens, brand) ->
@@ -42,10 +44,14 @@ class GenerateComposeFiles(
     companion object {
         const val LIBRARY_CODE_PATH = "../library/src/main/java/"
         const val MISTICA_COLORS = "MisticaColors"
+        const val MISTICA_BRUSHES = "MisticaGradients"
         val misticaColorsClass = ClassName("com.telefonica.mistica.compose.theme.color", MISTICA_COLORS)
         val colorClass = ClassName("androidx.compose.ui.graphics", "Color")
         val misticaRadiusClass = ClassName("com.telefonica.mistica.compose.theme.values", "MisticaRadius")
         val dpClass = ClassName("androidx.compose.ui.unit", "Dp")
         val intClass = ClassName("kotlin", "Int")
+        val misticaBrushesClass = ClassName("com.telefonica.mistica.compose.theme.color", MISTICA_BRUSHES)
+        val brushClass = ClassName("androidx.compose.ui.graphics", "Brush")
+
     }
 }
