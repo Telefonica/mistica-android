@@ -2,6 +2,8 @@
 package com.telefonica.mistica.compose.theme.brand
 
 import androidx.compose.ui.graphics.Color
+import com.telefonica.mistica.compose.theme.color.AngledLinearGradient
+import com.telefonica.mistica.compose.theme.color.MisticaBrushes
 import com.telefonica.mistica.compose.theme.color.MisticaColors
 
 public object TuBrandColors {
@@ -23,7 +25,8 @@ public object TuBrandColors {
       backgroundSkeletonInverse = TuPaletteColor.tu_color_primary65,
       navigationBarBackground = TuPaletteColor.tu_color_primary,
       backgroundAlternative = TuPaletteColor.tu_color_grey1,
-      backgroundFeedbackBottom = TuPaletteColor.tu_color_primary,
+      backgroundBrandTop = TuPaletteColor.tu_color_primary,
+      backgroundBrandBottom = TuPaletteColor.tu_color_primary,
       skeletonWave = TuPaletteColor.tu_color_grey2,
       borderLow = TuPaletteColor.tu_color_grey1,
       border = TuPaletteColor.tu_color_grey2,
@@ -117,6 +120,18 @@ public object TuBrandColors {
       textAppBar = TuPaletteColor.tu_color_grey6,
       textAppBarSelected = TuPaletteColor.tu_color_primary,
       customTabsBackground = TuPaletteColor.tu_color_white,
+      tagTextPromo = TuPaletteColor.tu_color_blue,
+      tagTextActive = TuPaletteColor.tu_color_blue,
+      tagTextInactive = TuPaletteColor.tu_color_grey5,
+      tagTextSuccess = TuPaletteColor.tu_color_green75,
+      tagTextWarning = TuPaletteColor.tu_color_orange70,
+      tagTextError = TuPaletteColor.tu_color_red70,
+      tagBackgroundPromo = TuPaletteColor.tu_color_blue10,
+      tagBackgroundActive = TuPaletteColor.tu_color_blue10,
+      tagBackgroundInactive = TuPaletteColor.tu_color_grey1,
+      tagBackgroundSuccess = TuPaletteColor.tu_color_green10,
+      tagBackgroundWarning = TuPaletteColor.tu_color_orange20,
+      tagBackgroundError = TuPaletteColor.tu_color_red10,
       )
 
   public val darkColors: MisticaColors = MisticaColors(background =
@@ -135,7 +150,8 @@ public object TuBrandColors {
       backgroundOverlay = TuPaletteColor.tu_color_darkModeGrey_80_alpha,
       backgroundSkeleton = TuPaletteColor.tu_color_darkModeGrey6,
       backgroundSkeletonInverse = TuPaletteColor.tu_color_darkModeGrey6,
-      backgroundFeedbackBottom = TuPaletteColor.tu_color_darkModeBlack,
+      backgroundBrandTop = TuPaletteColor.tu_color_darkModeBlack,
+      backgroundBrandBottom = TuPaletteColor.tu_color_darkModeBlack,
       appBarBackground = TuPaletteColor.tu_color_darkModeGrey,
       navigationBarBackground = TuPaletteColor.tu_color_darkModeBlack,
       skeletonWave = TuPaletteColor.tu_color_grey5,
@@ -149,7 +165,7 @@ public object TuBrandColors {
       buttonDangerBackgroundSelected = TuPaletteColor.tu_color_red80,
       buttonDangerBackgroundHover = TuPaletteColor.tu_color_red80,
       buttonLinkDangerBackgroundSelected = TuPaletteColor.tu_color_red10,
-      buttonLinkDangerBackgroundInverse = TuPaletteColor.tu_color_white,
+      buttonLinkDangerBackgroundInverse = TuPaletteColor.tu_color_white_1_alpha,
       buttonLinkDangerBackgroundInverseSelected = TuPaletteColor.tu_color_red10,
       buttonLinkBackgroundSelected = TuPaletteColor.tu_color_white_8_alpha,
       buttonLinkBackgroundInverseSelected = TuPaletteColor.tu_color_white_8_alpha,
@@ -231,6 +247,40 @@ public object TuBrandColors {
       textAppBar = TuPaletteColor.tu_color_grey5,
       textAppBarSelected = TuPaletteColor.tu_color_grey2,
       customTabsBackground = TuPaletteColor.tu_color_darkModeBlack,
+      tagTextPromo = TuPaletteColor.tu_color_blue30,
+      tagTextActive = TuPaletteColor.tu_color_blue30,
+      tagTextInactive = TuPaletteColor.tu_color_grey5,
+      tagTextSuccess = TuPaletteColor.tu_color_green40,
+      tagTextWarning = TuPaletteColor.tu_color_orange55,
+      tagTextError = TuPaletteColor.tu_color_red40,
+      tagBackgroundPromo = TuPaletteColor.tu_color_darkModeGrey6,
+      tagBackgroundActive = TuPaletteColor.tu_color_darkModeGrey6,
+      tagBackgroundInactive = TuPaletteColor.tu_color_darkModeGrey6,
+      tagBackgroundSuccess = TuPaletteColor.tu_color_darkModeGrey6,
+      tagBackgroundWarning = TuPaletteColor.tu_color_darkModeGrey6,
+      tagBackgroundError = TuPaletteColor.tu_color_darkModeGrey6,
+      )
+}
+
+public object TuBrandBrushes {
+  public val lightBrushes: MisticaBrushes = MisticaBrushes(
+      cardContentOverlay = AngledLinearGradient(
+        angleInDegrees = 180F,
+        colorStops = listOf(
+          0.0F to TuPaletteColor.tu_color_black,
+          0.3F to TuPaletteColor.tu_color_black_40_alpha,
+          1.0F to TuPaletteColor.tu_color_black_70_alpha
+        ))
+      )
+
+  public val darkBrushes: MisticaBrushes = MisticaBrushes(
+      cardContentOverlay = AngledLinearGradient(
+        angleInDegrees = 180F,
+        colorStops = listOf(
+          0.0F to TuPaletteColor.tu_color_black,
+          0.3F to TuPaletteColor.tu_color_black_40_alpha,
+          1.0F to TuPaletteColor.tu_color_black_70_alpha
+        ))
       )
 }
 
@@ -307,6 +357,8 @@ private object TuPaletteColor {
 
   public val tu_color_white: Color = Color(0xFFFFFFFF)
 
+  public val tu_color_black: Color = Color(0xFF000000)
+
   public val tu_color_darkModeBlack: Color = Color(0xFF161A24)
 
   public val tu_color_darkModeGrey: Color = Color(0xFF202735)
@@ -335,6 +387,10 @@ private object TuPaletteColor {
 
   public val tu_color_white_20_alpha: Color = Color(0x33FFFFFF)
 
+  public val tu_color_black_40_alpha: Color = Color(0x66000000)
+
+  public val tu_color_black_70_alpha: Color = Color(0xB3000000)
+
   public val tu_color_white_3_alpha: Color = Color(0x08FFFFFF)
 
   public val tu_color_white_5_alpha: Color = Color(0x0DFFFFFF)
@@ -344,6 +400,8 @@ private object TuPaletteColor {
   public val tu_color_darkModeBlack_25_alpha: Color = Color(0x40161A24)
 
   public val tu_color_darkModeBlack_35_alpha: Color = Color(0x59161A24)
+
+  public val tu_color_white_1_alpha: Color = Color(0x03FFFFFF)
 
   public val tu_color_grey2_15_alpha: Color = Color(0x26D1D5E4)
 }

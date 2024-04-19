@@ -20,7 +20,8 @@
 		<item name="colorBackgroundSkeletonInverse">@color/blau_color_blauBlueSecondary</item>
 		<item name="colorNavigationBarBackground">@color/blau_color_blauBluePrimary</item>
 		<item name="colorBackgroundAlternative">@color/blau_color_blauBluePrimary20</item>
-		<item name="colorBackgroundFeedbackBottom">@color/blau_color_blauBluePrimary</item>
+		<item name="colorBackgroundBrandTop">@color/blau_color_blauBluePrimary</item>
+		<item name="colorBackgroundBrandBottom">@color/blau_color_blauBluePrimary</item>
 		<item name="colorSkeletonWave">@color/blau_color_grey2</item>
 		<item name="colorBorderLow">@color/blau_color_grey1</item>
 		<item name="colorBorder">@color/blau_color_grey2</item>
@@ -114,6 +115,22 @@
 		<item name="colorTextAppBar">@color/blau_color_grey5</item>
 		<item name="colorTextAppBarSelected">@color/blau_color_blauBlueSecondary60</item>
 		<item name="colorCustomTabsBackground">@color/blau_color_blauBluePrimary</item>
+		<item name="colorTagTextPromo">@color/blau_color_blauPurple</item>
+		<item name="colorTagTextActive">@color/blau_color_blauBluePrimary</item>
+		<item name="colorTagTextInactive">@color/blau_color_grey5</item>
+		<item name="colorTagTextSuccess">@color/blau_color_blauGreen70</item>
+		<item name="colorTagTextWarning">@color/blau_color_blauYellow70</item>
+		<item name="colorTagTextError">@color/blau_color_blauRed70</item>
+		<item name="colorTagBackgroundPromo">@color/blau_color_blauPurple10</item>
+		<item name="colorTagBackgroundActive">@color/blau_color_blauBlueSecondary10</item>
+		<item name="colorTagBackgroundInactive">@color/blau_color_grey1</item>
+		<item name="colorTagBackgroundSuccess">@color/blau_color_blauGreen10</item>
+		<item name="colorTagBackgroundWarning">@color/blau_color_blauYellow10</item>
+		<item name="colorTagBackgroundError">@color/blau_color_blauRed10</item>
+		<!-- Gradients -->
+		<item name="gradientColorsCardContentOverlay">@array/blau_gradient_colors_light_cardContentOverlay</item>
+		<item name="gradientStopsCardContentOverlay">@array/blau_gradient_stops_light_cardContentOverlay</item>
+		<item name="gradientAngleCardContentOverlay">@integer/blau_gradient_angle_light_cardContentOverlay</item>
 		<!-- Border radius -->
 		<item name="avatarBorderRadius">50%</item>
 		<item name="barBorderRadius">999dp</item>

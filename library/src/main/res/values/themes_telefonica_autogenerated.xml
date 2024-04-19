@@ -20,7 +20,8 @@
 		<item name="colorBackgroundSkeletonInverse">@color/telefonica_color_telefonicaBlue70</item>
 		<item name="colorNavigationBarBackground">@color/telefonica_color_telefonicaBlue</item>
 		<item name="colorBackgroundAlternative">@color/telefonica_color_grey1</item>
-		<item name="colorBackgroundFeedbackBottom">@color/telefonica_color_telefonicaBlue</item>
+		<item name="colorBackgroundBrandTop">@color/telefonica_color_telefonicaBlue</item>
+		<item name="colorBackgroundBrandBottom">@color/telefonica_color_telefonicaBlue</item>
 		<item name="colorSkeletonWave">@color/telefonica_color_grey2</item>
 		<item name="colorBorderLow">@color/telefonica_color_grey1</item>
 		<item name="colorBorder">@color/telefonica_color_grey2</item>
@@ -114,6 +115,22 @@
 		<item name="colorTextAppBar">@color/telefonica_color_grey4</item>
 		<item name="colorTextAppBarSelected">@color/telefonica_color_telefonicaBlue</item>
 		<item name="colorCustomTabsBackground">@color/telefonica_color_telefonicaBlue</item>
+		<item name="colorTagTextPromo">@color/telefonica_color_orchid70</item>
+		<item name="colorTagTextActive">@color/telefonica_color_telefonicaBlue</item>
+		<item name="colorTagTextInactive">@color/telefonica_color_grey5</item>
+		<item name="colorTagTextSuccess">@color/telefonica_color_turquoise70</item>
+		<item name="colorTagTextWarning">@color/telefonica_color_ambar70</item>
+		<item name="colorTagTextError">@color/telefonica_color_coral70</item>
+		<item name="colorTagBackgroundPromo">@color/telefonica_color_orchid10</item>
+		<item name="colorTagBackgroundActive">@color/telefonica_color_telefonicaBlue10</item>
+		<item name="colorTagBackgroundInactive">@color/telefonica_color_grey1</item>
+		<item name="colorTagBackgroundSuccess">@color/telefonica_color_turquoise10</item>
+		<item name="colorTagBackgroundWarning">@color/telefonica_color_ambar10</item>
+		<item name="colorTagBackgroundError">@color/telefonica_color_coral10</item>
+		<!-- Gradients -->
+		<item name="gradientColorsCardContentOverlay">@array/telefonica_gradient_colors_light_cardContentOverlay</item>
+		<item name="gradientStopsCardContentOverlay">@array/telefonica_gradient_stops_light_cardContentOverlay</item>
+		<item name="gradientAngleCardContentOverlay">@integer/telefonica_gradient_angle_light_cardContentOverlay</item>
 		<!-- Border radius -->
 		<item name="avatarBorderRadius">50%</item>
 		<item name="barBorderRadius">0dp</item>

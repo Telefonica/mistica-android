@@ -18,7 +18,8 @@
 		<item name="colorBackgroundOverlay">@color/vivo_color_grey6_60_alpha</item>
 		<item name="colorBackgroundSkeleton">@color/vivo_color_grey2</item>
 		<item name="colorBackgroundSkeletonInverse">@color/vivo_color_vivoPurpleDark</item>
-		<item name="colorBackgroundFeedbackBottom">@color/vivo_color_vivoPurple</item>
+		<item name="colorBackgroundBrandTop">@color/vivo_color_vivoPurple</item>
+		<item name="colorBackgroundBrandBottom">@color/vivo_color_vivoPurple</item>
 		<item name="colorAppBarBackground">@color/vivo_color_white</item>
 		<item name="colorNavigationBarBackground">@color/vivo_color_vivoPurple</item>
 		<item name="colorSkeletonWave">@color/vivo_color_grey2</item>
@@ -114,6 +115,22 @@
 		<item name="colorTextAppBar">@color/vivo_color_grey4</item>
 		<item name="colorTextAppBarSelected">@color/vivo_color_vivoPurple</item>
 		<item name="colorCustomTabsBackground">@color/vivo_color_vivoPurple</item>
+		<item name="colorTagTextPromo">@color/vivo_color_vivoPurple</item>
+		<item name="colorTagTextActive">@color/vivo_color_vivoPurple</item>
+		<item name="colorTagTextInactive">@color/vivo_color_grey5</item>
+		<item name="colorTagTextSuccess">@color/vivo_color_vivoGreenDark</item>
+		<item name="colorTagTextWarning">@color/vivo_color_orangeDark</item>
+		<item name="colorTagTextError">@color/vivo_color_pepperDark80</item>
+		<item name="colorTagBackgroundPromo">@color/vivo_color_vivoPurpleLight10</item>
+		<item name="colorTagBackgroundActive">@color/vivo_color_vivoPurpleLight10</item>
+		<item name="colorTagBackgroundInactive">@color/vivo_color_grey1</item>
+		<item name="colorTagBackgroundSuccess">@color/vivo_color_vivoGreenLight10</item>
+		<item name="colorTagBackgroundWarning">@color/vivo_color_orangeLight10</item>
+		<item name="colorTagBackgroundError">@color/vivo_color_pepperLight10</item>
+		<!-- Gradients -->
+		<item name="gradientColorsCardContentOverlay">@array/vivo_gradient_colors_light_cardContentOverlay</item>
+		<item name="gradientStopsCardContentOverlay">@array/vivo_gradient_stops_light_cardContentOverlay</item>
+		<item name="gradientAngleCardContentOverlay">@integer/vivo_gradient_angle_light_cardContentOverlay</item>
 		<!-- Border radius -->
 		<item name="avatarBorderRadius">50%</item>
 		<item name="barBorderRadius">999dp</item>

@@ -2,6 +2,8 @@
 package com.telefonica.mistica.compose.theme.brand
 
 import androidx.compose.ui.graphics.Color
+import com.telefonica.mistica.compose.theme.color.AngledLinearGradient
+import com.telefonica.mistica.compose.theme.color.MisticaBrushes
 import com.telefonica.mistica.compose.theme.color.MisticaColors
 
 public object MovistarBrandColors {
@@ -21,7 +23,8 @@ public object MovistarBrandColors {
       backgroundOverlay = MovistarPaletteColor.movistar_color_movistarBlueDark_60_alpha,
       backgroundSkeleton = MovistarPaletteColor.movistar_color_grey2,
       backgroundSkeletonInverse = MovistarPaletteColor.movistar_color_movistarBlue55,
-      backgroundFeedbackBottom = MovistarPaletteColor.movistar_color_movistarBlue,
+      backgroundBrandTop = MovistarPaletteColor.movistar_color_movistarBlue,
+      backgroundBrandBottom = MovistarPaletteColor.movistar_color_movistarBlue,
       appBarBackground = MovistarPaletteColor.movistar_color_white,
       navigationBarBackground = MovistarPaletteColor.movistar_color_movistarBlue,
       skeletonWave = MovistarPaletteColor.movistar_color_grey2,
@@ -117,6 +120,18 @@ public object MovistarBrandColors {
       textAppBar = MovistarPaletteColor.movistar_color_grey4,
       textAppBarSelected = MovistarPaletteColor.movistar_color_movistarBlue,
       customTabsBackground = MovistarPaletteColor.movistar_color_movistarBlue,
+      tagTextPromo = MovistarPaletteColor.movistar_color_purple70,
+      tagTextActive = MovistarPaletteColor.movistar_color_movistarBlue,
+      tagTextInactive = MovistarPaletteColor.movistar_color_grey5,
+      tagTextSuccess = MovistarPaletteColor.movistar_color_movistarGreen70,
+      tagTextWarning = MovistarPaletteColor.movistar_color_egg80,
+      tagTextError = MovistarPaletteColor.movistar_color_pepper70,
+      tagBackgroundPromo = MovistarPaletteColor.movistar_color_purple10,
+      tagBackgroundActive = MovistarPaletteColor.movistar_color_movistarBlue10,
+      tagBackgroundInactive = MovistarPaletteColor.movistar_color_grey1,
+      tagBackgroundSuccess = MovistarPaletteColor.movistar_color_movistarGreen10,
+      tagBackgroundWarning = MovistarPaletteColor.movistar_color_egg10,
+      tagBackgroundError = MovistarPaletteColor.movistar_color_pepper10,
       )
 
   public val darkColors: MisticaColors = MisticaColors(background =
@@ -135,7 +150,8 @@ public object MovistarBrandColors {
       backgroundOverlay = MovistarPaletteColor.movistar_color_darkModeGrey_80_alpha,
       backgroundSkeleton = MovistarPaletteColor.movistar_color_movistarBlueDark,
       backgroundSkeletonInverse = MovistarPaletteColor.movistar_color_movistarBlueDark,
-      backgroundFeedbackBottom = MovistarPaletteColor.movistar_color_darkModeBlack,
+      backgroundBrandTop = MovistarPaletteColor.movistar_color_darkModeBlack,
+      backgroundBrandBottom = MovistarPaletteColor.movistar_color_darkModeBlack,
       appBarBackground = MovistarPaletteColor.movistar_color_darkModeGrey,
       navigationBarBackground = MovistarPaletteColor.movistar_color_darkModeBlack,
       skeletonWave = MovistarPaletteColor.movistar_color_darkModeGrey6,
@@ -231,6 +247,40 @@ public object MovistarBrandColors {
       textAppBar = MovistarPaletteColor.movistar_color_darkModeGrey5,
       textAppBarSelected = MovistarPaletteColor.movistar_color_darkModeGrey2,
       customTabsBackground = MovistarPaletteColor.movistar_color_darkModeBlack,
+      tagTextPromo = MovistarPaletteColor.movistar_color_purple40,
+      tagTextActive = MovistarPaletteColor.movistar_color_movistarBlue,
+      tagTextInactive = MovistarPaletteColor.movistar_color_darkModeGrey5,
+      tagTextSuccess = MovistarPaletteColor.movistar_color_movistarGreen40,
+      tagTextWarning = MovistarPaletteColor.movistar_color_egg40,
+      tagTextError = MovistarPaletteColor.movistar_color_pepper40,
+      tagBackgroundPromo = MovistarPaletteColor.movistar_color_movistarBlueDark,
+      tagBackgroundActive = MovistarPaletteColor.movistar_color_movistarBlueDark,
+      tagBackgroundInactive = MovistarPaletteColor.movistar_color_movistarBlueDark,
+      tagBackgroundSuccess = MovistarPaletteColor.movistar_color_movistarBlueDark,
+      tagBackgroundWarning = MovistarPaletteColor.movistar_color_movistarBlueDark,
+      tagBackgroundError = MovistarPaletteColor.movistar_color_movistarBlueDark,
+      )
+}
+
+public object MovistarBrandBrushes {
+  public val lightBrushes: MisticaBrushes = MisticaBrushes(
+      cardContentOverlay = AngledLinearGradient(
+        angleInDegrees = 180F,
+        colorStops = listOf(
+          0.0F to MovistarPaletteColor.movistar_color_black,
+          0.3F to MovistarPaletteColor.movistar_color_black_40_alpha,
+          1.0F to MovistarPaletteColor.movistar_color_black_70_alpha
+        ))
+      )
+
+  public val darkBrushes: MisticaBrushes = MisticaBrushes(
+      cardContentOverlay = AngledLinearGradient(
+        angleInDegrees = 180F,
+        colorStops = listOf(
+          0.0F to MovistarPaletteColor.movistar_color_black,
+          0.3F to MovistarPaletteColor.movistar_color_black_40_alpha,
+          1.0F to MovistarPaletteColor.movistar_color_black_70_alpha
+        ))
       )
 }
 
@@ -301,6 +351,8 @@ private object MovistarPaletteColor {
 
   public val movistar_color_white: Color = Color(0xFFFFFFFF)
 
+  public val movistar_color_black: Color = Color(0xFF000000)
+
   public val movistar_color_movistarBlueDark: Color = Color(0xFF0B2739)
 
   public val movistar_color_darkModeBlack: Color = Color(0xFF061824)
@@ -332,6 +384,10 @@ private object MovistarPaletteColor {
   public val movistar_color_darkModeBlack_35_alpha: Color = Color(0x59061824)
 
   public val movistar_color_white_20_alpha: Color = Color(0x33FFFFFF)
+
+  public val movistar_color_black_40_alpha: Color = Color(0x66000000)
+
+  public val movistar_color_black_70_alpha: Color = Color(0xB3000000)
 
   public val movistar_color_white_3_alpha: Color = Color(0x08FFFFFF)
 

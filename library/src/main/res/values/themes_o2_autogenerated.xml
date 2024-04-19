@@ -18,7 +18,8 @@
 		<item name="colorBackgroundOverlay">@color/o2_color_grey6_60_alpha</item>
 		<item name="colorBackgroundSkeleton">@color/o2_color_grey2</item>
 		<item name="colorBackgroundSkeletonInverse">@color/o2_color_o2BluePrimary70</item>
-		<item name="colorBackgroundFeedbackBottom">@color/o2_color_o2BluePrimary</item>
+		<item name="colorBackgroundBrandTop">@color/o2_color_o2BluePrimary</item>
+		<item name="colorBackgroundBrandBottom">@color/o2_color_o2BluePrimary</item>
 		<item name="colorAppBarBackground">@color/o2_color_white</item>
 		<item name="colorNavigationBarBackground">@color/o2_color_o2BluePrimary</item>
 		<item name="colorSkeletonWave">@color/o2_color_grey2</item>
@@ -114,6 +115,22 @@
 		<item name="colorTextAppBar">@color/o2_color_grey4</item>
 		<item name="colorTextAppBarSelected">@color/o2_color_o2BluePrimary</item>
 		<item name="colorCustomTabsBackground">@color/o2_color_o2BluePrimary</item>
+		<item name="colorTagTextPromo">@color/o2_color_o2Purple</item>
+		<item name="colorTagTextActive">@color/o2_color_o2BluePrimary</item>
+		<item name="colorTagTextInactive">@color/o2_color_grey5</item>
+		<item name="colorTagTextSuccess">@color/o2_color_o2Green80</item>
+		<item name="colorTagTextWarning">@color/o2_color_o2Orange75</item>
+		<item name="colorTagTextError">@color/o2_color_pepper60</item>
+		<item name="colorTagBackgroundPromo">@color/o2_color_o2Purple10</item>
+		<item name="colorTagBackgroundActive">@color/o2_color_o2BluePrimary10</item>
+		<item name="colorTagBackgroundInactive">@color/o2_color_grey1</item>
+		<item name="colorTagBackgroundSuccess">@color/o2_color_o2Green10</item>
+		<item name="colorTagBackgroundWarning">@color/o2_color_o2Orange10</item>
+		<item name="colorTagBackgroundError">@color/o2_color_pepper10</item>
+		<!-- Gradients -->
+		<item name="gradientColorsCardContentOverlay">@array/o2_gradient_colors_light_cardContentOverlay</item>
+		<item name="gradientStopsCardContentOverlay">@array/o2_gradient_stops_light_cardContentOverlay</item>
+		<item name="gradientAngleCardContentOverlay">@integer/o2_gradient_angle_light_cardContentOverlay</item>
 		<!-- Border radius -->
 		<item name="avatarBorderRadius">50%</item>
 		<item name="barBorderRadius">999dp</item>

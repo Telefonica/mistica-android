@@ -17,7 +17,8 @@
 		<item name="colorBackgroundOverlay">@color/movistar_color_darkModeGrey_80_alpha</item>
 		<item name="colorBackgroundSkeleton">@color/movistar_color_movistarBlueDark</item>
 		<item name="colorBackgroundSkeletonInverse">@color/movistar_color_movistarBlueDark</item>
-		<item name="colorBackgroundFeedbackBottom">@color/movistar_color_darkModeBlack</item>
+		<item name="colorBackgroundBrandTop">@color/movistar_color_darkModeBlack</item>
+		<item name="colorBackgroundBrandBottom">@color/movistar_color_darkModeBlack</item>
 		<item name="colorAppBarBackground">@color/movistar_color_darkModeGrey</item>
 		<item name="colorNavigationBarBackground">@color/movistar_color_darkModeBlack</item>
 		<item name="colorSkeletonWave">@color/movistar_color_darkModeGrey6</item>
@@ -113,5 +114,21 @@
 		<item name="colorTextAppBar">@color/movistar_color_darkModeGrey5</item>
 		<item name="colorTextAppBarSelected">@color/movistar_color_darkModeGrey2</item>
 		<item name="colorCustomTabsBackground">@color/movistar_color_darkModeBlack</item>
+		<item name="colorTagTextPromo">@color/movistar_color_purple40</item>
+		<item name="colorTagTextActive">@color/movistar_color_movistarBlue</item>
+		<item name="colorTagTextInactive">@color/movistar_color_darkModeGrey5</item>
+		<item name="colorTagTextSuccess">@color/movistar_color_movistarGreen40</item>
+		<item name="colorTagTextWarning">@color/movistar_color_egg40</item>
+		<item name="colorTagTextError">@color/movistar_color_pepper40</item>
+		<item name="colorTagBackgroundPromo">@color/movistar_color_movistarBlueDark</item>
+		<item name="colorTagBackgroundActive">@color/movistar_color_movistarBlueDark</item>
+		<item name="colorTagBackgroundInactive">@color/movistar_color_movistarBlueDark</item>
+		<item name="colorTagBackgroundSuccess">@color/movistar_color_movistarBlueDark</item>
+		<item name="colorTagBackgroundWarning">@color/movistar_color_movistarBlueDark</item>
+		<item name="colorTagBackgroundError">@color/movistar_color_movistarBlueDark</item>
+		<!-- Gradients -->
+		<item name="gradientColorsCardContentOverlay">@array/movistar_gradient_colors_dark_cardContentOverlay</item>
+		<item name="gradientStopsCardContentOverlay">@array/movistar_gradient_stops_dark_cardContentOverlay</item>
+		<item name="gradientAngleCardContentOverlay">@integer/movistar_gradient_angle_dark_cardContentOverlay</item>
 	</style>
 </resources>

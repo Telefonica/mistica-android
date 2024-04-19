@@ -25,7 +25,8 @@ public class MisticaColors(
   backgroundOverlay: Color = Color.Unspecified,
   backgroundSkeleton: Color = Color.Unspecified,
   backgroundSkeletonInverse: Color = Color.Unspecified,
-  backgroundFeedbackBottom: Color = Color.Unspecified,
+  backgroundBrandTop: Color = Color.Unspecified,
+  backgroundBrandBottom: Color = Color.Unspecified,
   appBarBackground: Color = Color.Unspecified,
   navigationBarBackground: Color = Color.Unspecified,
   skeletonWave: Color = Color.Unspecified,
@@ -121,14 +122,18 @@ public class MisticaColors(
   textAppBar: Color = Color.Unspecified,
   textAppBarSelected: Color = Color.Unspecified,
   customTabsBackground: Color = Color.Unspecified,
-  gradientBackgroundFirst: Color = Color.Unspecified,
-  gradientBackgroundSecond: Color = Color.Unspecified,
-  gradientBackgroundThird: Color = Color.Unspecified,
-  gradientBackgroundFourth: Color = Color.Unspecified,
-  loginLoadingGradientFirst: Color = Color.Unspecified,
-  loginLoadingGradientSecond: Color = Color.Unspecified,
-  loginLoadingGradientThird: Color = Color.Unspecified,
-  loginLoadingGradientFourth: Color = Color.Unspecified,
+  tagTextPromo: Color = Color.Unspecified,
+  tagTextActive: Color = Color.Unspecified,
+  tagTextInactive: Color = Color.Unspecified,
+  tagTextSuccess: Color = Color.Unspecified,
+  tagTextWarning: Color = Color.Unspecified,
+  tagTextError: Color = Color.Unspecified,
+  tagBackgroundPromo: Color = Color.Unspecified,
+  tagBackgroundActive: Color = Color.Unspecified,
+  tagBackgroundInactive: Color = Color.Unspecified,
+  tagBackgroundSuccess: Color = Color.Unspecified,
+  tagBackgroundWarning: Color = Color.Unspecified,
+  tagBackgroundError: Color = Color.Unspecified,
 ) {
   public var background: Color by mutableStateOf(background, structuralEqualityPolicy())
     internal set
@@ -188,7 +193,11 @@ public class MisticaColors(
       structuralEqualityPolicy())
     internal set
 
-  public var backgroundFeedbackBottom: Color by mutableStateOf(backgroundFeedbackBottom,
+  public var backgroundBrandTop: Color by mutableStateOf(backgroundBrandTop,
+      structuralEqualityPolicy())
+    internal set
+
+  public var backgroundBrandBottom: Color by mutableStateOf(backgroundBrandBottom,
       structuralEqualityPolicy())
     internal set
 
@@ -527,35 +536,45 @@ public class MisticaColors(
       structuralEqualityPolicy())
     internal set
 
-  public var gradientBackgroundFirst: Color by mutableStateOf(gradientBackgroundFirst,
+  public var tagTextPromo: Color by mutableStateOf(tagTextPromo, structuralEqualityPolicy())
+    internal set
+
+  public var tagTextActive: Color by mutableStateOf(tagTextActive, structuralEqualityPolicy())
+    internal set
+
+  public var tagTextInactive: Color by mutableStateOf(tagTextInactive, structuralEqualityPolicy())
+    internal set
+
+  public var tagTextSuccess: Color by mutableStateOf(tagTextSuccess, structuralEqualityPolicy())
+    internal set
+
+  public var tagTextWarning: Color by mutableStateOf(tagTextWarning, structuralEqualityPolicy())
+    internal set
+
+  public var tagTextError: Color by mutableStateOf(tagTextError, structuralEqualityPolicy())
+    internal set
+
+  public var tagBackgroundPromo: Color by mutableStateOf(tagBackgroundPromo,
       structuralEqualityPolicy())
     internal set
 
-  public var gradientBackgroundSecond: Color by mutableStateOf(gradientBackgroundSecond,
+  public var tagBackgroundActive: Color by mutableStateOf(tagBackgroundActive,
       structuralEqualityPolicy())
     internal set
 
-  public var gradientBackgroundThird: Color by mutableStateOf(gradientBackgroundThird,
+  public var tagBackgroundInactive: Color by mutableStateOf(tagBackgroundInactive,
       structuralEqualityPolicy())
     internal set
 
-  public var gradientBackgroundFourth: Color by mutableStateOf(gradientBackgroundFourth,
+  public var tagBackgroundSuccess: Color by mutableStateOf(tagBackgroundSuccess,
       structuralEqualityPolicy())
     internal set
 
-  public var loginLoadingGradientFirst: Color by mutableStateOf(loginLoadingGradientFirst,
+  public var tagBackgroundWarning: Color by mutableStateOf(tagBackgroundWarning,
       structuralEqualityPolicy())
     internal set
 
-  public var loginLoadingGradientSecond: Color by mutableStateOf(loginLoadingGradientSecond,
-      structuralEqualityPolicy())
-    internal set
-
-  public var loginLoadingGradientThird: Color by mutableStateOf(loginLoadingGradientThird,
-      structuralEqualityPolicy())
-    internal set
-
-  public var loginLoadingGradientFourth: Color by mutableStateOf(loginLoadingGradientFourth,
+  public var tagBackgroundError: Color by mutableStateOf(tagBackgroundError,
       structuralEqualityPolicy())
     internal set
 
@@ -575,7 +594,8 @@ public class MisticaColors(
     backgroundOverlay: Color = this.backgroundOverlay,
     backgroundSkeleton: Color = this.backgroundSkeleton,
     backgroundSkeletonInverse: Color = this.backgroundSkeletonInverse,
-    backgroundFeedbackBottom: Color = this.backgroundFeedbackBottom,
+    backgroundBrandTop: Color = this.backgroundBrandTop,
+    backgroundBrandBottom: Color = this.backgroundBrandBottom,
     appBarBackground: Color = this.appBarBackground,
     navigationBarBackground: Color = this.navigationBarBackground,
     skeletonWave: Color = this.skeletonWave,
@@ -672,14 +692,18 @@ public class MisticaColors(
     textAppBar: Color = this.textAppBar,
     textAppBarSelected: Color = this.textAppBarSelected,
     customTabsBackground: Color = this.customTabsBackground,
-    gradientBackgroundFirst: Color = this.gradientBackgroundFirst,
-    gradientBackgroundSecond: Color = this.gradientBackgroundSecond,
-    gradientBackgroundThird: Color = this.gradientBackgroundThird,
-    gradientBackgroundFourth: Color = this.gradientBackgroundFourth,
-    loginLoadingGradientFirst: Color = this.loginLoadingGradientFirst,
-    loginLoadingGradientSecond: Color = this.loginLoadingGradientSecond,
-    loginLoadingGradientThird: Color = this.loginLoadingGradientThird,
-    loginLoadingGradientFourth: Color = this.loginLoadingGradientFourth,
+    tagTextPromo: Color = this.tagTextPromo,
+    tagTextActive: Color = this.tagTextActive,
+    tagTextInactive: Color = this.tagTextInactive,
+    tagTextSuccess: Color = this.tagTextSuccess,
+    tagTextWarning: Color = this.tagTextWarning,
+    tagTextError: Color = this.tagTextError,
+    tagBackgroundPromo: Color = this.tagBackgroundPromo,
+    tagBackgroundActive: Color = this.tagBackgroundActive,
+    tagBackgroundInactive: Color = this.tagBackgroundInactive,
+    tagBackgroundSuccess: Color = this.tagBackgroundSuccess,
+    tagBackgroundWarning: Color = this.tagBackgroundWarning,
+    tagBackgroundError: Color = this.tagBackgroundError,
   ): MisticaColors = MisticaColors(background = background, backgroundAlternative =
       backgroundAlternative, backgroundBrand = backgroundBrand, backgroundBrandSecondary =
       backgroundBrandSecondary, backgroundContainer = backgroundContainer, backgroundContainerHover
@@ -689,21 +713,22 @@ public class MisticaColors(
       backgroundContainerBrandPressed, backgroundContainerBrandOverInverse =
       backgroundContainerBrandOverInverse, backgroundContainerAlternative =
       backgroundContainerAlternative, backgroundOverlay = backgroundOverlay, backgroundSkeleton =
-      backgroundSkeleton, backgroundSkeletonInverse = backgroundSkeletonInverse,
-      backgroundFeedbackBottom = backgroundFeedbackBottom, appBarBackground = appBarBackground,
-      navigationBarBackground = navigationBarBackground, skeletonWave = skeletonWave, borderLow =
-      borderLow, border = border, borderHigh = borderHigh, borderSelected = borderSelected,
-      coverBackgroundHover = coverBackgroundHover, coverBackgroundPressed = coverBackgroundPressed,
-      buttonDangerBackground = buttonDangerBackground, buttonDangerBackgroundSelected =
-      buttonDangerBackgroundSelected, buttonDangerBackgroundHover = buttonDangerBackgroundHover,
-      buttonLinkDangerBackgroundSelected = buttonLinkDangerBackgroundSelected,
-      buttonLinkDangerBackgroundInverse = buttonLinkDangerBackgroundInverse,
-      buttonLinkDangerBackgroundInverseSelected = buttonLinkDangerBackgroundInverseSelected,
-      buttonLinkBackgroundSelected = buttonLinkBackgroundSelected,
-      buttonLinkBackgroundInverseSelected = buttonLinkBackgroundInverseSelected,
-      buttonPrimaryBackground = buttonPrimaryBackground, buttonPrimaryBackgroundInverse =
-      buttonPrimaryBackgroundInverse, buttonPrimaryBackgroundSelected =
-      buttonPrimaryBackgroundSelected, buttonPrimaryBackgroundHover = buttonPrimaryBackgroundHover,
+      backgroundSkeleton, backgroundSkeletonInverse = backgroundSkeletonInverse, backgroundBrandTop
+      = backgroundBrandTop, backgroundBrandBottom = backgroundBrandBottom, appBarBackground =
+      appBarBackground, navigationBarBackground = navigationBarBackground, skeletonWave =
+      skeletonWave, borderLow = borderLow, border = border, borderHigh = borderHigh, borderSelected
+      = borderSelected, coverBackgroundHover = coverBackgroundHover, coverBackgroundPressed =
+      coverBackgroundPressed, buttonDangerBackground = buttonDangerBackground,
+      buttonDangerBackgroundSelected = buttonDangerBackgroundSelected, buttonDangerBackgroundHover =
+      buttonDangerBackgroundHover, buttonLinkDangerBackgroundSelected =
+      buttonLinkDangerBackgroundSelected, buttonLinkDangerBackgroundInverse =
+      buttonLinkDangerBackgroundInverse, buttonLinkDangerBackgroundInverseSelected =
+      buttonLinkDangerBackgroundInverseSelected, buttonLinkBackgroundSelected =
+      buttonLinkBackgroundSelected, buttonLinkBackgroundInverseSelected =
+      buttonLinkBackgroundInverseSelected, buttonPrimaryBackground = buttonPrimaryBackground,
+      buttonPrimaryBackgroundInverse = buttonPrimaryBackgroundInverse,
+      buttonPrimaryBackgroundSelected = buttonPrimaryBackgroundSelected,
+      buttonPrimaryBackgroundHover = buttonPrimaryBackgroundHover,
       buttonPrimaryBackgroundInverseSelected = buttonPrimaryBackgroundInverseSelected,
       buttonSecondaryBorder = buttonSecondaryBorder, buttonSecondaryBorderSelected =
       buttonSecondaryBorderSelected, buttonSecondaryBackgroundHover =
@@ -739,12 +764,12 @@ public class MisticaColors(
       textNavigationBarPrimary, textNavigationBarSecondary = textNavigationBarSecondary,
       textNavigationSearchBarHint = textNavigationSearchBarHint, textNavigationSearchBarText =
       textNavigationSearchBarText, textAppBar = textAppBar, textAppBarSelected = textAppBarSelected,
-      customTabsBackground = customTabsBackground, gradientBackgroundFirst =
-      gradientBackgroundFirst, gradientBackgroundSecond = gradientBackgroundSecond,
-      gradientBackgroundThird = gradientBackgroundThird, gradientBackgroundFourth =
-      gradientBackgroundFourth, loginLoadingGradientFirst = loginLoadingGradientFirst,
-      loginLoadingGradientSecond = loginLoadingGradientSecond, loginLoadingGradientThird =
-      loginLoadingGradientThird, loginLoadingGradientFourth = loginLoadingGradientFourth)
+      customTabsBackground = customTabsBackground, tagTextPromo = tagTextPromo, tagTextActive =
+      tagTextActive, tagTextInactive = tagTextInactive, tagTextSuccess = tagTextSuccess,
+      tagTextWarning = tagTextWarning, tagTextError = tagTextError, tagBackgroundPromo =
+      tagBackgroundPromo, tagBackgroundActive = tagBackgroundActive, tagBackgroundInactive =
+      tagBackgroundInactive, tagBackgroundSuccess = tagBackgroundSuccess, tagBackgroundWarning =
+      tagBackgroundWarning, tagBackgroundError = tagBackgroundError)
 
   public fun updateColorsFrom(other: MisticaColors) {
     background = other.background
@@ -762,7 +787,8 @@ public class MisticaColors(
     backgroundOverlay = other.backgroundOverlay
     backgroundSkeleton = other.backgroundSkeleton
     backgroundSkeletonInverse = other.backgroundSkeletonInverse
-    backgroundFeedbackBottom = other.backgroundFeedbackBottom
+    backgroundBrandTop = other.backgroundBrandTop
+    backgroundBrandBottom = other.backgroundBrandBottom
     appBarBackground = other.appBarBackground
     navigationBarBackground = other.navigationBarBackground
     skeletonWave = other.skeletonWave
@@ -858,14 +884,18 @@ public class MisticaColors(
     textAppBar = other.textAppBar
     textAppBarSelected = other.textAppBarSelected
     customTabsBackground = other.customTabsBackground
-    gradientBackgroundFirst = other.gradientBackgroundFirst
-    gradientBackgroundSecond = other.gradientBackgroundSecond
-    gradientBackgroundThird = other.gradientBackgroundThird
-    gradientBackgroundFourth = other.gradientBackgroundFourth
-    loginLoadingGradientFirst = other.loginLoadingGradientFirst
-    loginLoadingGradientSecond = other.loginLoadingGradientSecond
-    loginLoadingGradientThird = other.loginLoadingGradientThird
-    loginLoadingGradientFourth = other.loginLoadingGradientFourth
+    tagTextPromo = other.tagTextPromo
+    tagTextActive = other.tagTextActive
+    tagTextInactive = other.tagTextInactive
+    tagTextSuccess = other.tagTextSuccess
+    tagTextWarning = other.tagTextWarning
+    tagTextError = other.tagTextError
+    tagBackgroundPromo = other.tagBackgroundPromo
+    tagBackgroundActive = other.tagBackgroundActive
+    tagBackgroundInactive = other.tagBackgroundInactive
+    tagBackgroundSuccess = other.tagBackgroundSuccess
+    tagBackgroundWarning = other.tagBackgroundWarning
+    tagBackgroundError = other.tagBackgroundError
   }
 }
 

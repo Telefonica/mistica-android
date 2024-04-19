@@ -17,7 +17,8 @@
 		<item name="colorBackgroundOverlay">@color/blau_color_darkModeGrey_80_alpha</item>
 		<item name="colorBackgroundSkeleton">@color/blau_color_darkModeGrey</item>
 		<item name="colorBackgroundSkeletonInverse">@color/blau_color_darkModeGrey</item>
-		<item name="colorBackgroundFeedbackBottom">@color/blau_color_darkModeBlack</item>
+		<item name="colorBackgroundBrandTop">@color/blau_color_darkModeBlack</item>
+		<item name="colorBackgroundBrandBottom">@color/blau_color_darkModeBlack</item>
 		<item name="colorAppBarBackground">@color/blau_color_darkModeGrey</item>
 		<item name="colorNavigationBarBackground">@color/blau_color_darkModeBlack</item>
 		<item name="colorSkeletonWave">@color/blau_color_grey5</item>
@@ -113,5 +114,21 @@
 		<item name="colorTextAppBar">@color/blau_color_grey5</item>
 		<item name="colorTextAppBarSelected">@color/blau_color_grey2</item>
 		<item name="colorCustomTabsBackground">@color/blau_color_darkModeBlack</item>
+		<item name="colorTagTextPromo">@color/blau_color_blauPurple30</item>
+		<item name="colorTagTextActive">@color/blau_color_blauBluePrimary</item>
+		<item name="colorTagTextInactive">@color/blau_color_grey5</item>
+		<item name="colorTagTextSuccess">@color/blau_color_blauGreen30</item>
+		<item name="colorTagTextWarning">@color/blau_color_blauYellow40</item>
+		<item name="colorTagTextError">@color/blau_color_blauRed40</item>
+		<item name="colorTagBackgroundPromo">@color/blau_color_darkModeGrey6</item>
+		<item name="colorTagBackgroundActive">@color/blau_color_darkModeGrey6</item>
+		<item name="colorTagBackgroundInactive">@color/blau_color_darkModeGrey6</item>
+		<item name="colorTagBackgroundSuccess">@color/blau_color_darkModeGrey6</item>
+		<item name="colorTagBackgroundWarning">@color/blau_color_darkModeGrey6</item>
+		<item name="colorTagBackgroundError">@color/blau_color_darkModeGrey6</item>
+		<!-- Gradients -->
+		<item name="gradientColorsCardContentOverlay">@array/blau_gradient_colors_dark_cardContentOverlay</item>
+		<item name="gradientStopsCardContentOverlay">@array/blau_gradient_stops_dark_cardContentOverlay</item>
+		<item name="gradientAngleCardContentOverlay">@integer/blau_gradient_angle_dark_cardContentOverlay</item>
 	</style>
 </resources>

@@ -2,6 +2,8 @@
 package com.telefonica.mistica.compose.theme.brand
 
 import androidx.compose.ui.graphics.Color
+import com.telefonica.mistica.compose.theme.color.AngledLinearGradient
+import com.telefonica.mistica.compose.theme.color.MisticaBrushes
 import com.telefonica.mistica.compose.theme.color.MisticaColors
 
 public object VivoBrandColors {
@@ -21,7 +23,8 @@ public object VivoBrandColors {
       backgroundOverlay = VivoPaletteColor.vivo_color_grey6_60_alpha,
       backgroundSkeleton = VivoPaletteColor.vivo_color_grey2,
       backgroundSkeletonInverse = VivoPaletteColor.vivo_color_vivoPurpleDark,
-      backgroundFeedbackBottom = VivoPaletteColor.vivo_color_vivoPurple,
+      backgroundBrandTop = VivoPaletteColor.vivo_color_vivoPurple,
+      backgroundBrandBottom = VivoPaletteColor.vivo_color_vivoPurple,
       appBarBackground = VivoPaletteColor.vivo_color_white,
       navigationBarBackground = VivoPaletteColor.vivo_color_vivoPurple,
       skeletonWave = VivoPaletteColor.vivo_color_grey2,
@@ -117,6 +120,18 @@ public object VivoBrandColors {
       textAppBar = VivoPaletteColor.vivo_color_grey4,
       textAppBarSelected = VivoPaletteColor.vivo_color_vivoPurple,
       customTabsBackground = VivoPaletteColor.vivo_color_vivoPurple,
+      tagTextPromo = VivoPaletteColor.vivo_color_vivoPurple,
+      tagTextActive = VivoPaletteColor.vivo_color_vivoPurple,
+      tagTextInactive = VivoPaletteColor.vivo_color_grey5,
+      tagTextSuccess = VivoPaletteColor.vivo_color_vivoGreenDark,
+      tagTextWarning = VivoPaletteColor.vivo_color_orangeDark,
+      tagTextError = VivoPaletteColor.vivo_color_pepperDark80,
+      tagBackgroundPromo = VivoPaletteColor.vivo_color_vivoPurpleLight10,
+      tagBackgroundActive = VivoPaletteColor.vivo_color_vivoPurpleLight10,
+      tagBackgroundInactive = VivoPaletteColor.vivo_color_grey1,
+      tagBackgroundSuccess = VivoPaletteColor.vivo_color_vivoGreenLight10,
+      tagBackgroundWarning = VivoPaletteColor.vivo_color_orangeLight10,
+      tagBackgroundError = VivoPaletteColor.vivo_color_pepperLight10,
       )
 
   public val darkColors: MisticaColors = MisticaColors(background =
@@ -135,7 +150,8 @@ public object VivoBrandColors {
       backgroundOverlay = VivoPaletteColor.vivo_color_darkModeGrey_80_alpha,
       backgroundSkeleton = VivoPaletteColor.vivo_color_darkModeGrey6,
       backgroundSkeletonInverse = VivoPaletteColor.vivo_color_darkModeGrey6,
-      backgroundFeedbackBottom = VivoPaletteColor.vivo_color_darkModeBlack,
+      backgroundBrandTop = VivoPaletteColor.vivo_color_darkModeBlack,
+      backgroundBrandBottom = VivoPaletteColor.vivo_color_darkModeBlack,
       appBarBackground = VivoPaletteColor.vivo_color_darkModeGrey,
       navigationBarBackground = VivoPaletteColor.vivo_color_darkModeBlack,
       skeletonWave = VivoPaletteColor.vivo_color_grey5,
@@ -231,6 +247,40 @@ public object VivoBrandColors {
       textAppBar = VivoPaletteColor.vivo_color_grey5,
       textAppBarSelected = VivoPaletteColor.vivo_color_grey2,
       customTabsBackground = VivoPaletteColor.vivo_color_darkModeBlack,
+      tagTextPromo = VivoPaletteColor.vivo_color_vivoPurpleLight50,
+      tagTextActive = VivoPaletteColor.vivo_color_vivoPurpleLight80,
+      tagTextInactive = VivoPaletteColor.vivo_color_grey5,
+      tagTextSuccess = VivoPaletteColor.vivo_color_vivoGreenLight30,
+      tagTextWarning = VivoPaletteColor.vivo_color_orangeLight40,
+      tagTextError = VivoPaletteColor.vivo_color_pepperLight40,
+      tagBackgroundPromo = VivoPaletteColor.vivo_color_darkModeGrey6,
+      tagBackgroundActive = VivoPaletteColor.vivo_color_darkModeGrey6,
+      tagBackgroundInactive = VivoPaletteColor.vivo_color_darkModeGrey6,
+      tagBackgroundSuccess = VivoPaletteColor.vivo_color_darkModeGrey6,
+      tagBackgroundWarning = VivoPaletteColor.vivo_color_darkModeGrey6,
+      tagBackgroundError = VivoPaletteColor.vivo_color_darkModeGrey6,
+      )
+}
+
+public object VivoBrandBrushes {
+  public val lightBrushes: MisticaBrushes = MisticaBrushes(
+      cardContentOverlay = AngledLinearGradient(
+        angleInDegrees = 180F,
+        colorStops = listOf(
+          0.0F to VivoPaletteColor.vivo_color_grey6,
+          0.3F to VivoPaletteColor.vivo_color_grey6_40_alpha,
+          1.0F to VivoPaletteColor.vivo_color_grey6_70_alpha
+        ))
+      )
+
+  public val darkBrushes: MisticaBrushes = MisticaBrushes(
+      cardContentOverlay = AngledLinearGradient(
+        angleInDegrees = 180F,
+        colorStops = listOf(
+          0.0F to VivoPaletteColor.vivo_color_grey6,
+          0.3F to VivoPaletteColor.vivo_color_grey6_40_alpha,
+          1.0F to VivoPaletteColor.vivo_color_grey6_70_alpha
+        ))
       )
 }
 
@@ -324,6 +374,10 @@ private object VivoPaletteColor {
   public val vivo_color_white_15_alpha: Color = Color(0x26FFFFFF)
 
   public val vivo_color_white_20_alpha: Color = Color(0x33FFFFFF)
+
+  public val vivo_color_grey6_40_alpha: Color = Color(0x66000000)
+
+  public val vivo_color_grey6_70_alpha: Color = Color(0xB3000000)
 
   public val vivo_color_white_3_alpha: Color = Color(0x08FFFFFF)
 

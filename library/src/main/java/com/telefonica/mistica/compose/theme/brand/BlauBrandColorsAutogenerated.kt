@@ -2,6 +2,8 @@
 package com.telefonica.mistica.compose.theme.brand
 
 import androidx.compose.ui.graphics.Color
+import com.telefonica.mistica.compose.theme.color.AngledLinearGradient
+import com.telefonica.mistica.compose.theme.color.MisticaBrushes
 import com.telefonica.mistica.compose.theme.color.MisticaColors
 
 public object BlauBrandColors {
@@ -23,7 +25,8 @@ public object BlauBrandColors {
       backgroundSkeletonInverse = BlauPaletteColor.blau_color_blauBlueSecondary,
       navigationBarBackground = BlauPaletteColor.blau_color_blauBluePrimary,
       backgroundAlternative = BlauPaletteColor.blau_color_blauBluePrimary20,
-      backgroundFeedbackBottom = BlauPaletteColor.blau_color_blauBluePrimary,
+      backgroundBrandTop = BlauPaletteColor.blau_color_blauBluePrimary,
+      backgroundBrandBottom = BlauPaletteColor.blau_color_blauBluePrimary,
       skeletonWave = BlauPaletteColor.blau_color_grey2,
       borderLow = BlauPaletteColor.blau_color_grey1,
       border = BlauPaletteColor.blau_color_grey2,
@@ -117,6 +120,18 @@ public object BlauBrandColors {
       textAppBar = BlauPaletteColor.blau_color_grey5,
       textAppBarSelected = BlauPaletteColor.blau_color_blauBlueSecondary60,
       customTabsBackground = BlauPaletteColor.blau_color_blauBluePrimary,
+      tagTextPromo = BlauPaletteColor.blau_color_blauPurple,
+      tagTextActive = BlauPaletteColor.blau_color_blauBluePrimary,
+      tagTextInactive = BlauPaletteColor.blau_color_grey5,
+      tagTextSuccess = BlauPaletteColor.blau_color_blauGreen70,
+      tagTextWarning = BlauPaletteColor.blau_color_blauYellow70,
+      tagTextError = BlauPaletteColor.blau_color_blauRed70,
+      tagBackgroundPromo = BlauPaletteColor.blau_color_blauPurple10,
+      tagBackgroundActive = BlauPaletteColor.blau_color_blauBlueSecondary10,
+      tagBackgroundInactive = BlauPaletteColor.blau_color_grey1,
+      tagBackgroundSuccess = BlauPaletteColor.blau_color_blauGreen10,
+      tagBackgroundWarning = BlauPaletteColor.blau_color_blauYellow10,
+      tagBackgroundError = BlauPaletteColor.blau_color_blauRed10,
       )
 
   public val darkColors: MisticaColors = MisticaColors(background =
@@ -135,7 +150,8 @@ public object BlauBrandColors {
       backgroundOverlay = BlauPaletteColor.blau_color_darkModeGrey_80_alpha,
       backgroundSkeleton = BlauPaletteColor.blau_color_darkModeGrey,
       backgroundSkeletonInverse = BlauPaletteColor.blau_color_darkModeGrey,
-      backgroundFeedbackBottom = BlauPaletteColor.blau_color_darkModeBlack,
+      backgroundBrandTop = BlauPaletteColor.blau_color_darkModeBlack,
+      backgroundBrandBottom = BlauPaletteColor.blau_color_darkModeBlack,
       appBarBackground = BlauPaletteColor.blau_color_darkModeGrey,
       navigationBarBackground = BlauPaletteColor.blau_color_darkModeBlack,
       skeletonWave = BlauPaletteColor.blau_color_grey5,
@@ -231,6 +247,40 @@ public object BlauBrandColors {
       textAppBar = BlauPaletteColor.blau_color_grey5,
       textAppBarSelected = BlauPaletteColor.blau_color_grey2,
       customTabsBackground = BlauPaletteColor.blau_color_darkModeBlack,
+      tagTextPromo = BlauPaletteColor.blau_color_blauPurple30,
+      tagTextActive = BlauPaletteColor.blau_color_blauBluePrimary,
+      tagTextInactive = BlauPaletteColor.blau_color_grey5,
+      tagTextSuccess = BlauPaletteColor.blau_color_blauGreen30,
+      tagTextWarning = BlauPaletteColor.blau_color_blauYellow40,
+      tagTextError = BlauPaletteColor.blau_color_blauRed40,
+      tagBackgroundPromo = BlauPaletteColor.blau_color_darkModeGrey6,
+      tagBackgroundActive = BlauPaletteColor.blau_color_darkModeGrey6,
+      tagBackgroundInactive = BlauPaletteColor.blau_color_darkModeGrey6,
+      tagBackgroundSuccess = BlauPaletteColor.blau_color_darkModeGrey6,
+      tagBackgroundWarning = BlauPaletteColor.blau_color_darkModeGrey6,
+      tagBackgroundError = BlauPaletteColor.blau_color_darkModeGrey6,
+      )
+}
+
+public object BlauBrandBrushes {
+  public val lightBrushes: MisticaBrushes = MisticaBrushes(
+      cardContentOverlay = AngledLinearGradient(
+        angleInDegrees = 180F,
+        colorStops = listOf(
+          0.0F to BlauPaletteColor.blau_color_grey6,
+          0.3F to BlauPaletteColor.blau_color_grey6_40_alpha,
+          1.0F to BlauPaletteColor.blau_color_grey6_70_alpha
+        ))
+      )
+
+  public val darkBrushes: MisticaBrushes = MisticaBrushes(
+      cardContentOverlay = AngledLinearGradient(
+        angleInDegrees = 180F,
+        colorStops = listOf(
+          0.0F to BlauPaletteColor.blau_color_grey6,
+          0.3F to BlauPaletteColor.blau_color_grey6_40_alpha,
+          1.0F to BlauPaletteColor.blau_color_grey6_70_alpha
+        ))
       )
 }
 
@@ -326,6 +376,10 @@ private object BlauPaletteColor {
   public val blau_color_white_15_alpha: Color = Color(0x26FFFFFF)
 
   public val blau_color_white_20_alpha: Color = Color(0x33FFFFFF)
+
+  public val blau_color_grey6_40_alpha: Color = Color(0x66000000)
+
+  public val blau_color_grey6_70_alpha: Color = Color(0xB3000000)
 
   public val blau_color_white_3_alpha: Color = Color(0x08FFFFFF)
 

@@ -2,6 +2,8 @@
 package com.telefonica.mistica.compose.theme.brand
 
 import androidx.compose.ui.graphics.Color
+import com.telefonica.mistica.compose.theme.color.AngledLinearGradient
+import com.telefonica.mistica.compose.theme.color.MisticaBrushes
 import com.telefonica.mistica.compose.theme.color.MisticaColors
 
 public object O2BrandColors {
@@ -20,7 +22,8 @@ public object O2BrandColors {
       backgroundOverlay = O2PaletteColor.o2_color_grey6_60_alpha,
       backgroundSkeleton = O2PaletteColor.o2_color_grey2,
       backgroundSkeletonInverse = O2PaletteColor.o2_color_o2BluePrimary70,
-      backgroundFeedbackBottom = O2PaletteColor.o2_color_o2BluePrimary,
+      backgroundBrandTop = O2PaletteColor.o2_color_o2BluePrimary,
+      backgroundBrandBottom = O2PaletteColor.o2_color_o2BluePrimary,
       appBarBackground = O2PaletteColor.o2_color_white,
       navigationBarBackground = O2PaletteColor.o2_color_o2BluePrimary,
       skeletonWave = O2PaletteColor.o2_color_grey2,
@@ -116,6 +119,18 @@ public object O2BrandColors {
       textAppBar = O2PaletteColor.o2_color_grey4,
       textAppBarSelected = O2PaletteColor.o2_color_o2BluePrimary,
       customTabsBackground = O2PaletteColor.o2_color_o2BluePrimary,
+      tagTextPromo = O2PaletteColor.o2_color_o2Purple,
+      tagTextActive = O2PaletteColor.o2_color_o2BluePrimary,
+      tagTextInactive = O2PaletteColor.o2_color_grey5,
+      tagTextSuccess = O2PaletteColor.o2_color_o2Green80,
+      tagTextWarning = O2PaletteColor.o2_color_o2Orange75,
+      tagTextError = O2PaletteColor.o2_color_pepper60,
+      tagBackgroundPromo = O2PaletteColor.o2_color_o2Purple10,
+      tagBackgroundActive = O2PaletteColor.o2_color_o2BluePrimary10,
+      tagBackgroundInactive = O2PaletteColor.o2_color_grey1,
+      tagBackgroundSuccess = O2PaletteColor.o2_color_o2Green10,
+      tagBackgroundWarning = O2PaletteColor.o2_color_o2Orange10,
+      tagBackgroundError = O2PaletteColor.o2_color_pepper10,
       )
 
   public val darkColors: MisticaColors = MisticaColors(background =
@@ -134,7 +149,8 @@ public object O2BrandColors {
       backgroundOverlay = O2PaletteColor.o2_color_darkModeGrey_80_alpha,
       backgroundSkeleton = O2PaletteColor.o2_color_darkModeGrey6,
       backgroundSkeletonInverse = O2PaletteColor.o2_color_darkModeGrey6,
-      backgroundFeedbackBottom = O2PaletteColor.o2_color_darkModeBlack,
+      backgroundBrandTop = O2PaletteColor.o2_color_darkModeBlack,
+      backgroundBrandBottom = O2PaletteColor.o2_color_darkModeBlack,
       appBarBackground = O2PaletteColor.o2_color_darkModeGrey,
       navigationBarBackground = O2PaletteColor.o2_color_darkModeBlack,
       skeletonWave = O2PaletteColor.o2_color_grey5,
@@ -230,6 +246,40 @@ public object O2BrandColors {
       textAppBar = O2PaletteColor.o2_color_grey5,
       textAppBarSelected = O2PaletteColor.o2_color_grey2,
       customTabsBackground = O2PaletteColor.o2_color_darkModeBlack,
+      tagTextPromo = O2PaletteColor.o2_color_o2Purple30,
+      tagTextActive = O2PaletteColor.o2_color_o2BluePrimary30,
+      tagTextInactive = O2PaletteColor.o2_color_grey5,
+      tagTextSuccess = O2PaletteColor.o2_color_o2Green40,
+      tagTextWarning = O2PaletteColor.o2_color_o2Orange40,
+      tagTextError = O2PaletteColor.o2_color_pepper40,
+      tagBackgroundPromo = O2PaletteColor.o2_color_darkModeGrey6,
+      tagBackgroundActive = O2PaletteColor.o2_color_darkModeGrey6,
+      tagBackgroundInactive = O2PaletteColor.o2_color_darkModeGrey6,
+      tagBackgroundSuccess = O2PaletteColor.o2_color_darkModeGrey6,
+      tagBackgroundWarning = O2PaletteColor.o2_color_darkModeGrey6,
+      tagBackgroundError = O2PaletteColor.o2_color_darkModeGrey6,
+      )
+}
+
+public object O2BrandBrushes {
+  public val lightBrushes: MisticaBrushes = MisticaBrushes(
+      cardContentOverlay = AngledLinearGradient(
+        angleInDegrees = 180F,
+        colorStops = listOf(
+          0.0F to O2PaletteColor.o2_color_black,
+          0.3F to O2PaletteColor.o2_color_black_40_alpha,
+          1.0F to O2PaletteColor.o2_color_black_70_alpha
+        ))
+      )
+
+  public val darkBrushes: MisticaBrushes = MisticaBrushes(
+      cardContentOverlay = AngledLinearGradient(
+        angleInDegrees = 180F,
+        colorStops = listOf(
+          0.0F to O2PaletteColor.o2_color_black,
+          0.3F to O2PaletteColor.o2_color_black_40_alpha,
+          1.0F to O2PaletteColor.o2_color_black_70_alpha
+        ))
       )
 }
 
@@ -306,6 +356,8 @@ private object O2PaletteColor {
 
   public val o2_color_white: Color = Color(0xFFFFFFFF)
 
+  public val o2_color_black: Color = Color(0xFF000000)
+
   public val o2_color_darkModeBlack: Color = Color(0xFF191919)
 
   public val o2_color_darkModeGrey: Color = Color(0xFF242424)
@@ -335,6 +387,10 @@ private object O2PaletteColor {
   public val o2_color_white_15_alpha: Color = Color(0x26FFFFFF)
 
   public val o2_color_white_20_alpha: Color = Color(0x33FFFFFF)
+
+  public val o2_color_black_40_alpha: Color = Color(0x66000000)
+
+  public val o2_color_black_70_alpha: Color = Color(0xB3000000)
 
   public val o2_color_white_3_alpha: Color = Color(0x08FFFFFF)
 

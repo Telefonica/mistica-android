@@ -17,7 +17,8 @@
 		<item name="colorBackgroundOverlay">@color/vivoNew_color_darkModeGrey_80_alpha</item>
 		<item name="colorBackgroundSkeleton">@color/vivoNew_color_darkModeGrey6</item>
 		<item name="colorBackgroundSkeletonInverse">@color/vivoNew_color_darkModeGrey6</item>
-		<item name="colorBackgroundFeedbackBottom">@color/vivoNew_color_darkModeBlack</item>
+		<item name="colorBackgroundBrandTop">@color/vivoNew_color_darkModeBlack</item>
+		<item name="colorBackgroundBrandBottom">@color/vivoNew_color_darkModeBlack</item>
 		<item name="colorAppBarBackground">@color/vivoNew_color_darkModeGrey</item>
 		<item name="colorNavigationBarBackground">@color/vivoNew_color_darkModeBlack</item>
 		<item name="colorSkeletonWave">@color/vivoNew_color_grey5</item>
@@ -113,6 +114,22 @@
 		<item name="colorTextAppBar">@color/vivoNew_color_grey5</item>
 		<item name="colorTextAppBarSelected">@color/vivoNew_color_grey2</item>
 		<item name="colorCustomTabsBackground">@color/vivoNew_color_darkModeBlack</item>
+		<item name="colorTagTextPromo">@color/vivoNew_color_vivoPurpleLight50</item>
+		<item name="colorTagTextActive">@color/vivoNew_color_vivoPurpleLight80</item>
+		<item name="colorTagTextInactive">@color/vivoNew_color_grey5</item>
+		<item name="colorTagTextSuccess">@color/vivoNew_color_vivoGreenLight30</item>
+		<item name="colorTagTextWarning">@color/vivoNew_color_orangeLight40</item>
+		<item name="colorTagTextError">@color/vivoNew_color_pepperLight40</item>
+		<item name="colorTagBackgroundPromo">@color/vivoNew_color_darkModeGrey6</item>
+		<item name="colorTagBackgroundActive">@color/vivoNew_color_darkModeGrey6</item>
+		<item name="colorTagBackgroundInactive">@color/vivoNew_color_darkModeGrey6</item>
+		<item name="colorTagBackgroundSuccess">@color/vivoNew_color_darkModeGrey6</item>
+		<item name="colorTagBackgroundWarning">@color/vivoNew_color_darkModeGrey6</item>
+		<item name="colorTagBackgroundError">@color/vivoNew_color_darkModeGrey6</item>
+		<!-- Gradients -->
+		<item name="gradientColorsCardContentOverlay">@array/vivoNew_gradient_colors_dark_cardContentOverlay</item>
+		<item name="gradientStopsCardContentOverlay">@array/vivoNew_gradient_stops_dark_cardContentOverlay</item>
+		<item name="gradientAngleCardContentOverlay">@integer/vivoNew_gradient_angle_dark_cardContentOverlay</item>
 	</style>
 	<style name="VivoNewOverride" parent="VivoNewOverride_Customizations">
 		<item name="colorBackground">@color/vivoNew_color_darkModeBlack</item>
@@ -130,7 +147,8 @@
 		<item name="colorBackgroundOverlay">@color/vivoNew_color_darkModeGrey_80_alpha</item>
 		<item name="colorBackgroundSkeleton">@color/vivoNew_color_darkModeGrey6</item>
 		<item name="colorBackgroundSkeletonInverse">@color/vivoNew_color_darkModeGrey6</item>
-		<item name="colorBackgroundFeedbackBottom">@color/vivoNew_color_darkModeBlack</item>
+		<item name="colorBackgroundBrandTop">@color/vivoNew_color_darkModeBlack</item>
+		<item name="colorBackgroundBrandBottom">@color/vivoNew_color_darkModeBlack</item>
 		<item name="colorAppBarBackground">@color/vivoNew_color_darkModeGrey</item>
 		<item name="colorNavigationBarBackground">@color/vivoNew_color_darkModeBlack</item>
 		<item name="colorSkeletonWave">@color/vivoNew_color_grey5</item>
@@ -226,5 +244,21 @@
 		<item name="colorTextAppBar">@color/vivoNew_color_grey5</item>
 		<item name="colorTextAppBarSelected">@color/vivoNew_color_grey2</item>
 		<item name="colorCustomTabsBackground">@color/vivoNew_color_darkModeBlack</item>
+		<item name="colorTagTextPromo">@color/vivoNew_color_vivoPurpleLight50</item>
+		<item name="colorTagTextActive">@color/vivoNew_color_vivoPurpleLight80</item>
+		<item name="colorTagTextInactive">@color/vivoNew_color_grey5</item>
+		<item name="colorTagTextSuccess">@color/vivoNew_color_vivoGreenLight30</item>
+		<item name="colorTagTextWarning">@color/vivoNew_color_orangeLight40</item>
+		<item name="colorTagTextError">@color/vivoNew_color_pepperLight40</item>
+		<item name="colorTagBackgroundPromo">@color/vivoNew_color_darkModeGrey6</item>
+		<item name="colorTagBackgroundActive">@color/vivoNew_color_darkModeGrey6</item>
+		<item name="colorTagBackgroundInactive">@color/vivoNew_color_darkModeGrey6</item>
+		<item name="colorTagBackgroundSuccess">@color/vivoNew_color_darkModeGrey6</item>
+		<item name="colorTagBackgroundWarning">@color/vivoNew_color_darkModeGrey6</item>
+		<item name="colorTagBackgroundError">@color/vivoNew_color_darkModeGrey6</item>
+		<!-- Gradients -->
+		<item name="gradientColorsCardContentOverlay">@array/vivoNew_gradient_colors_dark_cardContentOverlay</item>
+		<item name="gradientStopsCardContentOverlay">@array/vivoNew_gradient_stops_dark_cardContentOverlay</item>
+		<item name="gradientAngleCardContentOverlay">@integer/vivoNew_gradient_angle_dark_cardContentOverlay</item>
 	</style>
 </resources>

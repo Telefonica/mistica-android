@@ -2,6 +2,8 @@
 package com.telefonica.mistica.compose.theme.brand
 
 import androidx.compose.ui.graphics.Color
+import com.telefonica.mistica.compose.theme.color.AngledLinearGradient
+import com.telefonica.mistica.compose.theme.color.MisticaBrushes
 import com.telefonica.mistica.compose.theme.color.MisticaColors
 
 public object TelefonicaBrandColors {
@@ -26,7 +28,8 @@ public object TelefonicaBrandColors {
       backgroundSkeletonInverse = TelefonicaPaletteColor.telefonica_color_telefonicaBlue70,
       navigationBarBackground = TelefonicaPaletteColor.telefonica_color_telefonicaBlue,
       backgroundAlternative = TelefonicaPaletteColor.telefonica_color_grey1,
-      backgroundFeedbackBottom = TelefonicaPaletteColor.telefonica_color_telefonicaBlue,
+      backgroundBrandTop = TelefonicaPaletteColor.telefonica_color_telefonicaBlue,
+      backgroundBrandBottom = TelefonicaPaletteColor.telefonica_color_telefonicaBlue,
       skeletonWave = TelefonicaPaletteColor.telefonica_color_grey2,
       borderLow = TelefonicaPaletteColor.telefonica_color_grey1,
       border = TelefonicaPaletteColor.telefonica_color_grey2,
@@ -123,6 +126,18 @@ public object TelefonicaBrandColors {
       textAppBar = TelefonicaPaletteColor.telefonica_color_grey4,
       textAppBarSelected = TelefonicaPaletteColor.telefonica_color_telefonicaBlue,
       customTabsBackground = TelefonicaPaletteColor.telefonica_color_telefonicaBlue,
+      tagTextPromo = TelefonicaPaletteColor.telefonica_color_orchid70,
+      tagTextActive = TelefonicaPaletteColor.telefonica_color_telefonicaBlue,
+      tagTextInactive = TelefonicaPaletteColor.telefonica_color_grey5,
+      tagTextSuccess = TelefonicaPaletteColor.telefonica_color_turquoise70,
+      tagTextWarning = TelefonicaPaletteColor.telefonica_color_ambar70,
+      tagTextError = TelefonicaPaletteColor.telefonica_color_coral70,
+      tagBackgroundPromo = TelefonicaPaletteColor.telefonica_color_orchid10,
+      tagBackgroundActive = TelefonicaPaletteColor.telefonica_color_telefonicaBlue10,
+      tagBackgroundInactive = TelefonicaPaletteColor.telefonica_color_grey1,
+      tagBackgroundSuccess = TelefonicaPaletteColor.telefonica_color_turquoise10,
+      tagBackgroundWarning = TelefonicaPaletteColor.telefonica_color_ambar10,
+      tagBackgroundError = TelefonicaPaletteColor.telefonica_color_coral10,
       )
 
   public val darkColors: MisticaColors = MisticaColors(background =
@@ -141,7 +156,8 @@ public object TelefonicaBrandColors {
       backgroundOverlay = TelefonicaPaletteColor.telefonica_color_darkModeGrey_80_alpha,
       backgroundSkeleton = TelefonicaPaletteColor.telefonica_color_grey6,
       backgroundSkeletonInverse = TelefonicaPaletteColor.telefonica_color_grey6,
-      backgroundFeedbackBottom = TelefonicaPaletteColor.telefonica_color_darkModeBlack,
+      backgroundBrandTop = TelefonicaPaletteColor.telefonica_color_darkModeBlack,
+      backgroundBrandBottom = TelefonicaPaletteColor.telefonica_color_darkModeBlack,
       appBarBackground = TelefonicaPaletteColor.telefonica_color_darkModeGrey,
       navigationBarBackground = TelefonicaPaletteColor.telefonica_color_darkModeBlack,
       skeletonWave = TelefonicaPaletteColor.telefonica_color_grey5,
@@ -241,6 +257,40 @@ public object TelefonicaBrandColors {
       textAppBar = TelefonicaPaletteColor.telefonica_color_grey5,
       textAppBarSelected = TelefonicaPaletteColor.telefonica_color_grey2,
       customTabsBackground = TelefonicaPaletteColor.telefonica_color_darkModeBlack,
+      tagTextPromo = TelefonicaPaletteColor.telefonica_color_orchid40,
+      tagTextActive = TelefonicaPaletteColor.telefonica_color_telefonicaBlue,
+      tagTextInactive = TelefonicaPaletteColor.telefonica_color_grey5,
+      tagTextSuccess = TelefonicaPaletteColor.telefonica_color_turquoise40,
+      tagTextWarning = TelefonicaPaletteColor.telefonica_color_ambar40,
+      tagTextError = TelefonicaPaletteColor.telefonica_color_coral40,
+      tagBackgroundPromo = TelefonicaPaletteColor.telefonica_color_darkModeGrey6,
+      tagBackgroundActive = TelefonicaPaletteColor.telefonica_color_darkModeGrey6,
+      tagBackgroundInactive = TelefonicaPaletteColor.telefonica_color_darkModeGrey6,
+      tagBackgroundSuccess = TelefonicaPaletteColor.telefonica_color_darkModeGrey6,
+      tagBackgroundWarning = TelefonicaPaletteColor.telefonica_color_darkModeGrey6,
+      tagBackgroundError = TelefonicaPaletteColor.telefonica_color_darkModeGrey6,
+      )
+}
+
+public object TelefonicaBrandBrushes {
+  public val lightBrushes: MisticaBrushes = MisticaBrushes(
+      cardContentOverlay = AngledLinearGradient(
+        angleInDegrees = 180F,
+        colorStops = listOf(
+          0.0F to TelefonicaPaletteColor.telefonica_color_black,
+          0.3F to TelefonicaPaletteColor.telefonica_color_black_40_alpha,
+          1.0F to TelefonicaPaletteColor.telefonica_color_black_70_alpha
+        ))
+      )
+
+  public val darkBrushes: MisticaBrushes = MisticaBrushes(
+      cardContentOverlay = AngledLinearGradient(
+        angleInDegrees = 180F,
+        colorStops = listOf(
+          0.0F to TelefonicaPaletteColor.telefonica_color_black,
+          0.3F to TelefonicaPaletteColor.telefonica_color_black_40_alpha,
+          1.0F to TelefonicaPaletteColor.telefonica_color_black_70_alpha
+        ))
       )
 }
 
@@ -309,6 +359,8 @@ private object TelefonicaPaletteColor {
 
   public val telefonica_color_white: Color = Color(0xFFFFFFFF)
 
+  public val telefonica_color_black: Color = Color(0xFF000000)
+
   public val telefonica_color_darkModeBlack: Color = Color(0xFF191919)
 
   public val telefonica_color_darkModeGrey: Color = Color(0xFF242424)
@@ -334,6 +386,10 @@ private object TelefonicaPaletteColor {
   public val telefonica_color_white_10_alpha: Color = Color(0x1AFFFFFF)
 
   public val telefonica_color_white_20_alpha: Color = Color(0x33FFFFFF)
+
+  public val telefonica_color_black_40_alpha: Color = Color(0x66000000)
+
+  public val telefonica_color_black_70_alpha: Color = Color(0xB3000000)
 
   public val telefonica_color_white_3_alpha: Color = Color(0x08FFFFFF)
 

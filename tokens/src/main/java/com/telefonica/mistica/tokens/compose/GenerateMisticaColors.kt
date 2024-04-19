@@ -116,19 +116,9 @@ class GenerateMisticaColors {
     }
 
     private fun getColors(tokens: TokensDTO, gradientTokensNames: List<String>) =
-        tokens.light.removeGradientTokens(gradientTokensNames).keys.toList() + LEGACY_GRADIENT_COLORS
+        tokens.light.removeGradientTokens(gradientTokensNames).keys.toList()
 
     private companion object {
         const val LIBRARY_CODE_PATH = "../library/src/main/java/"
-        val LEGACY_GRADIENT_COLORS = listOf(
-            "gradientBackgroundFirst",
-            "gradientBackgroundSecond",
-            "gradientBackgroundThird",
-            "gradientBackgroundFourth",
-            "loginLoadingGradientFirst",
-            "loginLoadingGradientSecond",
-            "loginLoadingGradientThird",
-            "loginLoadingGradientFourth",
-        )
     }
 }

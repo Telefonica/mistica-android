@@ -34,6 +34,7 @@
 	<color name="movistar_color_grey5">#86888C</color>
 	<color name="movistar_color_grey6">#313235</color>
 	<color name="movistar_color_white">#FFFFFF</color>
+	<color name="movistar_color_black">#000000</color>
 	<color name="movistar_color_movistarBlueDark">#0B2739</color>
 	<color name="movistar_color_darkModeBlack">#061824</color>
 	<color name="movistar_color_darkModeGrey">#081F2E</color>
@@ -50,6 +51,8 @@
 	<color name="movistar_color_darkModeBlack_25_alpha">#40061824</color>
 	<color name="movistar_color_darkModeBlack_35_alpha">#59061824</color>
 	<color name="movistar_color_white_20_alpha">#33FFFFFF</color>
+	<color name="movistar_color_black_40_alpha">#66000000</color>
+	<color name="movistar_color_black_70_alpha">#B3000000</color>
 	<color name="movistar_color_white_3_alpha">#08FFFFFF</color>
 	<color name="movistar_color_white_5_alpha">#0DFFFFFF</color>
 	<color name="movistar_color_darkModeGrey_80_alpha">#CC081F2E</color>

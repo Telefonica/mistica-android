@@ -17,7 +17,8 @@
 		<attr name="colorBackgroundOverlay" format="color|reference"/>
 		<attr name="colorBackgroundSkeleton" format="color|reference"/>
 		<attr name="colorBackgroundSkeletonInverse" format="color|reference"/>
-		<attr name="colorBackgroundFeedbackBottom" format="color|reference"/>
+		<attr name="colorBackgroundBrandTop" format="color|reference"/>
+		<attr name="colorBackgroundBrandBottom" format="color|reference"/>
 		<attr name="colorAppBarBackground" format="color|reference"/>
 		<attr name="colorNavigationBarBackground" format="color|reference"/>
 		<attr name="colorSkeletonWave" format="color|reference"/>
@@ -114,6 +115,18 @@
 		<attr name="colorTextAppBar" format="color|reference"/>
 		<attr name="colorTextAppBarSelected" format="color|reference"/>
 		<attr name="colorCustomTabsBackground" format="color|reference"/>
+		<attr name="colorTagTextPromo" format="color|reference"/>
+		<attr name="colorTagTextActive" format="color|reference"/>
+		<attr name="colorTagTextInactive" format="color|reference"/>
+		<attr name="colorTagTextSuccess" format="color|reference"/>
+		<attr name="colorTagTextWarning" format="color|reference"/>
+		<attr name="colorTagTextError" format="color|reference"/>
+		<attr name="colorTagBackgroundPromo" format="color|reference"/>
+		<attr name="colorTagBackgroundActive" format="color|reference"/>
+		<attr name="colorTagBackgroundInactive" format="color|reference"/>
+		<attr name="colorTagBackgroundSuccess" format="color|reference"/>
+		<attr name="colorTagBackgroundWarning" format="color|reference"/>
+		<attr name="colorTagBackgroundError" format="color|reference"/>
 		<attr name="colorGradientBackgroundFirst" format="color|reference"/>
 		<attr name="colorGradientBackgroundSecond" format="color|reference"/>
 		<attr name="colorGradientBackgroundThird" format="color|reference"/>
@@ -122,6 +135,12 @@
 		<attr name="colorLoginLoadingGradientSecond" format="color|reference"/>
 		<attr name="colorLoginLoadingGradientThird" format="color|reference"/>
 		<attr name="colorLoginLoadingGradientFourth" format="color|reference"/>
+	</declare-styleable>
+	<declare-styleable name="Gradients">
+		<!-- cardContentOverlay -->
+		<attr name="gradientColorsCardContentOverlay" format="reference"/>
+		<attr name="gradientStopsCardContentOverlay" format="reference"/>
+		<attr name="gradientAngleCardContentOverlay" format="integer|reference"/>
 	</declare-styleable>
 	<declare-styleable name="BorderRadius">
 		<attr name="avatarBorderRadius" format="dimension|fraction"/>
