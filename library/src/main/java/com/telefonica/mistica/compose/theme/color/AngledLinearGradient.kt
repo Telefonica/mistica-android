@@ -37,7 +37,7 @@ import kotlin.math.sqrt
 class AngledLinearGradient(
     private val colorStops: List<Pair<Float, Color>>,
     private val angleInDegrees: Float = 0f,
-    private val useAsCssAngle: Boolean = false,
+    private val useAsCssAngle: Boolean = true,
     private val tileMode: TileMode = TileMode.Clamp,
 ) : ShaderBrush() {
 

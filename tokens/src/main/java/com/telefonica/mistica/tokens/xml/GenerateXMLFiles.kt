@@ -280,7 +280,7 @@ class GenerateXMLFiles(
 
             val isDarkInfix = if (isDark) "dark" else "light"
             comment("${brushEntry.key} gradient")
-            "array" {
+            "integer-array" {
                 attribute("name", "${brand.name}_gradient_colors_${isDarkInfix}_${brushEntry.key}")
                 colorValues.forEach { value ->
                     "item" {
@@ -288,7 +288,7 @@ class GenerateXMLFiles(
                     }
                 }
             }
-            "array" {
+            "string-array" {
                 attribute("name", "${brand.name}_gradient_stops_${isDarkInfix}_${brushEntry.key}")
                 colorStops.forEach { stop ->
                     "item" {
