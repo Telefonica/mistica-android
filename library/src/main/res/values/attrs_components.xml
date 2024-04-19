@@ -314,6 +314,7 @@
             <enum name="blau" value="4" />
             <enum name="vivoNew" value="5" />
             <enum name="tu" value="6" />
+            <enum name="o2New" value="7" />
         </attr>
     </declare-styleable>
 
