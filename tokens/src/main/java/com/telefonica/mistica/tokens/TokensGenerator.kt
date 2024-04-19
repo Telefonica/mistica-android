@@ -38,7 +38,7 @@ class TokensGenerator(
             Brand("vivo", "vivo"),
             Brand("vivoNew", "vivo-new", createDuplicateWithoutInheritMistica = true),
             Brand("tu", "tu"),
-            Brand("o2New", "o2-new"),
+            //Brand("o2New", "o2-new"),
         )
 
         val ALPHA_REGEX = "0\\.\\d{1,2}".toRegex()

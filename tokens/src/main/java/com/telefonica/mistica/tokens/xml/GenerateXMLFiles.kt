@@ -37,6 +37,7 @@ class GenerateXMLFiles(
     private val getColorNameWithAlpha: GetColorNameWithAlpha = GetColorNameWithAlpha(),
     private val generateAttributesFile: GenerateAttributesFile = GenerateAttributesFile(),
     private val getBorderRadiusName: GetBorderRadiusName = GetBorderRadiusName(),
+    private val generateMisticaGradients: GenerateMisticaGradients = GenerateMisticaGradients(),
 ) {
 
     operator fun invoke(jsonAdapter: JsonAdapter<TokensDTO>) {
@@ -51,6 +52,7 @@ class GenerateXMLFiles(
             .getGradientTokensNames()
 
         generateAttributesFile(jsonAdapter, gradientTokensNames)
+        generateMisticaGradients(gradientTokensNames)
 
         brandTokens.forEach { (tokens, brand) ->
             generateColorsFiles(tokens, brand)
