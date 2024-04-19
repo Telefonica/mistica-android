@@ -77,12 +77,6 @@ class GenerateAttributesFile(
                 getColorElement("color${key.capitalizeString()}")
             }
         }
-
-        GRADIENT_ATTRS.forEach { color ->
-            ATTR {
-                getColorElement(color)
-            }
-        }
     }
 
     private fun Node.getGradientAttributes(tokens: TokensDTO, gradientTokensNames: List<String>) {
@@ -176,16 +170,6 @@ class GenerateAttributesFile(
     }
 
     private companion object {
-        val GRADIENT_ATTRS = listOf(
-            "colorGradientBackgroundFirst",
-            "colorGradientBackgroundSecond",
-            "colorGradientBackgroundThird",
-            "colorGradientBackgroundFourth",
-            "colorLoginLoadingGradientFirst",
-            "colorLoginLoadingGradientSecond",
-            "colorLoginLoadingGradientThird",
-            "colorLoginLoadingGradientFourth",
-        )
         const val DECLARE_STYLEABLE = "declare-styleable"
         const val FLAG = "flag"
         const val ATTR = "attr"
