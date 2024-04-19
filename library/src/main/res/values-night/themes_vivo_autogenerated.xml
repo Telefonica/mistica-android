@@ -4,12 +4,10 @@
 	<style name="MisticaTheme.Vivo" parent="MisticaTheme.Vivo_Customizations">
 		<item name="colorBackground">@color/vivo_color_darkModeBlack</item>
 		<item name="colorBackgroundAlternative">@color/vivo_color_darkModeBlack</item>
-		<item name="colorBackgroundBrand">@color/vivo_color_darkModeBlack</item>
 		<item name="colorBackgroundBrandSecondary">@color/vivo_color_darkModeBlack</item>
 		<item name="colorBackgroundContainer">@color/vivo_color_darkModeGrey</item>
 		<item name="colorBackgroundContainerHover">@color/vivo_color_white_3_alpha</item>
 		<item name="colorBackgroundContainerPressed">@color/vivo_color_white_5_alpha</item>
-		<item name="colorBackgroundContainerBrand">@color/vivo_color_darkModeGrey</item>
 		<item name="colorBackgroundContainerBrandHover">@color/vivo_color_white_3_alpha</item>
 		<item name="colorBackgroundContainerBrandPressed">@color/vivo_color_white_5_alpha</item>
 		<item name="colorBackgroundContainerBrandOverInverse">@color/vivo_color_darkModeGrey</item>
@@ -130,5 +128,11 @@
 		<item name="gradientColorsCardContentOverlay">@array/vivo_gradient_colors_dark_cardContentOverlay</item>
 		<item name="gradientStopsCardContentOverlay">@array/vivo_gradient_stops_dark_cardContentOverlay</item>
 		<item name="gradientAngleCardContentOverlay">@integer/vivo_gradient_angle_dark_cardContentOverlay</item>
+		<item name="gradientColorsBackgroundBrand">@array/vivo_gradient_colors_dark_backgroundBrand</item>
+		<item name="gradientStopsBackgroundBrand">@array/vivo_gradient_stops_dark_backgroundBrand</item>
+		<item name="gradientAngleBackgroundBrand">@integer/vivo_gradient_angle_dark_backgroundBrand</item>
+		<item name="gradientColorsBackgroundContainerBrand">@array/vivo_gradient_colors_dark_backgroundContainerBrand</item>
+		<item name="gradientStopsBackgroundContainerBrand">@array/vivo_gradient_stops_dark_backgroundContainerBrand</item>
+		<item name="gradientAngleBackgroundContainerBrand">@integer/vivo_gradient_angle_dark_backgroundContainerBrand</item>
 	</style>
 </resources>

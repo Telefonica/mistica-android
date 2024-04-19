@@ -2,20 +2,19 @@
 package com.telefonica.mistica.compose.theme.brand
 
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.SolidColor
 import com.telefonica.mistica.compose.theme.color.AngledLinearGradient
 import com.telefonica.mistica.compose.theme.color.MisticaBrushes
 import com.telefonica.mistica.compose.theme.color.MisticaColors
 
 public object BlauBrandColors {
-  public val lightColors: MisticaColors = MisticaColors(backgroundBrand =
+  public val lightColors: MisticaColors = MisticaColors(backgroundBrandSecondary =
       BlauPaletteColor.blau_color_blauBluePrimary,
-      backgroundBrandSecondary = BlauPaletteColor.blau_color_blauBluePrimary,
       appBarBackground = BlauPaletteColor.blau_color_white,
       background = BlauPaletteColor.blau_color_white,
       backgroundContainer = BlauPaletteColor.blau_color_white,
       backgroundContainerHover = BlauPaletteColor.blau_color_blauBluePrimary_3_alpha,
       backgroundContainerPressed = BlauPaletteColor.blau_color_blauBluePrimary_5_alpha,
-      backgroundContainerBrand = BlauPaletteColor.blau_color_blauBluePrimary,
       backgroundContainerBrandHover = BlauPaletteColor.blau_color_darkModeBlack_20_alpha,
       backgroundContainerBrandPressed = BlauPaletteColor.blau_color_darkModeBlack_40_alpha,
       backgroundContainerBrandOverInverse = BlauPaletteColor.blau_color_blauBlueSecondary,
@@ -137,12 +136,10 @@ public object BlauBrandColors {
   public val darkColors: MisticaColors = MisticaColors(background =
       BlauPaletteColor.blau_color_darkModeBlack,
       backgroundAlternative = BlauPaletteColor.blau_color_darkModeBlack,
-      backgroundBrand = BlauPaletteColor.blau_color_darkModeBlack,
       backgroundBrandSecondary = BlauPaletteColor.blau_color_darkModeBlack,
       backgroundContainer = BlauPaletteColor.blau_color_darkModeGrey,
       backgroundContainerHover = BlauPaletteColor.blau_color_white_3_alpha,
       backgroundContainerPressed = BlauPaletteColor.blau_color_white_5_alpha,
-      backgroundContainerBrand = BlauPaletteColor.blau_color_darkModeGrey,
       backgroundContainerBrandHover = BlauPaletteColor.blau_color_white_3_alpha,
       backgroundContainerBrandPressed = BlauPaletteColor.blau_color_white_5_alpha,
       backgroundContainerBrandOverInverse = BlauPaletteColor.blau_color_darkModeGrey,
@@ -165,7 +162,7 @@ public object BlauBrandColors {
       buttonDangerBackgroundSelected = BlauPaletteColor.blau_color_blauRed70,
       buttonDangerBackgroundHover = BlauPaletteColor.blau_color_blauRed70,
       buttonLinkDangerBackgroundSelected = BlauPaletteColor.blau_color_blauPurple_30_alpha,
-      buttonLinkDangerBackgroundInverse = BlauPaletteColor.blau_color_blauPurple_1_alpha,
+      buttonLinkDangerBackgroundInverse = BlauPaletteColor.blau_color_white_1_alpha,
       buttonLinkDangerBackgroundInverseSelected = BlauPaletteColor.blau_color_blauPurple_30_alpha,
       buttonLinkBackgroundSelected = BlauPaletteColor.blau_color_blauPurple_30_alpha,
       buttonLinkBackgroundInverseSelected = BlauPaletteColor.blau_color_blauPurple_30_alpha,
@@ -264,6 +261,8 @@ public object BlauBrandColors {
 
 public object BlauBrandBrushes {
   public val lightBrushes: MisticaBrushes = MisticaBrushes(
+      backgroundBrand = SolidColor(BlauPaletteColor.blau_color_blauBluePrimary),
+      backgroundContainerBrand = SolidColor(BlauPaletteColor.blau_color_blauBluePrimary),
       cardContentOverlay = AngledLinearGradient(
         angleInDegrees = 180F,
         colorStops = listOf(
@@ -274,6 +273,8 @@ public object BlauBrandBrushes {
       )
 
   public val darkBrushes: MisticaBrushes = MisticaBrushes(
+      backgroundBrand = SolidColor(BlauPaletteColor.blau_color_darkModeBlack),
+      backgroundContainerBrand = SolidColor(BlauPaletteColor.blau_color_darkModeGrey),
       cardContentOverlay = AngledLinearGradient(
         angleInDegrees = 180F,
         colorStops = listOf(
@@ -389,5 +390,5 @@ private object BlauPaletteColor {
 
   public val blau_color_blauPurple_30_alpha: Color = Color(0x4D7814B3)
 
-  public val blau_color_blauPurple_1_alpha: Color = Color(0x037814B3)
+  public val blau_color_white_1_alpha: Color = Color(0x03FFFFFF)
 }

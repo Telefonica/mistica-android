@@ -43,13 +43,13 @@ class GenerateBrandBrushes(
         val assignments = brushes.map { (key, brush) ->
             when (brush) {
                 is BrushDTO.SolidColorDTO -> {
-                    val colorValue = getColorValue(brush.value, brush.description, brandName, paletteClassName)
+                    val colorValue = getColorValue(brush.value, brandName, paletteClassName)
                     CodeBlock.of("$key = %T($colorValue)", solidColorClass)
                 }
                 is BrushDTO.GradientDTO -> {
                     val angle = brush.value.angle
                     val colorStops = brush.value.colors.map { color ->
-                        "${color.stop}F to ${getColorValue(color.value, brush.description, brandName, paletteClassName)}"
+                        "${color.stop}F to ${getColorValue(color.value, brandName, paletteClassName)}"
                     }.joinToString(",\n")
                     CodeBlock.of("$key = %T(\n⇥angleInDegrees = %LF,\ncolorStops = listOf(\n⇥%L⇤\n)⇤)", angledLinearGradientClass, angle, colorStops)
                 }
@@ -60,15 +60,15 @@ class GenerateBrandBrushes(
 
     private fun getColorValue(
         color: String,
-        description: String,
         brandName: String,
         paletteClassName: String
     ): String {
-        var colorValue = "${brandName}_color_${description}"
+        val colorName = TokensGenerator.COLOR_NAME_REGEX.find(color)?.groups?.get(1)?.value
+        var colorValue = "${brandName}_color_${colorName}"
         if (color.contains("rgba(")) {
             val alpha = TokensGenerator.ALPHA_REGEX.find(color)?.value?.toDouble()
-            if (alpha != null) {
-                colorValue = getColorNameWithAlpha(brandName, description, alpha)
+            if (alpha != null && colorName != null) {
+                colorValue = getColorNameWithAlpha(brandName, colorName, alpha)
             }
         }
         return "$paletteClassName.$colorValue"

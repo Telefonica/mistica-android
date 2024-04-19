@@ -12,12 +12,10 @@ import androidx.compose.ui.graphics.Color
 public class MisticaColors(
   background: Color = Color.Unspecified,
   backgroundAlternative: Color = Color.Unspecified,
-  backgroundBrand: Color = Color.Unspecified,
   backgroundBrandSecondary: Color = Color.Unspecified,
   backgroundContainer: Color = Color.Unspecified,
   backgroundContainerHover: Color = Color.Unspecified,
   backgroundContainerPressed: Color = Color.Unspecified,
-  backgroundContainerBrand: Color = Color.Unspecified,
   backgroundContainerBrandHover: Color = Color.Unspecified,
   backgroundContainerBrandPressed: Color = Color.Unspecified,
   backgroundContainerBrandOverInverse: Color = Color.Unspecified,
@@ -142,9 +140,6 @@ public class MisticaColors(
       structuralEqualityPolicy())
     internal set
 
-  public var backgroundBrand: Color by mutableStateOf(backgroundBrand, structuralEqualityPolicy())
-    internal set
-
   public var backgroundBrandSecondary: Color by mutableStateOf(backgroundBrandSecondary,
       structuralEqualityPolicy())
     internal set
@@ -158,10 +153,6 @@ public class MisticaColors(
     internal set
 
   public var backgroundContainerPressed: Color by mutableStateOf(backgroundContainerPressed,
-      structuralEqualityPolicy())
-    internal set
-
-  public var backgroundContainerBrand: Color by mutableStateOf(backgroundContainerBrand,
       structuralEqualityPolicy())
     internal set
 
@@ -581,12 +572,10 @@ public class MisticaColors(
   public fun copy(
     background: Color = this.background,
     backgroundAlternative: Color = this.backgroundAlternative,
-    backgroundBrand: Color = this.backgroundBrand,
     backgroundBrandSecondary: Color = this.backgroundBrandSecondary,
     backgroundContainer: Color = this.backgroundContainer,
     backgroundContainerHover: Color = this.backgroundContainerHover,
     backgroundContainerPressed: Color = this.backgroundContainerPressed,
-    backgroundContainerBrand: Color = this.backgroundContainerBrand,
     backgroundContainerBrandHover: Color = this.backgroundContainerBrandHover,
     backgroundContainerBrandPressed: Color = this.backgroundContainerBrandPressed,
     backgroundContainerBrandOverInverse: Color = this.backgroundContainerBrandOverInverse,
@@ -705,12 +694,11 @@ public class MisticaColors(
     tagBackgroundWarning: Color = this.tagBackgroundWarning,
     tagBackgroundError: Color = this.tagBackgroundError,
   ): MisticaColors = MisticaColors(background = background, backgroundAlternative =
-      backgroundAlternative, backgroundBrand = backgroundBrand, backgroundBrandSecondary =
-      backgroundBrandSecondary, backgroundContainer = backgroundContainer, backgroundContainerHover
-      = backgroundContainerHover, backgroundContainerPressed = backgroundContainerPressed,
-      backgroundContainerBrand = backgroundContainerBrand, backgroundContainerBrandHover =
-      backgroundContainerBrandHover, backgroundContainerBrandPressed =
-      backgroundContainerBrandPressed, backgroundContainerBrandOverInverse =
+      backgroundAlternative, backgroundBrandSecondary = backgroundBrandSecondary,
+      backgroundContainer = backgroundContainer, backgroundContainerHover =
+      backgroundContainerHover, backgroundContainerPressed = backgroundContainerPressed,
+      backgroundContainerBrandHover = backgroundContainerBrandHover, backgroundContainerBrandPressed
+      = backgroundContainerBrandPressed, backgroundContainerBrandOverInverse =
       backgroundContainerBrandOverInverse, backgroundContainerAlternative =
       backgroundContainerAlternative, backgroundOverlay = backgroundOverlay, backgroundSkeleton =
       backgroundSkeleton, backgroundSkeletonInverse = backgroundSkeletonInverse, backgroundBrandTop
@@ -774,12 +762,10 @@ public class MisticaColors(
   public fun updateColorsFrom(other: MisticaColors) {
     background = other.background
     backgroundAlternative = other.backgroundAlternative
-    backgroundBrand = other.backgroundBrand
     backgroundBrandSecondary = other.backgroundBrandSecondary
     backgroundContainer = other.backgroundContainer
     backgroundContainerHover = other.backgroundContainerHover
     backgroundContainerPressed = other.backgroundContainerPressed
-    backgroundContainerBrand = other.backgroundContainerBrand
     backgroundContainerBrandHover = other.backgroundContainerBrandHover
     backgroundContainerBrandPressed = other.backgroundContainerBrandPressed
     backgroundContainerBrandOverInverse = other.backgroundContainerBrandOverInverse

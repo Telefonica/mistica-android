@@ -3,14 +3,12 @@
 	<!-- Code generated automatically, DO NOT EDIT manually. Use Import design tokens GitHub Action. -->
 	<style name="MisticaTheme.Blau" parent="MisticaTheme.Blau_Customizations"/>
 	<style name="MisticaTheme.Blau_Base">
-		<item name="colorBackgroundBrand">@color/blau_color_blauBluePrimary</item>
 		<item name="colorBackgroundBrandSecondary">@color/blau_color_blauBluePrimary</item>
 		<item name="colorAppBarBackground">@color/blau_color_white</item>
 		<item name="colorBackground">@color/blau_color_white</item>
 		<item name="colorBackgroundContainer">@color/blau_color_white</item>
 		<item name="colorBackgroundContainerHover">@color/blau_color_blauBluePrimary_3_alpha</item>
 		<item name="colorBackgroundContainerPressed">@color/blau_color_blauBluePrimary_5_alpha</item>
-		<item name="colorBackgroundContainerBrand">@color/blau_color_blauBluePrimary</item>
 		<item name="colorBackgroundContainerBrandHover">@color/blau_color_darkModeBlack_20_alpha</item>
 		<item name="colorBackgroundContainerBrandPressed">@color/blau_color_darkModeBlack_40_alpha</item>
 		<item name="colorBackgroundContainerBrandOverInverse">@color/blau_color_blauBlueSecondary</item>
@@ -131,6 +129,12 @@
 		<item name="gradientColorsCardContentOverlay">@array/blau_gradient_colors_light_cardContentOverlay</item>
 		<item name="gradientStopsCardContentOverlay">@array/blau_gradient_stops_light_cardContentOverlay</item>
 		<item name="gradientAngleCardContentOverlay">@integer/blau_gradient_angle_light_cardContentOverlay</item>
+		<item name="gradientColorsBackgroundBrand">@array/blau_gradient_colors_light_backgroundBrand</item>
+		<item name="gradientStopsBackgroundBrand">@array/blau_gradient_stops_light_backgroundBrand</item>
+		<item name="gradientAngleBackgroundBrand">@integer/blau_gradient_angle_light_backgroundBrand</item>
+		<item name="gradientColorsBackgroundContainerBrand">@array/blau_gradient_colors_light_backgroundContainerBrand</item>
+		<item name="gradientStopsBackgroundContainerBrand">@array/blau_gradient_stops_light_backgroundContainerBrand</item>
+		<item name="gradientAngleBackgroundContainerBrand">@integer/blau_gradient_angle_light_backgroundContainerBrand</item>
 		<!-- Border radius -->
 		<item name="avatarBorderRadius">50%</item>
 		<item name="barBorderRadius">999dp</item>

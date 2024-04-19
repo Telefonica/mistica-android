@@ -13,16 +13,31 @@ import androidx.compose.ui.graphics.SolidColor
 
 public class MisticaBrushes(
   cardContentOverlay: Brush = SolidColor(Color.Unspecified),
+  backgroundBrand: Brush = SolidColor(Color.Unspecified),
+  backgroundContainerBrand: Brush = SolidColor(Color.Unspecified),
 ) {
   public var cardContentOverlay: Brush by mutableStateOf(cardContentOverlay,
       structuralEqualityPolicy())
     internal set
 
-  public fun copy(cardContentOverlay: Brush = this.cardContentOverlay): MisticaBrushes =
-      MisticaBrushes(cardContentOverlay = cardContentOverlay)
+  public var backgroundBrand: Brush by mutableStateOf(backgroundBrand, structuralEqualityPolicy())
+    internal set
+
+  public var backgroundContainerBrand: Brush by mutableStateOf(backgroundContainerBrand,
+      structuralEqualityPolicy())
+    internal set
+
+  public fun copy(
+    cardContentOverlay: Brush = this.cardContentOverlay,
+    backgroundBrand: Brush = this.backgroundBrand,
+    backgroundContainerBrand: Brush = this.backgroundContainerBrand,
+  ): MisticaBrushes = MisticaBrushes(cardContentOverlay = cardContentOverlay, backgroundBrand =
+      backgroundBrand, backgroundContainerBrand = backgroundContainerBrand)
 
   public fun updateBrushesFrom(other: MisticaBrushes) {
     cardContentOverlay = other.cardContentOverlay
+    backgroundBrand = other.backgroundBrand
+    backgroundContainerBrand = other.backgroundContainerBrand
   }
 }
 

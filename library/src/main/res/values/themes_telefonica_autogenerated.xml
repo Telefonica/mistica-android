@@ -8,12 +8,10 @@
 		<item name="colorBackgroundContainer">@color/telefonica_color_white</item>
 		<item name="colorBackgroundContainerHover">@color/telefonica_color_telefonicaBlue_3_alpha</item>
 		<item name="colorBackgroundContainerPressed">@color/telefonica_color_telefonicaBlue_5_alpha</item>
-		<item name="colorBackgroundContainerBrand">@color/telefonica_color_telefonicaBlue</item>
 		<item name="colorBackgroundContainerBrandHover">@color/telefonica_color_darkModeBlack_20_alpha</item>
 		<item name="colorBackgroundContainerBrandPressed">@color/telefonica_color_darkModeBlack_40_alpha</item>
 		<item name="colorBackgroundContainerBrandOverInverse">@color/telefonica_color_telefonicaBlue70</item>
 		<item name="colorBackgroundContainerAlternative">@color/telefonica_color_grey1</item>
-		<item name="colorBackgroundBrand">@color/telefonica_color_telefonicaBlue</item>
 		<item name="colorBackgroundBrandSecondary">@color/telefonica_color_telefonicaBlue</item>
 		<item name="colorBackgroundOverlay">@color/telefonica_color_grey6_80_alpha</item>
 		<item name="colorBackgroundSkeleton">@color/telefonica_color_grey2</item>
@@ -131,6 +129,12 @@
 		<item name="gradientColorsCardContentOverlay">@array/telefonica_gradient_colors_light_cardContentOverlay</item>
 		<item name="gradientStopsCardContentOverlay">@array/telefonica_gradient_stops_light_cardContentOverlay</item>
 		<item name="gradientAngleCardContentOverlay">@integer/telefonica_gradient_angle_light_cardContentOverlay</item>
+		<item name="gradientColorsBackgroundBrand">@array/telefonica_gradient_colors_light_backgroundBrand</item>
+		<item name="gradientStopsBackgroundBrand">@array/telefonica_gradient_stops_light_backgroundBrand</item>
+		<item name="gradientAngleBackgroundBrand">@integer/telefonica_gradient_angle_light_backgroundBrand</item>
+		<item name="gradientColorsBackgroundContainerBrand">@array/telefonica_gradient_colors_light_backgroundContainerBrand</item>
+		<item name="gradientStopsBackgroundContainerBrand">@array/telefonica_gradient_stops_light_backgroundContainerBrand</item>
+		<item name="gradientAngleBackgroundContainerBrand">@integer/telefonica_gradient_angle_light_backgroundContainerBrand</item>
 		<!-- Border radius -->
 		<item name="avatarBorderRadius">50%</item>
 		<item name="barBorderRadius">0dp</item>

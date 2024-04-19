@@ -15,5 +15,9 @@ public enum class MisticaGradient(
 ) {
   CardContentOverlay(R.attr.gradientColorsCardContentOverlay,
       R.attr.gradientStopsCardContentOverlay, R.attr.gradientAngleCardContentOverlay),
+  BackgroundBrand(R.attr.gradientColorsBackgroundBrand, R.attr.gradientStopsBackgroundBrand,
+      R.attr.gradientAngleBackgroundBrand),
+  BackgroundContainerBrand(R.attr.gradientColorsBackgroundContainerBrand,
+      R.attr.gradientStopsBackgroundContainerBrand, R.attr.gradientAngleBackgroundContainerBrand),
   ;
 }

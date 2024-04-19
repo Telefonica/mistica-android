@@ -2,6 +2,7 @@
 package com.telefonica.mistica.compose.theme.brand
 
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.SolidColor
 import com.telefonica.mistica.compose.theme.color.AngledLinearGradient
 import com.telefonica.mistica.compose.theme.color.MisticaBrushes
 import com.telefonica.mistica.compose.theme.color.MisticaColors
@@ -10,12 +11,10 @@ public object VivoNewBrandColors {
   public val lightColors: MisticaColors = MisticaColors(background =
       VivoNewPaletteColor.vivoNew_color_white,
       backgroundAlternative = VivoNewPaletteColor.vivoNew_color_grey1,
-      backgroundBrand = VivoNewPaletteColor.vivoNew_color_vivoPurple,
       backgroundBrandSecondary = VivoNewPaletteColor.vivoNew_color_vivoPurpleLight80,
       backgroundContainer = VivoNewPaletteColor.vivoNew_color_white,
       backgroundContainerHover = VivoNewPaletteColor.vivoNew_color_darkModeBlack_3_alpha,
       backgroundContainerPressed = VivoNewPaletteColor.vivoNew_color_darkModeBlack_5_alpha,
-      backgroundContainerBrand = VivoNewPaletteColor.vivoNew_color_vivoPurple,
       backgroundContainerBrandHover = VivoNewPaletteColor.vivoNew_color_darkModeBlack_20_alpha,
       backgroundContainerBrandPressed = VivoNewPaletteColor.vivoNew_color_darkModeBlack_40_alpha,
       backgroundContainerBrandOverInverse = VivoNewPaletteColor.vivoNew_color_vivoPurpleDark,
@@ -137,12 +136,10 @@ public object VivoNewBrandColors {
   public val darkColors: MisticaColors = MisticaColors(background =
       VivoNewPaletteColor.vivoNew_color_darkModeBlack,
       backgroundAlternative = VivoNewPaletteColor.vivoNew_color_darkModeBlack,
-      backgroundBrand = VivoNewPaletteColor.vivoNew_color_darkModeBlack,
       backgroundBrandSecondary = VivoNewPaletteColor.vivoNew_color_darkModeBlack,
       backgroundContainer = VivoNewPaletteColor.vivoNew_color_darkModeGrey,
       backgroundContainerHover = VivoNewPaletteColor.vivoNew_color_white_3_alpha,
       backgroundContainerPressed = VivoNewPaletteColor.vivoNew_color_white_5_alpha,
-      backgroundContainerBrand = VivoNewPaletteColor.vivoNew_color_darkModeGrey,
       backgroundContainerBrandHover = VivoNewPaletteColor.vivoNew_color_white_3_alpha,
       backgroundContainerBrandPressed = VivoNewPaletteColor.vivoNew_color_white_5_alpha,
       backgroundContainerBrandOverInverse = VivoNewPaletteColor.vivoNew_color_darkModeGrey,
@@ -264,6 +261,8 @@ public object VivoNewBrandColors {
 
 public object VivoNewBrandBrushes {
   public val lightBrushes: MisticaBrushes = MisticaBrushes(
+      backgroundBrand = SolidColor(VivoNewPaletteColor.vivoNew_color_vivoPurple),
+      backgroundContainerBrand = SolidColor(VivoNewPaletteColor.vivoNew_color_vivoPurple),
       cardContentOverlay = AngledLinearGradient(
         angleInDegrees = 180F,
         colorStops = listOf(
@@ -274,6 +273,8 @@ public object VivoNewBrandBrushes {
       )
 
   public val darkBrushes: MisticaBrushes = MisticaBrushes(
+      backgroundBrand = SolidColor(VivoNewPaletteColor.vivoNew_color_darkModeBlack),
+      backgroundContainerBrand = SolidColor(VivoNewPaletteColor.vivoNew_color_darkModeGrey),
       cardContentOverlay = AngledLinearGradient(
         angleInDegrees = 180F,
         colorStops = listOf(

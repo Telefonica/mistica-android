@@ -5,12 +5,10 @@
 	<style name="MisticaTheme.Vivo_Base">
 		<item name="colorBackground">@color/vivo_color_white</item>
 		<item name="colorBackgroundAlternative">@color/vivo_color_grey1</item>
-		<item name="colorBackgroundBrand">@color/vivo_color_vivoPurple</item>
 		<item name="colorBackgroundBrandSecondary">@color/vivo_color_vivoPurple</item>
 		<item name="colorBackgroundContainer">@color/vivo_color_white</item>
 		<item name="colorBackgroundContainerHover">@color/vivo_color_darkModeBlack_3_alpha</item>
 		<item name="colorBackgroundContainerPressed">@color/vivo_color_darkModeBlack_5_alpha</item>
-		<item name="colorBackgroundContainerBrand">@color/vivo_color_vivoPurple</item>
 		<item name="colorBackgroundContainerBrandHover">@color/vivo_color_darkModeBlack_20_alpha</item>
 		<item name="colorBackgroundContainerBrandPressed">@color/vivo_color_darkModeBlack_40_alpha</item>
 		<item name="colorBackgroundContainerBrandOverInverse">@color/vivo_color_vivoPurpleDark</item>
@@ -131,6 +129,12 @@
 		<item name="gradientColorsCardContentOverlay">@array/vivo_gradient_colors_light_cardContentOverlay</item>
 		<item name="gradientStopsCardContentOverlay">@array/vivo_gradient_stops_light_cardContentOverlay</item>
 		<item name="gradientAngleCardContentOverlay">@integer/vivo_gradient_angle_light_cardContentOverlay</item>
+		<item name="gradientColorsBackgroundBrand">@array/vivo_gradient_colors_light_backgroundBrand</item>
+		<item name="gradientStopsBackgroundBrand">@array/vivo_gradient_stops_light_backgroundBrand</item>
+		<item name="gradientAngleBackgroundBrand">@integer/vivo_gradient_angle_light_backgroundBrand</item>
+		<item name="gradientColorsBackgroundContainerBrand">@array/vivo_gradient_colors_light_backgroundContainerBrand</item>
+		<item name="gradientStopsBackgroundContainerBrand">@array/vivo_gradient_stops_light_backgroundContainerBrand</item>
+		<item name="gradientAngleBackgroundContainerBrand">@integer/vivo_gradient_angle_light_backgroundContainerBrand</item>
 		<!-- Border radius -->
 		<item name="avatarBorderRadius">50%</item>
 		<item name="barBorderRadius">999dp</item>

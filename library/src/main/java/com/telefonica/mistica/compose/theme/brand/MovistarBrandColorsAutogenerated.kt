@@ -2,6 +2,7 @@
 package com.telefonica.mistica.compose.theme.brand
 
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.SolidColor
 import com.telefonica.mistica.compose.theme.color.AngledLinearGradient
 import com.telefonica.mistica.compose.theme.color.MisticaBrushes
 import com.telefonica.mistica.compose.theme.color.MisticaColors
@@ -10,12 +11,10 @@ public object MovistarBrandColors {
   public val lightColors: MisticaColors = MisticaColors(background =
       MovistarPaletteColor.movistar_color_white,
       backgroundAlternative = MovistarPaletteColor.movistar_color_grey1,
-      backgroundBrand = MovistarPaletteColor.movistar_color_movistarBlue,
       backgroundBrandSecondary = MovistarPaletteColor.movistar_color_movistarBlueDark,
       backgroundContainer = MovistarPaletteColor.movistar_color_white,
       backgroundContainerHover = MovistarPaletteColor.movistar_color_darkModeBlack_3_alpha,
       backgroundContainerPressed = MovistarPaletteColor.movistar_color_darkModeBlack_5_alpha,
-      backgroundContainerBrand = MovistarPaletteColor.movistar_color_movistarBlue,
       backgroundContainerBrandHover = MovistarPaletteColor.movistar_color_darkModeBlack_10_alpha,
       backgroundContainerBrandPressed = MovistarPaletteColor.movistar_color_darkModeBlack_20_alpha,
       backgroundContainerBrandOverInverse = MovistarPaletteColor.movistar_color_movistarBlue55,
@@ -137,12 +136,10 @@ public object MovistarBrandColors {
   public val darkColors: MisticaColors = MisticaColors(background =
       MovistarPaletteColor.movistar_color_darkModeBlack,
       backgroundAlternative = MovistarPaletteColor.movistar_color_darkModeBlack,
-      backgroundBrand = MovistarPaletteColor.movistar_color_darkModeBlack,
       backgroundBrandSecondary = MovistarPaletteColor.movistar_color_darkModeBlack,
       backgroundContainer = MovistarPaletteColor.movistar_color_darkModeGrey,
       backgroundContainerHover = MovistarPaletteColor.movistar_color_white_3_alpha,
       backgroundContainerPressed = MovistarPaletteColor.movistar_color_white_5_alpha,
-      backgroundContainerBrand = MovistarPaletteColor.movistar_color_darkModeGrey,
       backgroundContainerBrandHover = MovistarPaletteColor.movistar_color_white_3_alpha,
       backgroundContainerBrandPressed = MovistarPaletteColor.movistar_color_white_5_alpha,
       backgroundContainerBrandOverInverse = MovistarPaletteColor.movistar_color_darkModeGrey,
@@ -264,6 +261,8 @@ public object MovistarBrandColors {
 
 public object MovistarBrandBrushes {
   public val lightBrushes: MisticaBrushes = MisticaBrushes(
+      backgroundBrand = SolidColor(MovistarPaletteColor.movistar_color_movistarBlue),
+      backgroundContainerBrand = SolidColor(MovistarPaletteColor.movistar_color_movistarBlue),
       cardContentOverlay = AngledLinearGradient(
         angleInDegrees = 180F,
         colorStops = listOf(
@@ -274,6 +273,8 @@ public object MovistarBrandBrushes {
       )
 
   public val darkBrushes: MisticaBrushes = MisticaBrushes(
+      backgroundBrand = SolidColor(MovistarPaletteColor.movistar_color_darkModeBlack),
+      backgroundContainerBrand = SolidColor(MovistarPaletteColor.movistar_color_darkModeGrey),
       cardContentOverlay = AngledLinearGradient(
         angleInDegrees = 180F,
         colorStops = listOf(

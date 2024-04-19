@@ -2,6 +2,7 @@
 package com.telefonica.mistica.compose.theme.brand
 
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.SolidColor
 import com.telefonica.mistica.compose.theme.color.AngledLinearGradient
 import com.telefonica.mistica.compose.theme.color.MisticaBrushes
 import com.telefonica.mistica.compose.theme.color.MisticaColors
@@ -13,12 +14,10 @@ public object TuBrandColors {
       backgroundContainer = TuPaletteColor.tu_color_white,
       backgroundContainerHover = TuPaletteColor.tu_color_grey9_3_alpha,
       backgroundContainerPressed = TuPaletteColor.tu_color_grey9_5_alpha,
-      backgroundContainerBrand = TuPaletteColor.tu_color_primary,
       backgroundContainerBrandHover = TuPaletteColor.tu_color_grey9_20_alpha,
       backgroundContainerBrandPressed = TuPaletteColor.tu_color_grey9_40_alpha,
       backgroundContainerBrandOverInverse = TuPaletteColor.tu_color_primary80,
       backgroundContainerAlternative = TuPaletteColor.tu_color_grey1,
-      backgroundBrand = TuPaletteColor.tu_color_primary,
       backgroundBrandSecondary = TuPaletteColor.tu_color_blue,
       backgroundOverlay = TuPaletteColor.tu_color_primary_80_alpha,
       backgroundSkeleton = TuPaletteColor.tu_color_grey2,
@@ -137,12 +136,10 @@ public object TuBrandColors {
   public val darkColors: MisticaColors = MisticaColors(background =
       TuPaletteColor.tu_color_darkModeBlack,
       backgroundAlternative = TuPaletteColor.tu_color_darkModeBlack,
-      backgroundBrand = TuPaletteColor.tu_color_darkModeBlack,
       backgroundBrandSecondary = TuPaletteColor.tu_color_darkModeBlack,
       backgroundContainer = TuPaletteColor.tu_color_darkModeGrey,
       backgroundContainerHover = TuPaletteColor.tu_color_white_3_alpha,
       backgroundContainerPressed = TuPaletteColor.tu_color_white_5_alpha,
-      backgroundContainerBrand = TuPaletteColor.tu_color_darkModeGrey,
       backgroundContainerBrandHover = TuPaletteColor.tu_color_white_3_alpha,
       backgroundContainerBrandPressed = TuPaletteColor.tu_color_white_5_alpha,
       backgroundContainerBrandOverInverse = TuPaletteColor.tu_color_darkModeGrey,
@@ -264,6 +261,8 @@ public object TuBrandColors {
 
 public object TuBrandBrushes {
   public val lightBrushes: MisticaBrushes = MisticaBrushes(
+      backgroundContainerBrand = SolidColor(TuPaletteColor.tu_color_primary),
+      backgroundBrand = SolidColor(TuPaletteColor.tu_color_primary),
       cardContentOverlay = AngledLinearGradient(
         angleInDegrees = 180F,
         colorStops = listOf(
@@ -274,6 +273,8 @@ public object TuBrandBrushes {
       )
 
   public val darkBrushes: MisticaBrushes = MisticaBrushes(
+      backgroundBrand = SolidColor(TuPaletteColor.tu_color_darkModeBlack),
+      backgroundContainerBrand = SolidColor(TuPaletteColor.tu_color_darkModeGrey),
       cardContentOverlay = AngledLinearGradient(
         angleInDegrees = 180F,
         colorStops = listOf(

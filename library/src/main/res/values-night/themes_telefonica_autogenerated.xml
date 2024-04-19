@@ -4,12 +4,10 @@
 	<style name="MisticaTheme.Telefonica" parent="MisticaTheme.Telefonica_Customizations">
 		<item name="colorBackground">@color/telefonica_color_darkModeBlack</item>
 		<item name="colorBackgroundAlternative">@color/telefonica_color_darkModeBlack</item>
-		<item name="colorBackgroundBrand">@color/telefonica_color_darkModeBlack</item>
 		<item name="colorBackgroundBrandSecondary">@color/telefonica_color_darkModeBlack</item>
 		<item name="colorBackgroundContainer">@color/telefonica_color_darkModeGrey</item>
 		<item name="colorBackgroundContainerHover">@color/telefonica_color_white_3_alpha</item>
 		<item name="colorBackgroundContainerPressed">@color/telefonica_color_white_5_alpha</item>
-		<item name="colorBackgroundContainerBrand">@color/telefonica_color_darkModeGrey</item>
 		<item name="colorBackgroundContainerBrandHover">@color/telefonica_color_white_3_alpha</item>
 		<item name="colorBackgroundContainerBrandPressed">@color/telefonica_color_white_5_alpha</item>
 		<item name="colorBackgroundContainerBrandOverInverse">@color/telefonica_color_darkModeGrey</item>
@@ -130,5 +128,11 @@
 		<item name="gradientColorsCardContentOverlay">@array/telefonica_gradient_colors_dark_cardContentOverlay</item>
 		<item name="gradientStopsCardContentOverlay">@array/telefonica_gradient_stops_dark_cardContentOverlay</item>
 		<item name="gradientAngleCardContentOverlay">@integer/telefonica_gradient_angle_dark_cardContentOverlay</item>
+		<item name="gradientColorsBackgroundBrand">@array/telefonica_gradient_colors_dark_backgroundBrand</item>
+		<item name="gradientStopsBackgroundBrand">@array/telefonica_gradient_stops_dark_backgroundBrand</item>
+		<item name="gradientAngleBackgroundBrand">@integer/telefonica_gradient_angle_dark_backgroundBrand</item>
+		<item name="gradientColorsBackgroundContainerBrand">@array/telefonica_gradient_colors_dark_backgroundContainerBrand</item>
+		<item name="gradientStopsBackgroundContainerBrand">@array/telefonica_gradient_stops_dark_backgroundContainerBrand</item>
+		<item name="gradientAngleBackgroundContainerBrand">@integer/telefonica_gradient_angle_dark_backgroundContainerBrand</item>
 	</style>
 </resources>

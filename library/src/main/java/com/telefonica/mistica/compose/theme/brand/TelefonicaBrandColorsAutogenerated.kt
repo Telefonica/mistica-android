@@ -2,6 +2,7 @@
 package com.telefonica.mistica.compose.theme.brand
 
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.SolidColor
 import com.telefonica.mistica.compose.theme.color.AngledLinearGradient
 import com.telefonica.mistica.compose.theme.color.MisticaBrushes
 import com.telefonica.mistica.compose.theme.color.MisticaColors
@@ -13,7 +14,6 @@ public object TelefonicaBrandColors {
       backgroundContainer = TelefonicaPaletteColor.telefonica_color_white,
       backgroundContainerHover = TelefonicaPaletteColor.telefonica_color_telefonicaBlue_3_alpha,
       backgroundContainerPressed = TelefonicaPaletteColor.telefonica_color_telefonicaBlue_5_alpha,
-      backgroundContainerBrand = TelefonicaPaletteColor.telefonica_color_telefonicaBlue,
       backgroundContainerBrandHover =
           TelefonicaPaletteColor.telefonica_color_darkModeBlack_20_alpha,
       backgroundContainerBrandPressed =
@@ -21,7 +21,6 @@ public object TelefonicaBrandColors {
       backgroundContainerBrandOverInverse =
           TelefonicaPaletteColor.telefonica_color_telefonicaBlue70,
       backgroundContainerAlternative = TelefonicaPaletteColor.telefonica_color_grey1,
-      backgroundBrand = TelefonicaPaletteColor.telefonica_color_telefonicaBlue,
       backgroundBrandSecondary = TelefonicaPaletteColor.telefonica_color_telefonicaBlue,
       backgroundOverlay = TelefonicaPaletteColor.telefonica_color_grey6_80_alpha,
       backgroundSkeleton = TelefonicaPaletteColor.telefonica_color_grey2,
@@ -143,12 +142,10 @@ public object TelefonicaBrandColors {
   public val darkColors: MisticaColors = MisticaColors(background =
       TelefonicaPaletteColor.telefonica_color_darkModeBlack,
       backgroundAlternative = TelefonicaPaletteColor.telefonica_color_darkModeBlack,
-      backgroundBrand = TelefonicaPaletteColor.telefonica_color_darkModeBlack,
       backgroundBrandSecondary = TelefonicaPaletteColor.telefonica_color_darkModeBlack,
       backgroundContainer = TelefonicaPaletteColor.telefonica_color_darkModeGrey,
       backgroundContainerHover = TelefonicaPaletteColor.telefonica_color_white_3_alpha,
       backgroundContainerPressed = TelefonicaPaletteColor.telefonica_color_white_5_alpha,
-      backgroundContainerBrand = TelefonicaPaletteColor.telefonica_color_darkModeGrey,
       backgroundContainerBrandHover = TelefonicaPaletteColor.telefonica_color_white_3_alpha,
       backgroundContainerBrandPressed = TelefonicaPaletteColor.telefonica_color_white_5_alpha,
       backgroundContainerBrandOverInverse = TelefonicaPaletteColor.telefonica_color_darkModeGrey,
@@ -274,6 +271,8 @@ public object TelefonicaBrandColors {
 
 public object TelefonicaBrandBrushes {
   public val lightBrushes: MisticaBrushes = MisticaBrushes(
+      backgroundContainerBrand = SolidColor(TelefonicaPaletteColor.telefonica_color_telefonicaBlue),
+      backgroundBrand = SolidColor(TelefonicaPaletteColor.telefonica_color_telefonicaBlue),
       cardContentOverlay = AngledLinearGradient(
         angleInDegrees = 180F,
         colorStops = listOf(
@@ -284,6 +283,8 @@ public object TelefonicaBrandBrushes {
       )
 
   public val darkBrushes: MisticaBrushes = MisticaBrushes(
+      backgroundBrand = SolidColor(TelefonicaPaletteColor.telefonica_color_darkModeBlack),
+      backgroundContainerBrand = SolidColor(TelefonicaPaletteColor.telefonica_color_darkModeGrey),
       cardContentOverlay = AngledLinearGradient(
         angleInDegrees = 180F,
         colorStops = listOf(

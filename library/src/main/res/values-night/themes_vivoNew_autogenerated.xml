@@ -4,12 +4,10 @@
 	<style name="MisticaTheme.VivoNew" parent="MisticaTheme.VivoNew_Customizations">
 		<item name="colorBackground">@color/vivoNew_color_darkModeBlack</item>
 		<item name="colorBackgroundAlternative">@color/vivoNew_color_darkModeBlack</item>
-		<item name="colorBackgroundBrand">@color/vivoNew_color_darkModeBlack</item>
 		<item name="colorBackgroundBrandSecondary">@color/vivoNew_color_darkModeBlack</item>
 		<item name="colorBackgroundContainer">@color/vivoNew_color_darkModeGrey</item>
 		<item name="colorBackgroundContainerHover">@color/vivoNew_color_white_3_alpha</item>
 		<item name="colorBackgroundContainerPressed">@color/vivoNew_color_white_5_alpha</item>
-		<item name="colorBackgroundContainerBrand">@color/vivoNew_color_darkModeGrey</item>
 		<item name="colorBackgroundContainerBrandHover">@color/vivoNew_color_white_3_alpha</item>
 		<item name="colorBackgroundContainerBrandPressed">@color/vivoNew_color_white_5_alpha</item>
 		<item name="colorBackgroundContainerBrandOverInverse">@color/vivoNew_color_darkModeGrey</item>
@@ -130,16 +128,20 @@
 		<item name="gradientColorsCardContentOverlay">@array/vivoNew_gradient_colors_dark_cardContentOverlay</item>
 		<item name="gradientStopsCardContentOverlay">@array/vivoNew_gradient_stops_dark_cardContentOverlay</item>
 		<item name="gradientAngleCardContentOverlay">@integer/vivoNew_gradient_angle_dark_cardContentOverlay</item>
+		<item name="gradientColorsBackgroundBrand">@array/vivoNew_gradient_colors_dark_backgroundBrand</item>
+		<item name="gradientStopsBackgroundBrand">@array/vivoNew_gradient_stops_dark_backgroundBrand</item>
+		<item name="gradientAngleBackgroundBrand">@integer/vivoNew_gradient_angle_dark_backgroundBrand</item>
+		<item name="gradientColorsBackgroundContainerBrand">@array/vivoNew_gradient_colors_dark_backgroundContainerBrand</item>
+		<item name="gradientStopsBackgroundContainerBrand">@array/vivoNew_gradient_stops_dark_backgroundContainerBrand</item>
+		<item name="gradientAngleBackgroundContainerBrand">@integer/vivoNew_gradient_angle_dark_backgroundContainerBrand</item>
 	</style>
 	<style name="VivoNewOverride" parent="VivoNewOverride_Customizations">
 		<item name="colorBackground">@color/vivoNew_color_darkModeBlack</item>
 		<item name="colorBackgroundAlternative">@color/vivoNew_color_darkModeBlack</item>
-		<item name="colorBackgroundBrand">@color/vivoNew_color_darkModeBlack</item>
 		<item name="colorBackgroundBrandSecondary">@color/vivoNew_color_darkModeBlack</item>
 		<item name="colorBackgroundContainer">@color/vivoNew_color_darkModeGrey</item>
 		<item name="colorBackgroundContainerHover">@color/vivoNew_color_white_3_alpha</item>
 		<item name="colorBackgroundContainerPressed">@color/vivoNew_color_white_5_alpha</item>
-		<item name="colorBackgroundContainerBrand">@color/vivoNew_color_darkModeGrey</item>
 		<item name="colorBackgroundContainerBrandHover">@color/vivoNew_color_white_3_alpha</item>
 		<item name="colorBackgroundContainerBrandPressed">@color/vivoNew_color_white_5_alpha</item>
 		<item name="colorBackgroundContainerBrandOverInverse">@color/vivoNew_color_darkModeGrey</item>
@@ -260,5 +262,11 @@
 		<item name="gradientColorsCardContentOverlay">@array/vivoNew_gradient_colors_dark_cardContentOverlay</item>
 		<item name="gradientStopsCardContentOverlay">@array/vivoNew_gradient_stops_dark_cardContentOverlay</item>
 		<item name="gradientAngleCardContentOverlay">@integer/vivoNew_gradient_angle_dark_cardContentOverlay</item>
+		<item name="gradientColorsBackgroundBrand">@array/vivoNew_gradient_colors_dark_backgroundBrand</item>
+		<item name="gradientStopsBackgroundBrand">@array/vivoNew_gradient_stops_dark_backgroundBrand</item>
+		<item name="gradientAngleBackgroundBrand">@integer/vivoNew_gradient_angle_dark_backgroundBrand</item>
+		<item name="gradientColorsBackgroundContainerBrand">@array/vivoNew_gradient_colors_dark_backgroundContainerBrand</item>
+		<item name="gradientStopsBackgroundContainerBrand">@array/vivoNew_gradient_stops_dark_backgroundContainerBrand</item>
+		<item name="gradientAngleBackgroundContainerBrand">@integer/vivoNew_gradient_angle_dark_backgroundContainerBrand</item>
 	</style>
 </resources>

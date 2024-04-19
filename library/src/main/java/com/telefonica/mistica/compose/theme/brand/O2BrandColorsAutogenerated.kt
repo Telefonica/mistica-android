@@ -2,6 +2,7 @@
 package com.telefonica.mistica.compose.theme.brand
 
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.SolidColor
 import com.telefonica.mistica.compose.theme.color.AngledLinearGradient
 import com.telefonica.mistica.compose.theme.color.MisticaBrushes
 import com.telefonica.mistica.compose.theme.color.MisticaColors
@@ -9,12 +10,10 @@ import com.telefonica.mistica.compose.theme.color.MisticaColors
 public object O2BrandColors {
   public val lightColors: MisticaColors = MisticaColors(background = O2PaletteColor.o2_color_white,
       backgroundAlternative = O2PaletteColor.o2_color_grey1,
-      backgroundBrand = O2PaletteColor.o2_color_o2BluePrimary,
       backgroundBrandSecondary = O2PaletteColor.o2_color_o2BluePrimary,
       backgroundContainer = O2PaletteColor.o2_color_white,
       backgroundContainerHover = O2PaletteColor.o2_color_darkModeBlack_3_alpha,
       backgroundContainerPressed = O2PaletteColor.o2_color_darkModeBlack_5_alpha,
-      backgroundContainerBrand = O2PaletteColor.o2_color_o2BluePrimary,
       backgroundContainerBrandHover = O2PaletteColor.o2_color_darkModeBlack_20_alpha,
       backgroundContainerBrandPressed = O2PaletteColor.o2_color_darkModeBlack_40_alpha,
       backgroundContainerBrandOverInverse = O2PaletteColor.o2_color_o2BluePrimary70,
@@ -136,12 +135,10 @@ public object O2BrandColors {
   public val darkColors: MisticaColors = MisticaColors(background =
       O2PaletteColor.o2_color_darkModeBlack,
       backgroundAlternative = O2PaletteColor.o2_color_darkModeBlack,
-      backgroundBrand = O2PaletteColor.o2_color_darkModeBlack,
       backgroundBrandSecondary = O2PaletteColor.o2_color_darkModeBlack,
       backgroundContainer = O2PaletteColor.o2_color_darkModeGrey,
       backgroundContainerHover = O2PaletteColor.o2_color_white_3_alpha,
       backgroundContainerPressed = O2PaletteColor.o2_color_white_5_alpha,
-      backgroundContainerBrand = O2PaletteColor.o2_color_darkModeGrey,
       backgroundContainerBrandHover = O2PaletteColor.o2_color_white_3_alpha,
       backgroundContainerBrandPressed = O2PaletteColor.o2_color_white_5_alpha,
       backgroundContainerBrandOverInverse = O2PaletteColor.o2_color_darkModeGrey,
@@ -263,6 +260,8 @@ public object O2BrandColors {
 
 public object O2BrandBrushes {
   public val lightBrushes: MisticaBrushes = MisticaBrushes(
+      backgroundBrand = SolidColor(O2PaletteColor.o2_color_o2BluePrimary),
+      backgroundContainerBrand = SolidColor(O2PaletteColor.o2_color_o2BluePrimary),
       cardContentOverlay = AngledLinearGradient(
         angleInDegrees = 180F,
         colorStops = listOf(
@@ -273,6 +272,8 @@ public object O2BrandBrushes {
       )
 
   public val darkBrushes: MisticaBrushes = MisticaBrushes(
+      backgroundBrand = SolidColor(O2PaletteColor.o2_color_darkModeBlack),
+      backgroundContainerBrand = SolidColor(O2PaletteColor.o2_color_darkModeGrey),
       cardContentOverlay = AngledLinearGradient(
         angleInDegrees = 180F,
         colorStops = listOf(

@@ -4,12 +4,10 @@
 	<style name="MisticaTheme.Blau" parent="MisticaTheme.Blau_Customizations">
 		<item name="colorBackground">@color/blau_color_darkModeBlack</item>
 		<item name="colorBackgroundAlternative">@color/blau_color_darkModeBlack</item>
-		<item name="colorBackgroundBrand">@color/blau_color_darkModeBlack</item>
 		<item name="colorBackgroundBrandSecondary">@color/blau_color_darkModeBlack</item>
 		<item name="colorBackgroundContainer">@color/blau_color_darkModeGrey</item>
 		<item name="colorBackgroundContainerHover">@color/blau_color_white_3_alpha</item>
 		<item name="colorBackgroundContainerPressed">@color/blau_color_white_5_alpha</item>
-		<item name="colorBackgroundContainerBrand">@color/blau_color_darkModeGrey</item>
 		<item name="colorBackgroundContainerBrandHover">@color/blau_color_white_3_alpha</item>
 		<item name="colorBackgroundContainerBrandPressed">@color/blau_color_white_5_alpha</item>
 		<item name="colorBackgroundContainerBrandOverInverse">@color/blau_color_darkModeGrey</item>
@@ -32,7 +30,7 @@
 		<item name="colorButtonDangerBackgroundSelected">@color/blau_color_blauRed70</item>
 		<item name="colorButtonDangerBackgroundHover">@color/blau_color_blauRed70</item>
 		<item name="colorButtonLinkDangerBackgroundSelected">@color/blau_color_blauPurple_30_alpha</item>
-		<item name="colorButtonLinkDangerBackgroundInverse">@color/blau_color_blauPurple_1_alpha</item>
+		<item name="colorButtonLinkDangerBackgroundInverse">@color/blau_color_white_1_alpha</item>
 		<item name="colorButtonLinkDangerBackgroundInverseSelected">@color/blau_color_blauPurple_30_alpha</item>
 		<item name="colorButtonLinkBackgroundSelected">@color/blau_color_blauPurple_30_alpha</item>
 		<item name="colorButtonLinkBackgroundInverseSelected">@color/blau_color_blauPurple_30_alpha</item>
@@ -130,5 +128,11 @@
 		<item name="gradientColorsCardContentOverlay">@array/blau_gradient_colors_dark_cardContentOverlay</item>
 		<item name="gradientStopsCardContentOverlay">@array/blau_gradient_stops_dark_cardContentOverlay</item>
 		<item name="gradientAngleCardContentOverlay">@integer/blau_gradient_angle_dark_cardContentOverlay</item>
+		<item name="gradientColorsBackgroundBrand">@array/blau_gradient_colors_dark_backgroundBrand</item>
+		<item name="gradientStopsBackgroundBrand">@array/blau_gradient_stops_dark_backgroundBrand</item>
+		<item name="gradientAngleBackgroundBrand">@integer/blau_gradient_angle_dark_backgroundBrand</item>
+		<item name="gradientColorsBackgroundContainerBrand">@array/blau_gradient_colors_dark_backgroundContainerBrand</item>
+		<item name="gradientStopsBackgroundContainerBrand">@array/blau_gradient_stops_dark_backgroundContainerBrand</item>
+		<item name="gradientAngleBackgroundContainerBrand">@integer/blau_gradient_angle_dark_backgroundContainerBrand</item>
 	</style>
 </resources>

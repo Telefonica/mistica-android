@@ -5,12 +5,10 @@
 	<style name="MisticaTheme.VivoNew_Base">
 		<item name="colorBackground">@color/vivoNew_color_white</item>
 		<item name="colorBackgroundAlternative">@color/vivoNew_color_grey1</item>
-		<item name="colorBackgroundBrand">@color/vivoNew_color_vivoPurple</item>
 		<item name="colorBackgroundBrandSecondary">@color/vivoNew_color_vivoPurpleLight80</item>
 		<item name="colorBackgroundContainer">@color/vivoNew_color_white</item>
 		<item name="colorBackgroundContainerHover">@color/vivoNew_color_darkModeBlack_3_alpha</item>
 		<item name="colorBackgroundContainerPressed">@color/vivoNew_color_darkModeBlack_5_alpha</item>
-		<item name="colorBackgroundContainerBrand">@color/vivoNew_color_vivoPurple</item>
 		<item name="colorBackgroundContainerBrandHover">@color/vivoNew_color_darkModeBlack_20_alpha</item>
 		<item name="colorBackgroundContainerBrandPressed">@color/vivoNew_color_darkModeBlack_40_alpha</item>
 		<item name="colorBackgroundContainerBrandOverInverse">@color/vivoNew_color_vivoPurpleDark</item>
@@ -131,6 +129,12 @@
 		<item name="gradientColorsCardContentOverlay">@array/vivoNew_gradient_colors_light_cardContentOverlay</item>
 		<item name="gradientStopsCardContentOverlay">@array/vivoNew_gradient_stops_light_cardContentOverlay</item>
 		<item name="gradientAngleCardContentOverlay">@integer/vivoNew_gradient_angle_light_cardContentOverlay</item>
+		<item name="gradientColorsBackgroundBrand">@array/vivoNew_gradient_colors_light_backgroundBrand</item>
+		<item name="gradientStopsBackgroundBrand">@array/vivoNew_gradient_stops_light_backgroundBrand</item>
+		<item name="gradientAngleBackgroundBrand">@integer/vivoNew_gradient_angle_light_backgroundBrand</item>
+		<item name="gradientColorsBackgroundContainerBrand">@array/vivoNew_gradient_colors_light_backgroundContainerBrand</item>
+		<item name="gradientStopsBackgroundContainerBrand">@array/vivoNew_gradient_stops_light_backgroundContainerBrand</item>
+		<item name="gradientAngleBackgroundContainerBrand">@integer/vivoNew_gradient_angle_light_backgroundContainerBrand</item>
 		<!-- Border radius -->
 		<item name="avatarBorderRadius">50%</item>
 		<item name="barBorderRadius">999dp</item>
@@ -181,12 +185,10 @@
 	<style name="VivoNewOverride_Base">
 		<item name="colorBackground">@color/vivoNew_color_white</item>
 		<item name="colorBackgroundAlternative">@color/vivoNew_color_grey1</item>
-		<item name="colorBackgroundBrand">@color/vivoNew_color_vivoPurple</item>
 		<item name="colorBackgroundBrandSecondary">@color/vivoNew_color_vivoPurpleLight80</item>
 		<item name="colorBackgroundContainer">@color/vivoNew_color_white</item>
 		<item name="colorBackgroundContainerHover">@color/vivoNew_color_darkModeBlack_3_alpha</item>
 		<item name="colorBackgroundContainerPressed">@color/vivoNew_color_darkModeBlack_5_alpha</item>
-		<item name="colorBackgroundContainerBrand">@color/vivoNew_color_vivoPurple</item>
 		<item name="colorBackgroundContainerBrandHover">@color/vivoNew_color_darkModeBlack_20_alpha</item>
 		<item name="colorBackgroundContainerBrandPressed">@color/vivoNew_color_darkModeBlack_40_alpha</item>
 		<item name="colorBackgroundContainerBrandOverInverse">@color/vivoNew_color_vivoPurpleDark</item>
@@ -307,6 +309,12 @@
 		<item name="gradientColorsCardContentOverlay">@array/vivoNew_gradient_colors_light_cardContentOverlay</item>
 		<item name="gradientStopsCardContentOverlay">@array/vivoNew_gradient_stops_light_cardContentOverlay</item>
 		<item name="gradientAngleCardContentOverlay">@integer/vivoNew_gradient_angle_light_cardContentOverlay</item>
+		<item name="gradientColorsBackgroundBrand">@array/vivoNew_gradient_colors_light_backgroundBrand</item>
+		<item name="gradientStopsBackgroundBrand">@array/vivoNew_gradient_stops_light_backgroundBrand</item>
+		<item name="gradientAngleBackgroundBrand">@integer/vivoNew_gradient_angle_light_backgroundBrand</item>
+		<item name="gradientColorsBackgroundContainerBrand">@array/vivoNew_gradient_colors_light_backgroundContainerBrand</item>
+		<item name="gradientStopsBackgroundContainerBrand">@array/vivoNew_gradient_stops_light_backgroundContainerBrand</item>
+		<item name="gradientAngleBackgroundContainerBrand">@integer/vivoNew_gradient_angle_light_backgroundContainerBrand</item>
 		<!-- Border radius -->
 		<item name="avatarBorderRadius">50%</item>
 		<item name="barBorderRadius">999dp</item>

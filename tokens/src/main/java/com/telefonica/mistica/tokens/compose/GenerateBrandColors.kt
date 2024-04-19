@@ -64,12 +64,12 @@ class GenerateBrandColors(
         var colorsConstructor = "${GenerateComposeFiles.MISTICA_COLORS}("
 
         colors.forEach { (key, color) ->
-            var colorValue = "${brandName}_color_${color.description}"
-
+            val colorName = TokensGenerator.COLOR_NAME_REGEX.find(color.value)?.groups?.get(1)?.value
+            var colorValue = "${brandName}_color_${colorName}"
             if (color.value.contains("rgba(")) {
                 val alpha = TokensGenerator.ALPHA_REGEX.find(color.value)?.value?.toDouble()
-                if (alpha != null) {
-                    colorValue = getColorNameWithAlpha(brandName, color.description, alpha)
+                if (alpha != null && colorName != null) {
+                    colorValue = getColorNameWithAlpha(brandName, colorName, alpha)
                     colorsConstructor += "$key = $paletteClassName.$colorValue,\n"
                 }
             } else {
