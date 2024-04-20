@@ -1,6 +1,6 @@
 package com.telefonica.mistica.tokens.common
 
-import com.telefonica.mistica.tokens.dto.ColorDTO
+import com.telefonica.mistica.tokens.dto.BrushDTO
 import com.telefonica.mistica.tokens.dto.GlobalDTO
 import com.telefonica.mistica.tokens.dto.PaletteDTO
 import com.telefonica.mistica.tokens.dto.TextDTO
@@ -27,36 +27,30 @@ class GetColorsWithAlphaTest {
         const val BRAND = "blau"
         val TOKENS = TokensDTO(
             light = mapOf(
-                "backgroundContainerAlternativeHover" to ColorDTO(
+                "backgroundContainerAlternativeHover" to BrushDTO.SolidColorDTO(
                     value = "rgba({palette.grey5}, 0.1)",
-                    type = "color",
                     description = "grey5"
                 ),
-                "backgroundOverlay" to ColorDTO(
+                "backgroundOverlay" to BrushDTO.SolidColorDTO(
                     value = "rgba({palette.blauBlueSecondary}, 0.75)",
-                    type = "color",
                     description = "blauBlueSecondary"
                 ),
-                "backgroundContainerBrand" to ColorDTO(
+                "backgroundContainerBrand" to BrushDTO.SolidColorDTO(
                     value = "{palette.blauBluePrimary}",
-                    type = "color",
                     description = "blauBluePrimary"
                 )
             ),
             dark = mapOf(
-                "textButtonSecondarySelected" to ColorDTO(
+                "textButtonSecondarySelected" to BrushDTO.SolidColorDTO(
                     value = "{palette.grey2}",
-                    type = "color",
                     description = "grey2"
                 ),
-                "buttonLinkBackgroundSelected" to ColorDTO(
+                "buttonLinkBackgroundSelected" to BrushDTO.SolidColorDTO(
                     value = "rgba({palette.blauPurple}, 0.3)",
-                    type = "color",
                     description = "blauPurple"
                 ),
-                "buttonSecondaryBackgroundHover" to ColorDTO(
+                "buttonSecondaryBackgroundHover" to BrushDTO.SolidColorDTO(
                     value = "rgba({palette.white}, 0.15)",
-                    type = "color",
                     description = "white"
                 )
             ),
