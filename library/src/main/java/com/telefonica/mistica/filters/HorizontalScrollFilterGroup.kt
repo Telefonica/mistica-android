@@ -10,6 +10,8 @@ import androidx.annotation.IdRes
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
 import com.telefonica.mistica.R
+import com.telefonica.mistica.theme.color.MisticaGradient
+import com.telefonica.mistica.theme.color.getThemeGradient
 import com.telefonica.mistica.util.children
 import com.telefonica.mistica.util.getDimension
 
@@ -26,6 +28,7 @@ class HorizontalScrollFilterGroup @JvmOverloads constructor(
 
     init {
         View.inflate(context, R.layout.horizontal_scroll_filter_group, this)
+        scrollView.background = context.getThemeGradient(MisticaGradient.BackgroundBrand)
         setOnCheckedChangeListener { _, _ -> }
     }
 

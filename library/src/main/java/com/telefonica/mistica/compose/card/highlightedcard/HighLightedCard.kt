@@ -5,6 +5,7 @@ import android.graphics.BitmapFactory
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.foundation.layout.padding
@@ -52,24 +53,28 @@ fun HighLightedCard(
     val verticalMargin = 24.dp
     val resources = LocalContext.current.resources
     androidx.compose.material.Card(
-        modifier = modifier.defaultMinSize(minHeight = 100.dp),
+        modifier = modifier
+            .defaultMinSize(minHeight = 100.dp),
         shape = RoundedCornerShape(1.dp),
         elevation = 0.dp,
-        backgroundColor = if (inverseDisplay)
-            MisticaTheme.colors.backgroundBrand
-        else
-            MisticaTheme.colors.backgroundContainer,
         border = BorderStroke(width = 1.dp, color = MisticaTheme.colors.border)
     ) {
+        val bitmap = getBackgroundBitmap(resources, customBackground)
         ConstraintLayout(
-            modifier = modifier.drawBehind {
-                val bitmap = getBackgroundBitmap(resources, customBackground)
-                if (bitmap != null)
-                    drawImage(
-                        image = bitmap,
-                        dstSize = IntSize(this.size.width.toInt(), this.size.height.toInt())
-
-                    )
+            modifier = modifier.let {
+                when {
+                    bitmap != null ->
+                        it.drawBehind {
+                            drawImage(
+                                image = bitmap,
+                                dstSize = IntSize(this.size.width.toInt(), this.size.height.toInt())
+                            )
+                        }
+                    inverseDisplay ->
+                        it.background(MisticaTheme.brushes.backgroundBrand)
+                    else ->
+                        it.background(MisticaTheme.colors.backgroundContainer)
+                }
             }
         ) {
             val (

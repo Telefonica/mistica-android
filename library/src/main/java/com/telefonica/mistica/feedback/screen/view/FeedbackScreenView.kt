@@ -32,7 +32,8 @@ import com.telefonica.mistica.R
 import com.telefonica.mistica.button.ProgressButton
 import com.telefonica.mistica.feedback.screen.haptics.HapticFeedbackType
 import com.telefonica.mistica.feedback.screen.haptics.performHapticFeedback
-import com.telefonica.mistica.util.background.GradientBackgroundFactory
+import com.telefonica.mistica.theme.color.MisticaGradient
+import com.telefonica.mistica.theme.color.getThemeGradient
 import com.telefonica.mistica.util.convertDpToPx
 import com.telefonica.mistica.util.getThemeColor
 import com.telefonica.mistica.util.getThemeRes
@@ -256,16 +257,9 @@ class FeedbackScreenView : ConstraintLayout {
     private fun configureBackground() {
         when (type) {
             TYPE_SUCCESS -> when {
-                getBooleanThemeRes(R.attr.feedbackScreenSuccessWithGradient) -> GradientBackgroundFactory.getBackground(
-                    context
-                )
-
-                getBooleanThemeRes(R.attr.feedbackScreenSuccessInverse) -> ColorDrawable(
-                    context.getThemeColor(
-                        R.attr.colorBackgroundBrand
-                    )
-                )
-
+                getBooleanThemeRes(R.attr.feedbackScreenSuccessWithGradient) ||
+                        getBooleanThemeRes(R.attr.feedbackScreenSuccessInverse) ->
+                            context.getThemeGradient(MisticaGradient.BackgroundBrand)
                 else -> ColorDrawable(context.getThemeColor(R.attr.colorBackground))
             }
 

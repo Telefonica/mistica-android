@@ -3,6 +3,7 @@ package com.telefonica.mistica.compose.theme.brand
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.TextUnit
+import com.telefonica.mistica.compose.theme.color.MisticaBrushes
 import com.telefonica.mistica.compose.theme.color.MisticaColors
 import com.telefonica.mistica.compose.theme.values.MisticaRadius
 import com.telefonica.mistica.compose.theme.values.MisticaValues
@@ -12,6 +13,8 @@ interface Brand {
     val compatibilityTheme: Int
     val lightColors: MisticaColors
     val darkColors: MisticaColors
+    val lightBrushes: MisticaBrushes
+    val darkBrushes: MisticaBrushes
     val fontFamily: FontFamily
         get() = FontFamily.SansSerif
     val preset5FontWeight: FontWeight
@@ -34,4 +37,4 @@ interface Brand {
     val radius: MisticaRadius
 }
 
-enum class BrandType { BLAU, MOVISTAR, O2, TELEFONICA, VIVO, VIVO_NEW, TU }
+enum class BrandType { BLAU, MOVISTAR, O2, TELEFONICA, VIVO, VIVO_NEW, TU, O2_NEW }

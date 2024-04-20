@@ -135,13 +135,13 @@ fun Callouts() {
                 modifier = Modifier
                     .padding(vertical = 8.dp)
                     .fillMaxWidth()
-                    .background(
+                    .let {
                         if (inverse) {
-                            MisticaTheme.colors.backgroundBrand
+                            it.background(MisticaTheme.brushes.backgroundBrand)
                         } else {
-                            MisticaTheme.colors.background
+                            it.background(MisticaTheme.colors.background)
                         }
-                    ),
+                    },
             ) {
                 Callout(
                     modifier = Modifier

@@ -1,6 +1,7 @@
 package com.telefonica.mistica.compose.theme.brand
 
 import com.telefonica.mistica.R
+import com.telefonica.mistica.compose.theme.color.MisticaBrushes
 
 object VivoNewBrand : Brand {
 
@@ -10,6 +11,10 @@ object VivoNewBrand : Brand {
     override val lightColors = VivoNewBrandColors.lightColors
 
     override val darkColors = VivoNewBrandColors.darkColors
+
+    override val lightBrushes: MisticaBrushes = VivoNewBrandBrushes.lightBrushes
+
+    override val darkBrushes: MisticaBrushes = VivoNewBrandBrushes.darkBrushes
 
     override val preset5FontWeight = VivoNewBrandFontWeights.text5FontWeight
 

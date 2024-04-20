@@ -43,7 +43,7 @@ fun Buttons() {
         )
         Buttons(
             modifier = Modifier
-                .background(MisticaTheme.colors.backgroundBrand),
+                .background(MisticaTheme.brushes.backgroundBrand),
             filter = { it.name.contains("INVERSE") }
         )
     }

@@ -1,6 +1,7 @@
 package com.telefonica.mistica.header
 
 import android.content.Context
+import android.graphics.drawable.ColorDrawable
 import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.Gravity
@@ -17,6 +18,8 @@ import androidx.annotation.StringRes
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
+import com.telefonica.mistica.theme.color.MisticaGradient
+import com.telefonica.mistica.theme.color.getThemeGradient
 import com.telefonica.mistica.util.children
 import com.telefonica.mistica.util.convertDpToPx
 import com.telefonica.mistica.util.getThemeColor
@@ -318,7 +321,12 @@ class HeaderView @JvmOverloads constructor(
     }
 
     private fun configureTextsColors() {
-        setBackgroundColor(context.getThemeColor(if (isInverse) R.attr.colorBackgroundBrand else R.attr.colorBackground))
+        val backgroundDrawable = if (isInverse) {
+            context.getThemeGradient(MisticaGradient.BackgroundBrand)
+        } else {
+            ColorDrawable(context.getThemeColor(R.attr.colorBackground))
+        }
+        background = backgroundDrawable
 
         @ColorInt val primaryColor: Int =
             context.getThemeColor(if (isInverse) R.attr.colorTextPrimaryInverse else R.attr.colorTextPrimary)

@@ -15,7 +15,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.theme.brand.Brand
+import com.telefonica.mistica.compose.theme.color.LocalMisticaBrushes
 import com.telefonica.mistica.compose.theme.color.LocalMisticaColors
+import com.telefonica.mistica.compose.theme.color.MisticaBrushes
 import com.telefonica.mistica.compose.theme.color.MisticaColors
 import com.telefonica.mistica.compose.theme.text.LocalMisticaTypography
 import com.telefonica.mistica.compose.theme.text.MisticaTypography
@@ -41,9 +43,19 @@ fun MisticaTheme(
         brand.lightColors
     }
 
+    val brushes = if (darkTheme) {
+        brand.darkBrushes
+    } else {
+        brand.lightBrushes
+    }
+
     val rememberedColors = remember {
         MisticaColors()
     }.apply { updateColorsFrom(colors) }
+
+    val rememberedBrushes = remember {
+        MisticaBrushes()
+    }.apply { updateBrushesFrom(brushes) }
 
     val typography = remember {
         MisticaTypography(
@@ -83,6 +95,7 @@ fun MisticaTheme(
 
     CompositionLocalProvider(
         LocalMisticaColors provides rememberedColors,
+        LocalMisticaBrushes provides rememberedBrushes,
         LocalMisticaTypography provides typography,
         LocalMisticaValues provides values,
         LocalMisticaRadius provides radius
@@ -121,6 +134,11 @@ object MisticaTheme {
         @Composable
         @ReadOnlyComposable
         get() = LocalMisticaColors.current
+
+    val brushes: MisticaBrushes
+        @Composable
+        @ReadOnlyComposable
+        get() = LocalMisticaBrushes.current
 
     val typography: MisticaTypography
         @Composable

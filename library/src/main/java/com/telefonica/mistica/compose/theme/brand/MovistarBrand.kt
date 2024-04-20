@@ -1,6 +1,7 @@
 package com.telefonica.mistica.compose.theme.brand
 
 import com.telefonica.mistica.R
+import com.telefonica.mistica.compose.theme.color.MisticaBrushes
 import com.telefonica.mistica.compose.theme.values.MisticaValues
 import com.telefonica.mistica.compose.title.TitleStyle
 
@@ -12,6 +13,10 @@ object MovistarBrand : Brand {
     override val lightColors = MovistarBrandColors.lightColors
 
     override val darkColors = MovistarBrandColors.darkColors
+
+    override val lightBrushes: MisticaBrushes = MovistarBrandBrushes.lightBrushes
+
+    override val darkBrushes: MisticaBrushes = MovistarBrandBrushes.darkBrushes
 
     override val preset5FontWeight = MovistarBrandFontWeights.text5FontWeight
 

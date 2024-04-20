@@ -30,16 +30,28 @@ class AngledLinearGradientShaderProvider(
     private val angleInRadians: Float = Math.toRadians(normalizedAngle.toDouble()).toFloat()
 
     fun createShader(width: Int, height: Int): Shader {
-        val (from, to) = getGradientCoordinates(width, height)
-        return LinearGradient(
-            from.x,
-            from.y,
-            to.x,
-            to.y,
-            colors,
-            stops,
-            Shader.TileMode.CLAMP
-        )
+        if (width <= 0 || height <= 0) {
+            return LinearGradient(
+                0F,
+                0F,
+                0F,
+                0F,
+                colors,
+                stops,
+                Shader.TileMode.CLAMP
+            )
+        } else {
+            val (from, to) = getGradientCoordinates(width, height)
+            return LinearGradient(
+                from.x,
+                from.y,
+                to.x,
+                to.y,
+                colors,
+                stops,
+                Shader.TileMode.CLAMP
+            )
+        }
     }
 
     private fun getGradientCoordinates(width: Int, height: Int): Pair<Offset, Offset> {

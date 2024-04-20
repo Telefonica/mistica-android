@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment
 import com.telefonica.mistica.button2.Button
 import com.telefonica.mistica.button.ProgressButton
 import com.telefonica.mistica.catalog.R
+import com.telefonica.mistica.theme.color.MisticaGradient
+import com.telefonica.mistica.theme.color.getThemeGradient
 
 class ButtonsCatalogFragment : Fragment() {
 
@@ -17,7 +19,10 @@ class ButtonsCatalogFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
-        return layoutInflater.inflate(R.layout.screen_buttons_catalog, container, false)
+        return layoutInflater.inflate(R.layout.screen_buttons_catalog, container, false).apply {
+            findViewById<View>(R.id.inverse_buttons_container).background =
+                context.getThemeGradient(MisticaGradient.BackgroundBrand)
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

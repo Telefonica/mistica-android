@@ -1,6 +1,7 @@
 package com.telefonica.mistica.compose.theme.brand
 
 import com.telefonica.mistica.R
+import com.telefonica.mistica.compose.theme.color.MisticaBrushes
 
 object BlauBrand : Brand {
 
@@ -10,6 +11,10 @@ object BlauBrand : Brand {
     override val lightColors = BlauBrandColors.lightColors
 
     override val darkColors = BlauBrandColors.darkColors
+
+    override val lightBrushes: MisticaBrushes = BlauBrandBrushes.lightBrushes
+
+    override val darkBrushes: MisticaBrushes = BlauBrandBrushes.darkBrushes
 
     override val preset5FontWeight = BlauBrandFontWeights.text5FontWeight
 

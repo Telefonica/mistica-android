@@ -329,9 +329,9 @@
             app:title="Inverse Inputs" />
 
         <LinearLayout
+            android:id="@+id/inverse_inputs_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?attr/colorBackgroundBrand"
             android:orientation="vertical"
             android:padding="16dp">
 
