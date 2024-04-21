@@ -43,16 +43,21 @@ class GenerateComposeFiles(
 
     companion object {
         const val LIBRARY_CODE_PATH = "../library/src/main/java/"
+
         const val MISTICA_COLORS = "MisticaColors"
-        const val MISTICA_BRUSHES = "MisticaBrushes"
+        const val BRAND_PALETTE_COLOR_CLASS_SUFFIX = "PaletteColor"
         val misticaColorsClass = ClassName("com.telefonica.mistica.compose.theme.color", MISTICA_COLORS)
         val colorClass = ClassName("androidx.compose.ui.graphics", "Color")
-        val misticaRadiusClass = ClassName("com.telefonica.mistica.compose.theme.values", "MisticaRadius")
-        val dpClass = ClassName("androidx.compose.ui.unit", "Dp")
-        val intClass = ClassName("kotlin", "Int")
+
+        const val MISTICA_BRUSHES = "MisticaBrushes"
+        const val BRAND_BRUSHES_CLASS_SUFFIX = "BrandBrushes"
         val misticaBrushesClass = ClassName("com.telefonica.mistica.compose.theme.color", MISTICA_BRUSHES)
         val brushClass = ClassName("androidx.compose.ui.graphics", "Brush")
         val solidColorClass = ClassName("androidx.compose.ui.graphics", "SolidColor")
         val linearGradientWithAngleClass = ClassName("com.telefonica.mistica.compose.theme.color", "LinearGradientWithAngle")
+
+        val misticaRadiusClass = ClassName("com.telefonica.mistica.compose.theme.values", "MisticaRadius")
+        val dpClass = ClassName("androidx.compose.ui.unit", "Dp")
+        val intClass = ClassName("kotlin", "Int")
     }
 }

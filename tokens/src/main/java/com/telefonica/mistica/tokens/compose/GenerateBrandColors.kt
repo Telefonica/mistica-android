@@ -5,8 +5,9 @@ import com.squareup.kotlinpoet.KModifier
 import com.squareup.kotlinpoet.PropertySpec
 import com.squareup.kotlinpoet.TypeSpec
 import com.telefonica.mistica.tokens.TokensGenerator
-import com.telefonica.mistica.tokens.common.GetColorNameWithAlpha
+import com.telefonica.mistica.tokens.common.GetColorResourceName
 import com.telefonica.mistica.tokens.common.GetColorsWithAlpha
+import com.telefonica.mistica.tokens.compose.GenerateComposeFiles.Companion.BRAND_PALETTE_COLOR_CLASS_SUFFIX
 import com.telefonica.mistica.tokens.compose.GenerateComposeFiles.Companion.colorClass
 import com.telefonica.mistica.tokens.compose.GenerateComposeFiles.Companion.misticaColorsClass
 import com.telefonica.mistica.tokens.dto.BrushDTO
@@ -20,12 +21,12 @@ import java.io.File
  */
 class GenerateBrandColors(
     private val getColorsWithAlpha: GetColorsWithAlpha = GetColorsWithAlpha(),
-    private val getColorNameWithAlpha: GetColorNameWithAlpha = GetColorNameWithAlpha(),
+    private val getColorResourceName: GetColorResourceName = GetColorResourceName(),
     private val generateBrandBrushes: GenerateBrandBrushes = GenerateBrandBrushes(),
 ) {
 
     operator fun invoke(tokens: TokensDTO, brandName: String, gradientTokensNames: List<String>) {
-        val paletteClassName = "${brandName.capitalizeString()}PaletteColor"
+        val paletteClassName = "${brandName.capitalizeString()}$BRAND_PALETTE_COLOR_CLASS_SUFFIX"
 
         val lightProperty = PropertySpec.builder("lightColors", misticaColorsClass)
             .initializer(getColorsConstructor(brandName, tokens.light.removeGradientTokens(gradientTokensNames), paletteClassName))
@@ -60,21 +61,11 @@ class GenerateBrandColors(
         colors: Map<String, BrushDTO.SolidColorDTO>,
         paletteClassName: String,
     ): String {
-
         var colorsConstructor = "${GenerateComposeFiles.MISTICA_COLORS}("
 
         colors.forEach { (key, color) ->
-            val colorName = TokensGenerator.COLOR_NAME_REGEX.find(color.value)?.groups?.get(1)?.value
-            var colorValue = "${brandName}_color_${colorName}"
-            if (color.value.contains("rgba(")) {
-                val alpha = TokensGenerator.ALPHA_REGEX.find(color.value)?.value?.toDouble()
-                if (alpha != null && colorName != null) {
-                    colorValue = getColorNameWithAlpha(brandName, colorName, alpha)
-                    colorsConstructor += "$key = $paletteClassName.$colorValue,\n"
-                }
-            } else {
-                colorsConstructor += "$key = $paletteClassName.$colorValue,\n"
-            }
+            val colorResourceName = getColorResourceName(color.value, brandName)
+            colorsConstructor += "$key = $paletteClassName.$colorResourceName,\n"
         }
 
         return "$colorsConstructor)"
