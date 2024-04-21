@@ -22,11 +22,11 @@ class GenerateBrandBrushes(
     operator fun invoke(tokens: TokensDTO, brandName: String, gradientTokensNames: List<String>): TypeSpec {
         val paletteClassName = "${brandName.capitalizeString()}$BRAND_PALETTE_COLOR_CLASS_SUFFIX"
 
-        val lightProperty = PropertySpec.builder(LIGHT_BRUSHES_PROPERTY_NAME, misticaBrushesClass)
+        val lightProperty = PropertySpec.builder("lightBrushes", misticaBrushesClass)
             .initializer(getBrushesConstructor(brandName, tokens.light.getGradientTokens(gradientTokensNames), paletteClassName))
             .build()
 
-        val darkProperty = PropertySpec.builder(DARK_BRUSHES_PROPERTY_NAME, misticaBrushesClass)
+        val darkProperty = PropertySpec.builder("darkBrushes", misticaBrushesClass)
             .initializer(getBrushesConstructor(brandName, tokens.dark.getGradientTokens(gradientTokensNames), paletteClassName))
             .build()
 
@@ -72,8 +72,4 @@ class GenerateBrandBrushes(
     ): String =
         "$paletteClassName.${getColorResourceName(colorSpecification, brandName)}"
 
-    private companion object {
-        const val LIGHT_BRUSHES_PROPERTY_NAME = "lightBrushes"
-        const val DARK_BRUSHES_PROPERTY_NAME = "darkBrushes"
-    }
 }

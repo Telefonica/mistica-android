@@ -10,7 +10,7 @@ import java.io.File
 
 class GenerateComposeFiles(
     private val generateMisticaColors: GenerateMisticaColors = GenerateMisticaColors(),
-    private val generateBrandColors: GenerateBrandColors = GenerateBrandColors(),
+    private val generateBrandColors: GenerateBrandColorsAndBrushes = GenerateBrandColorsAndBrushes(),
     private val generateMisticaRadius: GenerateMisticaRadius = GenerateMisticaRadius(),
     private val generateBrandRadius: GenerateBrandRadius = GenerateBrandRadius(),
     private val generateBrandFontWeights: GenerateBrandFontWeights = GenerateBrandFontWeights(),

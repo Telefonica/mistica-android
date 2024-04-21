@@ -12,7 +12,7 @@ import com.telefonica.mistica.util.getCoordinatesForLinearGradientWithAngle
 @Immutable
 class LinearGradientWithAngle(
     private val colorStops: List<Pair<Float, Color>>,
-    private val angleInDegrees: Float = 90F,
+    private val angleInDegrees: Float = 0F,
 ) : ShaderBrush() {
 
     override fun createShader(size: Size): Shader {

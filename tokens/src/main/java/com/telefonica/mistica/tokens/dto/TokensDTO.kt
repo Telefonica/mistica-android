@@ -21,6 +21,7 @@ sealed class BrushDTO(
         val value: GradientSpecificationDTO,
         description: String,
     ) : BrushDTO(GRADIENT_TYPE, description) {
+
         class GradientSpecificationDTO(
             val angle: Int,
             val colors: List<GradientColorDTO>
