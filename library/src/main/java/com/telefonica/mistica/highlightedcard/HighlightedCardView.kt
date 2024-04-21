@@ -22,6 +22,7 @@ import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
 import com.telefonica.mistica.theme.color.MisticaGradient
 import com.telefonica.mistica.theme.color.getThemeGradient
+import com.telefonica.mistica.theme.color.getThemeGradientBuilder
 import com.telefonica.mistica.util.getDimension
 import com.telefonica.mistica.util.getThemeColor
 import com.telefonica.mistica.util.hide
@@ -300,11 +301,10 @@ class HighlightedCardView @JvmOverloads constructor(
     private fun configureBackground() {
         if (!hasCustomBackground) {
             val backgroundDrawable = if (isInverse) {
-                context.getThemeGradient(
-                    gradient = MisticaGradient.BackgroundBrand,
-                    withBorderRadius = true,
-                    withBorderStroke = true,
-                )
+                context.getThemeGradientBuilder(MisticaGradient.BackgroundBrand)
+                    .withCornerRadius()
+                    .withBorderStroke()
+                    .get()
             } else {
                 AppCompatResources.getDrawable(context, R.drawable.highlighted_card_background)
             }

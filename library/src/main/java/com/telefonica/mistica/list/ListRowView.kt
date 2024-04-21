@@ -27,6 +27,7 @@ import com.telefonica.mistica.badge.Badge
 import com.telefonica.mistica.list.model.ImageDimensions
 import com.telefonica.mistica.theme.color.MisticaGradient
 import com.telefonica.mistica.theme.color.getThemeGradient
+import com.telefonica.mistica.theme.color.getThemeGradientBuilder
 import com.telefonica.mistica.util.convertDpToPx
 import com.telefonica.mistica.util.getThemeColor
 import com.telefonica.mistica.util.loadUrl
@@ -402,11 +403,10 @@ class ListRowView @JvmOverloads constructor(
             BackgroundType.TYPE_BOXED ->
                 AppCompatResources.getDrawable(context, R.drawable.boxed_list_row_background)
             BackgroundType.TYPE_BOXED_INVERSE ->
-                context.getThemeGradient(
-                    gradient = MisticaGradient.BackgroundBrand,
-                    withBorderRadius = true,
-                    withRipple = true,
-                )
+                context.getThemeGradientBuilder(MisticaGradient.BackgroundBrand)
+                    .withCornerRadius()
+                    .withRipple()
+                    .get()
             BackgroundType.TYPE_NORMAL ->
                 AppCompatResources.getDrawable(context, R.drawable.list_row_background)
             else ->
