@@ -29,29 +29,29 @@ class GetColorsWithAlphaTest {
             light = mapOf(
                 "backgroundContainerAlternativeHover" to BrushDTO.SolidColorDTO(
                     value = "rgba({palette.grey5}, 0.1)",
-                    description = "grey5"
+                    description = "anyDescription"
                 ),
                 "backgroundOverlay" to BrushDTO.SolidColorDTO(
                     value = "rgba({palette.blauBlueSecondary}, 0.75)",
-                    description = "blauBlueSecondary"
+                    description = "anyDescription"
                 ),
                 "backgroundContainerBrand" to BrushDTO.SolidColorDTO(
                     value = "{palette.blauBluePrimary}",
-                    description = "blauBluePrimary"
+                    description = "anyDescription"
                 )
             ),
             dark = mapOf(
                 "textButtonSecondarySelected" to BrushDTO.SolidColorDTO(
                     value = "{palette.grey2}",
-                    description = "grey2"
+                    description = "anyDescription"
                 ),
                 "buttonLinkBackgroundSelected" to BrushDTO.SolidColorDTO(
                     value = "rgba({palette.blauPurple}, 0.3)",
-                    description = "blauPurple"
+                    description = "anyDescription"
                 ),
                 "buttonSecondaryBackgroundHover" to BrushDTO.SolidColorDTO(
                     value = "rgba({palette.white}, 0.15)",
-                    description = "white"
+                    description = "anyDescription"
                 )
             ),
             radius = emptyMap(),
