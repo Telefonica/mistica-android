@@ -7,6 +7,7 @@ import com.squareup.kotlinpoet.ParameterSpec
 import com.squareup.kotlinpoet.PropertySpec
 import com.squareup.kotlinpoet.TypeSpec
 import com.telefonica.mistica.tokens.TokensGenerator
+import com.telefonica.mistica.tokens.xml.GenerateXMLFiles.Companion.capitalizeString
 import java.io.File
 
 /**
@@ -93,8 +94,5 @@ class GenerateMisticaGradients {
         private val intClass = ClassName("kotlin", "Int")
         private val rClass = ClassName("com.telefonica.mistica", "R")
         private val attrResClass = ClassName("androidx.annotation", "AttrRes")
-
-        fun String.capitalizeString(): String =
-            this.replaceFirstChar { if (it.isLowerCase()) it.titlecase() else it.toString() }
     }
 }
