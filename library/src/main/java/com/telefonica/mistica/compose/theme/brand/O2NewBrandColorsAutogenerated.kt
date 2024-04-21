@@ -3,7 +3,7 @@ package com.telefonica.mistica.compose.theme.brand
 
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
-import com.telefonica.mistica.compose.theme.color.AngledLinearGradient
+import com.telefonica.mistica.compose.theme.color.LinearGradientWithAngle
 import com.telefonica.mistica.compose.theme.color.MisticaBrushes
 import com.telefonica.mistica.compose.theme.color.MisticaColors
 
@@ -261,21 +261,21 @@ public object O2NewBrandColors {
 
 public object O2NewBrandBrushes {
   public val lightBrushes: MisticaBrushes = MisticaBrushes(
-      backgroundBrand = AngledLinearGradient(
+      backgroundBrand = LinearGradientWithAngle(
         angleInDegrees = 180F,
         colorStops = listOf(
           0.0F to O2NewPaletteColor.o2New_color_darkBlue,
           0.64F to O2NewPaletteColor.o2New_color_beyondBlue,
           1.0F to O2NewPaletteColor.o2New_color_beyondBlue45
         )),
-      backgroundContainerBrand = AngledLinearGradient(
+      backgroundContainerBrand = LinearGradientWithAngle(
         angleInDegrees = 180F,
         colorStops = listOf(
           0.0F to O2NewPaletteColor.o2New_color_darkBlue,
           0.64F to O2NewPaletteColor.o2New_color_beyondBlue,
           1.0F to O2NewPaletteColor.o2New_color_beyondBlue45
         )),
-      cardContentOverlay = AngledLinearGradient(
+      cardContentOverlay = LinearGradientWithAngle(
         angleInDegrees = 180F,
         colorStops = listOf(
           0.0F to O2NewPaletteColor.o2New_color_beyondBlue,
@@ -287,7 +287,7 @@ public object O2NewBrandBrushes {
   public val darkBrushes: MisticaBrushes = MisticaBrushes(
       backgroundBrand = SolidColor(O2NewPaletteColor.o2New_color_darkModeBlack),
       backgroundContainerBrand = SolidColor(O2NewPaletteColor.o2New_color_darkModeGrey),
-      cardContentOverlay = AngledLinearGradient(
+      cardContentOverlay = LinearGradientWithAngle(
         angleInDegrees = 180F,
         colorStops = listOf(
           0.0F to O2NewPaletteColor.o2New_color_black,

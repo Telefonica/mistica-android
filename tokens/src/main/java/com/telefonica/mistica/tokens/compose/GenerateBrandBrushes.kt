@@ -6,7 +6,7 @@ import com.squareup.kotlinpoet.TypeSpec
 import com.squareup.kotlinpoet.joinToCode
 import com.telefonica.mistica.tokens.TokensGenerator
 import com.telefonica.mistica.tokens.common.GetColorNameWithAlpha
-import com.telefonica.mistica.tokens.compose.GenerateComposeFiles.Companion.angledLinearGradientClass
+import com.telefonica.mistica.tokens.compose.GenerateComposeFiles.Companion.linearGradientWithAngleClass
 import com.telefonica.mistica.tokens.compose.GenerateComposeFiles.Companion.misticaBrushesClass
 import com.telefonica.mistica.tokens.compose.GenerateComposeFiles.Companion.solidColorClass
 import com.telefonica.mistica.tokens.dto.BrushDTO
@@ -51,7 +51,7 @@ class GenerateBrandBrushes(
                     val colorStops = brush.value.colors.map { color ->
                         "${color.stop}F to ${getColorValue(color.value, brandName, paletteClassName)}"
                     }.joinToString(",\n")
-                    CodeBlock.of("$key = %T(\n⇥angleInDegrees = %LF,\ncolorStops = listOf(\n⇥%L⇤\n)⇤)", angledLinearGradientClass, angle, colorStops)
+                    CodeBlock.of("$key = %T(\n⇥angleInDegrees = %LF,\ncolorStops = listOf(\n⇥%L⇤\n)⇤)", linearGradientWithAngleClass, angle, colorStops)
                 }
             }
         }

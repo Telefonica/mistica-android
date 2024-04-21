@@ -1,7 +1,7 @@
 package com.telefonica.mistica.theme.color
 
 import android.content.Context
-import android.graphics.Color
+import android.graphics.LinearGradient
 import android.graphics.Paint
 import android.graphics.Shader
 import android.graphics.drawable.Drawable
@@ -13,9 +13,11 @@ import android.graphics.drawable.shapes.RectShape
 import android.util.TypedValue
 import androidx.annotation.ColorInt
 import androidx.annotation.Px
+import androidx.compose.ui.geometry.Size
 import androidx.core.content.res.ResourcesCompat
 import com.telefonica.mistica.R
 import com.telefonica.mistica.util.convertDpToPx
+import com.telefonica.mistica.util.getCoordinatesForLinearGradientWithAngle
 import com.telefonica.mistica.util.getDimension
 import com.telefonica.mistica.util.getThemeColor
 
@@ -90,18 +92,24 @@ class GradientBuilder(
         val angle = typedValue.data
 
         return if (colors.size > 1) {
-            val shaderFactory: ShapeDrawable.ShaderFactory = object : ShapeDrawable.ShaderFactory() {
+            val gradientShaderFactory: ShapeDrawable.ShaderFactory = object : ShapeDrawable.ShaderFactory() {
                 override fun resize(width: Int, height: Int): Shader {
-                    return AngledLinearGradientShaderProvider(
-                        colors = colors,
-                        stops = stops,
-                        angleInDegrees = angle.toFloat(),
-                    ).createShader(width, height)
+                    val (from, to) = Size(width.toFloat(), height.toFloat())
+                        .getCoordinatesForLinearGradientWithAngle(angle.toFloat())
+                    return LinearGradient(
+                        from.x,
+                        from.y,
+                        to.x,
+                        to.y,
+                        colors,
+                        stops,
+                        Shader.TileMode.CLAMP
+                    )
                 }
             }
             PaintDrawable().apply {
                 shape = RectShape()
-                this.shaderFactory = shaderFactory
+                shaderFactory = gradientShaderFactory
             }
         } else {
             PaintDrawable(colors.first())

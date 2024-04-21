@@ -3,7 +3,7 @@ package com.telefonica.mistica.compose.theme.brand
 
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
-import com.telefonica.mistica.compose.theme.color.AngledLinearGradient
+import com.telefonica.mistica.compose.theme.color.LinearGradientWithAngle
 import com.telefonica.mistica.compose.theme.color.MisticaBrushes
 import com.telefonica.mistica.compose.theme.color.MisticaColors
 
@@ -263,7 +263,7 @@ public object MovistarBrandBrushes {
   public val lightBrushes: MisticaBrushes = MisticaBrushes(
       backgroundBrand = SolidColor(MovistarPaletteColor.movistar_color_movistarBlue),
       backgroundContainerBrand = SolidColor(MovistarPaletteColor.movistar_color_movistarBlue),
-      cardContentOverlay = AngledLinearGradient(
+      cardContentOverlay = LinearGradientWithAngle(
         angleInDegrees = 180F,
         colorStops = listOf(
           0.0F to MovistarPaletteColor.movistar_color_black,
@@ -275,7 +275,7 @@ public object MovistarBrandBrushes {
   public val darkBrushes: MisticaBrushes = MisticaBrushes(
       backgroundBrand = SolidColor(MovistarPaletteColor.movistar_color_darkModeBlack),
       backgroundContainerBrand = SolidColor(MovistarPaletteColor.movistar_color_darkModeGrey),
-      cardContentOverlay = AngledLinearGradient(
+      cardContentOverlay = LinearGradientWithAngle(
         angleInDegrees = 180F,
         colorStops = listOf(
           0.0F to MovistarPaletteColor.movistar_color_black,
