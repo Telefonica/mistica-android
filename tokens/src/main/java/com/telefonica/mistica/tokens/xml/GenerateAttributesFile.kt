@@ -7,6 +7,9 @@ import com.telefonica.mistica.tokens.common.GetBorderRadiusName
 import com.telefonica.mistica.tokens.dto.TokensDTO
 import com.telefonica.mistica.tokens.dto.getGradientTokens
 import com.telefonica.mistica.tokens.dto.removeGradientTokens
+import com.telefonica.mistica.tokens.xml.GenerateMisticaGradients.Companion.BRAND_GRADIENT_ANGLE_ATTR_PREFIX
+import com.telefonica.mistica.tokens.xml.GenerateMisticaGradients.Companion.BRAND_GRADIENT_COLORS_ATTR_PREFIX
+import com.telefonica.mistica.tokens.xml.GenerateMisticaGradients.Companion.BRAND_GRADIENT_STOPS_ATTR_PREFIX
 import com.telefonica.mistica.tokens.xml.GenerateXMLFiles.Companion.ATTRS_FILE
 import com.telefonica.mistica.tokens.xml.GenerateXMLFiles.Companion.FONT_SUFFIX
 import com.telefonica.mistica.tokens.xml.GenerateXMLFiles.Companion.TEXT_SIZE_SUFFIX
@@ -85,13 +88,13 @@ class GenerateAttributesFile(
             val key = gradient.key
             comment(key)
             ATTR {
-                getReferenceElement("gradientColors${key.capitalizeString()}")
+                getReferenceElement("$BRAND_GRADIENT_COLORS_ATTR_PREFIX${key.capitalizeString()}")
             }
             ATTR {
-                getReferenceElement("gradientStops${key.capitalizeString()}")
+                getReferenceElement("$BRAND_GRADIENT_STOPS_ATTR_PREFIX${key.capitalizeString()}")
             }
             ATTR {
-                getIntegerElement("gradientAngle${key.capitalizeString()}")
+                getIntegerElement("$BRAND_GRADIENT_ANGLE_ATTR_PREFIX${key.capitalizeString()}")
             }
         }
     }
