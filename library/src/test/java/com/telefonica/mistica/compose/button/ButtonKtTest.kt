@@ -1,8 +1,8 @@
 package com.telefonica.mistica.compose.button
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.Surface
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onRoot
@@ -36,7 +36,7 @@ internal class ButtonKtTest(private val brand: Brand, private val style: ButtonS
     private fun `when Button`(brand: Brand = MovistarBrand, style: ButtonStyle, icon: Boolean, darkTheme: Boolean) {
         composeTestRule.setContent {
             MisticaTheme(brand = brand, darkTheme = darkTheme) {
-                Surface(
+                Box(
                     modifier = Modifier.let {
                         if (style.isInverse()) {
                             it.background(brushes.backgroundBrand)
