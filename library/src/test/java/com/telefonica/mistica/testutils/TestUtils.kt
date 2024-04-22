@@ -7,6 +7,7 @@ import com.telefonica.mistica.compose.theme.brand.BlauBrand
 import com.telefonica.mistica.compose.theme.brand.Brand
 import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 import com.telefonica.mistica.compose.theme.brand.O2Brand
+import com.telefonica.mistica.compose.theme.brand.O2NewBrand
 import com.telefonica.mistica.compose.theme.brand.TelefonicaBrand
 import com.telefonica.mistica.compose.theme.brand.TuBrand
 import com.telefonica.mistica.compose.theme.brand.VivoBrand
@@ -38,6 +39,7 @@ object TestUtils {
         BlauBrand,
         TelefonicaBrand,
         TuBrand,
+        O2NewBrand,
     )
 
     fun ButtonStyle.isInverse() = when(this) {
@@ -57,6 +59,7 @@ object TestUtils {
         BlauBrand -> R.style.MisticaTheme_Blau
         TuBrand -> R.style.MisticaTheme_Tu
         TelefonicaBrand -> R.style.MisticaTheme_Telefonica
+        O2NewBrand -> R.style.MisticaTheme_O2New
         else -> error("No tests defined for brand $this")
     }
 }
