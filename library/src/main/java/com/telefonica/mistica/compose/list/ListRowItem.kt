@@ -29,6 +29,8 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.semantics.heading
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.R
@@ -44,6 +46,7 @@ fun ListRowItem(
     modifier: Modifier = Modifier,
     listRowIcon: ListRowIcon? = null,
     title: String? = null,
+    isTitleHeading: Boolean = false,
     subtitle: String? = null,
     description: String? = null,
     backgroundType: BackgroundType = BackgroundType.TYPE_NORMAL,
@@ -59,6 +62,7 @@ fun ListRowItem(
         modifier = modifier,
         icon = { listRowIcon?.Draw() },
         title = title,
+        isTitleHeading = isTitleHeading,
         subtitle = subtitle,
         description = description,
         backgroundType = backgroundType,
@@ -79,6 +83,7 @@ fun ListRowItem(
     modifier: Modifier = Modifier,
     icon: @Composable (() -> Unit)? = null,
     title: String? = null,
+    isTitleHeading: Boolean = false,
     subtitle: String? = null,
     description: String? = null,
     backgroundType: BackgroundType = BackgroundType.TYPE_NORMAL,
@@ -100,6 +105,7 @@ fun ListRowItem(
         badge = badge,
         isBadgeVisible = isBadgeVisible,
         headline = headline,
+        isTitleHeading = isTitleHeading,
         trailing = trailing,
         onClick = onClick,
         bottom = bottom,
@@ -113,6 +119,7 @@ private fun ListRowItemImp(
     modifier: Modifier = Modifier,
     icon: @Composable (() -> Unit)? = null,
     title: String? = null,
+    isTitleHeading: Boolean = false,
     subtitle: String? = null,
     description: String? = null,
     backgroundType: BackgroundType = BackgroundType.TYPE_NORMAL,
@@ -206,7 +213,15 @@ private fun ListRowItemImp(
                         text = it,
                         style = MisticaTheme.typography.preset3,
                         color = textColorPrimary,
-                        modifier = Modifier.testTag(ListRowItemTestTags.LIST_ROW_ITEM_TITLE),
+                        modifier = Modifier
+                            .testTag(ListRowItemTestTags.LIST_ROW_ITEM_TITLE)
+                            .then(
+                                if (isTitleHeading) {
+                                    Modifier.semantics { heading() }
+                                } else {
+                                    Modifier
+                                }
+                            ),
                     )
                 }
                 subtitle?.let {

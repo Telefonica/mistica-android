@@ -49,6 +49,7 @@ const val DESCRIPTION = "Description"
 fun samples() = listOf(
     ListItem(
         title = TITLE,
+        isTitleHeading = true,
     ),
     ListItem(
         title = TITLE,
@@ -68,6 +69,7 @@ fun samples() = listOf(
     ListItem(
         title = TITLE,
         subtitle = SUBTITLE,
+        isTitleHeading = true,
     ),
     ListItem(
         title = TITLE,
@@ -319,6 +321,7 @@ fun Lists() {
                 listRowIcon = item.listRowIcon,
                 headline = item.headline,
                 title = item.title,
+                isTitleHeading = item.isTitleHeading,
                 subtitle = item.subtitle,
                 description = item.description,
                 trailing = item.action,
@@ -390,6 +393,7 @@ fun Lists() {
 data class ListItem(
     val listRowIcon: ListRowIcon? = null,
     val title: String? = null,
+    val isTitleHeading: Boolean = false,
     val subtitle: String? = null,
     val description: String? = null,
     val backgroundType: BackgroundType = BackgroundType.TYPE_NORMAL,
@@ -397,7 +401,7 @@ data class ListItem(
     val isBadgeVisible: Boolean = false,
     val headline: Tag? = null,
     val action: @Composable (() -> Unit)? = null,
-    val onClick: () -> Unit = {},
+    val onClick: (() -> Unit)? = null,
     val bottom: @Composable (() -> Unit)? = null,
 )
 
