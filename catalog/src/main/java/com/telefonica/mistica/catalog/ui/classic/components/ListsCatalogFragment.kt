@@ -84,12 +84,14 @@ class ListsCatalogFragment : Fragment() {
             {
                 it.configureView(
                     withInverseBackground = withInverseBackground,
+                    withTitleHeading = true,
                 )
             },
             {
                 it.configureView(
                     withAction = true,
                     withInverseBackground = withInverseBackground,
+                    withTitleHeading = true,
                 )
             },
             {
@@ -98,6 +100,7 @@ class ListsCatalogFragment : Fragment() {
                     withBadge = true,
                     withBadgeDescription = "You have unread messages",
                     withInverseBackground = withInverseBackground,
+                    withTitleHeading = true,
                 )
             },
             {
@@ -105,6 +108,7 @@ class ListsCatalogFragment : Fragment() {
                     withAction = true,
                     withBadgeNumeric = 1,
                     withInverseBackground = withInverseBackground,
+                    withTitleHeading = true,
                 )
             },
             {
@@ -461,6 +465,7 @@ class ListsCatalogFragment : Fragment() {
         private fun ListRowView.configureView(
             withLongTitle: Boolean = false,
             withTitleMaxLines: Int? = null,
+            withTitleHeading: Boolean? = false,
             withLongDescription: Boolean? = null,
             withDescriptionMaxLines: Int? = null,
             withAsset: Boolean = false,
@@ -491,6 +496,9 @@ class ListsCatalogFragment : Fragment() {
             withTitleMaxLines?.let { setTitleMaxLines(it) }
             setTitle(if (withLongTitle) "Title long enough to need more than 2 lines to show it, just for testing purposes." +
                     "More sample text just for testing purposes." else "Title")
+            if (withTitleHeading == true) {
+                setTitleHeading()
+            }
             withSubtitleMaxLines?.let { setSubtitleMaxLines(it) }
             setSubtitle(if (withSubtitle) "Any Subtitle" else null)
             withDescriptionMaxLines?.let { setDescriptionMaxLines(it) }
@@ -528,6 +536,7 @@ class ListsCatalogFragment : Fragment() {
             } else {
                 setActionLayout(ListRowView.ACTION_NONE)
                 isClickable = false
+                importantForAccessibility = View.IMPORTANT_FOR_ACCESSIBILITY_NO
             }
 
             when {

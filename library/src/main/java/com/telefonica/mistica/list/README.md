@@ -16,6 +16,7 @@ Implemented as a custom view, `com.telefonica.mistica.ListRowView` can be used i
 	</attr>
 	<attr name="listRowHeadlineVisible" format="boolean" />
 	<attr name="listRowTitle" format="string" />
+	<attr name="isTitleHeading" format="boolean" />
 	<attr name="listRowTitleMaxLines" format="integer" />
 	<attr name="listRowSubtitle" format="string" />
 	<attr name="listRowSubtitleMaxLines" format="integer" />
