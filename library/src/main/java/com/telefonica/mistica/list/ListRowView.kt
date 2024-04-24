@@ -389,7 +389,7 @@ class ListRowView @JvmOverloads constructor(
         }
     }
 
-View i    fun setTitleHeading() {
+    fun setTitleHeading() {
         ViewCompat.setAccessibilityHeading(titleTextView, true)
     }
 
