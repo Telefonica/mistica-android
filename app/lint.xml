@@ -7,4 +7,5 @@
     <issue id="NotificationPermission">
         <ignore regexp="com.microsoft.appcenter.distribute.Distribute" />
     </issue>
+    <issue id="GradleDependency" severity="ignore" />
 </lint>

@@ -311,6 +311,14 @@
                     app:inputCheckText="This is a disabled CheckBox"
                     app:inputEnabled="false"/>
 
+            <com.telefonica.mistica.input.CheckBoxInput
+                    android:id="@+id/disabled_checkboxInput_unchecked"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:inputCheckText="This is a disabled CheckBox"
+                    app:inputChecked="false"
+                    app:inputEnabled="false"/>
+
         </LinearLayout>
 
         <com.telefonica.mistica.title.TitleView

@@ -20,6 +20,7 @@ import com.telefonica.mistica.compose.theme.brand.TelefonicaBrand
 import com.telefonica.mistica.compose.theme.brand.TuBrand
 import com.telefonica.mistica.compose.theme.brand.VivoBrand
 import com.telefonica.mistica.testutils.ScreenshotsTest
+import com.telefonica.mistica.testutils.TestUtils
 import com.telefonica.mistica.testutils.TestUtils.getAllBrands
 import com.telefonica.mistica.testutils.TestUtils.isInverse
 import com.telefonica.mistica.util.getThemeColor
@@ -37,7 +38,7 @@ internal class ButtonTest(
 ) : ScreenshotsTest() {
 
     private val intent = Intent(ApplicationProvider.getApplicationContext(), DummyActivity::class.java).apply {
-        this.putExtra(EXTRA_THEME, brand.getBaseThemeForBrand())
+        this.putExtra(EXTRA_THEME, TestUtils.getBaseThemeForBrand(brand))
     }
 
     @get:Rule
@@ -103,17 +104,6 @@ internal class ButtonTest(
             }
         }
     }
-}
-
-@StyleRes
-private fun Brand.getBaseThemeForBrand(): Int = when (this) {
-    MovistarBrand -> R.style.MisticaTheme_Movistar
-    VivoBrand -> R.style.MisticaTheme_Vivo
-    O2Brand -> R.style.MisticaTheme_O2
-    BlauBrand -> R.style.MisticaTheme_Blau
-    TuBrand -> R.style.MisticaTheme_Tu
-    TelefonicaBrand -> R.style.MisticaTheme_Telefonica
-    else -> error("No tests defined for brand $this")
 }
 
 @LayoutRes
