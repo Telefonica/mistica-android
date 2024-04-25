@@ -40,7 +40,7 @@ import com.telefonica.mistica.compose.tag.Tag
 import com.telefonica.mistica.compose.theme.MisticaTheme
 import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 
-@ExperimentalMaterialApi
+@OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun ListRowItem(
     modifier: Modifier = Modifier,
@@ -76,7 +76,7 @@ fun ListRowItem(
     )
 }
 
-@ExperimentalMaterialApi
+@OptIn(ExperimentalMaterialApi::class)
 @Composable
 @Deprecated(replaceWith = ReplaceWith("ListRowItem"), message = "Use new ListRowItem with ListRowIcon param instead")
 fun ListRowItem(

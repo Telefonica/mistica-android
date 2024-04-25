@@ -15,7 +15,6 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Divider
-import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Switch
 import androidx.compose.material.Text
@@ -301,7 +300,6 @@ fun samples() = listOf(
 
 const val IMAGE_URL = "https://www.fotoaparat.cz/imgs/a/26/2639/0n1wjdf0-cr-em13-09-1200x627x9.jpg"
 
-@OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun Lists() {
     val samples = samples()
@@ -453,7 +451,6 @@ private fun CustomSlot() {
 }
 
 @Composable
-@OptIn(ExperimentalMaterialApi::class)
 private fun ClickableAssetSample(context: Context, onRowClick: () -> Unit) {
     ListRowItem(
         title = "Clickable Asset in Clickable Row",

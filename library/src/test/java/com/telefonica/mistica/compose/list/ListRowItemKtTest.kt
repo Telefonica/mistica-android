@@ -1,7 +1,6 @@
 package com.telefonica.mistica.compose.list
 
 import androidx.compose.foundation.clickable
-import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
@@ -83,7 +82,6 @@ internal class ListRowItemKtTest : ScreenshotsTest() {
             .assert(!isHeading())
     }
 
-    @OptIn(ExperimentalMaterialApi::class)
     private fun `when ListRowItem with asset`(dimensions: ImageDimensions, onAssetClick: () -> Unit = {}) {
         composeTestRule.setContent {
             MisticaTheme(brand = MovistarBrand) {
@@ -106,7 +104,6 @@ internal class ListRowItemKtTest : ScreenshotsTest() {
         }
     }
 
-    @OptIn(ExperimentalMaterialApi::class)
     private fun `when ListRowItem with title`(title: String, isTitleHeading: Boolean) {
         composeTestRule.setContent {
             MisticaTheme(brand = MovistarBrand) {
