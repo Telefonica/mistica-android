@@ -534,7 +534,6 @@ class ListsCatalogFragment : Fragment() {
             } else {
                 setActionLayout(ListRowView.ACTION_NONE)
                 isClickable = false
-                importantForAccessibility = View.IMPORTANT_FOR_ACCESSIBILITY_NO
             }
 
             when {
