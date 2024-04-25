@@ -58,4 +58,17 @@
 			app:listRowAssetType="image_1_1"
 			app:listRowIsBoxed="true"
 			app:listRowTitle="Image_1_1" />
+	<com.telefonica.mistica.list.ListRowView
+			android:id="@+id/list_row_view_title_heading"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			app:listRowActionLayout="@layout/list_row_chevron_action"
+			app:listRowAssetDrawable="@drawable/placeholder"
+			app:listRowBadgeCount="gone"
+			app:listRowBadgeVisible="false"
+			app:listRowDescription="Test Subtitle"
+			app:listRowAssetType="image_1_1"
+			app:listRowIsBoxed="true"
+			app:listRowTitle="Image_1_1"
+			app:listRowIsTitleHeading="true" />
 </LinearLayout>

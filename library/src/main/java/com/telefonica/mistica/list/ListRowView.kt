@@ -252,7 +252,7 @@ class ListRowView @JvmOverloads constructor(
                 false
             )
                 .takeIf { it }
-                .let { setTitleHeading() }
+                ?.let { setTitleHeading() }
 
             styledAttrs.recycle()
         }

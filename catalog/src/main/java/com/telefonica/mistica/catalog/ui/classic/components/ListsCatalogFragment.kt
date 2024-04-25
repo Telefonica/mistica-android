@@ -91,7 +91,6 @@ class ListsCatalogFragment : Fragment() {
                 it.configureView(
                     withAction = true,
                     withInverseBackground = withInverseBackground,
-                    withTitleHeading = true,
                 )
             },
             {
@@ -100,7 +99,6 @@ class ListsCatalogFragment : Fragment() {
                     withBadge = true,
                     withBadgeDescription = "You have unread messages",
                     withInverseBackground = withInverseBackground,
-                    withTitleHeading = true,
                 )
             },
             {
@@ -108,13 +106,13 @@ class ListsCatalogFragment : Fragment() {
                     withAction = true,
                     withBadgeNumeric = 1,
                     withInverseBackground = withInverseBackground,
-                    withTitleHeading = true,
                 )
             },
             {
                 it.configureView(
                     withLongDescription = false,
                     withInverseBackground = withInverseBackground,
+                    withTitleHeading = true,
                 )
             },
             {
