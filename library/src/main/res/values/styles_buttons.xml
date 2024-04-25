@@ -137,4 +137,46 @@
         <item name="rippleColor">?colorButtonLinkBackgroundSelected</item>
     </style>
 
+    <style name="AppTheme.Button.LinkButton.Small" parent="AppTheme.LinkButton">
+        <item name="android:textAppearance">@style/AppTheme.TextAppearance.PresetSmallButton</item>
+        <item name="android:minWidth">@dimen/button_small_min_width</item>
+        <item name="android:minHeight">@dimen/button_small_height</item>
+        <item name="iconSize">@dimen/button_small_icon_size</item>
+    </style>
+
+    <style name="AppTheme.Button.LinkButtonInverse.Small" parent="AppTheme.Button.LinkButtonInverse">
+        <item name="android:textAppearance">@style/AppTheme.TextAppearance.PresetSmallButton</item>
+        <item name="android:minWidth">@dimen/button_small_min_width</item>
+        <item name="android:minHeight">@dimen/button_small_height</item>
+        <item name="iconSize">@dimen/button_small_icon_size</item>
+    </style>
+
+    <style name="AppTheme.Button.DangerLinkButton" parent="AppTheme.LinkButton">
+        <item name="backgroundTint">@android:color/transparent</item>
+        <item name="android:textColor">?attr/colorTextLinkDanger</item>
+        <item name="iconTint">?attr/colorTextLinkDanger</item>
+        <item name="rippleColor">?colorButtonLinkDangerBackgroundSelected</item>
+    </style>
+
+    <style name="AppTheme.Button.DangerLinkButtonInverse" parent="AppTheme.LinkButton">
+        <item name="backgroundTint">@android:color/transparent</item>
+        <item name="android:textColor">?attr/colorTextLinkDanger</item>
+        <item name="iconTint">?attr/colorTextLinkDanger</item>
+        <item name="rippleColor">?colorButtonLinkDangerBackgroundInverseSelected</item>
+    </style>
+
+    <style name="AppTheme.Button.DangerLinkButton.Small" parent="AppTheme.Button.DangerLinkButton">
+        <item name="android:textAppearance">@style/AppTheme.TextAppearance.PresetSmallButton</item>
+        <item name="android:minWidth">@dimen/button_small_min_width</item>
+        <item name="android:minHeight">@dimen/button_small_height</item>
+        <item name="iconSize">@dimen/button_small_icon_size</item>
+    </style>
+
+    <style name="AppTheme.Button.DangerLinkButtonInverse.Small" parent="AppTheme.Button.DangerLinkButtonInverse">
+        <item name="android:textAppearance">@style/AppTheme.TextAppearance.PresetSmallButton</item>
+        <item name="android:minWidth">@dimen/button_small_min_width</item>
+        <item name="android:minHeight">@dimen/button_small_height</item>
+        <item name="iconSize">@dimen/button_small_icon_size</item>
+    </style>
+
 </resources>

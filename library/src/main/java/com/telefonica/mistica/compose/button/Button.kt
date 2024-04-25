@@ -215,7 +215,13 @@ enum class ButtonStyle {
     PRIMARY_SMALL_INVERSE,
     SECONDARY_INVERSE,
     SECONDARY_SMALL_INVERSE,
-    LINK_INVERSE
+    LINK_INVERSE,
+    LINK_SMALL,
+    LINK_SMALL_INVERSE,
+    DANGER_LINK,
+    DANGER_LINK_INVERSE,
+    DANGER_LINK_SMALL,
+    DANGER_LINK_SMALL_INVERSE,
 }
 
 @Preview
@@ -266,6 +272,18 @@ fun LinkWithChevronPreview() {
             text = "Text",
             withChevron = true,
             buttonStyle = ButtonStyle.LINK,
+            onClickListener = {},
+        )
+    }
+}
+
+@Preview
+@Composable
+fun DangerLinkWithChevronPreview() {
+    MisticaTheme(brand = MovistarBrand) {
+        Button(
+            text = "Text",
+            buttonStyle = ButtonStyle.DANGER_LINK,
             onClickListener = {},
         )
     }

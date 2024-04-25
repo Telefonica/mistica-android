@@ -261,6 +261,71 @@
                 app:style="LINK"
                 app:withChevron="true" />
 
+
+            <com.telefonica.mistica.button2.Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Danger Link"
+                    app:style="DANGER_LINK" />
+
+            <com.telefonica.mistica.button2.Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Danger Link Icon"
+                    app:icon="@drawable/icn_creditcard"
+                    app:iconTint="@color/text_button_link_inverse_selector"
+                    app:style="DANGER_LINK" />
+
+            <com.telefonica.mistica.button2.Button
+                    android:id="@+id/danger_link_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Danger Link Progress"
+                    app:style="DANGER_LINK" />
+
+            <com.telefonica.mistica.button2.Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:enabled="false"
+                    android:text="Danger Link Disabled"
+                    app:style="DANGER_LINK" />
+
+            <com.telefonica.mistica.button2.Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Danger Link"
+                    app:style="DANGER_LINK_SMALL" />
+
+            <com.telefonica.mistica.button2.Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Danger Link Icon"
+                    app:icon="@drawable/icn_creditcard"
+                    app:iconTint="@color/text_button_link_inverse_selector"
+                    app:style="DANGER_LINK" />
+
+            <com.telefonica.mistica.button2.Button
+                    android:id="@+id/danger_link_small_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Danger Link Progress"
+                    app:style="DANGER_LINK_SMALL" />
+
+            <com.telefonica.mistica.button2.Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:enabled="false"
+                    android:text="Danger Link Disabled"
+                    app:style="DANGER_LINK_SMALL" />
+
         </LinearLayout>
 
         <com.telefonica.mistica.title.TitleView
@@ -455,6 +520,71 @@
                 android:text="Link With Chevron Disabled"
                 app:style="LINK_INVERSE"
                 app:withChevron="true" />
+
+            <com.telefonica.mistica.button2.Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Danger Link"
+                    app:style="DANGER_LINK_INVERSE" />
+
+            <com.telefonica.mistica.button2.Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Danger Link Icon"
+                    app:icon="@drawable/icn_creditcard"
+                    app:iconTint="@color/text_button_link_inverse_selector"
+                    app:style="DANGER_LINK_INVERSE" />
+
+            <com.telefonica.mistica.button2.Button
+                    android:id="@+id/danger_link_inverse_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Danger Link Progress"
+                    app:style="DANGER_LINK_INVERSE" />
+
+            <com.telefonica.mistica.button2.Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:enabled="false"
+                    android:text="Danger Link Disabled"
+                    app:style="DANGER_LINK_INVERSE" />
+
+            <com.telefonica.mistica.button2.Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Danger Link"
+                    app:style="DANGER_LINK_SMALL_INVERSE" />
+
+            <com.telefonica.mistica.button2.Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Danger Link Icon"
+                    app:icon="@drawable/icn_creditcard"
+                    app:iconTint="@color/text_button_link_inverse_selector"
+                    app:style="DANGER_LINK_SMALL_INVERSE" />
+
+            <com.telefonica.mistica.button2.Button
+                    android:id="@+id/danger_link_small_inverse_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Danger Link Progress"
+                    app:style="DANGER_LINK_SMALL_INVERSE" />
+
+            <com.telefonica.mistica.button2.Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:enabled="false"
+                    android:text="Danger Link Disabled"
+                    app:style="DANGER_LINK_SMALL_INVERSE"
+                    tools:ignore="TooManyViews"/>
 
         </LinearLayout>
 
