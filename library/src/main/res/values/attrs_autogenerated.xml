@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 	<!-- Code generated automatically, DO NOT EDIT manually. Use Import design tokens GitHub Action. -->
 	<declare-styleable name="Colors">
 		<attr name="colorBackground" format="color|reference"/>
@@ -128,14 +128,20 @@
 	</declare-styleable>
 	<declare-styleable name="Gradients">
 		<!-- backgroundBrand -->
+		<attr name="drawableBackgroundBrand" format="reference" tools:targetApi="n"/>
+		<!-- Less than Api 24 Support Gradients Attributes -->
 		<attr name="gradientColorsBackgroundBrand" format="reference"/>
 		<attr name="gradientStopsBackgroundBrand" format="reference"/>
 		<attr name="gradientAngleBackgroundBrand" format="integer|reference"/>
 		<!-- backgroundContainerBrand -->
+		<attr name="drawableBackgroundContainerBrand" format="reference" tools:targetApi="n"/>
+		<!-- Less than Api 24 Support Gradients Attributes -->
 		<attr name="gradientColorsBackgroundContainerBrand" format="reference"/>
 		<attr name="gradientStopsBackgroundContainerBrand" format="reference"/>
 		<attr name="gradientAngleBackgroundContainerBrand" format="integer|reference"/>
 		<!-- cardContentOverlay -->
+		<attr name="drawableCardContentOverlay" format="reference" tools:targetApi="n"/>
+		<!-- Less than Api 24 Support Gradients Attributes -->
 		<attr name="gradientColorsCardContentOverlay" format="reference"/>
 		<attr name="gradientStopsCardContentOverlay" format="reference"/>
 		<attr name="gradientAngleCardContentOverlay" format="integer|reference"/>

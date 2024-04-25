@@ -21,8 +21,8 @@ import com.telefonica.mistica.input.validations.EmailTextInputValidation
 import com.telefonica.mistica.input.validations.PhoneTextInputValidation
 import com.telefonica.mistica.input.validations.TextInputValidation
 import com.telefonica.mistica.input.validations.TextInputValidationResult
-import com.telefonica.mistica.theme.color.MisticaGradient
-import com.telefonica.mistica.theme.color.getThemeGradient
+import com.telefonica.mistica.theme.gradient.MisticaCompatibilityGradient
+import com.telefonica.mistica.theme.gradient.getThemeGradient
 import com.telefonica.mistica.title.TitleView
 
 class InputsCatalogFragment : Fragment() {
@@ -36,7 +36,7 @@ class InputsCatalogFragment : Fragment() {
         return layoutInflater.inflate(R.layout.screen_inputs_catalog, container, false).apply {
 
             findViewById<View>(R.id.inverse_inputs_container).background =
-                context.getThemeGradient(MisticaGradient.BackgroundBrand)
+                context.getThemeGradient(MisticaCompatibilityGradient.BackgroundBrand)
 
             val countries = listOf("Item 1", "Item 2", "Item 3", "Item 4")
 

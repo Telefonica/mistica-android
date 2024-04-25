@@ -1,11 +1,11 @@
 // Code generated automatically, DO NOT EDIT manually. Use Import design tokens GitHub Action.
-package com.telefonica.mistica.theme.color
+package com.telefonica.mistica.theme.gradient
 
 import androidx.`annotation`.AttrRes
 import com.telefonica.mistica.R
 import kotlin.Int
 
-public enum class MisticaGradient(
+public enum class MisticaCompatibilityGradient(
   @AttrRes
   public val gradientColorsAttrRes: Int,
   @AttrRes

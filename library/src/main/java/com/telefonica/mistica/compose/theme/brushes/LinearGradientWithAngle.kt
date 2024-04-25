@@ -1,4 +1,4 @@
-package com.telefonica.mistica.compose.theme.color
+package com.telefonica.mistica.compose.theme.brushes
 
 import androidx.compose.runtime.Immutable
 import androidx.compose.ui.geometry.Size

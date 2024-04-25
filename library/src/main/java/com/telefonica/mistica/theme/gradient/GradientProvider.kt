@@ -1,35 +1,30 @@
-package com.telefonica.mistica.theme.color
+package com.telefonica.mistica.theme.gradient
 
 import android.content.Context
-import android.graphics.LinearGradient
 import android.graphics.Paint
-import android.graphics.Shader
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.LayerDrawable
 import android.graphics.drawable.PaintDrawable
 import android.graphics.drawable.RippleDrawable
-import android.graphics.drawable.ShapeDrawable
 import android.graphics.drawable.shapes.RectShape
 import android.util.TypedValue
 import androidx.annotation.ColorInt
 import androidx.annotation.Px
-import androidx.compose.ui.geometry.Size
 import androidx.core.content.res.ResourcesCompat
 import com.telefonica.mistica.R
 import com.telefonica.mistica.util.convertDpToPx
-import com.telefonica.mistica.util.getCoordinatesForLinearGradientWithAngle
 import com.telefonica.mistica.util.getDimension
 import com.telefonica.mistica.util.getThemeColor
 
-fun Context.getThemeGradient(gradient: MisticaGradient): Drawable =
+fun Context.getThemeGradient(gradient: MisticaCompatibilityGradient): Drawable =
     getThemeGradientBuilder(gradient).get()
 
-fun Context.getThemeGradientBuilder(gradient: MisticaGradient): GradientBuilder =
+fun Context.getThemeGradientBuilder(gradient: MisticaCompatibilityGradient): GradientBuilder =
     GradientBuilder(this, gradient)
 
 class GradientBuilder(
     private val context: Context,
-    private val gradient: MisticaGradient,
+    private val gradient: MisticaCompatibilityGradient,
 ) {
     private var withCornerRadius: Boolean = false
 
@@ -73,7 +68,7 @@ class GradientBuilder(
             .applyBorderStroke()
 
     private fun getGradient(
-        gradient: MisticaGradient,
+        gradient: MisticaCompatibilityGradient,
     ): PaintDrawable {
         val typedValue = TypedValue()
         context.theme.resolveAttribute(gradient.gradientColorsAttrRes, typedValue, true)
@@ -89,28 +84,10 @@ class GradientBuilder(
         val stops = context.resources.getStringArray(typedValue.data).map { it.toFloat() }.toFloatArray()
 
         context.theme.resolveAttribute(gradient.gradientAngleAttrRes, typedValue, true)
-        val angle = typedValue.data
+        val angle = typedValue.data.toFloat()
 
         return if (colors.size > 1) {
-            val gradientShaderFactory: ShapeDrawable.ShaderFactory = object : ShapeDrawable.ShaderFactory() {
-                override fun resize(width: Int, height: Int): Shader {
-                    val (from, to) = Size(width.toFloat(), height.toFloat())
-                        .getCoordinatesForLinearGradientWithAngle(angle.toFloat())
-                    return LinearGradient(
-                        from.x,
-                        from.y,
-                        to.x,
-                        to.y,
-                        colors,
-                        stops,
-                        Shader.TileMode.CLAMP
-                    )
-                }
-            }
-            PaintDrawable().apply {
-                shape = RectShape()
-                shaderFactory = gradientShaderFactory
-            }
+            LinearGradientWithAngleDrawable(colors, stops, angle)
         } else {
             PaintDrawable(colors.first())
         }

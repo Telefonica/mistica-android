@@ -15,9 +15,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.theme.brand.Brand
-import com.telefonica.mistica.compose.theme.color.LocalMisticaBrushes
+import com.telefonica.mistica.compose.theme.brushes.LocalMisticaBrushes
 import com.telefonica.mistica.compose.theme.color.LocalMisticaColors
-import com.telefonica.mistica.compose.theme.color.MisticaBrushes
+import com.telefonica.mistica.compose.theme.brushes.MisticaBrushes
 import com.telefonica.mistica.compose.theme.color.MisticaColors
 import com.telefonica.mistica.compose.theme.text.LocalMisticaTypography
 import com.telefonica.mistica.compose.theme.text.MisticaTypography

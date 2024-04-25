@@ -1,70 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<!-- Code generated automatically, DO NOT EDIT manually. Use Import design tokens GitHub Action. -->
-	<!-- Gradient resources -->
+	<!-- Less than Api 24 Support Gradients Resources -->
+	<!-- Light Gradient resources -->
 	<!-- backgroundBrand gradient -->
-	<integer-array name="o2New_gradient_colors_light_backgroundBrand">
+	<integer-array name="o2new_gradient_colors_light_backgroundbrand">
 		<item>@color/o2New_color_darkBlue</item>
 		<item>@color/o2New_color_beyondBlue</item>
 		<item>@color/o2New_color_beyondBlue45</item>
 	</integer-array>
-	<string-array name="o2New_gradient_stops_light_backgroundBrand">
+	<string-array name="o2new_gradient_stops_light_backgroundbrand">
 		<item>0.0</item>
 		<item>0.64</item>
 		<item>1.0</item>
 	</string-array>
-	<integer name="o2New_gradient_angle_light_backgroundBrand">180</integer>
+	<integer name="o2new_gradient_angle_light_backgroundbrand">180</integer>
 	<!-- backgroundContainerBrand gradient -->
-	<integer-array name="o2New_gradient_colors_light_backgroundContainerBrand">
+	<integer-array name="o2new_gradient_colors_light_backgroundcontainerbrand">
 		<item>@color/o2New_color_darkBlue</item>
 		<item>@color/o2New_color_beyondBlue</item>
 		<item>@color/o2New_color_beyondBlue45</item>
 	</integer-array>
-	<string-array name="o2New_gradient_stops_light_backgroundContainerBrand">
+	<string-array name="o2new_gradient_stops_light_backgroundcontainerbrand">
 		<item>0.0</item>
 		<item>0.64</item>
 		<item>1.0</item>
 	</string-array>
-	<integer name="o2New_gradient_angle_light_backgroundContainerBrand">180</integer>
+	<integer name="o2new_gradient_angle_light_backgroundcontainerbrand">180</integer>
 	<!-- cardContentOverlay gradient -->
-	<integer-array name="o2New_gradient_colors_light_cardContentOverlay">
+	<integer-array name="o2new_gradient_colors_light_cardcontentoverlay">
 		<item>@color/o2New_color_beyondBlue</item>
 		<item>@color/o2New_color_beyondBlue_40_alpha</item>
 		<item>@color/o2New_color_beyondBlue</item>
 	</integer-array>
-	<string-array name="o2New_gradient_stops_light_cardContentOverlay">
+	<string-array name="o2new_gradient_stops_light_cardcontentoverlay">
 		<item>0.0</item>
 		<item>0.3</item>
 		<item>1.0</item>
 	</string-array>
-	<integer name="o2New_gradient_angle_light_cardContentOverlay">180</integer>
-	<!-- Gradient Dark resources -->
+	<integer name="o2new_gradient_angle_light_cardcontentoverlay">180</integer>
+	<!-- Dark Gradient resources -->
 	<!-- backgroundBrand gradient -->
-	<integer-array name="o2New_gradient_colors_dark_backgroundBrand">
+	<integer-array name="o2new_gradient_colors_dark_backgroundbrand">
 		<item>@color/o2New_color_darkModeBlack</item>
 	</integer-array>
-	<string-array name="o2New_gradient_stops_dark_backgroundBrand">
+	<string-array name="o2new_gradient_stops_dark_backgroundbrand">
 		<item>0.0</item>
 	</string-array>
-	<integer name="o2New_gradient_angle_dark_backgroundBrand">0</integer>
+	<integer name="o2new_gradient_angle_dark_backgroundbrand">0</integer>
 	<!-- backgroundContainerBrand gradient -->
-	<integer-array name="o2New_gradient_colors_dark_backgroundContainerBrand">
+	<integer-array name="o2new_gradient_colors_dark_backgroundcontainerbrand">
 		<item>@color/o2New_color_darkModeGrey</item>
 	</integer-array>
-	<string-array name="o2New_gradient_stops_dark_backgroundContainerBrand">
+	<string-array name="o2new_gradient_stops_dark_backgroundcontainerbrand">
 		<item>0.0</item>
 	</string-array>
-	<integer name="o2New_gradient_angle_dark_backgroundContainerBrand">0</integer>
+	<integer name="o2new_gradient_angle_dark_backgroundcontainerbrand">0</integer>
 	<!-- cardContentOverlay gradient -->
-	<integer-array name="o2New_gradient_colors_dark_cardContentOverlay">
+	<integer-array name="o2new_gradient_colors_dark_cardcontentoverlay">
 		<item>@color/o2New_color_black</item>
 		<item>@color/o2New_color_black_40_alpha</item>
 		<item>@color/o2New_color_black_70_alpha</item>
 	</integer-array>
-	<string-array name="o2New_gradient_stops_dark_cardContentOverlay">
+	<string-array name="o2new_gradient_stops_dark_cardcontentoverlay">
 		<item>0.0</item>
 		<item>0.3</item>
 		<item>1.0</item>
 	</string-array>
-	<integer name="o2New_gradient_angle_dark_cardContentOverlay">180</integer>
+	<integer name="o2new_gradient_angle_dark_cardcontentoverlay">180</integer>
 </resources>

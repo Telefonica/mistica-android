@@ -1,7 +1,7 @@
 package com.telefonica.mistica.compose.theme.brand
 
 import com.telefonica.mistica.R
-import com.telefonica.mistica.compose.theme.color.MisticaBrushes
+import com.telefonica.mistica.compose.theme.brushes.MisticaBrushes
 
 object O2NewBrand : Brand {
 

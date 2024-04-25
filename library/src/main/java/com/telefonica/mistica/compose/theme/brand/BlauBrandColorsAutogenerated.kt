@@ -3,8 +3,8 @@ package com.telefonica.mistica.compose.theme.brand
 
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
-import com.telefonica.mistica.compose.theme.color.LinearGradientWithAngle
-import com.telefonica.mistica.compose.theme.color.MisticaBrushes
+import com.telefonica.mistica.compose.theme.brushes.LinearGradientWithAngle
+import com.telefonica.mistica.compose.theme.brushes.MisticaBrushes
 import com.telefonica.mistica.compose.theme.color.MisticaColors
 
 public object BlauBrandColors {

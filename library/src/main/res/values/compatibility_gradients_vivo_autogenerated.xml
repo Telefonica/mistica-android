@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!-- Code generated automatically, DO NOT EDIT manually. Use Import design tokens GitHub Action. -->
+	<!-- Less than Api 24 Support Gradients Resources -->
+	<!-- Light Gradient resources -->
+	<!-- backgroundBrand gradient -->
+	<integer-array name="vivo_gradient_colors_light_backgroundbrand">
+		<item>@color/vivo_color_vivoPurple</item>
+	</integer-array>
+	<string-array name="vivo_gradient_stops_light_backgroundbrand">
+		<item>0.0</item>
+	</string-array>
+	<integer name="vivo_gradient_angle_light_backgroundbrand">0</integer>
+	<!-- backgroundContainerBrand gradient -->
+	<integer-array name="vivo_gradient_colors_light_backgroundcontainerbrand">
+		<item>@color/vivo_color_vivoPurple</item>
+	</integer-array>
+	<string-array name="vivo_gradient_stops_light_backgroundcontainerbrand">
+		<item>0.0</item>
+	</string-array>
+	<integer name="vivo_gradient_angle_light_backgroundcontainerbrand">0</integer>
+	<!-- cardContentOverlay gradient -->
+	<integer-array name="vivo_gradient_colors_light_cardcontentoverlay">
+		<item>@color/vivo_color_grey6</item>
+		<item>@color/vivo_color_grey6_40_alpha</item>
+		<item>@color/vivo_color_grey6_70_alpha</item>
+	</integer-array>
+	<string-array name="vivo_gradient_stops_light_cardcontentoverlay">
+		<item>0.0</item>
+		<item>0.3</item>
+		<item>1.0</item>
+	</string-array>
+	<integer name="vivo_gradient_angle_light_cardcontentoverlay">180</integer>
+	<!-- Dark Gradient resources -->
+	<!-- backgroundBrand gradient -->
+	<integer-array name="vivo_gradient_colors_dark_backgroundbrand">
+		<item>@color/vivo_color_darkModeBlack</item>
+	</integer-array>
+	<string-array name="vivo_gradient_stops_dark_backgroundbrand">
+		<item>0.0</item>
+	</string-array>
+	<integer name="vivo_gradient_angle_dark_backgroundbrand">0</integer>
+	<!-- backgroundContainerBrand gradient -->
+	<integer-array name="vivo_gradient_colors_dark_backgroundcontainerbrand">
+		<item>@color/vivo_color_darkModeGrey</item>
+	</integer-array>
+	<string-array name="vivo_gradient_stops_dark_backgroundcontainerbrand">
+		<item>0.0</item>
+	</string-array>
+	<integer name="vivo_gradient_angle_dark_backgroundcontainerbrand">0</integer>
+	<!-- cardContentOverlay gradient -->
+	<integer-array name="vivo_gradient_colors_dark_cardcontentoverlay">
+		<item>@color/vivo_color_grey6</item>
+		<item>@color/vivo_color_grey6_40_alpha</item>
+		<item>@color/vivo_color_grey6_70_alpha</item>
+	</integer-array>
+	<string-array name="vivo_gradient_stops_dark_cardcontentoverlay">
+		<item>0.0</item>
+		<item>0.3</item>
+		<item>1.0</item>
+	</string-array>
+	<integer name="vivo_gradient_angle_dark_cardcontentoverlay">180</integer>
+</resources>
