@@ -5,27 +5,30 @@ import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.test.assert
 import androidx.compose.ui.test.hasTestTag
+import androidx.compose.ui.test.hasText
+import androidx.compose.ui.test.isHeading
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onRoot
 import androidx.compose.ui.test.performClick
+import com.telefonica.mistica.R
 import com.telefonica.mistica.compose.shape.Chevron
 import com.telefonica.mistica.compose.tag.Tag
 import com.telefonica.mistica.compose.theme.MisticaTheme
 import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 import com.telefonica.mistica.list.model.ImageDimensions
 import com.telefonica.mistica.testutils.ScreenshotsTest
+import org.junit.Assert.assertEquals
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
-import com.telefonica.mistica.R
-import org.junit.Assert.assertEquals
 
 private const val LIST_ROW_ITEM_ASSET_TAG = "listRowItemAssetTag"
 
 @RunWith(RobolectricTestRunner::class)
-internal class ListRowItemKtTest: ScreenshotsTest() {
+internal class ListRowItemKtTest : ScreenshotsTest() {
     @get:Rule
     val composeTestRule = createComposeRule()
 
@@ -58,6 +61,28 @@ internal class ListRowItemKtTest: ScreenshotsTest() {
         assertEquals(1, clicked)
     }
 
+    @Test
+    fun `check ListRowItem with accessibility heading is heading`() {
+        val titleText = "Title With Heading"
+        `when ListRowItem with title`(
+            title = titleText,
+            isTitleHeading = true,
+        )
+        composeTestRule.onNode(hasText(titleText))
+            .assert(isHeading())
+    }
+
+    @Test
+    fun `check ListRowItem without accessibility heading is NOT heading`() {
+        val titleText = "Title NO Heading"
+        `when ListRowItem with title`(
+            title = titleText,
+            isTitleHeading = false,
+        )
+        composeTestRule.onNode(hasText(titleText))
+            .assert(!isHeading())
+    }
+
     @OptIn(ExperimentalMaterialApi::class)
     private fun `when ListRowItem with asset`(dimensions: ImageDimensions, onAssetClick: () -> Unit = {}) {
         composeTestRule.setContent {
@@ -66,7 +91,9 @@ internal class ListRowItemKtTest: ScreenshotsTest() {
                     listRowIcon = ListRowIcon.ImageAsset(
                         painter = painterResource(id = R.drawable.placeholder),
                         dimensions = ImageDimensions(width = dimensions.width, height = dimensions.height),
-                        modifier = Modifier.testTag(LIST_ROW_ITEM_ASSET_TAG).clickable { onAssetClick() },
+                        modifier = Modifier
+                            .testTag(LIST_ROW_ITEM_ASSET_TAG)
+                            .clickable { onAssetClick() },
                     ),
                     headline = Tag("Promo"),
                     isBadgeVisible = true,
@@ -74,6 +101,23 @@ internal class ListRowItemKtTest: ScreenshotsTest() {
                     subtitle = "Subtitle",
                     description = "Description",
                     trailing = { Chevron() },
+                )
+            }
+        }
+    }
+
+    @OptIn(ExperimentalMaterialApi::class)
+    private fun `when ListRowItem with title`(title: String, isTitleHeading: Boolean) {
+        composeTestRule.setContent {
+            MisticaTheme(brand = MovistarBrand) {
+                ListRowItem(
+                    listRowIcon = null,
+                    headline = Tag("Promo"),
+                    isBadgeVisible = true,
+                    title = title,
+                    isTitleHeading = isTitleHeading,
+                    subtitle = "Subtitle",
+                    description = "Description",
                 )
             }
         }
