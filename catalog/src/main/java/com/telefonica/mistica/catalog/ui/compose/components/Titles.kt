@@ -32,6 +32,7 @@ private fun DefaultTitles() {
     Title(
         modifier = Modifier.padding(bottom = 8.dp),
         text = "Short default title",
+        isTitleHeading = true,
     )
     Title(
         modifier = Modifier.padding(bottom = 8.dp),
@@ -59,6 +60,7 @@ private fun TitlesWithStyleOverridden(
         modifier = Modifier.padding(bottom = 8.dp),
         style = style,
         text = "Short title $style",
+        isTitleHeading = true,
     )
     Title(
         modifier = Modifier.padding(bottom = 8.dp),

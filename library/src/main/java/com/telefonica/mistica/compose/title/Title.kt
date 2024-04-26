@@ -7,6 +7,8 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.semantics.heading
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.theme.MisticaTheme
@@ -14,6 +16,7 @@ import com.telefonica.mistica.compose.theme.MisticaTheme
 @Composable
 fun Title(
     modifier: Modifier = Modifier,
+    isTitleHeading: Boolean = false,
     style: TitleStyle = MisticaTheme.values.titleStyle,
     text: String,
     linkText: String? = null,
@@ -24,6 +27,13 @@ fun Title(
     ) {
         TitleText(
             modifier = Modifier
+                .then(
+                    if (isTitleHeading) {
+                        Modifier.semantics { heading() }
+                    } else {
+                        Modifier
+                    }
+                )
                 .weight(1F)
                 .alignByBaseline(),
             text = text,
