@@ -31,7 +31,7 @@ import com.telefonica.mistica.util.setTextPreset
     BindingMethod(
         type = TitleView::class,
         attribute = "isTitleHeading",
-        method = "setIsTitleHeading"
+        method = "setTitleHeading"
     ),
     BindingMethod(
         type = TitleView::class,
