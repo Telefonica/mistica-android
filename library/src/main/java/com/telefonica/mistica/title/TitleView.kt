@@ -30,6 +30,11 @@ import com.telefonica.mistica.util.setTextPreset
     ),
     BindingMethod(
         type = TitleView::class,
+        attribute = "isTitleHeading",
+        method = "setIsTitleHeading"
+    ),
+    BindingMethod(
+        type = TitleView::class,
         attribute = "link",
         method = "setLink"
     ),

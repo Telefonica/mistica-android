@@ -54,6 +54,11 @@ import com.telefonica.mistica.util.setAlpha
     ),
     BindingMethod(
         type = ListRowView::class,
+        attribute = "listRowIsTitleHeading",
+        method = "setIsTitleHeading"
+    ),
+    BindingMethod(
+        type = ListRowView::class,
         attribute = "listRowSubtitle",
         method = "setSubtitle"
     ),
