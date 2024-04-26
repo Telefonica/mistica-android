@@ -7,7 +7,9 @@ import android.widget.TextView
 import androidx.annotation.AttrRes
 import androidx.annotation.IntDef
 import androidx.annotation.StyleRes
+import androidx.annotation.VisibleForTesting
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.view.ViewCompat
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
@@ -71,6 +73,13 @@ class TitleView @JvmOverloads constructor(
             titleTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.TitleView_title))
             setTitleStyle(styledAttrs.getInt(R.styleable.TitleView_titleStyle, -1))
 
+            styledAttrs.getBoolean(
+                R.styleable.TitleView_isTitleHeading,
+                false
+            )
+                .takeIf { it }
+                ?.let { setTitleHeading() }
+
             linkTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.TitleView_link))
 
             styledAttrs.recycle()
@@ -78,6 +87,9 @@ class TitleView @JvmOverloads constructor(
     }
 
     fun getTitle(): String = titleTextView.text.toString()
+
+    @VisibleForTesting
+    internal fun getTitleTextView(): TextView = titleTextView
 
     fun setTitle(text: CharSequence?) {
         titleTextView.setTextAndVisibility(text)
@@ -93,6 +105,10 @@ class TitleView @JvmOverloads constructor(
         titleTextView.setTextPreset(styleConfig.preset)
         titleTextView.setTextColor(context.getThemeColor(styleConfig.colorAttrRes))
         titleTextView.isAllCaps = styleConfig.isAllCaps
+    }
+
+    fun setTitleHeading() {
+        ViewCompat.setAccessibilityHeading(titleTextView, true)
     }
 
     fun getLink(): String = linkTextView.text.toString()

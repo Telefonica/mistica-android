@@ -126,6 +126,7 @@
 
     <declare-styleable name="TitleView">
         <attr name="title" format="string" />
+        <attr name="isTitleHeading" format="boolean" />
         <attr name="titleStyle" format="enum">
             <enum name="title1" value="0" />
             <enum name="title2" value="1" />
