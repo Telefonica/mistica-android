@@ -266,6 +266,7 @@ class GenerateXMLFiles(
     private fun Node.mapCompatibilityGradients(brand: Brand, gradientTokensNames: List<String>, isDark: Boolean) {
         comment("Less than Api 24 Support Gradients")
         gradientTokensNames.forEach { gradientName ->
+            comment(gradientName)
             "item" {
                 attribute("name", "$BRAND_GRADIENT_COLORS_ATTR_PREFIX${gradientName.capitalizeString()}")
                 -"@array/${getGradientCompatibilityResourceName(brand.name, COMPATIBILITY_GRADIENT_COLORS_RESOURCE_INFIX, isDark, gradientName)}"
@@ -302,7 +303,7 @@ class GenerateXMLFiles(
                 }
             }
 
-            comment("${brushEntry.key} gradient")
+            comment(brushEntry.key)
             "integer-array" {
                 attribute("name", getGradientCompatibilityResourceName(brand.name, COMPATIBILITY_GRADIENT_COLORS_RESOURCE_INFIX, isDark, brushEntry.key))
                 colorResourcesNames.forEach { value ->

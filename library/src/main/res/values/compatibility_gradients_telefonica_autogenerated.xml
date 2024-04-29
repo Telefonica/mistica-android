@@ -3,7 +3,7 @@
 	<!-- Code generated automatically, DO NOT EDIT manually. Use Import design tokens GitHub Action. -->
 	<!-- Less than Api 24 Support Gradients Resources -->
 	<!-- Light Gradient resources -->
-	<!-- backgroundContainerBrand gradient -->
+	<!-- backgroundContainerBrand -->
 	<integer-array name="telefonica_gradient_colors_light_backgroundcontainerbrand">
 		<item>@color/telefonica_color_telefonicaBlue</item>
 	</integer-array>
@@ -11,7 +11,7 @@
 		<item>0.0</item>
 	</string-array>
 	<integer name="telefonica_gradient_angle_light_backgroundcontainerbrand">0</integer>
-	<!-- backgroundBrand gradient -->
+	<!-- backgroundBrand -->
 	<integer-array name="telefonica_gradient_colors_light_backgroundbrand">
 		<item>@color/telefonica_color_telefonicaBlue</item>
 	</integer-array>
@@ -19,7 +19,7 @@
 		<item>0.0</item>
 	</string-array>
 	<integer name="telefonica_gradient_angle_light_backgroundbrand">0</integer>
-	<!-- cardContentOverlay gradient -->
+	<!-- cardContentOverlay -->
 	<integer-array name="telefonica_gradient_colors_light_cardcontentoverlay">
 		<item>@color/telefonica_color_black</item>
 		<item>@color/telefonica_color_black_40_alpha</item>
@@ -32,7 +32,7 @@
 	</string-array>
 	<integer name="telefonica_gradient_angle_light_cardcontentoverlay">180</integer>
 	<!-- Dark Gradient resources -->
-	<!-- backgroundBrand gradient -->
+	<!-- backgroundBrand -->
 	<integer-array name="telefonica_gradient_colors_dark_backgroundbrand">
 		<item>@color/telefonica_color_darkModeBlack</item>
 	</integer-array>
@@ -40,7 +40,7 @@
 		<item>0.0</item>
 	</string-array>
 	<integer name="telefonica_gradient_angle_dark_backgroundbrand">0</integer>
-	<!-- backgroundContainerBrand gradient -->
+	<!-- backgroundContainerBrand -->
 	<integer-array name="telefonica_gradient_colors_dark_backgroundcontainerbrand">
 		<item>@color/telefonica_color_darkModeGrey</item>
 	</integer-array>
@@ -48,7 +48,7 @@
 		<item>0.0</item>
 	</string-array>
 	<integer name="telefonica_gradient_angle_dark_backgroundcontainerbrand">0</integer>
-	<!-- cardContentOverlay gradient -->
+	<!-- cardContentOverlay -->
 	<integer-array name="telefonica_gradient_colors_dark_cardcontentoverlay">
 		<item>@color/telefonica_color_black</item>
 		<item>@color/telefonica_color_black_40_alpha</item>
