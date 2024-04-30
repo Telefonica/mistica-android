@@ -107,5 +107,11 @@ private fun Int?.toButtonStyle(): ButtonStyle = when (this) {
     9 -> ButtonStyle.SECONDARY_INVERSE
     10 -> ButtonStyle.SECONDARY_SMALL_INVERSE
     11 -> ButtonStyle.LINK_INVERSE
+    12 -> ButtonStyle.LINK_SMALL
+    13 -> ButtonStyle.LINK_SMALL_INVERSE
+    14 -> ButtonStyle.DANGER_LINK
+    15 -> ButtonStyle.DANGER_LINK_INVERSE
+    16 -> ButtonStyle.DANGER_LINK_SMALL
+    17 -> ButtonStyle.DANGER_LINK_SMALL_INVERSE
     else -> ButtonStyle.PRIMARY
 }

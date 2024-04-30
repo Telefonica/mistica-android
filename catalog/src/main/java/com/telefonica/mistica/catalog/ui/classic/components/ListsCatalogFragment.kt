@@ -84,6 +84,7 @@ class ListsCatalogFragment : Fragment() {
             {
                 it.configureView(
                     withInverseBackground = withInverseBackground,
+                    withTitleHeading = true,
                 )
             },
             {
@@ -111,6 +112,7 @@ class ListsCatalogFragment : Fragment() {
                 it.configureView(
                     withLongDescription = false,
                     withInverseBackground = withInverseBackground,
+                    withTitleHeading = true,
                 )
             },
             {
@@ -461,6 +463,7 @@ class ListsCatalogFragment : Fragment() {
         private fun ListRowView.configureView(
             withLongTitle: Boolean = false,
             withTitleMaxLines: Int? = null,
+            withTitleHeading: Boolean? = false,
             withLongDescription: Boolean? = null,
             withDescriptionMaxLines: Int? = null,
             withAsset: Boolean = false,
@@ -491,6 +494,9 @@ class ListsCatalogFragment : Fragment() {
             withTitleMaxLines?.let { setTitleMaxLines(it) }
             setTitle(if (withLongTitle) "Title long enough to need more than 2 lines to show it, just for testing purposes." +
                     "More sample text just for testing purposes." else "Title")
+            if (withTitleHeading == true) {
+                setTitleHeading()
+            }
             withSubtitleMaxLines?.let { setSubtitleMaxLines(it) }
             setSubtitle(if (withSubtitle) "Any Subtitle" else null)
             withDescriptionMaxLines?.let { setDescriptionMaxLines(it) }

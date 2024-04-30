@@ -64,7 +64,7 @@ private fun Buttons(
         )
 
         val scope = rememberCoroutineScope()
-        ButtonStyle.values()
+        ButtonStyle.entries
             .filter(filter)
             .forEach {
                 CatalogButton(

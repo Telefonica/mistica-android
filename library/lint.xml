@@ -8,4 +8,5 @@
         <ignore path="**/res/drawable/feedback_info_o2.xml"/>
     </issue>
     <issue id="OldTargetApi" severity="ignore" />
+    <issue id="GradleDependency" severity="ignore" />
 </lint>

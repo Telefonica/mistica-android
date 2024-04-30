@@ -15,7 +15,6 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Divider
-import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Switch
 import androidx.compose.material.Text
@@ -49,6 +48,7 @@ const val DESCRIPTION = "Description"
 fun samples() = listOf(
     ListItem(
         title = TITLE,
+        isTitleHeading = true,
     ),
     ListItem(
         title = TITLE,
@@ -68,6 +68,7 @@ fun samples() = listOf(
     ListItem(
         title = TITLE,
         subtitle = SUBTITLE,
+        isTitleHeading = true,
     ),
     ListItem(
         title = TITLE,
@@ -299,7 +300,6 @@ fun samples() = listOf(
 
 const val IMAGE_URL = "https://www.fotoaparat.cz/imgs/a/26/2639/0n1wjdf0-cr-em13-09-1200x627x9.jpg"
 
-@OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun Lists() {
     val samples = samples()
@@ -319,6 +319,7 @@ fun Lists() {
                 listRowIcon = item.listRowIcon,
                 headline = item.headline,
                 title = item.title,
+                isTitleHeading = item.isTitleHeading,
                 subtitle = item.subtitle,
                 description = item.description,
                 trailing = item.action,
@@ -390,6 +391,7 @@ fun Lists() {
 data class ListItem(
     val listRowIcon: ListRowIcon? = null,
     val title: String? = null,
+    val isTitleHeading: Boolean = false,
     val subtitle: String? = null,
     val description: String? = null,
     val backgroundType: BackgroundType = BackgroundType.TYPE_NORMAL,
@@ -397,7 +399,7 @@ data class ListItem(
     val isBadgeVisible: Boolean = false,
     val headline: Tag? = null,
     val action: @Composable (() -> Unit)? = null,
-    val onClick: () -> Unit = {},
+    val onClick: (() -> Unit)? = null,
     val bottom: @Composable (() -> Unit)? = null,
 )
 
@@ -449,7 +451,6 @@ private fun CustomSlot() {
 }
 
 @Composable
-@OptIn(ExperimentalMaterialApi::class)
 private fun ClickableAssetSample(context: Context, onRowClick: () -> Unit) {
     ListRowItem(
         title = "Clickable Asset in Clickable Row",

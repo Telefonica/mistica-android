@@ -18,6 +18,7 @@ import androidx.annotation.LayoutRes
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
+import androidx.core.view.ViewCompat
 import androidx.core.view.isVisible
 import androidx.databinding.BindingAdapter
 import androidx.databinding.BindingMethod
@@ -52,6 +53,11 @@ import com.telefonica.mistica.util.setAlpha
         type = ListRowView::class,
         attribute = "listRowTitleMaxLines",
         method = "setTitleMaxLines"
+    ),
+    BindingMethod(
+        type = ListRowView::class,
+        attribute = "listRowIsTitleHeading",
+        method = "setTitleHeading"
     ),
     BindingMethod(
         type = ListRowView::class,
@@ -247,6 +253,14 @@ class ListRowView @JvmOverloads constructor(
             )
                 .takeIf { it != TypedValue.TYPE_NULL }
                 .let { setActionLayout(it ?: ACTION_NONE) }
+
+            styledAttrs.getBoolean(
+                R.styleable.ListRowView_listRowIsTitleHeading,
+                false
+            )
+                .takeIf { it }
+                ?.let { setTitleHeading() }
+
             styledAttrs.recycle()
         }
     }
@@ -380,6 +394,10 @@ class ListRowView @JvmOverloads constructor(
             titleTextView.maxLines = maxLines
             titleTextView.ellipsize = TextUtils.TruncateAt.END
         }
+    }
+
+    fun setTitleHeading() {
+        ViewCompat.setAccessibilityHeading(titleTextView, true)
     }
 
     @Deprecated(

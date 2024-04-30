@@ -18,6 +18,7 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_marginBottom="8dp"
+				app:isTitleHeading="true"
 				app:title="Short default Title" />
 
 		<com.telefonica.mistica.title.TitleView
@@ -48,6 +49,7 @@
 				android:layout_height="wrap_content"
 				android:layout_marginBottom="8dp"
 				app:titleStyle="title1"
+				app:isTitleHeading="true"
 				app:title="Some title 1" />
 
 		<com.telefonica.mistica.title.TitleView

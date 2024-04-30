@@ -27,4 +27,5 @@
         <ignore path="**/res/drawable/media_card_sample_image.png" />
     </issue>
     <issue id="OldTargetApi" severity="ignore" />
+    <issue id="GradleDependency" severity="ignore" />
 </lint>

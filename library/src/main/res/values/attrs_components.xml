@@ -56,6 +56,7 @@
         </attr>
         <attr name="listRowHeadlineVisible" format="boolean" />
         <attr name="listRowTitle" format="string" />
+        <attr name="listRowIsTitleHeading" format="boolean" />
         <attr name="listRowTitleMaxLines" format="integer" />
         <attr name="listRowSubtitle" format="string" />
         <attr name="listRowSubtitleMaxLines" format="integer" />
@@ -125,6 +126,7 @@
 
     <declare-styleable name="TitleView">
         <attr name="title" format="string" />
+        <attr name="isTitleHeading" format="boolean" />
         <attr name="titleStyle" format="enum">
             <enum name="title1" value="0" />
             <enum name="title2" value="1" />
@@ -335,6 +337,12 @@
             <enum name="SECONDARY_INVERSE" value="9" />
             <enum name="SECONDARY_SMALL_INVERSE" value="10" />
             <enum name="LINK_INVERSE" value="11" />
+            <enum name="LINK_SMALL" value="12" />
+            <enum name="LINK_SMALL_INVERSE" value="13" />
+            <enum name="DANGER_LINK" value="14" />
+            <enum name="DANGER_LINK_INVERSE" value="15" />
+            <enum name="DANGER_LINK_SMALL" value="16" />
+            <enum name="DANGER_LINK_SMALL_INVERSE" value="17" />
         </attr>
         <attr name="icon" format="reference" />
         <attr name="withChevron" format="boolean" />
