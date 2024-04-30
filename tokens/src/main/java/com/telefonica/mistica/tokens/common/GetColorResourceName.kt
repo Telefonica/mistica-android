@@ -12,7 +12,7 @@ class GetColorResourceName(
         val baseColorName = TokensGenerator.COLOR_NAME_REGEX.find(colorSpecification)?.groups?.get(1)?.value
         var colorResourceName = "${brandName}_color_${baseColorName}"
         if (colorSpecification.contains("rgba(")) {
-            val alpha = TokensGenerator.ALPHA_REGEX.find(colorSpecification)?.value?.toDouble()
+            val alpha = TokensGenerator.ALPHA_REGEX.find(colorSpecification)?.groups?.get(1)?.value?.toDouble()
             if (alpha != null && baseColorName != null) {
                 colorResourceName = getColorNameWithAlpha(brandName, baseColorName, alpha)
             }

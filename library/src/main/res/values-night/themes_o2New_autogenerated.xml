@@ -33,7 +33,7 @@
 		<item name="colorButtonDangerBackgroundSelected">@color/o2New_color_o2Red65</item>
 		<item name="colorButtonDangerBackgroundHover">@color/o2New_color_o2Red65</item>
 		<item name="colorButtonLinkDangerBackgroundSelected">@color/o2New_color_white_8_alpha</item>
-		<item name="colorButtonLinkDangerBackgroundInverse">@color/o2New_color_white</item>
+		<item name="colorButtonLinkDangerBackgroundInverse">@color/o2New_color_white_0_alpha</item>
 		<item name="colorButtonLinkDangerBackgroundInverseSelected">@color/o2New_color_white_8_alpha</item>
 		<item name="colorButtonLinkBackgroundSelected">@color/o2New_color_white_8_alpha</item>
 		<item name="colorButtonLinkBackgroundInverseSelected">@color/o2New_color_white_8_alpha</item>
@@ -61,6 +61,8 @@
 		<item name="colorTextLinkInverse">@color/o2New_color_beyondBlue40</item>
 		<item name="colorTextLinkDanger">@color/o2New_color_o2Red45</item>
 		<item name="colorTextLinkSnackbar">@color/o2New_color_beyondBlue30</item>
+		<item name="colorTextActivated">@color/o2New_color_beyondBlue30</item>
+		<item name="colorTextBrand">@color/o2New_color_beyondBlue30</item>
 		<item name="colorControl">@color/o2New_color_grey45</item>
 		<item name="colorControlActive">@color/o2New_color_beyondBlue30</item>
 		<item name="colorControlInverse">@color/o2New_color_grey45</item>

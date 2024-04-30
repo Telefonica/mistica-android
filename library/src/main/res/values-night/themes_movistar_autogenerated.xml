@@ -33,7 +33,7 @@
 		<item name="colorButtonDangerBackgroundSelected">@color/movistar_color_pepper55</item>
 		<item name="colorButtonDangerBackgroundHover">@color/movistar_color_pepper55</item>
 		<item name="colorButtonLinkDangerBackgroundSelected">@color/movistar_color_white_8_alpha</item>
-		<item name="colorButtonLinkDangerBackgroundInverse">@color/movistar_color_white</item>
+		<item name="colorButtonLinkDangerBackgroundInverse">@color/movistar_color_white_0_alpha</item>
 		<item name="colorButtonLinkDangerBackgroundInverseSelected">@color/movistar_color_white_8_alpha</item>
 		<item name="colorButtonLinkBackgroundSelected">@color/movistar_color_white_8_alpha</item>
 		<item name="colorButtonLinkBackgroundInverseSelected">@color/movistar_color_white_8_alpha</item>
@@ -61,6 +61,8 @@
 		<item name="colorTextLinkInverse">@color/movistar_color_movistarBlue</item>
 		<item name="colorTextLinkDanger">@color/movistar_color_pepper</item>
 		<item name="colorTextLinkSnackbar">@color/movistar_color_movistarBlue30</item>
+		<item name="colorTextActivated">@color/movistar_color_movistarBlue</item>
+		<item name="colorTextBrand">@color/movistar_color_movistarBlue</item>
 		<item name="colorControl">@color/movistar_color_darkModeGrey6</item>
 		<item name="colorControlActive">@color/movistar_color_movistarBlue</item>
 		<item name="colorControlInverse">@color/movistar_color_darkModeGrey6</item>

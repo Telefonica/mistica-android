@@ -66,6 +66,8 @@ public object VivoBrandColors {
       textLinkInverse = VivoPaletteColor.vivo_color_white
       textLinkDanger = VivoPaletteColor.vivo_color_pepper
       textLinkSnackbar = VivoPaletteColor.vivo_color_vivoPurpleLight50
+      textActivated = VivoPaletteColor.vivo_color_vivoPurple
+      textBrand = VivoPaletteColor.vivo_color_vivoPurple
       control = VivoPaletteColor.vivo_color_grey3
       controlActivated = VivoPaletteColor.vivo_color_vivoPurple
       controlInverse = VivoPaletteColor.vivo_color_vivoPurpleLight50
@@ -166,7 +168,7 @@ public object VivoBrandColors {
       buttonDangerBackgroundSelected = VivoPaletteColor.vivo_color_pepperDark
       buttonDangerBackgroundHover = VivoPaletteColor.vivo_color_pepperDark
       buttonLinkDangerBackgroundSelected = VivoPaletteColor.vivo_color_white_8_alpha
-      buttonLinkDangerBackgroundInverse = VivoPaletteColor.vivo_color_white
+      buttonLinkDangerBackgroundInverse = VivoPaletteColor.vivo_color_white_0_alpha
       buttonLinkDangerBackgroundInverseSelected = VivoPaletteColor.vivo_color_white_8_alpha
       buttonLinkBackgroundSelected = VivoPaletteColor.vivo_color_white_8_alpha
       buttonLinkBackgroundInverseSelected = VivoPaletteColor.vivo_color_white_8_alpha
@@ -194,6 +196,8 @@ public object VivoBrandColors {
       textLinkInverse = VivoPaletteColor.vivo_color_vivoPurpleLight50
       textLinkDanger = VivoPaletteColor.vivo_color_pepper
       textLinkSnackbar = VivoPaletteColor.vivo_color_vivoPurpleLight50
+      textActivated = VivoPaletteColor.vivo_color_vivoPurpleLight80
+      textBrand = VivoPaletteColor.vivo_color_vivoPurpleLight80
       control = VivoPaletteColor.vivo_color_darkModeGrey6
       controlActivated = VivoPaletteColor.vivo_color_vivoPurpleLight80
       controlInverse = VivoPaletteColor.vivo_color_darkModeGrey6
@@ -272,7 +276,7 @@ public object VivoBrandBrushes {
       cardContentOverlay = LinearGradientWithAngle(
         angleInDegrees = 180F,
         colorStops = listOf(
-          0.0F to VivoPaletteColor.vivo_color_grey6,
+          0.0F to VivoPaletteColor.vivo_color_grey6_0_alpha,
           0.3F to VivoPaletteColor.vivo_color_grey6_40_alpha,
           1.0F to VivoPaletteColor.vivo_color_grey6_70_alpha
         ))
@@ -284,7 +288,7 @@ public object VivoBrandBrushes {
       cardContentOverlay = LinearGradientWithAngle(
         angleInDegrees = 180F,
         colorStops = listOf(
-          0.0F to VivoPaletteColor.vivo_color_grey6,
+          0.0F to VivoPaletteColor.vivo_color_grey6_0_alpha,
           0.3F to VivoPaletteColor.vivo_color_grey6_40_alpha,
           1.0F to VivoPaletteColor.vivo_color_grey6_70_alpha
         ))
@@ -382,6 +386,8 @@ private object VivoPaletteColor {
 
   public val vivo_color_white_20_alpha: Color = Color(0x33FFFFFF)
 
+  public val vivo_color_grey6_0_alpha: Color = Color(0x00000000)
+
   public val vivo_color_grey6_40_alpha: Color = Color(0x66000000)
 
   public val vivo_color_grey6_70_alpha: Color = Color(0xB3000000)
@@ -393,4 +399,6 @@ private object VivoPaletteColor {
   public val vivo_color_darkModeGrey_80_alpha: Color = Color(0xCC242424)
 
   public val vivo_color_white_8_alpha: Color = Color(0x14FFFFFF)
+
+  public val vivo_color_white_0_alpha: Color = Color(0x00FFFFFF)
 }

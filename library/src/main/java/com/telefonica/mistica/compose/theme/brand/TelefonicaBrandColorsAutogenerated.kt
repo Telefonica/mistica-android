@@ -69,6 +69,8 @@ public object TelefonicaBrandColors {
       textLinkInverse = TelefonicaPaletteColor.telefonica_color_white
       textLinkDanger = TelefonicaPaletteColor.telefonica_color_coral
       textLinkSnackbar = TelefonicaPaletteColor.telefonica_color_telefonicaBlue30
+      textActivated = TelefonicaPaletteColor.telefonica_color_telefonicaBlue
+      textBrand = TelefonicaPaletteColor.telefonica_color_telefonicaBlue
       control = TelefonicaPaletteColor.telefonica_color_grey3
       controlActivated = TelefonicaPaletteColor.telefonica_color_telefonicaBlue
       controlInverse = TelefonicaPaletteColor.telefonica_color_grey1
@@ -169,7 +171,7 @@ public object TelefonicaBrandColors {
       buttonDangerBackgroundSelected = TelefonicaPaletteColor.telefonica_color_coral80
       buttonDangerBackgroundHover = TelefonicaPaletteColor.telefonica_color_coral80
       buttonLinkDangerBackgroundSelected = TelefonicaPaletteColor.telefonica_color_white_8_alpha
-      buttonLinkDangerBackgroundInverse = TelefonicaPaletteColor.telefonica_color_white
+      buttonLinkDangerBackgroundInverse = TelefonicaPaletteColor.telefonica_color_white_0_alpha
       buttonLinkDangerBackgroundInverseSelected =
           TelefonicaPaletteColor.telefonica_color_white_8_alpha
       buttonLinkBackgroundSelected = TelefonicaPaletteColor.telefonica_color_white_8_alpha
@@ -200,6 +202,8 @@ public object TelefonicaBrandColors {
       textLinkInverse = TelefonicaPaletteColor.telefonica_color_telefonicaBlue
       textLinkDanger = TelefonicaPaletteColor.telefonica_color_coral
       textLinkSnackbar = TelefonicaPaletteColor.telefonica_color_telefonicaBlue30
+      textActivated = TelefonicaPaletteColor.telefonica_color_telefonicaBlue
+      textBrand = TelefonicaPaletteColor.telefonica_color_telefonicaBlue
       control = TelefonicaPaletteColor.telefonica_color_darkModeGrey6
       controlActivated = TelefonicaPaletteColor.telefonica_color_telefonicaBlue
       controlInverse = TelefonicaPaletteColor.telefonica_color_darkModeGrey6
@@ -278,7 +282,7 @@ public object TelefonicaBrandBrushes {
       cardContentOverlay = LinearGradientWithAngle(
         angleInDegrees = 180F,
         colorStops = listOf(
-          0.0F to TelefonicaPaletteColor.telefonica_color_black,
+          0.0F to TelefonicaPaletteColor.telefonica_color_black_0_alpha,
           0.3F to TelefonicaPaletteColor.telefonica_color_black_40_alpha,
           1.0F to TelefonicaPaletteColor.telefonica_color_black_70_alpha
         ))
@@ -290,7 +294,7 @@ public object TelefonicaBrandBrushes {
       cardContentOverlay = LinearGradientWithAngle(
         angleInDegrees = 180F,
         colorStops = listOf(
-          0.0F to TelefonicaPaletteColor.telefonica_color_black,
+          0.0F to TelefonicaPaletteColor.telefonica_color_black_0_alpha,
           0.3F to TelefonicaPaletteColor.telefonica_color_black_40_alpha,
           1.0F to TelefonicaPaletteColor.telefonica_color_black_70_alpha
         ))
@@ -390,6 +394,8 @@ private object TelefonicaPaletteColor {
 
   public val telefonica_color_white_20_alpha: Color = Color(0x33FFFFFF)
 
+  public val telefonica_color_black_0_alpha: Color = Color(0x00000000)
+
   public val telefonica_color_black_40_alpha: Color = Color(0x66000000)
 
   public val telefonica_color_black_70_alpha: Color = Color(0xB3000000)
@@ -399,6 +405,8 @@ private object TelefonicaPaletteColor {
   public val telefonica_color_white_5_alpha: Color = Color(0x0DFFFFFF)
 
   public val telefonica_color_darkModeGrey_80_alpha: Color = Color(0xCC242424)
+
+  public val telefonica_color_white_0_alpha: Color = Color(0x00FFFFFF)
 
   public val telefonica_color_white_15_alpha: Color = Color(0x26FFFFFF)
 }

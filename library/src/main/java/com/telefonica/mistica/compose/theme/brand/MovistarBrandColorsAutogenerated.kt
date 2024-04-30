@@ -66,6 +66,8 @@ public object MovistarBrandColors {
       textLinkInverse = MovistarPaletteColor.movistar_color_white
       textLinkDanger = MovistarPaletteColor.movistar_color_pepper
       textLinkSnackbar = MovistarPaletteColor.movistar_color_movistarBlue30
+      textActivated = MovistarPaletteColor.movistar_color_movistarBlue
+      textBrand = MovistarPaletteColor.movistar_color_movistarBlue
       control = MovistarPaletteColor.movistar_color_grey3
       controlActivated = MovistarPaletteColor.movistar_color_movistarBlue
       controlInverse = MovistarPaletteColor.movistar_color_movistarBlue20
@@ -166,7 +168,7 @@ public object MovistarBrandColors {
       buttonDangerBackgroundSelected = MovistarPaletteColor.movistar_color_pepper55
       buttonDangerBackgroundHover = MovistarPaletteColor.movistar_color_pepper55
       buttonLinkDangerBackgroundSelected = MovistarPaletteColor.movistar_color_white_8_alpha
-      buttonLinkDangerBackgroundInverse = MovistarPaletteColor.movistar_color_white
+      buttonLinkDangerBackgroundInverse = MovistarPaletteColor.movistar_color_white_0_alpha
       buttonLinkDangerBackgroundInverseSelected = MovistarPaletteColor.movistar_color_white_8_alpha
       buttonLinkBackgroundSelected = MovistarPaletteColor.movistar_color_white_8_alpha
       buttonLinkBackgroundInverseSelected = MovistarPaletteColor.movistar_color_white_8_alpha
@@ -194,6 +196,8 @@ public object MovistarBrandColors {
       textLinkInverse = MovistarPaletteColor.movistar_color_movistarBlue
       textLinkDanger = MovistarPaletteColor.movistar_color_pepper
       textLinkSnackbar = MovistarPaletteColor.movistar_color_movistarBlue30
+      textActivated = MovistarPaletteColor.movistar_color_movistarBlue
+      textBrand = MovistarPaletteColor.movistar_color_movistarBlue
       control = MovistarPaletteColor.movistar_color_darkModeGrey6
       controlActivated = MovistarPaletteColor.movistar_color_movistarBlue
       controlInverse = MovistarPaletteColor.movistar_color_darkModeGrey6
@@ -272,7 +276,7 @@ public object MovistarBrandBrushes {
       cardContentOverlay = LinearGradientWithAngle(
         angleInDegrees = 180F,
         colorStops = listOf(
-          0.0F to MovistarPaletteColor.movistar_color_black,
+          0.0F to MovistarPaletteColor.movistar_color_black_0_alpha,
           0.3F to MovistarPaletteColor.movistar_color_black_40_alpha,
           1.0F to MovistarPaletteColor.movistar_color_black_70_alpha
         ))
@@ -284,7 +288,7 @@ public object MovistarBrandBrushes {
       cardContentOverlay = LinearGradientWithAngle(
         angleInDegrees = 180F,
         colorStops = listOf(
-          0.0F to MovistarPaletteColor.movistar_color_black,
+          0.0F to MovistarPaletteColor.movistar_color_black_0_alpha,
           0.3F to MovistarPaletteColor.movistar_color_black_40_alpha,
           1.0F to MovistarPaletteColor.movistar_color_black_70_alpha
         ))
@@ -392,6 +396,8 @@ private object MovistarPaletteColor {
 
   public val movistar_color_white_20_alpha: Color = Color(0x33FFFFFF)
 
+  public val movistar_color_black_0_alpha: Color = Color(0x00000000)
+
   public val movistar_color_black_40_alpha: Color = Color(0x66000000)
 
   public val movistar_color_black_70_alpha: Color = Color(0xB3000000)
@@ -403,6 +409,8 @@ private object MovistarPaletteColor {
   public val movistar_color_darkModeGrey_80_alpha: Color = Color(0xCC081F2E)
 
   public val movistar_color_white_8_alpha: Color = Color(0x14FFFFFF)
+
+  public val movistar_color_white_0_alpha: Color = Color(0x00FFFFFF)
 
   public val movistar_color_white_15_alpha: Color = Color(0x26FFFFFF)
 }

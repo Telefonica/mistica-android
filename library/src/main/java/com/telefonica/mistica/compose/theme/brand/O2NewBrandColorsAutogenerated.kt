@@ -66,6 +66,8 @@ public object O2NewBrandColors {
       textLinkInverse = O2NewPaletteColor.o2New_color_white
       textLinkDanger = O2NewPaletteColor.o2New_color_o2Red65
       textLinkSnackbar = O2NewPaletteColor.o2New_color_beyondBlue30
+      textActivated = O2NewPaletteColor.o2New_color_beyondBlue
+      textBrand = O2NewPaletteColor.o2New_color_beyondBlue
       control = O2NewPaletteColor.o2New_color_grey45
       controlActivated = O2NewPaletteColor.o2New_color_beyondBlue
       controlInverse = O2NewPaletteColor.o2New_color_white
@@ -166,7 +168,7 @@ public object O2NewBrandColors {
       buttonDangerBackgroundSelected = O2NewPaletteColor.o2New_color_o2Red65
       buttonDangerBackgroundHover = O2NewPaletteColor.o2New_color_o2Red65
       buttonLinkDangerBackgroundSelected = O2NewPaletteColor.o2New_color_white_8_alpha
-      buttonLinkDangerBackgroundInverse = O2NewPaletteColor.o2New_color_white
+      buttonLinkDangerBackgroundInverse = O2NewPaletteColor.o2New_color_white_0_alpha
       buttonLinkDangerBackgroundInverseSelected = O2NewPaletteColor.o2New_color_white_8_alpha
       buttonLinkBackgroundSelected = O2NewPaletteColor.o2New_color_white_8_alpha
       buttonLinkBackgroundInverseSelected = O2NewPaletteColor.o2New_color_white_8_alpha
@@ -194,6 +196,8 @@ public object O2NewBrandColors {
       textLinkInverse = O2NewPaletteColor.o2New_color_beyondBlue40
       textLinkDanger = O2NewPaletteColor.o2New_color_o2Red45
       textLinkSnackbar = O2NewPaletteColor.o2New_color_beyondBlue30
+      textActivated = O2NewPaletteColor.o2New_color_beyondBlue30
+      textBrand = O2NewPaletteColor.o2New_color_beyondBlue30
       control = O2NewPaletteColor.o2New_color_grey45
       controlActivated = O2NewPaletteColor.o2New_color_beyondBlue30
       controlInverse = O2NewPaletteColor.o2New_color_grey45
@@ -284,9 +288,9 @@ public object O2NewBrandBrushes {
       cardContentOverlay = LinearGradientWithAngle(
         angleInDegrees = 180F,
         colorStops = listOf(
-          0.0F to O2NewPaletteColor.o2New_color_beyondBlue,
+          0.0F to O2NewPaletteColor.o2New_color_beyondBlue_0_alpha,
           0.3F to O2NewPaletteColor.o2New_color_beyondBlue_40_alpha,
-          1.0F to O2NewPaletteColor.o2New_color_beyondBlue
+          1.0F to O2NewPaletteColor.o2New_color_beyondBlue_100_alpha
         ))
       }
 
@@ -296,7 +300,7 @@ public object O2NewBrandBrushes {
       cardContentOverlay = LinearGradientWithAngle(
         angleInDegrees = 180F,
         colorStops = listOf(
-          0.0F to O2NewPaletteColor.o2New_color_black,
+          0.0F to O2NewPaletteColor.o2New_color_black_0_alpha,
           0.3F to O2NewPaletteColor.o2New_color_black_40_alpha,
           1.0F to O2NewPaletteColor.o2New_color_black_70_alpha
         ))
@@ -414,7 +418,11 @@ private object O2NewPaletteColor {
 
   public val o2New_color_white_20_alpha: Color = Color(0x33FFFFFF)
 
+  public val o2New_color_beyondBlue_0_alpha: Color = Color(0x000050FF)
+
   public val o2New_color_beyondBlue_40_alpha: Color = Color(0x660050FF)
+
+  public val o2New_color_beyondBlue_100_alpha: Color = Color(0xFF0050FF)
 
   public val o2New_color_white_3_alpha: Color = Color(0x08FFFFFF)
 
@@ -422,7 +430,11 @@ private object O2NewPaletteColor {
 
   public val o2New_color_darkModeGrey_80_alpha: Color = Color(0xCC08132B)
 
+  public val o2New_color_white_0_alpha: Color = Color(0x00FFFFFF)
+
   public val o2New_color_white_10_alpha: Color = Color(0x1AFFFFFF)
+
+  public val o2New_color_black_0_alpha: Color = Color(0x0000001E)
 
   public val o2New_color_black_40_alpha: Color = Color(0x6600001E)
 

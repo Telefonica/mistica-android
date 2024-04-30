@@ -66,6 +66,8 @@ public object BlauBrandColors {
       textLinkInverse = BlauPaletteColor.blau_color_white
       textLinkDanger = BlauPaletteColor.blau_color_blauRed
       textLinkSnackbar = BlauPaletteColor.blau_color_blauPurple30
+      textActivated = BlauPaletteColor.blau_color_blauBlueSecondary
+      textBrand = BlauPaletteColor.blau_color_blauBlueSecondary
       control = BlauPaletteColor.blau_color_grey2
       controlActivated = BlauPaletteColor.blau_color_blauBlueSecondary
       controlInverse = BlauPaletteColor.blau_color_blauBluePrimary30
@@ -166,7 +168,7 @@ public object BlauBrandColors {
       buttonDangerBackgroundSelected = BlauPaletteColor.blau_color_blauRed70
       buttonDangerBackgroundHover = BlauPaletteColor.blau_color_blauRed70
       buttonLinkDangerBackgroundSelected = BlauPaletteColor.blau_color_blauPurple_30_alpha
-      buttonLinkDangerBackgroundInverse = BlauPaletteColor.blau_color_white
+      buttonLinkDangerBackgroundInverse = BlauPaletteColor.blau_color_white_0_alpha
       buttonLinkDangerBackgroundInverseSelected = BlauPaletteColor.blau_color_blauPurple_30_alpha
       buttonLinkBackgroundSelected = BlauPaletteColor.blau_color_blauPurple_30_alpha
       buttonLinkBackgroundInverseSelected = BlauPaletteColor.blau_color_blauPurple_30_alpha
@@ -194,6 +196,8 @@ public object BlauBrandColors {
       textLinkInverse = BlauPaletteColor.blau_color_blauPurple30
       textLinkDanger = BlauPaletteColor.blau_color_blauRed
       textLinkSnackbar = BlauPaletteColor.blau_color_blauPurple30
+      textActivated = BlauPaletteColor.blau_color_blauBlueSecondary
+      textBrand = BlauPaletteColor.blau_color_blauBlueSecondary
       control = BlauPaletteColor.blau_color_darkModeGrey6
       controlActivated = BlauPaletteColor.blau_color_blauBlueSecondary
       controlInverse = BlauPaletteColor.blau_color_darkModeGrey6
@@ -272,7 +276,7 @@ public object BlauBrandBrushes {
       cardContentOverlay = LinearGradientWithAngle(
         angleInDegrees = 180F,
         colorStops = listOf(
-          0.0F to BlauPaletteColor.blau_color_grey6,
+          0.0F to BlauPaletteColor.blau_color_grey6_0_alpha,
           0.3F to BlauPaletteColor.blau_color_grey6_40_alpha,
           1.0F to BlauPaletteColor.blau_color_grey6_70_alpha
         ))
@@ -284,7 +288,7 @@ public object BlauBrandBrushes {
       cardContentOverlay = LinearGradientWithAngle(
         angleInDegrees = 180F,
         colorStops = listOf(
-          0.0F to BlauPaletteColor.blau_color_grey6,
+          0.0F to BlauPaletteColor.blau_color_grey6_0_alpha,
           0.3F to BlauPaletteColor.blau_color_grey6_40_alpha,
           1.0F to BlauPaletteColor.blau_color_grey6_70_alpha
         ))
@@ -384,6 +388,8 @@ private object BlauPaletteColor {
 
   public val blau_color_white_20_alpha: Color = Color(0x33FFFFFF)
 
+  public val blau_color_grey6_0_alpha: Color = Color(0x00000000)
+
   public val blau_color_grey6_40_alpha: Color = Color(0x66000000)
 
   public val blau_color_grey6_70_alpha: Color = Color(0xB3000000)
@@ -395,4 +401,6 @@ private object BlauPaletteColor {
   public val blau_color_darkModeGrey_80_alpha: Color = Color(0xCC242424)
 
   public val blau_color_blauPurple_30_alpha: Color = Color(0x4D7814B3)
+
+  public val blau_color_white_0_alpha: Color = Color(0x00FFFFFF)
 }

@@ -37,7 +37,7 @@ class GetColorsWithAlpha(
         return values
             .filter { it.contains("rgba(") }
             .mapNotNull { value ->
-                val alpha = TokensGenerator.ALPHA_REGEX.find(value)?.value?.toDouble()
+                val alpha = TokensGenerator.ALPHA_REGEX.find(value)?.groups?.get(1)?.value?.toDouble()
                 val baseColorName = TokensGenerator.COLOR_NAME_REGEX.find(value)?.groups?.get(1)?.value
                 val baseColorValue = tokens.global.palette[baseColorName]?.value
                 if (alpha != null && baseColorName != null && baseColorValue != null) {

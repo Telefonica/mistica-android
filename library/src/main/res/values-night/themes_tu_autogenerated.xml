@@ -33,7 +33,7 @@
 		<item name="colorButtonDangerBackgroundSelected">@color/tu_color_red80</item>
 		<item name="colorButtonDangerBackgroundHover">@color/tu_color_red80</item>
 		<item name="colorButtonLinkDangerBackgroundSelected">@color/tu_color_red10</item>
-		<item name="colorButtonLinkDangerBackgroundInverse">@color/tu_color_white</item>
+		<item name="colorButtonLinkDangerBackgroundInverse">@color/tu_color_white_0_alpha</item>
 		<item name="colorButtonLinkDangerBackgroundInverseSelected">@color/tu_color_red10</item>
 		<item name="colorButtonLinkBackgroundSelected">@color/tu_color_white_8_alpha</item>
 		<item name="colorButtonLinkBackgroundInverseSelected">@color/tu_color_white_8_alpha</item>
@@ -61,6 +61,8 @@
 		<item name="colorTextLinkInverse">@color/tu_color_blue30</item>
 		<item name="colorTextLinkDanger">@color/tu_color_red</item>
 		<item name="colorTextLinkSnackbar">@color/tu_color_blue30</item>
+		<item name="colorTextActivated">@color/tu_color_blue30</item>
+		<item name="colorTextBrand">@color/tu_color_blue30</item>
 		<item name="colorControl">@color/tu_color_darkModeGrey6</item>
 		<item name="colorControlActive">@color/tu_color_blue30</item>
 		<item name="colorControlInverse">@color/tu_color_darkModeGrey6</item>

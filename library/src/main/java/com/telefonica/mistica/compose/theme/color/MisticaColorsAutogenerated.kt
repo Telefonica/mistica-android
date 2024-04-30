@@ -229,6 +229,12 @@ public class MisticaColors {
       structuralEqualityPolicy())
     internal set
 
+  public var textActivated: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
+    internal set
+
+  public var textBrand: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
+    internal set
+
   public var control: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
     internal set
 
@@ -520,6 +526,8 @@ public class MisticaColors {
     textLinkInverse = other.textLinkInverse
     textLinkDanger = other.textLinkDanger
     textLinkSnackbar = other.textLinkSnackbar
+    textActivated = other.textActivated
+    textBrand = other.textBrand
     control = other.control
     controlActivated = other.controlActivated
     controlInverse = other.controlInverse

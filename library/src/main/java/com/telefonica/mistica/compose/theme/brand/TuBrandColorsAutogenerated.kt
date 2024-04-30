@@ -66,6 +66,8 @@ public object TuBrandColors {
       textLinkInverse = TuPaletteColor.tu_color_white
       textLinkDanger = TuPaletteColor.tu_color_red
       textLinkSnackbar = TuPaletteColor.tu_color_white
+      textActivated = TuPaletteColor.tu_color_primary
+      textBrand = TuPaletteColor.tu_color_blue
       control = TuPaletteColor.tu_color_grey5
       controlActivated = TuPaletteColor.tu_color_primary
       controlInverse = TuPaletteColor.tu_color_white
@@ -166,7 +168,7 @@ public object TuBrandColors {
       buttonDangerBackgroundSelected = TuPaletteColor.tu_color_red80
       buttonDangerBackgroundHover = TuPaletteColor.tu_color_red80
       buttonLinkDangerBackgroundSelected = TuPaletteColor.tu_color_red10
-      buttonLinkDangerBackgroundInverse = TuPaletteColor.tu_color_white
+      buttonLinkDangerBackgroundInverse = TuPaletteColor.tu_color_white_0_alpha
       buttonLinkDangerBackgroundInverseSelected = TuPaletteColor.tu_color_red10
       buttonLinkBackgroundSelected = TuPaletteColor.tu_color_white_8_alpha
       buttonLinkBackgroundInverseSelected = TuPaletteColor.tu_color_white_8_alpha
@@ -194,6 +196,8 @@ public object TuBrandColors {
       textLinkInverse = TuPaletteColor.tu_color_blue30
       textLinkDanger = TuPaletteColor.tu_color_red
       textLinkSnackbar = TuPaletteColor.tu_color_blue30
+      textActivated = TuPaletteColor.tu_color_blue30
+      textBrand = TuPaletteColor.tu_color_blue30
       control = TuPaletteColor.tu_color_darkModeGrey6
       controlActivated = TuPaletteColor.tu_color_blue30
       controlInverse = TuPaletteColor.tu_color_darkModeGrey6
@@ -272,7 +276,7 @@ public object TuBrandBrushes {
       cardContentOverlay = LinearGradientWithAngle(
         angleInDegrees = 180F,
         colorStops = listOf(
-          0.0F to TuPaletteColor.tu_color_black,
+          0.0F to TuPaletteColor.tu_color_black_0_alpha,
           0.3F to TuPaletteColor.tu_color_black_40_alpha,
           1.0F to TuPaletteColor.tu_color_black_70_alpha
         ))
@@ -284,7 +288,7 @@ public object TuBrandBrushes {
       cardContentOverlay = LinearGradientWithAngle(
         angleInDegrees = 180F,
         colorStops = listOf(
-          0.0F to TuPaletteColor.tu_color_black,
+          0.0F to TuPaletteColor.tu_color_black_0_alpha,
           0.3F to TuPaletteColor.tu_color_black_40_alpha,
           1.0F to TuPaletteColor.tu_color_black_70_alpha
         ))
@@ -394,6 +398,8 @@ private object TuPaletteColor {
 
   public val tu_color_white_20_alpha: Color = Color(0x33FFFFFF)
 
+  public val tu_color_black_0_alpha: Color = Color(0x00000000)
+
   public val tu_color_black_40_alpha: Color = Color(0x66000000)
 
   public val tu_color_black_70_alpha: Color = Color(0xB3000000)
@@ -407,6 +413,8 @@ private object TuPaletteColor {
   public val tu_color_darkModeBlack_25_alpha: Color = Color(0x40161A24)
 
   public val tu_color_darkModeBlack_35_alpha: Color = Color(0x59161A24)
+
+  public val tu_color_white_0_alpha: Color = Color(0x00FFFFFF)
 
   public val tu_color_grey2_15_alpha: Color = Color(0x26D1D5E4)
 }

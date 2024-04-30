@@ -59,6 +59,8 @@
 		<attr name="colorTextLinkInverse" format="color|reference"/>
 		<attr name="colorTextLinkDanger" format="color|reference"/>
 		<attr name="colorTextLinkSnackbar" format="color|reference"/>
+		<attr name="colorTextActivated" format="color|reference"/>
+		<attr name="colorTextBrand" format="color|reference"/>
 		<attr name="colorControl" format="color|reference"/>
 		<!-- We cannot use colorControlActivated in Android because it overlaps with a framework attribute -->
 		<attr name="colorControlActive" format="color|reference"/>
