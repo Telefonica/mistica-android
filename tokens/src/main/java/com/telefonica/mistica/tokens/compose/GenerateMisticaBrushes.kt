@@ -6,7 +6,6 @@ import com.squareup.kotlinpoet.FileSpec
 import com.squareup.kotlinpoet.FunSpec
 import com.squareup.kotlinpoet.KModifier
 import com.squareup.kotlinpoet.MemberName
-import com.squareup.kotlinpoet.ParameterSpec
 import com.squareup.kotlinpoet.ParameterizedTypeName.Companion.parameterizedBy
 import com.squareup.kotlinpoet.PropertySpec
 import com.squareup.kotlinpoet.TypeSpec
@@ -29,7 +28,6 @@ class GenerateMisticaBrushes {
     operator fun invoke(heterogeneousTokensNames: List<String>) {
         val colorsClass = TypeSpec.classBuilder(MISTICA_BRUSHES)
             .addProperties(getBrushProperties(heterogeneousTokensNames))
-            .addFunction(getCopyFunc(heterogeneousTokensNames))
             .addFunction(getUpdateBrushesFunc(heterogeneousTokensNames))
             .build()
 
@@ -77,22 +75,6 @@ class GenerateMisticaBrushes {
         }
 
         return funSpec
-            .build()
-    }
-
-    private fun getCopyFunc(brushes: List<String>): FunSpec {
-        val parameters = brushes.map {
-            ParameterSpec.builder(it, BRUSH_CLASS).defaultValue("this.$it").build()
-        }
-
-        val assignationStatements = brushes.joinToString("\n") {
-            "it.$it = $it"
-        }
-
-        return FunSpec.builder("copy")
-            .addParameters(parameters)
-            .returns(MISTICA_BRUSHES_CLASS)
-            .addStatement("return %T().let {\n⇥$assignationStatements\nit⇤\n}", MISTICA_BRUSHES_CLASS)
             .build()
     }
 

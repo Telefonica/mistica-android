@@ -24,17 +24,6 @@ public class MisticaBrushes {
       structuralEqualityPolicy())
     internal set
 
-  public fun copy(
-    cardContentOverlay: Brush = this.cardContentOverlay,
-    backgroundBrand: Brush = this.backgroundBrand,
-    backgroundContainerBrand: Brush = this.backgroundContainerBrand,
-  ): MisticaBrushes = MisticaBrushes().let {
-    it.cardContentOverlay = cardContentOverlay
-    it.backgroundBrand = backgroundBrand
-    it.backgroundContainerBrand = backgroundContainerBrand
-    it
-  }
-
   public fun updateBrushesFrom(other: MisticaBrushes) {
     cardContentOverlay = other.cardContentOverlay
     backgroundBrand = other.backgroundBrand
