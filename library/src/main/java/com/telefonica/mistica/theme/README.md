@@ -47,7 +47,15 @@ When using a mistica theme, drawables can be easily applied just referencing the
 Also, [drawables can be obtained programmatically](https://github.com/Telefonica/mistica-android/blob/main/library/src/main/java/com/telefonica/mistica/util/DrawableUtils.kt).
 
 ```kotlin
-val drawable: Drawable = getThemeColor(R.attr.colorBackground)
+val drawable: Drawable = getMisticaThemeDrawable(R.attr.drawableBackgroundBrand)
+```
+
+```kotlin
+val drawable: Drawable = getMisticaThemeDrawableBuilder(R.attr.drawableBackgroundBrand)
+    .withCornerRadius()
+    .withBorderStroke()
+    .withRipple()
+    .get()
 ```
 
 More information about [brushes in compose](library/src/main/java/com/telefonica/mistica/compose#brushes).
