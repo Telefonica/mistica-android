@@ -19,7 +19,7 @@ import com.telefonica.mistica.tokens.dto.TextDTO
 import com.telefonica.mistica.tokens.dto.TextSizeDTO
 import com.telefonica.mistica.tokens.dto.TextWeightDTO
 import com.telefonica.mistica.tokens.dto.TokensDTO
-import com.telefonica.mistica.tokens.dto.getGradientTokensNames
+import com.telefonica.mistica.tokens.dto.getHeterogeneousTokensNames
 import com.telefonica.mistica.tokens.xml.GenerateAttributesFile.Companion.BRAND_COLOR_PREFIX
 import com.telefonica.mistica.tokens.xml.GenerateAttributesFile.Companion.BRAND_DRAWABLE_PREFIX
 import org.redundent.kotlin.xml.Node
@@ -48,18 +48,18 @@ class GenerateXMLFiles(
             tokens to brand
         }
 
-        val gradientTokensNames = brandTokens
+        val heterogeneousTokensNames = brandTokens
             .map { it.first }
-            .getGradientTokensNames()
+            .getHeterogeneousTokensNames()
 
-        generateAttributesFile(jsonAdapter, gradientTokensNames)
+        generateAttributesFile(jsonAdapter, heterogeneousTokensNames)
         generateGradientCompatibilityMappers(brandTokens)
 
         brandTokens.forEach { (tokens, brand) ->
             generateColorsFiles(tokens, brand)
             generateBrandGradientDrawables(tokens, brand.name)
-            generateLightThemesFiles(tokens, brand, gradientTokensNames)
-            generateDarkThemesFiles(tokens, brand, gradientTokensNames)
+            generateLightThemesFiles(tokens, brand, heterogeneousTokensNames)
+            generateDarkThemesFiles(tokens, brand, heterogeneousTokensNames)
         }
 
     }
@@ -92,7 +92,7 @@ class GenerateXMLFiles(
     private fun generateLightThemesFiles(
         tokens: TokensDTO,
         brand: Brand,
-        gradientTokensNames: List<String>,
+        heterogeneousTokensNames: List<String>,
     ) {
 
         fun Node.generateTheme(themeName: String) {
@@ -103,7 +103,7 @@ class GenerateXMLFiles(
 
             "style" {
                 attribute("name", "${themeName}_Base")
-                mapColorsAndGradients(tokens.light, brand, gradientTokensNames, false)
+                mapColorsAndGradients(tokens.light, brand, heterogeneousTokensNames, false)
                 borderRadius(tokens.radius)
                 presetFonts(tokens.text)
                 presetStyles(tokens.text.weight)
@@ -187,14 +187,14 @@ class GenerateXMLFiles(
     private fun generateDarkThemesFiles(
         tokens: TokensDTO,
         brand: Brand,
-        gradientTokensNames: List<String>,
+        heterogeneousTokensNames: List<String>,
     ) {
 
         fun Node.generateTheme(themeName: String) {
             "style" {
                 attribute("name", themeName)
                 attribute("parent", "${themeName}_Customizations")
-                mapColorsAndGradients(tokens.dark, brand, gradientTokensNames, true)
+                mapColorsAndGradients(tokens.dark, brand, heterogeneousTokensNames, true)
             }
         }
 
@@ -216,12 +216,12 @@ class GenerateXMLFiles(
     private fun Node.mapColorsAndGradients(
         items: Map<String, BrushDTO>,
         brand: Brand,
-        gradientTokensNames: List<String>,
+        heterogeneousTokensNames: List<String>,
         isDark: Boolean,
     ) {
         items.forEach { item ->
             val tokenName = if (item.key == "controlActivated") "controlActive" else item.key
-            val attrName = if (tokenName in gradientTokensNames) {
+            val attrName = if (tokenName in heterogeneousTokensNames) {
                 "$BRAND_DRAWABLE_PREFIX${tokenName.capitalizeString()}"
             } else {
                 "$BRAND_COLOR_PREFIX${tokenName.capitalizeString()}"

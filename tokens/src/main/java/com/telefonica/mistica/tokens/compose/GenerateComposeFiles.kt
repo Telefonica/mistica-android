@@ -5,7 +5,7 @@ import com.squareup.moshi.JsonAdapter
 import com.telefonica.mistica.tokens.TokensGenerator.Companion.BRANDS
 import com.telefonica.mistica.tokens.TokensGenerator.Companion.MISTICA_TOKENS_DIR
 import com.telefonica.mistica.tokens.dto.TokensDTO
-import com.telefonica.mistica.tokens.dto.getGradientTokensNames
+import com.telefonica.mistica.tokens.dto.getHeterogeneousTokensNames
 import java.io.File
 
 class GenerateComposeFiles(
@@ -25,16 +25,16 @@ class GenerateComposeFiles(
             tokens to brand
         }
 
-        val gradientTokensNames = brandTokens
+        val heterogeneousTokensNames = brandTokens
             .map { it.first }
-            .getGradientTokensNames()
+            .getHeterogeneousTokensNames()
 
-        generateMisticaColors(jsonAdapter, gradientTokensNames)
-        generateMisticaBrushes(gradientTokensNames)
+        generateMisticaColors(jsonAdapter, heterogeneousTokensNames)
+        generateMisticaBrushes(heterogeneousTokensNames)
         generateMisticaRadius(jsonAdapter)
 
         brandTokens.forEach { (tokens, brand) ->
-            generateBrandColors(tokens, brand.name, gradientTokensNames)
+            generateBrandColors(tokens, brand.name, heterogeneousTokensNames)
             generateBrandRadius(tokens, brand.name)
             generateBrandFontWeights(tokens, brand.name)
             generateBrandFontSizes(tokens, brand.name)
