@@ -59,6 +59,5 @@
 	<color name="tu_color_darkModeGrey_80_alpha">#CC202735</color>
 	<color name="tu_color_darkModeBlack_25_alpha">#40161A24</color>
 	<color name="tu_color_darkModeBlack_35_alpha">#59161A24</color>
-	<color name="tu_color_white_1_alpha">#03FFFFFF</color>
 	<color name="tu_color_grey2_15_alpha">#26D1D5E4</color>
 </resources>

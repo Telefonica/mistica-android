@@ -6,6 +6,7 @@
 		<attr name="colorBackgroundAlternative" format="color|reference"/>
 		<attr name="colorBackgroundBrandSecondary" format="color|reference"/>
 		<attr name="colorBackgroundContainer" format="color|reference"/>
+		<attr name="colorBackgroundContainerError" format="color|reference"/>
 		<attr name="colorBackgroundContainerHover" format="color|reference"/>
 		<attr name="colorBackgroundContainerPressed" format="color|reference"/>
 		<attr name="colorBackgroundContainerBrandHover" format="color|reference"/>
@@ -91,6 +92,8 @@
 		<attr name="colorSuccess" format="color|reference"/>
 		<attr name="colorWarning" format="color|reference"/>
 		<attr name="colorError" format="color|reference"/>
+		<attr name="colorTextError" format="color|reference"/>
+		<attr name="colorTextErrorInverse" format="color|reference"/>
 		<attr name="colorPromo" format="color|reference"/>
 		<attr name="colorHighlight" format="color|reference"/>
 		<attr name="colorSuccessLow" format="color|reference"/>

@@ -8,6 +8,7 @@
 		<item name="drawableBackgroundBrand">@color/vivoNew_color_vivoPurple</item>
 		<item name="colorBackgroundBrandSecondary">@color/vivoNew_color_vivoPurpleLight80</item>
 		<item name="colorBackgroundContainer">@color/vivoNew_color_white</item>
+		<item name="colorBackgroundContainerError">@color/vivoNew_color_pepperLight10</item>
 		<item name="colorBackgroundContainerHover">@color/vivoNew_color_darkModeBlack_3_alpha</item>
 		<item name="colorBackgroundContainerPressed">@color/vivoNew_color_darkModeBlack_5_alpha</item>
 		<item name="drawableBackgroundContainerBrand">@color/vivoNew_color_vivoPurple</item>
@@ -93,6 +94,8 @@
 		<item name="colorSuccess">@color/vivoNew_color_vivoGreen</item>
 		<item name="colorWarning">@color/vivoNew_color_orange</item>
 		<item name="colorError">@color/vivoNew_color_pepper</item>
+		<item name="colorTextError">@color/vivoNew_color_pepper</item>
+		<item name="colorTextErrorInverse">@color/vivoNew_color_white</item>
 		<item name="colorPromo">@color/vivoNew_color_vivoPurple</item>
 		<item name="colorHighlight">@color/vivoNew_color_pink</item>
 		<item name="colorSuccessLow">@color/vivoNew_color_vivoGreenLight10</item>
@@ -181,6 +184,7 @@
 		<item name="drawableBackgroundBrand">@color/vivoNew_color_vivoPurple</item>
 		<item name="colorBackgroundBrandSecondary">@color/vivoNew_color_vivoPurpleLight80</item>
 		<item name="colorBackgroundContainer">@color/vivoNew_color_white</item>
+		<item name="colorBackgroundContainerError">@color/vivoNew_color_pepperLight10</item>
 		<item name="colorBackgroundContainerHover">@color/vivoNew_color_darkModeBlack_3_alpha</item>
 		<item name="colorBackgroundContainerPressed">@color/vivoNew_color_darkModeBlack_5_alpha</item>
 		<item name="drawableBackgroundContainerBrand">@color/vivoNew_color_vivoPurple</item>
@@ -266,6 +270,8 @@
 		<item name="colorSuccess">@color/vivoNew_color_vivoGreen</item>
 		<item name="colorWarning">@color/vivoNew_color_orange</item>
 		<item name="colorError">@color/vivoNew_color_pepper</item>
+		<item name="colorTextError">@color/vivoNew_color_pepper</item>
+		<item name="colorTextErrorInverse">@color/vivoNew_color_white</item>
 		<item name="colorPromo">@color/vivoNew_color_vivoPurple</item>
 		<item name="colorHighlight">@color/vivoNew_color_pink</item>
 		<item name="colorSuccessLow">@color/vivoNew_color_vivoGreenLight10</item>

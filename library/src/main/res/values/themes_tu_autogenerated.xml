@@ -6,6 +6,7 @@
 		<item name="colorAppBarBackground">@color/tu_color_white</item>
 		<item name="colorBackground">@color/tu_color_white</item>
 		<item name="colorBackgroundContainer">@color/tu_color_white</item>
+		<item name="colorBackgroundContainerError">@color/tu_color_red10</item>
 		<item name="colorBackgroundContainerHover">@color/tu_color_grey9_3_alpha</item>
 		<item name="colorBackgroundContainerPressed">@color/tu_color_grey9_5_alpha</item>
 		<item name="drawableBackgroundContainerBrand">@color/tu_color_primary</item>
@@ -91,6 +92,8 @@
 		<item name="colorTextSecondary">@color/tu_color_grey6</item>
 		<item name="colorTextSecondaryInverse">@color/tu_color_grey3</item>
 		<item name="colorError">@color/tu_color_red</item>
+		<item name="colorTextError">@color/tu_color_red</item>
+		<item name="colorTextErrorInverse">@color/tu_color_white</item>
 		<item name="colorSuccess">@color/tu_color_green</item>
 		<item name="colorWarning">@color/tu_color_orange</item>
 		<item name="colorPromo">@color/tu_color_blue</item>

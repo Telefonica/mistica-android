@@ -8,6 +8,7 @@
 		<item name="drawableBackgroundBrand">@color/o2_color_o2BluePrimary</item>
 		<item name="colorBackgroundBrandSecondary">@color/o2_color_o2BluePrimary</item>
 		<item name="colorBackgroundContainer">@color/o2_color_white</item>
+		<item name="colorBackgroundContainerError">@color/o2_color_pepper10</item>
 		<item name="colorBackgroundContainerHover">@color/o2_color_darkModeBlack_3_alpha</item>
 		<item name="colorBackgroundContainerPressed">@color/o2_color_darkModeBlack_5_alpha</item>
 		<item name="drawableBackgroundContainerBrand">@color/o2_color_o2BluePrimary</item>
@@ -93,6 +94,8 @@
 		<item name="colorSuccess">@color/o2_color_o2Green</item>
 		<item name="colorWarning">@color/o2_color_o2Orange</item>
 		<item name="colorError">@color/o2_color_pepper</item>
+		<item name="colorTextError">@color/o2_color_pepper</item>
+		<item name="colorTextErrorInverse">@color/o2_color_white</item>
 		<item name="colorPromo">@color/o2_color_o2Purple</item>
 		<item name="colorHighlight">@color/o2_color_o2Pink</item>
 		<item name="colorSuccessLow">@color/o2_color_o2Green10</item>

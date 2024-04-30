@@ -7,6 +7,7 @@
 		<item name="drawableBackgroundBrand">@color/telefonica_color_darkModeBlack</item>
 		<item name="colorBackgroundBrandSecondary">@color/telefonica_color_darkModeBlack</item>
 		<item name="colorBackgroundContainer">@color/telefonica_color_darkModeGrey</item>
+		<item name="colorBackgroundContainerError">@color/telefonica_color_darkModeGrey</item>
 		<item name="colorBackgroundContainerHover">@color/telefonica_color_white_3_alpha</item>
 		<item name="colorBackgroundContainerPressed">@color/telefonica_color_white_5_alpha</item>
 		<item name="drawableBackgroundContainerBrand">@color/telefonica_color_darkModeGrey</item>
@@ -32,7 +33,7 @@
 		<item name="colorButtonDangerBackgroundSelected">@color/telefonica_color_coral80</item>
 		<item name="colorButtonDangerBackgroundHover">@color/telefonica_color_coral80</item>
 		<item name="colorButtonLinkDangerBackgroundSelected">@color/telefonica_color_white_8_alpha</item>
-		<item name="colorButtonLinkDangerBackgroundInverse">@color/telefonica_color_white_1_alpha</item>
+		<item name="colorButtonLinkDangerBackgroundInverse">@color/telefonica_color_white</item>
 		<item name="colorButtonLinkDangerBackgroundInverseSelected">@color/telefonica_color_white_8_alpha</item>
 		<item name="colorButtonLinkBackgroundSelected">@color/telefonica_color_white_8_alpha</item>
 		<item name="colorButtonLinkBackgroundInverseSelected">@color/telefonica_color_white_8_alpha</item>
@@ -90,6 +91,8 @@
 		<item name="colorTextSecondary">@color/telefonica_color_grey4</item>
 		<item name="colorTextSecondaryInverse">@color/telefonica_color_grey4</item>
 		<item name="colorError">@color/telefonica_color_coral</item>
+		<item name="colorTextError">@color/telefonica_color_coral</item>
+		<item name="colorTextErrorInverse">@color/telefonica_color_coral</item>
 		<item name="colorSuccess">@color/telefonica_color_turquoise</item>
 		<item name="colorWarning">@color/telefonica_color_ambar</item>
 		<item name="colorPromo">@color/telefonica_color_orchid</item>

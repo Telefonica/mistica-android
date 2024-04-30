@@ -24,12 +24,12 @@ class GenerateBrandBrushes(
 
         val lightProperty = PropertySpec.builder("lightBrushes", MISTICA_BRUSHES_CLASS)
             .initializer(
-                getBrushesConstructor(brandName, tokens.light.getHeterogeneousTokens(heterogeneousTokensNames), paletteClassName)
+                getBrushesInitializer(brandName, tokens.light.getHeterogeneousTokens(heterogeneousTokensNames), paletteClassName)
             ).build()
 
         val darkProperty = PropertySpec.builder("darkBrushes", MISTICA_BRUSHES_CLASS)
             .initializer(
-                getBrushesConstructor(brandName, tokens.dark.getHeterogeneousTokens(heterogeneousTokensNames), paletteClassName)
+                getBrushesInitializer(brandName, tokens.dark.getHeterogeneousTokens(heterogeneousTokensNames), paletteClassName)
             ).build()
 
         return TypeSpec.objectBuilder("${brandName.capitalizeString()}$BRAND_BRUSHES_CLASS_SUFFIX")
@@ -38,7 +38,7 @@ class GenerateBrandBrushes(
             .build()
     }
 
-    private fun getBrushesConstructor(
+    private fun getBrushesInitializer(
         brandName: String,
         brushes: Map<String, BrushDTO>,
         paletteClassName: String,
@@ -64,7 +64,7 @@ class GenerateBrandBrushes(
                 }
             }
         }
-        return CodeBlock.of("%T(\n%L\n)", MISTICA_BRUSHES_CLASS, assignments.joinToCode(separator = ",\n"))
+        return CodeBlock.of("%T().apply {\n%L\n}", MISTICA_BRUSHES_CLASS, assignments.joinToCode(separator = "\n"))
     }
 
     private fun getColorResourceReference(

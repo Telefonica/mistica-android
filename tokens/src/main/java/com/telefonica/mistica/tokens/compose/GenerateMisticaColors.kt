@@ -35,11 +35,6 @@ class GenerateMisticaColors {
         } else {
             val colors = getColors(tokens, heterogeneousTokensNames)
             val colorsClass = TypeSpec.classBuilder(MISTICA_COLORS)
-                .primaryConstructor(
-                    FunSpec.constructorBuilder()
-                        .addParameters(getConstructorParameters(colors))
-                        .build()
-                )
                 .addProperties(getColorProperties(colors))
                 .addFunction(getCopyFunc(colors))
                 .addFunction(getUpdateColorsFunc(colors))
@@ -70,21 +65,13 @@ class GenerateMisticaColors {
         colors.map {
             PropertySpec.builder(it, colorClass)
                 .mutable()
-                .delegate("%M(%N, %M())", mutableStateOf, it, structuralEqualityPolicy)
+                .delegate("%M(%L, %M())", mutableStateOf, DEFAULT_COLOR, structuralEqualityPolicy)
                 .setter(
                     FunSpec.setterBuilder()
                         .addModifiers(KModifier.INTERNAL)
                         .build()
                 )
                 .build()
-        }
-
-    private fun getConstructorParameters(colors: List<String>): List<ParameterSpec> =
-        colors.map {
-            ParameterSpec.builder(
-                it,
-                colorClass
-            ).defaultValue("Color.Unspecified").build()
         }
 
     private fun getUpdateColorsFunc(colors: List<String>): FunSpec {
@@ -104,14 +91,14 @@ class GenerateMisticaColors {
             ParameterSpec.builder(it, colorClass).defaultValue("this.$it").build()
         }
 
-        val constructorParameters = colors.joinToString(", ") {
-            "$it = $it"
+        val assignationStatements = colors.joinToString("\n") {
+            "it.$it = $it"
         }
 
         return FunSpec.builder("copy")
             .addParameters(parameters)
             .returns(misticaColorsClass)
-            .addStatement("return %T($constructorParameters)", misticaColorsClass)
+            .addStatement("return %T().let {\n⇥$assignationStatements\nit⇤\n}", misticaColorsClass)
             .build()
     }
 
@@ -120,5 +107,6 @@ class GenerateMisticaColors {
 
     private companion object {
         const val LIBRARY_CODE_PATH = "../library/src/main/java/"
+        const val DEFAULT_COLOR = "Color.Unspecified"
     }
 }

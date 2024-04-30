@@ -6,6 +6,7 @@
 		<item name="colorAppBarBackground">@color/telefonica_color_white</item>
 		<item name="colorBackground">@color/telefonica_color_white</item>
 		<item name="colorBackgroundContainer">@color/telefonica_color_white</item>
+		<item name="colorBackgroundContainerError">@color/telefonica_color_coral10</item>
 		<item name="colorBackgroundContainerHover">@color/telefonica_color_telefonicaBlue_3_alpha</item>
 		<item name="colorBackgroundContainerPressed">@color/telefonica_color_telefonicaBlue_5_alpha</item>
 		<item name="drawableBackgroundContainerBrand">@color/telefonica_color_telefonicaBlue</item>
@@ -91,6 +92,8 @@
 		<item name="colorTextSecondary">@color/telefonica_color_grey5</item>
 		<item name="colorTextSecondaryInverse">@color/telefonica_color_telefonicaBlue10</item>
 		<item name="colorError">@color/telefonica_color_coral</item>
+		<item name="colorTextError">@color/telefonica_color_coral</item>
+		<item name="colorTextErrorInverse">@color/telefonica_color_white</item>
 		<item name="colorSuccess">@color/telefonica_color_turquoise</item>
 		<item name="colorWarning">@color/telefonica_color_ambar</item>
 		<item name="colorPromo">@color/telefonica_color_orchid</item>

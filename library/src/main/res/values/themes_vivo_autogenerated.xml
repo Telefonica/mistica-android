@@ -8,6 +8,7 @@
 		<item name="drawableBackgroundBrand">@color/vivo_color_vivoPurple</item>
 		<item name="colorBackgroundBrandSecondary">@color/vivo_color_vivoPurple</item>
 		<item name="colorBackgroundContainer">@color/vivo_color_white</item>
+		<item name="colorBackgroundContainerError">@color/vivo_color_pepperLight10</item>
 		<item name="colorBackgroundContainerHover">@color/vivo_color_darkModeBlack_3_alpha</item>
 		<item name="colorBackgroundContainerPressed">@color/vivo_color_darkModeBlack_5_alpha</item>
 		<item name="drawableBackgroundContainerBrand">@color/vivo_color_vivoPurple</item>
@@ -93,6 +94,8 @@
 		<item name="colorSuccess">@color/vivo_color_vivoGreen</item>
 		<item name="colorWarning">@color/vivo_color_orange</item>
 		<item name="colorError">@color/vivo_color_pepper</item>
+		<item name="colorTextError">@color/vivo_color_pepper</item>
+		<item name="colorTextErrorInverse">@color/vivo_color_white</item>
 		<item name="colorPromo">@color/vivo_color_vivoPurple</item>
 		<item name="colorHighlight">@color/vivo_color_pink</item>
 		<item name="colorSuccessLow">@color/vivo_color_vivoGreenLight10</item>

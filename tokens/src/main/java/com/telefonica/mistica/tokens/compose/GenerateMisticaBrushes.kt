@@ -1,6 +1,7 @@
 package com.telefonica.mistica.tokens.compose
 
 import com.squareup.kotlinpoet.ClassName
+import com.squareup.kotlinpoet.CodeBlock
 import com.squareup.kotlinpoet.FileSpec
 import com.squareup.kotlinpoet.FunSpec
 import com.squareup.kotlinpoet.KModifier
@@ -27,11 +28,6 @@ class GenerateMisticaBrushes {
 
     operator fun invoke(heterogeneousTokensNames: List<String>) {
         val colorsClass = TypeSpec.classBuilder(MISTICA_BRUSHES)
-            .primaryConstructor(
-                FunSpec.constructorBuilder()
-                    .addParameters(getConstructorParameters(heterogeneousTokensNames))
-                    .build()
-            )
             .addProperties(getBrushProperties(heterogeneousTokensNames))
             .addFunction(getCopyFunc(heterogeneousTokensNames))
             .addFunction(getUpdateBrushesFunc(heterogeneousTokensNames))
@@ -57,11 +53,12 @@ class GenerateMisticaBrushes {
             .build()
     }
 
-    private fun getBrushProperties(brushes: List<String>): List<PropertySpec> =
-        brushes.map {
+    private fun getBrushProperties(brushes: List<String>): List<PropertySpec> {
+        val defaultValue = CodeBlock.of("%T(%T.Unspecified)", SOLID_COLOR_CLASS, colorClass)
+        return brushes.map {
             PropertySpec.builder(it, BRUSH_CLASS)
                 .mutable()
-                .delegate("%M(%N, %M())", mutableStateOf, it, structuralEqualityPolicy)
+                .delegate("%M(%L, %M())", mutableStateOf, defaultValue, structuralEqualityPolicy)
                 .setter(
                     FunSpec.setterBuilder()
                         .addModifiers(KModifier.INTERNAL)
@@ -69,14 +66,7 @@ class GenerateMisticaBrushes {
                 )
                 .build()
         }
-
-    private fun getConstructorParameters(brushes: List<String>): List<ParameterSpec> =
-        brushes.map {
-            ParameterSpec.builder(
-                it,
-                BRUSH_CLASS
-            ).defaultValue("%T(%T.Unspecified)", SOLID_COLOR_CLASS, colorClass).build()
-        }
+    }
 
     private fun getUpdateBrushesFunc(brushes: List<String>): FunSpec {
         val funSpec = FunSpec.builder("updateBrushesFrom")
@@ -95,14 +85,14 @@ class GenerateMisticaBrushes {
             ParameterSpec.builder(it, BRUSH_CLASS).defaultValue("this.$it").build()
         }
 
-        val constructorParameters = brushes.joinToString(", ") {
-            "$it = $it"
+        val assignationStatements = brushes.joinToString("\n") {
+            "it.$it = $it"
         }
 
         return FunSpec.builder("copy")
             .addParameters(parameters)
             .returns(MISTICA_BRUSHES_CLASS)
-            .addStatement("return %T($constructorParameters)", MISTICA_BRUSHES_CLASS)
+            .addStatement("return %T().let {\n⇥$assignationStatements\nit⇤\n}", MISTICA_BRUSHES_CLASS)
             .build()
     }
 

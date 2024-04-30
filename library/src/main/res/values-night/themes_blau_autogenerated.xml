@@ -7,6 +7,7 @@
 		<item name="drawableBackgroundBrand">@color/blau_color_darkModeBlack</item>
 		<item name="colorBackgroundBrandSecondary">@color/blau_color_darkModeBlack</item>
 		<item name="colorBackgroundContainer">@color/blau_color_darkModeGrey</item>
+		<item name="colorBackgroundContainerError">@color/blau_color_darkModeGrey</item>
 		<item name="colorBackgroundContainerHover">@color/blau_color_white_3_alpha</item>
 		<item name="colorBackgroundContainerPressed">@color/blau_color_white_5_alpha</item>
 		<item name="drawableBackgroundContainerBrand">@color/blau_color_darkModeGrey</item>
@@ -32,7 +33,7 @@
 		<item name="colorButtonDangerBackgroundSelected">@color/blau_color_blauRed70</item>
 		<item name="colorButtonDangerBackgroundHover">@color/blau_color_blauRed70</item>
 		<item name="colorButtonLinkDangerBackgroundSelected">@color/blau_color_blauPurple_30_alpha</item>
-		<item name="colorButtonLinkDangerBackgroundInverse">@color/blau_color_white_1_alpha</item>
+		<item name="colorButtonLinkDangerBackgroundInverse">@color/blau_color_white</item>
 		<item name="colorButtonLinkDangerBackgroundInverseSelected">@color/blau_color_blauPurple_30_alpha</item>
 		<item name="colorButtonLinkBackgroundSelected">@color/blau_color_blauPurple_30_alpha</item>
 		<item name="colorButtonLinkBackgroundInverseSelected">@color/blau_color_blauPurple_30_alpha</item>
@@ -90,6 +91,8 @@
 		<item name="colorTextSecondary">@color/blau_color_grey4</item>
 		<item name="colorTextSecondaryInverse">@color/blau_color_grey4</item>
 		<item name="colorError">@color/blau_color_blauRed</item>
+		<item name="colorTextError">@color/blau_color_blauRed</item>
+		<item name="colorTextErrorInverse">@color/blau_color_blauRed</item>
 		<item name="colorSuccess">@color/blau_color_blauGreen</item>
 		<item name="colorWarning">@color/blau_color_blauYellow</item>
 		<item name="colorPromo">@color/blau_color_blauPurple</item>

@@ -8,6 +8,7 @@
 		<item name="colorAppBarBackground">@color/blau_color_white</item>
 		<item name="colorBackground">@color/blau_color_white</item>
 		<item name="colorBackgroundContainer">@color/blau_color_white</item>
+		<item name="colorBackgroundContainerError">@color/blau_color_blauRed10</item>
 		<item name="colorBackgroundContainerHover">@color/blau_color_blauBluePrimary_3_alpha</item>
 		<item name="colorBackgroundContainerPressed">@color/blau_color_blauBluePrimary_5_alpha</item>
 		<item name="drawableBackgroundContainerBrand">@color/blau_color_blauBluePrimary</item>
@@ -91,6 +92,8 @@
 		<item name="colorTextSecondary">@color/blau_color_grey5</item>
 		<item name="colorTextSecondaryInverse">@color/blau_color_blauBluePrimary20</item>
 		<item name="colorError">@color/blau_color_blauRed</item>
+		<item name="colorTextError">@color/blau_color_blauRed</item>
+		<item name="colorTextErrorInverse">@color/blau_color_white</item>
 		<item name="colorSuccess">@color/blau_color_blauGreen</item>
 		<item name="colorWarning">@color/blau_color_blauYellow</item>
 		<item name="colorPromo">@color/blau_color_blauPurple</item>

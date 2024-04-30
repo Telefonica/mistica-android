@@ -7,6 +7,7 @@
 		<item name="drawableBackgroundBrand">@color/tu_color_darkModeBlack</item>
 		<item name="colorBackgroundBrandSecondary">@color/tu_color_darkModeBlack</item>
 		<item name="colorBackgroundContainer">@color/tu_color_darkModeGrey</item>
+		<item name="colorBackgroundContainerError">@color/tu_color_darkModeGrey</item>
 		<item name="colorBackgroundContainerHover">@color/tu_color_white_3_alpha</item>
 		<item name="colorBackgroundContainerPressed">@color/tu_color_white_5_alpha</item>
 		<item name="drawableBackgroundContainerBrand">@color/tu_color_darkModeGrey</item>
@@ -32,7 +33,7 @@
 		<item name="colorButtonDangerBackgroundSelected">@color/tu_color_red80</item>
 		<item name="colorButtonDangerBackgroundHover">@color/tu_color_red80</item>
 		<item name="colorButtonLinkDangerBackgroundSelected">@color/tu_color_red10</item>
-		<item name="colorButtonLinkDangerBackgroundInverse">@color/tu_color_white_1_alpha</item>
+		<item name="colorButtonLinkDangerBackgroundInverse">@color/tu_color_white</item>
 		<item name="colorButtonLinkDangerBackgroundInverseSelected">@color/tu_color_red10</item>
 		<item name="colorButtonLinkBackgroundSelected">@color/tu_color_white_8_alpha</item>
 		<item name="colorButtonLinkBackgroundInverseSelected">@color/tu_color_white_8_alpha</item>
@@ -90,6 +91,8 @@
 		<item name="colorTextSecondary">@color/tu_color_grey4</item>
 		<item name="colorTextSecondaryInverse">@color/tu_color_grey4</item>
 		<item name="colorError">@color/tu_color_red</item>
+		<item name="colorTextError">@color/tu_color_red</item>
+		<item name="colorTextErrorInverse">@color/tu_color_red</item>
 		<item name="colorSuccess">@color/tu_color_green</item>
 		<item name="colorWarning">@color/tu_color_orange</item>
 		<item name="colorPromo">@color/tu_color_blue</item>

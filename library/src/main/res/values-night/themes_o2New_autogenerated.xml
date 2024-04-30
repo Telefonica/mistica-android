@@ -7,6 +7,7 @@
 		<item name="drawableBackgroundBrand">@color/o2New_color_darkModeBlack</item>
 		<item name="colorBackgroundBrandSecondary">@color/o2New_color_darkModeBlack</item>
 		<item name="colorBackgroundContainer">@color/o2New_color_darkModeGrey</item>
+		<item name="colorBackgroundContainerError">@color/o2New_color_darkModeGrey</item>
 		<item name="colorBackgroundContainerHover">@color/o2New_color_white_3_alpha</item>
 		<item name="colorBackgroundContainerPressed">@color/o2New_color_white_5_alpha</item>
 		<item name="drawableBackgroundContainerBrand">@color/o2New_color_darkModeGrey</item>
@@ -32,7 +33,7 @@
 		<item name="colorButtonDangerBackgroundSelected">@color/o2New_color_o2Red65</item>
 		<item name="colorButtonDangerBackgroundHover">@color/o2New_color_o2Red65</item>
 		<item name="colorButtonLinkDangerBackgroundSelected">@color/o2New_color_white_8_alpha</item>
-		<item name="colorButtonLinkDangerBackgroundInverse">@color/o2New_color_white_1_alpha</item>
+		<item name="colorButtonLinkDangerBackgroundInverse">@color/o2New_color_white</item>
 		<item name="colorButtonLinkDangerBackgroundInverseSelected">@color/o2New_color_white_8_alpha</item>
 		<item name="colorButtonLinkBackgroundSelected">@color/o2New_color_white_8_alpha</item>
 		<item name="colorButtonLinkBackgroundInverseSelected">@color/o2New_color_white_8_alpha</item>
@@ -92,6 +93,8 @@
 		<item name="colorSuccess">@color/o2New_color_o2Green</item>
 		<item name="colorWarning">@color/o2New_color_o2Orange</item>
 		<item name="colorError">@color/o2New_color_o2Red45</item>
+		<item name="colorTextError">@color/o2New_color_o2Red45</item>
+		<item name="colorTextErrorInverse">@color/o2New_color_o2Red45</item>
 		<item name="colorPromo">@color/o2New_color_o2Pink</item>
 		<item name="colorHighlight">@color/o2New_color_o2Pink</item>
 		<item name="colorSuccessLow">@color/o2New_color_darkModeGrey6</item>
@@ -119,7 +122,7 @@
 		<item name="colorTagTextInactive">@color/o2New_color_grey40</item>
 		<item name="colorTagTextSuccess">@color/o2New_color_o2Green</item>
 		<item name="colorTagTextWarning">@color/o2New_color_o2Orange</item>
-		<item name="colorTagTextError">@color/o2New_color_o2Red</item>
+		<item name="colorTagTextError">@color/o2New_color_o2Red45</item>
 		<item name="colorTagBackgroundPromo">@color/o2New_color_darkModeGrey6</item>
 		<item name="colorTagBackgroundActive">@color/o2New_color_darkModeGrey6</item>
 		<item name="colorTagBackgroundInactive">@color/o2New_color_darkModeGrey6</item>

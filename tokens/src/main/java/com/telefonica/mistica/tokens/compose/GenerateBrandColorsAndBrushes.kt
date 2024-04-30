@@ -29,11 +29,11 @@ class GenerateBrandColorsAndBrushes(
         val paletteClassName = "${brandName.capitalizeString()}$BRAND_PALETTE_COLOR_CLASS_SUFFIX"
 
         val lightProperty = PropertySpec.builder("lightColors", misticaColorsClass)
-            .initializer(getColorsConstructor(brandName, tokens.light.removeHeterogeneousTokens(heterogeneousTokensNames), paletteClassName))
+            .initializer(getColorsInitializer(brandName, tokens.light.removeHeterogeneousTokens(heterogeneousTokensNames), paletteClassName))
             .build()
 
         val darkProperty = PropertySpec.builder("darkColors", misticaColorsClass)
-            .initializer(getColorsConstructor(brandName, tokens.dark.removeHeterogeneousTokens(heterogeneousTokensNames), paletteClassName))
+            .initializer(getColorsInitializer(brandName, tokens.dark.removeHeterogeneousTokens(heterogeneousTokensNames), paletteClassName))
             .build()
 
         val colorsObject = TypeSpec.objectBuilder("${brandName.capitalizeString()}BrandColors")
@@ -56,19 +56,19 @@ class GenerateBrandColorsAndBrushes(
         file.writeTo(File(GenerateComposeFiles.LIBRARY_CODE_PATH))
     }
 
-    private fun getColorsConstructor(
+    private fun getColorsInitializer(
         brandName: String,
         colors: Map<String, BrushDTO.SolidColorDTO>,
         paletteClassName: String,
     ): String {
-        var colorsConstructor = "${GenerateComposeFiles.MISTICA_COLORS}("
+        var statement = "${GenerateComposeFiles.MISTICA_COLORS}().apply {\n"
 
         colors.forEach { (key, color) ->
             val colorResourceName = getColorResourceName(color.value, brandName)
-            colorsConstructor += "$key = $paletteClassName.$colorResourceName,\n"
+            statement += "$key = $paletteClassName.$colorResourceName\n"
         }
 
-        return "$colorsConstructor)"
+        return "$statement}"
     }
 
     private fun getPaletteProperties(
