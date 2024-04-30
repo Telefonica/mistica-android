@@ -1,0 +1,2 @@
+# Required rules for library consumers
+-keep class com.telefonica.mistica.theme.drawable.** { *; }
