@@ -233,6 +233,7 @@ class GenerateXMLFiles(
                         -"@color/${getColorResourceName(itemValue.value, brand.name)}"
                     }
                 }
+
                 is BrushDTO.GradientDTO -> {
                     "item" {
                         attribute("name", attrName)

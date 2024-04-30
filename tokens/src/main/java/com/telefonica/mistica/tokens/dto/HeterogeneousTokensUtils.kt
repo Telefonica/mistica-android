@@ -8,12 +8,12 @@ fun List<TokensDTO>.getHeterogeneousTokensNames(): List<String> =
     }.toSet().toList()
 
 fun Map<String, BrushDTO>.removeHeterogeneousTokens(
-    heterogeneousTokensNames: List<String>
+    heterogeneousTokensNames: List<String>,
 ): Map<String, BrushDTO.SolidColorDTO> =
     filterNot { heterogeneousTokensNames.contains(it.key) }
         .mapValues { it.value as BrushDTO.SolidColorDTO }
 
 fun Map<String, BrushDTO>.getHeterogeneousTokens(
-    heterogeneousTokensNames: List<String>
+    heterogeneousTokensNames: List<String>,
 ): Map<String, BrushDTO> =
     filter { heterogeneousTokensNames.contains(it.key) }
