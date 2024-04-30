@@ -1,4 +1,4 @@
-package com.telefonica.mistica.tokens.common
+package com.telefonica.mistica.tokens.xml
 
 class GetDrawableResourceName {
     operator fun invoke(

@@ -17,8 +17,7 @@ import com.telefonica.mistica.testutils.ScreenshotsTest
 import com.telefonica.mistica.testutils.TestUtils
 import com.telefonica.mistica.testutils.TestUtils.getAllBrands
 import com.telefonica.mistica.testutils.TestUtils.isInverse
-import com.telefonica.mistica.theme.color.MisticaGradient
-import com.telefonica.mistica.theme.gradient.getThemeGradient
+import com.telefonica.mistica.util.getMisticaThemeDrawable
 import com.telefonica.mistica.util.getThemeColor
 import org.junit.Rule
 import org.junit.Test
@@ -66,7 +65,7 @@ internal class ButtonTest(
                 iconSuffix = "icon"
             }
             if (style.isInverse()) {
-                wrapper.background = activity.getThemeGradient(MisticaGradient.BackgroundBrand)
+                wrapper.background = activity.getMisticaThemeDrawable(R.attr.drawableBackgroundBrand)
             } else {
                 wrapper.setBackgroundColor(activity.getThemeColor(R.attr.colorBackground))
             }

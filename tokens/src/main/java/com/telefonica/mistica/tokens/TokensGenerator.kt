@@ -15,12 +15,12 @@ class TokensGenerator(
 ) {
 
     fun generate() {
-        val gradientAdapter = PolymorphicJsonAdapterFactory.of(BrushDTO::class.java, "type")
+        val brushAdapter = PolymorphicJsonAdapterFactory.of(BrushDTO::class.java, BrushDTO.TYPE_FIELD_NAME)
             .withSubtype(BrushDTO.SolidColorDTO::class.java, BrushDTO.COLOR_TYPE)
             .withSubtype(BrushDTO.GradientDTO::class.java, BrushDTO.GRADIENT_TYPE)
 
         val moshi: Moshi = Moshi.Builder()
-            .add(gradientAdapter)
+            .add(brushAdapter)
             .addLast(KotlinJsonAdapterFactory())
             .build()
         val jsonAdapter: JsonAdapter<TokensDTO> = moshi.adapter(TokensDTO::class.java)

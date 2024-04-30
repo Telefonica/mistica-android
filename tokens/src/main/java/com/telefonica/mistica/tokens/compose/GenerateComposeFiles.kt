@@ -51,10 +51,11 @@ class GenerateComposeFiles(
 
         const val MISTICA_BRUSHES = "MisticaBrushes"
         const val BRAND_BRUSHES_CLASS_SUFFIX = "BrandBrushes"
-        val misticaBrushesClass = ClassName("com.telefonica.mistica.compose.theme.brushes", MISTICA_BRUSHES)
-        val brushClass = ClassName("androidx.compose.ui.graphics", "Brush")
-        val solidColorClass = ClassName("androidx.compose.ui.graphics", "SolidColor")
-        val linearGradientWithAngleClass = ClassName("com.telefonica.mistica.compose.theme.brushes", "LinearGradientWithAngle")
+
+        val MISTICA_BRUSHES_CLASS = ClassName("com.telefonica.mistica.compose.theme.brushes", MISTICA_BRUSHES)
+        val BRUSH_CLASS = ClassName("androidx.compose.ui.graphics", "Brush")
+        val SOLID_COLOR_CLASS = ClassName("androidx.compose.ui.graphics", "SolidColor")
+        val LINEAR_GRADIENT_WITH_ANGLE_CLASS = ClassName("com.telefonica.mistica.compose.theme.brushes", "LinearGradientWithAngle")
 
         val misticaRadiusClass = ClassName("com.telefonica.mistica.compose.theme.values", "MisticaRadius")
         val dpClass = ClassName("androidx.compose.ui.unit", "Dp")

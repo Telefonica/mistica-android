@@ -1,11 +1,9 @@
 package com.telefonica.mistica.util
 
 import android.content.Context
-import android.graphics.drawable.Drawable
 import android.util.TypedValue
 import androidx.annotation.AttrRes
 import androidx.annotation.ColorInt
-import androidx.core.content.res.ResourcesCompat
 
 @ColorInt
 fun Context.getThemeColor(@AttrRes themeColor: Int): Int =

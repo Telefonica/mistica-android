@@ -13,7 +13,6 @@ import com.telefonica.mistica.tokens.TokensGenerator.Companion.REGULAR
 import com.telefonica.mistica.tokens.common.GetBorderRadiusName
 import com.telefonica.mistica.tokens.common.GetColorResourceName
 import com.telefonica.mistica.tokens.common.GetColorsWithAlpha
-import com.telefonica.mistica.tokens.common.GetDrawableResourceName
 import com.telefonica.mistica.tokens.dto.BrushDTO
 import com.telefonica.mistica.tokens.dto.RadiusDTO
 import com.telefonica.mistica.tokens.dto.TextDTO
@@ -257,7 +256,7 @@ class GenerateXMLFiles(
         const val TEXT_SIZE_SUFFIX = "TextSize"
         const val FONT_SUFFIX = "Font"
 
-        const val GRADIENT_PACKAGE = "com.telefonica.mistica.theme.gradient"
+        const val DRAWABLE_PACKAGE = "com.telefonica.mistica.theme.drawable"
 
         const val TOOLS_NAMESPACE_ATTR = "xmlns:tools"
         const val TOOLS_NAMESPACE_VALUE = "http://schemas.android.com/tools"

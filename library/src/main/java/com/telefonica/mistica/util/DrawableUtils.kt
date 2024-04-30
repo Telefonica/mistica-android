@@ -5,7 +5,7 @@ import android.graphics.drawable.Drawable
 import android.graphics.drawable.PaintDrawable
 import android.util.TypedValue
 import androidx.annotation.AttrRes
-import com.telefonica.mistica.theme.gradient.MisticaDrawableCompatibilityMapper
+import com.telefonica.mistica.theme.drawable.MisticaDrawableCompatibilityMapper
 
 fun Context.getMisticaThemeDrawableBuilder(@AttrRes themeDrawable: Int): DrawableBuilder {
     return DrawableBuilder(this, getMisticaThemePaintDrawable(themeDrawable))

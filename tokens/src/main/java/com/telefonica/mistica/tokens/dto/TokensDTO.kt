@@ -34,6 +34,7 @@ sealed class BrushDTO(
     }
 
     companion object {
+        const val TYPE_FIELD_NAME = "type"
         const val COLOR_TYPE = "color"
         const val GRADIENT_TYPE = "linear-gradient"
     }

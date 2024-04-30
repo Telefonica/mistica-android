@@ -7,9 +7,9 @@ import com.squareup.kotlinpoet.joinToCode
 import com.telefonica.mistica.tokens.common.GetColorResourceName
 import com.telefonica.mistica.tokens.compose.GenerateComposeFiles.Companion.BRAND_BRUSHES_CLASS_SUFFIX
 import com.telefonica.mistica.tokens.compose.GenerateComposeFiles.Companion.BRAND_PALETTE_COLOR_CLASS_SUFFIX
-import com.telefonica.mistica.tokens.compose.GenerateComposeFiles.Companion.linearGradientWithAngleClass
-import com.telefonica.mistica.tokens.compose.GenerateComposeFiles.Companion.misticaBrushesClass
-import com.telefonica.mistica.tokens.compose.GenerateComposeFiles.Companion.solidColorClass
+import com.telefonica.mistica.tokens.compose.GenerateComposeFiles.Companion.LINEAR_GRADIENT_WITH_ANGLE_CLASS
+import com.telefonica.mistica.tokens.compose.GenerateComposeFiles.Companion.MISTICA_BRUSHES_CLASS
+import com.telefonica.mistica.tokens.compose.GenerateComposeFiles.Companion.SOLID_COLOR_CLASS
 import com.telefonica.mistica.tokens.dto.BrushDTO
 import com.telefonica.mistica.tokens.dto.TokensDTO
 import com.telefonica.mistica.tokens.dto.getGradientTokens
@@ -22,13 +22,15 @@ class GenerateBrandBrushes(
     operator fun invoke(tokens: TokensDTO, brandName: String, gradientTokensNames: List<String>): TypeSpec {
         val paletteClassName = "${brandName.capitalizeString()}$BRAND_PALETTE_COLOR_CLASS_SUFFIX"
 
-        val lightProperty = PropertySpec.builder("lightBrushes", misticaBrushesClass)
-            .initializer(getBrushesConstructor(brandName, tokens.light.getGradientTokens(gradientTokensNames), paletteClassName))
-            .build()
+        val lightProperty = PropertySpec.builder("lightBrushes", MISTICA_BRUSHES_CLASS)
+            .initializer(
+                getBrushesConstructor(brandName, tokens.light.getGradientTokens(gradientTokensNames), paletteClassName)
+            ).build()
 
-        val darkProperty = PropertySpec.builder("darkBrushes", misticaBrushesClass)
-            .initializer(getBrushesConstructor(brandName, tokens.dark.getGradientTokens(gradientTokensNames), paletteClassName))
-            .build()
+        val darkProperty = PropertySpec.builder("darkBrushes", MISTICA_BRUSHES_CLASS)
+            .initializer(
+                getBrushesConstructor(brandName, tokens.dark.getGradientTokens(gradientTokensNames), paletteClassName)
+            ).build()
 
         return TypeSpec.objectBuilder("${brandName.capitalizeString()}$BRAND_BRUSHES_CLASS_SUFFIX")
             .addProperty(lightProperty)
@@ -45,7 +47,7 @@ class GenerateBrandBrushes(
             when (brush) {
                 is BrushDTO.SolidColorDTO -> {
                     val colorReference = getColorResourceReference(brush.value, brandName, paletteClassName)
-                    CodeBlock.of("$key = %T($colorReference)", solidColorClass)
+                    CodeBlock.of("$key = %T($colorReference)", SOLID_COLOR_CLASS)
                 }
 
                 is BrushDTO.GradientDTO -> {
@@ -55,14 +57,14 @@ class GenerateBrandBrushes(
                     }.joinToString(",\n")
                     CodeBlock.of(
                         "$key = %T(\n⇥angleInDegrees = %LF,\ncolorStops = listOf(\n⇥%L⇤\n)⇤)",
-                        linearGradientWithAngleClass,
+                        LINEAR_GRADIENT_WITH_ANGLE_CLASS,
                         angle,
                         colorStops,
                     )
                 }
             }
         }
-        return CodeBlock.of("%T(\n%L\n)", misticaBrushesClass, assignments.joinToCode(separator = ",\n"))
+        return CodeBlock.of("%T(\n%L\n)", MISTICA_BRUSHES_CLASS, assignments.joinToCode(separator = ",\n"))
     }
 
     private fun getColorResourceReference(

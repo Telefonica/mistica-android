@@ -1,4 +1,4 @@
-package com.telefonica.mistica.theme.gradient
+package com.telefonica.mistica.theme.drawable
 
 import android.content.res.Resources
 import android.graphics.LinearGradient
