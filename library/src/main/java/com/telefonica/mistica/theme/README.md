@@ -17,7 +17,7 @@ When using a mistica theme, colors can be easily applied just referencing them i
   >
 ```
 
-Also, if needed, [colors can be obtained programatically](https://github.com/Telefonica/mistica-android/blob/main/library/src/main/java/com/telefonica/mistica/util/ColorUtils.kt).
+Also, if needed, [colors can be obtained programmatically](https://github.com/Telefonica/mistica-android/blob/main/library/src/main/java/com/telefonica/mistica/util/ColorUtils.kt).
 
 ```kotlin
 @ColorInt val color = getThemeColor(R.attr.colorBackground)
@@ -31,7 +31,7 @@ This is an heterogeneous type which can be implemented internally as a solid col
 
 When using a mistica theme, drawables can be easily applied just referencing them in the xml layouts:
 
-**WARNING:** Xml references for Mistica drawables only work from api 24. If you are supporting older api versions, you should obtain them always programatically as described in next point.
+**WARNING:** Xml references for Mistica drawables only work from api 24. If you are supporting older api versions, you should obtain them always programmatically as described in next point.
 
 ```xml
 <LinearLayout
@@ -44,7 +44,7 @@ When using a mistica theme, drawables can be easily applied just referencing the
   >
 ```
 
-Also, [drawables can be obtained programatically](https://github.com/Telefonica/mistica-android/blob/main/library/src/main/java/com/telefonica/mistica/util/DrawableUtils.kt).
+Also, [drawables can be obtained programmatically](https://github.com/Telefonica/mistica-android/blob/main/library/src/main/java/com/telefonica/mistica/util/DrawableUtils.kt).
 
 ```kotlin
 val drawable: Drawable = getThemeColor(R.attr.colorBackground)
