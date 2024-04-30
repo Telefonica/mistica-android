@@ -1,4 +1,4 @@
-package com.telefonica.mistica.theme.gradient
+package com.telefonica.mistica.util
 
 import android.content.Context
 import android.graphics.Paint
@@ -7,24 +7,14 @@ import android.graphics.drawable.LayerDrawable
 import android.graphics.drawable.PaintDrawable
 import android.graphics.drawable.RippleDrawable
 import android.graphics.drawable.shapes.RectShape
-import android.util.TypedValue
 import androidx.annotation.ColorInt
 import androidx.annotation.Px
 import androidx.core.content.res.ResourcesCompat
 import com.telefonica.mistica.R
-import com.telefonica.mistica.util.convertDpToPx
-import com.telefonica.mistica.util.getDimension
-import com.telefonica.mistica.util.getThemeColor
 
-fun Context.getThemeGradient(gradient: MisticaCompatibilityGradient): Drawable =
-    getThemeGradientBuilder(gradient).get()
-
-fun Context.getThemeGradientBuilder(gradient: MisticaCompatibilityGradient): GradientBuilder =
-    GradientBuilder(this, gradient)
-
-class GradientBuilder(
+class DrawableBuilder(
     private val context: Context,
-    private val gradient: MisticaCompatibilityGradient,
+    private val baseDrawable: PaintDrawable,
 ) {
     private var withCornerRadius: Boolean = false
 
@@ -62,36 +52,10 @@ class GradientBuilder(
     }
 
     fun get(): Drawable =
-        getGradient(gradient)
+        baseDrawable
             .applyCornerRadius()
             .applyRipple()
             .applyBorderStroke()
-
-    private fun getGradient(
-        gradient: MisticaCompatibilityGradient,
-    ): PaintDrawable {
-        val typedValue = TypedValue()
-        context.theme.resolveAttribute(gradient.gradientColorsAttrRes, typedValue, true)
-        if (typedValue.data == TypedValue.DATA_NULL_UNDEFINED) {
-            throw RuntimeException("Gradient colors are not specified!")
-        }
-        val colors = context.resources.getIntArray(typedValue.data)
-
-        context.theme.resolveAttribute(gradient.gradientStopsAttrRes, typedValue, true)
-        if (typedValue.data == TypedValue.DATA_NULL_UNDEFINED) {
-            throw RuntimeException("Gradient stops are not specified!")
-        }
-        val stops = context.resources.getStringArray(typedValue.data).map { it.toFloat() }.toFloatArray()
-
-        context.theme.resolveAttribute(gradient.gradientAngleAttrRes, typedValue, true)
-        val angle = typedValue.data.toFloat()
-
-        return if (colors.size > 1) {
-            LinearGradientWithAngleDrawable(colors, stops, angle)
-        } else {
-            PaintDrawable(colors.first())
-        }
-    }
 
     private fun PaintDrawable.applyCornerRadius(): PaintDrawable = apply {
         if (withCornerRadius) {

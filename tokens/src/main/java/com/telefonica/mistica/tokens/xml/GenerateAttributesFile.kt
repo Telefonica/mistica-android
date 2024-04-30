@@ -7,10 +7,6 @@ import com.telefonica.mistica.tokens.common.GetBorderRadiusName
 import com.telefonica.mistica.tokens.dto.TokensDTO
 import com.telefonica.mistica.tokens.dto.getGradientTokens
 import com.telefonica.mistica.tokens.dto.removeGradientTokens
-import com.telefonica.mistica.tokens.xml.GenerateMisticaCompatibilityGradientEnum.Companion.BRAND_GRADIENT_ANGLE_ATTR_PREFIX
-import com.telefonica.mistica.tokens.xml.GenerateMisticaCompatibilityGradientEnum.Companion.BRAND_GRADIENT_COLORS_ATTR_PREFIX
-import com.telefonica.mistica.tokens.xml.GenerateMisticaCompatibilityGradientEnum.Companion.BRAND_DRAWABLE_PREFIX
-import com.telefonica.mistica.tokens.xml.GenerateMisticaCompatibilityGradientEnum.Companion.BRAND_GRADIENT_STOPS_ATTR_PREFIX
 import com.telefonica.mistica.tokens.xml.GenerateXMLFiles.Companion.ATTRS_FILE
 import com.telefonica.mistica.tokens.xml.GenerateXMLFiles.Companion.FONT_SUFFIX
 import com.telefonica.mistica.tokens.xml.GenerateXMLFiles.Companion.MIN_API_24_VALUE
@@ -48,7 +44,7 @@ class GenerateAttributesFile(
                 }
 
                 DECLARE_STYLEABLE {
-                    getGradientAttributes(tokens, gradientTokensNames)
+                    getDrawableAttributes(tokens, gradientTokensNames)
                 }
 
                 DECLARE_STYLEABLE {
@@ -83,29 +79,18 @@ class GenerateAttributesFile(
             }
 
             ATTR {
-                getColorElement("color${key.capitalizeString()}")
+                getColorElement("$BRAND_COLOR_PREFIX${key.capitalizeString()}")
             }
         }
     }
 
-    private fun Node.getGradientAttributes(tokens: TokensDTO, gradientTokensNames: List<String>) {
-        attribute("name", "Gradients")
+    private fun Node.getDrawableAttributes(tokens: TokensDTO, gradientTokensNames: List<String>) {
+        attribute("name", "Drawables")
         tokens.light.getGradientTokens(gradientTokensNames).forEach { gradient ->
             val key = gradient.key
-            comment(key)
             ATTR {
                 getReferenceElement("$BRAND_DRAWABLE_PREFIX${key.capitalizeString()}")
                 attribute(MIN_API_LEVEL_ATTR, MIN_API_24_VALUE)
-            }
-            comment("Less than Api 24 Support Gradients Attributes")
-            ATTR {
-                getReferenceElement("$BRAND_GRADIENT_COLORS_ATTR_PREFIX${key.capitalizeString()}")
-            }
-            ATTR {
-                getReferenceElement("$BRAND_GRADIENT_STOPS_ATTR_PREFIX${key.capitalizeString()}")
-            }
-            ATTR {
-                getIntegerElement("$BRAND_GRADIENT_ANGLE_ATTR_PREFIX${key.capitalizeString()}")
             }
         }
     }
@@ -118,11 +103,6 @@ class GenerateAttributesFile(
     private fun Node.getReferenceElement(name: String) {
         attribute("name", name)
         attribute("format", "reference")
-    }
-
-    private fun Node.getIntegerElement(name: String) {
-        attribute("name", name)
-        attribute("format", "integer|reference")
     }
 
     private fun Node.getBorderRadiusAttributes(tokens: TokensDTO) {
@@ -183,9 +163,12 @@ class GenerateAttributesFile(
         }
     }
 
-    private companion object {
-        const val DECLARE_STYLEABLE = "declare-styleable"
-        const val FLAG = "flag"
-        const val ATTR = "attr"
+    companion object {
+        private const val DECLARE_STYLEABLE = "declare-styleable"
+        private const val FLAG = "flag"
+        private const val ATTR = "attr"
+
+        const val BRAND_COLOR_PREFIX = "color"
+        const val BRAND_DRAWABLE_PREFIX = "drawable"
     }
 }

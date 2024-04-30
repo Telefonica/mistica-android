@@ -11,44 +11,21 @@ import androidx.core.content.res.ResourcesCompat
 import com.telefonica.mistica.util.getCoordinatesForLinearGradientWithAngle
 import org.xmlpull.v1.XmlPullParser
 
-open class LinearGradientWithAngleDrawable : PaintDrawable {
-
-    private var colorResources: List<Int>? = null
-    private val colorStops: FloatArray
+open class LinearGradientWithAngleDrawable(
+    private val colorResStops: List<Pair<Float, Int>>,
     private val angleInDegrees: Float
-
-    private lateinit var colorValues: IntArray
-
-    constructor(
-        colorValues: IntArray,
-        colorStops: FloatArray,
-        angleInDegrees: Float,
-    ): super() {
-        this.colorValues = colorValues
-        this.colorStops = colorStops
-        this.angleInDegrees = angleInDegrees
-        init()
-    }
-
-    constructor(
-        colorResStops: List<Pair<Float, Int>>,
-        angleInDegrees: Float,
-    ): super() {
-        this.colorResources = colorResStops
-            .map { it.second }
-        this.colorStops = colorResStops
-            .map { it.first }
-            .toFloatArray()
-        this.angleInDegrees = angleInDegrees
-        init()
-    }
+) : PaintDrawable() {
 
     override fun inflate(r: Resources, parser: XmlPullParser, attrs: AttributeSet, theme: Resources.Theme?) {
         super.inflate(r, parser, attrs, theme)
-        colorValues = colorResources?.map { ResourcesCompat.getColor(r, it, theme) }?.toIntArray() ?: intArrayOf()
+        initialize(r, theme)
     }
 
-    private fun init() {
+    fun initialize(r: Resources, theme: Resources.Theme?) {
+        val colorValues = colorResStops.map { it.second }
+            .map { ResourcesCompat.getColor(r, it, theme) }
+            .toIntArray()
+
         val gradientShaderFactory: ShaderFactory = object : ShaderFactory() {
             override fun resize(width: Int, height: Int): Shader {
                 val (from, to) = Size(width.toFloat(), height.toFloat())
@@ -59,7 +36,7 @@ open class LinearGradientWithAngleDrawable : PaintDrawable {
                     to.x,
                     to.y,
                     colorValues,
-                    colorStops,
+                    colorResStops.map { it.first }.toFloatArray(),
                     Shader.TileMode.CLAMP
                 )
             }

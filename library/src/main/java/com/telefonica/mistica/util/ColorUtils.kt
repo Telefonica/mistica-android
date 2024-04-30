@@ -19,15 +19,3 @@ private fun Context.getThemeColor(@AttrRes themeColor: Int, resolveRefs: Boolean
     }
     return typedValue.data
 }
-
-fun Context.getThemeDrawable(@AttrRes themeDrawable: Int): Drawable =
-    getThemeDrawable(themeDrawable, false)
-
-private fun Context.getThemeDrawable(@AttrRes themeDrawable: Int, resolveRefs: Boolean): Drawable {
-    val typedValue = TypedValue()
-    theme.resolveAttribute(themeDrawable, typedValue, resolveRefs)
-    if (typedValue.data == TypedValue.DATA_NULL_UNDEFINED) {
-        throw RuntimeException("Theme color is not specified!")
-    }
-    return ResourcesCompat.getDrawable(resources, typedValue.data, theme)!!
-}
