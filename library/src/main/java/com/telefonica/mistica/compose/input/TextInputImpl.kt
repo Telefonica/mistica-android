@@ -115,7 +115,7 @@ private fun TextBox(
         label = {
             TextInputLabel(
                 text = label,
-                textIsNotEmpty = value.isNotEmpty(),
+                inputIsNotEmpty = value.isNotEmpty(),
                 isFocused = interactionSource.collectIsFocusedAsState().value,
                 isError = isError,
             )
@@ -142,12 +142,12 @@ private fun TextBox(
 @Composable
 private fun TextInputLabel(
     text: String,
-    textIsNotEmpty: Boolean,
+    inputIsNotEmpty: Boolean,
     isFocused: Boolean,
     isError: Boolean,
     modifier: Modifier = Modifier,
 ) {
-    val isMinimized = textIsNotEmpty || isFocused
+    val isMinimized = inputIsNotEmpty || isFocused
     Text(
         text = text,
         color = when {
