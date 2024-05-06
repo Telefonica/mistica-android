@@ -55,7 +55,7 @@ fun HighLightedCard(
     androidx.compose.material.Card(
         modifier = modifier
             .defaultMinSize(minHeight = 100.dp),
-        shape = RoundedCornerShape(1.dp),
+        shape = RoundedCornerShape(MisticaTheme.radius.containerBorderRadius),
         elevation = 0.dp,
         border = BorderStroke(width = 1.dp, color = MisticaTheme.colors.border)
     ) {
