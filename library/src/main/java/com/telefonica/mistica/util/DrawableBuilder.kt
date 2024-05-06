@@ -1,6 +1,7 @@
 package com.telefonica.mistica.util
 
 import android.content.Context
+import android.content.res.ColorStateList
 import android.graphics.Paint
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.LayerDrawable
@@ -28,6 +29,9 @@ class DrawableBuilder(
     @ColorInt
     private var borderStrokeColor: Int? = null
 
+    @ColorInt
+    private var rippleColor: Int? = null
+
     @Px
     private var borderStrokeWidth: Float? = null
 
@@ -38,8 +42,9 @@ class DrawableBuilder(
         this.cornerRadius = cornerRadius
     }
 
-    fun withRipple() = apply {
+    fun withRipple(@ColorInt rippleColor: Int? = null) = apply {
         withRipple = true
+        this.rippleColor = rippleColor
     }
 
     fun withBorderStroke(
@@ -70,6 +75,7 @@ class DrawableBuilder(
 
         val ripple = ResourcesCompat
             .getDrawable(context.resources, R.drawable.empty_ripple_background, context.theme) as RippleDrawable
+        rippleColor?.let { ripple.setColor(ColorStateList.valueOf(it)) }
         // Support for API 21 requires layer replacing
         ripple.setDrawableByLayerId(android.R.id.mask, this)
         ripple.setDrawableByLayerId(android.R.id.background, this)
