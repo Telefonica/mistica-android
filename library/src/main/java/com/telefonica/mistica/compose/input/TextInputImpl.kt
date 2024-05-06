@@ -152,7 +152,11 @@ private fun TextInputLabel(
             isMinimized -> MisticaTheme.colors.controlActivated
             else -> MisticaTheme.colors.textSecondary
         },
-        style = MisticaTheme.typography.preset3,
+        style = if (isMinimized) {
+            MisticaTheme.typography.preset1
+        } else {
+            MisticaTheme.typography.preset3
+        },
         modifier = modifier,
     )
 }
