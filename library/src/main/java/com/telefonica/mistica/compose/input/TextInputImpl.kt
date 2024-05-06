@@ -115,7 +115,8 @@ private fun TextBox(
         label = {
             TextInputLabel(
                 text = label,
-                isMinimized = interactionSource.collectIsFocusedAsState().value,
+                textIsNotEmpty = value.isNotEmpty(),
+                isFocused = interactionSource.collectIsFocusedAsState().value,
                 isError = isError,
             )
         },
@@ -141,15 +142,17 @@ private fun TextBox(
 @Composable
 private fun TextInputLabel(
     text: String,
-    isMinimized: Boolean,
+    textIsNotEmpty: Boolean,
+    isFocused: Boolean,
     isError: Boolean,
     modifier: Modifier = Modifier,
 ) {
+    val isMinimized = textIsNotEmpty || isFocused
     Text(
         text = text,
         color = when {
             isError && isMinimized -> MisticaTheme.colors.error
-            isMinimized -> MisticaTheme.colors.controlActivated
+            isFocused -> MisticaTheme.colors.controlActivated
             else -> MisticaTheme.colors.textSecondary
         },
         style = if (isMinimized) {
