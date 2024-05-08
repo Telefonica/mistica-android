@@ -163,6 +163,7 @@ class ListRowView @JvmOverloads constructor(
     private var assetType: Int = TYPE_SMALL_ICON
     private var assetHeight: Float = UNDEFINED
     private var assetWidth: Float = UNDEFINED
+    private var cachedDefaultBackgroundType: Int = BackgroundType.TYPE_NORMAL
 
     init {
         LayoutInflater.from(context).inflate(R.layout.list_row_item, this, true)
@@ -215,6 +216,7 @@ class ListRowView @JvmOverloads constructor(
             } else {
                 BackgroundType.TYPE_NORMAL
             }
+            cachedDefaultBackgroundType = backgroundTypeDefaultValue
             setBackgroundType(
                 styledAttrs.getInt(
                     R.styleable.ListRowView_listRowBackgroundType,
@@ -283,7 +285,9 @@ class ListRowView @JvmOverloads constructor(
             TYPE_IMAGE_1_1,
             TYPE_IMAGE_7_10,
             TYPE_IMAGE_16_9,
-            TYPE_IMAGE_ROUNDED -> assetRoundedImageView
+            TYPE_IMAGE_ROUNDED,
+            -> assetRoundedImageView
+
             else -> assetImageView
         }.also { imageView ->
             imageView.loadUrl(url) {
@@ -311,7 +315,7 @@ class ListRowView @JvmOverloads constructor(
                 TYPE_IMAGE_1_1,
                 TYPE_IMAGE_7_10,
                 TYPE_IMAGE_16_9,
-                TYPE_IMAGE_ROUNDED
+                TYPE_IMAGE_ROUNDED,
                 -> assetRoundedImageView.setImageDrawable(drawable)
 
                 else -> assetImageView.setImageDrawable(drawable)
@@ -414,6 +418,7 @@ class ListRowView @JvmOverloads constructor(
     }
 
     fun setBackgroundType(@BackgroundType type: Int) {
+        cachedDefaultBackgroundType = type
         @DrawableRes val backgroundDrawable: Int = when (type) {
             BackgroundType.TYPE_BOXED -> R.drawable.boxed_list_row_background
             BackgroundType.TYPE_BOXED_INVERSE -> R.drawable.boxed_inverse_list_row_background
@@ -421,31 +426,45 @@ class ListRowView @JvmOverloads constructor(
             else -> R.drawable.list_row_background
         }
         background = AppCompatResources.getDrawable(context, backgroundDrawable)
-        configureTextViewsColor(type)
+        setDefaultTitleTextColor(type)
+        setDefaultSecondaryTextColor(type)
+        setDefaultDescriptionTextColor(type)
     }
 
-    private fun configureTextViewsColor(@BackgroundType type: Int) {
-        val colorPrimary =
-            context.getThemeColor(
-                if (type == BackgroundType.TYPE_BOXED_INVERSE) {
-                    R.attr.colorTextPrimaryInverse
-                } else {
-                    R.attr.colorTextPrimary
-                }
-            )
+    fun setDefaultTitleTextColor(@BackgroundType type: Int = cachedDefaultBackgroundType) {
+        val themeColor = when (type) {
+            BackgroundType.TYPE_BOXED_INVERSE -> R.attr.colorTextPrimaryInverse
+            else -> R.attr.colorTextPrimary
+        }
+        setTitleTextColor(context.getThemeColor(themeColor))
+    }
 
-        val colorSecondary =
-            context.getThemeColor(
-                if (type == BackgroundType.TYPE_BOXED_INVERSE) {
-                    R.attr.colorTextSecondaryInverse
-                } else {
-                    R.attr.colorTextSecondary
-                }
-            )
+    fun setDefaultSecondaryTextColor(@BackgroundType type: Int = cachedDefaultBackgroundType) {
+        val themeColor = when (type) {
+            BackgroundType.TYPE_BOXED_INVERSE -> R.attr.colorTextSecondaryInverse
+            else -> R.attr.colorTextSecondary
+        }
+        setSubtitleTextColor(context.getThemeColor(themeColor))
+    }
 
-        titleTextView.setTextColor(colorPrimary)
-        subtitleTextView.setTextColor(colorSecondary)
-        descriptionTextView.setTextColor(colorSecondary)
+    fun setDefaultDescriptionTextColor(@BackgroundType type: Int = cachedDefaultBackgroundType) {
+        val themeColor = when (type) {
+            BackgroundType.TYPE_BOXED_INVERSE -> R.attr.colorTextSecondaryInverse
+            else -> R.attr.colorTextSecondary
+        }
+        setDescriptionTextColor(context.getThemeColor(themeColor))
+    }
+
+    fun setTitleTextColor(textColorOverride: Int) {
+        titleTextView.setTextColor(textColorOverride)
+    }
+
+    fun setSubtitleTextColor(textColorOverride: Int) {
+        subtitleTextView.setTextColor(textColorOverride)
+    }
+
+    fun setDescriptionTextColor(textColorOverride: Int) {
+        descriptionTextView.setTextColor(textColorOverride)
     }
 
     fun setHeadlineVisible(visible: Boolean) {
