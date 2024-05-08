@@ -29,8 +29,6 @@ This is an heterogeneous type which can be implemented internally as a solid col
 
 When using a mistica theme, drawables can be easily applied just referencing them in the xml layouts:
 
-**WARNING:** Xml references for Mistica drawables only work from api 24. If you are supporting older api versions, you should obtain them always programmatically as described in next point.
-
 ```xml
 <LinearLayout
   android:layout_width="match_parent"

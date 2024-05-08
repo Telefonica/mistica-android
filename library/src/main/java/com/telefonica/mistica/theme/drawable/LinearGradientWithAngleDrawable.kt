@@ -44,4 +44,6 @@ open class LinearGradientWithAngleDrawable(
         shape = RectShape()
         shaderFactory = gradientShaderFactory
     }
+
+    override fun getConstantState(): ConstantState? = null
 }

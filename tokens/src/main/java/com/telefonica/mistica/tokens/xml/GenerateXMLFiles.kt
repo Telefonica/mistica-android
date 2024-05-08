@@ -38,7 +38,6 @@ class GenerateXMLFiles(
     private val generateAttributesFile: GenerateAttributesFile = GenerateAttributesFile(),
     private val getBorderRadiusName: GetBorderRadiusName = GetBorderRadiusName(),
     private val generateBrandGradientDrawables: GenerateBrandGradientDrawables = GenerateBrandGradientDrawables(),
-    private val generateGradientCompatibilityMappers: GenerateDrawableCompatibilityMapper = GenerateDrawableCompatibilityMapper(),
 ) {
 
     operator fun invoke(jsonAdapter: JsonAdapter<TokensDTO>) {
@@ -53,7 +52,6 @@ class GenerateXMLFiles(
             .getHeterogeneousTokensNames()
 
         generateAttributesFile(jsonAdapter, heterogeneousTokensNames)
-        generateGradientCompatibilityMappers(brandTokens)
 
         brandTokens.forEach { (tokens, brand) ->
             generateColorsFiles(tokens, brand)
@@ -261,9 +259,6 @@ class GenerateXMLFiles(
 
         const val TOOLS_NAMESPACE_ATTR = "xmlns:tools"
         const val TOOLS_NAMESPACE_VALUE = "http://schemas.android.com/tools"
-
-        const val MIN_API_LEVEL_ATTR = "tools:targetApi"
-        const val MIN_API_24_VALUE = "n"
 
         fun String.capitalizeString(): String =
             this.replaceFirstChar { if (it.isLowerCase()) it.titlecase() else it.toString() }

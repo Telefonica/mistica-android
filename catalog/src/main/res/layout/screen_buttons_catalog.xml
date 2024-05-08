@@ -336,10 +336,10 @@
             app:title="Inverse Buttons" />
 
         <LinearLayout
-            android:id="@+id/inverse_buttons_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:background="?attr/drawableBackgroundBrand"
             android:gravity="center_horizontal"
             android:orientation="vertical">
 

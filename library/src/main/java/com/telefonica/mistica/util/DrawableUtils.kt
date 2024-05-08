@@ -5,8 +5,7 @@ import android.graphics.drawable.Drawable
 import android.graphics.drawable.PaintDrawable
 import android.util.TypedValue
 import androidx.annotation.AttrRes
-import com.telefonica.mistica.theme.drawable.LinearGradientWithAngleDrawable
-import com.telefonica.mistica.theme.drawable.MisticaDrawableCompatibilityMapper
+import androidx.appcompat.content.res.AppCompatResources
 
 fun Context.getMisticaThemeDrawableBuilder(@AttrRes themeDrawable: Int): DrawableBuilder {
     return DrawableBuilder(this, getMisticaThemePaintDrawable(themeDrawable))
@@ -25,12 +24,7 @@ private fun Context.getMisticaThemePaintDrawable(@AttrRes themeDrawable: Int): P
     return if (typedValue.type.isColorType()) {
         return PaintDrawable(typedValue.data)
     } else {
-        MisticaDrawableCompatibilityMapper.getDrawable(typedValue.resourceId)
-            ?.apply {
-                if (this is LinearGradientWithAngleDrawable) {
-                    initialize(resources, theme)
-                }
-            }
+        AppCompatResources.getDrawable(this, typedValue.resourceId) as? PaintDrawable
             ?: throw RuntimeException("Drawable is not a mistica Drawable!")
     }
 }

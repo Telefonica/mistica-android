@@ -9,8 +9,6 @@ import com.telefonica.mistica.tokens.dto.getHeterogeneousTokens
 import com.telefonica.mistica.tokens.dto.removeHeterogeneousTokens
 import com.telefonica.mistica.tokens.xml.GenerateXMLFiles.Companion.ATTRS_FILE
 import com.telefonica.mistica.tokens.xml.GenerateXMLFiles.Companion.FONT_SUFFIX
-import com.telefonica.mistica.tokens.xml.GenerateXMLFiles.Companion.MIN_API_24_VALUE
-import com.telefonica.mistica.tokens.xml.GenerateXMLFiles.Companion.MIN_API_LEVEL_ATTR
 import com.telefonica.mistica.tokens.xml.GenerateXMLFiles.Companion.TEXT_SIZE_SUFFIX
 import com.telefonica.mistica.tokens.xml.GenerateXMLFiles.Companion.TEXT_STYLE_SUFFIX
 import com.telefonica.mistica.tokens.xml.GenerateXMLFiles.Companion.TOOLS_NAMESPACE_ATTR
@@ -90,7 +88,6 @@ class GenerateAttributesFile(
             val key = gradient.key
             ATTR {
                 getReferenceElement("$BRAND_DRAWABLE_PREFIX${key.capitalizeString()}")
-                attribute(MIN_API_LEVEL_ATTR, MIN_API_24_VALUE)
             }
         }
     }

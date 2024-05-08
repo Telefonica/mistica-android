@@ -132,9 +132,9 @@
 		<attr name="colorTagBackgroundError" format="color|reference"/>
 	</declare-styleable>
 	<declare-styleable name="Drawables">
-		<attr name="drawableBackgroundBrand" format="reference" tools:targetApi="n"/>
-		<attr name="drawableBackgroundContainerBrand" format="reference" tools:targetApi="n"/>
-		<attr name="drawableCardContentOverlay" format="reference" tools:targetApi="n"/>
+		<attr name="drawableBackgroundBrand" format="reference"/>
+		<attr name="drawableBackgroundContainerBrand" format="reference"/>
+		<attr name="drawableCardContentOverlay" format="reference"/>
 	</declare-styleable>
 	<declare-styleable name="BorderRadius">
 		<attr name="avatarBorderRadius" format="dimension|fraction"/>
