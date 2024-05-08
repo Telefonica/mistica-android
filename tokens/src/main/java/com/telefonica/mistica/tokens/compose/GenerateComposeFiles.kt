@@ -21,7 +21,7 @@ class GenerateComposeFiles(
     operator fun invoke(jsonAdapter: JsonAdapter<TokensDTO>) {
         val brandTokens = BRANDS.map { brand ->
             val json = File("${MISTICA_TOKENS_DIR}/${brand.file}.json").readText()
-            val tokens = jsonAdapter.fromJson(json) ?: throw Exception("Invalid JSON")
+            val tokens = jsonAdapter.fromJson(json) ?: throw Exception("Invalid JSON in file: ${brand.file}")
             tokens to brand
         }
 
