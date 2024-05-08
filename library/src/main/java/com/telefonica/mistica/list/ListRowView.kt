@@ -427,7 +427,7 @@ class ListRowView @JvmOverloads constructor(
         }
         background = AppCompatResources.getDrawable(context, backgroundDrawable)
         setDefaultTitleTextColor(type)
-        setDefaultSecondaryTextColor(type)
+        setDefaultSubtitleTextColor(type)
         setDefaultDescriptionTextColor(type)
     }
 
@@ -439,7 +439,7 @@ class ListRowView @JvmOverloads constructor(
         setTitleTextColor(context.getThemeColor(themeColor))
     }
 
-    fun setDefaultSecondaryTextColor(@BackgroundType type: Int = cachedDefaultBackgroundType) {
+    fun setDefaultSubtitleTextColor(@BackgroundType type: Int = cachedDefaultBackgroundType) {
         val themeColor = when (type) {
             BackgroundType.TYPE_BOXED_INVERSE -> R.attr.colorTextSecondaryInverse
             else -> R.attr.colorTextSecondary
