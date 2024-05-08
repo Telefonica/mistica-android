@@ -3,12 +3,10 @@ package com.telefonica.mistica.input
 import android.content.Context
 import android.content.res.ColorStateList
 import android.graphics.drawable.Drawable
-import android.os.Build
 import android.text.method.MovementMethod
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.CompoundButton
-import androidx.annotation.RequiresApi
 import androidx.appcompat.widget.AppCompatCheckBox
 import androidx.databinding.*
 import com.google.android.material.textfield.TextInputLayout
@@ -122,7 +120,6 @@ class CheckBoxInput @JvmOverloads constructor(
         checkBox.movementMethod = movementMethod
     }
 
-    @RequiresApi(Build.VERSION_CODES.M)
     fun getButtonDrawable(): Drawable? =
         checkBox.buttonDrawable
 
