@@ -1,5 +1,9 @@
 # Upgrading guide
 
+**For versions newer than 11.1.1, breaking changes and corresponding upgrade guides will be published with their respective [releases](https://github.com/Telefonica/mistica-android/releases)**
+
+This document is just kept for reference for older versions, but it should not be modified.
+
 ## Upgrade to version 11.1.1
 Both `preset9FontWeight` and `preset10FontWeight` have been added to `Brand` interface.
 We should add these new values to our brand implementations.

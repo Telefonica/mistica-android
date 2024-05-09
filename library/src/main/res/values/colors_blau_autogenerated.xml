@@ -47,9 +47,12 @@
 	<color name="blau_color_darkModeBlack_35_alpha">#59191919</color>
 	<color name="blau_color_white_15_alpha">#26FFFFFF</color>
 	<color name="blau_color_white_20_alpha">#33FFFFFF</color>
+	<color name="blau_color_grey6_0_alpha">#00000000</color>
+	<color name="blau_color_grey6_40_alpha">#66000000</color>
+	<color name="blau_color_grey6_70_alpha">#B3000000</color>
 	<color name="blau_color_white_3_alpha">#08FFFFFF</color>
 	<color name="blau_color_white_5_alpha">#0DFFFFFF</color>
 	<color name="blau_color_darkModeGrey_80_alpha">#CC242424</color>
 	<color name="blau_color_blauPurple_30_alpha">#4D7814B3</color>
-	<color name="blau_color_blauPurple_1_alpha">#037814B3</color>
+	<color name="blau_color_white_0_alpha">#00FFFFFF</color>
 </resources>

@@ -96,6 +96,12 @@ Library includes a set of available [Text Appearance](library/src/main/res/value
 Mistica defines 3 typographic styles to be used along with the library, these typefaces are defined as attributes and can be override using some allowed fonts.
 More info [here](library/src/main/java/com/telefonica/mistica/fonts)
 
+## Working with semantic colors/gradients
+
+For each supported brand, Mistica exposes a set of theme properties (attributes in xml) customized accordingly for each brand.
+
+More info [here](library/src/main/java/com/telefonica/mistica/theme)
+
 ## Demo app
 
 There is a demo of currently implemented components in this repository. A full list of implemented components can be found here: [Components](library/src/main/java/com/telefonica/mistica).

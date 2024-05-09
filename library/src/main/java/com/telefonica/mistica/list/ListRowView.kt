@@ -27,6 +27,7 @@ import com.telefonica.mistica.R
 import com.telefonica.mistica.badge.Badge
 import com.telefonica.mistica.list.model.ImageDimensions
 import com.telefonica.mistica.util.convertDpToPx
+import com.telefonica.mistica.util.getMisticaThemeDrawableBuilder
 import com.telefonica.mistica.util.getThemeColor
 import com.telefonica.mistica.util.loadUrl
 import com.telefonica.mistica.util.setAlpha
@@ -419,13 +420,19 @@ class ListRowView @JvmOverloads constructor(
 
     fun setBackgroundType(@BackgroundType type: Int) {
         cachedDefaultBackgroundType = type
-        @DrawableRes val backgroundDrawable: Int = when (type) {
-            BackgroundType.TYPE_BOXED -> R.drawable.boxed_list_row_background
-            BackgroundType.TYPE_BOXED_INVERSE -> R.drawable.boxed_inverse_list_row_background
-            BackgroundType.TYPE_NORMAL -> R.drawable.list_row_background
-            else -> R.drawable.list_row_background
+        background = when (type) {
+            BackgroundType.TYPE_BOXED ->
+                AppCompatResources.getDrawable(context, R.drawable.boxed_list_row_background)
+            BackgroundType.TYPE_BOXED_INVERSE ->
+                context.getMisticaThemeDrawableBuilder(R.attr.drawableBackgroundBrand)
+                    .withCornerRadius()
+                    .withRipple()
+                    .get()
+            BackgroundType.TYPE_NORMAL ->
+                AppCompatResources.getDrawable(context, R.drawable.list_row_background)
+            else ->
+                AppCompatResources.getDrawable(context, R.drawable.list_row_background)
         }
-        background = AppCompatResources.getDrawable(context, backgroundDrawable)
         setDefaultTitleTextColor(type)
         setDefaultSubtitleTextColor(type)
         setDefaultDescriptionTextColor(type)

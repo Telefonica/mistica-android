@@ -1,7 +1,13 @@
 package com.telefonica.mistica.highlightedcard
 
 import android.content.Context
-import android.graphics.*
+import android.graphics.Bitmap
+import android.graphics.Canvas
+import android.graphics.Paint
+import android.graphics.PorterDuff
+import android.graphics.PorterDuffXfermode
+import android.graphics.Rect
+import android.graphics.RectF
 import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.util.AttributeSet
@@ -20,7 +26,9 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
+import com.telefonica.mistica.util.DrawableBuilder
 import com.telefonica.mistica.util.getDimension
+import com.telefonica.mistica.util.getMisticaThemeDrawableBuilder
 import com.telefonica.mistica.util.getThemeColor
 import com.telefonica.mistica.util.hide
 import com.telefonica.mistica.util.show
@@ -298,11 +306,14 @@ class HighlightedCardView @JvmOverloads constructor(
     private fun configureBackground() {
         if (!hasCustomBackground) {
             val backgroundDrawable = if (isInverse) {
-                R.drawable.highlighted_card_background_inverse
+                context.getMisticaThemeDrawableBuilder(R.attr.drawableBackgroundBrand)
+                    .withCornerRadius()
+                    .withBorderStroke()
+                    .get()
             } else {
-                R.drawable.highlighted_card_background
+                AppCompatResources.getDrawable(context, R.drawable.highlighted_card_background)
             }
-            container.background = AppCompatResources.getDrawable(context, backgroundDrawable)
+            container.background = backgroundDrawable
         }
     }
 

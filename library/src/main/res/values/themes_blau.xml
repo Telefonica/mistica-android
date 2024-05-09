@@ -2,16 +2,6 @@
 <resources>
 
 	<style name="MisticaTheme.Blau_Customizations" parent="MisticaTheme.Blau_Base">
-		<!-- Gradients (assistant, pin fingerprint screens) -->
-		<item name="colorGradientBackgroundFirst">?colorBackgroundBrand</item>
-		<item name="colorGradientBackgroundSecond">?colorBackgroundBrand</item>
-		<item name="colorGradientBackgroundThird">?colorBackgroundBrand</item>
-		<item name="colorGradientBackgroundFourth">?colorBackgroundBrand</item>
-		<item name="colorLoginLoadingGradientFirst">?colorBackgroundBrand</item>
-		<item name="colorLoginLoadingGradientSecond">?colorBackgroundBrand</item>
-		<item name="colorLoginLoadingGradientThird">?colorBackgroundBrand</item>
-		<item name="colorLoginLoadingGradientFourth">?colorBackgroundBrand</item>
-
 		<!-- Feedbacks -->
 		<item name="feedbackScreenSuccessWithGradient">false</item>
 		<item name="feedbackScreenSuccessInverse">true</item>

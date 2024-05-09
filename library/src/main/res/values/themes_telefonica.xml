@@ -2,16 +2,6 @@
 <resources>
 
 	<style name="MisticaTheme.Telefonica_Customizations" parent="MisticaTheme.Telefonica_Base">
-		<!-- Gradients (assistant, pin fingerprint screens) -->
-		<item name="colorGradientBackgroundFirst">?colorBackgroundBrand</item>
-		<item name="colorGradientBackgroundSecond">?colorBackgroundBrand</item>
-		<item name="colorGradientBackgroundThird">?colorBackgroundBrand</item>
-		<item name="colorGradientBackgroundFourth">?colorBackgroundBrand</item>
-		<item name="colorLoginLoadingGradientFirst">?colorBrandHigh</item>
-		<item name="colorLoginLoadingGradientSecond">?colorBrandHigh</item>
-		<item name="colorLoginLoadingGradientThird">?colorBrandHigh</item>
-		<item name="colorLoginLoadingGradientFourth">?colorBrandHigh</item>
-
 		<!-- Feedbacks -->
 		<item name="feedbackScreenSuccessWithGradient">false</item>
 		<item name="feedbackScreenSuccessInverse">true</item>

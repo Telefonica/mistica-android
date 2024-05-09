@@ -3,6 +3,7 @@ package com.telefonica.mistica.compose.theme.brand
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.TextUnit
 import com.telefonica.mistica.R
+import com.telefonica.mistica.compose.theme.brushes.MisticaBrushes
 import com.telefonica.mistica.compose.theme.color.MisticaColors
 import com.telefonica.mistica.compose.theme.values.MisticaRadius
 
@@ -13,6 +14,10 @@ object TuBrand : Brand {
     override val lightColors: MisticaColors = TuBrandColors.lightColors
 
     override val darkColors: MisticaColors = TuBrandColors.darkColors
+
+    override val lightBrushes: MisticaBrushes = TuBrandBrushes.lightBrushes
+
+    override val darkBrushes: MisticaBrushes = TuBrandBrushes.darkBrushes
 
     override val preset5FontWeight: FontWeight = TuBrandFontWeights.text5FontWeight
 

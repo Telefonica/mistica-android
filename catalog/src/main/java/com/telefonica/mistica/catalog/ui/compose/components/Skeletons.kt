@@ -64,7 +64,7 @@ fun Skeletons() {
         }
         Column(
             modifier = Modifier
-                .background(MisticaTheme.colors.backgroundBrand)
+                .background(MisticaTheme.brushes.backgroundBrand)
                 .wrapContentHeight()
                 .padding(16.dp)
         ) {

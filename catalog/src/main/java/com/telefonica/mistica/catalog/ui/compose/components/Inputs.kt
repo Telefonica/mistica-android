@@ -81,7 +81,7 @@ fun Inputs() {
         Title("Inverse inputs")
         Column(
             modifier = Modifier
-                .background(MisticaTheme.colors.backgroundBrand)
+                .background(MisticaTheme.brushes.backgroundBrand)
                 .padding(bottom = 16.dp)
         ) {
             TextInputWithError(isInverse = true)

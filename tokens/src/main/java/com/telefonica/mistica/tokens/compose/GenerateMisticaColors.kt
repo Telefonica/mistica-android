@@ -5,7 +5,6 @@ import com.squareup.kotlinpoet.FileSpec
 import com.squareup.kotlinpoet.FunSpec
 import com.squareup.kotlinpoet.KModifier
 import com.squareup.kotlinpoet.MemberName
-import com.squareup.kotlinpoet.ParameterSpec
 import com.squareup.kotlinpoet.ParameterizedTypeName.Companion.parameterizedBy
 import com.squareup.kotlinpoet.PropertySpec
 import com.squareup.kotlinpoet.TypeSpec
@@ -15,6 +14,7 @@ import com.telefonica.mistica.tokens.compose.GenerateComposeFiles.Companion.MIST
 import com.telefonica.mistica.tokens.compose.GenerateComposeFiles.Companion.colorClass
 import com.telefonica.mistica.tokens.compose.GenerateComposeFiles.Companion.misticaColorsClass
 import com.telefonica.mistica.tokens.dto.TokensDTO
+import com.telefonica.mistica.tokens.dto.removeHeterogeneousTokens
 import java.io.File
 
 /**
@@ -25,22 +25,16 @@ class GenerateMisticaColors {
     private val mutableStateOf = MemberName("androidx.compose.runtime", "mutableStateOf")
     private val structuralEqualityPolicy = MemberName("androidx.compose.runtime", "structuralEqualityPolicy")
 
-    operator fun invoke(jsonAdapter: JsonAdapter<TokensDTO>) {
+    operator fun invoke(jsonAdapter: JsonAdapter<TokensDTO>, heterogeneousTokensNames: List<String>) {
         val json = File("${TokensGenerator.MISTICA_TOKENS_DIR}/movistar.json").readText()
         val tokens = jsonAdapter.fromJson(json)
 
         if (tokens == null) {
             throw Exception("Invalid JSON")
         } else {
-            val colors = getColors(tokens)
+            val colors = getColors(tokens, heterogeneousTokensNames)
             val colorsClass = TypeSpec.classBuilder(MISTICA_COLORS)
-                .primaryConstructor(
-                    FunSpec.constructorBuilder()
-                        .addParameters(getConstructorParameters(colors))
-                        .build()
-                )
                 .addProperties(getColorProperties(colors))
-                .addFunction(getCopyFunc(colors))
                 .addFunction(getUpdateColorsFunc(colors))
                 .build()
 
@@ -69,21 +63,13 @@ class GenerateMisticaColors {
         colors.map {
             PropertySpec.builder(it, colorClass)
                 .mutable()
-                .delegate("%M(%N, %M())", mutableStateOf, it, structuralEqualityPolicy)
+                .delegate("%M(%L, %M())", mutableStateOf, DEFAULT_COLOR, structuralEqualityPolicy)
                 .setter(
                     FunSpec.setterBuilder()
                         .addModifiers(KModifier.INTERNAL)
                         .build()
                 )
                 .build()
-        }
-
-    private fun getConstructorParameters(colors: List<String>): List<ParameterSpec> =
-        colors.map {
-            ParameterSpec.builder(
-                it,
-                colorClass
-            ).defaultValue("Color.Unspecified").build()
         }
 
     private fun getUpdateColorsFunc(colors: List<String>): FunSpec {
@@ -98,35 +84,11 @@ class GenerateMisticaColors {
             .build()
     }
 
-    private fun getCopyFunc(colors: List<String>): FunSpec {
-        val parameters = colors.map {
-            ParameterSpec.builder(it, colorClass).defaultValue("this.$it").build()
-        }
-
-        val constructorParameters = colors.joinToString(", ") {
-            "$it = $it"
-        }
-
-        return FunSpec.builder("copy")
-            .addParameters(parameters)
-            .returns(misticaColorsClass)
-            .addStatement("return %T($constructorParameters)", misticaColorsClass)
-            .build()
-    }
-
-    private fun getColors(tokens: TokensDTO) = tokens.light.keys.toList() + GRADIENT_COLORS
+    private fun getColors(tokens: TokensDTO, heterogeneousTokensNames: List<String>) =
+        tokens.light.removeHeterogeneousTokens(heterogeneousTokensNames).keys.toList()
 
     private companion object {
         const val LIBRARY_CODE_PATH = "../library/src/main/java/"
-        val GRADIENT_COLORS = listOf(
-            "gradientBackgroundFirst",
-            "gradientBackgroundSecond",
-            "gradientBackgroundThird",
-            "gradientBackgroundFourth",
-            "loginLoadingGradientFirst",
-            "loginLoadingGradientSecond",
-            "loginLoadingGradientThird",
-            "loginLoadingGradientFourth",
-        )
+        const val DEFAULT_COLOR = "Color.Unspecified"
     }
 }
