@@ -70,7 +70,6 @@ class CheckBoxInput @JvmOverloads constructor(
         LayoutInflater.from(context).inflate(R.layout.input_checkbox, this, true)
 
         checkBox = findViewById(R.id.checkbox_input)
-
         setChecked(initialInputChecked)
         setText(initialInputText)
         configureErrorResetOnCheckChange()
