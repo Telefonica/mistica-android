@@ -20,10 +20,9 @@ internal fun TextWithLinks(
     text: String,
     links: List<TextLink>,
     modifier: Modifier = Modifier,
-    underline: Boolean = true,
 ) {
     val textLinkColour = MisticaTheme.colors.textLink
-    val linksText = remember { getAnnotatedLinksString(text = text, links = links, highlightColor = textLinkColour, underline = underline) }
+    val linksText = remember { getAnnotatedLinksString(text = text, links = links, highlightColor = textLinkColour) }
     ClickableText(
         text = linksText,
         style = MisticaTheme.typography.preset3,
@@ -46,7 +45,6 @@ internal fun getAnnotatedLinksString(
     text: String,
     links: List<TextLink>,
     highlightColor: Color,
-    underline: Boolean = true,
 ): AnnotatedString = buildAnnotatedString {
     val toHighlight: List<String> = links.map { it.link }
     val toHighlightRegex =
@@ -55,7 +53,7 @@ internal fun getAnnotatedLinksString(
     if (toHighlight.isNotEmpty()) {
         notHighlights.zip(toHighlight + "") { message, highlight ->
             append(message)
-            addHighlightedChunk(highlight, highlightColor, underline = underline)
+            addHighlightedChunk(highlight, highlightColor)
         }
     } else {
         append(text)
@@ -70,14 +68,12 @@ private fun getNotHighlightedElements(
 private fun AnnotatedString.Builder.addHighlightedChunk(
     highlight: String,
     highlightColor: Color,
-    underline: Boolean = true,
 ) {
     if (highlight.isNotEmpty()) {
         highlight(
             text = highlight,
             tag = highlight,
             highlightColor = highlightColor,
-            underline = underline,
         )
     }
 }
@@ -87,29 +83,23 @@ private fun AnnotatedString.Builder.highlight(
     tag: String,
     textTransformation: (String) -> String = { it },
     highlightColor: Color,
-    underline: Boolean = true,
 ) {
     pushStringAnnotation(
         tag = tag,
         annotation = text,
     )
-    highlightText(textTransformation(text), highlightColor, underline)
+    highlightText(textTransformation(text), highlightColor)
     pop()
 }
 
 private fun AnnotatedString.Builder.highlightText(
     highlight: String,
     highlightColor: Color,
-    underline: Boolean = true,
 ) {
     withStyle(
         style = SpanStyle(
             color = highlightColor,
-            textDecoration = if(underline) {
-                TextDecoration.Underline
-            } else {
-                TextDecoration.None
-            },
+            textDecoration = TextDecoration.None,
         ),
     ) {
         append(highlight)

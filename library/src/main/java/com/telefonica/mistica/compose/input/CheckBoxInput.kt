@@ -49,7 +49,7 @@ fun CheckBoxInput(
                 )
             }
             Spacer(modifier = Modifier.width(8.dp))
-            TextWithLinks(text, links, underline = false)
+            TextWithLinks(text, links)
         }
         Underline(
             isError = errorText?.isNotEmpty() ?: false,
