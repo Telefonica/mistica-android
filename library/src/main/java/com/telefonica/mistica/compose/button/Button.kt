@@ -39,6 +39,8 @@ import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
@@ -57,6 +59,7 @@ private const val CHEVRON_ASPECT_RATIO = 8f / 20f
 fun Button(
     modifier: Modifier = Modifier,
     text: String,
+    contentDescription: String? = null,
     loadingText: String = "",
     buttonStyle: ButtonStyle = ButtonStyle.PRIMARY,
     isLoading: Boolean = false,
@@ -96,7 +99,7 @@ fun Button(
         ) {
             Box(contentAlignment = Alignment.Center) {
                 LoadingContent(isLoading, size, textColor, loadingText)
-                ButtonContent(isLoading, icon, size, style, text, textColor, withChevron, enabled)
+                ButtonContent(isLoading, icon, size, style, text, textColor, withChevron, enabled, contentDescription)
             }
         }
     }
@@ -148,6 +151,7 @@ private fun ButtonContent(
     textColor: Color,
     withChevron: Boolean,
     enabled: Boolean,
+    contentDescription: String?,
 ) {
     AnimatedVisibility(
         modifier = Modifier.fillMaxHeight(),
@@ -169,7 +173,8 @@ private fun ButtonContent(
             }
             Text(
                 modifier = Modifier
-                    .align(Alignment.CenterVertically),
+                    .align(Alignment.CenterVertically)
+                    .semantics { contentDescription?.let { this.contentDescription = it } },
                 text = text,
                 color = textColor,
                 style = size.textStyle,

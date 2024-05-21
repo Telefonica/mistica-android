@@ -78,6 +78,7 @@ class ProgressButton : FrameLayout {
             }
         }
 
+        this.importantForAccessibility = IMPORTANT_FOR_ACCESSIBILITY_NO
         isClickable = false
         setPadding(0, 0, 0, 0)
         setBackgroundColor(Color.TRANSPARENT)
@@ -85,6 +86,7 @@ class ProgressButton : FrameLayout {
 
         buttonNormal.apply {
             id = NO_ID
+            importantForAccessibility = IMPORTANT_FOR_ACCESSIBILITY_NO
             layoutParams = LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT
@@ -94,6 +96,7 @@ class ProgressButton : FrameLayout {
 
         buttonLoading.apply {
             id = NO_ID
+            importantForAccessibility = IMPORTANT_FOR_ACCESSIBILITY_NO
             layoutParams = LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT
@@ -108,6 +111,7 @@ class ProgressButton : FrameLayout {
                 .apply {
                     gravity = Gravity.CENTER
                 }
+            importantForAccessibility = IMPORTANT_FOR_ACCESSIBILITY_NO
             isIndeterminate = true
             indeterminateTintMode = PorterDuff.Mode.SRC_IN
             visibility = View.INVISIBLE
@@ -115,6 +119,7 @@ class ProgressButton : FrameLayout {
 
         buttonBackground.apply {
             id = NO_ID
+            importantForAccessibility = IMPORTANT_FOR_ACCESSIBILITY_YES
             layoutParams = LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT
@@ -281,7 +286,6 @@ class ProgressButton : FrameLayout {
         isFocusable = false
         strokeWidth = 0
         rippleColor = ColorStateList.valueOf(Color.TRANSPARENT)
-        importantForAccessibility = View.IMPORTANT_FOR_ACCESSIBILITY_NO
     }
 
     private fun setProgressBarHorizontalPosition() {
