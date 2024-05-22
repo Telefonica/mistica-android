@@ -71,6 +71,7 @@ private fun Buttons(
                     name = it.name.lowercase().replaceFirstChar(Char::titlecase),
                     style = it,
                     isLoading = false,
+                    contentDescription = "Custom content description",
                 )
 
                 CatalogButton(
@@ -86,6 +87,7 @@ private fun Buttons(
                     style = it,
                     isLoading = isLoading,
                     loadingText = "Loading",
+                    contentDescription = "Custom content description loading",
                     onClickListener = {
                         isLoading = true
                         scope.launch {
@@ -100,6 +102,7 @@ private fun Buttons(
                     style = it,
                     enabled = false,
                     isLoading = false,
+                    contentDescription = "Custom content description disabled",
                 )
 
                 if (it in listOf(ButtonStyle.LINK, ButtonStyle.LINK_INVERSE)) {
@@ -133,6 +136,7 @@ private fun CatalogButton(
     loadingText: String = "",
     onClickListener: () -> Unit = {},
     @DrawableRes icon: Int? = null,
+    contentDescription: String? = null,
 ) {
     Button(
         text = name,
@@ -143,5 +147,6 @@ private fun CatalogButton(
         icon = icon,
         withChevron = withChevron,
         onClickListener = onClickListener,
+        contentDescription = contentDescription,
     )
 }
