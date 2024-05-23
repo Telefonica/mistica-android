@@ -16,6 +16,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -113,9 +114,13 @@ private fun TextBox(
         value = value,
         onValueChange = onValueChange,
         label = {
+            val transformedText = remember(value) {
+                visualTransformation.filter(AnnotatedString(value))
+            }
             TextInputLabel(
                 text = label,
-                isMinimized = interactionSource.collectIsFocusedAsState().value,
+                inputIsNotEmpty = transformedText.text.isNotEmpty(),
+                isFocused = interactionSource.collectIsFocusedAsState().value,
                 isError = isError,
             )
         },
@@ -141,17 +146,32 @@ private fun TextBox(
 @Composable
 private fun TextInputLabel(
     text: String,
-    isMinimized: Boolean,
+    inputIsNotEmpty: Boolean,
+    isFocused: Boolean,
     isError: Boolean,
     modifier: Modifier = Modifier,
 ) {
+    val isMinimized = inputIsNotEmpty || isFocused
+    val preset = if (isMinimized) {
+        MisticaTheme.typography.preset1
+    } else {
+        MisticaTheme.typography.preset3
+    }
+    // Setting every Mistica preset separately except its fontSize.
+    // We will rely on default fontSize values from Material so minimize/maximize
+    // label animation is not broken. It would require to have
+    // intermediate preset sizes to mimic the same animation
     Text(
         text = text,
         color = when {
             isError && isMinimized -> MisticaTheme.colors.error
-            isMinimized -> MisticaTheme.colors.controlActivated
+            isFocused -> MisticaTheme.colors.controlActivated
             else -> MisticaTheme.colors.textSecondary
         },
+        fontFamily = preset.fontFamily,
+        fontWeight = preset.fontWeight,
+        lineHeight = preset.lineHeight,
+        letterSpacing = preset.letterSpacing,
         modifier = modifier,
     )
 }
