@@ -28,6 +28,7 @@ private const val LIST_ROW_ITEM_ASSET_TAG = "listRowItemAssetTag"
 
 @RunWith(RobolectricTestRunner::class)
 internal class ListRowItemKtTest : ScreenshotsTest() {
+
     @get:Rule
     val composeTestRule = createComposeRule()
 
