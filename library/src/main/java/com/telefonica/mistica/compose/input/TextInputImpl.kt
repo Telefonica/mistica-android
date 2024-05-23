@@ -152,6 +152,11 @@ private fun TextInputLabel(
     modifier: Modifier = Modifier,
 ) {
     val isMinimized = inputIsNotEmpty || isFocused
+    val preset = if (isMinimized) {
+        MisticaTheme.typography.preset1
+    } else {
+        MisticaTheme.typography.preset3
+    }
     Text(
         text = text,
         color = when {
@@ -159,11 +164,10 @@ private fun TextInputLabel(
             isFocused -> MisticaTheme.colors.controlActivated
             else -> MisticaTheme.colors.textSecondary
         },
-        fontFamily = if (isMinimized) {
-            MisticaTheme.typography.preset1.fontFamily
-        } else {
-            MisticaTheme.typography.preset3.fontFamily
-        },
+        fontFamily = preset.fontFamily,
+        fontWeight = preset.fontWeight,
+        lineHeight = preset.lineHeight,
+        letterSpacing = preset.letterSpacing,
         modifier = modifier,
     )
 }
