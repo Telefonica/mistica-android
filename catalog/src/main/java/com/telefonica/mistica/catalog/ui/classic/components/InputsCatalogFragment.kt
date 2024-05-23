@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.Spanned
+import android.text.TextPaint
 import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
 import android.view.LayoutInflater
@@ -28,7 +29,7 @@ class InputsCatalogFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         return layoutInflater.inflate(R.layout.screen_inputs_catalog, container, false).apply {
@@ -132,6 +133,11 @@ class InputsCatalogFragment : Fragment() {
         @CallSuper
         override fun onClick(checkBox: View) {
             checkBox.cancelPendingInputEvents()
+        }
+
+        override fun updateDrawState(ds: TextPaint) {
+            ds.color = ds.linkColor
+            ds.isUnderlineText = false
         }
     }
 

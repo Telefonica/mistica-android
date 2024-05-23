@@ -158,7 +158,7 @@ private fun ListRowItemImp(
 
         BackgroundType.TYPE_BOXED_INVERSE -> Modifier
             .background(
-                color = MisticaTheme.colors.backgroundBrand,
+                brush = MisticaTheme.brushes.backgroundBrand,
                 shape = RoundedCornerShape(MisticaTheme.radius.containerBorderRadius),
             )
     }

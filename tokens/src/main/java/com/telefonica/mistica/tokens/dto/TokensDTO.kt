@@ -1,18 +1,44 @@
 package com.telefonica.mistica.tokens.dto
 
 data class TokensDTO(
-    val light: Map<String, ColorDTO>,
-    val dark: Map<String, ColorDTO>,
+    val light: Map<String, BrushDTO>,
+    val dark: Map<String, BrushDTO>,
     val radius: Map<String, RadiusDTO>,
     val text: TextDTO,
     val global: GlobalDTO,
 )
 
-data class ColorDTO(
-    val value: String,
+sealed class BrushDTO(
     val type: String,
     val description: String,
-)
+) {
+    class SolidColorDTO(
+        val value: String,
+        description: String,
+    ) : BrushDTO(COLOR_TYPE, description)
+
+    class GradientDTO(
+        val value: GradientSpecificationDTO,
+        description: String,
+    ) : BrushDTO(GRADIENT_TYPE, description) {
+
+        class GradientSpecificationDTO(
+            val angle: Int,
+            val colors: List<GradientColorDTO>,
+        )
+
+        class GradientColorDTO(
+            val value: String,
+            val stop: Float,
+        )
+    }
+
+    companion object {
+        const val TYPE_FIELD_NAME = "type"
+        const val COLOR_TYPE = "color"
+        const val GRADIENT_TYPE = "linear-gradient"
+    }
+}
 
 data class RadiusDTO(
     val value: String,

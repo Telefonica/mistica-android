@@ -1,7 +1,7 @@
 package com.telefonica.mistica.tokens.common
 
 import com.telefonica.mistica.tokens.TokensGenerator
-import com.telefonica.mistica.tokens.dto.ColorDTO
+import com.telefonica.mistica.tokens.dto.BrushDTO
 import com.telefonica.mistica.tokens.dto.TokensDTO
 import java.util.Locale
 import kotlin.math.roundToInt
@@ -11,41 +11,44 @@ class GetColorsWithAlpha(
 ) {
 
     operator fun invoke(tokens: TokensDTO, brandName: String): List<Pair<String, String>> {
-        val colorsWithAlpha = mutableSetOf<Pair<String, String>>()
+        val colorsWithAlpha = mutableMapOf<String, String>()
         tokens.light.values.forEach { color ->
-            val colorWithAlpha = getAlphaColor(color, tokens, brandName)
-            if (colorWithAlpha != null) {
-                colorsWithAlpha.add(colorWithAlpha)
-            }
+            val colorWithAlpha = getAlphaColors(color, tokens, brandName)
+            colorsWithAlpha.putAll(colorWithAlpha)
         }
 
         tokens.dark.values.forEach { color ->
-            val colorWithAlpha = getAlphaColor(color, tokens, brandName)
-            if (colorWithAlpha != null) {
-                colorsWithAlpha.add(colorWithAlpha)
-            }
+            val colorWithAlpha = getAlphaColors(color, tokens, brandName)
+            colorsWithAlpha.putAll(colorWithAlpha)
         }
 
         return colorsWithAlpha.toList()
     }
 
-    private fun getAlphaColor(
-        color: ColorDTO,
+    private fun getAlphaColors(
+        color: BrushDTO,
         tokens: TokensDTO,
         brandName: String,
-    ): Pair<String, String>? {
-        if (color.value.contains("rgba(")) {
-            val alpha = TokensGenerator.ALPHA_REGEX.find(color.value)?.value?.toDouble()
-
-            val colorValue = tokens.global.palette[color.description]?.value
-            if (alpha != null && colorValue != null) {
-                val alphaHex = alpha.toHex()
-                val colorName = getColorNameWithAlpha(brandName, color.description, alpha)
-                val colorWithAlpha = "#$alphaHex${colorValue.removePrefix("#")}"
-                return colorName to colorWithAlpha
-            }
+    ): Map<String, String> {
+        val values = when (color) {
+            is BrushDTO.GradientDTO -> color.value.colors.map { it.value }
+            is BrushDTO.SolidColorDTO -> listOf(color.value)
         }
-        return null
+        return values
+            .filter { it.contains("rgba(") }
+            .mapNotNull { value ->
+                val alpha = TokensGenerator.ALPHA_REGEX.find(value)?.groups?.get(1)?.value?.toDouble()
+                val baseColorName = TokensGenerator.COLOR_NAME_REGEX.find(value)?.groups?.get(1)?.value
+                val baseColorValue = tokens.global.palette[baseColorName]?.value
+                if (alpha != null && baseColorName != null && baseColorValue != null) {
+                    val alphaHex = alpha.toHex()
+                    val colorName = getColorNameWithAlpha(brandName, baseColorName, alpha)
+                    val colorWithAlpha = "#$alphaHex${baseColorValue.removePrefix("#")}"
+                    colorName to colorWithAlpha
+                } else {
+                    null
+                }
+            }.toMap()
     }
 
     private fun Double.toHex(): String {

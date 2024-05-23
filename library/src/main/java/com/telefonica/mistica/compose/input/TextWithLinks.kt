@@ -99,7 +99,7 @@ private fun AnnotatedString.Builder.highlightText(
     withStyle(
         style = SpanStyle(
             color = highlightColor,
-            textDecoration = TextDecoration.Underline,
+            textDecoration = TextDecoration.None,
         ),
     ) {
         append(highlight)

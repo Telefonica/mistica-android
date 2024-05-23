@@ -4,12 +4,13 @@
 	<style name="MisticaTheme.Vivo" parent="MisticaTheme.Vivo_Customizations">
 		<item name="colorBackground">@color/vivo_color_darkModeBlack</item>
 		<item name="colorBackgroundAlternative">@color/vivo_color_darkModeBlack</item>
-		<item name="colorBackgroundBrand">@color/vivo_color_darkModeBlack</item>
+		<item name="drawableBackgroundBrand">@color/vivo_color_darkModeBlack</item>
 		<item name="colorBackgroundBrandSecondary">@color/vivo_color_darkModeBlack</item>
 		<item name="colorBackgroundContainer">@color/vivo_color_darkModeGrey</item>
+		<item name="colorBackgroundContainerError">@color/vivo_color_darkModeGrey</item>
 		<item name="colorBackgroundContainerHover">@color/vivo_color_white_3_alpha</item>
 		<item name="colorBackgroundContainerPressed">@color/vivo_color_white_5_alpha</item>
-		<item name="colorBackgroundContainerBrand">@color/vivo_color_darkModeGrey</item>
+		<item name="drawableBackgroundContainerBrand">@color/vivo_color_darkModeGrey</item>
 		<item name="colorBackgroundContainerBrandHover">@color/vivo_color_white_3_alpha</item>
 		<item name="colorBackgroundContainerBrandPressed">@color/vivo_color_white_5_alpha</item>
 		<item name="colorBackgroundContainerBrandOverInverse">@color/vivo_color_darkModeGrey</item>
@@ -17,7 +18,8 @@
 		<item name="colorBackgroundOverlay">@color/vivo_color_darkModeGrey_80_alpha</item>
 		<item name="colorBackgroundSkeleton">@color/vivo_color_darkModeGrey6</item>
 		<item name="colorBackgroundSkeletonInverse">@color/vivo_color_darkModeGrey6</item>
-		<item name="colorBackgroundFeedbackBottom">@color/vivo_color_darkModeBlack</item>
+		<item name="colorBackgroundBrandTop">@color/vivo_color_darkModeBlack</item>
+		<item name="colorBackgroundBrandBottom">@color/vivo_color_darkModeBlack</item>
 		<item name="colorAppBarBackground">@color/vivo_color_darkModeGrey</item>
 		<item name="colorNavigationBarBackground">@color/vivo_color_darkModeBlack</item>
 		<item name="colorSkeletonWave">@color/vivo_color_grey5</item>
@@ -31,7 +33,7 @@
 		<item name="colorButtonDangerBackgroundSelected">@color/vivo_color_pepperDark</item>
 		<item name="colorButtonDangerBackgroundHover">@color/vivo_color_pepperDark</item>
 		<item name="colorButtonLinkDangerBackgroundSelected">@color/vivo_color_white_8_alpha</item>
-		<item name="colorButtonLinkDangerBackgroundInverse">@color/vivo_color_white_1_alpha</item>
+		<item name="colorButtonLinkDangerBackgroundInverse">@color/vivo_color_white_0_alpha</item>
 		<item name="colorButtonLinkDangerBackgroundInverseSelected">@color/vivo_color_white_8_alpha</item>
 		<item name="colorButtonLinkBackgroundSelected">@color/vivo_color_white_8_alpha</item>
 		<item name="colorButtonLinkBackgroundInverseSelected">@color/vivo_color_white_8_alpha</item>
@@ -59,6 +61,8 @@
 		<item name="colorTextLinkInverse">@color/vivo_color_vivoPurpleLight50</item>
 		<item name="colorTextLinkDanger">@color/vivo_color_pepper</item>
 		<item name="colorTextLinkSnackbar">@color/vivo_color_vivoPurpleLight50</item>
+		<item name="colorTextActivated">@color/vivo_color_vivoPurpleLight80</item>
+		<item name="colorTextBrand">@color/vivo_color_vivoPurpleLight80</item>
 		<item name="colorControl">@color/vivo_color_darkModeGrey6</item>
 		<item name="colorControlActive">@color/vivo_color_vivoPurpleLight80</item>
 		<item name="colorControlInverse">@color/vivo_color_darkModeGrey6</item>
@@ -91,6 +95,8 @@
 		<item name="colorSuccess">@color/vivo_color_vivoGreen</item>
 		<item name="colorWarning">@color/vivo_color_orange</item>
 		<item name="colorError">@color/vivo_color_pepper</item>
+		<item name="colorTextError">@color/vivo_color_pepper</item>
+		<item name="colorTextErrorInverse">@color/vivo_color_pepper</item>
 		<item name="colorPromo">@color/vivo_color_vivoPurpleLight80</item>
 		<item name="colorHighlight">@color/vivo_color_pink</item>
 		<item name="colorSuccessLow">@color/vivo_color_darkModeGrey6</item>
@@ -113,5 +119,18 @@
 		<item name="colorTextAppBar">@color/vivo_color_grey5</item>
 		<item name="colorTextAppBarSelected">@color/vivo_color_grey2</item>
 		<item name="colorCustomTabsBackground">@color/vivo_color_darkModeBlack</item>
+		<item name="colorTagTextPromo">@color/vivo_color_vivoPurpleLight50</item>
+		<item name="colorTagTextActive">@color/vivo_color_vivoPurpleLight80</item>
+		<item name="colorTagTextInactive">@color/vivo_color_grey5</item>
+		<item name="colorTagTextSuccess">@color/vivo_color_vivoGreenLight30</item>
+		<item name="colorTagTextWarning">@color/vivo_color_orangeLight40</item>
+		<item name="colorTagTextError">@color/vivo_color_pepperLight40</item>
+		<item name="colorTagBackgroundPromo">@color/vivo_color_darkModeGrey6</item>
+		<item name="colorTagBackgroundActive">@color/vivo_color_darkModeGrey6</item>
+		<item name="colorTagBackgroundInactive">@color/vivo_color_darkModeGrey6</item>
+		<item name="colorTagBackgroundSuccess">@color/vivo_color_darkModeGrey6</item>
+		<item name="colorTagBackgroundWarning">@color/vivo_color_darkModeGrey6</item>
+		<item name="colorTagBackgroundError">@color/vivo_color_darkModeGrey6</item>
+		<item name="drawableCardContentOverlay">@drawable/autogenerated_vivo_dark_cardcontentoverlay</item>
 	</style>
 </resources>

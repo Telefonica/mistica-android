@@ -17,6 +17,7 @@ import com.telefonica.mistica.input.CheckBoxInput
 import com.telefonica.mistica.input.DropDownInput
 import com.telefonica.mistica.input.TextInput
 import com.telefonica.mistica.util.getThemeColor
+import com.telefonica.mistica.util.getMisticaThemeDrawable
 
 class CalloutsCatalogFragment : Fragment() {
 
@@ -87,7 +88,7 @@ class CalloutsCatalogFragment : Fragment() {
             setInverse(inverse)
             with(view.findViewById<View>(R.id.callout_preview_container)) {
                 if (inverse) {
-                    setBackgroundColor(context.getThemeColor(R.attr.colorBackgroundBrand))
+                    background = context.getMisticaThemeDrawable(com.telefonica.mistica.R.attr.drawableBackgroundBrand)
                 } else {
                     setBackgroundColor(context.getThemeColor(R.attr.colorBackground))
                 }

@@ -12,6 +12,7 @@ import com.google.android.material.chip.ChipGroup
 import com.telefonica.mistica.R
 import com.telefonica.mistica.util.children
 import com.telefonica.mistica.util.getDimension
+import com.telefonica.mistica.util.getMisticaThemeDrawable
 
 class HorizontalScrollFilterGroup @JvmOverloads constructor(
     private val context: Context,
@@ -26,6 +27,7 @@ class HorizontalScrollFilterGroup @JvmOverloads constructor(
 
     init {
         View.inflate(context, R.layout.horizontal_scroll_filter_group, this)
+        scrollView.background = context.getMisticaThemeDrawable(R.attr.drawableBackgroundBrand)
         setOnCheckedChangeListener { _, _ -> }
     }
 

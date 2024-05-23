@@ -4,12 +4,13 @@
 	<style name="MisticaTheme.Telefonica" parent="MisticaTheme.Telefonica_Customizations">
 		<item name="colorBackground">@color/telefonica_color_darkModeBlack</item>
 		<item name="colorBackgroundAlternative">@color/telefonica_color_darkModeBlack</item>
-		<item name="colorBackgroundBrand">@color/telefonica_color_darkModeBlack</item>
+		<item name="drawableBackgroundBrand">@color/telefonica_color_darkModeBlack</item>
 		<item name="colorBackgroundBrandSecondary">@color/telefonica_color_darkModeBlack</item>
 		<item name="colorBackgroundContainer">@color/telefonica_color_darkModeGrey</item>
+		<item name="colorBackgroundContainerError">@color/telefonica_color_darkModeGrey</item>
 		<item name="colorBackgroundContainerHover">@color/telefonica_color_white_3_alpha</item>
 		<item name="colorBackgroundContainerPressed">@color/telefonica_color_white_5_alpha</item>
-		<item name="colorBackgroundContainerBrand">@color/telefonica_color_darkModeGrey</item>
+		<item name="drawableBackgroundContainerBrand">@color/telefonica_color_darkModeGrey</item>
 		<item name="colorBackgroundContainerBrandHover">@color/telefonica_color_white_3_alpha</item>
 		<item name="colorBackgroundContainerBrandPressed">@color/telefonica_color_white_5_alpha</item>
 		<item name="colorBackgroundContainerBrandOverInverse">@color/telefonica_color_darkModeGrey</item>
@@ -17,7 +18,8 @@
 		<item name="colorBackgroundOverlay">@color/telefonica_color_darkModeGrey_80_alpha</item>
 		<item name="colorBackgroundSkeleton">@color/telefonica_color_grey6</item>
 		<item name="colorBackgroundSkeletonInverse">@color/telefonica_color_grey6</item>
-		<item name="colorBackgroundFeedbackBottom">@color/telefonica_color_darkModeBlack</item>
+		<item name="colorBackgroundBrandTop">@color/telefonica_color_darkModeBlack</item>
+		<item name="colorBackgroundBrandBottom">@color/telefonica_color_darkModeBlack</item>
 		<item name="colorAppBarBackground">@color/telefonica_color_darkModeGrey</item>
 		<item name="colorNavigationBarBackground">@color/telefonica_color_darkModeBlack</item>
 		<item name="colorSkeletonWave">@color/telefonica_color_grey5</item>
@@ -31,7 +33,7 @@
 		<item name="colorButtonDangerBackgroundSelected">@color/telefonica_color_coral80</item>
 		<item name="colorButtonDangerBackgroundHover">@color/telefonica_color_coral80</item>
 		<item name="colorButtonLinkDangerBackgroundSelected">@color/telefonica_color_white_8_alpha</item>
-		<item name="colorButtonLinkDangerBackgroundInverse">@color/telefonica_color_white_1_alpha</item>
+		<item name="colorButtonLinkDangerBackgroundInverse">@color/telefonica_color_white_0_alpha</item>
 		<item name="colorButtonLinkDangerBackgroundInverseSelected">@color/telefonica_color_white_8_alpha</item>
 		<item name="colorButtonLinkBackgroundSelected">@color/telefonica_color_white_8_alpha</item>
 		<item name="colorButtonLinkBackgroundInverseSelected">@color/telefonica_color_white_8_alpha</item>
@@ -59,6 +61,8 @@
 		<item name="colorTextLinkInverse">@color/telefonica_color_telefonicaBlue</item>
 		<item name="colorTextLinkDanger">@color/telefonica_color_coral</item>
 		<item name="colorTextLinkSnackbar">@color/telefonica_color_telefonicaBlue30</item>
+		<item name="colorTextActivated">@color/telefonica_color_telefonicaBlue</item>
+		<item name="colorTextBrand">@color/telefonica_color_telefonicaBlue</item>
 		<item name="colorControl">@color/telefonica_color_darkModeGrey6</item>
 		<item name="colorControlActive">@color/telefonica_color_telefonicaBlue</item>
 		<item name="colorControlInverse">@color/telefonica_color_darkModeGrey6</item>
@@ -89,6 +93,8 @@
 		<item name="colorTextSecondary">@color/telefonica_color_grey4</item>
 		<item name="colorTextSecondaryInverse">@color/telefonica_color_grey4</item>
 		<item name="colorError">@color/telefonica_color_coral</item>
+		<item name="colorTextError">@color/telefonica_color_coral</item>
+		<item name="colorTextErrorInverse">@color/telefonica_color_coral</item>
 		<item name="colorSuccess">@color/telefonica_color_turquoise</item>
 		<item name="colorWarning">@color/telefonica_color_ambar</item>
 		<item name="colorPromo">@color/telefonica_color_orchid</item>
@@ -113,5 +119,18 @@
 		<item name="colorTextAppBar">@color/telefonica_color_grey5</item>
 		<item name="colorTextAppBarSelected">@color/telefonica_color_grey2</item>
 		<item name="colorCustomTabsBackground">@color/telefonica_color_darkModeBlack</item>
+		<item name="colorTagTextPromo">@color/telefonica_color_orchid40</item>
+		<item name="colorTagTextActive">@color/telefonica_color_telefonicaBlue</item>
+		<item name="colorTagTextInactive">@color/telefonica_color_grey5</item>
+		<item name="colorTagTextSuccess">@color/telefonica_color_turquoise40</item>
+		<item name="colorTagTextWarning">@color/telefonica_color_ambar40</item>
+		<item name="colorTagTextError">@color/telefonica_color_coral40</item>
+		<item name="colorTagBackgroundPromo">@color/telefonica_color_darkModeGrey6</item>
+		<item name="colorTagBackgroundActive">@color/telefonica_color_darkModeGrey6</item>
+		<item name="colorTagBackgroundInactive">@color/telefonica_color_darkModeGrey6</item>
+		<item name="colorTagBackgroundSuccess">@color/telefonica_color_darkModeGrey6</item>
+		<item name="colorTagBackgroundWarning">@color/telefonica_color_darkModeGrey6</item>
+		<item name="colorTagBackgroundError">@color/telefonica_color_darkModeGrey6</item>
+		<item name="drawableCardContentOverlay">@drawable/autogenerated_telefonica_dark_cardcontentoverlay</item>
 	</style>
 </resources>

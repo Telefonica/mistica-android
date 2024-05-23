@@ -4,12 +4,13 @@
 	<style name="MisticaTheme.Movistar" parent="MisticaTheme.Movistar_Customizations">
 		<item name="colorBackground">@color/movistar_color_darkModeBlack</item>
 		<item name="colorBackgroundAlternative">@color/movistar_color_darkModeBlack</item>
-		<item name="colorBackgroundBrand">@color/movistar_color_darkModeBlack</item>
+		<item name="drawableBackgroundBrand">@color/movistar_color_darkModeBlack</item>
 		<item name="colorBackgroundBrandSecondary">@color/movistar_color_darkModeBlack</item>
 		<item name="colorBackgroundContainer">@color/movistar_color_darkModeGrey</item>
+		<item name="colorBackgroundContainerError">@color/movistar_color_darkModeGrey</item>
 		<item name="colorBackgroundContainerHover">@color/movistar_color_white_3_alpha</item>
 		<item name="colorBackgroundContainerPressed">@color/movistar_color_white_5_alpha</item>
-		<item name="colorBackgroundContainerBrand">@color/movistar_color_darkModeGrey</item>
+		<item name="drawableBackgroundContainerBrand">@color/movistar_color_darkModeGrey</item>
 		<item name="colorBackgroundContainerBrandHover">@color/movistar_color_white_3_alpha</item>
 		<item name="colorBackgroundContainerBrandPressed">@color/movistar_color_white_5_alpha</item>
 		<item name="colorBackgroundContainerBrandOverInverse">@color/movistar_color_darkModeGrey</item>
@@ -17,7 +18,8 @@
 		<item name="colorBackgroundOverlay">@color/movistar_color_darkModeGrey_80_alpha</item>
 		<item name="colorBackgroundSkeleton">@color/movistar_color_movistarBlueDark</item>
 		<item name="colorBackgroundSkeletonInverse">@color/movistar_color_movistarBlueDark</item>
-		<item name="colorBackgroundFeedbackBottom">@color/movistar_color_darkModeBlack</item>
+		<item name="colorBackgroundBrandTop">@color/movistar_color_darkModeBlack</item>
+		<item name="colorBackgroundBrandBottom">@color/movistar_color_darkModeBlack</item>
 		<item name="colorAppBarBackground">@color/movistar_color_darkModeGrey</item>
 		<item name="colorNavigationBarBackground">@color/movistar_color_darkModeBlack</item>
 		<item name="colorSkeletonWave">@color/movistar_color_darkModeGrey6</item>
@@ -31,7 +33,7 @@
 		<item name="colorButtonDangerBackgroundSelected">@color/movistar_color_pepper55</item>
 		<item name="colorButtonDangerBackgroundHover">@color/movistar_color_pepper55</item>
 		<item name="colorButtonLinkDangerBackgroundSelected">@color/movistar_color_white_8_alpha</item>
-		<item name="colorButtonLinkDangerBackgroundInverse">@color/movistar_color_white_1_alpha</item>
+		<item name="colorButtonLinkDangerBackgroundInverse">@color/movistar_color_white_0_alpha</item>
 		<item name="colorButtonLinkDangerBackgroundInverseSelected">@color/movistar_color_white_8_alpha</item>
 		<item name="colorButtonLinkBackgroundSelected">@color/movistar_color_white_8_alpha</item>
 		<item name="colorButtonLinkBackgroundInverseSelected">@color/movistar_color_white_8_alpha</item>
@@ -59,6 +61,8 @@
 		<item name="colorTextLinkInverse">@color/movistar_color_movistarBlue</item>
 		<item name="colorTextLinkDanger">@color/movistar_color_pepper</item>
 		<item name="colorTextLinkSnackbar">@color/movistar_color_movistarBlue30</item>
+		<item name="colorTextActivated">@color/movistar_color_movistarBlue</item>
+		<item name="colorTextBrand">@color/movistar_color_movistarBlue</item>
 		<item name="colorControl">@color/movistar_color_darkModeGrey6</item>
 		<item name="colorControlActive">@color/movistar_color_movistarBlue</item>
 		<item name="colorControlInverse">@color/movistar_color_darkModeGrey6</item>
@@ -91,6 +95,8 @@
 		<item name="colorSuccess">@color/movistar_color_movistarGreen</item>
 		<item name="colorWarning">@color/movistar_color_egg</item>
 		<item name="colorError">@color/movistar_color_pepper</item>
+		<item name="colorTextError">@color/movistar_color_pepper</item>
+		<item name="colorTextErrorInverse">@color/movistar_color_pepper</item>
 		<item name="colorPromo">@color/movistar_color_purple</item>
 		<item name="colorHighlight">@color/movistar_color_pink</item>
 		<item name="colorSuccessLow">@color/movistar_color_movistarBlueDark</item>
@@ -113,5 +119,18 @@
 		<item name="colorTextAppBar">@color/movistar_color_darkModeGrey5</item>
 		<item name="colorTextAppBarSelected">@color/movistar_color_darkModeGrey2</item>
 		<item name="colorCustomTabsBackground">@color/movistar_color_darkModeBlack</item>
+		<item name="colorTagTextPromo">@color/movistar_color_purple40</item>
+		<item name="colorTagTextActive">@color/movistar_color_movistarBlue</item>
+		<item name="colorTagTextInactive">@color/movistar_color_darkModeGrey5</item>
+		<item name="colorTagTextSuccess">@color/movistar_color_movistarGreen40</item>
+		<item name="colorTagTextWarning">@color/movistar_color_egg40</item>
+		<item name="colorTagTextError">@color/movistar_color_pepper40</item>
+		<item name="colorTagBackgroundPromo">@color/movistar_color_movistarBlueDark</item>
+		<item name="colorTagBackgroundActive">@color/movistar_color_movistarBlueDark</item>
+		<item name="colorTagBackgroundInactive">@color/movistar_color_movistarBlueDark</item>
+		<item name="colorTagBackgroundSuccess">@color/movistar_color_movistarBlueDark</item>
+		<item name="colorTagBackgroundWarning">@color/movistar_color_movistarBlueDark</item>
+		<item name="colorTagBackgroundError">@color/movistar_color_movistarBlueDark</item>
+		<item name="drawableCardContentOverlay">@drawable/autogenerated_movistar_dark_cardcontentoverlay</item>
 	</style>
 </resources>

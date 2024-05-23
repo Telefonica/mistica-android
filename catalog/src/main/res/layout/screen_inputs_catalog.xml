@@ -331,7 +331,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?attr/colorBackgroundBrand"
+            android:background="?attr/drawableBackgroundBrand"
             android:orientation="vertical"
             android:padding="16dp">
 

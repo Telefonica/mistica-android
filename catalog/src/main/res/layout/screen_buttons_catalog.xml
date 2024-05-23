@@ -31,7 +31,8 @@
                 style="@style/AppTheme.Button.DefaultButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Primary" />
+                android:text="Primary"
+                android:contentDescription="Custom content description" />
 
             <com.telefonica.mistica.button.Button
                 style="@style/AppTheme.Button.DefaultButton"
@@ -47,7 +48,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Primary Progress" />
+                android:text="Primary Progress"
+                android:contentDescription="Custom content description progress" />
 
             <com.telefonica.mistica.button.Button
                 style="@style/AppTheme.Button.DefaultButton"
@@ -217,6 +219,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="Link"
+                android:contentDescription="Custom content description link"
                 app:style="LINK" />
 
             <com.telefonica.mistica.button2.Button
@@ -234,6 +237,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="Link Progress"
+                android:contentDescription="Custom content description link progress"
                 app:style="LINK" />
 
             <com.telefonica.mistica.button2.Button
@@ -242,6 +246,7 @@
                 android:layout_marginTop="8dp"
                 android:enabled="false"
                 android:text="Link Disabled"
+                android:contentDescription="Custom content description link disabled"
                 app:style="LINK" />
 
             <com.telefonica.mistica.button2.Button
@@ -339,7 +344,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:background="?attr/colorBackgroundBrand"
+            android:background="?attr/drawableBackgroundBrand"
             android:gravity="center_horizontal"
             android:orientation="vertical">
 

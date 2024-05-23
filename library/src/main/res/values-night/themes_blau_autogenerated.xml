@@ -4,12 +4,13 @@
 	<style name="MisticaTheme.Blau" parent="MisticaTheme.Blau_Customizations">
 		<item name="colorBackground">@color/blau_color_darkModeBlack</item>
 		<item name="colorBackgroundAlternative">@color/blau_color_darkModeBlack</item>
-		<item name="colorBackgroundBrand">@color/blau_color_darkModeBlack</item>
+		<item name="drawableBackgroundBrand">@color/blau_color_darkModeBlack</item>
 		<item name="colorBackgroundBrandSecondary">@color/blau_color_darkModeBlack</item>
 		<item name="colorBackgroundContainer">@color/blau_color_darkModeGrey</item>
+		<item name="colorBackgroundContainerError">@color/blau_color_darkModeGrey</item>
 		<item name="colorBackgroundContainerHover">@color/blau_color_white_3_alpha</item>
 		<item name="colorBackgroundContainerPressed">@color/blau_color_white_5_alpha</item>
-		<item name="colorBackgroundContainerBrand">@color/blau_color_darkModeGrey</item>
+		<item name="drawableBackgroundContainerBrand">@color/blau_color_darkModeGrey</item>
 		<item name="colorBackgroundContainerBrandHover">@color/blau_color_white_3_alpha</item>
 		<item name="colorBackgroundContainerBrandPressed">@color/blau_color_white_5_alpha</item>
 		<item name="colorBackgroundContainerBrandOverInverse">@color/blau_color_darkModeGrey</item>
@@ -17,7 +18,8 @@
 		<item name="colorBackgroundOverlay">@color/blau_color_darkModeGrey_80_alpha</item>
 		<item name="colorBackgroundSkeleton">@color/blau_color_darkModeGrey</item>
 		<item name="colorBackgroundSkeletonInverse">@color/blau_color_darkModeGrey</item>
-		<item name="colorBackgroundFeedbackBottom">@color/blau_color_darkModeBlack</item>
+		<item name="colorBackgroundBrandTop">@color/blau_color_darkModeBlack</item>
+		<item name="colorBackgroundBrandBottom">@color/blau_color_darkModeBlack</item>
 		<item name="colorAppBarBackground">@color/blau_color_darkModeGrey</item>
 		<item name="colorNavigationBarBackground">@color/blau_color_darkModeBlack</item>
 		<item name="colorSkeletonWave">@color/blau_color_grey5</item>
@@ -31,7 +33,7 @@
 		<item name="colorButtonDangerBackgroundSelected">@color/blau_color_blauRed70</item>
 		<item name="colorButtonDangerBackgroundHover">@color/blau_color_blauRed70</item>
 		<item name="colorButtonLinkDangerBackgroundSelected">@color/blau_color_blauPurple_30_alpha</item>
-		<item name="colorButtonLinkDangerBackgroundInverse">@color/blau_color_blauPurple_1_alpha</item>
+		<item name="colorButtonLinkDangerBackgroundInverse">@color/blau_color_white_0_alpha</item>
 		<item name="colorButtonLinkDangerBackgroundInverseSelected">@color/blau_color_blauPurple_30_alpha</item>
 		<item name="colorButtonLinkBackgroundSelected">@color/blau_color_blauPurple_30_alpha</item>
 		<item name="colorButtonLinkBackgroundInverseSelected">@color/blau_color_blauPurple_30_alpha</item>
@@ -59,6 +61,8 @@
 		<item name="colorTextLinkInverse">@color/blau_color_blauPurple30</item>
 		<item name="colorTextLinkDanger">@color/blau_color_blauRed</item>
 		<item name="colorTextLinkSnackbar">@color/blau_color_blauPurple30</item>
+		<item name="colorTextActivated">@color/blau_color_blauBlueSecondary</item>
+		<item name="colorTextBrand">@color/blau_color_blauBluePrimary</item>
 		<item name="colorControl">@color/blau_color_darkModeGrey6</item>
 		<item name="colorControlActive">@color/blau_color_blauBlueSecondary</item>
 		<item name="colorControlInverse">@color/blau_color_darkModeGrey6</item>
@@ -89,6 +93,8 @@
 		<item name="colorTextSecondary">@color/blau_color_grey4</item>
 		<item name="colorTextSecondaryInverse">@color/blau_color_grey4</item>
 		<item name="colorError">@color/blau_color_blauRed</item>
+		<item name="colorTextError">@color/blau_color_blauRed</item>
+		<item name="colorTextErrorInverse">@color/blau_color_blauRed</item>
 		<item name="colorSuccess">@color/blau_color_blauGreen</item>
 		<item name="colorWarning">@color/blau_color_blauYellow</item>
 		<item name="colorPromo">@color/blau_color_blauPurple</item>
@@ -113,5 +119,18 @@
 		<item name="colorTextAppBar">@color/blau_color_grey5</item>
 		<item name="colorTextAppBarSelected">@color/blau_color_grey2</item>
 		<item name="colorCustomTabsBackground">@color/blau_color_darkModeBlack</item>
+		<item name="colorTagTextPromo">@color/blau_color_blauPurple30</item>
+		<item name="colorTagTextActive">@color/blau_color_blauBluePrimary</item>
+		<item name="colorTagTextInactive">@color/blau_color_grey5</item>
+		<item name="colorTagTextSuccess">@color/blau_color_blauGreen30</item>
+		<item name="colorTagTextWarning">@color/blau_color_blauYellow40</item>
+		<item name="colorTagTextError">@color/blau_color_blauRed40</item>
+		<item name="colorTagBackgroundPromo">@color/blau_color_darkModeGrey6</item>
+		<item name="colorTagBackgroundActive">@color/blau_color_darkModeGrey6</item>
+		<item name="colorTagBackgroundInactive">@color/blau_color_darkModeGrey6</item>
+		<item name="colorTagBackgroundSuccess">@color/blau_color_darkModeGrey6</item>
+		<item name="colorTagBackgroundWarning">@color/blau_color_darkModeGrey6</item>
+		<item name="colorTagBackgroundError">@color/blau_color_darkModeGrey6</item>
+		<item name="drawableCardContentOverlay">@drawable/autogenerated_blau_dark_cardcontentoverlay</item>
 	</style>
 </resources>

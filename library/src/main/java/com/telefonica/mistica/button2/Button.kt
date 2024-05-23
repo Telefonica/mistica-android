@@ -28,7 +28,7 @@ class Button @JvmOverloads constructor(
     private var onClick: () -> Unit by mutableStateOf({})
     private var invalidatePaddings: Boolean by mutableStateOf(false)
 
-     init {
+    init {
         attrs?.let {
             val textTypedArray = context.obtainStyledAttributes(attrs, intArrayOf(android.R.attr.text))
             val enabledTypedArray = context.obtainStyledAttributes(attrs, intArrayOf(android.R.attr.enabled))
@@ -53,6 +53,8 @@ class Button @JvmOverloads constructor(
                 styledAttrs.recycle()
             }
         }
+
+        importantForAccessibility = IMPORTANT_FOR_ACCESSIBILITY_NO
     }
 
     override fun setEnabled(enabled: Boolean) {
@@ -88,7 +90,8 @@ class Button @JvmOverloads constructor(
                 icon = icon,
                 withChevron = withChevron,
                 invalidatePaddings = invalidatePaddings,
-                onClickListener = onClick
+                onClickListener = onClick,
+                contentDescription = contentDescription?.toString()?.ifEmpty { null }
             )
         }
     }
