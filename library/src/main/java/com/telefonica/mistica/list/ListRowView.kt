@@ -448,8 +448,8 @@ class ListRowView @JvmOverloads constructor(
 
     fun setDefaultSubtitleTextColor(@BackgroundType type: Int = cachedDefaultBackgroundType) {
         val themeColor = when (type) {
-            BackgroundType.TYPE_BOXED_INVERSE -> R.attr.colorTextSecondaryInverse
-            else -> R.attr.colorTextSecondary
+            BackgroundType.TYPE_BOXED_INVERSE -> R.attr.colorTextPrimaryInverse
+            else -> R.attr.colorTextPrimary
         }
         setSubtitleTextColor(context.getThemeColor(themeColor))
     }
