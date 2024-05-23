@@ -157,6 +157,10 @@ private fun TextInputLabel(
     } else {
         MisticaTheme.typography.preset3
     }
+    // Setting every Mistica preset separately except its fontSize.
+    // We will rely on default fontSize values from Material so minimize/maximize
+    // label animation is not broken. It would require to have
+    // intermediate preset sizes to mimic the same animation
     Text(
         text = text,
         color = when {
