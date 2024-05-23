@@ -159,10 +159,10 @@ private fun TextInputLabel(
             isFocused -> MisticaTheme.colors.controlActivated
             else -> MisticaTheme.colors.textSecondary
         },
-        style = if (isMinimized) {
-            MisticaTheme.typography.preset1
+        fontFamily = if (isMinimized) {
+            MisticaTheme.typography.preset1.fontFamily
         } else {
-            MisticaTheme.typography.preset3
+            MisticaTheme.typography.preset3.fontFamily
         },
         modifier = modifier,
     )
