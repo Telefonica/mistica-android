@@ -227,11 +227,11 @@ private fun TextInputWithTransformation() {
             text = it
         },
         label = "Your name",
-        visualTransformation = PhoneVisualTransformation
+        visualTransformation = PrefixVisualTransformation
     )
 }
 
-object PhoneVisualTransformation : VisualTransformation {
+object PrefixVisualTransformation : VisualTransformation {
     override fun filter(text: AnnotatedString): TransformedText {
         val newText = AnnotatedString("$PREFIX$text")
         return TransformedText(newText, object : OffsetMapping {
@@ -239,7 +239,7 @@ object PhoneVisualTransformation : VisualTransformation {
                 offset + PREFIX_LENGTH
 
             override fun transformedToOriginal(offset: Int): Int =
-                offset - PREFIX_LENGTH
+                (offset - PREFIX_LENGTH).coerceAtLeast(0)
         })
     }
 

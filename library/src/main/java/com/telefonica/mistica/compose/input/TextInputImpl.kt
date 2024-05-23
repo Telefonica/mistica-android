@@ -16,6 +16,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -113,9 +114,12 @@ private fun TextBox(
         value = value,
         onValueChange = onValueChange,
         label = {
+            val transformedText = remember(value) {
+                visualTransformation.filter(AnnotatedString(value))
+            }
             TextInputLabel(
                 text = label,
-                inputIsNotEmpty = value.isNotEmpty(),
+                inputIsNotEmpty = transformedText.text.isNotEmpty(),
                 isFocused = interactionSource.collectIsFocusedAsState().value,
                 isError = isError,
             )
