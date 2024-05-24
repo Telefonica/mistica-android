@@ -50,7 +50,6 @@ class ListRowItemTest(
                                 dimensions = ImageDimensions(width = dimensions.width, height = dimensions.height),
                             ),
                         )
-
                 }
             }
         }
