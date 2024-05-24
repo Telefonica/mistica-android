@@ -26,7 +26,7 @@ class ListRowItemTest(
     val composeTestRule = createComposeRule()
 
     @Test
-    fun `CheckBoxInput compose screenshot`() {
+    fun `ListRowItem compose screenshot`() {
         composeTestRule.setContent {
             MisticaTheme(brand = brand, darkTheme = darkTheme) {
                 Surface(
@@ -79,7 +79,7 @@ class ListRowItemTest(
         @JvmStatic
         @Parameters
         fun brands(): List<Array<Any?>> {
-            val brands = listOf(TestUtils.getAllBrands())
+            val brands = TestUtils.getAllBrands()
             val smallAsset = arrayOf(false, true)
             val backgroundType = arrayOf(BackgroundType.TYPE_NORMAL, BackgroundType.TYPE_BOXED, BackgroundType.TYPE_BOXED_INVERSE)
             val darkTheme = arrayOf(false, true)
