@@ -4,6 +4,7 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.Button
 import android.widget.TextView
 import androidx.annotation.ColorInt
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -14,7 +15,7 @@ internal class CustomSnackbarLayout @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0,
-): ConstraintLayout(context, attrs, defStyleAttr) {
+) : ConstraintLayout(context, attrs, defStyleAttr) {
 
     private val maxActionLengthPx: Int
 
@@ -28,10 +29,13 @@ internal class CustomSnackbarLayout @JvmOverloads constructor(
         getText().text = text
     }
 
-    fun setAction(actionText: CharSequence, listener: OnClickListener) {
+    fun setAction(actionText: CharSequence, contentDescription: String?, listener: OnClickListener) {
         getAction().run {
             visibility = View.VISIBLE
             text = actionText
+            contentDescription?.let {
+                this.contentDescription = contentDescription
+            }
             setOnClickListener(listener)
         }
     }
@@ -79,7 +83,9 @@ internal class CustomSnackbarLayout @JvmOverloads constructor(
         constraintSet.connect(action.id, ConstraintSet.TOP, text.id, ConstraintSet.BOTTOM)
         constraintSet.connect(action.id, ConstraintSet.END, parent.id, ConstraintSet.END)
         constraintSet.setHorizontalBias(action.id, 1.0F)
-        constraintSet.setMargin(action.id, ConstraintSet.END, context.resources.getDimensionPixelSize(R.dimen.mistica_snackbar_padding_horizontal))
+        constraintSet.setMargin(action.id, ConstraintSet.END, context.resources.getDimensionPixelSize(R.dimen.mistica_snackbar_action_horizontal_margin))
+        constraintSet.setMargin(action.id, ConstraintSet.BOTTOM, context.resources.getDimensionPixelSize(R.dimen.mistica_snackbar_action_vertical_margin))
+        constraintSet.setMargin(action.id, ConstraintSet.TOP, context.resources.getDimensionPixelSize(R.dimen.mistica_snackbar_action_vertical_margin))
 
         constraintSet.applyTo(this)
     }
@@ -87,7 +93,7 @@ internal class CustomSnackbarLayout @JvmOverloads constructor(
     private fun getText(): TextView =
         findViewById(R.id.custom_snackbar_text)
 
-    private fun getAction(): TextView =
+    private fun getAction(): Button =
         findViewById(R.id.custom_snackbar_action)
 
     private fun getDismissButton(): View =

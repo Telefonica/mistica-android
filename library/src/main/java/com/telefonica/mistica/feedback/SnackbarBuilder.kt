@@ -7,6 +7,7 @@ import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
 import android.view.LayoutInflater
 import android.view.View
+import android.view.accessibility.AccessibilityEvent
 import androidx.annotation.AttrRes
 import androidx.annotation.StringRes
 import com.google.android.material.snackbar.BaseTransientBottomBar.BaseCallback
@@ -21,6 +22,7 @@ open class SnackbarBuilder(view: View?, text: String) {
     private val view: View
     private val text: CharSequence
     private var actionText: String? = null
+    private var actionContentDescription: String? = null
     private var actionListener: View.OnClickListener? = null
     private var callback: Snackbar.Callback? = null
     private var withDismiss = false
@@ -36,19 +38,20 @@ open class SnackbarBuilder(view: View?, text: String) {
         this.view = view
     }
 
-    open fun withAction(text: String, listener: View.OnClickListener?): SnackbarBuilder = apply {
+    open fun withAction(text: String, contentDescription: String? = null, listener: View.OnClickListener?): SnackbarBuilder = apply {
         actionText = text
         actionListener = listener
+        actionContentDescription = contentDescription
     }
 
-    open fun withAction(@StringRes resId: Int, listener: View.OnClickListener?): SnackbarBuilder =
-        withAction(view.resources.getString(resId), listener)
+    open fun withAction(@StringRes resId: Int, @StringRes contentDescription: Int? = null, listener: View.OnClickListener?): SnackbarBuilder =
+        withAction(view.resources.getString(resId), contentDescription?.let { view.resources.getString(contentDescription) }, listener)
 
     open fun withCallback(callback: Snackbar.Callback): SnackbarBuilder = apply {
         this.callback = callback
     }
 
-    open fun withDismiss(): SnackbarBuilder = apply{
+    open fun withDismiss(): SnackbarBuilder = apply {
         this.withDismiss = true
     }
 
@@ -96,7 +99,7 @@ open class SnackbarBuilder(view: View?, text: String) {
     private fun createSnackbar(text: CharSequence, snackbarLength: SnackbarLength): Snackbar {
         val duration = when {
             areSticky() -> SnackbarLength.INDEFINITE
-            isInvalidLengthWhenThereIsAction(snackbarLength) ->  SnackbarLength.LONG
+            isInvalidLengthWhenThereIsAction(snackbarLength) -> SnackbarLength.LONG
             isInvalidLengthWhenThereIsNoAction(snackbarLength) -> SnackbarLength.SHORT
             else -> snackbarLength
         }.duration()
@@ -107,6 +110,11 @@ open class SnackbarBuilder(view: View?, text: String) {
         snackbar.setCustomAction()
         snackbar.showDismissActionIfNeeded(hasInfiniteDuration = snackbarLength == SnackbarLength.INDEFINITE)
         snackbar.addCallbackIfNeeded()
+        snackbar.addCallback(object : BaseCallback<Snackbar>() {
+            override fun onShown(transientBottomBar: Snackbar) {
+                transientBottomBar.view.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_FOCUSED)
+            }
+        })
 
         return snackbar
     }
@@ -139,6 +147,7 @@ open class SnackbarBuilder(view: View?, text: String) {
         actionText?.let { text ->
             getCustomLayout().setAction(
                 actionText = text,
+                contentDescription = actionContentDescription,
                 listener = {
                     actionListener?.onClick(it)
                     dispatchDismissedByActionEvent()

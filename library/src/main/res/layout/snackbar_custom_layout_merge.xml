@@ -17,8 +17,8 @@
 			android:layout_weight="1"
 			android:paddingTop="@dimen/mistica_snackbar_padding_vertical"
 			android:paddingBottom="@dimen/mistica_snackbar_padding_vertical"
-			android:paddingLeft="@dimen/mistica_snackbar_padding_horizontal"
-			android:paddingRight="@dimen/mistica_snackbar_padding_horizontal"
+			android:paddingLeft="12dp"
+			android:paddingRight="12dp"
 			android:layout_marginEnd="8dp"
 			android:ellipsize="end"
 			android:maxLines="@integer/mistica_snackbar_text_max_lines"
@@ -30,17 +30,16 @@
 			tools:text="Message"
 			/>
 
-	<TextView
+	<com.telefonica.mistica.button.Button
 			android:id="@+id/custom_snackbar_action"
-			style="@style/AppTheme.TextAppearance.PresetLink"
+			style="@style/AppTheme.Button.LinkButton.Small"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:textAlignment="textEnd"
-			android:layout_marginTop="@dimen/mistica_snackbar_padding_vertical"
-			android:layout_marginBottom="@dimen/mistica_snackbar_padding_vertical"
-			android:layout_marginStart="@dimen/mistica_snackbar_padding_horizontal"
-			android:layout_marginEnd="@dimen/mistica_snackbar_padding_horizontal"
+			android:layout_marginStart="8dp"
+			android:layout_marginEnd="4dp"
 			android:minWidth="48dp"
+			android:minHeight="0dp"
 			android:textAllCaps="false"
 			android:visibility="gone"
 			tools:visibility="visible"
