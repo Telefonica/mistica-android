@@ -14,15 +14,12 @@ import androidx.compose.ui.graphics.SolidColor
 public class MisticaBrushes {
   public var cardContentOverlay: Brush by mutableStateOf(SolidColor(Color.Unspecified),
       structuralEqualityPolicy())
-    internal set
 
   public var backgroundBrand: Brush by mutableStateOf(SolidColor(Color.Unspecified),
       structuralEqualityPolicy())
-    internal set
 
   public var backgroundContainerBrand: Brush by mutableStateOf(SolidColor(Color.Unspecified),
       structuralEqualityPolicy())
-    internal set
 
   public fun updateBrushesFrom(other: MisticaBrushes) {
     cardContentOverlay = other.cardContentOverlay

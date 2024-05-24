@@ -57,11 +57,6 @@ class GenerateMisticaBrushes {
             PropertySpec.builder(it, BRUSH_CLASS)
                 .mutable()
                 .delegate("%M(%L, %M())", mutableStateOf, defaultValue, structuralEqualityPolicy)
-                .setter(
-                    FunSpec.setterBuilder()
-                        .addModifiers(KModifier.INTERNAL)
-                        .build()
-                )
                 .build()
         }
     }

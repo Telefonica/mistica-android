@@ -64,11 +64,6 @@ class GenerateMisticaColors {
             PropertySpec.builder(it, colorClass)
                 .mutable()
                 .delegate("%M(%L, %M())", mutableStateOf, DEFAULT_COLOR, structuralEqualityPolicy)
-                .setter(
-                    FunSpec.setterBuilder()
-                        .addModifiers(KModifier.INTERNAL)
-                        .build()
-                )
                 .build()
         }
 
