@@ -11,462 +11,335 @@ import androidx.compose.ui.graphics.Color
 
 public class MisticaColors {
   public var background: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
-    internal set
 
   public var backgroundAlternative: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var backgroundBrandSecondary: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var backgroundContainer: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var backgroundContainerError: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var backgroundContainerHover: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var backgroundContainerPressed: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var backgroundContainerBrandHover: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var backgroundContainerBrandPressed: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var backgroundContainerBrandOverInverse: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var backgroundContainerAlternative: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var backgroundOverlay: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var backgroundSkeleton: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var backgroundSkeletonInverse: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var backgroundBrandTop: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var backgroundBrandBottom: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var appBarBackground: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var navigationBarBackground: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var skeletonWave: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
-    internal set
 
   public var borderLow: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
-    internal set
 
   public var border: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
-    internal set
 
   public var borderHigh: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
-    internal set
 
   public var borderSelected: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
-    internal set
 
   public var coverBackgroundHover: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var coverBackgroundPressed: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var buttonDangerBackground: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var buttonDangerBackgroundSelected: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var buttonDangerBackgroundHover: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var buttonLinkDangerBackgroundSelected: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var buttonLinkDangerBackgroundInverse: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var buttonLinkDangerBackgroundInverseSelected: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var buttonLinkBackgroundSelected: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var buttonLinkBackgroundInverseSelected: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var buttonPrimaryBackground: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var buttonPrimaryBackgroundInverse: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var buttonPrimaryBackgroundSelected: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var buttonPrimaryBackgroundHover: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var buttonPrimaryBackgroundInverseSelected: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var buttonSecondaryBorder: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var buttonSecondaryBorderSelected: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var buttonSecondaryBackgroundHover: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var buttonSecondaryBackgroundSelected: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var buttonSecondaryBorderInverse: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var buttonSecondaryBorderInverseSelected: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var buttonSecondaryBackgroundInverseHover: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var buttonSecondaryBackgroundInverseSelected: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var textButtonPrimary: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var textButtonPrimaryInverse: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var textButtonPrimaryInverseSelected: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var textButtonSecondary: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var textButtonSecondarySelected: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var textButtonSecondaryInverse: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var textButtonSecondaryInverseSelected: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var textLink: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
-    internal set
 
   public var textLinkInverse: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
-    internal set
 
   public var textLinkDanger: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
-    internal set
 
   public var textLinkSnackbar: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var textActivated: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
-    internal set
 
   public var textBrand: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
-    internal set
 
   public var control: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
-    internal set
 
   public var controlActivated: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var controlInverse: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
-    internal set
 
   public var controlActivatedInverse: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var controlError: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
-    internal set
 
   public var barTrack: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
-    internal set
 
   public var loadingBar: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
-    internal set
 
   public var loadingBarBackground: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var toggleAndroidInactive: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var toggleAndroidBackgroundActive: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var iosControlKnob: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
-    internal set
 
   public var divider: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
-    internal set
 
   public var dividerInverse: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
-    internal set
 
   public var navigationBarDivider: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var badge: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
-    internal set
 
   public var feedbackErrorBackground: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var feedbackInfoBackground: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var brand: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
-    internal set
 
   public var brandHigh: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
-    internal set
 
   public var inverse: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
-    internal set
 
   public var neutralHigh: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
-    internal set
 
   public var neutralMedium: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
-    internal set
 
   public var neutralMediumInverse: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var neutralLow: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
-    internal set
 
   public var neutralLowAlternative: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var textPrimary: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
-    internal set
 
   public var textPrimaryInverse: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var textSecondary: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
-    internal set
 
   public var textSecondaryInverse: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var success: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
-    internal set
 
   public var warning: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
-    internal set
 
   public var error: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
-    internal set
 
   public var textError: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
-    internal set
 
   public var textErrorInverse: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var promo: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
-    internal set
 
   public var highlight: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
-    internal set
 
   public var successLow: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
-    internal set
 
   public var warningLow: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
-    internal set
 
   public var errorLow: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
-    internal set
 
   public var promoLow: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
-    internal set
 
   public var brandLow: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
-    internal set
 
   public var successHigh: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
-    internal set
 
   public var warningHigh: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
-    internal set
 
   public var errorHigh: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
-    internal set
 
   public var promoHigh: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
-    internal set
 
   public var successHighInverse: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var warningHighInverse: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var errorHighInverse: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var promoHighInverse: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var textNavigationBarPrimary: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var textNavigationBarSecondary: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var textNavigationSearchBarHint: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var textNavigationSearchBarText: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var textAppBar: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
-    internal set
 
   public var textAppBarSelected: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var customTabsBackground: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var tagTextPromo: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
-    internal set
 
   public var tagTextActive: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
-    internal set
 
   public var tagTextInactive: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
-    internal set
 
   public var tagTextSuccess: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
-    internal set
 
   public var tagTextWarning: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
-    internal set
 
   public var tagTextError: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
-    internal set
 
   public var tagBackgroundPromo: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var tagBackgroundActive: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var tagBackgroundInactive: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var tagBackgroundSuccess: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var tagBackgroundWarning: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public var tagBackgroundError: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
-    internal set
 
   public fun updateColorsFrom(other: MisticaColors) {
     background = other.background
