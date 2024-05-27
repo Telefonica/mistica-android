@@ -118,6 +118,5 @@ class ListRowItemTest(
                 }
             }
         }
-
     }
 }
