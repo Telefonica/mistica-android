@@ -16,6 +16,8 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.IntDef
 import androidx.annotation.LayoutRes
 import androidx.appcompat.content.res.AppCompatResources
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.toArgb
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
 import androidx.core.view.ViewCompat
@@ -448,8 +450,8 @@ class ListRowView @JvmOverloads constructor(
 
     fun setDefaultSubtitleTextColor(@BackgroundType type: Int = cachedDefaultBackgroundType) {
         val themeColor = when (type) {
-            BackgroundType.TYPE_BOXED_INVERSE -> R.attr.colorTextSecondaryInverse
-            else -> R.attr.colorTextSecondary
+            BackgroundType.TYPE_BOXED_INVERSE -> R.attr.colorTextPrimaryInverse
+            else -> R.attr.colorTextPrimary
         }
         setSubtitleTextColor(context.getThemeColor(themeColor))
     }
@@ -577,6 +579,7 @@ class ListRowView @JvmOverloads constructor(
     private fun showNumericBadge(count: Int, withBadgeDescription: String?) {
         Badge.removeBadge(badgeAnchor)
         badgeAnchorContainer.visibility = View.VISIBLE
+        badgeAnchorContainer.setBackgroundColor(Color.Transparent.toArgb())
         Badge.showNumericBadgeIn(badgeAnchor, badgeAnchorContainer, count, withBadgeDescription)
     }
 

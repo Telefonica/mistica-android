@@ -228,7 +228,7 @@ private fun ListRowItemImp(
                     Text(
                         text = it,
                         style = MisticaTheme.typography.preset2,
-                        color = textColorSecondary,
+                        color = textColorPrimary,
                         modifier = Modifier
                             .testTag(ListRowItemTestTags.LIST_ROW_ITEM_SUBTITLE)
                             .padding(vertical = 2.dp)
