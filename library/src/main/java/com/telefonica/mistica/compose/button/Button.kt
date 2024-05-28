@@ -84,7 +84,7 @@ fun Button(
                 .defaultMinSize(size.minWidth, size.height)
                 .onGloballyPositioned {
                     if (originalWidth == null) {
-                        originalWidth = with(density) { it.size.width.toDp() }
+                        originalWidth = with(density) { it.size.width.toDp() + size.progressBarSize + iconSpacing }
                     }
                 }
                 .height(size.height)
