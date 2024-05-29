@@ -7,7 +7,7 @@ import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
 import android.view.LayoutInflater
 import android.view.View
-import android.view.accessibility.AccessibilityEvent
+import android.view.accessibility.AccessibilityNodeInfo
 import androidx.annotation.AttrRes
 import androidx.annotation.StringRes
 import com.google.android.material.snackbar.BaseTransientBottomBar.BaseCallback
@@ -111,8 +111,8 @@ open class SnackbarBuilder(view: View?, text: String) {
         snackbar.showDismissActionIfNeeded(hasInfiniteDuration = snackbarLength == SnackbarLength.INDEFINITE)
         snackbar.addCallbackIfNeeded()
         snackbar.addCallback(object : BaseCallback<Snackbar>() {
-            override fun onShown(transientBottomBar: Snackbar) {
-                transientBottomBar.view.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_FOCUSED)
+            override fun onShown(snackbar: Snackbar) {
+                snackbar.view.performAccessibilityAction(AccessibilityNodeInfo.ACTION_ACCESSIBILITY_FOCUS, null)
             }
         })
 
