@@ -64,9 +64,9 @@
 		<item name="colorTextActivated">@color/o2New_color_beyondBlue30</item>
 		<item name="colorTextBrand">@color/o2New_color_beyondBlue30</item>
 		<item name="colorControl">@color/o2New_color_grey45</item>
-		<item name="colorControlActive">@color/o2New_color_beyondBlue30</item>
+		<item name="colorControlActive">@color/o2New_color_darkModeBeyondBlue</item>
 		<item name="colorControlInverse">@color/o2New_color_grey45</item>
-		<item name="colorControlActivatedInverse">@color/o2New_color_beyondBlue30</item>
+		<item name="colorControlActivatedInverse">@color/o2New_color_darkModeBeyondBlue</item>
 		<item name="colorControlError">@color/o2New_color_o2Red45</item>
 		<item name="colorBarTrack">@color/o2New_color_darkModeGrey6</item>
 		<item name="colorLoadingBar">@color/o2New_color_darkModeBeyondBlue</item>
