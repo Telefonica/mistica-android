@@ -84,7 +84,12 @@ fun Button(
                 .defaultMinSize(size.minWidth, size.height)
                 .onGloballyPositioned {
                     if (originalWidth == null) {
-                        originalWidth = with(density) { it.size.width.toDp() + size.progressBarSize + iconSpacing }
+                        val extraSpace = if (loadingText.isNotEmpty()) {
+                            size.progressBarSize + iconSpacing
+                        } else {
+                            0.dp
+                        }
+                        originalWidth = with(density) { it.size.width.toDp() + extraSpace }
                     }
                 }
                 .height(size.height)
