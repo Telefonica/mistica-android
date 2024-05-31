@@ -62,10 +62,10 @@ fun Tabs(
     val isTablet = LocalConfiguration.current.screenWidthDp > 768
     val maxTabWidth = 280.dp
 
-    val composableTabs: @Composable @UiComposable () -> Unit = @Composable {
+    val composableTabs: @Composable @UiComposable (setTestTag: Boolean) -> Unit = @Composable { setTestTag ->
         tabs.forEachIndexed { index, tab ->
 
-            val boxModifier = if (tab.tabId != null) {
+            val boxModifier = if (setTestTag && tab.tabId != null) {
                 Modifier
                     .testTag(tab.tabId)
             } else {
@@ -126,6 +126,14 @@ fun Tabs(
         }
     }
 
+    val composableTabsForMeasuring: @Composable @UiComposable () -> Unit = @Composable {
+        composableTabs(false)
+    }
+
+    val composableTabsForPlacing: @Composable @UiComposable () -> Unit = @Composable {
+        composableTabs(true)
+    }
+
     val indicator: @Composable @UiComposable (tabPositions: List<TabPosition>) -> Unit =
         @Composable { tabPositions ->
             Box(
@@ -163,8 +171,7 @@ fun Tabs(
                 .selectableGroup()
                 .clipToBounds()
         ) { constraints ->
-            var tabsSlot = Slots.Tabs
-            var tabMeasurables = subcompose(tabsSlot, composableTabs)
+            var tabMeasurables = subcompose(Slots.TabsMeasurable, composableTabsForMeasuring)
             var tabPlaceables = tabMeasurables.map {
                 it.measure(constraints)
             }
@@ -173,10 +180,9 @@ fun Tabs(
                 sum + element.width
             }
 
-            if (tabsTotalWidth < maxWidth) {
-                tabsSlot = Slots.ProportionalSizeTabs
-                tabMeasurables = subcompose(tabsSlot, composableTabs)
+            tabMeasurables = subcompose(Slots.Tabs, composableTabsForPlacing)
 
+            if (tabsTotalWidth < maxWidth) {
                 val tabCount = tabMeasurables.size
                 val proportionalSizeTabWidth = (maxWidth / tabCount)
 
@@ -210,6 +216,10 @@ fun Tabs(
                             )
                         )
                     }
+                }
+            } else {
+                tabPlaceables = tabMeasurables.map {
+                    it.measure(constraints)
                 }
             }
 
@@ -328,8 +338,8 @@ private fun Modifier.misticaTabIndicatorOffset(
 
 private enum class Slots {
     Root,
+    TabsMeasurable,
     Tabs,
-    ProportionalSizeTabs,
     Divider,
     Indicator
 }
