@@ -108,7 +108,7 @@ internal class ButtonKtTest(
                     icons.flatMap { hasIcon ->
                         darkTheme.map { darkTheme ->
                             //loadingText.map { loadingText ->
-                                arrayOf(brand, buttonStyle, hasIcon, darkTheme, loadingText)
+                                arrayOf(brand, buttonStyle, hasIcon, darkTheme)
                             //}
                         }
                     }
