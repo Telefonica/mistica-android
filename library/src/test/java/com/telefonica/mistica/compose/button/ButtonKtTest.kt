@@ -26,7 +26,7 @@ internal class ButtonKtTest(
     private val style: ButtonStyle,
     private val icon: Boolean,
     private val darkTheme: Boolean,
-    private val loadingText: String,
+    //private val loadingText: String,
 ) :
     ScreenshotsTest() {
     @get:Rule
@@ -34,17 +34,16 @@ internal class ButtonKtTest(
 
     @Test
     fun `check the button screenshot`() {
-        `when Button`(brand, style, icon, darkTheme, loadingText)
+        `when Button`(brand, style, icon, darkTheme)
 
-        `then screenshot is OK`(brand, style, icon, darkTheme, loadingText)
+        `then screenshot is OK`(brand, style, icon, darkTheme)
     }
 
     private fun `when Button`(
         brand: Brand = MovistarBrand,
         style: ButtonStyle,
         icon: Boolean,
-        darkTheme: Boolean,
-        loadingText: String,
+        darkTheme: Boolean
     ) {
         composeTestRule.setContent {
             MisticaTheme(brand = brand, darkTheme = darkTheme) {
@@ -74,8 +73,7 @@ internal class ButtonKtTest(
         brand: Brand,
         style: ButtonStyle,
         icon: Boolean,
-        darkTheme: Boolean,
-        loadingText: String,
+        darkTheme: Boolean
     ) {
         val extra: String? = mutableListOf<String>().apply {
             icon.takeIf { it }?.let { add("icon") }
