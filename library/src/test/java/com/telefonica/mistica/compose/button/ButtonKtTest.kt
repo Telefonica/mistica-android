@@ -26,7 +26,7 @@ internal class ButtonKtTest(
     private val style: ButtonStyle,
     private val icon: Boolean,
     private val darkTheme: Boolean,
-    //private val loadingText: String,
+    private val loadingText: String,
 ) :
     ScreenshotsTest() {
     @get:Rule
@@ -34,16 +34,17 @@ internal class ButtonKtTest(
 
     @Test
     fun `check the button screenshot`() {
-        `when Button`(brand, style, icon, darkTheme)
+        `when Button`(brand, style, icon, darkTheme, loadingText)
 
-        `then screenshot is OK`(brand, style, icon, darkTheme)
+        `then screenshot is OK`(brand, style, icon, darkTheme, loadingText)
     }
 
     private fun `when Button`(
         brand: Brand = MovistarBrand,
         style: ButtonStyle,
         icon: Boolean,
-        darkTheme: Boolean
+        darkTheme: Boolean,
+        loadingText: String,
     ) {
         composeTestRule.setContent {
             MisticaTheme(brand = brand, darkTheme = darkTheme) {
@@ -58,7 +59,7 @@ internal class ButtonKtTest(
                 ) {
                     Button(
                         text = BUTTON_TEXT,
-                        loadingText = "",
+                        loadingText = loadingText,
                         buttonStyle = style,
                         icon = android.R.drawable.ic_lock_power_off.takeIf { icon },
                         onClickListener = { },
@@ -73,11 +74,12 @@ internal class ButtonKtTest(
         brand: Brand,
         style: ButtonStyle,
         icon: Boolean,
-        darkTheme: Boolean
+        darkTheme: Boolean,
+        loadingText: String,
     ) {
         val extra: String? = mutableListOf<String>().apply {
             icon.takeIf { it }?.let { add("icon") }
-            //loadingText.takeIf { it.isNotEmpty() }?.let { add("loadingText") }
+            loadingText.takeIf { it.isNotEmpty() }?.let { add("loadingText") }
         }.takeIf {
             it.isNotEmpty()
         }?.joinToString(separator = "_")
@@ -94,7 +96,7 @@ internal class ButtonKtTest(
 
     companion object {
         @JvmStatic
-        @ParameterizedRobolectricTestRunner.Parameters(name = "Button {1} {0} icon={2} darkTheme={3}")
+        @ParameterizedRobolectricTestRunner.Parameters(name = "Button {1} {0} icon={2} darkTheme={3} loadingText={4}")
         fun brands(): List<Array<Any>> {
             val allBrands = TestUtils.getAllBrands()
             val buttonStyles = ButtonStyle.entries
@@ -104,10 +106,10 @@ internal class ButtonKtTest(
             return allBrands.flatMap { brand ->
                 buttonStyles.flatMap { buttonStyle ->
                     icons.flatMap { hasIcon ->
-                        darkTheme.map { darkTheme ->
-                            //loadingText.map { loadingText ->
-                                arrayOf(brand, buttonStyle, hasIcon, darkTheme)
-                            //}
+                        darkTheme.flatMap { darkTheme ->
+                            loadingText.map { loadingText ->
+                                arrayOf(brand, buttonStyle, hasIcon, darkTheme, loadingText)
+                            }
                         }
                     }
                 }
