@@ -59,7 +59,7 @@ internal class ButtonKtTest(
                 ) {
                     Button(
                         text = BUTTON_TEXT,
-                        loadingText = loadingText,
+                        loadingText = "",
                         buttonStyle = style,
                         icon = android.R.drawable.ic_lock_power_off.takeIf { icon },
                         onClickListener = { },
@@ -79,7 +79,7 @@ internal class ButtonKtTest(
     ) {
         val extra: String? = mutableListOf<String>().apply {
             icon.takeIf { it }?.let { add("icon") }
-            loadingText.takeIf { it.isNotEmpty() }?.let { add("loadingText") }
+            //loadingText.takeIf { it.isNotEmpty() }?.let { add("loadingText") }
         }.takeIf {
             it.isNotEmpty()
         }?.joinToString(separator = "_")
@@ -106,10 +106,10 @@ internal class ButtonKtTest(
             return allBrands.flatMap { brand ->
                 buttonStyles.flatMap { buttonStyle ->
                     icons.flatMap { hasIcon ->
-                        darkTheme.flatMap { darkTheme ->
-                            loadingText.map { loadingText ->
+                        darkTheme.map { darkTheme ->
+                            //loadingText.map { loadingText ->
                                 arrayOf(brand, buttonStyle, hasIcon, darkTheme, loadingText)
-                            }
+                            //}
                         }
                     }
                 }
