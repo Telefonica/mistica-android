@@ -77,9 +77,12 @@ internal class ButtonKtTest(
         darkTheme: Boolean,
         loadingText: String,
     ) {
-        val extra: MutableList<String> = mutableListOf()
-        icon.takeIf { it }?.let { extra.add("icon") }
-        loadingText.takeIf { it.isNotEmpty() }?.let { extra.add("loadingText") }
+        val extra: String? = mutableListOf<String>().apply {
+            icon.takeIf { it }?.let { add("icon") }
+            loadingText.takeIf { it.isNotEmpty() }?.let { add("loadingText") }
+        }.takeIf {
+            it.isNotEmpty()
+        }?.joinToString(separator = "_")
 
         compareScreenshot(
             node = composeTestRule.onRoot(),
@@ -87,7 +90,7 @@ internal class ButtonKtTest(
             style = style.toString(),
             brand = brand,
             darkTheme = darkTheme,
-            extra = extra.joinToString(separator = "_")
+            extra = extra
         )
     }
 
