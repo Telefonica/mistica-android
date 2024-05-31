@@ -21,19 +21,31 @@ import org.junit.runner.RunWith
 import org.robolectric.ParameterizedRobolectricTestRunner
 
 @RunWith(ParameterizedRobolectricTestRunner::class)
-internal class ButtonKtTest(private val brand: Brand, private val style: ButtonStyle, private val icon: Boolean, private val darkTheme: Boolean):
+internal class ButtonKtTest(
+    private val brand: Brand,
+    private val style: ButtonStyle,
+    private val icon: Boolean,
+    private val darkTheme: Boolean,
+    private val loadingText: String,
+) :
     ScreenshotsTest() {
     @get:Rule
     val composeTestRule = createComposeRule()
 
     @Test
     fun `check the button screenshot`() {
-        `when Button`(brand, style, icon, darkTheme)
+        `when Button`(brand, style, icon, darkTheme, loadingText)
 
-        `then screenshot is OK`(brand, style, icon, darkTheme)
+        `then screenshot is OK`(brand, style, icon, darkTheme, loadingText)
     }
 
-    private fun `when Button`(brand: Brand = MovistarBrand, style: ButtonStyle, icon: Boolean, darkTheme: Boolean) {
+    private fun `when Button`(
+        brand: Brand = MovistarBrand,
+        style: ButtonStyle,
+        icon: Boolean,
+        darkTheme: Boolean,
+        loadingText: String,
+    ) {
         composeTestRule.setContent {
             MisticaTheme(brand = brand, darkTheme = darkTheme) {
                 Box(
@@ -46,7 +58,8 @@ internal class ButtonKtTest(private val brand: Brand, private val style: ButtonS
                     },
                 ) {
                     Button(
-                        text = "textValue",
+                        text = BUTTON_TEXT,
+                        loadingText = loadingText,
                         buttonStyle = style,
                         icon = android.R.drawable.ic_lock_power_off.takeIf { icon },
                         onClickListener = { },
@@ -57,13 +70,25 @@ internal class ButtonKtTest(private val brand: Brand, private val style: ButtonS
         }
     }
 
-    private fun `then screenshot is OK`(brand: Brand, style: ButtonStyle, icon: Boolean, darkTheme: Boolean) {
-        val iconSuffix = if (icon) {
-            "icon"
-        } else {
-            null
-        }
-        compareScreenshot(composeTestRule.onRoot(), "Button", style.toString(), brand, darkTheme, iconSuffix)
+    private fun `then screenshot is OK`(
+        brand: Brand,
+        style: ButtonStyle,
+        icon: Boolean,
+        darkTheme: Boolean,
+        loadingText: String,
+    ) {
+        val extra: MutableList<String> = mutableListOf()
+        icon.takeIf { it }?.let { extra.add("icon") }
+        loadingText.takeIf { it.isNotEmpty() }?.let { extra.add("loadingText") }
+
+        compareScreenshot(
+            node = composeTestRule.onRoot(),
+            component = "Button",
+            style = style.toString(),
+            brand = brand,
+            darkTheme = darkTheme,
+            extra = extra.joinToString(separator = "_")
+        )
     }
 
     companion object {
@@ -74,15 +99,20 @@ internal class ButtonKtTest(private val brand: Brand, private val style: ButtonS
             val buttonStyles = ButtonStyle.entries
             val icons = listOf(false, true)
             val darkTheme = listOf(false, true)
+            val loadingText = listOf("", BUTTON_TEXT)
             return allBrands.flatMap { brand ->
                 buttonStyles.flatMap { buttonStyle ->
                     icons.flatMap { hasIcon ->
-                        darkTheme.map { darkTheme ->
-                            arrayOf(brand, buttonStyle, hasIcon, darkTheme)
+                        darkTheme.flatMap { darkTheme ->
+                            loadingText.map { loadingText ->
+                                arrayOf(brand, buttonStyle, hasIcon, darkTheme, loadingText)
+                            }
                         }
                     }
                 }
             }
         }
+
+        private const val BUTTON_TEXT = "textValue"
     }
 }
