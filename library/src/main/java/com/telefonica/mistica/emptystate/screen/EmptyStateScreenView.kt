@@ -15,6 +15,7 @@ import android.widget.TextView
 import androidx.annotation.DrawableRes
 import androidx.annotation.IntDef
 import androidx.appcompat.content.res.AppCompatResources
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
@@ -243,24 +244,35 @@ class EmptyStateScreenView @JvmOverloads constructor(
     }
 
     fun setImageSize(@ImageSize imageSize: Int) {
-        val imageWidth: Int = when (imageSize) {
-            IMAGE_SIZE_ICON -> context.convertDpToPx(64)
-            IMAGE_SIZE_SMALL -> ViewGroup.LayoutParams.WRAP_CONTENT
-            else -> ViewGroup.LayoutParams.MATCH_PARENT
-        }
-        val imageHeight: Int = when (imageSize) {
-            IMAGE_SIZE_ICON -> context.convertDpToPx(64)
-            IMAGE_SIZE_SMALL -> context.convertDpToPx(112)
-            else -> ViewGroup.LayoutParams.WRAP_CONTENT
-        }
-        image.scaleType = when (imageSize) {
-            IMAGE_SIZE_ICON -> ImageView.ScaleType.CENTER_INSIDE
-            IMAGE_SIZE_SMALL -> ImageView.ScaleType.FIT_START
-            else -> ImageView.ScaleType.CENTER_CROP
-        }
-        image.layoutParams = image.layoutParams.apply {
-            width = imageWidth
-            height = imageHeight
+        val layoutParams = image.layoutParams as ConstraintLayout.LayoutParams
+        with (layoutParams) {
+            when (imageSize) {
+                IMAGE_SIZE_ICON -> {
+                    width = context.convertDpToPx(IMAGE_ICON_SIDE_PIXELS)
+                    height = context.convertDpToPx(IMAGE_ICON_SIDE_PIXELS)
+                    dimensionRatio = null
+                    image.scaleType = ImageView.ScaleType.CENTER_INSIDE
+                }
+                IMAGE_SIZE_SMALL -> {
+                    width = ViewGroup.LayoutParams.WRAP_CONTENT
+                    height = context.convertDpToPx(IMAGE_SMALL_HEIGHT_PIXELS)
+                    dimensionRatio = null
+                    image.scaleType = ImageView.ScaleType.FIT_START
+                }
+                IMAGE_SIZE_FULL_WIDTH -> {
+                    width = ViewGroup.LayoutParams.MATCH_PARENT
+                    height = 0
+                    dimensionRatio = "16:9"
+                    image.scaleType = ImageView.ScaleType.CENTER_CROP
+                }
+                else -> {
+                    width = ViewGroup.LayoutParams.MATCH_PARENT
+                    height = ViewGroup.LayoutParams.WRAP_CONTENT
+                    dimensionRatio = null
+                    image.scaleType = ImageView.ScaleType.CENTER_CROP
+                }
+            }
+            image.layoutParams = this
         }
     }
 
@@ -278,5 +290,8 @@ class EmptyStateScreenView @JvmOverloads constructor(
         const val IMAGE_SIZE_ICON = 0
         const val IMAGE_SIZE_SMALL = 1
         const val IMAGE_SIZE_FULL_WIDTH = 2
+
+        const val IMAGE_ICON_SIDE_PIXELS = 64
+        const val IMAGE_SMALL_HEIGHT_PIXELS = 112
     }
 }
