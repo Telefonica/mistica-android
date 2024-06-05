@@ -6,7 +6,7 @@
 		<item name="colorBackground">@color/vivo_color_white</item>
 		<item name="colorBackgroundAlternative">@color/vivo_color_grey1</item>
 		<item name="drawableBackgroundBrand">@color/vivo_color_vivoPurple</item>
-		<item name="colorBackgroundBrandSecondary">@color/vivo_color_vivoPurple</item>
+		<item name="colorBackgroundBrandSecondary">@color/vivo_color_vivoPurpleLight80</item>
 		<item name="colorBackgroundContainer">@color/vivo_color_white</item>
 		<item name="colorBackgroundContainerError">@color/vivo_color_pepperLight10</item>
 		<item name="colorBackgroundContainerHover">@color/vivo_color_darkModeBlack_3_alpha</item>
@@ -17,7 +17,7 @@
 		<item name="colorBackgroundContainerBrandOverInverse">@color/vivo_color_vivoPurpleDark</item>
 		<item name="colorBackgroundContainerAlternative">@color/vivo_color_grey1</item>
 		<item name="colorBackgroundOverlay">@color/vivo_color_grey6_60_alpha</item>
-		<item name="colorBackgroundSkeleton">@color/vivo_color_grey2</item>
+		<item name="colorBackgroundSkeleton">@color/vivo_color_grey4</item>
 		<item name="colorBackgroundSkeletonInverse">@color/vivo_color_vivoPurpleDark</item>
 		<item name="colorBackgroundBrandTop">@color/vivo_color_vivoPurple</item>
 		<item name="colorBackgroundBrandBottom">@color/vivo_color_vivoPurple</item>
@@ -61,26 +61,26 @@
 		<item name="colorTextLink">@color/vivo_color_vivoPurple</item>
 		<item name="colorTextLinkInverse">@color/vivo_color_white</item>
 		<item name="colorTextLinkDanger">@color/vivo_color_pepper</item>
-		<item name="colorTextLinkSnackbar">@color/vivo_color_vivoPurpleLight50</item>
+		<item name="colorTextLinkSnackbar">@color/vivo_color_vivoPurpleLight20</item>
 		<item name="colorTextActivated">@color/vivo_color_vivoPurple</item>
 		<item name="colorTextBrand">@color/vivo_color_vivoPurple</item>
-		<item name="colorControl">@color/vivo_color_grey3</item>
+		<item name="colorControl">@color/vivo_color_grey4</item>
 		<item name="colorControlActive">@color/vivo_color_vivoPurple</item>
 		<item name="colorControlInverse">@color/vivo_color_vivoPurpleLight50</item>
 		<item name="colorControlActivatedInverse">@color/vivo_color_white</item>
 		<item name="colorControlError">@color/vivo_color_pepper</item>
 		<item name="colorBarTrack">@color/vivo_color_grey3</item>
-		<item name="colorLoadingBar">@color/vivo_color_pink</item>
-		<item name="colorLoadingBarBackground">@color/vivo_color_pepperLight30</item>
+		<item name="colorLoadingBar">@color/vivo_color_vivoPurple</item>
+		<item name="colorLoadingBarBackground">@color/vivo_color_vivoPurpleLight10</item>
 		<item name="colorToggleAndroidInactive">@color/vivo_color_grey2</item>
 		<item name="colorToggleAndroidBackgroundActive">@color/vivo_color_vivoPurpleLight20</item>
 		<item name="colorIosControlKnob">@color/vivo_color_white</item>
-		<item name="colorDivider">@color/vivo_color_grey2</item>
+		<item name="colorDivider">@color/vivo_color_grey3</item>
 		<item name="colorDividerInverse">@color/vivo_color_white_20_alpha</item>
 		<item name="colorNavigationBarDivider">@color/vivo_color_vivoPurple</item>
 		<item name="colorBadge">@color/vivo_color_pepperDark</item>
 		<item name="colorFeedbackErrorBackground">@color/vivo_color_pepper</item>
-		<item name="colorFeedbackInfoBackground">@color/vivo_color_grey6</item>
+		<item name="colorFeedbackInfoBackground">@color/vivo_color_vivoPurpleDark</item>
 		<item name="colorBrand">@color/vivo_color_vivoPurple</item>
 		<item name="colorBrandHigh">@color/vivo_color_vivoPurpleDark</item>
 		<item name="colorInverse">@color/vivo_color_white</item>
@@ -119,7 +119,7 @@
 		<item name="colorTextNavigationSearchBarText">@color/vivo_color_white</item>
 		<item name="colorTextAppBar">@color/vivo_color_grey4</item>
 		<item name="colorTextAppBarSelected">@color/vivo_color_vivoPurple</item>
-		<item name="colorCustomTabsBackground">@color/vivo_color_vivoPurple</item>
+		<item name="colorCustomTabsBackground">@color/vivo_color_white</item>
 		<item name="colorTagTextPromo">@color/vivo_color_vivoPurple</item>
 		<item name="colorTagTextActive">@color/vivo_color_vivoPurple</item>
 		<item name="colorTagTextInactive">@color/vivo_color_grey5</item>
@@ -136,30 +136,30 @@
 		<!-- Border radius -->
 		<item name="avatarBorderRadius">50%</item>
 		<item name="barBorderRadius">999dp</item>
-		<item name="buttonBorderRadius">4dp</item>
+		<item name="buttonBorderRadius">999dp</item>
 		<item name="checkboxBorderRadius">2dp</item>
-		<item name="containerBorderRadius">8dp</item>
+		<item name="containerBorderRadius">16dp</item>
 		<item name="indicatorBorderRadius">999dp</item>
-		<item name="inputBorderRadius">8dp</item>
+		<item name="inputBorderRadius">12dp</item>
 		<item name="legacyDisplayBorderRadius">16dp</item>
 		<item name="popupBorderRadius">8dp</item>
-		<item name="sheetBorderRadius">8dp</item>
+		<item name="sheetBorderRadius">16dp</item>
 		<item name="mediaSmallBorderRadius">8dp</item>
 		<!-- Preset fonts -->
 		<item name="cardTitleFont">?font_family_regular</item>
-		<item name="buttonFont">?font_family_medium</item>
-		<item name="tabsLabelFont">?font_family_medium</item>
-		<item name="linkFont">?font_family_medium</item>
-		<item name="title1Font">?font_family_medium</item>
-		<item name="title2Font">?font_family_light</item>
-		<item name="indicatorFont">?font_family_medium</item>
-		<item name="navigationBarFont">?font_family_medium</item>
-		<item name="text5Font">?font_family_light</item>
-		<item name="text6Font">?font_family_light</item>
-		<item name="text7Font">?font_family_light</item>
-		<item name="text8Font">?font_family_light</item>
-		<item name="text9Font">?font_family_light</item>
-		<item name="text10Font">?font_family_light</item>
+		<item name="buttonFont">?font_family_regular</item>
+		<item name="tabsLabelFont">?font_family_regular</item>
+		<item name="linkFont">?font_family_regular</item>
+		<item name="title1Font">?font_family_regular</item>
+		<item name="title2Font">?font_family_regular</item>
+		<item name="indicatorFont">?font_family_regular</item>
+		<item name="navigationBarFont">?font_family_regular</item>
+		<item name="text5Font">?font_family_regular</item>
+		<item name="text6Font">?font_family_regular</item>
+		<item name="text7Font">?font_family_regular</item>
+		<item name="text8Font">?font_family_regular</item>
+		<item name="text9Font">?font_family_regular</item>
+		<item name="text10Font">?font_family_regular</item>
 		<!-- Preset styles -->
 		<item name="cardTitleTextStyle">normal</item>
 		<item name="buttonTextStyle">normal</item>
@@ -176,7 +176,7 @@
 		<item name="text9TextStyle">normal</item>
 		<item name="text10TextStyle">normal</item>
 		<!-- Preset sizes -->
-		<item name="tabsLabelTextSize">16sp</item>
-		<item name="title2TextSize">20sp</item>
+		<item name="tabsLabelTextSize">18sp</item>
+		<item name="title2TextSize">18sp</item>
 	</style>
 </resources>

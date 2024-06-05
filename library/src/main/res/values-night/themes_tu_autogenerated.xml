@@ -77,7 +77,7 @@
 		<item name="colorDivider">@color/tu_color_white_5_alpha</item>
 		<item name="colorDividerInverse">@color/tu_color_white_5_alpha</item>
 		<item name="colorNavigationBarDivider">@color/tu_color_darkModeBlack</item>
-		<item name="colorBadge">@color/tu_color_red70</item>
+		<item name="colorBadge">@color/tu_color_blue30</item>
 		<item name="colorFeedbackErrorBackground">@color/tu_color_red</item>
 		<item name="colorFeedbackInfoBackground">@color/tu_color_darkModeGrey</item>
 		<item name="colorBrand">@color/tu_color_blue30</item>

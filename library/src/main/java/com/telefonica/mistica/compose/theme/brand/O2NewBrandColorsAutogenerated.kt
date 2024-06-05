@@ -103,7 +103,7 @@ public object O2NewBrandColors {
       textError = O2NewPaletteColor.o2New_color_o2Red65
       textErrorInverse = O2NewPaletteColor.o2New_color_white
       promo = O2NewPaletteColor.o2New_color_o2Pink
-      highlight = O2NewPaletteColor.o2New_color_o2Pink
+      highlight = O2NewPaletteColor.o2New_color_o2Pink80
       successLow = O2NewPaletteColor.o2New_color_o2Green10
       warningLow = O2NewPaletteColor.o2New_color_o2Orange10
       errorLow = O2NewPaletteColor.o2New_color_o2Red10
@@ -199,9 +199,9 @@ public object O2NewBrandColors {
       textActivated = O2NewPaletteColor.o2New_color_beyondBlue30
       textBrand = O2NewPaletteColor.o2New_color_beyondBlue30
       control = O2NewPaletteColor.o2New_color_grey45
-      controlActivated = O2NewPaletteColor.o2New_color_beyondBlue30
+      controlActivated = O2NewPaletteColor.o2New_color_darkModeBeyondBlue
       controlInverse = O2NewPaletteColor.o2New_color_grey45
-      controlActivatedInverse = O2NewPaletteColor.o2New_color_beyondBlue30
+      controlActivatedInverse = O2NewPaletteColor.o2New_color_darkModeBeyondBlue
       controlError = O2NewPaletteColor.o2New_color_o2Red45
       barTrack = O2NewPaletteColor.o2New_color_darkModeGrey6
       loadingBar = O2NewPaletteColor.o2New_color_darkModeBeyondBlue

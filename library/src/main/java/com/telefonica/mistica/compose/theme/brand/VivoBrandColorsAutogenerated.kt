@@ -11,7 +11,7 @@ public object VivoBrandColors {
   public val lightColors: MisticaColors = MisticaColors().apply {
       background = VivoPaletteColor.vivo_color_white
       backgroundAlternative = VivoPaletteColor.vivo_color_grey1
-      backgroundBrandSecondary = VivoPaletteColor.vivo_color_vivoPurple
+      backgroundBrandSecondary = VivoPaletteColor.vivo_color_vivoPurpleLight80
       backgroundContainer = VivoPaletteColor.vivo_color_white
       backgroundContainerError = VivoPaletteColor.vivo_color_pepperLight10
       backgroundContainerHover = VivoPaletteColor.vivo_color_darkModeBlack_3_alpha
@@ -21,7 +21,7 @@ public object VivoBrandColors {
       backgroundContainerBrandOverInverse = VivoPaletteColor.vivo_color_vivoPurpleDark
       backgroundContainerAlternative = VivoPaletteColor.vivo_color_grey1
       backgroundOverlay = VivoPaletteColor.vivo_color_grey6_60_alpha
-      backgroundSkeleton = VivoPaletteColor.vivo_color_grey2
+      backgroundSkeleton = VivoPaletteColor.vivo_color_grey4
       backgroundSkeletonInverse = VivoPaletteColor.vivo_color_vivoPurpleDark
       backgroundBrandTop = VivoPaletteColor.vivo_color_vivoPurple
       backgroundBrandBottom = VivoPaletteColor.vivo_color_vivoPurple
@@ -65,26 +65,26 @@ public object VivoBrandColors {
       textLink = VivoPaletteColor.vivo_color_vivoPurple
       textLinkInverse = VivoPaletteColor.vivo_color_white
       textLinkDanger = VivoPaletteColor.vivo_color_pepper
-      textLinkSnackbar = VivoPaletteColor.vivo_color_vivoPurpleLight50
+      textLinkSnackbar = VivoPaletteColor.vivo_color_vivoPurpleLight20
       textActivated = VivoPaletteColor.vivo_color_vivoPurple
       textBrand = VivoPaletteColor.vivo_color_vivoPurple
-      control = VivoPaletteColor.vivo_color_grey3
+      control = VivoPaletteColor.vivo_color_grey4
       controlActivated = VivoPaletteColor.vivo_color_vivoPurple
       controlInverse = VivoPaletteColor.vivo_color_vivoPurpleLight50
       controlActivatedInverse = VivoPaletteColor.vivo_color_white
       controlError = VivoPaletteColor.vivo_color_pepper
       barTrack = VivoPaletteColor.vivo_color_grey3
-      loadingBar = VivoPaletteColor.vivo_color_pink
-      loadingBarBackground = VivoPaletteColor.vivo_color_pepperLight30
+      loadingBar = VivoPaletteColor.vivo_color_vivoPurple
+      loadingBarBackground = VivoPaletteColor.vivo_color_vivoPurpleLight10
       toggleAndroidInactive = VivoPaletteColor.vivo_color_grey2
       toggleAndroidBackgroundActive = VivoPaletteColor.vivo_color_vivoPurpleLight20
       iosControlKnob = VivoPaletteColor.vivo_color_white
-      divider = VivoPaletteColor.vivo_color_grey2
+      divider = VivoPaletteColor.vivo_color_grey3
       dividerInverse = VivoPaletteColor.vivo_color_white_20_alpha
       navigationBarDivider = VivoPaletteColor.vivo_color_vivoPurple
       badge = VivoPaletteColor.vivo_color_pepperDark
       feedbackErrorBackground = VivoPaletteColor.vivo_color_pepper
-      feedbackInfoBackground = VivoPaletteColor.vivo_color_grey6
+      feedbackInfoBackground = VivoPaletteColor.vivo_color_vivoPurpleDark
       brand = VivoPaletteColor.vivo_color_vivoPurple
       brandHigh = VivoPaletteColor.vivo_color_vivoPurpleDark
       inverse = VivoPaletteColor.vivo_color_white
@@ -123,7 +123,7 @@ public object VivoBrandColors {
       textNavigationSearchBarText = VivoPaletteColor.vivo_color_white
       textAppBar = VivoPaletteColor.vivo_color_grey4
       textAppBarSelected = VivoPaletteColor.vivo_color_vivoPurple
-      customTabsBackground = VivoPaletteColor.vivo_color_vivoPurple
+      customTabsBackground = VivoPaletteColor.vivo_color_white
       tagTextPromo = VivoPaletteColor.vivo_color_vivoPurple
       tagTextActive = VivoPaletteColor.vivo_color_vivoPurple
       tagTextInactive = VivoPaletteColor.vivo_color_grey5
@@ -352,7 +352,7 @@ private object VivoPaletteColor {
 
   public val vivo_color_grey3: Color = Color(0xFFDDDDDD)
 
-  public val vivo_color_grey4: Color = Color(0xFF999999)
+  public val vivo_color_grey4: Color = Color(0xFF949494)
 
   public val vivo_color_grey5: Color = Color(0xFF666666)
 

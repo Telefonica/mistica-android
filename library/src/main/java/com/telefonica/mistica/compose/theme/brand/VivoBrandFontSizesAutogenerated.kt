@@ -5,7 +5,7 @@ import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.sp
 
 public object VivoBrandFontSizes {
-  public val tabsLabelFontSize: TextUnit = 16.sp
+  public val tabsLabelFontSize: TextUnit = 18.sp
 
-  public val title2FontSize: TextUnit = 20.sp
+  public val title2FontSize: TextUnit = 18.sp
 }
