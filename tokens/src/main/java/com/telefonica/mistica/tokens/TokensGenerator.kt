@@ -2,8 +2,8 @@ package com.telefonica.mistica.tokens
 
 import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
-import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import com.squareup.moshi.adapters.PolymorphicJsonAdapterFactory
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import com.telefonica.mistica.tokens.compose.GenerateComposeFiles
 import com.telefonica.mistica.tokens.dto.BrushDTO
 import com.telefonica.mistica.tokens.dto.TokensDTO
@@ -35,8 +35,7 @@ class TokensGenerator(
             Brand("movistar", "movistar"),
             Brand("o2", "o2"),
             Brand("telefonica", "telefonica"),
-            Brand("vivo", "vivo"),
-            Brand("vivoNew", "vivo-new", createDuplicateWithoutInheritMistica = true),
+            Brand("vivo", "vivo-new"),
             Brand("tu", "tu"),
             Brand("o2New", "o2-new"),
         )
