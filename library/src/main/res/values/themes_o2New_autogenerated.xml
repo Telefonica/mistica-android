@@ -99,7 +99,7 @@
 		<item name="colorTextError">@color/o2New_color_o2Red65</item>
 		<item name="colorTextErrorInverse">@color/o2New_color_white</item>
 		<item name="colorPromo">@color/o2New_color_o2Pink</item>
-		<item name="colorHighlight">@color/o2New_color_o2Pink</item>
+		<item name="colorHighlight">@color/o2New_color_o2Pink80</item>
 		<item name="colorSuccessLow">@color/o2New_color_o2Green10</item>
 		<item name="colorWarningLow">@color/o2New_color_o2Orange10</item>
 		<item name="colorErrorLow">@color/o2New_color_o2Red10</item>

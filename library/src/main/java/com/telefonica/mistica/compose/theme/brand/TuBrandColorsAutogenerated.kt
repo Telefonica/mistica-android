@@ -212,7 +212,7 @@ public object TuBrandColors {
       divider = TuPaletteColor.tu_color_white_5_alpha
       dividerInverse = TuPaletteColor.tu_color_white_5_alpha
       navigationBarDivider = TuPaletteColor.tu_color_darkModeBlack
-      badge = TuPaletteColor.tu_color_red70
+      badge = TuPaletteColor.tu_color_blue30
       feedbackErrorBackground = TuPaletteColor.tu_color_red
       feedbackInfoBackground = TuPaletteColor.tu_color_darkModeGrey
       brand = TuPaletteColor.tu_color_blue30

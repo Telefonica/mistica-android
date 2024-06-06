@@ -165,7 +165,7 @@ private fun TextInputLabel(
         text = text,
         color = when {
             isError && isMinimized -> MisticaTheme.colors.error
-            isFocused -> MisticaTheme.colors.controlActivated
+            isFocused -> MisticaTheme.colors.textActivated
             else -> MisticaTheme.colors.textSecondary
         },
         fontFamily = preset.fontFamily,

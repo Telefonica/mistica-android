@@ -9,7 +9,7 @@
         <item name="boxStrokeWidthFocused">0dp</item>
         <item name="hintEnabled">true</item>
         <item name="errorTextColor">?attr/colorError</item>
-        <item name="hintTextColor">?attr/colorControlActive</item>
+        <item name="hintTextColor">?attr/colorTextActivated</item>
         <item name="hintTextAppearance">@style/AppTheme.Forms.TextInputLayout.Hint</item>
         <item name="errorTextAppearance">@style/AppTheme.Forms.TextInputLayout.Error</item>
         <item name="helperTextTextAppearance">@style/AppTheme.Forms.TextInputLayout.Helper</item>
