@@ -7,7 +7,6 @@ import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
 import android.view.LayoutInflater
 import android.view.View
-import android.view.accessibility.AccessibilityNodeInfo
 import androidx.annotation.AttrRes
 import androidx.annotation.StringRes
 import com.google.android.material.snackbar.BaseTransientBottomBar.BaseCallback
@@ -15,6 +14,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.telefonica.mistica.R
 import com.telefonica.mistica.feedback.SnackBarBehaviorConfig.areSticky
 import com.telefonica.mistica.feedback.snackbar.CustomSnackbarLayout
+import com.telefonica.mistica.util.AccessibilityWrapper
 import com.telefonica.mistica.util.getThemeColor
 
 open class SnackbarBuilder(view: View?, text: String) {
@@ -26,6 +26,7 @@ open class SnackbarBuilder(view: View?, text: String) {
     private var actionListener: View.OnClickListener? = null
     private var callback: Snackbar.Callback? = null
     private var withDismiss = false
+    private val accessibilityWrapper: AccessibilityWrapper
 
     private val hasAction: Boolean
         get() = actionText != null
@@ -36,6 +37,7 @@ open class SnackbarBuilder(view: View?, text: String) {
         requireNotNull(view) { "View cannot be null" }
         this.text = text
         this.view = view
+        this.accessibilityWrapper = AccessibilityWrapper(view.context)
     }
 
     open fun withAction(text: String, contentDescription: String? = null, listener: View.OnClickListener?): SnackbarBuilder = apply {
@@ -58,7 +60,7 @@ open class SnackbarBuilder(view: View?, text: String) {
     @JvmOverloads
     open fun showInformative(snackbarLength: SnackbarLength = SnackbarLength.SHORT): Snackbar {
         val spannable = getSpannable(R.attr.colorTextPrimaryInverse)
-        val snackbar = createSnackbar(spannable, snackbarLength)
+        val snackbar = createSnackbar(spannable, snackbarLength, isCritical = false)
         setBackgroundColor(snackbar, R.attr.colorFeedbackInfoBackground)
         setActionTextColor(snackbar, R.attr.colorTextLinkSnackbar)
         snackbar.show()
@@ -68,7 +70,7 @@ open class SnackbarBuilder(view: View?, text: String) {
     @JvmOverloads
     open fun showCritical(snackbarLength: SnackbarLength = SnackbarLength.SHORT): Snackbar {
         val spannable = getSpannable(R.attr.colorTextPrimaryInverse)
-        val snackbar = createSnackbar(spannable, snackbarLength)
+        val snackbar = createSnackbar(spannable, snackbarLength, isCritical = true)
         setBackgroundColor(snackbar, R.attr.colorFeedbackErrorBackground)
         setActionTextColor(snackbar, R.attr.colorTextPrimaryInverse)
         snackbar.show()
@@ -96,7 +98,7 @@ open class SnackbarBuilder(view: View?, text: String) {
         return spannable
     }
 
-    private fun createSnackbar(text: CharSequence, snackbarLength: SnackbarLength): Snackbar {
+    private fun createSnackbar(text: CharSequence, snackbarLength: SnackbarLength, isCritical: Boolean): Snackbar {
         val duration = when {
             areSticky() -> SnackbarLength.INDEFINITE
             isInvalidLengthWhenThereIsAction(snackbarLength) -> SnackbarLength.LONG
@@ -112,7 +114,7 @@ open class SnackbarBuilder(view: View?, text: String) {
         snackbar.addCallbackIfNeeded()
         snackbar.addCallback(object : BaseCallback<Snackbar>() {
             override fun onShown(snackbar: Snackbar) {
-                snackbar.view.performAccessibilityAction(AccessibilityNodeInfo.ACTION_ACCESSIBILITY_FOCUS, null)
+                accessibilityWrapper.sendAccessibilityAnnouncement(announcement = text.toString(), interrupt = isCritical)
             }
         })
 
