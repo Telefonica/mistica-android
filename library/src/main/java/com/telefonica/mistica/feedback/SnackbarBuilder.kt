@@ -91,7 +91,7 @@ open class SnackbarBuilder(view: View?, text: String) {
     private fun interruptPreviousAccessibilityAnnouncement(snackbar: Snackbar) {
         snackbar.addCallback(object : BaseCallback<Snackbar>() {
             override fun onShown(snackbar: Snackbar) {
-                accessibilityManager.interrupt()
+                if (accessibilityManager.isEnabled) accessibilityManager.interrupt()
             }
         })
     }
