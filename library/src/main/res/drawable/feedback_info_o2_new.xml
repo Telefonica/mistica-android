@@ -3,7 +3,6 @@
     android:height="64dp"
     android:viewportWidth="64"
     android:viewportHeight="64">
-
     <path
         android:fillColor="?colorBrand"
         android:pathData="M32 49.1392C30.7456 49.1392 29.7088 48.1152 29.7088 46.848V25.1392C29.7088 23.8848 30.7328 22.848 32 22.848C33.2544 22.848 34.2912 23.872 34.2912 25.1392V46.848C34.2912 48.1152 33.2544 49.1392 32 49.1392Z" />
