@@ -40,21 +40,18 @@ class BadgesCatalogFragment : Fragment() {
                 badgeVisible = !badgeVisible
             }
         }
-        findViewById<Button>(R.id.button_add_numeric_badge).apply {
-            setOnClickListener {
-                if (!badgeVisible) {
-                    Badge.showNumericBadgeIn(imageView, imageContainer, Random(System.currentTimeMillis()).nextInt(1, 11))
-                } else {
-                    Badge.removeBadge(imageView)
-                }
-                badgeVisible = !badgeVisible
-            }
+        findViewById<Button>(R.id.button_add_one_digit_numeric_badge).setOnClickListener {
+            Badge.showNumericBadgeIn(imageView, imageContainer, Random(System.currentTimeMillis()).nextInt(1, 9))
+            badgeVisible = true
         }
-        findViewById<Button>(R.id.button_remove_badge_if_numeric_with_count_zero).apply {
-            setOnClickListener {
-                Badge.showNumericBadgeIn(imageView, imageContainer, 0)
-                badgeVisible = false
-            }
+
+        findViewById<Button>(R.id.button_add_two_digit_numeric_badge).setOnClickListener {
+            Badge.showNumericBadgeIn(imageView, imageContainer, Random(System.currentTimeMillis()).nextInt(10, 20))
+            badgeVisible = true
+        }
+        findViewById<Button>(R.id.button_remove_badge_if_numeric_with_count_zero).setOnClickListener {
+            Badge.showNumericBadgeIn(imageView, imageContainer, 0)
+            badgeVisible = false
         }
     }
 }
