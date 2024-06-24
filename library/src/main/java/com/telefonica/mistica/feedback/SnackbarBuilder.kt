@@ -61,7 +61,7 @@ open class SnackbarBuilder(view: View?, text: String) {
     @JvmOverloads
     open fun showInformative(snackbarLength: SnackbarLength = SnackbarLength.SHORT): Snackbar {
         val spannable = getSpannable(R.attr.colorTextPrimaryInverse)
-        val snackbar = createSnackbar(spannable, snackbarLength, isCritical = false)
+        val snackbar = createSnackbar(spannable, snackbarLength)
         setBackgroundColor(snackbar, R.attr.colorFeedbackInfoBackground)
         setActionTextColor(snackbar, R.attr.colorTextLinkSnackbar)
         snackbar.show()
@@ -71,7 +71,7 @@ open class SnackbarBuilder(view: View?, text: String) {
     @JvmOverloads
     open fun showCritical(snackbarLength: SnackbarLength = SnackbarLength.SHORT): Snackbar {
         val spannable = getSpannable(R.attr.colorTextPrimaryInverse)
-        val snackbar = createSnackbar(spannable, snackbarLength, isCritical = true)
+        val snackbar = createSnackbar(spannable, snackbarLength)
         setBackgroundColor(snackbar, R.attr.colorFeedbackErrorBackground)
         setActionTextColor(snackbar, R.attr.colorTextPrimaryInverse)
         interruptPreviousAccessibilityAnnouncement(snackbar)
@@ -108,7 +108,7 @@ open class SnackbarBuilder(view: View?, text: String) {
         return spannable
     }
 
-    private fun createSnackbar(text: CharSequence, snackbarLength: SnackbarLength, isCritical: Boolean): Snackbar {
+    private fun createSnackbar(text: CharSequence, snackbarLength: SnackbarLength): Snackbar {
         val duration = when {
             areSticky() -> SnackbarLength.INDEFINITE
             isInvalidLengthWhenThereIsAction(snackbarLength) -> SnackbarLength.LONG
