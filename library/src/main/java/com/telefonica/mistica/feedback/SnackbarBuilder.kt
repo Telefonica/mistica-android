@@ -1,12 +1,14 @@
 package com.telefonica.mistica.feedback
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.res.ColorStateList
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
 import android.view.LayoutInflater
 import android.view.View
+import android.view.accessibility.AccessibilityManager
 import androidx.annotation.AttrRes
 import androidx.annotation.StringRes
 import com.google.android.material.snackbar.BaseTransientBottomBar.BaseCallback
@@ -21,9 +23,11 @@ open class SnackbarBuilder(view: View?, text: String) {
     private val view: View
     private val text: CharSequence
     private var actionText: String? = null
+    private var actionContentDescription: String? = null
     private var actionListener: View.OnClickListener? = null
     private var callback: Snackbar.Callback? = null
     private var withDismiss = false
+    private val accessibilityManager: AccessibilityManager
 
     private val hasAction: Boolean
         get() = actionText != null
@@ -34,21 +38,23 @@ open class SnackbarBuilder(view: View?, text: String) {
         requireNotNull(view) { "View cannot be null" }
         this.text = text
         this.view = view
+        this.accessibilityManager = view.context.getSystemService(Context.ACCESSIBILITY_SERVICE) as AccessibilityManager
     }
 
-    open fun withAction(text: String, listener: View.OnClickListener?): SnackbarBuilder = apply {
+    open fun withAction(text: String, contentDescription: String? = null, listener: View.OnClickListener?): SnackbarBuilder = apply {
         actionText = text
         actionListener = listener
+        actionContentDescription = contentDescription
     }
 
-    open fun withAction(@StringRes resId: Int, listener: View.OnClickListener?): SnackbarBuilder =
-        withAction(view.resources.getString(resId), listener)
+    open fun withAction(@StringRes resId: Int, @StringRes contentDescription: Int? = null, listener: View.OnClickListener?): SnackbarBuilder =
+        withAction(view.resources.getString(resId), contentDescription?.let { view.resources.getString(contentDescription) }, listener)
 
     open fun withCallback(callback: Snackbar.Callback): SnackbarBuilder = apply {
         this.callback = callback
     }
 
-    open fun withDismiss(): SnackbarBuilder = apply{
+    open fun withDismiss(): SnackbarBuilder = apply {
         this.withDismiss = true
     }
 
@@ -68,6 +74,7 @@ open class SnackbarBuilder(view: View?, text: String) {
         val snackbar = createSnackbar(spannable, snackbarLength)
         setBackgroundColor(snackbar, R.attr.colorFeedbackErrorBackground)
         setActionTextColor(snackbar, R.attr.colorTextPrimaryInverse)
+        interruptPreviousAccessibilityAnnouncement(snackbar)
         snackbar.show()
         return snackbar
     }
@@ -79,6 +86,14 @@ open class SnackbarBuilder(view: View?, text: String) {
     private fun setBackgroundColor(snackbar: Snackbar, @AttrRes colorRes: Int) {
         snackbar.view.backgroundTintList =
             ColorStateList.valueOf(view.context.getThemeColor(colorRes))
+    }
+
+    private fun interruptPreviousAccessibilityAnnouncement(snackbar: Snackbar) {
+        snackbar.addCallback(object : BaseCallback<Snackbar>() {
+            override fun onShown(snackbar: Snackbar) {
+                if (accessibilityManager.isEnabled) accessibilityManager.interrupt()
+            }
+        })
     }
 
     private fun getSpannable(@AttrRes colorRes: Int): Spannable {
@@ -96,7 +111,7 @@ open class SnackbarBuilder(view: View?, text: String) {
     private fun createSnackbar(text: CharSequence, snackbarLength: SnackbarLength): Snackbar {
         val duration = when {
             areSticky() -> SnackbarLength.INDEFINITE
-            isInvalidLengthWhenThereIsAction(snackbarLength) ->  SnackbarLength.LONG
+            isInvalidLengthWhenThereIsAction(snackbarLength) -> SnackbarLength.LONG
             isInvalidLengthWhenThereIsNoAction(snackbarLength) -> SnackbarLength.SHORT
             else -> snackbarLength
         }.duration()
@@ -139,6 +154,7 @@ open class SnackbarBuilder(view: View?, text: String) {
         actionText?.let { text ->
             getCustomLayout().setAction(
                 actionText = text,
+                contentDescription = actionContentDescription,
                 listener = {
                     actionListener?.onClick(it)
                     dispatchDismissedByActionEvent()

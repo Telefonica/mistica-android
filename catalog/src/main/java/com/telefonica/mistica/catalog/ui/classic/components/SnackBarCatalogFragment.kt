@@ -52,7 +52,7 @@ class SnackBarCatalogFragment : Fragment() {
             SnackbarBuilder(view, inputText.text.toString()).apply {
                 inputAction.text.toString().let { actionText ->
                     if (actionText.isNotEmpty()) {
-                        withAction(actionText) { }
+                        withAction(actionText, "Custom content description") { }
                     }
                 }
                 if (alwaysShowDismiss.isChecked()) {
