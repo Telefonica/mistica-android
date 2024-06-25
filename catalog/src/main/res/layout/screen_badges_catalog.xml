@@ -38,11 +38,18 @@
         android:text="Toggle" />
 
     <Button
-        android:id="@+id/button_add_numeric_badge"
+        android:id="@+id/button_add_one_digit_numeric_badge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Toggle With Number > 0" />
+        android:text="Show with one digit number" />
+
+    <Button
+        android:id="@+id/button_add_two_digit_numeric_badge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Show with two digit number " />
 
     <Button
         android:id="@+id/button_remove_badge_if_numeric_with_count_zero"

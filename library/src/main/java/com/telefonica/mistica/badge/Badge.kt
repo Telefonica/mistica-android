@@ -74,7 +74,7 @@ object Badge {
     private fun buildBadgeContentDescription(
         anchor: View,
         count: Int,
-        badgeDescription: String?
+        badgeDescription: String?,
     ): String {
         if (!contentDescriptions.containsKey(anchor.hashCode())) {
             contentDescriptions[anchor.hashCode()] = anchor.contentDescription
@@ -90,7 +90,7 @@ object Badge {
 
     private fun getDefaultBadgeDescription(
         anchor: View,
-        count: Int
+        count: Int,
     ) = if (count == 0) {
         anchor.context.getString(R.string.badge_notification_description)
     } else {
@@ -119,6 +119,7 @@ object Badge {
         parent.post {
             this.setBoundsFor(anchor, parent)
             val overlay = parent.overlay
+            overlay.clear()
             overlay.add(this)
             anchor.contentDescription = contentDescription
         }
