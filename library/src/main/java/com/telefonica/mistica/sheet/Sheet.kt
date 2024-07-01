@@ -101,6 +101,7 @@ open class SheetView(
 
         handler.setOnClickListener { cancel() }
         title.setTextOrHide(titleText)
+        ViewCompat.setAccessibilityHeading(title, true)
         titleSpace.setSpaceOrGone(titleText)
         subtitle.setTextOrHide(subtitleText)
         description.setTextOrHide(descriptionText)
