@@ -15,3 +15,4 @@ It has these attributes:
 - `titleStyle`: to configure the appearance of the title text. Values supported: `title1`, `title2`.
 - `link`: to set the label of an optional link
 - `linkOnClick`: listener that will be invoked when link is clicked
+- `linkWithChevron`: to show a chevron icon at the end of the link
