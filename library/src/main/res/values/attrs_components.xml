@@ -133,6 +133,7 @@
         </attr>
         <attr name="link" format="string" />
         <attr name="linkOnClick" format="string" />
+        <attr name="linkWithChevron" format="boolean"/>
     </declare-styleable>
 
     <declare-styleable name="HighlightedCardView">

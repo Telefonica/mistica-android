@@ -81,4 +81,12 @@ private fun TitlesWithStyleOverridden(
         text = "Some title $style that can get really long and almost fill the whole line",
         onLinkClicked = {}
     )
+    Title(
+        modifier = Modifier.padding(bottom = 8.dp),
+        style = style,
+        linkText = "Some link",
+        withChevron = true,
+        text = "Some title $style with chevron",
+        onLinkClicked = {}
+    )
 }

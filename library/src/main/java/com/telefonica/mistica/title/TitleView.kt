@@ -3,6 +3,8 @@ package com.telefonica.mistica.title
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
+import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.annotation.AttrRes
 import androidx.annotation.IntDef
@@ -10,6 +12,7 @@ import androidx.annotation.StyleRes
 import androidx.annotation.VisibleForTesting
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.ViewCompat
+import androidx.core.view.isVisible
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
@@ -58,6 +61,8 @@ class TitleView @JvmOverloads constructor(
     annotation class TitleStyle
 
     private var linkTextView: TextView
+    private var linkLayout: LinearLayout
+    private var linkChevron: ImageView
     private var titleTextView: TextView
 
     init {
@@ -65,6 +70,8 @@ class TitleView @JvmOverloads constructor(
 
         titleTextView = findViewById(R.id.title_text)
         linkTextView = findViewById(R.id.link_text)
+        linkLayout = findViewById(R.id.link_layout)
+        linkChevron = findViewById(R.id.link_chevron)
 
         if (attrs != null) {
             val styledAttrs =
@@ -84,8 +91,10 @@ class TitleView @JvmOverloads constructor(
             )
                 .takeIf { it }
                 ?.let { setTitleHeading() }
-
-            linkTextView.setTextAndVisibility(styledAttrs.getText(R.styleable.TitleView_link))
+            val text = styledAttrs.getText(R.styleable.TitleView_link)
+            linkTextView.setTextAndVisibility(text)
+            linkLayout.isVisible = text?.isNotBlank() == true
+            linkChevron.isVisible = styledAttrs.getBoolean(R.styleable.TitleView_linkWithChevron, false)
 
             styledAttrs.recycle()
         }
@@ -118,12 +127,17 @@ class TitleView @JvmOverloads constructor(
 
     fun getLink(): String = linkTextView.text.toString()
 
-    fun setLink(text: CharSequence?) {
+    fun setLink(
+        text: CharSequence?,
+        withChevron: Boolean = false
+    ) {
+        linkLayout.isVisible = text?.isNotBlank() == true
         linkTextView.setTextAndVisibility(text)
+        linkChevron.isVisible = withChevron
     }
 
     fun setOnLinkClickedListener(listener: () -> Unit) {
-        linkTextView.setOnClickListener { listener.invoke() }
+        linkLayout.setOnClickListener { listener.invoke() }
     }
 
     companion object {
