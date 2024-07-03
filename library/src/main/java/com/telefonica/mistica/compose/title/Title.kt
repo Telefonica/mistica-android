@@ -121,10 +121,9 @@ private fun Link(
         )
         if (withChevron) {
             Image(
-                painterResource(id = R.drawable.icn_chevron),
-                null,
-                modifier = Modifier
-                    .padding(start = dimensionResource(id = R.dimen.button_chevron_padding)),
+                painter = painterResource(id = R.drawable.icn_chevron),
+                contentDescription = null,
+                modifier = Modifier.padding(start = dimensionResource(id = R.dimen.button_chevron_padding)),
                 colorFilter = ColorFilter.tint(MisticaTheme.colors.textLink),
             )
         }
