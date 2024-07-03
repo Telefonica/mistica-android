@@ -15,7 +15,7 @@ Title(
     text = "Some title",
     style = TitleStyle.TITLE_1,
     linkText = "Some link", // Nullable
-    onLinkClicked = {} // Nullablem
+    onLinkClicked = {} // Nullable
     withChevron = true // Nullable
 )
 ```
