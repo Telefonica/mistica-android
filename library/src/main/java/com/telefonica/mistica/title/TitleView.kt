@@ -91,9 +91,9 @@ class TitleView @JvmOverloads constructor(
             )
                 .takeIf { it }
                 ?.let { setTitleHeading() }
-            val text = styledAttrs.getText(R.styleable.TitleView_link)
-            linkTextView.setTextAndVisibility(text)
-            linkLayout.isVisible = text?.isNotBlank() == true
+            val linkText = styledAttrs.getText(R.styleable.TitleView_link)
+            linkTextView.setTextAndVisibility(linkText)
+            linkLayout.isVisible = linkText?.isNotBlank() == true
             linkChevron.isVisible = styledAttrs.getBoolean(R.styleable.TitleView_linkWithChevron, false)
 
             styledAttrs.recycle()
