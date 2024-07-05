@@ -109,5 +109,26 @@
 				app:titleStyle="title2"
 				app:title="Some title 2 that can get really long and almost fill the whole line" />
 
+		<com.telefonica.mistica.title.TitleView
+				android:id="@+id/short_title_with_style_1_with_link_and_chevron"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="8dp"
+				app:link="Some link"
+				app:linkWithChevron="true"
+				app:titleStyle="title1"
+				app:title="Some title 1 with chevron" />
+
+		<com.telefonica.mistica.title.TitleView
+				android:id="@+id/short_title_with_style_2_with_link_and_chevron"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="8dp"
+				app:link="Some link"
+				app:linkWithChevron="true"
+				app:titleStyle="title2"
+				app:title="Some title 2 with chevron" />
+
 	</LinearLayout>
+
 </ScrollView>
