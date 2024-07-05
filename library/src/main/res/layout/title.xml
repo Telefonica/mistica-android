@@ -49,6 +49,7 @@
 			android:layout_height="wrap_content"
 			android:importantForAccessibility="no"
 			android:src="@drawable/icn_chevron"
+			android:layout_marginStart="2dp"
 			android:visibility="gone"
 			tools:visibility="visible"
 			app:tint="?attr/colorTextLink"/>
