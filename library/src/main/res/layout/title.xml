@@ -27,7 +27,7 @@
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintTop_toTopOf="parent"
 		app:layout_constraintBaseline_toBaselineOf="@id/title_text"
-		android:gravity="center_vertical"
+		android:gravity="center"
 		android:visibility="gone"
 		tools:visibility="visible">
 
@@ -48,7 +48,7 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:importantForAccessibility="no"
-			android:src="@drawable/icn_arrow"
+			android:src="@drawable/icn_chevron"
 			android:visibility="gone"
 			tools:visibility="visible"
 			app:tint="?attr/colorTextLink"/>
