@@ -66,7 +66,7 @@
 					android:id="@+id/empty_state_screen_primary_button"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:layout_marginEnd="24dp"
+					android:layout_marginEnd="@dimen/button_separation"
 					tools:text="Explore Marketplace"
 					/>
 
@@ -74,7 +74,7 @@
 					android:id="@+id/empty_state_screen_secondary_button"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:layout_marginEnd="24dp"
+					android:layout_marginEnd="@dimen/button_separation"
 					style="@style/AppTheme.Button.SecondaryButton"
 					tools:text="Secondary Action"
 					/>
