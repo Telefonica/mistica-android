@@ -7,9 +7,10 @@
 	<androidx.constraintlayout.widget.ConstraintLayout
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
+			android:paddingStart="16dp"
 			android:paddingTop="64dp"
-			android:paddingEnd="24dp"
-			android:paddingBottom="24dp"
+			android:paddingEnd="16dp"
+			android:paddingBottom="16dp"
 			style="@style/EmptyStateContainerWidth"
 			tools:ignore="RtlSymmetry"
 			>
@@ -18,7 +19,6 @@
 				android:id="@+id/empty_state_screen_image"
 				android:layout_width="wrap_content"
 				android:layout_height="112dp"
-				android:layout_marginStart="24dp"
 				android:scaleType="fitStart"
 				app:layout_constraintTop_toTopOf="parent"
 				app:layout_constraintStart_toStartOf="parent"
@@ -32,7 +32,6 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_marginTop="24dp"
-				android:layout_marginStart="24dp"
 				app:layout_constraintTop_toBottomOf="@id/empty_state_screen_image"
 				app:layout_constraintStart_toStartOf="parent"
 				tools:text="Your cart is empty"
@@ -45,7 +44,6 @@
 				android:layout_height="wrap_content"
 				android:visibility="gone"
 				android:layout_marginTop="16dp"
-				android:layout_marginStart="24dp"
 				android:textColor="?colorTextSecondary"
 				app:layout_constraintTop_toBottomOf="@id/empty_state_screen_title"
 				app:layout_constraintStart_toStartOf="parent"
@@ -60,7 +58,6 @@
 				android:gravity="start"
 				android:orientation="horizontal"
 				android:layout_marginTop="24dp"
-				android:layout_marginStart="0dp"
 				app:layout_constraintTop_toBottomOf="@id/empty_state_screen_subtitle"
 				app:layout_constraintStart_toStartOf="parent"
 				>
@@ -69,7 +66,7 @@
 					android:id="@+id/empty_state_screen_primary_button"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:layout_marginStart="24dp"
+					android:layout_marginEnd="@dimen/button_separation"
 					tools:text="Explore Marketplace"
 					/>
 
@@ -77,7 +74,7 @@
 					android:id="@+id/empty_state_screen_secondary_button"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:layout_marginStart="24dp"
+					android:layout_marginEnd="@dimen/button_separation"
 					style="@style/AppTheme.Button.SecondaryButton"
 					tools:text="Secondary Action"
 					/>
@@ -86,7 +83,6 @@
 					android:id="@+id/empty_state_screen_link_button"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:layout_marginStart="16dp"
 					android:layout_gravity="center_vertical"
 					style="@style/AppTheme.Button.LinkButton"
 					tools:text="More info"

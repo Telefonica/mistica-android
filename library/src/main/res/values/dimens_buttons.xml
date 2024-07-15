@@ -9,6 +9,7 @@
     <dimen name="button_outline_stroke_width">1.5dp</dimen>
     <dimen name="button_max_animation_translation">32dp</dimen>
     <dimen name="button_chevron_padding">2dp</dimen>
+    <dimen name="button_separation">24dp</dimen>
 
     <!-- Small variant -->
     <dimen name="button_small_height">32dp</dimen>
