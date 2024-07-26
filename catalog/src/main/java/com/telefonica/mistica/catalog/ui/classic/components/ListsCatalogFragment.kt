@@ -2,12 +2,24 @@ package com.telefonica.mistica.catalog.ui.classic.components
 
 import android.annotation.SuppressLint
 import android.graphics.drawable.Drawable
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.accessibility.AccessibilityEvent
+import android.view.accessibility.AccessibilityNodeInfo
+import android.widget.CompoundButton
+import android.widget.Switch
 import android.widget.Toast
+import androidx.annotation.LayoutRes
 import androidx.appcompat.content.res.AppCompatResources
+import androidx.appcompat.widget.SwitchCompat
+import androidx.core.view.AccessibilityDelegateCompat
+import androidx.core.view.ViewCompat
+import androidx.core.view.ViewCompat.IMPORTANT_FOR_ACCESSIBILITY_NO
+import androidx.core.view.ViewCompat.IMPORTANT_FOR_ACCESSIBILITY_NO_HIDE_DESCENDANTS
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.telefonica.mistica.catalog.R
@@ -30,6 +42,8 @@ import com.telefonica.mistica.util.convertDpToPx
 
 class ListsCatalogFragment : Fragment() {
 
+    lateinit var rowWithSwitch: ListRowView
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -41,6 +55,40 @@ class ListsCatalogFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        rowWithSwitch = view.findViewById(R.id.enable_pin_row)
+        val switch = rowWithSwitch.getActionView() as SwitchCompat
+
+        switch.importantForAccessibility = IMPORTANT_FOR_ACCESSIBILITY_NO_HIDE_DESCENDANTS
+
+        // ROW LIST
+        ViewCompat.setAccessibilityDelegate(rowWithSwitch, object : AccessibilityDelegateCompat() {
+            override fun onInitializeAccessibilityEvent(host: View, event: AccessibilityEvent) {
+                super.onInitializeAccessibilityEvent(host, event)
+                event.className = Switch::class.java.name
+            }
+
+            override fun onInitializeAccessibilityNodeInfo(host: View, info: AccessibilityNodeInfoCompat) {
+                super.onInitializeAccessibilityNodeInfo(host, info)
+                info.className = Switch::class.java.name
+            }
+
+        })
+
+        // Todo ver como puedo meter esto en el componente y no en la implementación.
+        // TODO 2 Ojo. Podemos crear un builder en el componente para Swtich por ejemplo.
+        ViewCompat.setStateDescription(rowWithSwitch, ViewCompat.getStateDescription(switch))
+        rowWithSwitch.setOnClickListener {
+            println("Fernaa - Holiwissss")
+            //switch.isChecked = !switch.isChecked
+            //ViewCompat.setStateDescription(rowWithSwitch, ViewCompat.getStateDescription(switch))
+        }
+
+
+
+
+
+
 
         val list: MisticaRecyclerView = view.findViewById(R.id.list)
         list.adapter = ListAdapter(backgroundType = ListRowView.BackgroundType.TYPE_NORMAL)
@@ -368,7 +416,7 @@ class ListsCatalogFragment : Fragment() {
                     withHeadline = true,
                     withInverseBackground = withInverseBackground,
                     withUrlIcon = "fail_image_url",
-                    withErrorIcon =  AppCompatResources.getDrawable(it.context, R.drawable.ic_error)
+                    withErrorIcon = AppCompatResources.getDrawable(it.context, R.drawable.ic_error)
                 )
             },
             {
@@ -380,7 +428,7 @@ class ListsCatalogFragment : Fragment() {
                     withHeadline = true,
                     withInverseBackground = withInverseBackground,
                     withUrlIcon = "fail_image_url",
-                    withErrorIcon =  AppCompatResources.getDrawable(it.context, R.drawable.ic_error)
+                    withErrorIcon = AppCompatResources.getDrawable(it.context, R.drawable.ic_error)
                 )
             },
             {
@@ -392,7 +440,7 @@ class ListsCatalogFragment : Fragment() {
                     withHeadline = true,
                     withInverseBackground = withInverseBackground,
                     withUrlIcon = "fail_image_url",
-                    withErrorIcon =  AppCompatResources.getDrawable(it.context, R.drawable.ic_error)
+                    withErrorIcon = AppCompatResources.getDrawable(it.context, R.drawable.ic_error)
                 )
             },
             {
@@ -404,7 +452,7 @@ class ListsCatalogFragment : Fragment() {
                     withHeadline = true,
                     withInverseBackground = withInverseBackground,
                     withUrlIcon = "fail_image_url",
-                    withErrorIcon =  AppCompatResources.getDrawable(it.context, R.drawable.ic_error)
+                    withErrorIcon = AppCompatResources.getDrawable(it.context, R.drawable.ic_error)
                 )
             },
             {
@@ -416,7 +464,7 @@ class ListsCatalogFragment : Fragment() {
                     withHeadline = true,
                     withInverseBackground = withInverseBackground,
                     withUrlIcon = "fail_image_url",
-                    withErrorIcon =  AppCompatResources.getDrawable(it.context, R.drawable.ic_error)
+                    withErrorIcon = AppCompatResources.getDrawable(it.context, R.drawable.ic_error)
                 )
             },
             {
@@ -428,7 +476,7 @@ class ListsCatalogFragment : Fragment() {
                     withHeadline = true,
                     withInverseBackground = withInverseBackground,
                     withUrlIcon = "fail_image_url",
-                    withErrorIcon =  AppCompatResources.getDrawable(it.context, R.drawable.ic_error)
+                    withErrorIcon = AppCompatResources.getDrawable(it.context, R.drawable.ic_error)
                 )
             },
             {
@@ -456,7 +504,7 @@ class ListsCatalogFragment : Fragment() {
                     withHeadline = true,
                     withInverseBackground = withInverseBackground,
                 )
-            },
+            }
         )
 
         @SuppressLint("SetTextI18n")
@@ -470,6 +518,7 @@ class ListsCatalogFragment : Fragment() {
             @AssetType withAssetType: Int = TYPE_SMALL_ICON,
             withDimensions: ImageDimensions? = null,
             withAction: Boolean = false,
+            @LayoutRes actionView: Int = ACTION_UNDEFINED,
             withBadge: Boolean = false,
             withBadgeNumeric: Int = 0,
             withHeadline: Boolean = false,
@@ -492,8 +541,10 @@ class ListsCatalogFragment : Fragment() {
             }
 
             withTitleMaxLines?.let { setTitleMaxLines(it) }
-            setTitle(if (withLongTitle) "Title long enough to need more than 2 lines to show it, just for testing purposes." +
-                    "More sample text just for testing purposes." else "Title")
+            setTitle(
+                if (withLongTitle) "Title long enough to need more than 2 lines to show it, just for testing purposes." +
+                        "More sample text just for testing purposes." else "Title"
+            )
             if (withTitleHeading == true) {
                 setTitleHeading()
             }
@@ -523,13 +574,14 @@ class ListsCatalogFragment : Fragment() {
             }
 
             if (withAction) {
-                setActionLayout(
-                    if (withInverseBackground) {
-                        R.layout.list_row_chevron_inverse_action
-                    } else {
-                        R.layout.list_row_chevron_action
-                    }
-                )
+                if (actionView == ACTION_UNDEFINED) { // Use default Chevron action
+                    setActionLayout(
+                        if (withInverseBackground) R.layout.list_row_chevron_inverse_action
+                        else R.layout.list_row_chevron_action
+                    )
+                } else {
+                    setActionLayout(actionView)
+                }
                 setOnClickListener { Toast.makeText(context, "Click!", Toast.LENGTH_SHORT).show() }
             } else {
                 setActionLayout(ListRowView.ACTION_NONE)
@@ -597,6 +649,7 @@ class ListsCatalogFragment : Fragment() {
 
     private companion object {
         const val IMAGE_URL = "https://www.fotoaparat.cz/imgs/a/26/2639/0n1wjdf0-cr-em13-09-1200x627x9.jpg"
+        const val ACTION_UNDEFINED = -1
     }
 
 }

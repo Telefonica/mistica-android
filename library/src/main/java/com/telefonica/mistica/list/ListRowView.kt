@@ -16,6 +16,7 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.IntDef
 import androidx.annotation.LayoutRes
 import androidx.appcompat.content.res.AppCompatResources
+import androidx.appcompat.widget.SwitchCompat
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -264,8 +265,37 @@ class ListRowView @JvmOverloads constructor(
                 .takeIf { it }
                 ?.let { setTitleHeading() }
 
+            // IF impl says delegate action a11y to row as SWITCH
+            // 1. Check if Action is actually a Switch component
+            /*
+                    if( action is Switch || action is SwitchCompat) {
+                        // do all the config (2.)
+                    } else {
+                        // throw illegal state exception or show a warning error and do nothing.
+                    }
+             */
+            // 2- Disable IMPORTANT_FOR_A11Y for ActionView
+            // 3- Set up setAccessibilityDelegate() as className = "android.widget.Switch"
+            // 4- Set inital state -> ViewCompat.setStateDescription(rowWithSwitch, ViewCompat.getStateDescription(switch))
+            // 4- override onclick to update state (overriding setOnClickListener)
+
             styledAttrs.recycle()
+
         }
+    }
+
+    override fun setOnClickListener(initialListener: OnClickListener?) {
+        //super.setOnClickListener(l)
+
+        val aggregatedListener = OnClickListener {
+            initialListener?.onClick(it)
+
+            (getActionView() as? SwitchCompat)?.let { switch ->
+                switch.isChecked = !switch.isChecked
+                ViewCompat.setStateDescription(this@ListRowView, ViewCompat.getStateDescription(switch))
+            }
+        }
+        super.setOnClickListener(aggregatedListener)
     }
 
     fun setAssetResource(@DrawableRes resource: Int? = null) {
