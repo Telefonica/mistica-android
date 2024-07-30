@@ -81,6 +81,10 @@
         <item name="android:inputType">phone</item>
     </style>
 
+    <style name="AppTheme.Forms.TextInputLayout.EditText.Number">
+        <item name="android:inputType">numberDecimal</item>
+    </style>
+
     <style name="AppTheme.Forms.TextInputLayout.EditText.Email">
         <item name="android:inputType">textEmailAddress</item>
     </style>

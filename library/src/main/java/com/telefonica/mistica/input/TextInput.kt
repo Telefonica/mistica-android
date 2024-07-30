@@ -74,7 +74,8 @@ class TextInput @JvmOverloads constructor(
         TYPE_EMAIL,
         TYPE_PASSWORD,
         TYPE_TEXT_AREA,
-        TYPE_PHONE
+        TYPE_PHONE,
+        TYPE_NUMBER
     )
     annotation class TextInputType
 
@@ -122,6 +123,7 @@ class TextInput @JvmOverloads constructor(
             TYPE_PASSWORD -> R.layout.input_text_password
             TYPE_TEXT_AREA -> R.layout.input_text_area
             TYPE_PHONE -> R.layout.input_text_phone
+            TYPE_NUMBER -> R.layout.input_text_number
             else -> R.layout.input_text
         }
 
@@ -259,6 +261,7 @@ class TextInput @JvmOverloads constructor(
         const val TYPE_PASSWORD = 2
         const val TYPE_TEXT_AREA = 3
         const val TYPE_PHONE = 4
+        const val TYPE_NUMBER = 5
 
         const val NO_MAX_LENGTH = 0
 
