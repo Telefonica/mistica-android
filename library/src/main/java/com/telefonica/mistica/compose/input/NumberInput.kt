@@ -48,7 +48,7 @@ fun NumberInput(
         onClick = onClick,
         visualTransformation = visualTransformation,
         keyboardOptions = keyboardOptions.toFoundationKeyboardOptions(
-            keyboardType = KeyboardType.Number
+            keyboardType = KeyboardType.Decimal
         )
     )
 
