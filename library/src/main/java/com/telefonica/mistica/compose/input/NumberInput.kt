@@ -24,19 +24,10 @@ fun NumberInput(
     keyboardOptions: KeyboardOptions = KeyboardOptions.Default,
 ) {
 
-    fun String.isNumericKeyboardEntry(): Boolean {
-        val regex = "^([+-]?\\d*\\.?\\d*)$".toRegex()
-        return this.matches(regex)
-    }
-
     TextInputImpl(
         modifier = modifier,
         value = value,
-        onValueChange = {
-            if (it.isNumericKeyboardEntry()) {
-                onValueChange(it)
-            }
-        },
+        onValueChange = onValueChange,
         label = label,
         helperText = helperText,
         isError = isError,
