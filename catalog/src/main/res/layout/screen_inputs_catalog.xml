@@ -140,6 +140,20 @@
                 app:inputType="phone" />
 
             <com.telefonica.mistica.title.TitleView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    app:title="Number Input" />
+
+            <com.telefonica.mistica.input.TextInput
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:inputHint="Number"
+                    app:inputType="number" />
+
+            <com.telefonica.mistica.title.TitleView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
