@@ -28,6 +28,7 @@ import com.telefonica.mistica.compose.input.CheckBoxInput
 import com.telefonica.mistica.compose.input.DropDownInput
 import com.telefonica.mistica.compose.input.EmailInput
 import com.telefonica.mistica.compose.input.LimitCharacters
+import com.telefonica.mistica.compose.input.NumberInput
 import com.telefonica.mistica.compose.input.PasswordInput
 import com.telefonica.mistica.compose.input.PhoneInput
 import com.telefonica.mistica.compose.input.TextAreaInput
@@ -62,6 +63,8 @@ fun Inputs() {
         PasswordInputSample()
         Title("Phone input")
         PhoneInputSample()
+        Title("Number input")
+        NumericInputSample()
         Title("Email input")
         EmailInputSample()
         Title("Email input with validation")
@@ -199,6 +202,25 @@ private fun PhoneInputSample() {
     }
 
     PhoneInput(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(top = 8.dp, start = 16.dp, end = 16.dp)
+        ,
+        value = text,
+        onValueChange = {
+            text = it
+        },
+        label = "Type Something"
+    )
+}
+
+@Composable
+private fun NumericInputSample() {
+    var text by remember {
+        mutableStateOf("")
+    }
+
+    NumberInput(
         modifier = Modifier
             .fillMaxWidth()
             .padding(top = 8.dp, start = 16.dp, end = 16.dp)
