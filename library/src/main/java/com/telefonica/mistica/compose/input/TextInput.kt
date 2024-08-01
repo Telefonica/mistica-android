@@ -10,7 +10,7 @@ fun TextInput(
     modifier: Modifier,
     value: String,
     onValueChange: (String) -> Unit,
-    label: String,
+    label: String?,
     helperText: String? = null,
     isError: Boolean = false,
     errorText: String? = null,

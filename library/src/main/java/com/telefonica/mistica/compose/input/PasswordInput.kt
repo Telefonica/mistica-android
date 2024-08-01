@@ -20,7 +20,7 @@ import com.telefonica.mistica.R
 fun PasswordInput(
     value: String,
     onValueChange: (String) -> Unit,
-    label: String,
+    label: String?,
     modifier: Modifier = Modifier,
     helperText: String? = null,
     isError: Boolean = false,
