@@ -13,18 +13,24 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.selection.toggleable
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Divider
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Switch
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.rememberAsyncImagePainter
@@ -46,7 +52,7 @@ const val DESCRIPTION = "Description"
 
 @Composable
 fun samples() = listOf(
-    ListItem(
+    /*ListItem(
         title = TITLE,
         isTitleHeading = true,
     ),
@@ -226,18 +232,18 @@ fun samples() = listOf(
         isBadgeVisible = true,
         badge = "1",
         listRowIcon = ListRowIcon.SmallAsset(painter = painterResource(id = R.drawable.list_row_drawable)),
-    ),
+    ),*/
     ListItem(
         headline = Tag("PROMO").withStyle(TYPE_PROMO),
         title = TITLE,
         subtitle = SUBTITLE,
         description = DESCRIPTION,
-        action = { Switch(checked = true, onCheckedChange = {}) },
+        //action = { Switch(checked = true, onCheckedChange = {}) },
         isBadgeVisible = true,
         badge = "1",
         listRowIcon = ListRowIcon.SmallAsset(painter = painterResource(id = R.drawable.list_row_drawable)),
     ),
-    ListItem(
+    /*ListItem(
         title = TITLE,
         subtitle = SUBTITLE,
         description = DESCRIPTION,
@@ -295,7 +301,7 @@ fun samples() = listOf(
             painter = painterResource(id = R.drawable.list_row_drawable),
             dimensions = ImageDimensions(width = 64, height = 64),
         ),
-    )
+    )*/
 )
 
 const val IMAGE_URL = "https://www.fotoaparat.cz/imgs/a/26/2639/0n1wjdf0-cr-em13-09-1200x627x9.jpg"
@@ -304,6 +310,8 @@ const val IMAGE_URL = "https://www.fotoaparat.cz/imgs/a/26/2639/0n1wjdf0-cr-em13
 fun Lists() {
     val samples = samples()
     val context = LocalContext.current
+    var toggleState by remember { mutableStateOf(true) }
+
     LazyColumn(
         modifier = Modifier
             .fillMaxSize(),
@@ -312,26 +320,37 @@ fun Lists() {
             SectionTitle("Full Width List")
         }
         items(samples) { item ->
-            ListRowItem(
-                backgroundType = item.backgroundType,
-                badge = item.badge,
-                isBadgeVisible = item.isBadgeVisible,
-                listRowIcon = item.listRowIcon,
-                headline = item.headline,
-                title = item.title,
-                isTitleHeading = item.isTitleHeading,
-                subtitle = item.subtitle,
-                description = item.description,
-                trailing = item.action,
-                onClick = item.onClick,
-                bottom = item.bottom,
-            )
+            /*Box(modifier = Modifier.toggleable(
+                value = toggleState,
+                onValueChange = { toggleState = !toggleState },
+                role = Role.Switch,
+            )) {*/
+                ListRowItem(
+                    modifier = Modifier.toggleable(
+                        value = toggleState,
+                        onValueChange = { toggleState = !toggleState },
+                        role = Role.Switch
+                    ),
+                    backgroundType = item.backgroundType,
+                    badge = item.badge,
+                    isBadgeVisible = item.isBadgeVisible,
+                    listRowIcon = item.listRowIcon,
+                    headline = item.headline,
+                    title = item.title,
+                    isTitleHeading = item.isTitleHeading,
+                    subtitle = item.subtitle,
+                    description = item.description,
+                    trailing = { Switch(checked = toggleState, onCheckedChange = null) },
+                    onClick = item.onClick,
+                    bottom = item.bottom,
+                )
+          //  }
             Divider(
                 modifier = Modifier.padding(horizontal = 16.dp),
                 color = MisticaTheme.colors.divider
             )
         }
-        item {
+        /*item {
             SectionTitle("Boxed List")
         }
         items(samples.map {
@@ -384,7 +403,7 @@ fun Lists() {
                 context = context,
                 onRowClick = { Toast.makeText(context, "Row Clicked", Toast.LENGTH_SHORT).show() },
             )
-        }
+        }*/
     }
 }
 
