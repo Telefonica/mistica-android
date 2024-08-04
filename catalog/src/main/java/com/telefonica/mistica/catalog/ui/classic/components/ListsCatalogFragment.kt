@@ -39,6 +39,8 @@ class ListsCatalogFragment : Fragment() {
 
     //lateinit var simpleRowWithSwitch: ListRowView
 
+    lateinit var listRowViewWithSwitch: ListRowViewWithSwitch
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -50,6 +52,11 @@ class ListsCatalogFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        listRowViewWithSwitch = view.findViewById(R.id.list_row_view_with_switch)
+        listRowViewWithSwitch.setOnClickListener {
+            listRowViewWithSwitch.changeSwitchAction()
+        }
 
       //  simpleRowWithSwitch = view.findViewById(R.id.enable_pin_row)
         //val switch = simpleRowWithSwitch.getActionView() as SwitchCompat

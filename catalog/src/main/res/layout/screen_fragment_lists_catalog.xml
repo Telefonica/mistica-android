@@ -14,6 +14,13 @@
 			android:orientation="vertical"
 			>
 
+		<com.telefonica.mistica.list.ListRowViewWithSwitch
+				android:id="@+id/list_row_view_with_switch"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				app:listRowTitle="Código PIN"
+				app:listRowDescription="Use números para acceder"
+				/>
 
 		<com.telefonica.mistica.list.ListRowView
 				android:id="@+id/enable_pin_row"
