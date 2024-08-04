@@ -5,12 +5,16 @@ import android.content.res.TypedArray
 import android.graphics.drawable.Drawable
 import android.text.TextUtils
 import android.util.AttributeSet
+import android.util.Log
 import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
+import android.view.accessibility.AccessibilityEvent
+import android.view.accessibility.AccessibilityNodeInfo
 import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.Switch
 import android.widget.TextView
 import androidx.annotation.DrawableRes
 import androidx.annotation.IntDef
@@ -21,6 +25,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
+import androidx.core.view.AccessibilityDelegateCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.isVisible
 import androidx.databinding.BindingAdapter
@@ -117,7 +122,8 @@ import com.telefonica.mistica.util.setAlpha
         method = "setAssetWidth"
     ),
 )
-class ListRowView @JvmOverloads constructor(
+
+open class ListRowView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0,
@@ -160,7 +166,7 @@ class ListRowView @JvmOverloads constructor(
     private val descriptionTextView: TextView
     private val badgeAnchor: View
     private val badgeAnchorContainer: FrameLayout
-    private val actionContainer: FrameLayout
+    protected val actionContainer: FrameLayout
 
     private var currentHeadlineLayoutRes: Int = HEADLINE_NONE
     private var currentActionLayoutRes: Int = ACTION_NONE
@@ -256,7 +262,9 @@ class ListRowView @JvmOverloads constructor(
                 TypedValue.TYPE_NULL
             )
                 .takeIf { it != TypedValue.TYPE_NULL }
-                .let { setActionLayout(it ?: ACTION_NONE) }
+                .let {
+                    setActionLayout(it ?: ACTION_NONE)
+                }
 
             styledAttrs.getBoolean(
                 R.styleable.ListRowView_listRowIsTitleHeading,
@@ -280,13 +288,11 @@ class ListRowView @JvmOverloads constructor(
             // 4- override onclick to update state (overriding setOnClickListener)
 
             styledAttrs.recycle()
-
         }
     }
 
-    override fun setOnClickListener(initialListener: OnClickListener?) {
-        //super.setOnClickListener(l)
-
+    // todo fer
+    /*override fun setOnClickListener(initialListener: OnClickListener?) {
         val aggregatedListener = OnClickListener {
             initialListener?.onClick(it)
 
@@ -296,6 +302,20 @@ class ListRowView @JvmOverloads constructor(
             }
         }
         super.setOnClickListener(aggregatedListener)
+    }*/
+
+    override fun onInitializeAccessibilityEvent(event: AccessibilityEvent?) {
+        super.onInitializeAccessibilityEvent(event)
+        event?.className = Switch::class.java.name
+    }
+
+    override fun onInitializeAccessibilityNodeInfo(info: AccessibilityNodeInfo?) {
+        super.onInitializeAccessibilityNodeInfo(info)
+        info?.className = Switch::class.java.name
+    }
+
+    fun setAccessibilityStateDescription(state: String) {
+        ViewCompat.setStateDescription(this, state)
     }
 
     fun setAssetResource(@DrawableRes resource: Int? = null) {
@@ -554,7 +574,7 @@ class ListRowView @JvmOverloads constructor(
         }
     }
 
-    fun setActionLayout(@LayoutRes layoutRes: Int = ACTION_NONE) {
+    open fun setActionLayout(@LayoutRes layoutRes: Int = ACTION_NONE) {
         if (currentActionLayoutRes != layoutRes) {
             actionContainer.removeAllViews()
             if (layoutRes != ACTION_NONE) {
@@ -564,6 +584,11 @@ class ListRowView @JvmOverloads constructor(
                 actionContainer.visibility = View.GONE
             }
             currentActionLayoutRes = layoutRes
+        }
+
+        if(getActionView() is Switch || getActionView() is SwitchCompat ){
+            Log.w("tag", "Using Toggleable like Switch or CheckBox in ListRowView can lead to bad behavior in a11y terms, " +
+                    "please consider using ListRowViewWithSwitch component")
         }
     }
 
@@ -583,7 +608,7 @@ class ListRowView @JvmOverloads constructor(
         }
     }
 
-    fun getActionView(): View? =
+    open fun getActionView(): View? =
         actionContainer.getChildAt(0)
 
     override fun setEnabled(enabled: Boolean) {

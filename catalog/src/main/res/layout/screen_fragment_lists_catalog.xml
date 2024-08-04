@@ -14,16 +14,18 @@
 			android:orientation="vertical"
 			>
 
+
 		<com.telefonica.mistica.list.ListRowView
 				android:id="@+id/enable_pin_row"
 				android:layout_height="wrap_content"
 				android:layout_width="match_parent"
 				android:layout_marginTop="8dp"
-				app:listRowTitle="Código PIN"
-				app:listRowDescription="Use números para acceder"
-				app:listRowActionLayout="@layout/list_row_switch_action" />
+				app:listRowBadgeVisible="true"
+				app:listRowBadgeCount="3"
+				app:listRowTitle="Cuadro informativo" />
 
-		<com.telefonica.mistica.title.TitleView
+
+		<!--com.telefonica.mistica.title.TitleView
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_gravity="start"
@@ -97,7 +99,7 @@
 				android:layout_marginTop="8dp"
 				android:layout_weight="0.5"
 				app:listLayoutType="full_width"
-				/>
+				/-->
 
 	</LinearLayout>
 </androidx.core.widget.NestedScrollView>

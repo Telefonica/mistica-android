@@ -2,23 +2,17 @@ package com.telefonica.mistica.catalog.ui.classic.components
 
 import android.annotation.SuppressLint
 import android.graphics.drawable.Drawable
-import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.accessibility.AccessibilityEvent
-import android.view.accessibility.AccessibilityNodeInfo
-import android.widget.CompoundButton
 import android.widget.Switch
 import android.widget.Toast
 import androidx.annotation.LayoutRes
 import androidx.appcompat.content.res.AppCompatResources
-import androidx.appcompat.widget.SwitchCompat
 import androidx.core.view.AccessibilityDelegateCompat
 import androidx.core.view.ViewCompat
-import androidx.core.view.ViewCompat.IMPORTANT_FOR_ACCESSIBILITY_NO
-import androidx.core.view.ViewCompat.IMPORTANT_FOR_ACCESSIBILITY_NO_HIDE_DESCENDANTS
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
@@ -32,7 +26,7 @@ import com.telefonica.mistica.list.ListRowView.Companion.TYPE_IMAGE_7_10
 import com.telefonica.mistica.list.ListRowView.Companion.TYPE_IMAGE_ROUNDED
 import com.telefonica.mistica.list.ListRowView.Companion.TYPE_LARGE_ICON
 import com.telefonica.mistica.list.ListRowView.Companion.TYPE_SMALL_ICON
-import com.telefonica.mistica.list.MisticaRecyclerView
+import com.telefonica.mistica.list.ListRowViewWithSwitch
 import com.telefonica.mistica.list.model.ImageDimensions
 import com.telefonica.mistica.tag.TagStyle
 import com.telefonica.mistica.tag.TagView
@@ -40,9 +34,10 @@ import com.telefonica.mistica.tag.TagView.Companion.TYPE_INVERSE
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_PROMO
 import com.telefonica.mistica.util.convertDpToPx
 
+@Suppress("ControlFlowWithEmptyBody", "NAME_SHADOWING")
 class ListsCatalogFragment : Fragment() {
 
-    lateinit var rowWithSwitch: ListRowView
+    //lateinit var simpleRowWithSwitch: ListRowView
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -56,13 +51,13 @@ class ListsCatalogFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        rowWithSwitch = view.findViewById(R.id.enable_pin_row)
-        val switch = rowWithSwitch.getActionView() as SwitchCompat
+      //  simpleRowWithSwitch = view.findViewById(R.id.enable_pin_row)
+        //val switch = simpleRowWithSwitch.getActionView() as SwitchCompat
 
-        switch.importantForAccessibility = IMPORTANT_FOR_ACCESSIBILITY_NO_HIDE_DESCENDANTS
+
 
         // ROW LIST
-        ViewCompat.setAccessibilityDelegate(rowWithSwitch, object : AccessibilityDelegateCompat() {
+       /* ViewCompat.setAccessibilityDelegate(simpleRowWithSwitch, object : AccessibilityDelegateCompat() {
             override fun onInitializeAccessibilityEvent(host: View, event: AccessibilityEvent) {
                 super.onInitializeAccessibilityEvent(host, event)
                 event.className = Switch::class.java.name
@@ -74,23 +69,16 @@ class ListsCatalogFragment : Fragment() {
             }
 
         })
-
+*/
         // Todo ver como puedo meter esto en el componente y no en la implementación.
         // TODO 2 Ojo. Podemos crear un builder en el componente para Swtich por ejemplo.
-        ViewCompat.setStateDescription(rowWithSwitch, ViewCompat.getStateDescription(switch))
-        rowWithSwitch.setOnClickListener {
-            println("Fernaa - Holiwissss")
+        //ViewCompat.setStateDescription(simpleRowWithSwitch, ViewCompat.getStateDescription(switch))
+        /*simpleRowWithSwitch.setOnClickListener {
             //switch.isChecked = !switch.isChecked
-            //ViewCompat.setStateDescription(rowWithSwitch, ViewCompat.getStateDescription(switch))
-        }
+            //ViewCompat.setStateDescription(simpleRowWithSwitch, ViewCompat.getStateDescription(switch))
+        }*/
 
-
-
-
-
-
-
-        val list: MisticaRecyclerView = view.findViewById(R.id.list)
+        /*val list: MisticaRecyclerView = view.findViewById(R.id.list)
         list.adapter = ListAdapter(backgroundType = ListRowView.BackgroundType.TYPE_NORMAL)
 
         val boxedList: MisticaRecyclerView = view.findViewById(R.id.boxed_list)
@@ -100,7 +88,7 @@ class ListsCatalogFragment : Fragment() {
         boxedInverseList.adapter = ListAdapter(backgroundType = ListRowView.BackgroundType.TYPE_BOXED_INVERSE)
 
         val clickableRow: MisticaRecyclerView = view.findViewById(R.id.clickable_list)
-        clickableRow.adapter = ClickableListAdapter()
+        clickableRow.adapter = ClickableListAdapter()*/
     }
 
     class ListAdapter(
