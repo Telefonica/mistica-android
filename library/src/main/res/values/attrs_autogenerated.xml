@@ -244,5 +244,15 @@
 	<declare-styleable name="PresetSizes">
 		<attr name="tabsLabelTextSize" format="dimension"/>
 		<attr name="title2TextSize" format="dimension"/>
+		<attr name="text1TextSize" format="dimension"/>
+		<attr name="text2TextSize" format="dimension"/>
+		<attr name="text3TextSize" format="dimension"/>
+		<attr name="text4TextSize" format="dimension"/>
+		<attr name="text5TextSize" format="dimension"/>
+		<attr name="text6TextSize" format="dimension"/>
+		<attr name="text7TextSize" format="dimension"/>
+		<attr name="text8TextSize" format="dimension"/>
+		<attr name="text9TextSize" format="dimension"/>
+		<attr name="text10TextSize" format="dimension"/>
 	</declare-styleable>
 </resources>
