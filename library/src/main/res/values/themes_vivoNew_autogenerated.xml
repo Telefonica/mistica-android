@@ -117,7 +117,7 @@
 		<item name="colorTextNavigationBarSecondary">@color/vivoNew_color_vivoPurpleLight50</item>
 		<item name="colorTextNavigationSearchBarHint">@color/vivoNew_color_vivoPurpleLight50</item>
 		<item name="colorTextNavigationSearchBarText">@color/vivoNew_color_white</item>
-		<item name="colorTextAppBar">@color/vivoNew_color_grey4</item>
+		<item name="colorTextAppBar">@color/vivoNew_color_grey5</item>
 		<item name="colorTextAppBarSelected">@color/vivoNew_color_vivoPurple</item>
 		<item name="colorCustomTabsBackground">@color/vivoNew_color_white</item>
 		<item name="colorTagTextPromo">@color/vivoNew_color_vivoPurple</item>
@@ -178,6 +178,16 @@
 		<!-- Preset sizes -->
 		<item name="tabsLabelTextSize">18sp</item>
 		<item name="title2TextSize">18sp</item>
+		<item name="text1TextSize">12sp</item>
+		<item name="text2TextSize">14sp</item>
+		<item name="text3TextSize">16sp</item>
+		<item name="text4TextSize">18sp</item>
+		<item name="text5TextSize">20sp</item>
+		<item name="text6TextSize">24sp</item>
+		<item name="text7TextSize">28sp</item>
+		<item name="text8TextSize">32sp</item>
+		<item name="text9TextSize">40sp</item>
+		<item name="text10TextSize">48sp</item>
 	</style>
 	<style name="VivoNewOverride" parent="VivoNewOverride_Customizations"/>
 	<style name="VivoNewOverride_Base">
@@ -295,7 +305,7 @@
 		<item name="colorTextNavigationBarSecondary">@color/vivoNew_color_vivoPurpleLight50</item>
 		<item name="colorTextNavigationSearchBarHint">@color/vivoNew_color_vivoPurpleLight50</item>
 		<item name="colorTextNavigationSearchBarText">@color/vivoNew_color_white</item>
-		<item name="colorTextAppBar">@color/vivoNew_color_grey4</item>
+		<item name="colorTextAppBar">@color/vivoNew_color_grey5</item>
 		<item name="colorTextAppBarSelected">@color/vivoNew_color_vivoPurple</item>
 		<item name="colorCustomTabsBackground">@color/vivoNew_color_white</item>
 		<item name="colorTagTextPromo">@color/vivoNew_color_vivoPurple</item>
@@ -356,5 +366,15 @@
 		<!-- Preset sizes -->
 		<item name="tabsLabelTextSize">18sp</item>
 		<item name="title2TextSize">18sp</item>
+		<item name="text1TextSize">12sp</item>
+		<item name="text2TextSize">14sp</item>
+		<item name="text3TextSize">16sp</item>
+		<item name="text4TextSize">18sp</item>
+		<item name="text5TextSize">20sp</item>
+		<item name="text6TextSize">24sp</item>
+		<item name="text7TextSize">28sp</item>
+		<item name="text8TextSize">32sp</item>
+		<item name="text9TextSize">40sp</item>
+		<item name="text10TextSize">48sp</item>
 	</style>
 </resources>

@@ -121,7 +121,7 @@ public object VivoNewBrandColors {
       textNavigationBarSecondary = VivoNewPaletteColor.vivoNew_color_vivoPurpleLight50
       textNavigationSearchBarHint = VivoNewPaletteColor.vivoNew_color_vivoPurpleLight50
       textNavigationSearchBarText = VivoNewPaletteColor.vivoNew_color_white
-      textAppBar = VivoNewPaletteColor.vivoNew_color_grey4
+      textAppBar = VivoNewPaletteColor.vivoNew_color_grey5
       textAppBarSelected = VivoNewPaletteColor.vivoNew_color_vivoPurple
       customTabsBackground = VivoNewPaletteColor.vivoNew_color_white
       tagTextPromo = VivoNewPaletteColor.vivoNew_color_vivoPurple

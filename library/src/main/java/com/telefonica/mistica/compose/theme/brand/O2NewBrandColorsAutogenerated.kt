@@ -81,7 +81,7 @@ public object O2NewBrandColors {
       iosControlKnob = O2NewPaletteColor.o2New_color_white
       divider = O2NewPaletteColor.o2New_color_grey30
       dividerInverse = O2NewPaletteColor.o2New_color_white_20_alpha
-      navigationBarDivider = O2NewPaletteColor.o2New_color_beyondBlue
+      navigationBarDivider = O2NewPaletteColor.o2New_color_darkBlue
       badge = O2NewPaletteColor.o2New_color_o2Red65
       feedbackErrorBackground = O2NewPaletteColor.o2New_color_o2Red60
       feedbackInfoBackground = O2NewPaletteColor.o2New_color_black
