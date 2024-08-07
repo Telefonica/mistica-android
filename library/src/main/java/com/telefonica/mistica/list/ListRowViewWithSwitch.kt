@@ -5,6 +5,7 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
 import android.view.accessibility.AccessibilityEvent
+import android.view.accessibility.AccessibilityManager
 import android.view.accessibility.AccessibilityNodeInfo
 import android.widget.Switch
 import androidx.appcompat.widget.SwitchCompat
@@ -19,6 +20,7 @@ class ListRowViewWithSwitch @JvmOverloads constructor(
 ) : ListRowView(context, attrs, defStyleAttr) {
 
     private val switchCompat: SwitchCompat
+    private val accessibilityManager = context.getSystemService(Context.ACCESSIBILITY_SERVICE) as AccessibilityManager
 
     init {
         LayoutInflater.from(context).inflate(R.layout.list_row_switch_action, actionContainer, true)
@@ -26,7 +28,7 @@ class ListRowViewWithSwitch @JvmOverloads constructor(
 
         switchCompat = actionContainer.getChildAt(0) as SwitchCompat
 
-        switchCompat.isClickable = false
+       // switchCompat.isClickable = false
         switchCompat.importantForAccessibility = IMPORTANT_FOR_ACCESSIBILITY_NO
 
         ViewCompat.setStateDescription(this, ViewCompat.getStateDescription(switchCompat))
@@ -43,19 +45,24 @@ class ListRowViewWithSwitch @JvmOverloads constructor(
     // Accessibility configuration
     override fun onInitializeAccessibilityEvent(event: AccessibilityEvent?) {
         super.onInitializeAccessibilityEvent(event)
-        event?.className = Switch::class.java.name
+     //   event?.className = Switch::class.java.name
     }
 
     override fun onInitializeAccessibilityNodeInfo(info: AccessibilityNodeInfo?) {
         super.onInitializeAccessibilityNodeInfo(info)
-        info?.className = Switch::class.java.name
-
-
-        info?.addAction(AccessibilityNodeInfo.AccessibilityAction(
-            AccessibilityNodeInfoCompat.ACTION_CLICK,
-            "Alternar"
-        ))
+        info?.apply {
+          //  className = Switch::class.java.name
+          //  isCheckable = true
+            /*addAction(
+                AccessibilityNodeInfo.AccessibilityAction(
+                    AccessibilityNodeInfoCompat.ACTION_CLICK,
+                    "alternar"
+                )
+            )*/
+        }
     }
+
+
 
     // Restrict Action Layout usage
     override fun setActionLayout(layoutRes: Int) {
@@ -68,7 +75,7 @@ class ListRowViewWithSwitch @JvmOverloads constructor(
     }
 
     override fun getActionView(): View? {
-        throw IllegalArgumentException(
+        throw IllegalStateException(
             "You cannot access to the custom Action Layout for ListRowViewWithSwitch since this component is managing a Switch in that place.\n" +
                     "If you want to manage the Switch state, you can use the utility methods provided by the component."
         )

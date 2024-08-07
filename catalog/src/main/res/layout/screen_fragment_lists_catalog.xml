@@ -29,7 +29,8 @@
 				android:layout_marginTop="8dp"
 				app:listRowBadgeVisible="true"
 				app:listRowBadgeCount="3"
-				app:listRowTitle="Cuadro informativo" />
+				app:listRowTitle="Cuadro informativo"
+				/>
 
 
 		<!--com.telefonica.mistica.title.TitleView
