@@ -116,7 +116,7 @@ import com.telefonica.mistica.util.setAlpha
         method = "setAssetWidth"
     ),
 )
-class ListRowView @JvmOverloads constructor(
+open class ListRowView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0,
@@ -159,7 +159,7 @@ class ListRowView @JvmOverloads constructor(
     private val descriptionTextView: TextView
     private val badgeAnchor: View
     private val badgeAnchorContainer: FrameLayout
-    private val actionContainer: FrameLayout
+    protected val actionContainer: FrameLayout
 
     private var currentHeadlineLayoutRes: Int = HEADLINE_NONE
     private var currentActionLayoutRes: Int = ACTION_NONE
@@ -524,7 +524,7 @@ class ListRowView @JvmOverloads constructor(
         }
     }
 
-    fun setActionLayout(@LayoutRes layoutRes: Int = ACTION_NONE) {
+    open fun setActionLayout(@LayoutRes layoutRes: Int = ACTION_NONE) {
         if (currentActionLayoutRes != layoutRes) {
             actionContainer.removeAllViews()
             if (layoutRes != ACTION_NONE) {
@@ -553,7 +553,7 @@ class ListRowView @JvmOverloads constructor(
         }
     }
 
-    fun getActionView(): View? =
+    open fun getActionView(): View? =
         actionContainer.getChildAt(0)
 
     override fun setEnabled(enabled: Boolean) {
