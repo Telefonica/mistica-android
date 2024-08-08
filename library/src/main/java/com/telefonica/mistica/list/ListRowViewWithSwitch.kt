@@ -5,7 +5,6 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
 import android.view.accessibility.AccessibilityEvent
-import android.view.accessibility.AccessibilityManager
 import android.view.accessibility.AccessibilityNodeInfo
 import android.widget.Switch
 import androidx.appcompat.widget.SwitchCompat
@@ -20,7 +19,6 @@ class ListRowViewWithSwitch @JvmOverloads constructor(
 ) : ListRowView(context, attrs, defStyleAttr) {
 
     private val switchCompat: SwitchCompat
-    private val accessibilityManager = context.getSystemService(Context.ACCESSIBILITY_SERVICE) as AccessibilityManager
 
     init {
         LayoutInflater.from(context).inflate(R.layout.list_row_switch_action, actionContainer, true)
@@ -28,7 +26,7 @@ class ListRowViewWithSwitch @JvmOverloads constructor(
 
         switchCompat = actionContainer.getChildAt(0) as SwitchCompat
 
-       // switchCompat.isClickable = false
+        switchCompat.isClickable = false
         switchCompat.importantForAccessibility = IMPORTANT_FOR_ACCESSIBILITY_NO
 
         ViewCompat.setStateDescription(this, ViewCompat.getStateDescription(switchCompat))
@@ -45,20 +43,20 @@ class ListRowViewWithSwitch @JvmOverloads constructor(
     // Accessibility configuration
     override fun onInitializeAccessibilityEvent(event: AccessibilityEvent?) {
         super.onInitializeAccessibilityEvent(event)
-     //   event?.className = Switch::class.java.name
+        event?.className = Switch::class.java.name
     }
 
     override fun onInitializeAccessibilityNodeInfo(info: AccessibilityNodeInfo?) {
         super.onInitializeAccessibilityNodeInfo(info)
         info?.apply {
-          //  className = Switch::class.java.name
-          //  isCheckable = true
-            /*addAction(
+            className = Switch::class.java.name
+            isCheckable = true
+            addAction(
                 AccessibilityNodeInfo.AccessibilityAction(
                     AccessibilityNodeInfoCompat.ACTION_CLICK,
                     "alternar"
                 )
-            )*/
+            )
         }
     }
 
