@@ -55,6 +55,7 @@
             <enum name="none" value="-1" />
         </attr>
         <attr name="listRowHeadlineVisible" format="boolean" />
+        <attr name="listRowHeadlineContentDescription" format="string" />
         <attr name="listRowTitle" format="string" />
         <attr name="listRowIsTitleHeading" format="boolean" />
         <attr name="listRowTitleMaxLines" format="integer" />

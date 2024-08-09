@@ -188,6 +188,10 @@ open class ListRowView @JvmOverloads constructor(
         badgeAnchorContainer = findViewById(R.id.row_badge_container)
         actionContainer = findViewById(R.id.row_action_container)
 
+        // Important! This value builds a sentence for a11y according to Mística order definition. Do not modify StringBuilder order arbitrarily
+        // https://www.figma.com/design/Be8QB9onmHunKCCAkIBAVr/%F0%9F%94%B8-Lists-Specs?node-id=4615-10711&t=rHgrWciayIn0NP4V-4
+        val contentDescriptionBuilder = StringBuilder()
+
         if (attrs != null) {
             val styledAttrs = context.theme.obtainStyledAttributes(
                 attrs,
@@ -195,20 +199,33 @@ open class ListRowView @JvmOverloads constructor(
                 defStyleAttr,
                 0
             )
+
+            // Title
             setTitleMaxLines(styledAttrs.getInteger(R.styleable.ListRowView_listRowTitleMaxLines, -1))
-            styledAttrs.getText(R.styleable.ListRowView_listRowTitle)?.let { setTitle(it) }
-            styledAttrs.getResourceId(
+            styledAttrs.getText(R.styleable.ListRowView_listRowTitle)?.let {
+                setTitle(it)
+                contentDescriptionBuilder.append(it)
+            }
+
+            // Headline
+            val headlineResId: Int = styledAttrs.getResourceId(
                 R.styleable.ListRowView_listRowHeadlineLayout,
                 TypedValue.TYPE_NULL
             )
-                .takeIf { it != TypedValue.TYPE_NULL }
-                .let { setHeadlineLayout(it ?: HEADLINE_NONE) }
-            setHeadlineVisible(
-                styledAttrs.getBoolean(
-                    R.styleable.ListRowView_listRowHeadlineVisible,
-                    currentHeadlineLayoutRes != HEADLINE_NONE
-                )
+            val headlineVisible: Boolean = styledAttrs.getBoolean(
+                R.styleable.ListRowView_listRowHeadlineVisible,
+                currentHeadlineLayoutRes != HEADLINE_NONE
             )
+            val headlineContentDescription: String? = styledAttrs.getString(R.styleable.ListRowView_listRowHeadlineContentDescription)
+
+            setHeadlineLayout(headlineResId.takeIf { it != TypedValue.TYPE_NULL } ?: HEADLINE_NONE)
+            setHeadlineVisible(headlineVisible)
+            if(headlineContentDescription != null && headlineResId != TypedValue.TYPE_NULL && headlineVisible) {
+                contentDescriptionBuilder.append(headlineContentDescription)
+            }
+
+            // todo - finish contentDescription String builder with the rest of the params according to Figma order:
+
             setSubtitleMaxLines(styledAttrs.getInteger(R.styleable.ListRowView_listRowSubtitleMaxLines, -1))
             setSubtitle(styledAttrs.getText(R.styleable.ListRowView_listRowSubtitle))
             setDescriptionMaxLines(styledAttrs.getInteger(R.styleable.ListRowView_listRowDescriptionMaxLines, -1))
@@ -265,6 +282,9 @@ open class ListRowView @JvmOverloads constructor(
                 ?.let { setTitleHeading() }
 
             styledAttrs.recycle()
+
+            // Set content description to the Row according to Figma order.
+            contentDescription = contentDescriptionBuilder.toString()
         }
     }
 
@@ -425,13 +445,16 @@ open class ListRowView @JvmOverloads constructor(
         background = when (type) {
             BackgroundType.TYPE_BOXED ->
                 AppCompatResources.getDrawable(context, R.drawable.boxed_list_row_background)
+
             BackgroundType.TYPE_BOXED_INVERSE ->
                 context.getMisticaThemeDrawableBuilder(R.attr.drawableBackgroundBrand)
                     .withCornerRadius()
                     .withRipple()
                     .get()
+
             BackgroundType.TYPE_NORMAL ->
                 AppCompatResources.getDrawable(context, R.drawable.list_row_background)
+
             else ->
                 AppCompatResources.getDrawable(context, R.drawable.list_row_background)
         }
@@ -489,7 +512,8 @@ open class ListRowView @JvmOverloads constructor(
         if (currentHeadlineLayoutRes != layoutRes) {
             headlineContainer.removeAllViews()
             if (layoutRes != HEADLINE_NONE) {
-                LayoutInflater.from(context).inflate(layoutRes, headlineContainer, true)
+                val view = LayoutInflater.from(context).inflate(layoutRes, headlineContainer, true)
+                println("Fernaa - " + view.contentDescription)
                 setHeadlineVisible(true)
             } else {
                 setHeadlineVisible(false)
