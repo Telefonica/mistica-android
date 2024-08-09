@@ -178,5 +178,15 @@
 		<!-- Preset sizes -->
 		<item name="tabsLabelTextSize">16sp</item>
 		<item name="title2TextSize">20sp</item>
+		<item name="text1TextSize">12sp</item>
+		<item name="text2TextSize">14sp</item>
+		<item name="text3TextSize">16sp</item>
+		<item name="text4TextSize">18sp</item>
+		<item name="text5TextSize">20sp</item>
+		<item name="text6TextSize">24sp</item>
+		<item name="text7TextSize">28sp</item>
+		<item name="text8TextSize">32sp</item>
+		<item name="text9TextSize">40sp</item>
+		<item name="text10TextSize">48sp</item>
 	</style>
 </resources>
