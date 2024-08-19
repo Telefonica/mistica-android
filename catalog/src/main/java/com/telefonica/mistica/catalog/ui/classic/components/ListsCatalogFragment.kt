@@ -368,7 +368,7 @@ class ListsCatalogFragment : Fragment() {
                     withHeadline = true,
                     withInverseBackground = withInverseBackground,
                     withUrlIcon = "fail_image_url",
-                    withErrorIcon =  AppCompatResources.getDrawable(it.context, R.drawable.ic_error)
+                    withErrorIcon = AppCompatResources.getDrawable(it.context, R.drawable.ic_error)
                 )
             },
             {
@@ -380,7 +380,7 @@ class ListsCatalogFragment : Fragment() {
                     withHeadline = true,
                     withInverseBackground = withInverseBackground,
                     withUrlIcon = "fail_image_url",
-                    withErrorIcon =  AppCompatResources.getDrawable(it.context, R.drawable.ic_error)
+                    withErrorIcon = AppCompatResources.getDrawable(it.context, R.drawable.ic_error)
                 )
             },
             {
@@ -392,7 +392,7 @@ class ListsCatalogFragment : Fragment() {
                     withHeadline = true,
                     withInverseBackground = withInverseBackground,
                     withUrlIcon = "fail_image_url",
-                    withErrorIcon =  AppCompatResources.getDrawable(it.context, R.drawable.ic_error)
+                    withErrorIcon = AppCompatResources.getDrawable(it.context, R.drawable.ic_error)
                 )
             },
             {
@@ -404,7 +404,7 @@ class ListsCatalogFragment : Fragment() {
                     withHeadline = true,
                     withInverseBackground = withInverseBackground,
                     withUrlIcon = "fail_image_url",
-                    withErrorIcon =  AppCompatResources.getDrawable(it.context, R.drawable.ic_error)
+                    withErrorIcon = AppCompatResources.getDrawable(it.context, R.drawable.ic_error)
                 )
             },
             {
@@ -416,7 +416,7 @@ class ListsCatalogFragment : Fragment() {
                     withHeadline = true,
                     withInverseBackground = withInverseBackground,
                     withUrlIcon = "fail_image_url",
-                    withErrorIcon =  AppCompatResources.getDrawable(it.context, R.drawable.ic_error)
+                    withErrorIcon = AppCompatResources.getDrawable(it.context, R.drawable.ic_error)
                 )
             },
             {
@@ -428,7 +428,7 @@ class ListsCatalogFragment : Fragment() {
                     withHeadline = true,
                     withInverseBackground = withInverseBackground,
                     withUrlIcon = "fail_image_url",
-                    withErrorIcon =  AppCompatResources.getDrawable(it.context, R.drawable.ic_error)
+                    withErrorIcon = AppCompatResources.getDrawable(it.context, R.drawable.ic_error)
                 )
             },
             {
@@ -493,8 +493,11 @@ class ListsCatalogFragment : Fragment() {
             }
 
             withTitleMaxLines?.let { setTitleMaxLines(it) }
-            setTitle(if (withLongTitle) "Title long enough to need more than 2 lines to show it, just for testing purposes." +
-                    "More sample text just for testing purposes." else "Title")
+            setTitle(
+                if (withLongTitle) "Title long enough to need more than 2 lines to show it, just for testing purposes. " +
+                        "More sample text just for testing purposes."
+                else "Title"
+            )
             if (withTitleHeading == true) {
                 setTitleHeading()
             }
