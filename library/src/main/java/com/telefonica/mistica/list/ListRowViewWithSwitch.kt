@@ -1,5 +1,6 @@
 package com.telefonica.mistica.list
 
+import android.content.ClipDescription
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
@@ -60,10 +61,8 @@ class ListRowViewWithSwitch @JvmOverloads constructor(
         }
     }
 
-
-
     // Restrict Action Layout usage
-    override fun setActionLayout(layoutRes: Int) {
+    override fun setActionLayout(layoutRes: Int, contentDescription: String?) {
         if (layoutRes != ACTION_NONE) {
             throw IllegalArgumentException(
                 "You cannot add a custom Action Layout for ListRowViewWithSwitch since this component is managing a Switch in that place.\n" +

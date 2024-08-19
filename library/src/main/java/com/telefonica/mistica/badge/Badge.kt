@@ -88,9 +88,10 @@ object Badge {
         }
     }
 
-    private fun getDefaultBadgeDescription(
+    @JvmStatic
+    fun getDefaultBadgeDescription(
         anchor: View,
-        count: Int,
+        count: Int = NON_NUMERIC_BADGE,
     ) = if (count == 0) {
         anchor.context.getString(R.string.badge_notification_description)
     } else {

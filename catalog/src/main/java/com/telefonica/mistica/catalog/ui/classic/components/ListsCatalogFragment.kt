@@ -482,10 +482,11 @@ class ListsCatalogFragment : Fragment() {
             withErrorIcon: Drawable? = null,
         ) {
             if (withHeadline) {
-                setHeadlineLayout(R.layout.list_row_tag_headline)
+                val headlineText = "Headline"
+                setHeadlineLayout(layoutRes = R.layout.list_row_tag_headline, contentDescription = headlineText)
                 (getHeadline()!! as TagView).apply {
                     setTagStyle(if (withInverseBackground) TYPE_INVERSE else withHeadlineStyle)
-                    text = "Headline"
+                    text = headlineText
                 }
             } else {
                 setHeadlineLayout(ListRowView.HEADLINE_NONE)

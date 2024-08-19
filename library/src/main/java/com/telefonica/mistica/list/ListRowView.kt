@@ -27,6 +27,12 @@ import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
 import com.telefonica.mistica.badge.Badge
+import com.telefonica.mistica.list.ListRowView.ContentDescriptionKeys.DESCRIPTION
+import com.telefonica.mistica.list.ListRowView.ContentDescriptionKeys.DETAIL
+import com.telefonica.mistica.list.ListRowView.ContentDescriptionKeys.HEADLINE
+import com.telefonica.mistica.list.ListRowView.ContentDescriptionKeys.RIGHT_SLOT
+import com.telefonica.mistica.list.ListRowView.ContentDescriptionKeys.SUBTITLE
+import com.telefonica.mistica.list.ListRowView.ContentDescriptionKeys.TITLE
 import com.telefonica.mistica.list.model.ImageDimensions
 import com.telefonica.mistica.util.convertDpToPx
 import com.telefonica.mistica.util.getMisticaThemeDrawableBuilder
@@ -168,6 +174,20 @@ open class ListRowView @JvmOverloads constructor(
     private var assetWidth: Float = UNDEFINED
     private var cachedDefaultBackgroundType: Int = BackgroundType.TYPE_NORMAL
 
+    private var isViewInitialized = false
+
+    // Important! This map builds a sentence for a11y according to Mística order definition. Do not modify the order arbitrarily, check:
+    // https://www.figma.com/design/Be8QB9onmHunKCCAkIBAVr/%F0%9F%94%B8-Lists-Specs?node-id=4615-10711&t=rHgrWciayIn0NP4V-4
+    private val contentDescriptionValues = linkedMapOf<ContentDescriptionKeys, String?>(
+        TITLE to null,
+        HEADLINE to null,
+        SUBTITLE to null,
+        DESCRIPTION to null,
+        DETAIL to null,
+        RIGHT_SLOT to null,
+    )
+    private var headlineContentDescription: String? = null
+
     init {
         LayoutInflater.from(context).inflate(R.layout.list_row_item, this, true)
 
@@ -188,10 +208,6 @@ open class ListRowView @JvmOverloads constructor(
         badgeAnchorContainer = findViewById(R.id.row_badge_container)
         actionContainer = findViewById(R.id.row_action_container)
 
-        // Important! This value builds a sentence for a11y according to Mística order definition. Do not modify StringBuilder order arbitrarily
-        // https://www.figma.com/design/Be8QB9onmHunKCCAkIBAVr/%F0%9F%94%B8-Lists-Specs?node-id=4615-10711&t=rHgrWciayIn0NP4V-4
-        val contentDescriptionBuilder = StringBuilder()
-
         if (attrs != null) {
             val styledAttrs = context.theme.obtainStyledAttributes(
                 attrs,
@@ -204,8 +220,13 @@ open class ListRowView @JvmOverloads constructor(
             setTitleMaxLines(styledAttrs.getInteger(R.styleable.ListRowView_listRowTitleMaxLines, -1))
             styledAttrs.getText(R.styleable.ListRowView_listRowTitle)?.let {
                 setTitle(it)
-                contentDescriptionBuilder.append(it)
             }
+            styledAttrs.getBoolean(
+                R.styleable.ListRowView_listRowIsTitleHeading,
+                false
+            )
+                .takeIf { it }
+                ?.let { setTitleHeading() }
 
             // Headline
             val headlineResId: Int = styledAttrs.getResourceId(
@@ -216,20 +237,19 @@ open class ListRowView @JvmOverloads constructor(
                 R.styleable.ListRowView_listRowHeadlineVisible,
                 currentHeadlineLayoutRes != HEADLINE_NONE
             )
-            val headlineContentDescription: String? = styledAttrs.getString(R.styleable.ListRowView_listRowHeadlineContentDescription)
-
+            headlineContentDescription = styledAttrs.getString(R.styleable.ListRowView_listRowHeadlineContentDescription)
             setHeadlineLayout(headlineResId.takeIf { it != TypedValue.TYPE_NULL } ?: HEADLINE_NONE)
             setHeadlineVisible(headlineVisible)
-            if(headlineContentDescription != null && headlineResId != TypedValue.TYPE_NULL && headlineVisible) {
-                contentDescriptionBuilder.append(headlineContentDescription)
-            }
 
-            // todo - finish contentDescription String builder with the rest of the params according to Figma order:
-
+            // Subtitle
             setSubtitleMaxLines(styledAttrs.getInteger(R.styleable.ListRowView_listRowSubtitleMaxLines, -1))
             setSubtitle(styledAttrs.getText(R.styleable.ListRowView_listRowSubtitle))
+
+            // Description
             setDescriptionMaxLines(styledAttrs.getInteger(R.styleable.ListRowView_listRowDescriptionMaxLines, -1))
             setDescription(styledAttrs.getText(R.styleable.ListRowView_listRowDescription))
+
+            // Style
             val isBoxed = styledAttrs.getBoolean(R.styleable.ListRowView_listRowIsBoxed, false)
             val backgroundTypeDefaultValue = if (isBoxed) {
                 BackgroundType.TYPE_BOXED
@@ -243,6 +263,8 @@ open class ListRowView @JvmOverloads constructor(
                     backgroundTypeDefaultValue
                 )
             )
+
+            // Left image
             setAssetHeight(
                 styledAttrs.getDimension(
                     R.styleable.ListRowView_listRowAssetHeight,
@@ -265,26 +287,45 @@ open class ListRowView @JvmOverloads constructor(
                 .takeIf { it != TypedValue.TYPE_NULL }
                 ?.let { AppCompatResources.getDrawable(context, it) }
             setAssetDrawable(assetDrawable)
-            setBadgeInitialState(styledAttrs)
 
+            // Action layout (right slot)
             styledAttrs.getResourceId(
                 R.styleable.ListRowView_listRowActionLayout,
                 TypedValue.TYPE_NULL
             )
                 .takeIf { it != TypedValue.TYPE_NULL }
-                .let { setActionLayout(it ?: ACTION_NONE) }
+                .let {
+                    setActionLayout(
+                        layoutRes = it ?: ACTION_NONE,
+                        contentDescription = styledAttrs.getString(R.styleable.ListRowView_listRowActionContentDescription)
+                    )
+                }
 
-            styledAttrs.getBoolean(
-                R.styleable.ListRowView_listRowIsTitleHeading,
-                false
-            )
-                .takeIf { it }
-                ?.let { setTitleHeading() }
+            // Badge
+            setBadgeInitialState(styledAttrs)
 
-            styledAttrs.recycle()
+            finishInit(styledAttrs)
+        }
+    }
 
-            // Set content description to the Row according to Figma order.
-            contentDescription = contentDescriptionBuilder.toString()
+    private fun finishInit(styledAttrs: TypedArray) {
+        styledAttrs.recycle()
+        isViewInitialized = true
+        recalculateContentDescription()
+    }
+
+    private fun recalculateContentDescription(newKeyValue: Pair<ContentDescriptionKeys, String?>? = null) {
+        if (newKeyValue != null) contentDescriptionValues[newKeyValue.first] = newKeyValue.second
+
+        // Refresh only when all values has been initialized.
+        if (isViewInitialized) {
+            val contentDescriptionBuilder = StringBuilder()
+
+            for (value: String? in contentDescriptionValues.values) {
+                value?.let { contentDescriptionBuilder.append("$it. ") }
+            }
+
+            this@ListRowView.contentDescription = contentDescriptionBuilder
         }
     }
 
@@ -412,6 +453,7 @@ open class ListRowView @JvmOverloads constructor(
     fun setTitle(text: CharSequence?) {
         titleTextView.text = text
         recalculateTitleBottomConstraints()
+        recalculateContentDescription(newKeyValue = Pair(TITLE, text?.toString()))
     }
 
     fun setTitleMaxLines(maxLines: Int) {
@@ -503,17 +545,18 @@ open class ListRowView @JvmOverloads constructor(
         headlineContainer.visibility = if (visible) View.VISIBLE else View.GONE
         recalculateTitleBottomConstraints()
         recalculateAssetPosition()
+        recalculateContentDescription(Pair(HEADLINE, if (visible) headlineContentDescription else null))
     }
 
     fun getHeadline(): View? =
         headlineContainer.getChildAt(0)
 
-    fun setHeadlineLayout(@LayoutRes layoutRes: Int = HEADLINE_NONE) {
+    fun setHeadlineLayout(@LayoutRes layoutRes: Int = HEADLINE_NONE, contentDescription: String? = null) {
+        headlineContentDescription = contentDescription
         if (currentHeadlineLayoutRes != layoutRes) {
             headlineContainer.removeAllViews()
             if (layoutRes != HEADLINE_NONE) {
-                val view = LayoutInflater.from(context).inflate(layoutRes, headlineContainer, true)
-                println("Fernaa - " + view.contentDescription)
+                LayoutInflater.from(context).inflate(layoutRes, headlineContainer, true)
                 setHeadlineVisible(true)
             } else {
                 setHeadlineVisible(false)
@@ -526,6 +569,7 @@ open class ListRowView @JvmOverloads constructor(
         subtitleTextView.setTextAndVisibility(text)
         recalculateTitleBottomConstraints()
         recalculateAssetPosition()
+        recalculateContentDescription(Pair(SUBTITLE, text?.toString()))
     }
 
     fun setSubtitleMaxLines(maxLines: Int) {
@@ -539,6 +583,7 @@ open class ListRowView @JvmOverloads constructor(
         descriptionTextView.setTextAndVisibility(text)
         recalculateTitleBottomConstraints()
         recalculateAssetPosition()
+        recalculateContentDescription(newKeyValue = Pair(DESCRIPTION, text?.toString()))
     }
 
     fun setDescriptionMaxLines(maxLines: Int) {
@@ -548,14 +593,16 @@ open class ListRowView @JvmOverloads constructor(
         }
     }
 
-    open fun setActionLayout(@LayoutRes layoutRes: Int = ACTION_NONE) {
+    open fun setActionLayout(@LayoutRes layoutRes: Int = ACTION_NONE, contentDescription: String? = null) {
         if (currentActionLayoutRes != layoutRes) {
             actionContainer.removeAllViews()
             if (layoutRes != ACTION_NONE) {
                 LayoutInflater.from(context).inflate(layoutRes, actionContainer, true)
                 actionContainer.visibility = View.VISIBLE
+                recalculateContentDescription(newKeyValue = Pair(RIGHT_SLOT, contentDescription))
             } else {
                 actionContainer.visibility = View.GONE
+                recalculateContentDescription(newKeyValue = Pair(RIGHT_SLOT, null))
             }
             currentActionLayoutRes = layoutRes
         }
@@ -597,14 +644,20 @@ open class ListRowView @JvmOverloads constructor(
     private fun showNonNumericBadge(withBadgeDescription: String?) {
         Badge.removeBadge(badgeAnchor)
         badgeAnchorContainer.visibility = View.VISIBLE
-        Badge.showBadgeIn(badgeAnchor, badgeAnchorContainer, withBadgeDescription)
+        Badge.showBadgeIn(badgeAnchor, badgeAnchorContainer)
+
+        // Important! Recalculate contentDescription after the Badge has been built
+        recalculateContentDescription(newKeyValue = Pair(DETAIL, withBadgeDescription ?: Badge.getDefaultBadgeDescription(badgeAnchor)))
     }
 
     private fun showNumericBadge(count: Int, withBadgeDescription: String?) {
         Badge.removeBadge(badgeAnchor)
         badgeAnchorContainer.visibility = View.VISIBLE
         badgeAnchorContainer.setBackgroundColor(Color.Transparent.toArgb())
-        Badge.showNumericBadgeIn(badgeAnchor, badgeAnchorContainer, count, withBadgeDescription)
+        Badge.showNumericBadgeIn(badgeAnchor, badgeAnchorContainer, count)
+
+        // Important! Recalculate contentDescription after the Badge has been built
+        recalculateContentDescription(newKeyValue = Pair(DETAIL, withBadgeDescription ?: Badge.getDefaultBadgeDescription(badgeAnchor)))
     }
 
     private fun hideBadge() {
@@ -683,6 +736,10 @@ open class ListRowView @JvmOverloads constructor(
         } else {
             visibility = View.GONE
         }
+    }
+
+    private enum class ContentDescriptionKeys {
+        TITLE, HEADLINE, SUBTITLE, DESCRIPTION, BOTTOM_SLOT, DETAIL, RIGHT_SLOT
     }
 
     companion object {

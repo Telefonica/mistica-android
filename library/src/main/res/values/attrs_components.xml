@@ -89,6 +89,7 @@
         <attr name="listRowActionLayout" format="integer">
             <enum name="none" value="-1" />
         </attr>
+        <attr name="listRowActionContentDescription" format="string" />
         <attr name="listRowBadgeCount" format="integer">
             <enum name="gone" value="0" />
         </attr>
