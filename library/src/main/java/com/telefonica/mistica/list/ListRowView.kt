@@ -237,8 +237,10 @@ open class ListRowView @JvmOverloads constructor(
                 R.styleable.ListRowView_listRowHeadlineVisible,
                 currentHeadlineLayoutRes != HEADLINE_NONE
             )
-            headlineContentDescription = styledAttrs.getString(R.styleable.ListRowView_listRowHeadlineContentDescription)
-            setHeadlineLayout(headlineResId.takeIf { it != TypedValue.TYPE_NULL } ?: HEADLINE_NONE)
+            setHeadlineLayout(
+                layoutRes = headlineResId.takeIf { it != TypedValue.TYPE_NULL } ?: HEADLINE_NONE,
+                contentDescription = styledAttrs.getString(R.styleable.ListRowView_listRowHeadlineContentDescription)
+            )
             setHeadlineVisible(headlineVisible)
 
             // Subtitle
@@ -545,14 +547,13 @@ open class ListRowView @JvmOverloads constructor(
         headlineContainer.visibility = if (visible) View.VISIBLE else View.GONE
         recalculateTitleBottomConstraints()
         recalculateAssetPosition()
-        recalculateContentDescription(Pair(HEADLINE, if (visible) headlineContentDescription else null))
+        updateHeadlineContentDescription(headlineContentDescription)
     }
 
     fun getHeadline(): View? =
         headlineContainer.getChildAt(0)
 
     fun setHeadlineLayout(@LayoutRes layoutRes: Int = HEADLINE_NONE, contentDescription: String? = null) {
-        headlineContentDescription = contentDescription
         if (currentHeadlineLayoutRes != layoutRes) {
             headlineContainer.removeAllViews()
             if (layoutRes != HEADLINE_NONE) {
@@ -562,6 +563,22 @@ open class ListRowView @JvmOverloads constructor(
                 setHeadlineVisible(false)
             }
             currentHeadlineLayoutRes = layoutRes
+        }
+        updateHeadlineContentDescription(contentDescription)
+    }
+
+    private fun updateHeadlineContentDescription(contentDescription: String?) {
+        if (headlineContentDescription != contentDescription) {
+            headlineContentDescription = contentDescription
+            recalculateContentDescription(
+                Pair(
+                    first = HEADLINE,
+                    second = when (headlineContainer.visibility) {
+                        VISIBLE -> headlineContentDescription
+                        else -> null
+                    }
+                )
+            )
         }
     }
 
