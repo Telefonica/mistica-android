@@ -18,6 +18,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Checkbox
 import androidx.compose.material.ExperimentalMaterialApi
+import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -29,8 +30,11 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.heading
+import androidx.compose.ui.semantics.isTraversalGroup
 import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.traversalIndex
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.R
@@ -175,6 +179,7 @@ private fun ListRowItemImp(
         BackgroundType.TYPE_NORMAL,
         BackgroundType.TYPE_BOXED,
         -> MisticaTheme.colors.textPrimary
+
         BackgroundType.TYPE_BOXED_INVERSE -> MisticaTheme.colors.textPrimaryInverse
     }
 
@@ -182,6 +187,7 @@ private fun ListRowItemImp(
         BackgroundType.TYPE_NORMAL,
         BackgroundType.TYPE_BOXED,
         -> MisticaTheme.colors.textSecondary
+
         BackgroundType.TYPE_BOXED_INVERSE -> MisticaTheme.colors.textSecondaryInverse
     }
 
@@ -189,7 +195,9 @@ private fun ListRowItemImp(
         modifier = boxModifier.testTag(ListRowItemTestTags.LIST_ROW_ITEM)
     ) {
         Row(
-            modifier = rowModifier.height(IntrinsicSize.Min)
+            modifier = rowModifier
+                .height(IntrinsicSize.Min)
+                .semantics { isTraversalGroup = true }
         ) {
             if (icon != null) {
                 Box(modifier = Modifier.testTag(ListRowItemTestTags.LIST_ROW_ITEM_ICON)) {
@@ -205,7 +213,7 @@ private fun ListRowItemImp(
                     .align(CenterVertically)
             ) {
                 headline?.let {
-                    it.build()
+                    it.withModifier(Modifier.semantics { traversalIndex = 2f }).build()
                     Spacer(modifier = Modifier.height(8.dp))
                 }
                 title?.let {
@@ -214,6 +222,7 @@ private fun ListRowItemImp(
                         style = MisticaTheme.typography.preset3,
                         color = textColorPrimary,
                         modifier = Modifier
+                            .semantics { traversalIndex = 1f }
                             .testTag(ListRowItemTestTags.LIST_ROW_ITEM_TITLE)
                             .then(
                                 if (isTitleHeading) {
@@ -221,7 +230,7 @@ private fun ListRowItemImp(
                                 } else {
                                     Modifier
                                 }
-                            ),
+                            )
                     )
                 }
                 subtitle?.let {
@@ -230,6 +239,7 @@ private fun ListRowItemImp(
                         style = MisticaTheme.typography.preset2,
                         color = textColorPrimary,
                         modifier = Modifier
+                            .semantics { traversalIndex = 3f }
                             .testTag(ListRowItemTestTags.LIST_ROW_ITEM_SUBTITLE)
                             .padding(vertical = 2.dp)
                             .defaultMinSize(minHeight = 20.dp),
@@ -241,6 +251,7 @@ private fun ListRowItemImp(
                         style = MisticaTheme.typography.preset2,
                         color = textColorSecondary,
                         modifier = Modifier
+                            .semantics { traversalIndex = 4f }
                             .testTag(ListRowItemTestTags.LIST_ROW_ITEM_DESCRIPTION)
                             .padding(vertical = 2.dp)
                             .defaultMinSize(minHeight = 20.dp),
@@ -248,7 +259,9 @@ private fun ListRowItemImp(
                 }
                 bottom?.let {
                     Spacer(modifier = Modifier.height(2.dp))
-                    bottom()
+                    Surface(modifier = Modifier.semantics { traversalIndex = 5f }) {
+                        bottom()
+                    }
                 }
             }
 
@@ -256,6 +269,10 @@ private fun ListRowItemImp(
                 val badgeModifier = Modifier
                     .align(CenterVertically)
                     .absolutePadding(0.dp, 0.dp, 16.dp, 0.dp)
+                    .semantics {
+                        traversalIndex = 6f
+                        contentDescription = badge ?: "Nuevas notificaciones"
+                    }
                 Badge(
                     modifier = badgeModifier,
                     content = badge,
@@ -263,7 +280,9 @@ private fun ListRowItemImp(
             }
 
             trailing?.let {
-                Column(modifier = Modifier.align(CenterVertically)) {
+                Column(modifier = Modifier
+                    .align(CenterVertically)
+                    .semantics { traversalIndex = 1f }) {
                     it()
                 }
             }

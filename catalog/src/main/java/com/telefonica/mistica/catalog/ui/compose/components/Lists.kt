@@ -64,6 +64,7 @@ fun samples() = listOf(
         action = { Chevron() },
         isBadgeVisible = true,
         badge = "1",
+        onClick = { println("Ferna") }
     ),
     ListItem(
         title = TITLE,
