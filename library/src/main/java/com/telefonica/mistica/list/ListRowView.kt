@@ -5,17 +5,21 @@ import android.content.res.TypedArray
 import android.graphics.drawable.Drawable
 import android.text.TextUtils
 import android.util.AttributeSet
+import android.util.Log
 import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.CheckBox
 import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.Switch
 import android.widget.TextView
 import androidx.annotation.DrawableRes
 import androidx.annotation.IntDef
 import androidx.annotation.LayoutRes
 import androidx.appcompat.content.res.AppCompatResources
+import androidx.appcompat.widget.SwitchCompat
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -614,7 +618,8 @@ open class ListRowView @JvmOverloads constructor(
         if (currentActionLayoutRes != layoutRes) {
             actionContainer.removeAllViews()
             if (layoutRes != ACTION_NONE) {
-                LayoutInflater.from(context).inflate(layoutRes, actionContainer, true)
+                val actionView = LayoutInflater.from(context).inflate(layoutRes, actionContainer, true)
+                checkToggleableWarning(actionView)
                 actionContainer.visibility = View.VISIBLE
                 recalculateContentDescription(newKeyValue = Pair(RIGHT_SLOT, contentDescription))
             } else {
@@ -623,6 +628,17 @@ open class ListRowView @JvmOverloads constructor(
             }
             currentActionLayoutRes = layoutRes
         }
+    }
+
+    private fun checkToggleableWarning(actionView: View) {
+        if (actionView is Switch || actionView is SwitchCompat) Log.w(
+            "ListRowView",
+            "Using ListRowView with a Switch component can lead to a bad accessibility behavior. Consider using ListRowViewWithSwitch instead."
+        )
+        if (actionView is CheckBox) Log.w(
+            "ListRowView",
+            "Using ListRowView with a CheckBox component can lead to a bad accessibility behavior. Consider using ListRowViewWithCheckBox instead."
+        )
     }
 
     fun setBadge(show: Boolean, withBadgeDescription: String? = null) {
