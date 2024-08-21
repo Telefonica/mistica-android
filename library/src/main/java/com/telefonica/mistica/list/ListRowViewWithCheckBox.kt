@@ -38,6 +38,7 @@ class ListRowViewWithCheckBox @JvmOverloads constructor(
     fun changeCheckBoxAction(newState: Boolean? = null) {
         checkBoxCompat.isChecked = newState ?: !checkBoxCompat.isChecked
         ViewCompat.setStateDescription(this, ViewCompat.getStateDescription(checkBoxCompat))
+        this@ListRowViewWithCheckBox.announceForAccessibility(ViewCompat.getStateDescription(this))
     }
 
     fun isCheckBoxChecked() = checkBoxCompat.isChecked

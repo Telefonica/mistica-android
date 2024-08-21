@@ -470,6 +470,7 @@ open class ListRowView @JvmOverloads constructor(
     }
 
     fun setTitleHeading() {
+        titleTextView.isFocusable = true
         ViewCompat.setAccessibilityHeading(titleTextView, true)
     }
 

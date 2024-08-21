@@ -611,6 +611,7 @@ class ListsCatalogFragment : Fragment() {
     class ToggleableListAdapter : RecyclerView.Adapter<ViewHolder>() {
 
         override fun getItemViewType(position: Int): Int = position
+        override fun getItemCount(): Int = 2
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
             return when (viewType) {
@@ -618,7 +619,6 @@ class ListsCatalogFragment : Fragment() {
                     LayoutInflater.from(parent.context).inflate(R.layout.screen_fragment_lists_catalog_item_with_switch, parent, false)
                             as ListRowViewWithSwitch
                 )
-
                 else -> ListCheckBoxViewHolder(
                     LayoutInflater.from(parent.context).inflate(
                         R.layout.screen_fragment_lists_catalog_item_with_checkbox,
@@ -627,10 +627,7 @@ class ListsCatalogFragment : Fragment() {
                             as ListRowViewWithCheckBox
                 )
             }
-
         }
-
-        override fun getItemCount(): Int = 2
 
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
             when (holder.itemViewType) {
@@ -639,7 +636,6 @@ class ListsCatalogFragment : Fragment() {
                         changeSwitchAction()
                     }
                 }
-
                 1 -> with((holder as ListCheckBoxViewHolder).rowView) {
                     setOnClickListener {
                         changeCheckBoxAction()

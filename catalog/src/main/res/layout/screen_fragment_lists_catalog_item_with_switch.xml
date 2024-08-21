@@ -7,6 +7,7 @@
 		app:listRowAssetDrawable="@drawable/highlighted_card_custom_background"
 		app:listRowBadgeCount="gone"
 		app:listRowBadgeVisible="false"
+		app:listRowIsTitleHeading="true"
 		app:listRowDescription="Any subtitle"
 		app:listRowAssetType="smallIcon"
 		app:listRowTitle="Title" />
