@@ -756,7 +756,7 @@ open class ListRowView @JvmOverloads constructor(
     }
 
     private enum class ContentDescriptionKeys {
-        TITLE, HEADLINE, SUBTITLE, DESCRIPTION, BOTTOM_SLOT, DETAIL, RIGHT_SLOT
+        TITLE, HEADLINE, SUBTITLE, DESCRIPTION, DETAIL, RIGHT_SLOT
     }
 
     companion object {

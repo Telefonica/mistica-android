@@ -6,50 +6,52 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.accessibility.AccessibilityEvent
 import android.view.accessibility.AccessibilityNodeInfo
+import android.widget.CheckBox
 import android.widget.Switch
+import androidx.appcompat.widget.AppCompatCheckBox
 import androidx.appcompat.widget.SwitchCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.telefonica.mistica.R
 
-class ListRowViewWithSwitch @JvmOverloads constructor(
+class ListRowViewWithCheckBox @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0,
 ) : ListRowView(context, attrs, defStyleAttr) {
 
-    private val switchCompat: SwitchCompat
+    private val checkBoxCompat: AppCompatCheckBox
 
     init {
-        LayoutInflater.from(context).inflate(R.layout.list_row_switch_action, actionContainer, true)
+        LayoutInflater.from(context).inflate(R.layout.list_row_checkbox_action, actionContainer, true)
         actionContainer.visibility = View.VISIBLE
 
-        switchCompat = actionContainer.getChildAt(0) as SwitchCompat
+        checkBoxCompat = actionContainer.getChildAt(0) as AppCompatCheckBox
 
-        switchCompat.isClickable = false
-        switchCompat.importantForAccessibility = IMPORTANT_FOR_ACCESSIBILITY_NO
+        checkBoxCompat.isClickable = false
+        checkBoxCompat.importantForAccessibility = IMPORTANT_FOR_ACCESSIBILITY_NO
 
-        ViewCompat.setStateDescription(this, ViewCompat.getStateDescription(switchCompat))
+        ViewCompat.setStateDescription(this, ViewCompat.getStateDescription(checkBoxCompat))
     }
 
     // Utility Switch method to be used by the implementation
-    fun changeSwitchAction(newState: Boolean? = null) {
-        switchCompat.isChecked = newState ?: !switchCompat.isChecked
-        ViewCompat.setStateDescription(this, ViewCompat.getStateDescription(switchCompat))
+    fun changeCheckBoxAction(newState: Boolean? = null) {
+        checkBoxCompat.isChecked = newState ?: !checkBoxCompat.isChecked
+        ViewCompat.setStateDescription(this, ViewCompat.getStateDescription(checkBoxCompat))
     }
 
-    fun isSwitchChecked() = switchCompat.isChecked
+    fun isCheckBoxChecked() = checkBoxCompat.isChecked
 
     // Accessibility configuration
     override fun onInitializeAccessibilityEvent(event: AccessibilityEvent?) {
         super.onInitializeAccessibilityEvent(event)
-        event?.className = Switch::class.java.name
+        event?.className = CheckBox::class.java.name
     }
 
     override fun onInitializeAccessibilityNodeInfo(info: AccessibilityNodeInfo?) {
         super.onInitializeAccessibilityNodeInfo(info)
         info?.apply {
-            className = Switch::class.java.name
+            className = CheckBox::class.java.name
             isCheckable = true
             addAction(
                 AccessibilityNodeInfo.AccessibilityAction(
@@ -64,7 +66,7 @@ class ListRowViewWithSwitch @JvmOverloads constructor(
     override fun setActionLayout(layoutRes: Int, contentDescription: String?) {
         if (layoutRes != ACTION_NONE) {
             throw IllegalArgumentException(
-                "You cannot add a custom Action Layout for ListRowViewWithSwitch since this component is managing a Switch in that place.\n" +
+                "You cannot add a custom Action Layout for ListRowViewWithCheckBox since this component is managing a CheckBox in that place.\n" +
                         "If you want to add a custom Action Layout you can use the generic ListRowView component instead."
             )
         }
@@ -72,7 +74,7 @@ class ListRowViewWithSwitch @JvmOverloads constructor(
 
     override fun getActionView(): View? {
         throw IllegalStateException(
-            "You cannot access to the custom Action Layout for ListRowViewWithSwitch since this component is managing a Switch in that place.\n" +
+            "You cannot access to the custom Action Layout for ListRowViewWithCheckBox since this component is managing a CheckBox in that place.\n" +
                     "If you want to manage the Switch state, you can use the utility methods provided by the component."
         )
     }

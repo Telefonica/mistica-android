@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.list.ListRowView
 import com.telefonica.mistica.list.ListRowView.AssetType
@@ -20,6 +21,8 @@ import com.telefonica.mistica.list.ListRowView.Companion.TYPE_IMAGE_7_10
 import com.telefonica.mistica.list.ListRowView.Companion.TYPE_IMAGE_ROUNDED
 import com.telefonica.mistica.list.ListRowView.Companion.TYPE_LARGE_ICON
 import com.telefonica.mistica.list.ListRowView.Companion.TYPE_SMALL_ICON
+import com.telefonica.mistica.list.ListRowViewWithCheckBox
+import com.telefonica.mistica.list.ListRowViewWithSwitch
 import com.telefonica.mistica.list.MisticaRecyclerView
 import com.telefonica.mistica.list.model.ImageDimensions
 import com.telefonica.mistica.tag.TagStyle
@@ -53,6 +56,9 @@ class ListsCatalogFragment : Fragment() {
 
         val clickableRow: MisticaRecyclerView = view.findViewById(R.id.clickable_list)
         clickableRow.adapter = ClickableListAdapter()
+
+        val toggleableRow: MisticaRecyclerView = view.findViewById(R.id.toggleable_list)
+        toggleableRow.adapter = ToggleableListAdapter()
     }
 
     class ListAdapter(
@@ -564,7 +570,7 @@ class ListsCatalogFragment : Fragment() {
             }
     }
 
-    class ListViewHolder(val rowView: ListRowView) : RecyclerView.ViewHolder(rowView)
+    class ListViewHolder(val rowView: ListRowView) : ViewHolder(rowView)
 
     class ClickableListAdapter : RecyclerView.Adapter<ListViewHolder>() {
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
@@ -593,6 +599,50 @@ class ListsCatalogFragment : Fragment() {
                     }
                     setAssetOnClickListener {
                         Toast.makeText(context, "Asset clicked!", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            }
+        }
+    }
+
+    class ListSwitchViewHolder(val rowView: ListRowViewWithSwitch) : ViewHolder(rowView)
+    class ListCheckBoxViewHolder(val rowView: ListRowViewWithCheckBox) : ViewHolder(rowView)
+
+    class ToggleableListAdapter : RecyclerView.Adapter<ViewHolder>() {
+
+        override fun getItemViewType(position: Int): Int = position
+
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+            return when (viewType) {
+                0 -> ListSwitchViewHolder(
+                    LayoutInflater.from(parent.context).inflate(R.layout.screen_fragment_lists_catalog_item_with_switch, parent, false)
+                            as ListRowViewWithSwitch
+                )
+
+                else -> ListCheckBoxViewHolder(
+                    LayoutInflater.from(parent.context).inflate(
+                        R.layout.screen_fragment_lists_catalog_item_with_checkbox,
+                        parent, false
+                    )
+                            as ListRowViewWithCheckBox
+                )
+            }
+
+        }
+
+        override fun getItemCount(): Int = 2
+
+        override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+            when (holder.itemViewType) {
+                0 -> with((holder as ListSwitchViewHolder).rowView) {
+                    setOnClickListener {
+                        changeSwitchAction()
+                    }
+                }
+
+                1 -> with((holder as ListCheckBoxViewHolder).rowView) {
+                    setOnClickListener {
+                        changeCheckBoxAction()
                     }
                 }
             }
