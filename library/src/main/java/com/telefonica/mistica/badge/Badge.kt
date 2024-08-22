@@ -92,7 +92,7 @@ object Badge {
     fun getDefaultBadgeDescription(
         anchor: View,
         count: Int = NON_NUMERIC_BADGE,
-    ) = if (count == 0) {
+    ) = if (count == NON_NUMERIC_BADGE) {
         anchor.context.getString(R.string.badge_notification_description)
     } else {
         count.toString()
