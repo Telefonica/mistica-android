@@ -101,17 +101,20 @@ Important! Do not try to alter the Action Layout attribute, since it is actually
 configuration. It will thrown an IllegalArgumentException if you try to override this attribute:
 ```xml
 <!-- Do not set app:listRowActionLayout manually -->
-<com.telefonica.mistica.list.ListRowViewWithSwitch app:listRowActionLayout="@layout/list_row_chevron_action" />
+<com.telefonica.mistica.list.ListRowViewWithSwitch 
+        app:listRowActionLayout="@layout/list_row_chevron_action" />
 ```
 Second, use the utility exposed methods to manage the Switch component. Remember to set your custom onClickListener to handle the click events from the 
 component:
 ```kotlin
 val listRowViewWithSwitch = findViewById<ListRowViewWithSwitch>(R.id.list_row_view_with_switch)
-listRowViewWithSwitch.setOnClickListener { 
-    listRowViewWithSwitch.changeSwitchAction()
+listRowViewWithSwitch.apply {
+    setOnClickListener {
+        listRowViewWithSwitch.changeSwitchAction()
+    }
+    val currentState = isSwitchChecked()
+    setTitle("My title")
 }
-listRowViewWithSwitch.isSwitchChecked()
-listRowViewWithSwitch.setTitle("My title")
 ```
 
 Important! Do not try to access the Action Layout attribute,  since it is actually inflated and managed internally in order to handle a proper accessibility
