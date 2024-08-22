@@ -57,7 +57,7 @@ class ListRowViewWithCheckBox @JvmOverloads constructor(
             addAction(
                 AccessibilityNodeInfo.AccessibilityAction(
                     AccessibilityNodeInfoCompat.ACTION_CLICK,
-                    "alternar"
+                    resources.getString(R.string.toggle_action_click)
                 )
             )
         }
