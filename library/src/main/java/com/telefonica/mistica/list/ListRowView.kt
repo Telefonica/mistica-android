@@ -666,18 +666,17 @@ open class ListRowView @JvmOverloads constructor(
         }
     }
 
-    open fun getActionView(): View? =
-        actionContainer.getChildAt(0)
+    open fun getActionView(): View? = actionContainer.getChildAt(0)
 
     override fun setEnabled(enabled: Boolean) {
         super.setEnabled(enabled)
         titleTextView.isEnabled = enabled
         descriptionTextView.isEnabled = enabled
-        getActionView()?.isEnabled = enabled
+        actionContainer.getChildAt(0)?.isEnabled = enabled
         setAlpha(enabled)
     }
 
-    fun delegateClickOnActionView() {
+    open fun delegateClickOnActionView() {
         setOnClickListener {
             getActionView()?.performClick()
         }

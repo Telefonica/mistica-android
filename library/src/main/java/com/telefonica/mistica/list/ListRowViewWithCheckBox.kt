@@ -2,6 +2,7 @@ package com.telefonica.mistica.list
 
 import android.content.Context
 import android.util.AttributeSet
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.accessibility.AccessibilityEvent
@@ -75,6 +76,13 @@ class ListRowViewWithCheckBox @JvmOverloads constructor(
         throw IllegalStateException(
             "You cannot access to the custom Action Layout for ListRowViewWithCheckBox since this component is managing a CheckBox in that place.\n" +
                     "If you want to manage the Switch state, you can use the utility methods provided by the component."
+        )
+    }
+
+    override fun delegateClickOnActionView() {
+        Log.w(
+            "ListRowViewWithCheckBox",
+            "Delegate click on ActionView has no effect for ListRowViewWithCheckBox component since the component itself is intended to perform CheckBox changes."
         )
     }
 }
