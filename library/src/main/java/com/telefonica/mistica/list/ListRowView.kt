@@ -673,6 +673,7 @@ open class ListRowView @JvmOverloads constructor(
         titleTextView.isEnabled = enabled
         descriptionTextView.isEnabled = enabled
         actionContainer.getChildAt(0)?.isEnabled = enabled
+        isClickable = enabled
         setAlpha(enabled)
     }
 
