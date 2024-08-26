@@ -33,7 +33,7 @@ class ListRowViewWithSwitch @JvmOverloads constructor(
     }
 
     // Utility Switch method to be used by the implementation
-    fun changeSwitchAction(newState: Boolean? = null) {
+    fun changeSwitchState(newState: Boolean? = null) {
         switchCompat.isChecked = newState ?: !switchCompat.isChecked
         ViewCompat.setStateDescription(this, ViewCompat.getStateDescription(switchCompat))
         this@ListRowViewWithSwitch.announceForAccessibility(ViewCompat.getStateDescription(this))

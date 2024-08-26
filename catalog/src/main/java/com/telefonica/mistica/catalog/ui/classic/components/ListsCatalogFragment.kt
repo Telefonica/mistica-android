@@ -12,6 +12,8 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.telefonica.mistica.catalog.R
+import com.telefonica.mistica.catalog.ui.classic.components.ListsCatalogFragment.ToggleableListAdapter.ViewType.CHECKBOX
+import com.telefonica.mistica.catalog.ui.classic.components.ListsCatalogFragment.ToggleableListAdapter.ViewType.SWITCH
 import com.telefonica.mistica.list.ListRowView
 import com.telefonica.mistica.list.ListRowView.AssetType
 import com.telefonica.mistica.list.ListRowView.Companion.TYPE_IMAGE
@@ -619,11 +621,9 @@ class ListsCatalogFragment : Fragment() {
                     LayoutInflater.from(parent.context).inflate(R.layout.screen_fragment_lists_catalog_item_with_switch, parent, false)
                             as ListRowViewWithSwitch
                 )
+
                 else -> ListCheckBoxViewHolder(
-                    LayoutInflater.from(parent.context).inflate(
-                        R.layout.screen_fragment_lists_catalog_item_with_checkbox,
-                        parent, false
-                    )
+                    LayoutInflater.from(parent.context).inflate(R.layout.screen_fragment_lists_catalog_item_with_checkbox, parent, false)
                             as ListRowViewWithCheckBox
                 )
             }
@@ -631,22 +631,21 @@ class ListsCatalogFragment : Fragment() {
 
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
             when (holder.itemViewType) {
-                0 -> with((holder as ListSwitchViewHolder).rowView) {
-                    setOnClickListener {
-                        changeSwitchAction()
-                    }
+                SWITCH.viewType -> with((holder as ListSwitchViewHolder).rowView) {
+                    setOnClickListener { changeSwitchState() }
                 }
-                1 -> with((holder as ListCheckBoxViewHolder).rowView) {
-                    setOnClickListener {
-                        changeCheckBoxAction()
-                    }
+                CHECKBOX.viewType -> with((holder as ListCheckBoxViewHolder).rowView) {
+                    setOnClickListener { changeCheckBoxState() }
                 }
             }
+        }
+
+        private enum class ViewType(val viewType: Int) {
+            SWITCH(0), CHECKBOX(1)
         }
     }
 
     private companion object {
         const val IMAGE_URL = "https://www.fotoaparat.cz/imgs/a/26/2639/0n1wjdf0-cr-em13-09-1200x627x9.jpg"
     }
-
 }

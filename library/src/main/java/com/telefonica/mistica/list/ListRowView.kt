@@ -182,14 +182,15 @@ open class ListRowView @JvmOverloads constructor(
 
     // Important! This map builds a sentence for a11y according to Mística order definition. Do not modify the order arbitrarily, check:
     // https://www.figma.com/design/Be8QB9onmHunKCCAkIBAVr/%F0%9F%94%B8-Lists-Specs?node-id=4615-10711&t=rHgrWciayIn0NP4V-4
-    private val contentDescriptionValues = linkedMapOf<ContentDescriptionKeys, String?>(
-        TITLE to null,
-        HEADLINE to null,
-        SUBTITLE to null,
-        DESCRIPTION to null,
-        DETAIL to null,
-        RIGHT_SLOT to null,
+    private val contentDescriptionValues = linkedSetOf(
+        ContentDescriptionInfo(key = TITLE, description = null),
+        ContentDescriptionInfo(key = HEADLINE, description = null),
+        ContentDescriptionInfo(key = SUBTITLE, description = null),
+        ContentDescriptionInfo(key = DESCRIPTION, description = null),
+        ContentDescriptionInfo(key = DETAIL, description = null),
+        ContentDescriptionInfo(key = RIGHT_SLOT, description = null),
     )
+    private data class ContentDescriptionInfo(val key: ContentDescriptionKeys, var description: String?)
     private var headlineContentDescription: String? = null
 
     init {
@@ -320,15 +321,17 @@ open class ListRowView @JvmOverloads constructor(
         recalculateContentDescription()
     }
 
-    private fun recalculateContentDescription(newKeyValue: Pair<ContentDescriptionKeys, String?>? = null) {
-        if (newKeyValue != null) contentDescriptionValues[newKeyValue.first] = newKeyValue.second
+    private fun recalculateContentDescription(newContentDescriptionInfo: ContentDescriptionInfo? = null) {
+        newContentDescriptionInfo?.let { newInfo ->
+            contentDescriptionValues.find { it.key == newInfo.key }?.description = newInfo.description
+        }
 
         // Refresh only when all values has been initialized.
         if (isViewInitialized) {
             val contentDescriptionBuilder = StringBuilder()
 
-            for (value: String? in contentDescriptionValues.values) {
-                value?.let { contentDescriptionBuilder.append("$it. ") }
+            contentDescriptionValues.filter { it.description != null }.forEach {
+                contentDescriptionBuilder.append("${it.description}. ")
             }
 
             this@ListRowView.contentDescription = contentDescriptionBuilder
@@ -459,7 +462,7 @@ open class ListRowView @JvmOverloads constructor(
     fun setTitle(text: CharSequence?) {
         titleTextView.text = text
         recalculateTitleBottomConstraints()
-        recalculateContentDescription(newKeyValue = Pair(TITLE, text?.toString()))
+        recalculateContentDescription(ContentDescriptionInfo(key = TITLE, description = text?.toString()))
     }
 
     fun setTitleMaxLines(maxLines: Int) {
@@ -575,10 +578,11 @@ open class ListRowView @JvmOverloads constructor(
     private fun updateHeadlineContentDescription(contentDescription: String?) {
         if (headlineContentDescription != contentDescription) {
             headlineContentDescription = contentDescription
+
             recalculateContentDescription(
-                Pair(
-                    first = HEADLINE,
-                    second = when (headlineContainer.visibility) {
+                ContentDescriptionInfo(
+                    key = HEADLINE,
+                    description = when (headlineContainer.visibility) {
                         VISIBLE -> headlineContentDescription
                         else -> null
                     }
@@ -591,7 +595,7 @@ open class ListRowView @JvmOverloads constructor(
         subtitleTextView.setTextAndVisibility(text)
         recalculateTitleBottomConstraints()
         recalculateAssetPosition()
-        recalculateContentDescription(Pair(SUBTITLE, text?.toString()))
+        recalculateContentDescription(ContentDescriptionInfo(key = SUBTITLE, description = text?.toString()))
     }
 
     fun setSubtitleMaxLines(maxLines: Int) {
@@ -605,7 +609,7 @@ open class ListRowView @JvmOverloads constructor(
         descriptionTextView.setTextAndVisibility(text)
         recalculateTitleBottomConstraints()
         recalculateAssetPosition()
-        recalculateContentDescription(newKeyValue = Pair(DESCRIPTION, text?.toString()))
+        recalculateContentDescription(ContentDescriptionInfo(key = DESCRIPTION, description = text?.toString()))
     }
 
     fun setDescriptionMaxLines(maxLines: Int) {
@@ -615,6 +619,10 @@ open class ListRowView @JvmOverloads constructor(
         }
     }
 
+    open fun setActionLayout(@LayoutRes layoutRes: Int = ACTION_NONE) {
+        setActionLayout(layoutRes, null)
+    }
+
     open fun setActionLayout(@LayoutRes layoutRes: Int = ACTION_NONE, contentDescription: String? = null) {
         if (currentActionLayoutRes != layoutRes) {
             actionContainer.removeAllViews()
@@ -622,10 +630,10 @@ open class ListRowView @JvmOverloads constructor(
                 val actionView = LayoutInflater.from(context).inflate(layoutRes, actionContainer, true)
                 checkToggleableWarning(actionView)
                 actionContainer.visibility = View.VISIBLE
-                recalculateContentDescription(newKeyValue = Pair(RIGHT_SLOT, contentDescription))
+                recalculateContentDescription(ContentDescriptionInfo(key = RIGHT_SLOT, description = contentDescription))
             } else {
                 actionContainer.visibility = View.GONE
-                recalculateContentDescription(newKeyValue = Pair(RIGHT_SLOT, null))
+                recalculateContentDescription(ContentDescriptionInfo(key = RIGHT_SLOT, description = null))
             }
             currentActionLayoutRes = layoutRes
         }
@@ -681,7 +689,7 @@ open class ListRowView @JvmOverloads constructor(
         Badge.showBadgeIn(badgeAnchor, badgeAnchorContainer)
 
         // Important! Recalculate contentDescription after the Badge has been built
-        recalculateContentDescription(newKeyValue = Pair(DETAIL, withBadgeDescription ?: Badge.getDefaultBadgeDescription(badgeAnchor)))
+        recalculateContentDescription(ContentDescriptionInfo(key = DETAIL, description = withBadgeDescription ?: Badge.getDefaultBadgeDescription(badgeAnchor)))
     }
 
     private fun showNumericBadge(count: Int, withBadgeDescription: String?) {
@@ -691,7 +699,12 @@ open class ListRowView @JvmOverloads constructor(
         Badge.showNumericBadgeIn(badgeAnchor, badgeAnchorContainer, count)
 
         // Important! Recalculate contentDescription after the Badge has been built
-        recalculateContentDescription(newKeyValue = Pair(DETAIL, withBadgeDescription ?: Badge.getDefaultBadgeDescription(badgeAnchor)))
+        recalculateContentDescription(
+            ContentDescriptionInfo(
+                key = DETAIL,
+                description = withBadgeDescription ?: Badge.getDefaultBadgeDescription(badgeAnchor, count)
+            )
+        )
     }
 
     private fun hideBadge() {

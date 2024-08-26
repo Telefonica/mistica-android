@@ -79,7 +79,7 @@ internal class ListRowViewToggleableTest : ScreenshotsTest() {
             with(activity.findViewById<ListRowViewWithSwitch>(R.id.list_row_view_with_switch)) {
                 val switchCompat = getActionContainer().getChildAt(0) as SwitchCompat
                 assertEquals(ViewCompat.getStateDescription(switchCompat), ViewCompat.getStateDescription(this))
-                changeSwitchAction()
+                changeSwitchState()
                 assertEquals(ViewCompat.getStateDescription(switchCompat), ViewCompat.getStateDescription(this))
             }
         }
@@ -94,7 +94,7 @@ internal class ListRowViewToggleableTest : ScreenshotsTest() {
             with(activity.findViewById<ListRowViewWithCheckBox>(R.id.list_row_view_with_checkbox)) {
                 val checkboxCompat = getActionContainer().getChildAt(0) as AppCompatCheckBox
                 assertEquals(ViewCompat.getStateDescription(checkboxCompat), ViewCompat.getStateDescription(this))
-                changeCheckBoxAction()
+                changeCheckBoxState()
                 assertEquals(ViewCompat.getStateDescription(checkboxCompat), ViewCompat.getStateDescription(this))
             }
         }
@@ -137,7 +137,7 @@ internal class ListRowViewToggleableTest : ScreenshotsTest() {
             with(activity.findViewById<ListRowViewWithSwitch>(R.id.list_row_view_with_switch)) {
                 val switchCompat = getActionContainer().getChildAt(0) as SwitchCompat
                 val initialState = switchCompat.isChecked
-                changeSwitchAction()
+                changeSwitchState()
                 assertNotEquals(initialState, switchCompat.isChecked)
             }
         }
@@ -152,7 +152,7 @@ internal class ListRowViewToggleableTest : ScreenshotsTest() {
             with(activity.findViewById<ListRowViewWithCheckBox>(R.id.list_row_view_with_checkbox)) {
                 val switchCompat = getActionContainer().getChildAt(0) as AppCompatCheckBox
                 val initialState = switchCompat.isChecked
-                changeCheckBoxAction()
+                changeCheckBoxState()
                 assertNotEquals(initialState, switchCompat.isChecked)
             }
         }

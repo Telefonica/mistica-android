@@ -7,9 +7,7 @@ import android.view.View
 import android.view.accessibility.AccessibilityEvent
 import android.view.accessibility.AccessibilityNodeInfo
 import android.widget.CheckBox
-import android.widget.Switch
 import androidx.appcompat.widget.AppCompatCheckBox
-import androidx.appcompat.widget.SwitchCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.telefonica.mistica.R
@@ -35,7 +33,7 @@ class ListRowViewWithCheckBox @JvmOverloads constructor(
     }
 
     // Utility Switch method to be used by the implementation
-    fun changeCheckBoxAction(newState: Boolean? = null) {
+    fun changeCheckBoxState(newState: Boolean? = null) {
         checkBoxCompat.isChecked = newState ?: !checkBoxCompat.isChecked
         ViewCompat.setStateDescription(this, ViewCompat.getStateDescription(checkBoxCompat))
         this@ListRowViewWithCheckBox.announceForAccessibility(ViewCompat.getStateDescription(this))
