@@ -15,7 +15,7 @@ import androidx.compose.ui.tooling.preview.Preview
 fun TextAreaInput(
     value: String,
     onValueChange: (String) -> Unit,
-    label: String,
+    label: String?,
     modifier: Modifier = Modifier,
     helperText: String? = null,
     isError: Boolean = false,

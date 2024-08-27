@@ -29,7 +29,7 @@ internal fun TextInputImpl(
     modifier: Modifier = Modifier,
     value: String,
     onValueChange: (String) -> Unit,
-    label: String,
+    label: String?,
     helperText: String?,
     isError: Boolean,
     errorText: String?,
@@ -82,7 +82,7 @@ private fun TextBox(
     value: String,
     modifier: Modifier = Modifier,
     onValueChange: (String) -> Unit,
-    label: String,
+    label: String?,
     isError: Boolean,
     trailingIcon: @Composable (() -> Unit)?,
     enabled: Boolean,
@@ -113,16 +113,18 @@ private fun TextBox(
         readOnly = readOnly,
         value = value,
         onValueChange = onValueChange,
-        label = {
-            val transformedText = remember(value) {
-                visualTransformation.filter(AnnotatedString(value))
+        label = label?.let {
+            {
+                val transformedText = remember(value) {
+                    visualTransformation.filter(AnnotatedString(value))
+                }
+                TextInputLabel(
+                    text = it,
+                    inputIsNotEmpty = transformedText.text.isNotEmpty(),
+                    isFocused = interactionSource.collectIsFocusedAsState().value,
+                    isError = isError,
+                )
             }
-            TextInputLabel(
-                text = label,
-                inputIsNotEmpty = transformedText.text.isNotEmpty(),
-                isFocused = interactionSource.collectIsFocusedAsState().value,
-                isError = isError,
-            )
         },
         interactionSource = interactionSource,
         keyboardOptions = keyboardOptions,

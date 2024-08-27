@@ -4,9 +4,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.VisualTransformation
+import androidx.core.text.isDigitsOnly
 
 @Composable
-fun TextInput(
+fun NumberInput(
     modifier: Modifier,
     value: String,
     onValueChange: (String) -> Unit,
@@ -22,6 +23,7 @@ fun TextInput(
     visualTransformation: VisualTransformation = VisualTransformation.None,
     keyboardOptions: KeyboardOptions = KeyboardOptions.Default,
 ) {
+
     TextInputImpl(
         modifier = modifier,
         value = value,
@@ -37,7 +39,8 @@ fun TextInput(
         onClick = onClick,
         visualTransformation = visualTransformation,
         keyboardOptions = keyboardOptions.toFoundationKeyboardOptions(
-            keyboardType = KeyboardType.Text
+            keyboardType = KeyboardType.Decimal
         )
     )
+
 }
