@@ -90,5 +90,24 @@
 				app:listLayoutType="full_width"
 				/>
 
+		<com.telefonica.mistica.title.TitleView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="start"
+				android:layout_marginStart="16dp"
+				android:layout_marginTop="16dp"
+				app:title="Toggleables"
+				/>
+
+		<com.telefonica.mistica.list.MisticaRecyclerView
+				android:nestedScrollingEnabled="false"
+				android:id="@+id/toggleable_list"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="8dp"
+				android:layout_weight="0.5"
+				app:listLayoutType="full_width"
+				/>
+
 	</LinearLayout>
 </androidx.core.widget.NestedScrollView>

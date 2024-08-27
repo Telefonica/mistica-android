@@ -1,0 +1,12 @@
+<com.telefonica.mistica.list.ListRowViewWithCheckBox xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		xmlns:tools="http://schemas.android.com/tools"
+		tools:viewBindingIgnore="true"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		app:listRowAssetDrawable="@drawable/highlighted_card_custom_background"
+		app:listRowBadgeCount="gone"
+		app:listRowBadgeVisible="false"
+		app:listRowDescription="Any subtitle"
+		app:listRowAssetType="smallIcon"
+		app:listRowTitle="Title" />
