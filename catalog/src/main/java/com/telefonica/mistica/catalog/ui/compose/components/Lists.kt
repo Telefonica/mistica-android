@@ -397,27 +397,21 @@ fun Lists() {
                 mutableStateOf(false)
             }
             ListRowItemWithSwitch(
-                headline = Tag("Headline").withStyle(TYPE_PROMO),
                 title = "Title",
                 subtitle = "Subtitle",
-                description = "Description",
-                isBadgeVisible = true,
-                badge = "1",
                 checked = switchState,
                 onCheckedChange = { switchState = it },
+                listRowIcon = ListRowIcon.NormalIcon(painter = painterResource(id = R.drawable.ic_lists)),
             )
             var checkBoxState by remember {
                 mutableStateOf(false)
             }
             ListRowItemWithCheckBox(
-                headline = Tag("Headline").withStyle(TYPE_PROMO),
                 title = "Title",
                 subtitle = "Subtitle",
-                description = "Description",
-                isBadgeVisible = true,
-                badge = "1",
                 checked = checkBoxState,
                 onCheckedChange = { checkBoxState = it },
+                listRowIcon = ListRowIcon.NormalIcon(painter = painterResource(id = R.drawable.ic_lists)),
             )
         }
     }
