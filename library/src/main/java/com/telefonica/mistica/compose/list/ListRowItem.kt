@@ -189,13 +189,9 @@ internal fun ListRowItemImp(
     }
 
     Box(
-        modifier = boxModifier.testTag(ListRowItemTestTags.LIST_ROW_ITEM)
-            .then(
-                if (isToggleable)
-                    Modifier.semantics(mergeDescendants = true) {}
-                else
-                    Modifier
-            )
+        modifier = boxModifier
+            .testTag(ListRowItemTestTags.LIST_ROW_ITEM)
+            .semantics(mergeDescendants = isToggleable) {  }
     ) {
         Row(
             modifier = rowModifier
