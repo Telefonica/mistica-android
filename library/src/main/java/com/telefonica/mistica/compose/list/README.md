@@ -151,3 +151,25 @@ Any `@Composable` is allowed to be used as `trailing` parameter. This will show 
       }
   )
 ```
+
+## Toggleables
+There is two new sub-components from ListRowView to handle Action Layouts with toggleable views like Switch or CheckBox components.
+Take a look to the new available sub-components:
+* [ListRowViewWithSwitch](ListRowItemWithSwitch.kt)
+* [ListRowViewWithCheckBox](ListRowItemWithCheckBox.kt)
+
+This two new sub-components have been created in order to handle the main accessibility actions according to Google standards with Toggleables views.
+So please, consider replacing and start using these two new sub-components if you need to use a list element with a Switch or CheckBox view.
+
+```kotlin
+var switchState by remember {
+    mutableStateOf(false)
+}
+ListRowItemWithSwitch(
+    title = "Title",
+    subtitle = "Subtitle",
+    checked = switchState,
+    onCheckedChange = { switchState = it },
+    listRowIcon = ListRowIcon.NormalIcon(painter = painterResource(id = R.drawable.ic_lists)),
+)
+```
