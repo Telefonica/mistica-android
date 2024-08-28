@@ -158,7 +158,7 @@ Take a look to the new available sub-components:
 * [ListRowViewWithSwitch](ListRowItemWithSwitch.kt)
 * [ListRowViewWithCheckBox](ListRowItemWithCheckBox.kt)
 
-This two new sub-components have been created in order to handle the main accessibility actions according to Google standards with Toggleables views.
+This two new sub-components have been created in order to handle the main accessibility actions according to Google standards with Toggleable views.
 So please, consider replacing and start using these two new sub-components if you need to use a list element with a Switch or CheckBox view.
 
 ```kotlin
