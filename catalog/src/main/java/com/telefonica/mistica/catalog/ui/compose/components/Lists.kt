@@ -19,6 +19,10 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Switch
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -34,6 +38,8 @@ import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.compose.list.BackgroundType
 import com.telefonica.mistica.compose.list.ListRowIcon
 import com.telefonica.mistica.compose.list.ListRowItem
+import com.telefonica.mistica.compose.list.ListRowItemWithCheckBox
+import com.telefonica.mistica.compose.list.ListRowItemWithSwitch
 import com.telefonica.mistica.compose.shape.Chevron
 import com.telefonica.mistica.compose.tag.Tag
 import com.telefonica.mistica.compose.theme.MisticaTheme
@@ -378,11 +384,40 @@ fun Lists() {
             SectionTitle("Clickable Asset")
             ClickableAssetSample(
                 context = context,
-                onRowClick = {},
+                onRowClick = null,
             )
             ClickableAssetSample(
                 context = context,
                 onRowClick = { Toast.makeText(context, "Row Clicked", Toast.LENGTH_SHORT).show() },
+            )
+        }
+        item {
+            SectionTitle("Toggleables")
+            var switchState by remember {
+                mutableStateOf(false)
+            }
+            ListRowItemWithSwitch(
+                headline = Tag("Headline").withStyle(TYPE_PROMO),
+                title = "Title",
+                subtitle = "Subtitle",
+                description = "Description",
+                isBadgeVisible = true,
+                badge = "1",
+                checked = switchState,
+                onCheckedChange = { switchState = it },
+            )
+            var checkBoxState by remember {
+                mutableStateOf(false)
+            }
+            ListRowItemWithCheckBox(
+                headline = Tag("Headline").withStyle(TYPE_PROMO),
+                title = "Title",
+                subtitle = "Subtitle",
+                description = "Description",
+                isBadgeVisible = true,
+                badge = "1",
+                checked = checkBoxState,
+                onCheckedChange = { checkBoxState = it },
             )
         }
     }
@@ -451,9 +486,9 @@ private fun CustomSlot() {
 }
 
 @Composable
-private fun ClickableAssetSample(context: Context, onRowClick: () -> Unit) {
+private fun ClickableAssetSample(context: Context, onRowClick: (() -> Unit)? = null) {
     ListRowItem(
-        title = "Clickable Asset in Clickable Row",
+        title = if (onRowClick != null) "Clickable Asset in Clickable Row" else "Clickable Asset",
         subtitle = "Subtitle",
         description = "Description",
         isBadgeVisible = true,
@@ -461,6 +496,7 @@ private fun ClickableAssetSample(context: Context, onRowClick: () -> Unit) {
         onClick = onRowClick,
         listRowIcon = ListRowIcon.CircleIcon(
             painterResource(id = R.drawable.ic_lists),
+            description = "Clickable asset",
             backgroundColor = MisticaTheme.colors.backgroundAlternative,
             modifier = Modifier.clickable {
                 Toast.makeText(context, "Asset Clicked", Toast.LENGTH_SHORT).show()
