@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material.Badge as MaterialBadge
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -36,7 +37,7 @@ fun Badge(
                 .size(8.dp),
         ) { }
     } else {
-        androidx.compose.material.Badge(
+        MaterialBadge(
             backgroundColor = MisticaTheme.colors.badge,
             modifier = modifier.testTag(BadgeTestTags.BADGE_NUMBER),
         ) {
