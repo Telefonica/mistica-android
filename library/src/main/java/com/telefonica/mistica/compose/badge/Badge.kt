@@ -13,6 +13,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.theme.MisticaTheme
@@ -23,6 +25,7 @@ import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 fun Badge(
     modifier: Modifier = Modifier,
     content: String? = null,
+    contentDescription: String? = null,
 ) {
     if (content.isNullOrEmpty()) {
         Surface(
@@ -38,7 +41,14 @@ fun Badge(
             modifier = modifier.testTag(BadgeTestTags.BADGE_NUMBER),
         ) {
             Text(
-                modifier = Modifier.testTag(BadgeTestTags.BADGE_NUMBER_VALUE),
+                modifier = Modifier
+                    .testTag(BadgeTestTags.BADGE_NUMBER_VALUE)
+                    .then(
+                        if (contentDescription != null)
+                            Modifier.semantics { this.contentDescription = contentDescription }
+                        else
+                            Modifier
+                    ),
                 text = content,
                 color = MisticaTheme.colors.textPrimaryInverse,
             )
