@@ -76,8 +76,8 @@ Also `com.telefonica.mistica.MisticaRecyclerView` is just a `RecyclerView` that 
 ## Toggleables
 There is two new sub-components from ListRowView to handle Action Layouts with toggleable views like Switch or CheckBox components.
 Take a look to the new available sub-components:
-* [ListRowViewWithSwitch](https://github.com/Telefonica/mistica-android/blob/ANDROID-14884_list_row_a11y/library/src/main/java/com/telefonica/mistica/list/ListRowViewWithSwitch.kt)
-* [ListRowViewWithCheckBox](https://github.com/Telefonica/mistica-android/blob/ANDROID-14884_list_row_a11y/library/src/main/java/com/telefonica/mistica/list/ListRowViewWithCheckBox.kt)
+* [ListRowViewWithSwitch](ListRowViewWithSwitch.kt)
+* [ListRowViewWithCheckBox](ListRowViewWithCheckBox.kt)
 
 This two new sub-components have been created in order to handle the main accessibility actions according to Google standards with Toggleable views. So 
 please, consider replacing and start using these two new sub-components if you need to use a list element with a Switch or CheckBox view.
