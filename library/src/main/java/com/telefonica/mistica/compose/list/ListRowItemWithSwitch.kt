@@ -6,8 +6,11 @@ import androidx.compose.material.Switch
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.tag.Tag
+import com.telefonica.mistica.compose.theme.MisticaTheme
+import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 
 @Composable
 fun ListRowItemWithSwitch(
@@ -29,7 +32,7 @@ fun ListRowItemWithSwitch(
     ListRowItemImp(
         modifier = modifier.toggleable(
             value = checked,
-            onValueChange = { onCheckedChange(!checked)},
+            onValueChange = { onCheckedChange(!checked) },
             role = Role.Switch,
         ),
         icon = { listRowIcon?.Draw() },
@@ -52,4 +55,32 @@ fun ListRowItemWithSwitch(
         bottom = bottom,
         contentPadding = contentPadding
     )
+}
+
+@Preview(showBackground = true)
+@Composable
+private fun PreviewListRowItemWithSwitchOff() {
+    MisticaTheme(brand = MovistarBrand) {
+        ListRowItemWithSwitch(
+            title = "Title",
+            subtitle = "Subtitle",
+            description = "Description",
+            checked = false,
+            onCheckedChange = {},
+        )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+private fun PreviewListRowItemWithSwitchOn() {
+    MisticaTheme(brand = MovistarBrand) {
+        ListRowItemWithSwitch(
+            title = "Title",
+            subtitle = "Subtitle",
+            description = "Description",
+            checked = true,
+            onCheckedChange = {},
+        )
+    }
 }
