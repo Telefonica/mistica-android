@@ -62,7 +62,7 @@ fun ListRowItemWithCheckBox(
 private fun PreviewListRowItemWithCheckBoxUnchecked() {
     MisticaTheme(brand = MovistarBrand) {
         ListRowItemWithCheckBox(
-            title = "Title",
+            title = "Unchecked",
             subtitle = "Subtitle",
             description = "Description",
             checked = false,
@@ -76,7 +76,7 @@ private fun PreviewListRowItemWithCheckBoxUnchecked() {
 private fun PreviewListRowItemWithCheckBoxChecked() {
     MisticaTheme(brand = MovistarBrand) {
         ListRowItemWithCheckBox(
-            title = "Title",
+            title = "Checked",
             subtitle = "Subtitle",
             description = "Description",
             checked = true,

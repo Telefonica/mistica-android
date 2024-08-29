@@ -62,7 +62,7 @@ fun ListRowItemWithSwitch(
 private fun PreviewListRowItemWithSwitchOff() {
     MisticaTheme(brand = MovistarBrand) {
         ListRowItemWithSwitch(
-            title = "Title",
+            title = "Off",
             subtitle = "Subtitle",
             description = "Description",
             checked = false,
@@ -76,7 +76,7 @@ private fun PreviewListRowItemWithSwitchOff() {
 private fun PreviewListRowItemWithSwitchOn() {
     MisticaTheme(brand = MovistarBrand) {
         ListRowItemWithSwitch(
-            title = "Title",
+            title = "On",
             subtitle = "Subtitle",
             description = "Description",
             checked = true,
