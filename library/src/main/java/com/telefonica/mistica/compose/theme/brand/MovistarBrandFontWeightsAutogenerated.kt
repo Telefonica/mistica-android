@@ -16,6 +16,8 @@ public object MovistarBrandFontWeights {
 
   public val title2FontWeight: FontWeight = FontWeight.Bold
 
+  public val title3FontWeight: FontWeight = FontWeight.Bold
+
   public val indicatorFontWeight: FontWeight = FontWeight.Medium
 
   public val navigationBarFontWeight: FontWeight = FontWeight.Medium

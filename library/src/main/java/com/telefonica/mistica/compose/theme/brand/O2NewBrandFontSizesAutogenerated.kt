@@ -7,7 +7,7 @@ import androidx.compose.ui.unit.sp
 public object O2NewBrandFontSizes {
   public val tabsLabelFontSize: TextUnit = 16.sp
 
-  public val title2FontSize: TextUnit = 20.sp
+  public val title3FontSize: TextUnit = 20.sp
 
   public val text1FontSize: TextUnit = 12.sp
 
