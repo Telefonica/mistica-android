@@ -35,6 +35,7 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.traversalIndex
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.zIndex
 import com.telefonica.mistica.R
 import com.telefonica.mistica.compose.badge.Badge
 import com.telefonica.mistica.compose.shape.Chevron
@@ -216,6 +217,7 @@ internal fun ListRowItemImp(
                         .withModifier(
                             modifier = Modifier
                                 .semantics { traversalIndex = 2f }
+                                .zIndex(2f)
                         )
                         .build()
                     Spacer(modifier = Modifier.height(8.dp))
@@ -228,6 +230,7 @@ internal fun ListRowItemImp(
                         modifier = Modifier
                             .testTag(ListRowItemTestTags.LIST_ROW_ITEM_TITLE)
                             .semantics { traversalIndex = 1f }
+                            .zIndex(1f)
                             .then(
                                 if (isTitleHeading) {
                                     Modifier.semantics { heading() }
@@ -245,6 +248,7 @@ internal fun ListRowItemImp(
                         modifier = Modifier
                             .testTag(ListRowItemTestTags.LIST_ROW_ITEM_SUBTITLE)
                             .semantics { traversalIndex = 3f }
+                            .zIndex(3f)
                             .padding(vertical = 2.dp)
                             .defaultMinSize(minHeight = 20.dp),
                     )
@@ -257,6 +261,7 @@ internal fun ListRowItemImp(
                         modifier = Modifier
                             .testTag(ListRowItemTestTags.LIST_ROW_ITEM_DESCRIPTION)
                             .semantics { traversalIndex = 4f }
+                            .zIndex(4f)
                             .padding(vertical = 2.dp)
                             .defaultMinSize(minHeight = 20.dp),
                     )
@@ -266,6 +271,7 @@ internal fun ListRowItemImp(
                     Box(
                         modifier = Modifier
                             .semantics(mergeDescendants = !isToggleable) { traversalIndex = 5f }
+                            .zIndex(5f)
                     ) {
                         bottom()
                     }
@@ -277,6 +283,7 @@ internal fun ListRowItemImp(
                     .align(CenterVertically)
                     .absolutePadding(0.dp, 0.dp, 16.dp, 0.dp)
                     .semantics(mergeDescendants = !isToggleable) { traversalIndex = 6f }
+                    .zIndex(6f)
                 Badge(
                     modifier = badgeModifier,
                     content = badge,
@@ -288,6 +295,7 @@ internal fun ListRowItemImp(
                     modifier = Modifier
                         .align(CenterVertically)
                         .semantics { traversalIndex = 7f }
+                        .zIndex(7f)
                 ) {
                     it()
                 }
