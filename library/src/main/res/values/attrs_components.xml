@@ -132,6 +132,8 @@
         <attr name="titleStyle" format="enum">
             <enum name="title1" value="0" />
             <enum name="title2" value="1" />
+            <enum name="title3" value="2" />
+            <enum name="title4" value="3" />
         </attr>
         <attr name="link" format="string" />
         <attr name="linkOnClick" format="string" />

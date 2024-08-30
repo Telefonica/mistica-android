@@ -14,7 +14,7 @@
 			android:orientation="vertical">
 
 		<com.telefonica.mistica.title.TitleView
-				android:id="@+id/short_title"
+				android:id="@+id/short_default_title"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_marginBottom="8dp"
@@ -22,14 +22,14 @@
 				app:title="Short default Title" />
 
 		<com.telefonica.mistica.title.TitleView
-				android:id="@+id/long_title"
+				android:id="@+id/long_default_title"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_marginBottom="8dp"
 				app:title="Some default title that can get really long and almost fill the whole line" />
 
 		<com.telefonica.mistica.title.TitleView
-				android:id="@+id/short_title_with_link"
+				android:id="@+id/short_default_title_with_link"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_marginBottom="8dp"
@@ -37,12 +37,16 @@
 				app:title="Short default Title" />
 
 		<com.telefonica.mistica.title.TitleView
-				android:id="@+id/long_title_with_link"
+				android:id="@+id/long_default_title_with_link"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_marginBottom="8dp"
 				app:link="Some link"
 				app:title="Some default title that can get really long and almost fill the whole line" />
+
+		<Space
+				android:layout_width="match_parent"
+				android:layout_height="24dp" />
 
 		<com.telefonica.mistica.title.TitleView
 				android:layout_width="match_parent"
@@ -74,40 +78,6 @@
 				app:link="Some link"
 				app:titleStyle="title1"
 				app:title="Some title 1 that can get really long and almost fill the whole line" />
-
-		<com.telefonica.mistica.title.TitleView
-				android:id="@+id/short_title_with_style_1"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_marginBottom="8dp"
-				app:titleStyle="title2"
-				app:title="Some title 2" />
-
-		<com.telefonica.mistica.title.TitleView
-				android:id="@+id/short_title_with_style_1_with_link"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_marginBottom="8dp"
-				app:link="Some link"
-				app:titleStyle="title2"
-				app:title="Some title 2" />
-
-		<com.telefonica.mistica.title.TitleView
-				android:id="@+id/long_title_with_style_1"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_marginBottom="8dp"
-				app:titleStyle="title2"
-				app:title="Some title 2 that can get really long and almost fill the whole line" />
-
-		<com.telefonica.mistica.title.TitleView
-				android:id="@+id/long_title_with_style_1_with_link"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_marginBottom="8dp"
-				app:link="Some link"
-				app:titleStyle="title2"
-				app:title="Some title 2 that can get really long and almost fill the whole line" />
 
 		<com.telefonica.mistica.title.TitleView
 				android:id="@+id/short_title_with_style_1_with_link_and_chevron"
@@ -119,6 +89,44 @@
 				app:titleStyle="title1"
 				app:title="Some title 1 with chevron" />
 
+		<Space
+				android:layout_width="match_parent"
+				android:layout_height="24dp" />
+
+		<com.telefonica.mistica.title.TitleView
+				android:id="@+id/short_title_with_style_2"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="8dp"
+				app:titleStyle="title2"
+				app:title="Some title 2" />
+
+		<com.telefonica.mistica.title.TitleView
+				android:id="@+id/short_title_with_style_2_with_link"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="8dp"
+				app:link="Some link"
+				app:titleStyle="title2"
+				app:title="Some title 2" />
+
+		<com.telefonica.mistica.title.TitleView
+				android:id="@+id/long_title_with_style_2"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="8dp"
+				app:titleStyle="title2"
+				app:title="Some title 2 that can get really long and almost fill the whole line" />
+
+		<com.telefonica.mistica.title.TitleView
+				android:id="@+id/long_title_with_style_2_with_link"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="8dp"
+				app:link="Some link"
+				app:titleStyle="title2"
+				app:title="Some title 2 that can get really long and almost fill the whole line" />
+
 		<com.telefonica.mistica.title.TitleView
 				android:id="@+id/short_title_with_style_2_with_link_and_chevron"
 				android:layout_width="match_parent"
@@ -129,6 +137,101 @@
 				app:titleStyle="title2"
 				app:title="Some title 2 with chevron" />
 
-	</LinearLayout>
+		<Space
+				android:layout_width="match_parent"
+				android:layout_height="24dp" />
 
+		<com.telefonica.mistica.title.TitleView
+				android:id="@+id/short_title_with_style_3"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="8dp"
+				app:titleStyle="title3"
+				app:title="Some title 3" />
+
+		<com.telefonica.mistica.title.TitleView
+				android:id="@+id/short_title_with_style_3_with_link"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="8dp"
+				app:link="Some link"
+				app:titleStyle="title3"
+				app:title="Some title 3" />
+
+		<com.telefonica.mistica.title.TitleView
+				android:id="@+id/long_title_with_style_3"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="8dp"
+				app:titleStyle="title3"
+				app:title="Some title 3 that can get really long and almost fill the whole line" />
+
+		<com.telefonica.mistica.title.TitleView
+				android:id="@+id/long_title_with_style_3_with_link"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="8dp"
+				app:link="Some link"
+				app:titleStyle="title3"
+				app:title="Some title 3 that can get really long and almost fill the whole line" />
+
+		<com.telefonica.mistica.title.TitleView
+				android:id="@+id/short_title_with_style_3_with_link_and_chevron"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="8dp"
+				app:link="Some link"
+				app:linkWithChevron="true"
+				app:titleStyle="title3"
+				app:title="Some title 3 with chevron" />
+
+		<Space
+				android:layout_width="match_parent"
+				android:layout_height="24dp" />
+
+		<com.telefonica.mistica.title.TitleView
+				android:id="@+id/short_title_with_style_4"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="8dp"
+				app:titleStyle="title4"
+				app:title="Some title 4" />
+
+		<com.telefonica.mistica.title.TitleView
+				android:id="@+id/short_title_with_style_4_with_link"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="8dp"
+				app:link="Some link"
+				app:titleStyle="title4"
+				app:title="Some title 4" />
+
+		<com.telefonica.mistica.title.TitleView
+				android:id="@+id/long_title_with_style_4"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="8dp"
+				app:titleStyle="title4"
+				app:title="Some title 4 that can get really long and almost fill the whole line" />
+
+		<com.telefonica.mistica.title.TitleView
+				android:id="@+id/long_title_with_style_4_with_link"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="8dp"
+				app:link="Some link"
+				app:titleStyle="title4"
+				app:title="Some title 4 that can get really long and almost fill the whole line" />
+
+		<com.telefonica.mistica.title.TitleView
+				android:id="@+id/short_title_with_style_4_with_link_and_chevron"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="8dp"
+				app:link="Some link"
+				app:linkWithChevron="true"
+				app:titleStyle="title4"
+				app:title="Some title 4 with chevron" />
+
+	</LinearLayout>
 </ScrollView>

@@ -57,6 +57,8 @@ class TitleView @JvmOverloads constructor(
     @IntDef(
         TITLE_1,
         TITLE_2,
+        TITLE_3,
+        TITLE_4,
     )
     annotation class TitleStyle
 
@@ -113,6 +115,8 @@ class TitleView @JvmOverloads constructor(
         val styleConfig = when (style) {
             TITLE_1 -> TITLE_1_STYLE_CONFIG
             TITLE_2 -> TITLE_2_STYLE_CONFIG
+            TITLE_3 -> TITLE_3_STYLE_CONFIG
+            TITLE_4 -> TITLE_4_STYLE_CONFIG
             else -> TITLE_1_STYLE_CONFIG
         }
 
@@ -143,6 +147,8 @@ class TitleView @JvmOverloads constructor(
     companion object {
         const val TITLE_1 = 0
         const val TITLE_2 = 1
+        const val TITLE_3 = 2
+        const val TITLE_4 = 3
 
         private val TITLE_1_STYLE_CONFIG = TitleStyleConfig(
             preset = R.style.AppTheme_TextAppearance_PresetTitle1,
@@ -151,7 +157,19 @@ class TitleView @JvmOverloads constructor(
         )
 
         private val TITLE_2_STYLE_CONFIG = TitleStyleConfig(
-            preset = R.style.AppTheme_TextAppearance_Preset5,
+            preset = R.style.AppTheme_TextAppearance_PresetTitle2,
+            colorAttrRes = R.attr.colorTextPrimary,
+            isAllCaps = false,
+        )
+
+        private val TITLE_3_STYLE_CONFIG = TitleStyleConfig(
+            preset = R.style.AppTheme_TextAppearance_PresetTitle3,
+            colorAttrRes = R.attr.colorTextPrimary,
+            isAllCaps = false,
+        )
+
+        private val TITLE_4_STYLE_CONFIG = TitleStyleConfig(
+            preset = R.style.AppTheme_TextAppearance_Preset6,
             colorAttrRes = R.attr.colorTextPrimary,
             isAllCaps = false,
         )

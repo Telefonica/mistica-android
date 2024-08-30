@@ -82,6 +82,12 @@ class MisticaTypography(
     var presetTitle1 by mutableStateOf(buildPresetTitle1(), structuralEqualityPolicy())
         private set
 
+    var presetTitle2 by mutableStateOf(buildPresetTitle2(), structuralEqualityPolicy())
+        private set
+
+    var presetTitle3 by mutableStateOf(buildPresetTitle3(), structuralEqualityPolicy())
+        private set
+
     var presetIndicator by mutableStateOf(buildPresetIndicator(), structuralEqualityPolicy())
         private set
 
@@ -241,7 +247,21 @@ class MisticaTypography(
     private fun buildPresetTitle1(
         fontWeight: FontWeight = FontWeight.Medium,
     ) = buildPreset1().copy(
-        fontWeight = fontWeight
+        fontWeight = fontWeight,
+    )
+
+    private fun buildPresetTitle2(
+        fontWeight: FontWeight = FontWeight.Medium,
+    ) = buildPreset3().copy(
+        fontWeight = fontWeight,
+    )
+
+    private fun buildPresetTitle3(
+        fontWeight: FontWeight = FontWeight.Medium,
+        textSize: TextUnit = 20.sp,
+    ) = buildPreset5().copy(
+        fontWeight = fontWeight,
+        fontSize = textSize,
     )
 
     private fun buildPresetIndicator(
@@ -271,6 +291,9 @@ class MisticaTypography(
         presetSmallButtonFontWeight: FontWeight,
         presetLinkFontWeight: FontWeight,
         presetTitle1FontWeight: FontWeight,
+        presetTitle2FontWeight: FontWeight,
+        presetTitle3FontWeight: FontWeight,
+        presetTitle3FontSize: TextUnit,
         presetIndicatorFontWeight: FontWeight,
         presetTabsLabelFontWeight: FontWeight,
         presetTabsLabelFontSize: TextUnit,
@@ -298,6 +321,8 @@ class MisticaTypography(
         presetSmallButton = buildPresetSmallButton(fontWeight = presetSmallButtonFontWeight)
         presetLink = buildPresetLink(fontWeight = presetLinkFontWeight)
         presetTitle1 = buildPresetTitle1(fontWeight = presetTitle1FontWeight)
+        presetTitle2 = buildPresetTitle2(fontWeight = presetTitle2FontWeight)
+        presetTitle3 = buildPresetTitle3(fontWeight = presetTitle3FontWeight, textSize = presetTitle3FontSize)
         presetIndicator = buildPresetIndicator(fontWeight = presetIndicatorFontWeight)
         presetTabsLabel = buildPresetTabsLabel(fontWeight = presetTabsLabelFontWeight, fontSize = presetTabsLabelFontSize)
     }
