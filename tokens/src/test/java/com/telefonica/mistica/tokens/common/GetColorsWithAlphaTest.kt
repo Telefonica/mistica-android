@@ -41,11 +41,11 @@ class GetColorsWithAlphaTest {
                 )
             ),
             dark = mapOf(
-                "textButtonSecondarySelected" to BrushDTO.SolidColorDTO(
+                "textButtonSecondaryPressed" to BrushDTO.SolidColorDTO(
                     value = "{palette.grey2}",
                     description = "anyDescription"
                 ),
-                "buttonLinkBackgroundSelected" to BrushDTO.SolidColorDTO(
+                "buttonLinkBackgroundPressed" to BrushDTO.SolidColorDTO(
                     value = "rgba({palette.blauPurple}, 0.3)",
                     description = "anyDescription"
                 ),

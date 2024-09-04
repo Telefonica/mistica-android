@@ -16,6 +16,8 @@ public object VivoNewBrandFontWeights {
 
   public val title2FontWeight: FontWeight = FontWeight.Normal
 
+  public val title3FontWeight: FontWeight = FontWeight.Normal
+
   public val indicatorFontWeight: FontWeight = FontWeight.Normal
 
   public val navigationBarFontWeight: FontWeight = FontWeight.Normal

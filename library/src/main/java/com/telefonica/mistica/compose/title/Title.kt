@@ -84,7 +84,19 @@ private fun TitleText(
         }
 
         TitleStyle.TITLE_2 -> {
-            preset = MisticaTheme.typography.preset5
+            preset = MisticaTheme.typography.presetTitle2
+            textColor = MisticaTheme.colors.textPrimary
+            isAllCaps = false
+        }
+
+        TitleStyle.TITLE_3 -> {
+            preset = MisticaTheme.typography.presetTitle3
+            textColor = MisticaTheme.colors.textPrimary
+            isAllCaps = false
+        }
+
+        TitleStyle.TITLE_4 -> {
+            preset = MisticaTheme.typography.preset6
             textColor = MisticaTheme.colors.textPrimary
             isAllCaps = false
         }
@@ -132,5 +144,7 @@ private fun Link(
 
 enum class TitleStyle {
     TITLE_1,
-    TITLE_2
+    TITLE_2,
+    TITLE_3,
+    TITLE_4,
 }

@@ -1,5 +1,7 @@
 package com.telefonica.mistica.compose.theme.brand
 
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.TextUnit
 import com.telefonica.mistica.R
 import com.telefonica.mistica.compose.theme.brushes.MisticaBrushes
 
@@ -35,6 +37,12 @@ object BlauBrand : Brand {
     override val linkFontWeight = BlauBrandFontWeights.linkFontWeight
 
     override val title1FontWeight = BlauBrandFontWeights.title1FontWeight
+
+    override val title2FontWeight = BlauBrandFontWeights.title2FontWeight
+
+    override val title3FontWeight = BlauBrandFontWeights.title3FontWeight
+
+    override val title3FontSize = BlauBrandFontSizes.title3FontSize
 
     override val indicatorFontWeight = BlauBrandFontWeights.indicatorFontWeight
 

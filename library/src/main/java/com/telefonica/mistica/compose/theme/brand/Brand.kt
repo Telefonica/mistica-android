@@ -27,6 +27,9 @@ interface Brand {
     val buttonFontWeight: FontWeight
     val linkFontWeight: FontWeight
     val title1FontWeight: FontWeight
+    val title2FontWeight: FontWeight
+    val title3FontWeight: FontWeight
+    val title3FontSize: TextUnit
     val indicatorFontWeight: FontWeight
     val tabsLabelFontWeight: FontWeight
     val tabsLabelFontSize: TextUnit

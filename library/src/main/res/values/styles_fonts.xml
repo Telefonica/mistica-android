@@ -126,6 +126,17 @@
         <item name="android:textStyle">?title1TextStyle</item>
     </style>
 
+    <style name="AppTheme.TextAppearance.PresetTitle2" parent="AppTheme.TextAppearance.Preset3">
+        <item name="android:fontFamily">?title2Font</item>
+        <item name="android:textStyle">?title2TextStyle</item>
+    </style>
+
+    <style name="AppTheme.TextAppearance.PresetTitle3" parent="AppTheme.TextAppearance.Preset5">
+        <item name="android:fontFamily">?title3Font</item>
+        <item name="android:textStyle">?title3TextStyle</item>
+        <item name="android:textSize">?title3TextSize</item>
+    </style>
+
     <style name="AppTheme.TextAppearance.PresetIndicator" parent="AppTheme.TextAppearance.Preset2">
         <item name="android:fontFamily">?indicatorFont</item>
         <item name="android:textStyle">?indicatorTextStyle</item>

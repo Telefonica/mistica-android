@@ -39,6 +39,12 @@ object TuBrand : Brand {
 
     override val title1FontWeight: FontWeight = TuBrandFontWeights.title1FontWeight
 
+    override val title2FontWeight: FontWeight = TuBrandFontWeights.title2FontWeight
+
+    override val title3FontWeight: FontWeight = TuBrandFontWeights.title3FontWeight
+
+    override val title3FontSize: TextUnit = TuBrandFontSizes.title3FontSize
+
     override val indicatorFontWeight: FontWeight = TuBrandFontWeights.indicatorFontWeight
 
     override val tabsLabelFontWeight: FontWeight = TuBrandFontWeights.tabsLabelFontWeight

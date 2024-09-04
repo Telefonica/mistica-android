@@ -36,6 +36,12 @@ object O2NewBrand : Brand {
 
     override val title1FontWeight = O2NewBrandFontWeights.title1FontWeight
 
+    override val title2FontWeight = O2NewBrandFontWeights.title2FontWeight
+
+    override val title3FontWeight = O2NewBrandFontWeights.title3FontWeight
+
+    override val title3FontSize = O2NewBrandFontSizes.title3FontSize
+
     override val indicatorFontWeight = O2NewBrandFontWeights.indicatorFontWeight
 
     override val tabsLabelFontWeight = O2NewBrandFontWeights.tabsLabelFontWeight
