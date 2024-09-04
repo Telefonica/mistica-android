@@ -215,13 +215,14 @@ fun samples() = listOf(
     ),
     ListItem(
         headline = Tag("PROMO").withStyle(TYPE_PROMO),
-        title = TITLE,
+        title = "$TITLE clickable",
         subtitle = SUBTITLE,
         description = DESCRIPTION,
         action = { Chevron() },
         isBadgeVisible = true,
         badge = "1",
         listRowIcon = ListRowIcon.SmallAsset(painter = painterResource(id = R.drawable.list_row_drawable)),
+        onClick = { println("do nothing") },
     ),
     ListItem(
         headline = Tag("PROMO").withStyle(TYPE_PROMO),
