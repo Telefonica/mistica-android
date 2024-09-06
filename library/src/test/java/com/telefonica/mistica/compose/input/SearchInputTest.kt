@@ -32,6 +32,13 @@ class SearchInputTest : ScreenshotsTest() {
     }
 
     @Test
+    fun `disabled SearchInput`() {
+        givenSomeSearchInput(value = "", enabled = false)
+
+        thenScreenshotIsOk()
+    }
+
+    @Test
     fun `SearchInput is cleared when clicking on clear search button`() {
         givenSomeSearchInput(value = "Something")
 
@@ -40,13 +47,14 @@ class SearchInputTest : ScreenshotsTest() {
         thenScreenshotIsOk()
     }
 
-    private fun givenSomeSearchInput(value: String) {
+    private fun givenSomeSearchInput(value: Strin, enabled: Boolean = true) {
         composeTestRule.setContent {
             MisticaTheme(brand = MovistarBrand) {
                 SearchInput(
                     value = value,
                     onValueChange = { },
                     label = "Search something",
+                    enabled = enabled
                 )
             }
         }

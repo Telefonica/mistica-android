@@ -83,7 +83,8 @@ fun Inputs() {
         Title("Disable Dropdown")
         DropDownSample(enabled = false)
         Title("Search Input")
-        SearchInputSample()
+        SearchInputSample(enabled = true)
+        SearchInputSample(enabled = false)
         Title("Inverse inputs")
         Column(
             modifier = Modifier
@@ -450,7 +451,7 @@ private fun DropDownSample(enabled: Boolean = true) {
 }
 
 @Composable
-private fun SearchInputSample() {
+private fun SearchInputSample(enabled: Boolean) {
     var text by remember {
         mutableStateOf("")
     }
@@ -464,6 +465,7 @@ private fun SearchInputSample() {
         onValueChange = {
             text = it
         },
-        label = "Search Something"
+        label = "Search Something",
+        enabled = enabled,
     )
 }
