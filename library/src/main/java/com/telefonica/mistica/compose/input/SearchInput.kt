@@ -1,9 +1,11 @@
 package com.telefonica.mistica.compose.input
 
 import androidx.compose.material.Icon
+import androidx.compose.material.IconButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.VisualTransformation
 import com.telefonica.mistica.R
@@ -18,7 +20,6 @@ fun SearchInput(
     helperText: String? = null,
     isError: Boolean = false,
     errorText: String? = null,
-    trailingIcon: @Composable (() -> Unit)? = null,
     isInverse: Boolean = false,
     enabled: Boolean = true,
     readOnly: Boolean = false,
@@ -34,7 +35,6 @@ fun SearchInput(
         helperText = helperText,
         isError = isError,
         errorText = errorText,
-        trailingIcon = trailingIcon,
         isInverse = isInverse,
         enabled = enabled,
         readOnly = readOnly,
@@ -49,6 +49,17 @@ fun SearchInput(
                 tint = MisticaTheme.colors.neutralHigh,
                 contentDescription = null
             )
+        },
+        trailingIcon = {
+            IconButton(onClick = {
+                onValueChange("")
+            }) {
+                Icon(
+                    painter = painterResource(id = R.drawable.ic_close_regular),
+                    tint = MisticaTheme.colors.neutralHigh,
+                    contentDescription = stringResource(id = R.string.clear_search_content_description),
+                )
+            }
         }
     )
 }
