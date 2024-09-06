@@ -47,7 +47,7 @@ class SearchInputTest : ScreenshotsTest() {
         thenScreenshotIsOk()
     }
 
-    private fun givenSomeSearchInput(value: Strin, enabled: Boolean = true) {
+    private fun givenSomeSearchInput(value: String, enabled: Boolean = true) {
         composeTestRule.setContent {
             MisticaTheme(brand = MovistarBrand) {
                 SearchInput(
