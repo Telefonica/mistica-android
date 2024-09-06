@@ -4,6 +4,7 @@ import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
@@ -51,9 +52,12 @@ fun SearchInput(
             )
         },
         trailingIcon = {
-            IconButton(onClick = {
-                onValueChange("")
-            }) {
+            IconButton(
+                modifier = Modifier.testTag(TextInputTestTags.CLEAR_SEARCH_BUTTON),
+                onClick = {
+                    onValueChange("")
+                }
+            ) {
                 Icon(
                     painter = painterResource(id = R.drawable.ic_close_regular),
                     tint = MisticaTheme.colors.neutralHigh,
