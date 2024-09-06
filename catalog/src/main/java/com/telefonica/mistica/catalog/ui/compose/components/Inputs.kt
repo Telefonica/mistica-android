@@ -31,6 +31,7 @@ import com.telefonica.mistica.compose.input.LimitCharacters
 import com.telefonica.mistica.compose.input.NumberInput
 import com.telefonica.mistica.compose.input.PasswordInput
 import com.telefonica.mistica.compose.input.PhoneInput
+import com.telefonica.mistica.compose.input.SearchInput
 import com.telefonica.mistica.compose.input.TextAreaInput
 import com.telefonica.mistica.compose.input.TextInput
 import com.telefonica.mistica.compose.input.TextLink
@@ -81,6 +82,8 @@ fun Inputs() {
         DropDownSample()
         Title("Disable Dropdown")
         DropDownSample(enabled = false)
+        Title("Search Input")
+        SearchInputSample()
         Title("Inverse inputs")
         Column(
             modifier = Modifier
@@ -443,5 +446,24 @@ private fun DropDownSample(enabled: Boolean = true) {
             selectedItemIndex = it
         },
         enabled = enabled
+    )
+}
+
+@Composable
+private fun SearchInputSample() {
+    var text by remember {
+        mutableStateOf("")
+    }
+
+    SearchInput(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(top = 8.dp, start = 16.dp, end = 16.dp)
+        ,
+        value = text,
+        onValueChange = {
+            text = it
+        },
+        label = "Search Something"
     )
 }
