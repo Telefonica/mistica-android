@@ -13,10 +13,10 @@ import com.telefonica.mistica.compose.theme.MisticaTheme
 
 @Composable
 fun SearchInput(
-    modifier: Modifier,
     value: String,
     onValueChange: (String) -> Unit,
     label: String?,
+    modifier: Modifier = Modifier,
     helperText: String? = null,
     isError: Boolean = false,
     errorText: String? = null,
