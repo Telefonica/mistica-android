@@ -94,7 +94,7 @@ dependencies {
     implementation "io.coil-kt:coil-svg:$coil_version"
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'com.airbnb.android:lottie:3.2.2'
+    implementation 'com.airbnb.android:lottie:6.5.0'
 
     implementation "com.github.skydoves:balloon-compose:1.5.3"
 
