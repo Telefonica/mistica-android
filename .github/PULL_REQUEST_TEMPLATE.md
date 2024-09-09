@@ -12,6 +12,7 @@ _Provide a description of the implementation. A list of steps would be ideal._
 - [ ] Tested with dark mode.
 - [ ] Tested with API 24.
 - [ ] Sync done with iOS team for this feature to ensure alignment, if applies.
+- [ ] Accessibility. These changes do not worsen the current implementation.
 
 ### :test_tube: How can I test this?
 _If it cannot be tested explain why._
