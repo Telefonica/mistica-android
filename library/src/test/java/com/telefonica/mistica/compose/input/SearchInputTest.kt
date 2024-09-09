@@ -10,10 +10,15 @@ import com.telefonica.mistica.testutils.ScreenshotsTest
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
+import org.mockito.kotlin.mock
+import org.mockito.kotlin.verify
 import org.robolectric.RobolectricTestRunner
 
 @RunWith(RobolectricTestRunner::class)
 class SearchInputTest : ScreenshotsTest() {
+
+    private val onValueChangeMock: (String) -> Unit = mock()
+
     @get:Rule
     val composeTestRule = createComposeRule()
 
@@ -44,7 +49,7 @@ class SearchInputTest : ScreenshotsTest() {
 
         whenClickingOnClearSearch()
 
-        thenScreenshotIsOk()
+        thenValueIsNowEmptyString()
     }
 
     private fun givenSomeSearchInput(value: String, enabled: Boolean = true) {
@@ -52,7 +57,7 @@ class SearchInputTest : ScreenshotsTest() {
             MisticaTheme(brand = MovistarBrand) {
                 SearchInput(
                     value = value,
-                    onValueChange = { },
+                    onValueChange = onValueChangeMock,
                     label = "Search something",
                     enabled = enabled
                 )
@@ -66,5 +71,9 @@ class SearchInputTest : ScreenshotsTest() {
 
     private fun thenScreenshotIsOk() {
         compareScreenshot(composeTestRule.onRoot())
+    }
+
+    private fun thenValueIsNowEmptyString() {
+        verify(onValueChangeMock).invoke("")
     }
 }
