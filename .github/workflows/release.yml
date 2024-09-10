@@ -30,7 +30,7 @@ jobs:
           --max-workers 1 closeAndReleaseStagingRepository"
 
       - name: Microsoft Teams Notification
-        uses: skitionek/notify-microsoft-teams@master
+        uses: skitionek/notify-microsoft-teams@v1.0.8
         if: success()
         with:
           webhook_url: ${{ secrets.ANDROID_LIBRARIES_TEAMS_WEBHOOK }}
