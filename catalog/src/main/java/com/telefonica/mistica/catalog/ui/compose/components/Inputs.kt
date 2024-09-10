@@ -466,6 +466,7 @@ private fun SearchInputSample(enabled: Boolean) {
             text = it
         },
         label = "Search Something",
+        helperText = "Some helper text",
         enabled = enabled,
     )
 }

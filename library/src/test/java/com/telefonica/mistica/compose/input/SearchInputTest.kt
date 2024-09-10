@@ -59,6 +59,7 @@ class SearchInputTest : ScreenshotsTest() {
                     value = value,
                     onValueChange = onValueChangeMock,
                     label = "Search something",
+                    helperText = "Helper text",
                     enabled = enabled
                 )
             }
