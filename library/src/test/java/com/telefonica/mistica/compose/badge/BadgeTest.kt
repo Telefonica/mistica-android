@@ -24,21 +24,21 @@ class BadgeTest: ScreenshotsTest() {
     val composeTestRule = createComposeRule()
 
     @Test
-    fun `check non numeric badge screenshot`() {
+    fun `Badge non numeric`() {
         `when some badge`("")
 
         `then screenshot is OK`()
     }
 
     @Test
-    fun checkNumericBadgeScreenshotOneDigit() {
+    fun `Badge numeric one digit`() {
         `when some badge`(ONE_DIGIT_CONTENT)
 
         `then screenshot is OK`()
     }
 
     @Test
-    fun checkNumericBadgeScreenshotTwoDigits() {
+    fun `Badge numeric two digits`() {
         `when some badge`(TWO_DIGITS_CONTENT)
 
         `then screenshot is OK`()
