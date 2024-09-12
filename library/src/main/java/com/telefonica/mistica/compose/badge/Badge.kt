@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -20,7 +19,6 @@ import com.telefonica.mistica.compose.theme.MisticaTheme
 import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 import androidx.compose.material.Badge as MaterialBadge
 
-@ExperimentalMaterialApi
 @Composable
 fun Badge(
     modifier: Modifier = Modifier,
@@ -66,7 +64,6 @@ object BadgeTestTags {
     const val BADGE_NUMBER_VALUE = "badge_number_value"
 }
 
-@ExperimentalMaterialApi
 @Preview(showBackground = true)
 @Composable
 fun BadgePreview() {
