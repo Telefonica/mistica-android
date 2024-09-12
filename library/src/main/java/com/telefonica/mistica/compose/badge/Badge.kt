@@ -14,6 +14,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.theme.MisticaTheme
 import com.telefonica.mistica.compose.theme.brand.MovistarBrand
@@ -22,6 +23,7 @@ import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 @Composable
 fun Badge(
     modifier: Modifier = Modifier,
+    textSize: TextUnit = TextUnit.Unspecified,
     content: String? = null,
 ) {
     if (content.isNullOrEmpty()) {
@@ -40,6 +42,7 @@ fun Badge(
             Text(
                 modifier = Modifier.testTag(BadgeTestTags.BADGE_NUMBER_VALUE),
                 text = content,
+                fontSize = textSize,
                 color = MisticaTheme.colors.textPrimaryInverse,
             )
         }
