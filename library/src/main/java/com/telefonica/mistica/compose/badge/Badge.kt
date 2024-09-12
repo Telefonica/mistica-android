@@ -18,6 +18,7 @@ import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.theme.MisticaTheme
 import com.telefonica.mistica.compose.theme.brand.MovistarBrand
+import androidx.compose.material.Badge as MaterialBadge
 
 @ExperimentalMaterialApi
 @Composable
@@ -35,18 +36,28 @@ fun Badge(
                 .size(8.dp),
         ) { }
     } else {
-        androidx.compose.material.Badge(
+        MaterialBadge(
             backgroundColor = MisticaTheme.colors.badge,
             modifier = modifier.testTag(BadgeTestTags.BADGE_NUMBER),
         ) {
             Text(
                 modifier = Modifier.testTag(BadgeTestTags.BADGE_NUMBER_VALUE),
-                text = content,
+                text = getBadgeContent(content),
                 fontSize = textSize,
                 color = MisticaTheme.colors.textPrimaryInverse,
             )
         }
     }
+}
+
+private fun getBadgeContent(content: String) = if (content.all { it.isDigit() }) {
+    if (content.toLong() > 9) {
+        "9+"
+    } else {
+        content
+    }
+} else {
+    content
 }
 
 object BadgeTestTags {
