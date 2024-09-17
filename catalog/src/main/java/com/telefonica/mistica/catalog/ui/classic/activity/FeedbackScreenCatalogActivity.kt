@@ -2,7 +2,6 @@ package com.telefonica.mistica.catalog.ui.classic.activity
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import com.telefonica.mistica.catalog.R
@@ -49,14 +48,14 @@ class FeedbackScreenCatalogActivity : AppCompatActivity() {
             firstButtonLoadingText?.let { setFeedbackFirstButtonLoadingText(it) }
             secondButtonText?.let { setFeedbackSecondButtonText(it) }
             showSecondButtonAsLink?.let { setFeedbackSecondButtonAsLink(it) }
-            setFirstButtonOnClick(View.OnClickListener {
+            setFirstButtonOnClick {
                 if (showLoadingInButton == true) {
                     setIsLoading(true)
                     handler.postDelayed({ setIsLoading(false) }, RETRY_DELAY)
                 } else {
                     finish()
                 }
-            })
+            }
             customIcon?.let { setCustomIcon(it) }
             customAnimation?.let { setCustomAnimation(it) }
             setShouldAnimateOnAttached(shouldAnimateOnAttached)

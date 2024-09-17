@@ -242,7 +242,6 @@ class FeedbackScreenView : ConstraintLayout {
     override fun onAttachedToWindow() {
         super.onAttachedToWindow()
         configureView()
-        animateViewsOnFirstLayout()
     }
 
     private fun configureView() {
@@ -251,6 +250,7 @@ class FeedbackScreenView : ConstraintLayout {
         configureTexts()
         configureCustomContentView()
         configureButtons()
+        animateViewsOnFirstLayout()
     }
 
     private fun configureBackground() {
