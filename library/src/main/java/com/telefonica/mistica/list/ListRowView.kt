@@ -242,7 +242,7 @@ setHeadlineLayout(
                 layoutRes = headlineResId.takeIf { it != TypedValue.TYPE_NULL } ?: HEADLINE_NONE,
                 contentDescription = styledAttrs.getString(R.styleable.ListRowView_listRowHeadlineContentDescription)
             ).also {
-                // Visibility decision depends on the title layout initialization
+                // Visibility decision depends on the headline layout initialization
                 val headlineVisible: Boolean = styledAttrs.getBoolean(
                     R.styleable.ListRowView_listRowHeadlineVisible,
                     currentHeadlineLayoutRes != HEADLINE_NONE
