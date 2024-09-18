@@ -249,7 +249,6 @@ setHeadlineLayout(
                 )
                 setHeadlineVisible(headlineVisible)
             }
-            setHeadlineVisible(headlineVisible)
 
             // Subtitle
             setSubtitleMaxLines(styledAttrs.getInteger(R.styleable.ListRowView_listRowSubtitleMaxLines, -1))
