@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -14,14 +13,16 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.theme.MisticaTheme
 import com.telefonica.mistica.compose.theme.brand.MovistarBrand
+import androidx.compose.material.Badge as MaterialBadge
 
-@ExperimentalMaterialApi
 @Composable
 fun Badge(
     modifier: Modifier = Modifier,
+    textSize: TextUnit = TextUnit.Unspecified,
     content: String? = null,
 ) {
     if (content.isNullOrEmpty()) {
@@ -33,17 +34,28 @@ fun Badge(
                 .size(8.dp),
         ) { }
     } else {
-        androidx.compose.material.Badge(
+        MaterialBadge(
             backgroundColor = MisticaTheme.colors.badge,
             modifier = modifier.testTag(BadgeTestTags.BADGE_NUMBER),
         ) {
             Text(
                 modifier = Modifier.testTag(BadgeTestTags.BADGE_NUMBER_VALUE),
-                text = content,
+                text = getBadgeContent(content),
+                fontSize = textSize,
                 color = MisticaTheme.colors.textPrimaryInverse,
             )
         }
     }
+}
+
+private fun getBadgeContent(content: String) = if (content.all { it.isDigit() }) {
+    if (content.toLong() > 9) {
+        "9+"
+    } else {
+        content
+    }
+} else {
+    content
 }
 
 object BadgeTestTags {
@@ -52,7 +64,6 @@ object BadgeTestTags {
     const val BADGE_NUMBER_VALUE = "badge_number_value"
 }
 
-@ExperimentalMaterialApi
 @Preview(showBackground = true)
 @Composable
 fun BadgePreview() {
