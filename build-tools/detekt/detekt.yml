@@ -1,0 +1,36 @@
+complexity:
+  TooManyFunctions:
+    active: false
+  LongParameterList:
+    active: false
+
+style:
+  NewLineAtEndOfFile:
+    active: false
+  MagicNumber:
+    active: false
+  ReturnCount:
+    active: false
+  UnusedImports:
+    active: true
+  MaxLineLength:
+    maxLineLength: 160
+  UnusedPrivateMember:
+    ignoreAnnotated: 'Preview'
+  UnnecessaryAbstractClass:
+    ignoreAnnotated: "Module"
+
+naming:
+  FunctionNaming:
+    active: true
+    ignoreAnnotated: 'Composable'
+
+empty-blocks:
+  EmptyFunctionBlock:
+    active: false
+
+exceptions:
+  TooGenericExceptionThrown:
+    active: false
+  TooGenericExceptionCaught:
+    active: false

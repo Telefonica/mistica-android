@@ -1,0 +1,6 @@
+
+detekt {
+    buildUponDefaultConfig = true
+    config = files("$projectDir/build-tools/detekt/detekt.yml")
+    input = files("$projectDir")
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <ManuallySuppressedIssues></ManuallySuppressedIssues>
+  <CurrentIssues>
+    <ID>WildcardImport:protect_android_task.gradle.kts$import java.io.*</ID>
+    <ID>WildcardImport:protect_android_task.gradle.kts$import java.lang.*</ID>
+  </CurrentIssues>
+</SmellBaseline>
