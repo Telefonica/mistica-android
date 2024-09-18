@@ -11,7 +11,7 @@ buildscript {
         accompanist_version = "0.32.0"
         coil_version = '2.5.0'
         constraintComposeVersion = '1.0.1'
-        detekt_version = '1.22.0'
+        detekt_version = '1.23.7'
         roborazzi_version = "1.10.1"
     }
     repositories {
@@ -24,6 +24,7 @@ buildscript {
         classpath "com.android.tools.build:gradle:8.1.4"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "gradle.plugin.com.betomorrow.gradle:appcenter-plugin:2.0.3"
+        classpath "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:$detekt_version"
     }
 }
 
@@ -31,7 +32,11 @@ plugins {
     id 'org.jetbrains.kotlin.android' version '1.5.21' apply false
     id 'io.github.gradle-nexus.publish-plugin' version '1.1.0' apply false
     id "io.github.takahirom.roborazzi" version '1.10.1' apply false
-    id 'io.gitlab.arturbosch.detekt' version '1.22.0'
+    id "io.gitlab.arturbosch.detekt" version '1.23.7'
+}
+
+dependencies {
+    apply plugin: "io.gitlab.arturbosch.detekt"
 }
 
 allprojects {

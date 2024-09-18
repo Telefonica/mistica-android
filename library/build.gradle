@@ -100,8 +100,6 @@ dependencies {
 
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.6.1"
 
-    implementation "io.gitlab.arturbosch.detekt:$detekt_version"
-
     testImplementation 'junit:junit:4.13.2'
     testImplementation "androidx.compose.ui:ui-test-junit4:$compose_ui_version"
     testImplementation "androidx.compose.ui:ui-test-manifest:$compose_ui_version"
