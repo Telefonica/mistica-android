@@ -238,14 +238,17 @@ open class ListRowView @JvmOverloads constructor(
                 R.styleable.ListRowView_listRowHeadlineLayout,
                 TypedValue.TYPE_NULL
             )
-            setHeadlineLayout(
+setHeadlineLayout(
                 layoutRes = headlineResId.takeIf { it != TypedValue.TYPE_NULL } ?: HEADLINE_NONE,
                 contentDescription = styledAttrs.getString(R.styleable.ListRowView_listRowHeadlineContentDescription)
-            )
-            val headlineVisible: Boolean = styledAttrs.getBoolean(
-                R.styleable.ListRowView_listRowHeadlineVisible,
-                currentHeadlineLayoutRes != HEADLINE_NONE
-            )
+            ).also {
+                // Visibility decision depends on the title layout initialization
+                val headlineVisible: Boolean = styledAttrs.getBoolean(
+                    R.styleable.ListRowView_listRowHeadlineVisible,
+                    currentHeadlineLayoutRes != HEADLINE_NONE
+                )
+                setHeadlineVisible(headlineVisible)
+            }
             setHeadlineVisible(headlineVisible)
 
             // Subtitle
