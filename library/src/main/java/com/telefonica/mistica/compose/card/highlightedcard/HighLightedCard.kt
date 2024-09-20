@@ -80,7 +80,10 @@ fun HighLightedCard(
             val (
                 titleComposable,
                 messageComposable,
-                closeButtonComposable,
+                closeButtonComposable
+            ) = createRefs()
+
+            val (
                 actionButtonComposable,
                 pictureComposable,
             ) = createRefs()
