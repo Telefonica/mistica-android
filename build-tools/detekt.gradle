@@ -1,7 +1,7 @@
 
 detekt {
     buildUponDefaultConfig = true
-    config = files("$projectDir/build-tools/detekt/detekt.yml")
+    config.from(files("$projectDir/build-tools/detekt/detekt.yml"))
     basePath = files("$projectDir")
 
     source.from(fileTree(rootProject.projectDir) {
