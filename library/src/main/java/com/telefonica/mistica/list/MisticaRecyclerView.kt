@@ -3,7 +3,6 @@ package com.telefonica.mistica.list
 import android.content.Context
 import android.util.AttributeSet
 import androidx.annotation.IntDef
-import androidx.annotation.Nullable
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import androidx.recyclerview.widget.RecyclerView
