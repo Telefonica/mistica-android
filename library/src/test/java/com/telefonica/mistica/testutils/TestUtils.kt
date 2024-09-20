@@ -30,7 +30,7 @@ object TestUtils {
                 }
             }
         }
-        throw IllegalStateException("Could not find running test method name")
+        error("Could not find running test method name")
     }
     fun getAllBrands() = listOf(
         MovistarBrand,
