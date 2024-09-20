@@ -30,7 +30,7 @@ class PhoneTextInputValidation(private val invalidMessage: String) : TextInputVa
 
 }
 
-class NoValidation() : TextInputValidation {
+class NoValidation : TextInputValidation {
     override fun isValid(text: String?) = TextInputValidationResult.Success
 }
 
