@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.BadgedBox
-import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Icon
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -23,7 +22,6 @@ import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.compose.badge.Badge
 import com.telefonica.mistica.compose.button.Button
 
-@OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun Badges() {
     Column(
