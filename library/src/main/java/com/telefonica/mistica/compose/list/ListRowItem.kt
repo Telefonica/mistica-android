@@ -17,7 +17,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Checkbox
-import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -40,7 +39,6 @@ import com.telefonica.mistica.compose.tag.Tag
 import com.telefonica.mistica.compose.theme.MisticaTheme
 import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 
-@OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun ListRowItem(
     modifier: Modifier = Modifier,
@@ -76,7 +74,6 @@ fun ListRowItem(
     )
 }
 
-@OptIn(ExperimentalMaterialApi::class)
 @Composable
 @Deprecated(replaceWith = ReplaceWith("ListRowItem"), message = "Use new ListRowItem with ListRowIcon param instead")
 fun ListRowItem(
@@ -113,7 +110,6 @@ fun ListRowItem(
     )
 }
 
-@ExperimentalMaterialApi
 @Composable
 private fun ListRowItemImp(
     modifier: Modifier = Modifier,
@@ -286,7 +282,6 @@ object ListRowItemTestTags {
     const val LIST_ROW_ITEM_TITLE = "list_row_item_title"
 }
 
-@ExperimentalMaterialApi
 @Preview(showBackground = true)
 @Composable
 fun ListRowItemPreview() {
