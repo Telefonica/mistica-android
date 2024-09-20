@@ -36,7 +36,7 @@ import com.telefonica.mistica.sheet.children.list.adapter.SelectableListAdapter
 open class SheetView(
     context: Context,
     sheetModel: SheetModel,
-    private val onSheetTapped: onSheetTapped,
+    private val onSheetTapped: OnSheetTapped,
     private val onDismiss: () -> Unit = {},
     private val onCancel: () -> Unit = {},
 ): BottomSheetDialog(context, R.style.SheetDialogTheme) {
@@ -148,7 +148,7 @@ open class SheetView(
 class Sheet(val context: Context){
 
     private var sheetModel: SheetModel = SheetModel()
-    private var onSheetTapped: onSheetTapped = object: onSheetTapped {
+    private var onSheetTapped: OnSheetTapped = object: OnSheetTapped {
         override fun onTapped(sheetView: SheetView, childrenId: String, itemId: String) {}
     }
     private var onDismiss: () -> Unit = {}
@@ -196,7 +196,7 @@ class Sheet(val context: Context){
         sheetModel = sheetModel.copy(content = sheetModel.content.toMutableList().also { it.add(listActionButtons) })
     }
 
-    fun withOnSheetTappedListener(onSheetTapped: onSheetTapped): Sheet = this.apply {
+    fun withOnSheetTappedListener(onSheetTapped: OnSheetTapped): Sheet = this.apply {
         this.onSheetTapped = onSheetTapped
     }
 
@@ -219,7 +219,7 @@ class Sheet(val context: Context){
     }
 }
 
-interface onSheetTapped {
+interface OnSheetTapped {
     fun onTapped(sheetView: SheetView, childrenId: String, itemId: String)
 }
 
