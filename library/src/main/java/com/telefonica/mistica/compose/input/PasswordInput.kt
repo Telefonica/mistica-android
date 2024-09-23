@@ -15,6 +15,8 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import com.telefonica.mistica.R
+import com.telefonica.mistica.compose.theme.MisticaTheme
+import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 
 @Composable
 fun PasswordInput(
@@ -86,38 +88,46 @@ private fun PasswordVisibleIcon(
 @Preview(showBackground = true)
 @Composable
 fun PreviewEmptyPasswordInput() {
-    PasswordInput(
-        value = "",
-        onValueChange = {},
-        label = "empty",
-    )
+    MisticaTheme(brand = MovistarBrand) {
+        PasswordInput(
+            value = "",
+            onValueChange = {},
+            label = "empty",
+        )
+    }
 }
 
 @Preview(showBackground = true)
 @Composable
 fun PreviewPasswordInput() {
-    PasswordInput(
-        value = "value",
-        onValueChange = {},
-        label = "label",
-    )
+    MisticaTheme(brand = MovistarBrand) {
+        PasswordInput(
+            value = "value",
+            onValueChange = {},
+            label = "label",
+        )
+    }
 }
 
 @Preview(showBackground = true)
 @Composable
 fun PreviewPasswordVisibleIconVisible() {
-    PasswordVisibleIcon(
-        passwordVisible = true,
-        onIconClicked = {},
-    )
+    MisticaTheme(brand = MovistarBrand) {
+        PasswordVisibleIcon(
+            passwordVisible = true,
+            onIconClicked = {},
+        )
+    }
 }
 
 @Preview(showBackground = true)
 @Composable
 fun PreviewPasswordVisibleIconInVisible() {
-    PasswordVisibleIcon(
-        passwordVisible = false,
-        onIconClicked = {},
-    )
+    MisticaTheme(brand = MovistarBrand) {
+        PasswordVisibleIcon(
+            passwordVisible = false,
+            onIconClicked = {},
+        )
+    }
 }
 
