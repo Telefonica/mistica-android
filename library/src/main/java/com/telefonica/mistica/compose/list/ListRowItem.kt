@@ -58,7 +58,7 @@ fun ListRowItem(
 ) {
     ListRowItemImp(
         modifier = modifier,
-        icon = { listRowIcon?.Draw() },
+        icon = listRowIcon?.let { { listRowIcon.Draw() } },
         title = title,
         isTitleHeading = isTitleHeading,
         subtitle = subtitle,
@@ -288,6 +288,10 @@ fun ListRowItemPreview() {
     MisticaTheme(brand = MovistarBrand) {
         val checkedState = remember { mutableStateOf(true) }
         Column {
+            ListRowItem(
+                listRowIcon = null,
+                title = "Title",
+            )
             ListRowItem(
                 listRowIcon = null,
                 headline = Tag("Promo"),
