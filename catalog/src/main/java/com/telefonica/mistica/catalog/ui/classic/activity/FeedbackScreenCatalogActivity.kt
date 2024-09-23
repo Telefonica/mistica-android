@@ -29,7 +29,6 @@ class FeedbackScreenCatalogActivity : AppCompatActivity() {
     var shouldAnimateOnAttached: Boolean = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
         intent.getIntExtra(EXTRA_THEME, NO_THEME_OVERRIDE)
             .takeIf { it != NO_THEME_OVERRIDE }
             ?.let { setTheme(it) }
@@ -40,28 +39,36 @@ class FeedbackScreenCatalogActivity : AppCompatActivity() {
         handleIntentExtras(intent)
 
         findViewById<FeedbackScreenView>(R.id.feedback).apply {
-            type?.let { setFeedbackType(it) }
-            title?.let { setFeedbackTitle(it) }
-            subtitle?.let { setFeedbackSubtitle(it) }
-            errorReference?.let { setFeedbackErrorReference(it) }
-            customContentLayout?.let { setCustomContentLayout(it) }
-            firstButtonText?.let { setFeedbackFirstButtonText(it) }
-            firstButtonLoadingText?.let { setFeedbackFirstButtonLoadingText(it) }
-            secondButtonText?.let { setFeedbackSecondButtonText(it) }
-            showSecondButtonAsLink?.let { setFeedbackSecondButtonAsLink(it) }
-            setFirstButtonOnClick(View.OnClickListener {
-                if (showLoadingInButton == true) {
-                    setIsLoading(true)
-                    handler.postDelayed({ setIsLoading(false) }, RETRY_DELAY)
-                } else {
-                    finish()
-                }
-            })
-            customIcon?.let { setCustomIcon(it) }
-            customAnimation?.let { setCustomAnimation(it) }
+            applyNonNullFeedbackProperties()
+            setFirstButtonClickAction(showLoadingInButton)
             setShouldAnimateOnAttached(shouldAnimateOnAttached)
             if (!shouldAnimateOnAttached){
                 animateViews()
+            }
+        }
+    }
+
+    private fun FeedbackScreenView.applyNonNullFeedbackProperties() {
+        type?.let { setFeedbackType(it) }
+        title?.let { setFeedbackTitle(it) }
+        subtitle?.let { setFeedbackSubtitle(it) }
+        errorReference?.let { setFeedbackErrorReference(it) }
+        customContentLayout?.let { setCustomContentLayout(it) }
+        firstButtonText?.let { setFeedbackFirstButtonText(it) }
+        firstButtonLoadingText?.let { setFeedbackFirstButtonLoadingText(it) }
+        secondButtonText?.let { setFeedbackSecondButtonText(it) }
+        showSecondButtonAsLink?.let { setFeedbackSecondButtonAsLink(it) }
+        customIcon?.let { setCustomIcon(it) }
+        customAnimation?.let { setCustomAnimation(it) }
+    }
+
+    private fun FeedbackScreenView.setFirstButtonClickAction(showLoadingInButton: Boolean?) {
+        setFirstButtonOnClick {
+            if (showLoadingInButton == true) {
+                setIsLoading(true)
+                handler.postDelayed({ setIsLoading(false) }, RETRY_DELAY)
+            } else {
+                finish()
             }
         }
     }
