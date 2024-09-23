@@ -82,25 +82,25 @@ public class MisticaColors {
   public var buttonDangerBackground: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
-  public var buttonDangerBackgroundSelected: Color by mutableStateOf(Color.Unspecified,
+  public var buttonDangerBackgroundPressed: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
   public var buttonDangerBackgroundHover: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
-  public var buttonLinkDangerBackgroundSelected: Color by mutableStateOf(Color.Unspecified,
+  public var buttonLinkDangerBackgroundPressed: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
   public var buttonLinkDangerBackgroundInverse: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
-  public var buttonLinkDangerBackgroundInverseSelected: Color by mutableStateOf(Color.Unspecified,
+  public var buttonLinkDangerBackgroundInversePressed: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
-  public var buttonLinkBackgroundSelected: Color by mutableStateOf(Color.Unspecified,
+  public var buttonLinkBackgroundPressed: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
-  public var buttonLinkBackgroundInverseSelected: Color by mutableStateOf(Color.Unspecified,
+  public var buttonLinkBackgroundInversePressed: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
   public var buttonPrimaryBackground: Color by mutableStateOf(Color.Unspecified,
@@ -109,37 +109,37 @@ public class MisticaColors {
   public var buttonPrimaryBackgroundInverse: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
-  public var buttonPrimaryBackgroundSelected: Color by mutableStateOf(Color.Unspecified,
+  public var buttonPrimaryBackgroundPressed: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
   public var buttonPrimaryBackgroundHover: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
-  public var buttonPrimaryBackgroundInverseSelected: Color by mutableStateOf(Color.Unspecified,
+  public var buttonPrimaryBackgroundInversePressed: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
   public var buttonSecondaryBorder: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
-  public var buttonSecondaryBorderSelected: Color by mutableStateOf(Color.Unspecified,
+  public var buttonSecondaryBorderPressed: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
   public var buttonSecondaryBackgroundHover: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
-  public var buttonSecondaryBackgroundSelected: Color by mutableStateOf(Color.Unspecified,
+  public var buttonSecondaryBackgroundPressed: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
   public var buttonSecondaryBorderInverse: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
-  public var buttonSecondaryBorderInverseSelected: Color by mutableStateOf(Color.Unspecified,
+  public var buttonSecondaryBorderInversePressed: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
   public var buttonSecondaryBackgroundInverseHover: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
-  public var buttonSecondaryBackgroundInverseSelected: Color by mutableStateOf(Color.Unspecified,
+  public var buttonSecondaryBackgroundInversePressed: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
   public var textButtonPrimary: Color by mutableStateOf(Color.Unspecified,
@@ -148,19 +148,19 @@ public class MisticaColors {
   public var textButtonPrimaryInverse: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
-  public var textButtonPrimaryInverseSelected: Color by mutableStateOf(Color.Unspecified,
+  public var textButtonPrimaryInversePressed: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
   public var textButtonSecondary: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
-  public var textButtonSecondarySelected: Color by mutableStateOf(Color.Unspecified,
+  public var textButtonSecondaryPressed: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
   public var textButtonSecondaryInverse: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
-  public var textButtonSecondaryInverseSelected: Color by mutableStateOf(Color.Unspecified,
+  public var textButtonSecondaryInversePressed: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
   public var textLink: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
@@ -368,33 +368,33 @@ public class MisticaColors {
     coverBackgroundHover = other.coverBackgroundHover
     coverBackgroundPressed = other.coverBackgroundPressed
     buttonDangerBackground = other.buttonDangerBackground
-    buttonDangerBackgroundSelected = other.buttonDangerBackgroundSelected
+    buttonDangerBackgroundPressed = other.buttonDangerBackgroundPressed
     buttonDangerBackgroundHover = other.buttonDangerBackgroundHover
-    buttonLinkDangerBackgroundSelected = other.buttonLinkDangerBackgroundSelected
+    buttonLinkDangerBackgroundPressed = other.buttonLinkDangerBackgroundPressed
     buttonLinkDangerBackgroundInverse = other.buttonLinkDangerBackgroundInverse
-    buttonLinkDangerBackgroundInverseSelected = other.buttonLinkDangerBackgroundInverseSelected
-    buttonLinkBackgroundSelected = other.buttonLinkBackgroundSelected
-    buttonLinkBackgroundInverseSelected = other.buttonLinkBackgroundInverseSelected
+    buttonLinkDangerBackgroundInversePressed = other.buttonLinkDangerBackgroundInversePressed
+    buttonLinkBackgroundPressed = other.buttonLinkBackgroundPressed
+    buttonLinkBackgroundInversePressed = other.buttonLinkBackgroundInversePressed
     buttonPrimaryBackground = other.buttonPrimaryBackground
     buttonPrimaryBackgroundInverse = other.buttonPrimaryBackgroundInverse
-    buttonPrimaryBackgroundSelected = other.buttonPrimaryBackgroundSelected
+    buttonPrimaryBackgroundPressed = other.buttonPrimaryBackgroundPressed
     buttonPrimaryBackgroundHover = other.buttonPrimaryBackgroundHover
-    buttonPrimaryBackgroundInverseSelected = other.buttonPrimaryBackgroundInverseSelected
+    buttonPrimaryBackgroundInversePressed = other.buttonPrimaryBackgroundInversePressed
     buttonSecondaryBorder = other.buttonSecondaryBorder
-    buttonSecondaryBorderSelected = other.buttonSecondaryBorderSelected
+    buttonSecondaryBorderPressed = other.buttonSecondaryBorderPressed
     buttonSecondaryBackgroundHover = other.buttonSecondaryBackgroundHover
-    buttonSecondaryBackgroundSelected = other.buttonSecondaryBackgroundSelected
+    buttonSecondaryBackgroundPressed = other.buttonSecondaryBackgroundPressed
     buttonSecondaryBorderInverse = other.buttonSecondaryBorderInverse
-    buttonSecondaryBorderInverseSelected = other.buttonSecondaryBorderInverseSelected
+    buttonSecondaryBorderInversePressed = other.buttonSecondaryBorderInversePressed
     buttonSecondaryBackgroundInverseHover = other.buttonSecondaryBackgroundInverseHover
-    buttonSecondaryBackgroundInverseSelected = other.buttonSecondaryBackgroundInverseSelected
+    buttonSecondaryBackgroundInversePressed = other.buttonSecondaryBackgroundInversePressed
     textButtonPrimary = other.textButtonPrimary
     textButtonPrimaryInverse = other.textButtonPrimaryInverse
-    textButtonPrimaryInverseSelected = other.textButtonPrimaryInverseSelected
+    textButtonPrimaryInversePressed = other.textButtonPrimaryInversePressed
     textButtonSecondary = other.textButtonSecondary
-    textButtonSecondarySelected = other.textButtonSecondarySelected
+    textButtonSecondaryPressed = other.textButtonSecondaryPressed
     textButtonSecondaryInverse = other.textButtonSecondaryInverse
-    textButtonSecondaryInverseSelected = other.textButtonSecondaryInverseSelected
+    textButtonSecondaryInversePressed = other.textButtonSecondaryInversePressed
     textLink = other.textLink
     textLinkInverse = other.textLinkInverse
     textLinkDanger = other.textLinkDanger

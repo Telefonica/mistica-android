@@ -64,7 +64,7 @@ private fun primary(
     ),
     textColor: Color = MisticaTheme.colors.textButtonPrimary,
     disabledTextColor: Color = textColor.disabled(),
-    rippleTheme: MisticaRippleTheme = MisticaRippleTheme(MisticaTheme.colors.buttonPrimaryBackgroundSelected),
+    rippleTheme: MisticaRippleTheme = MisticaRippleTheme(MisticaTheme.colors.buttonPrimaryBackgroundPressed),
 ) = ButtonStyleConfig(
     buttonColors = buttonColors,
     textColor = textColor,
@@ -78,16 +78,16 @@ private fun primaryInverse() = primary(
         backgroundColor = MisticaTheme.colors.buttonPrimaryBackgroundInverse,
         disabledBackgroundColor = MisticaTheme.colors.buttonPrimaryBackgroundInverse.disabled()
     ),
-    textColor = MisticaTheme.colors.textButtonPrimaryInverseSelected,
+    textColor = MisticaTheme.colors.textButtonPrimaryInversePressed,
     disabledTextColor = MisticaTheme.colors.textButtonPrimaryInverse,
-    rippleTheme = MisticaRippleTheme(MisticaTheme.colors.buttonPrimaryBackgroundInverseSelected),
+    rippleTheme = MisticaRippleTheme(MisticaTheme.colors.buttonPrimaryBackgroundInversePressed),
 )
 
 @Composable
 private fun secondary(
     textColor: Color = MisticaTheme.colors.textButtonSecondary,
     strokeColor: Color = MisticaTheme.colors.buttonSecondaryBorder,
-    rippleTheme: MisticaRippleTheme = MisticaRippleTheme(MisticaTheme.colors.buttonSecondaryBackgroundSelected)
+    rippleTheme: MisticaRippleTheme = MisticaRippleTheme(MisticaTheme.colors.buttonSecondaryBackgroundPressed)
 ) = ButtonStyleConfig(
     buttonColors = ButtonDefaults.outlinedButtonColors(
         backgroundColor = Color.Transparent,
@@ -112,7 +112,7 @@ private fun secondaryInverseConfig() =
     secondary(
         textColor = MisticaTheme.colors.textButtonSecondaryInverse,
         strokeColor = MisticaTheme.colors.buttonSecondaryBorderInverse,
-        rippleTheme = MisticaRippleTheme(MisticaTheme.colors.buttonSecondaryBackgroundInverseSelected)
+        rippleTheme = MisticaRippleTheme(MisticaTheme.colors.buttonSecondaryBackgroundInversePressed)
     )
 
 @Composable
@@ -121,7 +121,7 @@ private fun danger() = primary(
         backgroundColor = MisticaTheme.colors.buttonDangerBackground,
         disabledBackgroundColor = MisticaTheme.colors.buttonDangerBackground.disabled()
     ),
-    rippleTheme = MisticaRippleTheme(MisticaTheme.colors.buttonDangerBackgroundSelected)
+    rippleTheme = MisticaRippleTheme(MisticaTheme.colors.buttonDangerBackgroundPressed)
 )
 
 @Composable
@@ -134,7 +134,7 @@ private fun link(
     ),
     textColor = textColor,
     disabledTextColor = textColor.disabled(),
-    rippleTheme = MisticaRippleTheme(MisticaTheme.colors.buttonLinkBackgroundSelected),
+    rippleTheme = MisticaRippleTheme(MisticaTheme.colors.buttonLinkBackgroundPressed),
 )
 
 @Composable
@@ -147,7 +147,7 @@ private fun linkInverse() = link(
 private fun dangerLink(
     textColor: Color = MisticaTheme.colors.textLinkDanger,
     backgroundColor: Color = Color.Transparent,
-    selectedBackgroundColor: Color = MisticaTheme.colors.buttonLinkDangerBackgroundSelected,
+    selectedBackgroundColor: Color = MisticaTheme.colors.buttonLinkDangerBackgroundPressed,
 ) = primary(
     buttonColors = ButtonDefaults.buttonColors(
         backgroundColor = backgroundColor,
@@ -161,7 +161,7 @@ private fun dangerLink(
 @Composable
 private fun dangerLinkInverse() = dangerLink(
     backgroundColor = MisticaTheme.colors.buttonLinkDangerBackgroundInverse,
-    selectedBackgroundColor = MisticaTheme.colors.buttonLinkDangerBackgroundInverseSelected,
+    selectedBackgroundColor = MisticaTheme.colors.buttonLinkDangerBackgroundInversePressed,
 )
 
 private fun Color.disabled() =

@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Badge as MaterialBadge
-import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -17,14 +16,16 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.theme.MisticaTheme
 import com.telefonica.mistica.compose.theme.brand.MovistarBrand
+import androidx.compose.material.Badge as MaterialBadge
 
-@ExperimentalMaterialApi
 @Composable
 fun Badge(
     modifier: Modifier = Modifier,
+    textSize: TextUnit = TextUnit.Unspecified,
     content: String? = null,
     contentDescription: String? = null,
 ) {
@@ -50,11 +51,22 @@ fun Badge(
                         else
                             Modifier
                     ),
-                text = content,
+                text = getBadgeContent(content),
+                fontSize = textSize,
                 color = MisticaTheme.colors.textPrimaryInverse,
             )
         }
     }
+}
+
+private fun getBadgeContent(content: String) = if (content.all { it.isDigit() }) {
+    if (content.toLong() > 9) {
+        "9+"
+    } else {
+        content
+    }
+} else {
+    content
 }
 
 object BadgeTestTags {
@@ -63,7 +75,6 @@ object BadgeTestTags {
     const val BADGE_NUMBER_VALUE = "badge_number_value"
 }
 
-@ExperimentalMaterialApi
 @Preview(showBackground = true)
 @Composable
 fun BadgePreview() {

@@ -17,7 +17,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Checkbox
-import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -63,7 +62,7 @@ fun ListRowItem(
 ) {
     ListRowItemImp(
         modifier = modifier,
-        icon = { listRowIcon?.Draw() },
+        icon = listRowIcon?.let { { listRowIcon.Draw() } },
         title = title,
         isTitleHeading = isTitleHeading,
         subtitle = subtitle,
@@ -116,7 +115,6 @@ fun ListRowItem(
     )
 }
 
-@OptIn(ExperimentalMaterialApi::class)
 @Composable
 internal fun ListRowItemImp(
     modifier: Modifier = Modifier,
@@ -319,13 +317,16 @@ object ListRowItemTestTags {
     const val LIST_ROW_ITEM_TITLE = "list_row_item_title"
 }
 
-@ExperimentalMaterialApi
 @Preview(showBackground = true)
 @Composable
 fun ListRowItemPreview() {
     MisticaTheme(brand = MovistarBrand) {
         val checkedState = remember { mutableStateOf(true) }
         Column {
+            ListRowItem(
+                listRowIcon = null,
+                title = "Title",
+            )
             ListRowItem(
                 listRowIcon = null,
                 headline = Tag("Promo"),

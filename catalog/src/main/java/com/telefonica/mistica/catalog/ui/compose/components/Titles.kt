@@ -1,7 +1,9 @@
 package com.telefonica.mistica.catalog.ui.compose.components
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -21,7 +23,8 @@ fun Titles() {
             .padding(16.dp)
     ) {
         DefaultTitles()
-        TitleStyle.values().forEach {
+        TitleStyle.entries.forEach {
+            Spacer(modifier = Modifier.height(24.dp))
             TitlesWithStyleOverridden(it)
         }
     }

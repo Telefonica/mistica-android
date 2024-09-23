@@ -42,6 +42,7 @@ internal fun TextInputImpl(
     visualTransformation: VisualTransformation,
     keyboardOptions: FoundationKeyboardOptions,
     underlineEnd: @Composable (() -> Unit)? = null,
+    leadingIcon: @Composable (() -> Unit)? = null,
 ) {
     Column(
         modifier = modifier
@@ -52,6 +53,7 @@ internal fun TextInputImpl(
             onValueChange = onValueChange,
             label = label,
             isError = isError,
+            leadingIcon = leadingIcon,
             trailingIcon = trailingIcon,
             enabled = enabled,
             readOnly = readOnly,
@@ -84,6 +86,7 @@ private fun TextBox(
     onValueChange: (String) -> Unit,
     label: String?,
     isError: Boolean,
+    leadingIcon: @Composable (() -> Unit)?,
     trailingIcon: @Composable (() -> Unit)?,
     enabled: Boolean,
     readOnly: Boolean,
@@ -129,6 +132,7 @@ private fun TextBox(
         interactionSource = interactionSource,
         keyboardOptions = keyboardOptions,
         isError = isError,
+        leadingIcon = leadingIcon,
         trailingIcon = trailingIcon,
         shape = RoundedCornerShape(MisticaTheme.radius.inputBorderRadius),
         colors = TextFieldDefaults.textFieldColors(
@@ -188,6 +192,7 @@ fun PreviewTextInput() {
         helperText = "helperText",
         isError = false,
         errorText = "",
+        leadingIcon = { },
         trailingIcon = { },
         isInverse = false,
         enabled = true,
@@ -208,6 +213,7 @@ fun PreviewEmptyTextInput() {
         helperText = "helperText",
         isError = false,
         errorText = "",
+        leadingIcon = { },
         trailingIcon = { },
         isInverse = false,
         enabled = true,

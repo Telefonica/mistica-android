@@ -28,33 +28,33 @@
 		<attr name="colorCoverBackgroundHover" format="color|reference"/>
 		<attr name="colorCoverBackgroundPressed" format="color|reference"/>
 		<attr name="colorButtonDangerBackground" format="color|reference"/>
-		<attr name="colorButtonDangerBackgroundSelected" format="color|reference"/>
+		<attr name="colorButtonDangerBackgroundPressed" format="color|reference"/>
 		<attr name="colorButtonDangerBackgroundHover" format="color|reference"/>
-		<attr name="colorButtonLinkDangerBackgroundSelected" format="color|reference"/>
+		<attr name="colorButtonLinkDangerBackgroundPressed" format="color|reference"/>
 		<attr name="colorButtonLinkDangerBackgroundInverse" format="color|reference"/>
-		<attr name="colorButtonLinkDangerBackgroundInverseSelected" format="color|reference"/>
-		<attr name="colorButtonLinkBackgroundSelected" format="color|reference"/>
-		<attr name="colorButtonLinkBackgroundInverseSelected" format="color|reference"/>
+		<attr name="colorButtonLinkDangerBackgroundInversePressed" format="color|reference"/>
+		<attr name="colorButtonLinkBackgroundPressed" format="color|reference"/>
+		<attr name="colorButtonLinkBackgroundInversePressed" format="color|reference"/>
 		<attr name="colorButtonPrimaryBackground" format="color|reference"/>
 		<attr name="colorButtonPrimaryBackgroundInverse" format="color|reference"/>
-		<attr name="colorButtonPrimaryBackgroundSelected" format="color|reference"/>
+		<attr name="colorButtonPrimaryBackgroundPressed" format="color|reference"/>
 		<attr name="colorButtonPrimaryBackgroundHover" format="color|reference"/>
-		<attr name="colorButtonPrimaryBackgroundInverseSelected" format="color|reference"/>
+		<attr name="colorButtonPrimaryBackgroundInversePressed" format="color|reference"/>
 		<attr name="colorButtonSecondaryBorder" format="color|reference"/>
-		<attr name="colorButtonSecondaryBorderSelected" format="color|reference"/>
+		<attr name="colorButtonSecondaryBorderPressed" format="color|reference"/>
 		<attr name="colorButtonSecondaryBackgroundHover" format="color|reference"/>
-		<attr name="colorButtonSecondaryBackgroundSelected" format="color|reference"/>
+		<attr name="colorButtonSecondaryBackgroundPressed" format="color|reference"/>
 		<attr name="colorButtonSecondaryBorderInverse" format="color|reference"/>
-		<attr name="colorButtonSecondaryBorderInverseSelected" format="color|reference"/>
+		<attr name="colorButtonSecondaryBorderInversePressed" format="color|reference"/>
 		<attr name="colorButtonSecondaryBackgroundInverseHover" format="color|reference"/>
-		<attr name="colorButtonSecondaryBackgroundInverseSelected" format="color|reference"/>
+		<attr name="colorButtonSecondaryBackgroundInversePressed" format="color|reference"/>
 		<attr name="colorTextButtonPrimary" format="color|reference"/>
 		<attr name="colorTextButtonPrimaryInverse" format="color|reference"/>
-		<attr name="colorTextButtonPrimaryInverseSelected" format="color|reference"/>
+		<attr name="colorTextButtonPrimaryInversePressed" format="color|reference"/>
 		<attr name="colorTextButtonSecondary" format="color|reference"/>
-		<attr name="colorTextButtonSecondarySelected" format="color|reference"/>
+		<attr name="colorTextButtonSecondaryPressed" format="color|reference"/>
 		<attr name="colorTextButtonSecondaryInverse" format="color|reference"/>
-		<attr name="colorTextButtonSecondaryInverseSelected" format="color|reference"/>
+		<attr name="colorTextButtonSecondaryInversePressed" format="color|reference"/>
 		<attr name="colorTextLink" format="color|reference"/>
 		<attr name="colorTextLinkInverse" format="color|reference"/>
 		<attr name="colorTextLinkDanger" format="color|reference"/>
@@ -156,6 +156,7 @@
 		<attr name="linkFont" format="string"/>
 		<attr name="title1Font" format="string"/>
 		<attr name="title2Font" format="string"/>
+		<attr name="title3Font" format="string"/>
 		<attr name="indicatorFont" format="string"/>
 		<attr name="navigationBarFont" format="string"/>
 		<attr name="text5Font" format="string"/>
@@ -196,6 +197,11 @@
 			<flag name="italic" value="2"/>
 		</attr>
 		<attr name="title2TextStyle" format="reference">
+			<flag name="normal" value="0"/>
+			<flag name="bold" value="1"/>
+			<flag name="italic" value="2"/>
+		</attr>
+		<attr name="title3TextStyle" format="reference">
 			<flag name="normal" value="0"/>
 			<flag name="bold" value="1"/>
 			<flag name="italic" value="2"/>
@@ -243,7 +249,7 @@
 	</declare-styleable>
 	<declare-styleable name="PresetSizes">
 		<attr name="tabsLabelTextSize" format="dimension"/>
-		<attr name="title2TextSize" format="dimension"/>
+		<attr name="title3TextSize" format="dimension"/>
 		<attr name="text1TextSize" format="dimension"/>
 		<attr name="text2TextSize" format="dimension"/>
 		<attr name="text3TextSize" format="dimension"/>

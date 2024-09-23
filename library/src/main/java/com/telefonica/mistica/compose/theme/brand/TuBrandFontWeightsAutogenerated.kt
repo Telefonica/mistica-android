@@ -16,6 +16,8 @@ public object TuBrandFontWeights {
 
   public val title2FontWeight: FontWeight = FontWeight.Medium
 
+  public val title3FontWeight: FontWeight = FontWeight.Medium
+
   public val indicatorFontWeight: FontWeight = FontWeight.Medium
 
   public val navigationBarFontWeight: FontWeight = FontWeight.Medium
