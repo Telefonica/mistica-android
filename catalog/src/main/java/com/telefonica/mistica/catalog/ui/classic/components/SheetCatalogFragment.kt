@@ -2,6 +2,7 @@ package com.telefonica.mistica.catalog.ui.classic.components
 
 import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -207,6 +208,7 @@ class SheetCatalogFragment : Fragment() {
             InformativeIconType.Regular -> InformativeIcon.Icon(ResourcesCompat.getDrawable(resources, R.drawable.ic_sheets, requireContext().theme)!!)
         }
     } catch (e: Exception) {
+        Log.e("getInformativeIcon", "Error occurred while fetching the informative icon", e)
         InformativeIcon.Bullet
     }
 
