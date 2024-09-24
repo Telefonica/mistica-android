@@ -161,12 +161,14 @@ class ListsCatalogFragment : Fragment() {
                 configure(withAssetType = TYPE_LARGE_ICON, withAction = true, withHeadline = true, withSubtitle = true),
                 configure(withAssetType = TYPE_IMAGE, withErrorIcon = R.drawable.ic_error, withUrlIcon =
                 "fail_image_url"),
-                configure(withAssetType = TYPE_IMAGE_ROUNDED, withDimensions = ImageDimensions(64, 64), withAction = true, withHeadline = true, withSubtitle = true)
+                configure(withAssetType = TYPE_IMAGE_ROUNDED, withDimensions = ImageDimensions(64, 64),
+                    withAction = true, withHeadline = true, withSubtitle = true)
             )
         }
 
 
         @SuppressLint("SetTextI18n")
+        @Suppress("LongMethod", "CyclomaticComplexMethod")
         private fun ListRowView.configureView(
             withLongTitle: Boolean = false,
             withTitleMaxLines: Int? = null,
