@@ -76,7 +76,6 @@ allprojects {
         buildUponDefaultConfig.set(true)
         setSource(files("$projectDir"))
         config.setFrom(files("$projectDir/build-tools/detekt/detekt.yml"))
-        baseline.set(file("$projectDir/detekt-baseline.xml"))
         include("**/*.kt")
         include("**/*.kts")
     }
