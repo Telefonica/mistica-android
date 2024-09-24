@@ -11,6 +11,7 @@ import kotlin.math.pow
 import kotlin.math.sin
 import kotlin.math.sqrt
 
+@Suppress("ComplexCondition")
 fun Size.getCoordinatesForLinearGradientWithAngle(
     angleInDegrees: Float = 90F,
 ): Pair<Offset, Offset> {

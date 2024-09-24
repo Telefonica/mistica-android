@@ -46,6 +46,7 @@ import com.telefonica.mistica.compose.theme.MisticaTheme
 
 @OptIn(ExperimentalPagerApi::class)
 @SuppressLint("MutableCollectionMutableState")
+@Suppress("LongMethod")
 @Composable
 fun CarouselPagerIndicator(
     modifier: Modifier = Modifier,
@@ -157,6 +158,7 @@ fun CarouselPagerIndicator(
 }
 
 @ExperimentalPagerApi
+@Suppress("LongMethod", "CyclomaticComplexMethod")
 internal fun calculateItems(
     items: MutableList<Item>,
     visibleWindowState: VisibleWindowState,
@@ -326,6 +328,7 @@ private fun calculateDirection(
 
 @ExperimentalPagerApi
 @Composable
+@Suppress("CyclomaticComplexMethod")
 private fun PagerIndicatorBox(
     items: MutableList<Item>,
     indicatorUnselectedWidth: Dp,

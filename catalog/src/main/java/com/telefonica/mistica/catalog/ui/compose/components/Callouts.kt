@@ -31,6 +31,7 @@ import com.telefonica.mistica.compose.input.DropDownInput
 import com.telefonica.mistica.compose.theme.MisticaTheme
 
 @Composable
+@Suppress("LongMethod")
 fun Callouts() {
     Column(
         modifier = Modifier

@@ -97,6 +97,7 @@ class Button @JvmOverloads constructor(
     }
 }
 
+@Suppress("CyclomaticComplexMethod")
 private fun Int?.toButtonStyle(): ButtonStyle = when (this) {
     0 -> ButtonStyle.PRIMARY
     1 -> ButtonStyle.PRIMARY_SMALL

@@ -102,6 +102,7 @@ internal class ButtonTest(
 }
 
 @LayoutRes
+@Suppress("CyclomaticComplexMethod")
 private fun ButtonStyle.getButtonLayout(): Int = when (this) {
     ButtonStyle.PRIMARY -> R.layout.primary_button
     ButtonStyle.PRIMARY_SMALL -> R.layout.primary_button_small

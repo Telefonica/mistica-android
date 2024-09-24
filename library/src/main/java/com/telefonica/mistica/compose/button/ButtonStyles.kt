@@ -35,6 +35,7 @@ class MisticaRippleTheme(
 }
 
 @Composable
+@Suppress("CyclomaticComplexMethod")
 internal fun ButtonStyle.getButtonStyleCompose(): ButtonStyleConfig = when (this) {
     ButtonStyle.PRIMARY -> primary()
     ButtonStyle.PRIMARY_INVERSE -> primaryInverse()

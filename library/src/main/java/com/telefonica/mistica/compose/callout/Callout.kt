@@ -29,6 +29,7 @@ import com.telefonica.mistica.compose.card.datacard.resourceIconPainter
 import com.telefonica.mistica.compose.theme.MisticaTheme
 
 @Composable
+@Suppress("LongMethod")
 fun Callout(
     modifier: Modifier = Modifier,
     title: String?,

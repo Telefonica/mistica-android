@@ -47,6 +47,7 @@ import com.telefonica.mistica.compose.theme.MisticaTheme
 
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable
+@Suppress("LongMethod")
 fun PopOver(
     modifier: Modifier = Modifier,
     @DrawableRes imageRes: Int?,

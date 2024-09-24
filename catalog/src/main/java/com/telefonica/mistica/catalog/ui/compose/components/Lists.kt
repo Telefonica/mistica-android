@@ -45,6 +45,7 @@ const val SUBTITLE = "Subtitle"
 const val DESCRIPTION = "Description"
 
 @Composable
+@Suppress("LongMethod")
 fun samples() = listOf(
     ListItem(
         title = TITLE,
@@ -301,6 +302,7 @@ fun samples() = listOf(
 const val IMAGE_URL = "https://www.fotoaparat.cz/imgs/a/26/2639/0n1wjdf0-cr-em13-09-1200x627x9.jpg"
 
 @Composable
+@Suppress("LongMethod")
 fun Lists() {
     val samples = samples()
     val context = LocalContext.current

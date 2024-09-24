@@ -38,6 +38,7 @@ import com.telefonica.mistica.compose.button.ButtonStyle
 import com.telefonica.mistica.compose.theme.MisticaTheme
 
 @Composable
+@Suppress("LongMethod")
 fun HighLightedCard(
     modifier: Modifier = Modifier,
     title: String = "",

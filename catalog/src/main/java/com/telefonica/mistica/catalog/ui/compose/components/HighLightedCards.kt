@@ -45,6 +45,7 @@ import com.telefonica.mistica.compose.theme.MisticaTheme
 
 @Preview(showSystemUi = true)
 @Composable
+@Suppress("LongMethod")
 fun HighlightedCards() {
     val context = LocalContext.current
     var cardTitle by remember { mutableStateOf("Card Title Text") }
@@ -232,7 +233,8 @@ fun HighLightedImageType(imageConfig: HighLightCardImageConfig, onImageTypeSelec
     }
 }
 
-    @Composable
+@Composable
+@Suppress("LongMethod")
 fun HighLightedCardButtonType(buttonConfig: HighLightCardButtonSettings, onButtonTypeSelected: (HighLightCardButtonSettings) -> Unit) {
     Card(
         modifier = Modifier

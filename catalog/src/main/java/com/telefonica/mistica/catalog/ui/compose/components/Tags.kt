@@ -27,6 +27,7 @@ import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 import com.telefonica.mistica.tag.TagView
 
 @Composable
+@Suppress("LongMethod")
 fun Tags() {
     val customText = remember { mutableStateOf(TextFieldValue("Promotion")) }
 

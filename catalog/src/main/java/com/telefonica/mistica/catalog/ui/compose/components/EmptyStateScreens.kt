@@ -26,6 +26,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 @Composable
+@Suppress("LongMethod")
 fun EmptyStateScreens() {
 
     var shouldShowEmptyStateScreen by remember { mutableStateOf(false) }

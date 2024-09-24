@@ -29,6 +29,7 @@ import com.telefonica.mistica.compose.tag.Tag
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_PROMO
 
 @Composable
+@Suppress("LongMethod")
 fun MediaCards() {
 
     var tag: String by remember { mutableStateOf("tag") }

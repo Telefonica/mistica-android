@@ -27,6 +27,7 @@ import com.telefonica.mistica.compose.tabs.Tabs
 import com.telefonica.mistica.compose.theme.MisticaTheme
 
 @Composable
+@Suppress("LongMethod")
 fun TabsCatalog() {
     Column(
         modifier = Modifier
