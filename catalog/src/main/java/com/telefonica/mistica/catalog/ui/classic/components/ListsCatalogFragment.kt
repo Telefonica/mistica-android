@@ -88,384 +88,83 @@ class ListsCatalogFragment : Fragment() {
             rowConfiguration[position].invoke(rowView)
         }
 
-        private fun rowConfiguration(withInverseBackground: Boolean): List<(ListRowView) -> Unit> = listOf(
-            {
-                it.configureView(
+        private fun rowConfiguration(withInverseBackground: Boolean): List<(ListRowView) -> Unit> {
+            fun configure(
+                withAction: Boolean = false,
+                withBadge: Boolean = false,
+                withBadgeNumeric: Int? = null,
+                withBadgeDescription: String? = null,
+                withAssetType: Int? = null,
+                withHeadline: Boolean = false,
+                withSubtitle: Boolean = false,
+                withUrlIcon: String? = null,
+                withErrorIcon: Int? = null,
+                withTitleHeading: Boolean = false,
+                withLongDescription: Boolean = true,
+                withLongTitle: Boolean = false,
+                withTitleMaxLines: Int? = null,
+                withDescriptionMaxLines: Int? = null,
+                withDimensions: ImageDimensions? = null
+            ): (ListRowView) -> Unit = { view ->
+                view.configureView(
+                    withAction = withAction,
+                    withBadge = withBadge,
+                    withBadgeNumeric = withBadgeNumeric ?: 0,
+                    withBadgeDescription = withBadgeDescription,
+                    withAsset = withAssetType != null,
+                    withAssetType = withAssetType ?: TYPE_SMALL_ICON,
                     withInverseBackground = withInverseBackground,
-                    withTitleHeading = true,
+                    withHeadline = withHeadline,
+                    withSubtitle = withSubtitle,
+                    withUrlIcon = withUrlIcon,
+                    withErrorIcon = withErrorIcon?.let { AppCompatResources.getDrawable(view.context, it) },
+                    withTitleHeading = withTitleHeading,
+                    withLongDescription = withLongDescription,
+                    withLongTitle = withLongTitle,
+                    withTitleMaxLines = withTitleMaxLines,
+                    withDescriptionMaxLines = withDescriptionMaxLines,
+                    withDimensions = withDimensions
                 )
-            },
-            {
-                it.configureView(
-                    withAction = true,
-                    withInverseBackground = withInverseBackground,
-                )
-            },
-            {
-                it.configureView(
-                    withAction = true,
-                    withBadge = true,
-                    withBadgeDescription = "You have unread messages",
-                    withInverseBackground = withInverseBackground,
-                )
-            },
-            {
-                it.configureView(
-                    withAction = true,
-                    withBadgeNumeric = 1,
-                    withInverseBackground = withInverseBackground,
-                )
-            },
-            {
-                it.configureView(
-                    withLongDescription = false,
-                    withInverseBackground = withInverseBackground,
-                    withTitleHeading = true,
-                )
-            },
-            {
-                it.configureView(
-                    withLongDescription = false,
-                    withAction = true,
-                    withInverseBackground = withInverseBackground,
-                )
-            },
-            {
-                it.configureView(
-                    withAsset = true,
-                    withAssetType = TYPE_LARGE_ICON,
-                    withInverseBackground = withInverseBackground,
-                )
-            },
-            {
-                it.configureView(
-                    withAsset = true,
-                    withAssetType = TYPE_LARGE_ICON,
-                    withAction = true,
-                    withInverseBackground = withInverseBackground,
-                )
-            },
-            {
-                it.configureView(
-                    withAsset = true,
-                    withAssetType = TYPE_LARGE_ICON,
-                    withAction = true,
-                    withBadge = true,
-                    withInverseBackground = withInverseBackground,
-                )
-            },
-            {
-                it.configureView(
-                    withAsset = true,
-                    withAssetType = TYPE_LARGE_ICON,
-                    withAction = true,
-                    withBadgeNumeric = 5,
-                    withBadgeDescription = "5 new messages",
-                    withInverseBackground = withInverseBackground,
-                )
-            },
-            {
-                it.configureView(
-                    withLongDescription = false,
-                    withAsset = true,
-                    withAssetType = TYPE_LARGE_ICON,
-                    withInverseBackground = withInverseBackground,
-                )
-            },
-            {
-                it.configureView(
-                    withLongDescription = false,
-                    withAsset = true,
-                    withAssetType = TYPE_LARGE_ICON,
-                    withAction = true,
-                    withInverseBackground = withInverseBackground,
-                )
-            },
-            {
-                it.configureView(
-                    withAsset = true,
-                    withAssetType = TYPE_SMALL_ICON,
-                    withInverseBackground = withInverseBackground,
-                )
-            },
-            {
-                it.configureView(
-                    withAsset = true,
-                    withAssetType = TYPE_SMALL_ICON,
-                    withAction = true,
-                    withInverseBackground = withInverseBackground,
-                )
-            },
-            {
-                it.configureView(
-                    withAsset = true,
-                    withAssetType = TYPE_SMALL_ICON,
-                    withAction = true,
-                    withBadge = true,
-                    withInverseBackground = withInverseBackground,
-                )
-            },
-            {
-                it.configureView(
-                    withAsset = true,
-                    withAssetType = TYPE_SMALL_ICON,
-                    withAction = true,
-                    withBadgeNumeric = 10,
-                    withInverseBackground = withInverseBackground,
-                )
-            },
-            {
-                it.configureView(
-                    withLongTitle = true,
-                    withTitleMaxLines = 1,
-                    withLongDescription = true,
-                    withInverseBackground = withInverseBackground,
-                )
-            },
-            {
-                it.configureView(
-                    withLongTitle = true,
-                    withLongDescription = true,
-                    withDescriptionMaxLines = 2,
-                    withInverseBackground = withInverseBackground,
-                )
-            },
-            {
-                it.configureView(
-                    withLongTitle = true,
-                    withAsset = true,
-                    withAssetType = TYPE_LARGE_ICON,
-                    withInverseBackground = withInverseBackground,
-                )
-            },
-            {
-                it.configureView(
-                    withLongTitle = true,
-                    withAsset = true,
-                    withAssetType = TYPE_SMALL_ICON,
-                    withInverseBackground = withInverseBackground,
-                )
-            },
-            {
-                it.configureView(
-                    withLongTitle = true,
-                    withLongDescription = true,
-                    withAsset = true,
-                    withAssetType = TYPE_LARGE_ICON,
-                    withInverseBackground = withInverseBackground,
-                )
-            },
-            {
-                it.configureView(
-                    withLongTitle = true,
-                    withLongDescription = true,
-                    withAsset = true,
-                    withAssetType = TYPE_SMALL_ICON,
-                    withInverseBackground = withInverseBackground,
-                )
-            },
-            {
-                it.configureView(
-                    withLongTitle = true,
-                    withLongDescription = true,
-                    withAsset = true,
-                    withAssetType = TYPE_LARGE_ICON,
-                    withAction = true,
-                    withInverseBackground = withInverseBackground,
-                )
-            },
-            {
-                it.configureView(
-                    withAsset = true,
-                    withAssetType = TYPE_LARGE_ICON,
-                    withAction = true,
-                    withHeadline = true,
-                    withInverseBackground = withInverseBackground,
-                )
-            },
-            {
-                it.configureView(
-                    withAsset = true,
-                    withAssetType = TYPE_IMAGE_1_1,
-                    withAction = true,
-                    withSubtitle = true,
-                    withHeadline = true,
-                    withInverseBackground = withInverseBackground,
-                )
-            },
-            {
-                it.configureView(
-                    withAsset = true,
-                    withAssetType = TYPE_IMAGE_7_10,
-                    withAction = true,
-                    withSubtitle = true,
-                    withHeadline = true,
-                    withInverseBackground = withInverseBackground,
-                )
-            },
-            {
-                it.configureView(
-                    withAsset = true,
-                    withAssetType = TYPE_IMAGE_16_9,
-                    withAction = true,
-                    withSubtitle = true,
-                    withHeadline = true,
-                    withInverseBackground = withInverseBackground,
-                )
-            },
-            {
-                it.configureView(
-                    withAsset = true,
-                    withAssetType = TYPE_IMAGE_1_1,
-                    withAction = true,
-                    withSubtitle = true,
-                    withHeadline = true,
-                    withInverseBackground = withInverseBackground,
-                    withUrlIcon = IMAGE_URL,
-                )
-            },
-            {
-                it.configureView(
-                    withAsset = true,
-                    withAssetType = TYPE_IMAGE_7_10,
-                    withAction = true,
-                    withSubtitle = true,
-                    withHeadline = true,
-                    withInverseBackground = withInverseBackground,
-                    withUrlIcon = IMAGE_URL,
-                )
-            },
-            {
-                it.configureView(
-                    withAsset = true,
-                    withAssetType = TYPE_IMAGE_16_9,
-                    withAction = true,
-                    withSubtitle = true,
-                    withHeadline = true,
-                    withInverseBackground = withInverseBackground,
-                    withUrlIcon = IMAGE_URL,
-                )
-            },
-            {
-                it.configureView(
-                    withAsset = true,
-                    withAssetType = TYPE_LARGE_ICON,
-                    withAction = true,
-                    withSubtitle = true,
-                    withHeadline = true,
-                    withInverseBackground = withInverseBackground,
-                )
-            },
-            {
-                it.configureView(
-                    withAsset = true,
-                    withAssetType = TYPE_LARGE_ICON,
-                    withLongDescription = false,
-                    withAction = true,
-                    withSubtitle = true,
-                    withHeadline = true,
-                    withInverseBackground = withInverseBackground,
-                )
-            },
-            {
-                it.configureView(
-                    withAsset = true,
-                    withAssetType = TYPE_IMAGE,
-                    withAction = true,
-                    withSubtitle = true,
-                    withHeadline = true,
-                    withInverseBackground = withInverseBackground,
-                    withUrlIcon = "fail_image_url",
-                    withErrorIcon = AppCompatResources.getDrawable(it.context, R.drawable.ic_error)
-                )
-            },
-            {
-                it.configureView(
-                    withAsset = true,
-                    withAssetType = TYPE_LARGE_ICON,
-                    withAction = true,
-                    withSubtitle = true,
-                    withHeadline = true,
-                    withInverseBackground = withInverseBackground,
-                    withUrlIcon = "fail_image_url",
-                    withErrorIcon = AppCompatResources.getDrawable(it.context, R.drawable.ic_error)
-                )
-            },
-            {
-                it.configureView(
-                    withAsset = true,
-                    withAssetType = TYPE_SMALL_ICON,
-                    withAction = true,
-                    withSubtitle = true,
-                    withHeadline = true,
-                    withInverseBackground = withInverseBackground,
-                    withUrlIcon = "fail_image_url",
-                    withErrorIcon = AppCompatResources.getDrawable(it.context, R.drawable.ic_error)
-                )
-            },
-            {
-                it.configureView(
-                    withAsset = true,
-                    withAssetType = TYPE_IMAGE_1_1,
-                    withAction = true,
-                    withSubtitle = true,
-                    withHeadline = true,
-                    withInverseBackground = withInverseBackground,
-                    withUrlIcon = "fail_image_url",
-                    withErrorIcon = AppCompatResources.getDrawable(it.context, R.drawable.ic_error)
-                )
-            },
-            {
-                it.configureView(
-                    withAsset = true,
-                    withAssetType = TYPE_IMAGE_7_10,
-                    withAction = true,
-                    withSubtitle = true,
-                    withHeadline = true,
-                    withInverseBackground = withInverseBackground,
-                    withUrlIcon = "fail_image_url",
-                    withErrorIcon = AppCompatResources.getDrawable(it.context, R.drawable.ic_error)
-                )
-            },
-            {
-                it.configureView(
-                    withAsset = true,
-                    withAssetType = TYPE_IMAGE_16_9,
-                    withAction = true,
-                    withSubtitle = true,
-                    withHeadline = true,
-                    withInverseBackground = withInverseBackground,
-                    withUrlIcon = "fail_image_url",
-                    withErrorIcon = AppCompatResources.getDrawable(it.context, R.drawable.ic_error)
-                )
-            },
-            {
-                it.configureView(
-                    withAsset = true,
-                    withAssetType = TYPE_IMAGE,
-                    withLongDescription = false,
-                    withInverseBackground = withInverseBackground,
-                )
-            },
-            {
-                it.configureView(
-                    withAsset = true,
-                    withAssetType = TYPE_IMAGE,
-                    withInverseBackground = withInverseBackground,
-                )
-            },
-            {
-                it.configureView(
-                    withAsset = true,
-                    withAssetType = TYPE_IMAGE_ROUNDED,
-                    withDimensions = ImageDimensions(width = 64, height = 64),
-                    withAction = true,
-                    withSubtitle = true,
-                    withHeadline = true,
-                    withInverseBackground = withInverseBackground,
-                )
-            },
-        )
+            }
+
+            return listOf(
+                configure(withTitleHeading = true),
+                configure(withAction = true),
+                configure(withAction = true, withBadge = true, withBadgeDescription = "You have unread messages"),
+                configure(withAction = true, withBadgeNumeric = 1),
+                configure(withLongDescription = false, withTitleHeading = true),
+                configure(withLongDescription = false, withAction = true),
+                configure(withAssetType = TYPE_LARGE_ICON),
+                configure(withAssetType = TYPE_LARGE_ICON, withAction = true),
+                configure(withAssetType = TYPE_LARGE_ICON, withAction = true, withBadge = true),
+                configure(withAssetType = TYPE_LARGE_ICON, withAction = true, withBadgeNumeric = 5, withBadgeDescription = "5 new messages"),
+                configure(withLongDescription = false, withAssetType = TYPE_LARGE_ICON),
+                configure(withLongDescription = false, withAssetType = TYPE_LARGE_ICON, withAction = true),
+                configure(withAssetType = TYPE_SMALL_ICON),
+                configure(withAssetType = TYPE_SMALL_ICON, withAction = true),
+                configure(withAssetType = TYPE_SMALL_ICON, withAction = true, withBadge = true),
+                configure(withAssetType = TYPE_SMALL_ICON, withAction = true, withBadgeNumeric = 10),
+                configure(withLongTitle = true, withTitleMaxLines = 1),
+                configure(withLongTitle = true, withDescriptionMaxLines = 2),
+                configure(withLongTitle = true, withAssetType = TYPE_LARGE_ICON),
+                configure(withLongTitle = true, withAssetType = TYPE_SMALL_ICON),
+                configure(withLongTitle = true, withAssetType = TYPE_LARGE_ICON, withLongDescription = true),
+                configure(withLongTitle = true, withAssetType = TYPE_SMALL_ICON, withLongDescription = true),
+                configure(withLongTitle = true, withAssetType = TYPE_LARGE_ICON, withAction = true),
+                configure(withAssetType = TYPE_LARGE_ICON, withAction = true, withHeadline = true),
+                configure(withAssetType = TYPE_IMAGE_1_1, withAction = true, withHeadline = true, withSubtitle = true),
+                configure(withAssetType = TYPE_IMAGE_7_10, withAction = true, withHeadline = true, withSubtitle = true),
+                configure(withAssetType = TYPE_IMAGE_16_9, withAction = true, withHeadline = true, withSubtitle = true),
+                configure(withAssetType = TYPE_IMAGE_1_1, withAction = true, withHeadline = true, withSubtitle = true, withUrlIcon = IMAGE_URL),
+                configure(withAssetType = TYPE_IMAGE_7_10, withAction = true, withHeadline = true, withSubtitle = true, withUrlIcon = IMAGE_URL),
+                configure(withAssetType = TYPE_IMAGE_16_9, withAction = true, withHeadline = true, withSubtitle = true, withUrlIcon = IMAGE_URL),
+                configure(withAssetType = TYPE_LARGE_ICON, withAction = true, withHeadline = true, withSubtitle = true),
+                configure(withAssetType = TYPE_IMAGE, withErrorIcon = R.drawable.ic_error, withUrlIcon =
+                "fail_image_url"),
+                configure(withAssetType = TYPE_IMAGE_ROUNDED, withDimensions = ImageDimensions(64, 64), withAction = true, withHeadline = true, withSubtitle = true)
+            )
+        }
+
 
         @SuppressLint("SetTextI18n")
         private fun ListRowView.configureView(
