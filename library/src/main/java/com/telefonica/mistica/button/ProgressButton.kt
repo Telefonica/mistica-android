@@ -66,7 +66,6 @@ class ProgressButton : FrameLayout {
     }
 
     @SuppressLint("ClickableViewAccessibility")
-    @Suppress("LongMethod")
     private fun init(attrs: AttributeSet? = null, defStyleAttr: Int = 0) {
         if (attrs != null) {
             val theme = context.theme

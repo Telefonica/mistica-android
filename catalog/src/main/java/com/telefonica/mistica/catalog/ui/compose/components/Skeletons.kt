@@ -24,7 +24,6 @@ import com.telefonica.mistica.compose.skeleton.TextSkeleton
 import com.telefonica.mistica.compose.theme.MisticaTheme
 
 @Composable
-@Suppress("LongMethod")
 fun Skeletons() {
     val infiniteTransition: InfiniteTransition =
         rememberInfiniteTransition()

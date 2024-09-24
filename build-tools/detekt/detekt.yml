@@ -3,6 +3,9 @@ complexity:
     active: false
   LongParameterList:
     active: false
+  LongMethod:
+    ignoreAnnotated: 'Composable'
+
 
 style:
   NewLineAtEndOfFile:

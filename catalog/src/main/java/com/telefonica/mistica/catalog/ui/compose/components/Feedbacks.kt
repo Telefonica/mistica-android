@@ -43,7 +43,6 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 @Composable
-@Suppress("LongMethod")
 fun Feedbacks(
     @StyleRes themeOverride: Int? = null,
 ) {

@@ -46,7 +46,6 @@ import com.telefonica.mistica.compose.theme.MisticaTheme
 
 @OptIn(ExperimentalPagerApi::class)
 @SuppressLint("MutableCollectionMutableState")
-@Suppress("LongMethod")
 @Composable
 fun CarouselPagerIndicator(
     modifier: Modifier = Modifier,

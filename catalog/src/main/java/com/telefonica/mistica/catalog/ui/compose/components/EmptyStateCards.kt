@@ -25,7 +25,6 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 @Composable
-@Suppress("LongMethod")
 fun EmptyStateCards() {
 
     val retryDelay = 2000L

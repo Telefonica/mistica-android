@@ -27,7 +27,6 @@ import com.telefonica.mistica.compose.theme.values.MisticaRadius
 import com.telefonica.mistica.compose.theme.values.MisticaValues
 
 @Composable
-@Suppress("LongMethod")
 fun MisticaTheme(
     brand: Brand,
     darkTheme: Boolean = isSystemInDarkTheme(),

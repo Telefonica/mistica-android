@@ -50,7 +50,6 @@ fun Buttons() {
 }
 
 @Composable
-@Suppress("LongMethod")
 private fun Buttons(
     modifier: Modifier = Modifier,
     filter: (ButtonStyle) -> Boolean,

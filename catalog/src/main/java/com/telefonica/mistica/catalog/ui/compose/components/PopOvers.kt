@@ -28,7 +28,6 @@ import com.telefonica.mistica.compose.popover.PopOver
 import com.telefonica.mistica.compose.theme.MisticaTheme
 
 @Composable
-@Suppress("LongMethod")
 fun PopOvers() {
 
     var title: String by remember { mutableStateOf("Title of the pop over") }

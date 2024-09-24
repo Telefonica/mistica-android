@@ -10,7 +10,6 @@ import androidx.compose.ui.Modifier
 import com.telefonica.mistica.compose.theme.MisticaTheme
 
 @Composable
-@Suppress("LongMethod")
 fun Texts() {
     Column(
         modifier = Modifier.fillMaxSize(),

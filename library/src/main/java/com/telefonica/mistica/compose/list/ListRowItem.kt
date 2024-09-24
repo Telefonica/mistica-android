@@ -111,7 +111,7 @@ fun ListRowItem(
 }
 
 @Composable
-@Suppress("LongMethod", "CyclomaticComplexMethod")
+@Suppress("CyclomaticComplexMethod")
 private fun ListRowItemImp(
     modifier: Modifier = Modifier,
     icon: @Composable (() -> Unit)? = null,
@@ -285,7 +285,6 @@ object ListRowItemTestTags {
 
 @Preview(showBackground = true)
 @Composable
-@Suppress("LongMethod")
 fun ListRowItemPreview() {
     MisticaTheme(brand = MovistarBrand) {
         val checkedState = remember { mutableStateOf(true) }
