@@ -49,7 +49,7 @@ class MediaCardsFragment : Fragment() {
                 .isChecked()
         )
         val mediaCards = mutableListOf<MediaCardData>()
-        for (a in 1..MEDIA_CARDS_CAROUSEL_SIZE) {
+        repeat(MEDIA_CARDS_CAROUSEL_SIZE) {
             mediaCards.add(cardData)
         }
         mediaCardRecyclerView.layoutManager =

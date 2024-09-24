@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: "Build Android project"
-        run: 'bash ./gradlew clean check assemble'
+        run: 'bash ./gradlew clean check detekt assemble'
 
       - name: Upload Lint results
         uses: github/codeql-action/upload-sarif@v2

@@ -146,6 +146,7 @@ internal fun TagPreview() {
 }
 
 @Composable
+@Suppress("CyclomaticComplexMethod")
 private fun Int.getStyle() = when (this) {
     TYPE_PROMO -> with(MisticaTheme.colors) { promoLow to promoHigh }
     TYPE_ACTIVE -> with(MisticaTheme.colors) { brandLow to brand }

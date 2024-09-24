@@ -82,7 +82,8 @@ class ListRowViewWithCheckBox @JvmOverloads constructor(
     override fun delegateClickOnActionView() {
         Log.w(
             "ListRowViewWithCheckBox",
-            "Delegate click on ActionView has no effect for ListRowViewWithCheckBox component since the component itself is intended to perform CheckBox changes."
+            "Delegate click on ActionView has no effect for ListRowViewWithCheckBox component since " +
+                    "the component itself is intended to perform CheckBox changes."
         )
     }
 }

@@ -111,6 +111,7 @@ fun ListRowItem(
 }
 
 @Composable
+@Suppress("CyclomaticComplexMethod")
 private fun ListRowItemImp(
     modifier: Modifier = Modifier,
     icon: @Composable (() -> Unit)? = null,

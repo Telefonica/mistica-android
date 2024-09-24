@@ -9,7 +9,6 @@ import androidx.test.ext.junit.rules.activityScenarioRule
 import com.telefonica.mistica.DummyActivity
 import com.telefonica.mistica.R
 import com.telefonica.mistica.compose.theme.brand.Brand
-import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 import com.telefonica.mistica.list.ListRowView.BackgroundType.Companion.TYPE_BOXED
 import com.telefonica.mistica.list.ListRowView.BackgroundType.Companion.TYPE_BOXED_INVERSE
 import com.telefonica.mistica.list.ListRowView.BackgroundType.Companion.TYPE_NORMAL

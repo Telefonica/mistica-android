@@ -157,6 +157,7 @@ fun CarouselPagerIndicator(
 }
 
 @ExperimentalPagerApi
+@Suppress("LongMethod", "CyclomaticComplexMethod")
 internal fun calculateItems(
     items: MutableList<Item>,
     visibleWindowState: VisibleWindowState,
@@ -326,6 +327,7 @@ private fun calculateDirection(
 
 @ExperimentalPagerApi
 @Composable
+@Suppress("CyclomaticComplexMethod")
 private fun PagerIndicatorBox(
     items: MutableList<Item>,
     indicatorUnselectedWidth: Dp,
