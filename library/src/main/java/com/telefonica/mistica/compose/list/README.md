@@ -2,8 +2,7 @@
 `ListRowItems` are a continuous group of text or images. They are composed of items containing primary and supplemental actions, which are represented by icons and text.
 This component is designed to be used inside lists, that in Compose are built using `Column` or `LazyColumn`.
 
-```kotlin
-@ExperimentalMaterialApi  
+```kotlin 
 @Composable  
 fun ListRowItem(
     modifier: Modifier = Modifier,

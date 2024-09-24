@@ -17,7 +17,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Checkbox
-import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -40,7 +39,6 @@ import com.telefonica.mistica.compose.tag.Tag
 import com.telefonica.mistica.compose.theme.MisticaTheme
 import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 
-@OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun ListRowItem(
     modifier: Modifier = Modifier,
@@ -60,7 +58,7 @@ fun ListRowItem(
 ) {
     ListRowItemImp(
         modifier = modifier,
-        icon = { listRowIcon?.Draw() },
+        icon = listRowIcon?.let { { listRowIcon.Draw() } },
         title = title,
         isTitleHeading = isTitleHeading,
         subtitle = subtitle,
@@ -76,7 +74,6 @@ fun ListRowItem(
     )
 }
 
-@OptIn(ExperimentalMaterialApi::class)
 @Composable
 @Deprecated(replaceWith = ReplaceWith("ListRowItem"), message = "Use new ListRowItem with ListRowIcon param instead")
 fun ListRowItem(
@@ -113,7 +110,6 @@ fun ListRowItem(
     )
 }
 
-@ExperimentalMaterialApi
 @Composable
 @Suppress("LongMethod", "CyclomaticComplexMethod")
 private fun ListRowItemImp(
@@ -287,7 +283,6 @@ object ListRowItemTestTags {
     const val LIST_ROW_ITEM_TITLE = "list_row_item_title"
 }
 
-@ExperimentalMaterialApi
 @Preview(showBackground = true)
 @Composable
 @Suppress("LongMethod")
@@ -295,6 +290,10 @@ fun ListRowItemPreview() {
     MisticaTheme(brand = MovistarBrand) {
         val checkedState = remember { mutableStateOf(true) }
         Column {
+            ListRowItem(
+                listRowIcon = null,
+                title = "Title",
+            )
             ListRowItem(
                 listRowIcon = null,
                 headline = Tag("Promo"),
