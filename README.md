@@ -2,7 +2,7 @@
 ![Mistica for Android](doc/images/mistica-android-dark.svg#gh-dark-mode-only)
 
 [![Platform](https://img.shields.io/badge/Platform-Android-brightgreen)](https://github.com/Telefonica/mistica-android)
-[![Version](https://img.shields.io/maven-metadata/v.svg?label=maven-central&metadataUrl=https%3A%2F%2Frepo1.maven.org%2Fmaven2%2Fcom%2Ftelefonica%2Fmistica%2Fmaven-metadata.xml)](https://search.maven.org/artifact/com.telefonica/mistica)
+[![Version](https://img.shields.io/maven-metadata/v.svg?label=maven-central&metadataUrl=https%3A%2F%2Frepo1.maven.org%2Fmaven2%2Fcom%2Ftelefonica%2Fmistica%2Fmaven-metadata.xml)](https://central.sonatype.com/artifact/com.telefonica/mistica)
 [![Support](https://img.shields.io/badge/Support-%3E%3D%20Android%205.0-brightgreen)](https://github.com/Telefonica/mistica-android)
 [![Kotlin version badge](https://img.shields.io/badge/kotlin-1.8.20-blue.svg)](https://kotlinlang.org/docs/whatsnew1820.html)
 
