@@ -2,7 +2,6 @@ package com.telefonica.mistica.catalog.ui.classic.activity
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import com.telefonica.mistica.catalog.R
