@@ -1,10 +1,8 @@
 package com.telefonica.mistica.compose.carousel
 
-import com.google.accompanist.pager.ExperimentalPagerApi
 import junit.framework.TestCase.assertEquals
 import org.junit.Test
 
-@ExperimentalPagerApi
 class CalculateItemsTest {
 
     @Test
