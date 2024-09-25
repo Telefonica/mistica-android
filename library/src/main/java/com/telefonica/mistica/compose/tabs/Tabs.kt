@@ -53,6 +53,7 @@ import kotlinx.coroutines.launch
 
 @Composable
 @UiComposable
+@Suppress("CyclomaticComplexMethod")
 fun Tabs(
     modifier: Modifier = Modifier,
     selectedIndex: Int,

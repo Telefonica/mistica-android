@@ -2,6 +2,7 @@ package com.telefonica.mistica.catalog.ui.classic.components
 
 import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,7 +24,7 @@ import com.telefonica.mistica.sheet.RowSelectable
 import com.telefonica.mistica.sheet.SelectableAsset
 import com.telefonica.mistica.sheet.Sheet
 import com.telefonica.mistica.sheet.SheetView
-import com.telefonica.mistica.sheet.onSheetTapped
+import com.telefonica.mistica.sheet.OnSheetTapped
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -101,7 +102,7 @@ class SheetCatalogFragment : Fragment() {
                     )
                 }
             }
-            .withOnSheetTappedListener(object : onSheetTapped {
+            .withOnSheetTappedListener(object : OnSheetTapped {
                 override fun onTapped(sheetView: SheetView, childrenId: String, itemId: String) {
                     Toast
                         .makeText(this@SheetCatalogFragment.context, "Onclicked: [Children: $childrenId, item:$itemId]", Toast.LENGTH_SHORT)
@@ -207,6 +208,7 @@ class SheetCatalogFragment : Fragment() {
             InformativeIconType.Regular -> InformativeIcon.Icon(ResourcesCompat.getDrawable(resources, R.drawable.ic_sheets, requireContext().theme)!!)
         }
     } catch (e: Exception) {
+        Log.e("getInformativeIcon", "Error occurred while fetching the informative icon", e)
         InformativeIcon.Bullet
     }
 

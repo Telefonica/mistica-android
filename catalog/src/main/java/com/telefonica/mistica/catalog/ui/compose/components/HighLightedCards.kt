@@ -232,7 +232,7 @@ fun HighLightedImageType(imageConfig: HighLightCardImageConfig, onImageTypeSelec
     }
 }
 
-    @Composable
+@Composable
 fun HighLightedCardButtonType(buttonConfig: HighLightCardButtonSettings, onButtonTypeSelected: (HighLightCardButtonSettings) -> Unit) {
     Card(
         modifier = Modifier

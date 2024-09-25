@@ -6,16 +6,6 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.theme.MisticaTheme
 
-internal data class ButtonSizeConfig(
-    val textStyle: TextStyle,
-    val height: Dp,
-    val minWidth: Dp,
-    val iconSize: Dp,
-    val progressBarSize: Dp,
-    val progressBarStroke: Dp,
-    val horizontalPadding: Dp,
-)
-
 @Composable
 internal fun ButtonStyle.getButtonSizeCompose(): ButtonSizeConfig =
     when (this) {
@@ -54,4 +44,14 @@ private fun getSmallButtonSizeConfig() = ButtonSizeConfig(
     progressBarSize = 16.dp,
     progressBarStroke = 1.dp,
     horizontalPadding = 12.dp
+)
+
+internal data class ButtonSizeConfig(
+    val textStyle: TextStyle,
+    val height: Dp,
+    val minWidth: Dp,
+    val iconSize: Dp,
+    val progressBarSize: Dp,
+    val progressBarStroke: Dp,
+    val horizontalPadding: Dp,
 )

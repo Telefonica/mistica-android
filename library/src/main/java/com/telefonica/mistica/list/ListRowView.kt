@@ -126,6 +126,8 @@ import com.telefonica.mistica.util.setAlpha
         method = "setAssetWidth"
     ),
 )
+
+@Suppress("LargeClass")
 open class ListRowView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,

@@ -12,7 +12,6 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.IntDef
 import androidx.annotation.StringRes
 import androidx.appcompat.content.res.AppCompatResources
-import androidx.core.graphics.drawable.DrawableCompat
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
@@ -22,7 +21,6 @@ import com.telefonica.mistica.card.datacard.DataCardView.IconType.Companion.TYPE
 import com.telefonica.mistica.card.datacard.DataCardView.IconType.Companion.TYPE_ICON
 import com.telefonica.mistica.card.datacard.DataCardView.IconType.Companion.TYPE_SQUARE_IMAGE
 import com.telefonica.mistica.util.convertDpToPx
-import com.telefonica.mistica.util.getThemeColor
 
 @BindingMethods(
     BindingMethod(

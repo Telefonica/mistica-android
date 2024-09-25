@@ -26,7 +26,6 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
-import com.telefonica.mistica.util.DrawableBuilder
 import com.telefonica.mistica.util.getDimension
 import com.telefonica.mistica.util.getMisticaThemeDrawableBuilder
 import com.telefonica.mistica.util.getThemeColor

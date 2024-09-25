@@ -19,7 +19,6 @@ import com.telefonica.mistica.tag.TagView.Companion.TYPE_SUCCESS
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_WARNING
 import com.telefonica.mistica.util.convertDpToPx
 import com.telefonica.mistica.util.getThemeColor
-import java.util.Locale
 
 @Retention(AnnotationRetention.SOURCE)
 @IntDef(

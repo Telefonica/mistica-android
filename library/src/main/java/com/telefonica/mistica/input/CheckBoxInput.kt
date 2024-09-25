@@ -8,7 +8,12 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.CompoundButton
 import androidx.appcompat.widget.AppCompatCheckBox
-import androidx.databinding.*
+import androidx.databinding.BindingAdapter
+import androidx.databinding.BindingMethod
+import androidx.databinding.BindingMethods
+import androidx.databinding.InverseBindingListener
+import androidx.databinding.InverseBindingMethod
+import androidx.databinding.InverseBindingMethods
 import com.google.android.material.textfield.TextInputLayout
 import com.telefonica.mistica.R
 import com.telefonica.mistica.util.getThemeColor

@@ -1,7 +1,5 @@
 package com.telefonica.mistica.compose.theme.brand
 
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.TextUnit
 import com.telefonica.mistica.R
 import com.telefonica.mistica.compose.theme.brushes.MisticaBrushes
 
