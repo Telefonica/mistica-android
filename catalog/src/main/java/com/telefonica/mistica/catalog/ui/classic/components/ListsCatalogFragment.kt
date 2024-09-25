@@ -168,7 +168,6 @@ class ListsCatalogFragment : Fragment() {
 
 
         @SuppressLint("SetTextI18n")
-        @Suppress("LongMethod", "CyclomaticComplexMethod")
         private fun ListRowView.configureView(
             withLongTitle: Boolean = false,
             withTitleMaxLines: Int? = null,

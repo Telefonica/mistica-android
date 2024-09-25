@@ -156,8 +156,6 @@ fun CarouselPagerIndicator(
         indicatorShape = indicatorShape)
 }
 
-@ExperimentalPagerApi
-@Suppress("LongMethod", "CyclomaticComplexMethod")
 internal fun calculateItems(
     items: MutableList<Item>,
     visibleWindowState: VisibleWindowState,
