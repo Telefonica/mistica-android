@@ -168,7 +168,7 @@ class ListsCatalogFragment : Fragment() {
 
 
         @SuppressLint("SetTextI18n")
-        @Suppress("LongMethod", "CyclomaticComplexMethod")
+        @Suppress("CyclomaticComplexMethod")
         private fun ListRowView.configureView(
             withLongTitle: Boolean = false,
             withTitleMaxLines: Int? = null,
@@ -249,11 +249,7 @@ class ListsCatalogFragment : Fragment() {
                 isClickable = false
             }
 
-            when {
-                withBadge -> setBadge(true, withBadgeDescription)
-                withBadgeNumeric > 0 -> setNumericBadge(withBadgeNumeric, withBadgeDescription)
-                else -> setBadge(false, withBadgeDescription)
-            }
+            setBadge(withBadge, withBadgeDescription, withBadgeNumeric)
         }
 
         private fun getAssetResource(withAsset: Boolean, @AssetType withAssetType: Int): Int? =
@@ -271,6 +267,14 @@ class ListsCatalogFragment : Fragment() {
             } else {
                 null
             }
+
+        private fun ListRowView.setBadge(withBadge: Boolean, withBadgeDescription: String?, withBadgeNumeric: Int) {
+            when {
+                withBadge -> setBadge(true, withBadgeDescription)
+                withBadgeNumeric > 0 -> setNumericBadge(withBadgeNumeric, withBadgeDescription)
+                else -> setBadge(false, withBadgeDescription)
+            }
+        }
     }
 
     class ListViewHolder(val rowView: ListRowView) : ViewHolder(rowView)
