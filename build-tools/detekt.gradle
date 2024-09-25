@@ -3,5 +3,9 @@ detekt {
     buildUponDefaultConfig = true
     config.from(files("$projectDir/build-tools/detekt/detekt.yml"))
     basePath = files("$projectDir")
-    source.from(fileTree(rootProject.projectDir))
+    source.from(fileTree(rootProject.projectDir) {
+        exclude("**/.gradle/")
+        exclude("**/build/")
+        exclude("**/tmp/**")
+    })
 }
