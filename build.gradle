@@ -92,3 +92,7 @@ apply from: "build-tools/detekt.gradle"
 tasks.withType(io.gitlab.arturbosch.detekt.Detekt) {
     autoCorrect = true
 }
+
+tasks.named("detekt").configure {
+    dependsOn(":library-test-utils:javaPreCompileDebugUnitTest")
+}
