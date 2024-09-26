@@ -3,28 +3,11 @@ on:
   workflow_dispatch:
 
 jobs:
-  screenshots_baseline:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set up JDK 17
-        uses: actions/setup-java@v2
-        with:
-          distribution: 'temurin'
-          java-version: '17'
-
-      - name: Checkout repo
-        uses: actions/checkout@v2
-
-      - name: Run Roborazzi Record
-        run: 'bash ./gradlew clean recordRoborazziDebug'
-
-      - name: Check Git status
-        run: 'git status'
-        shell: bash
-
-      - name: Commit and push screenshots baseline
-        id: commitAndPushScreenshotsBaseline
-        uses: EndBug/add-and-commit@v7
-        with:
-          message: 'Updated screenshots baseline'
-          add: './**/screenshots/*'
+  update_screenshots_baseline:
+    uses: Telefonica/android-shared-workflows/.github/workflows/update-baseline.yml@feature/ANDROID-15237-UpdateBaselineShared
+    with:
+      baseline-update-tasks: 'recordRoborazziDebug'
+      emulators-number: 0
+      baseline-file-path: './**/screenshots/*'
+      commit-message: 'Updated screenshots baseline'
+    secrets: inherit
