@@ -22,7 +22,6 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
-import com.google.accompanist.pager.ExperimentalPagerApi
 import com.telefonica.mistica.compose.carousel.CarouselPagerIndicator.MAX_WINDOW_SIZE
 import com.telefonica.mistica.compose.carousel.CarouselPagerIndicator.indicatorSelectedHeight
 import com.telefonica.mistica.compose.carousel.CarouselPagerIndicator.indicatorSelectedWidth
@@ -44,7 +43,6 @@ import com.telefonica.mistica.compose.carousel.MovementDirection.INCREASE
 import com.telefonica.mistica.compose.carousel.MovementDirection.NO_MOVEMENT
 import com.telefonica.mistica.compose.theme.MisticaTheme
 
-@OptIn(ExperimentalPagerApi::class)
 @SuppressLint("MutableCollectionMutableState")
 @Composable
 fun CarouselPagerIndicator(
@@ -156,8 +154,6 @@ fun CarouselPagerIndicator(
         indicatorShape = indicatorShape)
 }
 
-@ExperimentalPagerApi
-@Suppress("LongMethod", "CyclomaticComplexMethod")
 internal fun calculateItems(
     items: MutableList<Item>,
     visibleWindowState: VisibleWindowState,
@@ -172,76 +168,27 @@ internal fun calculateItems(
                 log("item-$index is outside the window")
                 item.type = INVISIBLE
             }
+
             //The current selected
             index == visibleWindowState.currentSelected -> {
                 log("item-$index is the currently selected")
                 item.type = SELECTED
             }
-            //The adjacent to the lower edge may be small
+
             visibleWindowState.window.isTheAdjacentToTheLowerEdge(index) -> {
-                val thereAreNoMoreItems = visibleWindowState.window.first == 0
-                when {
-                    thereAreNoMoreItems -> {
-                        log("item-$index is unselected, because it's the adjacent to the edge, but there are no more items")
-                        item.type = UNSELECTED
-                    }
-                    else -> {
-                        log("item-$index is adjacent to the lower edge")
-                        item.type = UNSELECTED_SMALL
-                    }
-                }
+                doOnNearToLowerEdge(visibleWindowState, log, index, item)
             }
-            //The adjacent to the higher edge may be small
+
             visibleWindowState.window.isTheAdjacentToTheHigherEdge(index) -> {
-                val thereAreNoMoreItems = visibleWindowState.window.second == pagerCount - 1
-                when {
-                    thereAreNoMoreItems -> {
-                        log("item-$index is unselected, because it's the adjacent to the edge, but there are no more items")
-                        item.type = UNSELECTED
-                    }
-                    else -> {
-                        log("item-$index is adjacent to the higher edge")
-                        item.type = UNSELECTED_SMALL
-                    }
-                }
+                doOnNearToHigherEdge(visibleWindowState, pagerCount, log, index, item)
             }
-            //The items in the lower edge can be regular, small or very small
+
             visibleWindowState.window.isTheLowerEdge(index) -> {
-                val thereAreNoMoreItems = visibleWindowState.window.first == 0
-                val isTheSelectedAdjacent = (index + 1) == currentSelected
-                when {
-                    thereAreNoMoreItems -> {
-                        log("item-$index is the lower edge and there are no more items")
-                        item.type = UNSELECTED
-                    }
-                    isTheSelectedAdjacent -> {
-                        log("item-$index is the lower edge and the selected is the adjacent")
-                        item.type = UNSELECTED_SMALL
-                    }
-                    else -> {
-                        log("item-$index is the lower edge and the selected is NOT adjacent")
-                        item.type = UNSELECTED_VERY_SMALL
-                    }
-                }
+                doOnLowerEdge(visibleWindowState, index, currentSelected, log, item)
             }
-            //The items in the higher edge can be regular, small or very small
+
             visibleWindowState.window.isTheHigherEdge(index) -> {
-                val thereAreNoMoreItems = visibleWindowState.window.second == pagerCount - 1
-                val isTheSelectedAdjacent = (index - 1) == currentSelected
-                when {
-                    thereAreNoMoreItems -> {
-                        log("item-$index is the higher edge and there are no more items")
-                        item.type = UNSELECTED
-                    }
-                    isTheSelectedAdjacent -> {
-                        log("item-$index is the higher edge and the selected is the adjacent")
-                        item.type = UNSELECTED_SMALL
-                    }
-                    else -> {
-                        log("item-$index is the higher edge and the selected is NOT adjacent")
-                        item.type = UNSELECTED_VERY_SMALL
-                    }
-                }
+                doOnHigherEdge(visibleWindowState, pagerCount, index, currentSelected, log, item)
             }
             else -> {
                 log("item-$index is unselected")
@@ -251,7 +198,106 @@ internal fun calculateItems(
     }
 }
 
-@ExperimentalPagerApi
+//The adjacent to the lower edge may be small
+private fun doOnNearToLowerEdge(
+    visibleWindowState: VisibleWindowState,
+    log: (String) -> Unit,
+    index: Int,
+    item: Item,
+) {
+    val thereAreNoMoreItems = visibleWindowState.window.first == 0
+    when {
+        thereAreNoMoreItems -> {
+            log("item-$index is unselected, because it's the adjacent to the edge, but there are no more items")
+            item.type = UNSELECTED
+        }
+
+        else -> {
+            log("item-$index is adjacent to the lower edge")
+            item.type = UNSELECTED_SMALL
+        }
+    }
+}
+
+//The adjacent to the higher edge may be small
+private fun doOnNearToHigherEdge(
+    visibleWindowState: VisibleWindowState,
+    pagerCount: Int,
+    log: (String) -> Unit,
+    index: Int,
+    item: Item,
+) {
+    val thereAreNoMoreItems = visibleWindowState.window.second == pagerCount - 1
+    when {
+        thereAreNoMoreItems -> {
+            log("item-$index is unselected, because it's the adjacent to the edge, but there are no more items")
+            item.type = UNSELECTED
+        }
+
+        else -> {
+            log("item-$index is adjacent to the higher edge")
+            item.type = UNSELECTED_SMALL
+        }
+    }
+}
+
+//The items in the lower edge can be regular, small or very small
+private fun doOnLowerEdge(
+    visibleWindowState: VisibleWindowState,
+    index: Int,
+    currentSelected: Int,
+    log: (String) -> Unit,
+    item: Item,
+) {
+    val thereAreNoMoreItems = visibleWindowState.window.first == 0
+    val isTheSelectedAdjacent = (index + 1) == currentSelected
+    when {
+        thereAreNoMoreItems -> {
+            log("item-$index is the lower edge and there are no more items")
+            item.type = UNSELECTED
+        }
+
+        isTheSelectedAdjacent -> {
+            log("item-$index is the lower edge and the selected is the adjacent")
+            item.type = UNSELECTED_SMALL
+        }
+
+        else -> {
+            log("item-$index is the lower edge and the selected is NOT adjacent")
+            item.type = UNSELECTED_VERY_SMALL
+        }
+    }
+}
+
+//The items in the higher edge can be regular, small or very small
+private fun doOnHigherEdge(
+    visibleWindowState: VisibleWindowState,
+    pagerCount: Int,
+    index: Int,
+    currentSelected: Int,
+    log: (String) -> Unit,
+    item: Item,
+) {
+    val thereAreNoMoreItems = visibleWindowState.window.second == pagerCount - 1
+    val isTheSelectedAdjacent = (index - 1) == currentSelected
+    when {
+        thereAreNoMoreItems -> {
+            log("item-$index is the higher edge and there are no more items")
+            item.type = UNSELECTED
+        }
+
+        isTheSelectedAdjacent -> {
+            log("item-$index is the higher edge and the selected is the adjacent")
+            item.type = UNSELECTED_SMALL
+        }
+
+        else -> {
+            log("item-$index is the higher edge and the selected is NOT adjacent")
+            item.type = UNSELECTED_VERY_SMALL
+        }
+    }
+}
+
 internal fun calculateWindowPosition(
     movementDirection: MovementDirection,
     currentSelected: Int,
@@ -312,7 +358,6 @@ internal fun calculateWindowPosition(
     }
 }
 
-@ExperimentalPagerApi
 private fun calculateDirection(
     carouselState: CarouselState,
     currentlySelected: Int,
@@ -325,7 +370,6 @@ private fun calculateDirection(
     return movementDirection
 }
 
-@ExperimentalPagerApi
 @Composable
 @Suppress("CyclomaticComplexMethod")
 private fun PagerIndicatorBox(
