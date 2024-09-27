@@ -24,9 +24,10 @@ jobs:
           path: .github/android-shared-workflows
 
       - name: "Update screenshot baseline"
-        uses: ./.github/android-shared-workflows/.github/workflows/update-baseline-and-commit.yml
-        with:
-          baseline-update-tasks: 'recordRoborazziDebug'
-          emulators-number: 0
-          baseline-file-path: './**/screenshots/*'
-          commit-message: 'Updated screenshots baseline'
+        run: |
+          # Run the script or workflow from the shared workflows repository
+          bash .github/android-shared-workflows/.github/workflows/update-baseline-and-commit.yml \
+            --baseline-update-tasks 'recordRoborazziDebug' \
+            --emulators-number 0 \
+            --baseline-file-path './**/screenshots/*' \
+            --commit-message 'Updated screenshots baseline'
