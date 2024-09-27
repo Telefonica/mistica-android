@@ -3,7 +3,28 @@ on:
   workflow_dispatch:
 
 jobs:
-  update_screenshots_baseline:
+  clone_shared_workflows:
+    runs-on: ubuntu-latest
+    outputs:
+      workflows-path: ${{ steps.set-path.outputs.workflows-path }}  # Pass path to the next job
+    steps:
+      - name: Check out main repo
+        uses: actions/checkout@v4
+
+      - name: Check out actions from private repo
+        uses: actions/checkout@v4
+        with:
+          repository: Telefonica/android-shared-workflows
+          ref: 'feature/ANDROID-15237-UpdateBaselineShared'
+          token: "${{ secrets.NOVUM_PRIVATE_REPOS }}"
+          path: .github/android-shared-workflows
+
+      - name: Set output for workflows path
+        id: set-path
+        run: echo "::set-output name=workflows-path::.github/android-shared-workflows"
+
+  use_shared_workflow:
+    needs: clone_shared_workflows  # Ensure Job 2 runs after Job 1
     runs-on: ubuntu-latest
     steps:
       - name: Set up JDK 17
@@ -12,19 +33,8 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Checkout repo
-        uses: actions/checkout@v4
-
-      - name: Check out actions
-        uses: actions/checkout@v4
-        with:
-          repository: Telefonica/android-shared-workflows
-          ref: 'feature/ANDROID-15237-UpdateBaselineShared'
-          token: "${{ secrets.NOVUM_PRIVATE_REPOS }}"
-          path: .github/android-shared-workflows
-
       - name: "Update screenshot baseline"
-        uses: ./.github/android-shared-workflows/update-baseline.yaml
+        uses: ./${{ needs.clone_shared_workflows.outputs.workflows-path }}/update-baseline.yaml
         with:
           baseline-update-tasks: 'recordRoborazziDebug'
           emulators-number: 0
