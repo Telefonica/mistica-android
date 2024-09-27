@@ -1,33 +1,55 @@
-name: "Update screenshot baseline"
-on:
-  workflow_dispatch:
+  Skip to content
+    Navigation Menu
+    Telefonica
+    /
+    mistica-android
+    
+    Type / to search
+    Code
+    Issues
+    Pull requests
+    8
+    Actions
+    Projects
+    Wiki
+    Security
+    Insights
+    Settings
+    Update screenshot baseline
+    Update screenshot baseline #63
+    Jobs
+    Run details
+    Workflow file for this run
+    .github/workflows/update_screenshot_baseline.yml at 0c8cd35
+  name: "Update screenshot baseline"
+  on:
+    workflow_dispatch:
 
-jobs:
-  update_screenshots_baseline:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set up JDK 17
-        uses: actions/setup-java@v2
-        with:
-          distribution: 'temurin'
-          java-version: '17'
+  jobs:
+    update_screenshots_baseline:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Set up JDK 17
+          uses: actions/setup-java@v2
+          with:
+            distribution: 'temurin'
+            java-version: '17'
 
-      - name: Checkout repo
-        uses: actions/checkout@v4
+        - name: Checkout repo
+          uses: actions/checkout@v4
 
-      - name: Check out actions
-        uses: actions/checkout@v4
-        with:
-          repository: Telefonica/android-shared-workflows
-          ref: 'feature/ANDROID-15237-UpdateBaselineShared'
-          token: "${{ secrets.NOVUM_PRIVATE_REPOS }}"
-          path: .github/android-shared-workflows
+        - name: Check out actions
+          uses: actions/checkout@v4
+          with:
+            repository: Telefonica/android-shared-workflows
+            ref: 'feature/ANDROID-15237-UpdateBaselineShared'
+            token: "${{ secrets.NOVUM_PRIVATE_REPOS }}"
+            path: .github/android-shared-workflows
 
-      - name: "Update screenshot baseline"
-        run: |
-          # Run the script or workflow from the shared workflows repository
-          bash ./.github/android-shared-workflows/.github/workflows/update-baseline-and-commit.yml \
-            --baseline-update-tasks 'recordRoborazziDebug' \
-            --emulators-number 0 \
-            --baseline-file-path './**/screenshots/*' \
-            --commit-message 'Updated screenshots baseline'
+        - name: "Update screenshot baseline"
+          uses: ./.github/android-shared-workflows/update-baseline.yaml
+          with:
+            baseline-update-tasks: 'recordRoborazziDebug'
+            emulators-number: 0
+            baseline-file-path: './**/screenshots/*'
+            commit-message: 'Updated screenshots baseline'
