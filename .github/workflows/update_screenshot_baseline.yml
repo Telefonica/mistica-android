@@ -34,7 +34,9 @@ jobs:
           java-version: '17'
 
       - name: "Update screenshot baseline"
-        uses: ./${{ needs.clone_shared_workflows.outputs.workflows-path }}/update-baseline.yaml
+        run: |
+          echo "Running shared workflow..."
+          ./${{ needs.clone_shared_workflows.outputs.workflows-path }}/update-baseline.yaml
         with:
           baseline-update-tasks: 'recordRoborazziDebug'
           emulators-number: 0
