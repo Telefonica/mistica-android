@@ -4,6 +4,7 @@ on:
 
 jobs:
   update_screenshots_baseline:
+    runs-on: ubuntu-latest
     steps:
       - name: Check out actions
         uses: actions/checkout@v4
@@ -20,4 +21,3 @@ jobs:
           emulators-number: 0
           baseline-file-path: './**/screenshots/*'
           commit-message: 'Updated screenshots baseline'
-        secrets: inherit
