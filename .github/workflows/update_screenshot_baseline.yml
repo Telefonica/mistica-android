@@ -15,7 +15,7 @@ jobs:
           path: .github/android-shared-workflows
 
       - name: "Update screenshot baseline"
-        uses: .github/workflows/update-baseline
+        uses: ./.github/workflows/update-baseline
         with:
           baseline-update-tasks: 'recordRoborazziDebug'
           emulators-number: 0
