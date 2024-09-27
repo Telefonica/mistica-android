@@ -4,10 +4,20 @@ on:
 
 jobs:
   update_screenshots_baseline:
-    uses: Telefonica/android-shared-workflows/.github/workflows/update-baseline.yml@feature/ANDROID-15237-UpdateBaselineShared
-    with:
-      baseline-update-tasks: 'recordRoborazziDebug'
-      emulators-number: 0
-      baseline-file-path: './**/screenshots/*'
-      commit-message: 'Updated screenshots baseline'
-    secrets: inherit
+    steps:
+      - name: Check out actions
+        uses: actions/checkout@v4
+        with:
+          repository: Telefonica/android-shared-workflows
+          ref: 'feature/ANDROID-15237-UpdateBaselineShared'
+          token: "${{ secrets.NOVUM_PRIVATE_REPOS }}"
+          path: .github/android-shared-workflows
+
+      - name: "Update screenshot baseline"
+        uses: .github/workflows/update-baseline
+        with:
+          baseline-update-tasks: 'recordRoborazziDebug'
+          emulators-number: 0
+          baseline-file-path: './**/screenshots/*'
+          commit-message: 'Updated screenshots baseline'
+        secrets: inherit
