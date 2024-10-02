@@ -6,6 +6,12 @@ plugins {
     id 'io.github.takahirom.roborazzi'
 }
 
+
+roborazzi {
+    generateComposePreviewRobolectricTests.enable = true
+    generateComposePreviewRobolectricTests.packages.set(["com.telefonica.mistica.compose.feedback.error"])
+}
+
 android {
     compileSdk target_sdk_version
     namespace "com.telefonica.mistica"
@@ -61,6 +67,7 @@ android {
             includeAndroidResources = true
             all {
                 systemProperty 'robolectric.graphicsMode', 'NATIVE'
+                it.systemProperties["robolectric.pixelCopyRenderMode"] = "hardware"
             }
         }
     }
@@ -72,6 +79,10 @@ task sourceJar(type: Jar) {
 }
 
 dependencies {
+    testImplementation "com.github.sergio-sastre.ComposablePreviewScanner:android:0.3.2"
+    testImplementation "io.github.takahirom.roborazzi:roborazzi-compose-preview-scanner-support:$roborazzi_version"
+
+
     api "com.google.android.material:material:1.6.1"
     api 'androidx.constraintlayout:constraintlayout:2.0.4'
     api 'androidx.constraintlayout:constraintlayout-solver:2.0.4'
