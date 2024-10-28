@@ -74,11 +74,13 @@ public object BlauBrandColors {
       controlActivatedInverse = BlauPaletteColor.blau_color_white
       controlError = BlauPaletteColor.blau_color_blauRed
       barTrack = BlauPaletteColor.blau_color_grey2
+      barTrackInverse = BlauPaletteColor.blau_color_grey6_20_alpha
       loadingBar = BlauPaletteColor.blau_color_blauBlueSecondary
       loadingBarBackground = BlauPaletteColor.blau_color_blauBlueSecondary10
       toggleAndroidInactive = BlauPaletteColor.blau_color_grey2
       toggleAndroidBackgroundActive = BlauPaletteColor.blau_color_blauBlueSecondary10
       iosControlKnob = BlauPaletteColor.blau_color_white
+      controlKnobInverse = BlauPaletteColor.blau_color_blauBlueSecondary
       divider = BlauPaletteColor.blau_color_grey2
       dividerInverse = BlauPaletteColor.blau_color_white_20_alpha
       navigationBarDivider = BlauPaletteColor.blau_color_blauBluePrimary
@@ -204,11 +206,13 @@ public object BlauBrandColors {
       controlActivatedInverse = BlauPaletteColor.blau_color_blauBlueSecondary
       controlError = BlauPaletteColor.blau_color_blauRed
       barTrack = BlauPaletteColor.blau_color_darkModeGrey6
+      barTrackInverse = BlauPaletteColor.blau_color_darkModeGrey6
       loadingBar = BlauPaletteColor.blau_color_blauBluePrimary
       loadingBarBackground = BlauPaletteColor.blau_color_darkModeGrey
       toggleAndroidInactive = BlauPaletteColor.blau_color_grey5
       toggleAndroidBackgroundActive = BlauPaletteColor.blau_color_blauBlueSecondary30
       iosControlKnob = BlauPaletteColor.blau_color_grey2
+      controlKnobInverse = BlauPaletteColor.blau_color_grey2
       divider = BlauPaletteColor.blau_color_white_5_alpha
       dividerInverse = BlauPaletteColor.blau_color_white_5_alpha
       navigationBarDivider = BlauPaletteColor.blau_color_darkModeBlack
@@ -387,6 +391,8 @@ private object BlauPaletteColor {
   public val blau_color_white_15_alpha: Color = Color(0x26FFFFFF)
 
   public val blau_color_white_20_alpha: Color = Color(0x33FFFFFF)
+
+  public val blau_color_grey6_20_alpha: Color = Color(0x33000000)
 
   public val blau_color_grey6_0_alpha: Color = Color(0x00000000)
 

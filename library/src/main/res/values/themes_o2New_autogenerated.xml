@@ -70,11 +70,13 @@
 		<item name="colorControlActivatedInverse">@color/o2New_color_white</item>
 		<item name="colorControlError">@color/o2New_color_o2Red60</item>
 		<item name="colorBarTrack">@color/o2New_color_grey30</item>
+		<item name="colorBarTrackInverse">@color/o2New_color_white_30_alpha</item>
 		<item name="colorLoadingBar">@color/o2New_color_beyondBlue</item>
 		<item name="colorLoadingBarBackground">@color/o2New_color_grey20</item>
 		<item name="colorToggleAndroidInactive">@color/o2New_color_grey30</item>
 		<item name="colorToggleAndroidBackgroundActive">@color/o2New_color_beyondBlue15</item>
 		<item name="colorIosControlKnob">@color/o2New_color_white</item>
+		<item name="colorControlKnobInverse">@color/o2New_color_beyondBlue</item>
 		<item name="colorDivider">@color/o2New_color_grey30</item>
 		<item name="colorDividerInverse">@color/o2New_color_white_20_alpha</item>
 		<item name="colorNavigationBarDivider">@color/o2New_color_darkBlue</item>

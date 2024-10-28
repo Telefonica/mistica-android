@@ -74,11 +74,13 @@ public object TuBrandColors {
       controlActivatedInverse = TuPaletteColor.tu_color_white
       controlError = TuPaletteColor.tu_color_red
       barTrack = TuPaletteColor.tu_color_grey2
+      barTrackInverse = TuPaletteColor.tu_color_white_36_alpha
       loadingBar = TuPaletteColor.tu_color_green40
       loadingBarBackground = TuPaletteColor.tu_color_green
       toggleAndroidInactive = TuPaletteColor.tu_color_grey2
       toggleAndroidBackgroundActive = TuPaletteColor.tu_color_primary15
       iosControlKnob = TuPaletteColor.tu_color_white
+      controlKnobInverse = TuPaletteColor.tu_color_primary
       divider = TuPaletteColor.tu_color_grey2
       dividerInverse = TuPaletteColor.tu_color_white_20_alpha
       navigationBarDivider = TuPaletteColor.tu_color_primary
@@ -204,11 +206,13 @@ public object TuBrandColors {
       controlActivatedInverse = TuPaletteColor.tu_color_blue30
       controlError = TuPaletteColor.tu_color_red
       barTrack = TuPaletteColor.tu_color_darkModeGrey6
+      barTrackInverse = TuPaletteColor.tu_color_darkModeGrey6
       loadingBar = TuPaletteColor.tu_color_green40
       loadingBarBackground = TuPaletteColor.tu_color_green
       toggleAndroidInactive = TuPaletteColor.tu_color_grey4
       toggleAndroidBackgroundActive = TuPaletteColor.tu_color_blue20
       iosControlKnob = TuPaletteColor.tu_color_grey2
+      controlKnobInverse = TuPaletteColor.tu_color_grey2
       divider = TuPaletteColor.tu_color_white_5_alpha
       dividerInverse = TuPaletteColor.tu_color_white_5_alpha
       navigationBarDivider = TuPaletteColor.tu_color_darkModeBlack
@@ -395,6 +399,8 @@ private object TuPaletteColor {
   public val tu_color_white_80_alpha: Color = Color(0xCCFFFFFF)
 
   public val tu_color_white_10_alpha: Color = Color(0x1AFFFFFF)
+
+  public val tu_color_white_36_alpha: Color = Color(0x5CFFFFFF)
 
   public val tu_color_white_20_alpha: Color = Color(0x33FFFFFF)
 

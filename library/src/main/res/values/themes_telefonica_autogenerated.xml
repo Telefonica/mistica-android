@@ -69,12 +69,14 @@
 		<item name="colorControlInverse">@color/telefonica_color_grey1</item>
 		<item name="colorControlActivatedInverse">@color/telefonica_color_white</item>
 		<item name="colorControlError">@color/telefonica_color_coral</item>
-		<item name="colorBarTrack">@color/telefonica_color_grey3</item>
+		<item name="colorBarTrack">@color/telefonica_color_grey2</item>
+		<item name="colorBarTrackInverse">@color/telefonica_color_white_30_alpha</item>
 		<item name="colorLoadingBar">@color/telefonica_color_telefonicaBlue30</item>
 		<item name="colorLoadingBarBackground">@color/telefonica_color_telefonicaBlue70</item>
 		<item name="colorToggleAndroidInactive">@color/telefonica_color_grey2</item>
 		<item name="colorToggleAndroidBackgroundActive">@color/telefonica_color_grey2</item>
 		<item name="colorIosControlKnob">@color/telefonica_color_white</item>
+		<item name="colorControlKnobInverse">@color/telefonica_color_telefonicaBlue</item>
 		<item name="colorDivider">@color/telefonica_color_grey2</item>
 		<item name="colorDividerInverse">@color/telefonica_color_white_20_alpha</item>
 		<item name="colorNavigationBarDivider">@color/telefonica_color_telefonicaBlue</item>

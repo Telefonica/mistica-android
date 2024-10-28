@@ -69,11 +69,13 @@
 		<item name="colorControlActivatedInverse">@color/tu_color_blue30</item>
 		<item name="colorControlError">@color/tu_color_red</item>
 		<item name="colorBarTrack">@color/tu_color_darkModeGrey6</item>
+		<item name="colorBarTrackInverse">@color/tu_color_darkModeGrey6</item>
 		<item name="colorLoadingBar">@color/tu_color_green40</item>
 		<item name="colorLoadingBarBackground">@color/tu_color_green</item>
 		<item name="colorToggleAndroidInactive">@color/tu_color_grey4</item>
 		<item name="colorToggleAndroidBackgroundActive">@color/tu_color_blue20</item>
 		<item name="colorIosControlKnob">@color/tu_color_grey2</item>
+		<item name="colorControlKnobInverse">@color/tu_color_grey2</item>
 		<item name="colorDivider">@color/tu_color_white_5_alpha</item>
 		<item name="colorDividerInverse">@color/tu_color_white_5_alpha</item>
 		<item name="colorNavigationBarDivider">@color/tu_color_darkModeBlack</item>

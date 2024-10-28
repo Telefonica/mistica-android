@@ -76,12 +76,14 @@ public object TelefonicaBrandColors {
       controlInverse = TelefonicaPaletteColor.telefonica_color_grey1
       controlActivatedInverse = TelefonicaPaletteColor.telefonica_color_white
       controlError = TelefonicaPaletteColor.telefonica_color_coral
-      barTrack = TelefonicaPaletteColor.telefonica_color_grey3
+      barTrack = TelefonicaPaletteColor.telefonica_color_grey2
+      barTrackInverse = TelefonicaPaletteColor.telefonica_color_white_30_alpha
       loadingBar = TelefonicaPaletteColor.telefonica_color_telefonicaBlue30
       loadingBarBackground = TelefonicaPaletteColor.telefonica_color_telefonicaBlue70
       toggleAndroidInactive = TelefonicaPaletteColor.telefonica_color_grey2
       toggleAndroidBackgroundActive = TelefonicaPaletteColor.telefonica_color_grey2
       iosControlKnob = TelefonicaPaletteColor.telefonica_color_white
+      controlKnobInverse = TelefonicaPaletteColor.telefonica_color_telefonicaBlue
       divider = TelefonicaPaletteColor.telefonica_color_grey2
       dividerInverse = TelefonicaPaletteColor.telefonica_color_white_20_alpha
       navigationBarDivider = TelefonicaPaletteColor.telefonica_color_telefonicaBlue
@@ -210,11 +212,13 @@ public object TelefonicaBrandColors {
       controlActivatedInverse = TelefonicaPaletteColor.telefonica_color_telefonicaBlue
       controlError = TelefonicaPaletteColor.telefonica_color_coral
       barTrack = TelefonicaPaletteColor.telefonica_color_darkModeGrey6
+      barTrackInverse = TelefonicaPaletteColor.telefonica_color_darkModeGrey6
       loadingBar = TelefonicaPaletteColor.telefonica_color_telefonicaBlue
       loadingBarBackground = TelefonicaPaletteColor.telefonica_color_grey6
       toggleAndroidInactive = TelefonicaPaletteColor.telefonica_color_grey4
       toggleAndroidBackgroundActive = TelefonicaPaletteColor.telefonica_color_telefonicaBlue20
       iosControlKnob = TelefonicaPaletteColor.telefonica_color_grey2
+      controlKnobInverse = TelefonicaPaletteColor.telefonica_color_grey2
       divider = TelefonicaPaletteColor.telefonica_color_white_5_alpha
       dividerInverse = TelefonicaPaletteColor.telefonica_color_white_5_alpha
       navigationBarDivider = TelefonicaPaletteColor.telefonica_color_darkModeBlack
@@ -391,6 +395,8 @@ private object TelefonicaPaletteColor {
   public val telefonica_color_white_8_alpha: Color = Color(0x14FFFFFF)
 
   public val telefonica_color_white_10_alpha: Color = Color(0x1AFFFFFF)
+
+  public val telefonica_color_white_30_alpha: Color = Color(0x4DFFFFFF)
 
   public val telefonica_color_white_20_alpha: Color = Color(0x33FFFFFF)
 

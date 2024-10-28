@@ -68,11 +68,13 @@
 		<attr name="colorControlActivatedInverse" format="color|reference"/>
 		<attr name="colorControlError" format="color|reference"/>
 		<attr name="colorBarTrack" format="color|reference"/>
+		<attr name="colorBarTrackInverse" format="color|reference"/>
 		<attr name="colorLoadingBar" format="color|reference"/>
 		<attr name="colorLoadingBarBackground" format="color|reference"/>
 		<attr name="colorToggleAndroidInactive" format="color|reference"/>
 		<attr name="colorToggleAndroidBackgroundActive" format="color|reference"/>
 		<attr name="colorIosControlKnob" format="color|reference"/>
+		<attr name="colorControlKnobInverse" format="color|reference"/>
 		<attr name="colorDivider" format="color|reference"/>
 		<attr name="colorDividerInverse" format="color|reference"/>
 		<attr name="colorNavigationBarDivider" format="color|reference"/>

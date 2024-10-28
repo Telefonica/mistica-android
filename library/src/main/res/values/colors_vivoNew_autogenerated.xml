@@ -45,6 +45,7 @@
 	<color name="vivoNew_color_darkModeBlack_35_alpha">#59191919</color>
 	<color name="vivoNew_color_white_10_alpha">#1AFFFFFF</color>
 	<color name="vivoNew_color_white_15_alpha">#26FFFFFF</color>
+	<color name="vivoNew_color_white_50_alpha">#80FFFFFF</color>
 	<color name="vivoNew_color_white_20_alpha">#33FFFFFF</color>
 	<color name="vivoNew_color_grey6_0_alpha">#00000000</color>
 	<color name="vivoNew_color_grey6_40_alpha">#66000000</color>

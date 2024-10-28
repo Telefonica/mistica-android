@@ -74,11 +74,13 @@ public object O2NewBrandColors {
       controlActivatedInverse = O2NewPaletteColor.o2New_color_white
       controlError = O2NewPaletteColor.o2New_color_o2Red60
       barTrack = O2NewPaletteColor.o2New_color_grey30
+      barTrackInverse = O2NewPaletteColor.o2New_color_white_30_alpha
       loadingBar = O2NewPaletteColor.o2New_color_beyondBlue
       loadingBarBackground = O2NewPaletteColor.o2New_color_grey20
       toggleAndroidInactive = O2NewPaletteColor.o2New_color_grey30
       toggleAndroidBackgroundActive = O2NewPaletteColor.o2New_color_beyondBlue15
       iosControlKnob = O2NewPaletteColor.o2New_color_white
+      controlKnobInverse = O2NewPaletteColor.o2New_color_beyondBlue
       divider = O2NewPaletteColor.o2New_color_grey30
       dividerInverse = O2NewPaletteColor.o2New_color_white_20_alpha
       navigationBarDivider = O2NewPaletteColor.o2New_color_darkBlue
@@ -204,11 +206,13 @@ public object O2NewBrandColors {
       controlActivatedInverse = O2NewPaletteColor.o2New_color_darkModeBeyondBlue
       controlError = O2NewPaletteColor.o2New_color_o2Red45
       barTrack = O2NewPaletteColor.o2New_color_darkModeGrey6
+      barTrackInverse = O2NewPaletteColor.o2New_color_darkModeGrey6
       loadingBar = O2NewPaletteColor.o2New_color_darkModeBeyondBlue
       loadingBarBackground = O2NewPaletteColor.o2New_color_darkModeGrey6
       toggleAndroidInactive = O2NewPaletteColor.o2New_color_grey20
       toggleAndroidBackgroundActive = O2NewPaletteColor.o2New_color_beyondBlue15
       iosControlKnob = O2NewPaletteColor.o2New_color_grey30
+      controlKnobInverse = O2NewPaletteColor.o2New_color_grey30
       badge = O2NewPaletteColor.o2New_color_o2Red65
       feedbackErrorBackground = O2NewPaletteColor.o2New_color_o2Red60
       feedbackInfoBackground = O2NewPaletteColor.o2New_color_darkModeGrey6
@@ -415,6 +419,8 @@ private object O2NewPaletteColor {
   public val o2New_color_white_8_alpha: Color = Color(0x14FFFFFF)
 
   public val o2New_color_white_15_alpha: Color = Color(0x26FFFFFF)
+
+  public val o2New_color_white_30_alpha: Color = Color(0x4DFFFFFF)
 
   public val o2New_color_white_20_alpha: Color = Color(0x33FFFFFF)
 
