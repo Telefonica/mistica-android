@@ -74,11 +74,13 @@ public object VivoNewBrandColors {
       controlActivatedInverse = VivoNewPaletteColor.vivoNew_color_white
       controlError = VivoNewPaletteColor.vivoNew_color_pepper
       barTrack = VivoNewPaletteColor.vivoNew_color_grey3
+      barTrackInverse = VivoNewPaletteColor.vivoNew_color_white_50_alpha
       loadingBar = VivoNewPaletteColor.vivoNew_color_vivoPurple
       loadingBarBackground = VivoNewPaletteColor.vivoNew_color_vivoPurpleLight10
       toggleAndroidInactive = VivoNewPaletteColor.vivoNew_color_grey2
       toggleAndroidBackgroundActive = VivoNewPaletteColor.vivoNew_color_vivoPurpleLight20
       iosControlKnob = VivoNewPaletteColor.vivoNew_color_white
+      controlKnobInverse = VivoNewPaletteColor.vivoNew_color_vivoPurple
       divider = VivoNewPaletteColor.vivoNew_color_grey3
       dividerInverse = VivoNewPaletteColor.vivoNew_color_white_20_alpha
       navigationBarDivider = VivoNewPaletteColor.vivoNew_color_vivoPurple
@@ -204,11 +206,13 @@ public object VivoNewBrandColors {
       controlActivatedInverse = VivoNewPaletteColor.vivoNew_color_vivoPurpleLight80
       controlError = VivoNewPaletteColor.vivoNew_color_pepper
       barTrack = VivoNewPaletteColor.vivoNew_color_darkModeGrey6
+      barTrackInverse = VivoNewPaletteColor.vivoNew_color_darkModeGrey6
       loadingBar = VivoNewPaletteColor.vivoNew_color_vivoPurpleLight80
       loadingBarBackground = VivoNewPaletteColor.vivoNew_color_darkModeGrey6
       toggleAndroidInactive = VivoNewPaletteColor.vivoNew_color_grey4
       toggleAndroidBackgroundActive = VivoNewPaletteColor.vivoNew_color_vivoPurpleLight50
       iosControlKnob = VivoNewPaletteColor.vivoNew_color_grey2
+      controlKnobInverse = VivoNewPaletteColor.vivoNew_color_grey2
       divider = VivoNewPaletteColor.vivoNew_color_white_5_alpha
       dividerInverse = VivoNewPaletteColor.vivoNew_color_white_5_alpha
       navigationBarDivider = VivoNewPaletteColor.vivoNew_color_darkModeBlack
@@ -383,6 +387,8 @@ private object VivoNewPaletteColor {
   public val vivoNew_color_white_10_alpha: Color = Color(0x1AFFFFFF)
 
   public val vivoNew_color_white_15_alpha: Color = Color(0x26FFFFFF)
+
+  public val vivoNew_color_white_50_alpha: Color = Color(0x80FFFFFF)
 
   public val vivoNew_color_white_20_alpha: Color = Color(0x33FFFFFF)
 

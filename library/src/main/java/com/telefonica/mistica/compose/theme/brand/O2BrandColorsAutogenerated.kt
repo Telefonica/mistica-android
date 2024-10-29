@@ -74,11 +74,13 @@ public object O2BrandColors {
       controlActivatedInverse = O2PaletteColor.o2_color_white
       controlError = O2PaletteColor.o2_color_pepper
       barTrack = O2PaletteColor.o2_color_grey3
+      barTrackInverse = O2PaletteColor.o2_color_white_30_alpha
       loadingBar = O2PaletteColor.o2_color_o2BluePrimary
       loadingBarBackground = O2PaletteColor.o2_color_grey1
       toggleAndroidInactive = O2PaletteColor.o2_color_grey2
       toggleAndroidBackgroundActive = O2PaletteColor.o2_color_o2BluePrimary15
       iosControlKnob = O2PaletteColor.o2_color_white
+      controlKnobInverse = O2PaletteColor.o2_color_o2BluePrimary
       divider = O2PaletteColor.o2_color_grey2
       dividerInverse = O2PaletteColor.o2_color_white_20_alpha
       navigationBarDivider = O2PaletteColor.o2_color_o2BluePrimary
@@ -204,11 +206,13 @@ public object O2BrandColors {
       controlActivatedInverse = O2PaletteColor.o2_color_o2BluePrimary30
       controlError = O2PaletteColor.o2_color_pepper
       barTrack = O2PaletteColor.o2_color_darkModeGrey6
+      barTrackInverse = O2PaletteColor.o2_color_darkModeGrey6
       loadingBar = O2PaletteColor.o2_color_darkModeO2BluePrimary
       loadingBarBackground = O2PaletteColor.o2_color_darkModeGrey6
       toggleAndroidInactive = O2PaletteColor.o2_color_grey4
       toggleAndroidBackgroundActive = O2PaletteColor.o2_color_o2BlueLight30
       iosControlKnob = O2PaletteColor.o2_color_grey2
+      controlKnobInverse = O2PaletteColor.o2_color_grey2
       badge = O2PaletteColor.o2_color_pepper60
       feedbackErrorBackground = O2PaletteColor.o2_color_pepper
       feedbackInfoBackground = O2PaletteColor.o2_color_darkModeGrey6
@@ -397,6 +401,8 @@ private object O2PaletteColor {
   public val o2_color_white_8_alpha: Color = Color(0x14FFFFFF)
 
   public val o2_color_white_15_alpha: Color = Color(0x26FFFFFF)
+
+  public val o2_color_white_30_alpha: Color = Color(0x4DFFFFFF)
 
   public val o2_color_white_20_alpha: Color = Color(0x33FFFFFF)
 

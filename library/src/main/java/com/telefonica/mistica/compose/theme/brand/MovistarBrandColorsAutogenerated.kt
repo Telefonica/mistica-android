@@ -74,11 +74,13 @@ public object MovistarBrandColors {
       controlActivatedInverse = MovistarPaletteColor.movistar_color_white
       controlError = MovistarPaletteColor.movistar_color_pepper55
       barTrack = MovistarPaletteColor.movistar_color_grey3
+      barTrackInverse = MovistarPaletteColor.movistar_color_black_14_alpha
       loadingBar = MovistarPaletteColor.movistar_color_movistarBlue
       loadingBarBackground = MovistarPaletteColor.movistar_color_grey2
       toggleAndroidInactive = MovistarPaletteColor.movistar_color_grey2
       toggleAndroidBackgroundActive = MovistarPaletteColor.movistar_color_movistarBlue20
       iosControlKnob = MovistarPaletteColor.movistar_color_white
+      controlKnobInverse = MovistarPaletteColor.movistar_color_movistarBlue
       divider = MovistarPaletteColor.movistar_color_grey3
       dividerInverse = MovistarPaletteColor.movistar_color_white_20_alpha
       navigationBarDivider = MovistarPaletteColor.movistar_color_movistarBlue
@@ -204,11 +206,13 @@ public object MovistarBrandColors {
       controlActivatedInverse = MovistarPaletteColor.movistar_color_movistarBlue
       controlError = MovistarPaletteColor.movistar_color_pepper45
       barTrack = MovistarPaletteColor.movistar_color_darkModeGrey6
+      barTrackInverse = MovistarPaletteColor.movistar_color_darkModeGrey6
       loadingBar = MovistarPaletteColor.movistar_color_movistarBlue
       loadingBarBackground = MovistarPaletteColor.movistar_color_darkModeGrey6
       toggleAndroidInactive = MovistarPaletteColor.movistar_color_darkModeGrey2
       toggleAndroidBackgroundActive = MovistarPaletteColor.movistar_color_movistarBlue20
       iosControlKnob = MovistarPaletteColor.movistar_color_darkModeGrey2
+      controlKnobInverse = MovistarPaletteColor.movistar_color_darkModeGrey2
       divider = MovistarPaletteColor.movistar_color_white_10_alpha
       dividerInverse = MovistarPaletteColor.movistar_color_white_10_alpha
       navigationBarDivider = MovistarPaletteColor.movistar_color_darkModeBlack
@@ -423,6 +427,8 @@ private object MovistarPaletteColor {
   public val movistar_color_white_20_alpha: Color = Color(0x33FFFFFF)
 
   public val movistar_color_white_30_alpha: Color = Color(0x4DFFFFFF)
+
+  public val movistar_color_black_14_alpha: Color = Color(0x24000000)
 
   public val movistar_color_black_0_alpha: Color = Color(0x00000000)
 

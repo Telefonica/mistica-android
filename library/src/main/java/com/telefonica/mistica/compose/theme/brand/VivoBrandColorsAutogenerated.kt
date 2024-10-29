@@ -74,11 +74,13 @@ public object VivoBrandColors {
       controlActivatedInverse = VivoPaletteColor.vivo_color_white
       controlError = VivoPaletteColor.vivo_color_pepper
       barTrack = VivoPaletteColor.vivo_color_grey3
+      barTrackInverse = VivoPaletteColor.vivo_color_white_50_alpha
       loadingBar = VivoPaletteColor.vivo_color_pink
       loadingBarBackground = VivoPaletteColor.vivo_color_pepperLight30
       toggleAndroidInactive = VivoPaletteColor.vivo_color_grey2
       toggleAndroidBackgroundActive = VivoPaletteColor.vivo_color_vivoPurpleLight20
       iosControlKnob = VivoPaletteColor.vivo_color_white
+      controlKnobInverse = VivoPaletteColor.vivo_color_vivoPurple
       divider = VivoPaletteColor.vivo_color_grey2
       dividerInverse = VivoPaletteColor.vivo_color_white_20_alpha
       navigationBarDivider = VivoPaletteColor.vivo_color_vivoPurple
@@ -204,11 +206,13 @@ public object VivoBrandColors {
       controlActivatedInverse = VivoPaletteColor.vivo_color_vivoPurpleLight80
       controlError = VivoPaletteColor.vivo_color_pepper
       barTrack = VivoPaletteColor.vivo_color_darkModeGrey6
+      barTrackInverse = VivoPaletteColor.vivo_color_darkModeGrey6
       loadingBar = VivoPaletteColor.vivo_color_vivoPurpleLight80
       loadingBarBackground = VivoPaletteColor.vivo_color_darkModeGrey6
       toggleAndroidInactive = VivoPaletteColor.vivo_color_grey4
       toggleAndroidBackgroundActive = VivoPaletteColor.vivo_color_vivoPurpleLight50
       iosControlKnob = VivoPaletteColor.vivo_color_grey2
+      controlKnobInverse = VivoPaletteColor.vivo_color_grey2
       divider = VivoPaletteColor.vivo_color_white_5_alpha
       dividerInverse = VivoPaletteColor.vivo_color_white_5_alpha
       navigationBarDivider = VivoPaletteColor.vivo_color_darkModeBlack
@@ -383,6 +387,8 @@ private object VivoPaletteColor {
   public val vivo_color_white_10_alpha: Color = Color(0x1AFFFFFF)
 
   public val vivo_color_white_15_alpha: Color = Color(0x26FFFFFF)
+
+  public val vivo_color_white_50_alpha: Color = Color(0x80FFFFFF)
 
   public val vivo_color_white_20_alpha: Color = Color(0x33FFFFFF)
 

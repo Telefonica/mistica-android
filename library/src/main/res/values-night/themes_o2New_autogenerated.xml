@@ -69,11 +69,13 @@
 		<item name="colorControlActivatedInverse">@color/o2New_color_darkModeBeyondBlue</item>
 		<item name="colorControlError">@color/o2New_color_o2Red45</item>
 		<item name="colorBarTrack">@color/o2New_color_darkModeGrey6</item>
+		<item name="colorBarTrackInverse">@color/o2New_color_darkModeGrey6</item>
 		<item name="colorLoadingBar">@color/o2New_color_darkModeBeyondBlue</item>
 		<item name="colorLoadingBarBackground">@color/o2New_color_darkModeGrey6</item>
 		<item name="colorToggleAndroidInactive">@color/o2New_color_grey20</item>
 		<item name="colorToggleAndroidBackgroundActive">@color/o2New_color_beyondBlue15</item>
 		<item name="colorIosControlKnob">@color/o2New_color_grey30</item>
+		<item name="colorControlKnobInverse">@color/o2New_color_grey30</item>
 		<item name="colorBadge">@color/o2New_color_o2Red65</item>
 		<item name="colorFeedbackErrorBackground">@color/o2New_color_o2Red60</item>
 		<item name="colorFeedbackInfoBackground">@color/o2New_color_darkModeGrey6</item>

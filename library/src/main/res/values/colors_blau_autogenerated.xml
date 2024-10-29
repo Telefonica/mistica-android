@@ -47,6 +47,7 @@
 	<color name="blau_color_darkModeBlack_35_alpha">#59191919</color>
 	<color name="blau_color_white_15_alpha">#26FFFFFF</color>
 	<color name="blau_color_white_20_alpha">#33FFFFFF</color>
+	<color name="blau_color_grey6_20_alpha">#33000000</color>
 	<color name="blau_color_grey6_0_alpha">#00000000</color>
 	<color name="blau_color_grey6_40_alpha">#66000000</color>
 	<color name="blau_color_grey6_70_alpha">#B3000000</color>

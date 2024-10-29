@@ -190,6 +190,8 @@ public class MisticaColors {
 
   public var barTrack: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
 
+  public var barTrackInverse: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
+
   public var loadingBar: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
 
   public var loadingBarBackground: Color by mutableStateOf(Color.Unspecified,
@@ -202,6 +204,9 @@ public class MisticaColors {
       structuralEqualityPolicy())
 
   public var iosControlKnob: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
+
+  public var controlKnobInverse: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
 
   public var divider: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
 
@@ -407,11 +412,13 @@ public class MisticaColors {
     controlActivatedInverse = other.controlActivatedInverse
     controlError = other.controlError
     barTrack = other.barTrack
+    barTrackInverse = other.barTrackInverse
     loadingBar = other.loadingBar
     loadingBarBackground = other.loadingBarBackground
     toggleAndroidInactive = other.toggleAndroidInactive
     toggleAndroidBackgroundActive = other.toggleAndroidBackgroundActive
     iosControlKnob = other.iosControlKnob
+    controlKnobInverse = other.controlKnobInverse
     divider = other.divider
     dividerInverse = other.dividerInverse
     navigationBarDivider = other.navigationBarDivider

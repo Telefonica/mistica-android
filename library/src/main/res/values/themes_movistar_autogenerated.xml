@@ -70,11 +70,13 @@
 		<item name="colorControlActivatedInverse">@color/movistar_color_white</item>
 		<item name="colorControlError">@color/movistar_color_pepper55</item>
 		<item name="colorBarTrack">@color/movistar_color_grey3</item>
+		<item name="colorBarTrackInverse">@color/movistar_color_black_14_alpha</item>
 		<item name="colorLoadingBar">@color/movistar_color_movistarBlue</item>
 		<item name="colorLoadingBarBackground">@color/movistar_color_grey2</item>
 		<item name="colorToggleAndroidInactive">@color/movistar_color_grey2</item>
 		<item name="colorToggleAndroidBackgroundActive">@color/movistar_color_movistarBlue20</item>
 		<item name="colorIosControlKnob">@color/movistar_color_white</item>
+		<item name="colorControlKnobInverse">@color/movistar_color_movistarBlue</item>
 		<item name="colorDivider">@color/movistar_color_grey3</item>
 		<item name="colorDividerInverse">@color/movistar_color_white_20_alpha</item>
 		<item name="colorNavigationBarDivider">@color/movistar_color_movistarBlue</item>
