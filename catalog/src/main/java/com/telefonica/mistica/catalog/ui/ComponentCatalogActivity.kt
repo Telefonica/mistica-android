@@ -7,12 +7,16 @@ import android.view.View
 import androidx.annotation.StyleRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
+import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.catalog.databinding.ScreenComponentCatalogBinding
 import com.telefonica.mistica.catalog.ui.CatalogMainActivity.Companion.DEFAULT_BRAND_TYPE
 import com.telefonica.mistica.catalog.ui.CatalogMainActivity.Companion.DEFAULT_CLASSIC_THEME
@@ -41,6 +45,13 @@ import com.telefonica.mistica.catalog.ui.classic.components.TabsCatalogFragment
 import com.telefonica.mistica.catalog.ui.classic.components.TagsCatalogFragment
 import com.telefonica.mistica.catalog.ui.classic.components.TextPresetsCatalogFragment
 import com.telefonica.mistica.catalog.ui.classic.components.TitleCatalogFragment
+import com.telefonica.mistica.catalog.ui.compose.common.CatalogMovistarBrand
+import com.telefonica.mistica.catalog.ui.compose.common.CatalogO2Brand
+import com.telefonica.mistica.catalog.ui.compose.common.CatalogO2NewBrand
+import com.telefonica.mistica.catalog.ui.compose.common.CatalogTelefonicaBrand
+import com.telefonica.mistica.catalog.ui.compose.common.CatalogTuBrand
+import com.telefonica.mistica.catalog.ui.compose.common.CatalogVivoBrand
+import com.telefonica.mistica.catalog.ui.compose.common.CatalogVivoNewBrand
 import com.telefonica.mistica.catalog.ui.compose.common.ComponentComposeFragment
 import com.telefonica.mistica.catalog.ui.compose.components.Badges
 import com.telefonica.mistica.catalog.ui.compose.components.Buttons
@@ -322,14 +333,14 @@ class ComponentCatalogActivity : AppCompatActivity() {
     private fun setUpThemes() {
         classicThemeOverride = intent.getIntExtra(EXTRA_CLASSIC_THEME, DEFAULT_CLASSIC_THEME)
         composeThemeOverride = when ((intent.getSerializableExtra(EXTRA_COMPOSE_THEME) ?: DEFAULT_BRAND_TYPE) as BrandType) {
-            MOVISTAR -> MovistarBrand
-            O2 -> O2Brand
-            VIVO -> VivoBrand
-            VIVO_NEW -> VivoNewBrand
-            TELEFONICA -> TelefonicaBrand
+            MOVISTAR -> CatalogMovistarBrand
+            O2 -> CatalogO2Brand
+            VIVO -> CatalogVivoBrand
+            VIVO_NEW -> CatalogVivoNewBrand
+            TELEFONICA -> CatalogTelefonicaBrand
             BLAU -> BlauBrand
-            TU -> TuBrand
-            O2_NEW -> O2NewBrand
+            TU -> CatalogTuBrand
+            O2_NEW -> CatalogO2NewBrand
         }
 
         setTheme(classicThemeOverride)
