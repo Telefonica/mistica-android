@@ -7,16 +7,12 @@ import android.view.View
 import androidx.annotation.StyleRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.text.font.Font
-import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontWeight
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
-import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.catalog.databinding.ScreenComponentCatalogBinding
 import com.telefonica.mistica.catalog.ui.CatalogMainActivity.Companion.DEFAULT_BRAND_TYPE
 import com.telefonica.mistica.catalog.ui.CatalogMainActivity.Companion.DEFAULT_CLASSIC_THEME
@@ -85,13 +81,6 @@ import com.telefonica.mistica.compose.theme.brand.BrandType.TELEFONICA
 import com.telefonica.mistica.compose.theme.brand.BrandType.TU
 import com.telefonica.mistica.compose.theme.brand.BrandType.VIVO
 import com.telefonica.mistica.compose.theme.brand.BrandType.VIVO_NEW
-import com.telefonica.mistica.compose.theme.brand.MovistarBrand
-import com.telefonica.mistica.compose.theme.brand.O2Brand
-import com.telefonica.mistica.compose.theme.brand.O2NewBrand
-import com.telefonica.mistica.compose.theme.brand.TelefonicaBrand
-import com.telefonica.mistica.compose.theme.brand.TuBrand
-import com.telefonica.mistica.compose.theme.brand.VivoBrand
-import com.telefonica.mistica.compose.theme.brand.VivoNewBrand
 
 class ComponentCatalogActivity : AppCompatActivity() {
 
