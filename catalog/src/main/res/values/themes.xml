@@ -31,6 +31,8 @@
 		<item name="font_family_medium">@font/telefonica_sans_medium</item>
 	</style>
 
+	<style name="CatalogBlau" parent="MisticaTheme.Blau"/>
+
 	<style name="CatalogTu" parent="MisticaTheme.Tu">
 		<item name="font_family_light">@font/telefonica_sans_light</item>
 		<item name="font_family_regular">@font/telefonica_sans_regular</item>

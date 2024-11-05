@@ -41,6 +41,7 @@ import com.telefonica.mistica.catalog.ui.classic.components.TabsCatalogFragment
 import com.telefonica.mistica.catalog.ui.classic.components.TagsCatalogFragment
 import com.telefonica.mistica.catalog.ui.classic.components.TextPresetsCatalogFragment
 import com.telefonica.mistica.catalog.ui.classic.components.TitleCatalogFragment
+import com.telefonica.mistica.catalog.ui.compose.common.CatalogBlauBrand
 import com.telefonica.mistica.catalog.ui.compose.common.CatalogMovistarBrand
 import com.telefonica.mistica.catalog.ui.compose.common.CatalogO2Brand
 import com.telefonica.mistica.catalog.ui.compose.common.CatalogO2NewBrand
@@ -70,7 +71,6 @@ import com.telefonica.mistica.catalog.ui.compose.components.Tags
 import com.telefonica.mistica.catalog.ui.compose.components.Texts
 import com.telefonica.mistica.catalog.ui.compose.components.Titles
 import com.telefonica.mistica.compose.theme.MisticaTheme
-import com.telefonica.mistica.compose.theme.brand.BlauBrand
 import com.telefonica.mistica.compose.theme.brand.Brand
 import com.telefonica.mistica.compose.theme.brand.BrandType
 import com.telefonica.mistica.compose.theme.brand.BrandType.BLAU
@@ -327,7 +327,7 @@ class ComponentCatalogActivity : AppCompatActivity() {
             VIVO -> CatalogVivoBrand
             VIVO_NEW -> CatalogVivoNewBrand
             TELEFONICA -> CatalogTelefonicaBrand
-            BLAU -> BlauBrand
+            BLAU -> CatalogBlauBrand
             TU -> CatalogTuBrand
             O2_NEW -> CatalogO2NewBrand
         }

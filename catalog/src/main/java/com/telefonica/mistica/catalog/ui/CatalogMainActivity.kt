@@ -51,7 +51,7 @@ class CatalogMainActivity : AppCompatActivity() {
             ComponentStyle("Vivo", R.style.CatalogVivo, VIVO),
             ComponentStyle("Vivo New", R.style.CatalogVivoNew, VIVO_NEW),
             ComponentStyle("Telefonica", R.style.CatalogTelefonica, TELEFONICA),
-            ComponentStyle("Blau", R.style.MisticaTheme_Blau, BLAU),
+            ComponentStyle("Blau", R.style.CatalogBlau, BLAU),
             ComponentStyle("Tu", R.style.CatalogTu, TU),
             ComponentStyle("O2New", R.style.CatalogO2New, O2_NEW),
         )
