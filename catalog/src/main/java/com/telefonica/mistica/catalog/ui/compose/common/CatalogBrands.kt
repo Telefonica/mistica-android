@@ -21,8 +21,7 @@ abstract class CatalogBrand(
     baseBrand: Brand,
     val theme: Int,
 ) : Brand {
-    override val compatibilityTheme: Int
-        get() = theme
+    override val compatibilityTheme: Int = theme
     override val lightColors: MisticaColors = baseBrand.lightColors
     override val darkColors: MisticaColors = baseBrand.darkColors
     override val lightBrushes: MisticaBrushes = baseBrand.lightBrushes
@@ -57,6 +56,15 @@ object CatalogMovistarBrand : CatalogBrand(MovistarBrand, R.style.CatalogMovista
 }
 
 object CatalogO2Brand : CatalogBrand(O2Brand, R.style.CatalogO2) {
+    override val fontFamily: FontFamily
+        get() = FontFamily(
+            Font(R.font.onair_light, FontWeight.Light),
+            Font(R.font.onair_regular, FontWeight.Normal),
+            Font(R.font.onair_medium, FontWeight.Medium),
+        )
+}
+
+object CatalogO2NewBrand : CatalogBrand(O2NewBrand, R.style.CatalogO2New) {
     override val fontFamily: FontFamily
         get() = FontFamily(
             Font(R.font.onair_light, FontWeight.Light),
@@ -103,11 +111,3 @@ object CatalogTuBrand : CatalogBrand(TuBrand, R.style.CatalogTu) {
         )
 }
 
-object CatalogO2NewBrand : CatalogBrand(O2NewBrand, R.style.CatalogO2New) {
-    override val fontFamily: FontFamily
-        get() = FontFamily(
-            Font(R.font.onair_light, FontWeight.Light),
-            Font(R.font.onair_regular, FontWeight.Normal),
-            Font(R.font.onair_medium, FontWeight.Medium),
-        )
-}
