@@ -41,6 +41,14 @@ import com.telefonica.mistica.catalog.ui.classic.components.TabsCatalogFragment
 import com.telefonica.mistica.catalog.ui.classic.components.TagsCatalogFragment
 import com.telefonica.mistica.catalog.ui.classic.components.TextPresetsCatalogFragment
 import com.telefonica.mistica.catalog.ui.classic.components.TitleCatalogFragment
+import com.telefonica.mistica.catalog.ui.compose.common.CatalogBlauBrand
+import com.telefonica.mistica.catalog.ui.compose.common.CatalogMovistarBrand
+import com.telefonica.mistica.catalog.ui.compose.common.CatalogO2Brand
+import com.telefonica.mistica.catalog.ui.compose.common.CatalogO2NewBrand
+import com.telefonica.mistica.catalog.ui.compose.common.CatalogTelefonicaBrand
+import com.telefonica.mistica.catalog.ui.compose.common.CatalogTuBrand
+import com.telefonica.mistica.catalog.ui.compose.common.CatalogVivoBrand
+import com.telefonica.mistica.catalog.ui.compose.common.CatalogVivoNewBrand
 import com.telefonica.mistica.catalog.ui.compose.common.ComponentComposeFragment
 import com.telefonica.mistica.catalog.ui.compose.components.Badges
 import com.telefonica.mistica.catalog.ui.compose.components.Buttons
@@ -63,7 +71,6 @@ import com.telefonica.mistica.catalog.ui.compose.components.Tags
 import com.telefonica.mistica.catalog.ui.compose.components.Texts
 import com.telefonica.mistica.catalog.ui.compose.components.Titles
 import com.telefonica.mistica.compose.theme.MisticaTheme
-import com.telefonica.mistica.compose.theme.brand.BlauBrand
 import com.telefonica.mistica.compose.theme.brand.Brand
 import com.telefonica.mistica.compose.theme.brand.BrandType
 import com.telefonica.mistica.compose.theme.brand.BrandType.BLAU
@@ -74,13 +81,6 @@ import com.telefonica.mistica.compose.theme.brand.BrandType.TELEFONICA
 import com.telefonica.mistica.compose.theme.brand.BrandType.TU
 import com.telefonica.mistica.compose.theme.brand.BrandType.VIVO
 import com.telefonica.mistica.compose.theme.brand.BrandType.VIVO_NEW
-import com.telefonica.mistica.compose.theme.brand.MovistarBrand
-import com.telefonica.mistica.compose.theme.brand.O2Brand
-import com.telefonica.mistica.compose.theme.brand.O2NewBrand
-import com.telefonica.mistica.compose.theme.brand.TelefonicaBrand
-import com.telefonica.mistica.compose.theme.brand.TuBrand
-import com.telefonica.mistica.compose.theme.brand.VivoBrand
-import com.telefonica.mistica.compose.theme.brand.VivoNewBrand
 
 class ComponentCatalogActivity : AppCompatActivity() {
 
@@ -322,14 +322,14 @@ class ComponentCatalogActivity : AppCompatActivity() {
     private fun setUpThemes() {
         classicThemeOverride = intent.getIntExtra(EXTRA_CLASSIC_THEME, DEFAULT_CLASSIC_THEME)
         composeThemeOverride = when ((intent.getSerializableExtra(EXTRA_COMPOSE_THEME) ?: DEFAULT_BRAND_TYPE) as BrandType) {
-            MOVISTAR -> MovistarBrand
-            O2 -> O2Brand
-            VIVO -> VivoBrand
-            VIVO_NEW -> VivoNewBrand
-            TELEFONICA -> TelefonicaBrand
-            BLAU -> BlauBrand
-            TU -> TuBrand
-            O2_NEW -> O2NewBrand
+            MOVISTAR -> CatalogMovistarBrand
+            O2 -> CatalogO2Brand
+            VIVO -> CatalogVivoBrand
+            VIVO_NEW -> CatalogVivoNewBrand
+            TELEFONICA -> CatalogTelefonicaBrand
+            BLAU -> CatalogBlauBrand
+            TU -> CatalogTuBrand
+            O2_NEW -> CatalogO2NewBrand
         }
 
         setTheme(classicThemeOverride)

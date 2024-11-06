@@ -46,14 +46,14 @@ class CatalogMainActivity : AppCompatActivity() {
     private fun configureThemeDropDown() {
 
         val styles: List<ComponentStyle> = listOf(
-            ComponentStyle("Movistar", R.style.MisticaTheme_Movistar, MOVISTAR),
-            ComponentStyle("O2", R.style.MisticaTheme_O2, O2),
-            ComponentStyle("Vivo", R.style.MisticaTheme_Vivo, VIVO),
-            ComponentStyle("Vivo New", R.style.MisticaTheme_VivoNew, VIVO_NEW),
-            ComponentStyle("Telefonica", R.style.MisticaTheme_Telefonica, TELEFONICA),
-            ComponentStyle("Blau", R.style.MisticaTheme_Blau, BLAU),
-            ComponentStyle("Tu", R.style.MisticaTheme_Tu, TU),
-            ComponentStyle("O2New", R.style.MisticaTheme_O2New, O2_NEW),
+            ComponentStyle("Movistar", R.style.CatalogMovistar, MOVISTAR),
+            ComponentStyle("O2", R.style.CatalogO2, O2),
+            ComponentStyle("Vivo", R.style.CatalogVivo, VIVO),
+            ComponentStyle("Vivo New", R.style.CatalogVivoNew, VIVO_NEW),
+            ComponentStyle("Telefonica", R.style.CatalogTelefonica, TELEFONICA),
+            ComponentStyle("Blau", R.style.CatalogBlau, BLAU),
+            ComponentStyle("Tu", R.style.CatalogTu, TU),
+            ComponentStyle("O2New", R.style.CatalogO2New, O2_NEW),
         )
 
         findViewById<DropDownInput>(R.id.drop_down_themes)?.apply {

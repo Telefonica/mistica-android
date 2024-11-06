@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<style name="CatalogMovistar" parent="MisticaTheme.Movistar">
+		<item name="font_family_light">@font/onair_light</item>
+		<item name="font_family_regular">@font/onair_regular</item>
+		<item name="font_family_medium">@font/onair_medium</item>
+	</style>
+
+	<style name="CatalogO2" parent="MisticaTheme.O2">
+		<item name="font_family_light">@font/onair_light</item>
+		<item name="font_family_regular">@font/onair_regular</item>
+		<item name="font_family_medium">@font/onair_medium</item>
+	</style>
+
+	<style name="CatalogO2New" parent="MisticaTheme.O2New">
+		<item name="font_family_light">@font/onair_light</item>
+		<item name="font_family_regular">@font/onair_regular</item>
+		<item name="font_family_medium">@font/onair_medium</item>
+	</style>
+
+	<style name="CatalogVivo" parent="MisticaTheme.Vivo">
+		<item name="font_family_light">@font/vivo_type_light</item>
+		<item name="font_family_regular">@font/vivo_type_regular</item>
+		<item name="font_family_medium">@font/vivo_type_medium</item>
+	</style>
+
+	<style name="CatalogVivoNew" parent="MisticaTheme.VivoNew">
+		<item name="font_family_light">@font/vivo_type_light</item>
+		<item name="font_family_regular">@font/vivo_type_regular</item>
+		<item name="font_family_medium">@font/vivo_type_medium</item>
+	</style>
+
+	<style name="CatalogTelefonica" parent="MisticaTheme.Telefonica">
+		<item name="font_family_light">@font/telefonica_sans_light</item>
+		<item name="font_family_regular">@font/telefonica_sans_regular</item>
+		<item name="font_family_medium">@font/telefonica_sans_medium</item>
+	</style>
+
+	<style name="CatalogBlau" parent="MisticaTheme.Blau"/>
+
+	<style name="CatalogTu" parent="MisticaTheme.Tu">
+		<item name="font_family_light">@font/telefonica_sans_light</item>
+		<item name="font_family_regular">@font/telefonica_sans_regular</item>
+		<item name="font_family_medium">@font/telefonica_sans_medium</item>
+	</style>
+
+</resources>
