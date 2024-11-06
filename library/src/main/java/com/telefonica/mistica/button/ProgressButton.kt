@@ -191,7 +191,6 @@ class ProgressButton : FrameLayout {
         }
     }
 
-    @SuppressLint("ClickableViewAccessibility")
     private fun setButtonBackground() {
         buttonBackground.apply {
             id = NO_ID
@@ -204,27 +203,36 @@ class ProgressButton : FrameLayout {
             setTextColor(Color.TRANSPARENT)
             visibility = VISIBLE
             setOnTouchListener { view, event ->
+                var eventConsumed = false
                 when (event.action) {
                     MotionEvent.ACTION_DOWN -> {
-                        buttonNormal.isPressed = true
-                        buttonLoading.isPressed = true
+                        setButtonPressed(true)
                     }
 
                     MotionEvent.ACTION_MOVE -> {
                         val outsideBounds =
                             event.x < 0 || event.y < 0 || event.x > view.measuredWidth || event.y > view.measuredHeight
-                        buttonNormal.isPressed = !outsideBounds
-                        buttonLoading.isPressed = !outsideBounds
+                        setButtonPressed(!outsideBounds)
                     }
 
-                    MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> {
-                        buttonNormal.isPressed = false
-                        buttonLoading.isPressed = false
+                    MotionEvent.ACTION_UP -> {
+                        setButtonPressed(false)
+                        view.performClick()
+                        eventConsumed = true
+                    }
+
+                    MotionEvent.ACTION_CANCEL -> {
+                        setButtonPressed(false)
                     }
                 }
-                false
+                eventConsumed
             }
         }
+    }
+
+    private fun setButtonPressed(pressed: Boolean) {
+        buttonNormal.isPressed = pressed
+        buttonLoading.isPressed = pressed
     }
 
     private fun addViews() {
