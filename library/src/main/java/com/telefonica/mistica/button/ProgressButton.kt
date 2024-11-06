@@ -191,6 +191,7 @@ class ProgressButton : FrameLayout {
         }
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     private fun setButtonBackground() {
         buttonBackground.apply {
             id = NO_ID
@@ -219,7 +220,6 @@ class ProgressButton : FrameLayout {
                     MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> {
                         buttonNormal.isPressed = false
                         buttonLoading.isPressed = false
-                        view.performClick()
                     }
                 }
                 false
