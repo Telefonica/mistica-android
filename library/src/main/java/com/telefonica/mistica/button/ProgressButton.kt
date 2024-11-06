@@ -66,94 +66,14 @@ class ProgressButton : FrameLayout {
     }
 
     @SuppressLint("ClickableViewAccessibility")
-    @Suppress("LongMethod")
     private fun init(attrs: AttributeSet? = null, defStyleAttr: Int = 0) {
-        if (attrs != null) {
-            val theme = context.theme
-            val styledAttrs =
-                theme.obtainStyledAttributes(attrs, R.styleable.Button, defStyleAttr, 0)
-            try {
-                isLoading = styledAttrs.getBoolean(R.styleable.Button_isLoading, false)
-            } finally {
-                styledAttrs.recycle()
-            }
-        }
-
-        this.importantForAccessibility = IMPORTANT_FOR_ACCESSIBILITY_NO
-        isClickable = false
-        setPadding(0, 0, 0, 0)
-        setBackgroundColor(Color.TRANSPARENT)
-        originalTextColors = buttonNormal.textColors
-
-        buttonNormal.apply {
-            id = NO_ID
-            importantForAccessibility = IMPORTANT_FOR_ACCESSIBILITY_NO
-            layoutParams = LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.MATCH_PARENT
-            )
-            showTextOnly()
-        }
-
-        buttonLoading.apply {
-            id = NO_ID
-            importantForAccessibility = IMPORTANT_FOR_ACCESSIBILITY_NO
-            layoutParams = LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.MATCH_PARENT
-            )
-            showTextOnly()
-            icon = AppCompatResources.getDrawable(context, R.drawable.empty_material_button_icon)
-            text = ""
-        }
-
-        progressBar.apply {
-            layoutParams = LayoutParams(buttonLoading.iconSize, buttonLoading.iconSize)
-                .apply {
-                    gravity = Gravity.CENTER
-                }
-            importantForAccessibility = IMPORTANT_FOR_ACCESSIBILITY_NO
-            isIndeterminate = true
-            indeterminateTintMode = PorterDuff.Mode.SRC_IN
-            visibility = View.INVISIBLE
-        }
-
-        buttonBackground.apply {
-            id = NO_ID
-            importantForAccessibility = IMPORTANT_FOR_ACCESSIBILITY_YES
-            layoutParams = LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.MATCH_PARENT
-            )
-            icon = null
-            setTextColor(Color.TRANSPARENT)
-            visibility = View.VISIBLE
-            setOnTouchListener { view, event ->
-                when (event.action) {
-                    MotionEvent.ACTION_DOWN -> {
-                        buttonNormal.isPressed = true
-                        buttonLoading.isPressed = true
-                    }
-                    MotionEvent.ACTION_MOVE -> {
-                        val outsideBounds =
-                            event.x < 0 || event.y < 0 || event.x > view.measuredWidth || event.y > view.measuredHeight
-                        buttonNormal.isPressed = !outsideBounds
-                        buttonLoading.isPressed = !outsideBounds
-                    }
-                    MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> {
-                        buttonNormal.isPressed = false
-                        buttonLoading.isPressed = false
-                    }
-                }
-                false
-            }
-        }
-
-        addView(buttonBackground)
-        addView(buttonNormal)
-        addView(buttonLoading)
-        addView(progressBar)
-
+        setupAttributes(attrs, defStyleAttr)
+        setupViewProperties()
+        setupButtonNormal()
+        setupButtonLoading()
+        setupProgressBar()
+        setButtonBackground()
+        addViews()
         setVisibilityAndColors()
     }
 
@@ -209,6 +129,109 @@ class ProgressButton : FrameLayout {
         if (isLoading) {
             switchState()
         }
+    }
+
+    private fun setupAttributes(attrs: AttributeSet?, defStyleAttr: Int) {
+        if (attrs != null) {
+            val theme = context.theme
+            val styledAttrs =
+                theme.obtainStyledAttributes(attrs, R.styleable.Button, defStyleAttr, 0)
+            try {
+                isLoading = styledAttrs.getBoolean(R.styleable.Button_isLoading, false)
+            } finally {
+                styledAttrs.recycle()
+            }
+        }
+    }
+
+    private fun setupViewProperties() {
+        this.importantForAccessibility = IMPORTANT_FOR_ACCESSIBILITY_NO
+        isClickable = false
+        setPadding(0, 0, 0, 0)
+        setBackgroundColor(Color.TRANSPARENT)
+        originalTextColors = buttonNormal.textColors
+    }
+
+    private fun setupButtonNormal() {
+        buttonNormal.apply {
+            id = NO_ID
+            importantForAccessibility = IMPORTANT_FOR_ACCESSIBILITY_NO
+            layoutParams = LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT
+            )
+            showTextOnly()
+        }
+    }
+
+    private fun setupButtonLoading() {
+        buttonLoading.apply {
+            id = NO_ID
+            importantForAccessibility = IMPORTANT_FOR_ACCESSIBILITY_NO
+            layoutParams = LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT
+            )
+            showTextOnly()
+            icon = AppCompatResources.getDrawable(context, R.drawable.empty_material_button_icon)
+            text = ""
+        }
+    }
+
+    private fun setupProgressBar() {
+        progressBar.apply {
+            layoutParams = LayoutParams(buttonLoading.iconSize, buttonLoading.iconSize)
+                .apply {
+                    gravity = Gravity.CENTER
+                }
+            importantForAccessibility = IMPORTANT_FOR_ACCESSIBILITY_NO
+            isIndeterminate = true
+            indeterminateTintMode = PorterDuff.Mode.SRC_IN
+            visibility = INVISIBLE
+        }
+    }
+
+    @SuppressLint("ClickableViewAccessibility")
+    private fun setButtonBackground() {
+        buttonBackground.apply {
+            id = NO_ID
+            importantForAccessibility = IMPORTANT_FOR_ACCESSIBILITY_YES
+            layoutParams = LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT
+            )
+            icon = null
+            setTextColor(Color.TRANSPARENT)
+            visibility = VISIBLE
+            setOnTouchListener { view, event ->
+                when (event.action) {
+                    MotionEvent.ACTION_DOWN -> {
+                        buttonNormal.isPressed = true
+                        buttonLoading.isPressed = true
+                    }
+
+                    MotionEvent.ACTION_MOVE -> {
+                        val outsideBounds =
+                            event.x < 0 || event.y < 0 || event.x > view.measuredWidth || event.y > view.measuredHeight
+                        buttonNormal.isPressed = !outsideBounds
+                        buttonLoading.isPressed = !outsideBounds
+                    }
+
+                    MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> {
+                        buttonNormal.isPressed = false
+                        buttonLoading.isPressed = false
+                    }
+                }
+                false
+            }
+        }
+    }
+
+    private fun addViews() {
+        addView(buttonBackground)
+        addView(buttonNormal)
+        addView(buttonLoading)
+        addView(progressBar)
     }
 
     private fun switchState() {
