@@ -16,6 +16,7 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.compositionLocalOf
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.theme.MisticaTheme
@@ -43,11 +44,13 @@ internal fun Underline(
         Row(modifier = Modifier.fillMaxWidth()) {
             Box {
                 UnderlineTextAnimatedVisibility(
+                    isError = isError,
                     visible = !isError && helperText != null,
                     text = helperText,
                     color = LocalUnderlineTextColors.current.helperTextColor,
                 )
                 UnderlineTextAnimatedVisibility(
+                    isError = isError,
                     visible = isError && errorText != null,
                     text = errorText,
                     color = LocalUnderlineTextColors.current.errorTextColor,
@@ -65,6 +68,7 @@ internal fun Underline(
 
 @Composable
 private fun UnderlineTextAnimatedVisibility(
+    isError: Boolean,
     visible: Boolean,
     text: String?,
     color: Color,
@@ -75,18 +79,29 @@ private fun UnderlineTextAnimatedVisibility(
         exit = fadeOut(animationSpec = tween(0)),
     ) {
         if (text != null) {
-            UnderlineText(text = text, color = color)
+            UnderlineText(
+                modifier = Modifier.testTag(
+                    if (isError) {
+                        TextInputTestTags.ERROR_TEXT
+                    } else {
+                        TextInputTestTags.HELPER_TEXT
+                    }
+                ),
+                text = text,
+                color = color,
+            )
         }
     }
 }
 
 @Composable
 private fun UnderlineText(
+    modifier: Modifier,
     text: String,
     color: Color,
 ) {
     Text(
-        modifier = Modifier.padding(top = 4.dp, start = 14.dp, end = 14.dp),
+        modifier = modifier.padding(top = 4.dp, start = 14.dp, end = 14.dp),
         text = text,
         style = MisticaTheme.typography.preset1,
         color = color,

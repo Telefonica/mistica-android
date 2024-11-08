@@ -2,6 +2,7 @@ package com.telefonica.mistica.compose.input
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.VisualTransformation
 
@@ -24,7 +25,7 @@ fun NumberInput(
 ) {
 
     TextInputImpl(
-        modifier = modifier,
+        modifier = modifier.testTag(TextInputTestTags.DECIMAL_INPUT),
         value = value,
         onValueChange = onValueChange,
         label = label,

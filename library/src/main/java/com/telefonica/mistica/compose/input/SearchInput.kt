@@ -29,7 +29,7 @@ fun SearchInput(
     keyboardOptions: KeyboardOptions = KeyboardOptions.Default,
 ) {
     TextInputImpl(
-        modifier = modifier,
+        modifier = modifier.testTag(TextInputTestTags.SEARCH_INPUT),
         value = value,
         onValueChange = onValueChange,
         label = label,

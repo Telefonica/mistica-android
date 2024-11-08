@@ -2,6 +2,7 @@ package com.telefonica.mistica.compose.input
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.VisualTransformation
 
@@ -23,7 +24,7 @@ fun PhoneInput(
     keyboardOptions: KeyboardOptions = KeyboardOptions.Default
 ) {
     TextInputImpl(
-        modifier = modifier,
+        modifier = modifier.testTag(TextInputTestTags.PHONE_NUMBER_INPUT),
         value = value,
         onValueChange = onValueChange,
         label = label,
