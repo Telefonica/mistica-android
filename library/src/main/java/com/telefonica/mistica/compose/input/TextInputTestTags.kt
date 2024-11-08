@@ -7,6 +7,7 @@ object TextInputTestTags {
     const val PHONE_NUMBER_INPUT = "PhoneNumberField"
     const val EMAIL_INPUT = "EmailField"
     const val DECIMAL_INPUT = "DecimalField"
+    const val LABEL = "label"
     const val HELPER_TEXT = "helperText"
     const val END_HELPER_TEXT = "endHelperText"
     const val ERROR_TEXT = "errorText"

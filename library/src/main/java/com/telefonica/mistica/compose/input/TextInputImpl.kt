@@ -123,6 +123,7 @@ private fun TextBox(
                     visualTransformation.filter(AnnotatedString(value))
                 }
                 TextInputLabel(
+                    modifier = Modifier.testTag(TextInputTestTags.LABEL),
                     text = it,
                     inputIsNotEmpty = transformedText.text.isNotEmpty(),
                     isFocused = interactionSource.collectIsFocusedAsState().value,
