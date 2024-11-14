@@ -24,6 +24,8 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.telefonica.mistica.R
 import com.telefonica.mistica.button.Button
 import com.telefonica.mistica.list.MisticaRecyclerView
+import com.telefonica.mistica.list.decoration.divider.DividerItemAdapter
+import com.telefonica.mistica.list.decoration.divider.DividerItemDecoration
 import com.telefonica.mistica.list.layout.configureWithFullWidthLayout
 import com.telefonica.mistica.sheet.Children.BottomActions
 import com.telefonica.mistica.sheet.Children.ListActions
@@ -250,6 +252,7 @@ private fun ListInformative.toView(context: Context): View =
     RecyclerView(context).also {
         it.layoutManager = LinearLayoutManager(context)
         it.adapter = InformativeListAdapter(this.elements.mapToInformativeViewData())
+        it.configureWithFullWidthLayout()
     }
 
 private fun BottomActions.toView(onSheetTapped: InternalOnSheetTapped, container: ViewGroup): View {
