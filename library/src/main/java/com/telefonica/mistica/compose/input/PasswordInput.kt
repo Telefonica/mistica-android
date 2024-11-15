@@ -36,7 +36,8 @@ fun PasswordInput(
     }
 
     TextInputImpl(
-        modifier = modifier.testTag(TextInputTestTags.PASSWORD_INPUT),
+        modifier = modifier,
+        testTag = TextInputTestTags.PASSWORD_INPUT,
         value = value,
         onValueChange = onValueChange,
         label = label,

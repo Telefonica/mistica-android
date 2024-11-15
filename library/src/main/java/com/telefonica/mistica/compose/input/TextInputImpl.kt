@@ -39,6 +39,7 @@ internal fun TextInputImpl(
     isInverse: Boolean,
     enabled: Boolean,
     readOnly: Boolean,
+    testTag: String,
     isTextArea: Boolean = false,
     onClick: (() -> Unit)?,
     visualTransformation: VisualTransformation,
@@ -68,7 +69,7 @@ internal fun TextInputImpl(
                     Modifier.height(152.dp)
                 } else {
                     Modifier
-                },
+                }.testTag(testTag),
             ),
         )
         Underline(
@@ -219,6 +220,7 @@ fun PreviewTextInput() {
         isInverse = false,
         enabled = true,
         readOnly = false,
+        testTag = "",
         onClick = { },
         visualTransformation = VisualTransformation.None,
         keyboardOptions = FoundationKeyboardOptions(),
@@ -240,6 +242,7 @@ fun PreviewEmptyTextInput() {
         isInverse = false,
         enabled = true,
         readOnly = false,
+        testTag = "",
         onClick = { },
         visualTransformation = VisualTransformation.None,
         keyboardOptions = FoundationKeyboardOptions(),
