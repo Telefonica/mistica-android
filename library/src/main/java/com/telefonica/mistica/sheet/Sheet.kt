@@ -24,8 +24,6 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.telefonica.mistica.R
 import com.telefonica.mistica.button.Button
 import com.telefonica.mistica.list.MisticaRecyclerView
-import com.telefonica.mistica.list.decoration.divider.DividerItemAdapter
-import com.telefonica.mistica.list.decoration.divider.DividerItemDecoration
 import com.telefonica.mistica.list.layout.configureWithFullWidthLayout
 import com.telefonica.mistica.sheet.Children.BottomActions
 import com.telefonica.mistica.sheet.Children.ListActions
