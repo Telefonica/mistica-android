@@ -30,6 +30,7 @@ fun SearchInput(
 ) {
     TextInputImpl(
         modifier = modifier,
+        testTag = TextInputTestTags.SEARCH_INPUT,
         value = value,
         onValueChange = onValueChange,
         label = label,

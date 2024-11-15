@@ -25,6 +25,7 @@ fun NumberInput(
 
     TextInputImpl(
         modifier = modifier,
+        testTag = TextInputTestTags.DECIMAL_INPUT,
         value = value,
         onValueChange = onValueChange,
         label = label,

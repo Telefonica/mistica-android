@@ -24,6 +24,7 @@ fun EmailInput(
 ) {
     TextInputImpl(
         modifier = modifier,
+        testTag = TextInputTestTags.EMAIL_INPUT,
         value = value,
         onValueChange = onValueChange,
         label = label,

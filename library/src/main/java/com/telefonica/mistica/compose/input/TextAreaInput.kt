@@ -35,6 +35,7 @@ fun TextAreaInput(
 
     TextInputImpl(
         modifier = modifier,
+        testTag = TextInputTestTags.TEXT_INPUT,
         value = value,
         onValueChange = { newValue ->
             currentChars = doOnValueChange(maxChars, newValue, onValueChange)

@@ -24,6 +24,7 @@ fun PhoneInput(
 ) {
     TextInputImpl(
         modifier = modifier,
+        testTag = TextInputTestTags.PHONE_NUMBER_INPUT,
         value = value,
         onValueChange = onValueChange,
         label = label,

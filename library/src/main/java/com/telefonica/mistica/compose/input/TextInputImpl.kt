@@ -4,9 +4,11 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.interaction.collectIsFocusedAsState
 import androidx.compose.foundation.interaction.collectIsPressedAsState
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Text
 import androidx.compose.material.TextField
@@ -37,6 +39,7 @@ internal fun TextInputImpl(
     isInverse: Boolean,
     enabled: Boolean,
     readOnly: Boolean,
+    testTag: String,
     isTextArea: Boolean = false,
     onClick: (() -> Unit)?,
     visualTransformation: VisualTransformation,
@@ -66,7 +69,7 @@ internal fun TextInputImpl(
                     Modifier.height(152.dp)
                 } else {
                     Modifier
-                },
+                }.testTag(testTag),
             ),
         )
         Underline(
@@ -105,7 +108,6 @@ private fun TextBox(
 
     TextField(
         modifier = modifier
-            .testTag(TextInputTestTags.TEXT_INPUT)
             .fillMaxWidth()
             .border(
                 width = 1.dp,
@@ -122,6 +124,7 @@ private fun TextBox(
                     visualTransformation.filter(AnnotatedString(value))
                 }
                 TextInputLabel(
+                    modifier = Modifier.testTag(TextInputTestTags.LABEL),
                     text = it,
                     inputIsNotEmpty = transformedText.text.isNotEmpty(),
                     isFocused = interactionSource.collectIsFocusedAsState().value,
@@ -132,8 +135,28 @@ private fun TextBox(
         interactionSource = interactionSource,
         keyboardOptions = keyboardOptions,
         isError = isError,
-        leadingIcon = leadingIcon,
-        trailingIcon = trailingIcon,
+        leadingIcon = leadingIcon?.let { icon ->
+            {
+                Box(
+                    modifier = Modifier
+                        .wrapContentSize()
+                        .testTag(TextInputTestTags.START_ICON)
+                ) {
+                    icon()
+                }
+            }
+        },
+        trailingIcon = trailingIcon?.let { icon ->
+            {
+                Box(
+                    modifier = Modifier
+                        .wrapContentSize()
+                        .testTag(TextInputTestTags.END_ICON)
+                ) {
+                    icon()
+                }
+            }
+        },
         shape = RoundedCornerShape(MisticaTheme.radius.inputBorderRadius),
         colors = TextFieldDefaults.textFieldColors(
             backgroundColor = MisticaTheme.colors.backgroundContainer,
@@ -197,6 +220,7 @@ fun PreviewTextInput() {
         isInverse = false,
         enabled = true,
         readOnly = false,
+        testTag = "",
         onClick = { },
         visualTransformation = VisualTransformation.None,
         keyboardOptions = FoundationKeyboardOptions(),
@@ -218,6 +242,7 @@ fun PreviewEmptyTextInput() {
         isInverse = false,
         enabled = true,
         readOnly = false,
+        testTag = "",
         onClick = { },
         visualTransformation = VisualTransformation.None,
         keyboardOptions = FoundationKeyboardOptions(),

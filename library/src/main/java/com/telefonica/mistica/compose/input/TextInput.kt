@@ -24,6 +24,7 @@ fun TextInput(
 ) {
     TextInputImpl(
         modifier = modifier,
+        testTag = TextInputTestTags.TEXT_INPUT,
         value = value,
         onValueChange = onValueChange,
         label = label,

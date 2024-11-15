@@ -3,6 +3,7 @@ package com.telefonica.mistica.compose.input
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.style.TextAlign
 import com.telefonica.mistica.compose.theme.MisticaTheme
 
@@ -18,7 +19,7 @@ internal fun CharsCounter(
         color = if (isError) MisticaTheme.colors.error else MisticaTheme.colors.textSecondary,
         textAlign = TextAlign.End,
         style = MisticaTheme.typography.preset1,
-        modifier = modifier,
+        modifier = modifier.testTag(TextInputTestTags.END_HELPER_TEXT),
     )
 }
 
