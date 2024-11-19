@@ -1,5 +1,6 @@
 package com.telefonica.mistica.compose.card.postercard
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.aspectRatio
@@ -11,6 +12,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.tag.Tag
 import com.telefonica.mistica.compose.theme.MisticaTheme
@@ -71,12 +74,17 @@ fun PosterCardBackground(backgroundType: PosterCardBackgroundType, content: @Com
                     backgroundType.brush
                 } else {
                     SolidColor(Color.Transparent)
-                }
+                },
             )
     ) {
         when (backgroundType) {
             is PosterCardBackgroundType.Image -> {
-                //TODO:
+                Image(
+                    modifier = Modifier.fillMaxSize(),
+                    painter = painterResource(id = backgroundType.imageResource),
+                    contentDescription = backgroundType.contentDescription,
+                    contentScale = ContentScale.Crop
+                )
             }
 
             is PosterCardBackgroundType.Video -> {
@@ -90,9 +98,7 @@ fun PosterCardBackground(backgroundType: PosterCardBackgroundType, content: @Com
 }
 
 fun buildCardTextContentBackgroundBrush(backgroundType: PosterCardBackgroundType): Brush =
-    if (backgroundType is PosterCardBackgroundType.Color) {
-        SolidColor(Color.Transparent)
-    } else {
+    if( backgroundType.inverseDisplay ) {
         Brush.verticalGradient(
             colorStops = arrayOf(
                 0.0f to Color.Black.copy(alpha = 0f),
@@ -100,4 +106,6 @@ fun buildCardTextContentBackgroundBrush(backgroundType: PosterCardBackgroundType
                 1.0f to Color.Black.copy(alpha = 0.7f)
             )
         )
+    } else {
+        SolidColor(Color.Transparent)
     }

@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shadow
 import androidx.compose.ui.text.TextStyle
@@ -80,13 +79,18 @@ internal fun PosterCardTextContent(
 }
 
 @Composable
-internal fun PosterCardText(modifier: Modifier = Modifier, textValue: String, textStyle: TextStyle, inverseDisplay: Boolean) {
+internal fun PosterCardText(
+    modifier: Modifier = Modifier,
+    textValue: String,
+    textStyle: TextStyle,
+    inverseDisplay: Boolean,
+) {
     Text(
         modifier = modifier,
         text = textValue,
-        style = textStyle.apply {
+        style = textStyle.also { style ->
             if (inverseDisplay) {
-                copy(shadow = buildPosterCardShadow())
+                style.copy(shadow = buildPosterCardTextShadow())
             }
         },
         color = if (inverseDisplay) {
@@ -97,8 +101,7 @@ internal fun PosterCardText(modifier: Modifier = Modifier, textValue: String, te
     )
 }
 
-internal fun buildPosterCardShadow() = Shadow(
+internal fun buildPosterCardTextShadow() = Shadow(
     color = Color.Black.copy(alpha = 0.4f),
-    offset = Offset(x = 0f, y = 0f),
     blurRadius = 15f
 )

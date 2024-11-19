@@ -10,6 +10,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.telefonica.mistica.R
 import com.telefonica.mistica.compose.tag.Tag
 import com.telefonica.mistica.compose.theme.MisticaTheme
 import com.telefonica.mistica.compose.theme.brand.TuBrand
@@ -55,15 +56,15 @@ sealed class PosterCardBackgroundType(open val inverseDisplay: Boolean) {
     data class Color(val brush: Brush, override val inverseDisplay: Boolean = true) : PosterCardBackgroundType(inverseDisplay = inverseDisplay)
 }
 
-@Preview
+@Preview(showSystemUi = true)
 @Composable
 internal fun PosterCardSampleContent() {
     MisticaTheme(brand = TuBrand) {
         PosterCard(
-            modifier = Modifier.width(6000.dp).background(color = Color.Black),
-            iconOrTopActions = {},
+//            iconOrTopActions = {},
             aspectRatio = PosterCardAspectRatio.AR_9_10,
-            backgroundType = PosterCardBackgroundType.Color(brush = SolidColor(Color.Red), inverseDisplay = false),
+//            backgroundType = PosterCardBackgroundType.Color(brush = SolidColor(Color.Red), inverseDisplay = true),
+            backgroundType = PosterCardBackgroundType.Image(imageResource = R.drawable.sample_background),
             headline = Tag(content = "Headline"),
             preTitle = "Pretitle",
             title = "Title",
