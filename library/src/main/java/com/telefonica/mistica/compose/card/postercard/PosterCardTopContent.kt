@@ -12,7 +12,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun PosterCardTopContent(modifier: Modifier = Modifier){
+internal fun PosterCardTopContent(modifier: Modifier = Modifier){
     Row(
         modifier = modifier
             .fillMaxWidth()

@@ -24,6 +24,7 @@ internal fun PosterCardTextContent(
     title: String?,
     subtitle: String?,
     description: String?,
+    customContent: (@Composable () -> Unit)? = null,
 ) {
     Column(
         modifier = modifier
@@ -33,7 +34,11 @@ internal fun PosterCardTextContent(
                 top = 4.dp,
                 start = 16.dp,
                 end = 16.dp,
-                bottom = 24.dp,
+                bottom = if (customContent != null) {
+                    0.dp
+                } else {
+                    24.dp
+                },
             )
     ) {
         if (tag != null) {
@@ -74,6 +79,11 @@ internal fun PosterCardTextContent(
                 textStyle = MisticaTheme.typography.preset2,
                 inverseDisplay = backgroundType.inverseDisplay
             )
+        }
+        customContent?.let {
+            Box(modifier = Modifier.padding(top = 4.dp, bottom = 24.dp)) {
+                it()
+            }
         }
     }
 }
