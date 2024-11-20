@@ -1,12 +1,10 @@
 package com.telefonica.mistica.compose.card.postercard
 
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.aspectRatio
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -26,14 +24,19 @@ fun PosterCard(
     title: String? = null,
     subtitle: String? = null,
     description: String? = null,
+    onClickAction: (() -> Unit)? = null,
     customContent: (@Composable () -> Unit)? = null,
-    iconOrTopActions: @Composable (() -> Unit) ? = null,
+    firstTopAction: TopActionData? = null,
+    secondTopAction: TopActionData? = null,
 ) {
     androidx.compose.material.Card(
         elevation = 0.dp,
         shape = RoundedCornerShape(MisticaTheme.radius.containerBorderRadius),
         border = BorderStroke(width = 1.dp, color = MisticaTheme.colors.border),
         modifier = modifier.let { modifierValue ->
+            onClickAction?.let {
+                modifierValue.clickable { it.invoke() }
+            }
             if (!aspectRatio.ratio.isNaN()) {
                 modifierValue.aspectRatio(aspectRatio.ratio)
             } else {
@@ -42,25 +45,26 @@ fun PosterCard(
         },
     ) {
         PosterCardBackground(backgroundType = backgroundType) {
-            Box(modifier = Modifier.fillMaxSize()) {
-                iconOrTopActions?.let {
-                    PosterCardTopContent(modifier = Modifier.align(alignment = Alignment.TopCenter))
-                }
-                Column(
-                    modifier = Modifier.align(alignment = Alignment.BottomCenter),
-                    verticalArrangement = Arrangement.Bottom
-                ){
-                    PosterCardTextContent(
-                        backgroundType = backgroundType,
-                        tag = headline,
-                        preTitle = preTitle,
-                        title = title,
-                        description = description,
-                        subtitle = subtitle,
-                        customContent = customContent
-                    )
-
-                }
+            if (firstTopAction != null || secondTopAction != null) {
+                PosterCardTopActions(
+                    modifier = Modifier.align(alignment = Alignment.TopCenter),
+                    firstTopAction = firstTopAction,
+                    secondTopAction = secondTopAction
+                )
+            }
+            Column(
+                modifier = Modifier.align(alignment = Alignment.BottomCenter),
+                verticalArrangement = Arrangement.Bottom
+            ) {
+                PosterCardTextContent(
+                    backgroundType = backgroundType,
+                    tag = headline,
+                    preTitle = preTitle,
+                    title = title,
+                    description = description,
+                    subtitle = subtitle,
+                    customContent = customContent
+                )
             }
         }
     }
@@ -79,3 +83,4 @@ sealed class PosterCardBackgroundType(open val inverseDisplay: Boolean) {
     data class Video(val videoContent: @Composable (() -> Unit)) : PosterCardBackgroundType(inverseDisplay = true)
     data class Color(val brush: Brush, override val inverseDisplay: Boolean = true) : PosterCardBackgroundType(inverseDisplay = inverseDisplay)
 }
+

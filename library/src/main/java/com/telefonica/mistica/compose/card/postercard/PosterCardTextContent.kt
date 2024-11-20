@@ -42,14 +42,14 @@ internal fun PosterCardTextContent(
             )
     ) {
         if (tag != null) {
-            Box(modifier = Modifier.padding(top = 8.dp, bottom = 8.dp)) {
+            Box(modifier = Modifier.padding(top = 8.dp, bottom = 20.dp)) {
                 tag.build()
             }
         }
 
         preTitle?.let {
             PosterCardText(
-                modifier = Modifier.padding(top = 16.dp),
+                modifier = Modifier.padding(top = 4.dp),
                 textValue = preTitle,
                 textStyle = MisticaTheme.typography.preset1,
                 inverseDisplay = backgroundType.inverseDisplay
