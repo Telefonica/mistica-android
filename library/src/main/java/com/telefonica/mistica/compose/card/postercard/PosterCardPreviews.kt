@@ -16,8 +16,6 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.R
-import com.telefonica.mistica.compose.card.datacard.IconPainter
-import com.telefonica.mistica.compose.card.datacard.IconType
 import com.telefonica.mistica.compose.tag.Tag
 import com.telefonica.mistica.compose.theme.MisticaTheme
 import com.telefonica.mistica.compose.theme.brand.TuBrand
@@ -45,20 +43,14 @@ internal fun PosterCardGradientColor() {
     MisticaTheme(brand = TuBrand) {
         PosterCard(
             firstTopAction = TopActionData(
-                iconPainter = IconPainter.ResourceIconPainter(
-                    iconRes = R.drawable.icn_visibility,
-                    backgroundColor = MisticaTheme.colors.backgroundAlternative,
-                    iconTint = MisticaTheme.colors.brand,
-                    iconType = IconType.CIRCULAR_ASSET,
-                )
+                iconRes = R.drawable.icn_visibility,
+                backgroundColor = MisticaTheme.colors.backgroundAlternative,
+                iconTint = MisticaTheme.colors.brand,
             ),
             secondTopAction = TopActionData(
-                iconPainter = IconPainter.ResourceIconPainter(
-                    iconRes = R.drawable.ic_close_regular,
-                    backgroundColor = MisticaTheme.colors.backgroundAlternative,
-                    iconTint = MisticaTheme.colors.brand,
-                    iconType = IconType.CIRCULAR_ASSET,
-                )
+                iconRes = R.drawable.ic_close_regular,
+                backgroundColor = MisticaTheme.colors.backgroundAlternative,
+                iconTint = MisticaTheme.colors.brand,
             ),
             aspectRatio = PosterCardAspectRatio.AR_16_9,
             backgroundType = PosterCardBackgroundType.Color(

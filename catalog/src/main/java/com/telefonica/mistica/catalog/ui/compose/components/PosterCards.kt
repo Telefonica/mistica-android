@@ -29,8 +29,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.R
-import com.telefonica.mistica.compose.card.datacard.IconPainter
-import com.telefonica.mistica.compose.card.datacard.IconType
 import com.telefonica.mistica.compose.card.postercard.PosterCard
 import com.telefonica.mistica.compose.card.postercard.PosterCardAspectRatio
 import com.telefonica.mistica.compose.card.postercard.PosterCardBackgroundType
@@ -48,7 +46,10 @@ fun PosterCards() {
     var tagType: Int by remember { mutableIntStateOf(TYPE_PROMO) }
 
     var aspectRatioType: PosterCardAspectRatio by remember { mutableStateOf(PosterCardAspectRatio.AR_AUTO) }
+
+    var inverseDisplay: Boolean by remember { mutableStateOf(true) }
     var backgroundType: BackgroundType by remember { mutableStateOf(BackgroundType.SOLID_COLOR) }
+
     var topActionsType: TopActionsType by remember { mutableStateOf(TopActionsType.NONE) }
 
     var preTitle: String by remember { mutableStateOf("Pretitle") }
@@ -57,6 +58,7 @@ fun PosterCards() {
     var description: String by remember { mutableStateOf("Description") }
 
     var withAdditionalContent: Boolean by remember { mutableStateOf(false) }
+
 
     Column(
         modifier = Modifier
@@ -86,6 +88,16 @@ fun PosterCards() {
             hint = "Background type",
         )
 
+        if (backgroundType != BackgroundType.IMAGE) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Text("Inverse display")
+                Checkbox(checked = inverseDisplay, onCheckedChange = {
+                    inverseDisplay = !inverseDisplay
+                    backgroundType.backgroundValue.inverseDisplay = inverseDisplay
+                })
+            }
+        }
+
         DropDownInput(
             modifier = Modifier
                 .fillMaxWidth()
@@ -112,7 +124,7 @@ fun PosterCards() {
             hint = "Tag style",
         )
 
-        OutlinedTextField(modifier = Modifier.fillMaxWidth(), value = preTitle, onValueChange = { preTitle = it }, label = { Text("PreTitle") })
+        OutlinedTextField(modifier = Modifier.fillMaxWidth(), value = preTitle, onValueChange = { preTitle = it }, label = { Text("Pretitle") })
         OutlinedTextField(modifier = Modifier.fillMaxWidth(), value = title, onValueChange = { title = it }, label = { Text("Title") })
         OutlinedTextField(modifier = Modifier.fillMaxWidth(), value = subtitle, onValueChange = { subtitle = it }, label = { Text("Subtitle") })
         OutlinedTextField(modifier = Modifier.fillMaxWidth(), value = description, onValueChange = { description = it }, label = { Text("Description") })
@@ -163,7 +175,7 @@ private val aspectRatioLabelsMaps = mapOf(
 private val backgroundTypeLabelsMap = mapOf(
     BackgroundType.SOLID_COLOR to "Solid color",
     BackgroundType.GRADIENT_COLOR to "Gradient color",
-    BackgroundType.IMAGE to "Image color"
+    BackgroundType.IMAGE to "Image"
 )
 
 private val topActionsTypeLabelsMap = mapOf(
@@ -175,11 +187,7 @@ private val topActionsTypeLabelsMap = mapOf(
 private enum class BackgroundType(val backgroundValue: PosterCardBackgroundType) {
     IMAGE(PosterCardBackgroundType.Image(imageResource = R.drawable.sample_background)),
     SOLID_COLOR(PosterCardBackgroundType.Color(brush = SolidColor(Color.Red))),
-    GRADIENT_COLOR(
-        PosterCardBackgroundType.Color(
-            brush = Brush.verticalGradient(colors = listOf(Color.Blue, Color.LightGray))
-        )
-    ),
+    GRADIENT_COLOR(PosterCardBackgroundType.Color(brush = Brush.verticalGradient(colors = listOf(Color.Blue, Color.LightGray)))),
 }
 
 private enum class TopActionsType(val info: PosterCardTopActionInfo? = null) {
@@ -187,32 +195,23 @@ private enum class TopActionsType(val info: PosterCardTopActionInfo? = null) {
     ONE_ACTION_DISMISS(
         info = PosterCardTopActionInfo(
             firstTopAction = TopActionData(
-                iconPainter = IconPainter.ResourceIconPainter(
-                    iconRes = R.drawable.ic_close_regular,
-                    backgroundColor = Color.White,
-                    iconTint = Color.Gray,
-                    iconType = IconType.CIRCULAR_ASSET
-                )
+                iconRes = R.drawable.ic_close_regular,
+                backgroundColor = Color.White,
+                iconTint = Color.Gray,
             )
         )
     ),
     TWO_ACTIONS(
         info = PosterCardTopActionInfo(
             firstTopAction = TopActionData(
-                iconPainter = IconPainter.ResourceIconPainter(
-                    iconRes = R.drawable.icn_visibility,
-                    backgroundColor = Color.White,
-                    iconTint = Color.Gray,
-                    iconType = IconType.CIRCULAR_ASSET,
-                )
+                iconRes = R.drawable.icn_visibility,
+                backgroundColor = Color.White,
+                iconTint = Color.Gray
             ),
             secondTopAction = TopActionData(
-                iconPainter = IconPainter.ResourceIconPainter(
-                    iconRes = R.drawable.ic_close_regular,
-                    backgroundColor = Color.White,
-                    iconTint = Color.Gray,
-                    iconType = IconType.CIRCULAR_ASSET,
-                )
+                iconRes = R.drawable.ic_close_regular,
+                backgroundColor = Color.White,
+                iconTint = Color.Gray
             ),
         )
     )

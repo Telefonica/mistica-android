@@ -5,6 +5,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -78,8 +79,8 @@ enum class PosterCardAspectRatio(val ratio: Float) {
     AR_16_9(16 / 9f)
 }
 
-sealed class PosterCardBackgroundType(open val inverseDisplay: Boolean) {
+sealed class PosterCardBackgroundType(open var inverseDisplay: Boolean) {
     data class Image(val imageResource: Int, val contentDescription: String = "") : PosterCardBackgroundType(inverseDisplay = true)
-    data class Color(val brush: Brush, override val inverseDisplay: Boolean = true) : PosterCardBackgroundType(inverseDisplay = inverseDisplay)
+    data class Color(val brush: Brush, override var inverseDisplay: Boolean = true) : PosterCardBackgroundType(inverseDisplay = inverseDisplay)
 }
 
