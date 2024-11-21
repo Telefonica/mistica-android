@@ -62,8 +62,8 @@ internal fun PosterCardGradientColor() {
             ),
             aspectRatio = PosterCardAspectRatio.AR_16_9,
             backgroundType = PosterCardBackgroundType.Color(
-                brush = Brush.verticalGradient(colors = listOf(Color.Blue, Color.LightGray)), inverseDisplay =
-                true
+                brush = Brush.verticalGradient(colors = listOf(Color.Blue, Color.LightGray)),
+                inverseDisplay = true
             ),
             headline = Tag(content = TAG_HEADLINE_VALUE),
             preTitle = PRE_TITLE_VALUE,

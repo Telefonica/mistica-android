@@ -80,7 +80,6 @@ enum class PosterCardAspectRatio(val ratio: Float) {
 
 sealed class PosterCardBackgroundType(open val inverseDisplay: Boolean) {
     data class Image(val imageResource: Int, val contentDescription: String = "") : PosterCardBackgroundType(inverseDisplay = true)
-    data class Video(val videoContent: @Composable (() -> Unit)) : PosterCardBackgroundType(inverseDisplay = true)
     data class Color(val brush: Brush, override val inverseDisplay: Boolean = true) : PosterCardBackgroundType(inverseDisplay = inverseDisplay)
 }
 

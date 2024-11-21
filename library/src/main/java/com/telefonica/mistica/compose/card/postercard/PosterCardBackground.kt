@@ -26,28 +26,20 @@ internal fun PosterCardBackground(backgroundType: PosterCardBackgroundType, cont
                 },
             )
     ) {
-        when (backgroundType) {
-            is PosterCardBackgroundType.Image -> {
-                Image(
-                    modifier = Modifier.fillMaxSize(),
-                    painter = painterResource(id = backgroundType.imageResource),
-                    contentDescription = backgroundType.contentDescription,
-                    contentScale = ContentScale.Crop
-                )
-            }
-
-            is PosterCardBackgroundType.Video -> {
-                //TODO:
-            }
-
-            else -> {}
+        if (backgroundType is PosterCardBackgroundType.Image) {
+            Image(
+                modifier = Modifier.fillMaxSize(),
+                painter = painterResource(id = backgroundType.imageResource),
+                contentDescription = backgroundType.contentDescription,
+                contentScale = ContentScale.Crop
+            )
         }
         content()
     }
 }
 
 fun buildCardTextContentBackgroundBrush(backgroundType: PosterCardBackgroundType): Brush =
-    if( backgroundType.inverseDisplay ) {
+    if (backgroundType.inverseDisplay) {
         Brush.verticalGradient(
             colorStops = arrayOf(
                 0.0f to Color.Black.copy(alpha = 0f),
