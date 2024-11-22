@@ -45,7 +45,7 @@ fun PosterCards() {
     var tag: String by remember { mutableStateOf("Headline") }
     var tagType: Int by remember { mutableIntStateOf(TYPE_PROMO) }
 
-    var aspectRatioType: PosterCardAspectRatio by remember { mutableStateOf(PosterCardAspectRatio.AR_AUTO) }
+    var aspectRatioType: PosterCardAspectRatio by remember { mutableStateOf(PosterCardAspectRatio.AR_16_9) }
 
     var inverseDisplay: Boolean by remember { mutableStateOf(true) }
     var backgroundType: BackgroundType by remember { mutableStateOf(BackgroundType.SOLID_COLOR) }
@@ -187,7 +187,7 @@ private val topActionsTypeLabelsMap = mapOf(
 private enum class BackgroundType(val backgroundValue: PosterCardBackgroundType) {
     IMAGE(PosterCardBackgroundType.Image(imageResource = R.drawable.sample_background)),
     SOLID_COLOR(PosterCardBackgroundType.Color(brush = SolidColor(Color.Red))),
-    GRADIENT_COLOR(PosterCardBackgroundType.Color(brush = Brush.verticalGradient(colors = listOf(Color.Blue, Color.LightGray)))),
+    GRADIENT_COLOR(PosterCardBackgroundType.Color(brush = Brush.verticalGradient(colors = listOf(Color.Blue, Color.Cyan)))),
 }
 
 private enum class TopActionsType(val info: PosterCardTopActionInfo? = null) {
@@ -197,7 +197,7 @@ private enum class TopActionsType(val info: PosterCardTopActionInfo? = null) {
             firstTopAction = TopActionData(
                 iconRes = R.drawable.ic_close_regular,
                 backgroundColor = Color.White,
-                iconTint = Color.Gray,
+                iconTint = Color.DarkGray,
             )
         )
     ),
@@ -211,7 +211,7 @@ private enum class TopActionsType(val info: PosterCardTopActionInfo? = null) {
             secondTopAction = TopActionData(
                 iconRes = R.drawable.ic_close_regular,
                 backgroundColor = Color.White,
-                iconTint = Color.Gray
+                iconTint = Color.DarkGray
             ),
         )
     )
