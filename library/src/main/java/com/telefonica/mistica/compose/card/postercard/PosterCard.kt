@@ -5,7 +5,6 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.aspectRatio
-import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -32,7 +31,7 @@ fun PosterCard(
 ) {
     androidx.compose.material.Card(
         elevation = 0.dp,
-        shape = RoundedCornerShape(MisticaTheme.radius.containerBorderRadius),
+        shape = RoundedCornerShape(16.dp),
         border = BorderStroke(width = 1.dp, color = MisticaTheme.colors.border),
         modifier = modifier.let { modifierValue ->
             onClickAction?.let {
@@ -57,7 +56,7 @@ fun PosterCard(
                 modifier = Modifier.align(alignment = Alignment.BottomCenter),
                 verticalArrangement = Arrangement.Bottom
             ) {
-                PosterCardTextContent(
+                PosterCardMainContent(
                     backgroundType = backgroundType,
                     tag = headline,
                     preTitle = preTitle,

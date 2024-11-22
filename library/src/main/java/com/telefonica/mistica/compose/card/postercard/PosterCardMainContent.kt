@@ -16,7 +16,7 @@ import com.telefonica.mistica.compose.tag.Tag
 import com.telefonica.mistica.compose.theme.MisticaTheme
 
 @Composable
-internal fun PosterCardTextContent(
+internal fun PosterCardMainContent(
     modifier: Modifier = Modifier,
     backgroundType: PosterCardBackgroundType,
     tag: Tag?,
