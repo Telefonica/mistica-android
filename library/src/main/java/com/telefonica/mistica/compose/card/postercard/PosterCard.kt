@@ -24,10 +24,10 @@ fun PosterCard(
     title: String? = null,
     subtitle: String? = null,
     description: String? = null,
-    onClickAction: (() -> Unit)? = null,
-    customContent: (@Composable () -> Unit)? = null,
     firstTopAction: TopActionData? = null,
     secondTopAction: TopActionData? = null,
+    onClickAction: (() -> Unit)? = null,
+    customContent: (@Composable () -> Unit)? = null,
 ) {
     androidx.compose.material.Card(
         elevation = 0.dp,
@@ -37,12 +37,12 @@ fun PosterCard(
             onClickAction?.let {
                 modifierValue.clickable { it.invoke() }
             }
-            if (!aspectRatio.ratio.isNaN()) {
-                modifierValue.aspectRatio(aspectRatio.ratio)
-            } else {
+            if (aspectRatio == PosterCardAspectRatio.AR_AUTO) {
                 modifierValue
+            } else {
+                modifierValue.aspectRatio(aspectRatio.ratio, matchHeightConstraintsFirst = true)
             }
-        },
+        }
     ) {
         PosterCardBackground(backgroundType = backgroundType) {
             if (firstTopAction != null || secondTopAction != null) {

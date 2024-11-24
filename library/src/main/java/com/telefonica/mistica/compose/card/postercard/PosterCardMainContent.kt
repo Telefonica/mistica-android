@@ -42,7 +42,7 @@ internal fun PosterCardMainContent(
             )
     ) {
         if (tag != null) {
-            Box(modifier = Modifier.padding(top = 8.dp, bottom = 20.dp)) {
+            Box(modifier = Modifier.padding(top = 16.dp, bottom = 20.dp)) {
                 tag.build()
             }
         }

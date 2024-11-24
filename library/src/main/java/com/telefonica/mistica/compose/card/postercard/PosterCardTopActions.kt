@@ -20,6 +20,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 
@@ -47,6 +48,7 @@ internal fun TopAction(topActionData: TopActionData) {
     with(topActionData) {
         Box(
             modifier = Modifier
+                .testTag(topActionData.testTag.orEmpty())
                 .size(40.dp)
                 .clip(CircleShape)
                 .background(color = backgroundColor)
@@ -69,4 +71,5 @@ data class TopActionData(
     val backgroundColor: Color = Color.Transparent,
     val contentDescription: String? = null,
     val onClick: (() -> Unit)? = null,
+    val testTag: String? = null
 )
