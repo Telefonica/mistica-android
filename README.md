@@ -76,6 +76,7 @@ Just set your App or any specific activity to use any of the following:
 * [Load Error Feedback](library/src/main/java/com/telefonica/mistica/feedback/error)
 * [Media Cards](library/src/main/java/com/telefonica/mistica/card/mediacard)
 * [Pop Overs](library/src/main/java/com/telefonica/mistica/feedback/popover)
+* [Poster Card](library/src/main/java/com/telefonica/mistica/card/postercard)
 * [Screen Feedbacks](library/src/main/java/com/telefonica/mistica/feedback/screen)
 * [Scroll Content Indicator](library/src/main/java/com/telefonica/mistica/contentindicator)
 * [Sheet](library/src/main/java/com/telefonica/mistica/sheet)
