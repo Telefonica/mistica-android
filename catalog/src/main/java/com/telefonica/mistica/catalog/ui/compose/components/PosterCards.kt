@@ -45,10 +45,10 @@ fun PosterCards() {
     var tag: String by remember { mutableStateOf("Headline") }
     var tagType: Int by remember { mutableIntStateOf(TYPE_PROMO) }
 
-    var aspectRatioType: PosterCardAspectRatio by remember { mutableStateOf(PosterCardAspectRatio.AR_16_9) }
+    var aspectRatioType: PosterCardAspectRatio by remember { mutableStateOf(PosterCardAspectRatio.AR_AUTO) }
 
     var inverseDisplay: Boolean by remember { mutableStateOf(true) }
-    var backgroundType: BackgroundType by remember { mutableStateOf(BackgroundType.SOLID_COLOR) }
+    var backgroundType: BackgroundType by remember { mutableStateOf(BackgroundType.IMAGE) }
 
     var topActionsType: TopActionsType by remember { mutableStateOf(TopActionsType.NONE) }
 
@@ -227,7 +227,7 @@ internal fun AdditionalContent() {
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .size(40.dp)
+            .size(150.dp)
             .background(color = MisticaTheme.colors.successHighInverse.copy(alpha = 0.5f))
             .border(width = 1.dp, color = MisticaTheme.colors.success),
         contentAlignment = Alignment.Center

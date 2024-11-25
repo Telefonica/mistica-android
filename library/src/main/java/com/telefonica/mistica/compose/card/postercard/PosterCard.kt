@@ -3,13 +3,17 @@ package com.telefonica.mistica.compose.card.postercard
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.tag.Tag
 import com.telefonica.mistica.compose.theme.MisticaTheme
@@ -29,45 +33,50 @@ fun PosterCard(
     onClickAction: (() -> Unit)? = null,
     customContent: (@Composable () -> Unit)? = null,
 ) {
-    androidx.compose.material.Card(
-        elevation = 0.dp,
-        shape = RoundedCornerShape(16.dp),
-        border = BorderStroke(width = 1.dp, color = MisticaTheme.colors.border),
-        modifier = modifier.let { modifierValue ->
-            onClickAction?.let {
-                modifierValue.clickable { it.invoke() }
-            }
-            if (aspectRatio == PosterCardAspectRatio.AR_AUTO) {
-                modifierValue
-            } else {
-                modifierValue.aspectRatio(aspectRatio.ratio, matchHeightConstraintsFirst = true)
-            }
-        }
-    ) {
-        PosterCardBackground(backgroundType = backgroundType) {
-            if (firstTopAction != null || secondTopAction != null) {
-                PosterCardTopActions(
-                    modifier = Modifier.align(alignment = Alignment.TopCenter),
-                    firstTopAction = firstTopAction,
-                    secondTopAction = secondTopAction
-                )
-            }
-            Column(
-                modifier = Modifier.align(alignment = Alignment.BottomCenter),
-                verticalArrangement = Arrangement.Bottom
-            ) {
-                PosterCardMainContent(
-                    backgroundType = backgroundType,
-                    tag = headline,
-                    preTitle = preTitle,
-                    title = title,
-                    description = description,
-                    subtitle = subtitle,
-                    customContent = customContent
-                )
+    BoxWithConstraints(modifier = modifier) {
+        androidx.compose.material.Card(
+            elevation = 0.dp,
+            backgroundColor = Color.Red,
+            shape = RoundedCornerShape(16.dp),
+            border = BorderStroke(width = 1.dp, color = MisticaTheme.colors.border),
+            modifier = Modifier
+                .width(maxWidth)
+                .let { modifierValue ->
+                    onClickAction?.let {
+                        modifierValue.clickable { it.invoke() }
+                    }
+                    modifierValue.heightIn(
+                        min = maxWidth / aspectRatio.ratio,
+                        max = Dp.Infinity
+                    )
+                }
+        ) {
+            PosterCardBackground(backgroundType = backgroundType) {
+                if (firstTopAction != null || secondTopAction != null) {
+                    PosterCardTopActions(
+                        modifier = Modifier.align(alignment = Alignment.TopCenter),
+                        firstTopAction = firstTopAction,
+                        secondTopAction = secondTopAction
+                    )
+                }
+                Column(
+                    modifier = Modifier.align(alignment = Alignment.BottomCenter),
+                    verticalArrangement = Arrangement.Bottom
+                ) {
+                    PosterCardMainContent(
+                        backgroundType = backgroundType,
+                        tag = headline,
+                        preTitle = preTitle,
+                        title = title,
+                        description = description,
+                        subtitle = subtitle,
+                        customContent = customContent
+                    )
+                }
             }
         }
     }
+
 }
 
 enum class PosterCardAspectRatio(val ratio: Float) {
