@@ -37,15 +37,13 @@ fun PosterCard(
             shape = RoundedCornerShape(MisticaTheme.radius.containerBorderRadius),
             modifier = Modifier
                 .width(maxWidth)
-                .let { modifierValue ->
-                    onClickAction?.let {
-                        modifierValue.clickable { it.invoke() }
-                    }
-                    modifierValue.heightIn(
-                        min = maxWidth / aspectRatio.ratio,
-                        max = Dp.Infinity
-                    )
+                .clickable(enabled = onClickAction != null) {
+                    onClickAction?.invoke()
                 }
+                .heightIn(
+                    min = maxWidth / aspectRatio.ratio,
+                    max = Dp.Infinity
+                )
         ) {
             PosterCardBackground(backgroundType = backgroundType) {
                 Column(

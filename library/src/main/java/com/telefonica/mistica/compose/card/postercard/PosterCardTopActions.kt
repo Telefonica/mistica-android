@@ -51,13 +51,12 @@ internal fun TopAction(topActionData: TopActionData) {
                 .testTag(topActionData.testTag.orEmpty())
                 .size(40.dp)
                 .clip(CircleShape)
+                .clickable(enabled = topActionData.onClick != null) {
+                    topActionData.onClick?.invoke()
+                }
                 .background(color = backgroundColor)
                 .wrapContentSize(align = Alignment.Center)
-                .let { modifierValue ->
-                    topActionData.onClick?.let {
-                        modifierValue.clickable { it() }
-                    } ?: modifierValue
-                }
+
         ) {
             Image(
                 painter = painterResource(id = iconRes),
@@ -72,8 +71,8 @@ internal fun TopAction(topActionData: TopActionData) {
 data class TopActionData(
     val iconRes: Int,
     val backgroundColor: Color = Color.Transparent,
+    val contentDescription: String = "",
     val iconTint: Color? = null,
-    val contentDescription: String? = null,
     val testTag: String? = null,
     val onClick: (() -> Unit)? = null,
 )
