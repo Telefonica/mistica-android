@@ -1,6 +1,5 @@
 package com.telefonica.mistica.compose.card.postercard
 
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.BoxWithConstraints
@@ -12,7 +11,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.tag.Tag
@@ -36,9 +34,7 @@ fun PosterCard(
     BoxWithConstraints(modifier = modifier) {
         androidx.compose.material.Card(
             elevation = 0.dp,
-            backgroundColor = Color.Red,
-            shape = RoundedCornerShape(16.dp),
-            border = BorderStroke(width = 1.dp, color = MisticaTheme.colors.border),
+            shape = RoundedCornerShape(MisticaTheme.radius.containerBorderRadius),
             modifier = Modifier
                 .width(maxWidth)
                 .let { modifierValue ->
