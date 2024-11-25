@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.layout.ContentScale
@@ -18,8 +17,7 @@ internal fun PosterCardBackground(
     content: @Composable BoxScope.() -> Unit)
 {
     Box(
-        modifier = Modifier
-            .background(
+        modifier = Modifier.background(
                 brush = if (backgroundType is PosterCardBackgroundType.Color) {
                     backgroundType.brush
                 } else {
@@ -39,15 +37,3 @@ internal fun PosterCardBackground(
     }
 }
 
-fun buildCardTextContentBackgroundBrush(backgroundType: PosterCardBackgroundType): Brush =
-    if (backgroundType.inverseDisplay) {
-        Brush.verticalGradient(
-            colorStops = arrayOf(
-                0.0f to Color.Black.copy(alpha = 0f),
-                0.3f to Color.Black.copy(alpha = 0.4f),
-                1.0f to Color.Black.copy(alpha = 0.7f)
-            )
-        )
-    } else {
-        SolidColor(Color.Transparent)
-    }

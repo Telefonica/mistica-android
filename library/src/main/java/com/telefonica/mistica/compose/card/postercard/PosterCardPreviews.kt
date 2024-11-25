@@ -54,7 +54,7 @@ internal fun PosterCardGradientColor() {
             ),
             aspectRatio = PosterCardAspectRatio.AR_16_9,
             backgroundType = PosterCardBackgroundType.Color(
-                brush = Brush.verticalGradient(colors = listOf(Color.Blue, Color.LightGray)),
+                brush = Brush.verticalGradient(colors = listOf(Color.Magenta, Color.Red)),
                 inverseDisplay = true
             ),
             headline = Tag(content = TAG_HEADLINE_VALUE),
@@ -72,7 +72,7 @@ internal fun PosterCardImage() {
     MisticaTheme(brand = TuBrand) {
         PosterCard(
             modifier = Modifier.fillMaxWidth(),
-            aspectRatio = PosterCardAspectRatio.AR_7_10,
+            aspectRatio = PosterCardAspectRatio.AR_16_9,
             backgroundType = PosterCardBackgroundType.Image(imageResource = R.drawable.sample_background),
             headline = Tag(content = TAG_HEADLINE_VALUE),
             preTitle = PRE_TITLE_VALUE,
@@ -91,7 +91,7 @@ internal fun CustomLowerContent() {
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .size(40.dp)
+            .size(150.dp)
             .background(color = MisticaTheme.colors.successHighInverse.copy(alpha = 0.5f))
             .border(width = 1.dp, color = MisticaTheme.colors.success),
         contentAlignment = Alignment.Center

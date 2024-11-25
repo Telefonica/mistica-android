@@ -52,13 +52,17 @@ internal fun TopAction(topActionData: TopActionData) {
                 .size(40.dp)
                 .clip(CircleShape)
                 .background(color = backgroundColor)
-                .clickable { topActionData.onClick?.invoke() }
                 .wrapContentSize(align = Alignment.Center)
+                .let { modifierValue ->
+                    topActionData.onClick?.let {
+                        modifierValue.clickable { it() }
+                    } ?: modifierValue
+                }
         ) {
             Image(
                 painter = painterResource(id = iconRes),
                 contentDescription = contentDescription,
-                colorFilter = iconTint?.let { ColorFilter.tint(iconTint) },
+                colorFilter = iconTint?.let { ColorFilter.tint(it) },
                 contentScale = ContentScale.Crop
             )
         }
@@ -67,9 +71,9 @@ internal fun TopAction(topActionData: TopActionData) {
 
 data class TopActionData(
     val iconRes: Int,
-    val iconTint: Color?,
     val backgroundColor: Color = Color.Transparent,
+    val iconTint: Color? = null,
     val contentDescription: String? = null,
+    val testTag: String? = null,
     val onClick: (() -> Unit)? = null,
-    val testTag: String? = null
 )
