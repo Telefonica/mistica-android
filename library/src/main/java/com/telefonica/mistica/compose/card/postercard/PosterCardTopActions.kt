@@ -48,11 +48,11 @@ internal fun TopAction(topActionData: TopActionData) {
     with(topActionData) {
         Box(
             modifier = Modifier
-                .testTag(topActionData.testTag.orEmpty())
+                .testTag(testTag.orEmpty())
                 .size(40.dp)
                 .clip(CircleShape)
-                .clickable(enabled = topActionData.onClick != null) {
-                    topActionData.onClick?.invoke()
+                .clickable(enabled = onClick != null) {
+                    onClick?.invoke()
                 }
                 .background(color = backgroundColor)
                 .wrapContentSize(align = Alignment.Center)
