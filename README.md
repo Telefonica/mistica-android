@@ -165,7 +165,7 @@ allprojects {
 - Update the version of mistica to the one the snapshot was released with, sync your project and the dependency should be resolved with the artifact including your local changes.
 
 ## Snapshot generation with GitHub Action
-This is another option to generate a snapshot version available for all applications. Just navigate to [the snapshot.yml workflow within Actions](https://github.com/Telefonica/mistica-android/actions/workflows/snapshot.yml), select a branch and enter the version like
+To create a new snapshot go to [the snapshot.yml Action](https://github.com/Telefonica/mistica-android/actions/workflows/snapshot.yml), select a branch and enter the version, like
 ``` x.x.x-snapshot ```
 
 After a while, the new version will be available!
