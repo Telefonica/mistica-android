@@ -164,6 +164,12 @@ allprojects {
 
 - Update the version of mistica to the one the snapshot was released with, sync your project and the dependency should be resolved with the artifact including your local changes.
 
+## Snapshot generation with GitHub Action
+This is another option to generate a snapshot version available for all applications. Just navigate to [the snapshot.yml workflow within Actions](https://github.com/Telefonica/mistica-android/actions/workflows/snapshot.yml), select a branch and enter the version like
+``` x.x.x-snapshot ```
+
+After a while, the new version will be available!
+
 ## Design tokens
 We have several tokens that are defined by the UX team (colors, radius and text presets) in a [JSON format](https://github.com/Telefonica/mistica-design/tree/production/tokens). Using these files, we generate XML and Kotlin files that are used in the library.
 
