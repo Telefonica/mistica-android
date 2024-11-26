@@ -166,7 +166,7 @@ allprojects {
 
 ## Snapshot generation with GitHub Action
 To create a new snapshot go to [the snapshot.yml Action](https://github.com/Telefonica/mistica-android/actions/workflows/snapshot.yml), select a branch and enter the version, like
-``` x.x.x-SNAPSHOT ```
+``` x.x.x ```
 
 After a while, the new version will be available!
 
