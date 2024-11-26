@@ -12,15 +12,17 @@ In addition, up to a maximum of 2 actions can be defined, which will be displaye
 
 ```kotlin
 PosterCard(
-    firstTopAction = TopActionData(
-        iconRes = R.drawable.icn_visibility,
-        backgroundColor = MisticaTheme.colors.backgroundAlternative,
-        iconTint = MisticaTheme.colors.brand,
-    ),
-    secondTopAction = TopActionData(
-        iconRes = R.drawable.ic_close_regular,
-        backgroundColor = MisticaTheme.colors.backgroundAlternative,
-        iconTint = MisticaTheme.colors.brand,
+    topActionsList = listOf(
+        TopActionData(
+            iconRes = R.drawable.icn_visibility,
+            backgroundColor = MisticaTheme.colors.backgroundAlternative,
+            iconTint = MisticaTheme.colors.brand,
+        ),
+        TopActionData(
+            iconRes = R.drawable.ic_close_regular,
+            backgroundColor = MisticaTheme.colors.backgroundAlternative,
+            iconTint = MisticaTheme.colors.brand,
+        )
     ),
     aspectRatio = PosterCardAspectRatio.AR_16_9,
     backgroundType = PosterCardBackgroundType.Color(brush = SolidColor(MisticaTheme.colors.background), inverseDisplay = false),
