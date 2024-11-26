@@ -168,7 +168,7 @@ allprojects {
 To create a new snapshot go to [the snapshot.yml Action](https://github.com/Telefonica/mistica-android/actions/workflows/snapshot.yml), select a branch and enter the version, like
 ``` x.x.x ```
 
-After a while, the new version will be available!
+After a while, the new version will be available, keep in mind that the version name will be ``` x.x.x-SNAPSHOT ```
 
 ## Design tokens
 We have several tokens that are defined by the UX team (colors, radius and text presets) in a [JSON format](https://github.com/Telefonica/mistica-design/tree/production/tokens). Using these files, we generate XML and Kotlin files that are used in the library.
