@@ -25,7 +25,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 
 @Composable
-internal fun PosterCardTopActions(modifier: Modifier = Modifier, firstTopAction: TopActionData?, secondTopAction: TopActionData?) {
+internal fun PosterCardTopActions(modifier: Modifier = Modifier, topActionsList: List<TopActionData>) {
     Row(
         modifier = modifier
             .fillMaxWidth()
@@ -33,12 +33,11 @@ internal fun PosterCardTopActions(modifier: Modifier = Modifier, firstTopAction:
         horizontalArrangement = Arrangement.End,
         verticalAlignment = Alignment.CenterVertically
     ) {
-        firstTopAction?.let {
-            TopAction(topActionData = it)
-        }
-        secondTopAction?.let {
-            Spacer(modifier = Modifier.width(16.dp))
-            TopAction(topActionData = it)
+        topActionsList.forEachIndexed { index, topActionData ->
+            TopAction(topActionData = topActionData)
+            if( index!=topActionsList.lastIndex ){
+                Spacer(modifier = Modifier.width(16.dp))
+            }
         }
     }
 }

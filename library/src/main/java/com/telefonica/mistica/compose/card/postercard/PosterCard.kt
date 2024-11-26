@@ -4,6 +4,8 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -26,8 +28,7 @@ fun PosterCard(
     title: String? = null,
     subtitle: String? = null,
     description: String? = null,
-    firstTopAction: TopActionData? = null,
-    secondTopAction: TopActionData? = null,
+    topActionsList: List<TopActionData>? = null,
     onClickAction: (() -> Unit)? = null,
     customContent: (@Composable () -> Unit)? = null,
 ) {
@@ -50,6 +51,9 @@ fun PosterCard(
                     modifier = Modifier.align(alignment = Alignment.BottomCenter),
                     verticalArrangement = Arrangement.Bottom
                 ) {
+                    if (topActionsList.areLoaded()) {
+                        Spacer(modifier = Modifier.height(40.dp))
+                    }
                     PosterCardMainContent(
                         backgroundType = backgroundType,
                         tag = headline,
@@ -60,18 +64,19 @@ fun PosterCard(
                         customContent = customContent
                     )
                 }
-                if (firstTopAction != null || secondTopAction != null) {
+                if (topActionsList.areLoaded()) {
                     PosterCardTopActions(
                         modifier = Modifier.align(alignment = Alignment.TopCenter),
-                        firstTopAction = firstTopAction,
-                        secondTopAction = secondTopAction
+                        topActionsList = topActionsList!!
                     )
                 }
             }
         }
     }
-
 }
+
+private fun List<TopActionData>?.areLoaded(): Boolean =
+    !this.isNullOrEmpty() && size <= 2
 
 enum class PosterCardAspectRatio(val ratio: Float) {
     AR_AUTO(ratio = Float.NaN),

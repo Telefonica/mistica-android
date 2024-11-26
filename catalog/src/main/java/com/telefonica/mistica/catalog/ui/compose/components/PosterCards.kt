@@ -148,8 +148,7 @@ fun PosterCards() {
                     AdditionalContent()
                 }
             },
-            firstTopAction = topActionsType.info?.firstTopAction,
-            secondTopAction = topActionsType.info?.secondTopAction
+            topActionsList = topActionsType.info?.topActionsList
         )
     }
 }
@@ -194,32 +193,35 @@ private enum class TopActionsType(val info: PosterCardTopActionInfo? = null) {
     NONE,
     ONE_ACTION_DISMISS(
         info = PosterCardTopActionInfo(
-            firstTopAction = TopActionData(
-                iconRes = R.drawable.ic_close_regular,
-                backgroundColor = Color.White,
-                iconTint = Color.DarkGray,
+            topActionsList = listOf(
+                TopActionData(
+                    iconRes = R.drawable.ic_close_regular,
+                    backgroundColor = Color.White,
+                    iconTint = Color.DarkGray,
+                )
             )
         )
     ),
     TWO_ACTIONS(
         info = PosterCardTopActionInfo(
-            firstTopAction = TopActionData(
-                iconRes = R.drawable.icn_visibility,
-                backgroundColor = Color.White,
-                iconTint = Color.Gray
-            ),
-            secondTopAction = TopActionData(
-                iconRes = R.drawable.ic_close_regular,
-                backgroundColor = Color.White,
-                iconTint = Color.DarkGray
-            ),
+            topActionsList = listOf(
+                TopActionData(
+                    iconRes = R.drawable.icn_visibility,
+                    backgroundColor = Color.White,
+                    iconTint = Color.Gray
+                ),
+                TopActionData(
+                    iconRes = R.drawable.ic_close_regular,
+                    backgroundColor = Color.White,
+                    iconTint = Color.DarkGray
+                )
+            )
         )
     )
 }
 
 private data class PosterCardTopActionInfo(
-    val firstTopAction: TopActionData? = null,
-    val secondTopAction: TopActionData? = null,
+    val topActionsList: List<TopActionData>? = null,
 )
 
 @Composable

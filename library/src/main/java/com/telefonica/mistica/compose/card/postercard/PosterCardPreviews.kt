@@ -42,15 +42,17 @@ internal fun PosterCardSolidColor() {
 internal fun PosterCardGradientColor() {
     MisticaTheme(brand = TuBrand) {
         PosterCard(
-            firstTopAction = TopActionData(
-                iconRes = R.drawable.icn_visibility,
-                backgroundColor = MisticaTheme.colors.backgroundAlternative,
-                iconTint = MisticaTheme.colors.brand,
-            ),
-            secondTopAction = TopActionData(
-                iconRes = R.drawable.ic_close_regular,
-                backgroundColor = MisticaTheme.colors.backgroundAlternative,
-                iconTint = MisticaTheme.colors.brand,
+            topActionsList = listOf(
+                TopActionData(
+                    iconRes = R.drawable.icn_visibility,
+                    backgroundColor = MisticaTheme.colors.backgroundAlternative,
+                    iconTint = MisticaTheme.colors.brand,
+                ),
+                TopActionData(
+                    iconRes = R.drawable.ic_close_regular,
+                    backgroundColor = MisticaTheme.colors.backgroundAlternative,
+                    iconTint = MisticaTheme.colors.brand,
+                )
             ),
             aspectRatio = PosterCardAspectRatio.AR_16_9,
             backgroundType = PosterCardBackgroundType.Color(
