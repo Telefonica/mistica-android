@@ -194,27 +194,15 @@ private enum class TopActionsType(val info: PosterCardTopActionInfo? = null) {
     ONE_ACTION_DISMISS(
         info = PosterCardTopActionInfo(
             topActionsList = listOf(
-                TopActionData(
-                    iconRes = R.drawable.ic_close_regular,
-                    backgroundColor = Color.White,
-                    iconTint = Color.DarkGray,
-                )
+                TopActionData(iconRes = R.drawable.ic_close_regular)
             )
         )
     ),
     TWO_ACTIONS(
         info = PosterCardTopActionInfo(
             topActionsList = listOf(
-                TopActionData(
-                    iconRes = R.drawable.icn_visibility,
-                    backgroundColor = Color.White,
-                    iconTint = Color.Gray
-                ),
-                TopActionData(
-                    iconRes = R.drawable.ic_close_regular,
-                    backgroundColor = Color.White,
-                    iconTint = Color.DarkGray
-                )
+                TopActionData(iconRes = R.drawable.icn_visibility),
+                TopActionData(iconRes = R.drawable.ic_close_regular)
             )
         )
     )

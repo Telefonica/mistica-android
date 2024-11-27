@@ -38,7 +38,7 @@ fun PosterCard(
             shape = RoundedCornerShape(MisticaTheme.radius.containerBorderRadius),
             modifier = Modifier
                 .width(maxWidth)
-                .clickable(enabled = onClickAction != null) {
+                .clickable(enabled = onClickAction!=null) {
                     onClickAction?.invoke()
                 }
                 .heightIn(

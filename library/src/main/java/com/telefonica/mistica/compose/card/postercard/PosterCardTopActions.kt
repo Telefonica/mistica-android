@@ -23,6 +23,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import com.telefonica.mistica.compose.theme.MisticaTheme
 
 @Composable
 internal fun PosterCardTopActions(modifier: Modifier = Modifier, topActionsList: List<TopActionData>) {
@@ -35,7 +36,7 @@ internal fun PosterCardTopActions(modifier: Modifier = Modifier, topActionsList:
     ) {
         topActionsList.forEachIndexed { index, topActionData ->
             TopAction(topActionData = topActionData)
-            if( index!=topActionsList.lastIndex ){
+            if (index != topActionsList.lastIndex) {
                 Spacer(modifier = Modifier.width(16.dp))
             }
         }
@@ -50,17 +51,27 @@ internal fun TopAction(topActionData: TopActionData) {
                 .testTag(testTag.orEmpty())
                 .size(40.dp)
                 .clip(CircleShape)
-                .clickable(enabled = onClick != null) {
-                    onClick?.invoke()
-                }
-                .background(color = backgroundColor)
+                .clickable { onClick() }
+                .background(
+                    color = when {
+                        isInverse -> Color.Transparent
+                        withBackground -> MisticaTheme.colors.inverse.copy(alpha = 0.8f)
+                        else -> Color.Transparent
+                    }
+                )
                 .wrapContentSize(align = Alignment.Center)
 
         ) {
             Image(
                 painter = painterResource(id = iconRes),
                 contentDescription = contentDescription,
-                colorFilter = iconTint?.let { ColorFilter.tint(it) },
+                colorFilter = ColorFilter.tint(
+                    if (isInverse) {
+                        MisticaTheme.colors.inverse
+                    } else {
+                        MisticaTheme.colors.neutralHigh
+                    }
+                ),
                 contentScale = ContentScale.Crop
             )
         }
@@ -69,9 +80,9 @@ internal fun TopAction(topActionData: TopActionData) {
 
 data class TopActionData(
     val iconRes: Int,
-    val backgroundColor: Color = Color.Transparent,
     val contentDescription: String = "",
-    val iconTint: Color? = null,
     val testTag: String? = null,
-    val onClick: (() -> Unit)? = null,
+    val withBackground: Boolean = true,
+    val isInverse: Boolean = false,
+    val onClick: () -> Unit = {},
 )
