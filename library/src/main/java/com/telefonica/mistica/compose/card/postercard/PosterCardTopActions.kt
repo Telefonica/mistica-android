@@ -26,7 +26,11 @@ import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.theme.MisticaTheme
 
 @Composable
-internal fun PosterCardTopActions(modifier: Modifier = Modifier, topActionsList: List<TopActionData>) {
+internal fun PosterCardTopActions(
+    modifier: Modifier = Modifier,
+    firstTopAction: TopActionData?,
+    secondTopAction: TopActionData?
+) {
     Row(
         modifier = modifier
             .fillMaxWidth()
@@ -34,11 +38,14 @@ internal fun PosterCardTopActions(modifier: Modifier = Modifier, topActionsList:
         horizontalArrangement = Arrangement.End,
         verticalAlignment = Alignment.CenterVertically
     ) {
-        topActionsList.forEachIndexed { index, topActionData ->
-            TopAction(topActionData = topActionData)
-            if (index != topActionsList.lastIndex) {
+        firstTopAction?.let {
+            TopAction(topActionData = it)
+        }
+        secondTopAction?.let {
+            if (firstTopAction != null) {
                 Spacer(modifier = Modifier.width(16.dp))
             }
+            TopAction(topActionData = it)
         }
     }
 }

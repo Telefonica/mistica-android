@@ -143,12 +143,13 @@ fun PosterCards() {
             title = title.getOrNullIfEmpty(),
             subtitle = subtitle.getOrNullIfEmpty(),
             description = description.getOrNullIfEmpty(),
+            firstTopAction = topActionsType.info?.firstTopAction,
+            secondTopAction = topActionsType.info?.secondTopAction,
             customContent = {
                 if (withAdditionalContent) {
                     AdditionalContent()
                 }
-            },
-            topActionsList = topActionsType.info?.topActionsList
+            }
         )
     }
 }
@@ -193,23 +194,20 @@ private enum class TopActionsType(val info: PosterCardTopActionInfo? = null) {
     NONE,
     ONE_ACTION_DISMISS(
         info = PosterCardTopActionInfo(
-            topActionsList = listOf(
-                TopActionData(iconRes = R.drawable.ic_close_regular)
-            )
+            firstTopAction = TopActionData(iconRes = R.drawable.ic_close_regular)
         )
     ),
     TWO_ACTIONS(
         info = PosterCardTopActionInfo(
-            topActionsList = listOf(
-                TopActionData(iconRes = R.drawable.icn_visibility),
-                TopActionData(iconRes = R.drawable.ic_close_regular)
-            )
+            firstTopAction = TopActionData(iconRes = R.drawable.icn_visibility),
+            secondTopAction = TopActionData(iconRes = R.drawable.ic_close_regular)
         )
     )
 }
 
 private data class PosterCardTopActionInfo(
-    val topActionsList: List<TopActionData>? = null,
+    val firstTopAction: TopActionData? = null,
+    val secondTopAction: TopActionData? = null
 )
 
 @Composable

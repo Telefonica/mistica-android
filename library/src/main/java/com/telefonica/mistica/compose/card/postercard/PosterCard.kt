@@ -28,10 +28,13 @@ fun PosterCard(
     title: String? = null,
     subtitle: String? = null,
     description: String? = null,
-    topActionsList: List<TopActionData>? = null,
+    firstTopAction: TopActionData? = null,
+    secondTopAction: TopActionData? = null,
     onClickAction: (() -> Unit)? = null,
     customContent: (@Composable () -> Unit)? = null,
 ) {
+    val anyTopActionsLoaded = firstTopAction!=null || secondTopAction!=null
+
     BoxWithConstraints(modifier = modifier) {
         androidx.compose.material.Card(
             elevation = 0.dp,
@@ -51,7 +54,7 @@ fun PosterCard(
                     modifier = Modifier.align(alignment = Alignment.BottomCenter),
                     verticalArrangement = Arrangement.Bottom
                 ) {
-                    if (topActionsList.areLoaded()) {
+                    if (anyTopActionsLoaded) {
                         Spacer(modifier = Modifier.height(40.dp))
                     }
                     PosterCardMainContent(
@@ -64,19 +67,17 @@ fun PosterCard(
                         customContent = customContent
                     )
                 }
-                if (topActionsList.areLoaded()) {
+                if (anyTopActionsLoaded) {
                     PosterCardTopActions(
                         modifier = Modifier.align(alignment = Alignment.TopCenter),
-                        topActionsList = topActionsList!!
+                        firstTopAction = firstTopAction,
+                        secondTopAction = secondTopAction
                     )
                 }
             }
         }
     }
 }
-
-private fun List<TopActionData>?.areLoaded(): Boolean =
-    !this.isNullOrEmpty() && size <= 2
 
 enum class PosterCardAspectRatio(val ratio: Float) {
     AR_AUTO(ratio = Float.NaN),
