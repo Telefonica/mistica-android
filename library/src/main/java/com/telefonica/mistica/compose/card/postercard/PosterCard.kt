@@ -1,5 +1,6 @@
 package com.telefonica.mistica.compose.card.postercard
 
+import androidx.annotation.DrawableRes
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.BoxWithConstraints
@@ -13,6 +14,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.semantics.focused
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.tag.Tag
@@ -48,6 +51,9 @@ fun PosterCard(
                     min = maxWidth / aspectRatio.ratio,
                     max = Dp.Infinity
                 )
+                .semantics {
+                    focused = true
+                }
         ) {
             PosterCardBackground(backgroundType = backgroundType) {
                 Column(
@@ -88,7 +94,7 @@ enum class PosterCardAspectRatio(val ratio: Float) {
 }
 
 sealed class PosterCardBackgroundType(open var inverseDisplay: Boolean) {
-    data class Image(val imageResource: Int, val contentDescription: String = "") : PosterCardBackgroundType(inverseDisplay = true)
+    data class Image(@DrawableRes val imageResource: Int, val contentDescription: String = "") : PosterCardBackgroundType(inverseDisplay = true)
     data class Color(val brush: Brush, override var inverseDisplay: Boolean = true) : PosterCardBackgroundType(inverseDisplay = inverseDisplay)
 }
 
