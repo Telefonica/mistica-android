@@ -66,7 +66,7 @@ internal fun PosterCardImage() {
             firstTopAction = TopActionData(iconRes = R.drawable.icn_visibility),
             modifier = Modifier.fillMaxWidth(),
             aspectRatio = PosterCardAspectRatio.AR_16_9,
-            backgroundType = PosterCardBackgroundType.Image(imageResource = R.drawable.sample_background),
+            backgroundType = PosterCardBackgroundType.Color(brush = SolidColor(MisticaTheme.colors.successLow)),
             headline = Tag(content = TAG_HEADLINE_VALUE),
             preTitle = PRE_TITLE_VALUE,
             title = TITLE_VALUE,
