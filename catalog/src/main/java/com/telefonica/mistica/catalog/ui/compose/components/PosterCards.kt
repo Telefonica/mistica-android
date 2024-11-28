@@ -28,7 +28,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.unit.dp
-import com.telefonica.mistica.R
+import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.compose.card.postercard.PosterCard
 import com.telefonica.mistica.compose.card.postercard.PosterCardAspectRatio
 import com.telefonica.mistica.compose.card.postercard.PosterCardBackgroundType
