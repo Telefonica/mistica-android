@@ -1,5 +1,6 @@
 package com.telefonica.mistica.compose.card.postercard
 
+import android.content.res.Configuration
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
@@ -37,7 +38,7 @@ internal fun PosterCardSolidColor() {
     }
 }
 
-@Preview
+@Preview(name = "Dark Mode", uiMode = Configuration.UI_MODE_NIGHT_YES, showBackground = true)
 @Composable
 internal fun PosterCardGradientColor() {
     MisticaTheme(brand = TuBrand) {

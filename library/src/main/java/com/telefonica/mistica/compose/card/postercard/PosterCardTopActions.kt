@@ -36,7 +36,7 @@ internal fun PosterCardTopActions(
     Row(
         modifier = modifier
             .fillMaxWidth()
-            .padding(top = 16.dp, start = 16.dp, end = 16.dp, bottom = 8.dp),
+            .padding(8.dp),
         horizontalArrangement = Arrangement.End,
         verticalAlignment = Alignment.CenterVertically
     ) {
@@ -47,7 +47,7 @@ internal fun PosterCardTopActions(
         }
         secondTopAction?.let {
             if (firstTopAction != null) {
-                Spacer(modifier = Modifier.width(16.dp))
+                Spacer(modifier = Modifier.width(4.dp))
             }
             TopAction(topActionData = it, modifier = Modifier.semantics {
                 traversalIndex = 9f
@@ -62,13 +62,14 @@ internal fun TopAction(modifier: Modifier, topActionData: TopActionData) {
         Box(
             modifier = modifier
                 .testTag(testTag.orEmpty())
-                .size(40.dp)
+                .size(48.dp)
+                .padding(4.dp)
                 .clip(CircleShape)
                 .clickable { onClick() }
                 .background(
                     color = when {
                         isInverse -> Color.Transparent
-                        withBackground -> MisticaTheme.colors.inverse.copy(alpha = 0.8f)
+                        withBackground -> MisticaTheme.colors.controlInverse.copy(alpha = 0.8f)
                         else -> Color.Transparent
                     }
                 )
