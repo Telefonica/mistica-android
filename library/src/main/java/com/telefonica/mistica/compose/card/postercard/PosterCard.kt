@@ -14,7 +14,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
-import androidx.compose.ui.semantics.focused
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
@@ -36,7 +35,7 @@ fun PosterCard(
     onClickAction: (() -> Unit)? = null,
     customContent: (@Composable () -> Unit)? = null,
 ) {
-    val anyTopActionsLoaded = firstTopAction!=null || secondTopAction!=null
+    val anyTopActionsLoaded = firstTopAction != null || secondTopAction != null
 
     BoxWithConstraints(modifier = modifier) {
         androidx.compose.material.Card(
@@ -44,18 +43,18 @@ fun PosterCard(
             shape = RoundedCornerShape(MisticaTheme.radius.containerBorderRadius),
             modifier = Modifier
                 .width(maxWidth)
-                .clickable(enabled = onClickAction!=null) {
+                .clickable(enabled = onClickAction != null) {
                     onClickAction?.invoke()
                 }
                 .heightIn(
                     min = maxWidth / aspectRatio.ratio,
                     max = Dp.Infinity
                 )
-                .semantics {
-                    focused = true
-                }
+                .semantics(mergeDescendants = true) {}
         ) {
-            PosterCardBackground(backgroundType = backgroundType) {
+            PosterCardBackground(
+                backgroundType = backgroundType
+            ) {
                 Column(
                     modifier = Modifier.align(alignment = Alignment.BottomCenter),
                     verticalArrangement = Arrangement.Bottom
