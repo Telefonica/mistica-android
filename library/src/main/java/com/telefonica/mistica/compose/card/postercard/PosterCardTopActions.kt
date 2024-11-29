@@ -36,7 +36,7 @@ internal fun PosterCardTopActions(
     Row(
         modifier = modifier
             .fillMaxWidth()
-            .padding(8.dp),
+            .padding(16.dp),
         horizontalArrangement = Arrangement.End,
         verticalAlignment = Alignment.CenterVertically
     ) {
@@ -47,7 +47,7 @@ internal fun PosterCardTopActions(
         }
         secondTopAction?.let {
             if (firstTopAction != null) {
-                Spacer(modifier = Modifier.width(4.dp))
+                Spacer(modifier = Modifier.width(16.dp))
             }
             TopAction(topActionData = it, modifier = Modifier.semantics {
                 traversalIndex = 9f
@@ -62,8 +62,7 @@ internal fun TopAction(modifier: Modifier, topActionData: TopActionData) {
         Box(
             modifier = modifier
                 .testTag(testTag.orEmpty())
-                .size(48.dp)
-                .padding(4.dp)
+                .size(40.dp)
                 .clip(CircleShape)
                 .clickable { onClick() }
                 .background(

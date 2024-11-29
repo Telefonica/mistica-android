@@ -50,7 +50,7 @@ fun PosterCards() {
     var inverseDisplay: Boolean by remember { mutableStateOf(true) }
     var backgroundType: BackgroundType by remember { mutableStateOf(BackgroundType.IMAGE) }
 
-    var topActionsType: TopActionsType by remember { mutableStateOf(TopActionsType.NONE) }
+    var topActionsType: TopActionsType by remember { mutableStateOf(TopActionsType.TWO_ACTIONS) }
 
     var preTitle: String by remember { mutableStateOf("Pretitle") }
     var title: String by remember { mutableStateOf("Title") }
@@ -185,7 +185,7 @@ private val topActionsTypeLabelsMap = mapOf(
 )
 
 private enum class BackgroundType(val backgroundValue: PosterCardBackgroundType) {
-    IMAGE(PosterCardBackgroundType.Image(imageResource = R.drawable.sample_background)),
+    IMAGE(PosterCardBackgroundType.Image(imageResource = R.drawable.sample_background, contentDescription = "Mística PosterCard")),
     SOLID_COLOR(PosterCardBackgroundType.Color(brush = SolidColor(Color.Red))),
     GRADIENT_COLOR(PosterCardBackgroundType.Color(brush = Brush.verticalGradient(colors = listOf(Color.Blue, Color.Cyan)))),
 }
@@ -199,8 +199,14 @@ private enum class TopActionsType(val info: PosterCardTopActionInfo? = null) {
     ),
     TWO_ACTIONS(
         info = PosterCardTopActionInfo(
-            firstTopAction = TopActionData(iconRes = R.drawable.icn_visibility),
-            secondTopAction = TopActionData(iconRes = R.drawable.ic_close_regular)
+            firstTopAction = TopActionData(
+                iconRes = R.drawable.icn_visibility,
+                contentDescription = "PosterCard Visible top action"
+            ),
+            secondTopAction = TopActionData(
+                iconRes = R.drawable.ic_close_regular,
+                contentDescription = "PosterCard Close top action"
+            )
         )
     )
 }

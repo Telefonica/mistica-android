@@ -51,7 +51,7 @@ internal fun PosterCardMainContent(
                     24.dp
                 },
             )
-            .semantics { isTraversalGroup = true },
+            .semantics { isTraversalGroup = true }
     ) {
         if (tag != null) {
             Box(modifier = Modifier
