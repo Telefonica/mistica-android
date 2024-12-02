@@ -31,7 +31,7 @@ import com.telefonica.mistica.compose.theme.MisticaTheme
 internal fun PosterCardTopActions(
     modifier: Modifier = Modifier,
     firstTopAction: TopActionData?,
-    secondTopAction: TopActionData?
+    secondTopAction: TopActionData?,
 ) {
     Row(
         modifier = modifier
@@ -41,26 +41,25 @@ internal fun PosterCardTopActions(
         verticalAlignment = Alignment.CenterVertically
     ) {
         firstTopAction?.let {
-            TopAction(topActionData = it, modifier = Modifier.semantics {
-                traversalIndex = 8f
-            })
+            TopAction(topActionData = it, modifier = Modifier.semantics { traversalIndex = 7f })
         }
         secondTopAction?.let {
             if (firstTopAction != null) {
                 Spacer(modifier = Modifier.width(16.dp))
             }
-            TopAction(topActionData = it, modifier = Modifier.semantics {
-                traversalIndex = 9f
-            })
+            TopAction(topActionData = it, modifier = Modifier.semantics { traversalIndex = 8f })
         }
     }
 }
 
 @Composable
-internal fun TopAction(modifier: Modifier, topActionData: TopActionData) {
+internal fun TopAction(
+    modifier: Modifier = Modifier,
+    topActionData: TopActionData
+) {
     with(topActionData) {
         Box(
-            modifier = modifier
+            modifier = Modifier
                 .testTag(testTag.orEmpty())
                 .size(40.dp)
                 .clip(CircleShape)
@@ -73,7 +72,7 @@ internal fun TopAction(modifier: Modifier, topActionData: TopActionData) {
                     }
                 )
                 .wrapContentSize(align = Alignment.Center)
-
+                .then(modifier)
         ) {
             Image(
                 painter = painterResource(id = iconRes),

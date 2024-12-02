@@ -38,26 +38,23 @@ fun PosterCard(
 ) {
     val anyTopActionsLoaded = firstTopAction != null || secondTopAction != null
 
-    BoxWithConstraints(modifier = modifier.semantics(mergeDescendants = true) {  }) {
+    BoxWithConstraints(modifier = modifier.semantics { isTraversalGroup = true }) {
         androidx.compose.material.Card(
             elevation = 0.dp,
             shape = RoundedCornerShape(MisticaTheme.radius.containerBorderRadius),
             modifier = Modifier
                 .width(maxWidth)
-                .clickable(enabled = onClickAction != null) {
-                    onClickAction?.invoke()
-                }
+//                .clickable(enabled = onClickAction != null) {
+//                    onClickAction?.invoke()
+//                }
                 .heightIn(
                     min = maxWidth / aspectRatio.ratio,
                     max = Dp.Infinity
                 )
-                .semantics { isTraversalGroup = true }
-//                .semantics(mergeDescendants = true) {
-//                    focused = true
-//                }
         ) {
-            PosterCardBackground(//modifier = Modifier.semantics { isTraversalGroup = true },
-                backgroundType = backgroundType) {
+            PosterCardBackground(
+                backgroundType = backgroundType
+            ) {
                 Column(
                     modifier = Modifier.align(alignment = Alignment.BottomCenter),
                     verticalArrangement = Arrangement.Bottom
@@ -66,7 +63,6 @@ fun PosterCard(
                         Spacer(modifier = Modifier.height(40.dp))
                     }
                     PosterCardMainContent(
-//                        modifier = Modifier.semantics { isTraversalGroup = true },
                         backgroundType = backgroundType,
                         tag = headline,
                         preTitle = preTitle,
@@ -79,7 +75,6 @@ fun PosterCard(
                 if (anyTopActionsLoaded) {
                     PosterCardTopActions(
                         modifier = Modifier.align(alignment = Alignment.TopCenter),
-//                            .semantics { isTraversalGroup = true },
                         firstTopAction = firstTopAction,
                         secondTopAction = secondTopAction
                     )

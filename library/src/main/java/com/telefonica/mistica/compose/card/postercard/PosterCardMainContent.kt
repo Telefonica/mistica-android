@@ -11,8 +11,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shadow
 import androidx.compose.ui.graphics.SolidColor
-import androidx.compose.ui.semantics.heading
-import androidx.compose.ui.semantics.isTraversalGroup
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.traversalIndex
 import androidx.compose.ui.text.TextStyle
@@ -51,15 +49,10 @@ internal fun PosterCardMainContent(
                     24.dp
                 },
             )
-            .semantics { isTraversalGroup = true }
     ) {
         if (tag != null) {
-            Box(modifier = Modifier
-                .padding(top = 16.dp, bottom = 20.dp)
-                .semantics {
-                    traversalIndex = 2f
-                }) {
-                tag.build()
+            Box(modifier = Modifier.padding(top = 16.dp, bottom = 20.dp)) {
+                tag.withModifier(modifier = Modifier.semantics { traversalIndex = 2f }).build()
             }
         }
 
@@ -67,9 +60,7 @@ internal fun PosterCardMainContent(
             PosterCardText(
                 modifier = Modifier
                     .padding(top = 4.dp)
-                    .semantics {
-                        traversalIndex = 3f
-                    },
+                    .semantics { traversalIndex = 3f },
                 textValue = preTitle,
                 textStyle = MisticaTheme.typography.preset1,
                 inverseDisplay = backgroundType.inverseDisplay
@@ -80,10 +71,7 @@ internal fun PosterCardMainContent(
             PosterCardText(
                 modifier = Modifier
                     .padding(top = 4.dp)
-                    .semantics {
-                        heading()
-                        traversalIndex = 1f
-                    },
+                    .semantics { traversalIndex = 1f },
                 textValue = title,
                 textStyle = MisticaTheme.typography.presetCardTitle,
                 inverseDisplay = backgroundType.inverseDisplay
@@ -93,9 +81,7 @@ internal fun PosterCardMainContent(
             PosterCardText(
                 modifier = Modifier
                     .padding(top = 4.dp)
-                    .semantics {
-                        traversalIndex = 4f
-                    },
+                    .semantics { traversalIndex = 4f },
                 textValue = subtitle,
                 textStyle = MisticaTheme.typography.preset2,
                 inverseDisplay = backgroundType.inverseDisplay
@@ -105,9 +91,7 @@ internal fun PosterCardMainContent(
             PosterCardText(
                 modifier = Modifier
                     .padding(top = 8.dp)
-                    .semantics {
-                        traversalIndex = 5f
-                    },
+                    .semantics { traversalIndex = 5f },
                 textValue = description,
                 textStyle = MisticaTheme.typography.preset2,
                 inverseDisplay = backgroundType.inverseDisplay
@@ -116,9 +100,8 @@ internal fun PosterCardMainContent(
         customContent?.let {
             Box(modifier = Modifier
                 .padding(top = 4.dp, bottom = 24.dp)
-                .semantics {
-                    traversalIndex = 6f
-                }) {
+                .semantics { traversalIndex = 6f }
+            ) {
                 it()
             }
         }

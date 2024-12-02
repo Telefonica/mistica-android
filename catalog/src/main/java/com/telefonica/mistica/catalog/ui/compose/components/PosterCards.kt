@@ -57,7 +57,7 @@ fun PosterCards() {
     var subtitle: String by remember { mutableStateOf("Subtitle") }
     var description: String by remember { mutableStateOf("Description") }
 
-    var withAdditionalContent: Boolean by remember { mutableStateOf(false) }
+    var withAdditionalContent: Boolean by remember { mutableStateOf(true) }
 
 
     Column(
