@@ -14,10 +14,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
-import androidx.compose.ui.semantics.isTraversalGroup
-import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.zIndex
 import com.telefonica.mistica.compose.tag.Tag
 import com.telefonica.mistica.compose.theme.MisticaTheme
 
@@ -38,15 +37,15 @@ fun PosterCard(
 ) {
     val anyTopActionsLoaded = firstTopAction != null || secondTopAction != null
 
-    BoxWithConstraints(modifier = modifier.semantics { isTraversalGroup = true }) {
+    BoxWithConstraints(modifier = modifier) {
         androidx.compose.material.Card(
             elevation = 0.dp,
             shape = RoundedCornerShape(MisticaTheme.radius.containerBorderRadius),
             modifier = Modifier
                 .width(maxWidth)
-//                .clickable(enabled = onClickAction != null) {
-//                    onClickAction?.invoke()
-//                }
+                .clickable(enabled = onClickAction != null) {
+                    onClickAction?.invoke()
+                }
                 .heightIn(
                     min = maxWidth / aspectRatio.ratio,
                     max = Dp.Infinity
@@ -74,7 +73,7 @@ fun PosterCard(
                 }
                 if (anyTopActionsLoaded) {
                     PosterCardTopActions(
-                        modifier = Modifier.align(alignment = Alignment.TopCenter),
+                        modifier = Modifier.align(alignment = Alignment.TopCenter).zIndex(1f),
                         firstTopAction = firstTopAction,
                         secondTopAction = secondTopAction
                     )
