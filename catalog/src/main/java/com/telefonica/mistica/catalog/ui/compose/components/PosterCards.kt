@@ -50,14 +50,14 @@ fun PosterCards() {
     var inverseDisplay: Boolean by remember { mutableStateOf(true) }
     var backgroundType: BackgroundType by remember { mutableStateOf(BackgroundType.IMAGE) }
 
-    var topActionsType: TopActionsType by remember { mutableStateOf(TopActionsType.TWO_ACTIONS) }
+    var topActionsType: TopActionsType by remember { mutableStateOf(TopActionsType.NONE) }
 
     var preTitle: String by remember { mutableStateOf("Pretitle") }
     var title: String by remember { mutableStateOf("Title") }
     var subtitle: String by remember { mutableStateOf("Subtitle") }
     var description: String by remember { mutableStateOf("Description") }
 
-    var withAdditionalContent: Boolean by remember { mutableStateOf(true) }
+    var withAdditionalContent: Boolean by remember { mutableStateOf(false) }
 
 
     Column(

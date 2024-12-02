@@ -13,7 +13,6 @@ import androidx.compose.ui.res.painterResource
 
 @Composable
 internal fun PosterCardBackground(
-    modifier: Modifier = Modifier,
     backgroundType: PosterCardBackgroundType,
     content: @Composable BoxScope.() -> Unit
 ) {
@@ -26,7 +25,6 @@ internal fun PosterCardBackground(
                     SolidColor(Color.Transparent)
                 },
             )
-            .then(modifier)
     ) {
         if (backgroundType is PosterCardBackgroundType.Image) {
             Image(

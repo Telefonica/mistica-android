@@ -22,9 +22,9 @@ import com.telefonica.mistica.compose.theme.MisticaTheme
 
 @Composable
 fun PosterCard(
-    modifier: Modifier = Modifier,
     aspectRatio: PosterCardAspectRatio,
     backgroundType: PosterCardBackgroundType,
+    modifier: Modifier = Modifier,
     headline: Tag? = null,
     preTitle: String? = null,
     title: String? = null,
@@ -51,9 +51,7 @@ fun PosterCard(
                     max = Dp.Infinity
                 )
         ) {
-            PosterCardBackground(
-                backgroundType = backgroundType
-            ) {
+            PosterCardBackground(backgroundType = backgroundType) {
                 Column(
                     modifier = Modifier.align(alignment = Alignment.BottomCenter),
                     verticalArrangement = Arrangement.Bottom

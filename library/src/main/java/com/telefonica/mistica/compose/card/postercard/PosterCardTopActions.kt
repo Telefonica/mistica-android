@@ -22,8 +22,6 @@ import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.semantics.semantics
-import androidx.compose.ui.semantics.traversalIndex
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.theme.MisticaTheme
 
@@ -41,22 +39,19 @@ internal fun PosterCardTopActions(
         verticalAlignment = Alignment.CenterVertically
     ) {
         firstTopAction?.let {
-            TopAction(topActionData = it, modifier = Modifier.semantics { traversalIndex = 7f })
+            TopAction(topActionData = it)
         }
         secondTopAction?.let {
             if (firstTopAction != null) {
                 Spacer(modifier = Modifier.width(16.dp))
             }
-            TopAction(topActionData = it, modifier = Modifier.semantics { traversalIndex = 8f })
+            TopAction(topActionData = it)
         }
     }
 }
 
 @Composable
-internal fun TopAction(
-    modifier: Modifier = Modifier,
-    topActionData: TopActionData
-) {
+internal fun TopAction(topActionData: TopActionData) {
     with(topActionData) {
         Box(
             modifier = Modifier
@@ -72,7 +67,6 @@ internal fun TopAction(
                     }
                 )
                 .wrapContentSize(align = Alignment.Center)
-                .then(modifier)
         ) {
             Image(
                 painter = painterResource(id = iconRes),
