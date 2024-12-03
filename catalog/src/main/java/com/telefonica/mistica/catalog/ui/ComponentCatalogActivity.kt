@@ -64,6 +64,7 @@ import com.telefonica.mistica.catalog.ui.compose.components.Lists
 import com.telefonica.mistica.catalog.ui.compose.components.LoadErrorFeedbacks
 import com.telefonica.mistica.catalog.ui.compose.components.MediaCards
 import com.telefonica.mistica.catalog.ui.compose.components.PopOvers
+import com.telefonica.mistica.catalog.ui.compose.components.PosterCards
 import com.telefonica.mistica.catalog.ui.compose.components.Skeletons
 import com.telefonica.mistica.catalog.ui.compose.components.Steppers
 import com.telefonica.mistica.catalog.ui.compose.components.TabsCatalog
@@ -128,7 +129,8 @@ class ComponentCatalogActivity : AppCompatActivity() {
             Section.CALLOUTS to ::setCalloutsCatalogFragment,
             Section.SHEET to ::setSheetCatalogFragment,
             Section.CAROUSEL to ::setCarouselFragment,
-            Section.SKELETON to ::setSkeletonFragment
+            Section.SKELETON to ::setSkeletonFragment,
+            Section.POSTER_CARD to ::setPosterCardFragment
         )
 
         val section = intent.getSerializableExtra(EXTRA_SECTION) as? Section
@@ -208,6 +210,12 @@ class ComponentCatalogActivity : AppCompatActivity() {
         setPageAdapterWithTabs(
             classicComponent = DataCardFragment(),
             composeComponent = { DataCards() })
+    }
+
+    private fun setPosterCardFragment() {
+        setPageAdapterWithTabs(
+            classicComponent = null,
+            composeComponent = { PosterCards() })
     }
 
     private fun setMediaCardsFragment() {
@@ -398,5 +406,6 @@ enum class Section {
     SHEET,
     CAROUSEL,
     SKELETON,
+    POSTER_CARD
 }
 

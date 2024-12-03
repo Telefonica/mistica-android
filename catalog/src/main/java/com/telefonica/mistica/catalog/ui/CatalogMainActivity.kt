@@ -100,6 +100,7 @@ class CatalogMainActivity : AppCompatActivity() {
             SectionItem("Lists", R.drawable.ic_lists, Section.LISTS),
             SectionItem("Load Error Feedback", R.drawable.ic_load_feedback_error, Section.LOAD_ERROR_FEEDBACK),
             SectionItem("Media Card", R.drawable.ic_cards, Section.MEDIA_CARDS),
+            SectionItem("Poster Card", R.drawable.ic_cards, Section.POSTER_CARD),
             SectionItem("Filters", R.drawable.ic_filters, Section.FILTERS),
             SectionItem("PopOvers", R.drawable.ic_popovers, Section.POPOVERS),
             SectionItem("Scroll Content indicator", R.drawable.ic_feedbacks, Section.SCROLL_CONTENT_INDICATOR),
