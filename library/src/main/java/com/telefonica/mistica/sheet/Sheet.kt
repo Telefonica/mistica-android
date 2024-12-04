@@ -250,6 +250,7 @@ private fun ListInformative.toView(context: Context): View =
     RecyclerView(context).also {
         it.layoutManager = LinearLayoutManager(context)
         it.adapter = InformativeListAdapter(this.elements.mapToInformativeViewData())
+        it.configureWithFullWidthLayout()
     }
 
 private fun BottomActions.toView(onSheetTapped: InternalOnSheetTapped, container: ViewGroup): View {

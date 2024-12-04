@@ -54,11 +54,7 @@ internal class InformativeListAdapter(val items: List<RowInformativeViewData>) :
             }
         }
 
-        if (position == items.size - 1) {
-            holder.bottomExtraSpace.visibility = View.VISIBLE
-        } else {
-            holder.bottomExtraSpace.visibility = View.GONE
-        }
+        holder.bottomExtraSpace.visibility = View.VISIBLE
     }
 
     override fun getItemCount(): Int = items.size
