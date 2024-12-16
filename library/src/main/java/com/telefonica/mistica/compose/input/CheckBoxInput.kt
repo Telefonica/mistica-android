@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.material.Checkbox
 import androidx.compose.material.CheckboxDefaults
 import androidx.compose.material.ExperimentalMaterialApi
+import androidx.compose.material.LocalMinimumInteractiveComponentEnforcement
 import androidx.compose.material.LocalMinimumTouchTargetEnforcement
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
@@ -32,7 +33,7 @@ fun CheckBoxInput(
         modifier = modifier.alpha(enabled)
     ) {
         Row {
-            CompositionLocalProvider(LocalMinimumTouchTargetEnforcement provides false) {
+            CompositionLocalProvider(LocalMinimumInteractiveComponentEnforcement provides false) {
                 Checkbox(
                     checked = checked,
                     onCheckedChange = onCheckedChange,
