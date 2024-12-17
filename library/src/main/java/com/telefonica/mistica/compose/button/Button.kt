@@ -22,9 +22,10 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.ContentAlpha
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.LocalContentAlpha
+import androidx.compose.material.LocalRippleConfiguration
 import androidx.compose.material.Text
-import androidx.compose.material.ripple.LocalRippleTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.getValue
@@ -55,6 +56,7 @@ private val iconSpacing = 10.dp
 private val easing = CubicBezierEasing(0.77f, 0f, 0.175f, 1f)
 private const val CHEVRON_ASPECT_RATIO = 8f / 20f
 
+@OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun Button(
     modifier: Modifier = Modifier,
@@ -78,7 +80,7 @@ fun Button(
 
     var originalWidth: Dp? by remember { mutableStateOf(null) }
 
-    CompositionLocalProvider(LocalRippleTheme provides style.rippleTheme) {
+    CompositionLocalProvider(LocalRippleConfiguration provides style.rippleConfiguration) {
         androidx.compose.material.Button(
             modifier = modifier
                 .defaultMinSize(size.minWidth, size.height)

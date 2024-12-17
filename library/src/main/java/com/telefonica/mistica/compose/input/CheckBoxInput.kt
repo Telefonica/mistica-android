@@ -6,18 +6,13 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.Checkbox
 import androidx.compose.material.CheckboxDefaults
-import androidx.compose.material.ExperimentalMaterialApi
-import androidx.compose.material.LocalMinimumInteractiveComponentEnforcement
-import androidx.compose.material.LocalMinimumTouchTargetEnforcement
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.theme.MisticaTheme
 import com.telefonica.mistica.compose.ui.alpha
 
-@OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun CheckBoxInput(
     text: String,
@@ -33,22 +28,20 @@ fun CheckBoxInput(
         modifier = modifier.alpha(enabled)
     ) {
         Row {
-            CompositionLocalProvider(LocalMinimumInteractiveComponentEnforcement provides false) {
-                Checkbox(
-                    checked = checked,
-                    onCheckedChange = onCheckedChange,
-                    enabled = enabled,
-                    colors = CheckboxDefaults.colors(
-                        checkedColor = MisticaTheme.colors.controlActivated,
-                        uncheckedColor = MisticaTheme.colors.control,
-                        disabledColor = if (checked) {
-                            MisticaTheme.colors.controlActivated
-                        } else {
-                            MisticaTheme.colors.control
-                        }
-                    )
+            Checkbox(
+                checked = checked,
+                onCheckedChange = onCheckedChange,
+                enabled = enabled,
+                colors = CheckboxDefaults.colors(
+                    checkedColor = MisticaTheme.colors.controlActivated,
+                    uncheckedColor = MisticaTheme.colors.control,
+                    disabledColor = if (checked) {
+                        MisticaTheme.colors.controlActivated
+                    } else {
+                        MisticaTheme.colors.control
+                    }
                 )
-            }
+            )
             Spacer(modifier = Modifier.width(8.dp))
             TextWithLinks(text, links)
         }
