@@ -1,16 +1,16 @@
 package com.telefonica.mistica.compose.input
 
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.text.ClickableText
+import androidx.compose.foundation.text.BasicText
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.AnnotatedString
+import androidx.compose.ui.text.LinkAnnotation
 import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.TextLinkStyles
 import androidx.compose.ui.text.buildAnnotatedString
-import androidx.compose.ui.text.style.TextDecoration
-import androidx.compose.ui.text.withStyle
+import androidx.compose.ui.text.withLink
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.theme.MisticaTheme
@@ -22,91 +22,50 @@ internal fun TextWithLinks(
     modifier: Modifier = Modifier,
 ) {
     val textLinkColour = MisticaTheme.colors.textLink
-    val linksText = remember { getAnnotatedLinksString(text = text, links = links, highlightColor = textLinkColour) }
-    ClickableText(
+    val linksText = remember { getAnnotatedLinksString(originalText = text, links = links, highlightColor = textLinkColour) }
+
+    BasicText(
         text = linksText,
         style = MisticaTheme.typography.preset3,
         modifier = modifier,
-        onClick = { offset ->
-            links.forEach { textLink ->
-                linksText.getStringAnnotations(
-                    tag = textLink.link,
-                    start = offset,
-                    end = offset,
-                ).firstOrNull()?.let {
-                    textLink.onLinkTapped()
-                }
-            }
-        },
     )
 }
 
-internal fun getAnnotatedLinksString(
-    text: String,
+fun getAnnotatedLinksString(
+    originalText: String,
     links: List<TextLink>,
     highlightColor: Color,
-): AnnotatedString = buildAnnotatedString {
-    val toHighlight: List<String> = links.map { it.link }
-    val toHighlightRegex =
-        toHighlight.joinToString(separator = "|").toRegex()
-    val notHighlights = getNotHighlightedElements(text, toHighlightRegex)
-    if (toHighlight.isNotEmpty()) {
-        notHighlights.zip(toHighlight + "") { message, highlight ->
-            append(message)
-            addHighlightedChunk(highlight, highlightColor)
+) = buildAnnotatedString {
+    val linkMap = links.associateBy { it.link }
+    var currentIndex = 0
+
+    while (currentIndex < originalText.length) {
+        val linkEntry = linkMap.entries.find { (linkText, _) ->
+            originalText.startsWith(linkText, currentIndex)
         }
-    } else {
-        append(text)
-    }
-}
 
-private fun getNotHighlightedElements(
-    substring: String,
-    toHighlightRegex: Regex,
-) = substring.split(toHighlightRegex)
-
-private fun AnnotatedString.Builder.addHighlightedChunk(
-    highlight: String,
-    highlightColor: Color,
-) {
-    if (highlight.isNotEmpty()) {
-        highlight(
-            text = highlight,
-            tag = highlight,
-            highlightColor = highlightColor,
-        )
-    }
-}
-
-private fun AnnotatedString.Builder.highlight(
-    text: String,
-    tag: String,
-    textTransformation: (String) -> String = { it },
-    highlightColor: Color,
-) {
-    pushStringAnnotation(
-        tag = tag,
-        annotation = text,
-    )
-    highlightText(textTransformation(text), highlightColor)
-    pop()
-}
-
-private fun AnnotatedString.Builder.highlightText(
-    highlight: String,
-    highlightColor: Color,
-) {
-    withStyle(
-        style = SpanStyle(
-            color = highlightColor,
-            textDecoration = TextDecoration.None,
-        ),
-    ) {
-        append(highlight)
+        if (linkEntry != null) {
+            val (linkText, link) = linkEntry
+            withLink(
+                link = LinkAnnotation.Clickable(
+                    tag = TAG,
+                    styles = TextLinkStyles(style = SpanStyle(color = highlightColor)),
+                    linkInteractionListener = { link.onLinkTapped.invoke() },
+                ),
+            ) {
+                append(linkText)
+            }
+            currentIndex += linkText.length
+        } else {
+            append(originalText[currentIndex].toString())
+            currentIndex++
+        }
     }
 }
 
 data class TextLink(val link: String, val onLinkTapped: () -> Unit)
+
+private const val TAG = "TextWithLinks"
 
 @Preview(showBackground = true)
 @Composable

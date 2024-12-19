@@ -161,7 +161,7 @@ fun HighLightedCard(
                     onClick = onCloseButton
                 ) {
                     Icon(
-                        imageVector = Icons.Default.Close,
+                        imageVector = Icons.Filled.Close,
                         contentDescription = null,
                         tint = MisticaTheme.colors.neutralHigh
                     )
