@@ -48,7 +48,7 @@ fun getAnnotatedLinksString(
             val (linkText, link) = linkEntry
             withLink(
                 link = LinkAnnotation.Clickable(
-                    tag = TAG,
+                    tag = link.tag,
                     styles = TextLinkStyles(style = SpanStyle(color = highlightColor)),
                     linkInteractionListener = { link.onLinkTapped.invoke() },
                 ),
@@ -63,7 +63,7 @@ fun getAnnotatedLinksString(
     }
 }
 
-data class TextLink(val link: String, val onLinkTapped: () -> Unit)
+data class TextLink(val link: String, val tag: String = TAG, val onLinkTapped: () -> Unit)
 
 private const val TAG = "TextWithLinks"
 
