@@ -1,11 +1,15 @@
+@file:OptIn(ExperimentalMaterialApi::class) // Required for RippleConfiguration usage
+
 package com.telefonica.mistica.compose.button
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.ButtonColors
 import androidx.compose.material.ButtonDefaults
+import androidx.compose.material.ExperimentalMaterialApi
+import androidx.compose.material.RippleConfiguration
+import androidx.compose.material.RippleDefaults
 import androidx.compose.material.ripple.RippleAlpha
-import androidx.compose.material.ripple.RippleTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.dimensionResource
@@ -18,21 +22,12 @@ internal class ButtonStyleConfig(
     val disabledTextColor: Color = textColor,
     val border: BorderStroke? = null,
     val disabledBorder: BorderStroke? = null,
-    val rippleTheme: MisticaRippleTheme
+    val rippleConfiguration: RippleConfiguration,
 )
 
-class MisticaRippleTheme(
-    private val color: Color,
-    private val alpha: RippleAlpha? = null
-) : RippleTheme {
-
-    @Composable
-    override fun defaultColor(): Color = color
-
-    @Composable
-    override fun rippleAlpha(): RippleAlpha = alpha ?: RippleTheme.defaultRippleAlpha(color, !isSystemInDarkTheme())
-
-}
+@Composable
+private fun getMisticaRippleConfiguration(color: Color, alpha: RippleAlpha? = null) =
+    RippleConfiguration(color, alpha ?: RippleDefaults.rippleAlpha(color, !isSystemInDarkTheme()))
 
 @Composable
 @Suppress("CyclomaticComplexMethod")
@@ -65,12 +60,12 @@ private fun primary(
     ),
     textColor: Color = MisticaTheme.colors.textButtonPrimary,
     disabledTextColor: Color = textColor.disabled(),
-    rippleTheme: MisticaRippleTheme = MisticaRippleTheme(MisticaTheme.colors.buttonPrimaryBackgroundPressed),
+    rippleConfiguration: RippleConfiguration = getMisticaRippleConfiguration(MisticaTheme.colors.buttonPrimaryBackgroundPressed),
 ) = ButtonStyleConfig(
     buttonColors = buttonColors,
     textColor = textColor,
     disabledTextColor = disabledTextColor,
-    rippleTheme = rippleTheme
+    rippleConfiguration = rippleConfiguration,
 )
 
 @Composable
@@ -81,14 +76,14 @@ private fun primaryInverse() = primary(
     ),
     textColor = MisticaTheme.colors.textButtonPrimaryInversePressed,
     disabledTextColor = MisticaTheme.colors.textButtonPrimaryInverse,
-    rippleTheme = MisticaRippleTheme(MisticaTheme.colors.buttonPrimaryBackgroundInversePressed),
+    rippleConfiguration = getMisticaRippleConfiguration(MisticaTheme.colors.buttonPrimaryBackgroundInversePressed),
 )
 
 @Composable
 private fun secondary(
     textColor: Color = MisticaTheme.colors.textButtonSecondary,
     strokeColor: Color = MisticaTheme.colors.buttonSecondaryBorder,
-    rippleTheme: MisticaRippleTheme = MisticaRippleTheme(MisticaTheme.colors.buttonSecondaryBackgroundPressed)
+    rippleConfiguration: RippleConfiguration = getMisticaRippleConfiguration(MisticaTheme.colors.buttonSecondaryBackgroundPressed)
 ) = ButtonStyleConfig(
     buttonColors = ButtonDefaults.outlinedButtonColors(
         backgroundColor = Color.Transparent,
@@ -105,15 +100,16 @@ private fun secondary(
         dimensionResource(R.dimen.button_outline_stroke_width),
         strokeColor.disabled()
     ),
-    rippleTheme = rippleTheme
+    rippleConfiguration = rippleConfiguration
 )
+
 
 @Composable
 private fun secondaryInverseConfig() =
     secondary(
         textColor = MisticaTheme.colors.textButtonSecondaryInverse,
         strokeColor = MisticaTheme.colors.buttonSecondaryBorderInverse,
-        rippleTheme = MisticaRippleTheme(MisticaTheme.colors.buttonSecondaryBackgroundInversePressed)
+        rippleConfiguration = getMisticaRippleConfiguration(MisticaTheme.colors.buttonSecondaryBackgroundInversePressed)
     )
 
 @Composable
@@ -122,7 +118,7 @@ private fun danger() = primary(
         backgroundColor = MisticaTheme.colors.buttonDangerBackground,
         disabledBackgroundColor = MisticaTheme.colors.buttonDangerBackground.disabled()
     ),
-    rippleTheme = MisticaRippleTheme(MisticaTheme.colors.buttonDangerBackgroundPressed)
+    rippleConfiguration = getMisticaRippleConfiguration(MisticaTheme.colors.buttonDangerBackgroundPressed)
 )
 
 @Composable
@@ -135,7 +131,7 @@ private fun link(
     ),
     textColor = textColor,
     disabledTextColor = textColor.disabled(),
-    rippleTheme = MisticaRippleTheme(MisticaTheme.colors.buttonLinkBackgroundPressed),
+    rippleConfiguration = getMisticaRippleConfiguration(MisticaTheme.colors.buttonLinkBackgroundPressed),
 )
 
 @Composable
@@ -156,7 +152,7 @@ private fun dangerLink(
     ),
     textColor = textColor,
     disabledTextColor = textColor.disabled(),
-    rippleTheme = MisticaRippleTheme(selectedBackgroundColor),
+    rippleConfiguration = getMisticaRippleConfiguration(selectedBackgroundColor),
 )
 
 @Composable
