@@ -21,6 +21,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.compose.tag.Tag
 import com.telefonica.mistica.compose.theme.MisticaTheme
 import com.telefonica.mistica.compose.theme.brand.MovistarBrand
@@ -64,25 +65,25 @@ fun Tags() {
                     .padding(top = 16.dp)
                     .height(60.dp)
             ) {
-                Tag(text = "Inverse", style = TagView.TYPE_INVERSE, modifier = Modifier.padding(8.dp), icon = android.R.drawable.ic_lock_power_off)
+                Tag(text = "Inverse", style = TagView.TYPE_INVERSE, modifier = Modifier.padding(8.dp), icon = R.drawable.icn_cross)
             }
             LazyVerticalGrid(
                 columns = GridCells.Fixed(3),
                 modifier = Modifier.padding(16.dp)
             ) {
-                item { Tag(text = "Promotion", style = TagView.TYPE_PROMO, modifier = Modifier.padding(4.dp), icon = android.R.drawable.ic_lock_power_off) }
-                item { Tag(text = "Active", style = TagView.TYPE_ACTIVE, modifier = Modifier.padding(4.dp), icon = android.R.drawable.ic_lock_power_off) }
-                item { Tag(text = "Inactive", style = TagView.TYPE_INACTIVE, modifier = Modifier.padding(4.dp), icon = android.R.drawable.ic_lock_power_off) }
-                item { Tag(text = "Success", style = TagView.TYPE_SUCCESS, modifier = Modifier.padding(4.dp), icon = android.R.drawable.ic_lock_power_off) }
-                item { Tag(text = "Warning", style = TagView.TYPE_WARNING, modifier = Modifier.padding(4.dp), icon = android.R.drawable.ic_lock_power_off) }
-                item { Tag(text = "Error", style = TagView.TYPE_ERROR, modifier = Modifier.padding(4.dp), icon = android.R.drawable.ic_lock_power_off) }
+                item { Tag(text = "Promotion", style = TagView.TYPE_PROMO, modifier = Modifier.padding(4.dp), icon = R.drawable.icn_cross) }
+                item { Tag(text = "Active", style = TagView.TYPE_ACTIVE, modifier = Modifier.padding(4.dp), icon = R.drawable.icn_cross) }
+                item { Tag(text = "Inactive", style = TagView.TYPE_INACTIVE, modifier = Modifier.padding(4.dp), icon = R.drawable.icn_cross) }
+                item { Tag(text = "Success", style = TagView.TYPE_SUCCESS, modifier = Modifier.padding(4.dp), icon = R.drawable.icn_cross) }
+                item { Tag(text = "Warning", style = TagView.TYPE_WARNING, modifier = Modifier.padding(4.dp), icon = R.drawable.icn_cross) }
+                item { Tag(text = "Error", style = TagView.TYPE_ERROR, modifier = Modifier.padding(4.dp), icon = R.drawable.icn_cross) }
             }
         }
 
         Divider(thickness = 2.dp)
 
         Tag(text = customText.value.text, style = TagView.TYPE_PROMO, modifier = Modifier.padding(top = 16.dp))
-        Tag(text = customText.value.text, style = TagView.TYPE_PROMO, modifier = Modifier.padding(top = 8.dp), icon = android.R.drawable.ic_lock_power_off)
+        Tag(text = customText.value.text, style = TagView.TYPE_PROMO, modifier = Modifier.padding(top = 8.dp), icon = R.drawable.icn_cross)
 
         Surface(
             color = MisticaTheme.colors.brand,
@@ -96,8 +97,7 @@ fun Tags() {
                 verticalArrangement = Arrangement.Center,
             ) {
                 Tag(text = customText.value.text, style = TagView.TYPE_INVERSE)
-                Tag(text = customText.value.text, style = TagView.TYPE_INVERSE, modifier = Modifier.padding(top = 8.dp), icon = android.R.drawable
-                    .ic_lock_power_off)
+                Tag(text = customText.value.text, style = TagView.TYPE_INVERSE, modifier = Modifier.padding(top = 8.dp), icon = R.drawable.icn_cross)
             }
         }
 
