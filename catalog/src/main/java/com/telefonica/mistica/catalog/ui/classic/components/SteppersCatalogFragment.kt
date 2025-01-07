@@ -1,5 +1,6 @@
 package com.telefonica.mistica.catalog.ui.classic.components
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -21,6 +22,7 @@ class SteppersCatalogFragment : Fragment() {
         return layoutInflater.inflate(R.layout.screen_steppers_catalog, container, false)
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -42,7 +44,7 @@ class SteppersCatalogFragment : Fragment() {
                     numberOfSteps.map { it.toString() }
                 )
             )
-            setText(2.toString())
+            setText(maxSteps.toString())
             setOnItemClickListener { _, _, position, _ ->
                 maxSteps = numberOfSteps[position]
                 currentStep = 1

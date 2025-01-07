@@ -115,8 +115,8 @@ fun TabsCatalog() {
             text = "Remove last tab",
             onClickListener = {
                 if (tabs.size > 1) {
-                    tabs = tabs.toMutableList().also {
-                        it.removeLast()
+                    tabs = tabs.toMutableList().apply {
+                        removeAt(lastIndex)
                     }
                     if (currentIndex >= tabs.size) {
                         currentIndex = tabs.size - 1

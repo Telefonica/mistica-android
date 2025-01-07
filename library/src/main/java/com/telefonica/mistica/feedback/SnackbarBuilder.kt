@@ -9,6 +9,7 @@ import android.text.style.ForegroundColorSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.accessibility.AccessibilityManager
+import android.widget.FrameLayout
 import androidx.annotation.AttrRes
 import androidx.annotation.StringRes
 import com.google.android.material.snackbar.BaseTransientBottomBar.BaseCallback
@@ -141,7 +142,8 @@ open class SnackbarBuilder(view: View?, text: String) {
         // Since we are inflating a custom layout, we pass a dummy text and apply
         // the expected one later on to our custom TextView
         val snackbar = Snackbar.make(view, "", duration)
-        val snackbarLayout = snackbar.view as Snackbar.SnackbarLayout
+
+        val snackbarLayout = snackbar.view as FrameLayout
 
         snackbarLayout.removeAllViews()
         val customLayout = LayoutInflater.from(snackbarLayout.context).inflate(R.layout.snackbar_layout, snackbarLayout, false)

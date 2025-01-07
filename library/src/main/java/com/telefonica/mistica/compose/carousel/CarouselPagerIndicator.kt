@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -78,7 +79,7 @@ fun CarouselPagerIndicator(
             }
         })
     }
-    var currentlySelected by remember { mutableStateOf(0) }
+    var currentlySelected by remember { mutableIntStateOf(0) }
     var shouldAnimate by remember { mutableStateOf(true) }
 
     val indicatorUnselectedModifier = remember {

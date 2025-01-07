@@ -45,6 +45,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.Density
 import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.theme.MisticaTheme
 import com.telefonica.mistica.compose.theme.brand.MovistarBrand
@@ -331,9 +332,12 @@ private fun Modifier.misticaTabIndicatorOffset(
         targetValue = currentTabPosition.left,
         animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing)
     )
+
     fillMaxWidth()
         .wrapContentSize(Alignment.BottomStart)
-        .offset(x = indicatorOffset)
+        .offset {
+            IntOffset(x = indicatorOffset.roundToPx(), y = 0)
+        }
         .width(currentTabWidth)
 }
 
