@@ -2,7 +2,7 @@ package com.telefonica.mistica.compose.input
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
@@ -30,7 +30,7 @@ fun TextAreaInput(
     keyboardOptions: KeyboardOptions = KeyboardOptions.Default,
 ) {
     var currentChars by remember {
-        mutableStateOf(0)
+        mutableIntStateOf(0)
     }
 
     TextInputImpl(

@@ -27,6 +27,11 @@ naming:
   FunctionNaming:
     active: true
     ignoreAnnotated: 'Composable'
+  MatchingDeclarationName:
+    active: true
+    excludes:
+      - '**/ButtonStyles.kt'
+
 
 empty-blocks:
   EmptyFunctionBlock:

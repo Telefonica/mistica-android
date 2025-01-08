@@ -1,5 +1,6 @@
 package com.telefonica.mistica.stepper
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.PorterDuff
 import android.graphics.PorterDuffColorFilter
@@ -84,6 +85,7 @@ internal class StepView @JvmOverloads constructor(
         }
     }
 
+    @SuppressLint("SetTextI18n")
     fun setStep(step: Int, isSelected: Boolean = false) {
         selectedStepTextView.text = step.toString()
         unselectedStepTextView.text = step.toString()
