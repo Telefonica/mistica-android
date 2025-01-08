@@ -68,7 +68,7 @@ class TitleView @JvmOverloads constructor(
     private var titleTextView: TextView
 
     init {
-        LayoutInflater.from(context).inflate(R.layout.title, this, true)
+        LayoutInflater.from(context).inflate(R.layout.title_view, this, true)
 
         titleTextView = findViewById(R.id.title_text)
         linkTextView = findViewById(R.id.link_text)
