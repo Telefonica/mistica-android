@@ -51,6 +51,7 @@ task sourceJar(type: Jar) {
 dependencies {
     implementation project(':library')
 
+    implementation "com.google.android.material:material:$material_version"
     implementation 'androidx.core:core-ktx:1.9.0'
     implementation "androidx.constraintlayout:constraintlayout-compose:$constraintComposeVersion"
     implementation 'androidx.activity:activity-compose:1.4.0'
