@@ -7,7 +7,6 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.defaultMinSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -33,7 +32,6 @@ import com.telefonica.mistica.tag.TagStyle
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_ACTIVE
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_ERROR
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_INACTIVE
-import com.telefonica.mistica.tag.TagView.Companion.TYPE_INVERSE
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_PROMO
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_SUCCESS
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_WARNING
@@ -122,14 +120,6 @@ internal fun TagPreview() {
                 .padding(vertical = 32.dp, horizontal = 16.dp)
                 .background(MisticaTheme.colors.backgroundContainer),
         ) {
-            Surface(
-                color = MisticaTheme.colors.brand,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(60.dp)
-            ) {
-                Tag(text = "Inverse", style = TYPE_INVERSE, modifier = Modifier.padding(8.dp), icon = android.R.drawable.ic_lock_power_off)
-            }
             LazyVerticalGrid(
                 columns = GridCells.Fixed(3),
                 modifier = Modifier.padding(16.dp)
@@ -154,6 +144,5 @@ private fun Int.getStyle() = when (this) {
     TYPE_SUCCESS -> with(MisticaTheme.colors) { tagBackgroundSuccess to tagTextSuccess }
     TYPE_WARNING -> with(MisticaTheme.colors) { tagBackgroundWarning to tagTextWarning }
     TYPE_ERROR -> with(MisticaTheme.colors) { tagBackgroundError to tagTextError }
-    TYPE_INVERSE -> with(MisticaTheme.colors) { inverse to brand }
     else -> with(MisticaTheme.colors) { tagBackgroundPromo to tagTextPromo }
 }

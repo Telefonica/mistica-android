@@ -161,7 +161,6 @@ private enum class TagColorsValues(@AttrRes val tagStyle: Int) {
     SUCCESS(TagView.TYPE_SUCCESS),
     WARNING(TagView.TYPE_WARNING),
     ERROR(TagView.TYPE_ERROR),
-    INVERSE(TagView.TYPE_INVERSE),
 }
 
 private val aspectRatioLabelsMaps = mapOf(

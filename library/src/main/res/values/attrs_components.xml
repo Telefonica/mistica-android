@@ -17,7 +17,6 @@
 		<enum name="success" value="3" />
 		<enum name="warning" value="4" />
 		<enum name="error" value="5" />
-		<enum name="inverse" value="6" />
 	</attr>
 
     <declare-styleable name="FeedbackScreen">

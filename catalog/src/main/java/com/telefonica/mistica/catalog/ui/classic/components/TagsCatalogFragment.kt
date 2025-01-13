@@ -30,8 +30,6 @@ class TagsCatalogFragment : Fragment() {
         val tagViews = listOf<TagView>(
             view.findViewById(R.id.regular_tag),
             view.findViewById(R.id.regular_with_icon_tag),
-            view.findViewById(R.id.inverse_tag),
-            view.findViewById(R.id.inverse_with_icon_tag),
         )
 
         textInput.addTextChangedListener(object : TextWatcher {
