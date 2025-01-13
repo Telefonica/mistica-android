@@ -148,12 +148,12 @@ internal fun TagPreview() {
 @Composable
 @Suppress("CyclomaticComplexMethod")
 private fun Int.getStyle() = when (this) {
-    TYPE_PROMO -> with(MisticaTheme.colors) { promoLow to promoHigh }
-    TYPE_ACTIVE -> with(MisticaTheme.colors) { brandLow to brand }
-    TYPE_INACTIVE -> with(MisticaTheme.colors) { neutralLow to neutralMedium }
-    TYPE_SUCCESS -> with(MisticaTheme.colors) { successLow to successHigh }
-    TYPE_WARNING -> with(MisticaTheme.colors) { warningLow to warningHigh }
-    TYPE_ERROR -> with(MisticaTheme.colors) { errorLow to errorHigh }
+    TYPE_PROMO -> with(MisticaTheme.colors) { tagBackgroundPromo to tagTextPromo }
+    TYPE_ACTIVE -> with(MisticaTheme.colors) { tagBackgroundActive to tagTextActive }
+    TYPE_INACTIVE -> with(MisticaTheme.colors) { tagBackgroundInactive to tagTextInactive }
+    TYPE_SUCCESS -> with(MisticaTheme.colors) { tagBackgroundSuccess to tagTextSuccess }
+    TYPE_WARNING -> with(MisticaTheme.colors) { tagBackgroundWarning to tagTextWarning }
+    TYPE_ERROR -> with(MisticaTheme.colors) { tagBackgroundError to tagTextError }
     TYPE_INVERSE -> with(MisticaTheme.colors) { inverse to brand }
-    else -> with(MisticaTheme.colors) { promoLow to promoHigh }
+    else -> with(MisticaTheme.colors) { tagBackgroundPromo to tagTextPromo }
 }
