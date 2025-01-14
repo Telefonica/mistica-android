@@ -13,7 +13,6 @@ import com.telefonica.mistica.R
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_ACTIVE
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_ERROR
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_INACTIVE
-import com.telefonica.mistica.tag.TagView.Companion.TYPE_INVERSE
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_PROMO
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_SUCCESS
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_WARNING
@@ -28,7 +27,6 @@ import com.telefonica.mistica.util.getThemeColor
     TYPE_SUCCESS,
     TYPE_WARNING,
     TYPE_ERROR,
-    TYPE_INVERSE,
 )
 annotation class TagStyle
 
@@ -88,14 +86,13 @@ class TagView @JvmOverloads constructor(
     }
 
     private fun Int.getStyle() = when (this) {
-        TYPE_PROMO -> R.attr.colorPromoLow to R.attr.colorPromoHigh
-        TYPE_ACTIVE -> R.attr.colorBrandLow to R.attr.colorBrand
-        TYPE_INACTIVE -> R.attr.colorNeutralLow to R.attr.colorNeutralMedium
-        TYPE_SUCCESS -> R.attr.colorSuccessLow to R.attr.colorSuccessHigh
-        TYPE_WARNING -> R.attr.colorWarningLow to R.attr.colorWarningHigh
-        TYPE_ERROR -> R.attr.colorErrorLow to R.attr.colorErrorHigh
-        TYPE_INVERSE -> R.attr.colorInverse to R.attr.colorBrand
-        else -> R.attr.colorPromoLow to R.attr.colorPromoHigh
+        TYPE_PROMO -> R.attr.colorTagBackgroundPromo to R.attr.colorTagTextPromo
+        TYPE_ACTIVE -> R.attr.colorTagBackgroundActive to R.attr.colorTagTextActive
+        TYPE_INACTIVE -> R.attr.colorTagBackgroundInactive to R.attr.colorTagTextInactive
+        TYPE_SUCCESS -> R.attr.colorTagBackgroundSuccess to R.attr.colorTagTextSuccess
+        TYPE_WARNING -> R.attr.colorTagBackgroundWarning to R.attr.colorTagTextWarning
+        TYPE_ERROR -> R.attr.colorTagBackgroundError to R.attr.colorTagTextError
+        else -> R.attr.colorTagBackgroundPromo to R.attr.colorTagTextPromo
     }
 
     companion object {
@@ -105,6 +102,5 @@ class TagView @JvmOverloads constructor(
         const val TYPE_SUCCESS = 3
         const val TYPE_WARNING = 4
         const val TYPE_ERROR = 5
-        const val TYPE_INVERSE = 6
     }
 }

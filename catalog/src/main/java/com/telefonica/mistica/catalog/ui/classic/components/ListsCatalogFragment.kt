@@ -29,7 +29,6 @@ import com.telefonica.mistica.list.MisticaRecyclerView
 import com.telefonica.mistica.list.model.ImageDimensions
 import com.telefonica.mistica.tag.TagStyle
 import com.telefonica.mistica.tag.TagView
-import com.telefonica.mistica.tag.TagView.Companion.TYPE_INVERSE
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_PROMO
 import com.telefonica.mistica.util.convertDpToPx
 
@@ -194,7 +193,7 @@ class ListsCatalogFragment : Fragment() {
                 val headlineText = "Headline"
                 setHeadlineLayout(layoutRes = R.layout.list_row_tag_headline, contentDescription = headlineText)
                 (getHeadline()!! as TagView).apply {
-                    setTagStyle(if (withInverseBackground) TYPE_INVERSE else withHeadlineStyle)
+                    setTagStyle(withHeadlineStyle)
                     text = headlineText
                 }
             } else {

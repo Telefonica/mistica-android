@@ -148,7 +148,6 @@ private enum class TagColors(@AttrRes val tagStyle: Int) {
     SUCCESS(TagView.TYPE_SUCCESS),
     WARNING(TagView.TYPE_WARNING),
     ERROR(TagView.TYPE_ERROR),
-    INVERSE(TagView.TYPE_INVERSE),
 }
 
 private enum class IconTypes(@AttrRes val iconType: Int) {

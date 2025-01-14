@@ -9,27 +9,6 @@
 		android:padding="16dp"
 		>
 
-	<FrameLayout
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:background="?attr/colorBrand"
-			android:layout_marginTop="16dp"
-			android:padding="16dp"
-			android:gravity="center"
-			>
-
-		<com.telefonica.mistica.tag.TagView
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_columnWeight="1"
-				android:layout_gravity="center"
-				android:text="Inverse"
-				app:tagStyle="inverse"
-				tools:text="@tools:sample/full_names"
-				/>
-
-	</FrameLayout>
-
 	<GridLayout
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
@@ -97,28 +76,6 @@
 				tools:text="@tools:sample/full_names"
 				/>
 	</GridLayout>
-
-	<FrameLayout
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:background="?attr/colorBrand"
-			android:layout_marginTop="16dp"
-			android:padding="16dp"
-			android:gravity="center"
-			>
-
-		<com.telefonica.mistica.tag.TagView
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_columnWeight="1"
-				android:layout_gravity="center"
-				android:text="Inverse"
-				app:tagStyle="inverse"
-				app:tagIcon="@drawable/icn_cross"
-				tools:text="@tools:sample/full_names"
-				/>
-
-	</FrameLayout>
 
 	<GridLayout
 			android:layout_width="match_parent"
@@ -221,38 +178,6 @@
 			app:tagIcon="@drawable/icn_cross"
 			tools:text="@tools:sample/full_names"
 			/>
-
-	<LinearLayout
-			android:gravity="center"
-			android:layout_width="match_parent"
-			android:layout_marginTop="16dp"
-			android:layout_height="wrap_content"
-			android:padding="16dp"
-			android:background="?attr/colorBrand"
-			android:orientation="vertical"
-			>
-
-		<com.telefonica.mistica.tag.TagView
-				android:id="@+id/inverse_tag"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:text="Promotion"
-				app:tagStyle="inverse"
-				tools:text="@tools:sample/full_names"
-				/>
-
-		<com.telefonica.mistica.tag.TagView
-				android:id="@+id/inverse_with_icon_tag"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_marginTop="8dp"
-				android:text="Promotion"
-				app:tagStyle="inverse"
-				app:tagIcon="@drawable/icn_cross"
-				tools:text="@tools:sample/full_names"
-				/>
-
-	</LinearLayout>
 
 	<com.telefonica.mistica.input.TextInput
 			android:id="@+id/textInput"

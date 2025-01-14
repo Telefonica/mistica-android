@@ -21,7 +21,6 @@ import com.telefonica.mistica.tag.TagStyle
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_ACTIVE
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_ERROR
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_INACTIVE
-import com.telefonica.mistica.tag.TagView.Companion.TYPE_INVERSE
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_PROMO
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_SUCCESS
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_WARNING
@@ -132,7 +131,6 @@ class DataCardFragment : Fragment() {
         SUCCESS(TYPE_SUCCESS),
         WARNING(TYPE_WARNING),
         ERROR(TYPE_ERROR),
-        INVERSE(TYPE_INVERSE),
     }
 
     private enum class IconTypes(@AttrRes val iconType: Int) {

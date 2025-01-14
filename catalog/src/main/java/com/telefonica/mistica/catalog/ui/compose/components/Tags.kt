@@ -4,12 +4,10 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.material.Divider
-import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.material.TextField
 import androidx.compose.material.TextFieldDefaults
@@ -34,19 +32,11 @@ fun Tags() {
     Column(
         modifier = Modifier.padding(vertical = 32.dp, horizontal = 16.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center,
+        verticalArrangement = Arrangement.Top,
     ) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
-            Surface(
-                color = MisticaTheme.colors.brand,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(60.dp)
-            ) {
-                Tag(text = "Inverse", style = TagView.TYPE_INVERSE, modifier = Modifier.padding(8.dp))
-            }
             LazyVerticalGrid(
                 columns = GridCells.Fixed(3),
                 modifier = Modifier.padding(16.dp)
@@ -57,15 +47,6 @@ fun Tags() {
                 item { Tag(text = "Success", style = TagView.TYPE_SUCCESS, modifier = Modifier.padding(4.dp)) }
                 item { Tag(text = "Warning", style = TagView.TYPE_WARNING, modifier = Modifier.padding(4.dp)) }
                 item { Tag(text = "Error", style = TagView.TYPE_ERROR, modifier = Modifier.padding(4.dp)) }
-            }
-            Surface(
-                color = MisticaTheme.colors.brand,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(top = 16.dp)
-                    .height(60.dp)
-            ) {
-                Tag(text = "Inverse", style = TagView.TYPE_INVERSE, modifier = Modifier.padding(8.dp), icon = R.drawable.icn_cross)
             }
             LazyVerticalGrid(
                 columns = GridCells.Fixed(3),
@@ -84,22 +65,6 @@ fun Tags() {
 
         Tag(text = customText.value.text, style = TagView.TYPE_PROMO, modifier = Modifier.padding(top = 16.dp))
         Tag(text = customText.value.text, style = TagView.TYPE_PROMO, modifier = Modifier.padding(top = 8.dp), icon = R.drawable.icn_cross)
-
-        Surface(
-            color = MisticaTheme.colors.brand,
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(top = 16.dp)
-                .height(96.dp)
-        ) {
-            Column(
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center,
-            ) {
-                Tag(text = customText.value.text, style = TagView.TYPE_INVERSE)
-                Tag(text = customText.value.text, style = TagView.TYPE_INVERSE, modifier = Modifier.padding(top = 8.dp), icon = R.drawable.icn_cross)
-            }
-        }
 
         TextField(
             value = customText.value,
