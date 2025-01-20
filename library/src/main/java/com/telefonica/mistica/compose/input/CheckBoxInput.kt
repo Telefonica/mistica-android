@@ -9,6 +9,7 @@ import androidx.compose.material.Checkbox
 import androidx.compose.material.CheckboxDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -35,6 +36,7 @@ fun CheckBoxInput(
             role = Role.Checkbox
         )) {
             Checkbox(
+                modifier = Modifier.testTag(CheckBoxInputTestTags.CHECKBOX),
                 checked = checked,
                 onCheckedChange = null,
                 enabled = enabled,
@@ -97,4 +99,8 @@ fun PreviewDisabledCheckBoxInput() {
         text = "Disabled checkbox",
         enabled = false,
     )
+}
+
+object CheckBoxInputTestTags {
+    const val CHECKBOX = "checkbox_input_checkbox"
 }
