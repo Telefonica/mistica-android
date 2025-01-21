@@ -102,5 +102,5 @@ fun PreviewDisabledCheckBoxInput() {
 }
 
 object CheckBoxInputTestTags {
-    const val CHECKBOX = "checkbox_input_checkbox"
+    const val CHECKBOX = "checkbox"
 }
