@@ -38,8 +38,8 @@
 	<color name="blau_color_darkModeBlack">#191919</color>
 	<color name="blau_color_darkModeGrey">#242424</color>
 	<color name="blau_color_darkModeGrey6">#313235</color>
-	<color name="blau_color_blauBluePrimary_3_alpha">#0800B6F1</color>
-	<color name="blau_color_blauBluePrimary_5_alpha">#0D00B6F1</color>
+	<color name="blau_color_blauBlueSecondary_5_alpha">#0D0072BC</color>
+	<color name="blau_color_blauBlueSecondary_8_alpha">#140072BC</color>
 	<color name="blau_color_darkModeBlack_20_alpha">#33191919</color>
 	<color name="blau_color_darkModeBlack_40_alpha">#66191919</color>
 	<color name="blau_color_blauBlueSecondary_75_alpha">#BF0072BC</color>
@@ -51,8 +51,9 @@
 	<color name="blau_color_grey6_0_alpha">#00000000</color>
 	<color name="blau_color_grey6_40_alpha">#66000000</color>
 	<color name="blau_color_grey6_70_alpha">#B3000000</color>
-	<color name="blau_color_white_3_alpha">#08FFFFFF</color>
 	<color name="blau_color_white_5_alpha">#0DFFFFFF</color>
+	<color name="blau_color_white_8_alpha">#14FFFFFF</color>
+	<color name="blau_color_white_3_alpha">#08FFFFFF</color>
 	<color name="blau_color_darkModeGrey_80_alpha">#CC242424</color>
 	<color name="blau_color_blauPurple_30_alpha">#4D7814B3</color>
 	<color name="blau_color_white_0_alpha">#00FFFFFF</color>

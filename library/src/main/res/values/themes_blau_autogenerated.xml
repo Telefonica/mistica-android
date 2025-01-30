@@ -9,8 +9,8 @@
 		<item name="colorBackground">@color/blau_color_white</item>
 		<item name="colorBackgroundContainer">@color/blau_color_white</item>
 		<item name="colorBackgroundContainerError">@color/blau_color_blauRed10</item>
-		<item name="colorBackgroundContainerHover">@color/blau_color_blauBluePrimary_3_alpha</item>
-		<item name="colorBackgroundContainerPressed">@color/blau_color_blauBluePrimary_5_alpha</item>
+		<item name="colorBackgroundContainerHover">@color/blau_color_blauBlueSecondary_5_alpha</item>
+		<item name="colorBackgroundContainerPressed">@color/blau_color_blauBlueSecondary_8_alpha</item>
 		<item name="drawableBackgroundContainerBrand">@color/blau_color_blauBluePrimary</item>
 		<item name="colorBackgroundContainerBrandHover">@color/blau_color_darkModeBlack_20_alpha</item>
 		<item name="colorBackgroundContainerBrandPressed">@color/blau_color_darkModeBlack_40_alpha</item>
@@ -64,7 +64,7 @@
 		<item name="colorTextLinkSnackbar">@color/blau_color_blauPurple30</item>
 		<item name="colorTextActivated">@color/blau_color_blauBlueSecondary</item>
 		<item name="colorTextBrand">@color/blau_color_blauBluePrimary</item>
-		<item name="colorControl">@color/blau_color_grey2</item>
+		<item name="colorControl">@color/blau_color_grey5</item>
 		<item name="colorControlActive">@color/blau_color_blauBlueSecondary</item>
 		<item name="colorControlInverse">@color/blau_color_blauBluePrimary30</item>
 		<item name="colorControlActivatedInverse">@color/blau_color_white</item>

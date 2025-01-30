@@ -9,8 +9,8 @@
 		<item name="colorBackgroundBrandSecondary">@color/movistar_color_movistarBlueDark</item>
 		<item name="colorBackgroundContainer">@color/movistar_color_white</item>
 		<item name="colorBackgroundContainerError">@color/movistar_color_pepper10</item>
-		<item name="colorBackgroundContainerHover">@color/movistar_color_black_3_alpha</item>
-		<item name="colorBackgroundContainerPressed">@color/movistar_color_black_5_alpha</item>
+		<item name="colorBackgroundContainerHover">@color/movistar_color_black_5_alpha</item>
+		<item name="colorBackgroundContainerPressed">@color/movistar_color_black_8_alpha</item>
 		<item name="drawableBackgroundContainerBrand">@color/movistar_color_movistarBlue</item>
 		<item name="colorBackgroundContainerBrandHover">@color/movistar_color_black_10_alpha</item>
 		<item name="colorBackgroundContainerBrandPressed">@color/movistar_color_black_20_alpha</item>

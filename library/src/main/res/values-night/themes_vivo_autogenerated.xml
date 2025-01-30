@@ -8,8 +8,8 @@
 		<item name="colorBackgroundBrandSecondary">@color/vivo_color_darkModeBlack</item>
 		<item name="colorBackgroundContainer">@color/vivo_color_darkModeGrey</item>
 		<item name="colorBackgroundContainerError">@color/vivo_color_darkModeGrey</item>
-		<item name="colorBackgroundContainerHover">@color/vivo_color_white_3_alpha</item>
-		<item name="colorBackgroundContainerPressed">@color/vivo_color_white_5_alpha</item>
+		<item name="colorBackgroundContainerHover">@color/vivo_color_white_5_alpha</item>
+		<item name="colorBackgroundContainerPressed">@color/vivo_color_white_8_alpha</item>
 		<item name="drawableBackgroundContainerBrand">@color/vivo_color_darkModeGrey</item>
 		<item name="colorBackgroundContainerBrandHover">@color/vivo_color_white_3_alpha</item>
 		<item name="colorBackgroundContainerBrandPressed">@color/vivo_color_white_5_alpha</item>

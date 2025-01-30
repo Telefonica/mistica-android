@@ -43,8 +43,8 @@
 	<color name="o2_color_darkModeGrey6">#313235</color>
 	<color name="o2_color_darkModeO2BluePrimary">#0020D6</color>
 	<color name="o2_color_darkModeO2BluePrimaryDark">#000099</color>
-	<color name="o2_color_darkModeBlack_3_alpha">#08191919</color>
 	<color name="o2_color_darkModeBlack_5_alpha">#0D191919</color>
+	<color name="o2_color_darkModeBlack_8_alpha">#14191919</color>
 	<color name="o2_color_darkModeBlack_20_alpha">#33191919</color>
 	<color name="o2_color_darkModeBlack_40_alpha">#66191919</color>
 	<color name="o2_color_grey6_60_alpha">#99000033</color>
@@ -57,8 +57,8 @@
 	<color name="o2_color_black_0_alpha">#00000000</color>
 	<color name="o2_color_black_40_alpha">#66000000</color>
 	<color name="o2_color_black_70_alpha">#B3000000</color>
-	<color name="o2_color_white_3_alpha">#08FFFFFF</color>
 	<color name="o2_color_white_5_alpha">#0DFFFFFF</color>
+	<color name="o2_color_white_3_alpha">#08FFFFFF</color>
 	<color name="o2_color_darkModeGrey_80_alpha">#CC242424</color>
 	<color name="o2_color_white_0_alpha">#00FFFFFF</color>
 </resources>

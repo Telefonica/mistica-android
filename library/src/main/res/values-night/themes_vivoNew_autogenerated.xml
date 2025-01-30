@@ -8,8 +8,8 @@
 		<item name="colorBackgroundBrandSecondary">@color/vivoNew_color_darkModeBlack</item>
 		<item name="colorBackgroundContainer">@color/vivoNew_color_darkModeGrey</item>
 		<item name="colorBackgroundContainerError">@color/vivoNew_color_darkModeGrey</item>
-		<item name="colorBackgroundContainerHover">@color/vivoNew_color_white_3_alpha</item>
-		<item name="colorBackgroundContainerPressed">@color/vivoNew_color_white_5_alpha</item>
+		<item name="colorBackgroundContainerHover">@color/vivoNew_color_white_5_alpha</item>
+		<item name="colorBackgroundContainerPressed">@color/vivoNew_color_white_8_alpha</item>
 		<item name="drawableBackgroundContainerBrand">@color/vivoNew_color_darkModeGrey</item>
 		<item name="colorBackgroundContainerBrandHover">@color/vivoNew_color_white_3_alpha</item>
 		<item name="colorBackgroundContainerBrandPressed">@color/vivoNew_color_white_5_alpha</item>
@@ -142,8 +142,8 @@
 		<item name="colorBackgroundBrandSecondary">@color/vivoNew_color_darkModeBlack</item>
 		<item name="colorBackgroundContainer">@color/vivoNew_color_darkModeGrey</item>
 		<item name="colorBackgroundContainerError">@color/vivoNew_color_darkModeGrey</item>
-		<item name="colorBackgroundContainerHover">@color/vivoNew_color_white_3_alpha</item>
-		<item name="colorBackgroundContainerPressed">@color/vivoNew_color_white_5_alpha</item>
+		<item name="colorBackgroundContainerHover">@color/vivoNew_color_white_5_alpha</item>
+		<item name="colorBackgroundContainerPressed">@color/vivoNew_color_white_8_alpha</item>
 		<item name="drawableBackgroundContainerBrand">@color/vivoNew_color_darkModeGrey</item>
 		<item name="colorBackgroundContainerBrandHover">@color/vivoNew_color_white_3_alpha</item>
 		<item name="colorBackgroundContainerBrandPressed">@color/vivoNew_color_white_5_alpha</item>

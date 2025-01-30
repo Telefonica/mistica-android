@@ -14,8 +14,8 @@ public object O2BrandColors {
       backgroundBrandSecondary = O2PaletteColor.o2_color_o2BluePrimary
       backgroundContainer = O2PaletteColor.o2_color_white
       backgroundContainerError = O2PaletteColor.o2_color_pepper10
-      backgroundContainerHover = O2PaletteColor.o2_color_darkModeBlack_3_alpha
-      backgroundContainerPressed = O2PaletteColor.o2_color_darkModeBlack_5_alpha
+      backgroundContainerHover = O2PaletteColor.o2_color_darkModeBlack_5_alpha
+      backgroundContainerPressed = O2PaletteColor.o2_color_darkModeBlack_8_alpha
       backgroundContainerBrandHover = O2PaletteColor.o2_color_darkModeBlack_20_alpha
       backgroundContainerBrandPressed = O2PaletteColor.o2_color_darkModeBlack_40_alpha
       backgroundContainerBrandOverInverse = O2PaletteColor.o2_color_o2BluePrimary70
@@ -146,8 +146,8 @@ public object O2BrandColors {
       backgroundBrandSecondary = O2PaletteColor.o2_color_darkModeBlack
       backgroundContainer = O2PaletteColor.o2_color_darkModeGrey
       backgroundContainerError = O2PaletteColor.o2_color_darkModeGrey
-      backgroundContainerHover = O2PaletteColor.o2_color_white_3_alpha
-      backgroundContainerPressed = O2PaletteColor.o2_color_white_5_alpha
+      backgroundContainerHover = O2PaletteColor.o2_color_white_5_alpha
+      backgroundContainerPressed = O2PaletteColor.o2_color_white_8_alpha
       backgroundContainerBrandHover = O2PaletteColor.o2_color_white_3_alpha
       backgroundContainerBrandPressed = O2PaletteColor.o2_color_white_5_alpha
       backgroundContainerBrandOverInverse = O2PaletteColor.o2_color_darkModeGrey
@@ -384,9 +384,9 @@ private object O2PaletteColor {
 
   public val o2_color_darkModeO2BluePrimaryDark: Color = Color(0xFF000099)
 
-  public val o2_color_darkModeBlack_3_alpha: Color = Color(0x08191919)
-
   public val o2_color_darkModeBlack_5_alpha: Color = Color(0x0D191919)
+
+  public val o2_color_darkModeBlack_8_alpha: Color = Color(0x14191919)
 
   public val o2_color_darkModeBlack_20_alpha: Color = Color(0x33191919)
 
@@ -412,9 +412,9 @@ private object O2PaletteColor {
 
   public val o2_color_black_70_alpha: Color = Color(0xB3000000)
 
-  public val o2_color_white_3_alpha: Color = Color(0x08FFFFFF)
-
   public val o2_color_white_5_alpha: Color = Color(0x0DFFFFFF)
+
+  public val o2_color_white_3_alpha: Color = Color(0x08FFFFFF)
 
   public val o2_color_darkModeGrey_80_alpha: Color = Color(0xCC242424)
 

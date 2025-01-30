@@ -3,7 +3,6 @@ package com.telefonica.mistica.compose.theme.values
 
 import androidx.compose.runtime.ProvidableCompositionLocal
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.staticCompositionLocalOf
@@ -24,7 +23,8 @@ public class MisticaRadius(
   sheetBorderRadius: Dp = Dp.Unspecified,
   mediaSmallBorderRadius: Dp = Dp.Unspecified,
 ) {
-  public var avatarBorderRadius: Int by mutableIntStateOf(avatarBorderRadius)
+  public var avatarBorderRadius: Int by mutableStateOf(avatarBorderRadius,
+      structuralEqualityPolicy())
     internal set
 
   public var barBorderRadius: Dp by mutableStateOf(barBorderRadius, structuralEqualityPolicy())

@@ -7,8 +7,8 @@
 		<item name="colorBackground">@color/tu_color_white</item>
 		<item name="colorBackgroundContainer">@color/tu_color_white</item>
 		<item name="colorBackgroundContainerError">@color/tu_color_red10</item>
-		<item name="colorBackgroundContainerHover">@color/tu_color_grey9_3_alpha</item>
-		<item name="colorBackgroundContainerPressed">@color/tu_color_grey9_5_alpha</item>
+		<item name="colorBackgroundContainerHover">@color/tu_color_grey9_5_alpha</item>
+		<item name="colorBackgroundContainerPressed">@color/tu_color_grey9_8_alpha</item>
 		<item name="drawableBackgroundContainerBrand">@color/tu_color_primary</item>
 		<item name="colorBackgroundContainerBrandHover">@color/tu_color_grey9_20_alpha</item>
 		<item name="colorBackgroundContainerBrandPressed">@color/tu_color_grey9_40_alpha</item>
