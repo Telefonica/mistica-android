@@ -37,8 +37,8 @@
 	<color name="telefonica_color_darkModeBlack">#191919</color>
 	<color name="telefonica_color_darkModeGrey">#242424</color>
 	<color name="telefonica_color_darkModeGrey6">#313235</color>
-	<color name="telefonica_color_telefonicaBlue_3_alpha">#080066FF</color>
-	<color name="telefonica_color_telefonicaBlue_5_alpha">#0D0066FF</color>
+	<color name="telefonica_color_telefonicaBlue70_5_alpha">#0D0356C9</color>
+	<color name="telefonica_color_telefonicaBlue70_8_alpha">#140356C9</color>
 	<color name="telefonica_color_darkModeBlack_20_alpha">#33191919</color>
 	<color name="telefonica_color_darkModeBlack_40_alpha">#66191919</color>
 	<color name="telefonica_color_grey6_80_alpha">#CC58617A</color>
@@ -51,8 +51,8 @@
 	<color name="telefonica_color_black_0_alpha">#00000000</color>
 	<color name="telefonica_color_black_40_alpha">#66000000</color>
 	<color name="telefonica_color_black_70_alpha">#B3000000</color>
-	<color name="telefonica_color_white_3_alpha">#08FFFFFF</color>
 	<color name="telefonica_color_white_5_alpha">#0DFFFFFF</color>
+	<color name="telefonica_color_white_3_alpha">#08FFFFFF</color>
 	<color name="telefonica_color_darkModeGrey_80_alpha">#CC242424</color>
 	<color name="telefonica_color_white_0_alpha">#00FFFFFF</color>
 	<color name="telefonica_color_white_15_alpha">#26FFFFFF</color>

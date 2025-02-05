@@ -22,6 +22,7 @@
 	<color name="o2New_color_o2Orange">#FFA55A</color>
 	<color name="o2New_color_o2Orange10">#FFF6EE</color>
 	<color name="o2New_color_o2Orange40">#FFC08B</color>
+	<color name="o2New_color_o2Orange60">#F06C00</color>
 	<color name="o2New_color_o2Orange75">#996336</color>
 	<color name="o2New_color_o2Pink">#FA96FF</color>
 	<color name="o2New_color_o2Pink15">#FEEAFF</color>
@@ -46,8 +47,8 @@
 	<color name="o2New_color_darkModeGrey">#08132B</color>
 	<color name="o2New_color_darkModeGrey6">#14213D</color>
 	<color name="o2New_color_darkModeBeyondBlue">#1A62FF</color>
-	<color name="o2New_color_darkModeBlack_3_alpha">#0800001C</color>
 	<color name="o2New_color_darkModeBlack_5_alpha">#0D00001C</color>
+	<color name="o2New_color_darkModeBlack_8_alpha">#1400001C</color>
 	<color name="o2New_color_darkModeBlack_20_alpha">#3300001C</color>
 	<color name="o2New_color_darkModeBlack_40_alpha">#6600001C</color>
 	<color name="o2New_color_black_60_alpha">#9900001E</color>
@@ -60,8 +61,8 @@
 	<color name="o2New_color_beyondBlue_0_alpha">#000050FF</color>
 	<color name="o2New_color_beyondBlue_40_alpha">#660050FF</color>
 	<color name="o2New_color_beyondBlue_100_alpha">#FF0050FF</color>
-	<color name="o2New_color_white_3_alpha">#08FFFFFF</color>
 	<color name="o2New_color_white_5_alpha">#0DFFFFFF</color>
+	<color name="o2New_color_white_3_alpha">#08FFFFFF</color>
 	<color name="o2New_color_darkModeGrey_80_alpha">#CC08132B</color>
 	<color name="o2New_color_white_0_alpha">#00FFFFFF</color>
 	<color name="o2New_color_white_10_alpha">#1AFFFFFF</color>

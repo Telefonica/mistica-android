@@ -13,8 +13,8 @@ public object TuBrandColors {
       background = TuPaletteColor.tu_color_white
       backgroundContainer = TuPaletteColor.tu_color_white
       backgroundContainerError = TuPaletteColor.tu_color_red10
-      backgroundContainerHover = TuPaletteColor.tu_color_grey9_3_alpha
-      backgroundContainerPressed = TuPaletteColor.tu_color_grey9_5_alpha
+      backgroundContainerHover = TuPaletteColor.tu_color_grey9_5_alpha
+      backgroundContainerPressed = TuPaletteColor.tu_color_grey9_8_alpha
       backgroundContainerBrandHover = TuPaletteColor.tu_color_grey9_20_alpha
       backgroundContainerBrandPressed = TuPaletteColor.tu_color_grey9_40_alpha
       backgroundContainerBrandOverInverse = TuPaletteColor.tu_color_primary80
@@ -146,8 +146,8 @@ public object TuBrandColors {
       backgroundBrandSecondary = TuPaletteColor.tu_color_darkModeBlack
       backgroundContainer = TuPaletteColor.tu_color_darkModeGrey
       backgroundContainerError = TuPaletteColor.tu_color_darkModeGrey
-      backgroundContainerHover = TuPaletteColor.tu_color_white_3_alpha
-      backgroundContainerPressed = TuPaletteColor.tu_color_white_5_alpha
+      backgroundContainerHover = TuPaletteColor.tu_color_white_5_alpha
+      backgroundContainerPressed = TuPaletteColor.tu_color_white_8_alpha
       backgroundContainerBrandHover = TuPaletteColor.tu_color_white_3_alpha
       backgroundContainerBrandPressed = TuPaletteColor.tu_color_white_5_alpha
       backgroundContainerBrandOverInverse = TuPaletteColor.tu_color_darkModeGrey
@@ -380,9 +380,9 @@ private object TuPaletteColor {
 
   public val tu_color_darkModeGrey6: Color = Color(0xFF2B3447)
 
-  public val tu_color_grey9_3_alpha: Color = Color(0x08031A34)
-
   public val tu_color_grey9_5_alpha: Color = Color(0x0D031A34)
+
+  public val tu_color_grey9_8_alpha: Color = Color(0x14031A34)
 
   public val tu_color_grey9_20_alpha: Color = Color(0x33031A34)
 
@@ -410,9 +410,9 @@ private object TuPaletteColor {
 
   public val tu_color_black_70_alpha: Color = Color(0xB3000000)
 
-  public val tu_color_white_3_alpha: Color = Color(0x08FFFFFF)
-
   public val tu_color_white_5_alpha: Color = Color(0x0DFFFFFF)
+
+  public val tu_color_white_3_alpha: Color = Color(0x08FFFFFF)
 
   public val tu_color_darkModeGrey_80_alpha: Color = Color(0xCC202735)
 

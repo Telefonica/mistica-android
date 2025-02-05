@@ -14,8 +14,8 @@ public object O2NewBrandColors {
       backgroundBrandSecondary = O2NewPaletteColor.o2New_color_beyondBlue
       backgroundContainer = O2NewPaletteColor.o2New_color_white
       backgroundContainerError = O2NewPaletteColor.o2New_color_o2Red10
-      backgroundContainerHover = O2NewPaletteColor.o2New_color_darkModeBlack_3_alpha
-      backgroundContainerPressed = O2NewPaletteColor.o2New_color_darkModeBlack_5_alpha
+      backgroundContainerHover = O2NewPaletteColor.o2New_color_darkModeBlack_5_alpha
+      backgroundContainerPressed = O2NewPaletteColor.o2New_color_darkModeBlack_8_alpha
       backgroundContainerBrandHover = O2NewPaletteColor.o2New_color_darkModeBlack_20_alpha
       backgroundContainerBrandPressed = O2NewPaletteColor.o2New_color_darkModeBlack_40_alpha
       backgroundContainerBrandOverInverse = O2NewPaletteColor.o2New_color_beyondBlue70
@@ -100,7 +100,7 @@ public object O2NewBrandColors {
       textSecondary = O2NewPaletteColor.o2New_color_grey60
       textSecondaryInverse = O2NewPaletteColor.o2New_color_beyondBlue10
       success = O2NewPaletteColor.o2New_color_o2Green
-      warning = O2NewPaletteColor.o2New_color_o2Orange
+      warning = O2NewPaletteColor.o2New_color_o2Orange60
       error = O2NewPaletteColor.o2New_color_o2Red65
       textError = O2NewPaletteColor.o2New_color_o2Red65
       textErrorInverse = O2NewPaletteColor.o2New_color_white
@@ -146,8 +146,8 @@ public object O2NewBrandColors {
       backgroundBrandSecondary = O2NewPaletteColor.o2New_color_darkModeBlack
       backgroundContainer = O2NewPaletteColor.o2New_color_darkModeGrey
       backgroundContainerError = O2NewPaletteColor.o2New_color_darkModeGrey
-      backgroundContainerHover = O2NewPaletteColor.o2New_color_white_3_alpha
-      backgroundContainerPressed = O2NewPaletteColor.o2New_color_white_5_alpha
+      backgroundContainerHover = O2NewPaletteColor.o2New_color_white_5_alpha
+      backgroundContainerPressed = O2NewPaletteColor.o2New_color_white_8_alpha
       backgroundContainerBrandHover = O2NewPaletteColor.o2New_color_white_3_alpha
       backgroundContainerBrandPressed = O2NewPaletteColor.o2New_color_white_5_alpha
       backgroundContainerBrandOverInverse = O2NewPaletteColor.o2New_color_darkModeGrey
@@ -354,6 +354,8 @@ private object O2NewPaletteColor {
 
   public val o2New_color_o2Orange40: Color = Color(0xFFFFC08B)
 
+  public val o2New_color_o2Orange60: Color = Color(0xFFF06C00)
+
   public val o2New_color_o2Orange75: Color = Color(0xFF996336)
 
   public val o2New_color_o2Pink: Color = Color(0xFFFA96FF)
@@ -402,9 +404,9 @@ private object O2NewPaletteColor {
 
   public val o2New_color_darkModeBeyondBlue: Color = Color(0xFF1A62FF)
 
-  public val o2New_color_darkModeBlack_3_alpha: Color = Color(0x0800001C)
-
   public val o2New_color_darkModeBlack_5_alpha: Color = Color(0x0D00001C)
+
+  public val o2New_color_darkModeBlack_8_alpha: Color = Color(0x1400001C)
 
   public val o2New_color_darkModeBlack_20_alpha: Color = Color(0x3300001C)
 
@@ -430,9 +432,9 @@ private object O2NewPaletteColor {
 
   public val o2New_color_beyondBlue_100_alpha: Color = Color(0xFF0050FF)
 
-  public val o2New_color_white_3_alpha: Color = Color(0x08FFFFFF)
-
   public val o2New_color_white_5_alpha: Color = Color(0x0DFFFFFF)
+
+  public val o2New_color_white_3_alpha: Color = Color(0x08FFFFFF)
 
   public val o2New_color_darkModeGrey_80_alpha: Color = Color(0xCC08132B)
 

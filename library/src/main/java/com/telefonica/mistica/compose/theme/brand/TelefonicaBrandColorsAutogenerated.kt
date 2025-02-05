@@ -13,8 +13,8 @@ public object TelefonicaBrandColors {
       background = TelefonicaPaletteColor.telefonica_color_white
       backgroundContainer = TelefonicaPaletteColor.telefonica_color_white
       backgroundContainerError = TelefonicaPaletteColor.telefonica_color_coral10
-      backgroundContainerHover = TelefonicaPaletteColor.telefonica_color_telefonicaBlue_3_alpha
-      backgroundContainerPressed = TelefonicaPaletteColor.telefonica_color_telefonicaBlue_5_alpha
+      backgroundContainerHover = TelefonicaPaletteColor.telefonica_color_telefonicaBlue70_5_alpha
+      backgroundContainerPressed = TelefonicaPaletteColor.telefonica_color_telefonicaBlue70_8_alpha
       backgroundContainerBrandHover = TelefonicaPaletteColor.telefonica_color_darkModeBlack_20_alpha
       backgroundContainerBrandPressed =
           TelefonicaPaletteColor.telefonica_color_darkModeBlack_40_alpha
@@ -149,8 +149,8 @@ public object TelefonicaBrandColors {
       backgroundBrandSecondary = TelefonicaPaletteColor.telefonica_color_darkModeBlack
       backgroundContainer = TelefonicaPaletteColor.telefonica_color_darkModeGrey
       backgroundContainerError = TelefonicaPaletteColor.telefonica_color_darkModeGrey
-      backgroundContainerHover = TelefonicaPaletteColor.telefonica_color_white_3_alpha
-      backgroundContainerPressed = TelefonicaPaletteColor.telefonica_color_white_5_alpha
+      backgroundContainerHover = TelefonicaPaletteColor.telefonica_color_white_5_alpha
+      backgroundContainerPressed = TelefonicaPaletteColor.telefonica_color_white_8_alpha
       backgroundContainerBrandHover = TelefonicaPaletteColor.telefonica_color_white_3_alpha
       backgroundContainerBrandPressed = TelefonicaPaletteColor.telefonica_color_white_5_alpha
       backgroundContainerBrandOverInverse = TelefonicaPaletteColor.telefonica_color_darkModeGrey
@@ -378,9 +378,9 @@ private object TelefonicaPaletteColor {
 
   public val telefonica_color_darkModeGrey6: Color = Color(0xFF313235)
 
-  public val telefonica_color_telefonicaBlue_3_alpha: Color = Color(0x080066FF)
+  public val telefonica_color_telefonicaBlue70_5_alpha: Color = Color(0x0D0356C9)
 
-  public val telefonica_color_telefonicaBlue_5_alpha: Color = Color(0x0D0066FF)
+  public val telefonica_color_telefonicaBlue70_8_alpha: Color = Color(0x140356C9)
 
   public val telefonica_color_darkModeBlack_20_alpha: Color = Color(0x33191919)
 
@@ -406,9 +406,9 @@ private object TelefonicaPaletteColor {
 
   public val telefonica_color_black_70_alpha: Color = Color(0xB3000000)
 
-  public val telefonica_color_white_3_alpha: Color = Color(0x08FFFFFF)
-
   public val telefonica_color_white_5_alpha: Color = Color(0x0DFFFFFF)
+
+  public val telefonica_color_white_3_alpha: Color = Color(0x08FFFFFF)
 
   public val telefonica_color_darkModeGrey_80_alpha: Color = Color(0xCC242424)
 

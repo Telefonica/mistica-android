@@ -14,8 +14,8 @@ public object VivoBrandColors {
       backgroundBrandSecondary = VivoPaletteColor.vivo_color_vivoPurple
       backgroundContainer = VivoPaletteColor.vivo_color_white
       backgroundContainerError = VivoPaletteColor.vivo_color_pepperLight10
-      backgroundContainerHover = VivoPaletteColor.vivo_color_darkModeBlack_3_alpha
-      backgroundContainerPressed = VivoPaletteColor.vivo_color_darkModeBlack_5_alpha
+      backgroundContainerHover = VivoPaletteColor.vivo_color_darkModeBlack_5_alpha
+      backgroundContainerPressed = VivoPaletteColor.vivo_color_darkModeBlack_8_alpha
       backgroundContainerBrandHover = VivoPaletteColor.vivo_color_darkModeBlack_20_alpha
       backgroundContainerBrandPressed = VivoPaletteColor.vivo_color_darkModeBlack_40_alpha
       backgroundContainerBrandOverInverse = VivoPaletteColor.vivo_color_vivoPurpleDark
@@ -146,8 +146,8 @@ public object VivoBrandColors {
       backgroundBrandSecondary = VivoPaletteColor.vivo_color_darkModeBlack
       backgroundContainer = VivoPaletteColor.vivo_color_darkModeGrey
       backgroundContainerError = VivoPaletteColor.vivo_color_darkModeGrey
-      backgroundContainerHover = VivoPaletteColor.vivo_color_white_3_alpha
-      backgroundContainerPressed = VivoPaletteColor.vivo_color_white_5_alpha
+      backgroundContainerHover = VivoPaletteColor.vivo_color_white_5_alpha
+      backgroundContainerPressed = VivoPaletteColor.vivo_color_white_8_alpha
       backgroundContainerBrandHover = VivoPaletteColor.vivo_color_white_3_alpha
       backgroundContainerBrandPressed = VivoPaletteColor.vivo_color_white_5_alpha
       backgroundContainerBrandOverInverse = VivoPaletteColor.vivo_color_darkModeGrey
@@ -370,9 +370,9 @@ private object VivoPaletteColor {
 
   public val vivo_color_darkModeGrey6: Color = Color(0xFF313235)
 
-  public val vivo_color_darkModeBlack_3_alpha: Color = Color(0x08191919)
-
   public val vivo_color_darkModeBlack_5_alpha: Color = Color(0x0D191919)
+
+  public val vivo_color_darkModeBlack_8_alpha: Color = Color(0x14191919)
 
   public val vivo_color_darkModeBlack_20_alpha: Color = Color(0x33191919)
 
@@ -398,13 +398,13 @@ private object VivoPaletteColor {
 
   public val vivo_color_grey6_70_alpha: Color = Color(0xB3000000)
 
-  public val vivo_color_white_3_alpha: Color = Color(0x08FFFFFF)
-
   public val vivo_color_white_5_alpha: Color = Color(0x0DFFFFFF)
 
-  public val vivo_color_darkModeGrey_80_alpha: Color = Color(0xCC242424)
-
   public val vivo_color_white_8_alpha: Color = Color(0x14FFFFFF)
+
+  public val vivo_color_white_3_alpha: Color = Color(0x08FFFFFF)
+
+  public val vivo_color_darkModeGrey_80_alpha: Color = Color(0xCC242424)
 
   public val vivo_color_white_0_alpha: Color = Color(0x00FFFFFF)
 }

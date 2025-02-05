@@ -7,8 +7,8 @@
 		<item name="colorBackground">@color/telefonica_color_white</item>
 		<item name="colorBackgroundContainer">@color/telefonica_color_white</item>
 		<item name="colorBackgroundContainerError">@color/telefonica_color_coral10</item>
-		<item name="colorBackgroundContainerHover">@color/telefonica_color_telefonicaBlue_3_alpha</item>
-		<item name="colorBackgroundContainerPressed">@color/telefonica_color_telefonicaBlue_5_alpha</item>
+		<item name="colorBackgroundContainerHover">@color/telefonica_color_telefonicaBlue70_5_alpha</item>
+		<item name="colorBackgroundContainerPressed">@color/telefonica_color_telefonicaBlue70_8_alpha</item>
 		<item name="drawableBackgroundContainerBrand">@color/telefonica_color_telefonicaBlue</item>
 		<item name="colorBackgroundContainerBrandHover">@color/telefonica_color_darkModeBlack_20_alpha</item>
 		<item name="colorBackgroundContainerBrandPressed">@color/telefonica_color_darkModeBlack_40_alpha</item>

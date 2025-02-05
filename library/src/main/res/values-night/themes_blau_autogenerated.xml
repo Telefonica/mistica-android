@@ -8,8 +8,8 @@
 		<item name="colorBackgroundBrandSecondary">@color/blau_color_darkModeBlack</item>
 		<item name="colorBackgroundContainer">@color/blau_color_darkModeGrey</item>
 		<item name="colorBackgroundContainerError">@color/blau_color_darkModeGrey</item>
-		<item name="colorBackgroundContainerHover">@color/blau_color_white_3_alpha</item>
-		<item name="colorBackgroundContainerPressed">@color/blau_color_white_5_alpha</item>
+		<item name="colorBackgroundContainerHover">@color/blau_color_white_5_alpha</item>
+		<item name="colorBackgroundContainerPressed">@color/blau_color_white_8_alpha</item>
 		<item name="drawableBackgroundContainerBrand">@color/blau_color_darkModeGrey</item>
 		<item name="colorBackgroundContainerBrandHover">@color/blau_color_white_3_alpha</item>
 		<item name="colorBackgroundContainerBrandPressed">@color/blau_color_white_5_alpha</item>

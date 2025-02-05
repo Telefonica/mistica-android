@@ -14,8 +14,8 @@ public object MovistarBrandColors {
       backgroundBrandSecondary = MovistarPaletteColor.movistar_color_movistarBlueDark
       backgroundContainer = MovistarPaletteColor.movistar_color_white
       backgroundContainerError = MovistarPaletteColor.movistar_color_pepper10
-      backgroundContainerHover = MovistarPaletteColor.movistar_color_black_3_alpha
-      backgroundContainerPressed = MovistarPaletteColor.movistar_color_black_5_alpha
+      backgroundContainerHover = MovistarPaletteColor.movistar_color_black_5_alpha
+      backgroundContainerPressed = MovistarPaletteColor.movistar_color_black_8_alpha
       backgroundContainerBrandHover = MovistarPaletteColor.movistar_color_black_10_alpha
       backgroundContainerBrandPressed = MovistarPaletteColor.movistar_color_black_20_alpha
       backgroundContainerBrandOverInverse = MovistarPaletteColor.movistar_color_movistarBlue55
@@ -146,8 +146,8 @@ public object MovistarBrandColors {
       backgroundBrandSecondary = MovistarPaletteColor.movistar_color_darkModeBlack
       backgroundContainer = MovistarPaletteColor.movistar_color_darkModeGrey
       backgroundContainerError = MovistarPaletteColor.movistar_color_darkModeGrey
-      backgroundContainerHover = MovistarPaletteColor.movistar_color_white_3_alpha
-      backgroundContainerPressed = MovistarPaletteColor.movistar_color_white_5_alpha
+      backgroundContainerHover = MovistarPaletteColor.movistar_color_white_5_alpha
+      backgroundContainerPressed = MovistarPaletteColor.movistar_color_white_8_alpha
       backgroundContainerBrandHover = MovistarPaletteColor.movistar_color_white_3_alpha
       backgroundContainerBrandPressed = MovistarPaletteColor.movistar_color_white_5_alpha
       backgroundContainerBrandOverInverse = MovistarPaletteColor.movistar_color_darkModeGrey
@@ -410,9 +410,9 @@ private object MovistarPaletteColor {
 
   public val movistar_color_darkModeGrey7: Color = Color(0xFF032F46)
 
-  public val movistar_color_black_3_alpha: Color = Color(0x08000000)
-
   public val movistar_color_black_5_alpha: Color = Color(0x0D000000)
+
+  public val movistar_color_black_8_alpha: Color = Color(0x14000000)
 
   public val movistar_color_black_10_alpha: Color = Color(0x1A000000)
 
@@ -436,17 +436,17 @@ private object MovistarPaletteColor {
 
   public val movistar_color_black_70_alpha: Color = Color(0xB3000000)
 
-  public val movistar_color_white_3_alpha: Color = Color(0x08FFFFFF)
-
   public val movistar_color_white_5_alpha: Color = Color(0x0DFFFFFF)
+
+  public val movistar_color_white_8_alpha: Color = Color(0x14FFFFFF)
+
+  public val movistar_color_white_3_alpha: Color = Color(0x08FFFFFF)
 
   public val movistar_color_darkModeGrey_80_alpha: Color = Color(0xCC081F2E)
 
   public val movistar_color_darkModeBlack_25_alpha: Color = Color(0x40061824)
 
   public val movistar_color_darkModeBlack_35_alpha: Color = Color(0x59061824)
-
-  public val movistar_color_white_8_alpha: Color = Color(0x14FFFFFF)
 
   public val movistar_color_white_0_alpha: Color = Color(0x00FFFFFF)
 
