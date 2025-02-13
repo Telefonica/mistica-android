@@ -145,6 +145,7 @@ class ProgressButton : FrameLayout {
     }
 
     private fun setupViewProperties() {
+        this.descendantFocusability = ViewGroup.FOCUS_AFTER_DESCENDANTS
         this.importantForAccessibility = IMPORTANT_FOR_ACCESSIBILITY_NO
         isClickable = false
         setPadding(0, 0, 0, 0)
