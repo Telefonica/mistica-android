@@ -8,10 +8,9 @@ Don't hesitate to ask any questions and share your ideas
 
 ## Pull Requests
 
-We would love to accept your Pull Requests but please, before starting your development,
-[create an issue](https://github.com/Telefonica/mistica-android/issues/new/choose).
-
-Include someone from **Telefonica/mistica-design** team as reviewer.
+We would love to accept your Pull Requests but please
+- Before starting your development, [create an issue](https://github.com/Telefonica/mistica-android/issues/new/choose).
+- Once the pull request is created, make sure that you add someone from **Telefonica/mistica-design** team as reviewer to it.
 
 ## Bug reports
 
