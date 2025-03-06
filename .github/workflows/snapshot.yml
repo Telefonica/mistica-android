@@ -37,7 +37,7 @@ jobs:
         uses: wzieba/Firebase-Distribution-Github-Action@v1
         id: upload-apk
         with:
-          appId: '1:413491573542:android:d79e363379e606a7a807e7'
+          appId: '1:771826505811:android:f64fec267b535d7f974ea6'
           serviceCredentialsFile: ${{ github.workspace }}/service-account-file.json
           groups: 'mistica-internal-testers'
           file: ${{ steps.get-apk-path.outputs.apk_path }}
