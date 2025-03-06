@@ -6,28 +6,22 @@ on:
         description: "Snapshot version"
         required: true
 jobs:
-  snapshot:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set up JDK 17
-        uses: actions/setup-java@v2
-        with:
-          distribution: 'temurin'
-          java-version: '17'
+  firebase-catalog:
+    uses: Telefonica/android-shared-workflows/.github/workflows/build-enterprise.yml@firebase
+    with:
+      build-tasks: 'assembleDebug'
+      apk-path: '**/build/outputs/apk/debug/*.apk'
+      additional-groups: 'mistica-internal-testers'
+      distribution-track: 'internal'
+      notify-ci-cd-publication: true
+      notify-error-in-publication: true
+    secrets: inherit
 
-      - name: Checkout repo
-        uses: actions/checkout@v2
-
-      - name: Build library
-        run: 'bash ./gradlew clean :library:assembleRelease :catalog:assembleRelease'
-
-      - name: Release snapshot
-        env:
-          MOBILE_MAVENCENTRAL_USER: ${{ secrets.MOBILE_MAVENCENTRAL_USER }}
-          MOBILE_MAVENCENTRAL_PASSWORD: ${{ secrets.MOBILE_MAVENCENTRAL_PASSWORD }}
-          ORG_GRADLE_PROJECT_signingKey: ${{ secrets.ORG_GRADLE_PROJECT_SIGNINGKEY }}
-          ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.ORG_GRADLE_PROJECT_SIGNINGPASSWORD }}
-          ORG_GRADLE_PROJECT_signingKeyId: ${{ secrets.ORG_GRADLE_PROJECT_SIGNINGKEYID }}
-        run: "bash ./gradlew :library:publishReleasePublicationToSonatypeRepository -DSNAPSHOT_VERSION=${{ github.event.inputs.snapshotVersion }}
-          :catalog:publishCatalogPublicationToSonatypeRepository -DSNAPSHOT_VERSION=${{ github.event.inputs.snapshotVersion }}
-          --max-workers 1 closeAndReleaseStagingRepository"
+  debug-firebase-catalog:
+    uses: Telefonica/android-shared-workflows/.github/workflows/build-enterprise.yml@firebase
+    with:
+      build-tasks: 'assembleDebug'
+      apk-path: '**/build/outputs/apk/debug/*.apk'
+      additional-groups: 'mistica-internal-testers'
+      notify-publication-as-pr-comment: true
+    secrets: inherit
