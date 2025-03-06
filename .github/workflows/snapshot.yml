@@ -7,21 +7,22 @@ on:
         required: true
 jobs:
   firebase-catalog:
-    uses: Telefonica/android-shared-workflows/.github/workflows/build-enterprise.yml@firebase
-    with:
-      build-tasks: 'assembleDebug'
-      apk-path: '**/build/outputs/apk/debug/*.apk'
-      additional-groups: 'mistica-internal-testers'
-      distribution-track: 'internal'
-      notify-ci-cd-publication: true
-      notify-error-in-publication: true
-    secrets: inherit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Telefonica/ios-github-workflows repo
+        uses: actions/checkout@v4
+        with:
+          repository: Telefonica/android-shared-workflows
+          token: "${{ secrets.NOVUM_PRIVATE_REPOS }}"
+          path: .shared-workflows
+          ref: firebase
 
-  debug-firebase-catalog:
-    uses: Telefonica/android-shared-workflows/.github/workflows/build-enterprise.yml@firebase
-    with:
-      build-tasks: 'assembleDebug'
-      apk-path: '**/build/outputs/apk/debug/*.apk'
-      additional-groups: 'mistica-internal-testers'
-      notify-publication-as-pr-comment: true
-    secrets: inherit
+      - name: Build and Upload to Firebase
+        uses: ./.shared-workflows/.github/workflows/build-enterprise.yml
+        with:
+          build-tasks: 'assembleDebug'
+          apk-path: '**/build/outputs/apk/debug/*.apk'
+          additional-groups: 'mistica-internal-testers'
+          distribution-track: 'internal'
+          notify-ci-cd-publication: true
+          notify-error-in-publication: true
