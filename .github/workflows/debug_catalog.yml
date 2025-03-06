@@ -75,7 +75,7 @@ jobs:
       - name: Get Apk path
         id: get-apk-path
         run: |
-          apk_path=(**/build/outputs/apk/**/debug/*.apk)
+          apk_path=(**/build/outputs/apk/debug/*.apk)
           echo "apk_path=${apk_path[0]}" >> $GITHUB_OUTPUT
         shell: bash
 
