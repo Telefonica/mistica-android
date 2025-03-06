@@ -27,3 +27,15 @@ jobs:
         env:
           APPCENTER_API_TOKEN: ${{ secrets.APPCENTER_API_TOKEN }}
         run: 'bash ./gradlew clean check appCenterAssembleAndUploadDebug -Dappcenter_app_name=Mistica'
+
+  firebase-catalog:
+    if: github.event.pull_request.merged == true
+    uses: Telefonica/android-shared-workflows/.github/workflows/build-enterprise.yml@firebase
+    with:
+      build-tasks: 'assembleDebug'
+      apk-path: '**/build/outputs/apk/debug/*.apk'
+      additional-groups: 'mistica-internal-testers'
+      distribution-track: 'internal'
+      notify-ci-cd-publication: true
+      notify-error-in-publication: true
+    secrets: inherit

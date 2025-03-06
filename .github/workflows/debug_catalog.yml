@@ -52,3 +52,12 @@ jobs:
               repo: context.repo.repo,
               body: `📱 New catalog for testing generated: [Download](${{ steps.url-request.outputs.appcenter_url }})`
             })
+
+  debug-firebase-catalog:
+    uses: Telefonica/android-shared-workflows/.github/workflows/build-enterprise.yml@firebase
+    with:
+      build-tasks: 'assembleDebug'
+      apk-path: '**/build/outputs/apk/debug/*.apk'
+      additional-groups: 'mistica-internal-testers'
+      notify-publication-as-pr-comment: true
+    secrets: inherit
