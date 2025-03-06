@@ -6,23 +6,53 @@ on:
         description: "Snapshot version"
         required: true
 jobs:
-  firebase-catalog:
+  debug-firebase-catalog:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Telefonica/ios-github-workflows repo
-        uses: actions/checkout@v4
+      - name: Set up JDK 17
+        uses: actions/setup-java@v2
         with:
-          repository: Telefonica/android-shared-workflows
-          token: "${{ secrets.NOVUM_PRIVATE_REPOS }}"
-          path: .shared-workflows
-          ref: firebase
+          distribution: 'temurin'
+          java-version: '17'
 
-      - name: Build and Upload to Firebase
-        uses: ./.shared-workflows/.github/workflows/build-enterprise.yml
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Build catalog
+        run: 'bash ./gradlew assembleDebug -Dappcenter_notify=false'
+
+      - name: Create firebase service json file
+        run: |
+          echo ${{ secrets.FIREBASE_DIST_CREDENTIALS_NIGHTLY }} | base64 --decode > service-account-file.json
+        shell: bash
+
+      - name: Get Apk path
+        id: get-apk-path
+        run: |
+          apk_path=(**/build/outputs/apk/debug/*.apk)
+          echo "apk_path=${apk_path[0]}" >> $GITHUB_OUTPUT
+        shell: bash
+
+      - name: Upload artifact to Firebase App Distribution
+        uses: wzieba/Firebase-Distribution-Github-Action@v1
+        id: upload-apk
         with:
-          build-tasks: 'assembleDebug'
-          apk-path: '**/build/outputs/apk/debug/*.apk'
-          additional-groups: 'mistica-internal-testers'
-          distribution-track: 'internal'
-          notify-ci-cd-publication: true
-          notify-error-in-publication: true
+          appId: '1:413491573542:android:d79e363379e606a7a807e7'
+          serviceCredentialsFile: ${{ github.workspace }}/service-account-file.json
+          groups: 'mistica-internal-testers'
+          file: ${{ steps.get-apk-path.outputs.apk_path }}
+
+      - name: Send Notification to Teams about published APK
+        uses: Telefonica/github-actions/microsoft-teams/notify@main
+        with:
+          channel: android_builds
+          template: app_uploaded
+          flow-token: "${{ secrets.NOVUM_FLOW_BEARER }}"
+          template-context: >
+            platform: Android,
+            app_name: Mistica-internal-enterprise,
+            scope: internal,
+            repository: ${{ github.event.repository.name }},
+            changeset: ${{ github.sha }},
+            share_uri: ${{ steps.upload-apk.outputs.TESTING_URI }},
+            temporal_download_uri: ${{ steps.upload-apk.outputs.BINARY_DOWNLOAD_URI }}
