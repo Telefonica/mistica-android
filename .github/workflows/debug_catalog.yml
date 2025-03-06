@@ -5,6 +5,7 @@ on:
       - '**.md'
       - 'doc/**'
       - 'tokens/**'
+      - '.github/**'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}

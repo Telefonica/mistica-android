@@ -6,7 +6,7 @@ on:
         description: "Snapshot version"
         required: true
 jobs:
-  debug-firebase-catalog:
+  snapshot:
     runs-on: ubuntu-latest
     steps:
       - name: Set up JDK 17
@@ -16,28 +16,18 @@ jobs:
           java-version: '17'
 
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
 
-      - name: Build catalog
-        run: 'bash ./gradlew assembleDebug -Dappcenter_notify=false'
+      - name: Build library
+        run: 'bash ./gradlew clean :library:assembleRelease :catalog:assembleRelease'
 
-      - name: Create firebase service json file
-        run: |
-          echo ${{ secrets.FIREBASE_DIST_CREDENTIALS_NIGHTLY }} | base64 --decode > service-account-file.json
-        shell: bash
-
-      - name: Get Apk path
-        id: get-apk-path
-        run: |
-          apk_path=(**/build/outputs/apk/debug/*.apk)
-          echo "apk_path=${apk_path[0]}" >> $GITHUB_OUTPUT
-        shell: bash
-
-      - name: Upload artifact to Firebase App Distribution
-        uses: wzieba/Firebase-Distribution-Github-Action@v1
-        id: upload-apk
-        with:
-          appId: '1:771826505811:android:f64fec267b535d7f974ea6'
-          serviceCredentialsFile: ${{ github.workspace }}/service-account-file.json
-          groups: 'mistica-internal-testers'
-          file: ${{ steps.get-apk-path.outputs.apk_path }}
+      - name: Release snapshot
+        env:
+          MOBILE_MAVENCENTRAL_USER: ${{ secrets.MOBILE_MAVENCENTRAL_USER }}
+          MOBILE_MAVENCENTRAL_PASSWORD: ${{ secrets.MOBILE_MAVENCENTRAL_PASSWORD }}
+          ORG_GRADLE_PROJECT_signingKey: ${{ secrets.ORG_GRADLE_PROJECT_SIGNINGKEY }}
+          ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.ORG_GRADLE_PROJECT_SIGNINGPASSWORD }}
+          ORG_GRADLE_PROJECT_signingKeyId: ${{ secrets.ORG_GRADLE_PROJECT_SIGNINGKEYID }}
+        run: "bash ./gradlew :library:publishReleasePublicationToSonatypeRepository -DSNAPSHOT_VERSION=${{ github.event.inputs.snapshotVersion }}
+          :catalog:publishCatalogPublicationToSonatypeRepository -DSNAPSHOT_VERSION=${{ github.event.inputs.snapshotVersion }}
+          --max-workers 1 closeAndReleaseStagingRepository"
