@@ -41,18 +41,3 @@ jobs:
           serviceCredentialsFile: ${{ github.workspace }}/service-account-file.json
           groups: 'mistica-internal-testers'
           file: ${{ steps.get-apk-path.outputs.apk_path }}
-
-      - name: Send Notification to Teams about published APK
-        uses: Telefonica/github-actions/microsoft-teams/notify@main
-        with:
-          channel: android_builds
-          template: app_uploaded
-          flow-token: "${{ secrets.NOVUM_FLOW_BEARER }}"
-          template-context: >
-            platform: Android,
-            app_name: Mistica-internal-enterprise,
-            scope: internal,
-            repository: ${{ github.event.repository.name }},
-            changeset: ${{ github.sha }},
-            share_uri: ${{ steps.upload-apk.outputs.TESTING_URI }},
-            temporal_download_uri: ${{ steps.upload-apk.outputs.BINARY_DOWNLOAD_URI }}
