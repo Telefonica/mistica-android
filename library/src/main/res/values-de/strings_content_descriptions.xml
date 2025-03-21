@@ -4,4 +4,5 @@
     <string name="badge_notification_description" comment="Content description for non numeric badge">Neue Inhalte</string>
     <string name="toggle_action_click" comment="Toggle announcement information about perform action over the toggle">Wechseln</string>
     <string name="clear_search_content_description">Suche löschen</string>
+    <string name="carousel_indicator_content_description">Seite %1$s von %2$s</string>
 </resources>

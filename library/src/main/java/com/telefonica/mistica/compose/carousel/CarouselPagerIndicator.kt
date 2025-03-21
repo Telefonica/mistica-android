@@ -20,9 +20,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
+import com.telefonica.mistica.R
 import com.telefonica.mistica.compose.carousel.CarouselPagerIndicator.MAX_WINDOW_SIZE
 import com.telefonica.mistica.compose.carousel.CarouselPagerIndicator.indicatorSelectedHeight
 import com.telefonica.mistica.compose.carousel.CarouselPagerIndicator.indicatorSelectedWidth
@@ -401,11 +405,18 @@ private fun PagerIndicatorBox(
 
     val visibleItems = items.filterNot { it.type == INVISIBLE }
 
+    val carouselIndicatorContentDescription = stringResource(
+        R.string.carousel_indicator_content_description,
+        carouselState.currentPage + 1,
+        carouselState.pageCount
+    )
+
     Box(
         modifier = modifier,
         contentAlignment = Alignment.CenterStart
     ) {
         Row(
+            modifier = Modifier.semantics { contentDescription = carouselIndicatorContentDescription },
             horizontalArrangement = Arrangement.spacedBy(spacing),
             verticalAlignment = Alignment.CenterVertically,
         ) {
