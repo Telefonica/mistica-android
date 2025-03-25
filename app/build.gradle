@@ -21,6 +21,9 @@ android {
         buildConfigField "String", "APPCENTER_KEY", "\"" +
                 appCenterProjects.getProperty(System.getProperty("appcenter_app_name", "")) +
                 "\""
+
+        def icLauncherIcon = System.getProperty("IC_LAUNCHER_ICON", "ic_launcher")
+        manifestPlaceholders["ic_launcher_icon"] = icLauncherIcon
     }
 
     lint {
