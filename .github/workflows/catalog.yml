@@ -62,5 +62,5 @@ jobs:
         with:
           appId: '1:413491573542:android:d79e363379e606a7a807e7'
           serviceCredentialsFile: ${{ github.workspace }}/service-account-file.json
-          groups: 'mistica-internal-testers'
+          groups: 'tid-internal-testers,mistica-internal-testers'
           file: ${{ steps.get-apk-path.outputs.apk_path }}
