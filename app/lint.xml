@@ -8,4 +8,13 @@
         <ignore regexp="com.microsoft.appcenter.distribute.Distribute" />
     </issue>
     <issue id="GradleDependency" severity="ignore" />
+
+    <!-- Required for firebase distribution tracks, nodpi assets should be included also. -->
+    <issue id="UnusedResources">
+        <ignore path="src/main/res/drawable/ic_launcher_foreground*.xml" />
+        <ignore path="src/main/res/mipmap-*/ic_launcher*.png" />
+    </issue>
+    <issue id="IconLauncherShape">
+        <ignore path="src/main/res/mipmap-nodpi/ic_launcher*.png" />
+    </issue>
 </lint>
