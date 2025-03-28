@@ -13,7 +13,6 @@ android {
         minSdkVersion min_sdk_version
         targetSdkVersion target_sdk_version
 
-        buildConfigField "String", "APPCENTER_KEY", "\"" + System.env.APPCENTER_KEY + "\""
         vectorDrawables {
             useSupportLibrary true
         }

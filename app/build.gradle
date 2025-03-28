@@ -1,11 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-    id 'com.betomorrow.appcenter'
 }
-
-def appCenterProjects = new Properties()
-file("appcenter_projects.properties").withInputStream { appCenterProjects.load(it) }
 
 android {
     compileSdk target_sdk_version
@@ -17,10 +13,6 @@ android {
         targetSdkVersion target_sdk_version
         versionCode versionCodeDate()
         versionName "1.0.0"
-
-        buildConfigField "String", "APPCENTER_KEY", "\"" +
-                appCenterProjects.getProperty(System.getProperty("appcenter_app_name", "")) +
-                "\""
 
         def icLauncherIcon = System.getProperty("IC_LAUNCHER_ICON", "ic_launcher")
         manifestPlaceholders["ic_launcher_icon"] = icLauncherIcon
@@ -73,27 +65,7 @@ static def versionCodeDate() {
     return (new Date().getTime() / 1000).toInteger()
 }
 
-appcenter {
-    apiToken = System.env.APPCENTER_API_TOKEN ?: ""
-    ownerName = "Tuenti-Organization"
-    distributionGroups = ["Public"]
-    releaseNotes = System.getProperty("appcenter_notes", "# Library version: ${version} \n See https://github.com/Telefonica/mistica-android/releases for more info.")
-
-    notifyTesters = System.getProperty("appcenter_notify", "true")
-    apps {
-        debug {
-            appName = System.getProperty("appcenter_app_name", "")
-        }
-    }
-    uploadMappingFiles = false
-}
-
 dependencies {
-    def appCenterSdkVersion = '4.3.1'
-    implementation "com.microsoft.appcenter:appcenter-analytics:${appCenterSdkVersion}"
-    implementation "com.microsoft.appcenter:appcenter-crashes:${appCenterSdkVersion}"
-    implementation "com.microsoft.appcenter:appcenter-distribute:${appCenterSdkVersion}"
-
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation "androidx.appcompat:appcompat:$androidx_appcompat_version"
 

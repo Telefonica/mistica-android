@@ -107,8 +107,6 @@ More info [here](library/src/main/java/com/telefonica/mistica/theme)
 
 There is a demo of currently implemented components in this repository. A full list of implemented components can be found here: [Components](library/src/main/java/com/telefonica/mistica).
 
-The app can be downloaded [here](https://install.appcenter.ms/orgs/tuenti-organization/apps/mistica/distribution_groups/public) or manually built.
-
 To compile the app manually run the [App](app) module in Android Studio.
 
 <p align="left">

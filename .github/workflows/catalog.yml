@@ -5,29 +5,6 @@ on:
       - main
     types: [closed]
 jobs:
-  catalog:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set up JDK 17
-        uses: actions/setup-java@v2
-        with:
-          distribution: 'temurin'
-          java-version: '17'
-
-      - name: Check pull request status
-        if: "!github.event.pull_request.merged == true"
-        run: 'echo "Skipping generation, pull request is not merged"'
-
-      - name: Checkout repo
-        if: github.event.pull_request.merged == true
-        uses: actions/checkout@v2
-
-      - name: Publish catalog
-        if: github.event.pull_request.merged == true
-        env:
-          APPCENTER_API_TOKEN: ${{ secrets.APPCENTER_API_TOKEN }}
-        run: 'bash ./gradlew clean check appCenterAssembleAndUploadDebug -Dappcenter_app_name=Mistica'
-
   debug-firebase-catalog:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
@@ -42,11 +19,11 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build catalog
-        run: 'bash ./gradlew assembleDebug -Dappcenter_notify=false -DIC_LAUNCHER_ICON=ic_launcher_rc'
+        run: 'bash ./gradlew assembleDebug -DIC_LAUNCHER_ICON=ic_launcher_internal'
 
       - name: Create firebase service json file
         run: |
-          echo ${{ secrets.FIREBASE_DIST_CREDENTIALS_RC }} | base64 --decode > service-account-file.json
+          echo ${{ secrets.FIREBASE_DIST_CREDENTIALS_NIGHTLY }} | base64 --decode > service-account-file.json
         shell: bash
 
       - name: Get Apk path
@@ -60,7 +37,7 @@ jobs:
         uses: wzieba/Firebase-Distribution-Github-Action@v1
         id: upload-apk
         with:
-          appId: '1:413491573542:android:d79e363379e606a7a807e7'
+          appId: '1:771826505811:android:f64fec267b535d7f974ea6'
           serviceCredentialsFile: ${{ github.workspace }}/service-account-file.json
           groups: 'tid-internal-testers,mistica-internal-testers'
           file: ${{ steps.get-apk-path.outputs.apk_path }}
