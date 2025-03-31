@@ -4,9 +4,6 @@
     <issue id="GradleDependency" severity="ignore" />
     <issue id="OldTargetApi" severity="ignore" />
     <issue id="MonochromeLauncherIcon" severity="ignore" />
-    <issue id="NotificationPermission">
-        <ignore regexp="com.microsoft.appcenter.distribute.Distribute" />
-    </issue>
     <issue id="GradleDependency" severity="ignore" />
 
     <!-- Required for firebase distribution tracks, nodpi assets should be included also. -->
