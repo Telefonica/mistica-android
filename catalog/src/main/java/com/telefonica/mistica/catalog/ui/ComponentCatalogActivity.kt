@@ -406,6 +406,7 @@ enum class Section {
     SHEET,
     CAROUSEL,
     SKELETON,
-    POSTER_CARD
+    POSTER_CARD,
+    LINKS,
 }
 
