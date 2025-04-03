@@ -15,12 +15,12 @@ import com.telefonica.mistica.util.getThemeColor
 
 @BindingMethods(
     BindingMethod(
-        type = TextLinkView::class,
+        type = TextLink::class,
         attribute = "linkInverse",
         method = "setLinkInverse"
     ),
 )
-class TextLinkView @JvmOverloads constructor(
+class TextLink @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0,
@@ -33,15 +33,15 @@ class TextLinkView @JvmOverloads constructor(
     @ColorInt
     private var linkColor: Int = context.getThemeColor(R.attr.colorTextLink)
 
-    private var linkTextView: AppCompatTextView
+    private var textView: AppCompatTextView
 
     init {
         LayoutInflater.from(context).inflate(R.layout.text_link_view, this, true)
 
-        linkTextView = findViewById(R.id.link_text_view)
+        textView = findViewById(R.id.link_text_view)
 
-        linkTextView.movementMethod = LinkMovementMethod.getInstance()
-        linkTextView.highlightColor = Color.TRANSPARENT
+        textView.movementMethod = LinkMovementMethod.getInstance()
+        textView.highlightColor = Color.TRANSPARENT
 
         if (attrs != null) {
             val styledAttrs =
@@ -52,7 +52,7 @@ class TextLinkView @JvmOverloads constructor(
     }
 
     fun setSingleTextLink(linkText: String, onLinkTapped: () -> Unit) {
-        linkTextView.text = getSpannableLinkText(
+        textView.text = getSpannableLinkText(
             originalText = linkText,
             links = listOf(
                 Link(
@@ -65,7 +65,7 @@ class TextLinkView @JvmOverloads constructor(
     }
 
     fun setTextWithLinks(originalText: String, links: List<Link>) {
-        linkTextView.text = getSpannableLinkText(
+        textView.text = getSpannableLinkText(
             originalText = originalText,
             links = links,
             linkColor = linkColor,

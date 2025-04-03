@@ -39,6 +39,7 @@ import com.telefonica.mistica.catalog.ui.classic.components.SnackBarCatalogFragm
 import com.telefonica.mistica.catalog.ui.classic.components.SteppersCatalogFragment
 import com.telefonica.mistica.catalog.ui.classic.components.TabsCatalogFragment
 import com.telefonica.mistica.catalog.ui.classic.components.TagsCatalogFragment
+import com.telefonica.mistica.catalog.ui.classic.components.TextLinkCatalogFragment
 import com.telefonica.mistica.catalog.ui.classic.components.TextPresetsCatalogFragment
 import com.telefonica.mistica.catalog.ui.classic.components.TitleCatalogFragment
 import com.telefonica.mistica.catalog.ui.compose.common.CatalogBlauBrand
@@ -130,7 +131,8 @@ class ComponentCatalogActivity : AppCompatActivity() {
             Section.SHEET to ::setSheetCatalogFragment,
             Section.CAROUSEL to ::setCarouselFragment,
             Section.SKELETON to ::setSkeletonFragment,
-            Section.POSTER_CARD to ::setPosterCardFragment
+            Section.POSTER_CARD to ::setPosterCardFragment,
+            Section.LINKS to ::setTextLinkCatalogFragment,
         )
 
         val section = intent.getSerializableExtra(EXTRA_SECTION) as? Section
@@ -299,6 +301,13 @@ class ComponentCatalogActivity : AppCompatActivity() {
         setPageAdapterWithTabs(
             classicComponent = TextPresetsCatalogFragment(),
             composeComponent = { Texts() })
+    }
+
+    private fun setTextLinkCatalogFragment() {
+        setPageAdapterWithTabs(
+            classicComponent = TextLinkCatalogFragment(),
+            composeComponent = null
+        )
     }
 
     private fun setPageAdapterWithTabs(classicComponent: Fragment?, composeComponent: (@Composable () -> Unit)?) {
