@@ -25,6 +25,7 @@ import androidx.annotation.RawRes
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.graphics.drawable.DrawableCompat
+import androidx.core.view.ViewCompat
 import com.airbnb.lottie.LottieAnimationView
 import com.airbnb.lottie.LottieProperty
 import com.airbnb.lottie.model.KeyPath
@@ -107,6 +108,7 @@ class FeedbackScreenView : ConstraintLayout {
     fun setFeedbackTitle(text: CharSequence) {
         titleText = text
         title.text = text
+        ViewCompat.setAccessibilityHeading(title, true)
     }
 
     fun setFeedbackSubtitle(text: CharSequence) {
