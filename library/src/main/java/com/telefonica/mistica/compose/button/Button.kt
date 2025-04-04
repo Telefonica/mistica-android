@@ -38,6 +38,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.semantics.contentDescription
@@ -83,6 +84,7 @@ fun Button(
     CompositionLocalProvider(LocalRippleConfiguration provides style.rippleConfiguration) {
         androidx.compose.material.Button(
             modifier = modifier
+                .testTag(ButtonTestTag.BUTTON)
                 .defaultMinSize(size.minWidth, size.height)
                 .onGloballyPositioned {
                     if (originalWidth == null) {
@@ -128,6 +130,7 @@ private fun LoadingContent(
         Row {
             CircularProgressIndicator(
                 modifier = Modifier
+                    .testTag(ButtonTestTag.BUTTON_PROGRESS)
                     .size(size.progressBarSize)
                     .align(Alignment.CenterVertically),
                 color = textColor,
@@ -136,7 +139,9 @@ private fun LoadingContent(
             loadingText.takeIf { it.isNotEmpty() }?.let {
                 Spacer(modifier = Modifier.width(iconSpacing))
                 Text(
-                    modifier = Modifier.align(Alignment.CenterVertically),
+                    modifier = Modifier
+                        .testTag(ButtonTestTag.BUTTON_TEXT_LOADING)
+                        .align(Alignment.CenterVertically),
                     text = it,
                     color = textColor,
                     style = size.textStyle,
@@ -172,6 +177,7 @@ private fun ButtonContent(
                     painterResource(id = it),
                     null,
                     modifier = Modifier
+                        .testTag(ButtonTestTag.BUTTON_ICON)
                         .size(size.iconSize)
                         .align(Alignment.CenterVertically),
                     colorFilter = ColorFilter.tint(style.textColor)
@@ -180,6 +186,7 @@ private fun ButtonContent(
             }
             Text(
                 modifier = Modifier
+                    .testTag(ButtonTestTag.BUTTON_TEXT)
                     .align(Alignment.CenterVertically)
                     .semantics { contentDescription?.let { this.contentDescription = it } },
                 text = text,
@@ -214,6 +221,15 @@ private fun ButtonContent(
 
 private fun Modifier.applyWidth(originalWidth: Dp?): Modifier =
     originalWidth?.let { width(it) } ?: this
+
+
+object ButtonTestTag {
+    const val BUTTON = "button"
+    const val BUTTON_TEXT = "button_text"
+    const val BUTTON_TEXT_LOADING = "button_text_loading"
+    const val BUTTON_ICON = "button_icon"
+    const val BUTTON_PROGRESS = "button_progress"
+}
 
 enum class ButtonStyle {
     PRIMARY,
