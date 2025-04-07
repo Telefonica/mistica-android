@@ -1,8 +1,7 @@
 # TextLink Component
 
-<p align="center">
-   <img width="30%" src="../../../../../../../../doc/images/text_links/links_screenshot.jpg" />
-</p>
+<img width="30%" alt="Screenshot showing the implementation of the TextLink component" src="../../../../../../../../doc/images/text_links/links_screenshot.
+jpg" />
 
 This Android component is a custom `TextView` designed to simplify the display of text containing clickable links. It leverages Android's `SpannableString` to handle link creation and styling.
 
