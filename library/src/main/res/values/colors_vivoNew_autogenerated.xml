@@ -29,12 +29,13 @@
 	<color name="vivoNew_color_grey1">#F6F6F6</color>
 	<color name="vivoNew_color_grey2">#EEEEEE</color>
 	<color name="vivoNew_color_grey3">#DDDDDD</color>
-	<color name="vivoNew_color_grey4">#949494</color>
+	<color name="vivoNew_color_grey4">#8A8C90</color>
 	<color name="vivoNew_color_grey5">#666666</color>
 	<color name="vivoNew_color_grey6">#000000</color>
 	<color name="vivoNew_color_white">#FFFFFF</color>
 	<color name="vivoNew_color_darkModeBlack">#191919</color>
 	<color name="vivoNew_color_darkModeGrey">#242424</color>
+	<color name="vivoNew_color_darkModeGrey5">#6D7D88</color>
 	<color name="vivoNew_color_darkModeGrey6">#313235</color>
 	<color name="vivoNew_color_darkModeBlack_5_alpha">#0D191919</color>
 	<color name="vivoNew_color_darkModeBlack_8_alpha">#14191919</color>
