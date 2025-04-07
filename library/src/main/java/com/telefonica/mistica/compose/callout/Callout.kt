@@ -100,7 +100,10 @@ fun Callout(
                         }
 
                         CalloutButtonConfig.PRIMARY -> {
-                            PrimaryButton(text = primaryButtonText, onClick = onPrimaryButtonClick)
+                            PrimaryButton(
+                                text = primaryButtonText,
+                                onClick = onPrimaryButtonClick
+                            )
                         }
 
                         CalloutButtonConfig.PRIMARY_AND_LINK -> {
@@ -109,11 +112,17 @@ fun Callout(
                                 modifier = Modifier.padding(end = 16.dp),
                                 onClick = onPrimaryButtonClick,
                             )
-                            LinkButton(text = linkText, onClick = onLinkClicked)
+                            LinkButton(
+                                text = linkText,
+                                onClick = onLinkClicked
+                            )
                         }
 
                         CalloutButtonConfig.SECONDARY -> {
-                            SecondaryButton(text = secondaryButtonText, onClick = onSecondaryButtonClick)
+                            SecondaryButton(
+                                text = secondaryButtonText,
+                                onClick = onSecondaryButtonClick
+                            )
                         }
 
                         CalloutButtonConfig.PRIMARY_AND_SECONDARY -> {
@@ -122,7 +131,10 @@ fun Callout(
                                 modifier = Modifier.padding(end = 16.dp),
                                 onClick = onPrimaryButtonClick,
                             )
-                            SecondaryButton(text = secondaryButtonText, onClick = onSecondaryButtonClick)
+                            SecondaryButton(
+                                text = secondaryButtonText,
+                                onClick = onSecondaryButtonClick
+                            )
                         }
 
                         CalloutButtonConfig.SECONDARY_AND_LINK -> {
@@ -131,11 +143,17 @@ fun Callout(
                                 modifier = Modifier.padding(end = 16.dp),
                                 onClick = onSecondaryButtonClick,
                             )
-                            LinkButton(text = linkText, onClick = onLinkClicked)
+                            LinkButton(
+                                text = linkText,
+                                onClick = onLinkClicked
+                            )
                         }
 
                         CalloutButtonConfig.LINK -> {
-                            LinkButton(text = linkText, onClick = onLinkClicked)
+                            LinkButton(
+                                text = linkText,
+                                onClick = onLinkClicked
+                            )
                         }
                     }
                 }
