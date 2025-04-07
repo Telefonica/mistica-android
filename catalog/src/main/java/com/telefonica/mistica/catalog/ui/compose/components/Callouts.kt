@@ -148,6 +148,7 @@ fun Callouts() {
                         .fillMaxWidth()
                         .padding(16.dp),
                     title = title.takeIf { it.isNotBlank() },
+                    setTitleAsHeader = true,
                     description = description.takeIf { it.isNotBlank() },
                     buttonConfig = buttonConfig,
                     imageConfig = iconType,
