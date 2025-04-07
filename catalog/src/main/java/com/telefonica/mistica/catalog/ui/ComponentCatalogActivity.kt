@@ -70,6 +70,7 @@ import com.telefonica.mistica.catalog.ui.compose.components.Skeletons
 import com.telefonica.mistica.catalog.ui.compose.components.Steppers
 import com.telefonica.mistica.catalog.ui.compose.components.TabsCatalog
 import com.telefonica.mistica.catalog.ui.compose.components.Tags
+import com.telefonica.mistica.catalog.ui.compose.components.TextLinks
 import com.telefonica.mistica.catalog.ui.compose.components.Texts
 import com.telefonica.mistica.catalog.ui.compose.components.Titles
 import com.telefonica.mistica.compose.theme.MisticaTheme
@@ -306,7 +307,7 @@ class ComponentCatalogActivity : AppCompatActivity() {
     private fun setTextLinkCatalogFragment() {
         setPageAdapterWithTabs(
             classicComponent = TextLinkCatalogFragment(),
-            composeComponent = null
+            composeComponent = { TextLinks() }
         )
     }
 

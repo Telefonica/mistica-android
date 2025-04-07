@@ -3,7 +3,10 @@ package com.telefonica.mistica.link
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.Spanned
+import android.util.Log
 import androidx.annotation.ColorInt
+
+private const val WARNING_TAG = "TextLinkUtils"
 
 fun getSpannableLinkText(
     originalText: String,
@@ -24,11 +27,15 @@ fun getSpannableLinkText(
                     Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
                 )
             } else {
-                // todo show error while matching specific link
+                Log.w(WARNING_TAG, "Link \"${link.linkedText}\" not found in text \"$originalText\".")
             }
         }
     } else {
-        // todo show error while matching links, returning spannable without links
+        Log.w(
+            WARNING_TAG, "None of the provided links match the text:" +
+                    "\n- Links: $links" +
+                    "\n Provided text: \"$originalText\"."
+        )
     }
     return spannableString
 }
@@ -37,7 +44,7 @@ private fun String.containsAnyLink(links: List<MultiLink>): Boolean {
     return links.any { link -> contains(link.linkedText) }
 }
 
-private const val TAG = "Link"
+private const val LINK_TAG = "Link"
 
-data class MultiLink(val linkedText: String, val tag: String = TAG, val onLinkTapped: () -> Unit)
-data class SingleLink(val tag: String = TAG, val onLinkTapped: () -> Unit)
+data class MultiLink(val linkedText: String, val tag: String = LINK_TAG, val onLinkTapped: () -> Unit)
+data class SingleLink(val tag: String = LINK_TAG, val onLinkTapped: () -> Unit)
