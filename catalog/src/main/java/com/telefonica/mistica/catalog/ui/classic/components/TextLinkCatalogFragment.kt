@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.telefonica.mistica.catalog.R
+import com.telefonica.mistica.link.MultiLink
+import com.telefonica.mistica.link.SingleLink
 import com.telefonica.mistica.link.TextLink
 
 class TextLinkCatalogFragment : Fragment() {
@@ -23,14 +25,67 @@ class TextLinkCatalogFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         view.findViewById<TextLink>(R.id.single_link).apply {
-            setSingleTextLink("Single link") {
-                Toast.makeText(requireContext(), "Single link clicked!", Toast.LENGTH_SHORT).show()
-            }
+            setSingleTextLink(
+                originalText = "Single link", singleLink = SingleLink {
+                    Toast.makeText(requireContext(), "Link clicked!", Toast.LENGTH_SHORT).show()
+                })
         }
-        view.findViewById<TextLink>(R.id.single_link_inverse).apply {
-            setSingleTextLink("Single link inverse") {
-                Toast.makeText(requireContext(), "Single link inverse clicked!", Toast.LENGTH_SHORT).show()
-            }
+        view.findViewById<TextLink>(R.id.single_link_color).apply {
+            setSingleTextLink(singleLink = SingleLink {
+                Toast.makeText(requireContext(), "Link clicked!", Toast.LENGTH_SHORT).show()
+            })
         }
+        view.findViewById<TextLink>(R.id.single_link_style).apply {
+            setSingleTextLink(singleLink = SingleLink {
+                Toast.makeText(requireContext(), "Link clicked!", Toast.LENGTH_SHORT).show()
+            })
+        }
+        view.findViewById<TextLink>(R.id.multi_link).apply {
+            setMultiLinkText(
+                originalText = "This a text showing first link and second link",
+                links = listOf(
+                    MultiLink(
+                        linkedText = "first link",
+                        onLinkTapped = { Toast.makeText(requireContext(), "First link clicked!", Toast.LENGTH_SHORT).show() }
+                    ),
+                    MultiLink(
+                        linkedText = "second link",
+                        onLinkTapped = { Toast.makeText(requireContext(), "Second link clicked!", Toast.LENGTH_SHORT).show() }
+                    ),
+                )
+            )
+        }
+        view.findViewById<TextLink>(R.id.multi_link_color).apply {
+            setMultiLinkText(
+                links = listOf(
+                    MultiLink(
+                        linkedText = "first link",
+                        onLinkTapped = { Toast.makeText(requireContext(), "First link clicked!", Toast.LENGTH_SHORT).show() }
+                    ),
+                    MultiLink(
+                        linkedText = "second link",
+                        onLinkTapped = { Toast.makeText(requireContext(), "Second link clicked!", Toast.LENGTH_SHORT).show() }
+                    ),
+                )
+            )
+        }
+        view.findViewById<TextLink>(R.id.multi_link_style).apply {
+            setMultiLinkText(
+                links = listOf(
+                    MultiLink(
+                        linkedText = "first link",
+                        onLinkTapped = { Toast.makeText(requireContext(), "First link clicked!", Toast.LENGTH_SHORT).show() }
+                    ),
+                    MultiLink(
+                        linkedText = "second link",
+                        onLinkTapped = { Toast.makeText(requireContext(), "Second link clicked!", Toast.LENGTH_SHORT).show() }
+                    ),
+                )
+            )
+        }
+    }
+
+    fun singleLinkAction() {
+        Toast.makeText(requireContext(), "Single link action!", Toast.LENGTH_SHORT).show()
     }
 }

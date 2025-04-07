@@ -4,12 +4,50 @@
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		android:gravity="center|top"
-		android:paddingVertical="24dp"
+		android:padding="24dp"
 		android:orientation="vertical"
 		>
 
 	<com.telefonica.mistica.link.TextLink
 			android:id="@+id/single_link"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Single link default"
+			/>
+
+	<Space
+			android:layout_width="match_parent"
+			android:layout_height="16dp"
+			/>
+
+	<com.telefonica.mistica.link.TextLink
+			android:id="@+id/single_link_color"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Custom color link"
+			app:linkColor="?attr/colorPromoHigh"
+			/>
+
+	<Space
+			android:layout_width="match_parent"
+			android:layout_height="16dp"
+			/>
+
+	<com.telefonica.mistica.link.TextLink
+			android:id="@+id/single_link_style"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Custom style link"
+			style="@style/AppTheme.TextAppearance.PresetTitle3"
+			/>
+
+	<Space
+			android:layout_width="match_parent"
+			android:layout_height="48dp"
+			/>
+
+	<com.telefonica.mistica.link.TextLink
+			android:id="@+id/multi_link"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			/>
@@ -20,11 +58,27 @@
 			/>
 
 	<com.telefonica.mistica.link.TextLink
-			android:id="@+id/single_link_inverse"
+			android:id="@+id/multi_link_color"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:background="?attr/colorBrandHigh"
-			app:linkInverse="true"
+			android:text="This a text showing first link and second link with custom colors"
+			android:gravity="center"
+			android:textColor="@android:color/holo_blue_dark"
+			app:linkColor="?attr/colorPromoHigh"
+			/>
+
+	<Space
+			android:layout_width="match_parent"
+			android:layout_height="16dp"
+			/>
+
+	<com.telefonica.mistica.link.TextLink
+			android:id="@+id/multi_link_style"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="This a text showing first link and second link with custom style"
+			android:gravity="center"
+			style="@style/AppTheme.TextAppearance.PresetTitle3"
 			/>
 
 </LinearLayout>
