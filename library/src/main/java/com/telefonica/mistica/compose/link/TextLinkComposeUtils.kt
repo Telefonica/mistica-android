@@ -6,6 +6,7 @@ import androidx.compose.ui.text.LinkAnnotation
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.TextLinkStyles
 import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.withLink
 
 /**
@@ -29,7 +30,7 @@ fun getAnnotatedLinksString(
             withLink(
                 link = LinkAnnotation.Clickable(
                     tag = link.tag,
-                    styles = TextLinkStyles(style = SpanStyle(color = linkColor)),
+                    styles = TextLinkStyles(style = SpanStyle(color = linkColor, textDecoration = TextDecoration.Underline)),
                     linkInteractionListener = { link.onLinkTapped.invoke() },
                 ),
             ) {

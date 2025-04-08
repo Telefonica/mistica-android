@@ -12,6 +12,19 @@ import com.telefonica.mistica.compose.theme.MisticaTheme
 @Composable
 fun TextLink(
     originalText: String,
+    link: SingleLink,
+    modifier: Modifier = Modifier,
+) {
+    TextLink(
+        originalText = originalText,
+        links = listOf(MultiLink(originalText, link.tag, link.onLinkTapped)),
+        modifier = modifier,
+    )
+}
+
+@Composable
+fun TextLink(
+    originalText: String,
     links: List<MultiLink>,
     modifier: Modifier = Modifier,
 ) {
@@ -27,7 +40,19 @@ fun TextLink(
 
 @Preview(showBackground = true)
 @Composable
-fun PreviewTextWithLinks() {
+fun PreviewSingleLink() {
+    val message =
+        "Single link"
+    TextLink(
+        originalText = message,
+        link = SingleLink {},
+        modifier = Modifier.padding(16.dp),
+    )
+}
+
+@Preview(showBackground = true)
+@Composable
+fun PreviewMultiLinks() {
     val message =
         "I have read and agree to the promotion's Legal Grounds and Privacy Policy legal warning. (Tap on links to show error)."
     val links = listOf(
