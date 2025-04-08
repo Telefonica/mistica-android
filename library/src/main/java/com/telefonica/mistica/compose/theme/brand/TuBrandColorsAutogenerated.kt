@@ -68,6 +68,7 @@ public object TuBrandColors {
       textLinkSnackbar = TuPaletteColor.tu_color_white
       textActivated = TuPaletteColor.tu_color_primary
       textBrand = TuPaletteColor.tu_color_blue
+      inputBorder = TuPaletteColor.tu_color_grey5
       control = TuPaletteColor.tu_color_grey5
       controlActivated = TuPaletteColor.tu_color_primary
       controlInverse = TuPaletteColor.tu_color_white
@@ -129,15 +130,31 @@ public object TuBrandColors {
       tagTextPromo = TuPaletteColor.tu_color_blue
       tagTextActive = TuPaletteColor.tu_color_blue
       tagTextInactive = TuPaletteColor.tu_color_grey5
+      tagTextInfo = TuPaletteColor.tu_color_blue
       tagTextSuccess = TuPaletteColor.tu_color_green75
       tagTextWarning = TuPaletteColor.tu_color_orange70
       tagTextError = TuPaletteColor.tu_color_red70
       tagBackgroundPromo = TuPaletteColor.tu_color_blue10
       tagBackgroundActive = TuPaletteColor.tu_color_blue10
       tagBackgroundInactive = TuPaletteColor.tu_color_grey1
+      tagBackgroundInfo = TuPaletteColor.tu_color_blue10
       tagBackgroundSuccess = TuPaletteColor.tu_color_green10
       tagBackgroundWarning = TuPaletteColor.tu_color_orange20
       tagBackgroundError = TuPaletteColor.tu_color_red10
+      tagTextPromoInverse = TuPaletteColor.tu_color_blue
+      tagTextActiveInverse = TuPaletteColor.tu_color_blue
+      tagTextInactiveInverse = TuPaletteColor.tu_color_grey5
+      tagTextInfoInverse = TuPaletteColor.tu_color_blue
+      tagTextSuccessInverse = TuPaletteColor.tu_color_green75
+      tagTextWarningInverse = TuPaletteColor.tu_color_orange70
+      tagTextErrorInverse = TuPaletteColor.tu_color_red70
+      tagBackgroundPromoInverse = TuPaletteColor.tu_color_blue10
+      tagBackgroundActiveInverse = TuPaletteColor.tu_color_blue10
+      tagBackgroundInactiveInverse = TuPaletteColor.tu_color_grey1
+      tagBackgroundInfoInverse = TuPaletteColor.tu_color_blue10
+      tagBackgroundSuccessInverse = TuPaletteColor.tu_color_green10
+      tagBackgroundWarningInverse = TuPaletteColor.tu_color_orange20
+      tagBackgroundErrorInverse = TuPaletteColor.tu_color_red10
       }
 
   public val darkColors: MisticaColors = MisticaColors().apply {
@@ -200,6 +217,7 @@ public object TuBrandColors {
       textLinkSnackbar = TuPaletteColor.tu_color_blue30
       textActivated = TuPaletteColor.tu_color_blue30
       textBrand = TuPaletteColor.tu_color_blue30
+      inputBorder = TuPaletteColor.tu_color_grey5
       control = TuPaletteColor.tu_color_darkModeGrey6
       controlActivated = TuPaletteColor.tu_color_blue30
       controlInverse = TuPaletteColor.tu_color_darkModeGrey6
@@ -229,8 +247,8 @@ public object TuBrandColors {
       neutralLowAlternative = TuPaletteColor.tu_color_darkModeGrey6
       textPrimary = TuPaletteColor.tu_color_grey2
       textPrimaryInverse = TuPaletteColor.tu_color_grey2
-      textSecondary = TuPaletteColor.tu_color_grey4
-      textSecondaryInverse = TuPaletteColor.tu_color_grey4
+      textSecondary = TuPaletteColor.tu_color_grey3
+      textSecondaryInverse = TuPaletteColor.tu_color_grey3
       error = TuPaletteColor.tu_color_red
       textError = TuPaletteColor.tu_color_red
       textErrorInverse = TuPaletteColor.tu_color_red
@@ -261,15 +279,31 @@ public object TuBrandColors {
       tagTextPromo = TuPaletteColor.tu_color_blue30
       tagTextActive = TuPaletteColor.tu_color_blue30
       tagTextInactive = TuPaletteColor.tu_color_grey5
+      tagTextInfo = TuPaletteColor.tu_color_blue30
       tagTextSuccess = TuPaletteColor.tu_color_green40
       tagTextWarning = TuPaletteColor.tu_color_orange55
       tagTextError = TuPaletteColor.tu_color_red40
       tagBackgroundPromo = TuPaletteColor.tu_color_darkModeGrey6
       tagBackgroundActive = TuPaletteColor.tu_color_darkModeGrey6
       tagBackgroundInactive = TuPaletteColor.tu_color_darkModeGrey6
+      tagBackgroundInfo = TuPaletteColor.tu_color_darkModeGrey6
       tagBackgroundSuccess = TuPaletteColor.tu_color_darkModeGrey6
       tagBackgroundWarning = TuPaletteColor.tu_color_darkModeGrey6
       tagBackgroundError = TuPaletteColor.tu_color_darkModeGrey6
+      tagTextPromoInverse = TuPaletteColor.tu_color_blue30
+      tagTextActiveInverse = TuPaletteColor.tu_color_blue30
+      tagTextInactiveInverse = TuPaletteColor.tu_color_grey5
+      tagTextInfoInverse = TuPaletteColor.tu_color_blue30
+      tagTextSuccessInverse = TuPaletteColor.tu_color_green40
+      tagTextWarningInverse = TuPaletteColor.tu_color_orange55
+      tagTextErrorInverse = TuPaletteColor.tu_color_red40
+      tagBackgroundPromoInverse = TuPaletteColor.tu_color_darkModeGrey6
+      tagBackgroundActiveInverse = TuPaletteColor.tu_color_darkModeGrey6
+      tagBackgroundInactiveInverse = TuPaletteColor.tu_color_darkModeGrey6
+      tagBackgroundInfoInverse = TuPaletteColor.tu_color_darkModeGrey6
+      tagBackgroundSuccessInverse = TuPaletteColor.tu_color_darkModeGrey6
+      tagBackgroundWarningInverse = TuPaletteColor.tu_color_darkModeGrey6
+      tagBackgroundErrorInverse = TuPaletteColor.tu_color_darkModeGrey6
       }
 }
 

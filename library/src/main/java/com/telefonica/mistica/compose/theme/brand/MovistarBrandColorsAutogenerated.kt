@@ -68,6 +68,7 @@ public object MovistarBrandColors {
       textLinkSnackbar = MovistarPaletteColor.movistar_color_movistarBlue30
       textActivated = MovistarPaletteColor.movistar_color_movistarBlueHC
       textBrand = MovistarPaletteColor.movistar_color_movistarBlueHC
+      inputBorder = MovistarPaletteColor.movistar_color_grey4
       control = MovistarPaletteColor.movistar_color_grey4
       controlActivated = MovistarPaletteColor.movistar_color_movistarBlue
       controlInverse = MovistarPaletteColor.movistar_color_movistarBlue20
@@ -104,21 +105,21 @@ public object MovistarBrandColors {
       error = MovistarPaletteColor.movistar_color_pepper55
       textError = MovistarPaletteColor.movistar_color_pepper55
       textErrorInverse = MovistarPaletteColor.movistar_color_white
-      promo = MovistarPaletteColor.movistar_color_purple
+      promo = MovistarPaletteColor.movistar_color_pepper70
       highlight = MovistarPaletteColor.movistar_color_pink55
       successLow = MovistarPaletteColor.movistar_color_movistarGreen10
       warningLow = MovistarPaletteColor.movistar_color_egg10
       errorLow = MovistarPaletteColor.movistar_color_pepper10
-      promoLow = MovistarPaletteColor.movistar_color_purple10
+      promoLow = MovistarPaletteColor.movistar_color_pepper10
       brandLow = MovistarPaletteColor.movistar_color_movistarBlue10
       successHigh = MovistarPaletteColor.movistar_color_movistarGreen70
       warningHigh = MovistarPaletteColor.movistar_color_egg80
       errorHigh = MovistarPaletteColor.movistar_color_pepper70
-      promoHigh = MovistarPaletteColor.movistar_color_purple70
+      promoHigh = MovistarPaletteColor.movistar_color_pepper70
       successHighInverse = MovistarPaletteColor.movistar_color_movistarGreen70
       warningHighInverse = MovistarPaletteColor.movistar_color_egg80
       errorHighInverse = MovistarPaletteColor.movistar_color_pepper70
-      promoHighInverse = MovistarPaletteColor.movistar_color_purple70
+      promoHighInverse = MovistarPaletteColor.movistar_color_pepper70
       textNavigationBarPrimary = MovistarPaletteColor.movistar_color_white
       textNavigationBarSecondary = MovistarPaletteColor.movistar_color_movistarBlue20
       textNavigationSearchBarHint = MovistarPaletteColor.movistar_color_movistarBlue20
@@ -126,18 +127,34 @@ public object MovistarBrandColors {
       textAppBar = MovistarPaletteColor.movistar_color_grey5
       textAppBarSelected = MovistarPaletteColor.movistar_color_movistarBlueHC
       customTabsBackground = MovistarPaletteColor.movistar_color_white
-      tagTextPromo = MovistarPaletteColor.movistar_color_purple70
+      tagTextPromo = MovistarPaletteColor.movistar_color_white
       tagTextActive = MovistarPaletteColor.movistar_color_movistarBlueHC
       tagTextInactive = MovistarPaletteColor.movistar_color_grey5
+      tagTextInfo = MovistarPaletteColor.movistar_color_white
       tagTextSuccess = MovistarPaletteColor.movistar_color_movistarGreen70
       tagTextWarning = MovistarPaletteColor.movistar_color_egg80
       tagTextError = MovistarPaletteColor.movistar_color_pepper70
-      tagBackgroundPromo = MovistarPaletteColor.movistar_color_purple10
+      tagBackgroundPromo = MovistarPaletteColor.movistar_color_pepper70
       tagBackgroundActive = MovistarPaletteColor.movistar_color_movistarBlue10
       tagBackgroundInactive = MovistarPaletteColor.movistar_color_grey1
+      tagBackgroundInfo = MovistarPaletteColor.movistar_color_movistarBlueDark
       tagBackgroundSuccess = MovistarPaletteColor.movistar_color_movistarGreen10
       tagBackgroundWarning = MovistarPaletteColor.movistar_color_egg10
       tagBackgroundError = MovistarPaletteColor.movistar_color_pepper10
+      tagTextPromoInverse = MovistarPaletteColor.movistar_color_pepper70
+      tagTextActiveInverse = MovistarPaletteColor.movistar_color_movistarBlueHC
+      tagTextInactiveInverse = MovistarPaletteColor.movistar_color_grey5
+      tagTextInfoInverse = MovistarPaletteColor.movistar_color_movistarBlueDark
+      tagTextSuccessInverse = MovistarPaletteColor.movistar_color_movistarGreen70
+      tagTextWarningInverse = MovistarPaletteColor.movistar_color_egg80
+      tagTextErrorInverse = MovistarPaletteColor.movistar_color_pepper70
+      tagBackgroundPromoInverse = MovistarPaletteColor.movistar_color_white
+      tagBackgroundActiveInverse = MovistarPaletteColor.movistar_color_white
+      tagBackgroundInactiveInverse = MovistarPaletteColor.movistar_color_white
+      tagBackgroundInfoInverse = MovistarPaletteColor.movistar_color_white
+      tagBackgroundSuccessInverse = MovistarPaletteColor.movistar_color_white
+      tagBackgroundWarningInverse = MovistarPaletteColor.movistar_color_white
+      tagBackgroundErrorInverse = MovistarPaletteColor.movistar_color_white
       }
 
   public val darkColors: MisticaColors = MisticaColors().apply {
@@ -200,6 +217,7 @@ public object MovistarBrandColors {
       textLinkSnackbar = MovistarPaletteColor.movistar_color_movistarBlue
       textActivated = MovistarPaletteColor.movistar_color_movistarBlue
       textBrand = MovistarPaletteColor.movistar_color_movistarBlue
+      inputBorder = MovistarPaletteColor.movistar_color_darkModeGrey4
       control = MovistarPaletteColor.movistar_color_darkModeGrey4
       controlActivated = MovistarPaletteColor.movistar_color_movistarBlue
       controlInverse = MovistarPaletteColor.movistar_color_darkModeGrey4
@@ -225,8 +243,8 @@ public object MovistarBrandColors {
       neutralHigh = MovistarPaletteColor.movistar_color_darkModeGrey2
       neutralMedium = MovistarPaletteColor.movistar_color_darkModeGrey5
       neutralMediumInverse = MovistarPaletteColor.movistar_color_grey5
-      neutralLow = MovistarPaletteColor.movistar_color_darkModeGrey6
-      neutralLowAlternative = MovistarPaletteColor.movistar_color_darkModeGrey6
+      neutralLow = MovistarPaletteColor.movistar_color_darkModeGrey7
+      neutralLowAlternative = MovistarPaletteColor.movistar_color_darkModeGrey7
       textPrimary = MovistarPaletteColor.movistar_color_darkModeGrey2
       textPrimaryInverse = MovistarPaletteColor.movistar_color_darkModeGrey2
       textSecondary = MovistarPaletteColor.movistar_color_darkModeGrey4
@@ -236,7 +254,7 @@ public object MovistarBrandColors {
       error = MovistarPaletteColor.movistar_color_pepper45
       textError = MovistarPaletteColor.movistar_color_pepper45
       textErrorInverse = MovistarPaletteColor.movistar_color_pepper45
-      promo = MovistarPaletteColor.movistar_color_purple40
+      promo = MovistarPaletteColor.movistar_color_pepper45
       highlight = MovistarPaletteColor.movistar_color_pink45
       successLow = MovistarPaletteColor.movistar_color_darkModeGrey7
       warningLow = MovistarPaletteColor.movistar_color_darkModeGrey7
@@ -246,11 +264,11 @@ public object MovistarBrandColors {
       successHigh = MovistarPaletteColor.movistar_color_movistarGreen40
       warningHigh = MovistarPaletteColor.movistar_color_egg40
       errorHigh = MovistarPaletteColor.movistar_color_pepper45
-      promoHigh = MovistarPaletteColor.movistar_color_purple35
+      promoHigh = MovistarPaletteColor.movistar_color_pepper45
       successHighInverse = MovistarPaletteColor.movistar_color_movistarGreen70
       warningHighInverse = MovistarPaletteColor.movistar_color_egg80
       errorHighInverse = MovistarPaletteColor.movistar_color_pepper70
-      promoHighInverse = MovistarPaletteColor.movistar_color_purple70
+      promoHighInverse = MovistarPaletteColor.movistar_color_pepper45
       textNavigationBarPrimary = MovistarPaletteColor.movistar_color_darkModeGrey2
       textNavigationBarSecondary = MovistarPaletteColor.movistar_color_darkModeGrey4
       textNavigationSearchBarHint = MovistarPaletteColor.movistar_color_darkModeGrey4
@@ -258,18 +276,34 @@ public object MovistarBrandColors {
       textAppBar = MovistarPaletteColor.movistar_color_darkModeGrey4
       textAppBarSelected = MovistarPaletteColor.movistar_color_movistarBlue
       customTabsBackground = MovistarPaletteColor.movistar_color_darkModeBlack
-      tagTextPromo = MovistarPaletteColor.movistar_color_purple35
+      tagTextPromo = MovistarPaletteColor.movistar_color_white
       tagTextActive = MovistarPaletteColor.movistar_color_movistarBlue
       tagTextInactive = MovistarPaletteColor.movistar_color_darkModeGrey3
+      tagTextInfo = MovistarPaletteColor.movistar_color_white
       tagTextSuccess = MovistarPaletteColor.movistar_color_movistarGreen40
       tagTextWarning = MovistarPaletteColor.movistar_color_egg40
       tagTextError = MovistarPaletteColor.movistar_color_pepper45
-      tagBackgroundPromo = MovistarPaletteColor.movistar_color_darkModeGrey7
+      tagBackgroundPromo = MovistarPaletteColor.movistar_color_pepper70
       tagBackgroundActive = MovistarPaletteColor.movistar_color_darkModeGrey7
       tagBackgroundInactive = MovistarPaletteColor.movistar_color_darkModeGrey7
+      tagBackgroundInfo = MovistarPaletteColor.movistar_color_darkModeGrey7
       tagBackgroundSuccess = MovistarPaletteColor.movistar_color_darkModeGrey7
       tagBackgroundWarning = MovistarPaletteColor.movistar_color_darkModeGrey7
       tagBackgroundError = MovistarPaletteColor.movistar_color_darkModeGrey7
+      tagTextPromoInverse = MovistarPaletteColor.movistar_color_white
+      tagTextActiveInverse = MovistarPaletteColor.movistar_color_movistarBlue
+      tagTextInactiveInverse = MovistarPaletteColor.movistar_color_darkModeGrey3
+      tagTextInfoInverse = MovistarPaletteColor.movistar_color_white
+      tagTextSuccessInverse = MovistarPaletteColor.movistar_color_movistarGreen40
+      tagTextWarningInverse = MovistarPaletteColor.movistar_color_egg40
+      tagTextErrorInverse = MovistarPaletteColor.movistar_color_pepper45
+      tagBackgroundPromoInverse = MovistarPaletteColor.movistar_color_pepper70
+      tagBackgroundActiveInverse = MovistarPaletteColor.movistar_color_darkModeGrey7
+      tagBackgroundInactiveInverse = MovistarPaletteColor.movistar_color_darkModeGrey7
+      tagBackgroundInfoInverse = MovistarPaletteColor.movistar_color_darkModeGrey7
+      tagBackgroundSuccessInverse = MovistarPaletteColor.movistar_color_darkModeGrey7
+      tagBackgroundWarningInverse = MovistarPaletteColor.movistar_color_darkModeGrey7
+      tagBackgroundErrorInverse = MovistarPaletteColor.movistar_color_darkModeGrey7
       }
 }
 
@@ -402,7 +436,7 @@ private object MovistarPaletteColor {
 
   public val movistar_color_darkModeGrey3: Color = Color(0xFFCED4D7)
 
-  public val movistar_color_darkModeGrey4: Color = Color(0xFF85939C)
+  public val movistar_color_darkModeGrey4: Color = Color(0xFF89969F)
 
   public val movistar_color_darkModeGrey5: Color = Color(0xFF6D7D88)
 

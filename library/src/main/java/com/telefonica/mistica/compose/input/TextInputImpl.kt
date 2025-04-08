@@ -111,7 +111,7 @@ private fun TextBox(
             .fillMaxWidth()
             .border(
                 width = 1.dp,
-                color = MisticaTheme.colors.border,
+                color = MisticaTheme.colors.inputBorder,
                 shape = RoundedCornerShape(MisticaTheme.radius.inputBorderRadius)
             ),
         enabled = enabled,
