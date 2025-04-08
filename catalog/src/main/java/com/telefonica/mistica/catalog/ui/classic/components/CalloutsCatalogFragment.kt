@@ -94,7 +94,7 @@ class CalloutsCatalogFragment : Fragment() {
                 }
             }
             setTitle(view.findViewById<TextInput>(R.id.title_input).text.toString())
-            setTitleAsHeader(true)
+            setTitleAsHeading(true)
             setDescription(view.findViewById<TextInput>(R.id.description_input).text.toString())
             setButtonsConfig(
                 CalloutButtonsConfig.valueOf(view.findViewById<DropDownInput>(R.id.buttons_config_dropdown).dropDown.text.toString()).buttonsConfig

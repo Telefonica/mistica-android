@@ -33,7 +33,7 @@ import com.telefonica.mistica.util.getThemeColor
     BindingMethod(
         type = CalloutView::class,
         attribute = "calloutTitleAsHeader",
-        method = "setTitleAsHeader",
+        method = "setTitleAsHeading",
     ),
     BindingMethod(
         type = CalloutView::class,
@@ -147,14 +147,14 @@ class CalloutView @JvmOverloads constructor(
         @ButtonsConfig
         var buttonsConfig: Int = BUTTONS_CONFIG_PRIMARY
         var dismissable = false
-        var titleAsHeader = true
+        var titleAsHeading = true
         var inverse = false
         assetType = CalloutViewImageConfig.NONE
 
         if (attrs != null) {
             val styledAttrs = context.theme.obtainStyledAttributes(attrs, R.styleable.CalloutView, defStyleAttr, 0)
 
-            titleAsHeader = styledAttrs.getBoolean(R.styleable.CalloutView_calloutTitleAsHeader, true)
+            titleAsHeading = styledAttrs.getBoolean(R.styleable.CalloutView_calloutTitleAsHeader, true)
             styledAttrs.getString(R.styleable.CalloutView_calloutTitle)?.let { setTitle(it) }
             styledAttrs.getString(R.styleable.CalloutView_calloutDescription)?.let { setDescription(it) }
 
@@ -174,7 +174,7 @@ class CalloutView @JvmOverloads constructor(
             styledAttrs.recycle()
         }
 
-        setTitleAsHeader(titleAsHeader)
+        setTitleAsHeading(titleAsHeading)
         setButtonsConfig(buttonsConfig)
         setDismissable(dismissable)
         setInverse(inverse)
@@ -273,7 +273,7 @@ class CalloutView @JvmOverloads constructor(
         }
     }
 
-    fun setTitleAsHeader(value: Boolean) {
+    fun setTitleAsHeading(value: Boolean) {
         ViewCompat.setAccessibilityHeading(title, value)
     }
 
