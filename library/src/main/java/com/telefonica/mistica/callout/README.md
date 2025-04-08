@@ -12,9 +12,8 @@ configuration and databinding for all properties**.
 ```xml
 <declare-styleable name="CalloutView">
 	<attr name="calloutTitle" format="string"/>
+	<attr name="calloutTitleAsHeading" format="boolean"/>
 	<attr name="calloutDescription" format="string"/>
-	<attr name="calloutAsset" format="reference"/>
-    <attr name="calloutAssetType" format="enum"/>   
 	<attr name="calloutButtonsConfig" format="enum">
 		<enum name="none" value="-1"/>
 		<enum name="primary" value="0" />
@@ -23,6 +22,13 @@ configuration and databinding for all properties**.
 		<enum name="secondary" value="3" />
 		<enum name="secondary_link" value="4" />
 		<enum name="link" value="5" />
+	</attr>
+	<attr name="calloutAsset" format="reference"/>
+	<attr name="calloutAssetType" format="enum">
+		<enum name="none" value="-1"/>
+		<enum name="icon" value="0"/>
+		<enum name="squareImage" value="1"/>
+		<enum name="circularImage" value="2"/>
 	</attr>
 	<attr name="calloutPrimaryButtonText" format="string" />
 	<attr name="calloutPrimaryButtonOnClick" format="string" />

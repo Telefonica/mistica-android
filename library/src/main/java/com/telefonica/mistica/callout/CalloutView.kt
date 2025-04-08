@@ -16,6 +16,7 @@ import android.widget.TextView
 import androidx.annotation.DrawableRes
 import androidx.annotation.IntDef
 import androidx.appcompat.content.res.AppCompatResources
+import androidx.core.view.ViewCompat
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.google.android.material.imageview.ShapeableImageView
@@ -28,6 +29,11 @@ import com.telefonica.mistica.util.getThemeColor
         type = CalloutView::class,
         attribute = "calloutTitle",
         method = "setTitle",
+    ),
+    BindingMethod(
+        type = CalloutView::class,
+        attribute = "calloutTitleAsHeading",
+        method = "setTitleAsHeading",
     ),
     BindingMethod(
         type = CalloutView::class,
@@ -141,12 +147,14 @@ class CalloutView @JvmOverloads constructor(
         @ButtonsConfig
         var buttonsConfig: Int = BUTTONS_CONFIG_PRIMARY
         var dismissable = false
+        var titleAsHeading = true
         var inverse = false
         assetType = CalloutViewImageConfig.NONE
 
         if (attrs != null) {
             val styledAttrs = context.theme.obtainStyledAttributes(attrs, R.styleable.CalloutView, defStyleAttr, 0)
 
+            titleAsHeading = styledAttrs.getBoolean(R.styleable.CalloutView_calloutTitleAsHeading, true)
             styledAttrs.getString(R.styleable.CalloutView_calloutTitle)?.let { setTitle(it) }
             styledAttrs.getString(R.styleable.CalloutView_calloutDescription)?.let { setDescription(it) }
 
@@ -166,6 +174,7 @@ class CalloutView @JvmOverloads constructor(
             styledAttrs.recycle()
         }
 
+        setTitleAsHeading(titleAsHeading)
         setButtonsConfig(buttonsConfig)
         setDismissable(dismissable)
         setInverse(inverse)
@@ -264,6 +273,10 @@ class CalloutView @JvmOverloads constructor(
         }
     }
 
+    fun setTitleAsHeading(value: Boolean) {
+        ViewCompat.setAccessibilityHeading(title, value)
+    }
+
     fun setDescription(text: String) {
         if (text.isNotBlank()) {
             description.text = text
@@ -298,17 +311,19 @@ class CalloutView @JvmOverloads constructor(
     }
 
     fun setButtonsConfig(@ButtonsConfig buttonsConfig: Int) {
-        if (buttonsConfig == BUTTONS_CONFIG_NONE) {
-            buttonsContainer.visibility = GONE
-            return
-        }
         buttonsContainer.visibility = VISIBLE
 
         when (buttonsConfig) {
+            BUTTONS_CONFIG_NONE -> {
+                buttonsContainer.visibility = GONE
+                closeButton.accessibilityTraversalAfter = description.id
+            }
+
             BUTTONS_CONFIG_PRIMARY -> {
                 primaryButton.visibility = VISIBLE
                 secondaryButton.visibility = GONE
                 linkButton.visibility = GONE
+                closeButton.accessibilityTraversalAfter = primaryButton.id
             }
 
             BUTTONS_CONFIG_PRIMARY_LINK -> {
@@ -316,18 +331,21 @@ class CalloutView @JvmOverloads constructor(
                 secondaryButton.visibility = GONE
                 linkButton.visibility = VISIBLE
                 linkButton.layoutParams = marginStart(0f)
+                closeButton.accessibilityTraversalAfter = linkButton.id
             }
 
             BUTTONS_CONFIG_PRIMARY_SECONDARY -> {
                 primaryButton.visibility = VISIBLE
                 secondaryButton.visibility = VISIBLE
                 linkButton.visibility = GONE
+                closeButton.accessibilityTraversalAfter = secondaryButton.id
             }
 
             BUTTONS_CONFIG_SECONDARY -> {
                 primaryButton.visibility = GONE
                 secondaryButton.visibility = VISIBLE
                 linkButton.visibility = GONE
+                closeButton.accessibilityTraversalAfter = secondaryButton.id
             }
 
             BUTTONS_CONFIG_SECONDARY_LINK -> {
@@ -335,6 +353,7 @@ class CalloutView @JvmOverloads constructor(
                 secondaryButton.visibility = VISIBLE
                 linkButton.visibility = VISIBLE
                 linkButton.layoutParams = marginStart(0f)
+                closeButton.accessibilityTraversalAfter = linkButton.id
             }
 
             BUTTONS_CONFIG_LINK -> {
@@ -342,9 +361,8 @@ class CalloutView @JvmOverloads constructor(
                 secondaryButton.visibility = GONE
                 linkButton.visibility = VISIBLE
                 linkButton.layoutParams = marginStart(-8f)
+                closeButton.accessibilityTraversalAfter = linkButton.id
             }
-
-            BUTTONS_CONFIG_NONE -> {}
         }
     }
 

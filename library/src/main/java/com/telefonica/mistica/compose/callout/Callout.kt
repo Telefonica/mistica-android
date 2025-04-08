@@ -18,6 +18,9 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.heading
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.traversalIndex
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.R
 import com.telefonica.mistica.callout.CalloutViewImageConfig
@@ -32,6 +35,7 @@ import com.telefonica.mistica.compose.theme.MisticaTheme
 fun Callout(
     modifier: Modifier = Modifier,
     title: String?,
+    setTitleAsHeading: Boolean = true,
     description: String?,
     buttonConfig: CalloutButtonConfig,
     @DrawableRes iconRes: Int? = null,
@@ -74,7 +78,9 @@ fun Callout(
             ) {
                 title?.let {
                     Text(
-                        modifier = Modifier.testTag(CalloutTestTag.TITLE),
+                        modifier = Modifier
+                            .testTag(CalloutTestTag.TITLE)
+                            .semantics { if (setTitleAsHeading) heading() },
                         text = it,
                         style = MisticaTheme.typography.preset3,
                     )
@@ -100,7 +106,10 @@ fun Callout(
                         }
 
                         CalloutButtonConfig.PRIMARY -> {
-                            PrimaryButton(text = primaryButtonText, onClick = onPrimaryButtonClick)
+                            PrimaryButton(
+                                text = primaryButtonText,
+                                onClick = onPrimaryButtonClick
+                            )
                         }
 
                         CalloutButtonConfig.PRIMARY_AND_LINK -> {
@@ -109,11 +118,17 @@ fun Callout(
                                 modifier = Modifier.padding(end = 16.dp),
                                 onClick = onPrimaryButtonClick,
                             )
-                            LinkButton(text = linkText, onClick = onLinkClicked)
+                            LinkButton(
+                                text = linkText,
+                                onClick = onLinkClicked
+                            )
                         }
 
                         CalloutButtonConfig.SECONDARY -> {
-                            SecondaryButton(text = secondaryButtonText, onClick = onSecondaryButtonClick)
+                            SecondaryButton(
+                                text = secondaryButtonText,
+                                onClick = onSecondaryButtonClick
+                            )
                         }
 
                         CalloutButtonConfig.PRIMARY_AND_SECONDARY -> {
@@ -122,7 +137,10 @@ fun Callout(
                                 modifier = Modifier.padding(end = 16.dp),
                                 onClick = onPrimaryButtonClick,
                             )
-                            SecondaryButton(text = secondaryButtonText, onClick = onSecondaryButtonClick)
+                            SecondaryButton(
+                                text = secondaryButtonText,
+                                onClick = onSecondaryButtonClick
+                            )
                         }
 
                         CalloutButtonConfig.SECONDARY_AND_LINK -> {
@@ -131,11 +149,17 @@ fun Callout(
                                 modifier = Modifier.padding(end = 16.dp),
                                 onClick = onSecondaryButtonClick,
                             )
-                            LinkButton(text = linkText, onClick = onLinkClicked)
+                            LinkButton(
+                                text = linkText,
+                                onClick = onLinkClicked
+                            )
                         }
 
                         CalloutButtonConfig.LINK -> {
-                            LinkButton(text = linkText, onClick = onLinkClicked)
+                            LinkButton(
+                                text = linkText,
+                                onClick = onLinkClicked
+                            )
                         }
                     }
                 }
@@ -145,6 +169,7 @@ fun Callout(
                 Image(
                     modifier = Modifier
                         .clickable { onDismiss?.invoke() }
+                        .semantics { traversalIndex = 1f }
                         .testTag(CalloutTestTag.CLOSE_BUTTON),
                     painter = painterResource(id = R.drawable.icn_cross),
                     contentDescription = stringResource(id = R.string.close_button_content_description)
