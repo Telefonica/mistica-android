@@ -13,6 +13,8 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.telefonica.mistica.compose.link.MultiLink
+import com.telefonica.mistica.compose.link.TextLink
 import com.telefonica.mistica.compose.theme.MisticaTheme
 import com.telefonica.mistica.compose.ui.alpha
 
@@ -20,7 +22,7 @@ import com.telefonica.mistica.compose.ui.alpha
 fun CheckBoxInput(
     text: String,
     modifier: Modifier = Modifier,
-    links: List<TextLink> = emptyList(),
+    links: List<MultiLink> = emptyList(),
     errorText: String? = null,
     checked: Boolean = false,
     isInverse: Boolean = false,
@@ -51,7 +53,7 @@ fun CheckBoxInput(
                 )
             )
             Spacer(modifier = Modifier.width(8.dp))
-            TextWithLinks(text, links)
+            TextLink(text, links)
         }
         Underline(
             isError = errorText?.isNotEmpty() ?: false,
@@ -77,12 +79,12 @@ fun PreviewCheckBoxLongTextInput() {
     val message =
         "I have read and agree to the promotion's Legal Grounds and Privacy Policy legal warning. (Tap on links to show error)."
     val links = listOf(
-        TextLink(
-            link = "Legal Grounds",
+        MultiLink(
+            linkedText = "Legal Grounds",
             onLinkTapped = {},
         ),
-        TextLink(
-            link = "Privacy Policy",
+        MultiLink(
+            linkedText = "Privacy Policy",
             onLinkTapped = {},
         ),
     )

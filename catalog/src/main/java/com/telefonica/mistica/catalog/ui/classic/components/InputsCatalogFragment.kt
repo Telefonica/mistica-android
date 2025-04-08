@@ -22,6 +22,8 @@ import com.telefonica.mistica.input.validations.EmailTextInputValidation
 import com.telefonica.mistica.input.validations.PhoneTextInputValidation
 import com.telefonica.mistica.input.validations.TextInputValidation
 import com.telefonica.mistica.input.validations.TextInputValidationResult
+import com.telefonica.mistica.link.MultiLink.CustomMultiLink
+import com.telefonica.mistica.link.getSpannableLinkText
 import com.telefonica.mistica.title.TitleView
 
 class InputsCatalogFragment : Fragment() {
@@ -47,7 +49,15 @@ class InputsCatalogFragment : Fragment() {
             }
 
             findViewById<CheckBoxInput>(R.id.checkboxInput)?.apply {
-                setText(createdSpannableText())
+                setText(
+                    getSpannableLinkText(
+                        originalText = "I have read and agree to the promotion's Legal Grounds and Privacy Policy legal warning. (Tap on links to show error).",
+                        links = listOf(
+                            getCustomCheckboxMultiLink("Legal Grounds"),
+                            getCustomCheckboxMultiLink("Privacy Policy"),
+                        ),
+                    )
+                )
                 setMovementMethod(LinkMovementMethod.getInstance())
             }
 
@@ -89,6 +99,19 @@ class InputsCatalogFragment : Fragment() {
             }
         }
     }
+
+    private fun getCustomCheckboxMultiLink(linkedText: String) =
+        CustomMultiLink(
+            linkedText = linkedText,
+            customSpan = object : CheckBoxClickableSpan() {
+                override fun onClick(checkBox: View) {
+                    super.onClick(checkBox)
+                    view?.findViewById<CheckBoxInput>(R.id.checkboxInput)?.apply {
+                        error = "Error Text! Tapped on $linkedText"
+                    }
+                }
+            }
+        )
 
     private fun createdSpannableText(): Spannable {
         val message =

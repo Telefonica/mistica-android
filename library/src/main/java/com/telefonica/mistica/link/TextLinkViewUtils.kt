@@ -3,11 +3,17 @@ package com.telefonica.mistica.link
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.Spanned
+import android.text.style.ClickableSpan
 import android.util.Log
 import androidx.annotation.ColorInt
+import com.telefonica.mistica.link.MultiLink.DefaultMultiLink
+import com.telefonica.mistica.link.MultiLink.CustomMultiLink
 
 private const val WARNING_TAG = "TextLinkUtils"
 
+/**
+ * Creates a [Spannable] string with clickable links for classic View implementation.
+ */
 fun getSpannableLinkText(
     originalText: String,
     links: List<MultiLink>,
@@ -21,7 +27,10 @@ fun getSpannableLinkText(
             if (start >= 0) {
                 val end = start + link.linkedText.length
                 spannableString.setSpan(
-                    TextLinkSpan(linkColor) { link.onLinkTapped.invoke() },
+                    when (link) {
+                        is DefaultMultiLink -> TextLinkSpan(linkColor) { link.onLinkTapped.invoke() }
+                        is CustomMultiLink -> link.customSpan
+                    },
                     start,
                     end,
                     Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
@@ -44,7 +53,20 @@ private fun String.containsAnyLink(links: List<MultiLink>): Boolean {
     return links.any { link -> contains(link.linkedText) }
 }
 
-private const val LINK_TAG = "Link"
+sealed class MultiLink(open val linkedText: String) {
+    data class DefaultMultiLink(
+        override val linkedText: String,
+        val onLinkTapped: () -> Unit
+    ) : MultiLink(linkedText)
 
-data class MultiLink(val linkedText: String, val tag: String = LINK_TAG, val onLinkTapped: () -> Unit)
-data class SingleLink(val tag: String = LINK_TAG, val onLinkTapped: () -> Unit)
+    data class CustomMultiLink(
+        override val linkedText: String,
+        val customSpan: ClickableSpan,
+    ) : MultiLink(linkedText)
+}
+
+sealed class SingleLink {
+    data class DefaultSingleLink(val onLinkTapped: () -> Unit) : SingleLink()
+    data class CustomSingleLink(val customSpan: ClickableSpan) : SingleLink()
+}
+

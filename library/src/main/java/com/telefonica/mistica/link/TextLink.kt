@@ -9,6 +9,10 @@ import androidx.appcompat.widget.AppCompatTextView
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
+import com.telefonica.mistica.link.MultiLink.CustomMultiLink
+import com.telefonica.mistica.link.MultiLink.DefaultMultiLink
+import com.telefonica.mistica.link.SingleLink.CustomSingleLink
+import com.telefonica.mistica.link.SingleLink.DefaultSingleLink
 import com.telefonica.mistica.util.getThemeColor
 
 @BindingMethods(
@@ -58,13 +62,7 @@ class TextLink @JvmOverloads constructor(
     fun setSingleTextLink(originalText: String, singleLink: SingleLink) {
         text = getSpannableLinkText(
             originalText = originalText,
-            links = listOf(
-                MultiLink(
-                    linkedText = originalText,
-                    tag = singleLink.tag,
-                    onLinkTapped = singleLink.onLinkTapped,
-                )
-            ),
+            links = listOf(singleLink.toMultiLink(originalText)),
             linkColor = linkColor,
         )
     }
@@ -91,6 +89,13 @@ class TextLink @JvmOverloads constructor(
     private fun updateView() {
         if (!links.isNullOrEmpty()) {
             setMultiLinkText(text.toString(), links)
+        }
+    }
+
+    private fun SingleLink.toMultiLink(originalText: String): MultiLink {
+        return when (this) {
+            is DefaultSingleLink -> DefaultMultiLink(originalText, onLinkTapped)
+            is CustomSingleLink -> CustomMultiLink(originalText, customSpan)
         }
     }
 }
