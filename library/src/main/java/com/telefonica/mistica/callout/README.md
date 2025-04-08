@@ -12,7 +12,7 @@ configuration and databinding for all properties**.
 ```xml
 <declare-styleable name="CalloutView">
 	<attr name="calloutTitle" format="string"/>
-	<attr name="calloutTitleAsHeader" format="boolean"/>
+	<attr name="calloutTitleAsHeading" format="boolean"/>
 	<attr name="calloutDescription" format="string"/>
 	<attr name="calloutButtonsConfig" format="enum">
 		<enum name="none" value="-1"/>

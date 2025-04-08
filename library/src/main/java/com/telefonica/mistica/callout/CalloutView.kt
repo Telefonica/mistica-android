@@ -32,7 +32,7 @@ import com.telefonica.mistica.util.getThemeColor
     ),
     BindingMethod(
         type = CalloutView::class,
-        attribute = "calloutTitleAsHeader",
+        attribute = "calloutTitleAsHeading",
         method = "setTitleAsHeading",
     ),
     BindingMethod(
@@ -154,7 +154,7 @@ class CalloutView @JvmOverloads constructor(
         if (attrs != null) {
             val styledAttrs = context.theme.obtainStyledAttributes(attrs, R.styleable.CalloutView, defStyleAttr, 0)
 
-            titleAsHeading = styledAttrs.getBoolean(R.styleable.CalloutView_calloutTitleAsHeader, true)
+            titleAsHeading = styledAttrs.getBoolean(R.styleable.CalloutView_calloutTitleAsHeading, true)
             styledAttrs.getString(R.styleable.CalloutView_calloutTitle)?.let { setTitle(it) }
             styledAttrs.getString(R.styleable.CalloutView_calloutDescription)?.let { setDescription(it) }
 
