@@ -35,7 +35,7 @@ import com.telefonica.mistica.compose.theme.MisticaTheme
 fun Callout(
     modifier: Modifier = Modifier,
     title: String?,
-    setTitleAsHeader: Boolean = true,
+    setTitleAsHeading: Boolean = true,
     description: String?,
     buttonConfig: CalloutButtonConfig,
     @DrawableRes iconRes: Int? = null,
@@ -80,7 +80,7 @@ fun Callout(
                     Text(
                         modifier = Modifier
                             .testTag(CalloutTestTag.TITLE)
-                            .semantics { if (setTitleAsHeader) heading() },
+                            .semantics { if (setTitleAsHeading) heading() },
                         text = it,
                         style = MisticaTheme.typography.preset3,
                     )
