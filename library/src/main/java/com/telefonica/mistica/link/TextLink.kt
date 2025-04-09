@@ -1,9 +1,12 @@
 package com.telefonica.mistica.link
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Color
+import android.graphics.Typeface
 import android.text.method.LinkMovementMethod
 import android.util.AttributeSet
+import android.util.TypedValue
 import androidx.annotation.ColorInt
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.databinding.BindingMethod
@@ -19,7 +22,7 @@ import com.telefonica.mistica.util.getThemeColor
     BindingMethod(
         type = TextLink::class,
         attribute = "linkColor",
-        method = "setLinkInverse"
+        method = "setLinkColor"
     ),
 )
 class TextLink @JvmOverloads constructor(
@@ -38,14 +41,18 @@ class TextLink @JvmOverloads constructor(
     private val links: MutableList<MultiLink>? = null
 
     init {
-
         movementMethod = LinkMovementMethod.getInstance()
         highlightColor = Color.TRANSPARENT
 
-        if (attrs != null) {
+
+       if (attrs != null) {
+            if (attrs.hasCustomStyle().not()) {
+                // Ensure default style if there is no custom style
+                setTextAppearance(context, R.style.AppTheme_TextAppearance_Preset2)
+            }
+
             val styledAttrs =
                 context.theme.obtainStyledAttributes(attrs, R.styleable.TextLinkView, defStyleAttr, 0)
-
             setLinkColor(styledAttrs.getColor(R.styleable.TextLinkView_linkColor, context.getThemeColor(R.attr.colorTextLink)))
         }
     }
@@ -79,6 +86,7 @@ class TextLink @JvmOverloads constructor(
         )
     }
 
+    @Suppress("MemberVisibilityCanBePrivate")
     fun setLinkColor(@ColorInt linkColor: Int) {
         if (this.linkColor != linkColor) {
             this.linkColor = linkColor
@@ -98,4 +106,6 @@ class TextLink @JvmOverloads constructor(
             is CustomSingleLink -> CustomMultiLink(originalText, customSpan)
         }
     }
+
+    private fun AttributeSet.hasCustomStyle() = styleAttribute == 0
 }

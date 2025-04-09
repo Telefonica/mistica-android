@@ -5,6 +5,8 @@ import androidx.compose.foundation.text.BasicText
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.theme.MisticaTheme
@@ -14,11 +16,15 @@ fun TextLink(
     originalText: String,
     link: SingleLink,
     modifier: Modifier = Modifier,
+    linkColor: Color = MisticaTheme.colors.textLink,
+    textStyle: TextStyle = MisticaTheme.typography.preset2Medium,
 ) {
     TextLink(
         originalText = originalText,
         links = listOf(MultiLink(originalText, link.tag, link.onLinkTapped)),
         modifier = modifier,
+        linkColor = linkColor,
+        textStyle = textStyle,
     )
 }
 
@@ -27,13 +33,14 @@ fun TextLink(
     originalText: String,
     links: List<MultiLink>,
     modifier: Modifier = Modifier,
+    linkColor: Color = MisticaTheme.colors.textLink,
+    textStyle: TextStyle = MisticaTheme.typography.preset2Medium,
 ) {
-    val textLinkColour = MisticaTheme.colors.textLink
-    val linksText = remember { getAnnotatedLinksString(originalText = originalText, links = links, linkColor = textLinkColour) }
+    val linksText = remember { getAnnotatedLinksString(originalText = originalText, links = links, linkColor = linkColor) }
 
     BasicText(
         text = linksText,
-        style = MisticaTheme.typography.preset3,
+        style = textStyle,
         modifier = modifier,
     )
 }
