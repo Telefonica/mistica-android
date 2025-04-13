@@ -8,11 +8,12 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.semantics.invisibleToUser
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.link.MultiLink
 import com.telefonica.mistica.compose.link.SingleLink
@@ -26,27 +27,28 @@ fun TextLinks() {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(24.dp),
+            .padding(24.dp)
+            .semantics { invisibleToUser() },
         verticalArrangement = Arrangement.spacedBy(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         TextLink(
             originalText = "Single link",
             link = SingleLink {
-                Toast.makeText(context, "Link clicked", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Single link clicked", Toast.LENGTH_SHORT).show()
             }
         )
         TextLink(
             originalText = "Custom color link",
             link = SingleLink {
-                Toast.makeText(context, "Link clicked", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Color link clicked", Toast.LENGTH_SHORT).show()
             },
             linkColor = MisticaTheme.colors.promoHigh,
         )
         TextLink(
             originalText = "Custom style link",
             link = SingleLink {
-                Toast.makeText(context, "Link clicked", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Styled link clicked", Toast.LENGTH_SHORT).show()
             },
             textStyle = MisticaTheme.typography.presetTitle3,
         )
@@ -61,7 +63,7 @@ fun TextLinks() {
                     Toast.makeText(context, "First link clicked!", Toast.LENGTH_SHORT).show()
                 },
                 MultiLink(linkedText = "second link") {
-                    Toast.makeText(context, "First link clicked!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "Second link clicked!", Toast.LENGTH_SHORT).show()
                 },
             ),
         )
@@ -74,7 +76,7 @@ fun TextLinks() {
                     Toast.makeText(context, "First link clicked!", Toast.LENGTH_SHORT).show()
                 },
                 MultiLink(linkedText = "second link") {
-                    Toast.makeText(context, "First link clicked!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "Second link clicked!", Toast.LENGTH_SHORT).show()
                 },
             ),
             linkColor = MisticaTheme.colors.promoHigh,
@@ -88,7 +90,7 @@ fun TextLinks() {
                     Toast.makeText(context, "First link clicked!", Toast.LENGTH_SHORT).show()
                 },
                 MultiLink(linkedText = "second link") {
-                    Toast.makeText(context, "First link clicked!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "Second link clicked!", Toast.LENGTH_SHORT).show()
                 },
             ),
             textStyle = MisticaTheme.typography.presetTitle3,

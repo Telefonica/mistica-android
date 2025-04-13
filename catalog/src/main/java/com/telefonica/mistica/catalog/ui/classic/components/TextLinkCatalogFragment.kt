@@ -27,17 +27,17 @@ class TextLinkCatalogFragment : Fragment() {
         view.findViewById<TextLink>(R.id.single_link).apply {
             setSingleTextLink(
                 originalText = "Single link", singleLink = DefaultSingleLink {
-                    Toast.makeText(requireContext(), "Link clicked!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "Single link clicked!", Toast.LENGTH_SHORT).show()
                 })
         }
         view.findViewById<TextLink>(R.id.single_link_color).apply {
             setSingleTextLink(singleLink = DefaultSingleLink {
-                Toast.makeText(requireContext(), "Link clicked!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Color link clicked!", Toast.LENGTH_SHORT).show()
             })
         }
         view.findViewById<TextLink>(R.id.single_link_style).apply {
             setSingleTextLink(singleLink = DefaultSingleLink {
-                Toast.makeText(requireContext(), "Link clicked!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Styled link clicked!", Toast.LENGTH_SHORT).show()
             })
         }
         view.findViewById<TextLink>(R.id.multi_link).apply {
