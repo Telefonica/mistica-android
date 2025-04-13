@@ -48,7 +48,7 @@ class TextLink @JvmOverloads constructor(
        if (attrs != null) {
             if (attrs.hasCustomStyle().not()) {
                 // Ensure default style if there is no custom style
-                setTextAppearance(context, R.style.AppTheme_TextAppearance_Preset2)
+                setTextAppearance(context, R.style.AppTheme_TextAppearance_Preset2_Medium)
             }
 
             val styledAttrs =
@@ -107,5 +107,5 @@ class TextLink @JvmOverloads constructor(
         }
     }
 
-    private fun AttributeSet.hasCustomStyle() = styleAttribute == 0
+    private fun AttributeSet.hasCustomStyle() = styleAttribute != 0
 }

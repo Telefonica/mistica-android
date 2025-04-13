@@ -41,7 +41,7 @@ fun TextLinks() {
             link = SingleLink {
                 Toast.makeText(context, "Link clicked", Toast.LENGTH_SHORT).show()
             },
-            linkColor = MisticaTheme.colors.promoHigh
+            linkColor = MisticaTheme.colors.promoHigh,
         )
         TextLink(
             originalText = "Custom style link",
@@ -51,13 +51,44 @@ fun TextLinks() {
             textStyle = MisticaTheme.typography.presetTitle3,
         )
 
-        Spacer(modifier = Modifier.size(32.dp))
+        Spacer(modifier = Modifier.size(16.dp))
+
+        TextLink(
+            modifier = Modifier
+                .fillMaxWidth()
+                .wrapContentWidth(align = Alignment.CenterHorizontally),
+            originalText = "This a text showing first link and second link",
+            links = listOf(
+                MultiLink(linkedText = "first link") {
+                    Toast.makeText(context, "First link clicked!", Toast.LENGTH_SHORT).show()
+                },
+                MultiLink(linkedText = "second link") {
+                    Toast.makeText(context, "First link clicked!", Toast.LENGTH_SHORT).show()
+                },
+            ),
+        )
 
         TextLink(
             modifier = Modifier
                 .fillMaxWidth()
                 .wrapContentWidth(align = Alignment.CenterHorizontally),
             originalText = "This a text showing first link and second link with custom colors",
+            links = listOf(
+                MultiLink(linkedText = "first link") {
+                    Toast.makeText(context, "First link clicked!", Toast.LENGTH_SHORT).show()
+                },
+                MultiLink(linkedText = "second link") {
+                    Toast.makeText(context, "First link clicked!", Toast.LENGTH_SHORT).show()
+                },
+            ),
+            linkColor = MisticaTheme.colors.promoHigh,
+        )
+
+        TextLink(
+            modifier = Modifier
+                .fillMaxWidth()
+                .wrapContentWidth(align = Alignment.CenterHorizontally),
+            originalText = "This a text showing first link and second link with custom style",
             links = listOf(
                 MultiLink(linkedText = "first link") {
                     Toast.makeText(context, "First link clicked!", Toast.LENGTH_SHORT).show()
