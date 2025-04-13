@@ -48,7 +48,7 @@
 
 	<com.telefonica.mistica.link.TextLink
 			android:id="@+id/multi_link"
-			android:layout_width="wrap_content"
+			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			/>
 
@@ -59,10 +59,9 @@
 
 	<com.telefonica.mistica.link.TextLink
 			android:id="@+id/multi_link_color"
-			android:layout_width="wrap_content"
+			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:text="This a text showing first link and second link with custom colors"
-			android:gravity="center"
 			android:textColor="@android:color/holo_blue_dark"
 			app:linkColor="?attr/colorPromoHigh"
 			/>
@@ -74,10 +73,9 @@
 
 	<com.telefonica.mistica.link.TextLink
 			android:id="@+id/multi_link_style"
-			android:layout_width="wrap_content"
+			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:text="This a text showing first link and second link with custom style"
-			android:gravity="center"
 			style="@style/AppTheme.TextAppearance.PresetTitle3"
 			/>
 

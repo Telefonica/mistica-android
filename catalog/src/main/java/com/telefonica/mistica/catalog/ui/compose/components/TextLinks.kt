@@ -54,9 +54,7 @@ fun TextLinks() {
         Spacer(modifier = Modifier.size(16.dp))
 
         TextLink(
-            modifier = Modifier
-                .fillMaxWidth()
-                .wrapContentWidth(align = Alignment.CenterHorizontally),
+            modifier = Modifier.fillMaxWidth(),
             originalText = "This a text showing first link and second link",
             links = listOf(
                 MultiLink(linkedText = "first link") {
@@ -69,9 +67,7 @@ fun TextLinks() {
         )
 
         TextLink(
-            modifier = Modifier
-                .fillMaxWidth()
-                .wrapContentWidth(align = Alignment.CenterHorizontally),
+            modifier = Modifier.fillMaxWidth(),
             originalText = "This a text showing first link and second link with custom colors",
             links = listOf(
                 MultiLink(linkedText = "first link") {
@@ -85,9 +81,7 @@ fun TextLinks() {
         )
 
         TextLink(
-            modifier = Modifier
-                .fillMaxWidth()
-                .wrapContentWidth(align = Alignment.CenterHorizontally),
+            modifier = Modifier.fillMaxWidth(),
             originalText = "This a text showing first link and second link with custom style",
             links = listOf(
                 MultiLink(linkedText = "first link") {
