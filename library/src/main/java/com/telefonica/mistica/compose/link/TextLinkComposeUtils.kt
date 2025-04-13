@@ -16,6 +16,7 @@ fun getAnnotatedLinksString(
     originalText: String,
     links: List<MultiLink>,
     linkColor: Color,
+    linkDecoration: TextDecoration? = null,
 ) = buildAnnotatedString {
     val linkMap = links.associateBy { it.linkedText }
     var currentIndex = 0
@@ -30,7 +31,7 @@ fun getAnnotatedLinksString(
             withLink(
                 link = LinkAnnotation.Clickable(
                     tag = link.tag,
-                    styles = TextLinkStyles(style = SpanStyle(color = linkColor, textDecoration = TextDecoration.Underline)),
+                    styles = TextLinkStyles(style = SpanStyle(color = linkColor, textDecoration = linkDecoration)),
                     linkInteractionListener = { link.onLinkTapped.invoke() },
                 ),
             ) {
