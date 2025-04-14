@@ -7,7 +7,6 @@ import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onRoot
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.link.MultiLink
-import com.telefonica.mistica.compose.link.TextLink
 import com.telefonica.mistica.compose.theme.MisticaTheme
 import com.telefonica.mistica.compose.theme.brand.Brand
 import com.telefonica.mistica.testutils.ScreenshotsTest

@@ -1,12 +1,9 @@
 package com.telefonica.mistica.link
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Color
-import android.graphics.Typeface
 import android.text.method.LinkMovementMethod
 import android.util.AttributeSet
-import android.util.TypedValue
 import androidx.annotation.ColorInt
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.databinding.BindingMethod

@@ -43,45 +43,25 @@ class TextLinkCatalogFragment : Fragment() {
         view.findViewById<TextLink>(R.id.multi_link).apply {
             setMultiLinkText(
                 originalText = "This a text showing first link and second link",
-                links = listOf(
-                    DefaultMultiLink(
-                        linkedText = "first link",
-                        onLinkTapped = { Toast.makeText(requireContext(), "First link clicked!", Toast.LENGTH_SHORT).show() }
-                    ),
-                    DefaultMultiLink(
-                        linkedText = "second link",
-                        onLinkTapped = { Toast.makeText(requireContext(), "Second link clicked!", Toast.LENGTH_SHORT).show() }
-                    ),
-                )
+                links = getLinks(),
             )
         }
         view.findViewById<TextLink>(R.id.multi_link_color).apply {
-            setMultiLinkText(
-                links = listOf(
-                    DefaultMultiLink(
-                        linkedText = "first link",
-                        onLinkTapped = { Toast.makeText(requireContext(), "First link clicked!", Toast.LENGTH_SHORT).show() }
-                    ),
-                    DefaultMultiLink(
-                        linkedText = "second link",
-                        onLinkTapped = { Toast.makeText(requireContext(), "Second link clicked!", Toast.LENGTH_SHORT).show() }
-                    ),
-                )
-            )
+            setMultiLinkText(getLinks())
         }
         view.findViewById<TextLink>(R.id.multi_link_style).apply {
-            setMultiLinkText(
-                links = listOf(
-                    DefaultMultiLink(
-                        linkedText = "first link",
-                        onLinkTapped = { Toast.makeText(requireContext(), "First link clicked!", Toast.LENGTH_SHORT).show() }
-                    ),
-                    DefaultMultiLink(
-                        linkedText = "second link",
-                        onLinkTapped = { Toast.makeText(requireContext(), "Second link clicked!", Toast.LENGTH_SHORT).show() }
-                    ),
-                )
-            )
+            setMultiLinkText(getLinks())
         }
     }
+
+    private fun getLinks() = listOf(
+        DefaultMultiLink(
+            linkedText = "first link",
+            onLinkTapped = { Toast.makeText(requireContext(), "First link clicked!", Toast.LENGTH_SHORT).show() }
+        ),
+        DefaultMultiLink(
+            linkedText = "second link",
+            onLinkTapped = { Toast.makeText(requireContext(), "Second link clicked!", Toast.LENGTH_SHORT).show() }
+        ),
+    )
 }
