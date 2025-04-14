@@ -13,7 +13,6 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
-import org.robolectric.annotation.Config
 
 @RunWith(RobolectricTestRunner::class)
 class TextLinkTest: ScreenshotsTest() {
@@ -26,10 +25,9 @@ class TextLinkTest: ScreenshotsTest() {
         checkSingleTextLink()
     }
 
-    @Config(qualifiers = "+night")
     @Test
     fun `check single TextLink dark`() {
-        checkSingleTextLink()
+        checkSingleTextLink(darkTheme = true)
     }
 
     @Test
@@ -37,13 +35,12 @@ class TextLinkTest: ScreenshotsTest() {
         checkMultiTextLink()
     }
 
-    @Config(qualifiers = "+night")
     @Test
     fun `check multi TextLink dark`() {
-        checkMultiTextLink()
+        checkMultiTextLink(darkTheme = true)
     }
 
-    private fun checkSingleTextLink() {
+    private fun checkSingleTextLink(darkTheme: Boolean = false) {
         composeTestRule.setContent {
             MisticaTheme(brand = MovistarBrand) {
                 Box(modifier = Modifier.padding(24.dp)) {
@@ -54,10 +51,10 @@ class TextLinkTest: ScreenshotsTest() {
                 }
             }
         }
-        compareScreenshot(composeTestRule.onRoot())
+        compareScreenshot(node = composeTestRule.onRoot(), darkTheme = darkTheme)
     }
 
-    private fun checkMultiTextLink() {
+    private fun checkMultiTextLink(darkTheme: Boolean = false) {
         composeTestRule.setContent {
             MisticaTheme(brand = MovistarBrand) {
                 Box(modifier = Modifier.padding(24.dp)) {
@@ -71,6 +68,6 @@ class TextLinkTest: ScreenshotsTest() {
                 }
             }
         }
-        compareScreenshot(composeTestRule.onRoot())
+        compareScreenshot(node = composeTestRule.onRoot(), darkTheme = darkTheme)
     }
 }
