@@ -72,6 +72,7 @@ Just set your App or any specific activity to use any of the following:
 * [Headers](library/src/main/java/com/telefonica/mistica/header)
 * [Highlighted Cards](library/src/main/java/com/telefonica/mistica/highlightedcard)
 * [Inputs](library/src/main/java/com/telefonica/mistica/input)
+* [Link](library/src/main/java/com/telefonica/mistica/link)
 * [Lists](library/src/main/java/com/telefonica/mistica/list)
 * [Load Error Feedback](library/src/main/java/com/telefonica/mistica/feedback/error)
 * [Media Cards](library/src/main/java/com/telefonica/mistica/card/mediacard)
