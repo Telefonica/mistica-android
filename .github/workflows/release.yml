@@ -29,12 +29,70 @@ jobs:
           :catalog:publishCatalogPublicationToSonatypeRepository -DLIBRARY_VERSION=${{ github.event.release.tag_name }}
           --max-workers 1 closeAndReleaseStagingRepository"
 
-      - name: Microsoft Teams Notification
-        uses: skitionek/notify-microsoft-teams@v1.0.8
-        if: success()
+      - name: Send Teams notification
+        uses: fjogeleit/http-request-action@v1
         with:
-          webhook_url: ${{ secrets.ANDROID_LIBRARIES_TEAMS_WEBHOOK }}
-          needs: ${{ toJson(needs) }}
-          job: ${{ toJson(job) }}
-          steps: ${{ toJson(steps) }}
-          overwrite: "{title: `New Mistica version published ${{ github.event.release.tag_name }}`, text:`Release Notes:\n ${{ github.event.release.html_url }}`}"
+          url: ${{ secrets.ANDROID_LIBRARIES_TEAMS_WEBHOOK }}
+          method: 'POST'
+          data: |
+            {
+            "type": "message",
+            "attachments": [
+              {
+                "contentType": "application/vnd.microsoft.card.adaptive",
+                "content": {
+                  "type": "AdaptiveCard",
+                  "version": "1.5",
+                  "body": [
+                    {
+                      "type": "ColumnSet",
+                      "columns": [
+                        {
+                          "type": "Column",
+                          "width": "auto",
+                          "items": [
+                            {
+                              "type": "Image",
+                              "url": "https://raw.githubusercontent.com/Skitionek/notify-microsoft-teams/master/icons/success.png",
+                              "width": "56px",
+                              "height": "56px",
+                              "style": "RoundedCorners"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Column",
+                          "width": "stretch",
+                          "items": [
+                            {
+                              "type": "TextBlock",
+                              "text": "New Mística version published ${{ github.event.release.tag_name }}",
+                              "wrap": true,
+                              "weight": "Bolder",
+                              "style": "heading"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "TextBlock",
+                      "text": "${{ github.event.release.body }}",
+                      "wrap": true
+                    },
+                    {
+                      "type": "ActionSet",
+                      "actions": [
+                        {
+                          "type": "Action.OpenUrl",
+                          "title": "Open release",
+                          "url": "${{ github.event.release.html_url }}"
+                        }
+                      ]
+                    }
+                  ],
+                  "$schema": "https://adaptivecards.io/schemas/adaptive-card.json"
+                }
+              }
+            ]
+            }
