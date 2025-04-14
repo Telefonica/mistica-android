@@ -30,7 +30,7 @@ jobs:
           --max-workers 1 closeAndReleaseStagingRepository"
 
       - name: Send Teams notification
-        uses: fjogeleit/http-request-action@v1
+        uses: fjogeleit/http-request-action@v1.16.4
         with:
           url: ${{ secrets.ANDROID_LIBRARIES_TEAMS_WEBHOOK }}
           method: 'POST'
