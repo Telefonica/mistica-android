@@ -1,7 +1,15 @@
 <img width="30%" alt="Screenshot showing the implementation of the TextLink component" src="../../../../../../../../../doc/images/text_links/links_screenshot.jpg" />
 
-This Android component is a custom `TextView` designed to simplify the display of text containing clickable links. It leverages Android's `AnnotatedString` to
+This Android component is a custom `BasicText` designed to simplify the display of text containing clickable links. It leverages Android's `AnnotatedString` to
 handle link creation and styling.
+
+There are two main ways to use this component`:
+1. **Using Single Link**: This is the most straightforward method, where you can provide a single link and its associated text.
+2. **Using Multiple Links**: This method allows you to define multiple links within the same text, providing a more complex and flexible way to handle links.
+
+You can find some examples of how to use the `TextLink` component in the [TextLinks catalog section](../../../../../../../../.. 
+/catalog/src/main/java/com/telefonica/mistica/catalog/ui/compose/components/TextLinks.kt). 
+This class demonstrate how to create a simple link and a more complex link with multiple clickable segments.
 
 **Main Benefit: Enhanced Accessibility**
 
