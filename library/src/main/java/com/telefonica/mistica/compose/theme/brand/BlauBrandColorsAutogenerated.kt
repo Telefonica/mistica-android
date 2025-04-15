@@ -68,6 +68,7 @@ public object BlauBrandColors {
       textLinkSnackbar = BlauPaletteColor.blau_color_blauPurple30
       textActivated = BlauPaletteColor.blau_color_blauBlueSecondary
       textBrand = BlauPaletteColor.blau_color_blauBluePrimary
+      inputBorder = BlauPaletteColor.blau_color_grey5
       control = BlauPaletteColor.blau_color_grey5
       controlActivated = BlauPaletteColor.blau_color_blauBlueSecondary
       controlInverse = BlauPaletteColor.blau_color_blauBluePrimary30
@@ -129,15 +130,31 @@ public object BlauBrandColors {
       tagTextPromo = BlauPaletteColor.blau_color_blauPurple
       tagTextActive = BlauPaletteColor.blau_color_blauBluePrimary
       tagTextInactive = BlauPaletteColor.blau_color_grey5
+      tagTextInfo = BlauPaletteColor.blau_color_blauBluePrimary
       tagTextSuccess = BlauPaletteColor.blau_color_blauGreen70
       tagTextWarning = BlauPaletteColor.blau_color_blauYellow70
       tagTextError = BlauPaletteColor.blau_color_blauRed70
       tagBackgroundPromo = BlauPaletteColor.blau_color_blauPurple10
       tagBackgroundActive = BlauPaletteColor.blau_color_blauBlueSecondary10
       tagBackgroundInactive = BlauPaletteColor.blau_color_grey1
+      tagBackgroundInfo = BlauPaletteColor.blau_color_blauBlueSecondary10
       tagBackgroundSuccess = BlauPaletteColor.blau_color_blauGreen10
       tagBackgroundWarning = BlauPaletteColor.blau_color_blauYellow10
       tagBackgroundError = BlauPaletteColor.blau_color_blauRed10
+      tagTextPromoInverse = BlauPaletteColor.blau_color_blauPurple
+      tagTextActiveInverse = BlauPaletteColor.blau_color_blauBluePrimary
+      tagTextInactiveInverse = BlauPaletteColor.blau_color_grey5
+      tagTextInfoInverse = BlauPaletteColor.blau_color_blauBluePrimary
+      tagTextSuccessInverse = BlauPaletteColor.blau_color_blauGreen70
+      tagTextWarningInverse = BlauPaletteColor.blau_color_blauYellow70
+      tagTextErrorInverse = BlauPaletteColor.blau_color_blauRed70
+      tagBackgroundPromoInverse = BlauPaletteColor.blau_color_blauPurple10
+      tagBackgroundActiveInverse = BlauPaletteColor.blau_color_blauBlueSecondary10
+      tagBackgroundInactiveInverse = BlauPaletteColor.blau_color_grey1
+      tagBackgroundInfoInverse = BlauPaletteColor.blau_color_blauBlueSecondary10
+      tagBackgroundSuccessInverse = BlauPaletteColor.blau_color_blauGreen10
+      tagBackgroundWarningInverse = BlauPaletteColor.blau_color_blauYellow10
+      tagBackgroundErrorInverse = BlauPaletteColor.blau_color_blauRed10
       }
 
   public val darkColors: MisticaColors = MisticaColors().apply {
@@ -200,6 +217,7 @@ public object BlauBrandColors {
       textLinkSnackbar = BlauPaletteColor.blau_color_blauPurple30
       textActivated = BlauPaletteColor.blau_color_blauBlueSecondary
       textBrand = BlauPaletteColor.blau_color_blauBluePrimary
+      inputBorder = BlauPaletteColor.blau_color_grey5
       control = BlauPaletteColor.blau_color_darkModeGrey6
       controlActivated = BlauPaletteColor.blau_color_blauBlueSecondary
       controlInverse = BlauPaletteColor.blau_color_darkModeGrey6
@@ -261,15 +279,31 @@ public object BlauBrandColors {
       tagTextPromo = BlauPaletteColor.blau_color_blauPurple30
       tagTextActive = BlauPaletteColor.blau_color_blauBluePrimary
       tagTextInactive = BlauPaletteColor.blau_color_grey5
+      tagTextInfo = BlauPaletteColor.blau_color_blauBluePrimary
       tagTextSuccess = BlauPaletteColor.blau_color_blauGreen30
       tagTextWarning = BlauPaletteColor.blau_color_blauYellow40
       tagTextError = BlauPaletteColor.blau_color_blauRed40
       tagBackgroundPromo = BlauPaletteColor.blau_color_darkModeGrey6
       tagBackgroundActive = BlauPaletteColor.blau_color_darkModeGrey6
       tagBackgroundInactive = BlauPaletteColor.blau_color_darkModeGrey6
+      tagBackgroundInfo = BlauPaletteColor.blau_color_darkModeGrey6
       tagBackgroundSuccess = BlauPaletteColor.blau_color_darkModeGrey6
       tagBackgroundWarning = BlauPaletteColor.blau_color_darkModeGrey6
       tagBackgroundError = BlauPaletteColor.blau_color_darkModeGrey6
+      tagTextPromoInverse = BlauPaletteColor.blau_color_blauPurple30
+      tagTextActiveInverse = BlauPaletteColor.blau_color_blauBluePrimary
+      tagTextInactiveInverse = BlauPaletteColor.blau_color_grey5
+      tagTextInfoInverse = BlauPaletteColor.blau_color_blauBluePrimary
+      tagTextSuccessInverse = BlauPaletteColor.blau_color_blauGreen30
+      tagTextWarningInverse = BlauPaletteColor.blau_color_blauYellow40
+      tagTextErrorInverse = BlauPaletteColor.blau_color_blauRed40
+      tagBackgroundPromoInverse = BlauPaletteColor.blau_color_darkModeGrey6
+      tagBackgroundActiveInverse = BlauPaletteColor.blau_color_darkModeGrey6
+      tagBackgroundInactiveInverse = BlauPaletteColor.blau_color_darkModeGrey6
+      tagBackgroundInfoInverse = BlauPaletteColor.blau_color_darkModeGrey6
+      tagBackgroundSuccessInverse = BlauPaletteColor.blau_color_darkModeGrey6
+      tagBackgroundWarningInverse = BlauPaletteColor.blau_color_darkModeGrey6
+      tagBackgroundErrorInverse = BlauPaletteColor.blau_color_darkModeGrey6
       }
 }
 

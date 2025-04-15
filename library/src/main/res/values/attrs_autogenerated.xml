@@ -61,6 +61,7 @@
 		<attr name="colorTextLinkSnackbar" format="color|reference"/>
 		<attr name="colorTextActivated" format="color|reference"/>
 		<attr name="colorTextBrand" format="color|reference"/>
+		<attr name="colorInputBorder" format="color|reference"/>
 		<attr name="colorControl" format="color|reference"/>
 		<!-- We cannot use colorControlActivated in Android because it overlaps with a framework attribute -->
 		<attr name="colorControlActive" format="color|reference"/>
@@ -123,15 +124,31 @@
 		<attr name="colorTagTextPromo" format="color|reference"/>
 		<attr name="colorTagTextActive" format="color|reference"/>
 		<attr name="colorTagTextInactive" format="color|reference"/>
+		<attr name="colorTagTextInfo" format="color|reference"/>
 		<attr name="colorTagTextSuccess" format="color|reference"/>
 		<attr name="colorTagTextWarning" format="color|reference"/>
 		<attr name="colorTagTextError" format="color|reference"/>
 		<attr name="colorTagBackgroundPromo" format="color|reference"/>
 		<attr name="colorTagBackgroundActive" format="color|reference"/>
 		<attr name="colorTagBackgroundInactive" format="color|reference"/>
+		<attr name="colorTagBackgroundInfo" format="color|reference"/>
 		<attr name="colorTagBackgroundSuccess" format="color|reference"/>
 		<attr name="colorTagBackgroundWarning" format="color|reference"/>
 		<attr name="colorTagBackgroundError" format="color|reference"/>
+		<attr name="colorTagTextPromoInverse" format="color|reference"/>
+		<attr name="colorTagTextActiveInverse" format="color|reference"/>
+		<attr name="colorTagTextInactiveInverse" format="color|reference"/>
+		<attr name="colorTagTextInfoInverse" format="color|reference"/>
+		<attr name="colorTagTextSuccessInverse" format="color|reference"/>
+		<attr name="colorTagTextWarningInverse" format="color|reference"/>
+		<attr name="colorTagTextErrorInverse" format="color|reference"/>
+		<attr name="colorTagBackgroundPromoInverse" format="color|reference"/>
+		<attr name="colorTagBackgroundActiveInverse" format="color|reference"/>
+		<attr name="colorTagBackgroundInactiveInverse" format="color|reference"/>
+		<attr name="colorTagBackgroundInfoInverse" format="color|reference"/>
+		<attr name="colorTagBackgroundSuccessInverse" format="color|reference"/>
+		<attr name="colorTagBackgroundWarningInverse" format="color|reference"/>
+		<attr name="colorTagBackgroundErrorInverse" format="color|reference"/>
 	</declare-styleable>
 	<declare-styleable name="Drawables">
 		<attr name="drawableBackgroundBrand" format="reference"/>

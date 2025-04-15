@@ -176,6 +176,8 @@ public class MisticaColors {
 
   public var textBrand: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
 
+  public var inputBorder: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
+
   public var control: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
 
   public var controlActivated: Color by mutableStateOf(Color.Unspecified,
@@ -322,6 +324,8 @@ public class MisticaColors {
 
   public var tagTextInactive: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
 
+  public var tagTextInfo: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
+
   public var tagTextSuccess: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
 
   public var tagTextWarning: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
@@ -337,6 +341,9 @@ public class MisticaColors {
   public var tagBackgroundInactive: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
+  public var tagBackgroundInfo: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
   public var tagBackgroundSuccess: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
@@ -344,6 +351,48 @@ public class MisticaColors {
       structuralEqualityPolicy())
 
   public var tagBackgroundError: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var tagTextPromoInverse: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var tagTextActiveInverse: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var tagTextInactiveInverse: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var tagTextInfoInverse: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var tagTextSuccessInverse: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var tagTextWarningInverse: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var tagTextErrorInverse: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var tagBackgroundPromoInverse: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var tagBackgroundActiveInverse: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var tagBackgroundInactiveInverse: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var tagBackgroundInfoInverse: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var tagBackgroundSuccessInverse: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var tagBackgroundWarningInverse: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var tagBackgroundErrorInverse: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
   public fun updateColorsFrom(other: MisticaColors) {
@@ -406,6 +455,7 @@ public class MisticaColors {
     textLinkSnackbar = other.textLinkSnackbar
     textActivated = other.textActivated
     textBrand = other.textBrand
+    inputBorder = other.inputBorder
     control = other.control
     controlActivated = other.controlActivated
     controlInverse = other.controlInverse
@@ -467,15 +517,31 @@ public class MisticaColors {
     tagTextPromo = other.tagTextPromo
     tagTextActive = other.tagTextActive
     tagTextInactive = other.tagTextInactive
+    tagTextInfo = other.tagTextInfo
     tagTextSuccess = other.tagTextSuccess
     tagTextWarning = other.tagTextWarning
     tagTextError = other.tagTextError
     tagBackgroundPromo = other.tagBackgroundPromo
     tagBackgroundActive = other.tagBackgroundActive
     tagBackgroundInactive = other.tagBackgroundInactive
+    tagBackgroundInfo = other.tagBackgroundInfo
     tagBackgroundSuccess = other.tagBackgroundSuccess
     tagBackgroundWarning = other.tagBackgroundWarning
     tagBackgroundError = other.tagBackgroundError
+    tagTextPromoInverse = other.tagTextPromoInverse
+    tagTextActiveInverse = other.tagTextActiveInverse
+    tagTextInactiveInverse = other.tagTextInactiveInverse
+    tagTextInfoInverse = other.tagTextInfoInverse
+    tagTextSuccessInverse = other.tagTextSuccessInverse
+    tagTextWarningInverse = other.tagTextWarningInverse
+    tagTextErrorInverse = other.tagTextErrorInverse
+    tagBackgroundPromoInverse = other.tagBackgroundPromoInverse
+    tagBackgroundActiveInverse = other.tagBackgroundActiveInverse
+    tagBackgroundInactiveInverse = other.tagBackgroundInactiveInverse
+    tagBackgroundInfoInverse = other.tagBackgroundInfoInverse
+    tagBackgroundSuccessInverse = other.tagBackgroundSuccessInverse
+    tagBackgroundWarningInverse = other.tagBackgroundWarningInverse
+    tagBackgroundErrorInverse = other.tagBackgroundErrorInverse
   }
 }
 

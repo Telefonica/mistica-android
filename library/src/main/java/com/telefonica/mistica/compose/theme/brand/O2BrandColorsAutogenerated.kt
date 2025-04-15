@@ -68,6 +68,7 @@ public object O2BrandColors {
       textLinkSnackbar = O2PaletteColor.o2_color_o2BluePrimary30
       textActivated = O2PaletteColor.o2_color_o2BluePrimary
       textBrand = O2PaletteColor.o2_color_o2BluePrimary
+      inputBorder = O2PaletteColor.o2_color_grey3
       control = O2PaletteColor.o2_color_grey3
       controlActivated = O2PaletteColor.o2_color_o2BluePrimary
       controlInverse = O2PaletteColor.o2_color_o2BluePrimary30
@@ -129,15 +130,31 @@ public object O2BrandColors {
       tagTextPromo = O2PaletteColor.o2_color_o2Purple
       tagTextActive = O2PaletteColor.o2_color_o2BluePrimary
       tagTextInactive = O2PaletteColor.o2_color_grey5
+      tagTextInfo = O2PaletteColor.o2_color_o2BluePrimary
       tagTextSuccess = O2PaletteColor.o2_color_o2Green80
       tagTextWarning = O2PaletteColor.o2_color_o2Orange75
       tagTextError = O2PaletteColor.o2_color_pepper60
       tagBackgroundPromo = O2PaletteColor.o2_color_o2Purple10
       tagBackgroundActive = O2PaletteColor.o2_color_o2BluePrimary10
       tagBackgroundInactive = O2PaletteColor.o2_color_grey1
+      tagBackgroundInfo = O2PaletteColor.o2_color_o2BluePrimary10
       tagBackgroundSuccess = O2PaletteColor.o2_color_o2Green10
       tagBackgroundWarning = O2PaletteColor.o2_color_o2Orange10
       tagBackgroundError = O2PaletteColor.o2_color_pepper10
+      tagTextPromoInverse = O2PaletteColor.o2_color_o2Purple
+      tagTextActiveInverse = O2PaletteColor.o2_color_o2BluePrimary
+      tagTextInactiveInverse = O2PaletteColor.o2_color_grey5
+      tagTextInfoInverse = O2PaletteColor.o2_color_o2BluePrimary
+      tagTextSuccessInverse = O2PaletteColor.o2_color_o2Green80
+      tagTextWarningInverse = O2PaletteColor.o2_color_o2Orange75
+      tagTextErrorInverse = O2PaletteColor.o2_color_pepper60
+      tagBackgroundPromoInverse = O2PaletteColor.o2_color_o2Purple10
+      tagBackgroundActiveInverse = O2PaletteColor.o2_color_o2BluePrimary10
+      tagBackgroundInactiveInverse = O2PaletteColor.o2_color_grey1
+      tagBackgroundInfoInverse = O2PaletteColor.o2_color_o2BluePrimary10
+      tagBackgroundSuccessInverse = O2PaletteColor.o2_color_o2Green10
+      tagBackgroundWarningInverse = O2PaletteColor.o2_color_o2Orange10
+      tagBackgroundErrorInverse = O2PaletteColor.o2_color_pepper10
       }
 
   public val darkColors: MisticaColors = MisticaColors().apply {
@@ -200,6 +217,7 @@ public object O2BrandColors {
       textLinkSnackbar = O2PaletteColor.o2_color_o2BluePrimary30
       textActivated = O2PaletteColor.o2_color_o2BluePrimary30
       textBrand = O2PaletteColor.o2_color_o2BluePrimary30
+      inputBorder = O2PaletteColor.o2_color_darkModeGrey6
       control = O2PaletteColor.o2_color_darkModeGrey6
       controlActivated = O2PaletteColor.o2_color_o2BluePrimary30
       controlInverse = O2PaletteColor.o2_color_darkModeGrey6
@@ -261,15 +279,31 @@ public object O2BrandColors {
       tagTextPromo = O2PaletteColor.o2_color_o2Purple30
       tagTextActive = O2PaletteColor.o2_color_o2BluePrimary30
       tagTextInactive = O2PaletteColor.o2_color_grey5
+      tagTextInfo = O2PaletteColor.o2_color_o2BluePrimary30
       tagTextSuccess = O2PaletteColor.o2_color_o2Green40
       tagTextWarning = O2PaletteColor.o2_color_o2Orange40
       tagTextError = O2PaletteColor.o2_color_pepper40
       tagBackgroundPromo = O2PaletteColor.o2_color_darkModeGrey6
       tagBackgroundActive = O2PaletteColor.o2_color_darkModeGrey6
       tagBackgroundInactive = O2PaletteColor.o2_color_darkModeGrey6
+      tagBackgroundInfo = O2PaletteColor.o2_color_darkModeGrey6
       tagBackgroundSuccess = O2PaletteColor.o2_color_darkModeGrey6
       tagBackgroundWarning = O2PaletteColor.o2_color_darkModeGrey6
       tagBackgroundError = O2PaletteColor.o2_color_darkModeGrey6
+      tagTextPromoInverse = O2PaletteColor.o2_color_o2Purple30
+      tagTextActiveInverse = O2PaletteColor.o2_color_o2BluePrimary30
+      tagTextInactiveInverse = O2PaletteColor.o2_color_grey5
+      tagTextInfoInverse = O2PaletteColor.o2_color_o2BluePrimary30
+      tagTextSuccessInverse = O2PaletteColor.o2_color_o2Green40
+      tagTextWarningInverse = O2PaletteColor.o2_color_o2Orange40
+      tagTextErrorInverse = O2PaletteColor.o2_color_pepper40
+      tagBackgroundPromoInverse = O2PaletteColor.o2_color_darkModeGrey6
+      tagBackgroundActiveInverse = O2PaletteColor.o2_color_darkModeGrey6
+      tagBackgroundInactiveInverse = O2PaletteColor.o2_color_darkModeGrey6
+      tagBackgroundInfoInverse = O2PaletteColor.o2_color_darkModeGrey6
+      tagBackgroundSuccessInverse = O2PaletteColor.o2_color_darkModeGrey6
+      tagBackgroundWarningInverse = O2PaletteColor.o2_color_darkModeGrey6
+      tagBackgroundErrorInverse = O2PaletteColor.o2_color_darkModeGrey6
       }
 }
 

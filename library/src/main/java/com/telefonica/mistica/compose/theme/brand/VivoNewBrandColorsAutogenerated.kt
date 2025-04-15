@@ -68,6 +68,7 @@ public object VivoNewBrandColors {
       textLinkSnackbar = VivoNewPaletteColor.vivoNew_color_vivoPurpleLight20
       textActivated = VivoNewPaletteColor.vivoNew_color_vivoPurple
       textBrand = VivoNewPaletteColor.vivoNew_color_vivoPurple
+      inputBorder = VivoNewPaletteColor.vivoNew_color_grey4
       control = VivoNewPaletteColor.vivoNew_color_grey4
       controlActivated = VivoNewPaletteColor.vivoNew_color_vivoPurple
       controlInverse = VivoNewPaletteColor.vivoNew_color_vivoPurpleLight50
@@ -129,15 +130,31 @@ public object VivoNewBrandColors {
       tagTextPromo = VivoNewPaletteColor.vivoNew_color_vivoPurple
       tagTextActive = VivoNewPaletteColor.vivoNew_color_vivoPurple
       tagTextInactive = VivoNewPaletteColor.vivoNew_color_grey5
+      tagTextInfo = VivoNewPaletteColor.vivoNew_color_vivoPurple
       tagTextSuccess = VivoNewPaletteColor.vivoNew_color_vivoGreenDark
       tagTextWarning = VivoNewPaletteColor.vivoNew_color_orangeDark
       tagTextError = VivoNewPaletteColor.vivoNew_color_pepperDark80
       tagBackgroundPromo = VivoNewPaletteColor.vivoNew_color_vivoPurpleLight10
-      tagBackgroundActive = VivoNewPaletteColor.vivoNew_color_vivoPurpleLight10
+      tagBackgroundActive = VivoNewPaletteColor.vivoNew_color_grey1
       tagBackgroundInactive = VivoNewPaletteColor.vivoNew_color_grey1
+      tagBackgroundInfo = VivoNewPaletteColor.vivoNew_color_vivoPurpleLight10
       tagBackgroundSuccess = VivoNewPaletteColor.vivoNew_color_vivoGreenLight10
       tagBackgroundWarning = VivoNewPaletteColor.vivoNew_color_orangeLight10
       tagBackgroundError = VivoNewPaletteColor.vivoNew_color_pepperLight10
+      tagTextPromoInverse = VivoNewPaletteColor.vivoNew_color_vivoPurple
+      tagTextActiveInverse = VivoNewPaletteColor.vivoNew_color_vivoPurple
+      tagTextInactiveInverse = VivoNewPaletteColor.vivoNew_color_grey5
+      tagTextInfoInverse = VivoNewPaletteColor.vivoNew_color_vivoPurple
+      tagTextSuccessInverse = VivoNewPaletteColor.vivoNew_color_vivoGreenDark
+      tagTextWarningInverse = VivoNewPaletteColor.vivoNew_color_orangeDark
+      tagTextErrorInverse = VivoNewPaletteColor.vivoNew_color_pepperDark80
+      tagBackgroundPromoInverse = VivoNewPaletteColor.vivoNew_color_vivoPurpleLight10
+      tagBackgroundActiveInverse = VivoNewPaletteColor.vivoNew_color_vivoPurpleLight10
+      tagBackgroundInactiveInverse = VivoNewPaletteColor.vivoNew_color_grey1
+      tagBackgroundInfoInverse = VivoNewPaletteColor.vivoNew_color_vivoPurpleLight10
+      tagBackgroundSuccessInverse = VivoNewPaletteColor.vivoNew_color_vivoGreenLight10
+      tagBackgroundWarningInverse = VivoNewPaletteColor.vivoNew_color_orangeLight10
+      tagBackgroundErrorInverse = VivoNewPaletteColor.vivoNew_color_pepperLight10
       }
 
   public val darkColors: MisticaColors = MisticaColors().apply {
@@ -200,6 +217,7 @@ public object VivoNewBrandColors {
       textLinkSnackbar = VivoNewPaletteColor.vivoNew_color_vivoPurpleLight50
       textActivated = VivoNewPaletteColor.vivoNew_color_vivoPurpleLight80
       textBrand = VivoNewPaletteColor.vivoNew_color_vivoPurpleLight80
+      inputBorder = VivoNewPaletteColor.vivoNew_color_darkModeGrey5
       control = VivoNewPaletteColor.vivoNew_color_darkModeGrey6
       controlActivated = VivoNewPaletteColor.vivoNew_color_vivoPurpleLight80
       controlInverse = VivoNewPaletteColor.vivoNew_color_darkModeGrey6
@@ -229,8 +247,8 @@ public object VivoNewBrandColors {
       neutralLowAlternative = VivoNewPaletteColor.vivoNew_color_darkModeGrey6
       textPrimary = VivoNewPaletteColor.vivoNew_color_grey2
       textPrimaryInverse = VivoNewPaletteColor.vivoNew_color_grey2
-      textSecondary = VivoNewPaletteColor.vivoNew_color_grey4
-      textSecondaryInverse = VivoNewPaletteColor.vivoNew_color_grey4
+      textSecondary = VivoNewPaletteColor.vivoNew_color_grey3
+      textSecondaryInverse = VivoNewPaletteColor.vivoNew_color_grey3
       success = VivoNewPaletteColor.vivoNew_color_vivoGreen
       warning = VivoNewPaletteColor.vivoNew_color_orange
       error = VivoNewPaletteColor.vivoNew_color_pepper
@@ -261,15 +279,31 @@ public object VivoNewBrandColors {
       tagTextPromo = VivoNewPaletteColor.vivoNew_color_vivoPurpleLight50
       tagTextActive = VivoNewPaletteColor.vivoNew_color_vivoPurpleLight80
       tagTextInactive = VivoNewPaletteColor.vivoNew_color_grey5
+      tagTextInfo = VivoNewPaletteColor.vivoNew_color_vivoPurpleLight80
       tagTextSuccess = VivoNewPaletteColor.vivoNew_color_vivoGreenLight30
       tagTextWarning = VivoNewPaletteColor.vivoNew_color_orangeLight40
       tagTextError = VivoNewPaletteColor.vivoNew_color_pepperLight40
       tagBackgroundPromo = VivoNewPaletteColor.vivoNew_color_darkModeGrey6
       tagBackgroundActive = VivoNewPaletteColor.vivoNew_color_darkModeGrey6
       tagBackgroundInactive = VivoNewPaletteColor.vivoNew_color_darkModeGrey6
+      tagBackgroundInfo = VivoNewPaletteColor.vivoNew_color_darkModeGrey6
       tagBackgroundSuccess = VivoNewPaletteColor.vivoNew_color_darkModeGrey6
       tagBackgroundWarning = VivoNewPaletteColor.vivoNew_color_darkModeGrey6
       tagBackgroundError = VivoNewPaletteColor.vivoNew_color_darkModeGrey6
+      tagTextPromoInverse = VivoNewPaletteColor.vivoNew_color_vivoPurpleLight50
+      tagTextActiveInverse = VivoNewPaletteColor.vivoNew_color_vivoPurpleLight80
+      tagTextInactiveInverse = VivoNewPaletteColor.vivoNew_color_grey5
+      tagTextInfoInverse = VivoNewPaletteColor.vivoNew_color_vivoPurpleLight80
+      tagTextSuccessInverse = VivoNewPaletteColor.vivoNew_color_vivoGreenLight30
+      tagTextWarningInverse = VivoNewPaletteColor.vivoNew_color_orangeLight40
+      tagTextErrorInverse = VivoNewPaletteColor.vivoNew_color_pepperLight40
+      tagBackgroundPromoInverse = VivoNewPaletteColor.vivoNew_color_darkModeGrey6
+      tagBackgroundActiveInverse = VivoNewPaletteColor.vivoNew_color_darkModeGrey6
+      tagBackgroundInactiveInverse = VivoNewPaletteColor.vivoNew_color_darkModeGrey6
+      tagBackgroundInfoInverse = VivoNewPaletteColor.vivoNew_color_darkModeGrey6
+      tagBackgroundSuccessInverse = VivoNewPaletteColor.vivoNew_color_darkModeGrey6
+      tagBackgroundWarningInverse = VivoNewPaletteColor.vivoNew_color_darkModeGrey6
+      tagBackgroundErrorInverse = VivoNewPaletteColor.vivoNew_color_darkModeGrey6
       }
 }
 
@@ -356,7 +390,7 @@ private object VivoNewPaletteColor {
 
   public val vivoNew_color_grey3: Color = Color(0xFFDDDDDD)
 
-  public val vivoNew_color_grey4: Color = Color(0xFF949494)
+  public val vivoNew_color_grey4: Color = Color(0xFF8A8C90)
 
   public val vivoNew_color_grey5: Color = Color(0xFF666666)
 
@@ -367,6 +401,8 @@ private object VivoNewPaletteColor {
   public val vivoNew_color_darkModeBlack: Color = Color(0xFF191919)
 
   public val vivoNew_color_darkModeGrey: Color = Color(0xFF242424)
+
+  public val vivoNew_color_darkModeGrey5: Color = Color(0xFF6D7D88)
 
   public val vivoNew_color_darkModeGrey6: Color = Color(0xFF313235)
 
