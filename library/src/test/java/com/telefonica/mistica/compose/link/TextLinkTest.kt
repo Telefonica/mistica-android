@@ -42,7 +42,7 @@ class TextLinkTest: ScreenshotsTest() {
 
     private fun checkSingleTextLink(darkTheme: Boolean = false) {
         composeTestRule.setContent {
-            MisticaTheme(brand = MovistarBrand) {
+            MisticaTheme(brand = MovistarBrand, darkTheme = darkTheme) {
                 Box(modifier = Modifier.padding(24.dp)) {
                     TextLink(
                         originalText = "TextLink",
@@ -56,7 +56,7 @@ class TextLinkTest: ScreenshotsTest() {
 
     private fun checkMultiTextLink(darkTheme: Boolean = false) {
         composeTestRule.setContent {
-            MisticaTheme(brand = MovistarBrand) {
+            MisticaTheme(brand = MovistarBrand, darkTheme = darkTheme) {
                 Box(modifier = Modifier.padding(24.dp)) {
                     TextLink(
                         originalText = "This a text showing first link and second link",

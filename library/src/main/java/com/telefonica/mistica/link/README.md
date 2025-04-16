@@ -9,7 +9,7 @@ There are two main ways to use this component`:
 1. **Using Single Link**: This is the most straightforward method, where you can provide a single link and its associated text.
 2. **Using Multiple Links**: This method allows you to define multiple links within the same text, providing a more complex and flexible way to handle links.
 
-You can find some examples of how to use the `TextLink` component in the [TextLinksCatalogFragment section](https://github.com/Telefonica/mistica-android/blob/main/catalog/src/main/java/com/telefonica/mistica/catalog/ui/classic/components/TextLinkCatalogFragment.kt).
+You can find some examples of how to use the `TextLink` component in the [TextLinks catalog section](../../../../../../../../catalog/src/main/java/com/telefonica/mistica/catalog/ui/classic/components/TextLinkCatalogFragment.kt).
 This class demonstrate how to create a simple link and a more complex link with multiple clickable segments.
 
 **Main Benefit: Enhanced Accessibility**
