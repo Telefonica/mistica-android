@@ -97,6 +97,7 @@ class CatalogMainActivity : AppCompatActivity() {
             SectionItem("Headers", R.drawable.ic_header, Section.HEADERS),
             SectionItem("Highlighted Cards", R.drawable.ic_cards, Section.HIGHLIGHTED_CARDS),
             SectionItem("Inputs", R.drawable.ic_inputs, Section.INPUTS),
+            SectionItem("Links", R.drawable.ic_links, Section.LINKS),
             SectionItem("Lists", R.drawable.ic_lists, Section.LISTS),
             SectionItem("Load Error Feedback", R.drawable.ic_load_feedback_error, Section.LOAD_ERROR_FEEDBACK),
             SectionItem("Media Card", R.drawable.ic_cards, Section.MEDIA_CARDS),
