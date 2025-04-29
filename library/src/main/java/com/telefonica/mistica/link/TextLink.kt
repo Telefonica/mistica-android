@@ -41,13 +41,7 @@ class TextLink @JvmOverloads constructor(
         movementMethod = LinkMovementMethod.getInstance()
         highlightColor = Color.TRANSPARENT
 
-
        if (attrs != null) {
-            if (attrs.hasCustomStyle().not()) {
-                // Ensure default style if there is no custom style
-                setTextAppearance(context, R.style.AppTheme_TextAppearance_Preset2_Medium)
-            }
-
             val styledAttrs =
                 context.theme.obtainStyledAttributes(attrs, R.styleable.TextLinkView, defStyleAttr, 0)
             setLinkColor(styledAttrs.getColor(R.styleable.TextLinkView_linkColor, context.getThemeColor(R.attr.colorTextLink)))
