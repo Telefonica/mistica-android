@@ -98,5 +98,4 @@ class TextLink @JvmOverloads constructor(
         }
     }
 
-    private fun AttributeSet.hasCustomStyle() = styleAttribute != 0
 }
