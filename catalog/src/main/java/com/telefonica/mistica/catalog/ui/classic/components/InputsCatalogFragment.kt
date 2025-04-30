@@ -1,9 +1,6 @@
 package com.telefonica.mistica.catalog.ui.classic.components
 
 import android.os.Bundle
-import android.text.Spannable
-import android.text.SpannableString
-import android.text.Spanned
 import android.text.TextPaint
 import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
@@ -22,6 +19,8 @@ import com.telefonica.mistica.input.validations.EmailTextInputValidation
 import com.telefonica.mistica.input.validations.PhoneTextInputValidation
 import com.telefonica.mistica.input.validations.TextInputValidation
 import com.telefonica.mistica.input.validations.TextInputValidationResult
+import com.telefonica.mistica.link.MultiLink.CustomMultiLink
+import com.telefonica.mistica.link.getSpannableLinkText
 import com.telefonica.mistica.title.TitleView
 
 class InputsCatalogFragment : Fragment() {
@@ -47,17 +46,21 @@ class InputsCatalogFragment : Fragment() {
             }
 
             findViewById<CheckBoxInput>(R.id.checkboxInput)?.apply {
-                setText(createdSpannableText())
+                setText(
+                    getSpannableLinkText(
+                        originalText = "I have read and agree to the promotion's Legal Grounds and Privacy Policy legal warning. (Tap on links to show error).",
+                        links = listOf(
+                            getCustomCheckboxMultiLink("Legal Grounds"),
+                            getCustomCheckboxMultiLink("Privacy Policy"),
+                        ),
+                    )
+                )
                 setMovementMethod(LinkMovementMethod.getInstance())
             }
 
             findViewById<TitleView>(R.id.section_title_with_link)?.apply {
                 setOnLinkClickedListener {
-                    Toast.makeText(
-                        this.context,
-                        "Link tapped!",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    Toast.makeText(this.context, "Link tapped!", Toast.LENGTH_SHORT).show()
                 }
             }
 
@@ -90,41 +93,18 @@ class InputsCatalogFragment : Fragment() {
         }
     }
 
-    private fun createdSpannableText(): Spannable {
-        val message =
-            "I have read and agree to the promotion's Legal Grounds and Privacy Policy legal warning. (Tap on links to show error)."
-        val link1 = "Legal Grounds"
-        val link2 = "Privacy Policy"
-
-        val link1ClickableSpan = object : CheckBoxClickableSpan() {
-            override fun onClick(checkBox: View) {
-                super.onClick(checkBox)
-                view?.findViewById<CheckBoxInput>(R.id.checkboxInput)?.apply {
-                    error = "Error Text! Tapped on $link1"
+    private fun getCustomCheckboxMultiLink(linkedText: String) =
+        CustomMultiLink(
+            linkedText = linkedText,
+            customSpan = object : CheckBoxClickableSpan() {
+                override fun onClick(checkBox: View) {
+                    super.onClick(checkBox)
+                    view?.findViewById<CheckBoxInput>(R.id.checkboxInput)?.apply {
+                        error = "Error Text! Tapped on $linkedText"
+                    }
                 }
             }
-        }
-
-        val start1 = message.indexOf(link1)
-        val end1 = start1 + link1.length
-
-        val link2ClickableSpan = object : CheckBoxClickableSpan() {
-            override fun onClick(checkBox: View) {
-                super.onClick(checkBox)
-                view?.findViewById<CheckBoxInput>(R.id.checkboxInput)?.apply {
-                    error = "Error Text! Tapped on $link2"
-                }
-            }
-        }
-
-        val start2 = message.indexOf(link2)
-        val end2 = start2 + link2.length
-
-        return SpannableString(message).apply {
-            setSpan(link1ClickableSpan, start1, end1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-            setSpan(link2ClickableSpan, start2, end2, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-        }
-    }
+        )
 
     /**
      * Avoids toggling checkbox state when tapping on the span

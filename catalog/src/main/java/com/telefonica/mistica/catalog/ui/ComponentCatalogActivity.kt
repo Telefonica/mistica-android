@@ -39,6 +39,7 @@ import com.telefonica.mistica.catalog.ui.classic.components.SnackBarCatalogFragm
 import com.telefonica.mistica.catalog.ui.classic.components.SteppersCatalogFragment
 import com.telefonica.mistica.catalog.ui.classic.components.TabsCatalogFragment
 import com.telefonica.mistica.catalog.ui.classic.components.TagsCatalogFragment
+import com.telefonica.mistica.catalog.ui.classic.components.TextLinkCatalogFragment
 import com.telefonica.mistica.catalog.ui.classic.components.TextPresetsCatalogFragment
 import com.telefonica.mistica.catalog.ui.classic.components.TitleCatalogFragment
 import com.telefonica.mistica.catalog.ui.compose.common.CatalogBlauBrand
@@ -69,6 +70,7 @@ import com.telefonica.mistica.catalog.ui.compose.components.Skeletons
 import com.telefonica.mistica.catalog.ui.compose.components.Steppers
 import com.telefonica.mistica.catalog.ui.compose.components.TabsCatalog
 import com.telefonica.mistica.catalog.ui.compose.components.Tags
+import com.telefonica.mistica.catalog.ui.compose.components.TextLinks
 import com.telefonica.mistica.catalog.ui.compose.components.Texts
 import com.telefonica.mistica.catalog.ui.compose.components.Titles
 import com.telefonica.mistica.compose.theme.MisticaTheme
@@ -130,7 +132,8 @@ class ComponentCatalogActivity : AppCompatActivity() {
             Section.SHEET to ::setSheetCatalogFragment,
             Section.CAROUSEL to ::setCarouselFragment,
             Section.SKELETON to ::setSkeletonFragment,
-            Section.POSTER_CARD to ::setPosterCardFragment
+            Section.POSTER_CARD to ::setPosterCardFragment,
+            Section.LINKS to ::setTextLinkCatalogFragment,
         )
 
         val section = intent.getSerializableExtra(EXTRA_SECTION) as? Section
@@ -301,6 +304,13 @@ class ComponentCatalogActivity : AppCompatActivity() {
             composeComponent = { Texts() })
     }
 
+    private fun setTextLinkCatalogFragment() {
+        setPageAdapterWithTabs(
+            classicComponent = TextLinkCatalogFragment(),
+            composeComponent = { TextLinks() }
+        )
+    }
+
     private fun setPageAdapterWithTabs(classicComponent: Fragment?, composeComponent: (@Composable () -> Unit)?) {
         binding.tabLayoutViewGroup.visibility = View.VISIBLE
         if (classicComponent == null && composeComponent == null) throw ExceptionInInitializerError("At least one of the components must be not null.")
@@ -406,6 +416,7 @@ enum class Section {
     SHEET,
     CAROUSEL,
     SKELETON,
-    POSTER_CARD
+    POSTER_CARD,
+    LINKS,
 }
 

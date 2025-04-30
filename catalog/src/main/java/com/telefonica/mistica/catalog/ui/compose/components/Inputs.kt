@@ -34,7 +34,7 @@ import com.telefonica.mistica.compose.input.PhoneInput
 import com.telefonica.mistica.compose.input.SearchInput
 import com.telefonica.mistica.compose.input.TextAreaInput
 import com.telefonica.mistica.compose.input.TextInput
-import com.telefonica.mistica.compose.input.TextLink
+import com.telefonica.mistica.compose.link.MultiLink
 import com.telefonica.mistica.compose.theme.MisticaTheme
 
 @Composable
@@ -391,12 +391,12 @@ fun CheckBoxInputSample() {
         "I have read and agree to the promotion's Legal Grounds and Privacy Policy legal warning. (Tap on links to show error)."
     var errorText by remember { mutableStateOf("") }
     val links = listOf(
-        TextLink(
-            link = "Legal Grounds",
+        MultiLink(
+            linkedText = "Legal Grounds",
             onLinkTapped = { errorText = "Error Text! Tapped on Legal Grounds" },
         ),
-        TextLink(
-            link = "Privacy Policy",
+        MultiLink(
+            linkedText = "Privacy Policy",
             onLinkTapped = { errorText = "Error Text! Tapped on Privacy Policy" },
         ),
     )
