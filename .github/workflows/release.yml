@@ -29,6 +29,14 @@ jobs:
           :catalog:publishCatalogPublicationToSonatypeRepository -DLIBRARY_VERSION=${{ github.event.release.tag_name }}
           --max-workers 1 closeAndReleaseStagingRepository"
 
+      - name: Prepare release notes
+        run: |
+          RELEASE_BODY=$(jq -Rs . <<'EOF'
+          ${{ github.event.release.body }}
+          EOF
+          )
+          echo "FORMATTED_BODY=${RELEASE_BODY}" >> $GITHUB_ENV
+
       - name: Send Teams notification
         uses: fjogeleit/http-request-action@v1.16.4
         with:
@@ -77,7 +85,7 @@ jobs:
                     },
                     {
                       "type": "TextBlock",
-                      "text": "${{ github.event.release.body }}",
+                      "text": ${{ env.FORMATTED_BODY }},
                       "wrap": true
                     },
                     {
