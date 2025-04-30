@@ -39,12 +39,15 @@ jobs:
 #          :catalog:publishCatalogPublicationToSonatypeRepository -DLIBRARY_VERSION=${{ github.event.release.tag_name }}
 #          --max-workers 1 closeAndReleaseStagingRepository"
 
+      - name: Print release notes
+        run: echo ${{ env.RELEASE_NOTES }}
+
       - name: Prepare release notes
         run: |
-          RELEASE_BODY=$(echo '$RELEASE_NOTES' | jq -Rs .)
+          RELEASE_BODY=$(echo '${{ env.RELEASE_NOTES }}' | jq -Rs .)
           echo "FORMATTED_BODY=${RELEASE_BODY}" >> $GITHUB_ENV
 
-      - name: Print release notes
+      - name: Print formatted release notes
         run: echo ${{ env.FORMATTED_BODY }}
 
 #      - name: Send Teams notification
