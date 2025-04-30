@@ -41,73 +41,76 @@ jobs:
 
       - name: Prepare release notes
         run: |
-          RELEASE_BODY=$(echo '${RELEASE_NOTES}' | jq -Rs .)
+          RELEASE_BODY=$(echo '$RELEASE_NOTES' | jq -Rs .)
           echo "FORMATTED_BODY=${RELEASE_BODY}" >> $GITHUB_ENV
 
-      - name: Send Teams notification
-        uses: fjogeleit/http-request-action@v1.16.4
-        with:
-          url: ${{ secrets.ANDROID_LIBRARIES_TEAMS_WEBHOOK }}
-          method: 'POST'
-          data: |
-            {
-            "type": "message",
-            "attachments": [
-              {
-                "contentType": "application/vnd.microsoft.card.adaptive",
-                "content": {
-                  "type": "AdaptiveCard",
-                  "version": "1.5",
-                  "body": [
-                    {
-                      "type": "ColumnSet",
-                      "columns": [
-                        {
-                          "type": "Column",
-                          "width": "auto",
-                          "items": [
-                            {
-                              "type": "Image",
-                              "url": "https://raw.githubusercontent.com/Skitionek/notify-microsoft-teams/master/icons/success.png",
-                              "width": "56px",
-                              "height": "56px",
-                              "style": "RoundedCorners"
-                            }
-                          ]
-                        },
-                        {
-                          "type": "Column",
-                          "width": "stretch",
-                          "items": [
-                            {
-                              "type": "TextBlock",
-                              "text": "New Mística version published ${{ github.event.release.tag_name }}",
-                              "wrap": true,
-                              "weight": "Bolder",
-                              "style": "heading"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "TextBlock",
-                      "text": ${{ env.FORMATTED_BODY }},
-                      "wrap": true
-                    },
-                    {
-                      "type": "ActionSet",
-                      "actions": [
-                        {
-                          "type": "Action.OpenUrl",
-                          "title": "Open release",
-                          "url": "${{ github.event.release.html_url }}"
-                        }
-                      ]
-                    }
-                  ],
-                  "$schema": "https://adaptivecards.io/schemas/adaptive-card.json"
-                }
-              }
-            ]
-            }
+      - name: Print release notes
+        run: echo ${{ env.FORMATTED_BODY }}
+
+#      - name: Send Teams notification
+#        uses: fjogeleit/http-request-action@v1.16.4
+#        with:
+#          url: ${{ secrets.ANDROID_LIBRARIES_TEAMS_WEBHOOK }}
+#          method: 'POST'
+#          data: |
+#            {
+#            "type": "message",
+#            "attachments": [
+#              {
+#                "contentType": "application/vnd.microsoft.card.adaptive",
+#                "content": {
+#                  "type": "AdaptiveCard",
+#                  "version": "1.5",
+#                  "body": [
+#                    {
+#                      "type": "ColumnSet",
+#                      "columns": [
+#                        {
+#                          "type": "Column",
+#                          "width": "auto",
+#                          "items": [
+#                            {
+#                              "type": "Image",
+#                              "url": "https://raw.githubusercontent.com/Skitionek/notify-microsoft-teams/master/icons/success.png",
+#                              "width": "56px",
+#                              "height": "56px",
+#                              "style": "RoundedCorners"
+#                            }
+#                          ]
+#                        },
+#                        {
+#                          "type": "Column",
+#                          "width": "stretch",
+#                          "items": [
+#                            {
+#                              "type": "TextBlock",
+#                              "text": "New Mística version published ${{ github.event.release.tag_name }}",
+#                              "wrap": true,
+#                              "weight": "Bolder",
+#                              "style": "heading"
+#                            }
+#                          ]
+#                        }
+#                      ]
+#                    },
+#                    {
+#                      "type": "TextBlock",
+#                      "text": ${{ env.FORMATTED_BODY }},
+#                      "wrap": true
+#                    },
+#                    {
+#                      "type": "ActionSet",
+#                      "actions": [
+#                        {
+#                          "type": "Action.OpenUrl",
+#                          "title": "Open release",
+#                          "url": "${{ github.event.release.html_url }}"
+#                        }
+#                      ]
+#                    }
+#                  ],
+#                  "$schema": "https://adaptivecards.io/schemas/adaptive-card.json"
+#                }
+#              }
+#            ]
+#            }
