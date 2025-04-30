@@ -44,7 +44,10 @@ jobs:
 
       - name: Prepare release notes
         run: |
-          RELEASE_BODY=$(echo '${{ env.RELEASE_NOTES }}' | jq -Rs .)
+          RELEASE_BODY=$(jq -Rs . <<'EOF'
+          ${{ env.RELEASE_NOTES }}
+          EOF
+          )
           echo "FORMATTED_BODY=${RELEASE_BODY}" >> $GITHUB_ENV
 
       - name: Print formatted release notes
