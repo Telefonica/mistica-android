@@ -6,6 +6,15 @@ on:
 jobs:
   promote:
     runs-on: ubuntu-latest
+    env:
+      RELEASE_NOTES: |
+          ## What's Changed
+          * ANDROID-16028 Fix new release notification by @jeslat in https://github.com/Telefonica/mistica-android/pull/418
+          * ANDROID-15952 Input border contrast improvements by @yceballost in https://github.com/Telefonica/mistica-android/pull/415
+          * ANDROID-15772 Text link component by @haynlo in https://github.com/Telefonica/mistica-android/pull/416
+
+
+          **Full Changelog**: https://github.com/Telefonica/mistica-android/compare/18.1.4...18.2.0
     steps:
 #      - name: Set up JDK 17
 #        uses: actions/setup-java@v2
@@ -29,6 +38,11 @@ jobs:
 #        run: "bash ./gradlew :library:publishReleasePublicationToSonatypeRepository -DLIBRARY_VERSION=${{ github.event.release.tag_name }}
 #          :catalog:publishCatalogPublicationToSonatypeRepository -DLIBRARY_VERSION=${{ github.event.release.tag_name }}
 #          --max-workers 1 closeAndReleaseStagingRepository"
+
+      - name: Prepare release notes
+        run: |
+          RELEASE_BODY=$(echo '${RELEASE_NOTES}' | jq -Rs .)
+          echo "FORMATTED_BODY=${RELEASE_BODY}" >> $GITHUB_ENV
 
       - name: Send Teams notification
         uses: fjogeleit/http-request-action@v1.16.4
@@ -78,7 +92,7 @@ jobs:
                     },
                     {
                       "type": "TextBlock",
-                      "text": "## What's Changed",
+                      "text": ${{ env.FORMATTED_BODY }},
                       "wrap": true
                     },
                     {
