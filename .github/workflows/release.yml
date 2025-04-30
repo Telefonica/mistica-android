@@ -40,7 +40,7 @@ jobs:
 #          --max-workers 1 closeAndReleaseStagingRepository"
 
       - name: Print release notes
-        run: echo ${{ env.RELEASE_NOTES }}
+        run: echo "${{ env.RELEASE_NOTES }}"
 
       - name: Prepare release notes
         run: |
