@@ -43,7 +43,7 @@ jobs:
                 "contentType": "application/vnd.microsoft.card.adaptive",
                 "content": {
                   "type": "AdaptiveCard",
-                  "version": "1.4",
+                  "version": "1.5",
                   "body": [
                     {
                       "type": "ColumnSet",
@@ -78,13 +78,7 @@ jobs:
                     },
                     {
                       "type": "TextBlock",
-                      "text": "## What's Changed
-                      * ANDROID-16028 Fix new release notification by @jeslat in https://github.com/Telefonica/mistica-android/pull/418
-                      * ANDROID-15952 Input border contrast improvements by @yceballost in https://github.com/Telefonica/mistica-android/pull/415
-                      * ANDROID-15772 Text link component by @haynlo in https://github.com/Telefonica/mistica-android/pull/416
-                      
-                      
-                      **Full Changelog**: https://github.com/Telefonica/mistica-android/compare/18.1.4...18.2.0",
+                      "text": "## What's Changed",
                       "wrap": true
                     },
                     {
