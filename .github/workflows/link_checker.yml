@@ -1,7 +1,8 @@
 name: Links checker
 
 on:
-  pull_request:
+  # pull_request: # Action fails due rate limit issues -> https://jira.tid.es/browse/ANDROID-16194
+  workflow_dispatch:
 
 jobs:
   linkChecker:
@@ -11,7 +12,7 @@ jobs:
 
       - name: Link Checker
         id: lychee
-        uses: lycheeverse/lychee-action@v2.4.1
+        uses: lycheeverse/lychee-action@v1
         with:
           fail: true
         env:
