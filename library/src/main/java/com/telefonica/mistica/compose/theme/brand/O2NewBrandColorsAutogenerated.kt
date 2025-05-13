@@ -69,6 +69,8 @@ public object O2NewBrandColors {
       textActivated = O2NewPaletteColor.o2New_color_beyondBlue
       textBrand = O2NewPaletteColor.o2New_color_beyondBlue
       inputBorder = O2NewPaletteColor.o2New_color_grey45
+      completedStep = O2NewPaletteColor.o2New_color_beyondBlue
+      completedStepInverse = O2NewPaletteColor.o2New_color_beyondBlue70
       control = O2NewPaletteColor.o2New_color_grey45
       controlActivated = O2NewPaletteColor.o2New_color_beyondBlue
       controlInverse = O2NewPaletteColor.o2New_color_white
@@ -218,6 +220,8 @@ public object O2NewBrandColors {
       textActivated = O2NewPaletteColor.o2New_color_beyondBlue30
       textBrand = O2NewPaletteColor.o2New_color_beyondBlue30
       inputBorder = O2NewPaletteColor.o2New_color_grey45
+      completedStep = O2NewPaletteColor.o2New_color_darkModeBeyondBlue
+      completedStepInverse = O2NewPaletteColor.o2New_color_darkModeBeyondBlue
       control = O2NewPaletteColor.o2New_color_grey45
       controlActivated = O2NewPaletteColor.o2New_color_darkModeBeyondBlue
       controlInverse = O2NewPaletteColor.o2New_color_grey45

@@ -178,6 +178,11 @@ public class MisticaColors {
 
   public var inputBorder: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
 
+  public var completedStep: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
+
+  public var completedStepInverse: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
   public var control: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
 
   public var controlActivated: Color by mutableStateOf(Color.Unspecified,
@@ -456,6 +461,8 @@ public class MisticaColors {
     textActivated = other.textActivated
     textBrand = other.textBrand
     inputBorder = other.inputBorder
+    completedStep = other.completedStep
+    completedStepInverse = other.completedStepInverse
     control = other.control
     controlActivated = other.controlActivated
     controlInverse = other.controlInverse

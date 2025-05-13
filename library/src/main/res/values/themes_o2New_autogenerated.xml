@@ -65,6 +65,8 @@
 		<item name="colorTextActivated">@color/o2New_color_beyondBlue</item>
 		<item name="colorTextBrand">@color/o2New_color_beyondBlue</item>
 		<item name="colorInputBorder">@color/o2New_color_grey45</item>
+		<item name="colorCompletedStep">@color/o2New_color_beyondBlue</item>
+		<item name="colorCompletedStepInverse">@color/o2New_color_beyondBlue70</item>
 		<item name="colorControl">@color/o2New_color_grey45</item>
 		<item name="colorControlActive">@color/o2New_color_beyondBlue</item>
 		<item name="colorControlInverse">@color/o2New_color_white</item>
