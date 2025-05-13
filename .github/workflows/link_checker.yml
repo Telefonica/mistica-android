@@ -11,7 +11,7 @@ jobs:
 
       - name: Link Checker
         id: lychee
-        uses: lycheeverse/lychee-action@v1
+        uses: lycheeverse/lychee-action@2.4.1
         with:
           fail: true
         env:
