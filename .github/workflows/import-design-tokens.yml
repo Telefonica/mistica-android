@@ -38,7 +38,11 @@ jobs:
           token: ${{ secrets.NOVUM_PRIVATE_REPOS }}
           commit-message: 'Update design tokens'
           title: 'Update design tokens'
-          body: 'This PR was automatically created by the import-design-tokens GitHub Action.'
+          body: |
+            This PR was automatically created by the import-design-tokens GitHub Action.
+            
+            ## ⚠️ ACTION REQUIRED
+            > **Please, update this description with additional context for reviewers.**
           branch: 'import-design-tokens'
           assignees: ${{ github.actor }}
           team-reviewers: 'Android,mistica-design'
