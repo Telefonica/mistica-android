@@ -17,6 +17,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.telefonica.mistica.R
 import com.telefonica.mistica.feedback.SnackBarBehaviorConfig.areSticky
 import com.telefonica.mistica.feedback.snackbar.CustomSnackbarLayout
+import com.telefonica.mistica.util.announce
 import com.telefonica.mistica.util.getThemeColor
 
 open class SnackbarBuilder(view: View?, text: String) {
@@ -123,6 +124,8 @@ open class SnackbarBuilder(view: View?, text: String) {
         snackbar.setCustomAction()
         snackbar.showDismissActionIfNeeded(hasInfiniteDuration = snackbarLength == SnackbarLength.INDEFINITE)
         snackbar.addCallbackIfNeeded()
+        snackbar.disableDefaultAccessibility()
+        accessibilityManager.announce(text)
 
         return snackbar
     }
@@ -192,6 +195,10 @@ open class SnackbarBuilder(view: View?, text: String) {
         if (callback != null) {
             addCallback(callback)
         }
+    }
+
+    private fun Snackbar.disableDefaultAccessibility() {
+        view.importantForAccessibility = View.IMPORTANT_FOR_ACCESSIBILITY_NO
     }
 }
 
