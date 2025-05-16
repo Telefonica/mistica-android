@@ -64,6 +64,8 @@
 		<item name="colorTextActivated">@color/telefonica_color_telefonicaBlue</item>
 		<item name="colorTextBrand">@color/telefonica_color_telefonicaBlue</item>
 		<item name="colorInputBorder">@color/telefonica_color_grey5</item>
+		<item name="colorCompletedStep">@color/telefonica_color_telefonicaBlue</item>
+		<item name="colorCompletedStepInverse">@color/telefonica_color_telefonicaBlue</item>
 		<item name="colorControl">@color/telefonica_color_darkModeGrey6</item>
 		<item name="colorControlActive">@color/telefonica_color_telefonicaBlue</item>
 		<item name="colorControlInverse">@color/telefonica_color_darkModeGrey6</item>

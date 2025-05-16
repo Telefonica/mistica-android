@@ -65,6 +65,8 @@
 		<item name="colorTextActivated">@color/vivo_color_vivoPurple</item>
 		<item name="colorTextBrand">@color/vivo_color_vivoPurple</item>
 		<item name="colorInputBorder">@color/vivo_color_grey3</item>
+		<item name="colorCompletedStep">@color/vivo_color_vivoPurple</item>
+		<item name="colorCompletedStepInverse">@color/vivo_color_vivoPurpleDark</item>
 		<item name="colorControl">@color/vivo_color_grey3</item>
 		<item name="colorControlActive">@color/vivo_color_vivoPurple</item>
 		<item name="colorControlInverse">@color/vivo_color_vivoPurpleLight50</item>

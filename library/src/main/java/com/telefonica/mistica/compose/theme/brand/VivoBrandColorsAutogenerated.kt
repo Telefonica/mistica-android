@@ -69,6 +69,8 @@ public object VivoBrandColors {
       textActivated = VivoPaletteColor.vivo_color_vivoPurple
       textBrand = VivoPaletteColor.vivo_color_vivoPurple
       inputBorder = VivoPaletteColor.vivo_color_grey3
+      completedStep = VivoPaletteColor.vivo_color_vivoPurple
+      completedStepInverse = VivoPaletteColor.vivo_color_vivoPurpleDark
       control = VivoPaletteColor.vivo_color_grey3
       controlActivated = VivoPaletteColor.vivo_color_vivoPurple
       controlInverse = VivoPaletteColor.vivo_color_vivoPurpleLight50
@@ -218,6 +220,8 @@ public object VivoBrandColors {
       textActivated = VivoPaletteColor.vivo_color_vivoPurpleLight80
       textBrand = VivoPaletteColor.vivo_color_vivoPurpleLight80
       inputBorder = VivoPaletteColor.vivo_color_darkModeGrey6
+      completedStep = VivoPaletteColor.vivo_color_vivoPurpleLight80
+      completedStepInverse = VivoPaletteColor.vivo_color_vivoPurpleLight80
       control = VivoPaletteColor.vivo_color_darkModeGrey6
       controlActivated = VivoPaletteColor.vivo_color_vivoPurpleLight80
       controlInverse = VivoPaletteColor.vivo_color_darkModeGrey6

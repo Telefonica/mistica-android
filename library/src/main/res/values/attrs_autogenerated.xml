@@ -62,6 +62,8 @@
 		<attr name="colorTextActivated" format="color|reference"/>
 		<attr name="colorTextBrand" format="color|reference"/>
 		<attr name="colorInputBorder" format="color|reference"/>
+		<attr name="colorCompletedStep" format="color|reference"/>
+		<attr name="colorCompletedStepInverse" format="color|reference"/>
 		<attr name="colorControl" format="color|reference"/>
 		<!-- We cannot use colorControlActivated in Android because it overlaps with a framework attribute -->
 		<attr name="colorControlActive" format="color|reference"/>

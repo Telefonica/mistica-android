@@ -69,6 +69,8 @@ public object MovistarBrandColors {
       textActivated = MovistarPaletteColor.movistar_color_movistarBlueHC
       textBrand = MovistarPaletteColor.movistar_color_movistarBlueHC
       inputBorder = MovistarPaletteColor.movistar_color_grey4
+      completedStep = MovistarPaletteColor.movistar_color_movistarBlueHC
+      completedStepInverse = MovistarPaletteColor.movistar_color_movistarBlue55
       control = MovistarPaletteColor.movistar_color_grey4
       controlActivated = MovistarPaletteColor.movistar_color_movistarBlue
       controlInverse = MovistarPaletteColor.movistar_color_movistarBlue20
@@ -218,6 +220,8 @@ public object MovistarBrandColors {
       textActivated = MovistarPaletteColor.movistar_color_movistarBlue
       textBrand = MovistarPaletteColor.movistar_color_movistarBlue
       inputBorder = MovistarPaletteColor.movistar_color_darkModeGrey4
+      completedStep = MovistarPaletteColor.movistar_color_movistarBlueHC
+      completedStepInverse = MovistarPaletteColor.movistar_color_movistarBlueHC
       control = MovistarPaletteColor.movistar_color_darkModeGrey4
       controlActivated = MovistarPaletteColor.movistar_color_movistarBlue
       controlInverse = MovistarPaletteColor.movistar_color_darkModeGrey4

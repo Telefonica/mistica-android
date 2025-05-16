@@ -69,6 +69,8 @@ public object TuBrandColors {
       textActivated = TuPaletteColor.tu_color_primary
       textBrand = TuPaletteColor.tu_color_blue
       inputBorder = TuPaletteColor.tu_color_grey5
+      completedStep = TuPaletteColor.tu_color_primary
+      completedStepInverse = TuPaletteColor.tu_color_primary80
       control = TuPaletteColor.tu_color_grey5
       controlActivated = TuPaletteColor.tu_color_primary
       controlInverse = TuPaletteColor.tu_color_white
@@ -218,6 +220,8 @@ public object TuBrandColors {
       textActivated = TuPaletteColor.tu_color_blue30
       textBrand = TuPaletteColor.tu_color_blue30
       inputBorder = TuPaletteColor.tu_color_grey5
+      completedStep = TuPaletteColor.tu_color_grey2
+      completedStepInverse = TuPaletteColor.tu_color_grey2
       control = TuPaletteColor.tu_color_darkModeGrey6
       controlActivated = TuPaletteColor.tu_color_blue30
       controlInverse = TuPaletteColor.tu_color_darkModeGrey6
