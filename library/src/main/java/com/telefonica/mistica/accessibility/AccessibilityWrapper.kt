@@ -9,17 +9,19 @@ class AccessibilityWrapper(
 ) {
 
     fun announce(text: CharSequence) {
-        val event =
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                AccessibilityEvent().apply {
-                    eventType = AccessibilityEvent.TYPE_ANNOUNCEMENT
+        if (accessibilityManager.isEnabled) {
+            val event =
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                    AccessibilityEvent().apply {
+                        eventType = AccessibilityEvent.TYPE_ANNOUNCEMENT
+                    }
+                } else {
+                    @Suppress("DEPRECATION")
+                    AccessibilityEvent.obtain(AccessibilityEvent.TYPE_ANNOUNCEMENT)
                 }
-            } else {
-                @Suppress("DEPRECATION")
-                AccessibilityEvent.obtain(AccessibilityEvent.TYPE_ANNOUNCEMENT)
-            }
-        event.contentDescription = text
-        accessibilityManager.sendAccessibilityEvent(event)
+            event.contentDescription = text
+            accessibilityManager.sendAccessibilityEvent(event)
+        }
     }
 
     fun interrupt() {
