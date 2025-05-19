@@ -1,12 +1,14 @@
 package com.telefonica.mistica.feedback
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.res.ColorStateList
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
 import android.view.LayoutInflater
 import android.view.View
+import android.view.accessibility.AccessibilityManager
 import android.widget.FrameLayout
 import androidx.annotation.AttrRes
 import androidx.annotation.StringRes
@@ -26,6 +28,7 @@ open class SnackbarBuilder(view: View?, text: String) {
     private var actionListener: View.OnClickListener? = null
     private var callback: Snackbar.Callback? = null
     private var withDismiss = false
+    private val accessibilityManager: AccessibilityManager
 
     private val hasAction: Boolean
         get() = actionText != null
@@ -36,6 +39,7 @@ open class SnackbarBuilder(view: View?, text: String) {
         requireNotNull(view) { "View cannot be null" }
         this.text = text
         this.view = view
+        this.accessibilityManager = view.context.getSystemService(Context.ACCESSIBILITY_SERVICE) as AccessibilityManager
     }
 
     open fun withAction(text: String, contentDescription: String? = null, listener: View.OnClickListener?): SnackbarBuilder = apply {
@@ -71,6 +75,7 @@ open class SnackbarBuilder(view: View?, text: String) {
         val snackbar = createSnackbar(spannable, snackbarLength)
         setBackgroundColor(snackbar, R.attr.colorFeedbackErrorBackground)
         setActionTextColor(snackbar, R.attr.colorTextPrimaryInverse)
+        interruptPreviousAccessibilityAnnouncement(snackbar)
         snackbar.show()
         return snackbar
     }
@@ -82,6 +87,14 @@ open class SnackbarBuilder(view: View?, text: String) {
     private fun setBackgroundColor(snackbar: Snackbar, @AttrRes colorRes: Int) {
         snackbar.view.backgroundTintList =
             ColorStateList.valueOf(view.context.getThemeColor(colorRes))
+    }
+
+    private fun interruptPreviousAccessibilityAnnouncement(snackbar: Snackbar) {
+        snackbar.addCallback(object : BaseCallback<Snackbar>() {
+            override fun onShown(snackbar: Snackbar) {
+                if (accessibilityManager.isEnabled) accessibilityManager.interrupt()
+            }
+        })
     }
 
     private fun getSpannable(@AttrRes colorRes: Int): Spannable {
