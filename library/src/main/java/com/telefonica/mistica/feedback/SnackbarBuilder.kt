@@ -123,6 +123,7 @@ open class SnackbarBuilder(view: View?, text: String) {
         snackbar.setCustomAction()
         snackbar.showDismissActionIfNeeded(hasInfiniteDuration = snackbarLength == SnackbarLength.INDEFINITE)
         snackbar.addCallbackIfNeeded()
+        snackbar.setContentDescription(text)
 
         return snackbar
     }
@@ -192,6 +193,10 @@ open class SnackbarBuilder(view: View?, text: String) {
         if (callback != null) {
             addCallback(callback)
         }
+    }
+
+    private fun Snackbar.setContentDescription(text: CharSequence) {
+        getCustomLayout().contentDescription = text
     }
 }
 
