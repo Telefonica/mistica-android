@@ -8,6 +8,7 @@ import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
 import android.view.LayoutInflater
 import android.view.View
+import android.view.accessibility.AccessibilityEvent
 import android.view.accessibility.AccessibilityManager
 import android.widget.FrameLayout
 import androidx.annotation.AttrRes
@@ -65,6 +66,7 @@ open class SnackbarBuilder(view: View?, text: String) {
         val snackbar = createSnackbar(spannable, snackbarLength)
         setBackgroundColor(snackbar, R.attr.colorFeedbackInfoBackground)
         setActionTextColor(snackbar, R.attr.colorTextLinkSnackbar)
+        muteSnackbarAndMoveFocusIfPersistant(snackbar, snackbarLength)
         snackbar.show()
         return snackbar
     }
@@ -76,6 +78,7 @@ open class SnackbarBuilder(view: View?, text: String) {
         setBackgroundColor(snackbar, R.attr.colorFeedbackErrorBackground)
         setActionTextColor(snackbar, R.attr.colorTextPrimaryInverse)
         interruptPreviousAccessibilityAnnouncement(snackbar)
+        muteSnackbarAndMoveFocusIfPersistant(snackbar, snackbarLength)
         snackbar.show()
         return snackbar
     }
@@ -87,6 +90,17 @@ open class SnackbarBuilder(view: View?, text: String) {
     private fun setBackgroundColor(snackbar: Snackbar, @AttrRes colorRes: Int) {
         snackbar.view.backgroundTintList =
             ColorStateList.valueOf(view.context.getThemeColor(colorRes))
+    }
+
+    private fun muteSnackbarAndMoveFocusIfPersistant(snackbar: Snackbar, snackbarLength: SnackbarLength) {
+        if (snackbarLength == SnackbarLength.INDEFINITE) {
+            snackbar.view.accessibilityLiveRegion = View.ACCESSIBILITY_LIVE_REGION_NONE
+            snackbar.addCallback(object : BaseCallback<Snackbar>() {
+                override fun onShown(snackbar: Snackbar) {
+                    snackbar.view.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_FOCUSED)
+                }
+            })
+        }
     }
 
     private fun interruptPreviousAccessibilityAnnouncement(snackbar: Snackbar) {
