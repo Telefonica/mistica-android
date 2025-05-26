@@ -92,7 +92,7 @@ open class SnackbarBuilder(view: View?, text: String) {
             ColorStateList.valueOf(view.context.getThemeColor(colorRes))
     }
 
-    private fun muteSnackbarAndMoveFocusIfPersistant(snackbar: Snackbar, snackbarLength: SnackbarLength) {
+    private fun muteSnackbarAndMoveFocusIfPersistent(snackbar: Snackbar, snackbarLength: SnackbarLength) {
         if (snackbarLength == SnackbarLength.INDEFINITE) {
             snackbar.view.accessibilityLiveRegion = View.ACCESSIBILITY_LIVE_REGION_NONE
             snackbar.addCallback(object : BaseCallback<Snackbar>() {
