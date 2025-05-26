@@ -66,7 +66,7 @@ open class SnackbarBuilder(view: View?, text: String) {
         val snackbar = createSnackbar(spannable, snackbarLength)
         setBackgroundColor(snackbar, R.attr.colorFeedbackInfoBackground)
         setActionTextColor(snackbar, R.attr.colorTextLinkSnackbar)
-        muteSnackbarAndMoveFocusIfPersistant(snackbar, snackbarLength)
+        muteSnackbarAndMoveFocusIfPersistent(snackbar, snackbarLength)
         snackbar.show()
         return snackbar
     }
@@ -78,7 +78,7 @@ open class SnackbarBuilder(view: View?, text: String) {
         setBackgroundColor(snackbar, R.attr.colorFeedbackErrorBackground)
         setActionTextColor(snackbar, R.attr.colorTextPrimaryInverse)
         interruptPreviousAccessibilityAnnouncement(snackbar)
-        muteSnackbarAndMoveFocusIfPersistant(snackbar, snackbarLength)
+        muteSnackbarAndMoveFocusIfPersistent(snackbar, snackbarLength)
         snackbar.show()
         return snackbar
     }
