@@ -49,4 +49,7 @@ object BlauBrand : Brand {
     override val tabsLabelFontSize = BlauBrandFontSizes.tabsLabelFontSize
 
     override val radius = BlauBrandRadius.radius
+
+    override val themeVariant = BlauBrandThemeVariant.themeVariant
+
 }

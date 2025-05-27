@@ -16,14 +16,16 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.theme.brand.Brand
 import com.telefonica.mistica.compose.theme.brushes.LocalMisticaBrushes
-import com.telefonica.mistica.compose.theme.color.LocalMisticaColors
 import com.telefonica.mistica.compose.theme.brushes.MisticaBrushes
+import com.telefonica.mistica.compose.theme.color.LocalMisticaColors
 import com.telefonica.mistica.compose.theme.color.MisticaColors
 import com.telefonica.mistica.compose.theme.text.LocalMisticaTypography
 import com.telefonica.mistica.compose.theme.text.MisticaTypography
 import com.telefonica.mistica.compose.theme.values.LocalMisticaRadius
+import com.telefonica.mistica.compose.theme.values.LocalMisticaThemeVariant
 import com.telefonica.mistica.compose.theme.values.LocalMisticaValues
 import com.telefonica.mistica.compose.theme.values.MisticaRadius
+import com.telefonica.mistica.compose.theme.values.MisticaThemeVariant
 import com.telefonica.mistica.compose.theme.values.MisticaValues
 
 @Composable
@@ -96,12 +98,19 @@ fun MisticaTheme(
         updateWith(brand.radius)
     }
 
+    val themeVariant = remember {
+        MisticaThemeVariant()
+    }.apply {
+        updateWith(brand.themeVariant)
+    }
+
     CompositionLocalProvider(
         LocalMisticaColors provides rememberedColors,
         LocalMisticaBrushes provides rememberedBrushes,
         LocalMisticaTypography provides typography,
         LocalMisticaValues provides values,
-        LocalMisticaRadius provides radius
+        LocalMisticaRadius provides radius,
+        LocalMisticaThemeVariant provides themeVariant,
     ) {
         MaterialTheme(
             colors = if (darkTheme) {
@@ -157,4 +166,9 @@ object MisticaTheme {
         @Composable
         @ReadOnlyComposable
         get() = LocalMisticaRadius.current
+
+    val themeVariant: MisticaThemeVariant
+        @Composable
+        @ReadOnlyComposable
+        get() = LocalMisticaThemeVariant.current
 }
