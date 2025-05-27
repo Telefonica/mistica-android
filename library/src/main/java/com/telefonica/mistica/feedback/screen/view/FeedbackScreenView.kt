@@ -459,10 +459,16 @@ class FeedbackScreenView : ConstraintLayout {
     private fun isInversePresentation(): Boolean =
         type == TYPE_SUCCESS &&
                 (getBooleanThemeRes(R.attr.feedbackScreenSuccessWithGradient) ||
-                        getBooleanThemeRes(R.attr.feedbackScreenSuccessInverse))
+                        isInverseThemeVariant())
 
     private fun getBooleanThemeRes(@AttrRes attributeRes: Int): Boolean =
         context.getThemeRes(attributeRes)?.let { it != 0 } ?: false
+
+    private fun isInverseThemeVariant(): Boolean {
+        val typedValue = TypedValue()
+        context.theme.resolveAttribute(R.attr.successFeedbackThemeVariant, typedValue,true)
+        return typedValue.string == FEEDBACK_THEME_VARIANT_INVERSE
+    }
 
     companion object {
         const val TYPE_SUCCESS = 0
@@ -476,5 +482,8 @@ class FeedbackScreenView : ConstraintLayout {
 
         const val HAPTIC_FEEDBACK_DEFAULT_DELAY = 450L
         const val HAPTIC_FEEDBACK_ERROR_DELAY = 500L
+
+        const val FEEDBACK_THEME_VARIANT_DEFAULT = "default"
+        const val FEEDBACK_THEME_VARIANT_INVERSE = "inverse"
     }
 }

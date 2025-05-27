@@ -4,7 +4,6 @@
 	<style name="MisticaTheme.O2_Customizations" parent="MisticaTheme.O2_Base">
 		<!-- Feedbacks -->
 		<item name="feedbackScreenSuccessWithGradient">true</item>
-		<item name="feedbackScreenSuccessInverse">true</item>
 		<item name="feedbackScreenSuccessAnimation">@raw/feedback_success_o2</item>
 		<item name="feedbackScreenErrorAnimation">@raw/feedback_error_o2</item>
 		<item name="feedbackScreenInfoIcon">@drawable/feedback_info_o2</item>
