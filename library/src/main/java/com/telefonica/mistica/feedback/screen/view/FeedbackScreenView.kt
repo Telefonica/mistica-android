@@ -37,6 +37,7 @@ import com.telefonica.mistica.util.convertDpToPx
 import com.telefonica.mistica.util.getThemeColor
 import com.telefonica.mistica.util.getMisticaThemeDrawable
 import com.telefonica.mistica.util.getThemeRes
+import androidx.core.graphics.drawable.toDrawable
 
 class FeedbackScreenView : ConstraintLayout {
 
@@ -256,15 +257,9 @@ class FeedbackScreenView : ConstraintLayout {
     }
 
     private fun configureBackground() {
-        when (type) {
-            TYPE_SUCCESS -> when {
-                getBooleanThemeRes(R.attr.feedbackScreenSuccessWithGradient) ||
-                        getBooleanThemeRes(R.attr.feedbackScreenSuccessInverse) ->
-                            context.getMisticaThemeDrawable(R.attr.drawableBackgroundBrand)
-                else -> ColorDrawable(context.getThemeColor(R.attr.colorBackground))
-            }
-
-            else -> ColorDrawable(context.getThemeColor(R.attr.colorBackground))
+        when {
+            isInversePresentation() -> context.getMisticaThemeDrawable(R.attr.drawableBackgroundBrand)
+            else -> context.getThemeColor(R.attr.colorBackground).toDrawable()
         }.let {
             background = it
         }
@@ -275,7 +270,7 @@ class FeedbackScreenView : ConstraintLayout {
             TYPE_SUCCESS -> configureIcon(
                 animationAttr = R.attr.feedbackScreenSuccessAnimation,
                 imageAttr = R.attr.feedbackScreenSuccessIcon,
-                colorAttr = R.attr.colorInverse,
+                colorAttr = getSuccessIconColor(),
             )
 
             TYPE_ERROR -> configureIcon(
@@ -292,6 +287,9 @@ class FeedbackScreenView : ConstraintLayout {
 
         }
     }
+
+    private fun getSuccessIconColor(): Int =
+        if (isInversePresentation()) R.attr.colorInverse else R.attr.colorBrand
 
     private fun configureIcon(
         @AttrRes animationAttr: Int,
