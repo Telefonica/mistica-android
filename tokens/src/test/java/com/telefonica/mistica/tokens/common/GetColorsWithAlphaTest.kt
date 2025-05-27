@@ -55,6 +55,7 @@ class GetColorsWithAlphaTest {
                 )
             ),
             radius = emptyMap(),
+            themeVariant = emptyMap(),
             text = TextDTO(
                 weight = emptyMap(),
                 size = emptyMap()

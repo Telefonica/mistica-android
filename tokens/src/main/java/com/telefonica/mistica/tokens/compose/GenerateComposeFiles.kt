@@ -13,6 +13,8 @@ class GenerateComposeFiles(
     private val generateBrandColors: GenerateBrandColorsAndBrushes = GenerateBrandColorsAndBrushes(),
     private val generateMisticaRadius: GenerateMisticaRadius = GenerateMisticaRadius(),
     private val generateBrandRadius: GenerateBrandRadius = GenerateBrandRadius(),
+    private val tenerateMisticaThemeVariant: GenerateMisticaThemeVariant = GenerateMisticaThemeVariant(),
+    private val generateBrandThemeVariant: GenerateBrandThemeVariant = GenerateBrandThemeVariant(),
     private val generateBrandFontWeights: GenerateBrandFontWeights = GenerateBrandFontWeights(),
     private val generateBrandFontSizes: GenerateBrandFontSizes = GenerateBrandFontSizes(),
     private val generateMisticaBrushes: GenerateMisticaBrushes = GenerateMisticaBrushes(),
@@ -32,10 +34,12 @@ class GenerateComposeFiles(
         generateMisticaColors(jsonAdapter, heterogeneousTokensNames)
         generateMisticaBrushes(heterogeneousTokensNames)
         generateMisticaRadius(jsonAdapter)
+        tenerateMisticaThemeVariant(jsonAdapter)
 
         brandTokens.forEach { (tokens, brand) ->
             generateBrandColors(tokens, brand.name, heterogeneousTokensNames)
             generateBrandRadius(tokens, brand.name)
+            generateBrandThemeVariant(tokens, brand.name)
             generateBrandFontWeights(tokens, brand.name)
             generateBrandFontSizes(tokens, brand.name)
         }
@@ -58,7 +62,9 @@ class GenerateComposeFiles(
         val LINEAR_GRADIENT_WITH_ANGLE_CLASS = ClassName("com.telefonica.mistica.compose.theme.brushes", "LinearGradientWithAngle")
 
         val misticaRadiusClass = ClassName("com.telefonica.mistica.compose.theme.values", "MisticaRadius")
+        val misticaThemeVariantClass = ClassName("com.telefonica.mistica.compose.theme.values", "MisticaThemeVariant")
         val dpClass = ClassName("androidx.compose.ui.unit", "Dp")
         val intClass = ClassName("kotlin", "Int")
+        val stringClass = ClassName("kotlin", "String")
     }
 }
