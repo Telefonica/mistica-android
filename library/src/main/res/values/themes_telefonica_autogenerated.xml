@@ -167,8 +167,8 @@
 		<item name="sheetBorderRadius">0dp</item>
 		<item name="mediaSmallBorderRadius">0dp</item>
 		<!-- Theme variant -->
-		<item name="successFeedbackThemeVariant">inverse</item>
-		<item name="brandLoadingScreenThemeVariant">inverse</item>
+		<item name="successFeedbackThemeVariant">INVERSE</item>
+		<item name="brandLoadingScreenThemeVariant">INVERSE</item>
 		<!-- Preset fonts -->
 		<item name="cardTitleFont">?font_family_regular</item>
 		<item name="buttonFont">?font_family_medium</item>
