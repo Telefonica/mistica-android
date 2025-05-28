@@ -13,7 +13,7 @@ import com.squareup.moshi.JsonAdapter
 import com.telefonica.mistica.tokens.TokensGenerator
 import com.telefonica.mistica.tokens.common.GetThemeVariantName
 import com.telefonica.mistica.tokens.compose.GenerateComposeFiles.Companion.misticaThemeVariantClass
-import com.telefonica.mistica.tokens.compose.GenerateComposeFiles.Companion.stringClass
+import com.telefonica.mistica.tokens.compose.GenerateComposeFiles.Companion.themeVariantClass
 import com.telefonica.mistica.tokens.dto.ThemeVariantDTO
 import com.telefonica.mistica.tokens.dto.TokensDTO
 import java.io.File
@@ -59,11 +59,10 @@ class GenerateMisticaThemeVariant(
 
     private fun getConstructorParameters(themeVariants: Map<String, ThemeVariantDTO>): List<ParameterSpec> =
         themeVariants.map { (key, _) ->
-            val defaultValue = "\"default\""
             ParameterSpec.builder(
                 getThemeVariantName(key),
-                stringClass
-            ).defaultValue(defaultValue).build()
+                themeVariantClass,
+            ).defaultValue("ThemeVariant.DEFAULT").build()
         }
 
     private fun getProperties(themeVariants: Map<String, ThemeVariantDTO>): List<PropertySpec> =
@@ -71,7 +70,7 @@ class GenerateMisticaThemeVariant(
             val themeVariantName = getThemeVariantName(key)
             PropertySpec.builder(
                 themeVariantName,
-                stringClass
+                themeVariantClass,
             )
                 .mutable()
                 .delegate("%M(%N, %M())", mutableStateOf, themeVariantName, structuralEqualityPolicy)

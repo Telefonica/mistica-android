@@ -123,7 +123,15 @@ class GenerateAttributesFile(
         tokens.themeVariant.forEach { (key, _) ->
             ATTR {
                 attribute("name", getThemeVariantName(key))
-                attribute("format", "string")
+                attribute("format", ENUM)
+                ENUM {
+                    attribute("name", "DEFAULT")
+                    attribute("value", 0)
+                }
+                ENUM {
+                    attribute("name", "INVERSE")
+                    attribute("value", 1)
+                }
             }
         }
     }
@@ -180,6 +188,7 @@ class GenerateAttributesFile(
         private const val DECLARE_STYLEABLE = "declare-styleable"
         private const val FLAG = "flag"
         private const val ATTR = "attr"
+        private const val ENUM = "enum"
 
         const val BRAND_COLOR_PREFIX = "color"
         const val BRAND_DRAWABLE_PREFIX = "drawable"

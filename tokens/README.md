@@ -7,7 +7,7 @@ The expected workflow is that UX team runs a GitHub action in their repository, 
 You can run the [Import design tokens](https://github.com/Telefonica/mistica-android/actions/workflows/import-design-tokens.yml) GitHub Action to generate the design tokens
 
 #### Locally
-You will need to set up the json files from the [mistica-design repository](https://github.com/Telefonica/mistica-design/tree/production/tokens) in the
+You will need to set up the json files from the [mistica-design repository](https://github.com/Telefonica/mistica-design/tree/production/tokens) 
 in the repo directory under the following path `/temp/mistica-design/tokens` directory
 
 For example: `/temp/mistica-design/tokens/movistar.json`

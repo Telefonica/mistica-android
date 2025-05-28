@@ -13,7 +13,7 @@ class GenerateComposeFiles(
     private val generateBrandColors: GenerateBrandColorsAndBrushes = GenerateBrandColorsAndBrushes(),
     private val generateMisticaRadius: GenerateMisticaRadius = GenerateMisticaRadius(),
     private val generateBrandRadius: GenerateBrandRadius = GenerateBrandRadius(),
-    private val tenerateMisticaThemeVariant: GenerateMisticaThemeVariant = GenerateMisticaThemeVariant(),
+    private val generateMisticaThemeVariant: GenerateMisticaThemeVariant = GenerateMisticaThemeVariant(),
     private val generateBrandThemeVariant: GenerateBrandThemeVariant = GenerateBrandThemeVariant(),
     private val generateBrandFontWeights: GenerateBrandFontWeights = GenerateBrandFontWeights(),
     private val generateBrandFontSizes: GenerateBrandFontSizes = GenerateBrandFontSizes(),
@@ -34,7 +34,7 @@ class GenerateComposeFiles(
         generateMisticaColors(jsonAdapter, heterogeneousTokensNames)
         generateMisticaBrushes(heterogeneousTokensNames)
         generateMisticaRadius(jsonAdapter)
-        tenerateMisticaThemeVariant(jsonAdapter)
+        generateMisticaThemeVariant(jsonAdapter)
 
         brandTokens.forEach { (tokens, brand) ->
             generateBrandColors(tokens, brand.name, heterogeneousTokensNames)
@@ -63,8 +63,8 @@ class GenerateComposeFiles(
 
         val misticaRadiusClass = ClassName("com.telefonica.mistica.compose.theme.values", "MisticaRadius")
         val misticaThemeVariantClass = ClassName("com.telefonica.mistica.compose.theme.values", "MisticaThemeVariant")
+        val themeVariantClass = ClassName("com.telefonica.mistica.compose.theme.values", "ThemeVariant")
         val dpClass = ClassName("androidx.compose.ui.unit", "Dp")
         val intClass = ClassName("kotlin", "Int")
-        val stringClass = ClassName("kotlin", "String")
     }
 }

@@ -37,6 +37,7 @@ import com.telefonica.mistica.util.getThemeColor
 import com.telefonica.mistica.util.getMisticaThemeDrawable
 import com.telefonica.mistica.util.getThemeRes
 import androidx.core.graphics.drawable.toDrawable
+import com.telefonica.mistica.compose.theme.values.ThemeVariant
 
 class FeedbackScreenView : ConstraintLayout {
 
@@ -466,7 +467,7 @@ class FeedbackScreenView : ConstraintLayout {
     private fun isInverseThemeVariant(): Boolean {
         val typedValue = TypedValue()
         context.theme.resolveAttribute(R.attr.successFeedbackThemeVariant, typedValue,true)
-        return typedValue.string == FEEDBACK_THEME_VARIANT_INVERSE
+        return typedValue.data == ThemeVariant.INVERSE.ordinal
     }
 
     companion object {
@@ -481,8 +482,5 @@ class FeedbackScreenView : ConstraintLayout {
 
         const val HAPTIC_FEEDBACK_DEFAULT_DELAY = 450L
         const val HAPTIC_FEEDBACK_ERROR_DELAY = 500L
-
-        const val FEEDBACK_THEME_VARIANT_DEFAULT = "default"
-        const val FEEDBACK_THEME_VARIANT_INVERSE = "inverse"
     }
 }

@@ -145,7 +145,7 @@ class GenerateXMLFiles(
         themeVariant.forEach { (key, themeVariant) ->
             "item" {
                 attribute("name", getThemeVariantName(key))
-                -themeVariant.value
+                -themeVariant.value.uppercase()
             }
         }
     }
