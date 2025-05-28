@@ -7,17 +7,16 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.runtime.structuralEqualityPolicy
-import kotlin.String
 
 public class MisticaThemeVariant(
-  successFeedbackThemeVariant: String = "default",
-  brandLoadingScreenThemeVariant: String = "default",
+  successFeedbackThemeVariant: ThemeVariant = ThemeVariant.DEFAULT,
+  brandLoadingScreenThemeVariant: ThemeVariant = ThemeVariant.DEFAULT,
 ) {
-  public var successFeedbackThemeVariant: String by mutableStateOf(successFeedbackThemeVariant,
-      structuralEqualityPolicy())
+  public var successFeedbackThemeVariant: ThemeVariant by
+      mutableStateOf(successFeedbackThemeVariant, structuralEqualityPolicy())
     internal set
 
-  public var brandLoadingScreenThemeVariant: String by
+  public var brandLoadingScreenThemeVariant: ThemeVariant by
       mutableStateOf(brandLoadingScreenThemeVariant, structuralEqualityPolicy())
     internal set
 
