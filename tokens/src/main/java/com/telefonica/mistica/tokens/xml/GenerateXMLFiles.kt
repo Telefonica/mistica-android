@@ -13,11 +13,13 @@ import com.telefonica.mistica.tokens.TokensGenerator.Companion.REGULAR
 import com.telefonica.mistica.tokens.common.GetBorderRadiusName
 import com.telefonica.mistica.tokens.common.GetColorResourceName
 import com.telefonica.mistica.tokens.common.GetColorsWithAlpha
+import com.telefonica.mistica.tokens.common.GetThemeVariantName
 import com.telefonica.mistica.tokens.dto.BrushDTO
 import com.telefonica.mistica.tokens.dto.RadiusDTO
 import com.telefonica.mistica.tokens.dto.TextDTO
 import com.telefonica.mistica.tokens.dto.TextSizeDTO
 import com.telefonica.mistica.tokens.dto.TextWeightDTO
+import com.telefonica.mistica.tokens.dto.ThemeVariantDTO
 import com.telefonica.mistica.tokens.dto.TokensDTO
 import com.telefonica.mistica.tokens.dto.getHeterogeneousTokensNames
 import com.telefonica.mistica.tokens.xml.GenerateAttributesFile.Companion.BRAND_COLOR_PREFIX
@@ -37,6 +39,7 @@ class GenerateXMLFiles(
     private val getGradientDrawableResourceName: GetDrawableResourceName = GetDrawableResourceName(),
     private val generateAttributesFile: GenerateAttributesFile = GenerateAttributesFile(),
     private val getBorderRadiusName: GetBorderRadiusName = GetBorderRadiusName(),
+    private val getThemeVariantName: GetThemeVariantName = GetThemeVariantName(),
     private val generateBrandGradientDrawables: GenerateBrandGradientDrawables = GenerateBrandGradientDrawables(),
 ) {
 
@@ -103,6 +106,7 @@ class GenerateXMLFiles(
                 attribute("name", "${themeName}_Base")
                 mapColorsAndGradients(tokens.light, brand, heterogeneousTokensNames, false)
                 borderRadius(tokens.radius)
+                themeVariant(tokens.themeVariant)
                 presetFonts(tokens.text)
                 presetStyles(tokens.text.weight)
                 presetSizes(tokens.text.size)
@@ -132,6 +136,16 @@ class GenerateXMLFiles(
             "item" {
                 attribute("name", getBorderRadiusName(key))
                 -value
+            }
+        }
+    }
+
+    private fun Node.themeVariant(themeVariant: Map<String, ThemeVariantDTO>) {
+        comment("Theme variant")
+        themeVariant.forEach { (key, themeVariant) ->
+            "item" {
+                attribute("name", getThemeVariantName(key))
+                -themeVariant.value.uppercase()
             }
         }
     }

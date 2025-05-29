@@ -166,6 +166,9 @@
 		<item name="popupBorderRadius">8dp</item>
 		<item name="sheetBorderRadius">16dp</item>
 		<item name="mediaSmallBorderRadius">8dp</item>
+		<!-- Theme variant -->
+		<item name="successFeedbackThemeVariant">INVERSE</item>
+		<item name="brandLoadingScreenThemeVariant">INVERSE</item>
 		<!-- Preset fonts -->
 		<item name="cardTitleFont">?font_family_medium</item>
 		<item name="buttonFont">?font_family_medium</item>

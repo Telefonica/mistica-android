@@ -16,6 +16,7 @@ import com.telefonica.mistica.compose.theme.brand.VivoNewBrand
 import com.telefonica.mistica.compose.theme.brushes.MisticaBrushes
 import com.telefonica.mistica.compose.theme.color.MisticaColors
 import com.telefonica.mistica.compose.theme.values.MisticaRadius
+import com.telefonica.mistica.compose.theme.values.MisticaThemeVariant
 
 abstract class CatalogBrand(
     baseBrand: Brand,
@@ -43,6 +44,7 @@ abstract class CatalogBrand(
     override val tabsLabelFontWeight: FontWeight = baseBrand.tabsLabelFontWeight
     override val tabsLabelFontSize: TextUnit = baseBrand.tabsLabelFontSize
     override val radius: MisticaRadius = baseBrand.radius
+    override val themeVariant: MisticaThemeVariant = baseBrand.themeVariant
     override val fontFamily: FontFamily = baseBrand.fontFamily
 }
 

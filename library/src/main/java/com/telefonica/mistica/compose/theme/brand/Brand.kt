@@ -6,6 +6,7 @@ import androidx.compose.ui.unit.TextUnit
 import com.telefonica.mistica.compose.theme.brushes.MisticaBrushes
 import com.telefonica.mistica.compose.theme.color.MisticaColors
 import com.telefonica.mistica.compose.theme.values.MisticaRadius
+import com.telefonica.mistica.compose.theme.values.MisticaThemeVariant
 import com.telefonica.mistica.compose.theme.values.MisticaValues
 import com.telefonica.mistica.compose.title.TitleStyle
 
@@ -38,6 +39,7 @@ interface Brand {
             titleStyle = TitleStyle.TITLE_1,
         )
     val radius: MisticaRadius
+    val themeVariant: MisticaThemeVariant
 }
 
 enum class BrandType { BLAU, MOVISTAR, O2, TELEFONICA, VIVO, VIVO_NEW, TU, O2_NEW }

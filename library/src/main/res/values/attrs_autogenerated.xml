@@ -170,6 +170,16 @@
 		<attr name="sheetBorderRadius" format="dimension|fraction"/>
 		<attr name="mediaSmallBorderRadius" format="dimension|fraction"/>
 	</declare-styleable>
+	<declare-styleable name="ThemeVariant">
+		<attr name="successFeedbackThemeVariant" format="enum">
+			<enum name="DEFAULT" value="0"/>
+			<enum name="INVERSE" value="1"/>
+		</attr>
+		<attr name="brandLoadingScreenThemeVariant" format="enum">
+			<enum name="DEFAULT" value="0"/>
+			<enum name="INVERSE" value="1"/>
+		</attr>
+	</declare-styleable>
 	<declare-styleable name="PresetFonts">
 		<attr name="cardTitleFont" format="string"/>
 		<attr name="buttonFont" format="string"/>
