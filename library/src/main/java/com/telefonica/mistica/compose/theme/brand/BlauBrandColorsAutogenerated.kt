@@ -69,8 +69,9 @@ public object BlauBrandColors {
       textLinkDanger = BlauPaletteColor.blau_color_blauRed
       textLinkSnackbar = BlauPaletteColor.blau_color_blauPurple30
       textActivated = BlauPaletteColor.blau_color_blauBlueSecondary
-      textBrand = BlauPaletteColor.blau_color_blauBluePrimary
+      textBrand = BlauPaletteColor.blau_color_blauBlueSecondary
       inputBorder = BlauPaletteColor.blau_color_grey4
+      inputBorderInverse = BlauPaletteColor.blau_color_white
       control = BlauPaletteColor.blau_color_grey4
       controlActivated = BlauPaletteColor.blau_color_blauBlueSecondary
       controlInverse = BlauPaletteColor.blau_color_blauBluePrimary30
@@ -222,6 +223,7 @@ public object BlauBrandColors {
       textActivated = BlauPaletteColor.blau_color_blauBluePrimary
       textBrand = BlauPaletteColor.blau_color_blauBluePrimary
       inputBorder = BlauPaletteColor.blau_color_darkModeGrey5
+      inputBorderInverse = BlauPaletteColor.blau_color_darkModeGrey5
       control = BlauPaletteColor.blau_color_grey4
       controlActivated = BlauPaletteColor.blau_color_blauBlueSecondary
       controlInverse = BlauPaletteColor.blau_color_grey4

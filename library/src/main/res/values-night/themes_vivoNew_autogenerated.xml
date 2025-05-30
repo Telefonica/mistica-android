@@ -64,6 +64,7 @@
 		<item name="colorTextActivated">@color/vivoNew_color_vivoPurpleLight80</item>
 		<item name="colorTextBrand">@color/vivoNew_color_vivoPurpleLight80</item>
 		<item name="colorInputBorder">@color/vivoNew_color_darkModeGrey5</item>
+		<item name="colorInputBorderInverse">@color/vivoNew_color_darkModeGrey5</item>
 		<item name="colorCompletedStep">@color/vivoNew_color_vivoPurpleLight80</item>
 		<item name="colorCompletedStepInverse">@color/vivoNew_color_vivoPurpleLight80</item>
 		<item name="colorControl">@color/vivoNew_color_darkModeGrey6</item>
@@ -217,6 +218,7 @@
 		<item name="colorTextActivated">@color/vivoNew_color_vivoPurpleLight80</item>
 		<item name="colorTextBrand">@color/vivoNew_color_vivoPurpleLight80</item>
 		<item name="colorInputBorder">@color/vivoNew_color_darkModeGrey5</item>
+		<item name="colorInputBorderInverse">@color/vivoNew_color_darkModeGrey5</item>
 		<item name="colorCompletedStep">@color/vivoNew_color_vivoPurpleLight80</item>
 		<item name="colorCompletedStepInverse">@color/vivoNew_color_vivoPurpleLight80</item>
 		<item name="colorControl">@color/vivoNew_color_darkModeGrey6</item>

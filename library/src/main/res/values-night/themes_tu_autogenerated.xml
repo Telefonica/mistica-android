@@ -64,6 +64,7 @@
 		<item name="colorTextActivated">@color/tu_color_blue30</item>
 		<item name="colorTextBrand">@color/tu_color_blue30</item>
 		<item name="colorInputBorder">@color/tu_color_grey5</item>
+		<item name="colorInputBorderInverse">@color/tu_color_grey5</item>
 		<item name="colorCompletedStep">@color/tu_color_grey2</item>
 		<item name="colorCompletedStepInverse">@color/tu_color_grey2</item>
 		<item name="colorControl">@color/tu_color_darkModeGrey6</item>
