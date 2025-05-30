@@ -62,6 +62,7 @@
 		<attr name="colorTextActivated" format="color|reference"/>
 		<attr name="colorTextBrand" format="color|reference"/>
 		<attr name="colorInputBorder" format="color|reference"/>
+		<attr name="colorInputBorderInverse" format="color|reference"/>
 		<attr name="colorCompletedStep" format="color|reference"/>
 		<attr name="colorCompletedStepInverse" format="color|reference"/>
 		<attr name="colorControl" format="color|reference"/>
