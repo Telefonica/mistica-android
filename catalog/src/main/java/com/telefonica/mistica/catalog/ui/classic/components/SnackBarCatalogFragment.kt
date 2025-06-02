@@ -17,6 +17,8 @@ import com.telefonica.mistica.input.TextInput
 
 class SnackBarCatalogFragment : Fragment() {
 
+    private lateinit var createButton: Button
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -32,7 +34,7 @@ class SnackBarCatalogFragment : Fragment() {
         val inputText: TextInput = view.findViewById(R.id.input_snackbar_message)
         val inputAction: TextInput = view.findViewById(R.id.input_snackbar_action)
         val dropDownInput: DropDownInput = view.findViewById(R.id.dropdown_snackbar_type)
-        val createButton: Button = view.findViewById(R.id.button_create_snackbar)
+        createButton = view.findViewById(R.id.button_create_snackbar)
         val snackbarIndefiniteLength: CheckBoxInput = view.findViewById(R.id.infinite_length_checkbox)
         val alwaysShowDismiss: CheckBoxInput = view.findViewById(R.id.always_show_dismiss_checkbox)
 
@@ -70,11 +72,11 @@ class SnackBarCatalogFragment : Fragment() {
 
     private inline fun SnackbarBuilder.show(
         withIndefiniteLength: Boolean,
-        showWithLength: SnackbarBuilder.(SnackbarLength) -> Unit,
+        showWithLength: SnackbarBuilder.(SnackbarLength, View) -> Unit,
         showWithoutLength: SnackbarBuilder.() -> Unit,
     ) {
         if (withIndefiniteLength) {
-            showWithLength(SnackbarLength.INDEFINITE)
+            showWithLength(SnackbarLength.INDEFINITE, createButton)
         } else {
             showWithoutLength()
         }
