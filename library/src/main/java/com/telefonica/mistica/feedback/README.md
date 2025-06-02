@@ -23,9 +23,11 @@ Builder allows Snackbar customization:
   * Adds a callback for dismiss action. Dismiss action by definition will only work when using a coordinator layout as anchor view for the Snackbar.
 * `withDismiss()`
   * Adds a dismiss button to the Snackbar layout. 
-* * `setFocusViewAfterDismiss(view: View)`
-* Specifies a view to receive focus (including accessibility focus) after the Snackbar is dismissed. **Note:** This only works when the Snackbar length is 
-  `INDEFINITE`.
+* `setFocusViewAfterDismiss(view: View)`
+  * Specifies a view to receive accessibility focus after the Snackbar is dismissed. **Note:** This only works when the Snackbar length is 
+    `INDEFINITE`.
+* `setForceRequestFocus()`
+  * Forces the Snackbar to request accessibility focus when shown. **Note:** This only works when the Snackbar length is `INDEFINITE`.
 
 ## Showing the Snackbar
 
@@ -55,13 +57,18 @@ If a `SnackbarLength` is provided, the following logic is applied:
 
 ### Accessibility Focus
 
-When using `INDEFINITE` snackbars, you can optionally call `.setFocusViewAfterDismiss(view)` to define which view should receive accessibility focus once 
-the Snackbar is dismissed. **Note:** This only works when the Snackbar length is `INDEFINITE`.
-This ensures accessibility focus returns to the point of interaction after the snackbar disappears.
+When using `INDEFINITE` snackbars, you can enhance accessibility by:
+
+* Calling `.setFocusViewAfterDismiss(view)` to specify which view should receive accessibility focus after the Snackbar is dismissed.
+* Calling `.setForceRequestFocus()` to force the Snackbar to request accessibility focus when shown, ensuring that screen readers and accessibility services announce its content immediately.
+
+**Note:** Both methods only work when the Snackbar length is `INDEFINITE`.
+
+Example:
 
 ```kotlin
 SnackbarBuilder(triggerView, R.string.snackbar_message)
   .withDismiss()
+  .setForceRequestFocus()
   .setFocusViewAfterDismiss(triggerView)
   .showInformative(SnackbarLength.INDEFINITE)
-```

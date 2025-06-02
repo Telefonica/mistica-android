@@ -17,8 +17,6 @@ import com.telefonica.mistica.input.TextInput
 
 class SnackBarCatalogFragment : Fragment() {
 
-    private lateinit var createButton: Button
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -34,19 +32,18 @@ class SnackBarCatalogFragment : Fragment() {
         val inputText: TextInput = view.findViewById(R.id.input_snackbar_message)
         val inputAction: TextInput = view.findViewById(R.id.input_snackbar_action)
         val dropDownInput: DropDownInput = view.findViewById(R.id.dropdown_snackbar_type)
-        createButton = view.findViewById(R.id.button_create_snackbar)
+        val createButton: Button = view.findViewById(R.id.button_create_snackbar)
         val snackbarIndefiniteLength: CheckBoxInput = view.findViewById(R.id.infinite_length_checkbox)
         val returnFocus: CheckBoxInput = view.findViewById(R.id.return_focus_checkbox)
         val alwaysShowDismiss: CheckBoxInput = view.findViewById(R.id.always_show_dismiss_checkbox)
-        inputText.text = "This is a sample snackbar message"
-        inputAction.text = "Action"
+        val forceMoveFocus: CheckBoxInput = view.findViewById(R.id.move_focus_checkbox)
 
         with(dropDownInput.dropDown) {
             setAdapter(
                 DropDownInput.Adapter(
                     view.context,
                     R.layout.dropdown_menu_popup_item,
-                    SnackBarType.values().map { it.name }
+                    SnackBarType.entries.map { it.name }
                 )
             )
             setText(SnackBarType.INFORMATIVE.toString())
@@ -63,11 +60,14 @@ class SnackBarCatalogFragment : Fragment() {
                 if (alwaysShowDismiss.isChecked()) {
                     withDismiss()
                 }
-
-                val withIndefiniteLength = snackbarIndefiniteLength.isChecked()
                 if (returnFocus.isChecked()) {
                     setFocusViewAfterDismiss(createButton)
                 }
+                if (forceMoveFocus.isChecked()) {
+                    setForceRequestFocus()
+                }
+
+                val withIndefiniteLength = snackbarIndefiniteLength.isChecked()
                 when (SnackBarType.valueOf(dropDownInput.dropDown.text.toString())) {
                     SnackBarType.INFORMATIVE -> show(withIndefiniteLength, SnackbarBuilder::showInformative, SnackbarBuilder::showInformative)
                     SnackBarType.CRITICAL -> show(withIndefiniteLength, SnackbarBuilder::showCritical, SnackbarBuilder::showCritical)
