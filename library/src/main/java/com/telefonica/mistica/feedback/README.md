@@ -29,9 +29,9 @@ Builder allows Snackbar customization:
 Depending on the type of Snackbar, use one of the following methods to display it:
 
 * `showInformative(snackbarLength: SnackbarLength, focusViewAfterDismiss: View? = null)`
-* `showInformative(focusViewAfterDismiss: View? = null)`
+* `showInformative()`
 * `showCritical(snackbarLength: SnackbarLength, focusViewAfterDismiss: View? = null)`
-* `showCritical(focusViewAfterDismiss: View? = null)`
+* `showCritical()`
 
 Where `SnackbarLength` has three different possible values:
 
