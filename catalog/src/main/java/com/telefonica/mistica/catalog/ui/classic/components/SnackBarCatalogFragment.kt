@@ -36,7 +36,10 @@ class SnackBarCatalogFragment : Fragment() {
         val dropDownInput: DropDownInput = view.findViewById(R.id.dropdown_snackbar_type)
         createButton = view.findViewById(R.id.button_create_snackbar)
         val snackbarIndefiniteLength: CheckBoxInput = view.findViewById(R.id.infinite_length_checkbox)
+        val returnFocus: CheckBoxInput = view.findViewById(R.id.return_focus_checkbox)
         val alwaysShowDismiss: CheckBoxInput = view.findViewById(R.id.always_show_dismiss_checkbox)
+        inputText.text = "This is a sample snackbar message"
+        inputAction.text = "Action"
 
         with(dropDownInput.dropDown) {
             setAdapter(
@@ -62,6 +65,9 @@ class SnackBarCatalogFragment : Fragment() {
                 }
 
                 val withIndefiniteLength = snackbarIndefiniteLength.isChecked()
+                if (returnFocus.isChecked()) {
+                    setFocusViewAfterDismiss(createButton)
+                }
                 when (SnackBarType.valueOf(dropDownInput.dropDown.text.toString())) {
                     SnackBarType.INFORMATIVE -> show(withIndefiniteLength, SnackbarBuilder::showInformative, SnackbarBuilder::showInformative)
                     SnackBarType.CRITICAL -> show(withIndefiniteLength, SnackbarBuilder::showCritical, SnackbarBuilder::showCritical)
@@ -72,11 +78,11 @@ class SnackBarCatalogFragment : Fragment() {
 
     private inline fun SnackbarBuilder.show(
         withIndefiniteLength: Boolean,
-        showWithLength: SnackbarBuilder.(SnackbarLength, View) -> Unit,
+        showWithLength: SnackbarBuilder.(SnackbarLength) -> Unit,
         showWithoutLength: SnackbarBuilder.() -> Unit,
     ) {
         if (withIndefiniteLength) {
-            showWithLength(SnackbarLength.INDEFINITE, createButton)
+            showWithLength(SnackbarLength.INDEFINITE)
         } else {
             showWithoutLength()
         }

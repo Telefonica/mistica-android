@@ -19,9 +19,11 @@ import com.telefonica.mistica.R
 import com.telefonica.mistica.feedback.SnackBarBehaviorConfig.areSticky
 import com.telefonica.mistica.feedback.snackbar.CustomSnackbarLayout
 import com.telefonica.mistica.util.getThemeColor
+import java.lang.ref.WeakReference
 
 open class SnackbarBuilder(view: View?, text: String) {
 
+    private var focusViewAfterDismiss: WeakReference<View>? = null
     private val view: View
     private val text: CharSequence
     private var actionText: String? = null
@@ -60,31 +62,29 @@ open class SnackbarBuilder(view: View?, text: String) {
         this.withDismiss = true
     }
 
+    open fun setFocusViewAfterDismiss(view: View): SnackbarBuilder = apply {
+        this.focusViewAfterDismiss = WeakReference(view)
+    }
+
     @JvmOverloads
-    open fun showInformative(
-        snackbarLength: SnackbarLength = SnackbarLength.SHORT,
-        focusViewAfterDismiss: View? = null,
-    ): Snackbar {
+    open fun showInformative(snackbarLength: SnackbarLength = SnackbarLength.SHORT): Snackbar {
         val spannable = getSpannable(R.attr.colorTextPrimaryInverse)
         val snackbar = createSnackbar(spannable, snackbarLength)
         setBackgroundColor(snackbar, R.attr.colorFeedbackInfoBackground)
         setActionTextColor(snackbar, R.attr.colorTextLinkSnackbar)
-        muteSnackbarAndMoveFocusIfPersistent(snackbar, snackbarLength, focusViewAfterDismiss)
+        muteSnackbarAndMoveFocusIfPersistent(snackbar, snackbarLength)
         snackbar.show()
         return snackbar
     }
 
     @JvmOverloads
-    open fun showCritical(
-        snackbarLength: SnackbarLength = SnackbarLength.SHORT,
-        focusViewAfterDismiss: View? = null,
-    ): Snackbar {
+    open fun showCritical(snackbarLength: SnackbarLength = SnackbarLength.SHORT): Snackbar {
         val spannable = getSpannable(R.attr.colorTextPrimaryInverse)
         val snackbar = createSnackbar(spannable, snackbarLength)
         setBackgroundColor(snackbar, R.attr.colorFeedbackErrorBackground)
         setActionTextColor(snackbar, R.attr.colorTextPrimaryInverse)
         interruptPreviousAccessibilityAnnouncement(snackbar)
-        muteSnackbarAndMoveFocusIfPersistent(snackbar, snackbarLength, focusViewAfterDismiss)
+        muteSnackbarAndMoveFocusIfPersistent(snackbar, snackbarLength)
         snackbar.show()
         return snackbar
     }
@@ -98,7 +98,7 @@ open class SnackbarBuilder(view: View?, text: String) {
             ColorStateList.valueOf(view.context.getThemeColor(colorRes))
     }
 
-    private fun muteSnackbarAndMoveFocusIfPersistent(snackbar: Snackbar, snackbarLength: SnackbarLength, focusViewAfterDismiss: View?) {
+    private fun muteSnackbarAndMoveFocusIfPersistent(snackbar: Snackbar, snackbarLength: SnackbarLength) {
         if (snackbarLength == SnackbarLength.INDEFINITE) {
             snackbar.view.accessibilityLiveRegion = View.ACCESSIBILITY_LIVE_REGION_NONE
             snackbar.addCallback(object : BaseCallback<Snackbar>() {
@@ -108,7 +108,7 @@ open class SnackbarBuilder(view: View?, text: String) {
 
                 override fun onDismissed(transientBottomBar: Snackbar?, event: Int) {
                     super.onDismissed(transientBottomBar, event)
-                    focusViewAfterDismiss?.let { view ->
+                    focusViewAfterDismiss?.get()?.let { view ->
                         view.requestFocus()
                         view.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_FOCUSED)
                     }

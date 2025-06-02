@@ -23,14 +23,17 @@ Builder allows Snackbar customization:
   * Adds a callback for dismiss action. Dismiss action by definition will only work when using a coordinator layout as anchor view for the Snackbar.
 * `withDismiss()`
   * Adds a dismiss button to the Snackbar layout. 
+* * `setFocusViewAfterDismiss(view: View)`
+* Specifies a view to receive focus (including accessibility focus) after the Snackbar is dismissed. **Note:** This only works when the Snackbar length is 
+  `INDEFINITE`.
 
 ## Showing the Snackbar
 
 Depending on the type of Snackbar, use one of the following methods to display it:
 
-* `showInformative(snackbarLength: SnackbarLength, focusViewAfterDismiss: View? = null)`
+* `showInformative(snackbarLength: SnackbarLength)`
 * `showInformative()`
-* `showCritical(snackbarLength: SnackbarLength, focusViewAfterDismiss: View? = null)`
+* `showCritical(snackbarLength: SnackbarLength)`
 * `showCritical()`
 
 Where `SnackbarLength` has three different possible values:
@@ -52,14 +55,13 @@ If a `SnackbarLength` is provided, the following logic is applied:
 
 ### Accessibility Focus
 
-When using `INDEFINITE` snackbars, you can optionally specify a `focusViewAfterDismiss` to define which view should receive accessibility focus once the 
-snackbar is dismissed. This helps ensure that accessibility users return to the expected view in the UI.
-
-A good practice is to explicitly pass the view that triggered the snackbar (e.g., a button the user tapped) as the `focusViewAfterDismiss`. This provides a 
-clear and consistent experience, ensuring that focus returns to the point of interaction after the snackbar disappears.
+When using `INDEFINITE` snackbars, you can optionally call `.setFocusViewAfterDismiss(view)` to define which view should receive accessibility focus once 
+the Snackbar is dismissed. **Note:** This only works when the Snackbar length is `INDEFINITE`.
+This ensures accessibility focus returns to the point of interaction after the snackbar disappears.
 
 ```kotlin
 SnackbarBuilder(triggerView, R.string.snackbar_message)
-    .withDismiss()
-    .showInformative(SnackbarLength.INDEFINITE, focusViewAfterDismiss = triggerView)
+  .withDismiss()
+  .setFocusViewAfterDismiss(triggerView)
+  .showInformative(SnackbarLength.INDEFINITE)
 ```

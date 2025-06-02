@@ -41,13 +41,22 @@
         app:inputCheckText="Always show dismiss"/>
 
     <com.telefonica.mistica.input.CheckBoxInput
-            android:id="@+id/infinite_length_checkbox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_gravity="start"
-            app:inputChecked="false"
-            app:inputCheckText="Infinite length"/>
+        android:id="@+id/infinite_length_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_gravity="start"
+        app:inputChecked="false"
+        app:inputCheckText="Infinite length"/>
+
+	<com.telefonica.mistica.input.CheckBoxInput
+		android:id="@+id/return_focus_checkbox"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="8dp"
+		android:layout_gravity="start"
+		app:inputChecked="false"
+		app:inputCheckText="Return A11Y focus to create button."/>
 
     <com.telefonica.mistica.input.DropDownInput
         android:id="@+id/dropdown_snackbar_type"
