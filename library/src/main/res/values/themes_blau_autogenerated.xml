@@ -65,8 +65,9 @@
 		<item name="colorTextLinkDanger">@color/blau_color_blauRed</item>
 		<item name="colorTextLinkSnackbar">@color/blau_color_blauPurple30</item>
 		<item name="colorTextActivated">@color/blau_color_blauBlueSecondary</item>
-		<item name="colorTextBrand">@color/blau_color_blauBluePrimary</item>
+		<item name="colorTextBrand">@color/blau_color_blauBlueSecondary</item>
 		<item name="colorInputBorder">@color/blau_color_grey4</item>
+		<item name="colorInputBorderInverse">@color/blau_color_white</item>
 		<item name="colorControl">@color/blau_color_grey4</item>
 		<item name="colorControlActive">@color/blau_color_blauBlueSecondary</item>
 		<item name="colorControlInverse">@color/blau_color_blauBluePrimary30</item>
@@ -166,6 +167,9 @@
 		<item name="popupBorderRadius">8dp</item>
 		<item name="sheetBorderRadius">8dp</item>
 		<item name="mediaSmallBorderRadius">8dp</item>
+		<!-- Theme variant -->
+		<item name="successFeedbackThemeVariant">DEFAULT</item>
+		<item name="brandLoadingScreenThemeVariant">DEFAULT</item>
 		<!-- Preset fonts -->
 		<item name="cardTitleFont">?font_family_regular</item>
 		<item name="buttonFont">?font_family_medium</item>

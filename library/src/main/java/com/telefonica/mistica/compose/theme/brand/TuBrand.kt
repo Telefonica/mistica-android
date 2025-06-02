@@ -52,4 +52,7 @@ object TuBrand : Brand {
     override val tabsLabelFontSize: TextUnit = TuBrandFontSizes.tabsLabelFontSize
 
     override val radius: MisticaRadius = TuBrandRadius.radius
+
+    override val themeVariant = TuBrandThemeVariant.themeVariant
+
 }

@@ -65,6 +65,7 @@
 		<item name="colorTextActivated">@color/vivo_color_vivoPurple</item>
 		<item name="colorTextBrand">@color/vivo_color_vivoPurple</item>
 		<item name="colorInputBorder">@color/vivo_color_grey3</item>
+		<item name="colorInputBorderInverse">@color/vivo_color_white</item>
 		<item name="colorCompletedStep">@color/vivo_color_vivoPurple</item>
 		<item name="colorCompletedStepInverse">@color/vivo_color_vivoPurpleDark</item>
 		<item name="colorControl">@color/vivo_color_grey3</item>
@@ -166,6 +167,9 @@
 		<item name="popupBorderRadius">8dp</item>
 		<item name="sheetBorderRadius">8dp</item>
 		<item name="mediaSmallBorderRadius">8dp</item>
+		<!-- Theme variant -->
+		<item name="successFeedbackThemeVariant">INVERSE</item>
+		<item name="brandLoadingScreenThemeVariant">INVERSE</item>
 		<!-- Preset fonts -->
 		<item name="cardTitleFont">?font_family_regular</item>
 		<item name="buttonFont">?font_family_medium</item>

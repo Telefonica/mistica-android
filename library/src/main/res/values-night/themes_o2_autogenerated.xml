@@ -64,6 +64,7 @@
 		<item name="colorTextActivated">@color/o2_color_o2BluePrimary30</item>
 		<item name="colorTextBrand">@color/o2_color_o2BluePrimary30</item>
 		<item name="colorInputBorder">@color/o2_color_darkModeGrey6</item>
+		<item name="colorInputBorderInverse">@color/o2_color_darkModeGrey6</item>
 		<item name="colorCompletedStep">@color/o2_color_darkModeO2BluePrimary</item>
 		<item name="colorCompletedStepInverse">@color/o2_color_darkModeO2BluePrimary</item>
 		<item name="colorControl">@color/o2_color_darkModeGrey6</item>

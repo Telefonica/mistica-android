@@ -64,6 +64,7 @@
 		<item name="colorTextActivated">@color/movistar_color_movistarBlue</item>
 		<item name="colorTextBrand">@color/movistar_color_movistarBlue</item>
 		<item name="colorInputBorder">@color/movistar_color_darkModeGrey4</item>
+		<item name="colorInputBorderInverse">@color/movistar_color_darkModeGrey4</item>
 		<item name="colorCompletedStep">@color/movistar_color_movistarBlueHC</item>
 		<item name="colorCompletedStepInverse">@color/movistar_color_movistarBlueHC</item>
 		<item name="colorControl">@color/movistar_color_darkModeGrey4</item>

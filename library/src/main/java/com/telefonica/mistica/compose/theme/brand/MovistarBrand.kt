@@ -54,4 +54,7 @@ object MovistarBrand : Brand {
         get() = super.values.copy(titleStyle = TitleStyle.TITLE_3)
 
     override val radius = MovistarBrandRadius.radius
+
+    override val themeVariant = MovistarBrandThemeVariant.themeVariant
+
 }

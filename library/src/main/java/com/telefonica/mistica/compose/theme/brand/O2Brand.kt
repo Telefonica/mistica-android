@@ -49,4 +49,7 @@ object O2Brand : Brand {
     override val tabsLabelFontSize = O2BrandFontSizes.tabsLabelFontSize
 
     override val radius = O2BrandRadius.radius
+
+    override val themeVariant = O2BrandThemeVariant.themeVariant
+
 }

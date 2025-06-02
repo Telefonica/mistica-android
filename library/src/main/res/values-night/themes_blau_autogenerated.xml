@@ -66,6 +66,7 @@
 		<item name="colorTextActivated">@color/blau_color_blauBluePrimary</item>
 		<item name="colorTextBrand">@color/blau_color_blauBluePrimary</item>
 		<item name="colorInputBorder">@color/blau_color_darkModeGrey5</item>
+		<item name="colorInputBorderInverse">@color/blau_color_darkModeGrey5</item>
 		<item name="colorControl">@color/blau_color_grey4</item>
 		<item name="colorControlActive">@color/blau_color_blauBlueSecondary</item>
 		<item name="colorControlInverse">@color/blau_color_grey4</item>

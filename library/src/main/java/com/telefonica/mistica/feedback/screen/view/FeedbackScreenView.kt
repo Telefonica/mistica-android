@@ -5,7 +5,6 @@ import android.animation.ObjectAnimator
 import android.content.Context
 import android.graphics.PorterDuff
 import android.graphics.PorterDuffColorFilter
-import android.graphics.drawable.ColorDrawable
 import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.LayoutInflater
@@ -37,6 +36,8 @@ import com.telefonica.mistica.util.convertDpToPx
 import com.telefonica.mistica.util.getThemeColor
 import com.telefonica.mistica.util.getMisticaThemeDrawable
 import com.telefonica.mistica.util.getThemeRes
+import androidx.core.graphics.drawable.toDrawable
+import com.telefonica.mistica.compose.theme.values.ThemeVariant
 
 class FeedbackScreenView : ConstraintLayout {
 
@@ -256,15 +257,9 @@ class FeedbackScreenView : ConstraintLayout {
     }
 
     private fun configureBackground() {
-        when (type) {
-            TYPE_SUCCESS -> when {
-                getBooleanThemeRes(R.attr.feedbackScreenSuccessWithGradient) ||
-                        getBooleanThemeRes(R.attr.feedbackScreenSuccessInverse) ->
-                            context.getMisticaThemeDrawable(R.attr.drawableBackgroundBrand)
-                else -> ColorDrawable(context.getThemeColor(R.attr.colorBackground))
-            }
-
-            else -> ColorDrawable(context.getThemeColor(R.attr.colorBackground))
+        when {
+            isInversePresentation() -> context.getMisticaThemeDrawable(R.attr.drawableBackgroundBrand)
+            else -> context.getThemeColor(R.attr.colorBackground).toDrawable()
         }.let {
             background = it
         }
@@ -275,7 +270,7 @@ class FeedbackScreenView : ConstraintLayout {
             TYPE_SUCCESS -> configureIcon(
                 animationAttr = R.attr.feedbackScreenSuccessAnimation,
                 imageAttr = R.attr.feedbackScreenSuccessIcon,
-                colorAttr = R.attr.colorInverse,
+                colorAttr = getSuccessIconColor(),
             )
 
             TYPE_ERROR -> configureIcon(
@@ -292,6 +287,9 @@ class FeedbackScreenView : ConstraintLayout {
 
         }
     }
+
+    private fun getSuccessIconColor(): Int =
+        if (isInversePresentation()) R.attr.colorInverse else R.attr.colorBrand
 
     private fun configureIcon(
         @AttrRes animationAttr: Int,
@@ -461,10 +459,16 @@ class FeedbackScreenView : ConstraintLayout {
     private fun isInversePresentation(): Boolean =
         type == TYPE_SUCCESS &&
                 (getBooleanThemeRes(R.attr.feedbackScreenSuccessWithGradient) ||
-                        getBooleanThemeRes(R.attr.feedbackScreenSuccessInverse))
+                        isInverseThemeVariant())
 
     private fun getBooleanThemeRes(@AttrRes attributeRes: Int): Boolean =
         context.getThemeRes(attributeRes)?.let { it != 0 } ?: false
+
+    private fun isInverseThemeVariant(): Boolean {
+        val typedValue = TypedValue()
+        context.theme.resolveAttribute(R.attr.successFeedbackThemeVariant, typedValue,true)
+        return typedValue.data == ThemeVariant.INVERSE.ordinal
+    }
 
     companion object {
         const val TYPE_SUCCESS = 0

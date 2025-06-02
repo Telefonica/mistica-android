@@ -69,6 +69,7 @@ public object O2BrandColors {
       textActivated = O2PaletteColor.o2_color_o2BluePrimary
       textBrand = O2PaletteColor.o2_color_o2BluePrimary
       inputBorder = O2PaletteColor.o2_color_grey3
+      inputBorderInverse = O2PaletteColor.o2_color_white
       completedStep = O2PaletteColor.o2_color_o2BluePrimary
       completedStepInverse = O2PaletteColor.o2_color_o2BluePrimary70
       control = O2PaletteColor.o2_color_grey3
@@ -220,6 +221,7 @@ public object O2BrandColors {
       textActivated = O2PaletteColor.o2_color_o2BluePrimary30
       textBrand = O2PaletteColor.o2_color_o2BluePrimary30
       inputBorder = O2PaletteColor.o2_color_darkModeGrey6
+      inputBorderInverse = O2PaletteColor.o2_color_darkModeGrey6
       completedStep = O2PaletteColor.o2_color_darkModeO2BluePrimary
       completedStepInverse = O2PaletteColor.o2_color_darkModeO2BluePrimary
       control = O2PaletteColor.o2_color_darkModeGrey6

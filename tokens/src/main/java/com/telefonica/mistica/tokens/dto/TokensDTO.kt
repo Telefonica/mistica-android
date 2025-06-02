@@ -4,6 +4,7 @@ data class TokensDTO(
     val light: Map<String, BrushDTO>,
     val dark: Map<String, BrushDTO>,
     val radius: Map<String, RadiusDTO>,
+    val themeVariant: Map<String, ThemeVariantDTO>,
     val text: TextDTO,
     val global: GlobalDTO,
 )
@@ -41,6 +42,11 @@ sealed class BrushDTO(
 }
 
 data class RadiusDTO(
+    val value: String,
+    val type: String,
+)
+
+data class ThemeVariantDTO(
     val value: String,
     val type: String,
 )

@@ -49,4 +49,7 @@ object VivoNewBrand : Brand {
     override val tabsLabelFontSize = VivoNewBrandFontSizes.tabsLabelFontSize
 
     override val radius = VivoNewBrandRadius.radius
+
+    override val themeVariant = VivoNewBrandThemeVariant.themeVariant
+
 }

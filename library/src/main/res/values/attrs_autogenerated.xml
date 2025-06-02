@@ -62,6 +62,7 @@
 		<attr name="colorTextActivated" format="color|reference"/>
 		<attr name="colorTextBrand" format="color|reference"/>
 		<attr name="colorInputBorder" format="color|reference"/>
+		<attr name="colorInputBorderInverse" format="color|reference"/>
 		<attr name="colorCompletedStep" format="color|reference"/>
 		<attr name="colorCompletedStepInverse" format="color|reference"/>
 		<attr name="colorControl" format="color|reference"/>
@@ -169,6 +170,16 @@
 		<attr name="popupBorderRadius" format="dimension|fraction"/>
 		<attr name="sheetBorderRadius" format="dimension|fraction"/>
 		<attr name="mediaSmallBorderRadius" format="dimension|fraction"/>
+	</declare-styleable>
+	<declare-styleable name="ThemeVariant">
+		<attr name="successFeedbackThemeVariant" format="enum">
+			<enum name="DEFAULT" value="0"/>
+			<enum name="INVERSE" value="1"/>
+		</attr>
+		<attr name="brandLoadingScreenThemeVariant" format="enum">
+			<enum name="DEFAULT" value="0"/>
+			<enum name="INVERSE" value="1"/>
+		</attr>
 	</declare-styleable>
 	<declare-styleable name="PresetFonts">
 		<attr name="cardTitleFont" format="string"/>

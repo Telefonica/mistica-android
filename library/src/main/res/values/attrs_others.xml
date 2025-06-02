@@ -2,7 +2,6 @@
 <resources>
 	<declare-styleable name="Feedbacks">
 		<attr name="feedbackScreenSuccessWithGradient" format="boolean" />
-		<attr name="feedbackScreenSuccessInverse" format="boolean" />
 		<attr name="feedbackScreenSuccessAnimation" format="reference" />
 		<attr name="feedbackScreenSuccessIcon" format="reference" />
 		<attr name="feedbackScreenErrorAnimation" format="reference" />
