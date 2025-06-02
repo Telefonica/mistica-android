@@ -61,24 +61,30 @@ open class SnackbarBuilder(view: View?, text: String) {
     }
 
     @JvmOverloads
-    open fun showInformative(snackbarLength: SnackbarLength = SnackbarLength.SHORT): Snackbar {
+    open fun showInformative(
+        snackbarLength: SnackbarLength = SnackbarLength.SHORT,
+        focusViewAfterDismiss: View? = null,
+    ): Snackbar {
         val spannable = getSpannable(R.attr.colorTextPrimaryInverse)
         val snackbar = createSnackbar(spannable, snackbarLength)
         setBackgroundColor(snackbar, R.attr.colorFeedbackInfoBackground)
         setActionTextColor(snackbar, R.attr.colorTextLinkSnackbar)
-        muteSnackbarAndMoveFocusIfPersistent(snackbar, snackbarLength)
+        muteSnackbarAndMoveFocusIfPersistent(snackbar, snackbarLength, focusViewAfterDismiss)
         snackbar.show()
         return snackbar
     }
 
     @JvmOverloads
-    open fun showCritical(snackbarLength: SnackbarLength = SnackbarLength.SHORT): Snackbar {
+    open fun showCritical(
+        snackbarLength: SnackbarLength = SnackbarLength.SHORT,
+        focusViewAfterDismiss: View? = null,
+    ): Snackbar {
         val spannable = getSpannable(R.attr.colorTextPrimaryInverse)
         val snackbar = createSnackbar(spannable, snackbarLength)
         setBackgroundColor(snackbar, R.attr.colorFeedbackErrorBackground)
         setActionTextColor(snackbar, R.attr.colorTextPrimaryInverse)
         interruptPreviousAccessibilityAnnouncement(snackbar)
-        muteSnackbarAndMoveFocusIfPersistent(snackbar, snackbarLength)
+        muteSnackbarAndMoveFocusIfPersistent(snackbar, snackbarLength, focusViewAfterDismiss)
         snackbar.show()
         return snackbar
     }
@@ -92,12 +98,20 @@ open class SnackbarBuilder(view: View?, text: String) {
             ColorStateList.valueOf(view.context.getThemeColor(colorRes))
     }
 
-    private fun muteSnackbarAndMoveFocusIfPersistent(snackbar: Snackbar, snackbarLength: SnackbarLength) {
+    private fun muteSnackbarAndMoveFocusIfPersistent(snackbar: Snackbar, snackbarLength: SnackbarLength, focusViewAfterDismiss: View?) {
         if (snackbarLength == SnackbarLength.INDEFINITE) {
             snackbar.view.accessibilityLiveRegion = View.ACCESSIBILITY_LIVE_REGION_NONE
             snackbar.addCallback(object : BaseCallback<Snackbar>() {
                 override fun onShown(snackbar: Snackbar) {
                     snackbar.view.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_FOCUSED)
+                }
+
+                override fun onDismissed(transientBottomBar: Snackbar?, event: Int) {
+                    super.onDismissed(transientBottomBar, event)
+                    focusViewAfterDismiss?.let { view ->
+                        view.requestFocus()
+                        view.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_FOCUSED)
+                    }
                 }
             })
         }
