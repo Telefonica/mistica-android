@@ -8,6 +8,7 @@ import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
 import android.view.LayoutInflater
 import android.view.View
+import android.view.accessibility.AccessibilityEvent
 import android.view.accessibility.AccessibilityManager
 import android.widget.FrameLayout
 import androidx.annotation.AttrRes
@@ -18,9 +19,11 @@ import com.telefonica.mistica.R
 import com.telefonica.mistica.feedback.SnackBarBehaviorConfig.areSticky
 import com.telefonica.mistica.feedback.snackbar.CustomSnackbarLayout
 import com.telefonica.mistica.util.getThemeColor
+import java.lang.ref.WeakReference
 
 open class SnackbarBuilder(view: View?, text: String) {
 
+    private var focusViewAfterDismiss: WeakReference<View>? = null
     private val view: View
     private val text: CharSequence
     private var actionText: String? = null
@@ -28,6 +31,7 @@ open class SnackbarBuilder(view: View?, text: String) {
     private var actionListener: View.OnClickListener? = null
     private var callback: Snackbar.Callback? = null
     private var withDismiss = false
+    private var forceRequestFocus = false
     private val accessibilityManager: AccessibilityManager
 
     private val hasAction: Boolean
@@ -59,12 +63,22 @@ open class SnackbarBuilder(view: View?, text: String) {
         this.withDismiss = true
     }
 
+    open fun setFocusViewAfterDismiss(view: View): SnackbarBuilder = apply {
+        this.focusViewAfterDismiss = WeakReference(view)
+    }
+
+    open fun setForceRequestFocus(): SnackbarBuilder = apply {
+        this.forceRequestFocus = true
+    }
+
     @JvmOverloads
     open fun showInformative(snackbarLength: SnackbarLength = SnackbarLength.SHORT): Snackbar {
         val spannable = getSpannable(R.attr.colorTextPrimaryInverse)
         val snackbar = createSnackbar(spannable, snackbarLength)
         setBackgroundColor(snackbar, R.attr.colorFeedbackInfoBackground)
         setActionTextColor(snackbar, R.attr.colorTextLinkSnackbar)
+        muteSnackbarAndForceRequestFocus(snackbar, snackbarLength)
+        returnFocusToViewIfNeeded(snackbar, snackbarLength)
         snackbar.show()
         return snackbar
     }
@@ -76,6 +90,8 @@ open class SnackbarBuilder(view: View?, text: String) {
         setBackgroundColor(snackbar, R.attr.colorFeedbackErrorBackground)
         setActionTextColor(snackbar, R.attr.colorTextPrimaryInverse)
         interruptPreviousAccessibilityAnnouncement(snackbar)
+        muteSnackbarAndForceRequestFocus(snackbar, snackbarLength)
+        returnFocusToViewIfNeeded(snackbar, snackbarLength)
         snackbar.show()
         return snackbar
     }
@@ -87,6 +103,31 @@ open class SnackbarBuilder(view: View?, text: String) {
     private fun setBackgroundColor(snackbar: Snackbar, @AttrRes colorRes: Int) {
         snackbar.view.backgroundTintList =
             ColorStateList.valueOf(view.context.getThemeColor(colorRes))
+    }
+
+    private fun muteSnackbarAndForceRequestFocus(snackbar: Snackbar, snackbarLength: SnackbarLength) {
+        if (snackbarLength == SnackbarLength.INDEFINITE && forceRequestFocus) {
+            snackbar.view.accessibilityLiveRegion = View.ACCESSIBILITY_LIVE_REGION_NONE
+            snackbar.addCallback(object : BaseCallback<Snackbar>() {
+                override fun onShown(snackbar: Snackbar) {
+                    snackbar.view.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_FOCUSED)
+                }
+            })
+        }
+    }
+
+    private fun returnFocusToViewIfNeeded(snackbar: Snackbar, snackbarLength: SnackbarLength) {
+        if (snackbarLength == SnackbarLength.INDEFINITE) {
+            snackbar.addCallback(object : BaseCallback<Snackbar>() {
+                override fun onDismissed(transientBottomBar: Snackbar?, event: Int) {
+                    super.onDismissed(transientBottomBar, event)
+                    focusViewAfterDismiss?.get()?.let { view ->
+                        view.requestFocus()
+                        view.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_FOCUSED)
+                    }
+                }
+            })
+        }
     }
 
     private fun interruptPreviousAccessibilityAnnouncement(snackbar: Snackbar) {

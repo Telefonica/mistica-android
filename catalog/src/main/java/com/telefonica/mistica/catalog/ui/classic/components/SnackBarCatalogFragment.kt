@@ -34,14 +34,16 @@ class SnackBarCatalogFragment : Fragment() {
         val dropDownInput: DropDownInput = view.findViewById(R.id.dropdown_snackbar_type)
         val createButton: Button = view.findViewById(R.id.button_create_snackbar)
         val snackbarIndefiniteLength: CheckBoxInput = view.findViewById(R.id.infinite_length_checkbox)
+        val returnFocus: CheckBoxInput = view.findViewById(R.id.return_focus_checkbox)
         val alwaysShowDismiss: CheckBoxInput = view.findViewById(R.id.always_show_dismiss_checkbox)
+        val forceMoveFocus: CheckBoxInput = view.findViewById(R.id.move_focus_checkbox)
 
         with(dropDownInput.dropDown) {
             setAdapter(
                 DropDownInput.Adapter(
                     view.context,
                     R.layout.dropdown_menu_popup_item,
-                    SnackBarType.values().map { it.name }
+                    SnackBarType.entries.map { it.name }
                 )
             )
             setText(SnackBarType.INFORMATIVE.toString())
@@ -57,6 +59,12 @@ class SnackBarCatalogFragment : Fragment() {
                 }
                 if (alwaysShowDismiss.isChecked()) {
                     withDismiss()
+                }
+                if (returnFocus.isChecked()) {
+                    setFocusViewAfterDismiss(createButton)
+                }
+                if (forceMoveFocus.isChecked()) {
+                    setForceRequestFocus()
                 }
 
                 val withIndefiniteLength = snackbarIndefiniteLength.isChecked()
