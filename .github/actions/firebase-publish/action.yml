@@ -21,7 +21,7 @@ inputs:
 outputs:
   TESTING_URI:
     description: 'URI to the testing catalog'
-    value: ${{ steps.upload-apk.outputs.download_url }}
+    value: ${{ steps.upload-apk.outputs.TESTING_URI }}
 
 runs:
   using: "composite"
@@ -35,15 +35,9 @@ runs:
     - name: Checkout repo
       uses: actions/checkout@v4
 
-    - name: Read catalog version from properties file
-      id: catalog_version
-      uses: christian-draeger/read-properties@1.1.1
-      with:
-        path: './app/src/main/res/raw/config.properties'
-        properties: 'APP_VERSION'
-
     - name: Build catalog
       run: 'bash ./gradlew assembleDebug -DIC_LAUNCHER_ICON=${{ inputs.app-icon }} -DLIBRARY_VERSION=${{ inputs.app-version }}'
+      shell: bash
 
     - name: Create firebase service json file
       run: |

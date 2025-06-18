@@ -15,6 +15,16 @@ jobs:
   debug-firebase-catalog:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Read catalog version from properties file
+        id: catalog_version
+        uses: christian-draeger/read-properties@1.1.1
+        with:
+          path: './app/src/main/res/raw/config.properties'
+          properties: 'APP_VERSION'
+
       - name: Firebase Publish
         uses: ./.github/actions/firebase-publish
         id: firebase-publish
@@ -22,8 +32,8 @@ jobs:
           firebase-app-id: '1:25375145848:android:3d91abf4ac442f4848928d'
           firebase-json-file: ${{ secrets.FIREBASE_DIST_CREDENTIALS_ONDEMAND }}
           release-notes: 'Testing catalog for PR #${{ github.event.number }} ${{ github.sha }}'
-          app-icon: 'ic_launcher_internal'
-          app-version: '${{ steps.catalog_version.outputs.app_version }}-${{ github.event.number }}''
+          app-icon: 'ic_launcher_ondemand'
+          app-version: '${{ steps.catalog_version.outputs.app_version }}-${{ github.event.number }}'
 
       - name: Post comment with catalog URL
         uses: actions/github-script@v6

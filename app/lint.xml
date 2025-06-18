@@ -10,6 +10,7 @@
     <issue id="UnusedResources">
         <ignore path="src/main/res/drawable/ic_launcher_foreground*.xml" />
         <ignore path="src/main/res/mipmap-*/ic_launcher*.png" />
+        <ignore path="src/main/res/raw/config.properties" />
     </issue>
     <issue id="IconLauncherShape">
         <ignore path="src/main/res/mipmap-nodpi/ic_launcher*.png" />
