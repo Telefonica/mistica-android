@@ -24,8 +24,15 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
+      - name: Read catalog version from properties file
+        id: catalog_version
+        uses: christian-draeger/read-properties@1.1.1
+        with:
+          path: 'app/src/main/res/raw/config.properties'
+          properties: 'APP_VERSION'
+
       - name: Build catalog
-        run: 'bash ./gradlew assembleDebug -DIC_LAUNCHER_ICON=ic_launcher_ondemand'
+        run: 'bash ./gradlew assembleDebug -DIC_LAUNCHER_ICON=ic_launcher_ondemand -DLIBRARY_VERSION=${{ steps.catalog_version.outputs.app_version }}-${{ github.event.number }}'
 
       - name: Create firebase service json file
         run: |
