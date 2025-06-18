@@ -1,0 +1,68 @@
+name: 'Firebase Publish'
+description: 'Publishes the application to Firebase'
+
+inputs:
+  firebase-app-id:
+    description: 'Firebase app-id'
+    required: true
+  firebase-json-file:
+    description: 'Firebase json file containing service account credentials'
+    required: true
+  app-version:
+    description: 'Version of the application to be published'
+    required: true
+  app-icon:
+    description: 'Icon to be used for the application'
+    required: true
+  release-notes:
+    description: 'Release notes to be shown for the publication'
+    required: true
+
+outputs:
+  TESTING_URI:
+    description: 'URI to the testing catalog'
+    value: ${{ steps.upload-apk.outputs.download_url }}
+
+runs:
+  using: "composite"
+  steps:
+    - name: Set up JDK 17
+      uses: actions/setup-java@v2
+      with:
+        distribution: 'temurin'
+        java-version: '17'
+
+    - name: Checkout repo
+      uses: actions/checkout@v4
+
+    - name: Read catalog version from properties file
+      id: catalog_version
+      uses: christian-draeger/read-properties@1.1.1
+      with:
+        path: './app/src/main/res/raw/config.properties'
+        properties: 'APP_VERSION'
+
+    - name: Build catalog
+      run: 'bash ./gradlew assembleDebug -DIC_LAUNCHER_ICON=${{ inputs.app-icon }} -DLIBRARY_VERSION=${{ inputs.app-version }}'
+
+    - name: Create firebase service json file
+      run: |
+        echo ${{ inputs.firebase-json-file }} | base64 --decode > service-account-file.json
+      shell: bash
+
+    - name: Get Apk path
+      id: get-apk-path
+      run: |
+        apk_path=(**/build/outputs/apk/debug/*.apk)
+        echo "apk_path=${apk_path[0]}" >> $GITHUB_OUTPUT
+      shell: bash
+
+    - name: Upload artifact to Firebase App Distribution
+      uses: wzieba/Firebase-Distribution-Github-Action@v1
+      id: upload-apk
+      with:
+        appId: ${{ inputs.firebase-app-id }}
+        serviceCredentialsFile: ${{ github.workspace }}/service-account-file.json
+        groups: 'tid-internal-testers,mistica-internal-testers'
+        releaseNotes: ${{ inputs.release-notes }}
+        file: ${{ steps.get-apk-path.outputs.apk_path }}
