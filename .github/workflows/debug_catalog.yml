@@ -25,13 +25,22 @@ jobs:
           path: './app/src/main/res/raw/config.properties'
           properties: 'APP_VERSION'
 
+      - name: Get commit info
+        id: commit_info
+        run: |
+          {
+            echo "commit_info<<EOF"
+            git log -1 --pretty=short
+            echo "EOF"
+          } >> $GITHUB_OUTPUT
+
       - name: Firebase Publish
         uses: ./.github/actions/firebase-publish
         id: firebase-publish
         with:
           firebase-app-id: '1:25375145848:android:3d91abf4ac442f4848928d'
           firebase-json-file: ${{ secrets.FIREBASE_DIST_CREDENTIALS_ONDEMAND }}
-          release-notes: 'Testing catalog for PR #${{ github.event.number }} $(git log -1 --pretty=short)'
+          release-notes: 'Testing catalog for PR #${{ github.event.number }} - ${{ steps.commit_info.outputs.commit_info }}'
           app-icon: 'ic_launcher_ondemand'
           app-version: '${{ steps.catalog_version.outputs.app_version }}-${{ github.event.number }}'
 

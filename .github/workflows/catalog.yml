@@ -20,13 +20,22 @@ jobs:
           path: './app/src/main/res/raw/config.properties'
           properties: 'APP_VERSION'
 
+      - name: Get commit info
+        id: commit_info
+        run: |
+          {
+            echo "commit_info<<EOF"
+            git log -1 --pretty=short
+            echo "EOF"
+          } >> $GITHUB_OUTPUT
+          
       - name: Firebase Publish
         uses: ./.github/actions/firebase-publish
         id: firebase-publish
         with:
           firebase-app-id: '1:771826505811:android:f64fec267b535d7f974ea6'
           firebase-json-file: ${{ secrets.FIREBASE_DIST_CREDENTIALS_NIGHTLY }}
-          release-notes: 'Catalog for main branch version: ${{ steps.catalog_version.outputs.app_version }} - $(git log -1 --pretty=short)'
+          release-notes: 'Catalog for main branch version: ${{ steps.catalog_version.outputs.app_version }} - ${{ steps.commit_info.outputs.commit_info }}'
           app-icon: 'ic_launcher_internal'
-          app-version: '${{ steps.catalog_version.outputs.app_version }}-${{ steps.short-sha.outputs.sha_short }}'
+          app-version: '${{ steps.catalog_version.outputs.app_version }}'
 
