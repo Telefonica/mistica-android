@@ -1,4 +1,4 @@
-name: "Generate catalog app"
+name: "Generate main catalog app"
 on:
   pull_request:
     branches:
@@ -9,35 +9,24 @@ jobs:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
-      - name: Set up JDK 17
-        uses: actions/setup-java@v2
-        with:
-          distribution: 'temurin'
-          java-version: '17'
 
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Build catalog
-        run: 'bash ./gradlew assembleDebug -DIC_LAUNCHER_ICON=ic_launcher_internal'
-
-      - name: Create firebase service json file
-        run: |
-          echo ${{ secrets.FIREBASE_DIST_CREDENTIALS_NIGHTLY }} | base64 --decode > service-account-file.json
-        shell: bash
-
-      - name: Get Apk path
-        id: get-apk-path
-        run: |
-          apk_path=(**/build/outputs/apk/debug/*.apk)
-          echo "apk_path=${apk_path[0]}" >> $GITHUB_OUTPUT
-        shell: bash
-
-      - name: Upload artifact to Firebase App Distribution
-        uses: wzieba/Firebase-Distribution-Github-Action@v1
-        id: upload-apk
+      - name: Read catalog version from properties file
+        id: catalog_version
+        uses: christian-draeger/read-properties@1.1.1
         with:
-          appId: '1:771826505811:android:f64fec267b535d7f974ea6'
-          serviceCredentialsFile: ${{ github.workspace }}/service-account-file.json
-          groups: 'tid-internal-testers,mistica-internal-testers'
-          file: ${{ steps.get-apk-path.outputs.apk_path }}
+          path: './app/src/main/res/raw/config.properties'
+          properties: 'APP_VERSION'
+
+      - name: Firebase Publish
+        uses: ./.github/actions/firebase-publish
+        id: firebase-publish
+        with:
+          firebase-app-id: '1:771826505811:android:f64fec267b535d7f974ea6'
+          firebase-json-file: ${{ secrets.FIREBASE_DIST_CREDENTIALS_NIGHTLY }}
+          release-notes: 'Catalog for main branch version: ${{ steps.catalog_version.outputs.app_version }} - $(git log -1 --pretty=short)'
+          app-icon: 'ic_launcher_internal'
+          app-version: '${{ steps.catalog_version.outputs.app_version }}-${{ steps.short-sha.outputs.sha_short }}'
+

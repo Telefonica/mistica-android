@@ -31,7 +31,7 @@ jobs:
         with:
           firebase-app-id: '1:25375145848:android:3d91abf4ac442f4848928d'
           firebase-json-file: ${{ secrets.FIREBASE_DIST_CREDENTIALS_ONDEMAND }}
-          release-notes: 'Testing catalog for PR #${{ github.event.number }} ${{ github.sha }}'
+          release-notes: 'Testing catalog for PR #${{ github.event.number }} $(git log -1 --pretty=short)'
           app-icon: 'ic_launcher_ondemand'
           app-version: '${{ steps.catalog_version.outputs.app_version }}-${{ github.event.number }}'
 
@@ -43,5 +43,7 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `[Firebase] 📱 New catalog for testing generated: [Download](${{ steps.firebase-publish.outputs.TESTING_URI }})`
+              body: `[Firebase] 📱 New catalog for testing generated: 
+                     [Download from Firebase](${{ steps.firebase-publish.outputs.FIREBASE_CONSOLE_URI }})
+                     [Download from App Tester](${{ steps.firebase-publish.outputs.TESTING_URI }})`
             })

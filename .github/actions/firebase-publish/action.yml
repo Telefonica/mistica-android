@@ -20,9 +20,11 @@ inputs:
 
 outputs:
   TESTING_URI:
-    description: 'URI to the testing catalog'
+    description: 'URI to the testing catalog in App Tester'
     value: ${{ steps.upload-apk.outputs.TESTING_URI }}
-
+  FIREBASE_CONSOLE_URI:
+    description: 'URI to the testing catalog in Firebase Console'
+    value: ${{ steps.upload-apk.outputs.FIREBASE_CONSOLE_URI }}
 runs:
   using: "composite"
   steps:
