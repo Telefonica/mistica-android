@@ -37,6 +37,39 @@ jobs:
           )
           echo "FORMATTED_BODY=${RELEASE_BODY}" >> $GITHUB_ENV
 
+      - name: Write value to Properties-file
+        uses: christian-draeger/write-properties@1.1.0
+        with:
+          path: './app/src/main/res/raw/config.properties'
+          property: 'APP_VERSION'
+          value: '${{ github.event.release.tag_name }}'
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.NOVUM_PRIVATE_REPOS }}
+          base: main
+          branch: 'update-app-version-${{ github.event.release.tag_name }}'
+          title: 'Update app version to ${{ github.event.release.tag_name }}'
+          body: |
+            ## 📦 Update app version to ${{ github.event.release.tag_name }}
+                    
+            **What’s included:**
+            - Update `config.properties` with the new version `${{ github.event.release.tag_name }}`
+            - Prepare for the next development cycle
+          
+            Please review and merge if everything looks good. 🚀
+
+      - name: Firebase Publish
+        uses: ./.github/actions/firebase-publish
+        id: firebase-publish
+        with:
+          firebase-app-id: '1:413491573542:android:d79e363379e606a7a807e7'
+          firebase-json-file: ${{ secrets.FIREBASE_DIST_CREDENTIALS_RC }}
+          release-notes: 'Catalog for Mistica Release: ${{ github.event.release.tag_name }}'
+          app-icon: 'ic_launcher_rc'
+          app-version: '${{ github.event.release.tag_name }}'
+
       - name: Send Teams notification
         uses: fjogeleit/http-request-action@v1.16.4
         with:
