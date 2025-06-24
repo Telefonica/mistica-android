@@ -44,6 +44,22 @@ jobs:
           property: 'APP_VERSION'
           value: '${{ github.event.release.tag_name }}'
 
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.NOVUM_PRIVATE_REPOS }}
+          base: main
+          branch: 'update-app-version-${{ github.event.release.tag_name }}'
+          title: 'Update app version to ${{ github.event.release.tag_name }}'
+          body: |
+            ## 📦 Update app version to ${{ github.event.release.tag_name }}
+                    
+            **What’s included:**
+            - Update `config.properties` with the new version `${{ github.event.release.tag_name }}`
+            - Prepare for the next development cycle
+          
+            Please review and merge if everything looks good. 🚀
+
       - name: Firebase Publish
         uses: ./.github/actions/firebase-publish
         id: firebase-publish
