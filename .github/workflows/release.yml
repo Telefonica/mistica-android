@@ -13,7 +13,9 @@ jobs:
           java-version: '17'
 
       - name: Checkout repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
+        with:
+          token: "${{ secrets.NOVUM_PRIVATE_REPOS }}"
 
       - name: Build library
         run: 'bash ./gradlew clean :library:assembleRelease :catalog:assembleRelease'
@@ -37,6 +39,11 @@ jobs:
           )
           echo "FORMATTED_BODY=${RELEASE_BODY}" >> $GITHUB_ENV
 
+      - name: clean Properties file
+        run: |
+          truncate -s 0 ./app/src/main/res/raw/config.properties
+        shell: bash
+
       - name: Write value to Properties-file
         uses: christian-draeger/write-properties@1.1.0
         with:
@@ -44,21 +51,11 @@ jobs:
           property: 'APP_VERSION'
           value: '${{ github.event.release.tag_name }}'
 
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v5
+      - name: Commit and push new version
+        uses: EndBug/add-and-commit@v9.1.4
         with:
-          token: ${{ secrets.NOVUM_PRIVATE_REPOS }}
-          base: main
-          branch: 'update-app-version-${{ github.event.release.tag_name }}'
-          title: 'Update app version to ${{ github.event.release.tag_name }}'
-          body: |
-            ## 📦 Update app version to ${{ github.event.release.tag_name }}
-                    
-            **What’s included:**
-            - Update `config.properties` with the new version `${{ github.event.release.tag_name }}`
-            - Prepare for the next development cycle
-          
-            Please review and merge if everything looks good. 🚀
+          add: './app/src/main/res/raw/config.properties'
+          message: 'Update app version to ${{ github.event.release.tag_name }}'
 
       - name: Firebase Publish
         uses: ./.github/actions/firebase-publish
