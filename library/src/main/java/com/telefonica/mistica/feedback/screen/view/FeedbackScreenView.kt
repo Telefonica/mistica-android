@@ -386,6 +386,7 @@ class FeedbackScreenView : ConstraintLayout {
         }
     }
 
+    @Suppress("NestedBlockDepth")
     fun animateViews() {
         if (isIconAnimated) {
             icon.resumeAnimation()
