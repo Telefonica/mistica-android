@@ -387,49 +387,53 @@ class FeedbackScreenView : ConstraintLayout {
     }
 
     fun animateViews() {
-        if (isIconAnimated && !isAnimatedOnce) {
-            isAnimatedOnce = true
-            val titleAnimation = AnimatorSet().apply {
-                playTogether(
-                    getFadeInAnim(title),
-                    getTranslationYAnim(title)
-                )
-                interpolator = getCubicBezierInterpolator()
-                duration = TEXTS_ANIMATION_DURATION
-                startDelay = TITLE_ANIMATION_DELAY
-            }
-            val subtitleAnimation = AnimatorSet().apply {
-                playTogether(
-                    getFadeInAnim(subtitle),
-                    getTranslationYAnim(subtitle)
-                )
-                interpolator = getCubicBezierInterpolator()
-                duration = TEXTS_ANIMATION_DURATION
-                startDelay = SUBTITLE_ANIMATION_DELAY
-            }
+        if (isIconAnimated) {
+            icon.resumeAnimation()
 
-            val extraAnimation = AnimatorSet().apply {
-                playTogether(
-                    getFadeInAnim(customContentContainer),
-                    getTranslationYAnim(customContentContainer),
-                    getFadeInAnim(errorReference),
-                    getTranslationYAnim(errorReference),
-                )
-                interpolator = getCubicBezierInterpolator()
-                duration = TEXTS_ANIMATION_DURATION
-                startDelay = if (subtitleText.isEmpty()) SUBTITLE_ANIMATION_DELAY else EXTRAS_ANIMATION_DELAY
+            if (!isAnimatedOnce) {
+                isAnimatedOnce = true
+                val titleAnimation = AnimatorSet().apply {
+                    playTogether(
+                        getFadeInAnim(title),
+                        getTranslationYAnim(title)
+                    )
+                    interpolator = getCubicBezierInterpolator()
+                    duration = TEXTS_ANIMATION_DURATION
+                    startDelay = TITLE_ANIMATION_DELAY
+                }
+                val subtitleAnimation = AnimatorSet().apply {
+                    playTogether(
+                        getFadeInAnim(subtitle),
+                        getTranslationYAnim(subtitle)
+                    )
+                    interpolator = getCubicBezierInterpolator()
+                    duration = TEXTS_ANIMATION_DURATION
+                    startDelay = SUBTITLE_ANIMATION_DELAY
+                }
+
+                val extraAnimation = AnimatorSet().apply {
+                    playTogether(
+                        getFadeInAnim(customContentContainer),
+                        getTranslationYAnim(customContentContainer),
+                        getFadeInAnim(errorReference),
+                        getTranslationYAnim(errorReference),
+                    )
+                    interpolator = getCubicBezierInterpolator()
+                    duration = TEXTS_ANIMATION_DURATION
+                    startDelay = if (subtitleText.isEmpty()) SUBTITLE_ANIMATION_DELAY else EXTRAS_ANIMATION_DELAY
+                }
+
+
+                title.alpha = 0F
+                subtitle.alpha = 0F
+                errorReference.alpha = 0F
+                customContentContainer.alpha = 0F
+
+                titleAnimation.start()
+                subtitleAnimation.start()
+                extraAnimation.start()
+                executeHapticFeedback()
             }
-
-            title.alpha = 0F
-            subtitle.alpha = 0F
-            errorReference.alpha = 0F
-            customContentContainer.alpha = 0F
-
-            icon.playAnimation()
-            titleAnimation.start()
-            subtitleAnimation.start()
-            extraAnimation.start()
-            executeHapticFeedback()
         }
     }
 
