@@ -24,20 +24,20 @@ import androidx.annotation.RawRes
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.graphics.drawable.DrawableCompat
+import androidx.core.graphics.drawable.toDrawable
 import androidx.core.view.ViewCompat
 import com.airbnb.lottie.LottieAnimationView
 import com.airbnb.lottie.LottieProperty
 import com.airbnb.lottie.model.KeyPath
 import com.telefonica.mistica.R
 import com.telefonica.mistica.button.ProgressButton
+import com.telefonica.mistica.compose.theme.values.ThemeVariant
 import com.telefonica.mistica.feedback.screen.haptics.HapticFeedbackType
 import com.telefonica.mistica.feedback.screen.haptics.performHapticFeedback
 import com.telefonica.mistica.util.convertDpToPx
-import com.telefonica.mistica.util.getThemeColor
 import com.telefonica.mistica.util.getMisticaThemeDrawable
+import com.telefonica.mistica.util.getThemeColor
 import com.telefonica.mistica.util.getThemeRes
-import androidx.core.graphics.drawable.toDrawable
-import com.telefonica.mistica.compose.theme.values.ThemeVariant
 
 class FeedbackScreenView : ConstraintLayout {
 
@@ -72,6 +72,8 @@ class FeedbackScreenView : ConstraintLayout {
     private var secondButtonAsLink: Boolean = false
     private var isIconAnimated: Boolean = false
     private var shouldAnimateOnAttachedToWindow: Boolean = true
+
+    private var isAnimatedOnce: Boolean = false
 
     private var firstButtonClickListener: OnClickListener? = null
     private var secondButtonClickListener: OnClickListener? = null
@@ -385,7 +387,8 @@ class FeedbackScreenView : ConstraintLayout {
     }
 
     fun animateViews() {
-        if (isIconAnimated) {
+        if (isIconAnimated && !isAnimatedOnce) {
+            isAnimatedOnce = true
             val titleAnimation = AnimatorSet().apply {
                 playTogether(
                     getFadeInAnim(title),
@@ -466,7 +469,7 @@ class FeedbackScreenView : ConstraintLayout {
 
     private fun isInverseThemeVariant(): Boolean {
         val typedValue = TypedValue()
-        context.theme.resolveAttribute(R.attr.successFeedbackThemeVariant, typedValue,true)
+        context.theme.resolveAttribute(R.attr.successFeedbackThemeVariant, typedValue, true)
         return typedValue.data == ThemeVariant.INVERSE.ordinal
     }
 
