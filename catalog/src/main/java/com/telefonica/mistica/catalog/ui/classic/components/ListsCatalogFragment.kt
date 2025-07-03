@@ -92,7 +92,6 @@ class ListsCatalogFragment : Fragment() {
                 withAction: Boolean = false,
                 withBadge: Boolean = false,
                 withBadgeNumeric: Int? = null,
-                withBadgeDescription: String? = null,
                 withAssetType: Int? = null,
                 withHeadline: Boolean = false,
                 withSubtitle: Boolean = false,
@@ -109,7 +108,6 @@ class ListsCatalogFragment : Fragment() {
                     withAction = withAction,
                     withBadge = withBadge,
                     withBadgeNumeric = withBadgeNumeric ?: 0,
-                    withBadgeDescription = withBadgeDescription,
                     withAsset = withAssetType != null,
                     withAssetType = withAssetType ?: TYPE_SMALL_ICON,
                     withInverseBackground = withInverseBackground,
@@ -129,14 +127,14 @@ class ListsCatalogFragment : Fragment() {
             return listOf(
                 configure(withTitleHeading = true),
                 configure(withAction = true),
-                configure(withAction = true, withBadge = true, withBadgeDescription = "You have unread messages"),
+                configure(withAction = true, withBadge = true),
                 configure(withAction = true, withBadgeNumeric = 1),
                 configure(withLongDescription = false, withTitleHeading = true),
                 configure(withLongDescription = false, withAction = true),
                 configure(withAssetType = TYPE_LARGE_ICON),
                 configure(withAssetType = TYPE_LARGE_ICON, withAction = true),
                 configure(withAssetType = TYPE_LARGE_ICON, withAction = true, withBadge = true),
-                configure(withAssetType = TYPE_LARGE_ICON, withAction = true, withBadgeNumeric = 5, withBadgeDescription = "5 new messages"),
+                configure(withAssetType = TYPE_LARGE_ICON, withAction = true, withBadgeNumeric = 5),
                 configure(withLongDescription = false, withAssetType = TYPE_LARGE_ICON),
                 configure(withLongDescription = false, withAssetType = TYPE_LARGE_ICON, withAction = true),
                 configure(withAssetType = TYPE_SMALL_ICON),
@@ -184,7 +182,6 @@ class ListsCatalogFragment : Fragment() {
             @TagStyle withHeadlineStyle: Int = TYPE_PROMO,
             withSubtitle: Boolean = false,
             withSubtitleMaxLines: Int? = null,
-            withBadgeDescription: String? = null,
             withInverseBackground: Boolean,
             withUrlIcon: String? = null,
             withErrorIcon: Drawable? = null,
@@ -248,7 +245,7 @@ class ListsCatalogFragment : Fragment() {
                 isClickable = false
             }
 
-            setBadge(withBadge, withBadgeDescription, withBadgeNumeric)
+            setBadge(withBadge, withBadgeNumeric)
         }
 
         private fun getAssetResource(withAsset: Boolean, @AssetType withAssetType: Int): Int? =
@@ -267,11 +264,11 @@ class ListsCatalogFragment : Fragment() {
                 null
             }
 
-        private fun ListRowView.setBadge(withBadge: Boolean, withBadgeDescription: String?, withBadgeNumeric: Int) {
+        private fun ListRowView.setBadge(withBadge: Boolean, withBadgeNumeric: Int) {
             when {
-                withBadge -> setBadge(true, withBadgeDescription)
-                withBadgeNumeric > 0 -> setNumericBadge(withBadgeNumeric, withBadgeDescription)
-                else -> setBadge(false, withBadgeDescription)
+                withBadge -> setBadge(true)
+                withBadgeNumeric > 0 -> setNumericBadge(withBadgeNumeric)
+                else -> setBadge(false)
             }
         }
     }
