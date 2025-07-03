@@ -24,20 +24,20 @@ import androidx.annotation.RawRes
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.graphics.drawable.DrawableCompat
+import androidx.core.graphics.drawable.toDrawable
 import androidx.core.view.ViewCompat
 import com.airbnb.lottie.LottieAnimationView
 import com.airbnb.lottie.LottieProperty
 import com.airbnb.lottie.model.KeyPath
 import com.telefonica.mistica.R
 import com.telefonica.mistica.button.ProgressButton
+import com.telefonica.mistica.compose.theme.values.ThemeVariant
 import com.telefonica.mistica.feedback.screen.haptics.HapticFeedbackType
 import com.telefonica.mistica.feedback.screen.haptics.performHapticFeedback
 import com.telefonica.mistica.util.convertDpToPx
-import com.telefonica.mistica.util.getThemeColor
 import com.telefonica.mistica.util.getMisticaThemeDrawable
+import com.telefonica.mistica.util.getThemeColor
 import com.telefonica.mistica.util.getThemeRes
-import androidx.core.graphics.drawable.toDrawable
-import com.telefonica.mistica.compose.theme.values.ThemeVariant
 
 class FeedbackScreenView : ConstraintLayout {
 
@@ -72,6 +72,8 @@ class FeedbackScreenView : ConstraintLayout {
     private var secondButtonAsLink: Boolean = false
     private var isIconAnimated: Boolean = false
     private var shouldAnimateOnAttachedToWindow: Boolean = true
+
+    private var isAnimatedOnce: Boolean = false
 
     private var firstButtonClickListener: OnClickListener? = null
     private var secondButtonClickListener: OnClickListener? = null
@@ -384,49 +386,55 @@ class FeedbackScreenView : ConstraintLayout {
         }
     }
 
+    @Suppress("NestedBlockDepth")
     fun animateViews() {
         if (isIconAnimated) {
-            val titleAnimation = AnimatorSet().apply {
-                playTogether(
-                    getFadeInAnim(title),
-                    getTranslationYAnim(title)
-                )
-                interpolator = getCubicBezierInterpolator()
-                duration = TEXTS_ANIMATION_DURATION
-                startDelay = TITLE_ANIMATION_DELAY
-            }
-            val subtitleAnimation = AnimatorSet().apply {
-                playTogether(
-                    getFadeInAnim(subtitle),
-                    getTranslationYAnim(subtitle)
-                )
-                interpolator = getCubicBezierInterpolator()
-                duration = TEXTS_ANIMATION_DURATION
-                startDelay = SUBTITLE_ANIMATION_DELAY
-            }
+            icon.resumeAnimation()
 
-            val extraAnimation = AnimatorSet().apply {
-                playTogether(
-                    getFadeInAnim(customContentContainer),
-                    getTranslationYAnim(customContentContainer),
-                    getFadeInAnim(errorReference),
-                    getTranslationYAnim(errorReference),
-                )
-                interpolator = getCubicBezierInterpolator()
-                duration = TEXTS_ANIMATION_DURATION
-                startDelay = if (subtitleText.isEmpty()) SUBTITLE_ANIMATION_DELAY else EXTRAS_ANIMATION_DELAY
+            if (!isAnimatedOnce) {
+                isAnimatedOnce = true
+                val titleAnimation = AnimatorSet().apply {
+                    playTogether(
+                        getFadeInAnim(title),
+                        getTranslationYAnim(title)
+                    )
+                    interpolator = getCubicBezierInterpolator()
+                    duration = TEXTS_ANIMATION_DURATION
+                    startDelay = TITLE_ANIMATION_DELAY
+                }
+                val subtitleAnimation = AnimatorSet().apply {
+                    playTogether(
+                        getFadeInAnim(subtitle),
+                        getTranslationYAnim(subtitle)
+                    )
+                    interpolator = getCubicBezierInterpolator()
+                    duration = TEXTS_ANIMATION_DURATION
+                    startDelay = SUBTITLE_ANIMATION_DELAY
+                }
+
+                val extraAnimation = AnimatorSet().apply {
+                    playTogether(
+                        getFadeInAnim(customContentContainer),
+                        getTranslationYAnim(customContentContainer),
+                        getFadeInAnim(errorReference),
+                        getTranslationYAnim(errorReference),
+                    )
+                    interpolator = getCubicBezierInterpolator()
+                    duration = TEXTS_ANIMATION_DURATION
+                    startDelay = if (subtitleText.isEmpty()) SUBTITLE_ANIMATION_DELAY else EXTRAS_ANIMATION_DELAY
+                }
+
+
+                title.alpha = 0F
+                subtitle.alpha = 0F
+                errorReference.alpha = 0F
+                customContentContainer.alpha = 0F
+
+                titleAnimation.start()
+                subtitleAnimation.start()
+                extraAnimation.start()
+                executeHapticFeedback()
             }
-
-            title.alpha = 0F
-            subtitle.alpha = 0F
-            errorReference.alpha = 0F
-            customContentContainer.alpha = 0F
-
-            icon.playAnimation()
-            titleAnimation.start()
-            subtitleAnimation.start()
-            extraAnimation.start()
-            executeHapticFeedback()
         }
     }
 
@@ -466,7 +474,7 @@ class FeedbackScreenView : ConstraintLayout {
 
     private fun isInverseThemeVariant(): Boolean {
         val typedValue = TypedValue()
-        context.theme.resolveAttribute(R.attr.successFeedbackThemeVariant, typedValue,true)
+        context.theme.resolveAttribute(R.attr.successFeedbackThemeVariant, typedValue, true)
         return typedValue.data == ThemeVariant.INVERSE.ordinal
     }
 
