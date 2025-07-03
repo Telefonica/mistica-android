@@ -12,6 +12,7 @@ import coil.fetch.DrawableResult
 import coil.fetch.FetchResult
 import coil.fetch.Fetcher
 import coil.request.Options
+import androidx.core.graphics.drawable.toDrawable
 
 /**
  * Coil Fetcher implementation for Data Urls encoded in Base64.
@@ -31,7 +32,7 @@ internal class Base64DataUrlFetcher(
         try {
             val bytes = Base64.decode(base64Data, Base64.DEFAULT)
             val bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
-            val drawable = BitmapDrawable(resources, bitmap)
+            val drawable = bitmap.toDrawable(resources)
 
             DrawableResult(
                 drawable = drawable,

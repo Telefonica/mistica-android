@@ -9,6 +9,7 @@ import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
+import androidx.core.view.isGone
 import androidx.fragment.app.Fragment
 import com.telefonica.mistica.callout.CalloutView
 import com.telefonica.mistica.callout.CalloutViewImageConfig
@@ -60,7 +61,7 @@ class CalloutsCatalogFragment : Fragment() {
 
     private fun updateCalloutView(view: View) {
         with(view.findViewById<CalloutView>(R.id.callout_view)) {
-            if (visibility == GONE) {
+            if (isGone) {
                 visibility = VISIBLE
             }
 

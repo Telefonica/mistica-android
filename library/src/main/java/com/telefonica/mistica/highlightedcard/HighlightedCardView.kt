@@ -23,6 +23,7 @@ import androidx.annotation.IntDef
 import androidx.annotation.StringRes
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.graphics.drawable.toDrawable
 import androidx.databinding.BindingMethod
 import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
@@ -31,6 +32,7 @@ import com.telefonica.mistica.util.getMisticaThemeDrawableBuilder
 import com.telefonica.mistica.util.getThemeColor
 import com.telefonica.mistica.util.hide
 import com.telefonica.mistica.util.show
+import androidx.core.graphics.createBitmap
 
 @BindingMethods(
     BindingMethod(
@@ -258,8 +260,7 @@ class HighlightedCardView @JvmOverloads constructor(
 
     fun setCustomBackground(drawable: Drawable) {
 
-        val roundedCornerBitmap =
-            BitmapDrawable(resources, getRoundedCornerBitmap((drawable as BitmapDrawable).bitmap))
+        val roundedCornerBitmap = getRoundedCornerBitmap((drawable as BitmapDrawable).bitmap).toDrawable(resources)
 
         container.background = roundedCornerBitmap
         hasCustomBackground = true
@@ -362,11 +363,8 @@ class HighlightedCardView @JvmOverloads constructor(
         }
     }
 
-    private fun getRoundedCornerBitmap(bitmap: Bitmap): Bitmap? {
-        val output = Bitmap.createBitmap(
-            bitmap.width, bitmap
-                .height, Bitmap.Config.ARGB_8888
-        )
+    private fun getRoundedCornerBitmap(bitmap: Bitmap): Bitmap {
+        val output = createBitmap(bitmap.width, bitmap.height)
         val canvas = Canvas(output)
         val color = context.getThemeColor(R.attr.colorBorder)
         val paint = Paint()

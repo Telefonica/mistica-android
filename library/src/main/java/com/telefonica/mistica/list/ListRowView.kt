@@ -747,7 +747,7 @@ setHeadlineLayout(
     }
 
     private fun isAnyTextDifferentThanTitleVisible(): Boolean =
-        headlineContainer.isVisible() || subtitleTextView.isVisible() || descriptionTextView.isVisible()
+        headlineContainer.isVisible || subtitleTextView.isVisible || descriptionTextView.isVisible
 
     private fun ImageView.setSize(dpsSize: Int) {
         val pxSize: Int = context.convertDpToPx(dpsSize)
@@ -775,9 +775,6 @@ setHeadlineLayout(
             layoutParams = this
         }
     }
-
-    private fun View.isVisible(): Boolean =
-        visibility == View.VISIBLE
 
     private fun TextView.setTextAndVisibility(newText: CharSequence?) {
         if (newText != null) {

@@ -23,6 +23,7 @@ import com.telefonica.mistica.util.convertDpToPx
 import com.telefonica.mistica.util.getThemeColor
 import com.telefonica.mistica.util.getMisticaThemeDrawable
 import com.telefonica.mistica.util.setTextAndVisibility
+import androidx.core.graphics.drawable.toDrawable
 
 @BindingMethods(
     BindingMethod(
@@ -323,7 +324,7 @@ class HeaderView @JvmOverloads constructor(
         val backgroundDrawable = if (isInverse) {
             context.getMisticaThemeDrawable(R.attr.drawableBackgroundBrand)
         } else {
-            ColorDrawable(context.getThemeColor(R.attr.colorBackground))
+            context.getThemeColor(R.attr.colorBackground).toDrawable()
         }
         background = backgroundDrawable
 
