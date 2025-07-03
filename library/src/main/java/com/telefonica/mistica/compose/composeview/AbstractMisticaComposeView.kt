@@ -54,8 +54,8 @@ abstract class AbstractMisticaComposeView @JvmOverloads constructor(
     }
 
     @Composable
-    open fun Theme(brand: Brand = calculateBrand(), body: @Composable () -> Unit) {
-        MisticaTheme(brand) {
+    open fun Theme(body: @Composable () -> Unit) {
+        MisticaTheme(brand = calculateBrand()) {
             body()
         }
     }
