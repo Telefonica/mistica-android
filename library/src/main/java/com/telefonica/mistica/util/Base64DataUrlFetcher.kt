@@ -2,17 +2,16 @@ package com.telefonica.mistica.util
 
 import android.content.res.Resources
 import android.graphics.BitmapFactory
-import android.graphics.drawable.BitmapDrawable
 import android.net.Uri
 import android.util.Base64
 import android.util.Log
+import androidx.core.graphics.drawable.toDrawable
 import coil.ImageLoader
 import coil.decode.DataSource
 import coil.fetch.DrawableResult
 import coil.fetch.FetchResult
 import coil.fetch.Fetcher
 import coil.request.Options
-import androidx.core.graphics.drawable.toDrawable
 
 /**
  * Coil Fetcher implementation for Data Urls encoded in Base64.

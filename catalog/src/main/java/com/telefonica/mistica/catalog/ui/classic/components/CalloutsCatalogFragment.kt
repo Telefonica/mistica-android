@@ -4,7 +4,6 @@ import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
-import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.widget.Button
@@ -73,12 +72,15 @@ class CalloutsCatalogFragment : Fragment() {
                 CalloutViewImageConfig.NONE -> {
                     setAssetType(imageConfig)
                 }
+
                 CalloutViewImageConfig.ICON -> {
                     setAsset(R.drawable.ic_callout)
                     setAssetType(imageConfig)
                 }
+
                 CalloutViewImageConfig.SQUARE_IMAGE,
-                CalloutViewImageConfig.CIRCULAR_IMAGE -> {
+                CalloutViewImageConfig.CIRCULAR_IMAGE,
+                    -> {
                     setAsset(R.drawable.media_card_sample_image)
                     setAssetType(imageConfig)
                 }
