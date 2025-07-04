@@ -2,10 +2,10 @@ package com.telefonica.mistica.util
 
 import android.content.res.Resources
 import android.graphics.BitmapFactory
-import android.graphics.drawable.BitmapDrawable
 import android.net.Uri
 import android.util.Base64
 import android.util.Log
+import androidx.core.graphics.drawable.toDrawable
 import coil.ImageLoader
 import coil.decode.DataSource
 import coil.fetch.DrawableResult
@@ -31,7 +31,7 @@ internal class Base64DataUrlFetcher(
         try {
             val bytes = Base64.decode(base64Data, Base64.DEFAULT)
             val bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
-            val drawable = BitmapDrawable(resources, bitmap)
+            val drawable = bitmap.toDrawable(resources)
 
             DrawableResult(
                 drawable = drawable,

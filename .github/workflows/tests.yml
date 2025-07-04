@@ -23,7 +23,7 @@ jobs:
         run: 'bash ./gradlew clean check detekt assemble'
 
       - name: Upload Lint results
-        uses: github/codeql-action/upload-sarif@v2
+        uses: github/codeql-action/upload-sarif@v3
         if: success() || failure()
         with:
           sarif_file: app/build/reports/lint-results-debug.sarif

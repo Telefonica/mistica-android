@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-kapt'
     id 'maven-publish'
     id 'io.github.takahirom.roborazzi'
+    id 'org.jetbrains.kotlin.plugin.compose'
 }
 
 android {
@@ -47,10 +48,6 @@ android {
         compose true
     }
 
-    composeOptions {
-        kotlinCompilerExtensionVersion compose_compiler_version
-    }
-
     lint {
         sarifReport true
         checkDependencies true
@@ -78,7 +75,7 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation "androidx.compose.runtime:runtime:$compose_ui_version"
 
-    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation "androidx.core:core-ktx:$androidx_core_version"
     implementation 'androidx.activity:activity-compose:1.4.0'
     implementation "androidx.constraintlayout:constraintlayout-compose:$constraintComposeVersion"
 

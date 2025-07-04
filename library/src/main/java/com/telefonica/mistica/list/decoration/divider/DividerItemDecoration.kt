@@ -9,6 +9,7 @@ import androidx.annotation.DrawableRes
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.recyclerview.widget.RecyclerView
 import com.telefonica.mistica.R
+import androidx.core.graphics.withSave
 
 open class DividerItemDecoration @JvmOverloads constructor(
     context: Context,
@@ -49,31 +50,31 @@ open class DividerItemDecoration @JvmOverloads constructor(
     private fun isLastElement(position: Int, items: Int): Boolean = position == items - 1
 
     private fun drawHorizontal(c: Canvas, parent: RecyclerView, divider: Drawable, items: Int) {
-        c.save()
-        for (i in 0 until parent.childCount) {
-            val child = parent.getChildAt(i)
-            val position = parent.getChildAdapterPosition(child)
-            if (!hasDivider(position, items)) {
-                continue
-            }
-            parent.getDecoratedBoundsWithMargins(child, bounds)
-            val left =
-                parent.paddingLeft + adapter.getDividerLeftOffset(position) + Math.round(child.translationX)
-            val right =
-                parent.width - parent.paddingRight - adapter.getDividerRightOffset(position) + Math.round(
-                    child.translationX
-                )
-            val bottom = bounds.bottom + Math.round(child.translationY)
-            val top = bottom - divider.intrinsicHeight
+        c.withSave {
+            for (i in 0 until parent.childCount) {
+                val child = parent.getChildAt(i)
+                val position = parent.getChildAdapterPosition(child)
+                if (!hasDivider(position, items)) {
+                    continue
+                }
+                parent.getDecoratedBoundsWithMargins(child, bounds)
+                val left =
+                    parent.paddingLeft + adapter.getDividerLeftOffset(position) + Math.round(child.translationX)
+                val right =
+                    parent.width - parent.paddingRight - adapter.getDividerRightOffset(position) + Math.round(
+                        child.translationX
+                    )
+                val bottom = bounds.bottom + Math.round(child.translationY)
+                val top = bottom - divider.intrinsicHeight
 
-            divider.apply {
-                alpha = Math.round(child.alpha * HEX_MULTIPLIER)
-                setBounds(left, top, right, bottom)
-                draw(c)
-                state = drawableState
+                divider.apply {
+                    divider.alpha = Math.round(child.alpha * HEX_MULTIPLIER)
+                    divider.setBounds(left, top, right, bottom)
+                    draw(this@withSave)
+                    divider.state = drawableState
+                }
             }
         }
-        c.restore()
     }
 
     private companion object {
