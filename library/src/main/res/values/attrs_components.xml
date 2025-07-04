@@ -93,7 +93,6 @@
             <enum name="gone" value="0" />
         </attr>
         <attr name="listRowBadgeVisible" format="boolean" />
-        <attr name="listRowBadgeDescription" format="string" />
         <attr name="onClick" format="string" />
     </declare-styleable>
 
