@@ -180,6 +180,7 @@ open class ListRowView @JvmOverloads constructor(
     private var cachedDefaultBackgroundType: Int = BackgroundType.TYPE_NORMAL
 
     private var isViewInitialized = false
+    private var hasCustomContentDescription = false
 
     // Important! This map builds a sentence for a11y according to Mística order definition. Do not modify the order arbitrarily, check:
     // https://www.figma.com/design/Be8QB9onmHunKCCAkIBAVr/%F0%9F%94%B8-Lists-Specs?node-id=4615-10711&t=rHgrWciayIn0NP4V-4
@@ -315,17 +316,19 @@ open class ListRowView @JvmOverloads constructor(
             // Badge
             setBadgeInitialState(styledAttrs)
 
-            finishInit(styledAttrs)
+            styledAttrs.recycle()
         }
+        finishInit()
     }
 
-    private fun finishInit(styledAttrs: TypedArray) {
-        styledAttrs.recycle()
+    private fun finishInit() {
         isViewInitialized = true
-        if (contentDescription.isNullOrEmpty()) recalculateContentDescription()
+        recalculateContentDescription()
     }
 
     private fun recalculateContentDescription(newContentDescriptionInfo: ContentDescriptionInfo? = null) {
+        if (hasCustomContentDescription) return
+
         newContentDescriptionInfo?.let { newInfo ->
             contentDescriptionValues.find { it.key == newInfo.key }?.description = newInfo.description
         }
@@ -338,12 +341,23 @@ open class ListRowView @JvmOverloads constructor(
                 contentDescriptionBuilder.append("${it.description}. ")
             }
 
-            this@ListRowView.contentDescription = contentDescriptionBuilder
+            // Call super to update the content description without affecting the hasCustomContentDescription flag
+            super.setContentDescription(contentDescriptionBuilder)
         }
     }
 
     fun setAssetResource(@DrawableRes resource: Int? = null) {
         setAssetDrawable(resource?.let { AppCompatResources.getDrawable(context, it) })
+    }
+
+    override fun setContentDescription(contentDescription: CharSequence?) {
+        hasCustomContentDescription = true
+        super.setContentDescription(contentDescription)
+    }
+
+    fun resetContentDescription() {
+        hasCustomContentDescription = false
+        recalculateContentDescription()
     }
 
     fun setAssetUrl(

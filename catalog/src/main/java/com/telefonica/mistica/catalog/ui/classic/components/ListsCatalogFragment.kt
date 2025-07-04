@@ -102,7 +102,8 @@ class ListsCatalogFragment : Fragment() {
                 withLongTitle: Boolean = false,
                 withTitleMaxLines: Int? = null,
                 withDescriptionMaxLines: Int? = null,
-                withDimensions: ImageDimensions? = null
+                withDimensions: ImageDimensions? = null,
+                withCustomContentDescription: Boolean = false,
             ): (ListRowView) -> Unit = { view ->
                 view.configureView(
                     withAction = withAction,
@@ -120,13 +121,15 @@ class ListsCatalogFragment : Fragment() {
                     withLongTitle = withLongTitle,
                     withTitleMaxLines = withTitleMaxLines,
                     withDescriptionMaxLines = withDescriptionMaxLines,
-                    withDimensions = withDimensions
+                    withDimensions = withDimensions,
+                    withCustomContentDescription = withCustomContentDescription,
                 )
             }
 
             return listOf(
                 configure(withTitleHeading = true),
                 configure(withAction = true),
+                configure(withCustomContentDescription = true),
                 configure(withAction = true, withBadge = true),
                 configure(withAction = true, withBadgeNumeric = 1),
                 configure(withLongDescription = false, withTitleHeading = true),
@@ -163,14 +166,13 @@ class ListsCatalogFragment : Fragment() {
             )
         }
 
-
         @SuppressLint("SetTextI18n")
         @Suppress("CyclomaticComplexMethod")
         private fun ListRowView.configureView(
             withLongTitle: Boolean = false,
             withTitleMaxLines: Int? = null,
-            withTitleHeading: Boolean? = false,
-            withLongDescription: Boolean? = null,
+            withTitleHeading: Boolean = false,
+            withLongDescription: Boolean = true,
             withDescriptionMaxLines: Int? = null,
             withAsset: Boolean = false,
             @AssetType withAssetType: Int = TYPE_SMALL_ICON,
@@ -185,6 +187,7 @@ class ListsCatalogFragment : Fragment() {
             withInverseBackground: Boolean,
             withUrlIcon: String? = null,
             withErrorIcon: Drawable? = null,
+            withCustomContentDescription: Boolean = false,
         ) {
             if (withHeadline) {
                 val headlineText = "Headline"
@@ -210,13 +213,12 @@ class ListsCatalogFragment : Fragment() {
             setSubtitle(if (withSubtitle) "Any Subtitle" else null)
             withDescriptionMaxLines?.let { setDescriptionMaxLines(it) }
             setDescription(
-                withLongDescription?.let { long ->
-                    if (long) {
-                        "Description long enough to need more than 2 lines to show it, just for testing purposes." +
-                                "Description long enough to need more than 2 lines to show it, just for testing purposes."
-                    } else {
-                        "Description"
-                    }
+                when {
+                    withCustomContentDescription -> "Description.\nListRowView with custom content description."
+                    withLongDescription -> "Description long enough to need more than 2 lines to show it, just for testing purposes." +
+                            "Description long enough to need more than 2 lines to show it, just for testing purposes."
+
+                    else -> "Description"
                 }
             )
 
@@ -244,6 +246,8 @@ class ListsCatalogFragment : Fragment() {
                 setActionLayout(ListRowView.ACTION_NONE)
                 isClickable = false
             }
+
+            if (withCustomContentDescription) contentDescription = "Custom content description for ListRowView"
 
             setBadge(withBadge, withBadgeNumeric)
         }
