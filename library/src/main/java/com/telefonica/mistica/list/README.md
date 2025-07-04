@@ -124,6 +124,9 @@ listRowViewWithSwitch.getActionView()
 ```
 
 ## Custom Content Description
+> [!NOTE]
+> Using a custom contentDescription can be useful for specific accessibility cases, but it's recommended to use the default value whenever possible to ensure the best user experience.
+
 This component now supports configuring a **custom `contentDescription`**, which will override the internally managed default value. By default, the component automatically assigns and manages an accessible `contentDescription`.
 
 If you need to set a custom `contentDescription`, you can do so by simply setting the view's standard `contentDescription` property, either in code or via XML.
@@ -143,6 +146,3 @@ listRowViewWithSwitch.contentDescription = "Custom description for accessibility
 // Restore the component's default managed contentDescription
 listRowViewWithSwitch.resetDescription()
 ```
-
-> [!NOTE]
-> Using a custom contentDescription can be useful for specific accessibility cases, but it's recommended to use the default value whenever possible to ensure the best user experience.
