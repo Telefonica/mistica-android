@@ -32,7 +32,6 @@ import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
 import com.telefonica.mistica.badge.Badge
 import com.telefonica.mistica.list.ListRowView.ContentDescriptionKeys.DESCRIPTION
-import com.telefonica.mistica.list.ListRowView.ContentDescriptionKeys.DETAIL
 import com.telefonica.mistica.list.ListRowView.ContentDescriptionKeys.HEADLINE
 import com.telefonica.mistica.list.ListRowView.ContentDescriptionKeys.RIGHT_SLOT
 import com.telefonica.mistica.list.ListRowView.ContentDescriptionKeys.SUBTITLE
@@ -181,6 +180,7 @@ open class ListRowView @JvmOverloads constructor(
     private var cachedDefaultBackgroundType: Int = BackgroundType.TYPE_NORMAL
 
     private var isViewInitialized = false
+    private var hasCustomContentDescription = false
 
     // Important! This map builds a sentence for a11y according to Mística order definition. Do not modify the order arbitrarily, check:
     // https://www.figma.com/design/Be8QB9onmHunKCCAkIBAVr/%F0%9F%94%B8-Lists-Specs?node-id=4615-10711&t=rHgrWciayIn0NP4V-4
@@ -189,10 +189,11 @@ open class ListRowView @JvmOverloads constructor(
         ContentDescriptionInfo(key = HEADLINE, description = null),
         ContentDescriptionInfo(key = SUBTITLE, description = null),
         ContentDescriptionInfo(key = DESCRIPTION, description = null),
-        ContentDescriptionInfo(key = DETAIL, description = null),
         ContentDescriptionInfo(key = RIGHT_SLOT, description = null),
     )
+
     private data class ContentDescriptionInfo(val key: ContentDescriptionKeys, var description: String?)
+
     private var headlineContentDescription: String? = null
 
     init {
@@ -240,7 +241,7 @@ open class ListRowView @JvmOverloads constructor(
                 R.styleable.ListRowView_listRowHeadlineLayout,
                 TypedValue.TYPE_NULL
             )
-setHeadlineLayout(
+            setHeadlineLayout(
                 layoutRes = headlineResId.takeIf { it != TypedValue.TYPE_NULL } ?: HEADLINE_NONE,
                 contentDescription = styledAttrs.getString(R.styleable.ListRowView_listRowHeadlineContentDescription)
             ).also {
@@ -315,17 +316,19 @@ setHeadlineLayout(
             // Badge
             setBadgeInitialState(styledAttrs)
 
-            finishInit(styledAttrs)
+            styledAttrs.recycle()
         }
+        finishInit()
     }
 
-    private fun finishInit(styledAttrs: TypedArray) {
-        styledAttrs.recycle()
+    private fun finishInit() {
         isViewInitialized = true
         recalculateContentDescription()
     }
 
     private fun recalculateContentDescription(newContentDescriptionInfo: ContentDescriptionInfo? = null) {
+        if (hasCustomContentDescription) return
+
         newContentDescriptionInfo?.let { newInfo ->
             contentDescriptionValues.find { it.key == newInfo.key }?.description = newInfo.description
         }
@@ -338,12 +341,23 @@ setHeadlineLayout(
                 contentDescriptionBuilder.append("${it.description}. ")
             }
 
-            this@ListRowView.contentDescription = contentDescriptionBuilder
+            // Call super to update the content description without affecting the hasCustomContentDescription flag
+            super.setContentDescription(contentDescriptionBuilder)
         }
     }
 
     fun setAssetResource(@DrawableRes resource: Int? = null) {
         setAssetDrawable(resource?.let { AppCompatResources.getDrawable(context, it) })
+    }
+
+    override fun setContentDescription(contentDescription: CharSequence?) {
+        hasCustomContentDescription = true
+        super.setContentDescription(contentDescription)
+    }
+
+    fun resetContentDescription() {
+        hasCustomContentDescription = false
+        recalculateContentDescription()
     }
 
     fun setAssetUrl(
@@ -363,7 +377,7 @@ setHeadlineLayout(
             TYPE_IMAGE_7_10,
             TYPE_IMAGE_16_9,
             TYPE_IMAGE_ROUNDED,
-            -> assetRoundedImageView
+                -> assetRoundedImageView
 
             else -> assetImageView
         }.also { imageView ->
@@ -393,7 +407,7 @@ setHeadlineLayout(
                 TYPE_IMAGE_7_10,
                 TYPE_IMAGE_16_9,
                 TYPE_IMAGE_ROUNDED,
-                -> assetRoundedImageView.setImageDrawable(drawable)
+                    -> assetRoundedImageView.setImageDrawable(drawable)
 
                 else -> assetImageView.setImageDrawable(drawable)
             }
@@ -653,17 +667,17 @@ setHeadlineLayout(
         )
     }
 
-    fun setBadge(show: Boolean, withBadgeDescription: String? = null) {
+    fun setBadge(show: Boolean) {
         if (show) {
-            showNonNumericBadge(withBadgeDescription)
+            showNonNumericBadge()
         } else {
             hideBadge()
         }
     }
 
-    fun setNumericBadge(count: Int, withBadgeDescription: String? = null) {
+    fun setNumericBadge(count: Int) {
         if (count > 0) {
-            showNumericBadge(count, withBadgeDescription)
+            showNumericBadge(count)
         } else {
             hideBadge()
         }
@@ -686,28 +700,17 @@ setHeadlineLayout(
         }
     }
 
-    private fun showNonNumericBadge(withBadgeDescription: String?) {
+    private fun showNonNumericBadge() {
         Badge.removeBadge(badgeAnchor)
         badgeAnchorContainer.visibility = View.VISIBLE
         Badge.showBadgeIn(badgeAnchor, badgeAnchorContainer)
-
-        // Important! Recalculate contentDescription after the Badge has been built
-        recalculateContentDescription(ContentDescriptionInfo(key = DETAIL, description = withBadgeDescription ?: Badge.getDefaultBadgeDescription(badgeAnchor)))
     }
 
-    private fun showNumericBadge(count: Int, withBadgeDescription: String?) {
+    private fun showNumericBadge(count: Int) {
         Badge.removeBadge(badgeAnchor)
         badgeAnchorContainer.visibility = View.VISIBLE
         badgeAnchorContainer.setBackgroundColor(Color.Transparent.toArgb())
         Badge.showNumericBadgeIn(badgeAnchor, badgeAnchorContainer, count)
-
-        // Important! Recalculate contentDescription after the Badge has been built
-        recalculateContentDescription(
-            ContentDescriptionInfo(
-                key = DETAIL,
-                description = withBadgeDescription ?: Badge.getDefaultBadgeDescription(badgeAnchor, count)
-            )
-        )
     }
 
     private fun hideBadge() {
@@ -786,7 +789,7 @@ setHeadlineLayout(
     }
 
     private enum class ContentDescriptionKeys {
-        TITLE, HEADLINE, SUBTITLE, DESCRIPTION, DETAIL, RIGHT_SLOT
+        TITLE, HEADLINE, SUBTITLE, DESCRIPTION, RIGHT_SLOT
     }
 
     companion object {
@@ -803,21 +806,21 @@ setHeadlineLayout(
         const val TYPE_IMAGE_ROUNDED = 6
 
         @BindingAdapter(
-            value = ["listRowBadgeCount", "listRowBadgeDescription"],
+            value = ["listRowBadgeCount"],
             requireAll = false
         )
         @JvmStatic
-        fun setNumericBadge(view: ListRowView, count: Int, withBadgeDescription: String? = null) {
-            view.setNumericBadge(count, withBadgeDescription)
+        fun setNumericBadge(view: ListRowView, count: Int) {
+            view.setNumericBadge(count)
         }
 
         @BindingAdapter(
-            value = ["listRowBadgeVisible", "listRowBadgeDescription"],
+            value = ["listRowBadgeVisible"],
             requireAll = false
         )
         @JvmStatic
-        fun setBadge(view: ListRowView, show: Boolean, withBadgeDescription: String? = null) {
-            view.setBadge(show, withBadgeDescription)
+        fun setBadge(view: ListRowView, show: Boolean) {
+            view.setBadge(show)
         }
     }
 }

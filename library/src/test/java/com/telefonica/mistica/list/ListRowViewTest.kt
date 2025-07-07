@@ -10,6 +10,7 @@ import com.telefonica.mistica.R
 import com.telefonica.mistica.testutils.ScreenshotsTest
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
+import org.junit.Assert.assertNotEquals
 import org.junit.Assert.assertTrue
 import org.junit.Rule
 import org.junit.Test
@@ -71,5 +72,45 @@ internal class ListRowViewTest : ScreenshotsTest() {
         }
     }
 
+    @Test
+    fun `check ListRowView custom contentDescription overrides default contentDescription behavior`() {
+        rule.scenario.onActivity { activity ->
+            val listRowView = givenAnyListRowView(activity)
+            val defaultDescription = listRowView.contentDescription
+
+            listRowView.contentDescription = ANY_CUSTOM_DESCRIPTION
+
+            assertEquals(ANY_CUSTOM_DESCRIPTION, listRowView.contentDescription)
+            assertNotEquals(defaultDescription, listRowView.contentDescription)
+        }
+    }
+
+    @Test
+    fun `check ListRowView resetContentDescription reverts to default contentDescription behavior`() {
+        rule.scenario.onActivity { activity ->
+            val listRowView = givenAnyListRowView(activity)
+            val defaultDescription = listRowView.contentDescription?.toString()
+
+            listRowView.contentDescription = ANY_CUSTOM_DESCRIPTION
+            assertEquals(ANY_CUSTOM_DESCRIPTION, listRowView.contentDescription)
+
+            listRowView.resetContentDescription()
+
+            val actualDescriptionAfterReset = listRowView.contentDescription?.toString()
+
+            assertEquals(defaultDescription, actualDescriptionAfterReset)
+            assertNotEquals(ANY_CUSTOM_DESCRIPTION, actualDescriptionAfterReset)
+        }
+    }
+
+    private fun givenAnyListRowView(activity: DummyActivity) = ListRowView(activity).apply {
+        setTitle("Some title")
+        setSubtitle("Some subtitle")
+    }
+
     private fun ListRowView.hasTitleHeading() = this.findViewById<TextView>(R.id.row_title_text).isAccessibilityHeading
+
+    private companion object {
+        const val ANY_CUSTOM_DESCRIPTION = "Any custom description"
+    }
 }

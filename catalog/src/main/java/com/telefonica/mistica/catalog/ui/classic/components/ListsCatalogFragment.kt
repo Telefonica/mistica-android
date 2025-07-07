@@ -92,7 +92,6 @@ class ListsCatalogFragment : Fragment() {
                 withAction: Boolean = false,
                 withBadge: Boolean = false,
                 withBadgeNumeric: Int? = null,
-                withBadgeDescription: String? = null,
                 withAssetType: Int? = null,
                 withHeadline: Boolean = false,
                 withSubtitle: Boolean = false,
@@ -103,13 +102,13 @@ class ListsCatalogFragment : Fragment() {
                 withLongTitle: Boolean = false,
                 withTitleMaxLines: Int? = null,
                 withDescriptionMaxLines: Int? = null,
-                withDimensions: ImageDimensions? = null
+                withDimensions: ImageDimensions? = null,
+                withCustomContentDescription: Boolean = false,
             ): (ListRowView) -> Unit = { view ->
                 view.configureView(
                     withAction = withAction,
                     withBadge = withBadge,
                     withBadgeNumeric = withBadgeNumeric ?: 0,
-                    withBadgeDescription = withBadgeDescription,
                     withAsset = withAssetType != null,
                     withAssetType = withAssetType ?: TYPE_SMALL_ICON,
                     withInverseBackground = withInverseBackground,
@@ -122,21 +121,23 @@ class ListsCatalogFragment : Fragment() {
                     withLongTitle = withLongTitle,
                     withTitleMaxLines = withTitleMaxLines,
                     withDescriptionMaxLines = withDescriptionMaxLines,
-                    withDimensions = withDimensions
+                    withDimensions = withDimensions,
+                    withCustomContentDescription = withCustomContentDescription,
                 )
             }
 
             return listOf(
                 configure(withTitleHeading = true),
                 configure(withAction = true),
-                configure(withAction = true, withBadge = true, withBadgeDescription = "You have unread messages"),
+                configure(withCustomContentDescription = true),
+                configure(withAction = true, withBadge = true),
                 configure(withAction = true, withBadgeNumeric = 1),
                 configure(withLongDescription = false, withTitleHeading = true),
                 configure(withLongDescription = false, withAction = true),
                 configure(withAssetType = TYPE_LARGE_ICON),
                 configure(withAssetType = TYPE_LARGE_ICON, withAction = true),
                 configure(withAssetType = TYPE_LARGE_ICON, withAction = true, withBadge = true),
-                configure(withAssetType = TYPE_LARGE_ICON, withAction = true, withBadgeNumeric = 5, withBadgeDescription = "5 new messages"),
+                configure(withAssetType = TYPE_LARGE_ICON, withAction = true, withBadgeNumeric = 5),
                 configure(withLongDescription = false, withAssetType = TYPE_LARGE_ICON),
                 configure(withLongDescription = false, withAssetType = TYPE_LARGE_ICON, withAction = true),
                 configure(withAssetType = TYPE_SMALL_ICON),
@@ -165,14 +166,13 @@ class ListsCatalogFragment : Fragment() {
             )
         }
 
-
         @SuppressLint("SetTextI18n")
         @Suppress("CyclomaticComplexMethod")
         private fun ListRowView.configureView(
             withLongTitle: Boolean = false,
             withTitleMaxLines: Int? = null,
-            withTitleHeading: Boolean? = false,
-            withLongDescription: Boolean? = null,
+            withTitleHeading: Boolean = false,
+            withLongDescription: Boolean = true,
             withDescriptionMaxLines: Int? = null,
             withAsset: Boolean = false,
             @AssetType withAssetType: Int = TYPE_SMALL_ICON,
@@ -184,10 +184,10 @@ class ListsCatalogFragment : Fragment() {
             @TagStyle withHeadlineStyle: Int = TYPE_PROMO,
             withSubtitle: Boolean = false,
             withSubtitleMaxLines: Int? = null,
-            withBadgeDescription: String? = null,
             withInverseBackground: Boolean,
             withUrlIcon: String? = null,
             withErrorIcon: Drawable? = null,
+            withCustomContentDescription: Boolean = false,
         ) {
             if (withHeadline) {
                 val headlineText = "Headline"
@@ -213,13 +213,12 @@ class ListsCatalogFragment : Fragment() {
             setSubtitle(if (withSubtitle) "Any Subtitle" else null)
             withDescriptionMaxLines?.let { setDescriptionMaxLines(it) }
             setDescription(
-                withLongDescription?.let { long ->
-                    if (long) {
-                        "Description long enough to need more than 2 lines to show it, just for testing purposes." +
-                                "Description long enough to need more than 2 lines to show it, just for testing purposes."
-                    } else {
-                        "Description"
-                    }
+                when {
+                    withCustomContentDescription -> "Description.\nListRowView with custom content description."
+                    withLongDescription -> "Description long enough to need more than 2 lines to show it, just for testing purposes." +
+                            "Description long enough to need more than 2 lines to show it, just for testing purposes."
+
+                    else -> "Description"
                 }
             )
 
@@ -248,7 +247,9 @@ class ListsCatalogFragment : Fragment() {
                 isClickable = false
             }
 
-            setBadge(withBadge, withBadgeDescription, withBadgeNumeric)
+            if (withCustomContentDescription) contentDescription = "Custom content description for ListRowView"
+
+            setBadge(withBadge, withBadgeNumeric)
         }
 
         private fun getAssetResource(withAsset: Boolean, @AssetType withAssetType: Int): Int? =
@@ -267,11 +268,11 @@ class ListsCatalogFragment : Fragment() {
                 null
             }
 
-        private fun ListRowView.setBadge(withBadge: Boolean, withBadgeDescription: String?, withBadgeNumeric: Int) {
+        private fun ListRowView.setBadge(withBadge: Boolean, withBadgeNumeric: Int) {
             when {
-                withBadge -> setBadge(true, withBadgeDescription)
-                withBadgeNumeric > 0 -> setNumericBadge(withBadgeNumeric, withBadgeDescription)
-                else -> setBadge(false, withBadgeDescription)
+                withBadge -> setBadge(true)
+                withBadgeNumeric > 0 -> setNumericBadge(withBadgeNumeric)
+                else -> setBadge(false)
             }
         }
     }

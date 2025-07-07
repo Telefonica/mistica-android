@@ -52,7 +52,6 @@ Implemented as a custom view, `com.telefonica.mistica.ListRowView` can be used i
 		<enum name="gone" value="0" />
 	</attr>
 	<attr name="listRowBadgeVisible" format="boolean" />
-	<attr name="listRowBadgeDescription" format="string" />
 	<attr name="onClick" format="string" />
 </declare-styleable>
 ```
@@ -122,4 +121,28 @@ configuration. It will thrown an IllegalStateException if you try to access this
 ```kotlin
 // Do not invoke this method
 listRowViewWithSwitch.getActionView()
+```
+
+## Custom Content Description
+> [!NOTE]
+> Using a custom contentDescription can be useful for specific accessibility cases, but it's recommended to use the default value whenever possible to ensure the best user experience.
+
+This component now supports configuring a **custom `contentDescription`**, which will override the internally managed default value. By default, the component automatically assigns and manages an accessible `contentDescription`.
+
+If you need to set a custom `contentDescription`, you can do so by simply setting the view's standard `contentDescription` property, either in code or via XML.
+
+To revert to the default behavior, you can use the new method `resetContentDescription()`, which will remove the custom value and restore the component-managed `contentDescription`.
+
+> [!CAUTION]
+> If the component uses a badge and you need to provide accessibility support for it, you must use a custom contentDescription as the component's default
+> behavior will ignore the badge.
+
+### Usage Example
+
+```kotlin
+// Set a custom contentDescription
+listRowViewWithSwitch.contentDescription = "Custom description for accessibility"
+
+// Restore the component's default managed contentDescription
+listRowViewWithSwitch.resetDescription()
 ```
