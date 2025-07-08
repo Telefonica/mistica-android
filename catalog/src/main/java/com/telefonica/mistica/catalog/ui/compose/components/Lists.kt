@@ -45,258 +45,283 @@ const val SUBTITLE = "Subtitle"
 const val DESCRIPTION = "Description"
 
 @Composable
-fun samples() = listOf(
-    ListItem(
-        title = TITLE,
-        isTitleHeading = true,
-    ),
-    ListItem(
-        title = TITLE,
-        action = { Chevron() },
-    ),
-    ListItem(
-        title = TITLE,
-        action = { Chevron() },
-        isBadgeVisible = true,
-    ),
-    ListItem(
-        title = TITLE,
-        action = { Chevron() },
-        isBadgeVisible = true,
-        badge = "1",
-    ),
-    ListItem(
-        title = TITLE,
-        subtitle = SUBTITLE,
-        isTitleHeading = true,
-    ),
-    ListItem(
-        title = TITLE,
-        subtitle = SUBTITLE,
-        action = { Chevron() },
-    ),
-    ListItem(
-        title = TITLE,
-        subtitle = SUBTITLE,
-        action = { Chevron() },
-        bottom = { CustomSlot() },
-    ),
+fun samples(): List<ListItem> {
+    val context = LocalContext.current
 
-    ListItem(
-        title = TITLE,
-        listRowIcon = ListRowIcon.CircleIcon(painterResource(id = R.drawable.ic_lists)),
-    ),
-    ListItem(
-        title = TITLE,
-        action = { Chevron() },
-        listRowIcon = ListRowIcon.CircleIcon(painterResource(id = R.drawable.ic_lists)),
-    ),
-    ListItem(
-        title = TITLE,
-        action = { Chevron() },
-        isBadgeVisible = true,
-        listRowIcon = ListRowIcon.CircleIcon(painterResource(id = R.drawable.ic_lists)),
-    ),
-    ListItem(
-        title = TITLE,
-        action = { Chevron() },
-        isBadgeVisible = true,
-        badge = "1",
-        listRowIcon = ListRowIcon.CircleIcon(
-            painterResource(id = R.drawable.ic_lists),
-            backgroundColor = MisticaTheme.colors.backgroundAlternative
+    return listOf(
+        ListItem(
+            title = TITLE,
+            isTitleHeading = true,
         ),
-    ),
-    ListItem(
-        title = TITLE,
-        subtitle = SUBTITLE,
-        listRowIcon = ListRowIcon.CircleIcon(
-            painterResource(id = R.drawable.ic_lists),
-            backgroundColor = MisticaTheme.colors.backgroundAlternative
+        ListItem(
+            title = TITLE,
+            action = { Chevron() },
+            onClick = sampleClickHandler(context)
         ),
-    ),
-    ListItem(
-        title = TITLE,
-        subtitle = SUBTITLE,
-        action = { Chevron() },
-        listRowIcon = ListRowIcon.CircleIcon(
-            painterResource(id = R.drawable.ic_lists),
-            backgroundColor = MisticaTheme.colors.backgroundAlternative
+        ListItem(
+            title = TITLE,
+            action = { Chevron() },
+            isBadgeVisible = true,
+            onClick = sampleClickHandler(context)
         ),
-    ),
-    ListItem(
-        title = TITLE,
-        subtitle = SUBTITLE,
-        action = { Chevron() },
-        listRowIcon = ListRowIcon.CircleIcon(
-            painterResource(id = R.drawable.ic_lists),
-            backgroundColor = MisticaTheme.colors.backgroundAlternative
+        ListItem(
+            title = TITLE,
+            action = { Chevron() },
+            isBadgeVisible = true,
+            badge = "1",
+            onClick = sampleClickHandler(context)
         ),
-        bottom = { CustomSlot() },
-    ),
+        ListItem(
+            title = TITLE,
+            subtitle = SUBTITLE,
+            isTitleHeading = true,
+        ),
+        ListItem(
+            title = TITLE,
+            subtitle = SUBTITLE,
+            action = { Chevron() },
+            onClick = sampleClickHandler(context)
+        ),
+        ListItem(
+            title = TITLE,
+            subtitle = SUBTITLE,
+            action = { Chevron() },
+            bottom = { CustomSlot() },
+            onClick = sampleClickHandler(context)
+        ),
 
-    ListItem(
-        title = TITLE,
-        listRowIcon = ListRowIcon.CircleIcon(
-            painterResource(id = R.drawable.ic_lists),
-            backgroundColor = MisticaTheme.colors.backgroundAlternative
+        ListItem(
+            title = TITLE,
+            listRowIcon = ListRowIcon.CircleIcon(painterResource(id = R.drawable.ic_lists)),
         ),
-    ),
-    ListItem(
-        title = TITLE,
-        action = { Chevron() },
-        listRowIcon = ListRowIcon.CircleIcon(
-            painterResource(id = R.drawable.ic_lists),
-            backgroundColor = MisticaTheme.colors.backgroundAlternative
+        ListItem(
+            title = TITLE,
+            action = { Chevron() },
+            listRowIcon = ListRowIcon.CircleIcon(painterResource(id = R.drawable.ic_lists)),
+            onClick = sampleClickHandler(context)
         ),
-    ),
-    ListItem(
-        title = TITLE,
-        action = { Chevron() },
-        isBadgeVisible = true,
-        listRowIcon = ListRowIcon.CircleIcon(
-            painterResource(id = R.drawable.ic_lists),
-            backgroundColor = MisticaTheme.colors.backgroundAlternative
+        ListItem(
+            title = TITLE,
+            action = { Chevron() },
+            isBadgeVisible = true,
+            listRowIcon = ListRowIcon.CircleIcon(painterResource(id = R.drawable.ic_lists)),
+            onClick = sampleClickHandler(context)
         ),
-    ),
-    ListItem(
-        title = TITLE,
-        action = { Chevron() },
-        isBadgeVisible = true,
-        badge = "1",
-        listRowIcon = ListRowIcon.CircleIcon(
-            painterResource(id = R.drawable.ic_lists),
-            backgroundColor = MisticaTheme.colors.backgroundAlternative
+        ListItem(
+            title = TITLE,
+            action = { Chevron() },
+            isBadgeVisible = true,
+            badge = "1",
+            listRowIcon = ListRowIcon.CircleIcon(
+                painterResource(id = R.drawable.ic_lists),
+                backgroundColor = MisticaTheme.colors.backgroundAlternative
+            ),
+            onClick = sampleClickHandler(context)
         ),
-    ),
-    ListItem(
-        title = TITLE,
-        subtitle = SUBTITLE,
-        listRowIcon = ListRowIcon.CircleIcon(
-            painterResource(id = R.drawable.ic_lists),
-            backgroundColor = MisticaTheme.colors.backgroundAlternative
+        ListItem(
+            title = TITLE,
+            subtitle = SUBTITLE,
+            listRowIcon = ListRowIcon.CircleIcon(
+                painterResource(id = R.drawable.ic_lists),
+                backgroundColor = MisticaTheme.colors.backgroundAlternative
+            ),
         ),
-    ),
-    ListItem(
-        title = TITLE,
-        subtitle = SUBTITLE,
-        action = { Chevron() },
-        listRowIcon = ListRowIcon.CircleIcon(
-            painterResource(id = R.drawable.ic_lists),
-            backgroundColor = MisticaTheme.colors.backgroundAlternative
+        ListItem(
+            title = TITLE,
+            subtitle = SUBTITLE,
+            action = { Chevron() },
+            listRowIcon = ListRowIcon.CircleIcon(
+                painterResource(id = R.drawable.ic_lists),
+                backgroundColor = MisticaTheme.colors.backgroundAlternative
+            ),
+            onClick = sampleClickHandler(context)
         ),
-    ),
-    ListItem(
-        title = TITLE,
-        subtitle = SUBTITLE,
-        action = { Chevron() },
-        listRowIcon = ListRowIcon.CircleIcon(
-            painterResource(id = R.drawable.ic_lists),
-            backgroundColor = MisticaTheme.colors.backgroundAlternative
+        ListItem(
+            title = TITLE,
+            subtitle = SUBTITLE,
+            action = { Chevron() },
+            listRowIcon = ListRowIcon.CircleIcon(
+                painterResource(id = R.drawable.ic_lists),
+                backgroundColor = MisticaTheme.colors.backgroundAlternative
+            ),
+            bottom = { CustomSlot() },
+            onClick = sampleClickHandler(context)
         ),
-        bottom = { CustomSlot() },
-    ),
 
-    ListItem(
-        headline = Tag(content = "PROMO").withStyle(TYPE_PROMO),
-        title = TITLE,
-        subtitle = SUBTITLE,
-        action = { Chevron() },
-        listRowIcon = ListRowIcon.CircleIcon(
-            painterResource(id = R.drawable.ic_lists),
-            backgroundColor = MisticaTheme.colors.backgroundAlternative
+        ListItem(
+            title = TITLE,
+            listRowIcon = ListRowIcon.CircleIcon(
+                painterResource(id = R.drawable.ic_lists),
+                backgroundColor = MisticaTheme.colors.backgroundAlternative
+            ),
         ),
-    ),
-    ListItem(
-        headline = Tag("PROMO").withStyle(TYPE_PROMO),
-        title = TITLE,
-        subtitle = SUBTITLE,
-        description = DESCRIPTION,
-        action = { Chevron() },
-        isBadgeVisible = true,
-        badge = "1",
-        listRowIcon = ListRowIcon.SmallAsset(painter = painterResource(id = R.drawable.list_row_drawable)),
-    ),
-    ListItem(
-        headline = Tag("PROMO").withStyle(TYPE_PROMO),
-        title = TITLE,
-        subtitle = SUBTITLE,
-        description = DESCRIPTION,
-        action = { Avatar(IMAGE_URL) },
-        isBadgeVisible = true,
-        badge = "1",
-        listRowIcon = ListRowIcon.SmallAsset(painter = painterResource(id = R.drawable.list_row_drawable)),
-    ),
-    ListItem(
-        headline = Tag("PROMO").withStyle(TYPE_PROMO),
-        title = TITLE,
-        subtitle = SUBTITLE,
-        description = DESCRIPTION,
-        action = { Switch(checked = true, onCheckedChange = {}) },
-        isBadgeVisible = true,
-        badge = "1",
-        listRowIcon = ListRowIcon.SmallAsset(painter = painterResource(id = R.drawable.list_row_drawable)),
-    ),
-    ListItem(
-        title = TITLE,
-        subtitle = SUBTITLE,
-        description = DESCRIPTION,
-        action = { Switch(checked = true, onCheckedChange = {}) },
-        isBadgeVisible = true,
-        badge = "1",
-        listRowIcon = ListRowIcon.SmallAsset(painter = painterResource(id = R.drawable.list_row_drawable)),
-        bottom = { CustomSlot() },
-    ),
-    ListItem(
-        title = TITLE,
-        subtitle = SUBTITLE,
-        description = DESCRIPTION,
-        action = { Switch(checked = true, onCheckedChange = {}) },
-        isBadgeVisible = true,
-        badge = "1",
-        listRowIcon = ListRowIcon.LargeAsset(
-            painter = painterResource(id = R.drawable.list_row_drawable),
-            aspectRatio = ListRowIcon.AspectRatio.RATIO_1_1
+        ListItem(
+            title = TITLE,
+            action = { Chevron() },
+            listRowIcon = ListRowIcon.CircleIcon(
+                painterResource(id = R.drawable.ic_lists),
+                backgroundColor = MisticaTheme.colors.backgroundAlternative
+            ),
+            onClick = sampleClickHandler(context)
         ),
-    ),
-    ListItem(
-        title = TITLE,
-        subtitle = SUBTITLE,
-        description = DESCRIPTION,
-        action = { Switch(checked = true, onCheckedChange = {}) },
-        isBadgeVisible = true,
-        badge = "1",
-        listRowIcon = ListRowIcon.LargeAsset(
-            painter = painterResource(id = R.drawable.list_row_drawable),
-            aspectRatio = ListRowIcon.AspectRatio.RATIO_16_9,
-            contentScale = ContentScale.Crop
+        ListItem(
+            title = TITLE,
+            action = { Chevron() },
+            isBadgeVisible = true,
+            listRowIcon = ListRowIcon.CircleIcon(
+                painterResource(id = R.drawable.ic_lists),
+                backgroundColor = MisticaTheme.colors.backgroundAlternative
+            ),
+            onClick = sampleClickHandler(context)
         ),
-    ),
-    ListItem(
-        title = TITLE,
-        subtitle = SUBTITLE,
-        description = DESCRIPTION,
-        action = { Switch(checked = true, onCheckedChange = {}) },
-        isBadgeVisible = true,
-        badge = "1",
-        listRowIcon = ListRowIcon.LargeAsset(
-            painter = painterResource(id = R.drawable.list_row_drawable),
-            aspectRatio = ListRowIcon.AspectRatio.RATIO_7_10
+        ListItem(
+            title = TITLE,
+            action = { Chevron() },
+            isBadgeVisible = true,
+            badge = "1",
+            listRowIcon = ListRowIcon.CircleIcon(
+                painterResource(id = R.drawable.ic_lists),
+                backgroundColor = MisticaTheme.colors.backgroundAlternative
+            ),
+            onClick = sampleClickHandler(context)
         ),
-    ),
-    ListItem(
-        title = TITLE,
-        subtitle = SUBTITLE,
-        description = DESCRIPTION,
-        action = { Switch(checked = true, onCheckedChange = {}) },
-        isBadgeVisible = true,
-        badge = "1",
-        listRowIcon = ListRowIcon.ImageAsset(
-            painter = painterResource(id = R.drawable.list_row_drawable),
-            dimensions = ImageDimensions(width = 64, height = 64),
+        ListItem(
+            title = TITLE,
+            subtitle = SUBTITLE,
+            listRowIcon = ListRowIcon.CircleIcon(
+                painterResource(id = R.drawable.ic_lists),
+                backgroundColor = MisticaTheme.colors.backgroundAlternative
+            ),
         ),
+        ListItem(
+            title = TITLE,
+            subtitle = SUBTITLE,
+            action = { Chevron() },
+            listRowIcon = ListRowIcon.CircleIcon(
+                painterResource(id = R.drawable.ic_lists),
+                backgroundColor = MisticaTheme.colors.backgroundAlternative
+            ),
+            onClick = sampleClickHandler(context)
+        ),
+        ListItem(
+            title = TITLE,
+            subtitle = SUBTITLE,
+            action = { Chevron() },
+            listRowIcon = ListRowIcon.CircleIcon(
+                painterResource(id = R.drawable.ic_lists),
+                backgroundColor = MisticaTheme.colors.backgroundAlternative
+            ),
+            bottom = { CustomSlot() },
+            onClick = sampleClickHandler(context)
+        ),
+
+        ListItem(
+            headline = Tag(content = "PROMO").withStyle(TYPE_PROMO),
+            title = TITLE,
+            subtitle = SUBTITLE,
+            action = { Chevron() },
+            listRowIcon = ListRowIcon.CircleIcon(
+                painterResource(id = R.drawable.ic_lists),
+                backgroundColor = MisticaTheme.colors.backgroundAlternative
+            ),
+            onClick = sampleClickHandler(context)
+        ),
+        ListItem(
+            headline = Tag("PROMO").withStyle(TYPE_PROMO),
+            title = TITLE,
+            subtitle = SUBTITLE,
+            description = DESCRIPTION,
+            action = { Chevron() },
+            isBadgeVisible = true,
+            badge = "1",
+            listRowIcon = ListRowIcon.SmallAsset(painter = painterResource(id = R.drawable.list_row_drawable)),
+            onClick = sampleClickHandler(context)
+        ),
+        ListItem(
+            headline = Tag("PROMO").withStyle(TYPE_PROMO),
+            title = TITLE,
+            subtitle = SUBTITLE,
+            description = DESCRIPTION,
+            action = { Avatar(IMAGE_URL) },
+            isBadgeVisible = true,
+            badge = "1",
+            listRowIcon = ListRowIcon.SmallAsset(painter = painterResource(id = R.drawable.list_row_drawable)),
+        ),
+        ListItem(
+            headline = Tag("PROMO").withStyle(TYPE_PROMO),
+            title = TITLE,
+            subtitle = SUBTITLE,
+            description = DESCRIPTION,
+            action = { Switch(checked = true, onCheckedChange = {}) },
+            isBadgeVisible = true,
+            badge = "1",
+            listRowIcon = ListRowIcon.SmallAsset(painter = painterResource(id = R.drawable.list_row_drawable)),
+        ),
+        ListItem(
+            title = TITLE,
+            subtitle = SUBTITLE,
+            description = DESCRIPTION,
+            action = { Switch(checked = true, onCheckedChange = {}) },
+            isBadgeVisible = true,
+            badge = "1",
+            listRowIcon = ListRowIcon.SmallAsset(painter = painterResource(id = R.drawable.list_row_drawable)),
+            bottom = { CustomSlot() },
+        ),
+        ListItem(
+            title = TITLE,
+            subtitle = SUBTITLE,
+            description = DESCRIPTION,
+            action = { Switch(checked = true, onCheckedChange = {}) },
+            isBadgeVisible = true,
+            badge = "1",
+            listRowIcon = ListRowIcon.LargeAsset(
+                painter = painterResource(id = R.drawable.list_row_drawable),
+                aspectRatio = ListRowIcon.AspectRatio.RATIO_1_1
+            ),
+        ),
+        ListItem(
+            title = TITLE,
+            subtitle = SUBTITLE,
+            description = DESCRIPTION,
+            action = { Switch(checked = true, onCheckedChange = {}) },
+            isBadgeVisible = true,
+            badge = "1",
+            listRowIcon = ListRowIcon.LargeAsset(
+                painter = painterResource(id = R.drawable.list_row_drawable),
+                aspectRatio = ListRowIcon.AspectRatio.RATIO_16_9,
+                contentScale = ContentScale.Crop
+            ),
+        ),
+        ListItem(
+            title = TITLE,
+            subtitle = SUBTITLE,
+            description = DESCRIPTION,
+            action = { Switch(checked = true, onCheckedChange = {}) },
+            isBadgeVisible = true,
+            badge = "1",
+            listRowIcon = ListRowIcon.LargeAsset(
+                painter = painterResource(id = R.drawable.list_row_drawable),
+                aspectRatio = ListRowIcon.AspectRatio.RATIO_7_10
+            ),
+        ),
+        ListItem(
+            title = TITLE,
+            subtitle = SUBTITLE,
+            description = DESCRIPTION,
+            action = { Switch(checked = true, onCheckedChange = {}) },
+            isBadgeVisible = true,
+            badge = "1",
+            listRowIcon = ListRowIcon.ImageAsset(
+                painter = painterResource(id = R.drawable.list_row_drawable),
+                dimensions = ImageDimensions(width = 64, height = 64),
+            ),
+        )
     )
-)
+}
+
+private fun sampleClickHandler(context: Context): () -> Unit {
+    return { Toast.makeText(context, "Click!", Toast.LENGTH_SHORT).show() }
+}
 
 const val IMAGE_URL = "https://www.fotoaparat.cz/imgs/a/26/2639/0n1wjdf0-cr-em13-09-1200x627x9.jpg"
 
@@ -357,7 +382,7 @@ fun Lists() {
         items(samples.map {
             it.copy(
                 backgroundType = BackgroundType.TYPE_BOXED_INVERSE,
-                action = { Chevron(isInverse = true) },
+                action = { if (it.onClick != null) Chevron(isInverse = true) },
             )
         }) { item ->
             ListRowItem(
@@ -428,6 +453,7 @@ private fun SectionTitle(title: String) {
 
 @Composable
 private fun CustomSlot() {
+    val context = LocalContext.current
     Box(
         modifier = Modifier
             .fillMaxWidth()
@@ -440,6 +466,9 @@ private fun CustomSlot() {
                 color = Color.LightGray,
                 shape = RoundedCornerShape(MisticaTheme.radius.containerBorderRadius)
             )
+            .clickable {
+                Toast.makeText(context, "Custom Slot Clicked", Toast.LENGTH_SHORT).show()
+            }
     ) {
         Text(
             modifier = Modifier
