@@ -29,6 +29,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.semantics.clearAndSetSemantics
+import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.semantics.isTraversalGroup
 import androidx.compose.ui.semantics.semantics
@@ -58,6 +59,7 @@ fun ListRowItem(
     trailing: @Composable (() -> Unit)? = null,
     onClick: (() -> Unit)? = null,
     bottom: @Composable (() -> Unit)? = null,
+    customContentDescription: String? = null,
     contentPadding: PaddingValues = PaddingValues(horizontal = 16.dp, vertical = 8.dp),
 ) {
     ListRowItemImp(
@@ -74,6 +76,7 @@ fun ListRowItem(
         trailing = trailing,
         onClick = onClick,
         bottom = bottom,
+        customContentDescription = customContentDescription,
         contentPadding = contentPadding
     )
 }
@@ -94,6 +97,7 @@ fun ListRowItem(
     trailing: @Composable (() -> Unit)? = null,
     onClick: (() -> Unit)? = null,
     bottom: @Composable (() -> Unit)? = null,
+    customContentDescription: String? = null,
     contentPadding: PaddingValues = PaddingValues(horizontal = 16.dp, vertical = 8.dp),
 ) {
     ListRowItemImp(
@@ -110,6 +114,7 @@ fun ListRowItem(
         trailing = trailing,
         onClick = onClick,
         bottom = bottom,
+        customContentDescription = customContentDescription,
         contentPadding = contentPadding
     )
 }
@@ -130,10 +135,11 @@ internal fun ListRowItemImp(
     trailing: @Composable (() -> Unit)? = null,
     onClick: (() -> Unit)? = null,
     bottom: @Composable (() -> Unit)? = null,
+    customContentDescription: String? = null,
     contentPadding: PaddingValues = PaddingValues(horizontal = 16.dp, vertical = 8.dp),
 ) {
     val badgeVisible by remember { mutableStateOf(isBadgeVisible) }
-    val isRowClickable = onClick != null
+    val isRowFocusableGroup = onClick != null || customContentDescription != null
 
     val boxModifier = when (backgroundType) {
         BackgroundType.TYPE_NORMAL -> modifier
@@ -144,7 +150,10 @@ internal fun ListRowItemImp(
         .fillMaxWidth()
         .clip(shape = RoundedCornerShape(MisticaTheme.radius.containerBorderRadius))
         .makeClickableIfNeeded(onClick)
-        .semantics(mergeDescendants = isRowClickable) { isTraversalGroup = true }
+        .semantics(mergeDescendants = isRowFocusableGroup) {
+            isTraversalGroup = true
+            if (customContentDescription != null) contentDescription = customContentDescription
+        }
 
     val rowModifier = when (backgroundType) {
         BackgroundType.TYPE_NORMAL -> Modifier
@@ -211,9 +220,12 @@ internal fun ListRowItemImp(
             ) {
                 headline?.let {
                     it.withModifier(
-                        Modifier
-                            .semantics { traversalIndex = 2f }
-                            .zIndex(2f)
+                        Modifier.then(
+                            if (customContentDescription != null) Modifier.clearAndSetSemantics { }
+                            else Modifier
+                                .semantics { traversalIndex = 2f }
+                                .zIndex(2f)
+                        ),
                     ).build()
                     Spacer(modifier = Modifier.height(8.dp))
                 }
@@ -226,7 +238,8 @@ internal fun ListRowItemImp(
                         modifier = Modifier
                             .testTag(ListRowItemTestTags.LIST_ROW_ITEM_TITLE)
                             .then(
-                                Modifier
+                                if (customContentDescription != null) Modifier.clearAndSetSemantics { }
+                                else Modifier
                                     .semantics {
                                         if (isTitleHeading) heading()
                                         traversalIndex = 1f
@@ -245,8 +258,12 @@ internal fun ListRowItemImp(
                             .testTag(ListRowItemTestTags.LIST_ROW_ITEM_SUBTITLE)
                             .padding(vertical = 2.dp)
                             .defaultMinSize(minHeight = 20.dp)
-                            .semantics { traversalIndex = 3f }
-                            .zIndex(3f),
+                            .then(
+                                if (customContentDescription != null) Modifier.clearAndSetSemantics { }
+                                else Modifier
+                                    .semantics { traversalIndex = 3f }
+                                    .zIndex(3f)
+                            ),
                     )
                 }
 
@@ -259,16 +276,22 @@ internal fun ListRowItemImp(
                             .testTag(ListRowItemTestTags.LIST_ROW_ITEM_DESCRIPTION)
                             .padding(vertical = 2.dp)
                             .defaultMinSize(minHeight = 20.dp)
-                            .semantics { traversalIndex = 4f }
-                            .zIndex(4f),
+                            .then(
+                                if (customContentDescription != null) Modifier.clearAndSetSemantics { }
+                                else Modifier
+                                    .semantics { traversalIndex = 4f }
+                                    .zIndex(4f)
+                            ),
                     )
                 }
+
+                if(customContentDescription != null) println("Fernaa - isRowFocusableGroup: $isRowFocusableGroup")
 
                 bottom?.let {
                     Spacer(modifier = Modifier.height(2.dp))
                     Box(
                         modifier = Modifier
-                            .semantics(mergeDescendants = !isRowClickable) { traversalIndex = 5f }
+                            .semantics(mergeDescendants = !isRowFocusableGroup) { traversalIndex = 5f }
                             .zIndex(5f)
                     ) {
                         it()
@@ -291,7 +314,7 @@ internal fun ListRowItemImp(
                 Column(
                     modifier = Modifier
                         .align(CenterVertically)
-                        .semantics(mergeDescendants = !isRowClickable) { traversalIndex = 6f }
+                        .semantics(mergeDescendants = !isRowFocusableGroup) { traversalIndex = 6f }
                         .zIndex(6f)
                 ) {
                     it()

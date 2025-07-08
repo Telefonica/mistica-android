@@ -27,6 +27,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
@@ -148,7 +149,7 @@ fun samples(): List<ListItem> {
                 painterResource(id = R.drawable.ic_lists),
                 backgroundColor = MisticaTheme.colors.backgroundAlternative
             ),
-            bottom = { CustomSlot() },
+            bottom = { CustomSlot(clickable = true) },
         ),
 
         ListItem(
@@ -245,10 +246,59 @@ fun samples(): List<ListItem> {
             title = TITLE,
             subtitle = SUBTITLE,
             description = DESCRIPTION,
-            action = { Avatar(IMAGE_URL) },
+            action = { Avatar(url = IMAGE_URL) },
             isBadgeVisible = true,
             badge = "1",
             listRowIcon = ListRowIcon.SmallAsset(painter = painterResource(id = R.drawable.list_row_drawable)),
+        ),
+
+        ListItem(
+            headline = Tag("PROMO").withStyle(TYPE_PROMO),
+            title = TITLE,
+            subtitle = SUBTITLE,
+            description = DESCRIPTION,
+            bottom = { CustomSlot(Modifier.clearAndSetSemantics {  }) },
+            isBadgeVisible = true,
+            badge = "1",
+            listRowIcon = ListRowIcon.SmallAsset(painter = painterResource(id = R.drawable.list_row_drawable)),
+            customContentDescription = "List item with custom content description",
+        ),
+        ListItem(
+            headline = Tag("PROMO").withStyle(TYPE_PROMO),
+            title = TITLE,
+            subtitle = SUBTITLE,
+            description = DESCRIPTION,
+            bottom = { CustomSlot(clickable = true) },
+            isBadgeVisible = true,
+            badge = "1",
+            listRowIcon = ListRowIcon.SmallAsset(painter = painterResource(id = R.drawable.list_row_drawable)),
+            customContentDescription = "List item with custom content description",
+        ),
+        ListItem(
+            headline = Tag("PROMO").withStyle(TYPE_PROMO),
+            title = TITLE,
+            subtitle = SUBTITLE,
+            description = DESCRIPTION,
+            action = { Chevron() },
+            bottom = { CustomSlot() },
+            isBadgeVisible = true,
+            badge = "1",
+            listRowIcon = ListRowIcon.SmallAsset(painter = painterResource(id = R.drawable.list_row_drawable)),
+            onClick = sampleClickHandler(context),
+            customContentDescription = "List item with custom content description",
+        ),
+        ListItem(
+            headline = Tag("PROMO").withStyle(TYPE_PROMO),
+            title = TITLE,
+            subtitle = SUBTITLE,
+            description = DESCRIPTION,
+            action = { Chevron() },
+            bottom = { CustomSlot(clickable = true) },
+            isBadgeVisible = true,
+            badge = "1",
+            listRowIcon = ListRowIcon.SmallAsset(painter = painterResource(id = R.drawable.list_row_drawable)),
+            onClick = sampleClickHandler(context),
+            customContentDescription = "List item with custom content description",
         ),
     )
 }
@@ -284,6 +334,7 @@ fun Lists() {
                 trailing = item.action,
                 onClick = item.onClick,
                 bottom = item.bottom,
+                customContentDescription = item.customContentDescription,
             )
             Divider(
                 modifier = Modifier.padding(horizontal = 16.dp),
@@ -308,6 +359,7 @@ fun Lists() {
                 trailing = item.action,
                 onClick = item.onClick,
                 bottom = item.bottom,
+                customContentDescription = item.customContentDescription,
             )
         }
         item {
@@ -331,6 +383,7 @@ fun Lists() {
                 trailing = item.action,
                 onClick = item.onClick,
                 bottom = item.bottom,
+                customContentDescription = item.customContentDescription,
             )
         }
         item {
@@ -379,6 +432,7 @@ data class ListItem(
     val action: @Composable (() -> Unit)? = null,
     val onClick: (() -> Unit)? = null,
     val bottom: @Composable (() -> Unit)? = null,
+    val customContentDescription: String? = null,
 )
 
 @Composable
@@ -405,9 +459,13 @@ private fun SectionTitle(title: String) {
 }
 
 @Composable
-private fun CustomSlot() {
+private fun CustomSlot(
+    modifier: Modifier = Modifier,
+    clickable: Boolean = false,
+) {
+    val context = LocalContext.current
     Box(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth()
             .border(
                 width = 1.dp,
@@ -418,13 +476,17 @@ private fun CustomSlot() {
                 color = Color.LightGray,
                 shape = RoundedCornerShape(MisticaTheme.radius.containerBorderRadius)
             )
+            .then(
+                if (clickable) Modifier.clickable { Toast.makeText(context, "Custom Slot click!", Toast.LENGTH_SHORT).show() }
+                else Modifier
+            )
             .semantics { contentDescription = "Custom slot content description" },
     ) {
         Text(
             modifier = Modifier
                 .padding(vertical = 16.dp, horizontal = 8.dp)
                 .align(Alignment.Center),
-            text = "Custom Slot"
+            text = "Custom Slot ${if (clickable) "Clickable" else ""}",
         )
     }
 }
