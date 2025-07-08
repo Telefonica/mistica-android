@@ -16,15 +16,19 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Divider
 import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Switch
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.rememberAsyncImagePainter
@@ -34,10 +38,11 @@ import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.compose.list.BackgroundType
 import com.telefonica.mistica.compose.list.ListRowIcon
 import com.telefonica.mistica.compose.list.ListRowItem
+import com.telefonica.mistica.compose.list.ListRowItemWithCheckBox
+import com.telefonica.mistica.compose.list.ListRowItemWithSwitch
 import com.telefonica.mistica.compose.shape.Chevron
 import com.telefonica.mistica.compose.tag.Tag
 import com.telefonica.mistica.compose.theme.MisticaTheme
-import com.telefonica.mistica.list.model.ImageDimensions
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_PROMO
 
 const val TITLE = "Title"
@@ -139,13 +144,11 @@ fun samples(): List<ListItem> {
         ListItem(
             title = TITLE,
             subtitle = SUBTITLE,
-            action = { Chevron() },
             listRowIcon = ListRowIcon.CircleIcon(
                 painterResource(id = R.drawable.ic_lists),
                 backgroundColor = MisticaTheme.colors.backgroundAlternative
             ),
             bottom = { CustomSlot() },
-            onClick = sampleClickHandler(context)
         ),
 
         ListItem(
@@ -247,75 +250,6 @@ fun samples(): List<ListItem> {
             badge = "1",
             listRowIcon = ListRowIcon.SmallAsset(painter = painterResource(id = R.drawable.list_row_drawable)),
         ),
-        ListItem(
-            headline = Tag("PROMO").withStyle(TYPE_PROMO),
-            title = TITLE,
-            subtitle = SUBTITLE,
-            description = DESCRIPTION,
-            action = { Switch(checked = true, onCheckedChange = {}) },
-            isBadgeVisible = true,
-            badge = "1",
-            listRowIcon = ListRowIcon.SmallAsset(painter = painterResource(id = R.drawable.list_row_drawable)),
-        ),
-        ListItem(
-            title = TITLE,
-            subtitle = SUBTITLE,
-            description = DESCRIPTION,
-            action = { Switch(checked = true, onCheckedChange = {}) },
-            isBadgeVisible = true,
-            badge = "1",
-            listRowIcon = ListRowIcon.SmallAsset(painter = painterResource(id = R.drawable.list_row_drawable)),
-            bottom = { CustomSlot() },
-        ),
-        ListItem(
-            title = TITLE,
-            subtitle = SUBTITLE,
-            description = DESCRIPTION,
-            action = { Switch(checked = true, onCheckedChange = {}) },
-            isBadgeVisible = true,
-            badge = "1",
-            listRowIcon = ListRowIcon.LargeAsset(
-                painter = painterResource(id = R.drawable.list_row_drawable),
-                aspectRatio = ListRowIcon.AspectRatio.RATIO_1_1
-            ),
-        ),
-        ListItem(
-            title = TITLE,
-            subtitle = SUBTITLE,
-            description = DESCRIPTION,
-            action = { Switch(checked = true, onCheckedChange = {}) },
-            isBadgeVisible = true,
-            badge = "1",
-            listRowIcon = ListRowIcon.LargeAsset(
-                painter = painterResource(id = R.drawable.list_row_drawable),
-                aspectRatio = ListRowIcon.AspectRatio.RATIO_16_9,
-                contentScale = ContentScale.Crop
-            ),
-        ),
-        ListItem(
-            title = TITLE,
-            subtitle = SUBTITLE,
-            description = DESCRIPTION,
-            action = { Switch(checked = true, onCheckedChange = {}) },
-            isBadgeVisible = true,
-            badge = "1",
-            listRowIcon = ListRowIcon.LargeAsset(
-                painter = painterResource(id = R.drawable.list_row_drawable),
-                aspectRatio = ListRowIcon.AspectRatio.RATIO_7_10
-            ),
-        ),
-        ListItem(
-            title = TITLE,
-            subtitle = SUBTITLE,
-            description = DESCRIPTION,
-            action = { Switch(checked = true, onCheckedChange = {}) },
-            isBadgeVisible = true,
-            badge = "1",
-            listRowIcon = ListRowIcon.ImageAsset(
-                painter = painterResource(id = R.drawable.list_row_drawable),
-                dimensions = ImageDimensions(width = 64, height = 64),
-            ),
-        )
     )
 }
 
@@ -410,6 +344,25 @@ fun Lists() {
                 onRowClick = { Toast.makeText(context, "Row Clicked", Toast.LENGTH_SHORT).show() },
             )
         }
+        item {
+            SectionTitle("Toggleables")
+            var switchState by remember { mutableStateOf(false) }
+            ListRowItemWithSwitch(
+                title = "Title",
+                subtitle = "Subtitle",
+                checked = switchState,
+                onCheckedChange = { switchState = it },
+                listRowIcon = ListRowIcon.NormalIcon(painter = painterResource(id = R.drawable.ic_lists)),
+            )
+            var checkBoxState by remember { mutableStateOf(false) }
+            ListRowItemWithCheckBox(
+                title = "Title",
+                subtitle = "Subtitle",
+                checked = checkBoxState,
+                onCheckedChange = { checkBoxState = it },
+                listRowIcon = ListRowIcon.NormalIcon(painter = painterResource(id = R.drawable.ic_lists)),
+            )
+        }
     }
 }
 
@@ -437,7 +390,7 @@ fun Avatar(url: String) {
                 .apply { transformations(CircleCropTransformation()) }
                 .build()
         ),
-        contentDescription = null,
+        contentDescription = "Image content description",
         modifier = Modifier.size(40.dp)
     )
 }
@@ -453,7 +406,6 @@ private fun SectionTitle(title: String) {
 
 @Composable
 private fun CustomSlot() {
-    val context = LocalContext.current
     Box(
         modifier = Modifier
             .fillMaxWidth()
@@ -466,9 +418,7 @@ private fun CustomSlot() {
                 color = Color.LightGray,
                 shape = RoundedCornerShape(MisticaTheme.radius.containerBorderRadius)
             )
-            .clickable {
-                Toast.makeText(context, "Custom Slot Clicked", Toast.LENGTH_SHORT).show()
-            }
+            .semantics { contentDescription = "Custom slot content description" },
     ) {
         Text(
             modifier = Modifier

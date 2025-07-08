@@ -28,10 +28,14 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.semantics.heading
+import androidx.compose.ui.semantics.isTraversalGroup
 import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.traversalIndex
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.zIndex
 import com.telefonica.mistica.R
 import com.telefonica.mistica.compose.badge.Badge
 import com.telefonica.mistica.compose.shape.Chevron
@@ -112,7 +116,7 @@ fun ListRowItem(
 
 @Composable
 @Suppress("CyclomaticComplexMethod")
-private fun ListRowItemImp(
+internal fun ListRowItemImp(
     modifier: Modifier = Modifier,
     icon: @Composable (() -> Unit)? = null,
     title: String? = null,
@@ -129,16 +133,18 @@ private fun ListRowItemImp(
     contentPadding: PaddingValues = PaddingValues(horizontal = 16.dp, vertical = 8.dp),
 ) {
     val badgeVisible by remember { mutableStateOf(isBadgeVisible) }
+    val isRowClickable = onClick != null
 
     val boxModifier = when (backgroundType) {
         BackgroundType.TYPE_NORMAL -> modifier
         BackgroundType.TYPE_BOXED,
         BackgroundType.TYPE_BOXED_INVERSE,
-        -> modifier.padding(contentPadding)
+            -> modifier.padding(contentPadding)
     }
         .fillMaxWidth()
         .clip(shape = RoundedCornerShape(MisticaTheme.radius.containerBorderRadius))
         .makeClickableIfNeeded(onClick)
+        .semantics(mergeDescendants = isRowClickable) { isTraversalGroup = true }
 
     val rowModifier = when (backgroundType) {
         BackgroundType.TYPE_NORMAL -> Modifier
@@ -171,14 +177,16 @@ private fun ListRowItemImp(
     val textColorPrimary = when (backgroundType) {
         BackgroundType.TYPE_NORMAL,
         BackgroundType.TYPE_BOXED,
-        -> MisticaTheme.colors.textPrimary
+            -> MisticaTheme.colors.textPrimary
+
         BackgroundType.TYPE_BOXED_INVERSE -> MisticaTheme.colors.textPrimaryInverse
     }
 
     val textColorSecondary = when (backgroundType) {
         BackgroundType.TYPE_NORMAL,
         BackgroundType.TYPE_BOXED,
-        -> MisticaTheme.colors.textSecondary
+            -> MisticaTheme.colors.textSecondary
+
         BackgroundType.TYPE_BOXED_INVERSE -> MisticaTheme.colors.textSecondaryInverse
     }
 
@@ -202,9 +210,14 @@ private fun ListRowItemImp(
                     .align(CenterVertically)
             ) {
                 headline?.let {
-                    it.build()
+                    it.withModifier(
+                        Modifier
+                            .semantics { traversalIndex = 2f }
+                            .zIndex(2f)
+                    ).build()
                     Spacer(modifier = Modifier.height(8.dp))
                 }
+
                 title?.let {
                     Text(
                         text = it,
@@ -213,14 +226,16 @@ private fun ListRowItemImp(
                         modifier = Modifier
                             .testTag(ListRowItemTestTags.LIST_ROW_ITEM_TITLE)
                             .then(
-                                if (isTitleHeading) {
-                                    Modifier.semantics { heading() }
-                                } else {
-                                    Modifier
-                                }
+                                Modifier
+                                    .semantics {
+                                        if (isTitleHeading) heading()
+                                        traversalIndex = 1f
+                                    }
+                                    .zIndex(1f)
                             ),
                     )
                 }
+
                 subtitle?.let {
                     Text(
                         text = it,
@@ -229,9 +244,12 @@ private fun ListRowItemImp(
                         modifier = Modifier
                             .testTag(ListRowItemTestTags.LIST_ROW_ITEM_SUBTITLE)
                             .padding(vertical = 2.dp)
-                            .defaultMinSize(minHeight = 20.dp),
+                            .defaultMinSize(minHeight = 20.dp)
+                            .semantics { traversalIndex = 3f }
+                            .zIndex(3f),
                     )
                 }
+
                 description?.let {
                     Text(
                         text = it,
@@ -240,12 +258,21 @@ private fun ListRowItemImp(
                         modifier = Modifier
                             .testTag(ListRowItemTestTags.LIST_ROW_ITEM_DESCRIPTION)
                             .padding(vertical = 2.dp)
-                            .defaultMinSize(minHeight = 20.dp),
+                            .defaultMinSize(minHeight = 20.dp)
+                            .semantics { traversalIndex = 4f }
+                            .zIndex(4f),
                     )
                 }
+
                 bottom?.let {
                     Spacer(modifier = Modifier.height(2.dp))
-                    bottom()
+                    Box(
+                        modifier = Modifier
+                            .semantics(mergeDescendants = !isRowClickable) { traversalIndex = 5f }
+                            .zIndex(5f)
+                    ) {
+                        it()
+                    }
                 }
             }
 
@@ -253,6 +280,7 @@ private fun ListRowItemImp(
                 val badgeModifier = Modifier
                     .align(CenterVertically)
                     .absolutePadding(0.dp, 0.dp, 16.dp, 0.dp)
+                    .clearAndSetSemantics { }
                 Badge(
                     modifier = badgeModifier,
                     content = badge,
@@ -260,7 +288,12 @@ private fun ListRowItemImp(
             }
 
             trailing?.let {
-                Column(modifier = Modifier.align(CenterVertically)) {
+                Column(
+                    modifier = Modifier
+                        .align(CenterVertically)
+                        .semantics(mergeDescendants = !isRowClickable) { traversalIndex = 6f }
+                        .zIndex(6f)
+                ) {
                     it()
                 }
             }
