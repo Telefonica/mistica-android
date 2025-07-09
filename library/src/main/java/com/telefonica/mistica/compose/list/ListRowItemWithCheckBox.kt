@@ -30,13 +30,13 @@ fun ListRowItemWithCheckBox(
     bottom: @Composable (() -> Unit)? = null,
     contentPadding: PaddingValues = PaddingValues(horizontal = 16.dp, vertical = 8.dp),
 ) {
-    ListRowItemImp(
+    ListRowItem(
         modifier = modifier.toggleable(
             value = checked,
             onValueChange = { onCheckedChange(!checked) },
             role = Role.Checkbox,
         ),
-        icon = { listRowIcon?.Draw() },
+        listRowIcon = listRowIcon,
         title = title,
         isTitleHeading = isTitleHeading,
         subtitle = subtitle,
