@@ -247,7 +247,7 @@ fun samples(): List<ListItem> {
             title = TITLE,
             subtitle = SUBTITLE,
             description = DESCRIPTION,
-            action = { Avatar(url = IMAGE_URL) },
+            action = { Avatar() },
             isBadgeVisible = true,
             badge = "1",
             listRowIcon = ListRowIcon.SmallAsset(painter = painterResource(id = R.drawable.list_row_drawable)),
@@ -280,7 +280,7 @@ fun samples(): List<ListItem> {
             headline = Tag("PROMO").withStyle(TYPE_PROMO),
             title = "This item has a custom content description",
             subtitle = SUBTITLE,
-            action = { Avatar(url = CLICKABLE_IMAGE_URL, clickable = true) },
+            action = { Avatar(clickable = true) },
             isBadgeVisible = true,
             badge = "1",
             listRowIcon = ListRowIcon.SmallAsset(painter = painterResource(id = R.drawable.list_row_drawable)),
@@ -324,7 +324,7 @@ private fun sampleClickHandler(context: Context): () -> Unit {
 }
 
 const val IMAGE_URL = "https://www.fotoaparat.cz/imgs/a/26/2639/0n1wjdf0-cr-em13-09-1200x627x9.jpg"
-const val CLICKABLE_IMAGE_URL = "https://scontent-mad2-1.xx.fbcdn.net/v/t39.30808-6/300522230_470343268434934_6532735424291576461_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=BPbnBaYDVM0Q7kNvwERe66i&_nc_oc=AdnLzo07o6UElqcncvm1HsxHS-jup24IbA2ne1qvCqgmiEZtnTVJENeiPJSyO2hsXe4&_nc_zt=23&_nc_ht=scontent-mad2-1.xx&_nc_gid=Au9wTahQK_gROJgfqJYJmg&oh=00_AfQaMNAjqfroelGlgnbukJ1ugFUQBv20jIlosPL8-MdlIA&oe=6873FFE8"
+const val CLICKABLE_IMAGE_URL = "https://www.shutterstock.com/image-vector/click-hand-concept-icon-600nw-600416759.jpg"
 
 @Composable
 fun Lists() {
@@ -453,10 +453,7 @@ data class ListItem(
 )
 
 @Composable
-fun Avatar(
-    url: String,
-    clickable: Boolean = false,
-) {
+fun Avatar(clickable: Boolean = false) {
     val context = LocalContext.current
 
     Image(
@@ -468,7 +465,7 @@ fun Avatar(
             ),
         painter = rememberAsyncImagePainter(
             ImageRequest.Builder(LocalContext.current)
-                .data(url)
+                .data(if (clickable) CLICKABLE_IMAGE_URL else IMAGE_URL)
                 .apply { transformations(CircleCropTransformation()) }
                 .build()
         ),
