@@ -150,3 +150,67 @@ Any `@Composable` is allowed to be used as `trailing` parameter. This will show 
       }
   )
 ```
+
+## Toggleables
+There is two new sub-components from ListRowView to handle Action Layouts with toggleable views like Switch or CheckBox components.
+Take a look to the new available sub-components:
+* [ListRowViewWithSwitch](ListRowItemWithSwitch.kt)
+* [ListRowViewWithCheckBox](ListRowItemWithCheckBox.kt)
+
+This two new sub-components have been created in order to handle the main accessibility actions according to Google standards with Toggleable views.
+So please, consider replacing and start using these two new sub-components if you need to use a list element with a Switch or CheckBox view.
+
+```kotlin
+var switchState by remember {
+    mutableStateOf(false)
+}
+ListRowItemWithSwitch(
+    title = "Title",
+    subtitle = "Subtitle",
+    checked = switchState,
+    onCheckedChange = { switchState = it },
+    listRowIcon = ListRowIcon.NormalIcon(painter = painterResource(id = R.drawable.ic_lists)),
+)
+```
+
+## Custom Content Description
+By default, `ListRowItem` attempts to generate a coherent content description (`contentDescription`) for accessibility services.
+
+> [!NOTE]
+> Using a custom contentDescription can be useful for specific accessibility cases, but it's recommended to use the default value whenever possible to ensure the best user experience.
+
+### Customizing the `contentDescription`
+
+For scenarios where the automatic description is insufficient or more precise control over what screen readers announce is needed, this component now 
+supports configuring a **custom `contentDescription`**, which will override the internally managed default value. By default, the component automatically assigns and manages an accessible `contentDescription`.
+
+This is achieved through the `customContentDescription` parameter, which accepts a `CustomContentDescriptionConfig` object.
+
+**`CustomContentDescriptionConfig`:**
+
+This data class allows configuration of:
+
+*   `contentDescription: String`: The exact text you want accessibility services to announce for the entire `ListRowItem`. When provided, this **completely overrides** the automatic description generation.
+*   `ignoreBottomSlot: Boolean` (defaults to `true`): If `true`, the content of the `bottom` slot will be ignored for accessibility purposes when a custom `contentDescription` is used. This is useful if the custom description already covers the information in the `bottom` slot, or if the `bottom` slot is purely decorative in this context. If `false`, the `bottom` slot will maintain its own semantics and will be focusable/announceable separately if it has semantic content.
+*   `ignoreTrailingSlot: Boolean` (defaults to `true`): Similar to `ignoreBottomSlot`, but for the `trailing` slot. If `true`, the semantics of the `trailing` element are ignored when a `customContentDescription` is defined. If `false`, the `trailing` element will be independent in terms of accessibility.
+
+**Example Usage:**
+```kotlin
+ListRowItem(
+    title = "Special Offer", 
+    subtitle = "Valid until end of month", 
+    bottom = { CustomComposable() },
+    trailing = { Chevron() },
+    onClick = { /* ... */ }, 
+    customContentDescription = CustomContentDescriptionConfig(
+        contentDescription = "Special offer: Valid until end of month. Tap to see details and conditions of the offer.",
+        ignoreBottomSlot = false, // We want to maintain the semantics of the CustomComposable alongside the custom ContentDescription.
+    ) 
+)
+```
+> [!CAUTION]
+> If the component uses a badge and you need to provide accessibility support for it, you must use a custom contentDescription as the component's default
+> behavior will ignore the badge.
+
+> [!CAUTION]
+> If your CustomComposable contains clickable elements like buttons, you'll need to disable ignoreSlot by setting it to "false" as shown below.
