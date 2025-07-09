@@ -422,7 +422,10 @@ fun Lists() {
                 subtitle = "Subtitle",
                 checked = switchState,
                 onCheckedChange = { switchState = it },
-                listRowIcon = ListRowIcon.NormalIcon(painter = painterResource(id = R.drawable.ic_lists)),
+                listRowIcon = ListRowIcon.CircleIcon(
+                    painter = painterResource(id = R.drawable.ic_lists),
+                    backgroundColor = MisticaTheme.colors.backgroundAlternative
+                )
             )
             var checkBoxState by remember { mutableStateOf(false) }
             ListRowItemWithCheckBox(
@@ -430,7 +433,10 @@ fun Lists() {
                 subtitle = "Subtitle",
                 checked = checkBoxState,
                 onCheckedChange = { checkBoxState = it },
-                listRowIcon = ListRowIcon.NormalIcon(painter = painterResource(id = R.drawable.ic_lists)),
+                listRowIcon = ListRowIcon.CircleIcon(
+                    painter = painterResource(id = R.drawable.ic_lists),
+                    backgroundColor = MisticaTheme.colors.backgroundAlternative,
+                )
             )
         }
     }
