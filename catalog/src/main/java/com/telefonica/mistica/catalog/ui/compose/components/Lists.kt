@@ -37,6 +37,7 @@ import coil.request.ImageRequest
 import coil.transform.CircleCropTransformation
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.compose.list.BackgroundType
+import com.telefonica.mistica.compose.list.CustomContentDescriptionConfig
 import com.telefonica.mistica.compose.list.ListRowIcon
 import com.telefonica.mistica.compose.list.ListRowItem
 import com.telefonica.mistica.compose.list.ListRowItemWithCheckBox
@@ -87,6 +88,16 @@ fun samples(): List<ListItem> {
             subtitle = SUBTITLE,
             action = { Chevron() },
             onClick = sampleClickHandler(context)
+        ),
+        ListItem(
+            title = TITLE,
+            subtitle = SUBTITLE,
+            bottom = { CustomSlot() },
+        ),
+        ListItem(
+            title = TITLE,
+            subtitle = SUBTITLE,
+            bottom = { CustomSlot(clickable = true) },
         ),
         ListItem(
             title = TITLE,
@@ -142,16 +153,6 @@ fun samples(): List<ListItem> {
             ),
             onClick = sampleClickHandler(context)
         ),
-        ListItem(
-            title = TITLE,
-            subtitle = SUBTITLE,
-            listRowIcon = ListRowIcon.CircleIcon(
-                painterResource(id = R.drawable.ic_lists),
-                backgroundColor = MisticaTheme.colors.backgroundAlternative
-            ),
-            bottom = { CustomSlot(clickable = true) },
-        ),
-
         ListItem(
             title = TITLE,
             listRowIcon = ListRowIcon.CircleIcon(
@@ -254,51 +255,66 @@ fun samples(): List<ListItem> {
 
         ListItem(
             headline = Tag("PROMO").withStyle(TYPE_PROMO),
-            title = TITLE,
+            title = "This item has a custom content description",
             subtitle = SUBTITLE,
-            description = DESCRIPTION,
-            bottom = { CustomSlot(Modifier.clearAndSetSemantics {  }) },
+            bottom = { CustomSlot() },
             isBadgeVisible = true,
             badge = "1",
             listRowIcon = ListRowIcon.SmallAsset(painter = painterResource(id = R.drawable.list_row_drawable)),
-            customContentDescription = "List item with custom content description",
+            customContentDescription = CustomContentDescriptionConfig(contentDescription = "List item with custom content description")
         ),
         ListItem(
             headline = Tag("PROMO").withStyle(TYPE_PROMO),
-            title = TITLE,
+            title = "This item has a custom content description",
             subtitle = SUBTITLE,
-            description = DESCRIPTION,
             bottom = { CustomSlot(clickable = true) },
             isBadgeVisible = true,
             badge = "1",
             listRowIcon = ListRowIcon.SmallAsset(painter = painterResource(id = R.drawable.list_row_drawable)),
-            customContentDescription = "List item with custom content description",
+            customContentDescription = CustomContentDescriptionConfig(
+                contentDescription = "List item with custom content description",
+                ignoreBottomSlot = false,
+            )
         ),
         ListItem(
             headline = Tag("PROMO").withStyle(TYPE_PROMO),
-            title = TITLE,
+            title = "This item has a custom content description",
             subtitle = SUBTITLE,
-            description = DESCRIPTION,
+            action = { Avatar(url = CLICKABLE_IMAGE_URL, clickable = true) },
+            isBadgeVisible = true,
+            badge = "1",
+            listRowIcon = ListRowIcon.SmallAsset(painter = painterResource(id = R.drawable.list_row_drawable)),
+            customContentDescription = CustomContentDescriptionConfig(
+                contentDescription = "List item with custom content description",
+                ignoreTrailingSlot = false,
+            )
+        ),
+        ListItem(
+            headline = Tag("PROMO").withStyle(TYPE_PROMO),
+            title = "This item has a custom content description",
+            subtitle = SUBTITLE,
             action = { Chevron() },
             bottom = { CustomSlot() },
             isBadgeVisible = true,
             badge = "1",
             listRowIcon = ListRowIcon.SmallAsset(painter = painterResource(id = R.drawable.list_row_drawable)),
             onClick = sampleClickHandler(context),
-            customContentDescription = "List item with custom content description",
+            customContentDescription = CustomContentDescriptionConfig(contentDescription = "List item with custom content description")
         ),
         ListItem(
             headline = Tag("PROMO").withStyle(TYPE_PROMO),
-            title = TITLE,
+            title = "This item has a custom content description",
             subtitle = SUBTITLE,
-            description = DESCRIPTION,
             action = { Chevron() },
             bottom = { CustomSlot(clickable = true) },
             isBadgeVisible = true,
             badge = "1",
             listRowIcon = ListRowIcon.SmallAsset(painter = painterResource(id = R.drawable.list_row_drawable)),
             onClick = sampleClickHandler(context),
-            customContentDescription = "List item with custom content description",
+            customContentDescription = CustomContentDescriptionConfig(
+                contentDescription = "List item with custom content description",
+                ignoreBottomSlot = false,
+            )
         ),
     )
 }
@@ -308,6 +324,7 @@ private fun sampleClickHandler(context: Context): () -> Unit {
 }
 
 const val IMAGE_URL = "https://www.fotoaparat.cz/imgs/a/26/2639/0n1wjdf0-cr-em13-09-1200x627x9.jpg"
+const val CLICKABLE_IMAGE_URL = "https://scontent-mad2-1.xx.fbcdn.net/v/t39.30808-6/300522230_470343268434934_6532735424291576461_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=BPbnBaYDVM0Q7kNvwERe66i&_nc_oc=AdnLzo07o6UElqcncvm1HsxHS-jup24IbA2ne1qvCqgmiEZtnTVJENeiPJSyO2hsXe4&_nc_zt=23&_nc_ht=scontent-mad2-1.xx&_nc_gid=Au9wTahQK_gROJgfqJYJmg&oh=00_AfQaMNAjqfroelGlgnbukJ1ugFUQBv20jIlosPL8-MdlIA&oe=6873FFE8"
 
 @Composable
 fun Lists() {
@@ -432,12 +449,23 @@ data class ListItem(
     val action: @Composable (() -> Unit)? = null,
     val onClick: (() -> Unit)? = null,
     val bottom: @Composable (() -> Unit)? = null,
-    val customContentDescription: String? = null,
+    val customContentDescription: CustomContentDescriptionConfig? = null,
 )
 
 @Composable
-fun Avatar(url: String) {
+fun Avatar(
+    url: String,
+    clickable: Boolean = false,
+) {
+    val context = LocalContext.current
+
     Image(
+        modifier = Modifier
+            .size(40.dp)
+            .then(
+                if (clickable) Modifier.clickable { Toast.makeText(context, "Avatar Clicked", Toast.LENGTH_SHORT).show() }
+                else Modifier
+            ),
         painter = rememberAsyncImagePainter(
             ImageRequest.Builder(LocalContext.current)
                 .data(url)
@@ -445,7 +473,6 @@ fun Avatar(url: String) {
                 .build()
         ),
         contentDescription = "Image content description",
-        modifier = Modifier.size(40.dp)
     )
 }
 
@@ -485,7 +512,8 @@ private fun CustomSlot(
         Text(
             modifier = Modifier
                 .padding(vertical = 16.dp, horizontal = 8.dp)
-                .align(Alignment.Center),
+                .align(Alignment.Center)
+                .clearAndSetSemantics { },
             text = "Custom Slot ${if (clickable) "Clickable" else ""}",
         )
     }

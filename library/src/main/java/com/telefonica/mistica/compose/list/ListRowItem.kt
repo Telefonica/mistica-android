@@ -59,7 +59,7 @@ fun ListRowItem(
     trailing: @Composable (() -> Unit)? = null,
     onClick: (() -> Unit)? = null,
     bottom: @Composable (() -> Unit)? = null,
-    customContentDescription: String? = null,
+    customContentDescription: CustomContentDescriptionConfig? = null,
     contentPadding: PaddingValues = PaddingValues(horizontal = 16.dp, vertical = 8.dp),
 ) {
     ListRowItemImp(
@@ -97,7 +97,7 @@ fun ListRowItem(
     trailing: @Composable (() -> Unit)? = null,
     onClick: (() -> Unit)? = null,
     bottom: @Composable (() -> Unit)? = null,
-    customContentDescription: String? = null,
+    customContentDescription: CustomContentDescriptionConfig? = null,
     contentPadding: PaddingValues = PaddingValues(horizontal = 16.dp, vertical = 8.dp),
 ) {
     ListRowItemImp(
@@ -135,7 +135,7 @@ internal fun ListRowItemImp(
     trailing: @Composable (() -> Unit)? = null,
     onClick: (() -> Unit)? = null,
     bottom: @Composable (() -> Unit)? = null,
-    customContentDescription: String? = null,
+    customContentDescription: CustomContentDescriptionConfig? = null,
     contentPadding: PaddingValues = PaddingValues(horizontal = 16.dp, vertical = 8.dp),
 ) {
     val badgeVisible by remember { mutableStateOf(isBadgeVisible) }
@@ -152,7 +152,7 @@ internal fun ListRowItemImp(
         .makeClickableIfNeeded(onClick)
         .semantics(mergeDescendants = isRowFocusableGroup) {
             isTraversalGroup = true
-            if (customContentDescription != null) contentDescription = customContentDescription
+            if (customContentDescription != null) contentDescription = customContentDescription.contentDescription
         }
 
     val rowModifier = when (backgroundType) {
@@ -285,14 +285,16 @@ internal fun ListRowItemImp(
                     )
                 }
 
-                if(customContentDescription != null) println("Fernaa - isRowFocusableGroup: $isRowFocusableGroup")
-
                 bottom?.let {
                     Spacer(modifier = Modifier.height(2.dp))
                     Box(
                         modifier = Modifier
-                            .semantics(mergeDescendants = !isRowFocusableGroup) { traversalIndex = 5f }
-                            .zIndex(5f)
+                            .then(
+                                if (customContentDescription?.ignoreBottomSlot == true) Modifier.clearAndSetSemantics { }
+                                else Modifier
+                                    .semantics(mergeDescendants = !isRowFocusableGroup) { traversalIndex = 5f }
+                                    .zIndex(5f)
+                            )
                     ) {
                         it()
                     }
@@ -314,8 +316,12 @@ internal fun ListRowItemImp(
                 Column(
                     modifier = Modifier
                         .align(CenterVertically)
-                        .semantics(mergeDescendants = !isRowFocusableGroup) { traversalIndex = 6f }
-                        .zIndex(6f)
+                        .then(
+                            if (customContentDescription?.ignoreTrailingSlot == true) Modifier.clearAndSetSemantics { }
+                            else Modifier
+                                .semantics(mergeDescendants = !isRowFocusableGroup) { traversalIndex = 6f }
+                                .zIndex(6f)
+                        )
                 ) {
                     it()
                 }
@@ -338,6 +344,12 @@ object ListRowItemTestTags {
     const val LIST_ROW_ITEM_SUBTITLE = "list_row_item_subtitle"
     const val LIST_ROW_ITEM_TITLE = "list_row_item_title"
 }
+
+data class CustomContentDescriptionConfig(
+    val contentDescription: String,
+    val ignoreBottomSlot: Boolean = true,
+    val ignoreTrailingSlot: Boolean = true,
+)
 
 @Preview(showBackground = true)
 @Composable
