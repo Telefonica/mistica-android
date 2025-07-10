@@ -39,6 +39,12 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import com.telefonica.mistica.R
 import com.telefonica.mistica.compose.badge.Badge
+import com.telefonica.mistica.compose.list.AccessibilityOrder.BOTTOM
+import com.telefonica.mistica.compose.list.AccessibilityOrder.DESCRIPTION
+import com.telefonica.mistica.compose.list.AccessibilityOrder.HEADLINE
+import com.telefonica.mistica.compose.list.AccessibilityOrder.SUBTITLE
+import com.telefonica.mistica.compose.list.AccessibilityOrder.TITLE
+import com.telefonica.mistica.compose.list.AccessibilityOrder.TRAILING
 import com.telefonica.mistica.compose.shape.Chevron
 import com.telefonica.mistica.compose.tag.Tag
 import com.telefonica.mistica.compose.theme.MisticaTheme
@@ -223,8 +229,8 @@ private fun ListRowItemImp(
                         Modifier.then(
                             if (customContentDescription != null) Modifier.clearAndSetSemantics { }
                             else Modifier
-                                .semantics { traversalIndex = 2f }
-                                .zIndex(2f)
+                                .semantics { traversalIndex = HEADLINE.index }
+                                .zIndex(HEADLINE.index)
                         ),
                     ).build()
                     Spacer(modifier = Modifier.height(8.dp))
@@ -242,9 +248,9 @@ private fun ListRowItemImp(
                                 else Modifier
                                     .semantics {
                                         if (isTitleHeading) heading()
-                                        traversalIndex = 1f
+                                        traversalIndex = TITLE.index
                                     }
-                                    .zIndex(1f)
+                                    .zIndex(TITLE.index)
                             ),
                     )
                 }
@@ -261,8 +267,8 @@ private fun ListRowItemImp(
                             .then(
                                 if (customContentDescription != null) Modifier.clearAndSetSemantics { }
                                 else Modifier
-                                    .semantics { traversalIndex = 3f }
-                                    .zIndex(3f)
+                                    .semantics { traversalIndex = SUBTITLE.index }
+                                    .zIndex(SUBTITLE.index)
                             ),
                     )
                 }
@@ -279,8 +285,8 @@ private fun ListRowItemImp(
                             .then(
                                 if (customContentDescription != null) Modifier.clearAndSetSemantics { }
                                 else Modifier
-                                    .semantics { traversalIndex = 4f }
-                                    .zIndex(4f)
+                                    .semantics { traversalIndex = DESCRIPTION.index }
+                                    .zIndex(DESCRIPTION.index)
                             ),
                     )
                 }
@@ -292,8 +298,8 @@ private fun ListRowItemImp(
                             .then(
                                 if (customContentDescription?.ignoreBottomSlot == true) Modifier.clearAndSetSemantics { }
                                 else Modifier
-                                    .semantics(mergeDescendants = !isRowFocusableGroup) { traversalIndex = 5f }
-                                    .zIndex(5f)
+                                    .semantics(mergeDescendants = !isRowFocusableGroup) { traversalIndex = BOTTOM.index }
+                                    .zIndex(BOTTOM.index)
                             )
                     ) {
                         it()
@@ -319,8 +325,8 @@ private fun ListRowItemImp(
                         .then(
                             if (customContentDescription?.ignoreTrailingSlot == true) Modifier.clearAndSetSemantics { }
                             else Modifier
-                                .semantics(mergeDescendants = !isRowFocusableGroup) { traversalIndex = 6f }
-                                .zIndex(6f)
+                                .semantics(mergeDescendants = !isRowFocusableGroup) { traversalIndex = TRAILING.index }
+                                .zIndex(TRAILING.index)
                         )
                 ) {
                     it()
@@ -428,4 +434,13 @@ enum class BackgroundType {
     TYPE_NORMAL,
     TYPE_BOXED,
     TYPE_BOXED_INVERSE,
+}
+
+private enum class AccessibilityOrder(val index: Float) {
+    TITLE(1f),
+    HEADLINE(2f),
+    SUBTITLE(3f),
+    DESCRIPTION(4f),
+    BOTTOM(5f),
+    TRAILING(6f),
 }
