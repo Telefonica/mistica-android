@@ -27,7 +27,7 @@ internal class ListRowItemWithCheckBoxTest : ScreenshotsTest() {
 
     @Test
     fun `check ListRowItemWithCheckBox Off`() {
-        `when ListRowItemWithCheckBox`(checked = false)
+        `given a ListRowItemWithCheckBox`(checked = false)
 
         `then is NOT checked`()
         `then screenshot is OK`()
@@ -35,7 +35,7 @@ internal class ListRowItemWithCheckBoxTest : ScreenshotsTest() {
 
     @Test
     fun `check ListRowItemWithCheckBox On`() {
-        `when ListRowItemWithCheckBox`(checked = true)
+        `given a ListRowItemWithCheckBox`(checked = true)
 
         `then is checked`()
         `then screenshot is OK`()
@@ -44,7 +44,7 @@ internal class ListRowItemWithCheckBoxTest : ScreenshotsTest() {
     @Test
     fun `check ListRowItemWithCheckBox state change`() {
         `given ListRowItemWithCheckBox`(checked = false)
-        `given is NOT checked`()
+        `then is NOT checked`()
 
         `when toggling the state`()
 
@@ -52,12 +52,9 @@ internal class ListRowItemWithCheckBoxTest : ScreenshotsTest() {
     }
 
     private fun `given ListRowItemWithCheckBox`(checked: Boolean = false) =
-        `when ListRowItemWithCheckBox`(checked)
+        `given a ListRowItemWithCheckBox`(checked)
 
-    private fun `given is NOT checked`() =
-        `then is NOT checked`()
-
-    private fun `when ListRowItemWithCheckBox`(checked: Boolean = false) {
+    private fun `given a ListRowItemWithCheckBox`(checked: Boolean = false) {
         composeTestRule.setContent {
             var isChecked by remember { mutableStateOf(checked) }
             MisticaTheme(brand = MovistarBrand) {

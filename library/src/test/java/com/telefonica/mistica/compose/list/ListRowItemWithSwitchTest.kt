@@ -27,7 +27,7 @@ internal class ListRowItemWithSwitchTest : ScreenshotsTest() {
 
     @Test
     fun `check ListRowItemWithSwitch Off`() {
-        `when ListRowItemWithSwitch`(checked = false)
+        `given a ListRowItemWithSwitch`(checked = false)
 
         `then is NOT checked`()
         `then screenshot is OK`()
@@ -35,7 +35,7 @@ internal class ListRowItemWithSwitchTest : ScreenshotsTest() {
 
     @Test
     fun `check ListRowItemWithSwitch On`() {
-        `when ListRowItemWithSwitch`(checked = true)
+        `given a ListRowItemWithSwitch`(checked = true)
 
         `then is checked`()
         `then screenshot is OK`()
@@ -44,7 +44,7 @@ internal class ListRowItemWithSwitchTest : ScreenshotsTest() {
     @Test
     fun `check ListRowItemWithSwitch state change`() {
         `given ListRowItemWithSwitch`(checked = false)
-        `given is NOT checked`()
+        `then is NOT checked`()
 
         `when toggling the state`()
 
@@ -52,12 +52,9 @@ internal class ListRowItemWithSwitchTest : ScreenshotsTest() {
     }
 
     private fun `given ListRowItemWithSwitch`(checked: Boolean = false) =
-        `when ListRowItemWithSwitch`(checked)
+        `given a ListRowItemWithSwitch`(checked)
 
-    private fun `given is NOT checked`() =
-        `then is NOT checked`()
-
-    private fun `when ListRowItemWithSwitch`(checked: Boolean = false) {
+    private fun `given a ListRowItemWithSwitch`(checked: Boolean = false) {
         composeTestRule.setContent {
             var isChecked by remember { mutableStateOf(checked) }
             MisticaTheme(brand = MovistarBrand) {
