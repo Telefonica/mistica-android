@@ -152,12 +152,12 @@ Any `@Composable` is allowed to be used as `trailing` parameter. This will show 
 ```
 
 ## Toggleables
-There is two new sub-components from ListRowView to handle Action Layouts with toggleable views like Switch or CheckBox components.
+There are two new sub-components from ListRowItem to handle Action Layouts with toggleable views like Switch or CheckBox components.
 Take a look to the new available sub-components:
-* [ListRowViewWithSwitch](ListRowItemWithSwitch.kt)
-* [ListRowViewWithCheckBox](ListRowItemWithCheckBox.kt)
+* [ListRowItemWithSwitch](ListRowItemWithSwitch.kt)
+* [ListRowItemWithCheckBox](ListRowItemWithCheckBox.kt)
 
-This two new sub-components have been created in order to handle the main accessibility actions according to Google standards with Toggleable views.
+These two new sub-components have been created in order to handle the main accessibility actions according to Google standards with Toggleable views.
 So please, consider replacing and start using these two new sub-components if you need to use a list element with a Switch or CheckBox view.
 
 ```kotlin
