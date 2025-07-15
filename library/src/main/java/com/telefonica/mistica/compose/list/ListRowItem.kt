@@ -28,12 +28,23 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.semantics.clearAndSetSemantics
+import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.heading
+import androidx.compose.ui.semantics.isTraversalGroup
 import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.traversalIndex
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.zIndex
 import com.telefonica.mistica.R
 import com.telefonica.mistica.compose.badge.Badge
+import com.telefonica.mistica.compose.list.AccessibilityOrder.BOTTOM
+import com.telefonica.mistica.compose.list.AccessibilityOrder.DESCRIPTION
+import com.telefonica.mistica.compose.list.AccessibilityOrder.HEADLINE
+import com.telefonica.mistica.compose.list.AccessibilityOrder.SUBTITLE
+import com.telefonica.mistica.compose.list.AccessibilityOrder.TITLE
+import com.telefonica.mistica.compose.list.AccessibilityOrder.TRAILING
 import com.telefonica.mistica.compose.shape.Chevron
 import com.telefonica.mistica.compose.tag.Tag
 import com.telefonica.mistica.compose.theme.MisticaTheme
@@ -54,6 +65,7 @@ fun ListRowItem(
     trailing: @Composable (() -> Unit)? = null,
     onClick: (() -> Unit)? = null,
     bottom: @Composable (() -> Unit)? = null,
+    customContentDescription: CustomContentDescriptionConfig? = null,
     contentPadding: PaddingValues = PaddingValues(horizontal = 16.dp, vertical = 8.dp),
 ) {
     ListRowItemImp(
@@ -70,6 +82,7 @@ fun ListRowItem(
         trailing = trailing,
         onClick = onClick,
         bottom = bottom,
+        customContentDescription = customContentDescription,
         contentPadding = contentPadding
     )
 }
@@ -90,6 +103,7 @@ fun ListRowItem(
     trailing: @Composable (() -> Unit)? = null,
     onClick: (() -> Unit)? = null,
     bottom: @Composable (() -> Unit)? = null,
+    customContentDescription: CustomContentDescriptionConfig? = null,
     contentPadding: PaddingValues = PaddingValues(horizontal = 16.dp, vertical = 8.dp),
 ) {
     ListRowItemImp(
@@ -106,6 +120,7 @@ fun ListRowItem(
         trailing = trailing,
         onClick = onClick,
         bottom = bottom,
+        customContentDescription = customContentDescription,
         contentPadding = contentPadding
     )
 }
@@ -126,19 +141,25 @@ private fun ListRowItemImp(
     trailing: @Composable (() -> Unit)? = null,
     onClick: (() -> Unit)? = null,
     bottom: @Composable (() -> Unit)? = null,
+    customContentDescription: CustomContentDescriptionConfig? = null,
     contentPadding: PaddingValues = PaddingValues(horizontal = 16.dp, vertical = 8.dp),
 ) {
     val badgeVisible by remember { mutableStateOf(isBadgeVisible) }
+    val isRowFocusableGroup = onClick != null || customContentDescription != null
 
     val boxModifier = when (backgroundType) {
         BackgroundType.TYPE_NORMAL -> modifier
         BackgroundType.TYPE_BOXED,
         BackgroundType.TYPE_BOXED_INVERSE,
-        -> modifier.padding(contentPadding)
+            -> modifier.padding(contentPadding)
     }
         .fillMaxWidth()
         .clip(shape = RoundedCornerShape(MisticaTheme.radius.containerBorderRadius))
         .makeClickableIfNeeded(onClick)
+        .semantics(mergeDescendants = isRowFocusableGroup) {
+            isTraversalGroup = true
+            if (customContentDescription != null) contentDescription = customContentDescription.contentDescription
+        }
 
     val rowModifier = when (backgroundType) {
         BackgroundType.TYPE_NORMAL -> Modifier
@@ -171,14 +192,16 @@ private fun ListRowItemImp(
     val textColorPrimary = when (backgroundType) {
         BackgroundType.TYPE_NORMAL,
         BackgroundType.TYPE_BOXED,
-        -> MisticaTheme.colors.textPrimary
+            -> MisticaTheme.colors.textPrimary
+
         BackgroundType.TYPE_BOXED_INVERSE -> MisticaTheme.colors.textPrimaryInverse
     }
 
     val textColorSecondary = when (backgroundType) {
         BackgroundType.TYPE_NORMAL,
         BackgroundType.TYPE_BOXED,
-        -> MisticaTheme.colors.textSecondary
+            -> MisticaTheme.colors.textSecondary
+
         BackgroundType.TYPE_BOXED_INVERSE -> MisticaTheme.colors.textSecondaryInverse
     }
 
@@ -202,9 +225,17 @@ private fun ListRowItemImp(
                     .align(CenterVertically)
             ) {
                 headline?.let {
-                    it.build()
+                    it.withModifier(
+                        Modifier.then(
+                            if (customContentDescription != null) Modifier.clearAndSetSemantics { }
+                            else Modifier
+                                .semantics { traversalIndex = HEADLINE.index }
+                                .zIndex(HEADLINE.index)
+                        ),
+                    ).build()
                     Spacer(modifier = Modifier.height(8.dp))
                 }
+
                 title?.let {
                     Text(
                         text = it,
@@ -213,14 +244,17 @@ private fun ListRowItemImp(
                         modifier = Modifier
                             .testTag(ListRowItemTestTags.LIST_ROW_ITEM_TITLE)
                             .then(
-                                if (isTitleHeading) {
-                                    Modifier.semantics { heading() }
-                                } else {
-                                    Modifier
-                                }
+                                if (customContentDescription != null) Modifier.clearAndSetSemantics { }
+                                else Modifier
+                                    .semantics {
+                                        if (isTitleHeading) heading()
+                                        traversalIndex = TITLE.index
+                                    }
+                                    .zIndex(TITLE.index)
                             ),
                     )
                 }
+
                 subtitle?.let {
                     Text(
                         text = it,
@@ -229,9 +263,16 @@ private fun ListRowItemImp(
                         modifier = Modifier
                             .testTag(ListRowItemTestTags.LIST_ROW_ITEM_SUBTITLE)
                             .padding(vertical = 2.dp)
-                            .defaultMinSize(minHeight = 20.dp),
+                            .defaultMinSize(minHeight = 20.dp)
+                            .then(
+                                if (customContentDescription != null) Modifier.clearAndSetSemantics { }
+                                else Modifier
+                                    .semantics { traversalIndex = SUBTITLE.index }
+                                    .zIndex(SUBTITLE.index)
+                            ),
                     )
                 }
+
                 description?.let {
                     Text(
                         text = it,
@@ -240,12 +281,29 @@ private fun ListRowItemImp(
                         modifier = Modifier
                             .testTag(ListRowItemTestTags.LIST_ROW_ITEM_DESCRIPTION)
                             .padding(vertical = 2.dp)
-                            .defaultMinSize(minHeight = 20.dp),
+                            .defaultMinSize(minHeight = 20.dp)
+                            .then(
+                                if (customContentDescription != null) Modifier.clearAndSetSemantics { }
+                                else Modifier
+                                    .semantics { traversalIndex = DESCRIPTION.index }
+                                    .zIndex(DESCRIPTION.index)
+                            ),
                     )
                 }
+
                 bottom?.let {
                     Spacer(modifier = Modifier.height(2.dp))
-                    bottom()
+                    Box(
+                        modifier = Modifier
+                            .then(
+                                if (customContentDescription?.ignoreBottomSlot == true) Modifier.clearAndSetSemantics { }
+                                else Modifier
+                                    .semantics(mergeDescendants = !isRowFocusableGroup) { traversalIndex = BOTTOM.index }
+                                    .zIndex(BOTTOM.index)
+                            )
+                    ) {
+                        it()
+                    }
                 }
             }
 
@@ -253,6 +311,7 @@ private fun ListRowItemImp(
                 val badgeModifier = Modifier
                     .align(CenterVertically)
                     .absolutePadding(0.dp, 0.dp, 16.dp, 0.dp)
+                    .clearAndSetSemantics { }
                 Badge(
                     modifier = badgeModifier,
                     content = badge,
@@ -260,7 +319,16 @@ private fun ListRowItemImp(
             }
 
             trailing?.let {
-                Column(modifier = Modifier.align(CenterVertically)) {
+                Column(
+                    modifier = Modifier
+                        .align(CenterVertically)
+                        .then(
+                            if (customContentDescription?.ignoreTrailingSlot == true) Modifier.clearAndSetSemantics { }
+                            else Modifier
+                                .semantics(mergeDescendants = !isRowFocusableGroup) { traversalIndex = TRAILING.index }
+                                .zIndex(TRAILING.index)
+                        )
+                ) {
                     it()
                 }
             }
@@ -282,6 +350,12 @@ object ListRowItemTestTags {
     const val LIST_ROW_ITEM_SUBTITLE = "list_row_item_subtitle"
     const val LIST_ROW_ITEM_TITLE = "list_row_item_title"
 }
+
+data class CustomContentDescriptionConfig(
+    val contentDescription: String,
+    val ignoreBottomSlot: Boolean = true,
+    val ignoreTrailingSlot: Boolean = true,
+)
 
 @Preview(showBackground = true)
 @Composable
@@ -360,4 +434,13 @@ enum class BackgroundType {
     TYPE_NORMAL,
     TYPE_BOXED,
     TYPE_BOXED_INVERSE,
+}
+
+private enum class AccessibilityOrder(val index: Float) {
+    TITLE(1f),
+    HEADLINE(2f),
+    SUBTITLE(3f),
+    DESCRIPTION(4f),
+    BOTTOM(5f),
+    TRAILING(6f),
 }
