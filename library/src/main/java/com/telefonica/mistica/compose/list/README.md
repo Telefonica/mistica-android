@@ -110,8 +110,7 @@ Show a `badge` in the right side of the component could be done with the paramet
       icon = {
         Circle {
           Icon(
-            painterResource(id = R.drawable.icn_cross),
-            contentDescription = null
+            painterResource(id = R.drawable.icn_cross)
           )
         }
       }
@@ -123,14 +122,15 @@ Show a `badge` in the right side of the component could be done with the paramet
       icon = {
         Circle {
           Icon(
-            painterResource(id = R.drawable.icn_cross),
-            contentDescription = null
+            painterResource(id = R.drawable.icn_cross)
           )
         }
       }
   )
 ```
 Internally, `Badge` is a custom component that wraps the Material component `androidx.compose.material.Badge` to handle the specific definition when the content is empty. If you need to use the badge to notice another view remember to use `androidx.compose.material.BadgeBox` and use this custom component as `badge` parameter.
+> [!NOTE] 
+> Please note that this component is ignored in terms of accessibility. If you want to provide accessibility support for the Badge, please refer to the [Custom Content Description](#custom-content-description) section.
 
 ## Trailing
 Any `@Composable` is allowed to be used as `trailing` parameter. This will show the composable in the right side of the row, after the badge when visible.
