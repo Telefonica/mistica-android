@@ -47,11 +47,11 @@ import com.telefonica.mistica.compose.theme.MisticaTheme
 
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable
-fun PopOver(
+fun PopOver2(
     modifier: Modifier = Modifier,
-    @DrawableRes imageRes: Int?,
+    @DrawableRes imageResource: Int?,
     title: String,
-    subtitle: String,
+    subtitle: StringBuilder,
     popoverWindow: @Composable (popoverWindow: PopOverWindow) -> Unit,
 ) {
     val colorBackground = MisticaTheme.colors.background
@@ -96,9 +96,9 @@ fun PopOver(
                             .align(Alignment.TopStart),
                         horizontalArrangement = Arrangement.Start
                     ) {
-                        if (imageRes != null) {
+                        if (imageResource != null) {
                             Image(
-                                painter = painterResource(id = imageRes),
+                                painter = painterResource(id = imageResource),
                                 contentDescription = null,
                                 modifier = Modifier
                                     .padding(top = 8.dp)
@@ -124,7 +124,7 @@ fun PopOver(
                                 modifier = Modifier
                                     .fillMaxWidth()
                                     .testTag(POPOVER_SUBTITLE),
-                                text = subtitle,
+                                text = subtitle.toString(),
                                 style = MisticaTheme.typography.preset2,
                                 color = MisticaTheme.colors.textSecondary
                             )
