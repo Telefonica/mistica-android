@@ -51,7 +51,7 @@ fun PopOver2(
     modifier: Modifier = Modifier,
     @DrawableRes imageResource: Int?,
     title: String,
-    subtitle: String,
+    subtitle: StringBuilder,
     popoverWindow: @Composable (popoverWindow: PopOverWindow) -> Unit,
 ) {
     val colorBackground = MisticaTheme.colors.background
@@ -124,7 +124,7 @@ fun PopOver2(
                                 modifier = Modifier
                                     .fillMaxWidth()
                                     .testTag(POPOVER_SUBTITLE),
-                                text = subtitle,
+                                text = subtitle.toString(),
                                 style = MisticaTheme.typography.preset2,
                                 color = MisticaTheme.colors.textSecondary
                             )

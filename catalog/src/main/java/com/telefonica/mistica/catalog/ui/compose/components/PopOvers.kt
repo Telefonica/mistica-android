@@ -73,7 +73,7 @@ fun PopOvers() {
                 .wrapContentHeight(),
             imageResource = if (addImage) R.drawable.ic_popovers else null,
             title = title,
-            subtitle = subtitle,
+            subtitle = StringBuilder(subtitle),
         ) {
             Button(
                 modifier = Modifier
