@@ -31,7 +31,6 @@ object Badge {
         anchor: View,
         parent: FrameLayout,
         count: Int,
-        badgeDescription: String? = null
     ): BadgeDrawable =
         createBadge(anchor, count).apply {
             when (count) {
@@ -39,7 +38,7 @@ object Badge {
                 else -> addToView(
                     anchor,
                     parent,
-                    buildBadgeContentDescription(anchor, count, badgeDescription)
+                    buildBadgeContentDescription(anchor, count, "")
                 )
             }
         }
