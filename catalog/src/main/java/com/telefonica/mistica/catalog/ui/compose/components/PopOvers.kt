@@ -71,8 +71,8 @@ fun PopOvers() {
             modifier = Modifier
                 .fillMaxWidth()
                 .wrapContentHeight(),
-            imageRes = if (addImage) R.drawable.ic_popovers else null,
-            mTitle = title,
+            imageResource = if (addImage) R.drawable.ic_popovers else null,
+            title = title,
             subtitle = subtitle,
         ) {
             Button(

@@ -49,8 +49,8 @@ import com.telefonica.mistica.compose.theme.MisticaTheme
 @Composable
 fun PopOver2(
     modifier: Modifier = Modifier,
-    @DrawableRes imageRes: Int?,
-    mTitle: String,
+    @DrawableRes imageResource: Int?,
+    title: String,
     subtitle: String,
     popoverWindow: @Composable (popoverWindow: PopOverWindow) -> Unit,
 ) {
@@ -73,7 +73,7 @@ fun PopOver2(
     val popOverWindow = PopOverWindow(null, null)
     var window: BalloonWindow? by remember { mutableStateOf(null) }
 
-    key("$mTitle$subtitle") {
+    key("$title$subtitle") {
         Balloon(
             modifier = modifier
                 .onGloballyPositioned {
@@ -96,9 +96,9 @@ fun PopOver2(
                             .align(Alignment.TopStart),
                         horizontalArrangement = Arrangement.Start
                     ) {
-                        if (imageRes != null) {
+                        if (imageResource != null) {
                             Image(
-                                painter = painterResource(id = imageRes),
+                                painter = painterResource(id = imageResource),
                                 contentDescription = null,
                                 modifier = Modifier
                                     .padding(top = 8.dp)
@@ -116,7 +116,7 @@ fun PopOver2(
                                     .fillMaxWidth()
                                     .padding(bottom = 4.dp)
                                     .testTag(POPOVER_TITLE),
-                                text = mTitle,
+                                text = title,
                                 style = MisticaTheme.typography.preset3,
                                 maxLines = 2,
                             )
