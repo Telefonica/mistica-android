@@ -52,7 +52,7 @@ import com.telefonica.mistica.catalog.ui.compose.common.CatalogVivoBrand
 import com.telefonica.mistica.catalog.ui.compose.common.CatalogVivoNewBrand
 import com.telefonica.mistica.catalog.ui.compose.common.ComponentComposeFragment
 import com.telefonica.mistica.catalog.ui.compose.components.Badges
-import com.telefonica.mistica.catalog.ui.compose.components.Buttons
+import com.telefonica.mistica.catalog.ui.compose.components.ButtonsCatalog
 import com.telefonica.mistica.catalog.ui.compose.components.Callouts
 import com.telefonica.mistica.catalog.ui.compose.components.Carousels
 import com.telefonica.mistica.catalog.ui.compose.components.DataCards
@@ -289,7 +289,7 @@ class ComponentCatalogActivity : AppCompatActivity() {
     private fun setButtonsCatalogFragment() {
         setPageAdapterWithTabs(
             classicComponent = ButtonsCatalogFragment(),
-            composeComponent = { Buttons() })
+            composeComponent = { ButtonsCatalog() })
     }
 
     private fun setTitleCatalogFragment() {

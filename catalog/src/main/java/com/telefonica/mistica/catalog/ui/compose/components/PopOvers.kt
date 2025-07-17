@@ -24,7 +24,7 @@ import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.compose.button.Button
 import com.telefonica.mistica.compose.input.DropDownInput
-import com.telefonica.mistica.compose.popover.PopOver
+import com.telefonica.mistica.compose.popover.PopOver2
 import com.telefonica.mistica.compose.theme.MisticaTheme
 
 @Composable
@@ -67,12 +67,12 @@ fun PopOvers() {
             Checkbox(checked = addImage, onCheckedChange = { addImage = !addImage })
             Text("Add Image")
         }
-        PopOver(
+        PopOver2(
             modifier = Modifier
                 .fillMaxWidth()
                 .wrapContentHeight(),
             imageRes = if (addImage) R.drawable.ic_popovers else null,
-            title = title,
+            mTitle = title,
             subtitle = subtitle,
         ) {
             Button(

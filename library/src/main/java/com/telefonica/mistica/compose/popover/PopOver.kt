@@ -47,10 +47,10 @@ import com.telefonica.mistica.compose.theme.MisticaTheme
 
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable
-fun PopOver(
+fun PopOver2(
     modifier: Modifier = Modifier,
     @DrawableRes imageRes: Int?,
-    title: String,
+    mTitle: String,
     subtitle: String,
     popoverWindow: @Composable (popoverWindow: PopOverWindow) -> Unit,
 ) {
@@ -73,7 +73,7 @@ fun PopOver(
     val popOverWindow = PopOverWindow(null, null)
     var window: BalloonWindow? by remember { mutableStateOf(null) }
 
-    key("$title$subtitle") {
+    key("$mTitle$subtitle") {
         Balloon(
             modifier = modifier
                 .onGloballyPositioned {
@@ -116,7 +116,7 @@ fun PopOver(
                                     .fillMaxWidth()
                                     .padding(bottom = 4.dp)
                                     .testTag(POPOVER_TITLE),
-                                text = title,
+                                text = mTitle,
                                 style = MisticaTheme.typography.preset3,
                                 maxLines = 2,
                             )

@@ -28,7 +28,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 @Composable
-fun Buttons() {
+fun ButtonsCatalog() {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -36,12 +36,12 @@ fun Buttons() {
         verticalArrangement = Arrangement.spacedBy(8.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        Buttons(
+        ButtonsCatalog(
             modifier = Modifier
                 .background(MisticaTheme.colors.background),
             filter = { !it.name.contains("INVERSE") }
         )
-        Buttons(
+        ButtonsCatalog(
             modifier = Modifier
                 .background(MisticaTheme.brushes.backgroundBrand),
             filter = { it.name.contains("INVERSE") }
@@ -50,7 +50,7 @@ fun Buttons() {
 }
 
 @Composable
-private fun Buttons(
+private fun ButtonsCatalog(
     modifier: Modifier = Modifier,
     filter: (ButtonStyle) -> Boolean,
 ) {
