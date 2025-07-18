@@ -50,7 +50,7 @@ fun Badge(
 
 private fun getBadgeContent(content: String) = if (content.all { it.isDigit() }) {
     if (content.toLong() > 9) {
-        "9+"
+        "+9"
     } else {
         content
     }
