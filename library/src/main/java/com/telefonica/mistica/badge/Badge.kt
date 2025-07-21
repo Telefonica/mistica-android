@@ -68,6 +68,7 @@ object Badge {
     ) = BadgeDrawable.create(anchor.context).apply {
         maxCharacterCount = 2
         backgroundColor = anchor.context.getThemeColor(R.attr.colorBadge)
+        badgeTextColor = anchor.context.getThemeColor(R.attr.colorTextPrimaryInverse)
         setupCount(count)
     }
 
