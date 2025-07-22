@@ -31,6 +31,16 @@
 				android:layout_height="wrap_content"
 				android:layout_columnWeight="1"
 				android:layout_gravity="center"
+				android:text="Info"
+				app:tagStyle="info"
+				tools:text="@tools:sample/full_names"
+				/>
+
+		<com.telefonica.mistica.tag.TagView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_columnWeight="1"
+				android:layout_gravity="center"
 				android:text="Active"
 				app:tagStyle="active"
 				tools:text="@tools:sample/full_names"
@@ -92,6 +102,17 @@
 				android:layout_gravity="center"
 				android:text="Promotion"
 				app:tagIcon="@drawable/icn_cross"
+				tools:text="@tools:sample/full_names"
+				/>
+
+		<com.telefonica.mistica.tag.TagView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_columnWeight="1"
+				android:layout_gravity="center"
+				android:text="Info"
+				app:tagIcon="@drawable/icn_cross"
+				app:tagStyle="info"
 				tools:text="@tools:sample/full_names"
 				/>
 

@@ -42,6 +42,7 @@ fun Tags() {
                 modifier = Modifier.padding(16.dp)
             ) {
                 item { Tag(text = "Promotion", style = TagView.TYPE_PROMO, modifier = Modifier.padding(4.dp)) }
+                item { Tag(text = "Info", style = TagView.TYPE_INFO, modifier = Modifier.padding(4.dp)) }
                 item { Tag(text = "Active", style = TagView.TYPE_ACTIVE, modifier = Modifier.padding(4.dp)) }
                 item { Tag(text = "Inactive", style = TagView.TYPE_INACTIVE, modifier = Modifier.padding(4.dp)) }
                 item { Tag(text = "Success", style = TagView.TYPE_SUCCESS, modifier = Modifier.padding(4.dp)) }
@@ -53,6 +54,7 @@ fun Tags() {
                 modifier = Modifier.padding(16.dp)
             ) {
                 item { Tag(text = "Promotion", style = TagView.TYPE_PROMO, modifier = Modifier.padding(4.dp), icon = R.drawable.icn_cross) }
+                item { Tag(text = "Info", style = TagView.TYPE_INFO, modifier = Modifier.padding(4.dp), icon = R.drawable.icn_cross) }
                 item { Tag(text = "Active", style = TagView.TYPE_ACTIVE, modifier = Modifier.padding(4.dp), icon = R.drawable.icn_cross) }
                 item { Tag(text = "Inactive", style = TagView.TYPE_INACTIVE, modifier = Modifier.padding(4.dp), icon = R.drawable.icn_cross) }
                 item { Tag(text = "Success", style = TagView.TYPE_SUCCESS, modifier = Modifier.padding(4.dp), icon = R.drawable.icn_cross) }

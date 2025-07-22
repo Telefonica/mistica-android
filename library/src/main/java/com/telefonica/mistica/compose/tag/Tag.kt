@@ -32,6 +32,7 @@ import com.telefonica.mistica.tag.TagStyle
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_ACTIVE
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_ERROR
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_INACTIVE
+import com.telefonica.mistica.tag.TagView.Companion.TYPE_INFO
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_PROMO
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_SUCCESS
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_WARNING
@@ -125,6 +126,7 @@ internal fun TagPreview() {
                 modifier = Modifier.padding(16.dp)
             ) {
                 item { Tag(text = "Promotion", style = TYPE_PROMO, modifier = Modifier.padding(4.dp), icon = android.R.drawable.ic_lock_power_off) }
+                item { Tag(text = "Info", style = TYPE_INFO, modifier = Modifier.padding(4.dp), icon = android.R.drawable.ic_lock_power_off) }
                 item { Tag(text = "Active", style = TYPE_ACTIVE, modifier = Modifier.padding(4.dp), icon = android.R.drawable.ic_lock_power_off) }
                 item { Tag(text = "Inactive", style = TYPE_INACTIVE, modifier = Modifier.padding(4.dp), icon = android.R.drawable.ic_lock_power_off) }
                 item { Tag(text = "Success", style = TYPE_SUCCESS, modifier = Modifier.padding(4.dp), icon = android.R.drawable.ic_lock_power_off) }
@@ -139,6 +141,7 @@ internal fun TagPreview() {
 @Suppress("CyclomaticComplexMethod")
 private fun Int.getStyle() = when (this) {
     TYPE_PROMO -> with(MisticaTheme.colors) { tagBackgroundPromo to tagTextPromo }
+    TYPE_INFO -> with(MisticaTheme.colors) { tagBackgroundInfo to tagTextInfo }
     TYPE_ACTIVE -> with(MisticaTheme.colors) { tagBackgroundActive to tagTextActive }
     TYPE_INACTIVE -> with(MisticaTheme.colors) { tagBackgroundInactive to tagTextInactive }
     TYPE_SUCCESS -> with(MisticaTheme.colors) { tagBackgroundSuccess to tagTextSuccess }

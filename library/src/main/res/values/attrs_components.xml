@@ -12,11 +12,12 @@
 	<!-- This attribute is being reused by CardView and TagView -->
 	<attr name="tagStyle" format="enum">
 		<enum name="promo" value="0" />
-		<enum name="active" value="1" />
-		<enum name="inactive" value="2" />
-		<enum name="success" value="3" />
-		<enum name="warning" value="4" />
-		<enum name="error" value="5" />
+        <enum name="info" value="1" />
+		<enum name="active" value="2" />
+		<enum name="inactive" value="3" />
+		<enum name="success" value="4" />
+		<enum name="warning" value="5" />
+		<enum name="error" value="6" />
 	</attr>
 
     <declare-styleable name="FeedbackScreen">

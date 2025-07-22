@@ -13,6 +13,7 @@ import com.telefonica.mistica.R
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_ACTIVE
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_ERROR
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_INACTIVE
+import com.telefonica.mistica.tag.TagView.Companion.TYPE_INFO
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_PROMO
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_SUCCESS
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_WARNING
@@ -22,6 +23,7 @@ import com.telefonica.mistica.util.getThemeColor
 @Retention(AnnotationRetention.SOURCE)
 @IntDef(
     TYPE_PROMO,
+    TYPE_INFO,
     TYPE_ACTIVE,
     TYPE_INACTIVE,
     TYPE_SUCCESS,
@@ -87,6 +89,7 @@ class TagView @JvmOverloads constructor(
 
     private fun Int.getStyle() = when (this) {
         TYPE_PROMO -> R.attr.colorTagBackgroundPromo to R.attr.colorTagTextPromo
+        TYPE_INFO -> R.attr.colorTagBackgroundInfo to R.attr.colorTagTextInfo
         TYPE_ACTIVE -> R.attr.colorTagBackgroundActive to R.attr.colorTagTextActive
         TYPE_INACTIVE -> R.attr.colorTagBackgroundInactive to R.attr.colorTagTextInactive
         TYPE_SUCCESS -> R.attr.colorTagBackgroundSuccess to R.attr.colorTagTextSuccess
@@ -97,10 +100,11 @@ class TagView @JvmOverloads constructor(
 
     companion object {
         const val TYPE_PROMO = 0
-        const val TYPE_ACTIVE = 1
-        const val TYPE_INACTIVE = 2
-        const val TYPE_SUCCESS = 3
-        const val TYPE_WARNING = 4
-        const val TYPE_ERROR = 5
+        const val TYPE_INFO = 1
+        const val TYPE_ACTIVE = 2
+        const val TYPE_INACTIVE = 3
+        const val TYPE_SUCCESS = 4
+        const val TYPE_WARNING = 5
+        const val TYPE_ERROR = 6
     }
 }
