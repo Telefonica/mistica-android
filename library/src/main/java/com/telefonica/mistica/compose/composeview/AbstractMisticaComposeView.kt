@@ -8,17 +8,15 @@ import androidx.compose.ui.platform.AbstractComposeView
 import com.telefonica.mistica.R
 import com.telefonica.mistica.compose.composeview.AbstractMisticaComposeView.Companion.BRAND_VALUE_BLAU
 import com.telefonica.mistica.compose.composeview.AbstractMisticaComposeView.Companion.BRAND_VALUE_MOVISTAR
-import com.telefonica.mistica.compose.composeview.AbstractMisticaComposeView.Companion.BRAND_VALUE_O2
+import com.telefonica.mistica.compose.composeview.AbstractMisticaComposeView.Companion.BRAND_VALUE_O2_NEW
 import com.telefonica.mistica.compose.composeview.AbstractMisticaComposeView.Companion.BRAND_VALUE_TELEFONICA
-import com.telefonica.mistica.compose.composeview.AbstractMisticaComposeView.Companion.BRAND_VALUE_VIVO
 import com.telefonica.mistica.compose.composeview.AbstractMisticaComposeView.Companion.BRAND_VALUE_VIVO_NEW
 import com.telefonica.mistica.compose.theme.MisticaTheme
 import com.telefonica.mistica.compose.theme.brand.BlauBrand
 import com.telefonica.mistica.compose.theme.brand.Brand
 import com.telefonica.mistica.compose.theme.brand.MovistarBrand
-import com.telefonica.mistica.compose.theme.brand.O2Brand
+import com.telefonica.mistica.compose.theme.brand.O2NewBrand
 import com.telefonica.mistica.compose.theme.brand.TelefonicaBrand
-import com.telefonica.mistica.compose.theme.brand.VivoBrand
 import com.telefonica.mistica.compose.theme.brand.VivoNewBrand
 
 abstract class AbstractMisticaComposeView @JvmOverloads constructor(
@@ -35,10 +33,9 @@ abstract class AbstractMisticaComposeView @JvmOverloads constructor(
     @Retention(AnnotationRetention.SOURCE)
     @IntDef(
         BRAND_VALUE_MOVISTAR,
-        BRAND_VALUE_O2,
-        BRAND_VALUE_VIVO,
         BRAND_VALUE_TELEFONICA,
         BRAND_VALUE_BLAU,
+        BRAND_VALUE_O2_NEW,
         BRAND_VALUE_VIVO_NEW,
     )
     annotation class BrandConfig
@@ -64,20 +61,18 @@ abstract class AbstractMisticaComposeView @JvmOverloads constructor(
 
     companion object {
         const val BRAND_VALUE_MOVISTAR = 0
-        const val BRAND_VALUE_O2 = 1
-        const val BRAND_VALUE_VIVO = 2
-        const val BRAND_VALUE_TELEFONICA = 3
-        const val BRAND_VALUE_BLAU = 4
-        const val BRAND_VALUE_VIVO_NEW = 5
+        const val BRAND_VALUE_TELEFONICA = 1
+        const val BRAND_VALUE_BLAU = 2
+        const val BRAND_VALUE_O2_NEW = 3
+        const val BRAND_VALUE_VIVO_NEW = 4
     }
 }
 
 fun Int.mapToComposeBrand(): Brand = when (this) {
     BRAND_VALUE_MOVISTAR -> MovistarBrand
-    BRAND_VALUE_O2 -> O2Brand
-    BRAND_VALUE_VIVO -> VivoBrand
     BRAND_VALUE_TELEFONICA -> TelefonicaBrand
     BRAND_VALUE_BLAU -> BlauBrand
+    BRAND_VALUE_O2_NEW -> O2NewBrand
     BRAND_VALUE_VIVO_NEW -> VivoNewBrand
     else -> TelefonicaBrand
 }
