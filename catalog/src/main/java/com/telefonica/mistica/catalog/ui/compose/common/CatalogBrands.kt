@@ -7,11 +7,9 @@ import androidx.compose.ui.unit.TextUnit
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.compose.theme.brand.Brand
 import com.telefonica.mistica.compose.theme.brand.MovistarBrand
-import com.telefonica.mistica.compose.theme.brand.O2Brand
 import com.telefonica.mistica.compose.theme.brand.O2NewBrand
 import com.telefonica.mistica.compose.theme.brand.TelefonicaBrand
 import com.telefonica.mistica.compose.theme.brand.TuBrand
-import com.telefonica.mistica.compose.theme.brand.VivoBrand
 import com.telefonica.mistica.compose.theme.brand.VivoNewBrand
 import com.telefonica.mistica.compose.theme.brushes.MisticaBrushes
 import com.telefonica.mistica.compose.theme.color.MisticaColors
@@ -57,30 +55,12 @@ object CatalogMovistarBrand : CatalogBrand(MovistarBrand, R.style.CatalogMovista
         )
 }
 
-object CatalogO2Brand : CatalogBrand(O2Brand, R.style.CatalogO2) {
-    override val fontFamily: FontFamily
-        get() = FontFamily(
-            Font(R.font.onair_light, FontWeight.Light),
-            Font(R.font.onair_regular, FontWeight.Normal),
-            Font(R.font.onair_medium, FontWeight.Medium),
-        )
-}
-
 object CatalogO2NewBrand : CatalogBrand(O2NewBrand, R.style.CatalogO2New) {
     override val fontFamily: FontFamily
         get() = FontFamily(
             Font(R.font.onair_light, FontWeight.Light),
             Font(R.font.onair_regular, FontWeight.Normal),
             Font(R.font.onair_medium, FontWeight.Medium),
-        )
-}
-
-object CatalogVivoBrand : CatalogBrand(VivoBrand, R.style.CatalogVivo) {
-    override val fontFamily: FontFamily
-        get() = FontFamily(
-            Font(R.font.vivo_type_light, FontWeight.Light),
-            Font(R.font.vivo_type_regular, FontWeight.Normal),
-            Font(R.font.vivo_type_medium, FontWeight.Medium),
         )
 }
 

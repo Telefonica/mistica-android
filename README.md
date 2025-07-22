@@ -45,8 +45,8 @@ Mistica provides an Android theme for each brand supported by telefonica.
 Just set your App or any specific activity to use any of the following:
 
 * MisticaTheme.Movistar
-* MisticaTheme.O2
-* MisticaTheme.Vivo
+* MisticaTheme.O2New
+* MisticaTheme.VivoNew
 * MisticaTheme.Telefonica
 * MisticaTheme.Blau
 
