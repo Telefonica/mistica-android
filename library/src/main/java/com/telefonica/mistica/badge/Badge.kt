@@ -39,7 +39,7 @@ object Badge {
                 else -> addToView(
                     anchor,
                     parent,
-                    buildBadgeContentDescription(anchor, count, badgeDescription)
+                    buildBadgeContentDescription(anchor, count, badgeDescription ?: text)
                 )
             }
         }
