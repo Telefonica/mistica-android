@@ -53,11 +53,11 @@ class TagView @JvmOverloads constructor(
             val style = styledAttrs.getInt(R.styleable.TagView_tagStyle, currentStyle)
             val icon = styledAttrs.getDrawable(R.styleable.TagView_tagIcon)
             val textColor: Int? =
-                styledAttrs.getColor(R.styleable.TagView_tagTextColor, UNDEFINED_COLOUR)
-                    .takeIf { it != UNDEFINED_COLOUR }
+                styledAttrs.getColor(R.styleable.TagView_tagTextColor, UNDEFINED_COLOR)
+                    .takeIf { it != UNDEFINED_COLOR }
             val backgroundColor: Int? =
-                styledAttrs.getColor(R.styleable.TagView_tagBackgroundColor, UNDEFINED_COLOUR)
-                    .takeIf { it != UNDEFINED_COLOUR }
+                styledAttrs.getColor(R.styleable.TagView_tagBackgroundColor, UNDEFINED_COLOR)
+                    .takeIf { it != UNDEFINED_COLOR }
             setTagStyle(style, icon, TagColors(textColor, backgroundColor))
 
             styledAttrs.recycle()
@@ -118,6 +118,6 @@ class TagView @JvmOverloads constructor(
         const val TYPE_WARNING = 5
         const val TYPE_ERROR = 6
 
-        private const val UNDEFINED_COLOUR = Int.MIN_VALUE
+        private const val UNDEFINED_COLOR = Int.MIN_VALUE
     }
 }
