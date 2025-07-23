@@ -7,6 +7,8 @@
 	<declare-styleable name="TagView">
 		<attr name="tagIcon" format="reference" />
 		<attr name="tagStyle" />
+        <attr name="tagTextColor" format="color" />
+        <attr name="tagBackgroundColor" format="color" />
 	</declare-styleable>
 
 	<!-- This attribute is being reused by CardView and TagView -->

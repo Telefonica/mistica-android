@@ -3,6 +3,7 @@ package com.telefonica.mistica.tag
 import android.content.Context
 import android.graphics.drawable.Drawable
 import android.util.AttributeSet
+import androidx.annotation.ColorInt
 import androidx.annotation.IntDef
 import androidx.appcompat.view.ContextThemeWrapper
 import androidx.core.graphics.BlendModeColorFilterCompat
@@ -51,27 +52,37 @@ class TagView @JvmOverloads constructor(
 
             val style = styledAttrs.getInt(R.styleable.TagView_tagStyle, currentStyle)
             val icon = styledAttrs.getDrawable(R.styleable.TagView_tagIcon)
-            setTagStyle(style, icon)
+            val textColor: Int? =
+                styledAttrs.getColor(R.styleable.TagView_tagTextColor, UNDEFINED_COLOUR)
+                    .takeIf { it != UNDEFINED_COLOUR }
+            val backgroundColor: Int? =
+                styledAttrs.getColor(R.styleable.TagView_tagBackgroundColor, UNDEFINED_COLOUR)
+                    .takeIf { it != UNDEFINED_COLOUR }
+            setTagStyle(style, icon, TagColors(textColor, backgroundColor))
 
             styledAttrs.recycle()
         }
     }
 
     @JvmOverloads
-    fun setTagStyle(@TagStyle style: Int, icon: Drawable? = null) {
+    fun setTagStyle(@TagStyle style: Int, icon: Drawable? = null, customColors: TagColors? = null) {
         currentStyle = style
-        val (tagBackground, tagTextColor) = style.getStyle()
-        background.colorFilter = BlendModeColorFilterCompat.createBlendModeColorFilterCompat(context.getThemeColor(tagBackground), BlendModeCompat.SRC_IN)
-        setTextColor(context.getThemeColor(tagTextColor))
+        val styleColors = style.getStyle()
+
+        val tagBackgroundColor = customColors?.backgroundColor ?: context.getThemeColor(styleColors.first)
+        val tagTextColor = customColors?.textColor ?: context.getThemeColor(styleColors.second)
+        background.colorFilter = BlendModeColorFilterCompat
+            .createBlendModeColorFilterCompat(tagBackgroundColor, BlendModeCompat.SRC_IN)
+        setTextColor(tagTextColor)
 
         if (icon != null) {
-            setTagIcon(icon)
+            setTagIcon(icon, tagTextColor)
         }
     }
 
-    fun setTagIcon(drawable: Drawable) {
+    fun setTagIcon(drawable: Drawable, @ColorInt textColor: Int) {
 
-        DrawableCompat.setTint(DrawableCompat.wrap(drawable), context.getThemeColor(currentStyle.getStyle().second))
+        DrawableCompat.setTint(DrawableCompat.wrap(drawable), textColor)
 
         val iconSize = context.convertDpToPx(16)
         val fixedMargin = context.convertDpToPx(1.5F)
@@ -106,5 +117,7 @@ class TagView @JvmOverloads constructor(
         const val TYPE_SUCCESS = 4
         const val TYPE_WARNING = 5
         const val TYPE_ERROR = 6
+
+        private const val UNDEFINED_COLOUR = 0
     }
 }

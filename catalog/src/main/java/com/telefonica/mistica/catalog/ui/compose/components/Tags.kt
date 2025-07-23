@@ -55,12 +55,12 @@ fun Tags() {
                 item { Tag(text = "Error", style = TagView.TYPE_ERROR, modifier = Modifier.padding(4.dp)) }
                 item {
                     Tag(
-                        text = "CustomColor",
+                        text = "Custom",
                         style = TagView.TYPE_ERROR,
                         customColors =
                             TagColors(
                                 backgroundColor = Color(CUSTOM_TAG_COLOR),
-                                textColor = MisticaTheme.colors.tagTextPromo
+                                textColor = Color.White,
                             ),
                         modifier = Modifier
                             .padding(4.dp)
@@ -80,12 +80,12 @@ fun Tags() {
                 item { Tag(text = "Error", style = TagView.TYPE_ERROR, modifier = Modifier.padding(4.dp), icon = R.drawable.icn_cross) }
                 item {
                     Tag(
-                        text = "CustomColor",
+                        text = "Custom",
                         style = TagView.TYPE_ERROR,
                         customColors =
                             TagColors(
                                 backgroundColor = Color(CUSTOM_TAG_COLOR),
-                                textColor = MisticaTheme.colors.tagTextPromo
+                                textColor = Color.White,
                             ),
                         modifier = Modifier
                             .padding(4.dp),
