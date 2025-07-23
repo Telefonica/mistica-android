@@ -20,6 +20,7 @@
             android:id="@+id/image_badge_parent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:focusable="true"
             android:paddingTop="8dp">
         <ImageView
             android:id="@+id/imageView"
