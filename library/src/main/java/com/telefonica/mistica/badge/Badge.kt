@@ -39,7 +39,7 @@ object Badge {
                 else -> addToView(
                     anchor,
                     parent,
-                    buildBadgeContentDescription(anchor, count, badgeDescription)
+                    buildBadgeContentDescription(anchor, count, badgeDescription ?: text)
                 )
             }
         }
@@ -64,10 +64,11 @@ object Badge {
 
     private fun createBadge(
         anchor: View,
-        count: Int
+        count: Int,
     ) = BadgeDrawable.create(anchor.context).apply {
         maxCharacterCount = 2
         backgroundColor = anchor.context.getThemeColor(R.attr.colorBadge)
+        badgeTextColor = anchor.context.getThemeColor(R.attr.colorTextPrimaryInverse)
         setupCount(count)
     }
 
@@ -106,9 +107,10 @@ object Badge {
 
     private fun BadgeDrawable.setupCount(count: Int) {
         this.maxCharacterCount = 2
-        when (count) {
-            NON_NUMERIC_BADGE -> this.clearNumber()
-            else -> this.number = count
+        when {
+            count == NON_NUMERIC_BADGE -> this.clearNumber()
+            count.toString().length < this.maxCharacterCount -> this.number = count
+            else -> this.text = "+9"
         }
     }
 
