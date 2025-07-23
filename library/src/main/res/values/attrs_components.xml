@@ -14,7 +14,7 @@
 	<!-- This attribute is being reused by CardView and TagView -->
 	<attr name="tagStyle" format="enum">
 		<enum name="promo" value="0" />
-        <enum name="info" value="1" />
+		<enum name="info" value="1" />
 		<enum name="active" value="2" />
 		<enum name="inactive" value="3" />
 		<enum name="success" value="4" />
