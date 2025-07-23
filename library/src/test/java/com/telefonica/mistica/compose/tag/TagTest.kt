@@ -36,7 +36,6 @@ internal class TagTest(
     fun `check tags appearance`() = test {
         `when Tags`(brand)
 
-        Thread.sleep(5000)
         `then screenshot is OK`(brand)
     }
 
