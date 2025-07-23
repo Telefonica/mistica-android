@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onRoot
 import androidx.compose.ui.unit.dp
@@ -27,7 +28,7 @@ import org.robolectric.ParameterizedRobolectricTestRunner
 @RunWith(ParameterizedRobolectricTestRunner::class)
 internal class TagTest(
     private val brand: Brand,
-): ScreenshotsTest() {
+) : ScreenshotsTest() {
     @get:Rule
     val composeTestRule = createComposeRule()
 
@@ -48,7 +49,12 @@ internal class TagTest(
                 ) {
                     buttons.forEach {
                         item {
-                            Tag(text = it.text, style = it.style, modifier = Modifier.padding(4.dp))
+                            Tag(
+                                text = it.text,
+                                style = it.style,
+                                customColors = it.customColors,
+                                modifier = Modifier.padding(4.dp)
+                            )
                         }
                     }
                 }
@@ -72,11 +78,21 @@ internal class TagTest(
             ButtonInfo("Inactive", TYPE_INACTIVE),
             ButtonInfo("Success", TYPE_SUCCESS),
             ButtonInfo("Warning", TYPE_WARNING),
-            ButtonInfo("Error", TYPE_ERROR)
+            ButtonInfo("Error", TYPE_ERROR),
+            ButtonInfo(
+                text = "CustomColor",
+                style = TYPE_ERROR,
+                customColors = TagColors(
+                    backgroundColor = Color(CUSTOM_TAG_COLOR),
+                    textColor = Color.White,
+                )
+            ),
         )
     }
 
     companion object {
+        private const val CUSTOM_TAG_COLOR = 0xFF00CAB3
+
         @JvmStatic
         @ParameterizedRobolectricTestRunner.Parameters(name = "Brand: {0}")
         fun brands() = TestUtils.getAllBrands().map { arrayOf(it) }
@@ -85,5 +101,6 @@ internal class TagTest(
     data class ButtonInfo(
         val text: String,
         @TagStyle val style: Int,
+        val customColors: TagColors? = null,
     )
 }

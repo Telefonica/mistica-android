@@ -16,14 +16,19 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.compose.tag.Tag
+import com.telefonica.mistica.compose.tag.TagColors
 import com.telefonica.mistica.compose.theme.MisticaTheme
 import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 import com.telefonica.mistica.tag.TagView
+
+
+private const val CUSTOM_TAG_COLOR = 0xFF00CAB3
 
 @Composable
 fun Tags() {
@@ -48,6 +53,19 @@ fun Tags() {
                 item { Tag(text = "Success", style = TagView.TYPE_SUCCESS, modifier = Modifier.padding(4.dp)) }
                 item { Tag(text = "Warning", style = TagView.TYPE_WARNING, modifier = Modifier.padding(4.dp)) }
                 item { Tag(text = "Error", style = TagView.TYPE_ERROR, modifier = Modifier.padding(4.dp)) }
+                item {
+                    Tag(
+                        text = "CustomColor",
+                        style = TagView.TYPE_ERROR,
+                        customColors =
+                            TagColors(
+                                backgroundColor = Color(CUSTOM_TAG_COLOR),
+                                textColor = MisticaTheme.colors.tagTextPromo
+                            ),
+                        modifier = Modifier
+                            .padding(4.dp)
+                    )
+                }
             }
             LazyVerticalGrid(
                 columns = GridCells.Fixed(3),
@@ -60,6 +78,20 @@ fun Tags() {
                 item { Tag(text = "Success", style = TagView.TYPE_SUCCESS, modifier = Modifier.padding(4.dp), icon = R.drawable.icn_cross) }
                 item { Tag(text = "Warning", style = TagView.TYPE_WARNING, modifier = Modifier.padding(4.dp), icon = R.drawable.icn_cross) }
                 item { Tag(text = "Error", style = TagView.TYPE_ERROR, modifier = Modifier.padding(4.dp), icon = R.drawable.icn_cross) }
+                item {
+                    Tag(
+                        text = "CustomColor",
+                        style = TagView.TYPE_ERROR,
+                        customColors =
+                            TagColors(
+                                backgroundColor = Color(CUSTOM_TAG_COLOR),
+                                textColor = MisticaTheme.colors.tagTextPromo
+                            ),
+                        modifier = Modifier
+                            .padding(4.dp),
+                        icon = R.drawable.icn_cross,
+                    )
+                }
             }
         }
 

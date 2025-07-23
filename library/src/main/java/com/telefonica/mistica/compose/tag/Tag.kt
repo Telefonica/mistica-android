@@ -42,9 +42,11 @@ fun Tag(
     text: String,
     modifier: Modifier = Modifier,
     @TagStyle style: Int = TYPE_PROMO,
+    customColors: TagColors? = null,
     @DrawableRes icon: Int? = null,
 ) {
-    val (background, textColor) = style.getStyle()
+    val (background, textColor) = if (customColors == null ) style.getStyle()
+    else customColors.backgroundColor to customColors.textColor
 
     Surface(
         modifier = modifier
@@ -90,7 +92,7 @@ object TagTestTags {
     const val TAG_TEXT = "tag_text"
 }
 
-class Tag constructor(
+class Tag(
     private val content: String,
 ) {
     private var modifier: Modifier = Modifier
@@ -101,14 +103,17 @@ class Tag constructor(
     @DrawableRes
     private var icon: Int? = null
 
+    private var customColors: TagColors? = null
+
     fun withModifier(modifier: Modifier) = apply { this.modifier = this.modifier.then(modifier) }
     fun withStyle(@TagStyle style: Int) = apply { this.style = style }
     fun withIcon(@DrawableRes icon: Int?) = apply { this.icon = icon }
+    fun withCustomColors(customColors: TagColors?) = apply { this.customColors = customColors }
 
     @SuppressLint("ComposableNaming")
     @Composable
     fun build() {
-        Tag(text = content, modifier = modifier, style = style, icon = icon)
+        Tag(text = content, modifier = modifier, style = style, icon = icon, customColors = customColors)
     }
 }
 
