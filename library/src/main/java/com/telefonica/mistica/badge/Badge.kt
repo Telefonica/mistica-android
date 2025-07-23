@@ -64,10 +64,11 @@ object Badge {
 
     private fun createBadge(
         anchor: View,
-        count: Int
+        count: Int,
     ) = BadgeDrawable.create(anchor.context).apply {
         maxCharacterCount = 2
         backgroundColor = anchor.context.getThemeColor(R.attr.colorBadge)
+        badgeTextColor = anchor.context.getThemeColor(R.attr.colorTextPrimaryInverse)
         setupCount(count)
     }
 
