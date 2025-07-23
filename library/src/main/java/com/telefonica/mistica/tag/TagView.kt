@@ -118,6 +118,6 @@ class TagView @JvmOverloads constructor(
         const val TYPE_WARNING = 5
         const val TYPE_ERROR = 6
 
-        private const val UNDEFINED_COLOUR = 0
+        private const val UNDEFINED_COLOUR = Int.MIN_VALUE
     }
 }
