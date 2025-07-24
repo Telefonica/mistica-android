@@ -14,11 +14,9 @@ import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.compose.theme.brand.BrandType
 import com.telefonica.mistica.compose.theme.brand.BrandType.BLAU
 import com.telefonica.mistica.compose.theme.brand.BrandType.MOVISTAR
-import com.telefonica.mistica.compose.theme.brand.BrandType.O2
 import com.telefonica.mistica.compose.theme.brand.BrandType.O2_NEW
 import com.telefonica.mistica.compose.theme.brand.BrandType.TELEFONICA
 import com.telefonica.mistica.compose.theme.brand.BrandType.TU
-import com.telefonica.mistica.compose.theme.brand.BrandType.VIVO
 import com.telefonica.mistica.compose.theme.brand.BrandType.VIVO_NEW
 import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 import com.telefonica.mistica.input.DropDownInput
@@ -47,8 +45,6 @@ class CatalogMainActivity : AppCompatActivity() {
 
         val styles: List<ComponentStyle> = listOf(
             ComponentStyle("Movistar", R.style.CatalogMovistar, MOVISTAR),
-            ComponentStyle("O2", R.style.CatalogO2, O2),
-            ComponentStyle("Vivo", R.style.CatalogVivo, VIVO),
             ComponentStyle("Vivo New", R.style.CatalogVivoNew, VIVO_NEW),
             ComponentStyle("Telefonica", R.style.CatalogTelefonica, TELEFONICA),
             ComponentStyle("Blau", R.style.CatalogBlau, BLAU),
