@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<color name="mistica_color_logo">#031A34</color>
+	<color name="tag_custom_color_text">#FFFFFF</color>
+	<color name="tag_custom_color_background">#FF00CAB3</color>
 </resources>

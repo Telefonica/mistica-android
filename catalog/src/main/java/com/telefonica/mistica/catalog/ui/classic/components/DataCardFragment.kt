@@ -21,6 +21,7 @@ import com.telefonica.mistica.tag.TagStyle
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_ACTIVE
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_ERROR
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_INACTIVE
+import com.telefonica.mistica.tag.TagView.Companion.TYPE_INFO
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_PROMO
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_SUCCESS
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_WARNING
@@ -126,6 +127,7 @@ class DataCardFragment : Fragment() {
 
     private enum class TagColors(@AttrRes val tagStyle: Int) {
         PROMO(TYPE_PROMO),
+        INFO(TYPE_INFO),
         ACTIVE(TYPE_ACTIVE),
         INACTIVE(TYPE_INACTIVE),
         SUCCESS(TYPE_SUCCESS),

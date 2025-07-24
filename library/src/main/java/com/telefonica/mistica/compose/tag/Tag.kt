@@ -32,6 +32,7 @@ import com.telefonica.mistica.tag.TagStyle
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_ACTIVE
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_ERROR
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_INACTIVE
+import com.telefonica.mistica.tag.TagView.Companion.TYPE_INFO
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_PROMO
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_SUCCESS
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_WARNING
@@ -41,9 +42,11 @@ fun Tag(
     text: String,
     modifier: Modifier = Modifier,
     @TagStyle style: Int = TYPE_PROMO,
+    customColors: TagColors? = null,
     @DrawableRes icon: Int? = null,
 ) {
-    val (background, textColor) = style.getStyle()
+    val (background, textColor) = if (customColors == null ) style.getStyle()
+    else customColors.backgroundColor to customColors.textColor
 
     Surface(
         modifier = modifier
@@ -89,7 +92,7 @@ object TagTestTags {
     const val TAG_TEXT = "tag_text"
 }
 
-class Tag constructor(
+class Tag(
     private val content: String,
 ) {
     private var modifier: Modifier = Modifier
@@ -100,14 +103,17 @@ class Tag constructor(
     @DrawableRes
     private var icon: Int? = null
 
+    private var customColors: TagColors? = null
+
     fun withModifier(modifier: Modifier) = apply { this.modifier = this.modifier.then(modifier) }
     fun withStyle(@TagStyle style: Int) = apply { this.style = style }
     fun withIcon(@DrawableRes icon: Int?) = apply { this.icon = icon }
+    fun withCustomColors(customColors: TagColors?) = apply { this.customColors = customColors }
 
     @SuppressLint("ComposableNaming")
     @Composable
     fun build() {
-        Tag(text = content, modifier = modifier, style = style, icon = icon)
+        Tag(text = content, modifier = modifier, style = style, icon = icon, customColors = customColors)
     }
 }
 
@@ -125,6 +131,7 @@ internal fun TagPreview() {
                 modifier = Modifier.padding(16.dp)
             ) {
                 item { Tag(text = "Promotion", style = TYPE_PROMO, modifier = Modifier.padding(4.dp), icon = android.R.drawable.ic_lock_power_off) }
+                item { Tag(text = "Info", style = TYPE_INFO, modifier = Modifier.padding(4.dp), icon = android.R.drawable.ic_lock_power_off) }
                 item { Tag(text = "Active", style = TYPE_ACTIVE, modifier = Modifier.padding(4.dp), icon = android.R.drawable.ic_lock_power_off) }
                 item { Tag(text = "Inactive", style = TYPE_INACTIVE, modifier = Modifier.padding(4.dp), icon = android.R.drawable.ic_lock_power_off) }
                 item { Tag(text = "Success", style = TYPE_SUCCESS, modifier = Modifier.padding(4.dp), icon = android.R.drawable.ic_lock_power_off) }
@@ -139,6 +146,7 @@ internal fun TagPreview() {
 @Suppress("CyclomaticComplexMethod")
 private fun Int.getStyle() = when (this) {
     TYPE_PROMO -> with(MisticaTheme.colors) { tagBackgroundPromo to tagTextPromo }
+    TYPE_INFO -> with(MisticaTheme.colors) { tagBackgroundInfo to tagTextInfo }
     TYPE_ACTIVE -> with(MisticaTheme.colors) { tagBackgroundActive to tagTextActive }
     TYPE_INACTIVE -> with(MisticaTheme.colors) { tagBackgroundInactive to tagTextInactive }
     TYPE_SUCCESS -> with(MisticaTheme.colors) { tagBackgroundSuccess to tagTextSuccess }
