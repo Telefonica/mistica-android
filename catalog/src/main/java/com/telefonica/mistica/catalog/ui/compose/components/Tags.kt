@@ -28,7 +28,8 @@ import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 import com.telefonica.mistica.tag.TagView
 
 
-private const val CUSTOM_TAG_COLOR = 0xFF00CAB3
+private const val TAG_CUSTOM_COLOR_BACKGROUND = 0xFF00CAB3
+private const val TAG_CUSTOM_COLOR_TEXT = 0XFFFFFFFF
 
 @Composable
 fun Tags() {
@@ -59,8 +60,8 @@ fun Tags() {
                         style = TagView.TYPE_ERROR,
                         customColors =
                             TagColors(
-                                backgroundColor = Color(CUSTOM_TAG_COLOR),
-                                textColor = Color.White,
+                                backgroundColor = Color(TAG_CUSTOM_COLOR_BACKGROUND),
+                                textColor = Color(TAG_CUSTOM_COLOR_TEXT),
                             ),
                         modifier = Modifier
                             .padding(4.dp)
@@ -84,7 +85,7 @@ fun Tags() {
                         style = TagView.TYPE_ERROR,
                         customColors =
                             TagColors(
-                                backgroundColor = Color(CUSTOM_TAG_COLOR),
+                                backgroundColor = Color(TAG_CUSTOM_COLOR_BACKGROUND),
                                 textColor = Color.White,
                             ),
                         modifier = Modifier
