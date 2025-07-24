@@ -41,12 +41,14 @@ class BadgesCatalogFragment : Fragment() {
             }
         }
         findViewById<Button>(R.id.button_add_one_digit_numeric_badge).setOnClickListener {
-            Badge.showNumericBadgeIn(imageView, imageContainer, Random(System.currentTimeMillis()).nextInt(1, 9))
+            val number = Random(System.currentTimeMillis()).nextInt(1, 9)
+            Badge.showNumericBadgeIn(imageView, imageContainer, number, "$number")
             badgeVisible = true
         }
 
         findViewById<Button>(R.id.button_add_two_digit_numeric_badge).setOnClickListener {
-            Badge.showNumericBadgeIn(imageView, imageContainer, Random(System.currentTimeMillis()).nextInt(10, 20))
+            val number = Random(System.currentTimeMillis()).nextInt(10, 20)
+            Badge.showNumericBadgeIn(imageView, imageContainer, number, "+9")
             badgeVisible = true
         }
         findViewById<Button>(R.id.button_remove_badge_if_numeric_with_count_zero).setOnClickListener {
