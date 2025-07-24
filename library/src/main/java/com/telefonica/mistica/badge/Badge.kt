@@ -80,7 +80,12 @@ object Badge {
             contentDescriptions[anchor.hashCode()] = anchor.contentDescription
         }
 
-        return badgeDescription
+        val suffix = badgeDescription
+
+        return when (contentDescriptions[anchor.hashCode()]) {
+            null -> suffix
+            else -> "${contentDescriptions[anchor.hashCode()]}, ${suffix ?: ""}"
+        }
     }
 
     private fun resetContentDescription(anchor: View) {
