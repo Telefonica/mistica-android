@@ -84,7 +84,7 @@ object Badge {
 
         return when (contentDescriptions[anchor.hashCode()]) {
             null -> suffix
-            else -> "${contentDescriptions[anchor.hashCode()]}, ${suffix ?: ""}"
+            else -> if (suffix.isNullOrEmpty()) "${contentDescriptions[anchor.hashCode()]}" else "${contentDescriptions[anchor.hashCode()]}, $suffix"
         }
     }
 
