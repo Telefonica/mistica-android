@@ -40,7 +40,7 @@ fun Badges() {
         BadgedBox(
             badge = {
                 if (show) {
-                    Badge(content = badgeContent, contentDescription = if((badgeContent?.length ?: 0) > 1) "+9" else "$badgeContent")
+                    Badge(content = badgeContent, contentDescription = if ((badgeContent?.length ?: 0) > 1) "+9" else "$badgeContent")
                 }
             },
             modifier = Modifier.semantics(mergeDescendants = true) {}

@@ -26,7 +26,7 @@ fun Badge(
     modifier: Modifier = Modifier,
     textSize: TextUnit = TextUnit.Unspecified,
     content: String? = null,
-    contentDescription : String? = null,
+    contentDescription: String? = null,
 ) {
     if (content.isNullOrEmpty()) {
         Surface(
