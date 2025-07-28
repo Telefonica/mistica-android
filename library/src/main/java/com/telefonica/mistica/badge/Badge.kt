@@ -113,9 +113,7 @@ object Badge {
             val overlay = parent.overlay
             overlay.clear()
             overlay.add(this)
-            if (contentDescription != null) {
-                anchor.contentDescription = contentDescription
-            }
+            anchor.contentDescription = contentDescription
         }
     }
 
