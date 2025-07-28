@@ -39,7 +39,7 @@ fun Badge(
     } else {
         MaterialBadge(
             backgroundColor = MisticaTheme.colors.badge,
-            modifier = Modifier
+            modifier = modifier
                 .testTag(BadgeTestTags.BADGE_NUMBER)
                 .clearAndSetSemantics {
                     if (contentDescription != null) {
