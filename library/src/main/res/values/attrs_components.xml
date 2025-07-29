@@ -7,16 +7,19 @@
 	<declare-styleable name="TagView">
 		<attr name="tagIcon" format="reference" />
 		<attr name="tagStyle" />
+        <attr name="tagTextColor" format="color" />
+        <attr name="tagBackgroundColor" format="color" />
 	</declare-styleable>
 
 	<!-- This attribute is being reused by CardView and TagView -->
 	<attr name="tagStyle" format="enum">
 		<enum name="promo" value="0" />
-		<enum name="active" value="1" />
-		<enum name="inactive" value="2" />
-		<enum name="success" value="3" />
-		<enum name="warning" value="4" />
-		<enum name="error" value="5" />
+		<enum name="info" value="1" />
+		<enum name="active" value="2" />
+		<enum name="inactive" value="3" />
+		<enum name="success" value="4" />
+		<enum name="warning" value="5" />
+		<enum name="error" value="6" />
 	</attr>
 
     <declare-styleable name="FeedbackScreen">
@@ -315,13 +318,11 @@
     <declare-styleable name="AbstractMisticaComposeView">
         <attr name="composeBrand" format="enum">
             <enum name="movistar" value="0" />
-            <enum name="o2" value="1" />
-            <enum name="vivo" value="2" />
-            <enum name="telefonica" value="3" />
-            <enum name="blau" value="4" />
-            <enum name="vivoNew" value="5" />
-            <enum name="tu" value="6" />
-            <enum name="o2New" value="7" />
+            <enum name="telefonica" value="1" />
+            <enum name="blau" value="2" />
+            <enum name="o2New" value="3" />
+            <enum name="vivoNew" value="4" />
+            <enum name="tu" value="5" />
         </attr>
     </declare-styleable>
 

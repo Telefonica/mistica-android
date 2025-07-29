@@ -7,22 +7,10 @@
 		<item name="font_family_medium">@font/onair_medium</item>
 	</style>
 
-	<style name="CatalogO2" parent="MisticaTheme.O2">
-		<item name="font_family_light">@font/onair_light</item>
-		<item name="font_family_regular">@font/onair_regular</item>
-		<item name="font_family_medium">@font/onair_medium</item>
-	</style>
-
 	<style name="CatalogO2New" parent="MisticaTheme.O2New">
 		<item name="font_family_light">@font/onair_light</item>
 		<item name="font_family_regular">@font/onair_regular</item>
 		<item name="font_family_medium">@font/onair_medium</item>
-	</style>
-
-	<style name="CatalogVivo" parent="MisticaTheme.Vivo">
-		<item name="font_family_light">@font/vivo_type_light</item>
-		<item name="font_family_regular">@font/vivo_type_regular</item>
-		<item name="font_family_medium">@font/vivo_type_medium</item>
 	</style>
 
 	<style name="CatalogVivoNew" parent="MisticaTheme.VivoNew">

@@ -16,14 +16,20 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.compose.tag.Tag
+import com.telefonica.mistica.compose.tag.TagColors
 import com.telefonica.mistica.compose.theme.MisticaTheme
 import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 import com.telefonica.mistica.tag.TagView
+
+
+private const val TAG_CUSTOM_COLOR_BACKGROUND = 0xFF00CAB3
+private const val TAG_CUSTOM_COLOR_TEXT = 0XFFFFFFFF
 
 @Composable
 fun Tags() {
@@ -42,22 +48,51 @@ fun Tags() {
                 modifier = Modifier.padding(16.dp)
             ) {
                 item { Tag(text = "Promotion", style = TagView.TYPE_PROMO, modifier = Modifier.padding(4.dp)) }
+                item { Tag(text = "Info", style = TagView.TYPE_INFO, modifier = Modifier.padding(4.dp)) }
                 item { Tag(text = "Active", style = TagView.TYPE_ACTIVE, modifier = Modifier.padding(4.dp)) }
                 item { Tag(text = "Inactive", style = TagView.TYPE_INACTIVE, modifier = Modifier.padding(4.dp)) }
                 item { Tag(text = "Success", style = TagView.TYPE_SUCCESS, modifier = Modifier.padding(4.dp)) }
                 item { Tag(text = "Warning", style = TagView.TYPE_WARNING, modifier = Modifier.padding(4.dp)) }
                 item { Tag(text = "Error", style = TagView.TYPE_ERROR, modifier = Modifier.padding(4.dp)) }
+                item {
+                    Tag(
+                        text = "Custom",
+                        style = TagView.TYPE_ERROR,
+                        customColors =
+                            TagColors(
+                                backgroundColor = Color(TAG_CUSTOM_COLOR_BACKGROUND),
+                                textColor = Color(TAG_CUSTOM_COLOR_TEXT),
+                            ),
+                        modifier = Modifier
+                            .padding(4.dp)
+                    )
+                }
             }
             LazyVerticalGrid(
                 columns = GridCells.Fixed(3),
                 modifier = Modifier.padding(16.dp)
             ) {
                 item { Tag(text = "Promotion", style = TagView.TYPE_PROMO, modifier = Modifier.padding(4.dp), icon = R.drawable.icn_cross) }
+                item { Tag(text = "Info", style = TagView.TYPE_INFO, modifier = Modifier.padding(4.dp), icon = R.drawable.icn_cross) }
                 item { Tag(text = "Active", style = TagView.TYPE_ACTIVE, modifier = Modifier.padding(4.dp), icon = R.drawable.icn_cross) }
                 item { Tag(text = "Inactive", style = TagView.TYPE_INACTIVE, modifier = Modifier.padding(4.dp), icon = R.drawable.icn_cross) }
                 item { Tag(text = "Success", style = TagView.TYPE_SUCCESS, modifier = Modifier.padding(4.dp), icon = R.drawable.icn_cross) }
                 item { Tag(text = "Warning", style = TagView.TYPE_WARNING, modifier = Modifier.padding(4.dp), icon = R.drawable.icn_cross) }
                 item { Tag(text = "Error", style = TagView.TYPE_ERROR, modifier = Modifier.padding(4.dp), icon = R.drawable.icn_cross) }
+                item {
+                    Tag(
+                        text = "Custom",
+                        style = TagView.TYPE_ERROR,
+                        customColors =
+                            TagColors(
+                                backgroundColor = Color(TAG_CUSTOM_COLOR_BACKGROUND),
+                                textColor = Color.White,
+                            ),
+                        modifier = Modifier
+                            .padding(4.dp),
+                        icon = R.drawable.icn_cross,
+                    )
+                }
             }
         }
 

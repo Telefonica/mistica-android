@@ -42,4 +42,4 @@ interface Brand {
     val themeVariant: MisticaThemeVariant
 }
 
-enum class BrandType { BLAU, MOVISTAR, O2, TELEFONICA, VIVO, VIVO_NEW, TU, O2_NEW }
+enum class BrandType { BLAU, MOVISTAR, TELEFONICA, VIVO_NEW, TU, O2_NEW }

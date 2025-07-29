@@ -44,11 +44,9 @@ import com.telefonica.mistica.catalog.ui.classic.components.TextPresetsCatalogFr
 import com.telefonica.mistica.catalog.ui.classic.components.TitleCatalogFragment
 import com.telefonica.mistica.catalog.ui.compose.common.CatalogBlauBrand
 import com.telefonica.mistica.catalog.ui.compose.common.CatalogMovistarBrand
-import com.telefonica.mistica.catalog.ui.compose.common.CatalogO2Brand
 import com.telefonica.mistica.catalog.ui.compose.common.CatalogO2NewBrand
 import com.telefonica.mistica.catalog.ui.compose.common.CatalogTelefonicaBrand
 import com.telefonica.mistica.catalog.ui.compose.common.CatalogTuBrand
-import com.telefonica.mistica.catalog.ui.compose.common.CatalogVivoBrand
 import com.telefonica.mistica.catalog.ui.compose.common.CatalogVivoNewBrand
 import com.telefonica.mistica.catalog.ui.compose.common.ComponentComposeFragment
 import com.telefonica.mistica.catalog.ui.compose.components.Badges
@@ -78,11 +76,9 @@ import com.telefonica.mistica.compose.theme.brand.Brand
 import com.telefonica.mistica.compose.theme.brand.BrandType
 import com.telefonica.mistica.compose.theme.brand.BrandType.BLAU
 import com.telefonica.mistica.compose.theme.brand.BrandType.MOVISTAR
-import com.telefonica.mistica.compose.theme.brand.BrandType.O2
 import com.telefonica.mistica.compose.theme.brand.BrandType.O2_NEW
 import com.telefonica.mistica.compose.theme.brand.BrandType.TELEFONICA
 import com.telefonica.mistica.compose.theme.brand.BrandType.TU
-import com.telefonica.mistica.compose.theme.brand.BrandType.VIVO
 import com.telefonica.mistica.compose.theme.brand.BrandType.VIVO_NEW
 
 class ComponentCatalogActivity : AppCompatActivity() {
@@ -341,8 +337,6 @@ class ComponentCatalogActivity : AppCompatActivity() {
         classicThemeOverride = intent.getIntExtra(EXTRA_CLASSIC_THEME, DEFAULT_CLASSIC_THEME)
         composeThemeOverride = when ((intent.getSerializableExtra(EXTRA_COMPOSE_THEME) ?: DEFAULT_BRAND_TYPE) as BrandType) {
             MOVISTAR -> CatalogMovistarBrand
-            O2 -> CatalogO2Brand
-            VIVO -> CatalogVivoBrand
             VIVO_NEW -> CatalogVivoNewBrand
             TELEFONICA -> CatalogTelefonicaBrand
             BLAU -> CatalogBlauBrand
