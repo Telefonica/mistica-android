@@ -42,8 +42,8 @@ fun Badge(
             modifier = modifier
                 .testTag(BadgeTestTags.BADGE_NUMBER)
                 .clearAndSetSemantics {
-                    if (contentDescription != null) {
-                        this.contentDescription = getBadgeContent(contentDescription)
+                    contentDescription?.let {
+                        this.contentDescription = getBadgeContent(it)
                     }
                 },
         ) {
