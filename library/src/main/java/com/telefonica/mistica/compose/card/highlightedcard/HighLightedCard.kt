@@ -219,7 +219,7 @@ private fun HighLightCardButton(
     modifier: Modifier,
     inverseDisplay: Boolean,
     buttonConfig: HighLightCardButtonSettings,
-    onButtonClick: () -> Unit = {}
+    onButtonClick: () -> Unit = {},
 ){
     val buttonStyle = buttonConfig.getButtonStyle(inverseDisplay)
 
@@ -228,6 +228,7 @@ private fun HighLightCardButton(
             modifier = modifier,
             text = buttonConfig.buttonText,
             buttonStyle = buttonStyle,
+            invalidatePaddings = buttonConfig.invalidatePaddings,
             onClickListener = onButtonClick
         )
     }else{
@@ -243,7 +244,8 @@ enum class HighLightCardImageConfig {
 
 data class HighLightCardButtonSettings(
     val buttonText: String = "",
-    val buttonStyle: ButtonStyle? = null
+    val buttonStyle: ButtonStyle? = null,
+    val invalidatePaddings: Boolean = false,
 ){
     fun getButtonStyle(inverse: Boolean): ButtonStyle? {
         return buttonStyle?.let { style ->
