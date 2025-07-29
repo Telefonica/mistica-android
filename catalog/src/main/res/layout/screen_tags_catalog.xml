@@ -23,7 +23,15 @@
 				android:layout_columnWeight="1"
 				android:layout_gravity="center"
 				android:text="Promotion"
-				tools:text="@tools:sample/full_names"
+				/>
+
+		<com.telefonica.mistica.tag.TagView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_columnWeight="1"
+				android:layout_gravity="center"
+				android:text="Info"
+				app:tagStyle="info"
 				/>
 
 		<com.telefonica.mistica.tag.TagView
@@ -33,7 +41,6 @@
 				android:layout_gravity="center"
 				android:text="Active"
 				app:tagStyle="active"
-				tools:text="@tools:sample/full_names"
 				/>
 
 		<com.telefonica.mistica.tag.TagView
@@ -43,7 +50,6 @@
 				android:layout_gravity="center"
 				android:text="Inactive"
 				app:tagStyle="inactive"
-				tools:text="@tools:sample/full_names"
 				/>
 
 		<com.telefonica.mistica.tag.TagView
@@ -53,7 +59,6 @@
 				android:layout_gravity="center"
 				android:text="Success"
 				app:tagStyle="success"
-				tools:text="@tools:sample/full_names"
 				/>
 
 		<com.telefonica.mistica.tag.TagView
@@ -63,7 +68,6 @@
 				android:layout_gravity="center"
 				android:text="Warning"
 				app:tagStyle="warning"
-				tools:text="@tools:sample/full_names"
 				/>
 
 		<com.telefonica.mistica.tag.TagView
@@ -73,7 +77,18 @@
 				android:layout_gravity="center"
 				android:text="Error"
 				app:tagStyle="error"
-				tools:text="@tools:sample/full_names"
+				/>
+
+		<com.telefonica.mistica.tag.TagView
+				android:id="@+id/custom_color_tag"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_columnWeight="1"
+				android:layout_gravity="center"
+				android:text="Custom"
+				app:tagStyle="error"
+				app:tagTextColor="@color/tag_custom_color_text"
+				app:tagBackgroundColor="@color/tag_custom_color_background"
 				/>
 	</GridLayout>
 
@@ -92,7 +107,16 @@
 				android:layout_gravity="center"
 				android:text="Promotion"
 				app:tagIcon="@drawable/icn_cross"
-				tools:text="@tools:sample/full_names"
+				/>
+
+		<com.telefonica.mistica.tag.TagView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_columnWeight="1"
+				android:layout_gravity="center"
+				android:text="Info"
+				app:tagIcon="@drawable/icn_cross"
+				app:tagStyle="info"
 				/>
 
 		<com.telefonica.mistica.tag.TagView
@@ -103,7 +127,6 @@
 				android:text="Active"
 				app:tagIcon="@drawable/icn_cross"
 				app:tagStyle="active"
-				tools:text="@tools:sample/full_names"
 				/>
 
 		<com.telefonica.mistica.tag.TagView
@@ -114,7 +137,6 @@
 				android:text="Inactive"
 				app:tagIcon="@drawable/icn_cross"
 				app:tagStyle="inactive"
-				tools:text="@tools:sample/full_names"
 				/>
 
 		<com.telefonica.mistica.tag.TagView
@@ -125,7 +147,6 @@
 				android:text="Success"
 				app:tagIcon="@drawable/icn_cross"
 				app:tagStyle="success"
-				tools:text="@tools:sample/full_names"
 				/>
 
 		<com.telefonica.mistica.tag.TagView
@@ -136,7 +157,6 @@
 				android:text="Warning"
 				app:tagIcon="@drawable/icn_cross"
 				app:tagStyle="warning"
-				tools:text="@tools:sample/full_names"
 				/>
 
 		<com.telefonica.mistica.tag.TagView
@@ -147,7 +167,19 @@
 				android:text="Error"
 				app:tagIcon="@drawable/icn_cross"
 				app:tagStyle="error"
-				tools:text="@tools:sample/full_names"
+				/>
+
+		<com.telefonica.mistica.tag.TagView
+				android:id="@+id/custom_color_tag_with_cross_icon"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_columnWeight="1"
+				android:layout_gravity="center"
+				android:text="Custom"
+				app:tagIcon="@drawable/icn_cross"
+				app:tagStyle="error"
+				app:tagTextColor="@color/tag_custom_color_text"
+				app:tagBackgroundColor="@color/tag_custom_color_background"
 				/>
 	</GridLayout>
 
