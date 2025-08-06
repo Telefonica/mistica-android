@@ -9,12 +9,12 @@ public object MovistarBrandRadius {
       avatarBorderRadius = 50,
       barBorderRadius = 999.dp,
       buttonBorderRadius = 4.dp,
-      checkboxBorderRadius = 2.dp,
-      containerBorderRadius = 8.dp,
+      checkboxBorderRadius = 4.dp,
+      containerBorderRadius = 16.dp,
       indicatorBorderRadius = 999.dp,
-      inputBorderRadius = 8.dp,
+      inputBorderRadius = 12.dp,
       legacyDisplayBorderRadius = 16.dp,
       popupBorderRadius = 8.dp,
-      sheetBorderRadius = 8.dp,
+      sheetBorderRadius = 16.dp,
       mediaSmallBorderRadius = 8.dp,)
 }

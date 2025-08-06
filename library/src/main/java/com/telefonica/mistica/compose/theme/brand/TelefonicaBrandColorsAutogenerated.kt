@@ -35,51 +35,68 @@ public object TelefonicaBrandColors {
       borderSelected = TelefonicaPaletteColor.telefonica_color_telefonicaBlue
       coverBackgroundHover = TelefonicaPaletteColor.telefonica_color_darkModeBlack_25_alpha
       coverBackgroundPressed = TelefonicaPaletteColor.telefonica_color_darkModeBlack_35_alpha
-      buttonDangerBackground = TelefonicaPaletteColor.telefonica_color_coral
-      buttonDangerBackgroundPressed = TelefonicaPaletteColor.telefonica_color_coral80
-      buttonDangerBackgroundHover = TelefonicaPaletteColor.telefonica_color_coral80
-      buttonLinkDangerBackgroundPressed = TelefonicaPaletteColor.telefonica_color_coral10
+      buttonDangerBackground = TelefonicaPaletteColor.telefonica_color_coral60
+      buttonDangerBackgroundPressed = TelefonicaPaletteColor.telefonica_color_coral65
+      buttonDangerBackgroundHover = TelefonicaPaletteColor.telefonica_color_coral65
       buttonLinkDangerBackgroundInverse = TelefonicaPaletteColor.telefonica_color_white
+      buttonLinkDangerBackgroundMedia = TelefonicaPaletteColor.telefonica_color_white
+      buttonLinkDangerBackgroundPressed = TelefonicaPaletteColor.telefonica_color_coral10
       buttonLinkDangerBackgroundInversePressed = TelefonicaPaletteColor.telefonica_color_coral10
+      buttonLinkDangerBackgroundMediaPressed = TelefonicaPaletteColor.telefonica_color_coral10
       buttonLinkBackgroundPressed = TelefonicaPaletteColor.telefonica_color_grey1
       buttonLinkBackgroundInversePressed = TelefonicaPaletteColor.telefonica_color_white_8_alpha
+      buttonLinkBackgroundMediaPressed = TelefonicaPaletteColor.telefonica_color_white_8_alpha
       buttonPrimaryBackground = TelefonicaPaletteColor.telefonica_color_telefonicaBlue
       buttonPrimaryBackgroundInverse = TelefonicaPaletteColor.telefonica_color_white
-      buttonPrimaryBackgroundPressed = TelefonicaPaletteColor.telefonica_color_telefonicaBlue70
+      buttonPrimaryBackgroundMedia = TelefonicaPaletteColor.telefonica_color_white
       buttonPrimaryBackgroundHover = TelefonicaPaletteColor.telefonica_color_telefonicaBlue70
+      buttonPrimaryBackgroundInverseHover = TelefonicaPaletteColor.telefonica_color_telefonicaBlue10
+      buttonPrimaryBackgroundMediaHover = TelefonicaPaletteColor.telefonica_color_telefonicaBlue10
+      buttonPrimaryBackgroundPressed = TelefonicaPaletteColor.telefonica_color_telefonicaBlue70
       buttonPrimaryBackgroundInversePressed =
-          TelefonicaPaletteColor.telefonica_color_telefonicaBlue30
+          TelefonicaPaletteColor.telefonica_color_telefonicaBlue10
+      buttonPrimaryBackgroundMediaPressed = TelefonicaPaletteColor.telefonica_color_telefonicaBlue10
       buttonSecondaryBorder = TelefonicaPaletteColor.telefonica_color_telefonicaBlue
-      buttonSecondaryBorderPressed = TelefonicaPaletteColor.telefonica_color_telefonicaBlue70
-      buttonSecondaryBackgroundHover = TelefonicaPaletteColor.telefonica_color_telefonicaBlue10
-      buttonSecondaryBackgroundPressed = TelefonicaPaletteColor.telefonica_color_telefonicaBlue10
       buttonSecondaryBorderInverse = TelefonicaPaletteColor.telefonica_color_white
+      buttonSecondaryBorderMedia = TelefonicaPaletteColor.telefonica_color_white
+      buttonSecondaryBorderPressed = TelefonicaPaletteColor.telefonica_color_telefonicaBlue70
       buttonSecondaryBorderInversePressed = TelefonicaPaletteColor.telefonica_color_white
+      buttonSecondaryBorderMediaPressed = TelefonicaPaletteColor.telefonica_color_white
+      buttonSecondaryBackgroundHover = TelefonicaPaletteColor.telefonica_color_telefonicaBlue10
       buttonSecondaryBackgroundInverseHover = TelefonicaPaletteColor.telefonica_color_white_10_alpha
+      buttonSecondaryBackgroundMediaHover = TelefonicaPaletteColor.telefonica_color_white_10_alpha
+      buttonSecondaryBackgroundPressed = TelefonicaPaletteColor.telefonica_color_telefonicaBlue10
       buttonSecondaryBackgroundInversePressed =
           TelefonicaPaletteColor.telefonica_color_white_10_alpha
+      buttonSecondaryBackgroundMediaPressed = TelefonicaPaletteColor.telefonica_color_white_10_alpha
       textButtonPrimary = TelefonicaPaletteColor.telefonica_color_white
       textButtonPrimaryInverse = TelefonicaPaletteColor.telefonica_color_telefonicaBlue
-      textButtonPrimaryInversePressed = TelefonicaPaletteColor.telefonica_color_telefonicaBlue
+      textButtonPrimaryMedia = TelefonicaPaletteColor.telefonica_color_telefonicaBlue
+      textButtonPrimaryInversePressed = TelefonicaPaletteColor.telefonica_color_telefonicaBlue70
+      textButtonPrimaryMediaPressed = TelefonicaPaletteColor.telefonica_color_telefonicaBlue70
       textButtonSecondary = TelefonicaPaletteColor.telefonica_color_telefonicaBlue
-      textButtonSecondaryPressed = TelefonicaPaletteColor.telefonica_color_telefonicaBlue70
       textButtonSecondaryInverse = TelefonicaPaletteColor.telefonica_color_white
+      textButtonSecondaryMedia = TelefonicaPaletteColor.telefonica_color_white
+      textButtonSecondaryPressed = TelefonicaPaletteColor.telefonica_color_telefonicaBlue70
       textButtonSecondaryInversePressed = TelefonicaPaletteColor.telefonica_color_white
+      textButtonSecondaryMediaPressed = TelefonicaPaletteColor.telefonica_color_white
       textLink = TelefonicaPaletteColor.telefonica_color_telefonicaBlue
       textLinkInverse = TelefonicaPaletteColor.telefonica_color_white
-      textLinkDanger = TelefonicaPaletteColor.telefonica_color_coral
+      textLinkMedia = TelefonicaPaletteColor.telefonica_color_white
+      textLinkDanger = TelefonicaPaletteColor.telefonica_color_coral60
+      textLinkDangerMedia = TelefonicaPaletteColor.telefonica_color_coral60
       textLinkSnackbar = TelefonicaPaletteColor.telefonica_color_telefonicaBlue30
-      textActivated = TelefonicaPaletteColor.telefonica_color_telefonicaBlue
-      textBrand = TelefonicaPaletteColor.telefonica_color_telefonicaBlue
-      inputBorder = TelefonicaPaletteColor.telefonica_color_grey4
+      textActivated = TelefonicaPaletteColor.telefonica_color_telefonicaBlue70
+      textBrand = TelefonicaPaletteColor.telefonica_color_telefonicaBlue70
+      inputBorder = TelefonicaPaletteColor.telefonica_color_grey5
       inputBorderInverse = TelefonicaPaletteColor.telefonica_color_white
       completedStep = TelefonicaPaletteColor.telefonica_color_telefonicaBlue
       completedStepInverse = TelefonicaPaletteColor.telefonica_color_telefonicaBlue70
-      control = TelefonicaPaletteColor.telefonica_color_grey3
+      control = TelefonicaPaletteColor.telefonica_color_grey5
       controlActivated = TelefonicaPaletteColor.telefonica_color_telefonicaBlue
       controlInverse = TelefonicaPaletteColor.telefonica_color_grey1
       controlActivatedInverse = TelefonicaPaletteColor.telefonica_color_white
-      controlError = TelefonicaPaletteColor.telefonica_color_coral
+      controlError = TelefonicaPaletteColor.telefonica_color_coral60
       barTrack = TelefonicaPaletteColor.telefonica_color_grey2
       barTrackInverse = TelefonicaPaletteColor.telefonica_color_white_30_alpha
       loadingBar = TelefonicaPaletteColor.telefonica_color_telefonicaBlue30
@@ -91,8 +108,8 @@ public object TelefonicaBrandColors {
       divider = TelefonicaPaletteColor.telefonica_color_grey2
       dividerInverse = TelefonicaPaletteColor.telefonica_color_white_20_alpha
       navigationBarDivider = TelefonicaPaletteColor.telefonica_color_telefonicaBlue
-      badge = TelefonicaPaletteColor.telefonica_color_coral70
-      feedbackErrorBackground = TelefonicaPaletteColor.telefonica_color_coral
+      badge = TelefonicaPaletteColor.telefonica_color_coral60
+      feedbackErrorBackground = TelefonicaPaletteColor.telefonica_color_coral60
       feedbackInfoBackground = TelefonicaPaletteColor.telefonica_color_grey9
       brand = TelefonicaPaletteColor.telefonica_color_telefonicaBlue
       brandHigh = TelefonicaPaletteColor.telefonica_color_telefonicaBlue70
@@ -105,62 +122,63 @@ public object TelefonicaBrandColors {
       textPrimary = TelefonicaPaletteColor.telefonica_color_grey9
       textPrimaryInverse = TelefonicaPaletteColor.telefonica_color_white
       textSecondary = TelefonicaPaletteColor.telefonica_color_grey6
-      textSecondaryInverse = TelefonicaPaletteColor.telefonica_color_telefonicaBlue10
-      error = TelefonicaPaletteColor.telefonica_color_coral
-      textError = TelefonicaPaletteColor.telefonica_color_coral
+      textSecondaryInverse = TelefonicaPaletteColor.telefonica_color_white
+      error = TelefonicaPaletteColor.telefonica_color_coral60
+      textError = TelefonicaPaletteColor.telefonica_color_coral60
       textErrorInverse = TelefonicaPaletteColor.telefonica_color_white
       success = TelefonicaPaletteColor.telefonica_color_turquoise
-      warning = TelefonicaPaletteColor.telefonica_color_ambar
+      warning = TelefonicaPaletteColor.telefonica_color_yellow70
       promo = TelefonicaPaletteColor.telefonica_color_orchid
-      highlight = TelefonicaPaletteColor.telefonica_color_coral40
+      highlight = TelefonicaPaletteColor.telefonica_color_coral30
       successLow = TelefonicaPaletteColor.telefonica_color_turquoise10
-      warningLow = TelefonicaPaletteColor.telefonica_color_ambar10
+      warningLow = TelefonicaPaletteColor.telefonica_color_yellow15
       errorLow = TelefonicaPaletteColor.telefonica_color_coral10
       promoLow = TelefonicaPaletteColor.telefonica_color_orchid10
       brandLow = TelefonicaPaletteColor.telefonica_color_telefonicaBlue10
       successHigh = TelefonicaPaletteColor.telefonica_color_turquoise70
-      warningHigh = TelefonicaPaletteColor.telefonica_color_ambar70
-      errorHigh = TelefonicaPaletteColor.telefonica_color_coral70
+      warningHigh = TelefonicaPaletteColor.telefonica_color_yellow70
+      errorHigh = TelefonicaPaletteColor.telefonica_color_coral65
       promoHigh = TelefonicaPaletteColor.telefonica_color_orchid70
       successHighInverse = TelefonicaPaletteColor.telefonica_color_turquoise70
-      warningHighInverse = TelefonicaPaletteColor.telefonica_color_ambar70
-      errorHighInverse = TelefonicaPaletteColor.telefonica_color_coral70
+      warningHighInverse = TelefonicaPaletteColor.telefonica_color_yellow70
+      errorHighInverse = TelefonicaPaletteColor.telefonica_color_coral65
       promoHighInverse = TelefonicaPaletteColor.telefonica_color_orchid70
       textNavigationBarPrimary = TelefonicaPaletteColor.telefonica_color_white
       textNavigationBarSecondary = TelefonicaPaletteColor.telefonica_color_grey1
       textNavigationSearchBarHint = TelefonicaPaletteColor.telefonica_color_grey1
       textNavigationSearchBarText = TelefonicaPaletteColor.telefonica_color_white
       textAppBar = TelefonicaPaletteColor.telefonica_color_grey4
-      textAppBarSelected = TelefonicaPaletteColor.telefonica_color_telefonicaBlue
-      customTabsBackground = TelefonicaPaletteColor.telefonica_color_telefonicaBlue
-      tagTextPromo = TelefonicaPaletteColor.telefonica_color_orchid70
-      tagTextActive = TelefonicaPaletteColor.telefonica_color_telefonicaBlue
-      tagTextInactive = TelefonicaPaletteColor.telefonica_color_grey5
-      tagTextInfo = TelefonicaPaletteColor.telefonica_color_telefonicaBlue
-      tagTextSuccess = TelefonicaPaletteColor.telefonica_color_turquoise70
-      tagTextWarning = TelefonicaPaletteColor.telefonica_color_ambar70
-      tagTextError = TelefonicaPaletteColor.telefonica_color_coral70
+      textAppBarSelected = TelefonicaPaletteColor.telefonica_color_telefonicaBlue70
+      customTabsBackground = TelefonicaPaletteColor.telefonica_color_telefonicaBlue70
+      tagTextPromo = TelefonicaPaletteColor.telefonica_color_orchid80
+      tagTextActive = TelefonicaPaletteColor.telefonica_color_telefonicaBlue70
+      tagTextInactive = TelefonicaPaletteColor.telefonica_color_grey6
+      tagTextInfo = TelefonicaPaletteColor.telefonica_color_telefonicaBlue70
+      tagTextSuccess = TelefonicaPaletteColor.telefonica_color_turquoise80
+      tagTextWarning = TelefonicaPaletteColor.telefonica_color_yellow80
+      tagTextError = TelefonicaPaletteColor.telefonica_color_coral65
       tagBackgroundPromo = TelefonicaPaletteColor.telefonica_color_orchid10
-      tagBackgroundActive = TelefonicaPaletteColor.telefonica_color_telefonicaBlue10
+      tagBackgroundActive = TelefonicaPaletteColor.telefonica_color_grey1
       tagBackgroundInactive = TelefonicaPaletteColor.telefonica_color_grey1
       tagBackgroundInfo = TelefonicaPaletteColor.telefonica_color_telefonicaBlue10
       tagBackgroundSuccess = TelefonicaPaletteColor.telefonica_color_turquoise10
-      tagBackgroundWarning = TelefonicaPaletteColor.telefonica_color_ambar10
+      tagBackgroundWarning = TelefonicaPaletteColor.telefonica_color_yellow15
       tagBackgroundError = TelefonicaPaletteColor.telefonica_color_coral10
-      tagTextPromoInverse = TelefonicaPaletteColor.telefonica_color_orchid70
-      tagTextActiveInverse = TelefonicaPaletteColor.telefonica_color_telefonicaBlue
-      tagTextInactiveInverse = TelefonicaPaletteColor.telefonica_color_grey5
-      tagTextInfoInverse = TelefonicaPaletteColor.telefonica_color_telefonicaBlue
-      tagTextSuccessInverse = TelefonicaPaletteColor.telefonica_color_turquoise70
-      tagTextWarningInverse = TelefonicaPaletteColor.telefonica_color_ambar70
-      tagTextErrorInverse = TelefonicaPaletteColor.telefonica_color_coral70
+      tagTextPromoInverse = TelefonicaPaletteColor.telefonica_color_orchid80
+      tagTextActiveInverse = TelefonicaPaletteColor.telefonica_color_telefonicaBlue70
+      tagTextInactiveInverse = TelefonicaPaletteColor.telefonica_color_grey6
+      tagTextInfoInverse = TelefonicaPaletteColor.telefonica_color_telefonicaBlue70
+      tagTextSuccessInverse = TelefonicaPaletteColor.telefonica_color_turquoise80
+      tagTextWarningInverse = TelefonicaPaletteColor.telefonica_color_yellow80
+      tagTextErrorInverse = TelefonicaPaletteColor.telefonica_color_coral65
       tagBackgroundPromoInverse = TelefonicaPaletteColor.telefonica_color_orchid10
-      tagBackgroundActiveInverse = TelefonicaPaletteColor.telefonica_color_telefonicaBlue10
+      tagBackgroundActiveInverse = TelefonicaPaletteColor.telefonica_color_grey1
       tagBackgroundInactiveInverse = TelefonicaPaletteColor.telefonica_color_grey1
       tagBackgroundInfoInverse = TelefonicaPaletteColor.telefonica_color_telefonicaBlue10
       tagBackgroundSuccessInverse = TelefonicaPaletteColor.telefonica_color_turquoise10
-      tagBackgroundWarningInverse = TelefonicaPaletteColor.telefonica_color_ambar10
+      tagBackgroundWarningInverse = TelefonicaPaletteColor.telefonica_color_yellow15
       tagBackgroundErrorInverse = TelefonicaPaletteColor.telefonica_color_coral10
+      cardFooterOverlay = TelefonicaPaletteColor.telefonica_color_black_70_alpha
       }
 
   public val darkColors: MisticaColors = MisticaColors().apply {
@@ -169,153 +187,173 @@ public object TelefonicaBrandColors {
       backgroundBrandSecondary = TelefonicaPaletteColor.telefonica_color_darkModeBlack
       backgroundContainer = TelefonicaPaletteColor.telefonica_color_darkModeGrey
       backgroundContainerError = TelefonicaPaletteColor.telefonica_color_darkModeGrey
-      backgroundContainerHover = TelefonicaPaletteColor.telefonica_color_white_5_alpha
-      backgroundContainerPressed = TelefonicaPaletteColor.telefonica_color_white_8_alpha
+      backgroundContainerHover = TelefonicaPaletteColor.telefonica_color_telefonicaBlue70_5_alpha
+      backgroundContainerPressed = TelefonicaPaletteColor.telefonica_color_telefonicaBlue70_8_alpha
       backgroundContainerBrandHover = TelefonicaPaletteColor.telefonica_color_white_3_alpha
       backgroundContainerBrandPressed = TelefonicaPaletteColor.telefonica_color_white_5_alpha
       backgroundContainerBrandOverInverse = TelefonicaPaletteColor.telefonica_color_darkModeGrey
       backgroundContainerAlternative = TelefonicaPaletteColor.telefonica_color_darkModeGrey
       backgroundOverlay = TelefonicaPaletteColor.telefonica_color_darkModeGrey_80_alpha
-      backgroundSkeleton = TelefonicaPaletteColor.telefonica_color_grey6
-      backgroundSkeletonInverse = TelefonicaPaletteColor.telefonica_color_grey6
+      backgroundSkeleton = TelefonicaPaletteColor.telefonica_color_grey8
+      backgroundSkeletonInverse = TelefonicaPaletteColor.telefonica_color_grey8
       backgroundBrandTop = TelefonicaPaletteColor.telefonica_color_darkModeBlack
       backgroundBrandBottom = TelefonicaPaletteColor.telefonica_color_darkModeBlack
       appBarBackground = TelefonicaPaletteColor.telefonica_color_darkModeGrey
       navigationBarBackground = TelefonicaPaletteColor.telefonica_color_darkModeBlack
-      skeletonWave = TelefonicaPaletteColor.telefonica_color_grey5
+      skeletonWave = TelefonicaPaletteColor.telefonica_color_grey8
       borderLow = TelefonicaPaletteColor.telefonica_color_darkModeBlack
       border = TelefonicaPaletteColor.telefonica_color_darkModeGrey
       borderHigh = TelefonicaPaletteColor.telefonica_color_grey5
-      borderSelected = TelefonicaPaletteColor.telefonica_color_telefonicaBlue
+      borderSelected = TelefonicaPaletteColor.telefonica_color_darkModeTelefonicaBlue
       coverBackgroundHover = TelefonicaPaletteColor.telefonica_color_darkModeBlack_25_alpha
       coverBackgroundPressed = TelefonicaPaletteColor.telefonica_color_darkModeBlack_35_alpha
-      buttonDangerBackground = TelefonicaPaletteColor.telefonica_color_coral
-      buttonDangerBackgroundPressed = TelefonicaPaletteColor.telefonica_color_coral80
-      buttonDangerBackgroundHover = TelefonicaPaletteColor.telefonica_color_coral80
-      buttonLinkDangerBackgroundPressed = TelefonicaPaletteColor.telefonica_color_white_8_alpha
-      buttonLinkDangerBackgroundInverse = TelefonicaPaletteColor.telefonica_color_white_0_alpha
+      buttonDangerBackground = TelefonicaPaletteColor.telefonica_color_coral60
+      buttonDangerBackgroundPressed = TelefonicaPaletteColor.telefonica_color_coral65
+      buttonDangerBackgroundHover = TelefonicaPaletteColor.telefonica_color_coral65
+      buttonLinkDangerBackgroundInverse = TelefonicaPaletteColor.telefonica_color_coral60_16_alpha
+      buttonLinkDangerBackgroundMedia = TelefonicaPaletteColor.telefonica_color_white
+      buttonLinkDangerBackgroundPressed = TelefonicaPaletteColor.telefonica_color_coral60_16_alpha
       buttonLinkDangerBackgroundInversePressed =
-          TelefonicaPaletteColor.telefonica_color_white_8_alpha
-      buttonLinkBackgroundPressed = TelefonicaPaletteColor.telefonica_color_white_8_alpha
-      buttonLinkBackgroundInversePressed = TelefonicaPaletteColor.telefonica_color_white_8_alpha
+          TelefonicaPaletteColor.telefonica_color_coral60_16_alpha
+      buttonLinkDangerBackgroundMediaPressed = TelefonicaPaletteColor.telefonica_color_coral10
+      buttonLinkBackgroundPressed =
+          TelefonicaPaletteColor.telefonica_color_telefonicaBlue30_16_alpha
+      buttonLinkBackgroundInversePressed =
+          TelefonicaPaletteColor.telefonica_color_telefonicaBlue30_16_alpha
+      buttonLinkBackgroundMediaPressed = TelefonicaPaletteColor.telefonica_color_white_8_alpha
       buttonPrimaryBackground = TelefonicaPaletteColor.telefonica_color_telefonicaBlue
-      buttonPrimaryBackgroundInverse = TelefonicaPaletteColor.telefonica_color_telefonicaBlue
-      buttonPrimaryBackgroundPressed = TelefonicaPaletteColor.telefonica_color_telefonicaBlue70
+      buttonPrimaryBackgroundInverse = TelefonicaPaletteColor.telefonica_color_white
+      buttonPrimaryBackgroundMedia = TelefonicaPaletteColor.telefonica_color_white
       buttonPrimaryBackgroundHover = TelefonicaPaletteColor.telefonica_color_telefonicaBlue70
+      buttonPrimaryBackgroundInverseHover = TelefonicaPaletteColor.telefonica_color_telefonicaBlue10
+      buttonPrimaryBackgroundMediaHover = TelefonicaPaletteColor.telefonica_color_telefonicaBlue10
+      buttonPrimaryBackgroundPressed = TelefonicaPaletteColor.telefonica_color_telefonicaBlue70
       buttonPrimaryBackgroundInversePressed =
-          TelefonicaPaletteColor.telefonica_color_telefonicaBlue70
-      buttonSecondaryBackgroundPressed = TelefonicaPaletteColor.telefonica_color_white_15_alpha
+          TelefonicaPaletteColor.telefonica_color_telefonicaBlue10
+      buttonPrimaryBackgroundMediaPressed = TelefonicaPaletteColor.telefonica_color_telefonicaBlue10
       buttonSecondaryBorder = TelefonicaPaletteColor.telefonica_color_white
-      buttonSecondaryBackgroundHover = TelefonicaPaletteColor.telefonica_color_white_15_alpha
-      buttonSecondaryBorderPressed = TelefonicaPaletteColor.telefonica_color_white
       buttonSecondaryBorderInverse = TelefonicaPaletteColor.telefonica_color_white
+      buttonSecondaryBorderMedia = TelefonicaPaletteColor.telefonica_color_white
+      buttonSecondaryBorderPressed = TelefonicaPaletteColor.telefonica_color_white
       buttonSecondaryBorderInversePressed = TelefonicaPaletteColor.telefonica_color_white
+      buttonSecondaryBorderMediaPressed = TelefonicaPaletteColor.telefonica_color_white
+      buttonSecondaryBackgroundHover = TelefonicaPaletteColor.telefonica_color_white_15_alpha
       buttonSecondaryBackgroundInverseHover = TelefonicaPaletteColor.telefonica_color_white_15_alpha
+      buttonSecondaryBackgroundMediaHover = TelefonicaPaletteColor.telefonica_color_white_10_alpha
+      buttonSecondaryBackgroundPressed = TelefonicaPaletteColor.telefonica_color_white_15_alpha
       buttonSecondaryBackgroundInversePressed =
           TelefonicaPaletteColor.telefonica_color_white_15_alpha
-      textButtonPrimary = TelefonicaPaletteColor.telefonica_color_grey2
-      textButtonPrimaryInverse = TelefonicaPaletteColor.telefonica_color_grey2
-      textButtonPrimaryInversePressed = TelefonicaPaletteColor.telefonica_color_grey2
-      textButtonSecondary = TelefonicaPaletteColor.telefonica_color_grey2
-      textButtonSecondaryPressed = TelefonicaPaletteColor.telefonica_color_grey2
-      textButtonSecondaryInverse = TelefonicaPaletteColor.telefonica_color_grey2
-      textButtonSecondaryInversePressed = TelefonicaPaletteColor.telefonica_color_grey2
-      textLink = TelefonicaPaletteColor.telefonica_color_telefonicaBlue
-      textLinkInverse = TelefonicaPaletteColor.telefonica_color_telefonicaBlue
+      buttonSecondaryBackgroundMediaPressed = TelefonicaPaletteColor.telefonica_color_white_10_alpha
+      textButtonPrimary = TelefonicaPaletteColor.telefonica_color_white
+      textButtonPrimaryInverse = TelefonicaPaletteColor.telefonica_color_telefonicaBlue
+      textButtonPrimaryMedia = TelefonicaPaletteColor.telefonica_color_telefonicaBlue
+      textButtonPrimaryInversePressed = TelefonicaPaletteColor.telefonica_color_telefonicaBlue70
+      textButtonPrimaryMediaPressed = TelefonicaPaletteColor.telefonica_color_telefonicaBlue70
+      textButtonSecondary = TelefonicaPaletteColor.telefonica_color_white
+      textButtonSecondaryInverse = TelefonicaPaletteColor.telefonica_color_white
+      textButtonSecondaryMedia = TelefonicaPaletteColor.telefonica_color_white
+      textButtonSecondaryPressed = TelefonicaPaletteColor.telefonica_color_white
+      textButtonSecondaryInversePressed = TelefonicaPaletteColor.telefonica_color_white
+      textButtonSecondaryMediaPressed = TelefonicaPaletteColor.telefonica_color_white
+      textLink = TelefonicaPaletteColor.telefonica_color_darkModeTelefonicaBlue
+      textLinkInverse = TelefonicaPaletteColor.telefonica_color_darkModeTelefonicaBlue
+      textLinkMedia = TelefonicaPaletteColor.telefonica_color_white
       textLinkDanger = TelefonicaPaletteColor.telefonica_color_coral
-      textLinkSnackbar = TelefonicaPaletteColor.telefonica_color_telefonicaBlue30
-      textActivated = TelefonicaPaletteColor.telefonica_color_telefonicaBlue
-      textBrand = TelefonicaPaletteColor.telefonica_color_telefonicaBlue
+      textLinkDangerMedia = TelefonicaPaletteColor.telefonica_color_coral60
+      textLinkSnackbar = TelefonicaPaletteColor.telefonica_color_darkModeTelefonicaBlue
+      textActivated = TelefonicaPaletteColor.telefonica_color_telefonicaBlue30
+      textBrand = TelefonicaPaletteColor.telefonica_color_telefonicaBlue30
       inputBorder = TelefonicaPaletteColor.telefonica_color_grey5
       inputBorderInverse = TelefonicaPaletteColor.telefonica_color_grey5
       completedStep = TelefonicaPaletteColor.telefonica_color_telefonicaBlue
       completedStepInverse = TelefonicaPaletteColor.telefonica_color_telefonicaBlue
-      control = TelefonicaPaletteColor.telefonica_color_darkModeGrey6
-      controlActivated = TelefonicaPaletteColor.telefonica_color_telefonicaBlue
-      controlInverse = TelefonicaPaletteColor.telefonica_color_darkModeGrey6
-      controlActivatedInverse = TelefonicaPaletteColor.telefonica_color_telefonicaBlue
+      control = TelefonicaPaletteColor.telefonica_color_grey5
+      controlActivated = TelefonicaPaletteColor.telefonica_color_darkModeTelefonicaBlue
+      controlInverse = TelefonicaPaletteColor.telefonica_color_grey5
+      controlActivatedInverse = TelefonicaPaletteColor.telefonica_color_darkModeTelefonicaBlue
       controlError = TelefonicaPaletteColor.telefonica_color_coral
       barTrack = TelefonicaPaletteColor.telefonica_color_darkModeGrey6
       barTrackInverse = TelefonicaPaletteColor.telefonica_color_darkModeGrey6
-      loadingBar = TelefonicaPaletteColor.telefonica_color_telefonicaBlue
+      loadingBar = TelefonicaPaletteColor.telefonica_color_darkModeTelefonicaBlue
       loadingBarBackground = TelefonicaPaletteColor.telefonica_color_grey6
-      toggleAndroidInactive = TelefonicaPaletteColor.telefonica_color_grey4
+      toggleAndroidInactive = TelefonicaPaletteColor.telefonica_color_grey2
       toggleAndroidBackgroundActive = TelefonicaPaletteColor.telefonica_color_telefonicaBlue20
-      iosControlKnob = TelefonicaPaletteColor.telefonica_color_grey2
-      controlKnobInverse = TelefonicaPaletteColor.telefonica_color_grey2
-      divider = TelefonicaPaletteColor.telefonica_color_white_5_alpha
+      iosControlKnob = TelefonicaPaletteColor.telefonica_color_grey1
+      controlKnobInverse = TelefonicaPaletteColor.telefonica_color_grey1
+      divider = TelefonicaPaletteColor.telefonica_color_white_20_alpha
       dividerInverse = TelefonicaPaletteColor.telefonica_color_white_5_alpha
       navigationBarDivider = TelefonicaPaletteColor.telefonica_color_darkModeBlack
-      badge = TelefonicaPaletteColor.telefonica_color_coral70
-      feedbackErrorBackground = TelefonicaPaletteColor.telefonica_color_coral
-      feedbackInfoBackground = TelefonicaPaletteColor.telefonica_color_grey8
-      brand = TelefonicaPaletteColor.telefonica_color_telefonicaBlue
+      badge = TelefonicaPaletteColor.telefonica_color_coral60
+      feedbackErrorBackground = TelefonicaPaletteColor.telefonica_color_coral65
+      feedbackInfoBackground = TelefonicaPaletteColor.telefonica_color_darkModeGrey
+      brand = TelefonicaPaletteColor.telefonica_color_darkModeTelefonicaBlue
       brandHigh = TelefonicaPaletteColor.telefonica_color_white_5_alpha
-      inverse = TelefonicaPaletteColor.telefonica_color_grey2
+      inverse = TelefonicaPaletteColor.telefonica_color_grey1
       neutralHigh = TelefonicaPaletteColor.telefonica_color_grey2
       neutralMedium = TelefonicaPaletteColor.telefonica_color_grey5
       neutralMediumInverse = TelefonicaPaletteColor.telefonica_color_grey5
       neutralLow = TelefonicaPaletteColor.telefonica_color_darkModeGrey6
       neutralLowAlternative = TelefonicaPaletteColor.telefonica_color_darkModeGrey6
-      textPrimary = TelefonicaPaletteColor.telefonica_color_grey2
-      textPrimaryInverse = TelefonicaPaletteColor.telefonica_color_grey2
+      textPrimary = TelefonicaPaletteColor.telefonica_color_grey1
+      textPrimaryInverse = TelefonicaPaletteColor.telefonica_color_grey1
       textSecondary = TelefonicaPaletteColor.telefonica_color_grey3
       textSecondaryInverse = TelefonicaPaletteColor.telefonica_color_grey3
       error = TelefonicaPaletteColor.telefonica_color_coral
       textError = TelefonicaPaletteColor.telefonica_color_coral
       textErrorInverse = TelefonicaPaletteColor.telefonica_color_coral
       success = TelefonicaPaletteColor.telefonica_color_turquoise
-      warning = TelefonicaPaletteColor.telefonica_color_ambar
+      warning = TelefonicaPaletteColor.telefonica_color_yellow
       promo = TelefonicaPaletteColor.telefonica_color_orchid
-      highlight = TelefonicaPaletteColor.telefonica_color_coral40
+      highlight = TelefonicaPaletteColor.telefonica_color_coral30
       successLow = TelefonicaPaletteColor.telefonica_color_darkModeGrey6
       warningLow = TelefonicaPaletteColor.telefonica_color_darkModeGrey6
       errorLow = TelefonicaPaletteColor.telefonica_color_darkModeGrey6
       promoLow = TelefonicaPaletteColor.telefonica_color_darkModeGrey6
       brandLow = TelefonicaPaletteColor.telefonica_color_darkModeGrey6
       successHigh = TelefonicaPaletteColor.telefonica_color_turquoise40
-      warningHigh = TelefonicaPaletteColor.telefonica_color_ambar40
-      errorHigh = TelefonicaPaletteColor.telefonica_color_coral40
+      warningHigh = TelefonicaPaletteColor.telefonica_color_yellow40
+      errorHigh = TelefonicaPaletteColor.telefonica_color_coral30
       promoHigh = TelefonicaPaletteColor.telefonica_color_orchid40
       successHighInverse = TelefonicaPaletteColor.telefonica_color_turquoise70
-      warningHighInverse = TelefonicaPaletteColor.telefonica_color_ambar70
-      errorHighInverse = TelefonicaPaletteColor.telefonica_color_coral70
+      warningHighInverse = TelefonicaPaletteColor.telefonica_color_yellow70
+      errorHighInverse = TelefonicaPaletteColor.telefonica_color_coral65
       promoHighInverse = TelefonicaPaletteColor.telefonica_color_orchid70
-      textNavigationBarPrimary = TelefonicaPaletteColor.telefonica_color_grey2
+      textNavigationBarPrimary = TelefonicaPaletteColor.telefonica_color_white
       textNavigationBarSecondary = TelefonicaPaletteColor.telefonica_color_grey4
       textNavigationSearchBarHint = TelefonicaPaletteColor.telefonica_color_grey4
-      textNavigationSearchBarText = TelefonicaPaletteColor.telefonica_color_grey2
-      textAppBar = TelefonicaPaletteColor.telefonica_color_grey5
-      textAppBarSelected = TelefonicaPaletteColor.telefonica_color_grey2
+      textNavigationSearchBarText = TelefonicaPaletteColor.telefonica_color_white
+      textAppBar = TelefonicaPaletteColor.telefonica_color_grey2
+      textAppBarSelected = TelefonicaPaletteColor.telefonica_color_white
       customTabsBackground = TelefonicaPaletteColor.telefonica_color_darkModeBlack
       tagTextPromo = TelefonicaPaletteColor.telefonica_color_orchid40
-      tagTextActive = TelefonicaPaletteColor.telefonica_color_telefonicaBlue
-      tagTextInactive = TelefonicaPaletteColor.telefonica_color_grey5
-      tagTextInfo = TelefonicaPaletteColor.telefonica_color_telefonicaBlue
+      tagTextActive = TelefonicaPaletteColor.telefonica_color_telefonicaBlue20
+      tagTextInactive = TelefonicaPaletteColor.telefonica_color_grey3
+      tagTextInfo = TelefonicaPaletteColor.telefonica_color_telefonicaBlue20
       tagTextSuccess = TelefonicaPaletteColor.telefonica_color_turquoise40
-      tagTextWarning = TelefonicaPaletteColor.telefonica_color_ambar40
-      tagTextError = TelefonicaPaletteColor.telefonica_color_coral40
-      tagBackgroundPromo = TelefonicaPaletteColor.telefonica_color_darkModeGrey6
-      tagBackgroundActive = TelefonicaPaletteColor.telefonica_color_darkModeGrey6
-      tagBackgroundInactive = TelefonicaPaletteColor.telefonica_color_darkModeGrey6
-      tagBackgroundInfo = TelefonicaPaletteColor.telefonica_color_darkModeGrey6
-      tagBackgroundSuccess = TelefonicaPaletteColor.telefonica_color_darkModeGrey6
-      tagBackgroundWarning = TelefonicaPaletteColor.telefonica_color_darkModeGrey6
-      tagBackgroundError = TelefonicaPaletteColor.telefonica_color_darkModeGrey6
+      tagTextWarning = TelefonicaPaletteColor.telefonica_color_yellow40
+      tagTextError = TelefonicaPaletteColor.telefonica_color_coral30
+      tagBackgroundPromo = TelefonicaPaletteColor.telefonica_color_orchid80
+      tagBackgroundActive = TelefonicaPaletteColor.telefonica_color_telefonicaBlue80
+      tagBackgroundInactive = TelefonicaPaletteColor.telefonica_color_grey8
+      tagBackgroundInfo = TelefonicaPaletteColor.telefonica_color_telefonicaBlue80
+      tagBackgroundSuccess = TelefonicaPaletteColor.telefonica_color_turquoise80
+      tagBackgroundWarning = TelefonicaPaletteColor.telefonica_color_yellow80
+      tagBackgroundError = TelefonicaPaletteColor.telefonica_color_coral90
       tagTextPromoInverse = TelefonicaPaletteColor.telefonica_color_orchid40
-      tagTextActiveInverse = TelefonicaPaletteColor.telefonica_color_telefonicaBlue
-      tagTextInactiveInverse = TelefonicaPaletteColor.telefonica_color_grey5
-      tagTextInfoInverse = TelefonicaPaletteColor.telefonica_color_telefonicaBlue
+      tagTextActiveInverse = TelefonicaPaletteColor.telefonica_color_telefonicaBlue20
+      tagTextInactiveInverse = TelefonicaPaletteColor.telefonica_color_grey3
+      tagTextInfoInverse = TelefonicaPaletteColor.telefonica_color_telefonicaBlue20
       tagTextSuccessInverse = TelefonicaPaletteColor.telefonica_color_turquoise40
-      tagTextWarningInverse = TelefonicaPaletteColor.telefonica_color_ambar40
-      tagTextErrorInverse = TelefonicaPaletteColor.telefonica_color_coral40
-      tagBackgroundPromoInverse = TelefonicaPaletteColor.telefonica_color_darkModeGrey6
-      tagBackgroundActiveInverse = TelefonicaPaletteColor.telefonica_color_darkModeGrey6
-      tagBackgroundInactiveInverse = TelefonicaPaletteColor.telefonica_color_darkModeGrey6
-      tagBackgroundInfoInverse = TelefonicaPaletteColor.telefonica_color_darkModeGrey6
-      tagBackgroundSuccessInverse = TelefonicaPaletteColor.telefonica_color_darkModeGrey6
-      tagBackgroundWarningInverse = TelefonicaPaletteColor.telefonica_color_darkModeGrey6
-      tagBackgroundErrorInverse = TelefonicaPaletteColor.telefonica_color_darkModeGrey6
+      tagTextWarningInverse = TelefonicaPaletteColor.telefonica_color_yellow40
+      tagTextErrorInverse = TelefonicaPaletteColor.telefonica_color_coral30
+      tagBackgroundPromoInverse = TelefonicaPaletteColor.telefonica_color_orchid80
+      tagBackgroundActiveInverse = TelefonicaPaletteColor.telefonica_color_telefonicaBlue80
+      tagBackgroundInactiveInverse = TelefonicaPaletteColor.telefonica_color_grey8
+      tagBackgroundInfoInverse = TelefonicaPaletteColor.telefonica_color_telefonicaBlue80
+      tagBackgroundSuccessInverse = TelefonicaPaletteColor.telefonica_color_turquoise80
+      tagBackgroundWarningInverse = TelefonicaPaletteColor.telefonica_color_yellow80
+      tagBackgroundErrorInverse = TelefonicaPaletteColor.telefonica_color_coral90
+      cardFooterOverlay = TelefonicaPaletteColor.telefonica_color_black_70_alpha
       }
 }
 
@@ -356,6 +394,8 @@ private object TelefonicaPaletteColor {
 
   public val telefonica_color_telefonicaBlue70: Color = Color(0xFF0356C9)
 
+  public val telefonica_color_telefonicaBlue80: Color = Color(0xFF002E73)
+
   public val telefonica_color_ambar: Color = Color(0xFFEAC344)
 
   public val telefonica_color_ambar10: Color = Color(0xFFFDF9EC)
@@ -364,39 +404,57 @@ private object TelefonicaPaletteColor {
 
   public val telefonica_color_ambar70: Color = Color(0xFF69581F)
 
-  public val telefonica_color_coral: Color = Color(0xFFE66C64)
+  public val telefonica_color_yellow: Color = Color(0xFFe4c35c)
 
-  public val telefonica_color_coral10: Color = Color(0xFFFDF0EF)
+  public val telefonica_color_yellow15: Color = Color(0xFFfcf7db)
 
-  public val telefonica_color_coral40: Color = Color(0xFFE3A19A)
+  public val telefonica_color_yellow40: Color = Color(0xFFf3e996)
 
-  public val telefonica_color_coral70: Color = Color(0xFFD50000)
+  public val telefonica_color_yellow70: Color = Color(0xFFa7863e)
 
-  public val telefonica_color_coral80: Color = Color(0xFF912C31)
+  public val telefonica_color_yellow80: Color = Color(0xFF473515)
 
-  public val telefonica_color_orchid: Color = Color(0xFFC466EF)
+  public val telefonica_color_coral: Color = Color(0xFFd6786b)
 
-  public val telefonica_color_orchid10: Color = Color(0xFFF9F0FD)
+  public val telefonica_color_coral10: Color = Color(0xFFf9eeed)
 
-  public val telefonica_color_orchid40: Color = Color(0xFFD694F4)
+  public val telefonica_color_coral30: Color = Color(0xFFf2b1a5)
 
-  public val telefonica_color_orchid70: Color = Color(0xFF8A1A93)
+  public val telefonica_color_coral60: Color = Color(0xFFD22A1E)
 
-  public val telefonica_color_turquoise: Color = Color(0xFF59C2C9)
+  public val telefonica_color_coral65: Color = Color(0xFFC82C1E)
 
-  public val telefonica_color_turquoise10: Color = Color(0xFFEEF9FA)
+  public val telefonica_color_coral80: Color = Color(0xFF843c34)
 
-  public val telefonica_color_turquoise40: Color = Color(0xFF8BD4D9)
+  public val telefonica_color_coral90: Color = Color(0xFF491818)
 
-  public val telefonica_color_turquoise70: Color = Color(0xFF3E888D)
+  public val telefonica_color_orchid: Color = Color(0xFFb86be8)
 
-  public val telefonica_color_grey1: Color = Color(0xFFF2F4FF)
+  public val telefonica_color_orchid10: Color = Color(0xFFF8F0FD)
+
+  public val telefonica_color_orchid40: Color = Color(0xFFCD97EF)
+
+  public val telefonica_color_orchid70: Color = Color(0xFF7f258e)
+
+  public val telefonica_color_orchid80: Color = Color(0xFF471551)
+
+  public val telefonica_color_turquoise: Color = Color(0xFF75c0c7)
+
+  public val telefonica_color_turquoise10: Color = Color(0xFFebffff)
+
+  public val telefonica_color_turquoise40: Color = Color(0xFF9ED3D8)
+
+  public val telefonica_color_turquoise70: Color = Color(0xFF528889)
+
+  public val telefonica_color_turquoise80: Color = Color(0xFF253d3c)
+
+  public val telefonica_color_grey1: Color = Color(0xFFF7F7FF)
 
   public val telefonica_color_grey2: Color = Color(0xFFD1D5E4)
 
   public val telefonica_color_grey3: Color = Color(0xFFB0B6CA)
 
-  public val telefonica_color_grey4: Color = Color(0xFF848CA4)
+  public val telefonica_color_grey4: Color = Color(0xFF8f97af)
 
   public val telefonica_color_grey5: Color = Color(0xFF6E7894)
 
@@ -412,25 +470,27 @@ private object TelefonicaPaletteColor {
 
   public val telefonica_color_black: Color = Color(0xFF000000)
 
-  public val telefonica_color_darkModeBlack: Color = Color(0xFF191919)
+  public val telefonica_color_darkModeBlack: Color = Color(0xFF000522)
 
-  public val telefonica_color_darkModeGrey: Color = Color(0xFF242424)
+  public val telefonica_color_darkModeGrey: Color = Color(0xFF00182F)
 
-  public val telefonica_color_darkModeGrey6: Color = Color(0xFF313235)
+  public val telefonica_color_darkModeGrey6: Color = Color(0xFF00264D)
+
+  public val telefonica_color_darkModeTelefonicaBlue: Color = Color(0xFF227AFF)
 
   public val telefonica_color_telefonicaBlue70_5_alpha: Color = Color(0x0D0356C9)
 
   public val telefonica_color_telefonicaBlue70_8_alpha: Color = Color(0x140356C9)
 
-  public val telefonica_color_darkModeBlack_20_alpha: Color = Color(0x33191919)
+  public val telefonica_color_darkModeBlack_20_alpha: Color = Color(0x33000522)
 
-  public val telefonica_color_darkModeBlack_40_alpha: Color = Color(0x66191919)
+  public val telefonica_color_darkModeBlack_40_alpha: Color = Color(0x66000522)
 
   public val telefonica_color_grey6_80_alpha: Color = Color(0xCC58617A)
 
-  public val telefonica_color_darkModeBlack_25_alpha: Color = Color(0x40191919)
+  public val telefonica_color_darkModeBlack_25_alpha: Color = Color(0x40000522)
 
-  public val telefonica_color_darkModeBlack_35_alpha: Color = Color(0x59191919)
+  public val telefonica_color_darkModeBlack_35_alpha: Color = Color(0x59000522)
 
   public val telefonica_color_white_8_alpha: Color = Color(0x14FFFFFF)
 
@@ -446,13 +506,15 @@ private object TelefonicaPaletteColor {
 
   public val telefonica_color_black_70_alpha: Color = Color(0xB3000000)
 
-  public val telefonica_color_white_5_alpha: Color = Color(0x0DFFFFFF)
-
   public val telefonica_color_white_3_alpha: Color = Color(0x08FFFFFF)
 
-  public val telefonica_color_darkModeGrey_80_alpha: Color = Color(0xCC242424)
+  public val telefonica_color_white_5_alpha: Color = Color(0x0DFFFFFF)
 
-  public val telefonica_color_white_0_alpha: Color = Color(0x00FFFFFF)
+  public val telefonica_color_darkModeGrey_80_alpha: Color = Color(0xCC00182F)
+
+  public val telefonica_color_coral60_16_alpha: Color = Color(0x29D22A1E)
+
+  public val telefonica_color_telefonicaBlue30_16_alpha: Color = Color(0x2980B3FF)
 
   public val telefonica_color_white_15_alpha: Color = Color(0x26FFFFFF)
 }
