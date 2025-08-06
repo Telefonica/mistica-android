@@ -30,34 +30,51 @@
 		<attr name="colorButtonDangerBackground" format="color|reference"/>
 		<attr name="colorButtonDangerBackgroundPressed" format="color|reference"/>
 		<attr name="colorButtonDangerBackgroundHover" format="color|reference"/>
-		<attr name="colorButtonLinkDangerBackgroundPressed" format="color|reference"/>
 		<attr name="colorButtonLinkDangerBackgroundInverse" format="color|reference"/>
+		<attr name="colorButtonLinkDangerBackgroundMedia" format="color|reference"/>
+		<attr name="colorButtonLinkDangerBackgroundPressed" format="color|reference"/>
 		<attr name="colorButtonLinkDangerBackgroundInversePressed" format="color|reference"/>
+		<attr name="colorButtonLinkDangerBackgroundMediaPressed" format="color|reference"/>
 		<attr name="colorButtonLinkBackgroundPressed" format="color|reference"/>
 		<attr name="colorButtonLinkBackgroundInversePressed" format="color|reference"/>
+		<attr name="colorButtonLinkBackgroundMediaPressed" format="color|reference"/>
 		<attr name="colorButtonPrimaryBackground" format="color|reference"/>
 		<attr name="colorButtonPrimaryBackgroundInverse" format="color|reference"/>
-		<attr name="colorButtonPrimaryBackgroundPressed" format="color|reference"/>
+		<attr name="colorButtonPrimaryBackgroundMedia" format="color|reference"/>
 		<attr name="colorButtonPrimaryBackgroundHover" format="color|reference"/>
+		<attr name="colorButtonPrimaryBackgroundInverseHover" format="color|reference"/>
+		<attr name="colorButtonPrimaryBackgroundMediaHover" format="color|reference"/>
+		<attr name="colorButtonPrimaryBackgroundPressed" format="color|reference"/>
 		<attr name="colorButtonPrimaryBackgroundInversePressed" format="color|reference"/>
+		<attr name="colorButtonPrimaryBackgroundMediaPressed" format="color|reference"/>
 		<attr name="colorButtonSecondaryBorder" format="color|reference"/>
-		<attr name="colorButtonSecondaryBorderPressed" format="color|reference"/>
-		<attr name="colorButtonSecondaryBackgroundHover" format="color|reference"/>
-		<attr name="colorButtonSecondaryBackgroundPressed" format="color|reference"/>
 		<attr name="colorButtonSecondaryBorderInverse" format="color|reference"/>
+		<attr name="colorButtonSecondaryBorderMedia" format="color|reference"/>
+		<attr name="colorButtonSecondaryBorderPressed" format="color|reference"/>
 		<attr name="colorButtonSecondaryBorderInversePressed" format="color|reference"/>
+		<attr name="colorButtonSecondaryBorderMediaPressed" format="color|reference"/>
+		<attr name="colorButtonSecondaryBackgroundHover" format="color|reference"/>
 		<attr name="colorButtonSecondaryBackgroundInverseHover" format="color|reference"/>
+		<attr name="colorButtonSecondaryBackgroundMediaHover" format="color|reference"/>
+		<attr name="colorButtonSecondaryBackgroundPressed" format="color|reference"/>
 		<attr name="colorButtonSecondaryBackgroundInversePressed" format="color|reference"/>
+		<attr name="colorButtonSecondaryBackgroundMediaPressed" format="color|reference"/>
 		<attr name="colorTextButtonPrimary" format="color|reference"/>
 		<attr name="colorTextButtonPrimaryInverse" format="color|reference"/>
+		<attr name="colorTextButtonPrimaryMedia" format="color|reference"/>
 		<attr name="colorTextButtonPrimaryInversePressed" format="color|reference"/>
+		<attr name="colorTextButtonPrimaryMediaPressed" format="color|reference"/>
 		<attr name="colorTextButtonSecondary" format="color|reference"/>
-		<attr name="colorTextButtonSecondaryPressed" format="color|reference"/>
 		<attr name="colorTextButtonSecondaryInverse" format="color|reference"/>
+		<attr name="colorTextButtonSecondaryMedia" format="color|reference"/>
+		<attr name="colorTextButtonSecondaryPressed" format="color|reference"/>
 		<attr name="colorTextButtonSecondaryInversePressed" format="color|reference"/>
+		<attr name="colorTextButtonSecondaryMediaPressed" format="color|reference"/>
 		<attr name="colorTextLink" format="color|reference"/>
 		<attr name="colorTextLinkInverse" format="color|reference"/>
+		<attr name="colorTextLinkMedia" format="color|reference"/>
 		<attr name="colorTextLinkDanger" format="color|reference"/>
+		<attr name="colorTextLinkDangerMedia" format="color|reference"/>
 		<attr name="colorTextLinkSnackbar" format="color|reference"/>
 		<attr name="colorTextActivated" format="color|reference"/>
 		<attr name="colorTextBrand" format="color|reference"/>
@@ -152,6 +169,7 @@
 		<attr name="colorTagBackgroundSuccessInverse" format="color|reference"/>
 		<attr name="colorTagBackgroundWarningInverse" format="color|reference"/>
 		<attr name="colorTagBackgroundErrorInverse" format="color|reference"/>
+		<attr name="colorCardFooterOverlay" format="color|reference"/>
 	</declare-styleable>
 	<declare-styleable name="Drawables">
 		<attr name="drawableBackgroundBrand" format="reference"/>
