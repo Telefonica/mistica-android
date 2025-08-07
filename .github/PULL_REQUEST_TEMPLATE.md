@@ -20,3 +20,14 @@ _If it cannot be tested explain why._
 - [ ] Mistica App QR or download link
 - [ ] Reviewed by Mistica design team
 - [ ] ...
+
+### 🤖 Copilot review
+@copilot Please review this PR for potential breaking changes in the public API **within the `library` module only**.
+
+Focus on:
+- Public classes, interfaces, methods, or properties that are renamed, removed, or modified.
+- Changes in method signatures (parameters, return types).
+- Visibility changes (e.g., public → protected/private).
+- Enum value removals.
+
+Review all modified files in the `library` module and comment on each breaking change.
