@@ -25,10 +25,10 @@ _If it cannot be tested explain why._
 @copilot Please review this PR for potential breaking changes in the public API **within the `library` module only**.
 
 Focus on:
+- Enum value removals.
 - Removed or renamed public classes, interfaces, enums, methods, properties, or constants.
 - Changes in method signatures (parameters, return types).
 - Visibility changes (e.g., public → protected/private/package-private).
-- Enum value removals.
 - Removal of public annotations or change of annotation values (e.g., @JvmOverloads, @Deprecated).
 - Behavioral changes that keep the signature but alter the contract (e.g., new exceptions thrown, different return values for same input).
 
