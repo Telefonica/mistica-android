@@ -20,3 +20,16 @@ _If it cannot be tested explain why._
 - [ ] Mistica App QR or download link
 - [ ] Reviewed by Mistica design team
 - [ ] ...
+
+### 🤖 Copilot review
+@copilot Please review this PR for potential breaking changes in the public API **within the `library` module only**.
+
+Focus on:
+- Enum value removals.
+- Removed or renamed public classes, interfaces, enums, methods, properties, or constants.
+- Changes in method signatures (parameters, return types).
+- Visibility changes (e.g., public → protected/private/package-private).
+- Removal of public annotations or change of annotation values (e.g., @JvmOverloads, @Deprecated).
+- Behavioral changes that keep the signature but alter the contract (e.g., new exceptions thrown, different return values for same input).
+
+Review all modified files in the `library` module and comment on each breaking change.
