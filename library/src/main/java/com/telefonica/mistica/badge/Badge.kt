@@ -22,7 +22,7 @@ object Badge {
             addToView(
                 anchor,
                 parent,
-                buildBadgeContentDescription(anchor, NON_NUMERIC_BADGE, badgeDescription)
+                buildBadgeContentDescription(anchor, badgeDescription)
             )
         }
 
@@ -39,7 +39,7 @@ object Badge {
                 else -> addToView(
                     anchor,
                     parent,
-                    buildBadgeContentDescription(anchor, count, badgeDescription ?: text)
+                    buildBadgeContentDescription(anchor, badgeDescription)
                 )
             }
         }
@@ -74,29 +74,18 @@ object Badge {
 
     private fun buildBadgeContentDescription(
         anchor: View,
-        count: Int,
         badgeDescription: String?,
-    ): String {
+    ): String? {
         if (!contentDescriptions.containsKey(anchor.hashCode())) {
             contentDescriptions[anchor.hashCode()] = anchor.contentDescription
         }
 
-        val suffix = badgeDescription ?: getDefaultBadgeDescription(anchor, count)
+        val suffix = badgeDescription
 
         return when (contentDescriptions[anchor.hashCode()]) {
             null -> suffix
-            else -> "${contentDescriptions[anchor.hashCode()]}, $suffix"
+            else -> if (suffix.isNullOrEmpty()) "${contentDescriptions[anchor.hashCode()]}" else "${contentDescriptions[anchor.hashCode()]}, $suffix"
         }
-    }
-
-    @JvmStatic
-    fun getDefaultBadgeDescription(
-        anchor: View,
-        count: Int = NON_NUMERIC_BADGE,
-    ) = if (count == NON_NUMERIC_BADGE) {
-        anchor.context.getString(R.string.badge_notification_description)
-    } else {
-        count.toString()
     }
 
     private fun resetContentDescription(anchor: View) {

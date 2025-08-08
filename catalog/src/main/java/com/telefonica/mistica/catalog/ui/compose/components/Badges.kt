@@ -17,6 +17,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.compose.badge.Badge
@@ -38,13 +39,14 @@ fun Badges() {
         BadgedBox(
             badge = {
                 if (show) {
-                    Badge(content = badgeContent)
+                    Badge(content = badgeContent, contentDescription = if ((badgeContent?.length ?: 0) > 1) "+9" else "$badgeContent")
                 }
-            }
+            },
+            modifier = Modifier.semantics(mergeDescendants = true) {}
         ) {
             Icon(
                 painter = painterResource(id = R.drawable.icn_creditcard),
-                contentDescription = null,
+                contentDescription = "image",
             )
         }
         Button(
