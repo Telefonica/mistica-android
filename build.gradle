@@ -2,7 +2,7 @@
 buildscript {
     ext {
         min_sdk_version = 24
-        target_sdk_version = 34
+        target_sdk_version = 35
         compose_ui_version = "1.7.6"
         kotlin_version = "2.0.21"
         androidx_appcompat_version = "1.7.0"
