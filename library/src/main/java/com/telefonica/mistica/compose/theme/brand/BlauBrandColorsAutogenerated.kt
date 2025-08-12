@@ -39,34 +39,51 @@ public object BlauBrandColors {
       buttonDangerBackground = BlauPaletteColor.blau_color_blauRed
       buttonDangerBackgroundPressed = BlauPaletteColor.blau_color_blauRed70
       buttonDangerBackgroundHover = BlauPaletteColor.blau_color_blauRed70
-      buttonLinkDangerBackgroundPressed = BlauPaletteColor.blau_color_blauRed10
       buttonLinkDangerBackgroundInverse = BlauPaletteColor.blau_color_white
+      buttonLinkDangerBackgroundMedia = BlauPaletteColor.blau_color_white
+      buttonLinkDangerBackgroundPressed = BlauPaletteColor.blau_color_blauRed10
       buttonLinkDangerBackgroundInversePressed = BlauPaletteColor.blau_color_blauRed10
+      buttonLinkDangerBackgroundMediaPressed = BlauPaletteColor.blau_color_blauRed10
       buttonLinkBackgroundPressed = BlauPaletteColor.blau_color_blauPurple10
       buttonLinkBackgroundInversePressed = BlauPaletteColor.blau_color_white_15_alpha
+      buttonLinkBackgroundMediaPressed = BlauPaletteColor.blau_color_white_15_alpha
       buttonPrimaryBackground = BlauPaletteColor.blau_color_blauBlueSecondary
       buttonPrimaryBackgroundInverse = BlauPaletteColor.blau_color_white
-      buttonPrimaryBackgroundPressed = BlauPaletteColor.blau_color_blauBlueSecondary60
+      buttonPrimaryBackgroundMedia = BlauPaletteColor.blau_color_white
       buttonPrimaryBackgroundHover = BlauPaletteColor.blau_color_blauBlueSecondary60
+      buttonPrimaryBackgroundInverseHover = BlauPaletteColor.blau_color_blauBluePrimary20
+      buttonPrimaryBackgroundMediaHover = BlauPaletteColor.blau_color_blauBluePrimary20
+      buttonPrimaryBackgroundPressed = BlauPaletteColor.blau_color_blauBlueSecondary60
       buttonPrimaryBackgroundInversePressed = BlauPaletteColor.blau_color_blauBluePrimary30
+      buttonPrimaryBackgroundMediaPressed = BlauPaletteColor.blau_color_blauBluePrimary30
       buttonSecondaryBorder = BlauPaletteColor.blau_color_blauBlueSecondary
-      buttonSecondaryBorderPressed = BlauPaletteColor.blau_color_blauBlueSecondary60
       buttonSecondaryBorderInverse = BlauPaletteColor.blau_color_white
-      buttonSecondaryBackgroundHover = BlauPaletteColor.blau_color_blauBlueSecondary10
-      buttonSecondaryBackgroundPressed = BlauPaletteColor.blau_color_blauBlueSecondary10
+      buttonSecondaryBorderMedia = BlauPaletteColor.blau_color_white
+      buttonSecondaryBorderPressed = BlauPaletteColor.blau_color_blauBlueSecondary60
       buttonSecondaryBorderInversePressed = BlauPaletteColor.blau_color_white
+      buttonSecondaryBorderMediaPressed = BlauPaletteColor.blau_color_white
+      buttonSecondaryBackgroundHover = BlauPaletteColor.blau_color_blauBlueSecondary10
       buttonSecondaryBackgroundInverseHover = BlauPaletteColor.blau_color_white_20_alpha
+      buttonSecondaryBackgroundMediaHover = BlauPaletteColor.blau_color_white_20_alpha
+      buttonSecondaryBackgroundPressed = BlauPaletteColor.blau_color_blauBlueSecondary10
       buttonSecondaryBackgroundInversePressed = BlauPaletteColor.blau_color_white_20_alpha
+      buttonSecondaryBackgroundMediaPressed = BlauPaletteColor.blau_color_white_20_alpha
       textButtonPrimary = BlauPaletteColor.blau_color_white
       textButtonPrimaryInverse = BlauPaletteColor.blau_color_blauBlueSecondary
+      textButtonPrimaryMedia = BlauPaletteColor.blau_color_blauBlueSecondary
       textButtonPrimaryInversePressed = BlauPaletteColor.blau_color_blauBlueSecondary60
+      textButtonPrimaryMediaPressed = BlauPaletteColor.blau_color_blauBlueSecondary60
       textButtonSecondary = BlauPaletteColor.blau_color_blauBlueSecondary
-      textButtonSecondaryPressed = BlauPaletteColor.blau_color_blauBlueSecondary60
       textButtonSecondaryInverse = BlauPaletteColor.blau_color_white
+      textButtonSecondaryMedia = BlauPaletteColor.blau_color_white
+      textButtonSecondaryPressed = BlauPaletteColor.blau_color_blauBlueSecondary60
       textButtonSecondaryInversePressed = BlauPaletteColor.blau_color_white
+      textButtonSecondaryMediaPressed = BlauPaletteColor.blau_color_white
       textLink = BlauPaletteColor.blau_color_blauPurple
       textLinkInverse = BlauPaletteColor.blau_color_white
+      textLinkMedia = BlauPaletteColor.blau_color_white
       textLinkDanger = BlauPaletteColor.blau_color_blauRed
+      textLinkDangerMedia = BlauPaletteColor.blau_color_blauRed
       textLinkSnackbar = BlauPaletteColor.blau_color_blauPurple30
       textActivated = BlauPaletteColor.blau_color_blauBlueSecondary
       textBrand = BlauPaletteColor.blau_color_blauBlueSecondary
@@ -158,6 +175,7 @@ public object BlauBrandColors {
       tagBackgroundSuccessInverse = BlauPaletteColor.blau_color_blauGreen10
       tagBackgroundWarningInverse = BlauPaletteColor.blau_color_blauYellow10
       tagBackgroundErrorInverse = BlauPaletteColor.blau_color_blauRed10
+      cardFooterOverlay = BlauPaletteColor.blau_color_grey6_70_alpha
       }
 
   public val darkColors: MisticaColors = MisticaColors().apply {
@@ -191,34 +209,51 @@ public object BlauBrandColors {
       buttonDangerBackground = BlauPaletteColor.blau_color_blauRed
       buttonDangerBackgroundPressed = BlauPaletteColor.blau_color_blauRed70
       buttonDangerBackgroundHover = BlauPaletteColor.blau_color_blauRed70
-      buttonLinkDangerBackgroundPressed = BlauPaletteColor.blau_color_blauRed_30_alpha
       buttonLinkDangerBackgroundInverse = BlauPaletteColor.blau_color_white_0_alpha
+      buttonLinkDangerBackgroundMedia = BlauPaletteColor.blau_color_white
+      buttonLinkDangerBackgroundPressed = BlauPaletteColor.blau_color_blauRed_30_alpha
       buttonLinkDangerBackgroundInversePressed = BlauPaletteColor.blau_color_blauPurple_30_alpha
+      buttonLinkDangerBackgroundMediaPressed = BlauPaletteColor.blau_color_blauRed10
       buttonLinkBackgroundPressed = BlauPaletteColor.blau_color_blauPurple_30_alpha
       buttonLinkBackgroundInversePressed = BlauPaletteColor.blau_color_blauPurple_30_alpha
+      buttonLinkBackgroundMediaPressed = BlauPaletteColor.blau_color_white_15_alpha
       buttonPrimaryBackground = BlauPaletteColor.blau_color_blauBlueSecondary
       buttonPrimaryBackgroundInverse = BlauPaletteColor.blau_color_blauBlueSecondary
-      buttonPrimaryBackgroundPressed = BlauPaletteColor.blau_color_blauBlueSecondary60
+      buttonPrimaryBackgroundMedia = BlauPaletteColor.blau_color_white
       buttonPrimaryBackgroundHover = BlauPaletteColor.blau_color_blauBlueSecondary60
+      buttonPrimaryBackgroundInverseHover = BlauPaletteColor.blau_color_blauBlueSecondary60
+      buttonPrimaryBackgroundMediaHover = BlauPaletteColor.blau_color_blauBluePrimary20
+      buttonPrimaryBackgroundPressed = BlauPaletteColor.blau_color_blauBlueSecondary60
       buttonPrimaryBackgroundInversePressed = BlauPaletteColor.blau_color_blauBlueSecondary60
+      buttonPrimaryBackgroundMediaPressed = BlauPaletteColor.blau_color_blauBluePrimary30
       buttonSecondaryBorder = BlauPaletteColor.blau_color_white
-      buttonSecondaryBorderPressed = BlauPaletteColor.blau_color_white
-      buttonSecondaryBackgroundHover = BlauPaletteColor.blau_color_white_15_alpha
-      buttonSecondaryBackgroundPressed = BlauPaletteColor.blau_color_white_15_alpha
       buttonSecondaryBorderInverse = BlauPaletteColor.blau_color_white
+      buttonSecondaryBorderMedia = BlauPaletteColor.blau_color_white
+      buttonSecondaryBorderPressed = BlauPaletteColor.blau_color_white
       buttonSecondaryBorderInversePressed = BlauPaletteColor.blau_color_white
+      buttonSecondaryBorderMediaPressed = BlauPaletteColor.blau_color_white
+      buttonSecondaryBackgroundHover = BlauPaletteColor.blau_color_white_15_alpha
       buttonSecondaryBackgroundInverseHover = BlauPaletteColor.blau_color_white_15_alpha
+      buttonSecondaryBackgroundMediaHover = BlauPaletteColor.blau_color_white_20_alpha
+      buttonSecondaryBackgroundPressed = BlauPaletteColor.blau_color_white_15_alpha
       buttonSecondaryBackgroundInversePressed = BlauPaletteColor.blau_color_white_15_alpha
+      buttonSecondaryBackgroundMediaPressed = BlauPaletteColor.blau_color_white_20_alpha
       textButtonPrimary = BlauPaletteColor.blau_color_grey2
       textButtonPrimaryInverse = BlauPaletteColor.blau_color_grey2
+      textButtonPrimaryMedia = BlauPaletteColor.blau_color_blauBlueSecondary
       textButtonPrimaryInversePressed = BlauPaletteColor.blau_color_grey2
+      textButtonPrimaryMediaPressed = BlauPaletteColor.blau_color_blauBlueSecondary60
       textButtonSecondary = BlauPaletteColor.blau_color_grey2
-      textButtonSecondaryPressed = BlauPaletteColor.blau_color_grey2
       textButtonSecondaryInverse = BlauPaletteColor.blau_color_grey2
+      textButtonSecondaryMedia = BlauPaletteColor.blau_color_white
+      textButtonSecondaryPressed = BlauPaletteColor.blau_color_grey2
       textButtonSecondaryInversePressed = BlauPaletteColor.blau_color_grey2
+      textButtonSecondaryMediaPressed = BlauPaletteColor.blau_color_white
       textLink = BlauPaletteColor.blau_color_blauPurple30
       textLinkInverse = BlauPaletteColor.blau_color_blauPurple30
+      textLinkMedia = BlauPaletteColor.blau_color_white
       textLinkDanger = BlauPaletteColor.blau_color_blauRed40
+      textLinkDangerMedia = BlauPaletteColor.blau_color_blauRed
       textLinkSnackbar = BlauPaletteColor.blau_color_blauPurple30
       textActivated = BlauPaletteColor.blau_color_blauBluePrimary
       textBrand = BlauPaletteColor.blau_color_blauBluePrimary
@@ -310,6 +345,7 @@ public object BlauBrandColors {
       tagBackgroundSuccessInverse = BlauPaletteColor.blau_color_darkModeGrey6
       tagBackgroundWarningInverse = BlauPaletteColor.blau_color_darkModeGrey6
       tagBackgroundErrorInverse = BlauPaletteColor.blau_color_darkModeGrey6
+      cardFooterOverlay = BlauPaletteColor.blau_color_grey6_70_alpha
       }
 }
 
@@ -452,9 +488,9 @@ private object BlauPaletteColor {
 
   public val blau_color_darkModeGrey_80_alpha: Color = Color(0xCC242424)
 
-  public val blau_color_blauRed_30_alpha: Color = Color(0x4DD12937)
-
   public val blau_color_white_0_alpha: Color = Color(0x00FFFFFF)
+
+  public val blau_color_blauRed_30_alpha: Color = Color(0x4DD12937)
 
   public val blau_color_blauPurple_30_alpha: Color = Color(0x4D7814B3)
 

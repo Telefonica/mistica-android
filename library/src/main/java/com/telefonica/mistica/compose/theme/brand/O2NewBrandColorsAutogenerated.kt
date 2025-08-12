@@ -37,34 +37,51 @@ public object O2NewBrandColors {
       buttonDangerBackground = O2NewPaletteColor.o2New_color_o2Red60
       buttonDangerBackgroundPressed = O2NewPaletteColor.o2New_color_o2Red65
       buttonDangerBackgroundHover = O2NewPaletteColor.o2New_color_o2Red65
-      buttonLinkDangerBackgroundPressed = O2NewPaletteColor.o2New_color_o2Red10
       buttonLinkDangerBackgroundInverse = O2NewPaletteColor.o2New_color_white
+      buttonLinkDangerBackgroundMedia = O2NewPaletteColor.o2New_color_white
+      buttonLinkDangerBackgroundPressed = O2NewPaletteColor.o2New_color_o2Red10
       buttonLinkDangerBackgroundInversePressed = O2NewPaletteColor.o2New_color_o2Red10
+      buttonLinkDangerBackgroundMediaPressed = O2NewPaletteColor.o2New_color_o2Red10
       buttonLinkBackgroundPressed = O2NewPaletteColor.o2New_color_beyondBlue10
       buttonLinkBackgroundInversePressed = O2NewPaletteColor.o2New_color_white_8_alpha
+      buttonLinkBackgroundMediaPressed = O2NewPaletteColor.o2New_color_white_8_alpha
       buttonPrimaryBackground = O2NewPaletteColor.o2New_color_beyondBlue
       buttonPrimaryBackgroundInverse = O2NewPaletteColor.o2New_color_white
-      buttonPrimaryBackgroundPressed = O2NewPaletteColor.o2New_color_beyondBlue70
+      buttonPrimaryBackgroundMedia = O2NewPaletteColor.o2New_color_white
       buttonPrimaryBackgroundHover = O2NewPaletteColor.o2New_color_beyondBlue70
+      buttonPrimaryBackgroundInverseHover = O2NewPaletteColor.o2New_color_beyondBlue30
+      buttonPrimaryBackgroundMediaHover = O2NewPaletteColor.o2New_color_beyondBlue30
+      buttonPrimaryBackgroundPressed = O2NewPaletteColor.o2New_color_beyondBlue70
       buttonPrimaryBackgroundInversePressed = O2NewPaletteColor.o2New_color_beyondBlue30
+      buttonPrimaryBackgroundMediaPressed = O2NewPaletteColor.o2New_color_beyondBlue30
       buttonSecondaryBorder = O2NewPaletteColor.o2New_color_beyondBlue
-      buttonSecondaryBorderPressed = O2NewPaletteColor.o2New_color_beyondBlue70
-      buttonSecondaryBackgroundHover = O2NewPaletteColor.o2New_color_beyondBlue10
-      buttonSecondaryBackgroundPressed = O2NewPaletteColor.o2New_color_beyondBlue10
       buttonSecondaryBorderInverse = O2NewPaletteColor.o2New_color_white
+      buttonSecondaryBorderMedia = O2NewPaletteColor.o2New_color_white
+      buttonSecondaryBorderPressed = O2NewPaletteColor.o2New_color_beyondBlue70
       buttonSecondaryBorderInversePressed = O2NewPaletteColor.o2New_color_beyondBlue30
+      buttonSecondaryBorderMediaPressed = O2NewPaletteColor.o2New_color_beyondBlue30
+      buttonSecondaryBackgroundHover = O2NewPaletteColor.o2New_color_beyondBlue10
       buttonSecondaryBackgroundInverseHover = O2NewPaletteColor.o2New_color_white_15_alpha
+      buttonSecondaryBackgroundMediaHover = O2NewPaletteColor.o2New_color_white_15_alpha
+      buttonSecondaryBackgroundPressed = O2NewPaletteColor.o2New_color_beyondBlue10
       buttonSecondaryBackgroundInversePressed = O2NewPaletteColor.o2New_color_white_15_alpha
+      buttonSecondaryBackgroundMediaPressed = O2NewPaletteColor.o2New_color_white_15_alpha
       textButtonPrimary = O2NewPaletteColor.o2New_color_white
       textButtonPrimaryInverse = O2NewPaletteColor.o2New_color_beyondBlue
+      textButtonPrimaryMedia = O2NewPaletteColor.o2New_color_beyondBlue
       textButtonPrimaryInversePressed = O2NewPaletteColor.o2New_color_beyondBlue70
+      textButtonPrimaryMediaPressed = O2NewPaletteColor.o2New_color_beyondBlue70
       textButtonSecondary = O2NewPaletteColor.o2New_color_beyondBlue
-      textButtonSecondaryPressed = O2NewPaletteColor.o2New_color_beyondBlue70
       textButtonSecondaryInverse = O2NewPaletteColor.o2New_color_white
+      textButtonSecondaryMedia = O2NewPaletteColor.o2New_color_white
+      textButtonSecondaryPressed = O2NewPaletteColor.o2New_color_beyondBlue70
       textButtonSecondaryInversePressed = O2NewPaletteColor.o2New_color_white
+      textButtonSecondaryMediaPressed = O2NewPaletteColor.o2New_color_white
       textLink = O2NewPaletteColor.o2New_color_beyondBlue
       textLinkInverse = O2NewPaletteColor.o2New_color_white
+      textLinkMedia = O2NewPaletteColor.o2New_color_white
       textLinkDanger = O2NewPaletteColor.o2New_color_o2Red65
+      textLinkDangerMedia = O2NewPaletteColor.o2New_color_o2Red65
       textLinkSnackbar = O2NewPaletteColor.o2New_color_beyondBlue30
       textActivated = O2NewPaletteColor.o2New_color_beyondBlue
       textBrand = O2NewPaletteColor.o2New_color_beyondBlue
@@ -158,6 +175,7 @@ public object O2NewBrandColors {
       tagBackgroundSuccessInverse = O2NewPaletteColor.o2New_color_o2Green10
       tagBackgroundWarningInverse = O2NewPaletteColor.o2New_color_o2Orange10
       tagBackgroundErrorInverse = O2NewPaletteColor.o2New_color_o2Red10
+      cardFooterOverlay = O2NewPaletteColor.o2New_color_black_100_alpha
       }
 
   public val darkColors: MisticaColors = MisticaColors().apply {
@@ -189,34 +207,51 @@ public object O2NewBrandColors {
       buttonDangerBackground = O2NewPaletteColor.o2New_color_o2Red60
       buttonDangerBackgroundPressed = O2NewPaletteColor.o2New_color_o2Red65
       buttonDangerBackgroundHover = O2NewPaletteColor.o2New_color_o2Red65
-      buttonLinkDangerBackgroundPressed = O2NewPaletteColor.o2New_color_white_8_alpha
       buttonLinkDangerBackgroundInverse = O2NewPaletteColor.o2New_color_white_0_alpha
+      buttonLinkDangerBackgroundMedia = O2NewPaletteColor.o2New_color_white
+      buttonLinkDangerBackgroundPressed = O2NewPaletteColor.o2New_color_white_8_alpha
       buttonLinkDangerBackgroundInversePressed = O2NewPaletteColor.o2New_color_white_8_alpha
+      buttonLinkDangerBackgroundMediaPressed = O2NewPaletteColor.o2New_color_o2Red10
       buttonLinkBackgroundPressed = O2NewPaletteColor.o2New_color_white_8_alpha
       buttonLinkBackgroundInversePressed = O2NewPaletteColor.o2New_color_white_8_alpha
+      buttonLinkBackgroundMediaPressed = O2NewPaletteColor.o2New_color_white_8_alpha
       buttonPrimaryBackground = O2NewPaletteColor.o2New_color_darkModeBeyondBlue
       buttonPrimaryBackgroundInverse = O2NewPaletteColor.o2New_color_darkModeBeyondBlue
-      buttonPrimaryBackgroundPressed = O2NewPaletteColor.o2New_color_beyondBlue55
+      buttonPrimaryBackgroundMedia = O2NewPaletteColor.o2New_color_white
       buttonPrimaryBackgroundHover = O2NewPaletteColor.o2New_color_beyondBlue55
+      buttonPrimaryBackgroundInverseHover = O2NewPaletteColor.o2New_color_beyondBlue55
+      buttonPrimaryBackgroundMediaHover = O2NewPaletteColor.o2New_color_beyondBlue30
+      buttonPrimaryBackgroundPressed = O2NewPaletteColor.o2New_color_beyondBlue55
       buttonPrimaryBackgroundInversePressed = O2NewPaletteColor.o2New_color_beyondBlue55
-      buttonSecondaryBackgroundPressed = O2NewPaletteColor.o2New_color_white_15_alpha
+      buttonPrimaryBackgroundMediaPressed = O2NewPaletteColor.o2New_color_beyondBlue30
       buttonSecondaryBorder = O2NewPaletteColor.o2New_color_white
-      buttonSecondaryBorderPressed = O2NewPaletteColor.o2New_color_white
       buttonSecondaryBorderInverse = O2NewPaletteColor.o2New_color_white
+      buttonSecondaryBorderMedia = O2NewPaletteColor.o2New_color_white
+      buttonSecondaryBorderPressed = O2NewPaletteColor.o2New_color_white
       buttonSecondaryBorderInversePressed = O2NewPaletteColor.o2New_color_white
+      buttonSecondaryBorderMediaPressed = O2NewPaletteColor.o2New_color_beyondBlue30
       buttonSecondaryBackgroundHover = O2NewPaletteColor.o2New_color_white_15_alpha
       buttonSecondaryBackgroundInverseHover = O2NewPaletteColor.o2New_color_white_15_alpha
+      buttonSecondaryBackgroundMediaHover = O2NewPaletteColor.o2New_color_white_15_alpha
+      buttonSecondaryBackgroundPressed = O2NewPaletteColor.o2New_color_white_15_alpha
       buttonSecondaryBackgroundInversePressed = O2NewPaletteColor.o2New_color_white_15_alpha
+      buttonSecondaryBackgroundMediaPressed = O2NewPaletteColor.o2New_color_white_15_alpha
       textButtonPrimary = O2NewPaletteColor.o2New_color_white
       textButtonPrimaryInverse = O2NewPaletteColor.o2New_color_white
+      textButtonPrimaryMedia = O2NewPaletteColor.o2New_color_beyondBlue
       textButtonPrimaryInversePressed = O2NewPaletteColor.o2New_color_white
+      textButtonPrimaryMediaPressed = O2NewPaletteColor.o2New_color_beyondBlue70
       textButtonSecondary = O2NewPaletteColor.o2New_color_grey30
-      textButtonSecondaryPressed = O2NewPaletteColor.o2New_color_grey30
       textButtonSecondaryInverse = O2NewPaletteColor.o2New_color_grey30
+      textButtonSecondaryMedia = O2NewPaletteColor.o2New_color_white
+      textButtonSecondaryPressed = O2NewPaletteColor.o2New_color_grey30
       textButtonSecondaryInversePressed = O2NewPaletteColor.o2New_color_grey30
+      textButtonSecondaryMediaPressed = O2NewPaletteColor.o2New_color_white
       textLink = O2NewPaletteColor.o2New_color_beyondBlue40
       textLinkInverse = O2NewPaletteColor.o2New_color_beyondBlue40
+      textLinkMedia = O2NewPaletteColor.o2New_color_white
       textLinkDanger = O2NewPaletteColor.o2New_color_o2Red45
+      textLinkDangerMedia = O2NewPaletteColor.o2New_color_o2Red65
       textLinkSnackbar = O2NewPaletteColor.o2New_color_beyondBlue30
       textActivated = O2NewPaletteColor.o2New_color_beyondBlue30
       textBrand = O2NewPaletteColor.o2New_color_beyondBlue30
@@ -310,6 +345,7 @@ public object O2NewBrandColors {
       tagBackgroundSuccessInverse = O2NewPaletteColor.o2New_color_darkModeGrey6
       tagBackgroundWarningInverse = O2NewPaletteColor.o2New_color_darkModeGrey6
       tagBackgroundErrorInverse = O2NewPaletteColor.o2New_color_darkModeGrey6
+      cardFooterOverlay = O2NewPaletteColor.o2New_color_black_70_alpha
       }
 }
 
@@ -332,9 +368,9 @@ public object O2NewBrandBrushes {
       cardContentOverlay = LinearGradientWithAngle(
         angleInDegrees = 180F,
         colorStops = listOf(
-          0.0F to O2NewPaletteColor.o2New_color_beyondBlue_0_alpha,
-          0.3F to O2NewPaletteColor.o2New_color_beyondBlue_40_alpha,
-          1.0F to O2NewPaletteColor.o2New_color_beyondBlue_100_alpha
+          0.0F to O2NewPaletteColor.o2New_color_black_0_alpha,
+          0.3F to O2NewPaletteColor.o2New_color_black_40_alpha,
+          1.0F to O2NewPaletteColor.o2New_color_black_70_alpha
         ))
       }
 
@@ -466,11 +502,13 @@ private object O2NewPaletteColor {
 
   public val o2New_color_white_20_alpha: Color = Color(0x33FFFFFF)
 
-  public val o2New_color_beyondBlue_0_alpha: Color = Color(0x000050FF)
+  public val o2New_color_black_0_alpha: Color = Color(0x0000001E)
 
-  public val o2New_color_beyondBlue_40_alpha: Color = Color(0x660050FF)
+  public val o2New_color_black_40_alpha: Color = Color(0x6600001E)
 
-  public val o2New_color_beyondBlue_100_alpha: Color = Color(0xFF0050FF)
+  public val o2New_color_black_70_alpha: Color = Color(0xB300001E)
+
+  public val o2New_color_black_100_alpha: Color = Color(0xFF00001E)
 
   public val o2New_color_white_5_alpha: Color = Color(0x0DFFFFFF)
 
@@ -481,10 +519,4 @@ private object O2NewPaletteColor {
   public val o2New_color_white_0_alpha: Color = Color(0x00FFFFFF)
 
   public val o2New_color_white_10_alpha: Color = Color(0x1AFFFFFF)
-
-  public val o2New_color_black_0_alpha: Color = Color(0x0000001E)
-
-  public val o2New_color_black_40_alpha: Color = Color(0x6600001E)
-
-  public val o2New_color_black_70_alpha: Color = Color(0xB300001E)
 }

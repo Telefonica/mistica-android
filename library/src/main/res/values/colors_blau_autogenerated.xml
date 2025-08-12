@@ -57,8 +57,8 @@
 	<color name="blau_color_white_8_alpha">#14FFFFFF</color>
 	<color name="blau_color_white_3_alpha">#08FFFFFF</color>
 	<color name="blau_color_darkModeGrey_80_alpha">#CC242424</color>
-	<color name="blau_color_blauRed_30_alpha">#4DD12937</color>
 	<color name="blau_color_white_0_alpha">#00FFFFFF</color>
+	<color name="blau_color_blauRed_30_alpha">#4DD12937</color>
 	<color name="blau_color_blauPurple_30_alpha">#4D7814B3</color>
 	<color name="blau_color_white_9_alpha">#17FFFFFF</color>
 </resources>
