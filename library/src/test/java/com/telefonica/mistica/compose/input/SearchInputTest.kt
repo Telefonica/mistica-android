@@ -1,5 +1,6 @@
 package com.telefonica.mistica.compose.input
 
+import android.os.Build.VERSION_CODES.VANILLA_ICE_CREAM
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onRoot
@@ -13,8 +14,10 @@ import org.junit.runner.RunWith
 import org.mockito.kotlin.mock
 import org.mockito.kotlin.verify
 import org.robolectric.RobolectricTestRunner
+import org.robolectric.annotation.Config
 
 @RunWith(RobolectricTestRunner::class)
+@Config(sdk = [VANILLA_ICE_CREAM])
 class SearchInputTest : ScreenshotsTest() {
 
     private val onValueChangeMock: (String) -> Unit = mock()

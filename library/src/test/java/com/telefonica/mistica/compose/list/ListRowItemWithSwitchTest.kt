@@ -1,5 +1,6 @@
 package com.telefonica.mistica.compose.list
 
+import android.os.Build.VERSION_CODES.VANILLA_ICE_CREAM
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -18,8 +19,10 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
+import org.robolectric.annotation.Config
 
 @RunWith(RobolectricTestRunner::class)
+@Config(sdk = [VANILLA_ICE_CREAM])
 internal class ListRowItemWithSwitchTest : ScreenshotsTest() {
 
     @get:Rule

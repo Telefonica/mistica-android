@@ -1,5 +1,6 @@
 package com.telefonica.mistica.list
 
+import android.os.Build.VERSION_CODES.VANILLA_ICE_CREAM
 import android.widget.FrameLayout
 import android.widget.TextView
 import androidx.test.espresso.Espresso
@@ -16,8 +17,10 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
+import org.robolectric.annotation.Config
 
 @RunWith(RobolectricTestRunner::class)
+@Config(sdk = [VANILLA_ICE_CREAM])
 internal class ListRowViewTest : ScreenshotsTest() {
     @get:Rule
     val rule = activityScenarioRule<DummyActivity>()
