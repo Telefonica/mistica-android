@@ -101,7 +101,7 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     testImplementation "androidx.compose.ui:ui-test-junit4:$compose_ui_version"
     testImplementation "androidx.compose.ui:ui-test-manifest:$compose_ui_version"
-    testImplementation 'org.robolectric:robolectric:4.13'
+    testImplementation 'org.robolectric:robolectric:4.14'
     testImplementation "io.github.takahirom.roborazzi:roborazzi:$roborazzi_version"
     testImplementation "io.github.takahirom.roborazzi:roborazzi-compose:$roborazzi_version"
     testImplementation "org.mockito.kotlin:mockito-kotlin:4.0.0"
