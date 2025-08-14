@@ -1,5 +1,6 @@
 package com.telefonica.mistica.testutils
 
+import android.os.Build.VERSION_CODES.UPSIDE_DOWN_CAKE
 import androidx.compose.ui.test.SemanticsNodeInteraction
 import androidx.test.espresso.ViewInteraction
 import com.github.takahirom.roborazzi.RobolectricDeviceQualifiers
@@ -7,7 +8,7 @@ import com.github.takahirom.roborazzi.captureRoboImage
 import com.telefonica.mistica.compose.theme.brand.Brand
 import org.robolectric.annotation.Config
 
-@Config(sdk = [33], qualifiers = RobolectricDeviceQualifiers.Pixel5)
+@Config(sdk = [UPSIDE_DOWN_CAKE], qualifiers = RobolectricDeviceQualifiers.Pixel5)
 open class ScreenshotsTest {
     fun compareScreenshot(
         node: SemanticsNodeInteraction,

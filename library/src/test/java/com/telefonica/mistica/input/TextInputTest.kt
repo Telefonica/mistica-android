@@ -1,6 +1,5 @@
 package com.telefonica.mistica.input
 
-import android.os.Build.VERSION_CODES.UPSIDE_DOWN_CAKE
 import android.widget.FrameLayout
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.matcher.ViewMatchers
@@ -15,7 +14,6 @@ import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
 
 @RunWith(RobolectricTestRunner::class)
-@Config(sdk = [UPSIDE_DOWN_CAKE])
 internal class TextInputTest: ScreenshotsTest() {
     @get:Rule
     val rule = activityScenarioRule<DummyActivity>()

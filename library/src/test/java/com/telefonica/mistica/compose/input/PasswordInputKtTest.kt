@@ -1,6 +1,5 @@
 package com.telefonica.mistica.compose.input
 
-import android.os.Build.VERSION_CODES.UPSIDE_DOWN_CAKE
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onRoot
@@ -12,10 +11,8 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
-import org.robolectric.annotation.Config
 
 @RunWith(RobolectricTestRunner::class)
-@Config(sdk = [UPSIDE_DOWN_CAKE])
 internal class PasswordInputKtTest: ScreenshotsTest() {
     @get:Rule
     val composeTestRule = createComposeRule()

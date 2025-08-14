@@ -1,6 +1,5 @@
 package com.telefonica.mistica.compose.list
 
-import android.os.Build.VERSION_CODES.UPSIDE_DOWN_CAKE
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -19,10 +18,8 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
-import org.robolectric.annotation.Config
 
 @RunWith(RobolectricTestRunner::class)
-@Config(sdk = [UPSIDE_DOWN_CAKE])
 internal class ListRowItemWithCheckBoxTest : ScreenshotsTest() {
 
     @get:Rule

@@ -1,6 +1,5 @@
 package com.telefonica.mistica.compose.badge
 
-import android.os.Build.VERSION_CODES.UPSIDE_DOWN_CAKE
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.BadgedBox
@@ -18,10 +17,8 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
-import org.robolectric.annotation.Config
 
 @RunWith(RobolectricTestRunner::class)
-@Config(sdk = [UPSIDE_DOWN_CAKE])
 class BadgeTest: ScreenshotsTest() {
     @get:Rule
     val composeTestRule = createComposeRule()

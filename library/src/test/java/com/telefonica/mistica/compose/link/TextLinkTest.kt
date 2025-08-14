@@ -1,6 +1,5 @@
 package com.telefonica.mistica.compose.link
 
-import android.os.Build.VERSION_CODES.UPSIDE_DOWN_CAKE
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
 import androidx.compose.ui.Modifier
@@ -14,10 +13,8 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
-import org.robolectric.annotation.Config
 
 @RunWith(RobolectricTestRunner::class)
-@Config(sdk = [UPSIDE_DOWN_CAKE])
 class TextLinkTest: ScreenshotsTest() {
 
     @get:Rule

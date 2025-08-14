@@ -1,6 +1,5 @@
 package com.telefonica.mistica.list
 
-import android.os.Build.VERSION_CODES.UPSIDE_DOWN_CAKE
 import android.view.View.IMPORTANT_FOR_ACCESSIBILITY_NO
 import android.widget.FrameLayout
 import androidx.appcompat.widget.AppCompatCheckBox
@@ -19,10 +18,8 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
-import org.robolectric.annotation.Config
 
 @RunWith(RobolectricTestRunner::class)
-@Config(sdk = [UPSIDE_DOWN_CAKE])
 internal class ListRowViewToggleableTest : ScreenshotsTest() {
     @get:Rule
     val rule = activityScenarioRule<DummyActivity>()

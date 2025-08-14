@@ -1,6 +1,5 @@
 package com.telefonica.mistica.compose.list
 
-import android.os.Build.VERSION_CODES.UPSIDE_DOWN_CAKE
 import androidx.compose.foundation.clickable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
@@ -24,12 +23,10 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
-import org.robolectric.annotation.Config
 
 private const val LIST_ROW_ITEM_ASSET_TAG = "listRowItemAssetTag"
 
 @RunWith(RobolectricTestRunner::class)
-@Config(sdk = [UPSIDE_DOWN_CAKE])
 internal class ListRowItemKtTest : ScreenshotsTest() {
 
     @get:Rule
