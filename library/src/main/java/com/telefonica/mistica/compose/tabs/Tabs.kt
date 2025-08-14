@@ -1,5 +1,6 @@
 package com.telefonica.mistica.compose.tabs
 
+import android.app.Activity
 import androidx.annotation.DrawableRes
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.animateDpAsState
@@ -36,7 +37,8 @@ import androidx.compose.ui.composed
 import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.SubcomposeLayout
-import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.debugInspectorInfo
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
@@ -47,6 +49,7 @@ import androidx.compose.ui.unit.Density
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
+import androidx.window.layout.WindowMetricsCalculator
 import com.telefonica.mistica.compose.theme.MisticaTheme
 import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 import kotlinx.coroutines.CoroutineScope
@@ -61,7 +64,14 @@ fun Tabs(
     tabs: List<Tab>,
     onSelectedTabChanged: (index: Int) -> Unit,
 ) {
-    val isTablet = LocalConfiguration.current.screenWidthDp > 768
+
+    val context = LocalContext.current
+    val windowMetrics = WindowMetricsCalculator.getOrCreate().computeCurrentWindowMetrics(context as Activity)
+    val screenWidthDp = with(LocalDensity.current) {
+        windowMetrics.bounds.width().toDp()
+    }
+    val isTablet = screenWidthDp > 768.dp
+
     val maxTabWidth = 280.dp
 
     val composableTabs: @Composable @UiComposable (setTestTag: Boolean) -> Unit = @Composable { setTestTag ->

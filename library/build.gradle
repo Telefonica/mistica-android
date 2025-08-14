@@ -58,6 +58,7 @@ android {
             includeAndroidResources = true
             all {
                 systemProperty 'robolectric.graphicsMode', 'NATIVE'
+                systemProperty 'robolectric.pixelCopyRenderMode', 'software'
             }
         }
     }
@@ -97,11 +98,12 @@ dependencies {
     implementation "com.github.skydoves:balloon-compose:1.5.3"
 
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.6.1"
+    implementation 'androidx.window:window:1.4.0'
 
     testImplementation 'junit:junit:4.13.2'
     testImplementation "androidx.compose.ui:ui-test-junit4:$compose_ui_version"
     testImplementation "androidx.compose.ui:ui-test-manifest:$compose_ui_version"
-    testImplementation 'org.robolectric:robolectric:4.11.1'
+    testImplementation 'org.robolectric:robolectric:4.15.1'
     testImplementation "io.github.takahirom.roborazzi:roborazzi:$roborazzi_version"
     testImplementation "io.github.takahirom.roborazzi:roborazzi-compose:$roborazzi_version"
     testImplementation "org.mockito.kotlin:mockito-kotlin:4.0.0"
