@@ -58,6 +58,7 @@ android {
             includeAndroidResources = true
             all {
                 systemProperty 'robolectric.graphicsMode', 'NATIVE'
+                systemProperty 'robolectric.pixelCopyRenderMode', 'software'
             }
         }
     }
