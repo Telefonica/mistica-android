@@ -1,6 +1,6 @@
 package com.telefonica.mistica.compose.input
 
-import android.os.Build.VERSION_CODES.VANILLA_ICE_CREAM
+import android.os.Build.VERSION_CODES.UPSIDE_DOWN_CAKE
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onRoot
@@ -17,7 +17,7 @@ import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
 
 @RunWith(RobolectricTestRunner::class)
-@Config(sdk = [VANILLA_ICE_CREAM])
+@Config(sdk = [UPSIDE_DOWN_CAKE])
 class SearchInputTest : ScreenshotsTest() {
 
     private val onValueChangeMock: (String) -> Unit = mock()

@@ -1,6 +1,6 @@
 package com.telefonica.mistica.title
 
-import android.os.Build.VERSION_CODES.VANILLA_ICE_CREAM
+import android.os.Build.VERSION_CODES.UPSIDE_DOWN_CAKE
 import android.widget.FrameLayout
 import androidx.test.ext.junit.rules.activityScenarioRule
 import com.telefonica.mistica.DummyActivity
@@ -15,7 +15,7 @@ import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
 
 @RunWith(RobolectricTestRunner::class)
-@Config(sdk = [VANILLA_ICE_CREAM])
+@Config(sdk = [UPSIDE_DOWN_CAKE])
 internal class TitleViewTest: ScreenshotsTest() {
     @get:Rule
     val rule = activityScenarioRule<DummyActivity>()

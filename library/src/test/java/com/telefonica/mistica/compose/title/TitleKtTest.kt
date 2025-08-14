@@ -1,6 +1,6 @@
 package com.telefonica.mistica.compose.title
 
-import android.os.Build.VERSION_CODES.VANILLA_ICE_CREAM
+import android.os.Build.VERSION_CODES.UPSIDE_DOWN_CAKE
 import androidx.compose.ui.test.assert
 import androidx.compose.ui.test.isHeading
 import androidx.compose.ui.test.junit4.createComposeRule
@@ -14,7 +14,7 @@ import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
 
 @RunWith(RobolectricTestRunner::class)
-@Config(sdk = [VANILLA_ICE_CREAM])
+@Config(sdk = [UPSIDE_DOWN_CAKE])
 internal class TitleKtTest {
     @get:Rule
     val composeTestRule = createComposeRule()

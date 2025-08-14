@@ -1,6 +1,6 @@
 package com.telefonica.mistica.list
 
-import android.os.Build.VERSION_CODES.VANILLA_ICE_CREAM
+import android.os.Build.VERSION_CODES.UPSIDE_DOWN_CAKE
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.FrameLayout
@@ -18,7 +18,7 @@ import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
 
 @RunWith(RobolectricTestRunner::class)
-@Config(sdk = [VANILLA_ICE_CREAM])
+@Config(sdk = [UPSIDE_DOWN_CAKE])
 internal class MisticaRecyclerViewTest: ScreenshotsTest() {
     @get:Rule
     val rule = activityScenarioRule<DummyActivity>()
