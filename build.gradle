@@ -2,7 +2,7 @@
 buildscript {
     ext {
         min_sdk_version = 24
-        target_sdk_version = 34
+        target_sdk_version = 36
         compose_ui_version = "1.7.6"
         kotlin_version = "2.0.21"
         androidx_appcompat_version = "1.7.0"
@@ -12,7 +12,7 @@ buildscript {
         coil_version = '2.5.0'
         constraintComposeVersion = '1.0.1'
         detekt_version = '1.23.7'
-        roborazzi_version = "1.26.0"
+        roborazzi_version = "1.30.1"
         material_version = "1.12.0"
     }
     repositories {

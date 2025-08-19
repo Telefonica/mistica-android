@@ -2,8 +2,12 @@ package com.telefonica.mistica.catalog.ui.classic.activity
 
 import android.content.Intent
 import android.os.Bundle
+import androidx.activity.enableEdgeToEdge
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updatePadding
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.feedback.screen.view.FeedbackScreenView
 import com.telefonica.mistica.feedback.screen.view.FeedbackScreenView.FeedbackType
@@ -33,7 +37,13 @@ class FeedbackScreenCatalogActivity : AppCompatActivity() {
             ?.let { setTheme(it) }
 
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContentView(R.layout.screen_activity_feedback_catalog)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(android.R.id.content)) { view, windowInsets ->
+            val insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
+            view.updatePadding(top = insets.top, bottom = insets.bottom)
+            WindowInsetsCompat.CONSUMED
+        }
 
         handleIntentExtras(intent)
 

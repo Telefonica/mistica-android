@@ -2,7 +2,11 @@ package com.telefonica.mistica.catalog.ui.classic.activity
 
 import android.content.Context
 import android.os.Bundle
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updatePadding
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.emptystate.screen.EmptyStateScreenView
 
@@ -18,7 +22,13 @@ class EmptyStateScreenCatalogActivity : AppCompatActivity() {
             ?.let { setTheme(it) }
 
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContentView(R.layout.empty_state_screen_activity_catalog)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(android.R.id.content)) { view, windowInsets ->
+            val insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
+            view.updatePadding(top = insets.top, bottom = insets.bottom)
+            WindowInsetsCompat.CONSUMED
+        }
 
         @EmptyStateScreenView.ImageSize
         val imageSize: Int? = intent.getIntExtra(
