@@ -5,6 +5,7 @@
     <issue id="OldTargetApi" severity="ignore" />
     <issue id="MonochromeLauncherIcon" severity="ignore" />
     <issue id="GradleDependency" severity="ignore" />
+    <issue id="AndroidGradlePluginVersion" severity="ignore" />
 
     <!-- Required for firebase distribution tracks, nodpi assets should be included also. -->
     <issue id="UnusedResources">
