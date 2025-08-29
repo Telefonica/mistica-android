@@ -51,7 +51,6 @@ android {
     lint {
         sarifReport true
         checkDependencies true
-        lintConfig file('../lint-custom.xml')
     }
 
     testOptions {

@@ -21,7 +21,6 @@ android {
 
     lint {
         sarifReport true
-        lintConfig file('../lint-custom.xml')
     }
 
     lintOptions {

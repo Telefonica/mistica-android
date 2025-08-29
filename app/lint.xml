@@ -16,4 +16,6 @@
     <issue id="IconLauncherShape">
         <ignore path="src/main/res/mipmap-nodpi/ic_launcher*.png" />
     </issue>
+    <issue id="UseTomlInstead" severity="ignore" />
+
 </lint>
