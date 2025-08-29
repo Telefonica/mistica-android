@@ -8,12 +8,12 @@ artifacts {
 }
 
 apply plugin: 'maven-publish'
-apply plugin: 'signing'
+//apply plugin: 'signing'
 
 ext {
     PUBLISH_GROUP_ID = 'com.telefonica'
     PUBLISH_ARTIFACT_ID = 'mistica'
-    PUBLISH_VERSION = version
+    PUBLISH_VERSION = "200.0.0"
 
     PUBLISH_RELEASE_NAME = 'Mistica Android'
     PUBLISH_CATALOG_NAME = 'Mistica Catalog Android'
@@ -65,63 +65,63 @@ publishing {
                 }
             }
         }
-        catalog(MavenPublication) {
-            groupId PUBLISH_GROUP_ID
-            artifactId "$PUBLISH_ARTIFACT_ID-catalog"
-            version PUBLISH_VERSION
-
-            artifact("$buildDir/outputs/aar/catalog-release.aar")
-            artifact androidSourcesJar
-
-            pom {
-                name = PUBLISH_CATALOG_NAME
-                description = PUBLISH_DESCRIPTION
-                url = PUBLISH_REPO_URL
-                licenses {
-                    license {
-                        name = 'The Apache License, Version 2.0'
-                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-                    }
-                }
-                developers {
-                    developer {
-                        id = 'android-team-telefonica'
-                        name = 'Android Team'
-                        email = 'cto-android@telefonica.com'
-                    }
-                }
-                scm {
-                    connection = 'scm:git:github.com/Telefonica/mistica-android.git'
-                    developerConnection = 'scm:git:ssh://github.com/Telefonica/mistica-android.git'
-                    url = 'https://github.com/Telefonica/mistica-android/tree/main'
-                }
-                withXml {
-                    def dependenciesNode = asNode().appendNode('dependencies')
-
-                    project.configurations.getByName("implementation").allDependencies.each {
-                        if (it.group != "com.telefonica.mistica" && it.name != "library") {
-                            def dependencyNode = dependenciesNode.appendNode('dependency')
-                            dependencyNode.appendNode('groupId', it.group)
-                            dependencyNode.appendNode('artifactId', it.name)
-                            dependencyNode.appendNode('version', it.version)
-                        }
-                    }
-
-                    //Add a dependency with the library
-                    def dependencyNode = dependenciesNode.appendNode('dependency')
-                    dependencyNode.appendNode('groupId', PUBLISH_GROUP_ID)
-                    dependencyNode.appendNode('artifactId', PUBLISH_ARTIFACT_ID)
-                    dependencyNode.appendNode('version', PUBLISH_VERSION)
-                }
-            }
-        }
+//        catalog(MavenPublication) {
+//            groupId PUBLISH_GROUP_ID
+//            artifactId "$PUBLISH_ARTIFACT_ID-catalog"
+//            version PUBLISH_VERSION
+//
+//            artifact("$buildDir/outputs/aar/catalog-release.aar")
+//            artifact androidSourcesJar
+//
+//            pom {
+//                name = PUBLISH_CATALOG_NAME
+//                description = PUBLISH_DESCRIPTION
+//                url = PUBLISH_REPO_URL
+//                licenses {
+//                    license {
+//                        name = 'The Apache License, Version 2.0'
+//                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+//                    }
+//                }
+//                developers {
+//                    developer {
+//                        id = 'android-team-telefonica'
+//                        name = 'Android Team'
+//                        email = 'cto-android@telefonica.com'
+//                    }
+//                }
+//                scm {
+//                    connection = 'scm:git:github.com/Telefonica/mistica-android.git'
+//                    developerConnection = 'scm:git:ssh://github.com/Telefonica/mistica-android.git'
+//                    url = 'https://github.com/Telefonica/mistica-android/tree/main'
+//                }
+//                withXml {
+//                    def dependenciesNode = asNode().appendNode('dependencies')
+//
+//                    project.configurations.getByName("implementation").allDependencies.each {
+//                        if (it.group != "com.telefonica.mistica" && it.name != "library") {
+//                            def dependencyNode = dependenciesNode.appendNode('dependency')
+//                            dependencyNode.appendNode('groupId', it.group)
+//                            dependencyNode.appendNode('artifactId', it.name)
+//                            dependencyNode.appendNode('version', it.version)
+//                        }
+//                    }
+//
+//                    //Add a dependency with the library
+//                    def dependencyNode = dependenciesNode.appendNode('dependency')
+//                    dependencyNode.appendNode('groupId', PUBLISH_GROUP_ID)
+//                    dependencyNode.appendNode('artifactId', PUBLISH_ARTIFACT_ID)
+//                    dependencyNode.appendNode('version', PUBLISH_VERSION)
+//                }
+//            }
+//        }
     }
 }
 
-signing {
-    def signingKeyId = findProperty("signingKeyId")
-    def signingKey = findProperty("signingKey")
-    def signingPassword = findProperty("signingPassword")
-    useInMemoryPgpKeys(signingKeyId, signingKey, signingPassword)
-    sign publishing.publications
-}
+//signing {
+//    def signingKeyId = findProperty("signingKeyId")
+//    def signingKey = findProperty("signingKey")
+//    def signingPassword = findProperty("signingPassword")
+//    useInMemoryPgpKeys(signingKeyId, signingKey, signingPassword)
+//    sign publishing.publications
+//}
