@@ -1,3 +1,14 @@
+pluginManagement {
+    repositories {
+        mavenCentral()
+        google()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+        gradlePluginPortal()
+    }
+}
+
 include ':app'
 include ':library'
 include ':catalog'
