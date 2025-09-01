@@ -22,7 +22,6 @@ buildscript {
         }
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:8.9.3"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:$detekt_version"
     }
@@ -33,6 +32,9 @@ plugins {
     id 'org.jetbrains.kotlin.plugin.compose' version "$kotlin_version" apply false
     id 'io.github.gradle-nexus.publish-plugin' version '2.0.0' apply false
     id "io.github.takahirom.roborazzi" version '1.26.0' apply false
+    alias libs.plugins.com.android.application apply false
+    alias libs.plugins.com.android.library apply false
+
     id "io.gitlab.arturbosch.detekt" version '1.23.7'
 }
 
