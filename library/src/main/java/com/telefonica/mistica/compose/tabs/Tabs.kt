@@ -67,13 +67,13 @@ fun Tabs(
 ) {
 
     val configuration = LocalConfiguration.current
-    val windowInsets = WindowInsets.systemBars
     val density = LocalDensity.current
-    val insetsWidth = with(density) {
-        windowInsets.getLeft(density, LayoutDirection.Ltr) + windowInsets.getRight(density, LayoutDirection.Ltr)
-    }
     val screenWidthDp = with(density) {
         if (android.os.Build.VERSION.SDK_INT >= 35) {
+            val windowInsets = WindowInsets.systemBars
+            val insetsWidth = with(density) {
+                windowInsets.getLeft(density, LayoutDirection.Ltr) + windowInsets.getRight(density, LayoutDirection.Ltr)
+            }
             (configuration.screenWidthDp.dp.toPx() - insetsWidth).toDp()
         } else {
             configuration.screenWidthDp.dp
