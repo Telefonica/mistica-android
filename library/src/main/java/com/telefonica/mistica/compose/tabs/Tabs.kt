@@ -1,6 +1,5 @@
 package com.telefonica.mistica.compose.tabs
 
-import android.app.Activity
 import androidx.annotation.DrawableRes
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.animateDpAsState
@@ -11,11 +10,13 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.systemBars
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.layout.wrapContentSize
@@ -37,7 +38,7 @@ import androidx.compose.ui.composed
 import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.SubcomposeLayout
-import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.debugInspectorInfo
 import androidx.compose.ui.platform.testTag
@@ -48,8 +49,8 @@ import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.Density
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.IntOffset
+import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
-import androidx.window.layout.WindowMetricsCalculator
 import com.telefonica.mistica.compose.theme.MisticaTheme
 import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 import kotlinx.coroutines.CoroutineScope
@@ -65,10 +66,18 @@ fun Tabs(
     onSelectedTabChanged: (index: Int) -> Unit,
 ) {
 
-    val context = LocalContext.current
-    val windowMetrics = WindowMetricsCalculator.getOrCreate().computeCurrentWindowMetrics(context as Activity)
-    val screenWidthDp = with(LocalDensity.current) {
-        windowMetrics.bounds.width().toDp()
+    val configuration = LocalConfiguration.current
+    val density = LocalDensity.current
+    val screenWidthDp = with(density) {
+        if (android.os.Build.VERSION.SDK_INT >= 35) {
+            val windowInsets = WindowInsets.systemBars
+            val insetsWidth = with(density) {
+                windowInsets.getLeft(density, LayoutDirection.Ltr) + windowInsets.getRight(density, LayoutDirection.Ltr)
+            }
+            (configuration.screenWidthDp.dp.toPx() - insetsWidth).toDp()
+        } else {
+            configuration.screenWidthDp.dp
+        }
     }
     val isTablet = screenWidthDp > 768.dp
 
