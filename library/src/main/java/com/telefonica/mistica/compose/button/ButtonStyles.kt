@@ -29,27 +29,32 @@ internal class ButtonStyleConfig(
 private fun getMisticaRippleConfiguration(color: Color, alpha: RippleAlpha? = null) =
     RippleConfiguration(color, alpha ?: RippleDefaults.rippleAlpha(color, !isSystemInDarkTheme()))
 
+private var isFocused: Boolean? = null
+
 @Composable
 @Suppress("CyclomaticComplexMethod")
-internal fun ButtonStyle.getButtonStyleCompose(): ButtonStyleConfig = when (this) {
-    ButtonStyle.PRIMARY -> primary()
-    ButtonStyle.PRIMARY_INVERSE -> primaryInverse()
-    ButtonStyle.PRIMARY_SMALL -> primary()
-    ButtonStyle.PRIMARY_SMALL_INVERSE -> primaryInverse()
-    ButtonStyle.SECONDARY -> secondary()
-    ButtonStyle.SECONDARY_INVERSE -> secondaryInverseConfig()
-    ButtonStyle.SECONDARY_SMALL -> secondary()
-    ButtonStyle.SECONDARY_SMALL_INVERSE -> secondaryInverseConfig()
-    ButtonStyle.DANGER -> danger()
-    ButtonStyle.DANGER_SMALL -> danger()
-    ButtonStyle.LINK -> link(MisticaTheme.colors.textLink)
-    ButtonStyle.LINK_INVERSE -> linkInverse()
-    ButtonStyle.LINK_SMALL -> link()
-    ButtonStyle.LINK_SMALL_INVERSE -> linkInverse()
-    ButtonStyle.DANGER_LINK -> dangerLink()
-    ButtonStyle.DANGER_LINK_INVERSE -> dangerLinkInverse()
-    ButtonStyle.DANGER_LINK_SMALL -> dangerLink()
-    ButtonStyle.DANGER_LINK_SMALL_INVERSE -> dangerLinkInverse()
+internal fun ButtonStyle.getButtonStyleCompose(newFocusState: Boolean? = null): ButtonStyleConfig {
+    isFocused = newFocusState
+    return when (this) {
+        ButtonStyle.PRIMARY -> primary()
+        ButtonStyle.PRIMARY_INVERSE -> primaryInverse()
+        ButtonStyle.PRIMARY_SMALL -> primary()
+        ButtonStyle.PRIMARY_SMALL_INVERSE -> primaryInverse()
+        ButtonStyle.SECONDARY -> secondary()
+        ButtonStyle.SECONDARY_INVERSE -> secondaryInverseConfig()
+        ButtonStyle.SECONDARY_SMALL -> secondary()
+        ButtonStyle.SECONDARY_SMALL_INVERSE -> secondaryInverseConfig()
+        ButtonStyle.DANGER -> danger()
+        ButtonStyle.DANGER_SMALL -> danger()
+        ButtonStyle.LINK -> link()
+        ButtonStyle.LINK_INVERSE -> linkInverse()
+        ButtonStyle.LINK_SMALL -> link()
+        ButtonStyle.LINK_SMALL_INVERSE -> linkInverse()
+        ButtonStyle.DANGER_LINK -> dangerLink()
+        ButtonStyle.DANGER_LINK_INVERSE -> dangerLinkInverse()
+        ButtonStyle.DANGER_LINK_SMALL -> dangerLink()
+        ButtonStyle.DANGER_LINK_SMALL_INVERSE -> dangerLinkInverse()
+    }
 }
 
 @Composable
@@ -126,8 +131,9 @@ private fun link(
     textColor: Color = MisticaTheme.colors.textLink,
 ) = primary(
     buttonColors = ButtonDefaults.buttonColors(
-        backgroundColor = Color.Transparent,
-        disabledBackgroundColor = Color.Transparent
+        backgroundColor = if (isFocused == true) Color.Green else Color.Transparent,
+        //backgroundColor =Color.Transparent,
+        disabledBackgroundColor = Color.Transparent,
     ),
     textColor = textColor,
     disabledTextColor = textColor.disabled(),
@@ -147,7 +153,7 @@ private fun dangerLink(
     selectedBackgroundColor: Color = MisticaTheme.colors.buttonLinkDangerBackgroundPressed,
 ) = primary(
     buttonColors = ButtonDefaults.buttonColors(
-        backgroundColor = backgroundColor,
+        backgroundColor = if (isFocused == true) Color.Green else backgroundColor,
         disabledBackgroundColor = Color.Transparent,
     ),
     textColor = textColor,

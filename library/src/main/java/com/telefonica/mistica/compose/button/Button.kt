@@ -7,6 +7,8 @@ import androidx.compose.animation.core.tween
 import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutVertically
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.interaction.collectIsFocusedAsState
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.PaddingValues
@@ -74,7 +76,10 @@ fun Button(
 
     val density = LocalDensity.current
 
-    val style = buttonStyle.getButtonStyleCompose()
+    val interactionSource = remember { MutableInteractionSource() }
+    val isFocused by interactionSource.collectIsFocusedAsState()
+
+    val style = buttonStyle.getButtonStyleCompose(isFocused)
     val size = buttonStyle.getButtonSizeCompose()
     val textColor = if (enabled) style.textColor else style.disabledTextColor
 
@@ -102,7 +107,8 @@ fun Button(
             colors = style.buttonColors,
             border = if (enabled) style.border else style.disabledBorder,
             elevation = ButtonDefaults.elevation(0.dp, 0.dp, 0.dp, 0.dp, 0.dp),
-            shape = RoundedCornerShape(MisticaTheme.radius.buttonBorderRadius)
+            shape = RoundedCornerShape(MisticaTheme.radius.buttonBorderRadius),
+            interactionSource = interactionSource, // 👈 importante para focus
         ) {
             Box(contentAlignment = Alignment.Center) {
                 LoadingContent(isLoading, size, textColor, loadingText)
