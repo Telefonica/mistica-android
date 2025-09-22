@@ -167,17 +167,9 @@ fun Callout(
             }
 
             if (dismissable) {
-                Image(
-                    modifier = Modifier
-                        .clickable { onDismiss?.invoke() }
-                        .semantics { traversalIndex = 1f }
-                        .testTag(CalloutTestTag.CLOSE_BUTTON),
-                    painter = painterResource(id = R.drawable.icn_cross),
-                    contentDescription = if (dismissContentDescription.isNullOrEmpty()) {
-                        stringResource(id = R.string.close_button_content_description)
-                    } else {
-                        dismissContentDescription
-                    }
+                CalloutDismissButton(
+                    dismissContentDescription = dismissContentDescription,
+                    onDismiss = onDismiss
                 )
             }
         }
@@ -287,6 +279,22 @@ private fun Icon(
     }
 
     iconPainter.Paint()
+}
+
+@Composable
+private fun CalloutDismissButton(
+    dismissContentDescription: String?,
+    onDismiss: (() -> Unit)?,
+) {
+    Image(
+        modifier = Modifier
+            .clickable { onDismiss?.invoke() }
+            .semantics { traversalIndex = 1f }
+            .testTag(CalloutTestTag.CLOSE_BUTTON),
+        painter = painterResource(id = R.drawable.icn_cross),
+        contentDescription = dismissContentDescription.takeIf { !it.isNullOrEmpty() }
+            ?: stringResource(id = R.string.close_button_content_description)
+    )
 }
 
 enum class CalloutButtonConfig {
