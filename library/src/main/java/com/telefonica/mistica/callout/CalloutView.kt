@@ -409,7 +409,7 @@ enum class CalloutViewImageConfig(val value: Int) {
 
     companion object {
         fun getConfigByValue(item: Int): CalloutViewImageConfig {
-            return values().firstOrNull { it.value == item } ?: NONE
+            return CalloutViewImageConfig.entries.firstOrNull { it.value == item } ?: NONE
         }
     }
 }

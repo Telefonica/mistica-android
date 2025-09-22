@@ -39,7 +39,7 @@ class CalloutsCatalogFragment : Fragment() {
                 DropDownInput.Adapter(
                     view.context,
                     R.layout.dropdown_menu_popup_item,
-                    CalloutButtonsConfig.values().map { it.name },
+                    CalloutButtonsConfig.entries.map { it.name },
                 )
             )
             setText(CalloutButtonsConfig.PRIMARY.name)
@@ -49,7 +49,7 @@ class CalloutsCatalogFragment : Fragment() {
                 DropDownInput.Adapter(
                     view.context,
                     R.layout.dropdown_menu_popup_item,
-                    CalloutViewImageConfig.values().map { it.name },
+                    CalloutViewImageConfig.entries.map { it.name },
                 )
             )
             setText(CalloutViewImageConfig.ICON.name)

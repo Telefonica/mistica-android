@@ -55,9 +55,9 @@ fun Callouts() {
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(40.dp, 8.dp),
-            items = CalloutViewImageConfig.values().map { it.name },
-            currentItemIndex = CalloutViewImageConfig.values().indexOf(iconType),
-            onItemSelected = { index -> iconType = CalloutViewImageConfig.values()[index] },
+            items = CalloutViewImageConfig.entries.map { it.name },
+            currentItemIndex = CalloutViewImageConfig.entries.indexOf(iconType),
+            onItemSelected = { index -> iconType = CalloutViewImageConfig.entries.toTypedArray()[index] },
             hint = "Icon type",
         )
 
