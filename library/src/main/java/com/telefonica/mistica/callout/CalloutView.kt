@@ -169,6 +169,9 @@ class CalloutView @JvmOverloads constructor(
                 ?.let { setAsset(it) }
 
             dismissable = styledAttrs.getBoolean(R.styleable.CalloutView_calloutDismissable, false)
+            styledAttrs.getString(R.styleable.CalloutView_calloutDismissContentDescription)?.let {
+                setDismissContentDescription(it)
+            }
             inverse = styledAttrs.getBoolean(R.styleable.CalloutView_calloutInverse, false)
 
             styledAttrs.recycle()
@@ -183,6 +186,14 @@ class CalloutView @JvmOverloads constructor(
 
     fun setDismissable(dismissable: Boolean) {
         closeButton.visibility = if (dismissable) VISIBLE else GONE
+    }
+
+    fun setDismissContentDescription(contentDescription: String) {
+        if (contentDescription.isEmpty()) {
+            closeButton.contentDescription = context.getString(R.string.close_button_content_description)
+        } else {
+            closeButton.contentDescription = contentDescription
+        }
     }
 
     fun setInverse(inverse: Boolean) {

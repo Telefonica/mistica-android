@@ -41,6 +41,7 @@ fun Callout(
     @DrawableRes iconRes: Int? = null,
     imageConfig: CalloutViewImageConfig = CalloutViewImageConfig.NONE,
     dismissable: Boolean,
+    dismissContentDescription: String? = null,
     onDismiss: (() -> Unit)? = null,
     inverse: Boolean,
     primaryButtonText: String? = null,
@@ -172,7 +173,11 @@ fun Callout(
                         .semantics { traversalIndex = 1f }
                         .testTag(CalloutTestTag.CLOSE_BUTTON),
                     painter = painterResource(id = R.drawable.icn_cross),
-                    contentDescription = stringResource(id = R.string.close_button_content_description)
+                    contentDescription = if (dismissContentDescription.isNullOrEmpty()) {
+                        stringResource(id = R.string.close_button_content_description)
+                    } else {
+                        dismissContentDescription
+                    }
                 )
             }
         }

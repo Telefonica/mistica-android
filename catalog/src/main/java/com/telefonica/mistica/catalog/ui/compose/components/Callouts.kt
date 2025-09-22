@@ -41,6 +41,7 @@ fun Callouts() {
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         var inverse by remember { mutableStateOf(false) }
+        var dismissContentDescription: String by remember { mutableStateOf("") }
         Row(
             modifier = Modifier.padding(horizontal = 16.dp),
             verticalAlignment = Alignment.CenterVertically
@@ -67,6 +68,17 @@ fun Callouts() {
         ) {
             Checkbox(checked = dismissable, onCheckedChange = { dismissable = !dismissable })
             Text("Is dismissable")
+        }
+
+        if (dismissable) {
+           OutlinedTextField(
+               modifier = Modifier
+                   .fillMaxWidth()
+                   .padding(horizontal = 16.dp),
+               value = dismissContentDescription,
+               label = {Text("Custom dismiss content description")},
+               onValueChange = { dismissContentDescription = it },
+           )
         }
 
         var title by remember { mutableStateOf("Callout sample title") }
@@ -159,6 +171,7 @@ fun Callouts() {
                         CalloutViewImageConfig.SQUARE_IMAGE -> R.drawable.card_image_sample
                     },
                     dismissable = dismissable,
+                    dismissContentDescription = dismissContentDescription,
                     inverse = inverse,
                     onDismiss = { isShown = false },
                     primaryButtonText = primaryButtonText.takeIf { it.isNotBlank() },

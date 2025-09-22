@@ -37,6 +37,16 @@
 				app:inputCheckText="Is Dismissable"
 				/>
 
+		<com.telefonica.mistica.input.TextInput
+				android:id="@+id/dismiss_content_description_input"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_margin="8dp"
+				app:inputHint="Custom dismiss content description"
+				app:inputText=""
+				app:inputType="text"
+				/>
+
 		<com.telefonica.mistica.input.DropDownInput
 				android:id="@+id/image_config_dropdown"
 				android:layout_width="match_parent"
