@@ -189,7 +189,7 @@ class CalloutView @JvmOverloads constructor(
     }
 
     fun setDismissContentDescription(contentDescription: String) {
-        if (contentDescription.isEmpty()) {
+        if (contentDescription.isBlank()) {
             closeButton.contentDescription = context.getString(R.string.close_button_content_description)
         } else {
             closeButton.contentDescription = contentDescription

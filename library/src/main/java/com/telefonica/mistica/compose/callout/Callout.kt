@@ -292,7 +292,7 @@ private fun CalloutDismissButton(
             .semantics { traversalIndex = 1f }
             .testTag(CalloutTestTag.CLOSE_BUTTON),
         painter = painterResource(id = R.drawable.icn_cross),
-        contentDescription = dismissContentDescription.takeIf { !it.isNullOrEmpty() }
+        contentDescription = dismissContentDescription.takeIf { !it.isNullOrBlank() }
             ?: stringResource(id = R.string.close_button_content_description)
     )
 }
