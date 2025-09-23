@@ -18,6 +18,8 @@ import com.telefonica.mistica.input.DropDownInput
 import com.telefonica.mistica.input.TextInput
 import com.telefonica.mistica.util.getMisticaThemeDrawable
 import com.telefonica.mistica.util.getThemeColor
+import com.telefonica.mistica.util.hide
+import com.telefonica.mistica.util.show
 
 class CalloutsCatalogFragment : Fragment() {
 
@@ -37,7 +39,7 @@ class CalloutsCatalogFragment : Fragment() {
                 DropDownInput.Adapter(
                     view.context,
                     R.layout.dropdown_menu_popup_item,
-                    CalloutButtonsConfig.values().map { it.name },
+                    CalloutButtonsConfig.entries.map { it.name },
                 )
             )
             setText(CalloutButtonsConfig.PRIMARY.name)
@@ -47,7 +49,7 @@ class CalloutsCatalogFragment : Fragment() {
                 DropDownInput.Adapter(
                     view.context,
                     R.layout.dropdown_menu_popup_item,
-                    CalloutViewImageConfig.values().map { it.name },
+                    CalloutViewImageConfig.entries.map { it.name },
                 )
             )
             setText(CalloutViewImageConfig.ICON.name)
@@ -86,7 +88,10 @@ class CalloutsCatalogFragment : Fragment() {
                 }
             }
 
-            setDismissable(view.findViewById<CheckBoxInput>(R.id.dismiss_input).isChecked())
+            val dismissInput = view.findViewById<CheckBoxInput>(R.id.dismiss_input)
+            setDismissable(dismissInput.isChecked())
+            setDismissContentDescription(view.findViewById<TextInput>(R.id.dismiss_content_description_input).text.toString())
+
             val inverse = view.findViewById<CheckBoxInput>(R.id.inverse_input).isChecked()
             setInverse(inverse)
             with(view.findViewById<View>(R.id.callout_preview_container)) {
@@ -109,6 +114,14 @@ class CalloutsCatalogFragment : Fragment() {
             setSecondaryButtonOnClick { showToast(context, "Secondary button clicked!") }
             setLinkButtonOnClick { showToast(context, "Link button clicked!") }
             setOnDismiss { showToast(context, "Callout dismissed! Update to show again") }
+            dismissInput.setOnCheckedChangeListener { _, isChecked ->
+                val input = view.findViewById<TextInput>(R.id.dismiss_content_description_input)
+                if (isChecked) {
+                    input.show()
+                } else {
+                    input.hide()
+                }
+            }
         }
     }
 

@@ -312,6 +312,7 @@
         <attr name="calloutLinkButtonText" format="string" />
         <attr name="calloutLinkButtonOnClick" format="string" />
         <attr name="calloutDismissable" format="boolean"/>
+        <attr name="calloutDismissContentDescription" format="string"/>
         <attr name="calloutInverse" format="boolean"/>
     </declare-styleable>
 
