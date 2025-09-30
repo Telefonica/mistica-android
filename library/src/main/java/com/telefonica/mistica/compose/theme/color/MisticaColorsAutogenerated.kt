@@ -306,9 +306,15 @@ public class MisticaColors {
   public var textPrimaryInverse: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
+  public var textPrimaryMedia: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
   public var textSecondary: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
 
   public var textSecondaryInverse: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var textSecondaryMedia: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
   public var success: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
@@ -566,8 +572,10 @@ public class MisticaColors {
     neutralLowAlternative = other.neutralLowAlternative
     textPrimary = other.textPrimary
     textPrimaryInverse = other.textPrimaryInverse
+    textPrimaryMedia = other.textPrimaryMedia
     textSecondary = other.textSecondary
     textSecondaryInverse = other.textSecondaryInverse
+    textSecondaryMedia = other.textSecondaryMedia
     success = other.success
     warning = other.warning
     error = other.error

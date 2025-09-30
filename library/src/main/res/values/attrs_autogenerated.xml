@@ -112,8 +112,10 @@
 		<attr name="colorNeutralLowAlternative" format="color|reference"/>
 		<attr name="colorTextPrimary" format="color|reference"/>
 		<attr name="colorTextPrimaryInverse" format="color|reference"/>
+		<attr name="colorTextPrimaryMedia" format="color|reference"/>
 		<attr name="colorTextSecondary" format="color|reference"/>
 		<attr name="colorTextSecondaryInverse" format="color|reference"/>
+		<attr name="colorTextSecondaryMedia" format="color|reference"/>
 		<attr name="colorSuccess" format="color|reference"/>
 		<attr name="colorWarning" format="color|reference"/>
 		<attr name="colorError" format="color|reference"/>
@@ -183,6 +185,8 @@
 		<attr name="checkboxBorderRadius" format="dimension|fraction"/>
 		<attr name="containerBorderRadius" format="dimension|fraction"/>
 		<attr name="indicatorBorderRadius" format="dimension|fraction"/>
+		<attr name="chipBorderRadius" format="dimension|fraction"/>
+		<attr name="tagBorderRadius" format="dimension|fraction"/>
 		<attr name="inputBorderRadius" format="dimension|fraction"/>
 		<attr name="legacyDisplayBorderRadius" format="dimension|fraction"/>
 		<attr name="popupBorderRadius" format="dimension|fraction"/>
@@ -201,6 +205,7 @@
 	</declare-styleable>
 	<declare-styleable name="PresetFonts">
 		<attr name="cardTitleFont" format="string"/>
+		<attr name="rowTitleFont" format="string"/>
 		<attr name="buttonFont" format="string"/>
 		<attr name="tabsLabelFont" format="string"/>
 		<attr name="linkFont" format="string"/>
@@ -222,6 +227,11 @@
         and they have been replicated for each type of preset because
         it's not possible to reference the original values out of android:textStyle usage. -->
 		<attr name="cardTitleTextStyle" format="reference">
+			<flag name="normal" value="0"/>
+			<flag name="bold" value="1"/>
+			<flag name="italic" value="2"/>
+		</attr>
+		<attr name="rowTitleTextStyle" format="reference">
 			<flag name="normal" value="0"/>
 			<flag name="bold" value="1"/>
 			<flag name="italic" value="2"/>

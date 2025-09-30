@@ -6,6 +6,8 @@ import androidx.compose.ui.text.font.FontWeight
 public object VivoNewBrandFontWeights {
   public val cardTitleFontWeight: FontWeight = FontWeight.Medium
 
+  public val rowTitleFontWeight: FontWeight = FontWeight.Normal
+
   public val buttonFontWeight: FontWeight = FontWeight.Medium
 
   public val tabsLabelFontWeight: FontWeight = FontWeight.Medium

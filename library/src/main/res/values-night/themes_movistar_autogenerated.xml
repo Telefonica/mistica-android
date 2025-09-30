@@ -113,8 +113,10 @@
 		<item name="colorNeutralLowAlternative">@color/movistar_color_darkModeGrey7</item>
 		<item name="colorTextPrimary">@color/movistar_color_darkModeGrey2</item>
 		<item name="colorTextPrimaryInverse">@color/movistar_color_darkModeGrey2</item>
+		<item name="colorTextPrimaryMedia">@color/movistar_color_white</item>
 		<item name="colorTextSecondary">@color/movistar_color_darkModeGrey4</item>
 		<item name="colorTextSecondaryInverse">@color/movistar_color_darkModeGrey4</item>
+		<item name="colorTextSecondaryMedia">@color/movistar_color_white</item>
 		<item name="colorSuccess">@color/movistar_color_movistarGreen</item>
 		<item name="colorWarning">@color/movistar_color_egg</item>
 		<item name="colorError">@color/movistar_color_pepper45</item>

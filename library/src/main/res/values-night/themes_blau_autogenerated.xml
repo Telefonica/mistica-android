@@ -113,8 +113,10 @@
 		<item name="colorNeutralLowAlternative">@color/blau_color_darkModeGrey6</item>
 		<item name="colorTextPrimary">@color/blau_color_grey2</item>
 		<item name="colorTextPrimaryInverse">@color/blau_color_grey2</item>
+		<item name="colorTextPrimaryMedia">@color/blau_color_white</item>
 		<item name="colorTextSecondary">@color/blau_color_grey4</item>
 		<item name="colorTextSecondaryInverse">@color/blau_color_grey4</item>
+		<item name="colorTextSecondaryMedia">@color/blau_color_white</item>
 		<item name="colorError">@color/blau_color_blauRed</item>
 		<item name="colorTextError">@color/blau_color_blauRed40</item>
 		<item name="colorTextErrorInverse">@color/blau_color_blauRed40</item>

@@ -113,8 +113,10 @@
 		<item name="colorNeutralLowAlternative">@color/vivoNew_color_darkModeGrey6</item>
 		<item name="colorTextPrimary">@color/vivoNew_color_grey2</item>
 		<item name="colorTextPrimaryInverse">@color/vivoNew_color_grey2</item>
+		<item name="colorTextPrimaryMedia">@color/vivoNew_color_white</item>
 		<item name="colorTextSecondary">@color/vivoNew_color_grey3</item>
 		<item name="colorTextSecondaryInverse">@color/vivoNew_color_grey3</item>
+		<item name="colorTextSecondaryMedia">@color/vivoNew_color_white</item>
 		<item name="colorSuccess">@color/vivoNew_color_vivoGreen</item>
 		<item name="colorWarning">@color/vivoNew_color_orange</item>
 		<item name="colorError">@color/vivoNew_color_pepper</item>
@@ -285,8 +287,10 @@
 		<item name="colorNeutralLowAlternative">@color/vivoNew_color_darkModeGrey6</item>
 		<item name="colorTextPrimary">@color/vivoNew_color_grey2</item>
 		<item name="colorTextPrimaryInverse">@color/vivoNew_color_grey2</item>
+		<item name="colorTextPrimaryMedia">@color/vivoNew_color_white</item>
 		<item name="colorTextSecondary">@color/vivoNew_color_grey3</item>
 		<item name="colorTextSecondaryInverse">@color/vivoNew_color_grey3</item>
+		<item name="colorTextSecondaryMedia">@color/vivoNew_color_white</item>
 		<item name="colorSuccess">@color/vivoNew_color_vivoGreen</item>
 		<item name="colorWarning">@color/vivoNew_color_orange</item>
 		<item name="colorError">@color/vivoNew_color_pepper</item>
