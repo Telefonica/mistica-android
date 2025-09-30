@@ -13,7 +13,7 @@ public object MovistarBrandRadius {
       containerBorderRadius = 16.dp,
       indicatorBorderRadius = 24.dp,
       chipBorderRadius = 24.dp,
-      tagBorderRadius = 24.dp,
+      tagBorderRadius = 0.dp,
       inputBorderRadius = 12.dp,
       legacyDisplayBorderRadius = 16.dp,
       popupBorderRadius = 8.dp,
