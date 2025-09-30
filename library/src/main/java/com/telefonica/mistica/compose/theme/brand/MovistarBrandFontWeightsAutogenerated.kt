@@ -6,6 +6,8 @@ import androidx.compose.ui.text.font.FontWeight
 public object MovistarBrandFontWeights {
   public val cardTitleFontWeight: FontWeight = FontWeight.Bold
 
+  public val rowTitleFontWeight: FontWeight = FontWeight.Normal
+
   public val buttonFontWeight: FontWeight = FontWeight.Medium
 
   public val tabsLabelFontWeight: FontWeight = FontWeight.Medium

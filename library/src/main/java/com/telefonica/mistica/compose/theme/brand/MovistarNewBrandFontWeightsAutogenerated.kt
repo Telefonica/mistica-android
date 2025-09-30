@@ -3,10 +3,10 @@ package com.telefonica.mistica.compose.theme.brand
 
 import androidx.compose.ui.text.font.FontWeight
 
-public object O2NewBrandFontWeights {
-  public val cardTitleFontWeight: FontWeight = FontWeight.Medium
+public object MovistarNewBrandFontWeights {
+  public val cardTitleFontWeight: FontWeight = FontWeight.Bold
 
-  public val rowTitleFontWeight: FontWeight = FontWeight.Normal
+  public val rowTitleFontWeight: FontWeight = FontWeight.Medium
 
   public val buttonFontWeight: FontWeight = FontWeight.Medium
 

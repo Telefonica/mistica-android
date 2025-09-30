@@ -118,8 +118,10 @@ public object BlauBrandColors {
       neutralLowAlternative = BlauPaletteColor.blau_color_grey2
       textPrimary = BlauPaletteColor.blau_color_grey6
       textPrimaryInverse = BlauPaletteColor.blau_color_white
+      textPrimaryMedia = BlauPaletteColor.blau_color_white
       textSecondary = BlauPaletteColor.blau_color_grey5
       textSecondaryInverse = BlauPaletteColor.blau_color_blauBluePrimary20
+      textSecondaryMedia = BlauPaletteColor.blau_color_white
       error = BlauPaletteColor.blau_color_blauRed
       textError = BlauPaletteColor.blau_color_blauRed
       textErrorInverse = BlauPaletteColor.blau_color_white
@@ -288,8 +290,10 @@ public object BlauBrandColors {
       neutralLowAlternative = BlauPaletteColor.blau_color_darkModeGrey6
       textPrimary = BlauPaletteColor.blau_color_grey2
       textPrimaryInverse = BlauPaletteColor.blau_color_grey2
+      textPrimaryMedia = BlauPaletteColor.blau_color_white
       textSecondary = BlauPaletteColor.blau_color_grey4
       textSecondaryInverse = BlauPaletteColor.blau_color_grey4
+      textSecondaryMedia = BlauPaletteColor.blau_color_white
       error = BlauPaletteColor.blau_color_blauRed
       textError = BlauPaletteColor.blau_color_blauRed40
       textErrorInverse = BlauPaletteColor.blau_color_blauRed40

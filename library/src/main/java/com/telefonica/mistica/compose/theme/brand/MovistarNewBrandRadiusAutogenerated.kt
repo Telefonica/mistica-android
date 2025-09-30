@@ -4,19 +4,19 @@ package com.telefonica.mistica.compose.theme.brand
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.theme.values.MisticaRadius
 
-public object TelefonicaBrandRadius {
+public object MovistarNewBrandRadius {
   public val radius: MisticaRadius = MisticaRadius(
       avatarBorderRadius = 50,
-      barBorderRadius = 0.dp,
-      buttonBorderRadius = 32.dp,
-      checkboxBorderRadius = 0.dp,
-      containerBorderRadius = 0.dp,
+      barBorderRadius = 999.dp,
+      buttonBorderRadius = 4.dp,
+      checkboxBorderRadius = 4.dp,
+      containerBorderRadius = 16.dp,
       indicatorBorderRadius = 24.dp,
       chipBorderRadius = 24.dp,
-      tagBorderRadius = 24.dp,
-      inputBorderRadius = 0.dp,
-      legacyDisplayBorderRadius = 0.dp,
-      popupBorderRadius = 0.dp,
-      sheetBorderRadius = 0.dp,
-      mediaSmallBorderRadius = 0.dp,)
+      tagBorderRadius = 0.dp,
+      inputBorderRadius = 12.dp,
+      legacyDisplayBorderRadius = 16.dp,
+      popupBorderRadius = 8.dp,
+      sheetBorderRadius = 16.dp,
+      mediaSmallBorderRadius = 8.dp,)
 }

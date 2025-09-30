@@ -118,8 +118,10 @@ public object MovistarBrandColors {
       neutralLowAlternative = MovistarPaletteColor.movistar_color_grey2
       textPrimary = MovistarPaletteColor.movistar_color_movistarBlueDark
       textPrimaryInverse = MovistarPaletteColor.movistar_color_white
+      textPrimaryMedia = MovistarPaletteColor.movistar_color_white
       textSecondary = MovistarPaletteColor.movistar_color_grey5
       textSecondaryInverse = MovistarPaletteColor.movistar_color_movistarBlue10
+      textSecondaryMedia = MovistarPaletteColor.movistar_color_white
       success = MovistarPaletteColor.movistar_color_movistarGreen55
       warning = MovistarPaletteColor.movistar_color_egg55
       error = MovistarPaletteColor.movistar_color_pepper55
@@ -288,8 +290,10 @@ public object MovistarBrandColors {
       neutralLowAlternative = MovistarPaletteColor.movistar_color_darkModeGrey7
       textPrimary = MovistarPaletteColor.movistar_color_darkModeGrey2
       textPrimaryInverse = MovistarPaletteColor.movistar_color_darkModeGrey2
+      textPrimaryMedia = MovistarPaletteColor.movistar_color_white
       textSecondary = MovistarPaletteColor.movistar_color_darkModeGrey4
       textSecondaryInverse = MovistarPaletteColor.movistar_color_darkModeGrey4
+      textSecondaryMedia = MovistarPaletteColor.movistar_color_white
       success = MovistarPaletteColor.movistar_color_movistarGreen
       warning = MovistarPaletteColor.movistar_color_egg
       error = MovistarPaletteColor.movistar_color_pepper45

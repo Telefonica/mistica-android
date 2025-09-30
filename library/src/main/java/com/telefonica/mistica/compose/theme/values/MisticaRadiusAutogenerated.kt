@@ -17,6 +17,8 @@ public class MisticaRadius(
   checkboxBorderRadius: Dp = Dp.Unspecified,
   containerBorderRadius: Dp = Dp.Unspecified,
   indicatorBorderRadius: Dp = Dp.Unspecified,
+  chipBorderRadius: Dp = Dp.Unspecified,
+  tagBorderRadius: Dp = Dp.Unspecified,
   inputBorderRadius: Dp = Dp.Unspecified,
   legacyDisplayBorderRadius: Dp = Dp.Unspecified,
   popupBorderRadius: Dp = Dp.Unspecified,
@@ -46,6 +48,12 @@ public class MisticaRadius(
       structuralEqualityPolicy())
     internal set
 
+  public var chipBorderRadius: Dp by mutableStateOf(chipBorderRadius, structuralEqualityPolicy())
+    internal set
+
+  public var tagBorderRadius: Dp by mutableStateOf(tagBorderRadius, structuralEqualityPolicy())
+    internal set
+
   public var inputBorderRadius: Dp by mutableStateOf(inputBorderRadius, structuralEqualityPolicy())
     internal set
 
@@ -70,6 +78,8 @@ public class MisticaRadius(
     checkboxBorderRadius = other.checkboxBorderRadius
     containerBorderRadius = other.containerBorderRadius
     indicatorBorderRadius = other.indicatorBorderRadius
+    chipBorderRadius = other.chipBorderRadius
+    tagBorderRadius = other.tagBorderRadius
     inputBorderRadius = other.inputBorderRadius
     legacyDisplayBorderRadius = other.legacyDisplayBorderRadius
     popupBorderRadius = other.popupBorderRadius

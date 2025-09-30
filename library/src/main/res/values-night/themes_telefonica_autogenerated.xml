@@ -113,8 +113,10 @@
 		<item name="colorNeutralLowAlternative">@color/telefonica_color_darkModeGrey6</item>
 		<item name="colorTextPrimary">@color/telefonica_color_grey1</item>
 		<item name="colorTextPrimaryInverse">@color/telefonica_color_grey1</item>
+		<item name="colorTextPrimaryMedia">@color/telefonica_color_white</item>
 		<item name="colorTextSecondary">@color/telefonica_color_grey3</item>
 		<item name="colorTextSecondaryInverse">@color/telefonica_color_grey3</item>
+		<item name="colorTextSecondaryMedia">@color/telefonica_color_white</item>
 		<item name="colorError">@color/telefonica_color_coral</item>
 		<item name="colorTextError">@color/telefonica_color_coral</item>
 		<item name="colorTextErrorInverse">@color/telefonica_color_coral</item>

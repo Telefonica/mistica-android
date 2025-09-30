@@ -114,8 +114,10 @@
 		<item name="colorNeutralLowAlternative">@color/tu_color_grey2</item>
 		<item name="colorTextPrimary">@color/tu_color_grey9</item>
 		<item name="colorTextPrimaryInverse">@color/tu_color_white</item>
+		<item name="colorTextPrimaryMedia">@color/tu_color_white</item>
 		<item name="colorTextSecondary">@color/tu_color_grey6</item>
 		<item name="colorTextSecondaryInverse">@color/tu_color_grey3</item>
+		<item name="colorTextSecondaryMedia">@color/tu_color_white</item>
 		<item name="colorError">@color/tu_color_red</item>
 		<item name="colorTextError">@color/tu_color_red</item>
 		<item name="colorTextErrorInverse">@color/tu_color_white</item>
@@ -176,10 +178,12 @@
 		<!-- Border radius -->
 		<item name="avatarBorderRadius">50%</item>
 		<item name="barBorderRadius">999dp</item>
-		<item name="buttonBorderRadius">999dp</item>
+		<item name="buttonBorderRadius">32dp</item>
 		<item name="checkboxBorderRadius">2dp</item>
 		<item name="containerBorderRadius">16dp</item>
-		<item name="indicatorBorderRadius">999dp</item>
+		<item name="indicatorBorderRadius">24dp</item>
+		<item name="chipBorderRadius">24dp</item>
+		<item name="tagBorderRadius">24dp</item>
 		<item name="inputBorderRadius">12dp</item>
 		<item name="legacyDisplayBorderRadius">16dp</item>
 		<item name="popupBorderRadius">8dp</item>
@@ -190,6 +194,7 @@
 		<item name="brandLoadingScreenThemeVariant">INVERSE</item>
 		<!-- Preset fonts -->
 		<item name="cardTitleFont">?font_family_medium</item>
+		<item name="rowTitleFont">?font_family_regular</item>
 		<item name="buttonFont">?font_family_medium</item>
 		<item name="tabsLabelFont">?font_family_medium</item>
 		<item name="linkFont">?font_family_medium</item>
@@ -206,6 +211,7 @@
 		<item name="text10Font">?font_family_medium</item>
 		<!-- Preset styles -->
 		<item name="cardTitleTextStyle">normal</item>
+		<item name="rowTitleTextStyle">normal</item>
 		<item name="buttonTextStyle">normal</item>
 		<item name="tabsLabelTextStyle">normal</item>
 		<item name="linkTextStyle">normal</item>
