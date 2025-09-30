@@ -55,6 +55,7 @@ class CatalogMainActivity : AppCompatActivity() {
 
         val styles: List<ComponentStyle> = listOf(
             ComponentStyle("Movistar", R.style.CatalogMovistar, MOVISTAR),
+            ComponentStyle("Movistar New", R.style.CatalogMovistarNew, MOVISTAR),
             ComponentStyle("Vivo New", R.style.CatalogVivoNew, VIVO_NEW),
             ComponentStyle("Telefonica", R.style.CatalogTelefonica, TELEFONICA),
             ComponentStyle("Blau", R.style.CatalogBlau, BLAU),

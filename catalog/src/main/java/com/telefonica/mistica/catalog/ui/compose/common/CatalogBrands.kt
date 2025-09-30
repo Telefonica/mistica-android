@@ -7,6 +7,7 @@ import androidx.compose.ui.unit.TextUnit
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.compose.theme.brand.Brand
 import com.telefonica.mistica.compose.theme.brand.MovistarBrand
+import com.telefonica.mistica.compose.theme.brand.MovistarNewBrand
 import com.telefonica.mistica.compose.theme.brand.O2NewBrand
 import com.telefonica.mistica.compose.theme.brand.TelefonicaBrand
 import com.telefonica.mistica.compose.theme.brand.TuBrand
@@ -44,6 +45,15 @@ abstract class CatalogBrand(
     override val radius: MisticaRadius = baseBrand.radius
     override val themeVariant: MisticaThemeVariant = baseBrand.themeVariant
     override val fontFamily: FontFamily = baseBrand.fontFamily
+}
+
+object CatalogMovistarNewBrand : CatalogBrand(MovistarNewBrand, R.style.CatalogMovistarNew) {
+    override val fontFamily: FontFamily
+        get() = FontFamily(
+            Font(R.font.onair_light, FontWeight.Light),
+            Font(R.font.onair_regular, FontWeight.Normal),
+            Font(R.font.onair_medium, FontWeight.Medium),
+        )
 }
 
 object CatalogMovistarBrand : CatalogBrand(MovistarBrand, R.style.CatalogMovistar) {
