@@ -114,8 +114,10 @@
 		<item name="colorNeutralLowAlternative">@color/blau_color_grey2</item>
 		<item name="colorTextPrimary">@color/blau_color_grey6</item>
 		<item name="colorTextPrimaryInverse">@color/blau_color_white</item>
+		<item name="colorTextPrimaryMedia">@color/blau_color_white</item>
 		<item name="colorTextSecondary">@color/blau_color_grey5</item>
 		<item name="colorTextSecondaryInverse">@color/blau_color_blauBluePrimary20</item>
+		<item name="colorTextSecondaryMedia">@color/blau_color_white</item>
 		<item name="colorError">@color/blau_color_blauRed</item>
 		<item name="colorTextError">@color/blau_color_blauRed</item>
 		<item name="colorTextErrorInverse">@color/blau_color_white</item>
@@ -179,7 +181,9 @@
 		<item name="buttonBorderRadius">4dp</item>
 		<item name="checkboxBorderRadius">2dp</item>
 		<item name="containerBorderRadius">8dp</item>
-		<item name="indicatorBorderRadius">999dp</item>
+		<item name="indicatorBorderRadius">24dp</item>
+		<item name="chipBorderRadius">24dp</item>
+		<item name="tagBorderRadius">24dp</item>
 		<item name="inputBorderRadius">8dp</item>
 		<item name="legacyDisplayBorderRadius">16dp</item>
 		<item name="popupBorderRadius">8dp</item>
@@ -190,6 +194,7 @@
 		<item name="brandLoadingScreenThemeVariant">DEFAULT</item>
 		<!-- Preset fonts -->
 		<item name="cardTitleFont">?font_family_regular</item>
+		<item name="rowTitleFont">?font_family_regular</item>
 		<item name="buttonFont">?font_family_medium</item>
 		<item name="tabsLabelFont">?font_family_medium</item>
 		<item name="linkFont">?font_family_medium</item>
@@ -206,6 +211,7 @@
 		<item name="text10Font">?font_family_light</item>
 		<!-- Preset styles -->
 		<item name="cardTitleTextStyle">normal</item>
+		<item name="rowTitleTextStyle">normal</item>
 		<item name="buttonTextStyle">normal</item>
 		<item name="tabsLabelTextStyle">normal</item>
 		<item name="linkTextStyle">normal</item>

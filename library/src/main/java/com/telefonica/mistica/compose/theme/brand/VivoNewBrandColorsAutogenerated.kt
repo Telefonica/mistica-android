@@ -118,8 +118,10 @@ public object VivoNewBrandColors {
       neutralLowAlternative = VivoNewPaletteColor.vivoNew_color_grey2
       textPrimary = VivoNewPaletteColor.vivoNew_color_grey6
       textPrimaryInverse = VivoNewPaletteColor.vivoNew_color_white
+      textPrimaryMedia = VivoNewPaletteColor.vivoNew_color_white
       textSecondary = VivoNewPaletteColor.vivoNew_color_grey5
       textSecondaryInverse = VivoNewPaletteColor.vivoNew_color_vivoPurpleLight20
+      textSecondaryMedia = VivoNewPaletteColor.vivoNew_color_white
       success = VivoNewPaletteColor.vivoNew_color_vivoGreen
       warning = VivoNewPaletteColor.vivoNew_color_orange
       error = VivoNewPaletteColor.vivoNew_color_pepper
@@ -288,8 +290,10 @@ public object VivoNewBrandColors {
       neutralLowAlternative = VivoNewPaletteColor.vivoNew_color_darkModeGrey6
       textPrimary = VivoNewPaletteColor.vivoNew_color_grey2
       textPrimaryInverse = VivoNewPaletteColor.vivoNew_color_grey2
+      textPrimaryMedia = VivoNewPaletteColor.vivoNew_color_white
       textSecondary = VivoNewPaletteColor.vivoNew_color_grey3
       textSecondaryInverse = VivoNewPaletteColor.vivoNew_color_grey3
+      textSecondaryMedia = VivoNewPaletteColor.vivoNew_color_white
       success = VivoNewPaletteColor.vivoNew_color_vivoGreen
       warning = VivoNewPaletteColor.vivoNew_color_orange
       error = VivoNewPaletteColor.vivoNew_color_pepper

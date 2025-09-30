@@ -6,6 +6,8 @@ import androidx.compose.ui.text.font.FontWeight
 public object TelefonicaBrandFontWeights {
   public val cardTitleFontWeight: FontWeight = FontWeight.Normal
 
+  public val rowTitleFontWeight: FontWeight = FontWeight.Normal
+
   public val buttonFontWeight: FontWeight = FontWeight.Medium
 
   public val tabsLabelFontWeight: FontWeight = FontWeight.Medium

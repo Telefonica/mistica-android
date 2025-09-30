@@ -118,8 +118,10 @@ public object TuBrandColors {
       neutralLowAlternative = TuPaletteColor.tu_color_grey2
       textPrimary = TuPaletteColor.tu_color_grey9
       textPrimaryInverse = TuPaletteColor.tu_color_white
+      textPrimaryMedia = TuPaletteColor.tu_color_white
       textSecondary = TuPaletteColor.tu_color_grey6
       textSecondaryInverse = TuPaletteColor.tu_color_grey3
+      textSecondaryMedia = TuPaletteColor.tu_color_white
       error = TuPaletteColor.tu_color_red
       textError = TuPaletteColor.tu_color_red
       textErrorInverse = TuPaletteColor.tu_color_white
@@ -288,8 +290,10 @@ public object TuBrandColors {
       neutralLowAlternative = TuPaletteColor.tu_color_darkModeGrey6
       textPrimary = TuPaletteColor.tu_color_grey2
       textPrimaryInverse = TuPaletteColor.tu_color_grey2
+      textPrimaryMedia = TuPaletteColor.tu_color_white
       textSecondary = TuPaletteColor.tu_color_grey3
       textSecondaryInverse = TuPaletteColor.tu_color_grey3
+      textSecondaryMedia = TuPaletteColor.tu_color_white
       error = TuPaletteColor.tu_color_red
       textError = TuPaletteColor.tu_color_red
       textErrorInverse = TuPaletteColor.tu_color_red

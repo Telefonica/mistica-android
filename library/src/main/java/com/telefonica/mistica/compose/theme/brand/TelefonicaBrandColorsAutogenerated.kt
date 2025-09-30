@@ -121,8 +121,10 @@ public object TelefonicaBrandColors {
       neutralLowAlternative = TelefonicaPaletteColor.telefonica_color_grey2
       textPrimary = TelefonicaPaletteColor.telefonica_color_grey9
       textPrimaryInverse = TelefonicaPaletteColor.telefonica_color_white
+      textPrimaryMedia = TelefonicaPaletteColor.telefonica_color_white
       textSecondary = TelefonicaPaletteColor.telefonica_color_grey6
       textSecondaryInverse = TelefonicaPaletteColor.telefonica_color_white
+      textSecondaryMedia = TelefonicaPaletteColor.telefonica_color_white
       error = TelefonicaPaletteColor.telefonica_color_coral60
       textError = TelefonicaPaletteColor.telefonica_color_coral60
       textErrorInverse = TelefonicaPaletteColor.telefonica_color_white
@@ -296,8 +298,10 @@ public object TelefonicaBrandColors {
       neutralLowAlternative = TelefonicaPaletteColor.telefonica_color_darkModeGrey6
       textPrimary = TelefonicaPaletteColor.telefonica_color_grey1
       textPrimaryInverse = TelefonicaPaletteColor.telefonica_color_grey1
+      textPrimaryMedia = TelefonicaPaletteColor.telefonica_color_white
       textSecondary = TelefonicaPaletteColor.telefonica_color_grey3
       textSecondaryInverse = TelefonicaPaletteColor.telefonica_color_grey3
+      textSecondaryMedia = TelefonicaPaletteColor.telefonica_color_white
       error = TelefonicaPaletteColor.telefonica_color_coral
       textError = TelefonicaPaletteColor.telefonica_color_coral
       textErrorInverse = TelefonicaPaletteColor.telefonica_color_coral

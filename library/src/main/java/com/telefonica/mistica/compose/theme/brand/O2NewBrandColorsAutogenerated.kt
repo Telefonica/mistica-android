@@ -68,7 +68,7 @@ public object O2NewBrandColors {
       buttonSecondaryBackgroundMediaPressed = O2NewPaletteColor.o2New_color_white_15_alpha
       textButtonPrimary = O2NewPaletteColor.o2New_color_white
       textButtonPrimaryInverse = O2NewPaletteColor.o2New_color_beyondBlue
-      textButtonPrimaryMedia = O2NewPaletteColor.o2New_color_beyondBlue
+      textButtonPrimaryMedia = O2NewPaletteColor.o2New_color_white
       textButtonPrimaryInversePressed = O2NewPaletteColor.o2New_color_beyondBlue70
       textButtonPrimaryMediaPressed = O2NewPaletteColor.o2New_color_beyondBlue70
       textButtonSecondary = O2NewPaletteColor.o2New_color_beyondBlue
@@ -118,8 +118,10 @@ public object O2NewBrandColors {
       neutralLowAlternative = O2NewPaletteColor.o2New_color_grey30
       textPrimary = O2NewPaletteColor.o2New_color_black
       textPrimaryInverse = O2NewPaletteColor.o2New_color_white
+      textPrimaryMedia = O2NewPaletteColor.o2New_color_white
       textSecondary = O2NewPaletteColor.o2New_color_grey60
       textSecondaryInverse = O2NewPaletteColor.o2New_color_beyondBlue10
+      textSecondaryMedia = O2NewPaletteColor.o2New_color_white
       success = O2NewPaletteColor.o2New_color_o2Green
       warning = O2NewPaletteColor.o2New_color_o2Orange60
       error = O2NewPaletteColor.o2New_color_o2Red65
@@ -175,7 +177,7 @@ public object O2NewBrandColors {
       tagBackgroundSuccessInverse = O2NewPaletteColor.o2New_color_o2Green10
       tagBackgroundWarningInverse = O2NewPaletteColor.o2New_color_o2Orange10
       tagBackgroundErrorInverse = O2NewPaletteColor.o2New_color_o2Red10
-      cardFooterOverlay = O2NewPaletteColor.o2New_color_black_100_alpha
+      cardFooterOverlay = O2NewPaletteColor.o2New_color_black_70_alpha
       }
 
   public val darkColors: MisticaColors = MisticaColors().apply {
@@ -238,7 +240,7 @@ public object O2NewBrandColors {
       buttonSecondaryBackgroundMediaPressed = O2NewPaletteColor.o2New_color_white_15_alpha
       textButtonPrimary = O2NewPaletteColor.o2New_color_white
       textButtonPrimaryInverse = O2NewPaletteColor.o2New_color_white
-      textButtonPrimaryMedia = O2NewPaletteColor.o2New_color_beyondBlue
+      textButtonPrimaryMedia = O2NewPaletteColor.o2New_color_white
       textButtonPrimaryInversePressed = O2NewPaletteColor.o2New_color_white
       textButtonPrimaryMediaPressed = O2NewPaletteColor.o2New_color_beyondBlue70
       textButtonSecondary = O2NewPaletteColor.o2New_color_grey30
@@ -288,8 +290,10 @@ public object O2NewBrandColors {
       neutralLowAlternative = O2NewPaletteColor.o2New_color_darkModeGrey6
       textPrimary = O2NewPaletteColor.o2New_color_grey30
       textPrimaryInverse = O2NewPaletteColor.o2New_color_grey30
+      textPrimaryMedia = O2NewPaletteColor.o2New_color_white
       textSecondary = O2NewPaletteColor.o2New_color_grey45
       textSecondaryInverse = O2NewPaletteColor.o2New_color_grey45
+      textSecondaryMedia = O2NewPaletteColor.o2New_color_white
       success = O2NewPaletteColor.o2New_color_o2Green
       warning = O2NewPaletteColor.o2New_color_o2Orange
       error = O2NewPaletteColor.o2New_color_o2Red45
@@ -507,8 +511,6 @@ private object O2NewPaletteColor {
   public val o2New_color_black_40_alpha: Color = Color(0x6600001E)
 
   public val o2New_color_black_70_alpha: Color = Color(0xB300001E)
-
-  public val o2New_color_black_100_alpha: Color = Color(0xFF00001E)
 
   public val o2New_color_white_5_alpha: Color = Color(0x0DFFFFFF)
 
