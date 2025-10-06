@@ -48,7 +48,6 @@ import com.telefonica.mistica.compose.list.AccessibilityOrder.TRAILING
 import com.telefonica.mistica.compose.shape.Chevron
 import com.telefonica.mistica.compose.tag.Tag
 import com.telefonica.mistica.compose.theme.MisticaTheme
-import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 import com.telefonica.mistica.util.PreviewTheme
 
 @Composable
