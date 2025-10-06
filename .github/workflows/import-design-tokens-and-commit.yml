@@ -1,6 +1,5 @@
 name: Import design tokens and commit into branch
 on:
-  push:
   workflow_dispatch:
     inputs:
       ref:
