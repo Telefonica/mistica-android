@@ -7,6 +7,7 @@ import androidx.compose.ui.unit.TextUnit
 import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.compose.theme.brand.Brand
 import com.telefonica.mistica.compose.theme.brand.MovistarBrand
+import com.telefonica.mistica.compose.theme.brand.MovistarNewBrand
 import com.telefonica.mistica.compose.theme.brand.O2NewBrand
 import com.telefonica.mistica.compose.theme.brand.TelefonicaBrand
 import com.telefonica.mistica.compose.theme.brand.TuBrand
@@ -32,6 +33,7 @@ abstract class CatalogBrand(
     override val preset9FontWeight: FontWeight = baseBrand.preset9FontWeight
     override val preset10FontWeight: FontWeight = baseBrand.preset10FontWeight
     override val cardTitleFontWeight: FontWeight = baseBrand.cardTitleFontWeight
+    override val rowTitleFontWeight: FontWeight = baseBrand.rowTitleFontWeight
     override val buttonFontWeight: FontWeight = baseBrand.buttonFontWeight
     override val linkFontWeight: FontWeight = baseBrand.linkFontWeight
     override val title1FontWeight: FontWeight = baseBrand.title1FontWeight
@@ -52,6 +54,15 @@ object CatalogMovistarBrand : CatalogBrand(MovistarBrand, R.style.CatalogMovista
             Font(R.font.onair_light, FontWeight.Light),
             Font(R.font.onair_regular, FontWeight.Normal),
             Font(R.font.onair_medium, FontWeight.Medium),
+        )
+}
+
+object CatalogMovistarNewBrand : CatalogBrand(MovistarNewBrand, R.style.CatalogMovistarNew) {
+    override val fontFamily: FontFamily
+        get() = FontFamily(
+            Font(R.font.movistar_sans_light, FontWeight.Light),
+            Font(R.font.movistar_sans_regular, FontWeight.Normal),
+            Font(R.font.movistar_sans_medium, FontWeight.Medium),
         )
 }
 

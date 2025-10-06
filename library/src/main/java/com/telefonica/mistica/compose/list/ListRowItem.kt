@@ -239,7 +239,7 @@ private fun ListRowItemImp(
                 title?.let {
                     Text(
                         text = it,
-                        style = MisticaTheme.typography.preset3,
+                        style = MisticaTheme.typography.presetRowTitle,
                         color = textColorPrimary,
                         modifier = Modifier
                             .testTag(ListRowItemTestTags.LIST_ROW_ITEM_TITLE)

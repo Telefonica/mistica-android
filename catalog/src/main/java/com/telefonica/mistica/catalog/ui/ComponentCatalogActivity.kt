@@ -48,6 +48,7 @@ import com.telefonica.mistica.catalog.ui.classic.components.TextPresetsCatalogFr
 import com.telefonica.mistica.catalog.ui.classic.components.TitleCatalogFragment
 import com.telefonica.mistica.catalog.ui.compose.common.CatalogBlauBrand
 import com.telefonica.mistica.catalog.ui.compose.common.CatalogMovistarBrand
+import com.telefonica.mistica.catalog.ui.compose.common.CatalogMovistarNewBrand
 import com.telefonica.mistica.catalog.ui.compose.common.CatalogO2NewBrand
 import com.telefonica.mistica.catalog.ui.compose.common.CatalogTelefonicaBrand
 import com.telefonica.mistica.catalog.ui.compose.common.CatalogTuBrand
@@ -80,6 +81,7 @@ import com.telefonica.mistica.compose.theme.brand.Brand
 import com.telefonica.mistica.compose.theme.brand.BrandType
 import com.telefonica.mistica.compose.theme.brand.BrandType.BLAU
 import com.telefonica.mistica.compose.theme.brand.BrandType.MOVISTAR
+import com.telefonica.mistica.compose.theme.brand.BrandType.MOVISTAR_NEW
 import com.telefonica.mistica.compose.theme.brand.BrandType.O2_NEW
 import com.telefonica.mistica.compose.theme.brand.BrandType.TELEFONICA
 import com.telefonica.mistica.compose.theme.brand.BrandType.TU
@@ -347,6 +349,7 @@ class ComponentCatalogActivity : AppCompatActivity() {
         classicThemeOverride = intent.getIntExtra(EXTRA_CLASSIC_THEME, DEFAULT_CLASSIC_THEME)
         composeThemeOverride = when ((intent.getSerializableExtra(EXTRA_COMPOSE_THEME) ?: DEFAULT_BRAND_TYPE) as BrandType) {
             MOVISTAR -> CatalogMovistarBrand
+            MOVISTAR_NEW -> CatalogMovistarNewBrand
             VIVO_NEW -> CatalogVivoNewBrand
             TELEFONICA -> CatalogTelefonicaBrand
             BLAU -> CatalogBlauBrand

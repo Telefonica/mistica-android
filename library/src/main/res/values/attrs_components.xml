@@ -324,6 +324,7 @@
             <enum name="o2New" value="3" />
             <enum name="vivoNew" value="4" />
             <enum name="tu" value="5" />
+            <enum name="movistarNew" value="6" />
         </attr>
     </declare-styleable>
 

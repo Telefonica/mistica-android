@@ -11,13 +11,12 @@ import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
 import com.telefonica.mistica.R
 import com.telefonica.mistica.util.children
-import com.telefonica.mistica.util.getDimension
 import com.telefonica.mistica.util.getMisticaThemeDrawable
 
 class HorizontalScrollFilterGroup @JvmOverloads constructor(
     private val context: Context,
     attrs: AttributeSet? = null,
-    defStyle: Int = 0
+    defStyle: Int = 0,
 ) : FrameLayout(context, attrs, defStyle) {
 
     private val chipGroup: ChipGroup by lazy { findViewById(R.id.chips_group) }
@@ -32,8 +31,6 @@ class HorizontalScrollFilterGroup @JvmOverloads constructor(
     }
 
     fun addFilter(filter: Chip) {
-        filter.shapeAppearanceModel = filter.shapeAppearanceModel.withCornerSize(context.getDimension(R.attr.indicatorBorderRadius))
-
         chipGroup.addView(filter)
 
         if (filter.isChecked) {
@@ -81,7 +78,7 @@ class HorizontalScrollFilterGroup @JvmOverloads constructor(
                 oldLeft: Int,
                 oldTop: Int,
                 oldRight: Int,
-                oldBottom: Int
+                oldBottom: Int,
             ) {
                 view.removeOnLayoutChangeListener(this)
                 val paddingRequiredToShowWholeChipPlusASpaceAtBothSides = 2 * horizontalPadding

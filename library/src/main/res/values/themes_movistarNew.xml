@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<style name="MisticaTheme.MovistarNew_Customizations" parent="MisticaTheme.MovistarNew_Base">
+		<!-- Feedbacks -->
+		<item name="feedbackScreenSuccessWithGradient">false</item>
+		<item name="feedbackScreenSuccessAnimation">@raw/feedback_success</item>
+		<item name="feedbackScreenErrorAnimation">@raw/feedback_error</item>
+		<item name="feedbackScreenInfoIcon">@drawable/feedback_info</item>
+
+		<!-- Stepper -->
+		<item name="stepperFinishedStepAnimation">@raw/feedback_success</item>
+
+		<!-- Compose -->
+		<item name="composeBrand">movistar</item>
+
+		<!-- Title -->
+		<item name="titleStyle">title3</item>
+	</style>
+
+</resources>

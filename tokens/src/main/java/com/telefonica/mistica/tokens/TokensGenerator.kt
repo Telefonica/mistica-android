@@ -33,6 +33,7 @@ class TokensGenerator(
         val BRANDS = listOf(
             Brand("blau", "blau"),
             Brand("movistar", "movistar"),
+            Brand("movistarNew", "movistar-new"),
             Brand("telefonica", "telefonica"),
             Brand("vivoNew", "vivo-new", createDuplicateWithoutInheritMistica = true),
             Brand("tu", "tu"),

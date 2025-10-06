@@ -78,6 +78,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
+            android:text="Preset 4 (Card Title)"
+            android:textAppearance="@style/AppTheme.TextAppearance.PresetCardTitle" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
             android:text="Preset 3"
             android:textAppearance="@style/AppTheme.TextAppearance.Preset3" />
 
@@ -94,6 +101,13 @@
             android:layout_marginBottom="16dp"
             android:text="Preset 3 (Medium)"
             android:textAppearance="@style/AppTheme.TextAppearance.Preset3.Medium" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Preset 3 (Row Item Title)"
+            android:textAppearance="@style/AppTheme.TextAppearance.PresetRowItemTitle" />
 
         <TextView
             android:layout_width="wrap_content"

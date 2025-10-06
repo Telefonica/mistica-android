@@ -3,18 +3,18 @@ package com.telefonica.mistica.catalog.ui.compose.components
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.theme.MisticaTheme
 
 @Composable
 fun Texts() {
     Column(
-        modifier = Modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier.padding(16.dp).fillMaxSize(),
+        verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
         Text(
             text = "Preset 10",
@@ -53,6 +53,10 @@ fun Texts() {
             style = MisticaTheme.typography.preset4Medium
         )
         Text(
+            text = "Preset 4 (Card Title)",
+            style = MisticaTheme.typography.presetCardTitle
+        )
+        Text(
             text = "Preset 3",
             style = MisticaTheme.typography.preset3
         )
@@ -63,6 +67,10 @@ fun Texts() {
         Text(
             text = "Preset 3 (Medium)",
             style = MisticaTheme.typography.preset3Medium
+        )
+        Text(
+            text = "Preset 3 (Row Title)",
+            style = MisticaTheme.typography.presetRowTitle
         )
         Text(
             text = "Preset 2",

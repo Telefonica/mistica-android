@@ -25,6 +25,7 @@ interface Brand {
     val preset9FontWeight: FontWeight
     val preset10FontWeight: FontWeight
     val cardTitleFontWeight: FontWeight
+    val rowTitleFontWeight: FontWeight
     val buttonFontWeight: FontWeight
     val linkFontWeight: FontWeight
     val title1FontWeight: FontWeight
@@ -42,4 +43,4 @@ interface Brand {
     val themeVariant: MisticaThemeVariant
 }
 
-enum class BrandType { BLAU, MOVISTAR, TELEFONICA, VIVO_NEW, TU, O2_NEW }
+enum class BrandType { BLAU, MOVISTAR, TELEFONICA, VIVO_NEW, TU, O2_NEW, MOVISTAR_NEW }

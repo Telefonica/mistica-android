@@ -7,6 +7,7 @@
         <item name="chipMinHeight">32dp</item>
         <item name="chipStartPadding">16dp</item>
         <item name="chipEndPadding">16dp</item>
+        <item name="chipCornerRadius">?chipBorderRadius</item>
         <item name="chipBackgroundColor">@color/filter_background_color</item>
         <item name="rippleColor">?attr/colorBackgroundAlternative</item>
         <item name="android:minWidth">56dp</item>

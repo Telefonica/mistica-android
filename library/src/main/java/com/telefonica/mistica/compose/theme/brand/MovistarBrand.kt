@@ -32,6 +32,8 @@ object MovistarBrand : Brand {
 
     override val cardTitleFontWeight = MovistarBrandFontWeights.cardTitleFontWeight
 
+    override val rowTitleFontWeight = MovistarBrandFontWeights.rowTitleFontWeight
+
     override val buttonFontWeight = MovistarBrandFontWeights.buttonFontWeight
 
     override val linkFontWeight = MovistarBrandFontWeights.linkFontWeight
