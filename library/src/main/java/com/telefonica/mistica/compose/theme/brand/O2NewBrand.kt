@@ -1,5 +1,6 @@
 package com.telefonica.mistica.compose.theme.brand
 
+import androidx.compose.ui.text.font.FontWeight
 import com.telefonica.mistica.R
 import com.telefonica.mistica.compose.theme.brushes.MisticaBrushes
 
@@ -29,6 +30,8 @@ object O2NewBrand : Brand {
     override val preset10FontWeight = O2NewBrandFontWeights.text10FontWeight
 
     override val cardTitleFontWeight = O2NewBrandFontWeights.cardTitleFontWeight
+
+    override val rowTitleFontWeight = O2NewBrandFontWeights.rowTitleFontWeight
 
     override val buttonFontWeight = O2NewBrandFontWeights.buttonFontWeight
 
