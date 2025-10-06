@@ -52,7 +52,7 @@ import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.theme.MisticaTheme
-import com.telefonica.mistica.compose.theme.brand.MovistarBrand
+import com.telefonica.mistica.util.PreviewTheme
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
@@ -418,7 +418,7 @@ private class ScrollableTabData(
 @Preview
 @Composable
 fun TabsPreview() {
-    MisticaTheme(brand = MovistarBrand) {
+    PreviewTheme {
         Surface(
             modifier = Modifier
                 .background(color = MisticaTheme.colors.backgroundContainer)

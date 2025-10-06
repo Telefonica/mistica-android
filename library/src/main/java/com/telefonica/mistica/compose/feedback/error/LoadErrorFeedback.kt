@@ -12,7 +12,7 @@ import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.button.Button
 import com.telefonica.mistica.compose.button.ButtonStyle
 import com.telefonica.mistica.compose.theme.MisticaTheme
-import com.telefonica.mistica.compose.theme.brand.MovistarBrand
+import com.telefonica.mistica.util.PreviewTheme
 
 @Composable
 fun LoadErrorFeedback(
@@ -62,7 +62,7 @@ fun LoadErrorFeedback(
 @Preview
 @Composable
 fun LoadErrorFeedbackPreview() {
-    MisticaTheme(brand = MovistarBrand) {
+    PreviewTheme {
         LoadErrorFeedback(
             titleText = "Title",
             descriptionText = "Something went wrong, this is the description of the failure. Try to retry if you want.",
@@ -77,7 +77,7 @@ fun LoadErrorFeedbackPreview() {
 @Preview
 @Composable
 fun LoadErrorFeedbackNoButtonPreview() {
-    MisticaTheme(brand = MovistarBrand) {
+    PreviewTheme {
         LoadErrorFeedback(
             titleText = "Title",
             descriptionText = "Something went wrong, this is the description of the failure. Try to retry if you want.",

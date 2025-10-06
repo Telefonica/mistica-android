@@ -4,16 +4,15 @@ import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onRoot
 import androidx.compose.ui.test.performClick
-import com.telefonica.mistica.compose.theme.MisticaTheme
-import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 import com.telefonica.mistica.testutils.ScreenshotsTest
+import com.telefonica.mistica.testutils.TestTheme
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 
 @RunWith(RobolectricTestRunner::class)
-internal class PasswordInputKtTest: ScreenshotsTest() {
+internal class PasswordInputKtTest : ScreenshotsTest() {
     @get:Rule
     val composeTestRule = createComposeRule()
 
@@ -48,7 +47,7 @@ internal class PasswordInputKtTest: ScreenshotsTest() {
 
     private fun TestScope.`when PasswordInput`() {
         composeTestRule.setContent {
-            MisticaTheme(brand = MovistarBrand) {
+            TestTheme {
                 PasswordInput(
                     value = textValue,
                     onValueChange = onValueChanged,

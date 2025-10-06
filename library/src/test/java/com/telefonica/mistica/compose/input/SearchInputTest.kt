@@ -4,9 +4,8 @@ import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onRoot
 import androidx.compose.ui.test.performClick
-import com.telefonica.mistica.compose.theme.MisticaTheme
-import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 import com.telefonica.mistica.testutils.ScreenshotsTest
+import com.telefonica.mistica.testutils.TestTheme
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -54,7 +53,7 @@ class SearchInputTest : ScreenshotsTest() {
 
     private fun givenSomeSearchInput(value: String, enabled: Boolean = true) {
         composeTestRule.setContent {
-            MisticaTheme(brand = MovistarBrand) {
+            TestTheme {
                 SearchInput(
                     value = value,
                     onValueChange = onValueChangeMock,

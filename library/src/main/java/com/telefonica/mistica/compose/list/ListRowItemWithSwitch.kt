@@ -10,8 +10,7 @@ import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.tag.Tag
-import com.telefonica.mistica.compose.theme.MisticaTheme
-import com.telefonica.mistica.compose.theme.brand.MovistarBrand
+import com.telefonica.mistica.util.PreviewTheme
 
 @Composable
 fun ListRowItemWithSwitch(
@@ -47,7 +46,7 @@ fun ListRowItemWithSwitch(
         headline = headline,
         trailing = {
             Switch(
-                modifier = Modifier.clearAndSetSemantics {  },
+                modifier = Modifier.clearAndSetSemantics { },
                 checked = checked,
                 onCheckedChange = null,
             )
@@ -61,7 +60,7 @@ fun ListRowItemWithSwitch(
 @Preview(showBackground = true)
 @Composable
 private fun PreviewListRowItemWithSwitchOff() {
-    MisticaTheme(brand = MovistarBrand) {
+    PreviewTheme {
         ListRowItemWithSwitch(
             title = "Off",
             subtitle = "Subtitle",
@@ -75,7 +74,7 @@ private fun PreviewListRowItemWithSwitchOff() {
 @Preview(showBackground = true)
 @Composable
 private fun PreviewListRowItemWithSwitchOn() {
-    MisticaTheme(brand = MovistarBrand) {
+    PreviewTheme {
         ListRowItemWithSwitch(
             title = "On",
             subtitle = "Subtitle",

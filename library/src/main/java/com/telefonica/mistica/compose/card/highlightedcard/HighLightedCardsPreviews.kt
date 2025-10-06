@@ -9,16 +9,17 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.R
 import com.telefonica.mistica.compose.button.ButtonStyle
-import com.telefonica.mistica.compose.theme.MisticaTheme
-import com.telefonica.mistica.compose.theme.brand.MovistarBrand
+import com.telefonica.mistica.util.PreviewTheme
 
 @Preview(name = "Only Title and text")
 @Composable
-fun PreviewHighLightedCardOnlyTitleAndText(){
-    MisticaTheme(brand = MovistarBrand) {
-        Column(modifier = Modifier
-            .fillMaxWidth()
-            .padding(8.dp)) {
+fun PreviewHighLightedCardOnlyTitleAndText() {
+    PreviewTheme {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(8.dp)
+        ) {
             HighLightedCard(
                 modifier = Modifier.fillMaxWidth(),
                 title = "Solve Technical issue",
@@ -30,11 +31,13 @@ fun PreviewHighLightedCardOnlyTitleAndText(){
 
 @Preview(name = "Only Title,Text, Close Button")
 @Composable
-fun PreviewHighLightedCardTitleTextAndCloseButton(){
-    MisticaTheme(brand = MovistarBrand) {
-        Column(modifier = Modifier
-            .fillMaxWidth()
-            .padding(8.dp)) {
+fun PreviewHighLightedCardTitleTextAndCloseButton() {
+    PreviewTheme {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(8.dp)
+        ) {
             HighLightedCard(
                 modifier = Modifier.fillMaxWidth(),
                 title = "Solve Technical issue",
@@ -47,11 +50,13 @@ fun PreviewHighLightedCardTitleTextAndCloseButton(){
 
 @Preview(name = "Only Title,Text, Close Button, Action Button Primary")
 @Composable
-fun PreviewHighLightedCardTitleTextCloseButtonAndButtonPrimary(){
-    MisticaTheme(brand = MovistarBrand) {
-        Column(modifier = Modifier
-            .fillMaxWidth()
-            .padding(8.dp)) {
+fun PreviewHighLightedCardTitleTextCloseButtonAndButtonPrimary() {
+    PreviewTheme {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(8.dp)
+        ) {
             HighLightedCard(
                 modifier = Modifier.fillMaxWidth(),
                 title = "Solve Technical issue",
@@ -65,11 +70,13 @@ fun PreviewHighLightedCardTitleTextCloseButtonAndButtonPrimary(){
 
 @Preview(name = "[Inverse] Only Title,Text, Close Button, Action Button Primary")
 @Composable
-fun PreviewInverseHighLightedCardTitleTextCloseButtonAndButtonPrimary(){
-    MisticaTheme(brand = MovistarBrand) {
-        Column(modifier = Modifier
-            .fillMaxWidth()
-            .padding(8.dp)) {
+fun PreviewInverseHighLightedCardTitleTextCloseButtonAndButtonPrimary() {
+    PreviewTheme {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(8.dp)
+        ) {
             HighLightedCard(
                 modifier = Modifier.fillMaxWidth(),
                 title = "Solve Technical issue",
@@ -84,11 +91,13 @@ fun PreviewInverseHighLightedCardTitleTextCloseButtonAndButtonPrimary(){
 
 @Preview(name = "Only Title,Text, Close Button, Action Button Secondary")
 @Composable
-fun PreviewHighLightedCardTitleTextCloseButtonAndButtonSecondary(){
-    MisticaTheme(brand = MovistarBrand) {
-        Column(modifier = Modifier
-            .fillMaxWidth()
-            .padding(8.dp)) {
+fun PreviewHighLightedCardTitleTextCloseButtonAndButtonSecondary() {
+    PreviewTheme {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(8.dp)
+        ) {
             HighLightedCard(
                 modifier = Modifier.fillMaxWidth(),
                 title = "Solve Technical issue",
@@ -102,11 +111,13 @@ fun PreviewHighLightedCardTitleTextCloseButtonAndButtonSecondary(){
 
 @Preview(name = "Inverse Only Title,Text, Close Button, Action Button Secondary")
 @Composable
-fun PreviewInverseHighLightedCardTitleTextCloseButtonAndButtonSecondary(){
-    MisticaTheme(brand = MovistarBrand) {
-        Column(modifier = Modifier
-            .fillMaxWidth()
-            .padding(8.dp)) {
+fun PreviewInverseHighLightedCardTitleTextCloseButtonAndButtonSecondary() {
+    PreviewTheme {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(8.dp)
+        ) {
             HighLightedCard(
                 modifier = Modifier.fillMaxWidth(),
                 title = "Solve Technical issue",
@@ -121,11 +132,13 @@ fun PreviewInverseHighLightedCardTitleTextCloseButtonAndButtonSecondary(){
 
 @Preview(name = "Only Title,Text, Close Button, Action Button Link")
 @Composable
-fun PreviewHighLightedCardTitleTextCloseButtonAndButtonLink(){
-    MisticaTheme(brand = MovistarBrand) {
-        Column(modifier = Modifier
-            .fillMaxWidth()
-            .padding(8.dp)) {
+fun PreviewHighLightedCardTitleTextCloseButtonAndButtonLink() {
+    PreviewTheme {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(8.dp)
+        ) {
             HighLightedCard(
                 modifier = Modifier.fillMaxWidth(),
                 title = "Solve Technical issue",
@@ -139,11 +152,13 @@ fun PreviewHighLightedCardTitleTextCloseButtonAndButtonLink(){
 
 @Preview(name = "Only Title,Text, Close Button, Action Button Link")
 @Composable
-fun PreviewInverseHighLightedCardTitleTextCloseButtonAndButtonLink(){
-    MisticaTheme(brand = MovistarBrand) {
-        Column(modifier = Modifier
-            .fillMaxWidth()
-            .padding(8.dp)) {
+fun PreviewInverseHighLightedCardTitleTextCloseButtonAndButtonLink() {
+    PreviewTheme {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(8.dp)
+        ) {
             HighLightedCard(
                 modifier = Modifier.fillMaxWidth(),
                 title = "Solve Technical issue",
@@ -158,11 +173,13 @@ fun PreviewInverseHighLightedCardTitleTextCloseButtonAndButtonLink(){
 
 @Preview(name = "Only Title,Text, Close Button, Action Button Link, Image Fit")
 @Composable
-fun PreviewHighLightedCardTitleTextCloseButtonButtonLinkAndImageFit(){
-    MisticaTheme(brand = MovistarBrand) {
-        Column(modifier = Modifier
-            .fillMaxWidth()
-            .padding(8.dp)) {
+fun PreviewHighLightedCardTitleTextCloseButtonButtonLinkAndImageFit() {
+    PreviewTheme {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(8.dp)
+        ) {
             HighLightedCard(
                 modifier = Modifier.fillMaxWidth(),
                 title = "Solve Technical issue",
@@ -177,11 +194,13 @@ fun PreviewHighLightedCardTitleTextCloseButtonButtonLinkAndImageFit(){
 
 @Preview(name = "Only Title,Text, Close Button, Action Button Link, Image Fill")
 @Composable
-fun PreviewHighLightedCardTitleTextCloseButtonButtonLinkAndImageFill(){
-    MisticaTheme(brand = MovistarBrand) {
-        Column(modifier = Modifier
-            .fillMaxWidth()
-            .padding(8.dp)) {
+fun PreviewHighLightedCardTitleTextCloseButtonButtonLinkAndImageFill() {
+    PreviewTheme {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(8.dp)
+        ) {
             HighLightedCard(
                 modifier = Modifier.fillMaxWidth(),
                 title = "Solve Technical issue and with large text, not a lorem ipsum but...",
@@ -193,13 +212,16 @@ fun PreviewHighLightedCardTitleTextCloseButtonButtonLinkAndImageFill(){
         }
     }
 }
+
 @Preview(name = "Only Title,Text, Close Button, Action Button Link, Image Fill, Background")
 @Composable
-fun PreviewHighLightedCardTitleTextCloseButtonButtonLinkAndImageFillBackground(){
-    MisticaTheme(brand = MovistarBrand) {
-        Column(modifier = Modifier
-            .fillMaxWidth()
-            .padding(8.dp)) {
+fun PreviewHighLightedCardTitleTextCloseButtonButtonLinkAndImageFillBackground() {
+    PreviewTheme {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(8.dp)
+        ) {
             HighLightedCard(
                 modifier = Modifier.fillMaxWidth(),
                 title = "Solve Technical issue and with large text, not a lorem ipsum but...",

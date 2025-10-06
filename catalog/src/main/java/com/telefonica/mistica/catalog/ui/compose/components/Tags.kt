@@ -24,9 +24,8 @@ import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.compose.tag.Tag
 import com.telefonica.mistica.compose.tag.TagColors
 import com.telefonica.mistica.compose.theme.MisticaTheme
-import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 import com.telefonica.mistica.tag.TagView
-
+import com.telefonica.mistica.util.PreviewTheme
 
 private const val TAG_CUSTOM_COLOR_BACKGROUND = 0xFF00CAB3
 private const val TAG_CUSTOM_COLOR_TEXT = 0XFFFFFFFF
@@ -114,7 +113,7 @@ fun Tags() {
 @Preview(showBackground = true)
 @Composable
 fun TagPreview() {
-    MisticaTheme(brand = MovistarBrand) {
+    PreviewTheme {
         Column(
             modifier = Modifier
                 .padding(vertical = 32.dp, horizontal = 16.dp)

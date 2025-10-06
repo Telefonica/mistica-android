@@ -5,11 +5,11 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.TextUnit
 import com.telefonica.mistica.catalog.R
+import com.telefonica.mistica.compose.theme.brand.BlauBrand
 import com.telefonica.mistica.compose.theme.brand.Brand
 import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 import com.telefonica.mistica.compose.theme.brand.MovistarNewBrand
 import com.telefonica.mistica.compose.theme.brand.O2NewBrand
-import com.telefonica.mistica.compose.theme.brand.BlauBrand
 import com.telefonica.mistica.compose.theme.brand.TelefonicaBrand
 import com.telefonica.mistica.compose.theme.brand.TuBrand
 import com.telefonica.mistica.compose.theme.brand.VivoNewBrand

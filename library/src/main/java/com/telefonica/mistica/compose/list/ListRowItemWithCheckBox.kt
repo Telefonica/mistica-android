@@ -10,8 +10,7 @@ import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.tag.Tag
-import com.telefonica.mistica.compose.theme.MisticaTheme
-import com.telefonica.mistica.compose.theme.brand.MovistarBrand
+import com.telefonica.mistica.util.PreviewTheme
 
 @Composable
 fun ListRowItemWithCheckBox(
@@ -61,7 +60,7 @@ fun ListRowItemWithCheckBox(
 @Preview(showBackground = true)
 @Composable
 private fun PreviewListRowItemWithCheckBoxUnchecked() {
-    MisticaTheme(brand = MovistarBrand) {
+    PreviewTheme {
         ListRowItemWithCheckBox(
             title = "Unchecked",
             subtitle = "Subtitle",
@@ -75,7 +74,7 @@ private fun PreviewListRowItemWithCheckBoxUnchecked() {
 @Preview(showBackground = true)
 @Composable
 private fun PreviewListRowItemWithCheckBoxChecked() {
-    MisticaTheme(brand = MovistarBrand) {
+    PreviewTheme {
         ListRowItemWithCheckBox(
             title = "Checked",
             subtitle = "Subtitle",

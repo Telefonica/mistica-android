@@ -49,6 +49,7 @@ import com.telefonica.mistica.compose.shape.Chevron
 import com.telefonica.mistica.compose.tag.Tag
 import com.telefonica.mistica.compose.theme.MisticaTheme
 import com.telefonica.mistica.compose.theme.brand.MovistarBrand
+import com.telefonica.mistica.util.PreviewTheme
 
 @Composable
 fun ListRowItem(
@@ -360,7 +361,7 @@ data class CustomContentDescriptionConfig(
 @Preview(showBackground = true)
 @Composable
 fun ListRowItemPreview() {
-    MisticaTheme(brand = MovistarBrand) {
+    PreviewTheme {
         val checkedState = remember { mutableStateOf(true) }
         Column {
             ListRowItem(

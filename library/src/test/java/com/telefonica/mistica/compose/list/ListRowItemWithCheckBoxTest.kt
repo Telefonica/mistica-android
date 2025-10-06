@@ -11,9 +11,8 @@ import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onRoot
 import androidx.compose.ui.test.performClick
 import com.telefonica.mistica.compose.tag.Tag
-import com.telefonica.mistica.compose.theme.MisticaTheme
-import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 import com.telefonica.mistica.testutils.ScreenshotsTest
+import com.telefonica.mistica.testutils.TestTheme
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -57,7 +56,7 @@ internal class ListRowItemWithCheckBoxTest : ScreenshotsTest() {
     private fun `given a ListRowItemWithCheckBox`(checked: Boolean = false) {
         composeTestRule.setContent {
             var isChecked by remember { mutableStateOf(checked) }
-            MisticaTheme(brand = MovistarBrand) {
+            TestTheme {
                 ListRowItemWithCheckBox(
                     listRowIcon = null,
                     headline = Tag("Promo"),
@@ -65,7 +64,7 @@ internal class ListRowItemWithCheckBoxTest : ScreenshotsTest() {
                     subtitle = "Subtitle",
                     description = "Description",
                     checked = isChecked,
-                    onCheckedChange = { isChecked = it},
+                    onCheckedChange = { isChecked = it },
                 )
             }
         }
