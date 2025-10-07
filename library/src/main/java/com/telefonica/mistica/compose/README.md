@@ -51,7 +51,7 @@ where `brand` is the implementation of the app brand and `darkTheme` a flag that
 override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContent {
-        PreviewTheme {
+        MisticaTheme(brand = MovistarBrand) {
             ...
         }
     }
