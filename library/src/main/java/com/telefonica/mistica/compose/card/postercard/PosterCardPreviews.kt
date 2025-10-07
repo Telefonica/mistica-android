@@ -19,12 +19,12 @@ import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.R
 import com.telefonica.mistica.compose.tag.Tag
 import com.telefonica.mistica.compose.theme.MisticaTheme
-import com.telefonica.mistica.compose.theme.brand.TuBrand
+import com.telefonica.mistica.util.PreviewTheme
 
 @Preview
 @Composable
 internal fun PosterCardSolidColor() {
-    MisticaTheme(brand = TuBrand) {
+    PreviewTheme {
         PosterCard(
             modifier = Modifier.width(300.dp),
             aspectRatio = PosterCardAspectRatio.AR_1_1,
@@ -41,7 +41,7 @@ internal fun PosterCardSolidColor() {
 @Preview(name = "Dark Mode", uiMode = Configuration.UI_MODE_NIGHT_YES, showBackground = true)
 @Composable
 internal fun PosterCardGradientColor() {
-    MisticaTheme(brand = TuBrand) {
+    PreviewTheme {
         PosterCard(
             firstTopAction = TopActionData(iconRes = R.drawable.icn_visibility),
             secondTopAction = TopActionData(iconRes = R.drawable.ic_close_regular),
@@ -62,7 +62,7 @@ internal fun PosterCardGradientColor() {
 @Preview
 @Composable
 internal fun PosterCardImage() {
-    MisticaTheme(brand = TuBrand) {
+    PreviewTheme {
         PosterCard(
             firstTopAction = TopActionData(iconRes = R.drawable.icn_visibility),
             modifier = Modifier.fillMaxWidth(),

@@ -14,10 +14,9 @@ import androidx.compose.ui.test.performClick
 import com.telefonica.mistica.R
 import com.telefonica.mistica.compose.shape.Chevron
 import com.telefonica.mistica.compose.tag.Tag
-import com.telefonica.mistica.compose.theme.MisticaTheme
-import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 import com.telefonica.mistica.list.model.ImageDimensions
 import com.telefonica.mistica.testutils.ScreenshotsTest
+import com.telefonica.mistica.testutils.TestTheme
 import org.junit.Assert.assertEquals
 import org.junit.Rule
 import org.junit.Test
@@ -85,7 +84,7 @@ internal class ListRowItemKtTest : ScreenshotsTest() {
 
     private fun `when ListRowItem with asset`(dimensions: ImageDimensions, onAssetClick: () -> Unit = {}) {
         composeTestRule.setContent {
-            MisticaTheme(brand = MovistarBrand) {
+            TestTheme {
                 ListRowItem(
                     listRowIcon = ListRowIcon.ImageAsset(
                         painter = painterResource(id = R.drawable.placeholder),
@@ -107,7 +106,7 @@ internal class ListRowItemKtTest : ScreenshotsTest() {
 
     private fun `when ListRowItem with title`(title: String, isTitleHeading: Boolean) {
         composeTestRule.setContent {
-            MisticaTheme(brand = MovistarBrand) {
+            TestTheme {
                 ListRowItem(
                     listRowIcon = null,
                     headline = Tag("Promo"),

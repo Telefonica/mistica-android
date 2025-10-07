@@ -48,7 +48,7 @@ import com.telefonica.mistica.compose.list.AccessibilityOrder.TRAILING
 import com.telefonica.mistica.compose.shape.Chevron
 import com.telefonica.mistica.compose.tag.Tag
 import com.telefonica.mistica.compose.theme.MisticaTheme
-import com.telefonica.mistica.compose.theme.brand.MovistarBrand
+import com.telefonica.mistica.util.PreviewTheme
 
 @Composable
 fun ListRowItem(
@@ -239,7 +239,7 @@ private fun ListRowItemImp(
                 title?.let {
                     Text(
                         text = it,
-                        style = MisticaTheme.typography.preset3,
+                        style = MisticaTheme.typography.presetRowTitle,
                         color = textColorPrimary,
                         modifier = Modifier
                             .testTag(ListRowItemTestTags.LIST_ROW_ITEM_TITLE)
@@ -360,7 +360,7 @@ data class CustomContentDescriptionConfig(
 @Preview(showBackground = true)
 @Composable
 fun ListRowItemPreview() {
-    MisticaTheme(brand = MovistarBrand) {
+    PreviewTheme {
         val checkedState = remember { mutableStateOf(true) }
         Column {
             ListRowItem(

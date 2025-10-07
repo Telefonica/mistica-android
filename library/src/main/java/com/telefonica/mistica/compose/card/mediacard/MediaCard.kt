@@ -16,9 +16,8 @@ import com.telefonica.mistica.compose.card.CardContent
 import com.telefonica.mistica.compose.card.mediacard.MediaCardImage.MediaCardImageBitmap
 import com.telefonica.mistica.compose.card.mediacard.MediaCardImage.MediaCardImageResource
 import com.telefonica.mistica.compose.tag.Tag
-import com.telefonica.mistica.compose.theme.MisticaTheme
-import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 import com.telefonica.mistica.tag.TagView
+import com.telefonica.mistica.util.PreviewTheme
 
 @Composable
 fun MediaCard(
@@ -56,6 +55,7 @@ private fun CardImage(mediaCardImage: MediaCardImage) {
             contentDescription = mediaCardImage.contentDescription,
             contentScale = ContentScale.FillHeight
         )
+
         is MediaCardImageResource -> Image(
             painterResource(id = mediaCardImage.imageRes),
             contentDescription = mediaCardImage.contentDescription,
@@ -67,7 +67,7 @@ private fun CardImage(mediaCardImage: MediaCardImage) {
 @Preview
 @Composable
 fun CardPreview() {
-    MisticaTheme(brand = MovistarBrand) {
+    PreviewTheme {
         MediaCard(
             image = MediaCardImageResource(R.drawable.bg_list_image),
             tag = Tag("HEADLINE").withStyle(TagView.TYPE_PROMO),

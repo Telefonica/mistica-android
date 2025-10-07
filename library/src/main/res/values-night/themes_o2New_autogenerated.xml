@@ -63,7 +63,7 @@
 		<item name="colorButtonSecondaryBackgroundMediaPressed">@color/o2New_color_white_15_alpha</item>
 		<item name="colorTextButtonPrimary">@color/o2New_color_white</item>
 		<item name="colorTextButtonPrimaryInverse">@color/o2New_color_white</item>
-		<item name="colorTextButtonPrimaryMedia">@color/o2New_color_white</item>
+		<item name="colorTextButtonPrimaryMedia">@color/o2New_color_beyondBlue</item>
 		<item name="colorTextButtonPrimaryInversePressed">@color/o2New_color_white</item>
 		<item name="colorTextButtonPrimaryMediaPressed">@color/o2New_color_beyondBlue70</item>
 		<item name="colorTextButtonSecondary">@color/o2New_color_grey30</item>

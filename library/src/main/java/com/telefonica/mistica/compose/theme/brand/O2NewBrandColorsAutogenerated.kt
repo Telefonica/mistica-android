@@ -68,7 +68,7 @@ public object O2NewBrandColors {
       buttonSecondaryBackgroundMediaPressed = O2NewPaletteColor.o2New_color_white_15_alpha
       textButtonPrimary = O2NewPaletteColor.o2New_color_white
       textButtonPrimaryInverse = O2NewPaletteColor.o2New_color_beyondBlue
-      textButtonPrimaryMedia = O2NewPaletteColor.o2New_color_white
+      textButtonPrimaryMedia = O2NewPaletteColor.o2New_color_beyondBlue
       textButtonPrimaryInversePressed = O2NewPaletteColor.o2New_color_beyondBlue70
       textButtonPrimaryMediaPressed = O2NewPaletteColor.o2New_color_beyondBlue70
       textButtonSecondary = O2NewPaletteColor.o2New_color_beyondBlue
@@ -240,7 +240,7 @@ public object O2NewBrandColors {
       buttonSecondaryBackgroundMediaPressed = O2NewPaletteColor.o2New_color_white_15_alpha
       textButtonPrimary = O2NewPaletteColor.o2New_color_white
       textButtonPrimaryInverse = O2NewPaletteColor.o2New_color_white
-      textButtonPrimaryMedia = O2NewPaletteColor.o2New_color_white
+      textButtonPrimaryMedia = O2NewPaletteColor.o2New_color_beyondBlue
       textButtonPrimaryInversePressed = O2NewPaletteColor.o2New_color_white
       textButtonPrimaryMediaPressed = O2NewPaletteColor.o2New_color_beyondBlue70
       textButtonSecondary = O2NewPaletteColor.o2New_color_grey30

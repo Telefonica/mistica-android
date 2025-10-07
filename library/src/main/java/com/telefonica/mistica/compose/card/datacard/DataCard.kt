@@ -9,9 +9,8 @@ import com.telefonica.mistica.compose.card.Card
 import com.telefonica.mistica.compose.card.CardActions
 import com.telefonica.mistica.compose.card.CardContent
 import com.telefonica.mistica.compose.tag.Tag
-import com.telefonica.mistica.compose.theme.MisticaTheme
-import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 import com.telefonica.mistica.tag.TagView
+import com.telefonica.mistica.util.PreviewTheme
 
 @Composable
 fun DataCard(
@@ -39,7 +38,7 @@ fun DataCard(
 @Preview
 @Composable
 fun CardPreview() {
-    MisticaTheme(brand = MovistarBrand) {
+    PreviewTheme {
         DataCard(
             iconPainter = resourceIconPainter(R.drawable.bg_list_image),
             tag = Tag("HEADLINE").withStyle(TagView.TYPE_PROMO),

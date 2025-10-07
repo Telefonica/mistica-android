@@ -5,8 +5,7 @@ import androidx.compose.ui.test.assert
 import androidx.compose.ui.test.isHeading
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithText
-import com.telefonica.mistica.compose.theme.MisticaTheme
-import com.telefonica.mistica.compose.theme.brand.MovistarBrand
+import com.telefonica.mistica.testutils.TestTheme
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -39,7 +38,7 @@ internal class TitleKtTest {
 
     private fun TestScope.`when Title`(isHeading: Boolean = false) {
         composeTestRule.setContent {
-            MisticaTheme(brand = MovistarBrand) {
+            TestTheme {
                 Title(
                     text = textValue,
                     isTitleHeading = isHeading

@@ -27,7 +27,6 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.theme.MisticaTheme
-import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 import com.telefonica.mistica.tag.TagStyle
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_ACTIVE
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_ERROR
@@ -36,6 +35,7 @@ import com.telefonica.mistica.tag.TagView.Companion.TYPE_INFO
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_PROMO
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_SUCCESS
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_WARNING
+import com.telefonica.mistica.util.PreviewTheme
 
 @Composable
 fun Tag(
@@ -45,7 +45,7 @@ fun Tag(
     customColors: TagColors? = null,
     @DrawableRes icon: Int? = null,
 ) {
-    val (background, textColor) = if (customColors == null ) style.getStyle()
+    val (background, textColor) = if (customColors == null) style.getStyle()
     else customColors.backgroundColor to customColors.textColor
 
     Surface(
@@ -53,7 +53,7 @@ fun Tag(
             .wrapContentSize()
             .defaultMinSize(minWidth = 48.dp)
             .height(28.dp),
-        shape = RoundedCornerShape(MisticaTheme.radius.indicatorBorderRadius),
+        shape = RoundedCornerShape(MisticaTheme.radius.tagBorderRadius),
         color = background,
     ) {
         Row(
@@ -120,7 +120,7 @@ class Tag(
 @Preview(showBackground = true)
 @Composable
 internal fun TagPreview() {
-    MisticaTheme(brand = MovistarBrand) {
+    PreviewTheme {
         Column(
             modifier = Modifier
                 .padding(vertical = 32.dp, horizontal = 16.dp)

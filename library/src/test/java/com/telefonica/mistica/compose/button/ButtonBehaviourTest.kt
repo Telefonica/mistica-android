@@ -7,8 +7,7 @@ import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.unit.dp
-import com.telefonica.mistica.compose.theme.MisticaTheme
-import com.telefonica.mistica.compose.theme.brand.MovistarBrand
+import com.telefonica.mistica.testutils.TestTheme
 import org.junit.Assert.assertTrue
 import org.junit.Rule
 import org.junit.Test
@@ -37,7 +36,7 @@ internal class ButtonBehaviourTest {
 
     private fun TestScope.`when Button`() {
         composeTestRule.setContent {
-            MisticaTheme(brand = MovistarBrand) {
+            TestTheme {
                 Button(
                     text = textValue,
                     onClickListener = onClickListener,

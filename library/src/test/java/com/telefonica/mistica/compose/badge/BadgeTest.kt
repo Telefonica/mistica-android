@@ -10,16 +10,15 @@ import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onRoot
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.R
-import com.telefonica.mistica.compose.theme.MisticaTheme
-import com.telefonica.mistica.compose.theme.brand.MovistarBrand
 import com.telefonica.mistica.testutils.ScreenshotsTest
+import com.telefonica.mistica.testutils.TestTheme
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 
 @RunWith(RobolectricTestRunner::class)
-class BadgeTest: ScreenshotsTest() {
+class BadgeTest : ScreenshotsTest() {
     @get:Rule
     val composeTestRule = createComposeRule()
 
@@ -46,7 +45,7 @@ class BadgeTest: ScreenshotsTest() {
 
     private fun `when some badge`(value: String) {
         composeTestRule.setContent {
-            MisticaTheme(brand = MovistarBrand) {
+            TestTheme {
                 Box(modifier = Modifier.padding(24.dp)) {
                     BadgedBox(
                         badge = {

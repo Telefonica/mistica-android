@@ -73,6 +73,7 @@ fun MisticaTheme(
             preset6FontWeight = brand.preset6FontWeight,
             preset5FontWeight = brand.preset5FontWeight,
             presetCardTitleFontWeight = brand.cardTitleFontWeight,
+            presetRowTitleFontWeight = brand.rowTitleFontWeight,
             presetButtonFontWeight = brand.buttonFontWeight,
             presetSmallButtonFontWeight = brand.buttonFontWeight,
             presetLinkFontWeight = brand.linkFontWeight,

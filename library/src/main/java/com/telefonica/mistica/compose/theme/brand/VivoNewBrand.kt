@@ -30,6 +30,8 @@ object VivoNewBrand : Brand {
 
     override val cardTitleFontWeight = VivoNewBrandFontWeights.cardTitleFontWeight
 
+    override val rowTitleFontWeight = VivoNewBrandFontWeights.rowTitleFontWeight
+
     override val buttonFontWeight = VivoNewBrandFontWeights.buttonFontWeight
 
     override val linkFontWeight = VivoNewBrandFontWeights.linkFontWeight

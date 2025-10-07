@@ -65,7 +65,7 @@ Use HighlightedCard composable. There are some examples below
 @Preview(name = "Only Title and text")
 @Composable
 fun PreviewHighLightedCardOnlyTitleAndText(){
-    MisticaTheme(brand = MovistarBrand) {
+    PreviewTheme {
         Column(modifier = Modifier
             .fillMaxWidth()
             .padding(8.dp)) {
@@ -81,7 +81,7 @@ fun PreviewHighLightedCardOnlyTitleAndText(){
 @Preview(name = "Only Title,Text, Close Button")
 @Composable
 fun PreviewHighLightedCardTitleTextAndCloseButton(){
-    MisticaTheme(brand = MovistarBrand) {
+    PreviewTheme {
         Column(modifier = Modifier
             .fillMaxWidth()
             .padding(8.dp)) {
@@ -98,7 +98,7 @@ fun PreviewHighLightedCardTitleTextAndCloseButton(){
 @Preview(name = "Only Title,Text, Close Button, Action Button Primary")
 @Composable
 fun PreviewHighLightedCardTitleTextCloseButtonAndButtonPrimary(){
-    MisticaTheme(brand = MovistarBrand) {
+    PreviewTheme {
         Column(modifier = Modifier
             .fillMaxWidth()
             .padding(8.dp)) {
@@ -116,7 +116,7 @@ fun PreviewHighLightedCardTitleTextCloseButtonAndButtonPrimary(){
 @Preview(name = "[Inverse] Only Title,Text, Close Button, Action Button Primary")
 @Composable
 fun PreviewInverseHighLightedCardTitleTextCloseButtonAndButtonPrimary(){
-    MisticaTheme(brand = MovistarBrand) {
+    PreviewTheme {
         Column(modifier = Modifier
             .fillMaxWidth()
             .padding(8.dp)) {
@@ -135,7 +135,7 @@ fun PreviewInverseHighLightedCardTitleTextCloseButtonAndButtonPrimary(){
 @Preview(name = "Only Title,Text, Close Button, Action Button Secondary")
 @Composable
 fun PreviewHighLightedCardTitleTextCloseButtonAndButtonSecondary(){
-    MisticaTheme(brand = MovistarBrand) {
+    PreviewTheme {
         Column(modifier = Modifier
             .fillMaxWidth()
             .padding(8.dp)) {
@@ -153,7 +153,7 @@ fun PreviewHighLightedCardTitleTextCloseButtonAndButtonSecondary(){
 @Preview(name = "Inverse Only Title,Text, Close Button, Action Button Secondary")
 @Composable
 fun PreviewInverseHighLightedCardTitleTextCloseButtonAndButtonSecondary(){
-    MisticaTheme(brand = MovistarBrand) {
+    PreviewTheme {
         Column(modifier = Modifier
             .fillMaxWidth()
             .padding(8.dp)) {
@@ -172,7 +172,7 @@ fun PreviewInverseHighLightedCardTitleTextCloseButtonAndButtonSecondary(){
 @Preview(name = "Only Title,Text, Close Button, Action Button Link")
 @Composable
 fun PreviewHighLightedCardTitleTextCloseButtonAndButtonLink(){
-    MisticaTheme(brand = MovistarBrand) {
+    PreviewTheme {
         Column(modifier = Modifier
             .fillMaxWidth()
             .padding(8.dp)) {
@@ -190,7 +190,7 @@ fun PreviewHighLightedCardTitleTextCloseButtonAndButtonLink(){
 @Preview(name = "Only Title,Text, Close Button, Action Button Link")
 @Composable
 fun PreviewInverseHighLightedCardTitleTextCloseButtonAndButtonLink(){
-    MisticaTheme(brand = MovistarBrand) {
+    PreviewTheme {
         Column(modifier = Modifier
             .fillMaxWidth()
             .padding(8.dp)) {
@@ -209,7 +209,7 @@ fun PreviewInverseHighLightedCardTitleTextCloseButtonAndButtonLink(){
 @Preview(name = "Only Title,Text, Close Button, Action Button Link, Image Fit")
 @Composable
 fun PreviewHighLightedCardTitleTextCloseButtonButtonLinkAndImageFit(){
-    MisticaTheme(brand = MovistarBrand) {
+    PreviewTheme {
         Column(modifier = Modifier
             .fillMaxWidth()
             .padding(8.dp)) {
@@ -228,7 +228,7 @@ fun PreviewHighLightedCardTitleTextCloseButtonButtonLinkAndImageFit(){
 @Preview(name = "Only Title,Text, Close Button, Action Button Link, Image Fill")
 @Composable
 fun PreviewHighLightedCardTitleTextCloseButtonButtonLinkAndImageFill(){
-    MisticaTheme(brand = MovistarBrand) {
+    PreviewTheme {
         Column(modifier = Modifier
             .fillMaxWidth()
             .padding(8.dp)) {
@@ -246,7 +246,7 @@ fun PreviewHighLightedCardTitleTextCloseButtonButtonLinkAndImageFill(){
 @Preview(name = "Only Title,Text, Close Button, Action Button Link, Image Fill, Background")
 @Composable
 fun PreviewHighLightedCardTitleTextCloseButtonButtonLinkAndImageFillBackground(){
-    MisticaTheme(brand = MovistarBrand) {
+    PreviewTheme {
         Column(modifier = Modifier
             .fillMaxWidth()
             .padding(8.dp)) {

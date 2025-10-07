@@ -70,6 +70,9 @@ class MisticaTypography(
     var presetCardTitle by mutableStateOf(buildPresetCardTitle(), structuralEqualityPolicy())
         private set
 
+    var presetRowTitle by mutableStateOf(buildPresetRowTitle(), structuralEqualityPolicy())
+        private set
+
     var presetButton by mutableStateOf(buildPresetButton(), structuralEqualityPolicy())
         private set
 
@@ -226,6 +229,12 @@ class MisticaTypography(
         fontWeight = fontWeight
     )
 
+    private fun buildPresetRowTitle(
+        fontWeight: FontWeight = FontWeight.Medium,
+    ) = buildPreset3().copy(
+        fontWeight = fontWeight
+    )
+
     private fun buildPresetButton(
         fontWeight: FontWeight = FontWeight.Medium,
     ) = buildPreset3().copy(
@@ -287,6 +296,7 @@ class MisticaTypography(
         preset6FontWeight: FontWeight,
         preset5FontWeight: FontWeight,
         presetCardTitleFontWeight: FontWeight,
+        presetRowTitleFontWeight: FontWeight,
         presetButtonFontWeight: FontWeight,
         presetSmallButtonFontWeight: FontWeight,
         presetLinkFontWeight: FontWeight,
@@ -317,6 +327,7 @@ class MisticaTypography(
         preset1Medium = buildPreset1Medium()
         system = buildSystem()
         presetCardTitle = buildPresetCardTitle(fontWeight = presetCardTitleFontWeight)
+        presetRowTitle = buildPresetRowTitle(fontWeight = presetRowTitleFontWeight)
         presetButton = buildPresetButton(fontWeight = presetButtonFontWeight)
         presetSmallButton = buildPresetSmallButton(fontWeight = presetSmallButtonFontWeight)
         presetLink = buildPresetLink(fontWeight = presetLinkFontWeight)

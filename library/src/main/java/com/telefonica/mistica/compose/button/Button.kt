@@ -50,7 +50,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.R
 import com.telefonica.mistica.compose.theme.MisticaTheme
-import com.telefonica.mistica.compose.theme.brand.MovistarBrand
+import com.telefonica.mistica.util.PreviewTheme
 
 private val iconSpacing = 10.dp
 private val easing = CubicBezierEasing(0.77f, 0f, 0.175f, 1f)
@@ -239,7 +239,7 @@ enum class ButtonStyle {
 @Preview
 @Composable
 fun ButtonPreview(@PreviewParameter(PreviewBooleanProvider::class) enabled: Boolean) {
-    MisticaTheme(brand = MovistarBrand) {
+    PreviewTheme {
         Button(text = "Text", loadingText = "Loading", enabled = enabled, isLoading = false) {}
     }
 }
@@ -247,7 +247,7 @@ fun ButtonPreview(@PreviewParameter(PreviewBooleanProvider::class) enabled: Bool
 @Preview
 @Composable
 fun ProgressButtonNewPreview() {
-    MisticaTheme(brand = MovistarBrand) {
+    PreviewTheme {
         Button(text = "Text", loadingText = "Loading", isLoading = true) {}
     }
 }
@@ -255,7 +255,7 @@ fun ProgressButtonNewPreview() {
 @Preview
 @Composable
 fun ProgressButtonNoTextPreview() {
-    MisticaTheme(brand = MovistarBrand) {
+    PreviewTheme {
         Button(text = "Text", isLoading = true) {}
     }
 }
@@ -263,7 +263,7 @@ fun ProgressButtonNoTextPreview() {
 @Preview
 @Composable
 fun ProgressButtonIconPreview() {
-    MisticaTheme(brand = MovistarBrand) {
+    PreviewTheme {
         Button(text = "Text", icon = R.drawable.icn_creditcard) {}
     }
 }
@@ -271,7 +271,7 @@ fun ProgressButtonIconPreview() {
 @Preview
 @Composable
 fun ProgressButtonIconSmallPreview() {
-    MisticaTheme(brand = MovistarBrand) {
+    PreviewTheme {
         Button(text = "Text", icon = R.drawable.icn_creditcard, buttonStyle = ButtonStyle.PRIMARY_SMALL) {}
     }
 }
@@ -279,7 +279,7 @@ fun ProgressButtonIconSmallPreview() {
 @Preview
 @Composable
 fun LinkWithChevronPreview() {
-    MisticaTheme(brand = MovistarBrand) {
+    PreviewTheme {
         Button(
             text = "Text",
             withChevron = true,
@@ -292,7 +292,7 @@ fun LinkWithChevronPreview() {
 @Preview
 @Composable
 fun DangerLinkWithChevronPreview() {
-    MisticaTheme(brand = MovistarBrand) {
+    PreviewTheme {
         Button(
             text = "Text",
             buttonStyle = ButtonStyle.DANGER_LINK,

@@ -1,0 +1,42 @@
+name: Import design tokens and commit into branch
+on:
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: 'mistica-design repo changeset or branch'
+        required: false
+        default: 'production'
+jobs:
+  import-design-tokens-and-commit-into-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up JDK 17
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.NOVUM_PRIVATE_REPOS }}
+
+      - name: Checkout mistica-design repo with the tokens
+        uses: actions/checkout@v3
+        with:
+          repository: Telefonica/mistica-design
+          path: './temp/mistica-design'
+          ref: ${{github.event.inputs.ref}}
+          token: ${{ secrets.NOVUM_PRIVATE_REPOS }}
+
+      - name: Generate skins from design tokens
+        run: ./gradlew generateMisticaTokens
+
+      - name: Remove mistica-design repo
+        run: rm -r ./temp/mistica-design
+
+      - name: Commit and push baseline
+        id: commitAndPushBaseline
+        uses: EndBug/add-and-commit@v7
+        with:
+          message: "Update design tokens"
+

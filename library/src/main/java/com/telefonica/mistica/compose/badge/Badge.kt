@@ -18,7 +18,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.theme.MisticaTheme
-import com.telefonica.mistica.compose.theme.brand.MovistarBrand
+import com.telefonica.mistica.util.PreviewTheme
 import androidx.compose.material.Badge as MaterialBadge
 
 @Composable
@@ -76,7 +76,7 @@ object BadgeTestTags {
 @Preview(showBackground = true)
 @Composable
 fun BadgePreview() {
-    MisticaTheme(brand = MovistarBrand) {
+    PreviewTheme {
         Column(
             horizontalAlignment = Alignment.End,
             modifier = Modifier.padding(16.dp)

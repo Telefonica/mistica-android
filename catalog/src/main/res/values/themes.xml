@@ -7,6 +7,12 @@
 		<item name="font_family_medium">@font/onair_medium</item>
 	</style>
 
+	<style name="CatalogMovistarNew" parent="MisticaTheme.MovistarNew">
+		<item name="font_family_light">@font/movistar_sans_light</item>
+		<item name="font_family_regular">@font/movistar_sans_regular</item>
+		<item name="font_family_medium">@font/movistar_sans_medium</item>
+	</style>
+
 	<style name="CatalogO2New" parent="MisticaTheme.O2New">
 		<item name="font_family_light">@font/onair_light</item>
 		<item name="font_family_regular">@font/onair_regular</item>

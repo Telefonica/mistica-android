@@ -8,6 +8,7 @@ import androidx.compose.ui.platform.AbstractComposeView
 import com.telefonica.mistica.R
 import com.telefonica.mistica.compose.composeview.AbstractMisticaComposeView.Companion.BRAND_VALUE_BLAU
 import com.telefonica.mistica.compose.composeview.AbstractMisticaComposeView.Companion.BRAND_VALUE_MOVISTAR
+import com.telefonica.mistica.compose.composeview.AbstractMisticaComposeView.Companion.BRAND_VALUE_MOVISTAR_NEW
 import com.telefonica.mistica.compose.composeview.AbstractMisticaComposeView.Companion.BRAND_VALUE_O2_NEW
 import com.telefonica.mistica.compose.composeview.AbstractMisticaComposeView.Companion.BRAND_VALUE_TELEFONICA
 import com.telefonica.mistica.compose.composeview.AbstractMisticaComposeView.Companion.BRAND_VALUE_TU
@@ -16,6 +17,7 @@ import com.telefonica.mistica.compose.theme.MisticaTheme
 import com.telefonica.mistica.compose.theme.brand.BlauBrand
 import com.telefonica.mistica.compose.theme.brand.Brand
 import com.telefonica.mistica.compose.theme.brand.MovistarBrand
+import com.telefonica.mistica.compose.theme.brand.MovistarNewBrand
 import com.telefonica.mistica.compose.theme.brand.O2NewBrand
 import com.telefonica.mistica.compose.theme.brand.TelefonicaBrand
 import com.telefonica.mistica.compose.theme.brand.TuBrand
@@ -69,6 +71,7 @@ abstract class AbstractMisticaComposeView @JvmOverloads constructor(
         const val BRAND_VALUE_O2_NEW = 3
         const val BRAND_VALUE_VIVO_NEW = 4
         const val BRAND_VALUE_TU = 5
+        const val BRAND_VALUE_MOVISTAR_NEW = 6
     }
 }
 
@@ -79,5 +82,6 @@ fun Int.mapToComposeBrand(): Brand = when (this) {
     BRAND_VALUE_O2_NEW -> O2NewBrand
     BRAND_VALUE_VIVO_NEW -> VivoNewBrand
     BRAND_VALUE_TU -> TuBrand
+    BRAND_VALUE_MOVISTAR_NEW -> MovistarNewBrand
     else -> TelefonicaBrand
 }
