@@ -6,7 +6,7 @@
 		<item name="feedbackScreenSuccessWithGradient">false</item>
 		<item name="feedbackScreenSuccessAnimation">@raw/feedback_success_movistar_new</item>
 		<item name="feedbackScreenErrorAnimation">@raw/feedback_error_movistar_new</item>
-		<item name="feedbackScreenInfoIcon">@drawable/feedback_info</item>
+		<item name="feedbackScreenInfoIcon">@drawable/feedback_info_movistar_new</item>
 
 		<!-- Stepper -->
 		<item name="stepperFinishedStepAnimation">@raw/feedback_success_movistar_new</item>
