@@ -13,7 +13,7 @@ import com.telefonica.mistica.util.PreviewTheme
 
 @Preview(name = "Only Title and text")
 @Composable
-fun PreviewHighLightedCardOnlyTitleAndText() {
+private fun PreviewHighLightedCardOnlyTitleAndText() {
     PreviewTheme {
         Column(
             modifier = Modifier
@@ -31,7 +31,7 @@ fun PreviewHighLightedCardOnlyTitleAndText() {
 
 @Preview(name = "Only Title,Text, Close Button")
 @Composable
-fun PreviewHighLightedCardTitleTextAndCloseButton() {
+private fun PreviewHighLightedCardTitleTextAndCloseButton() {
     PreviewTheme {
         Column(
             modifier = Modifier
@@ -50,7 +50,7 @@ fun PreviewHighLightedCardTitleTextAndCloseButton() {
 
 @Preview(name = "Only Title,Text, Close Button, Action Button Primary")
 @Composable
-fun PreviewHighLightedCardTitleTextCloseButtonAndButtonPrimary() {
+private fun PreviewHighLightedCardTitleTextCloseButtonAndButtonPrimary() {
     PreviewTheme {
         Column(
             modifier = Modifier
@@ -70,7 +70,7 @@ fun PreviewHighLightedCardTitleTextCloseButtonAndButtonPrimary() {
 
 @Preview(name = "[Inverse] Only Title,Text, Close Button, Action Button Primary")
 @Composable
-fun PreviewInverseHighLightedCardTitleTextCloseButtonAndButtonPrimary() {
+private fun PreviewInverseHighLightedCardTitleTextCloseButtonAndButtonPrimary() {
     PreviewTheme {
         Column(
             modifier = Modifier
@@ -91,7 +91,7 @@ fun PreviewInverseHighLightedCardTitleTextCloseButtonAndButtonPrimary() {
 
 @Preview(name = "Only Title,Text, Close Button, Action Button Secondary")
 @Composable
-fun PreviewHighLightedCardTitleTextCloseButtonAndButtonSecondary() {
+private fun PreviewHighLightedCardTitleTextCloseButtonAndButtonSecondary() {
     PreviewTheme {
         Column(
             modifier = Modifier
@@ -111,7 +111,7 @@ fun PreviewHighLightedCardTitleTextCloseButtonAndButtonSecondary() {
 
 @Preview(name = "Inverse Only Title,Text, Close Button, Action Button Secondary")
 @Composable
-fun PreviewInverseHighLightedCardTitleTextCloseButtonAndButtonSecondary() {
+private fun PreviewInverseHighLightedCardTitleTextCloseButtonAndButtonSecondary() {
     PreviewTheme {
         Column(
             modifier = Modifier
@@ -132,7 +132,7 @@ fun PreviewInverseHighLightedCardTitleTextCloseButtonAndButtonSecondary() {
 
 @Preview(name = "Only Title,Text, Close Button, Action Button Link")
 @Composable
-fun PreviewHighLightedCardTitleTextCloseButtonAndButtonLink() {
+private fun PreviewHighLightedCardTitleTextCloseButtonAndButtonLink() {
     PreviewTheme {
         Column(
             modifier = Modifier
@@ -152,7 +152,7 @@ fun PreviewHighLightedCardTitleTextCloseButtonAndButtonLink() {
 
 @Preview(name = "Only Title,Text, Close Button, Action Button Link")
 @Composable
-fun PreviewInverseHighLightedCardTitleTextCloseButtonAndButtonLink() {
+private fun PreviewInverseHighLightedCardTitleTextCloseButtonAndButtonLink() {
     PreviewTheme {
         Column(
             modifier = Modifier
@@ -173,7 +173,7 @@ fun PreviewInverseHighLightedCardTitleTextCloseButtonAndButtonLink() {
 
 @Preview(name = "Only Title,Text, Close Button, Action Button Link, Image Fit")
 @Composable
-fun PreviewHighLightedCardTitleTextCloseButtonButtonLinkAndImageFit() {
+private fun PreviewHighLightedCardTitleTextCloseButtonButtonLinkAndImageFit() {
     PreviewTheme {
         Column(
             modifier = Modifier
@@ -194,7 +194,7 @@ fun PreviewHighLightedCardTitleTextCloseButtonButtonLinkAndImageFit() {
 
 @Preview(name = "Only Title,Text, Close Button, Action Button Link, Image Fill")
 @Composable
-fun PreviewHighLightedCardTitleTextCloseButtonButtonLinkAndImageFill() {
+private fun PreviewHighLightedCardTitleTextCloseButtonButtonLinkAndImageFill() {
     PreviewTheme {
         Column(
             modifier = Modifier
@@ -215,7 +215,7 @@ fun PreviewHighLightedCardTitleTextCloseButtonButtonLinkAndImageFill() {
 
 @Preview(name = "Only Title,Text, Close Button, Action Button Link, Image Fill, Background")
 @Composable
-fun PreviewHighLightedCardTitleTextCloseButtonButtonLinkAndImageFillBackground() {
+private fun PreviewHighLightedCardTitleTextCloseButtonButtonLinkAndImageFillBackground() {
     PreviewTheme {
         Column(
             modifier = Modifier
