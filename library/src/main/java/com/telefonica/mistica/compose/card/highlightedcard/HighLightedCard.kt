@@ -18,6 +18,7 @@ import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.key
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawBehind
@@ -131,7 +132,7 @@ fun HighLightedCard(
                     .padding(bottom = verticalMargin),
                 inverseDisplay = inverseDisplay,
                 buttonConfig = button,
-                onButtonClick = onButtonClick
+                onButtonClick = onButtonClick,
             )
 
             HighLightCardImage(
@@ -223,16 +224,25 @@ private fun HighLightCardButton(
 ){
     val buttonStyle = buttonConfig.getButtonStyle(inverseDisplay)
 
-    if (buttonStyle != null){
-        Button(
-            modifier = modifier,
-            text = buttonConfig.buttonText,
-            buttonStyle = buttonStyle,
-            onClickListener = onButtonClick
-        )
+    if (buttonStyle != null) {
+        key(buttonStyle) {
+            val isLink = buttonStyle == ButtonStyle.LINK || buttonStyle == ButtonStyle.LINK_INVERSE
+            Button(
+                modifier = modifier,
+                text = if (isLink) applyLinkTextFix(buttonConfig.buttonText) else buttonConfig.buttonText,
+                buttonStyle = buttonStyle,
+                invalidatePaddings = isLink,
+                invalidateMinWidth = isLink,
+                onClickListener = onButtonClick,
+            )
+        }
     }else{
         Spacer(modifier = modifier)
     }
+}
+
+private fun applyLinkTextFix(text: String): String {
+    return text.padEnd(18, ' ')
 }
 
 enum class HighLightCardImageConfig {
@@ -287,4 +297,3 @@ data class HighLightCardCustomBackgroundSettings(
     val withCustomBackground: Boolean
         get() = this.bitmap != null || this.drawableResource != null
 }
-

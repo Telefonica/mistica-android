@@ -356,9 +356,15 @@ class HighlightedCardView @JvmOverloads constructor(
 
         button?.setOnClickListener(buttonClickListener)
         button?.text = buttonText
+
+        if (buttonStyle == BUTTON_STYLE_LINK) {
+            button?.setPadding(0, 0, 0, 0)
+            button?.minimumWidth = 0
+        }
+
         if (this.button != button) {
-            button?.visibility = View.VISIBLE
-            this.button?.visibility = View.GONE
+            button?.visibility = VISIBLE
+            this.button?.visibility = GONE
             this.button = button
         }
     }

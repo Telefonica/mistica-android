@@ -69,6 +69,7 @@ fun Button(
     @DrawableRes icon: Int? = null,
     withChevron: Boolean = false,
     invalidatePaddings: Boolean = false,
+    invalidateMinWidth: Boolean = false,
     onClickListener: () -> Unit,
 ) {
 
@@ -83,7 +84,14 @@ fun Button(
     CompositionLocalProvider(LocalRippleConfiguration provides style.rippleConfiguration) {
         androidx.compose.material.Button(
             modifier = modifier
-                .defaultMinSize(size.minWidth, size.height)
+                .then(
+                    if (invalidateMinWidth)
+                        Modifier
+                            .defaultMinSize(minWidth = 0.dp, minHeight = size.height)
+                    else
+                        Modifier
+                            .defaultMinSize(minWidth = size.minWidth, minHeight = size.height)
+                )
                 .onGloballyPositioned {
                     if (originalWidth == null) {
                         val extraSpace = if (loadingText.isNotEmpty()) {
@@ -95,7 +103,7 @@ fun Button(
                     }
                 }
                 .height(size.height)
-                .applyWidth(originalWidth),
+                .then(if (!invalidateMinWidth) Modifier.applyWidth(originalWidth) else Modifier),
             contentPadding = PaddingValues(horizontal = if (invalidatePaddings) 0.dp else size.horizontalPadding, vertical = 0.dp),
             onClick = onClickListener,
             enabled = enabled,
@@ -238,7 +246,7 @@ enum class ButtonStyle {
 
 @Preview
 @Composable
-fun ButtonPreview(@PreviewParameter(PreviewBooleanProvider::class) enabled: Boolean) {
+private fun ButtonPreview(@PreviewParameter(PreviewBooleanProvider::class) enabled: Boolean) {
     PreviewTheme {
         Button(text = "Text", loadingText = "Loading", enabled = enabled, isLoading = false) {}
     }
@@ -246,7 +254,7 @@ fun ButtonPreview(@PreviewParameter(PreviewBooleanProvider::class) enabled: Bool
 
 @Preview
 @Composable
-fun ProgressButtonNewPreview() {
+private fun ProgressButtonNewPreview() {
     PreviewTheme {
         Button(text = "Text", loadingText = "Loading", isLoading = true) {}
     }
@@ -254,7 +262,7 @@ fun ProgressButtonNewPreview() {
 
 @Preview
 @Composable
-fun ProgressButtonNoTextPreview() {
+private fun ProgressButtonNoTextPreview() {
     PreviewTheme {
         Button(text = "Text", isLoading = true) {}
     }
@@ -262,7 +270,7 @@ fun ProgressButtonNoTextPreview() {
 
 @Preview
 @Composable
-fun ProgressButtonIconPreview() {
+private fun ProgressButtonIconPreview() {
     PreviewTheme {
         Button(text = "Text", icon = R.drawable.icn_creditcard) {}
     }
@@ -270,7 +278,7 @@ fun ProgressButtonIconPreview() {
 
 @Preview
 @Composable
-fun ProgressButtonIconSmallPreview() {
+private fun ProgressButtonIconSmallPreview() {
     PreviewTheme {
         Button(text = "Text", icon = R.drawable.icn_creditcard, buttonStyle = ButtonStyle.PRIMARY_SMALL) {}
     }
@@ -278,7 +286,7 @@ fun ProgressButtonIconSmallPreview() {
 
 @Preview
 @Composable
-fun LinkWithChevronPreview() {
+private fun LinkWithChevronPreview() {
     PreviewTheme {
         Button(
             text = "Text",
@@ -291,12 +299,26 @@ fun LinkWithChevronPreview() {
 
 @Preview
 @Composable
-fun DangerLinkWithChevronPreview() {
+private fun DangerLinkPreview() {
     PreviewTheme {
         Button(
             text = "Text",
             buttonStyle = ButtonStyle.DANGER_LINK,
             onClickListener = {},
+        )
+    }
+}
+
+@Preview
+@Composable
+private fun LinkWithoutPaddingsPreview() {
+    PreviewTheme {
+        Button(
+            text = "Link text",
+            buttonStyle = ButtonStyle.LINK,
+            onClickListener = {},
+            invalidatePaddings = true,
+            invalidateMinWidth = true,
         )
     }
 }
