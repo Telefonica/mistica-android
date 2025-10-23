@@ -31,6 +31,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.heading
+import androidx.compose.ui.semantics.invisibleToUser
 import androidx.compose.ui.semantics.isTraversalGroup
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.traversalIndex
@@ -227,7 +228,9 @@ private fun ListRowItemImp(
                 headline?.let {
                     it.withModifier(
                         Modifier.then(
-                            if (customContentDescription != null) Modifier.clearAndSetSemantics { }
+                            if (customContentDescription != null) Modifier.semantics {
+                                invisibleToUser()
+                            }
                             else Modifier
                                 .semantics { traversalIndex = HEADLINE.index }
                                 .zIndex(HEADLINE.index)
@@ -244,7 +247,9 @@ private fun ListRowItemImp(
                         modifier = Modifier
                             .testTag(ListRowItemTestTags.LIST_ROW_ITEM_TITLE)
                             .then(
-                                if (customContentDescription != null) Modifier.clearAndSetSemantics { }
+                                if (customContentDescription != null) Modifier.semantics {
+                                    invisibleToUser()
+                                }
                                 else Modifier
                                     .semantics {
                                         if (isTitleHeading) heading()
@@ -265,7 +270,9 @@ private fun ListRowItemImp(
                             .padding(vertical = 2.dp)
                             .defaultMinSize(minHeight = 20.dp)
                             .then(
-                                if (customContentDescription != null) Modifier.clearAndSetSemantics { }
+                                if (customContentDescription != null) Modifier.semantics {
+                                    invisibleToUser()
+                                }
                                 else Modifier
                                     .semantics { traversalIndex = SUBTITLE.index }
                                     .zIndex(SUBTITLE.index)
@@ -283,7 +290,9 @@ private fun ListRowItemImp(
                             .padding(vertical = 2.dp)
                             .defaultMinSize(minHeight = 20.dp)
                             .then(
-                                if (customContentDescription != null) Modifier.clearAndSetSemantics { }
+                                if (customContentDescription != null) Modifier.semantics {
+                                    invisibleToUser()
+                                }
                                 else Modifier
                                     .semantics { traversalIndex = DESCRIPTION.index }
                                     .zIndex(DESCRIPTION.index)
@@ -296,7 +305,9 @@ private fun ListRowItemImp(
                     Box(
                         modifier = Modifier
                             .then(
-                                if (customContentDescription?.ignoreBottomSlot == true) Modifier.clearAndSetSemantics { }
+                                if (customContentDescription?.ignoreBottomSlot == true) Modifier.semantics {
+                                    invisibleToUser()
+                                }
                                 else Modifier
                                     .semantics(mergeDescendants = !isRowFocusableGroup) { traversalIndex = BOTTOM.index }
                                     .zIndex(BOTTOM.index)
@@ -323,7 +334,9 @@ private fun ListRowItemImp(
                     modifier = Modifier
                         .align(CenterVertically)
                         .then(
-                            if (customContentDescription?.ignoreTrailingSlot == true) Modifier.clearAndSetSemantics { }
+                            if (customContentDescription?.ignoreTrailingSlot == true) Modifier.semantics {
+                                invisibleToUser()
+                            }
                             else Modifier
                                 .semantics(mergeDescendants = !isRowFocusableGroup) { traversalIndex = TRAILING.index }
                                 .zIndex(TRAILING.index)
