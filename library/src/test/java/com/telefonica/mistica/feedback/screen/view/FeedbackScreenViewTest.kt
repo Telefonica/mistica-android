@@ -50,6 +50,7 @@ internal class FeedbackScreenViewTest(
         rule.scenario.onActivity { activity ->
             val feedbackScreenView: FeedbackScreenView = activity.findViewById(R.id.dummy_activity_feedback)
             feedbackScreenView.apply {
+                setTestMode(true)
                 setFeedbackType(feedbackType)
 
                 // Configure content based on feedback type
