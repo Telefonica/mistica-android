@@ -51,6 +51,12 @@ allprojects {
         version = System.getProperty("LIBRARY_VERSION") ?: "undefined"
     }
 
+    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile).configureEach {
+        compilerOptions {
+            freeCompilerArgs.add("-Xexplicit-api=warning")
+        }
+    }
+
     tasks.withType(io.gitlab.arturbosch.detekt.Detekt).all {
         exclude("build/")
         exclude("**/build/**")
