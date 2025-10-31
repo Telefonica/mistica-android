@@ -80,21 +80,6 @@ internal class FeedbackScreenViewTest(
 
             }
 
-//            feedbackScreenView.layoutParams = ConstraintLayout.LayoutParams(
-//                ConstraintLayout.LayoutParams.MATCH_PARENT,
-//                ConstraintLayout.LayoutParams.MATCH_CONSTRAINT
-//            )
-//            val constraintLayout = ConstraintLayout(activity).apply {
-//                layoutParams = ConstraintLayout.LayoutParams(
-//                    ConstraintLayout.LayoutParams.MATCH_PARENT,
-//                    ConstraintLayout.LayoutParams.MATCH_PARENT
-//                )
-//                addView(feedbackScreenView)
-//            }
-//            wrapper.removeAllViews()
-//            wrapper.addView(constraintLayout)
-//            activity.setContentView(feedbackScreenView)
-
             val typeString = when (feedbackType) {
                 FeedbackScreenView.TYPE_SUCCESS -> "SUCCESS"
                 FeedbackScreenView.TYPE_ERROR -> "ERROR"
