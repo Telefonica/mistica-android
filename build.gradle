@@ -4,7 +4,7 @@ buildscript {
         min_sdk_version = 24
         target_sdk_version = 36
         activity_compose_version = "1.11.0"
-        compose_ui_version = "1.9.0"
+        compose_ui_version = "1.8.0"
         compose_icons_version = "1.7.8"
         kotlin_version = "2.0.21"
         androidx_appcompat_version = "1.7.0"
