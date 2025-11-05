@@ -2,6 +2,7 @@ package com.telefonica.mistica.compose.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.LocalContentColor
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Shapes
 import androidx.compose.material.Typography
@@ -112,6 +113,7 @@ fun MisticaTheme(
         LocalMisticaValues provides values,
         LocalMisticaRadius provides radius,
         LocalMisticaThemeVariant provides themeVariant,
+        LocalContentColor provides MaterialTheme.colors.onSurface
     ) {
         MaterialTheme(
             colors = if (darkTheme) {
