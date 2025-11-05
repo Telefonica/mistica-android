@@ -93,7 +93,7 @@ sealed class ListRowIcon(val contentDescription: String?) {
                     painter = painter,
                     modifier = Modifier.size(24.dp),
                     contentDescription = contentDescription,
-                    tint = tint ?: LocalContentColor.current.copy(alpha = LocalContentAlpha.current),
+                    tint = tint ?: Color.Unspecified.copy(alpha = LocalContentAlpha.current),
                 )
             }
         }
@@ -110,7 +110,7 @@ sealed class ListRowIcon(val contentDescription: String?) {
                 Icon(
                     painter = painter,
                     contentDescription = contentDescription,
-                    tint = tint ?: LocalContentColor.current.copy(alpha = LocalContentAlpha.current),
+                    tint = tint ?: Color.Unspecified.copy(alpha = LocalContentAlpha.current),
                 )
             }
         }
