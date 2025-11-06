@@ -155,6 +155,7 @@ sealed class ListRowIcon(val contentDescription: String?) {
                     .height(dimensions?.height?.dp ?: dimensionResource(id = R.dimen.asset_default_size))
                     .clip(RoundedCornerShape(4.dp)),
                 contentScale = contentScale,
+                alpha = LocalContentAlpha.current
             )
         }
     }
