@@ -1,6 +1,7 @@
 package com.telefonica.mistica.compose.list
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
@@ -8,6 +9,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.ContentAlpha
 import androidx.compose.material.Icon
 import androidx.compose.material.LocalContentColor
 import androidx.compose.runtime.Composable
@@ -104,7 +106,7 @@ sealed class ListRowIcon(val contentDescription: String?) {
                     painter = painter,
                     modifier = Modifier.size(24.dp),
                     contentDescription = contentDescription,
-                    tint = tint ?: LocalContentColor.current.copy(alpha = DEFAULT_ALPHA),                )
+                    tint = tint ?: LocalContentColor.current.copy(alpha = getDefaultAlpha()),                )
             }
         }
     }
@@ -119,7 +121,7 @@ sealed class ListRowIcon(val contentDescription: String?) {
                 Icon(
                     painter = painter,
                     contentDescription = contentDescription,
-                    tint = tint ?: LocalContentColor.current.copy(alpha = DEFAULT_ALPHA),                )
+                    tint = tint ?: LocalContentColor.current.copy(alpha = getDefaultAlpha()),                )
             }
         }
     }
@@ -134,7 +136,7 @@ sealed class ListRowIcon(val contentDescription: String?) {
                     painter = painter,
                     modifier = modifier,
                     contentDescription = contentDescription,
-                    tint = tint ?: LocalContentColor.current.copy(alpha = DEFAULT_ALPHA),
+                    tint = tint ?: LocalContentColor.current.copy(alpha = getDefaultAlpha()),
                 )
             }
         }
@@ -184,7 +186,8 @@ sealed class ListRowIcon(val contentDescription: String?) {
         }
     }
 
-    private companion object {
-        const val DEFAULT_ALPHA = 0.25f
-    }
+    @Composable
+    private fun getDefaultAlpha(): Float =
+        if (isSystemInDarkTheme()) ContentAlpha.medium
+        else ContentAlpha.disabled
 }
