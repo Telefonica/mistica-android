@@ -9,7 +9,7 @@ import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Icon
-import androidx.compose.material.LocalContentAlpha
+import androidx.compose.material.LocalContentColor
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -104,8 +104,7 @@ sealed class ListRowIcon(val contentDescription: String?) {
                     painter = painter,
                     modifier = Modifier.size(24.dp),
                     contentDescription = contentDescription,
-                    tint = tint ?: Color.Unspecified,
-                )
+                    tint = tint ?: LocalContentColor.current.copy(alpha = DEFAULT_ALPHA),                )
             }
         }
     }
@@ -120,8 +119,7 @@ sealed class ListRowIcon(val contentDescription: String?) {
                 Icon(
                     painter = painter,
                     contentDescription = contentDescription,
-                    tint = tint ?: Color.Unspecified,
-                )
+                    tint = tint ?: LocalContentColor.current.copy(alpha = DEFAULT_ALPHA),                )
             }
         }
     }
@@ -136,7 +134,7 @@ sealed class ListRowIcon(val contentDescription: String?) {
                     painter = painter,
                     modifier = modifier,
                     contentDescription = contentDescription,
-                    tint = tint ?: Color.Unspecified,
+                    tint = tint ?: LocalContentColor.current.copy(alpha = DEFAULT_ALPHA),
                 )
             }
         }
@@ -184,5 +182,9 @@ sealed class ListRowIcon(val contentDescription: String?) {
                 contentScale = contentScale,
             )
         }
+    }
+
+    private companion object {
+        const val DEFAULT_ALPHA = 0.25f
     }
 }
