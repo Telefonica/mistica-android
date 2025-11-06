@@ -55,6 +55,10 @@ sealed class ListRowIcon(val contentDescription: String?) {
         val modifier: Modifier = Modifier,
     ) : ListRowIcon(description)
 
+    /**
+     * Use either NormalIcon or CircleIcon for solid colour icons instead of this.
+     * ImageAsset should only be used for multicolour images
+     */
     data class ImageAsset(
         val painter: Painter? = null,
         val dimensions: ImageDimensions? = null,
@@ -155,7 +159,6 @@ sealed class ListRowIcon(val contentDescription: String?) {
                     .height(dimensions?.height?.dp ?: dimensionResource(id = R.dimen.asset_default_size))
                     .clip(RoundedCornerShape(4.dp)),
                 contentScale = contentScale,
-                alpha = LocalContentAlpha.current
             )
         }
     }

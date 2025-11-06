@@ -86,7 +86,7 @@ internal class ListRowItemKtTest : ScreenshotsTest() {
         composeTestRule.setContent {
             TestTheme {
                 ListRowItem(
-                    listRowIcon = ListRowIcon.ImageAsset(
+                    listRowIcon = ListRowIcon.NormalIcon(
                         painter = painterResource(id = R.drawable.placeholder),
                         dimensions = ImageDimensions(width = dimensions.width, height = dimensions.height),
                         modifier = Modifier
