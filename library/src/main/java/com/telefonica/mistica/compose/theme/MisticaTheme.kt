@@ -109,18 +109,6 @@ fun MisticaTheme(
         updateWith(brand.themeVariant)
     }
 
-    val alpha = if (darkTheme) {
-        ContentAlpha.disabled
-    } else {
-        ContentAlpha.high
-    }
-
-    val onSurfaceColor = if (darkTheme) {
-        Color.White
-    } else {
-        Color.Black
-    }
-
     CompositionLocalProvider(
         LocalMisticaColors provides rememberedColors,
         LocalMisticaBrushes provides rememberedBrushes,
@@ -147,6 +135,18 @@ fun MisticaTheme(
                 large = RoundedCornerShape(0.dp),
             )
         ) {
+            val alpha = if (darkTheme) {
+                ContentAlpha.disabled
+            } else {
+                ContentAlpha.high
+            }
+
+            val onSurfaceColor = if (darkTheme) {
+                darkColors().onSurface
+            } else {
+                lightColors().onSurface
+            }
+
             CompositionLocalProvider(
                 LocalMisticaTypography provides typography,
                 LocalMisticaValues provides values,
