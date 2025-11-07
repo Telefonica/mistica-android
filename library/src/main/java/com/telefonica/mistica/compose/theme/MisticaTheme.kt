@@ -2,6 +2,8 @@ package com.telefonica.mistica.compose.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.ContentAlpha
+import androidx.compose.material.LocalContentAlpha
 import androidx.compose.material.LocalContentColor
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Shapes
@@ -13,6 +15,7 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.ReadOnlyComposable
 import androidx.compose.runtime.remember
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.theme.brand.Brand
@@ -106,14 +109,21 @@ fun MisticaTheme(
         updateWith(brand.themeVariant)
     }
 
+    val alpha = if (darkTheme) {
+        ContentAlpha.disabled
+    } else {
+        ContentAlpha.high
+    }
+
+    val onSurfaceColor = if (darkTheme) {
+        Color.White
+    } else {
+        Color.Black
+    }
+
     CompositionLocalProvider(
         LocalMisticaColors provides rememberedColors,
         LocalMisticaBrushes provides rememberedBrushes,
-        LocalMisticaTypography provides typography,
-        LocalMisticaValues provides values,
-        LocalMisticaRadius provides radius,
-        LocalMisticaThemeVariant provides themeVariant,
-        LocalContentColor provides MaterialTheme.colors.onSurface
     ) {
         MaterialTheme(
             colors = if (darkTheme) {
@@ -127,8 +137,7 @@ fun MisticaTheme(
                 secondaryVariant = LocalMisticaColors.current.brand,
                 background = LocalMisticaColors.current.background,
                 error = LocalMisticaColors.current.error,
-
-                ),
+            ),
             typography = Typography(
                 body1 = LocalMisticaTypography.current.preset3
             ),
@@ -138,7 +147,16 @@ fun MisticaTheme(
                 large = RoundedCornerShape(0.dp),
             )
         ) {
-            content()
+            CompositionLocalProvider(
+                LocalMisticaTypography provides typography,
+                LocalMisticaValues provides values,
+                LocalMisticaRadius provides radius,
+                LocalMisticaThemeVariant provides themeVariant,
+                LocalContentColor provides onSurfaceColor,
+                LocalContentAlpha provides alpha,
+            ) {
+                content()
+            }
         }
     }
 }
