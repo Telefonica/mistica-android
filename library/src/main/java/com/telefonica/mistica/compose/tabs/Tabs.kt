@@ -38,8 +38,8 @@ import androidx.compose.ui.composed
 import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.SubcomposeLayout
-import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.platform.LocalWindowInfo
 import androidx.compose.ui.platform.debugInspectorInfo
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
@@ -66,17 +66,15 @@ fun Tabs(
     onSelectedTabChanged: (index: Int) -> Unit,
 ) {
 
-    val configuration = LocalConfiguration.current
+    val containerSize = LocalWindowInfo.current.containerSize
     val density = LocalDensity.current
     val screenWidthDp = with(density) {
         if (android.os.Build.VERSION.SDK_INT >= 35) {
             val windowInsets = WindowInsets.systemBars
-            val insetsWidth = with(density) {
-                windowInsets.getLeft(density, LayoutDirection.Ltr) + windowInsets.getRight(density, LayoutDirection.Ltr)
-            }
-            (configuration.screenWidthDp.dp.toPx() - insetsWidth).toDp()
+            val insetsWidth = windowInsets.getLeft(density, LayoutDirection.Ltr) + windowInsets.getRight(density, LayoutDirection.Ltr)
+            (containerSize.width.dp.toPx() - insetsWidth).toDp()
         } else {
-            configuration.screenWidthDp.dp
+            containerSize.height.dp
         }
     }
     val isTablet = screenWidthDp > 768.dp
