@@ -140,18 +140,12 @@ fun MisticaTheme(
                 ContentAlpha.high
             }
 
-            val onSurfaceColor = if (darkTheme) {
-                darkColors().onSurface
-            } else {
-                lightColors().onSurface
-            }
-
             CompositionLocalProvider(
                 LocalMisticaTypography provides typography,
                 LocalMisticaValues provides values,
                 LocalMisticaRadius provides radius,
                 LocalMisticaThemeVariant provides themeVariant,
-                LocalContentColor provides onSurfaceColor,
+                LocalContentColor provides MaterialTheme.colors.onSurface,
                 LocalContentAlpha provides alpha,
             ) {
                 content()
