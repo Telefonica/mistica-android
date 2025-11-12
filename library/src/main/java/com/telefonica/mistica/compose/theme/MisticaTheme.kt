@@ -145,7 +145,7 @@ fun MisticaTheme(
                 LocalMisticaValues provides values,
                 LocalMisticaRadius provides radius,
                 LocalMisticaThemeVariant provides themeVariant,
-                LocalContentColor provides MaterialTheme.colors.onSurface,
+                LocalContentColor provides MisticaTheme.colors.neutralHigh,
                 LocalContentAlpha provides alpha,
             ) {
                 content()
