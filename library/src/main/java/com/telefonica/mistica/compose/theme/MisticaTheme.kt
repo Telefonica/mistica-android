@@ -109,18 +109,18 @@ fun MisticaTheme(
         updateWith(brand.themeVariant)
     }
 
-    val darkDisplay = when (themeVariant.successFeedbackThemeVariant) {
+    val darkAspect = when (themeVariant.successFeedbackThemeVariant) {
         ThemeVariant.INVERSE -> !darkTheme
         ThemeVariant.DEFAULT -> darkTheme
     }
 
-    val contentColor = if (darkDisplay) {
+    val contentColor = if (darkAspect) {
         Color(0xFF010101)
     } else {
-        Color(0xFF000000)
+        Color.Black
     }
 
-    val contentAlpha = if (darkDisplay) {
+    val contentAlpha = if (darkAspect) {
         ContentAlpha.disabled
     } else {
         ContentAlpha.high
