@@ -4,7 +4,6 @@ import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.ContentAlpha
 import androidx.compose.material.LocalContentAlpha
-import androidx.compose.material.LocalContentColor
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Shapes
 import androidx.compose.material.Typography
@@ -15,6 +14,7 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.ReadOnlyComposable
 import androidx.compose.runtime.remember
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.theme.brand.Brand
@@ -30,6 +30,7 @@ import com.telefonica.mistica.compose.theme.values.LocalMisticaValues
 import com.telefonica.mistica.compose.theme.values.MisticaRadius
 import com.telefonica.mistica.compose.theme.values.MisticaThemeVariant
 import com.telefonica.mistica.compose.theme.values.MisticaValues
+import com.telefonica.mistica.compose.theme.values.ThemeVariant
 
 @Composable
 fun MisticaTheme(
@@ -108,6 +109,23 @@ fun MisticaTheme(
         updateWith(brand.themeVariant)
     }
 
+    val darkDisplay = when (themeVariant.successFeedbackThemeVariant) {
+        ThemeVariant.INVERSE -> !darkTheme
+        ThemeVariant.DEFAULT -> darkTheme
+    }
+
+    val contentColor = if (darkDisplay) {
+        Color(0xFF010101)
+    } else {
+        Color(0xFF000000)
+    }
+
+    val contentAlpha = if (darkDisplay) {
+        ContentAlpha.disabled
+    } else {
+        ContentAlpha.high
+    }
+
     CompositionLocalProvider(
         LocalMisticaColors provides rememberedColors,
         LocalMisticaBrushes provides rememberedBrushes,
@@ -124,6 +142,7 @@ fun MisticaTheme(
                 secondaryVariant = LocalMisticaColors.current.brand,
                 background = LocalMisticaColors.current.background,
                 error = LocalMisticaColors.current.error,
+                onSurface = contentColor
             ),
             typography = Typography(
                 body1 = LocalMisticaTypography.current.preset3
@@ -134,19 +153,12 @@ fun MisticaTheme(
                 large = RoundedCornerShape(0.dp),
             )
         ) {
-            val alpha = if (darkTheme) {
-                ContentAlpha.disabled
-            } else {
-                ContentAlpha.high
-            }
-
             CompositionLocalProvider(
                 LocalMisticaTypography provides typography,
                 LocalMisticaValues provides values,
                 LocalMisticaRadius provides radius,
                 LocalMisticaThemeVariant provides themeVariant,
-                LocalContentColor provides MisticaTheme.colors.neutralHigh,
-                LocalContentAlpha provides alpha,
+                LocalContentAlpha provides contentAlpha,
             ) {
                 content()
             }
