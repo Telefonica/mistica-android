@@ -4,6 +4,7 @@
 	<declare-styleable name="Colors">
 		<attr name="colorBackground" format="color|reference"/>
 		<attr name="colorBackgroundAlternative" format="color|reference"/>
+		<attr name="colorBackgroundNegative" format="color|reference"/>
 		<attr name="colorBackgroundBrandSecondary" format="color|reference"/>
 		<attr name="colorBackgroundContainer" format="color|reference"/>
 		<attr name="colorBackgroundContainerError" format="color|reference"/>
@@ -12,10 +13,14 @@
 		<attr name="colorBackgroundContainerBrandHover" format="color|reference"/>
 		<attr name="colorBackgroundContainerBrandPressed" format="color|reference"/>
 		<attr name="colorBackgroundContainerBrandOverInverse" format="color|reference"/>
+		<attr name="colorBackgroundContainerNegative" format="color|reference"/>
+		<attr name="colorBackgroundContainerBrandOverBrand" format="color|reference"/>
 		<attr name="colorBackgroundContainerAlternative" format="color|reference"/>
 		<attr name="colorBackgroundOverlay" format="color|reference"/>
 		<attr name="colorBackgroundSkeleton" format="color|reference"/>
 		<attr name="colorBackgroundSkeletonInverse" format="color|reference"/>
+		<attr name="colorBackgroundSkeletonNegative" format="color|reference"/>
+		<attr name="colorBackgroundSkeletonBrand" format="color|reference"/>
 		<attr name="colorBackgroundBrandTop" format="color|reference"/>
 		<attr name="colorBackgroundBrandBottom" format="color|reference"/>
 		<attr name="colorAppBarBackground" format="color|reference"/>
@@ -31,47 +36,78 @@
 		<attr name="colorButtonDangerBackgroundPressed" format="color|reference"/>
 		<attr name="colorButtonDangerBackgroundHover" format="color|reference"/>
 		<attr name="colorButtonLinkDangerBackgroundInverse" format="color|reference"/>
+		<attr name="colorButtonLinkDangerBackgroundNegative" format="color|reference"/>
+		<attr name="colorButtonLinkDangerBackgroundBrand" format="color|reference"/>
 		<attr name="colorButtonLinkDangerBackgroundMedia" format="color|reference"/>
 		<attr name="colorButtonLinkDangerBackgroundPressed" format="color|reference"/>
 		<attr name="colorButtonLinkDangerBackgroundInversePressed" format="color|reference"/>
+		<attr name="colorButtonLinkDangerBackgroundNegativePressed" format="color|reference"/>
+		<attr name="colorButtonLinkDangerBackgroundBrandPressed" format="color|reference"/>
 		<attr name="colorButtonLinkDangerBackgroundMediaPressed" format="color|reference"/>
 		<attr name="colorButtonLinkBackgroundPressed" format="color|reference"/>
 		<attr name="colorButtonLinkBackgroundInversePressed" format="color|reference"/>
+		<attr name="colorButtonLinkBackgroundNegativePressed" format="color|reference"/>
+		<attr name="colorButtonLinkBackgroundBrandPressed" format="color|reference"/>
 		<attr name="colorButtonLinkBackgroundMediaPressed" format="color|reference"/>
 		<attr name="colorButtonPrimaryBackground" format="color|reference"/>
 		<attr name="colorButtonPrimaryBackgroundInverse" format="color|reference"/>
+		<attr name="colorButtonPrimaryBackgroundNegative" format="color|reference"/>
+		<attr name="colorButtonPrimaryBackgroundBrand" format="color|reference"/>
 		<attr name="colorButtonPrimaryBackgroundMedia" format="color|reference"/>
 		<attr name="colorButtonPrimaryBackgroundHover" format="color|reference"/>
 		<attr name="colorButtonPrimaryBackgroundInverseHover" format="color|reference"/>
+		<attr name="colorButtonPrimaryBackgroundNegativeHover" format="color|reference"/>
+		<attr name="colorButtonPrimaryBackgroundBrandHover" format="color|reference"/>
 		<attr name="colorButtonPrimaryBackgroundMediaHover" format="color|reference"/>
 		<attr name="colorButtonPrimaryBackgroundPressed" format="color|reference"/>
 		<attr name="colorButtonPrimaryBackgroundInversePressed" format="color|reference"/>
+		<attr name="colorButtonPrimaryBackgroundNegativePressed" format="color|reference"/>
+		<attr name="colorButtonPrimaryBackgroundBrandPressed" format="color|reference"/>
 		<attr name="colorButtonPrimaryBackgroundMediaPressed" format="color|reference"/>
+		<attr name="colorButtonSecondaryBackgroundBrand" format="color|reference"/>
 		<attr name="colorButtonSecondaryBorder" format="color|reference"/>
 		<attr name="colorButtonSecondaryBorderInverse" format="color|reference"/>
+		<attr name="colorButtonSecondaryBorderNegative" format="color|reference"/>
+		<attr name="colorButtonSecondaryBorderBrand" format="color|reference"/>
 		<attr name="colorButtonSecondaryBorderMedia" format="color|reference"/>
 		<attr name="colorButtonSecondaryBorderPressed" format="color|reference"/>
 		<attr name="colorButtonSecondaryBorderInversePressed" format="color|reference"/>
+		<attr name="colorButtonSecondaryBorderNegativePressed" format="color|reference"/>
+		<attr name="colorButtonSecondaryBorderBrandPressed" format="color|reference"/>
 		<attr name="colorButtonSecondaryBorderMediaPressed" format="color|reference"/>
 		<attr name="colorButtonSecondaryBackgroundHover" format="color|reference"/>
 		<attr name="colorButtonSecondaryBackgroundInverseHover" format="color|reference"/>
+		<attr name="colorButtonSecondaryBackgroundNegativeHover" format="color|reference"/>
+		<attr name="colorButtonSecondaryBackgroundBrandHover" format="color|reference"/>
 		<attr name="colorButtonSecondaryBackgroundMediaHover" format="color|reference"/>
 		<attr name="colorButtonSecondaryBackgroundPressed" format="color|reference"/>
 		<attr name="colorButtonSecondaryBackgroundInversePressed" format="color|reference"/>
+		<attr name="colorButtonSecondaryBackgroundNegativePressed" format="color|reference"/>
+		<attr name="colorButtonSecondaryBackgroundBrandPressed" format="color|reference"/>
 		<attr name="colorButtonSecondaryBackgroundMediaPressed" format="color|reference"/>
 		<attr name="colorTextButtonPrimary" format="color|reference"/>
 		<attr name="colorTextButtonPrimaryInverse" format="color|reference"/>
+		<attr name="colorTextButtonPrimaryNegative" format="color|reference"/>
+		<attr name="colorTextButtonPrimaryBrand" format="color|reference"/>
 		<attr name="colorTextButtonPrimaryMedia" format="color|reference"/>
 		<attr name="colorTextButtonPrimaryInversePressed" format="color|reference"/>
+		<attr name="colorTextButtonPrimaryNegativePressed" format="color|reference"/>
+		<attr name="colorTextButtonPrimaryBrandPressed" format="color|reference"/>
 		<attr name="colorTextButtonPrimaryMediaPressed" format="color|reference"/>
 		<attr name="colorTextButtonSecondary" format="color|reference"/>
 		<attr name="colorTextButtonSecondaryInverse" format="color|reference"/>
+		<attr name="colorTextButtonSecondaryNegative" format="color|reference"/>
+		<attr name="colorTextButtonSecondaryBrand" format="color|reference"/>
 		<attr name="colorTextButtonSecondaryMedia" format="color|reference"/>
 		<attr name="colorTextButtonSecondaryPressed" format="color|reference"/>
 		<attr name="colorTextButtonSecondaryInversePressed" format="color|reference"/>
+		<attr name="colorTextButtonSecondaryNegativePressed" format="color|reference"/>
+		<attr name="colorTextButtonSecondaryBrandPressed" format="color|reference"/>
 		<attr name="colorTextButtonSecondaryMediaPressed" format="color|reference"/>
 		<attr name="colorTextLink" format="color|reference"/>
 		<attr name="colorTextLinkInverse" format="color|reference"/>
+		<attr name="colorTextLinkNegative" format="color|reference"/>
+		<attr name="colorTextLinkBrand" format="color|reference"/>
 		<attr name="colorTextLinkMedia" format="color|reference"/>
 		<attr name="colorTextLinkDanger" format="color|reference"/>
 		<attr name="colorTextLinkDangerMedia" format="color|reference"/>
@@ -80,24 +116,42 @@
 		<attr name="colorTextBrand" format="color|reference"/>
 		<attr name="colorInputBorder" format="color|reference"/>
 		<attr name="colorInputBorderInverse" format="color|reference"/>
+		<attr name="colorInputBorderNegative" format="color|reference"/>
+		<attr name="colorInputBorderBrand" format="color|reference"/>
 		<attr name="colorCompletedStep" format="color|reference"/>
 		<attr name="colorCompletedStepInverse" format="color|reference"/>
+		<attr name="colorCompletedStepNegative" format="color|reference"/>
+		<attr name="colorCompletedStepBrand" format="color|reference"/>
 		<attr name="colorControl" format="color|reference"/>
 		<!-- We cannot use colorControlActivated in Android because it overlaps with a framework attribute -->
 		<attr name="colorControlActive" format="color|reference"/>
 		<attr name="colorControlInverse" format="color|reference"/>
+		<attr name="colorControlNegative" format="color|reference"/>
+		<attr name="colorControlBrand" format="color|reference"/>
 		<attr name="colorControlActivatedInverse" format="color|reference"/>
+		<attr name="colorControlActivatedNegative" format="color|reference"/>
+		<attr name="colorControlActivatedBrand" format="color|reference"/>
 		<attr name="colorControlError" format="color|reference"/>
 		<attr name="colorBarTrack" format="color|reference"/>
 		<attr name="colorBarTrackInverse" format="color|reference"/>
+		<attr name="colorBarTrackNegative" format="color|reference"/>
+		<attr name="colorBarTrackBrand" format="color|reference"/>
 		<attr name="colorLoadingBar" format="color|reference"/>
 		<attr name="colorLoadingBarBackground" format="color|reference"/>
 		<attr name="colorToggleAndroidInactive" format="color|reference"/>
 		<attr name="colorToggleAndroidBackgroundActive" format="color|reference"/>
+		<attr name="colorToggleAndroidActiveBrand" format="color|reference"/>
+		<attr name="colorToggleAndroidInactiveBrand" format="color|reference"/>
+		<attr name="colorToggleAndroidBackgroundActiveBrand" format="color|reference"/>
+		<attr name="colorToggleAndroidBackgroundInactiveBrand" format="color|reference"/>
 		<attr name="colorIosControlKnob" format="color|reference"/>
 		<attr name="colorControlKnobInverse" format="color|reference"/>
+		<attr name="colorControlKnobNegative" format="color|reference"/>
+		<attr name="colorControlKnobBrand" format="color|reference"/>
 		<attr name="colorDivider" format="color|reference"/>
 		<attr name="colorDividerInverse" format="color|reference"/>
+		<attr name="colorDividerNegative" format="color|reference"/>
+		<attr name="colorDividerBrand" format="color|reference"/>
 		<attr name="colorNavigationBarDivider" format="color|reference"/>
 		<attr name="colorBadge" format="color|reference"/>
 		<attr name="colorFeedbackErrorBackground" format="color|reference"/>
@@ -105,22 +159,31 @@
 		<attr name="colorBrand" format="color|reference"/>
 		<attr name="colorBrandHigh" format="color|reference"/>
 		<attr name="colorInverse" format="color|reference"/>
+		<attr name="colorNegative" format="color|reference"/>
 		<attr name="colorNeutralHigh" format="color|reference"/>
 		<attr name="colorNeutralMedium" format="color|reference"/>
 		<attr name="colorNeutralMediumInverse" format="color|reference"/>
+		<attr name="colorNeutralMediumNegative" format="color|reference"/>
+		<attr name="colorNeutralMediumBrand" format="color|reference"/>
 		<attr name="colorNeutralLow" format="color|reference"/>
 		<attr name="colorNeutralLowAlternative" format="color|reference"/>
 		<attr name="colorTextPrimary" format="color|reference"/>
 		<attr name="colorTextPrimaryInverse" format="color|reference"/>
+		<attr name="colorTextPrimaryNegative" format="color|reference"/>
+		<attr name="colorTextPrimaryBrand" format="color|reference"/>
 		<attr name="colorTextPrimaryMedia" format="color|reference"/>
 		<attr name="colorTextSecondary" format="color|reference"/>
 		<attr name="colorTextSecondaryInverse" format="color|reference"/>
+		<attr name="colorTextSecondaryNegative" format="color|reference"/>
+		<attr name="colorTextSecondaryBrand" format="color|reference"/>
 		<attr name="colorTextSecondaryMedia" format="color|reference"/>
 		<attr name="colorSuccess" format="color|reference"/>
 		<attr name="colorWarning" format="color|reference"/>
 		<attr name="colorError" format="color|reference"/>
 		<attr name="colorTextError" format="color|reference"/>
 		<attr name="colorTextErrorInverse" format="color|reference"/>
+		<attr name="colorTextErrorNegative" format="color|reference"/>
+		<attr name="colorTextErrorBrand" format="color|reference"/>
 		<attr name="colorPromo" format="color|reference"/>
 		<attr name="colorHighlight" format="color|reference"/>
 		<attr name="colorSuccessLow" format="color|reference"/>
@@ -133,9 +196,17 @@
 		<attr name="colorErrorHigh" format="color|reference"/>
 		<attr name="colorPromoHigh" format="color|reference"/>
 		<attr name="colorSuccessHighInverse" format="color|reference"/>
+		<attr name="colorSuccessHighNegative" format="color|reference"/>
+		<attr name="colorSuccessHighBrand" format="color|reference"/>
 		<attr name="colorWarningHighInverse" format="color|reference"/>
+		<attr name="colorWarningHighNegative" format="color|reference"/>
+		<attr name="colorWarningHighBrand" format="color|reference"/>
 		<attr name="colorErrorHighInverse" format="color|reference"/>
+		<attr name="colorErrorHighNegative" format="color|reference"/>
+		<attr name="colorErrorHighBrand" format="color|reference"/>
 		<attr name="colorPromoHighInverse" format="color|reference"/>
+		<attr name="colorPromoHighNegative" format="color|reference"/>
+		<attr name="colorPromoHighBrand" format="color|reference"/>
 		<attr name="colorTextNavigationBarPrimary" format="color|reference"/>
 		<attr name="colorTextNavigationBarSecondary" format="color|reference"/>
 		<attr name="colorTextNavigationSearchBarHint" format="color|reference"/>
@@ -158,19 +229,47 @@
 		<attr name="colorTagBackgroundWarning" format="color|reference"/>
 		<attr name="colorTagBackgroundError" format="color|reference"/>
 		<attr name="colorTagTextPromoInverse" format="color|reference"/>
+		<attr name="colorTagTextPromoNegative" format="color|reference"/>
+		<attr name="colorTagTextPromoBrand" format="color|reference"/>
 		<attr name="colorTagTextActiveInverse" format="color|reference"/>
+		<attr name="colorTagTextActiveNegative" format="color|reference"/>
+		<attr name="colorTagTextActiveBrand" format="color|reference"/>
 		<attr name="colorTagTextInactiveInverse" format="color|reference"/>
+		<attr name="colorTagTextInactiveNegative" format="color|reference"/>
+		<attr name="colorTagTextInactiveBrand" format="color|reference"/>
 		<attr name="colorTagTextInfoInverse" format="color|reference"/>
+		<attr name="colorTagTextInfoNegative" format="color|reference"/>
+		<attr name="colorTagTextInfoBrand" format="color|reference"/>
 		<attr name="colorTagTextSuccessInverse" format="color|reference"/>
+		<attr name="colorTagTextSuccessNegative" format="color|reference"/>
+		<attr name="colorTagTextSuccessBrand" format="color|reference"/>
 		<attr name="colorTagTextWarningInverse" format="color|reference"/>
+		<attr name="colorTagTextWarningNegative" format="color|reference"/>
+		<attr name="colorTagTextWarningBrand" format="color|reference"/>
 		<attr name="colorTagTextErrorInverse" format="color|reference"/>
+		<attr name="colorTagTextErrorNegative" format="color|reference"/>
+		<attr name="colorTagTextErrorBrand" format="color|reference"/>
 		<attr name="colorTagBackgroundPromoInverse" format="color|reference"/>
+		<attr name="colorTagBackgroundPromoNegative" format="color|reference"/>
+		<attr name="colorTagBackgroundPromoBrand" format="color|reference"/>
 		<attr name="colorTagBackgroundActiveInverse" format="color|reference"/>
+		<attr name="colorTagBackgroundActiveNegative" format="color|reference"/>
+		<attr name="colorTagBackgroundActiveBrand" format="color|reference"/>
 		<attr name="colorTagBackgroundInactiveInverse" format="color|reference"/>
+		<attr name="colorTagBackgroundInactiveNegative" format="color|reference"/>
+		<attr name="colorTagBackgroundInactiveBrand" format="color|reference"/>
 		<attr name="colorTagBackgroundInfoInverse" format="color|reference"/>
+		<attr name="colorTagBackgroundInfoNegative" format="color|reference"/>
+		<attr name="colorTagBackgroundInfoBrand" format="color|reference"/>
 		<attr name="colorTagBackgroundSuccessInverse" format="color|reference"/>
+		<attr name="colorTagBackgroundSuccessNegative" format="color|reference"/>
+		<attr name="colorTagBackgroundSuccessBrand" format="color|reference"/>
 		<attr name="colorTagBackgroundWarningInverse" format="color|reference"/>
+		<attr name="colorTagBackgroundWarningNegative" format="color|reference"/>
+		<attr name="colorTagBackgroundWarningBrand" format="color|reference"/>
 		<attr name="colorTagBackgroundErrorInverse" format="color|reference"/>
+		<attr name="colorTagBackgroundErrorNegative" format="color|reference"/>
+		<attr name="colorTagBackgroundErrorBrand" format="color|reference"/>
 		<attr name="colorCardFooterOverlay" format="color|reference"/>
 	</declare-styleable>
 	<declare-styleable name="Drawables">
