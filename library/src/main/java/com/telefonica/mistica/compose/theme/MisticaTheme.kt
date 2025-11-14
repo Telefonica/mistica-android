@@ -2,9 +2,6 @@ package com.telefonica.mistica.compose.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.ContentAlpha
-import androidx.compose.material.LocalContentAlpha
-import androidx.compose.material.LocalContentColor
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Shapes
 import androidx.compose.material.Typography
@@ -40,6 +37,7 @@ fun MisticaTheme(
     content: @Composable () -> Unit,
 ) {
     val context = LocalContext.current
+
     LaunchedEffect(key1 = brand) {
         context.setTheme(brand.compatibilityTheme)
     }
@@ -114,17 +112,7 @@ fun MisticaTheme(
     (themeVariant.successFeedbackThemeVariant == ThemeVariant.DEFAULT && darkTheme) ||
             (themeVariant.successFeedbackThemeVariant == ThemeVariant.INVERSE && !darkTheme)
 
-    val contentColor = if (darkAspect) {
-        Color(-1)
-    } else {
-        Color(-16777216)
-    }
-
-    val contentAlpha = if (darkAspect) {
-        0.87f
-    } else {
-        0.2f
-    }
+    val onSurfaceColor = Color(0xFF41484C)
 
     MaterialTheme(
         colors = if (darkTheme) {
@@ -138,6 +126,7 @@ fun MisticaTheme(
             secondaryVariant = rememberedColors.brand,
             background = rememberedColors.background,
             error = rememberedColors.error,
+            onSurface = onSurfaceColor,
         ),
         typography = Typography(
             body1 = typography.preset3
@@ -155,8 +144,6 @@ fun MisticaTheme(
             LocalMisticaValues provides values,
             LocalMisticaRadius provides radius,
             LocalMisticaThemeVariant provides themeVariant,
-            LocalContentAlpha provides contentAlpha,
-            LocalContentColor provides contentColor,
         ) {
             content()
         }
