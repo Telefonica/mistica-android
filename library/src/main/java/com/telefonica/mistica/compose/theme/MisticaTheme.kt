@@ -4,6 +4,7 @@ import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.ContentAlpha
 import androidx.compose.material.LocalContentAlpha
+import androidx.compose.material.LocalContentColor
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Shapes
 import androidx.compose.material.Typography
@@ -109,59 +110,55 @@ fun MisticaTheme(
         updateWith(brand.themeVariant)
     }
 
-    val darkAspect = when (themeVariant.successFeedbackThemeVariant) {
-        ThemeVariant.INVERSE -> !darkTheme
-        ThemeVariant.DEFAULT -> darkTheme
-    }
+    val darkAspect =
+    (themeVariant.successFeedbackThemeVariant == ThemeVariant.DEFAULT && darkTheme) ||
+            (themeVariant.successFeedbackThemeVariant == ThemeVariant.INVERSE && !darkTheme)
 
     val contentColor = if (darkAspect) {
-        Color(0xFF010101)
+        Color(-1)
     } else {
-        Color.Black
+        Color(-16777216)
     }
 
     val contentAlpha = if (darkAspect) {
-        ContentAlpha.disabled
+        0.87f
     } else {
-        ContentAlpha.high
+        0.2f
     }
 
-    CompositionLocalProvider(
-        LocalMisticaColors provides rememberedColors,
-        LocalMisticaBrushes provides rememberedBrushes,
+    MaterialTheme(
+        colors = if (darkTheme) {
+            darkColors()
+        } else {
+            lightColors()
+        }.copy(
+            primary = rememberedColors.brand,
+            primaryVariant = rememberedColors.brand,
+            secondary = rememberedColors.brand,
+            secondaryVariant = rememberedColors.brand,
+            background = rememberedColors.background,
+            error = rememberedColors.error,
+        ),
+        typography = Typography(
+            body1 = typography.preset3
+        ),
+        shapes = Shapes(
+            small = RoundedCornerShape(4.dp),
+            medium = RoundedCornerShape(4.dp),
+            large = RoundedCornerShape(0.dp),
+        )
     ) {
-        MaterialTheme(
-            colors = if (darkTheme) {
-                darkColors()
-            } else {
-                lightColors()
-            }.copy(
-                primary = LocalMisticaColors.current.brand,
-                primaryVariant = LocalMisticaColors.current.brand,
-                secondary = LocalMisticaColors.current.brand,
-                secondaryVariant = LocalMisticaColors.current.brand,
-                background = LocalMisticaColors.current.background,
-                error = LocalMisticaColors.current.error,
-                onSurface = contentColor
-            ),
-            typography = Typography(
-                body1 = LocalMisticaTypography.current.preset3
-            ),
-            shapes = Shapes(
-                small = RoundedCornerShape(4.dp),
-                medium = RoundedCornerShape(4.dp),
-                large = RoundedCornerShape(0.dp),
-            )
+        CompositionLocalProvider(
+            LocalMisticaColors provides rememberedColors,
+            LocalMisticaBrushes provides rememberedBrushes,
+            LocalMisticaTypography provides typography,
+            LocalMisticaValues provides values,
+            LocalMisticaRadius provides radius,
+            LocalMisticaThemeVariant provides themeVariant,
+            LocalContentAlpha provides contentAlpha,
+            LocalContentColor provides contentColor,
         ) {
-            CompositionLocalProvider(
-                LocalMisticaTypography provides typography,
-                LocalMisticaValues provides values,
-                LocalMisticaRadius provides radius,
-                LocalMisticaThemeVariant provides themeVariant,
-                LocalContentAlpha provides contentAlpha,
-            ) {
-                content()
-            }
+            content()
         }
     }
 }
