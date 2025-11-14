@@ -27,7 +27,6 @@ import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.IntSize
@@ -37,6 +36,7 @@ import androidx.constraintlayout.compose.Dimension
 import com.telefonica.mistica.compose.button.Button
 import com.telefonica.mistica.compose.button.ButtonStyle
 import com.telefonica.mistica.compose.theme.MisticaTheme
+import androidx.compose.ui.platform.LocalResources
 
 @Composable
 fun HighLightedCard(
@@ -52,7 +52,7 @@ fun HighLightedCard(
     onButtonClick: () -> Unit = {}
 ){
     val verticalMargin = 24.dp
-    val resources = LocalContext.current.resources
+    val resources = LocalResources.current
     androidx.compose.material.Card(
         modifier = modifier
             .defaultMinSize(minHeight = 100.dp),
