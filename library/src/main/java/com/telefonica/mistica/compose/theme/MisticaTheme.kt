@@ -28,7 +28,6 @@ import com.telefonica.mistica.compose.theme.values.LocalMisticaValues
 import com.telefonica.mistica.compose.theme.values.MisticaRadius
 import com.telefonica.mistica.compose.theme.values.MisticaThemeVariant
 import com.telefonica.mistica.compose.theme.values.MisticaValues
-import com.telefonica.mistica.compose.theme.values.ThemeVariant
 
 @Composable
 fun MisticaTheme(
@@ -108,12 +107,6 @@ fun MisticaTheme(
         updateWith(brand.themeVariant)
     }
 
-    val darkAspect =
-    (themeVariant.successFeedbackThemeVariant == ThemeVariant.DEFAULT && darkTheme) ||
-            (themeVariant.successFeedbackThemeVariant == ThemeVariant.INVERSE && !darkTheme)
-
-    val onSurfaceColor = Color(0xFF41484C)
-
     MaterialTheme(
         colors = if (darkTheme) {
             darkColors()
@@ -126,7 +119,7 @@ fun MisticaTheme(
             secondaryVariant = rememberedColors.brand,
             background = rememberedColors.background,
             error = rememberedColors.error,
-            onSurface = onSurfaceColor,
+            onSurface = MisticaTheme.onSurfaceColor,
         ),
         typography = Typography(
             body1 = typography.preset3
@@ -181,4 +174,6 @@ object MisticaTheme {
         @Composable
         @ReadOnlyComposable
         get() = LocalMisticaThemeVariant.current
+
+    internal val onSurfaceColor: Color = Color(0xFF41484C)
 }
