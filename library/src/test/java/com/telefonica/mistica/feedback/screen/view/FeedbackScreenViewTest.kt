@@ -110,8 +110,8 @@ internal class FeedbackScreenViewTest(
             val allBrands = getAllBrands()
             val feedbackTypes = listOf(
                 FeedbackScreenView.TYPE_SUCCESS,
-//                FeedbackScreenView.TYPE_ERROR,
-//                FeedbackScreenView.TYPE_INFO
+                FeedbackScreenView.TYPE_ERROR,
+                FeedbackScreenView.TYPE_INFO
             )
 
             return allBrands.flatMap { brand ->
