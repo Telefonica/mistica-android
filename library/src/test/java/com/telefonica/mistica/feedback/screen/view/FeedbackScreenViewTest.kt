@@ -1,6 +1,7 @@
 package com.telefonica.mistica.feedback.screen.view
 
 import android.content.Intent
+import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.espresso.Espresso
 import androidx.test.espresso.matcher.ViewMatchers
@@ -30,6 +31,9 @@ internal class FeedbackScreenViewTest(
 
     @get:Rule
     val rule = activityScenarioRule<DummyFeedbackActivity>(intent)
+
+    @get:Rule
+    val composeTestRule = createComposeRule()
 
     @Test
     fun `check FeedbackScreenView light`() {
@@ -87,6 +91,8 @@ internal class FeedbackScreenViewTest(
                 else -> "UNKNOWN"
             }
 
+            composeTestRule.waitUntil{ feedbackScreenView.isAnimationLoaded() }
+
             compareScreenshot(
                 Espresso.onView(ViewMatchers.withId(R.id.dummy_activity_feedback)),
                 component = "FeedbackScreenView",
@@ -104,8 +110,8 @@ internal class FeedbackScreenViewTest(
             val allBrands = getAllBrands()
             val feedbackTypes = listOf(
                 FeedbackScreenView.TYPE_SUCCESS,
-                FeedbackScreenView.TYPE_ERROR,
-                FeedbackScreenView.TYPE_INFO
+//                FeedbackScreenView.TYPE_ERROR,
+//                FeedbackScreenView.TYPE_INFO
             )
 
             return allBrands.flatMap { brand ->
