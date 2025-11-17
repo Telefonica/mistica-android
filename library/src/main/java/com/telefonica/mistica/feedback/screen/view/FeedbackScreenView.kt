@@ -64,7 +64,6 @@ class FeedbackScreenView : ConstraintLayout {
     private var subtitleText: CharSequence = ""
     private var errorReferenceText: CharSequence = ""
     private var isLoading: Boolean = false
-    private var isAnimationLoaded: Boolean = false
 
     @LayoutRes
     private var customContentLayout: Int? = null
@@ -107,9 +106,6 @@ class FeedbackScreenView : ConstraintLayout {
         this.type = type
         configureView()
     }
-
-    fun isAnimationLoaded(): Boolean =
-        isAnimationLoaded
 
     @FeedbackType
     fun getFeedbackType(): Int = this.type
@@ -274,7 +270,6 @@ class FeedbackScreenView : ConstraintLayout {
     }
 
     private fun configureIcon() {
-        isAnimationLoaded = false
         when (type) {
             TYPE_SUCCESS -> configureIcon(
                 animationAttr = R.attr.feedbackScreenSuccessAnimation,
@@ -318,10 +313,6 @@ class FeedbackScreenView : ConstraintLayout {
     ) {
         when {
             animationResource != null -> {
-                icon.addLottieOnCompositionLoadedListener {
-                    isAnimationLoaded = true
-                }
-
                 icon.setAnimation(animationResource)
                 icon.addValueCallback(
                     KeyPath("**"),
@@ -344,13 +335,9 @@ class FeedbackScreenView : ConstraintLayout {
                 DrawableCompat.setTint(drawable, context.getThemeColor(colorAttr))
                 icon.setImageDrawable(drawable)
                 icon.visibility = View.VISIBLE
-                isAnimationLoaded = true
             }
 
-            else -> {
-                isAnimationLoaded = true
-                icon.visibility = View.GONE
-            }
+            else -> icon.visibility = View.GONE
         }
         isIconAnimated = animationResource != null
     }
