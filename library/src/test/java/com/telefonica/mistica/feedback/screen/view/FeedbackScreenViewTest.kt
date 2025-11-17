@@ -87,6 +87,8 @@ internal class FeedbackScreenViewTest(
                 else -> "UNKNOWN"
             }
 
+            Thread.sleep(1000)
+
             compareScreenshot(
                 Espresso.onView(ViewMatchers.withId(R.id.dummy_activity_feedback)),
                 component = "FeedbackScreenView",
