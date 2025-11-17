@@ -1,5 +1,6 @@
 package com.telefonica.mistica.compose.badge
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.BadgedBox
@@ -12,6 +13,7 @@ import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.R
 import com.telefonica.mistica.testutils.ScreenshotsTest
 import com.telefonica.mistica.testutils.TestTheme
+import com.telefonica.mistica.testutils.TestUtils
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -46,7 +48,11 @@ class BadgeTest : ScreenshotsTest() {
     private fun `when some badge`(value: String) {
         composeTestRule.setContent {
             TestTheme {
-                Box(modifier = Modifier.padding(24.dp)) {
+                Box(
+                    modifier = Modifier
+                        .background(TestUtils.DEFAULT_BACKGROUND_COLOR)
+                        .padding(24.dp)
+                ) {
                     BadgedBox(
                         badge = {
                             Badge(

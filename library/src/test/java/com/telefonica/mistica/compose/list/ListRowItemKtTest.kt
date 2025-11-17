@@ -88,7 +88,7 @@ internal class ListRowItemKtTest : ScreenshotsTest() {
         composeTestRule.setContent {
             TestTheme {
                 ListRowItem(
-                    listRowIcon = ListRowIcon.ResizableIcon(
+                    listRowIcon = ListRowIcon.ImageAsset(
                         painter = painterResource(id = R.drawable.placeholder),
                         modifier = Modifier
                             .size(

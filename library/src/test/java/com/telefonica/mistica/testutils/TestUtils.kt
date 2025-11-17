@@ -1,6 +1,7 @@
 package com.telefonica.mistica.testutils
 
 import androidx.annotation.StyleRes
+import androidx.compose.ui.graphics.Color
 import com.telefonica.mistica.R
 import com.telefonica.mistica.compose.button.ButtonStyle
 import com.telefonica.mistica.compose.theme.brand.BlauBrand
@@ -62,4 +63,6 @@ object TestUtils {
         MovistarNewBrand -> R.style.MisticaTheme_MovistarNew
         else -> error("No tests defined for brand $this")
     }
+
+    public val DEFAULT_BACKGROUND_COLOR: Color = Color(0xFFf0f0f3)
 }
