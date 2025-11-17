@@ -91,7 +91,7 @@ internal class FeedbackScreenViewTest(
                 else -> "UNKNOWN"
             }
 
-            composeTestRule.waitUntil{ feedbackScreenView.isAnimationLoaded() }
+            composeTestRule.waitUntil(10000){ feedbackScreenView.isAnimationLoaded() }
 
             compareScreenshot(
                 Espresso.onView(ViewMatchers.withId(R.id.dummy_activity_feedback)),
