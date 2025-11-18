@@ -48,12 +48,9 @@ class ListRowItemTest(
                             isBadgeVisible = true,
                             badge = "1",
                             onClick = {},
-                            listRowIcon = ListRowIcon.ResizableIcon(
+                            listRowIcon = ListRowIcon.ImageAsset(
                                 painter = painterResource(id = android.R.drawable.ic_lock_power_off),
-                                modifier = Modifier.size(
-                                    width = dimensions.width.dp,
-                                    height = dimensions.height.dp
-                                ),
+                                dimensions = dimensions
                             ),
                         )
                 }
