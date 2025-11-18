@@ -3,7 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'maven-publish'
-    id 'io.github.takahirom.roborazzi'
+    alias libs.plugins.roborazzi
     id 'org.jetbrains.kotlin.plugin.compose'
 }
 
@@ -93,7 +93,7 @@ dependencies {
     implementation "io.coil-kt:coil-svg:$coil_version"
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'com.airbnb.android:lottie:6.5.0'
+    implementation 'com.airbnb.android:lottie:6.7.1'
 
     implementation "com.github.skydoves:balloon-compose:1.5.3"
 
@@ -103,8 +103,8 @@ dependencies {
     testImplementation "androidx.compose.ui:ui-test-junit4:$compose_ui_version"
     testImplementation "androidx.compose.ui:ui-test-manifest:$compose_ui_version"
     testImplementation 'org.robolectric:robolectric:4.15.1'
-    testImplementation "io.github.takahirom.roborazzi:roborazzi:$roborazzi_version"
-    testImplementation "io.github.takahirom.roborazzi:roborazzi-compose:$roborazzi_version"
+    testImplementation libs.roborazzi
+    testImplementation libs.roborazzi.compose
     testImplementation "org.mockito.kotlin:mockito-kotlin:4.0.0"
     testImplementation "androidx.test:rules:1.5.0"
     testImplementation "androidx.test:core-ktx:1.5.0"
