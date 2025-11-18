@@ -45,11 +45,13 @@
 	<color name="tu_color_grey9_8_alpha">#14031A34</color>
 	<color name="tu_color_grey9_20_alpha">#33031A34</color>
 	<color name="tu_color_grey9_40_alpha">#66031A34</color>
+	<color name="tu_color_grey1_20_alpha">#33F2F4FF</color>
 	<color name="tu_color_primary_80_alpha">#CC2B3447</color>
 	<color name="tu_color_grey9_25_alpha">#40031A34</color>
 	<color name="tu_color_grey9_35_alpha">#59031A34</color>
 	<color name="tu_color_white_8_alpha">#14FFFFFF</color>
 	<color name="tu_color_white_80_alpha">#CCFFFFFF</color>
+	<color name="tu_color_white_0_alpha">#00FFFFFF</color>
 	<color name="tu_color_white_10_alpha">#1AFFFFFF</color>
 	<color name="tu_color_white_36_alpha">#5CFFFFFF</color>
 	<color name="tu_color_white_20_alpha">#33FFFFFF</color>
@@ -61,6 +63,5 @@
 	<color name="tu_color_darkModeGrey_80_alpha">#CC202735</color>
 	<color name="tu_color_darkModeBlack_25_alpha">#40161A24</color>
 	<color name="tu_color_darkModeBlack_35_alpha">#59161A24</color>
-	<color name="tu_color_white_0_alpha">#00FFFFFF</color>
 	<color name="tu_color_grey2_15_alpha">#26D1D5E4</color>
 </resources>
