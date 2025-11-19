@@ -1,12 +1,9 @@
 package com.telefonica.mistica.compose.list
 
-import androidx.compose.foundation.layout.size
 import androidx.compose.material.Surface
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onRoot
-import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.compose.theme.MisticaTheme
 import com.telefonica.mistica.compose.theme.brand.Brand
 import com.telefonica.mistica.list.model.ImageDimensions
@@ -48,12 +45,9 @@ class ListRowItemTest(
                             isBadgeVisible = true,
                             badge = "1",
                             onClick = {},
-                            listRowIcon = ListRowIcon.ResizableIcon(
+                            listRowIcon = ListRowIcon.ImageAsset(
                                 painter = painterResource(id = android.R.drawable.ic_lock_power_off),
-                                modifier = Modifier.size(
-                                    width = dimensions.width.dp,
-                                    height = dimensions.height.dp
-                                ),
+                                dimensions = dimensions,
                             ),
                         )
                 }

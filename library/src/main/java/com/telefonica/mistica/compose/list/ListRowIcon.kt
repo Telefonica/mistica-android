@@ -41,13 +41,6 @@ sealed class ListRowIcon(val contentDescription: String?) {
         val tint: Color? = null,
     ) : ListRowIcon(description)
 
-    data class ResizableIcon(
-        val painter: Painter? = null,
-        private val description: String? = null,
-        val modifier: Modifier = Modifier,
-        val tint: Color? = null,
-    ) : ListRowIcon(description)
-
     data class SmallAsset(
         val painter: Painter? = null,
         private val description: String? = null,
@@ -62,10 +55,6 @@ sealed class ListRowIcon(val contentDescription: String?) {
         val modifier: Modifier = Modifier,
     ) : ListRowIcon(description)
 
-    /**
-     * Use either ResizableIcon for solid colour icons instead of this.
-     * ImageAsset should only be used for multicolour images
-     */
     data class ImageAsset(
         val painter: Painter? = null,
         val dimensions: ImageDimensions? = null,
@@ -85,7 +74,6 @@ sealed class ListRowIcon(val contentDescription: String?) {
         when (this) {
             is NormalIcon -> DrawNormalIcon()
             is CircleIcon -> DrawCircleIcon()
-            is ResizableIcon -> DrawResizableIcon()
             is SmallAsset -> DrawSmallAsset()
             is LargeAsset -> DrawLargeAsset()
             is ImageAsset -> DrawImageAsset()
@@ -119,22 +107,6 @@ sealed class ListRowIcon(val contentDescription: String?) {
            painter?.let {
                 Icon(
                     painter = painter,
-                    contentDescription = contentDescription,
-                    tint = tint ?: MaterialTheme.colors.onSurface,
-                )
-            }
-        }
-    }
-
-    @Composable
-    private fun ResizableIcon.DrawResizableIcon() {
-        Box(
-            modifier = Modifier.wrapContentSize(align = Alignment.Center),
-        ) {
-            painter?.let {
-                Icon(
-                    painter = painter,
-                    modifier = modifier,
                     contentDescription = contentDescription,
                     tint = tint ?: MaterialTheme.colors.onSurface,
                 )
