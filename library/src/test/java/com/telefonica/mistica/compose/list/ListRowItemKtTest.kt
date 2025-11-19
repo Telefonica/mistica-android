@@ -1,7 +1,6 @@
 package com.telefonica.mistica.compose.list
 
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.size
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
@@ -12,7 +11,6 @@ import androidx.compose.ui.test.isHeading
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onRoot
 import androidx.compose.ui.test.performClick
-import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.R
 import com.telefonica.mistica.compose.shape.Chevron
 import com.telefonica.mistica.compose.tag.Tag
@@ -90,11 +88,8 @@ internal class ListRowItemKtTest : ScreenshotsTest() {
                 ListRowItem(
                     listRowIcon = ListRowIcon.ImageAsset(
                         painter = painterResource(id = R.drawable.placeholder),
+                        dimensions = ImageDimensions(width = dimensions.width, height = dimensions.height),
                         modifier = Modifier
-                            .size(
-                                width = dimensions.width.dp,
-                                height = dimensions.height.dp
-                            )
                             .testTag(LIST_ROW_ITEM_ASSET_TAG)
                             .clickable { onAssetClick() },
                     ),
