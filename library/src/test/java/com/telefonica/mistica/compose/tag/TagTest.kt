@@ -1,6 +1,5 @@
 package com.telefonica.mistica.compose.tag
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
@@ -45,9 +44,7 @@ internal class TagTest(
             MisticaTheme(brand = brand) {
                 LazyVerticalGrid(
                     columns = GridCells.Fixed(3),
-                    modifier = Modifier
-                        .background(TestUtils.DEFAULT_BACKGROUND_COLOR)
-                        .padding(16.dp)
+                    modifier = Modifier.padding(16.dp)
                 ) {
                     buttons.forEach {
                         item {

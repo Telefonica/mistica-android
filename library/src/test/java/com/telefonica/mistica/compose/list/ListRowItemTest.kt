@@ -46,8 +46,8 @@ class ListRowItemTest(
                             badge = "1",
                             onClick = {},
                             listRowIcon = ListRowIcon.ImageAsset(
-                                painter = painterResource(id = android.R.drawable.ic_lock_power_off),
-                                dimensions = dimensions,
+                                painterResource(id = android.R.drawable.ic_lock_power_off),
+                                dimensions = ImageDimensions(width = dimensions.width, height = dimensions.height),
                             ),
                         )
                 }
