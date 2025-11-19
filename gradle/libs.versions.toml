@@ -1,5 +1,5 @@
 [versions]
-android-gradle-plugin = "8.11.1"
+android-gradle-plugin = "8.13.0"
 roborazzi = "1.51.0"
 
 [libraries]
