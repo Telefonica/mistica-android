@@ -34,7 +34,6 @@ android {
 
 dependencies {
     implementation project(':library')
-
     implementation "androidx.compose.runtime:runtime:$compose_ui_version"
 
     implementation "androidx.core:core-ktx:$androidx_core_version"

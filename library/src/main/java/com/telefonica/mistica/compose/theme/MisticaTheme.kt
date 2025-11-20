@@ -106,36 +106,36 @@ fun MisticaTheme(
         updateWith(brand.themeVariant)
     }
 
-    MaterialTheme(
-        colors = if (darkTheme) {
-            darkColors()
-        } else {
-            lightColors()
-        }.copy(
-            primary = rememberedColors.brand,
-            primaryVariant = rememberedColors.brand,
-            secondary = rememberedColors.brand,
-            secondaryVariant = rememberedColors.brand,
-            background = rememberedColors.background,
-            error = rememberedColors.error,
-            onSurface = MisticaTheme.onSurfaceColor,
-        ),
-        typography = Typography(
-            body1 = typography.preset3
-        ),
-        shapes = Shapes(
-            small = RoundedCornerShape(4.dp),
-            medium = RoundedCornerShape(4.dp),
-            large = RoundedCornerShape(0.dp),
-        )
+    CompositionLocalProvider(
+        LocalMisticaColors provides rememberedColors,
+        LocalMisticaBrushes provides rememberedBrushes,
+        LocalMisticaTypography provides typography,
+        LocalMisticaValues provides values,
+        LocalMisticaRadius provides radius,
+        LocalMisticaThemeVariant provides themeVariant,
     ) {
-        CompositionLocalProvider(
-            LocalMisticaColors provides rememberedColors,
-            LocalMisticaBrushes provides rememberedBrushes,
-            LocalMisticaTypography provides typography,
-            LocalMisticaValues provides values,
-            LocalMisticaRadius provides radius,
-            LocalMisticaThemeVariant provides themeVariant,
+        MaterialTheme(
+            colors = if (darkTheme) {
+                darkColors()
+            } else {
+                lightColors()
+            }.copy(
+                primary = LocalMisticaColors.current.brand,
+                primaryVariant = LocalMisticaColors.current.brand,
+                secondary = LocalMisticaColors.current.brand,
+                secondaryVariant = LocalMisticaColors.current.brand,
+                background = LocalMisticaColors.current.background,
+                error = LocalMisticaColors.current.error,
+
+                ),
+            typography = Typography(
+                body1 = LocalMisticaTypography.current.preset3
+            ),
+            shapes = Shapes(
+                small = RoundedCornerShape(4.dp),
+                medium = RoundedCornerShape(4.dp),
+                large = RoundedCornerShape(0.dp),
+            )
         ) {
             content()
         }

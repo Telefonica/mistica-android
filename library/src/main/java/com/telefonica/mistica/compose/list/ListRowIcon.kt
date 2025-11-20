@@ -9,7 +9,8 @@ import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Icon
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material.LocalContentAlpha
+import androidx.compose.material.LocalContentColor
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -92,10 +93,11 @@ sealed class ListRowIcon(val contentDescription: String?) {
                     painter = painter,
                     modifier = Modifier.size(24.dp),
                     contentDescription = contentDescription,
-                    tint = tint ?: MaterialTheme.colors.onSurface,
+                    tint = tint ?: LocalContentColor.current.copy(alpha = LocalContentAlpha.current),
                 )
             }
         }
+
     }
 
     @Composable
@@ -108,7 +110,7 @@ sealed class ListRowIcon(val contentDescription: String?) {
                 Icon(
                     painter = painter,
                     contentDescription = contentDescription,
-                    tint = tint ?: MaterialTheme.colors.onSurface,
+                    tint = tint ?: LocalContentColor.current.copy(alpha = LocalContentAlpha.current),
                 )
             }
         }

@@ -8,7 +8,6 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.KeyboardType
@@ -16,8 +15,6 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import com.telefonica.mistica.R
-
-private const val CUSTOM_ICON_BACKGROUND_COLOR = 0xFF757575
 
 @Composable
 fun PasswordInput(
@@ -83,7 +80,6 @@ private fun PasswordVisibleIcon(
                 painterResource(id = R.drawable.icn_visibility)
             },
             contentDescription = if (passwordVisible) hideContentDescription else showContentDescription,
-            tint = Color(CUSTOM_ICON_BACKGROUND_COLOR),
         )
     }
 }
