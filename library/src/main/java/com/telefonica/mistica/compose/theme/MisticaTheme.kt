@@ -36,7 +36,6 @@ fun MisticaTheme(
     content: @Composable () -> Unit,
 ) {
     val context = LocalContext.current
-
     LaunchedEffect(key1 = brand) {
         context.setTheme(brand.compatibilityTheme)
     }

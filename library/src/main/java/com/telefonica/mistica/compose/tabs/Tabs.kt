@@ -74,7 +74,7 @@ fun Tabs(
             val insetsWidth = windowInsets.getLeft(density, LayoutDirection.Ltr) + windowInsets.getRight(density, LayoutDirection.Ltr)
             (containerSize.width.dp.toPx() - insetsWidth).toDp()
         } else {
-            containerSize.height.dp
+            containerSize.width.dp
         }
     }
     val isTablet = screenWidthDp > 768.dp
