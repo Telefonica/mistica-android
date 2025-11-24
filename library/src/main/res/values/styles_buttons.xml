@@ -104,7 +104,7 @@
         <item name="backgroundTint">@color/button_primary_background_inverse_selector</item>
         <item name="android:textColor">@color/text_button_primary_inverse_selector</item>
         <item name="iconTint">@color/text_button_primary_inverse_selector</item>
-        <item name="rippleColor">?attr/colorButtonPrimaryBackgroundInversePressed</item>
+        <item name="rippleColor">?attr/colorButtonPrimaryBackgroundBrandPressed</item>
     </style>
 
     <style name="AppTheme.Button.PrimaryButtonInverse.Small">
@@ -115,12 +115,12 @@
     </style>
 
     <style name="AppTheme.Button.SecondaryButtonInverse" parent="AppTheme.OutlinedButton">
-        <item name="backgroundTint">@android:color/transparent</item>
+        <item name="backgroundTint">@color/button_secondary_background_inverse_selector</item>
         <item name="android:textColor">@color/text_button_secondary_inverse_selector</item>
         <item name="iconTint">@color/text_button_secondary_inverse_selector</item>
-        <item name="strokeColor">@color/button_secondary_background_inverse_selector</item>
+        <item name="strokeColor">@color/button_secondary_border_inverse_selector</item>
         <item name="strokeWidth">@dimen/button_outline_stroke_width</item>
-        <item name="rippleColor">@android:color/transparent</item>
+        <item name="rippleColor">?attr/colorButtonSecondaryBackgroundBrandPressed</item>
     </style>
 
     <style name="AppTheme.Button.SecondaryButtonInverse.Small">
@@ -162,7 +162,7 @@
         <item name="backgroundTint">@android:color/transparent</item>
         <item name="android:textColor">?attr/colorTextLinkDanger</item>
         <item name="iconTint">?attr/colorTextLinkDanger</item>
-        <item name="rippleColor">?colorButtonLinkDangerBackgroundInversePressed</item>
+        <item name="rippleColor">?colorButtonLinkDangerBackgroundBrandPressed</item>
     </style>
 
     <style name="AppTheme.Button.DangerLinkButton.Small" parent="AppTheme.Button.DangerLinkButton">
