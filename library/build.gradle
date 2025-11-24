@@ -3,7 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'maven-publish'
-    id 'io.github.takahirom.roborazzi'
+    alias libs.plugins.roborazzi
     id 'org.jetbrains.kotlin.plugin.compose'
 }
 
@@ -77,11 +77,11 @@ dependencies {
     implementation "androidx.compose.runtime:runtime:$compose_ui_version"
 
     implementation "androidx.core:core-ktx:$androidx_core_version"
-    implementation 'androidx.activity:activity-compose:1.4.0'
+    implementation "androidx.activity:activity-compose:$activity_compose_version"
     implementation "androidx.constraintlayout:constraintlayout-compose:$constraintComposeVersion"
 
     implementation "androidx.compose.material:material:$compose_ui_version"
-    implementation("androidx.compose.material:material-icons-extended:$compose_ui_version")
+    implementation("androidx.compose.material:material-icons-extended:$compose_material_icons_version")
     implementation "androidx.compose.ui:ui:$compose_ui_version"
     implementation "androidx.compose.ui:ui-tooling-preview:$compose_ui_version"
 
@@ -93,7 +93,7 @@ dependencies {
     implementation "io.coil-kt:coil-svg:$coil_version"
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'com.airbnb.android:lottie:6.5.0'
+    implementation 'com.airbnb.android:lottie:6.7.1'
 
     implementation "com.github.skydoves:balloon-compose:1.5.3"
 
@@ -103,8 +103,8 @@ dependencies {
     testImplementation "androidx.compose.ui:ui-test-junit4:$compose_ui_version"
     testImplementation "androidx.compose.ui:ui-test-manifest:$compose_ui_version"
     testImplementation 'org.robolectric:robolectric:4.15.1'
-    testImplementation "io.github.takahirom.roborazzi:roborazzi:$roborazzi_version"
-    testImplementation "io.github.takahirom.roborazzi:roborazzi-compose:$roborazzi_version"
+    testImplementation libs.roborazzi
+    testImplementation libs.roborazzi.compose
     testImplementation "org.mockito.kotlin:mockito-kotlin:4.0.0"
     testImplementation "androidx.test:rules:1.5.0"
     testImplementation "androidx.test:core-ktx:1.5.0"

@@ -3,16 +3,16 @@ buildscript {
     ext {
         min_sdk_version = 24
         target_sdk_version = 36
-        compose_ui_version = "1.7.6"
+        compose_ui_version = "1.9.0"
+        compose_material_icons_version = "1.7.8"
+        activity_compose_version = "1.11.0"
         kotlin_version = "2.0.21"
         androidx_appcompat_version = "1.7.0"
-        androidx_activity_compose_version = "1.6.0"
         androidx_core_version = "1.13.1"
         accompanist_version = "0.32.0"
         coil_version = '2.5.0'
-        constraintComposeVersion = '1.0.1'
+        constraintComposeVersion = '1.1.1'
         detekt_version = '1.23.7'
-        roborazzi_version = "1.30.1"
         material_version = "1.12.0"
     }
     repositories {
@@ -31,7 +31,7 @@ plugins {
     id 'org.jetbrains.kotlin.android' version "$kotlin_version" apply false
     id 'org.jetbrains.kotlin.plugin.compose' version "$kotlin_version" apply false
     id 'io.github.gradle-nexus.publish-plugin' version '2.0.0' apply false
-    id "io.github.takahirom.roborazzi" version '1.26.0' apply false
+    alias libs.plugins.roborazzi apply false
     alias libs.plugins.com.android.application apply false
     alias libs.plugins.com.android.library apply false
 

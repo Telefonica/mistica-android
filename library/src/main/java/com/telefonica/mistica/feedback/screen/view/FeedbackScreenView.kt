@@ -21,6 +21,7 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.IntDef
 import androidx.annotation.LayoutRes
 import androidx.annotation.RawRes
+import androidx.annotation.VisibleForTesting
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.graphics.drawable.DrawableCompat
@@ -72,6 +73,7 @@ class FeedbackScreenView : ConstraintLayout {
     private var secondButtonAsLink: Boolean = false
     private var isIconAnimated: Boolean = false
     private var shouldAnimateOnAttachedToWindow: Boolean = true
+    private var testMode: Boolean = false
 
     private var isAnimatedOnce: Boolean = false
 
@@ -321,6 +323,9 @@ class FeedbackScreenView : ConstraintLayout {
                         PorterDuff.Mode.SRC_ATOP
                     )
                 }
+                if (testMode) {
+                    icon.progress = 1.0f
+                }
                 icon.visibility = View.VISIBLE
             }
 
@@ -388,7 +393,7 @@ class FeedbackScreenView : ConstraintLayout {
 
     @Suppress("NestedBlockDepth")
     fun animateViews() {
-        if (isIconAnimated) {
+        if (isIconAnimated && !testMode) {
             icon.resumeAnimation()
 
             if (!isAnimatedOnce) {
@@ -476,6 +481,11 @@ class FeedbackScreenView : ConstraintLayout {
         val typedValue = TypedValue()
         context.theme.resolveAttribute(R.attr.successFeedbackThemeVariant, typedValue, true)
         return typedValue.data == ThemeVariant.INVERSE.ordinal
+    }
+
+    @VisibleForTesting
+    fun setTestMode(testMode: Boolean) {
+        this.testMode = testMode
     }
 
     companion object {
