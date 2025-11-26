@@ -133,6 +133,7 @@
 		<item name="colorControlActivatedNegative">@color/movistar_color_movistarBlue</item>
 		<item name="colorControlActivatedBrand">@color/movistar_color_movistarBlue</item>
 		<item name="colorControlError">@color/movistar_color_pepper45</item>
+		<item name="colorChevronIndicator">@color/movistar_color_darkModeGrey5</item>
 		<item name="colorBarTrack">@color/movistar_color_darkModeGrey6</item>
 		<item name="colorBarTrackInverse">@color/movistar_color_darkModeGrey6</item>
 		<item name="colorBarTrackNegative">@color/movistar_color_darkModeGrey6</item>

@@ -6,6 +6,6 @@ import com.telefonica.mistica.compose.theme.values.ThemeVariant
 
 public object MovistarNewBrandThemeVariant {
   public val themeVariant: MisticaThemeVariant = MisticaThemeVariant(
-      successFeedbackThemeVariant = ThemeVariant.DEFAULT,
+      successFeedbackThemeVariant = ThemeVariant.INVERSE,
       brandLoadingScreenThemeVariant = ThemeVariant.DEFAULT,)
 }

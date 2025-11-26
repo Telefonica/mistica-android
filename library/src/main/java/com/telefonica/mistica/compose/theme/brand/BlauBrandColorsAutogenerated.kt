@@ -138,6 +138,7 @@ public object BlauBrandColors {
       controlActivatedNegative = BlauPaletteColor.blau_color_white
       controlActivatedBrand = BlauPaletteColor.blau_color_blauBlueSecondary60
       controlError = BlauPaletteColor.blau_color_blauRed
+      chevronIndicator = BlauPaletteColor.blau_color_grey5
       barTrack = BlauPaletteColor.blau_color_grey3
       barTrackInverse = BlauPaletteColor.blau_color_grey6_20_alpha
       barTrackNegative = BlauPaletteColor.blau_color_grey6_20_alpha
@@ -409,6 +410,7 @@ public object BlauBrandColors {
       controlActivatedNegative = BlauPaletteColor.blau_color_blauBlueSecondary
       controlActivatedBrand = BlauPaletteColor.blau_color_blauBlueSecondary
       controlError = BlauPaletteColor.blau_color_blauRed
+      chevronIndicator = BlauPaletteColor.blau_color_grey4
       barTrack = BlauPaletteColor.blau_color_grey5
       barTrackInverse = BlauPaletteColor.blau_color_grey5
       barTrackNegative = BlauPaletteColor.blau_color_grey5

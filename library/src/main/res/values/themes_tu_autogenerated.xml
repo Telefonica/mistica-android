@@ -134,6 +134,7 @@
 		<item name="colorControlActivatedNegative">@color/tu_color_white</item>
 		<item name="colorControlActivatedBrand">@color/tu_color_white</item>
 		<item name="colorControlError">@color/tu_color_red</item>
+		<item name="colorChevronIndicator">@color/tu_color_grey5</item>
 		<item name="colorBarTrack">@color/tu_color_grey2</item>
 		<item name="colorBarTrackInverse">@color/tu_color_white_36_alpha</item>
 		<item name="colorBarTrackNegative">@color/tu_color_white_36_alpha</item>

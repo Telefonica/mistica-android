@@ -138,6 +138,7 @@ public object TuBrandColors {
       controlActivatedNegative = TuPaletteColor.tu_color_white
       controlActivatedBrand = TuPaletteColor.tu_color_white
       controlError = TuPaletteColor.tu_color_red
+      chevronIndicator = TuPaletteColor.tu_color_grey5
       barTrack = TuPaletteColor.tu_color_grey2
       barTrackInverse = TuPaletteColor.tu_color_white_36_alpha
       barTrackNegative = TuPaletteColor.tu_color_white_36_alpha
@@ -409,6 +410,7 @@ public object TuBrandColors {
       controlActivatedNegative = TuPaletteColor.tu_color_blue30
       controlActivatedBrand = TuPaletteColor.tu_color_blue30
       controlError = TuPaletteColor.tu_color_red
+      chevronIndicator = TuPaletteColor.tu_color_grey5
       barTrack = TuPaletteColor.tu_color_darkModeGrey6
       barTrackInverse = TuPaletteColor.tu_color_darkModeGrey6
       barTrackNegative = TuPaletteColor.tu_color_darkModeGrey6

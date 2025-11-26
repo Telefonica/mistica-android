@@ -134,6 +134,7 @@
 		<item name="colorControlActivatedNegative">@color/telefonica_color_white</item>
 		<item name="colorControlActivatedBrand">@color/telefonica_color_white</item>
 		<item name="colorControlError">@color/telefonica_color_coral60</item>
+		<item name="colorChevronIndicator">@color/telefonica_color_grey5</item>
 		<item name="colorBarTrack">@color/telefonica_color_grey2</item>
 		<item name="colorBarTrackInverse">@color/telefonica_color_white_30_alpha</item>
 		<item name="colorBarTrackNegative">@color/telefonica_color_white_30_alpha</item>

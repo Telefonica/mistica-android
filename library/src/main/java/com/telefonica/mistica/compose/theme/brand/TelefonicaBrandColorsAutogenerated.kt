@@ -145,6 +145,7 @@ public object TelefonicaBrandColors {
       controlActivatedNegative = TelefonicaPaletteColor.telefonica_color_white
       controlActivatedBrand = TelefonicaPaletteColor.telefonica_color_white
       controlError = TelefonicaPaletteColor.telefonica_color_coral60
+      chevronIndicator = TelefonicaPaletteColor.telefonica_color_grey5
       barTrack = TelefonicaPaletteColor.telefonica_color_grey2
       barTrackInverse = TelefonicaPaletteColor.telefonica_color_white_30_alpha
       barTrackNegative = TelefonicaPaletteColor.telefonica_color_white_30_alpha
@@ -429,6 +430,7 @@ public object TelefonicaBrandColors {
       controlActivatedNegative = TelefonicaPaletteColor.telefonica_color_darkModeTelefonicaBlue
       controlActivatedBrand = TelefonicaPaletteColor.telefonica_color_darkModeTelefonicaBlue
       controlError = TelefonicaPaletteColor.telefonica_color_coral
+      chevronIndicator = TelefonicaPaletteColor.telefonica_color_grey5
       barTrack = TelefonicaPaletteColor.telefonica_color_darkModeGrey6
       barTrackInverse = TelefonicaPaletteColor.telefonica_color_darkModeGrey6
       barTrackNegative = TelefonicaPaletteColor.telefonica_color_darkModeGrey6

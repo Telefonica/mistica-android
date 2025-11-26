@@ -133,6 +133,7 @@
 		<item name="colorControlActivatedNegative">@color/telefonica_color_darkModeTelefonicaBlue</item>
 		<item name="colorControlActivatedBrand">@color/telefonica_color_darkModeTelefonicaBlue</item>
 		<item name="colorControlError">@color/telefonica_color_coral</item>
+		<item name="colorChevronIndicator">@color/telefonica_color_grey5</item>
 		<item name="colorBarTrack">@color/telefonica_color_darkModeGrey6</item>
 		<item name="colorBarTrackInverse">@color/telefonica_color_darkModeGrey6</item>
 		<item name="colorBarTrackNegative">@color/telefonica_color_darkModeGrey6</item>

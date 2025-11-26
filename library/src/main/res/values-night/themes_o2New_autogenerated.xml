@@ -133,6 +133,7 @@
 		<item name="colorControlActivatedNegative">@color/o2New_color_darkModeBeyondBlue</item>
 		<item name="colorControlActivatedBrand">@color/o2New_color_darkModeBeyondBlue</item>
 		<item name="colorControlError">@color/o2New_color_o2Red45</item>
+		<item name="colorChevronIndicator">@color/o2New_color_grey60</item>
 		<item name="colorBarTrack">@color/o2New_color_darkModeGrey6</item>
 		<item name="colorBarTrackInverse">@color/o2New_color_darkModeGrey6</item>
 		<item name="colorBarTrackNegative">@color/o2New_color_darkModeGrey6</item>

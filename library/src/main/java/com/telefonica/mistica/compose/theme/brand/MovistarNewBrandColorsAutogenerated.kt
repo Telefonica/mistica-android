@@ -54,7 +54,7 @@ public object MovistarNewBrandColors {
           MovistarNewPaletteColor.movistarNew_color_salmon100
       buttonLinkDangerBackgroundBrandPressed = MovistarNewPaletteColor.movistarNew_color_salmon100
       buttonLinkDangerBackgroundMediaPressed = MovistarNewPaletteColor.movistarNew_color_salmon100
-      buttonLinkBackgroundPressed = MovistarNewPaletteColor.movistarNew_color_blue100
+      buttonLinkBackgroundPressed = MovistarNewPaletteColor.movistarNew_color_blue200
       buttonLinkBackgroundInversePressed = MovistarNewPaletteColor.movistarNew_color_white_30_alpha
       buttonLinkBackgroundNegativePressed = MovistarNewPaletteColor.movistarNew_color_white_30_alpha
       buttonLinkBackgroundBrandPressed = MovistarNewPaletteColor.movistarNew_color_white_30_alpha
@@ -65,15 +65,15 @@ public object MovistarNewBrandColors {
       buttonPrimaryBackgroundBrand = MovistarNewPaletteColor.movistarNew_color_white
       buttonPrimaryBackgroundMedia = MovistarNewPaletteColor.movistarNew_color_white
       buttonPrimaryBackgroundHover = MovistarNewPaletteColor.movistarNew_color_blueHigh
-      buttonPrimaryBackgroundInverseHover = MovistarNewPaletteColor.movistarNew_color_blue100
+      buttonPrimaryBackgroundInverseHover = MovistarNewPaletteColor.movistarNew_color_blue200
       buttonPrimaryBackgroundNegativeHover = MovistarNewPaletteColor.movistarNew_color_blue100
       buttonPrimaryBackgroundBrandHover = MovistarNewPaletteColor.movistarNew_color_blue100
-      buttonPrimaryBackgroundMediaHover = MovistarNewPaletteColor.movistarNew_color_blue100
+      buttonPrimaryBackgroundMediaHover = MovistarNewPaletteColor.movistarNew_color_blue200
       buttonPrimaryBackgroundPressed = MovistarNewPaletteColor.movistarNew_color_blueHigh
-      buttonPrimaryBackgroundInversePressed = MovistarNewPaletteColor.movistarNew_color_blue100
+      buttonPrimaryBackgroundInversePressed = MovistarNewPaletteColor.movistarNew_color_blue200
       buttonPrimaryBackgroundNegativePressed = MovistarNewPaletteColor.movistarNew_color_blue100
       buttonPrimaryBackgroundBrandPressed = MovistarNewPaletteColor.movistarNew_color_blue100
-      buttonPrimaryBackgroundMediaPressed = MovistarNewPaletteColor.movistarNew_color_blue100
+      buttonPrimaryBackgroundMediaPressed = MovistarNewPaletteColor.movistarNew_color_blue200
       buttonSecondaryBackgroundBrand = MovistarNewPaletteColor.movistarNew_color_white_0_alpha
       buttonSecondaryBorder = MovistarNewPaletteColor.movistarNew_color_movistarBlue
       buttonSecondaryBorderInverse = MovistarNewPaletteColor.movistarNew_color_white
@@ -85,14 +85,14 @@ public object MovistarNewBrandColors {
       buttonSecondaryBorderNegativePressed = MovistarNewPaletteColor.movistarNew_color_white
       buttonSecondaryBorderBrandPressed = MovistarNewPaletteColor.movistarNew_color_white
       buttonSecondaryBorderMediaPressed = MovistarNewPaletteColor.movistarNew_color_white
-      buttonSecondaryBackgroundHover = MovistarNewPaletteColor.movistarNew_color_blue100
+      buttonSecondaryBackgroundHover = MovistarNewPaletteColor.movistarNew_color_blue200
       buttonSecondaryBackgroundInverseHover =
           MovistarNewPaletteColor.movistarNew_color_white_20_alpha
       buttonSecondaryBackgroundNegativeHover =
           MovistarNewPaletteColor.movistarNew_color_white_20_alpha
       buttonSecondaryBackgroundBrandHover = MovistarNewPaletteColor.movistarNew_color_white_20_alpha
       buttonSecondaryBackgroundMediaHover = MovistarNewPaletteColor.movistarNew_color_white_20_alpha
-      buttonSecondaryBackgroundPressed = MovistarNewPaletteColor.movistarNew_color_blue100
+      buttonSecondaryBackgroundPressed = MovistarNewPaletteColor.movistarNew_color_blue200
       buttonSecondaryBackgroundInversePressed =
           MovistarNewPaletteColor.movistarNew_color_white_30_alpha
       buttonSecondaryBackgroundNegativePressed =
@@ -147,6 +147,7 @@ public object MovistarNewBrandColors {
       controlActivatedNegative = MovistarNewPaletteColor.movistarNew_color_white
       controlActivatedBrand = MovistarNewPaletteColor.movistarNew_color_white
       controlError = MovistarNewPaletteColor.movistarNew_color_red
+      chevronIndicator = MovistarNewPaletteColor.movistarNew_color_movistarBlue
       barTrack = MovistarNewPaletteColor.movistarNew_color_grey300
       barTrackInverse = MovistarNewPaletteColor.movistarNew_color_movistarBlack_14_alpha
       barTrackNegative = MovistarNewPaletteColor.movistarNew_color_movistarBlack_14_alpha
@@ -163,7 +164,7 @@ public object MovistarNewBrandColors {
       controlKnobInverse = MovistarNewPaletteColor.movistarNew_color_movistarBlue
       controlKnobNegative = MovistarNewPaletteColor.movistarNew_color_movistarBlue
       controlKnobBrand = MovistarNewPaletteColor.movistarNew_color_movistarBlue
-      divider = MovistarNewPaletteColor.movistarNew_color_grey300
+      divider = MovistarNewPaletteColor.movistarNew_color_grey200
       dividerInverse = MovistarNewPaletteColor.movistarNew_color_white_20_alpha
       dividerNegative = MovistarNewPaletteColor.movistarNew_color_white_20_alpha
       dividerBrand = MovistarNewPaletteColor.movistarNew_color_white_20_alpha
@@ -237,9 +238,9 @@ public object MovistarNewBrandColors {
       tagTextWarning = MovistarNewPaletteColor.movistarNew_color_yellowHigh
       tagTextError = MovistarNewPaletteColor.movistarNew_color_redHigh
       tagBackgroundPromo = MovistarNewPaletteColor.movistarNew_color_redHigh
-      tagBackgroundActive = MovistarNewPaletteColor.movistarNew_color_blue100
+      tagBackgroundActive = MovistarNewPaletteColor.movistarNew_color_blue200
       tagBackgroundInactive = MovistarNewPaletteColor.movistarNew_color_grey200
-      tagBackgroundInfo = MovistarNewPaletteColor.movistarNew_color_blue100
+      tagBackgroundInfo = MovistarNewPaletteColor.movistarNew_color_blue200
       tagBackgroundSuccess = MovistarNewPaletteColor.movistarNew_color_green200
       tagBackgroundWarning = MovistarNewPaletteColor.movistarNew_color_yellowLight
       tagBackgroundError = MovistarNewPaletteColor.movistarNew_color_salmon200
@@ -348,12 +349,12 @@ public object MovistarNewBrandColors {
       buttonPrimaryBackgroundInverseHover = MovistarNewPaletteColor.movistarNew_color_blue800
       buttonPrimaryBackgroundNegativeHover = MovistarNewPaletteColor.movistarNew_color_blue800
       buttonPrimaryBackgroundBrandHover = MovistarNewPaletteColor.movistarNew_color_blue800
-      buttonPrimaryBackgroundMediaHover = MovistarNewPaletteColor.movistarNew_color_blue100
+      buttonPrimaryBackgroundMediaHover = MovistarNewPaletteColor.movistarNew_color_blue200
       buttonPrimaryBackgroundPressed = MovistarNewPaletteColor.movistarNew_color_blue800
       buttonPrimaryBackgroundInversePressed = MovistarNewPaletteColor.movistarNew_color_blue800
       buttonPrimaryBackgroundNegativePressed = MovistarNewPaletteColor.movistarNew_color_blue800
       buttonPrimaryBackgroundBrandPressed = MovistarNewPaletteColor.movistarNew_color_blue800
-      buttonPrimaryBackgroundMediaPressed = MovistarNewPaletteColor.movistarNew_color_blue100
+      buttonPrimaryBackgroundMediaPressed = MovistarNewPaletteColor.movistarNew_color_blue200
       buttonSecondaryBackgroundBrand = MovistarNewPaletteColor.movistarNew_color_white_0_alpha
       buttonSecondaryBorder = MovistarNewPaletteColor.movistarNew_color_white
       buttonSecondaryBorderInverse = MovistarNewPaletteColor.movistarNew_color_grey200
@@ -427,6 +428,7 @@ public object MovistarNewBrandColors {
       controlActivatedNegative = MovistarNewPaletteColor.movistarNew_color_darkModeMovistarBlue
       controlActivatedBrand = MovistarNewPaletteColor.movistarNew_color_darkModeMovistarBlue
       controlError = MovistarNewPaletteColor.movistarNew_color_red
+      chevronIndicator = MovistarNewPaletteColor.movistarNew_color_darkModeMovistarBlue
       barTrack = MovistarNewPaletteColor.movistarNew_color_grey600
       barTrackInverse = MovistarNewPaletteColor.movistarNew_color_grey600
       barTrackNegative = MovistarNewPaletteColor.movistarNew_color_grey600

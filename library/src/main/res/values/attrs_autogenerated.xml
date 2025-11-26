@@ -132,6 +132,7 @@
 		<attr name="colorControlActivatedNegative" format="color|reference"/>
 		<attr name="colorControlActivatedBrand" format="color|reference"/>
 		<attr name="colorControlError" format="color|reference"/>
+		<attr name="colorChevronIndicator" format="color|reference"/>
 		<attr name="colorBarTrack" format="color|reference"/>
 		<attr name="colorBarTrackInverse" format="color|reference"/>
 		<attr name="colorBarTrackNegative" format="color|reference"/>

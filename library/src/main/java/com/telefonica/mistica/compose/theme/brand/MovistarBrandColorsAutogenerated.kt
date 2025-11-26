@@ -138,6 +138,7 @@ public object MovistarBrandColors {
       controlActivatedNegative = MovistarPaletteColor.movistar_color_white
       controlActivatedBrand = MovistarPaletteColor.movistar_color_white
       controlError = MovistarPaletteColor.movistar_color_pepper55
+      chevronIndicator = MovistarPaletteColor.movistar_color_grey5
       barTrack = MovistarPaletteColor.movistar_color_grey3
       barTrackInverse = MovistarPaletteColor.movistar_color_black_14_alpha
       barTrackNegative = MovistarPaletteColor.movistar_color_black_14_alpha
@@ -409,6 +410,7 @@ public object MovistarBrandColors {
       controlActivatedNegative = MovistarPaletteColor.movistar_color_movistarBlue
       controlActivatedBrand = MovistarPaletteColor.movistar_color_movistarBlue
       controlError = MovistarPaletteColor.movistar_color_pepper45
+      chevronIndicator = MovistarPaletteColor.movistar_color_darkModeGrey5
       barTrack = MovistarPaletteColor.movistar_color_darkModeGrey6
       barTrackInverse = MovistarPaletteColor.movistar_color_darkModeGrey6
       barTrackNegative = MovistarPaletteColor.movistar_color_darkModeGrey6

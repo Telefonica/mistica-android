@@ -47,7 +47,7 @@
 		<item name="colorButtonLinkDangerBackgroundNegativePressed">@color/movistarNew_color_salmon100</item>
 		<item name="colorButtonLinkDangerBackgroundBrandPressed">@color/movistarNew_color_salmon100</item>
 		<item name="colorButtonLinkDangerBackgroundMediaPressed">@color/movistarNew_color_salmon100</item>
-		<item name="colorButtonLinkBackgroundPressed">@color/movistarNew_color_blue100</item>
+		<item name="colorButtonLinkBackgroundPressed">@color/movistarNew_color_blue200</item>
 		<item name="colorButtonLinkBackgroundInversePressed">@color/movistarNew_color_white_30_alpha</item>
 		<item name="colorButtonLinkBackgroundNegativePressed">@color/movistarNew_color_white_30_alpha</item>
 		<item name="colorButtonLinkBackgroundBrandPressed">@color/movistarNew_color_white_30_alpha</item>
@@ -58,15 +58,15 @@
 		<item name="colorButtonPrimaryBackgroundBrand">@color/movistarNew_color_white</item>
 		<item name="colorButtonPrimaryBackgroundMedia">@color/movistarNew_color_white</item>
 		<item name="colorButtonPrimaryBackgroundHover">@color/movistarNew_color_blueHigh</item>
-		<item name="colorButtonPrimaryBackgroundInverseHover">@color/movistarNew_color_blue100</item>
+		<item name="colorButtonPrimaryBackgroundInverseHover">@color/movistarNew_color_blue200</item>
 		<item name="colorButtonPrimaryBackgroundNegativeHover">@color/movistarNew_color_blue100</item>
 		<item name="colorButtonPrimaryBackgroundBrandHover">@color/movistarNew_color_blue100</item>
-		<item name="colorButtonPrimaryBackgroundMediaHover">@color/movistarNew_color_blue100</item>
+		<item name="colorButtonPrimaryBackgroundMediaHover">@color/movistarNew_color_blue200</item>
 		<item name="colorButtonPrimaryBackgroundPressed">@color/movistarNew_color_blueHigh</item>
-		<item name="colorButtonPrimaryBackgroundInversePressed">@color/movistarNew_color_blue100</item>
+		<item name="colorButtonPrimaryBackgroundInversePressed">@color/movistarNew_color_blue200</item>
 		<item name="colorButtonPrimaryBackgroundNegativePressed">@color/movistarNew_color_blue100</item>
 		<item name="colorButtonPrimaryBackgroundBrandPressed">@color/movistarNew_color_blue100</item>
-		<item name="colorButtonPrimaryBackgroundMediaPressed">@color/movistarNew_color_blue100</item>
+		<item name="colorButtonPrimaryBackgroundMediaPressed">@color/movistarNew_color_blue200</item>
 		<item name="colorButtonSecondaryBackgroundBrand">@color/movistarNew_color_white_0_alpha</item>
 		<item name="colorButtonSecondaryBorder">@color/movistarNew_color_movistarBlue</item>
 		<item name="colorButtonSecondaryBorderInverse">@color/movistarNew_color_white</item>
@@ -78,12 +78,12 @@
 		<item name="colorButtonSecondaryBorderNegativePressed">@color/movistarNew_color_white</item>
 		<item name="colorButtonSecondaryBorderBrandPressed">@color/movistarNew_color_white</item>
 		<item name="colorButtonSecondaryBorderMediaPressed">@color/movistarNew_color_white</item>
-		<item name="colorButtonSecondaryBackgroundHover">@color/movistarNew_color_blue100</item>
+		<item name="colorButtonSecondaryBackgroundHover">@color/movistarNew_color_blue200</item>
 		<item name="colorButtonSecondaryBackgroundInverseHover">@color/movistarNew_color_white_20_alpha</item>
 		<item name="colorButtonSecondaryBackgroundNegativeHover">@color/movistarNew_color_white_20_alpha</item>
 		<item name="colorButtonSecondaryBackgroundBrandHover">@color/movistarNew_color_white_20_alpha</item>
 		<item name="colorButtonSecondaryBackgroundMediaHover">@color/movistarNew_color_white_20_alpha</item>
-		<item name="colorButtonSecondaryBackgroundPressed">@color/movistarNew_color_blue100</item>
+		<item name="colorButtonSecondaryBackgroundPressed">@color/movistarNew_color_blue200</item>
 		<item name="colorButtonSecondaryBackgroundInversePressed">@color/movistarNew_color_white_30_alpha</item>
 		<item name="colorButtonSecondaryBackgroundNegativePressed">@color/movistarNew_color_white_30_alpha</item>
 		<item name="colorButtonSecondaryBackgroundBrandPressed">@color/movistarNew_color_white_30_alpha</item>
@@ -134,6 +134,7 @@
 		<item name="colorControlActivatedNegative">@color/movistarNew_color_white</item>
 		<item name="colorControlActivatedBrand">@color/movistarNew_color_white</item>
 		<item name="colorControlError">@color/movistarNew_color_red</item>
+		<item name="colorChevronIndicator">@color/movistarNew_color_movistarBlue</item>
 		<item name="colorBarTrack">@color/movistarNew_color_grey300</item>
 		<item name="colorBarTrackInverse">@color/movistarNew_color_movistarBlack_14_alpha</item>
 		<item name="colorBarTrackNegative">@color/movistarNew_color_movistarBlack_14_alpha</item>
@@ -150,7 +151,7 @@
 		<item name="colorControlKnobInverse">@color/movistarNew_color_movistarBlue</item>
 		<item name="colorControlKnobNegative">@color/movistarNew_color_movistarBlue</item>
 		<item name="colorControlKnobBrand">@color/movistarNew_color_movistarBlue</item>
-		<item name="colorDivider">@color/movistarNew_color_grey300</item>
+		<item name="colorDivider">@color/movistarNew_color_grey200</item>
 		<item name="colorDividerInverse">@color/movistarNew_color_white_20_alpha</item>
 		<item name="colorDividerNegative">@color/movistarNew_color_white_20_alpha</item>
 		<item name="colorDividerBrand">@color/movistarNew_color_white_20_alpha</item>
@@ -224,9 +225,9 @@
 		<item name="colorTagTextWarning">@color/movistarNew_color_yellowHigh</item>
 		<item name="colorTagTextError">@color/movistarNew_color_redHigh</item>
 		<item name="colorTagBackgroundPromo">@color/movistarNew_color_redHigh</item>
-		<item name="colorTagBackgroundActive">@color/movistarNew_color_blue100</item>
+		<item name="colorTagBackgroundActive">@color/movistarNew_color_blue200</item>
 		<item name="colorTagBackgroundInactive">@color/movistarNew_color_grey200</item>
-		<item name="colorTagBackgroundInfo">@color/movistarNew_color_blue100</item>
+		<item name="colorTagBackgroundInfo">@color/movistarNew_color_blue200</item>
 		<item name="colorTagBackgroundSuccess">@color/movistarNew_color_green200</item>
 		<item name="colorTagBackgroundWarning">@color/movistarNew_color_yellowLight</item>
 		<item name="colorTagBackgroundError">@color/movistarNew_color_salmon200</item>
@@ -289,7 +290,7 @@
 		<item name="sheetBorderRadius">16dp</item>
 		<item name="mediaSmallBorderRadius">8dp</item>
 		<!-- Theme variant -->
-		<item name="successFeedbackThemeVariant">DEFAULT</item>
+		<item name="successFeedbackThemeVariant">INVERSE</item>
 		<item name="brandLoadingScreenThemeVariant">DEFAULT</item>
 		<!-- Preset fonts -->
 		<item name="cardTitleFont">?font_family_regular</item>

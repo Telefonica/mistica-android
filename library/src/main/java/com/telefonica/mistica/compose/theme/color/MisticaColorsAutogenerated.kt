@@ -377,6 +377,9 @@ public class MisticaColors {
 
   public var controlError: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
 
+  public var chevronIndicator: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
   public var barTrack: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
 
   public var barTrackInverse: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
@@ -879,6 +882,7 @@ public class MisticaColors {
     controlActivatedNegative = other.controlActivatedNegative
     controlActivatedBrand = other.controlActivatedBrand
     controlError = other.controlError
+    chevronIndicator = other.chevronIndicator
     barTrack = other.barTrack
     barTrackInverse = other.barTrackInverse
     barTrackNegative = other.barTrackNegative

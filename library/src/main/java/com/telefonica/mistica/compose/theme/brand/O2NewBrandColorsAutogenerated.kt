@@ -138,6 +138,7 @@ public object O2NewBrandColors {
       controlActivatedNegative = O2NewPaletteColor.o2New_color_white
       controlActivatedBrand = O2NewPaletteColor.o2New_color_white
       controlError = O2NewPaletteColor.o2New_color_o2Red60
+      chevronIndicator = O2NewPaletteColor.o2New_color_grey60
       barTrack = O2NewPaletteColor.o2New_color_grey30
       barTrackInverse = O2NewPaletteColor.o2New_color_white_30_alpha
       barTrackNegative = O2NewPaletteColor.o2New_color_white_30_alpha
@@ -409,6 +410,7 @@ public object O2NewBrandColors {
       controlActivatedNegative = O2NewPaletteColor.o2New_color_darkModeBeyondBlue
       controlActivatedBrand = O2NewPaletteColor.o2New_color_darkModeBeyondBlue
       controlError = O2NewPaletteColor.o2New_color_o2Red45
+      chevronIndicator = O2NewPaletteColor.o2New_color_grey60
       barTrack = O2NewPaletteColor.o2New_color_darkModeGrey6
       barTrackInverse = O2NewPaletteColor.o2New_color_darkModeGrey6
       barTrackNegative = O2NewPaletteColor.o2New_color_darkModeGrey6

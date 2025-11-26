@@ -138,6 +138,7 @@ public object VivoNewBrandColors {
       controlActivatedNegative = VivoNewPaletteColor.vivoNew_color_white
       controlActivatedBrand = VivoNewPaletteColor.vivoNew_color_white
       controlError = VivoNewPaletteColor.vivoNew_color_pepper
+      chevronIndicator = VivoNewPaletteColor.vivoNew_color_grey5
       barTrack = VivoNewPaletteColor.vivoNew_color_grey3
       barTrackInverse = VivoNewPaletteColor.vivoNew_color_white_50_alpha
       barTrackNegative = VivoNewPaletteColor.vivoNew_color_white_50_alpha
@@ -409,6 +410,7 @@ public object VivoNewBrandColors {
       controlActivatedNegative = VivoNewPaletteColor.vivoNew_color_vivoPurpleLight80
       controlActivatedBrand = VivoNewPaletteColor.vivoNew_color_vivoPurpleLight80
       controlError = VivoNewPaletteColor.vivoNew_color_pepper
+      chevronIndicator = VivoNewPaletteColor.vivoNew_color_grey5
       barTrack = VivoNewPaletteColor.vivoNew_color_darkModeGrey6
       barTrackInverse = VivoNewPaletteColor.vivoNew_color_darkModeGrey6
       barTrackNegative = VivoNewPaletteColor.vivoNew_color_darkModeGrey6

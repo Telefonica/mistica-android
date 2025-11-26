@@ -133,6 +133,7 @@
 		<item name="colorControlActivatedNegative">@color/blau_color_blauBlueSecondary</item>
 		<item name="colorControlActivatedBrand">@color/blau_color_blauBlueSecondary</item>
 		<item name="colorControlError">@color/blau_color_blauRed</item>
+		<item name="colorChevronIndicator">@color/blau_color_grey4</item>
 		<item name="colorBarTrack">@color/blau_color_grey5</item>
 		<item name="colorBarTrackInverse">@color/blau_color_grey5</item>
 		<item name="colorBarTrackNegative">@color/blau_color_grey5</item>

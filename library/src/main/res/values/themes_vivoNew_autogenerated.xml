@@ -134,6 +134,7 @@
 		<item name="colorControlActivatedNegative">@color/vivoNew_color_white</item>
 		<item name="colorControlActivatedBrand">@color/vivoNew_color_white</item>
 		<item name="colorControlError">@color/vivoNew_color_pepper</item>
+		<item name="colorChevronIndicator">@color/vivoNew_color_grey5</item>
 		<item name="colorBarTrack">@color/vivoNew_color_grey3</item>
 		<item name="colorBarTrackInverse">@color/vivoNew_color_white_50_alpha</item>
 		<item name="colorBarTrackNegative">@color/vivoNew_color_white_50_alpha</item>
@@ -472,6 +473,7 @@
 		<item name="colorControlActivatedNegative">@color/vivoNew_color_white</item>
 		<item name="colorControlActivatedBrand">@color/vivoNew_color_white</item>
 		<item name="colorControlError">@color/vivoNew_color_pepper</item>
+		<item name="colorChevronIndicator">@color/vivoNew_color_grey5</item>
 		<item name="colorBarTrack">@color/vivoNew_color_grey3</item>
 		<item name="colorBarTrackInverse">@color/vivoNew_color_white_50_alpha</item>
 		<item name="colorBarTrackNegative">@color/vivoNew_color_white_50_alpha</item>
