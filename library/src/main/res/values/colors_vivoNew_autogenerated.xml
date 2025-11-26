@@ -45,6 +45,7 @@
 	<color name="vivoNew_color_darkModeBlack_25_alpha">#40191919</color>
 	<color name="vivoNew_color_darkModeBlack_35_alpha">#59191919</color>
 	<color name="vivoNew_color_white_10_alpha">#1AFFFFFF</color>
+	<color name="vivoNew_color_white_0_alpha">#00FFFFFF</color>
 	<color name="vivoNew_color_white_15_alpha">#26FFFFFF</color>
 	<color name="vivoNew_color_white_50_alpha">#80FFFFFF</color>
 	<color name="vivoNew_color_white_20_alpha">#33FFFFFF</color>
@@ -55,5 +56,4 @@
 	<color name="vivoNew_color_white_8_alpha">#14FFFFFF</color>
 	<color name="vivoNew_color_white_3_alpha">#08FFFFFF</color>
 	<color name="vivoNew_color_darkModeGrey_80_alpha">#CC242424</color>
-	<color name="vivoNew_color_white_0_alpha">#00FFFFFF</color>
 </resources>

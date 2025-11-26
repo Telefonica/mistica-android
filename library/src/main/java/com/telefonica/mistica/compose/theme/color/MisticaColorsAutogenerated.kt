@@ -15,6 +15,9 @@ public class MisticaColors {
   public var backgroundAlternative: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
+  public var backgroundNegative: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
   public var backgroundBrandSecondary: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
@@ -39,6 +42,12 @@ public class MisticaColors {
   public var backgroundContainerBrandOverInverse: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
+  public var backgroundContainerNegative: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var backgroundContainerBrandOverBrand: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
   public var backgroundContainerAlternative: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
@@ -49,6 +58,12 @@ public class MisticaColors {
       structuralEqualityPolicy())
 
   public var backgroundSkeletonInverse: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var backgroundSkeletonNegative: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var backgroundSkeletonBrand: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
   public var backgroundBrandTop: Color by mutableStateOf(Color.Unspecified,
@@ -91,6 +106,12 @@ public class MisticaColors {
   public var buttonLinkDangerBackgroundInverse: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
+  public var buttonLinkDangerBackgroundNegative: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var buttonLinkDangerBackgroundBrand: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
   public var buttonLinkDangerBackgroundMedia: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
@@ -98,6 +119,12 @@ public class MisticaColors {
       structuralEqualityPolicy())
 
   public var buttonLinkDangerBackgroundInversePressed: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var buttonLinkDangerBackgroundNegativePressed: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var buttonLinkDangerBackgroundBrandPressed: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
   public var buttonLinkDangerBackgroundMediaPressed: Color by mutableStateOf(Color.Unspecified,
@@ -109,6 +136,12 @@ public class MisticaColors {
   public var buttonLinkBackgroundInversePressed: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
+  public var buttonLinkBackgroundNegativePressed: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var buttonLinkBackgroundBrandPressed: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
   public var buttonLinkBackgroundMediaPressed: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
@@ -116,6 +149,12 @@ public class MisticaColors {
       structuralEqualityPolicy())
 
   public var buttonPrimaryBackgroundInverse: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var buttonPrimaryBackgroundNegative: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var buttonPrimaryBackgroundBrand: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
   public var buttonPrimaryBackgroundMedia: Color by mutableStateOf(Color.Unspecified,
@@ -127,6 +166,12 @@ public class MisticaColors {
   public var buttonPrimaryBackgroundInverseHover: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
+  public var buttonPrimaryBackgroundNegativeHover: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var buttonPrimaryBackgroundBrandHover: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
   public var buttonPrimaryBackgroundMediaHover: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
@@ -136,13 +181,28 @@ public class MisticaColors {
   public var buttonPrimaryBackgroundInversePressed: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
+  public var buttonPrimaryBackgroundNegativePressed: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var buttonPrimaryBackgroundBrandPressed: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
   public var buttonPrimaryBackgroundMediaPressed: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var buttonSecondaryBackgroundBrand: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
   public var buttonSecondaryBorder: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
   public var buttonSecondaryBorderInverse: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var buttonSecondaryBorderNegative: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var buttonSecondaryBorderBrand: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
   public var buttonSecondaryBorderMedia: Color by mutableStateOf(Color.Unspecified,
@@ -154,6 +214,12 @@ public class MisticaColors {
   public var buttonSecondaryBorderInversePressed: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
+  public var buttonSecondaryBorderNegativePressed: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var buttonSecondaryBorderBrandPressed: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
   public var buttonSecondaryBorderMediaPressed: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
@@ -161,6 +227,12 @@ public class MisticaColors {
       structuralEqualityPolicy())
 
   public var buttonSecondaryBackgroundInverseHover: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var buttonSecondaryBackgroundNegativeHover: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var buttonSecondaryBackgroundBrandHover: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
   public var buttonSecondaryBackgroundMediaHover: Color by mutableStateOf(Color.Unspecified,
@@ -172,6 +244,12 @@ public class MisticaColors {
   public var buttonSecondaryBackgroundInversePressed: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
+  public var buttonSecondaryBackgroundNegativePressed: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var buttonSecondaryBackgroundBrandPressed: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
   public var buttonSecondaryBackgroundMediaPressed: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
@@ -181,10 +259,22 @@ public class MisticaColors {
   public var textButtonPrimaryInverse: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
+  public var textButtonPrimaryNegative: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var textButtonPrimaryBrand: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
   public var textButtonPrimaryMedia: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
   public var textButtonPrimaryInversePressed: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var textButtonPrimaryNegativePressed: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var textButtonPrimaryBrandPressed: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
   public var textButtonPrimaryMediaPressed: Color by mutableStateOf(Color.Unspecified,
@@ -196,6 +286,12 @@ public class MisticaColors {
   public var textButtonSecondaryInverse: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
+  public var textButtonSecondaryNegative: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var textButtonSecondaryBrand: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
   public var textButtonSecondaryMedia: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
@@ -205,12 +301,23 @@ public class MisticaColors {
   public var textButtonSecondaryInversePressed: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
+  public var textButtonSecondaryNegativePressed: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var textButtonSecondaryBrandPressed: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
   public var textButtonSecondaryMediaPressed: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
   public var textLink: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
 
   public var textLinkInverse: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
+
+  public var textLinkNegative: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var textLinkBrand: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
 
   public var textLinkMedia: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
 
@@ -231,9 +338,21 @@ public class MisticaColors {
   public var inputBorderInverse: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
+  public var inputBorderNegative: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var inputBorderBrand: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
   public var completedStep: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
 
   public var completedStepInverse: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var completedStepNegative: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var completedStepBrand: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
   public var control: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
@@ -243,14 +362,32 @@ public class MisticaColors {
 
   public var controlInverse: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
 
+  public var controlNegative: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
+
+  public var controlBrand: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
+
   public var controlActivatedInverse: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var controlActivatedNegative: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var controlActivatedBrand: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
   public var controlError: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
 
+  public var chevronIndicator: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
   public var barTrack: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
 
   public var barTrackInverse: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
+
+  public var barTrackNegative: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var barTrackBrand: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
 
   public var loadingBar: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
 
@@ -263,14 +400,36 @@ public class MisticaColors {
   public var toggleAndroidBackgroundActive: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
+  public var toggleAndroidActiveBrand: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var toggleAndroidInactiveBrand: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var toggleAndroidBackgroundActiveBrand: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var toggleAndroidBackgroundInactiveBrand: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
   public var iosControlKnob: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
 
   public var controlKnobInverse: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
+  public var controlKnobNegative: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var controlKnobBrand: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
   public var divider: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
 
   public var dividerInverse: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
+
+  public var dividerNegative: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
+
+  public var dividerBrand: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
 
   public var navigationBarDivider: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
@@ -289,11 +448,19 @@ public class MisticaColors {
 
   public var inverse: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
 
+  public var negative: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
+
   public var neutralHigh: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
 
   public var neutralMedium: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
 
   public var neutralMediumInverse: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var neutralMediumNegative: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var neutralMediumBrand: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
   public var neutralLow: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
@@ -306,12 +473,24 @@ public class MisticaColors {
   public var textPrimaryInverse: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
+  public var textPrimaryNegative: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var textPrimaryBrand: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
   public var textPrimaryMedia: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
   public var textSecondary: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
 
   public var textSecondaryInverse: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var textSecondaryNegative: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var textSecondaryBrand: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
   public var textSecondaryMedia: Color by mutableStateOf(Color.Unspecified,
@@ -327,6 +506,11 @@ public class MisticaColors {
 
   public var textErrorInverse: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
+
+  public var textErrorNegative: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var textErrorBrand: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
 
   public var promo: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
 
@@ -353,14 +537,36 @@ public class MisticaColors {
   public var successHighInverse: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
+  public var successHighNegative: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var successHighBrand: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
   public var warningHighInverse: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var warningHighNegative: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var warningHighBrand: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
   public var errorHighInverse: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
+  public var errorHighNegative: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var errorHighBrand: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
+
   public var promoHighInverse: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
+
+  public var promoHighNegative: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var promoHighBrand: Color by mutableStateOf(Color.Unspecified, structuralEqualityPolicy())
 
   public var textNavigationBarPrimary: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
@@ -420,43 +626,127 @@ public class MisticaColors {
   public var tagTextPromoInverse: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
+  public var tagTextPromoNegative: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var tagTextPromoBrand: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
   public var tagTextActiveInverse: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var tagTextActiveNegative: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var tagTextActiveBrand: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
   public var tagTextInactiveInverse: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
+  public var tagTextInactiveNegative: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var tagTextInactiveBrand: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
   public var tagTextInfoInverse: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var tagTextInfoNegative: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var tagTextInfoBrand: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
   public var tagTextSuccessInverse: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
+  public var tagTextSuccessNegative: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var tagTextSuccessBrand: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
   public var tagTextWarningInverse: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var tagTextWarningNegative: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var tagTextWarningBrand: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
   public var tagTextErrorInverse: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
+  public var tagTextErrorNegative: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var tagTextErrorBrand: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
   public var tagBackgroundPromoInverse: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var tagBackgroundPromoNegative: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var tagBackgroundPromoBrand: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
   public var tagBackgroundActiveInverse: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
+  public var tagBackgroundActiveNegative: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var tagBackgroundActiveBrand: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
   public var tagBackgroundInactiveInverse: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var tagBackgroundInactiveNegative: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var tagBackgroundInactiveBrand: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
   public var tagBackgroundInfoInverse: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
+  public var tagBackgroundInfoNegative: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var tagBackgroundInfoBrand: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
   public var tagBackgroundSuccessInverse: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var tagBackgroundSuccessNegative: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var tagBackgroundSuccessBrand: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
   public var tagBackgroundWarningInverse: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
+  public var tagBackgroundWarningNegative: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var tagBackgroundWarningBrand: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
   public var tagBackgroundErrorInverse: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var tagBackgroundErrorNegative: Color by mutableStateOf(Color.Unspecified,
+      structuralEqualityPolicy())
+
+  public var tagBackgroundErrorBrand: Color by mutableStateOf(Color.Unspecified,
       structuralEqualityPolicy())
 
   public var cardFooterOverlay: Color by mutableStateOf(Color.Unspecified,
@@ -465,6 +755,7 @@ public class MisticaColors {
   public fun updateColorsFrom(other: MisticaColors) {
     background = other.background
     backgroundAlternative = other.backgroundAlternative
+    backgroundNegative = other.backgroundNegative
     backgroundBrandSecondary = other.backgroundBrandSecondary
     backgroundContainer = other.backgroundContainer
     backgroundContainerError = other.backgroundContainerError
@@ -473,10 +764,14 @@ public class MisticaColors {
     backgroundContainerBrandHover = other.backgroundContainerBrandHover
     backgroundContainerBrandPressed = other.backgroundContainerBrandPressed
     backgroundContainerBrandOverInverse = other.backgroundContainerBrandOverInverse
+    backgroundContainerNegative = other.backgroundContainerNegative
+    backgroundContainerBrandOverBrand = other.backgroundContainerBrandOverBrand
     backgroundContainerAlternative = other.backgroundContainerAlternative
     backgroundOverlay = other.backgroundOverlay
     backgroundSkeleton = other.backgroundSkeleton
     backgroundSkeletonInverse = other.backgroundSkeletonInverse
+    backgroundSkeletonNegative = other.backgroundSkeletonNegative
+    backgroundSkeletonBrand = other.backgroundSkeletonBrand
     backgroundBrandTop = other.backgroundBrandTop
     backgroundBrandBottom = other.backgroundBrandBottom
     appBarBackground = other.appBarBackground
@@ -492,47 +787,78 @@ public class MisticaColors {
     buttonDangerBackgroundPressed = other.buttonDangerBackgroundPressed
     buttonDangerBackgroundHover = other.buttonDangerBackgroundHover
     buttonLinkDangerBackgroundInverse = other.buttonLinkDangerBackgroundInverse
+    buttonLinkDangerBackgroundNegative = other.buttonLinkDangerBackgroundNegative
+    buttonLinkDangerBackgroundBrand = other.buttonLinkDangerBackgroundBrand
     buttonLinkDangerBackgroundMedia = other.buttonLinkDangerBackgroundMedia
     buttonLinkDangerBackgroundPressed = other.buttonLinkDangerBackgroundPressed
     buttonLinkDangerBackgroundInversePressed = other.buttonLinkDangerBackgroundInversePressed
+    buttonLinkDangerBackgroundNegativePressed = other.buttonLinkDangerBackgroundNegativePressed
+    buttonLinkDangerBackgroundBrandPressed = other.buttonLinkDangerBackgroundBrandPressed
     buttonLinkDangerBackgroundMediaPressed = other.buttonLinkDangerBackgroundMediaPressed
     buttonLinkBackgroundPressed = other.buttonLinkBackgroundPressed
     buttonLinkBackgroundInversePressed = other.buttonLinkBackgroundInversePressed
+    buttonLinkBackgroundNegativePressed = other.buttonLinkBackgroundNegativePressed
+    buttonLinkBackgroundBrandPressed = other.buttonLinkBackgroundBrandPressed
     buttonLinkBackgroundMediaPressed = other.buttonLinkBackgroundMediaPressed
     buttonPrimaryBackground = other.buttonPrimaryBackground
     buttonPrimaryBackgroundInverse = other.buttonPrimaryBackgroundInverse
+    buttonPrimaryBackgroundNegative = other.buttonPrimaryBackgroundNegative
+    buttonPrimaryBackgroundBrand = other.buttonPrimaryBackgroundBrand
     buttonPrimaryBackgroundMedia = other.buttonPrimaryBackgroundMedia
     buttonPrimaryBackgroundHover = other.buttonPrimaryBackgroundHover
     buttonPrimaryBackgroundInverseHover = other.buttonPrimaryBackgroundInverseHover
+    buttonPrimaryBackgroundNegativeHover = other.buttonPrimaryBackgroundNegativeHover
+    buttonPrimaryBackgroundBrandHover = other.buttonPrimaryBackgroundBrandHover
     buttonPrimaryBackgroundMediaHover = other.buttonPrimaryBackgroundMediaHover
     buttonPrimaryBackgroundPressed = other.buttonPrimaryBackgroundPressed
     buttonPrimaryBackgroundInversePressed = other.buttonPrimaryBackgroundInversePressed
+    buttonPrimaryBackgroundNegativePressed = other.buttonPrimaryBackgroundNegativePressed
+    buttonPrimaryBackgroundBrandPressed = other.buttonPrimaryBackgroundBrandPressed
     buttonPrimaryBackgroundMediaPressed = other.buttonPrimaryBackgroundMediaPressed
+    buttonSecondaryBackgroundBrand = other.buttonSecondaryBackgroundBrand
     buttonSecondaryBorder = other.buttonSecondaryBorder
     buttonSecondaryBorderInverse = other.buttonSecondaryBorderInverse
+    buttonSecondaryBorderNegative = other.buttonSecondaryBorderNegative
+    buttonSecondaryBorderBrand = other.buttonSecondaryBorderBrand
     buttonSecondaryBorderMedia = other.buttonSecondaryBorderMedia
     buttonSecondaryBorderPressed = other.buttonSecondaryBorderPressed
     buttonSecondaryBorderInversePressed = other.buttonSecondaryBorderInversePressed
+    buttonSecondaryBorderNegativePressed = other.buttonSecondaryBorderNegativePressed
+    buttonSecondaryBorderBrandPressed = other.buttonSecondaryBorderBrandPressed
     buttonSecondaryBorderMediaPressed = other.buttonSecondaryBorderMediaPressed
     buttonSecondaryBackgroundHover = other.buttonSecondaryBackgroundHover
     buttonSecondaryBackgroundInverseHover = other.buttonSecondaryBackgroundInverseHover
+    buttonSecondaryBackgroundNegativeHover = other.buttonSecondaryBackgroundNegativeHover
+    buttonSecondaryBackgroundBrandHover = other.buttonSecondaryBackgroundBrandHover
     buttonSecondaryBackgroundMediaHover = other.buttonSecondaryBackgroundMediaHover
     buttonSecondaryBackgroundPressed = other.buttonSecondaryBackgroundPressed
     buttonSecondaryBackgroundInversePressed = other.buttonSecondaryBackgroundInversePressed
+    buttonSecondaryBackgroundNegativePressed = other.buttonSecondaryBackgroundNegativePressed
+    buttonSecondaryBackgroundBrandPressed = other.buttonSecondaryBackgroundBrandPressed
     buttonSecondaryBackgroundMediaPressed = other.buttonSecondaryBackgroundMediaPressed
     textButtonPrimary = other.textButtonPrimary
     textButtonPrimaryInverse = other.textButtonPrimaryInverse
+    textButtonPrimaryNegative = other.textButtonPrimaryNegative
+    textButtonPrimaryBrand = other.textButtonPrimaryBrand
     textButtonPrimaryMedia = other.textButtonPrimaryMedia
     textButtonPrimaryInversePressed = other.textButtonPrimaryInversePressed
+    textButtonPrimaryNegativePressed = other.textButtonPrimaryNegativePressed
+    textButtonPrimaryBrandPressed = other.textButtonPrimaryBrandPressed
     textButtonPrimaryMediaPressed = other.textButtonPrimaryMediaPressed
     textButtonSecondary = other.textButtonSecondary
     textButtonSecondaryInverse = other.textButtonSecondaryInverse
+    textButtonSecondaryNegative = other.textButtonSecondaryNegative
+    textButtonSecondaryBrand = other.textButtonSecondaryBrand
     textButtonSecondaryMedia = other.textButtonSecondaryMedia
     textButtonSecondaryPressed = other.textButtonSecondaryPressed
     textButtonSecondaryInversePressed = other.textButtonSecondaryInversePressed
+    textButtonSecondaryNegativePressed = other.textButtonSecondaryNegativePressed
+    textButtonSecondaryBrandPressed = other.textButtonSecondaryBrandPressed
     textButtonSecondaryMediaPressed = other.textButtonSecondaryMediaPressed
     textLink = other.textLink
     textLinkInverse = other.textLinkInverse
+    textLinkNegative = other.textLinkNegative
+    textLinkBrand = other.textLinkBrand
     textLinkMedia = other.textLinkMedia
     textLinkDanger = other.textLinkDanger
     textLinkDangerMedia = other.textLinkDangerMedia
@@ -541,23 +867,42 @@ public class MisticaColors {
     textBrand = other.textBrand
     inputBorder = other.inputBorder
     inputBorderInverse = other.inputBorderInverse
+    inputBorderNegative = other.inputBorderNegative
+    inputBorderBrand = other.inputBorderBrand
     completedStep = other.completedStep
     completedStepInverse = other.completedStepInverse
+    completedStepNegative = other.completedStepNegative
+    completedStepBrand = other.completedStepBrand
     control = other.control
     controlActivated = other.controlActivated
     controlInverse = other.controlInverse
+    controlNegative = other.controlNegative
+    controlBrand = other.controlBrand
     controlActivatedInverse = other.controlActivatedInverse
+    controlActivatedNegative = other.controlActivatedNegative
+    controlActivatedBrand = other.controlActivatedBrand
     controlError = other.controlError
+    chevronIndicator = other.chevronIndicator
     barTrack = other.barTrack
     barTrackInverse = other.barTrackInverse
+    barTrackNegative = other.barTrackNegative
+    barTrackBrand = other.barTrackBrand
     loadingBar = other.loadingBar
     loadingBarBackground = other.loadingBarBackground
     toggleAndroidInactive = other.toggleAndroidInactive
     toggleAndroidBackgroundActive = other.toggleAndroidBackgroundActive
+    toggleAndroidActiveBrand = other.toggleAndroidActiveBrand
+    toggleAndroidInactiveBrand = other.toggleAndroidInactiveBrand
+    toggleAndroidBackgroundActiveBrand = other.toggleAndroidBackgroundActiveBrand
+    toggleAndroidBackgroundInactiveBrand = other.toggleAndroidBackgroundInactiveBrand
     iosControlKnob = other.iosControlKnob
     controlKnobInverse = other.controlKnobInverse
+    controlKnobNegative = other.controlKnobNegative
+    controlKnobBrand = other.controlKnobBrand
     divider = other.divider
     dividerInverse = other.dividerInverse
+    dividerNegative = other.dividerNegative
+    dividerBrand = other.dividerBrand
     navigationBarDivider = other.navigationBarDivider
     badge = other.badge
     feedbackErrorBackground = other.feedbackErrorBackground
@@ -565,22 +910,31 @@ public class MisticaColors {
     brand = other.brand
     brandHigh = other.brandHigh
     inverse = other.inverse
+    negative = other.negative
     neutralHigh = other.neutralHigh
     neutralMedium = other.neutralMedium
     neutralMediumInverse = other.neutralMediumInverse
+    neutralMediumNegative = other.neutralMediumNegative
+    neutralMediumBrand = other.neutralMediumBrand
     neutralLow = other.neutralLow
     neutralLowAlternative = other.neutralLowAlternative
     textPrimary = other.textPrimary
     textPrimaryInverse = other.textPrimaryInverse
+    textPrimaryNegative = other.textPrimaryNegative
+    textPrimaryBrand = other.textPrimaryBrand
     textPrimaryMedia = other.textPrimaryMedia
     textSecondary = other.textSecondary
     textSecondaryInverse = other.textSecondaryInverse
+    textSecondaryNegative = other.textSecondaryNegative
+    textSecondaryBrand = other.textSecondaryBrand
     textSecondaryMedia = other.textSecondaryMedia
     success = other.success
     warning = other.warning
     error = other.error
     textError = other.textError
     textErrorInverse = other.textErrorInverse
+    textErrorNegative = other.textErrorNegative
+    textErrorBrand = other.textErrorBrand
     promo = other.promo
     highlight = other.highlight
     successLow = other.successLow
@@ -593,9 +947,17 @@ public class MisticaColors {
     errorHigh = other.errorHigh
     promoHigh = other.promoHigh
     successHighInverse = other.successHighInverse
+    successHighNegative = other.successHighNegative
+    successHighBrand = other.successHighBrand
     warningHighInverse = other.warningHighInverse
+    warningHighNegative = other.warningHighNegative
+    warningHighBrand = other.warningHighBrand
     errorHighInverse = other.errorHighInverse
+    errorHighNegative = other.errorHighNegative
+    errorHighBrand = other.errorHighBrand
     promoHighInverse = other.promoHighInverse
+    promoHighNegative = other.promoHighNegative
+    promoHighBrand = other.promoHighBrand
     textNavigationBarPrimary = other.textNavigationBarPrimary
     textNavigationBarSecondary = other.textNavigationBarSecondary
     textNavigationSearchBarHint = other.textNavigationSearchBarHint
@@ -618,19 +980,47 @@ public class MisticaColors {
     tagBackgroundWarning = other.tagBackgroundWarning
     tagBackgroundError = other.tagBackgroundError
     tagTextPromoInverse = other.tagTextPromoInverse
+    tagTextPromoNegative = other.tagTextPromoNegative
+    tagTextPromoBrand = other.tagTextPromoBrand
     tagTextActiveInverse = other.tagTextActiveInverse
+    tagTextActiveNegative = other.tagTextActiveNegative
+    tagTextActiveBrand = other.tagTextActiveBrand
     tagTextInactiveInverse = other.tagTextInactiveInverse
+    tagTextInactiveNegative = other.tagTextInactiveNegative
+    tagTextInactiveBrand = other.tagTextInactiveBrand
     tagTextInfoInverse = other.tagTextInfoInverse
+    tagTextInfoNegative = other.tagTextInfoNegative
+    tagTextInfoBrand = other.tagTextInfoBrand
     tagTextSuccessInverse = other.tagTextSuccessInverse
+    tagTextSuccessNegative = other.tagTextSuccessNegative
+    tagTextSuccessBrand = other.tagTextSuccessBrand
     tagTextWarningInverse = other.tagTextWarningInverse
+    tagTextWarningNegative = other.tagTextWarningNegative
+    tagTextWarningBrand = other.tagTextWarningBrand
     tagTextErrorInverse = other.tagTextErrorInverse
+    tagTextErrorNegative = other.tagTextErrorNegative
+    tagTextErrorBrand = other.tagTextErrorBrand
     tagBackgroundPromoInverse = other.tagBackgroundPromoInverse
+    tagBackgroundPromoNegative = other.tagBackgroundPromoNegative
+    tagBackgroundPromoBrand = other.tagBackgroundPromoBrand
     tagBackgroundActiveInverse = other.tagBackgroundActiveInverse
+    tagBackgroundActiveNegative = other.tagBackgroundActiveNegative
+    tagBackgroundActiveBrand = other.tagBackgroundActiveBrand
     tagBackgroundInactiveInverse = other.tagBackgroundInactiveInverse
+    tagBackgroundInactiveNegative = other.tagBackgroundInactiveNegative
+    tagBackgroundInactiveBrand = other.tagBackgroundInactiveBrand
     tagBackgroundInfoInverse = other.tagBackgroundInfoInverse
+    tagBackgroundInfoNegative = other.tagBackgroundInfoNegative
+    tagBackgroundInfoBrand = other.tagBackgroundInfoBrand
     tagBackgroundSuccessInverse = other.tagBackgroundSuccessInverse
+    tagBackgroundSuccessNegative = other.tagBackgroundSuccessNegative
+    tagBackgroundSuccessBrand = other.tagBackgroundSuccessBrand
     tagBackgroundWarningInverse = other.tagBackgroundWarningInverse
+    tagBackgroundWarningNegative = other.tagBackgroundWarningNegative
+    tagBackgroundWarningBrand = other.tagBackgroundWarningBrand
     tagBackgroundErrorInverse = other.tagBackgroundErrorInverse
+    tagBackgroundErrorNegative = other.tagBackgroundErrorNegative
+    tagBackgroundErrorBrand = other.tagBackgroundErrorBrand
     cardFooterOverlay = other.cardFooterOverlay
   }
 }
