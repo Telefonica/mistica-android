@@ -1,5 +1,5 @@
 ---
-applyTo: "library/**/*, library-test-utils/**/*, tokens/**/*"
+applyTo: "library/**/*"
 excludeAgent: "coding-agent"
 ---
 
