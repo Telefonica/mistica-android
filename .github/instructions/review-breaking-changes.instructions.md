@@ -18,5 +18,7 @@ Focus specifically on detecting:
 - For UI components, changes to XML attributes, theming contracts, styleable entries, or required resources that may break clients.
 
 For any potential breaking change:
-- Remind the author to add the “Breaking change” label to the PR.
-- Remind us to include the migration notes when the release is drafted.
+- Create a separate comment describing why it may break existing consumers.
+- When detecting a potential breaking change:
+    - Remind the author to apply the "Breaking change" label to the PR.
+    - Remind that migration notes are not expected inside the PR; they must be added later when drafting the release (via "Draft new Release").
