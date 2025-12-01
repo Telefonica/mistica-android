@@ -301,6 +301,7 @@
 		<item name="title1Font">?font_family_medium</item>
 		<item name="title2Font">?font_family_regular</item>
 		<item name="title3Font">?font_family_regular</item>
+		<item name="title4Font">?font_family_regular</item>
 		<item name="indicatorFont">?font_family_medium</item>
 		<item name="navigationBarFont">?font_family_medium</item>
 		<item name="text5Font">?font_family_regular</item>
@@ -309,6 +310,7 @@
 		<item name="text8Font">?font_family_regular</item>
 		<item name="text9Font">?font_family_regular</item>
 		<item name="text10Font">?font_family_regular</item>
+		<item name="chipLabelFont">?font_family_medium</item>
 		<!-- Preset styles -->
 		<item name="cardTitleTextStyle">bold</item>
 		<item name="rowTitleTextStyle">normal</item>
@@ -318,6 +320,7 @@
 		<item name="title1TextStyle">normal</item>
 		<item name="title2TextStyle">bold</item>
 		<item name="title3TextStyle">bold</item>
+		<item name="title4TextStyle">bold</item>
 		<item name="indicatorTextStyle">normal</item>
 		<item name="navigationBarTextStyle">normal</item>
 		<item name="text5TextStyle">bold</item>
@@ -326,9 +329,13 @@
 		<item name="text8TextStyle">bold</item>
 		<item name="text9TextStyle">bold</item>
 		<item name="text10TextStyle">bold</item>
+		<item name="chipLabelTextStyle">normal</item>
 		<!-- Preset sizes -->
 		<item name="tabsLabelTextSize">16sp</item>
-		<item name="title3TextSize">20sp</item>
+		<item name="title1TextSize">14sp</item>
+		<item name="title2TextSize">16sp</item>
+		<item name="title3TextSize">18sp</item>
+		<item name="title4TextSize">20sp</item>
 		<item name="text1TextSize">12sp</item>
 		<item name="text2TextSize">14sp</item>
 		<item name="text3TextSize">16sp</item>
@@ -339,5 +346,11 @@
 		<item name="text8TextSize">32sp</item>
 		<item name="text9TextSize">40sp</item>
 		<item name="text10TextSize">48sp</item>
+		<item name="chipLabelTextSize">14sp</item>
+		<item name="inputLabelTextSize">12sp</item>
+		<item name="inputValueTextSize">16sp</item>
+		<item name="inputHelperTextTextSize">14sp</item>
+		<item name="stepperStepLabelTextSize">12sp</item>
+		<item name="loadingScreenTitleTextSize">24sp</item>
 	</style>
 </resources>

@@ -20,6 +20,8 @@ public object BlauBrandFontWeights {
 
   public val title3FontWeight: FontWeight = FontWeight.Light
 
+  public val title4FontWeight: FontWeight = FontWeight.Light
+
   public val indicatorFontWeight: FontWeight = FontWeight.Medium
 
   public val navigationBarFontWeight: FontWeight = FontWeight.Medium
@@ -35,4 +37,6 @@ public object BlauBrandFontWeights {
   public val text9FontWeight: FontWeight = FontWeight.Light
 
   public val text10FontWeight: FontWeight = FontWeight.Light
+
+  public val chipLabelFontWeight: FontWeight = FontWeight.Medium
 }

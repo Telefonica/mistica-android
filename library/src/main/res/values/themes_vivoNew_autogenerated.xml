@@ -301,6 +301,7 @@
 		<item name="title1Font">?font_family_medium</item>
 		<item name="title2Font">?font_family_medium</item>
 		<item name="title3Font">?font_family_medium</item>
+		<item name="title4Font">?font_family_medium</item>
 		<item name="indicatorFont">?font_family_medium</item>
 		<item name="navigationBarFont">?font_family_regular</item>
 		<item name="text5Font">?font_family_medium</item>
@@ -309,6 +310,7 @@
 		<item name="text8Font">?font_family_regular</item>
 		<item name="text9Font">?font_family_regular</item>
 		<item name="text10Font">?font_family_regular</item>
+		<item name="chipLabelFont">?font_family_medium</item>
 		<!-- Preset styles -->
 		<item name="cardTitleTextStyle">normal</item>
 		<item name="rowTitleTextStyle">normal</item>
@@ -318,6 +320,7 @@
 		<item name="title1TextStyle">normal</item>
 		<item name="title2TextStyle">normal</item>
 		<item name="title3TextStyle">normal</item>
+		<item name="title4TextStyle">normal</item>
 		<item name="indicatorTextStyle">normal</item>
 		<item name="navigationBarTextStyle">normal</item>
 		<item name="text5TextStyle">normal</item>
@@ -326,9 +329,13 @@
 		<item name="text8TextStyle">normal</item>
 		<item name="text9TextStyle">normal</item>
 		<item name="text10TextStyle">normal</item>
+		<item name="chipLabelTextStyle">normal</item>
 		<!-- Preset sizes -->
 		<item name="tabsLabelTextSize">18sp</item>
+		<item name="title1TextSize">12sp</item>
+		<item name="title2TextSize">16sp</item>
 		<item name="title3TextSize">18sp</item>
+		<item name="title4TextSize">24sp</item>
 		<item name="text1TextSize">12sp</item>
 		<item name="text2TextSize">14sp</item>
 		<item name="text3TextSize">16sp</item>
@@ -339,6 +346,12 @@
 		<item name="text8TextSize">32sp</item>
 		<item name="text9TextSize">40sp</item>
 		<item name="text10TextSize">48sp</item>
+		<item name="chipLabelTextSize">14sp</item>
+		<item name="inputLabelTextSize">12sp</item>
+		<item name="inputValueTextSize">16sp</item>
+		<item name="inputHelperTextTextSize">12sp</item>
+		<item name="stepperStepLabelTextSize">14sp</item>
+		<item name="loadingScreenTitleTextSize">18sp</item>
 	</style>
 	<style name="VivoNewOverride" parent="VivoNewOverride_Customizations"/>
 	<style name="VivoNewOverride_Base">
@@ -640,6 +653,7 @@
 		<item name="title1Font">?font_family_medium</item>
 		<item name="title2Font">?font_family_medium</item>
 		<item name="title3Font">?font_family_medium</item>
+		<item name="title4Font">?font_family_medium</item>
 		<item name="indicatorFont">?font_family_medium</item>
 		<item name="navigationBarFont">?font_family_regular</item>
 		<item name="text5Font">?font_family_medium</item>
@@ -648,6 +662,7 @@
 		<item name="text8Font">?font_family_regular</item>
 		<item name="text9Font">?font_family_regular</item>
 		<item name="text10Font">?font_family_regular</item>
+		<item name="chipLabelFont">?font_family_medium</item>
 		<!-- Preset styles -->
 		<item name="cardTitleTextStyle">normal</item>
 		<item name="rowTitleTextStyle">normal</item>
@@ -657,6 +672,7 @@
 		<item name="title1TextStyle">normal</item>
 		<item name="title2TextStyle">normal</item>
 		<item name="title3TextStyle">normal</item>
+		<item name="title4TextStyle">normal</item>
 		<item name="indicatorTextStyle">normal</item>
 		<item name="navigationBarTextStyle">normal</item>
 		<item name="text5TextStyle">normal</item>
@@ -665,9 +681,13 @@
 		<item name="text8TextStyle">normal</item>
 		<item name="text9TextStyle">normal</item>
 		<item name="text10TextStyle">normal</item>
+		<item name="chipLabelTextStyle">normal</item>
 		<!-- Preset sizes -->
 		<item name="tabsLabelTextSize">18sp</item>
+		<item name="title1TextSize">12sp</item>
+		<item name="title2TextSize">16sp</item>
 		<item name="title3TextSize">18sp</item>
+		<item name="title4TextSize">24sp</item>
 		<item name="text1TextSize">12sp</item>
 		<item name="text2TextSize">14sp</item>
 		<item name="text3TextSize">16sp</item>
@@ -678,5 +698,11 @@
 		<item name="text8TextSize">32sp</item>
 		<item name="text9TextSize">40sp</item>
 		<item name="text10TextSize">48sp</item>
+		<item name="chipLabelTextSize">14sp</item>
+		<item name="inputLabelTextSize">12sp</item>
+		<item name="inputValueTextSize">16sp</item>
+		<item name="inputHelperTextTextSize">12sp</item>
+		<item name="stepperStepLabelTextSize">14sp</item>
+		<item name="loadingScreenTitleTextSize">18sp</item>
 	</style>
 </resources>

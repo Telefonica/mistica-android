@@ -312,6 +312,7 @@
 		<attr name="title1Font" format="string"/>
 		<attr name="title2Font" format="string"/>
 		<attr name="title3Font" format="string"/>
+		<attr name="title4Font" format="string"/>
 		<attr name="indicatorFont" format="string"/>
 		<attr name="navigationBarFont" format="string"/>
 		<attr name="text5Font" format="string"/>
@@ -320,6 +321,7 @@
 		<attr name="text8Font" format="string"/>
 		<attr name="text9Font" format="string"/>
 		<attr name="text10Font" format="string"/>
+		<attr name="chipLabelFont" format="string"/>
 	</declare-styleable>
 	<declare-styleable name="PresetStyles">
 		<!-- Important:
@@ -366,6 +368,11 @@
 			<flag name="bold" value="1"/>
 			<flag name="italic" value="2"/>
 		</attr>
+		<attr name="title4TextStyle" format="reference">
+			<flag name="normal" value="0"/>
+			<flag name="bold" value="1"/>
+			<flag name="italic" value="2"/>
+		</attr>
 		<attr name="indicatorTextStyle" format="reference">
 			<flag name="normal" value="0"/>
 			<flag name="bold" value="1"/>
@@ -406,10 +413,18 @@
 			<flag name="bold" value="1"/>
 			<flag name="italic" value="2"/>
 		</attr>
+		<attr name="chipLabelTextStyle" format="reference">
+			<flag name="normal" value="0"/>
+			<flag name="bold" value="1"/>
+			<flag name="italic" value="2"/>
+		</attr>
 	</declare-styleable>
 	<declare-styleable name="PresetSizes">
 		<attr name="tabsLabelTextSize" format="dimension"/>
+		<attr name="title1TextSize" format="dimension"/>
+		<attr name="title2TextSize" format="dimension"/>
 		<attr name="title3TextSize" format="dimension"/>
+		<attr name="title4TextSize" format="dimension"/>
 		<attr name="text1TextSize" format="dimension"/>
 		<attr name="text2TextSize" format="dimension"/>
 		<attr name="text3TextSize" format="dimension"/>
@@ -420,5 +435,11 @@
 		<attr name="text8TextSize" format="dimension"/>
 		<attr name="text9TextSize" format="dimension"/>
 		<attr name="text10TextSize" format="dimension"/>
+		<attr name="chipLabelTextSize" format="dimension"/>
+		<attr name="inputLabelTextSize" format="dimension"/>
+		<attr name="inputValueTextSize" format="dimension"/>
+		<attr name="inputHelperTextTextSize" format="dimension"/>
+		<attr name="stepperStepLabelTextSize" format="dimension"/>
+		<attr name="loadingScreenTitleTextSize" format="dimension"/>
 	</declare-styleable>
 </resources>

@@ -7,7 +7,13 @@ import androidx.compose.ui.unit.sp
 public object MovistarNewBrandFontSizes {
   public val tabsLabelFontSize: TextUnit = 16.sp
 
-  public val title3FontSize: TextUnit = 20.sp
+  public val title1FontSize: TextUnit = 14.sp
+
+  public val title2FontSize: TextUnit = 16.sp
+
+  public val title3FontSize: TextUnit = 18.sp
+
+  public val title4FontSize: TextUnit = 20.sp
 
   public val text1FontSize: TextUnit = 12.sp
 
@@ -28,4 +34,16 @@ public object MovistarNewBrandFontSizes {
   public val text9FontSize: TextUnit = 40.sp
 
   public val text10FontSize: TextUnit = 48.sp
+
+  public val chipLabelFontSize: TextUnit = 14.sp
+
+  public val inputLabelFontSize: TextUnit = 12.sp
+
+  public val inputValueFontSize: TextUnit = 16.sp
+
+  public val inputHelperTextFontSize: TextUnit = 14.sp
+
+  public val stepperStepLabelFontSize: TextUnit = 12.sp
+
+  public val loadingScreenTitleFontSize: TextUnit = 24.sp
 }
