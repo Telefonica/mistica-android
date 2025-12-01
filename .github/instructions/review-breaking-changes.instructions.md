@@ -19,6 +19,5 @@ Focus specifically on detecting:
 
 For any potential breaking change:
 - Create a separate comment describing why it may break existing consumers.
-- When detecting a potential breaking change:
-    - Remind the author to apply the "Breaking change" label to the PR.
-    - Remind that migration notes are not expected inside the PR; they must be added later when drafting the release (via "Draft new Release").
+- Remind the author to apply the "Breaking change" label to the PR.
+- Remind that migration notes are not expected inside the PR; they must be added later when drafting the release (via "Draft new Release").
