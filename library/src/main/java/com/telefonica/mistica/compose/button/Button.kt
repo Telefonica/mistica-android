@@ -225,7 +225,7 @@ private fun Modifier.applyWidth(originalWidth: Dp?): Modifier =
 
 enum class ButtonStyle {
     PRIMARY,
-    PRIMARY_SMALL,
+    PRIMAY_VERY_SMALL,
     SECONDARY,
     SECONDARY_SMALL,
     DANGER,
@@ -280,7 +280,7 @@ private fun ProgressButtonIconPreview() {
 @Composable
 private fun ProgressButtonIconSmallPreview() {
     PreviewTheme {
-        Button(text = "Text", icon = R.drawable.icn_creditcard, buttonStyle = ButtonStyle.PRIMARY_SMALL) {}
+        Button(text = "Text", icon = R.drawable.icn_creditcard, buttonStyle = ButtonStyle.PRIMAY_VERY_SMALL) {}
     }
 }
 

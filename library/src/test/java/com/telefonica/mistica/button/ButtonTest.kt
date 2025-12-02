@@ -105,7 +105,7 @@ internal class ButtonTest(
 @Suppress("CyclomaticComplexMethod")
 private fun ButtonStyle.getButtonLayout(): Int = when (this) {
     ButtonStyle.PRIMARY -> R.layout.primary_button
-    ButtonStyle.PRIMARY_SMALL -> R.layout.primary_button_small
+    ButtonStyle.PRIMAY_VERY_SMALL -> R.layout.primary_button_small
     ButtonStyle.SECONDARY -> R.layout.secondary_button
     ButtonStyle.SECONDARY_SMALL -> R.layout.secondary_button_small
     ButtonStyle.DANGER -> R.layout.danger_button

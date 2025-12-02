@@ -53,7 +53,7 @@ import com.telefonica.mistica.catalog.ui.compose.common.CatalogO2NewBrand
 import com.telefonica.mistica.catalog.ui.compose.common.CatalogTelefonicaBrand
 import com.telefonica.mistica.catalog.ui.compose.common.CatalogTuBrand
 import com.telefonica.mistica.catalog.ui.compose.common.CatalogVivoNewBrand
-import com.telefonica.mistica.catalog.ui.compose.common.ComponentComposeFragment
+import com.telefonica.mistica.catalog.ui.compose.common.ComponentValueComposeFragment
 import com.telefonica.mistica.catalog.ui.compose.components.Badges
 import com.telefonica.mistica.catalog.ui.compose.components.Buttons
 import com.telefonica.mistica.catalog.ui.compose.components.Callouts
@@ -327,7 +327,7 @@ class ComponentCatalogActivity : AppCompatActivity() {
             if (classicComponent != null) add(classicComponent)
             else binding.componentTabs.removeTabAt(CLASSIC_TAB_POS)
 
-            if (composeComponent != null) add(ComponentComposeFragment(composeThemeOverride, composeComponent))
+            if (composeComponent != null) add(ComponentValueComposeFragment(composeThemeOverride, composeComponent))
             else binding.componentTabs.removeTabAt(COMPOSE_TAB_POS)
         }
 

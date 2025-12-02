@@ -11,7 +11,7 @@ internal fun ButtonStyle.getButtonSizeCompose(): ButtonSizeConfig =
     when (this) {
         ButtonStyle.DANGER_SMALL,
         ButtonStyle.PRIMARY_SMALL_INVERSE,
-        ButtonStyle.PRIMARY_SMALL,
+        ButtonStyle.PRIMAY_VERY_SMALL,
         ButtonStyle.SECONDARY_SMALL_INVERSE,
         ButtonStyle.SECONDARY_SMALL,
         ButtonStyle.LINK,

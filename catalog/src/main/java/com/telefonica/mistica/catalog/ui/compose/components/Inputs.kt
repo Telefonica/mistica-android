@@ -325,7 +325,7 @@ private fun ColumnScope.EmailInputWithValidation() {
         onClickListener = {
             isError = text.isEmpty()
         },
-        buttonStyle = ButtonStyle.PRIMARY_SMALL
+        buttonStyle = ButtonStyle.PRIMAY_VERY_SMALL
     )
 }
 
@@ -361,7 +361,7 @@ private fun ColumnScope.PhoneInputWithValidation() {
         onClickListener = {
             isError = text.isEmpty()
         },
-        buttonStyle = ButtonStyle.PRIMARY_SMALL
+        buttonStyle = ButtonStyle.PRIMAY_VERY_SMALL
     )
 }
 
