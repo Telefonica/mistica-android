@@ -46,7 +46,7 @@ fun Callout(
     inverse: Boolean,
     primaryButtonText: String? = null,
     secondaryButtonText: String? = null,
-    onPrimaryButtonClick: (() -> Unit)? = null,
+    onPrimaryButtonClickAction: (() -> Unit)? = null,
     onSecondaryButtonClick: (() -> Unit)? = null,
     linkText: String? = null,
     onLinkClicked: (() -> Unit)? = null,
@@ -109,7 +109,7 @@ fun Callout(
                         CalloutButtonConfig.PRIMARY -> {
                             PrimaryButton(
                                 text = primaryButtonText,
-                                onClick = onPrimaryButtonClick
+                                onClick = onPrimaryButtonClickAction
                             )
                         }
 
@@ -117,7 +117,7 @@ fun Callout(
                             PrimaryButton(
                                 text = primaryButtonText,
                                 modifier = Modifier.padding(end = 16.dp),
-                                onClick = onPrimaryButtonClick,
+                                onClick = onPrimaryButtonClickAction,
                             )
                             LinkButton(
                                 text = linkText,
@@ -136,7 +136,7 @@ fun Callout(
                             PrimaryButton(
                                 text = primaryButtonText,
                                 modifier = Modifier.padding(end = 16.dp),
-                                onClick = onPrimaryButtonClick,
+                                onClick = onPrimaryButtonClickAction,
                             )
                             SecondaryButton(
                                 text = secondaryButtonText,
