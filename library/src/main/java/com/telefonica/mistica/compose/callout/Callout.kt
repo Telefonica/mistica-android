@@ -185,7 +185,7 @@ private fun PrimaryButton(
     CalloutButton(
         text = text,
         onClick = onClick,
-        style = ButtonStyle.PRIMARY_SMALL,
+        style = ButtonStyle.PRIMAY_VERY_SMALL,
         modifier = modifier.testTag(CalloutTestTag.PRIMARY_BUTTON)
     )
 }

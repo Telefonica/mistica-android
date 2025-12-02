@@ -34,7 +34,7 @@ private fun getMisticaRippleConfiguration(color: Color, alpha: RippleAlpha? = nu
 internal fun ButtonStyle.getButtonStyleCompose(): ButtonStyleConfig = when (this) {
     ButtonStyle.PRIMARY -> primary()
     ButtonStyle.PRIMARY_INVERSE -> primaryInverse()
-    ButtonStyle.PRIMARY_SMALL -> primary()
+    ButtonStyle.PRIMAY_VERY_SMALL -> primary()
     ButtonStyle.PRIMARY_SMALL_INVERSE -> primaryInverse()
     ButtonStyle.SECONDARY -> secondary()
     ButtonStyle.SECONDARY_INVERSE -> secondaryInverseConfig()

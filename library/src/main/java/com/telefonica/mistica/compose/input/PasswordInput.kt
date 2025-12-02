@@ -28,7 +28,7 @@ fun PasswordInput(
     isInverse: Boolean = false,
     enabled: Boolean = true,
     readOnly: Boolean = false,
-    onClick: (() -> Unit)? = null,
+    onClickAction: (() -> Unit)? = null,
     keyboardOptions: KeyboardOptions = KeyboardOptions.Default,
 ) {
     var passwordVisible by remember {
@@ -55,7 +55,7 @@ fun PasswordInput(
         isInverse = isInverse,
         enabled = enabled,
         readOnly = readOnly,
-        onClick = onClick,
+        onClick = onClickAction,
         visualTransformation = if (passwordVisible) VisualTransformation.None else PasswordVisualTransformation(),
         keyboardOptions = keyboardOptions.toFoundationKeyboardOptions(KeyboardType.Password),
     )

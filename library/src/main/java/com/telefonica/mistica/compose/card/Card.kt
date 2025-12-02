@@ -69,7 +69,7 @@ internal fun CardActions(primaryButton: Action?, linkButton: Action?) {
                 Button(
                     text = it.text,
                     onClickListener = it.onTapped,
-                    buttonStyle = ButtonStyle.PRIMARY_SMALL,
+                    buttonStyle = ButtonStyle.PRIMAY_VERY_SMALL,
                 )
             }
             linkButton?.let {
