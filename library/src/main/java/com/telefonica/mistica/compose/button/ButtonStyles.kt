@@ -32,7 +32,7 @@ private fun getMisticaRippleConfiguration(color: Color, alpha: RippleAlpha? = nu
 @Composable
 @Suppress("CyclomaticComplexMethod")
 internal fun ButtonStyle.getButtonStyleCompose(): ButtonStyleConfig = when (this) {
-    ButtonStyle.PRIMARY -> primary()
+    ButtonStyle.PRIMARY_MAIN -> primary()
     ButtonStyle.PRIMARY_INVERSE -> primaryInverse()
     ButtonStyle.PRIMARY_SMALL -> primary()
     ButtonStyle.PRIMARY_SMALL_INVERSE -> primaryInverse()

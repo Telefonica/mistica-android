@@ -17,7 +17,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.catalog.R
-import com.telefonica.mistica.catalog.ui.compose.common.DropDown
+import com.telefonica.mistica.catalog.ui.compose.common.DropDownCompose
 import com.telefonica.mistica.catalog.ui.compose.common.OnBackPressedHandler
 import com.telefonica.mistica.compose.button.Button
 import com.telefonica.mistica.compose.emptystate.screen.EmptyStateScreen
@@ -83,7 +83,7 @@ fun EmptyStateScreens() {
                 color = MisticaTheme.colors.textSecondary,
             )
 
-            DropDown(
+            DropDownCompose(
                 modifier = Modifier.padding(top = 8.dp),
                 selectedValue = imageSize,
                 onValueChanged = { imageSize = it }
@@ -100,7 +100,7 @@ fun EmptyStateScreens() {
                 onValueChange = { subtitle = it },
                 label = { Text("Subtitle") }
             )
-            DropDown(
+            DropDownCompose(
                 modifier = Modifier.padding(top = 8.dp),
                 selectedValue = buttonConfig,
                 onValueChanged = { buttonConfig = it }
