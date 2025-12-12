@@ -23,7 +23,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.callout.CalloutViewImageConfig
 import com.telefonica.mistica.catalog.R
-import com.telefonica.mistica.catalog.ui.compose.common.DropDown
+import com.telefonica.mistica.catalog.ui.compose.common.DropDownCompose
 import com.telefonica.mistica.compose.button.Button
 import com.telefonica.mistica.compose.callout.Callout
 import com.telefonica.mistica.compose.callout.CalloutButtonConfig
@@ -102,7 +102,7 @@ fun Callouts() {
         )
 
         var buttonConfig by remember { mutableStateOf(CalloutButtonConfig.PRIMARY) }
-        DropDown(
+        DropDownCompose(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(horizontal = 16.dp),

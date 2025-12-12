@@ -23,7 +23,7 @@ class Button @JvmOverloads constructor(
 
     private var loadingText: String by mutableStateOf("")
     private var isLoading: Boolean by mutableStateOf(false)
-    private var style: ButtonStyle by mutableStateOf(ButtonStyle.PRIMARY)
+    private var style: ButtonStyle by mutableStateOf(ButtonStyle.PRIMARY_MAIN)
     private var isEnable: Boolean by mutableStateOf(true)
     private var onClick: () -> Unit by mutableStateOf({})
     private var invalidatePaddings: Boolean by mutableStateOf(false)
@@ -99,7 +99,7 @@ class Button @JvmOverloads constructor(
 
 @Suppress("CyclomaticComplexMethod")
 private fun Int?.toButtonStyle(): ButtonStyle = when (this) {
-    0 -> ButtonStyle.PRIMARY
+    0 -> ButtonStyle.PRIMARY_MAIN
     1 -> ButtonStyle.PRIMARY_SMALL
     2 -> ButtonStyle.SECONDARY
     3 -> ButtonStyle.SECONDARY_SMALL
@@ -117,5 +117,5 @@ private fun Int?.toButtonStyle(): ButtonStyle = when (this) {
     15 -> ButtonStyle.DANGER_LINK_INVERSE
     16 -> ButtonStyle.DANGER_LINK_SMALL
     17 -> ButtonStyle.DANGER_LINK_SMALL_INVERSE
-    else -> ButtonStyle.PRIMARY
+    else -> ButtonStyle.PRIMARY_MAIN
 }

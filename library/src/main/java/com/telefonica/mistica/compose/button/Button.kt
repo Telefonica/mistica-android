@@ -63,7 +63,7 @@ fun Button(
     text: String,
     contentDescription: String? = null,
     loadingText: String = "",
-    buttonStyle: ButtonStyle = ButtonStyle.PRIMARY,
+    buttonStyle: ButtonStyle = ButtonStyle.PRIMARY_MAIN,
     isLoading: Boolean = false,
     enabled: Boolean = true,
     @DrawableRes icon: Int? = null,
@@ -224,7 +224,7 @@ private fun Modifier.applyWidth(originalWidth: Dp?): Modifier =
     originalWidth?.let { width(it) } ?: this
 
 enum class ButtonStyle {
-    PRIMARY,
+    PRIMARY_MAIN,
     PRIMARY_SMALL,
     SECONDARY,
     SECONDARY_SMALL,

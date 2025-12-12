@@ -26,7 +26,7 @@ import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.unit.dp
 
 @Composable
-inline fun <reified T : Enum<T>> DropDown(
+inline fun <reified T : Enum<T>> DropDownCompose(
     modifier: Modifier,
     selectedValue: T,
     crossinline onValueChanged: (newSelectedValue: T) -> Unit,

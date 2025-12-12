@@ -268,13 +268,13 @@ fun HighLightedCardButtonType(buttonConfig: HighLightCardButtonSettings, onButto
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .clickable { onButtonTypeSelected(buttonConfig.copy(buttonStyle = ButtonStyle.PRIMARY)) },
+                    .clickable { onButtonTypeSelected(buttonConfig.copy(buttonStyle = ButtonStyle.PRIMARY_MAIN)) },
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 RadioButton(
-                    selected = buttonConfig.buttonStyle == ButtonStyle.PRIMARY,
+                    selected = buttonConfig.buttonStyle == ButtonStyle.PRIMARY_MAIN,
                     onClick = {
-                        onButtonTypeSelected(buttonConfig.copy(buttonStyle = ButtonStyle.PRIMARY))
+                        onButtonTypeSelected(buttonConfig.copy(buttonStyle = ButtonStyle.PRIMARY_MAIN))
                     }
                 )
                 Text(text = "Primary")
