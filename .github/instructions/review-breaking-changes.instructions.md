@@ -4,10 +4,8 @@ excludeAgent: "coding-agent"
 ---
 
 # Copilot review
-Please perform your normal Pull Request review. 
-Additionally, check for potential breaking changes.
-
-Focus specifically on detecting:
+Please perform your normal Pull Request review.
+Additionally, check for potential breaking changes within the `library` module only. Focus on:
 - Removal or renaming of public classes, interfaces, enums, methods, properties, or constants.
 - Removal or modification of enum values.
 - Changes to method signatures (parameters, types, nullability, default parameter values, return types).
@@ -17,7 +15,7 @@ Focus specifically on detecting:
 - Removal of deprecated APIs, ensuring they had been deprecated long enough.
 - For UI components, changes to XML attributes, theming contracts, styleable entries, or required resources that may break clients.
 
-For any potential breaking change:
+When detecting a potential breaking change in the `library` module only:
 - Create a separate comment describing why it may break existing consumers.
 - Remind the author to apply the "Breaking change" label to the PR.
 - Remind that migration notes are not expected inside the PR; they must be added later when drafting the release (via "Draft new Release").
