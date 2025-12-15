@@ -13,40 +13,11 @@ import androidx.annotation.VisibleForTesting
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.ViewCompat
 import androidx.core.view.isVisible
-import androidx.databinding.BindingMethod
-import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
 import com.telefonica.mistica.util.getThemeColor
 import com.telefonica.mistica.util.setTextAndVisibility
 import com.telefonica.mistica.util.setTextPreset
 
-@BindingMethods(
-    BindingMethod(
-        type = TitleView::class,
-        attribute = "title",
-        method = "setTitle"
-    ),
-    BindingMethod(
-        type = TitleView::class,
-        attribute = "titleStyle",
-        method = "setTitleStyle"
-    ),
-    BindingMethod(
-        type = TitleView::class,
-        attribute = "isTitleHeading",
-        method = "setTitleHeading"
-    ),
-    BindingMethod(
-        type = TitleView::class,
-        attribute = "link",
-        method = "setLink"
-    ),
-    BindingMethod(
-        type = TitleView::class,
-        attribute = "linkOnClick",
-        method = "setOnLinkClickedListener"
-    )
-)
 class TitleView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
@@ -133,7 +104,7 @@ class TitleView @JvmOverloads constructor(
 
     fun setLink(
         text: CharSequence?,
-        withChevron: Boolean = false
+        withChevron: Boolean = false,
     ) {
         linkLayout.isVisible = text?.isNotBlank() == true
         linkTextView.setTextAndVisibility(text)

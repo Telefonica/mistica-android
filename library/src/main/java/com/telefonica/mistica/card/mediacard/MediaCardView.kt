@@ -11,30 +11,12 @@ import android.widget.ImageView
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.appcompat.content.res.AppCompatResources
-import androidx.databinding.BindingMethod
-import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
 import com.telefonica.mistica.card.CardView
 import com.telefonica.mistica.util.hide
 import com.telefonica.mistica.util.show
 
-@BindingMethods(
-    BindingMethod(
-        type = MediaCardView::class,
-        attribute = "mediaCardImageDrawable",
-        method = "setImageDrawable"
-    ),
-    BindingMethod(
-        type = MediaCardView::class,
-        attribute = "cardPretitle",
-        method = "setPretitle"
-    ),
-    BindingMethod(
-        type = MediaCardView::class,
-        attribute = "cardImageContentDescription",
-        method = "setCardImageContentDescription"
-    )
-)
+
 class MediaCardView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,

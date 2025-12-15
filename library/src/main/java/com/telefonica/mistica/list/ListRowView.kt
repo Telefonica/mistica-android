@@ -26,9 +26,6 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
 import androidx.core.view.ViewCompat
 import androidx.core.view.isVisible
-import androidx.databinding.BindingAdapter
-import androidx.databinding.BindingMethod
-import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
 import com.telefonica.mistica.badge.Badge
 import com.telefonica.mistica.list.ListRowView.ContentDescriptionKeys.DESCRIPTION
@@ -43,88 +40,6 @@ import com.telefonica.mistica.util.getThemeColor
 import com.telefonica.mistica.util.loadUrl
 import com.telefonica.mistica.util.setAlpha
 
-@BindingMethods(
-    BindingMethod(
-        type = ListRowView::class,
-        attribute = "listRowHeadlineLayout",
-        method = "setHeadlineLayout"
-    ),
-    BindingMethod(
-        type = ListRowView::class,
-        attribute = "listRowHeadlineVisible",
-        method = "setHeadlineVisible"
-    ),
-    BindingMethod(
-        type = ListRowView::class,
-        attribute = "listRowTitle",
-        method = "setTitle"
-    ),
-    BindingMethod(
-        type = ListRowView::class,
-        attribute = "listRowTitleMaxLines",
-        method = "setTitleMaxLines"
-    ),
-    BindingMethod(
-        type = ListRowView::class,
-        attribute = "listRowIsTitleHeading",
-        method = "setTitleHeading"
-    ),
-    BindingMethod(
-        type = ListRowView::class,
-        attribute = "listRowSubtitle",
-        method = "setSubtitle"
-    ),
-    BindingMethod(
-        type = ListRowView::class,
-        attribute = "listRowSubtitleMaxLines",
-        method = "setSubtitleMaxLines"
-    ),
-    BindingMethod(
-        type = ListRowView::class,
-        attribute = "listRowDescription",
-        method = "setDescription"
-    ),
-    BindingMethod(
-        type = ListRowView::class,
-        attribute = "listRowDescriptionMaxLines",
-        method = "setDescriptionMaxLines"
-    ),
-    BindingMethod(
-        type = ListRowView::class,
-        attribute = "listRowAssetDrawable",
-        method = "setAssetDrawable"
-    ),
-    BindingMethod(
-        type = ListRowView::class,
-        attribute = "listRowAssetType",
-        method = "setAssetType"
-    ),
-    BindingMethod(
-        type = ListRowView::class,
-        attribute = "listRowIsBoxed",
-        method = "setBoxed"
-    ),
-    BindingMethod(
-        type = ListRowView::class,
-        attribute = "backgroundType",
-        method = "setBackgroundType"
-    ),
-    BindingMethod(
-        type = ListRowView::class,
-        attribute = "listRowActionLayout",
-        method = "setActionLayout"
-    ),
-    BindingMethod(
-        type = ListRowView::class,
-        attribute = "listRowAssetHeight",
-        method = "setAssetHeight"
-    ),
-    BindingMethod(
-        type = ListRowView::class,
-        attribute = "listRowAssetWidth",
-        method = "setAssetWidth"
-    ),
-)
 
 @Suppress("LargeClass")
 open class ListRowView @JvmOverloads constructor(
@@ -805,19 +720,6 @@ open class ListRowView @JvmOverloads constructor(
         const val TYPE_IMAGE_16_9 = 5
         const val TYPE_IMAGE_ROUNDED = 6
 
-        @BindingAdapter(
-            value = ["listRowBadgeCount"],
-            requireAll = false
-        )
-        @JvmStatic
-        fun setNumericBadge(view: ListRowView, count: Int) {
-            view.setNumericBadge(count)
-        }
-
-        @BindingAdapter(
-            value = ["listRowBadgeVisible"],
-            requireAll = false
-        )
         @JvmStatic
         fun setBadge(view: ListRowView, show: Boolean) {
             view.setBadge(show)
