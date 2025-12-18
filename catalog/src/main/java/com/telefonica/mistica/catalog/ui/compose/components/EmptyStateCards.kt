@@ -18,7 +18,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.telefonica.mistica.catalog.R
-import com.telefonica.mistica.catalog.ui.compose.common.DropDown
+import com.telefonica.mistica.catalog.ui.compose.common.DropDownCompose
 import com.telefonica.mistica.compose.emptystate.card.EmptyStateCard
 import com.telefonica.mistica.compose.theme.MisticaTheme
 import kotlinx.coroutines.delay
@@ -51,7 +51,7 @@ fun EmptyStateCards() {
             color = MisticaTheme.colors.textSecondary,
         )
 
-        DropDown(
+        DropDownCompose(
             modifier = Modifier.padding(top = 8.dp),
             selectedValue = imageSize,
             onValueChanged = { imageSize = it }
@@ -68,7 +68,7 @@ fun EmptyStateCards() {
             onValueChange = { subtitle = it },
             label = { Text("Subtitle") }
         )
-        DropDown(
+        DropDownCompose(
             modifier = Modifier.padding(top = 8.dp),
             selectedValue = buttonConfig,
             onValueChanged = { buttonConfig = it }

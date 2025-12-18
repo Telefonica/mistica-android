@@ -261,7 +261,7 @@ data class HighLightCardButtonSettings(
                 style
             } else {
                 when (style){
-                    ButtonStyle.PRIMARY -> ButtonStyle.PRIMARY_INVERSE
+                    ButtonStyle.PRIMARY_MAIN -> ButtonStyle.PRIMARY_INVERSE
                     ButtonStyle.PRIMARY_SMALL -> ButtonStyle.PRIMARY_SMALL_INVERSE
                     ButtonStyle.SECONDARY -> ButtonStyle.SECONDARY_INVERSE
                     ButtonStyle.SECONDARY_SMALL -> ButtonStyle.SECONDARY_SMALL_INVERSE
