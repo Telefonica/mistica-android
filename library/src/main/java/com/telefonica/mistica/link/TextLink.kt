@@ -6,8 +6,6 @@ import android.text.method.LinkMovementMethod
 import android.util.AttributeSet
 import androidx.annotation.ColorInt
 import androidx.appcompat.widget.AppCompatTextView
-import androidx.databinding.BindingMethod
-import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
 import com.telefonica.mistica.link.MultiLink.CustomMultiLink
 import com.telefonica.mistica.link.MultiLink.DefaultMultiLink
@@ -15,13 +13,7 @@ import com.telefonica.mistica.link.SingleLink.CustomSingleLink
 import com.telefonica.mistica.link.SingleLink.DefaultSingleLink
 import com.telefonica.mistica.util.getThemeColor
 
-@BindingMethods(
-    BindingMethod(
-        type = TextLink::class,
-        attribute = "linkColor",
-        method = "setLinkColor"
-    ),
-)
+
 class TextLink @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
@@ -41,7 +33,7 @@ class TextLink @JvmOverloads constructor(
         movementMethod = LinkMovementMethod.getInstance()
         highlightColor = Color.TRANSPARENT
 
-       if (attrs != null) {
+        if (attrs != null) {
             val styledAttrs =
                 context.theme.obtainStyledAttributes(attrs, R.styleable.TextLinkView, defStyleAttr, 0)
             setLinkColor(styledAttrs.getColor(R.styleable.TextLinkView_linkColor, context.getThemeColor(R.attr.colorTextLink)))

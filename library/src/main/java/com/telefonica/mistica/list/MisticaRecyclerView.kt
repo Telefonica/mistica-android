@@ -3,20 +3,11 @@ package com.telefonica.mistica.list
 import android.content.Context
 import android.util.AttributeSet
 import androidx.annotation.IntDef
-import androidx.databinding.BindingMethod
-import androidx.databinding.BindingMethods
 import androidx.recyclerview.widget.RecyclerView
 import com.telefonica.mistica.R
 import com.telefonica.mistica.list.layout.configureWithBoxedLayout
 import com.telefonica.mistica.list.layout.configureWithFullWidthLayout
 
-@BindingMethods(
-    BindingMethod(
-        type = MisticaRecyclerView::class,
-        attribute = "listLayoutType",
-        method = "setListLayoutType"
-    )
-)
 class MisticaRecyclerView : RecyclerView {
 
     constructor(context: Context) : super(context) {

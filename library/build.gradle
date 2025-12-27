@@ -1,7 +1,6 @@
 plugins {
     alias libs.plugins.com.android.library
     id 'org.jetbrains.kotlin.android'
-    id 'kotlin-kapt'
     id 'maven-publish'
     alias libs.plugins.roborazzi
     id 'org.jetbrains.kotlin.plugin.compose'
@@ -21,10 +20,6 @@ android {
         vectorDrawables {
             useSupportLibrary true
         }
-    }
-
-    buildFeatures {
-        dataBinding true
     }
 
     kotlinOptions {
