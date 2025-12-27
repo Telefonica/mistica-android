@@ -7,6 +7,7 @@ import android.text.method.MovementMethod
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.CompoundButton
+import androidx.annotation.StringRes
 import androidx.appcompat.widget.AppCompatCheckBox
 import com.google.android.material.textfield.TextInputLayout
 import com.telefonica.mistica.R
@@ -75,6 +76,28 @@ class CheckBoxInput @JvmOverloads constructor(
             context.getThemeColor(R.attr.colorControl),
         )
         checkBox.buttonTintList = ColorStateList(states, colors)
+    }
+
+    fun setInputError(@StringRes errorRes: Int?) {
+        if (errorRes == null) {
+            error = null
+            setErrorEnabled(false)
+        } else {
+            error = context.getString(errorRes)
+            setErrorEnabled(true)
+        }
+    }
+
+    fun setInputEnabled(enabled: Boolean) {
+        isEnabled = enabled
+    }
+
+    fun setInputCheckText(text: CharSequence?) {
+        setText(text)
+    }
+
+    fun getInputCheckText(): CharSequence? {
+        return getText()
     }
 
     fun setChecked(checked: Boolean) {

@@ -236,6 +236,37 @@ class HeaderView @JvmOverloads constructor(
         configureTextsColors()
     }
 
+
+    fun setHeaderFirstPretitle(@StringRes textRes: Int?) = setFirstPretitle(textRes)
+    fun setHeaderTitle(text: CharSequence?) = setTitle(text)
+
+    fun setHeaderInverse(value: Boolean) = setInverse(value)
+    fun setHeaderHasTopPadding(value: Boolean) = setHasTopPadding(value)
+
+    fun setHeaderFirstPretitle(text: CharSequence?) = setFirstPretitle(text)
+    fun setHeaderFirstPretitleHasSecondaryColor(value: Boolean) =
+        setFirstPretitleHasSecondaryColor(value)
+
+    fun setHeaderSecondPretitle(text: CharSequence?) = setSecondPretitle(text)
+    fun setHeaderSecondPretitleHasSecondaryColor(value: Boolean) =
+        setSecondPretitleHasSecondaryColor(value)
+
+    fun setHeaderNumeral(text: CharSequence?) = setNumeral(text)
+    fun setHeaderNumeralHasErrorColor(value: Boolean) = setNumeralHasDangerColor(value)
+
+    fun setHeaderSubtitle(text: CharSequence?) = setSubtitle(text)
+    fun setHeaderSubtitleHasSecondaryColor(value: Boolean) = setSubtitleHasSecondaryColor(value)
+
+    fun setHeaderActionButtonText(text: CharSequence?) = setActionButtonText(text)
+    fun setHeaderSecondaryActionButtonText(text: CharSequence?) = setSecondaryActionButtonText(text)
+
+    fun setHeaderActionButtonOnClick(listener: OnClickListener?) = setActionButtonOnClick(listener)
+    fun setHeaderSecondaryActionButtonOnClick(listener: OnClickListener?) =
+        setSecondaryActionButtonOnClick(listener)
+
+    fun setHeaderBottomLayout(@LayoutRes layoutRes: Int) = setBottomLayout(layoutRes)
+
+
     private fun configureTextsColors() {
         val backgroundDrawable = if (isInverse) {
             context.getMisticaThemeDrawable(R.attr.drawableBackgroundBrand)

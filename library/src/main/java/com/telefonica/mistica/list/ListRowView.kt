@@ -40,7 +40,6 @@ import com.telefonica.mistica.util.getThemeColor
 import com.telefonica.mistica.util.loadUrl
 import com.telefonica.mistica.util.setAlpha
 
-
 @Suppress("LargeClass")
 open class ListRowView @JvmOverloads constructor(
     context: Context,
@@ -613,6 +612,30 @@ open class ListRowView @JvmOverloads constructor(
         setOnClickListener {
             getActionView()?.performClick()
         }
+    }
+
+    fun setListRowTitle(value: CharSequence?) {
+        setTitle(value)
+    }
+
+    fun setListRowSubtitle(value: CharSequence?) {
+        setSubtitle(value)
+    }
+
+    fun setListRowDescription(value: CharSequence?) {
+        setDescription(value)
+    }
+
+    fun setListRowHeadlineVisible(value: Boolean) {
+        setHeadlineVisible(value)
+    }
+
+    fun setListRowTitleMaxLines(value: Int) {
+        setTitleMaxLines(value)
+    }
+
+    fun setListRowIsTitleHeading(value: Boolean) {
+        if (value) setTitleHeading()
     }
 
     private fun showNonNumericBadge() {
