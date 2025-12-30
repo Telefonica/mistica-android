@@ -93,6 +93,14 @@ class LoadErrorFeedbackView @JvmOverloads constructor(
     }
 
     fun setButtonClickListener(listener: ((View) -> Unit)?) {
-        setButtonOnClick(OnClickListener { listener?.invoke(it) })
+        setButtonOnClick { v -> listener?.invoke(v) }
     }
+
+    fun setLoadErrorFeedbackTitle(text: CharSequence?) = setTitle(text)
+    fun setLoadErrorFeedbackDescription(text: CharSequence?) = setDescription(text ?: "")
+    fun setLoadErrorFeedbackButtonText(text: CharSequence?) = setButtonText(text ?: "")
+    fun setLoadErrorFeedbackButtonText(@StringRes textId: Int) = setButtonText(textId)
+    fun setLoadErrorFeedbackIsLoading(loading: Boolean) = setIsLoading(loading)
+    fun setLoadErrorFeedbackIsButtonVisible(visible: Boolean) = setIsButtonVisible(visible)
+    fun setLoadErrorFeedbackButtonOnClick(listener: OnClickListener?) = setButtonOnClick(listener)
 }
