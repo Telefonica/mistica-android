@@ -11,8 +11,7 @@ Implemented as a custom view,
 `com.telefonica.mistica.emptystate.card.EmptyStateCardView` can be used
 inside any layout like a regular view.
 
-It supports both **attribute
-configuration and databinding for all properties**.
+It supports **attribute-based configuration for all properties**.
 
 ```xml
 <declare-styleable name="EmptyStateCardView">

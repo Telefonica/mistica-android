@@ -54,9 +54,8 @@ To create or modify components on this repository, follow the next steps:
 3. Place the new component under `library` module, under `com.telefonica.mistica` package. The component should have a proper definition by the design team. When implementing the component, follow these guidelines:
    - The component should be implemented to be reusable. Make it **generic** enough so that other teams can also use it.
    - If it is designed to be part of a layout definition (It's not a floating element), it should be implemented as a **Custom View**.
-     - It must allow **configuration with layout attributes**.
-     - It must provide **databinding support** for these attributes.
-     - It must also provide relevant **public methods to configure the view programatically**.
+     - It must allow **configuration through XML layout attributes**.
+     - It must expose **public APIs (setters / methods)** to configure the view programmatically.
    - In case it is a floating element, provide **necessary classes/builders to configure it** before display.
    - Make sure the component **resizes correctly**, so it adapts correctly to any screen size (including rotation).
    - If possible, take into account **accessibility** (TalkBack, Font size modification).
@@ -79,3 +78,8 @@ Y -> New components or features
 Z -> Minor modifications or fixes
 
 You can find more information here https://semver.org/
+
+> [!NOTE]
+> Mística components are implemented as standard Android Views and do not depend on Android DataBinding.
+> Applications may still use DataBinding at app level if needed, but the library does not provide or require
+> DataBinding-specific APIs.
