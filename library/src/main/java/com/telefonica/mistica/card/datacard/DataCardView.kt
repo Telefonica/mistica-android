@@ -12,8 +12,6 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.IntDef
 import androidx.annotation.StringRes
 import androidx.appcompat.content.res.AppCompatResources
-import androidx.databinding.BindingMethod
-import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
 import com.telefonica.mistica.card.CardView
 import com.telefonica.mistica.card.datacard.DataCardView.IconType.Companion.TYPE_CIRCULAR_ICON
@@ -22,23 +20,6 @@ import com.telefonica.mistica.card.datacard.DataCardView.IconType.Companion.TYPE
 import com.telefonica.mistica.card.datacard.DataCardView.IconType.Companion.TYPE_SQUARE_IMAGE
 import com.telefonica.mistica.util.convertDpToPx
 
-@BindingMethods(
-    BindingMethod(
-        type = DataCardView::class,
-        attribute = "cardIcon",
-        method = "setIcon"
-    ),
-    BindingMethod(
-        type = DataCardView::class,
-        attribute = "cardIconType",
-        method = "setIconType"
-    ),
-    BindingMethod(
-        type = DataCardView::class,
-        attribute = "cardSubtitle",
-        method = "setSubtitle"
-    )
-)
 class DataCardView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,

@@ -16,74 +16,10 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.IntDef
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.databinding.BindingMethod
-import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
 import com.telefonica.mistica.button.ProgressButton
 import com.telefonica.mistica.util.convertDpToPx
 
-@BindingMethods(
-    BindingMethod(
-        type = EmptyStateScreenView::class,
-        attribute = "emptyStateScreenImage",
-        method = "setImage"
-    ),
-    BindingMethod(
-        type = EmptyStateScreenView::class,
-        attribute = "emptyStateScreenImageContentDescription",
-        method = "setImageContentDescription"
-    ),
-    BindingMethod(
-        type = EmptyStateScreenView::class,
-        attribute = "emptyStateScreenTitle",
-        method = "setTitle"
-    ),
-    BindingMethod(
-        type = EmptyStateScreenView::class,
-        attribute = "emptyStateScreenSubtitle",
-        method = "setSubtitle"
-    ),
-    BindingMethod(
-        type = EmptyStateScreenView::class,
-        attribute = "emptyStateScreenButtonsConfig",
-        method = "setButtonsConfig"
-    ),
-    BindingMethod(
-        type = EmptyStateScreenView::class,
-        attribute = "emptyStateScreenPrimaryButtonText",
-        method = "setPrimaryButtonText"
-    ),
-    BindingMethod(
-        type = EmptyStateScreenView::class,
-        attribute = "emptyStateScreenPrimaryButtonOnClick",
-        method = "setPrimaryButtonOnClick"
-    ),
-    BindingMethod(
-        type = EmptyStateScreenView::class,
-        attribute = "emptyStateScreenSecondaryButtonText",
-        method = "setSecondaryButtonText"
-    ),
-    BindingMethod(
-        type = EmptyStateScreenView::class,
-        attribute = "emptyStateScreenSecondaryButtonOnClick",
-        method = "setSecondaryButtonOnClick"
-    ),
-    BindingMethod(
-        type = EmptyStateScreenView::class,
-        attribute = "emptyStateScreenLinkButtonText",
-        method = "setLinkButtonText"
-    ),
-    BindingMethod(
-        type = EmptyStateScreenView::class,
-        attribute = "emptyStateScreenLinkButtonOnClick",
-        method = "setLinkButtonOnClick"
-    ),
-    BindingMethod(
-        type = EmptyStateScreenView::class,
-        attribute = "emptyStateScreenImageSize",
-        method = "setImageSize"
-    ),
-)
 class EmptyStateScreenView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
