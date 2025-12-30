@@ -17,85 +17,11 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.IntDef
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.view.ViewCompat
-import androidx.databinding.BindingMethod
-import androidx.databinding.BindingMethods
 import com.google.android.material.imageview.ShapeableImageView
 import com.telefonica.mistica.R
 import com.telefonica.mistica.button.Button
 import com.telefonica.mistica.util.getThemeColor
 
-@BindingMethods(
-    BindingMethod(
-        type = CalloutView::class,
-        attribute = "calloutTitle",
-        method = "setTitle",
-    ),
-    BindingMethod(
-        type = CalloutView::class,
-        attribute = "calloutTitleAsHeading",
-        method = "setTitleAsHeading",
-    ),
-    BindingMethod(
-        type = CalloutView::class,
-        attribute = "calloutDescription",
-        method = "setDescription",
-    ),
-    BindingMethod(
-        type = CalloutView::class,
-        attribute = "calloutAsset",
-        method = "setAsset",
-    ),
-    BindingMethod(
-        type = CalloutView::class,
-        attribute = "calloutAssetType",
-        method = "setAssetType",
-    ),
-    BindingMethod(
-        type = CalloutView::class,
-        attribute = "calloutButtonsConfig",
-        method = "setButtonsConfig",
-    ),
-    BindingMethod(
-        type = CalloutView::class,
-        attribute = "calloutPrimaryButtonText",
-        method = "setPrimaryButtonText",
-    ),
-    BindingMethod(
-        type = CalloutView::class,
-        attribute = "calloutPrimaryButtonOnClick",
-        method = "setPrimaryButtonOnClick",
-    ),
-    BindingMethod(
-        type = CalloutView::class,
-        attribute = "calloutSecondaryButtonText",
-        method = "setSecondaryButtonText",
-    ),
-    BindingMethod(
-        type = CalloutView::class,
-        attribute = "calloutSecondaryButtonOnClick",
-        method = "setSecondaryButtonOnClick",
-    ),
-    BindingMethod(
-        type = CalloutView::class,
-        attribute = "calloutLinkButtonText",
-        method = "setLinkButtonText",
-    ),
-    BindingMethod(
-        type = CalloutView::class,
-        attribute = "calloutLinkButtonOnClick",
-        method = "setLinkButtonOnClick",
-    ),
-    BindingMethod(
-        type = CalloutView::class,
-        attribute = "calloutDismissable",
-        method = "setDismissable",
-    ),
-    BindingMethod(
-        type = CalloutView::class,
-        attribute = "calloutOnDismiss",
-        method = "setOnDismiss",
-    ),
-)
 class CalloutView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
@@ -246,12 +172,14 @@ class CalloutView @JvmOverloads constructor(
                     image.visibility = GONE
                     circularImage.visibility = GONE
                 }
+
                 CalloutViewImageConfig.SQUARE_IMAGE -> {
                     image.setImageResource(assetRes)
                     image.visibility = VISIBLE
                     icon.visibility = GONE
                     circularImage.visibility = GONE
                 }
+
                 CalloutViewImageConfig.CIRCULAR_IMAGE -> {
                     circularImage.setImageResource(assetRes)
                     circularImage.visibility = VISIBLE
