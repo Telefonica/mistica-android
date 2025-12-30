@@ -7,36 +7,12 @@ import android.text.method.MovementMethod
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.CompoundButton
+import androidx.annotation.StringRes
 import androidx.appcompat.widget.AppCompatCheckBox
-import androidx.databinding.BindingAdapter
-import androidx.databinding.BindingMethod
-import androidx.databinding.BindingMethods
-import androidx.databinding.InverseBindingListener
-import androidx.databinding.InverseBindingMethod
-import androidx.databinding.InverseBindingMethods
 import com.google.android.material.textfield.TextInputLayout
 import com.telefonica.mistica.R
 import com.telefonica.mistica.util.getThemeColor
 
-@BindingMethods(
-    BindingMethod(
-        type = CheckBoxInput::class,
-        attribute = "inputCheckText",
-        method = "setText"
-    ),
-    BindingMethod(
-        type = CheckBoxInput::class,
-        attribute = "inputChecked",
-        method = "setChecked"
-    )
-)
-@InverseBindingMethods(
-    InverseBindingMethod(
-        type = CheckBoxInput::class,
-        attribute = "inputChecked",
-        method = "isChecked"
-    )
-)
 class CheckBoxInput @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
@@ -102,6 +78,28 @@ class CheckBoxInput @JvmOverloads constructor(
         checkBox.buttonTintList = ColorStateList(states, colors)
     }
 
+    fun setInputError(@StringRes errorRes: Int?) {
+        if (errorRes == null) {
+            error = null
+            setErrorEnabled(false)
+        } else {
+            error = context.getString(errorRes)
+            setErrorEnabled(true)
+        }
+    }
+
+    fun setInputEnabled(enabled: Boolean) {
+        isEnabled = enabled
+    }
+
+    fun setInputCheckText(text: CharSequence?) {
+        setText(text)
+    }
+
+    fun getInputCheckText(): CharSequence? {
+        return getText()
+    }
+
     fun setChecked(checked: Boolean) {
         checkBox.isChecked = checked
     }
@@ -130,15 +128,5 @@ class CheckBoxInput @JvmOverloads constructor(
     override fun setEnabled(enabled: Boolean) {
         super.setEnabled(enabled)
         checkBox.isEnabled = enabled
-    }
-
-    companion object {
-        @BindingAdapter(
-            value = ["inputCheckedAttrChanged"]
-        )
-        @JvmStatic
-        fun setCheckWatcher(input: CheckBoxInput, listener: InverseBindingListener) {
-            input.setOnCheckedChangeListener(CompoundButton.OnCheckedChangeListener { _, _ -> listener.onChange() })
-        }
     }
 }

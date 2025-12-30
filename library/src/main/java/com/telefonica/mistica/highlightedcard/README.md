@@ -8,7 +8,7 @@
    <img src="../../../../../../../../doc/images/highlighted_cards/highlighted_cards_5.png" />
 </p>
 
-Implemented as a custom view, `com.telefonica.mistica.highlightedcard.HighlightedCardView` can be used inside any layout like a regular view. It supports both **attribute configuration and databinding for all properties**.
+Implemented as a custom view, `com.telefonica.mistica.highlightedcard.HighlightedCardView` can be used inside any layout like a regular view. It supports **attribute-based configuration for all properties**.
 
 ```xml
     <declare-styleable name="HighlightedCardView">

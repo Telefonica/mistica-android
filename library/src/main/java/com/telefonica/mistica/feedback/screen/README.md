@@ -8,7 +8,7 @@
 
 It can be used inside any layout like a regular view. When adding it to the view hierarchy, entry animations will be performed.
 
-In order to configure it for the specific purpose, it supports both **attribute configuration and databinding for all properties**
+In order to configure it for the specific purpose, it supports **attribute-based configuration for all properties**.
 
 ## Available fields
 

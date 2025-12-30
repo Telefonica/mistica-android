@@ -11,23 +11,9 @@ import androidx.constraintlayout.widget.ConstraintSet.END
 import androidx.constraintlayout.widget.ConstraintSet.BOTTOM
 import androidx.constraintlayout.widget.ConstraintSet.START
 import androidx.constraintlayout.widget.ConstraintSet.TOP
-import androidx.databinding.BindingMethod
-import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
 import kotlin.math.roundToInt
 
-@BindingMethods(
-    BindingMethod(
-        type = DeterminateStepperView::class,
-        attribute = "maxSteps",
-        method = "setMaxSteps"
-    ),
-    BindingMethod(
-        type = DeterminateStepperView::class,
-        attribute = "step",
-        method = "setStep"
-    )
-)
 class DeterminateStepperView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,

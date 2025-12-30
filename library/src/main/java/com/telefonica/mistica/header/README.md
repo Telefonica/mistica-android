@@ -5,7 +5,7 @@
    <img src="../../../../../../../../doc/images/headers/headers_2.png" />
 </p>
 
-Implemented as a custom view, `com.telefonica.mistica.header.HeaderView` can be used inside any layout like a regular view. It supports both **attribute configuration and databinding for all properties**.
+Implemented as a custom view, `com.telefonica.mistica.header.HeaderView` can be used inside any layout like a regular view. It supports **attribute-based configuration for all properties**.
 
 ```xml
 <declare-styleable name="HeaderView">
