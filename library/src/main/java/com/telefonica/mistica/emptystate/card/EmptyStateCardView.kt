@@ -14,74 +14,10 @@ import android.widget.TextView
 import androidx.annotation.DrawableRes
 import androidx.annotation.IntDef
 import androidx.appcompat.content.res.AppCompatResources
-import androidx.databinding.BindingMethod
-import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
 import com.telefonica.mistica.button.ProgressButton
 import com.telefonica.mistica.util.convertDpToPx
 
-@BindingMethods(
-    BindingMethod(
-        type = EmptyStateCardView::class,
-        attribute = "emptyStateCardImage",
-        method = "setImage"
-    ),
-    BindingMethod(
-        type = EmptyStateCardView::class,
-        attribute = "emptyStateCardImageContentDescription",
-        method = "setImageContentDescription"
-    ),
-    BindingMethod(
-        type = EmptyStateCardView::class,
-        attribute = "emptyStateCardTitle",
-        method = "setTitle"
-    ),
-    BindingMethod(
-        type = EmptyStateCardView::class,
-        attribute = "emptyStateCardSubtitle",
-        method = "setSubtitle"
-    ),
-    BindingMethod(
-        type = EmptyStateCardView::class,
-        attribute = "emptyStateCardButtonsConfig",
-        method = "setButtonsConfig"
-    ),
-    BindingMethod(
-        type = EmptyStateCardView::class,
-        attribute = "emptyStateCardPrimaryButtonText",
-        method = "setPrimaryButtonText"
-    ),
-    BindingMethod(
-        type = EmptyStateCardView::class,
-        attribute = "emptyStateCardPrimaryButtonOnClick",
-        method = "setPrimaryButtonOnClick"
-    ),
-    BindingMethod(
-        type = EmptyStateCardView::class,
-        attribute = "emptyStateCardSecondaryButtonText",
-        method = "setSecondaryButtonText"
-    ),
-    BindingMethod(
-        type = EmptyStateCardView::class,
-        attribute = "emptyStateCardSecondaryButtonOnClick",
-        method = "setSecondaryButtonOnClick"
-    ),
-    BindingMethod(
-        type = EmptyStateCardView::class,
-        attribute = "emptyStateCardLinkButtonText",
-        method = "setLinkButtonText"
-    ),
-    BindingMethod(
-        type = EmptyStateCardView::class,
-        attribute = "emptyStateCardLinkButtonOnClick",
-        method = "setLinkButtonOnClick"
-    ),
-    BindingMethod(
-        type = EmptyStateCardView::class,
-        attribute = "emptyStateCardImageSize",
-        method = "setImageSize"
-    ),
-)
 class EmptyStateCardView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
@@ -208,7 +144,8 @@ class EmptyStateCardView @JvmOverloads constructor(
             BUTTONS_CONFIG_PRIMARY,
             BUTTONS_CONFIG_PRIMARY_LINK,
             BUTTONS_CONFIG_PRIMARY_SECONDARY,
-            -> View.VISIBLE
+                -> View.VISIBLE
+
             else -> View.GONE
         }
 
@@ -216,7 +153,8 @@ class EmptyStateCardView @JvmOverloads constructor(
             BUTTONS_CONFIG_PRIMARY_SECONDARY,
             BUTTONS_CONFIG_SECONDARY,
             BUTTONS_CONFIG_SECONDARY_LINK,
-            -> View.VISIBLE
+                -> View.VISIBLE
+
             else -> View.GONE
         }
 
@@ -224,7 +162,8 @@ class EmptyStateCardView @JvmOverloads constructor(
             BUTTONS_CONFIG_PRIMARY_LINK,
             BUTTONS_CONFIG_SECONDARY_LINK,
             LINK,
-            -> View.VISIBLE
+                -> View.VISIBLE
+
             else -> View.GONE
         }
         linkButton.layoutParams = (linkButton.layoutParams as LinearLayout.LayoutParams).apply {

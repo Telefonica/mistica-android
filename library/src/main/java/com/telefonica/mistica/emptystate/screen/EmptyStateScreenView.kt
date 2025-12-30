@@ -16,74 +16,10 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.IntDef
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.databinding.BindingMethod
-import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
 import com.telefonica.mistica.button.ProgressButton
 import com.telefonica.mistica.util.convertDpToPx
 
-@BindingMethods(
-    BindingMethod(
-        type = EmptyStateScreenView::class,
-        attribute = "emptyStateScreenImage",
-        method = "setImage"
-    ),
-    BindingMethod(
-        type = EmptyStateScreenView::class,
-        attribute = "emptyStateScreenImageContentDescription",
-        method = "setImageContentDescription"
-    ),
-    BindingMethod(
-        type = EmptyStateScreenView::class,
-        attribute = "emptyStateScreenTitle",
-        method = "setTitle"
-    ),
-    BindingMethod(
-        type = EmptyStateScreenView::class,
-        attribute = "emptyStateScreenSubtitle",
-        method = "setSubtitle"
-    ),
-    BindingMethod(
-        type = EmptyStateScreenView::class,
-        attribute = "emptyStateScreenButtonsConfig",
-        method = "setButtonsConfig"
-    ),
-    BindingMethod(
-        type = EmptyStateScreenView::class,
-        attribute = "emptyStateScreenPrimaryButtonText",
-        method = "setPrimaryButtonText"
-    ),
-    BindingMethod(
-        type = EmptyStateScreenView::class,
-        attribute = "emptyStateScreenPrimaryButtonOnClick",
-        method = "setPrimaryButtonOnClick"
-    ),
-    BindingMethod(
-        type = EmptyStateScreenView::class,
-        attribute = "emptyStateScreenSecondaryButtonText",
-        method = "setSecondaryButtonText"
-    ),
-    BindingMethod(
-        type = EmptyStateScreenView::class,
-        attribute = "emptyStateScreenSecondaryButtonOnClick",
-        method = "setSecondaryButtonOnClick"
-    ),
-    BindingMethod(
-        type = EmptyStateScreenView::class,
-        attribute = "emptyStateScreenLinkButtonText",
-        method = "setLinkButtonText"
-    ),
-    BindingMethod(
-        type = EmptyStateScreenView::class,
-        attribute = "emptyStateScreenLinkButtonOnClick",
-        method = "setLinkButtonOnClick"
-    ),
-    BindingMethod(
-        type = EmptyStateScreenView::class,
-        attribute = "emptyStateScreenImageSize",
-        method = "setImageSize"
-    ),
-)
 class EmptyStateScreenView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
@@ -198,19 +134,22 @@ class EmptyStateScreenView @JvmOverloads constructor(
         primaryButton.visibility = when (buttonsConfig) {
             BUTTONS_CONFIG_PRIMARY,
             BUTTONS_CONFIG_PRIMARY_LINK,
-            -> View.VISIBLE
+                -> View.VISIBLE
+
             else -> View.GONE
         }
         secondaryButton.visibility = when (buttonsConfig) {
             BUTTONS_CONFIG_SECONDARY,
             BUTTONS_CONFIG_SECONDARY_LINK,
-            -> View.VISIBLE
+                -> View.VISIBLE
+
             else -> View.GONE
         }
         linkButton.visibility = when (buttonsConfig) {
             BUTTONS_CONFIG_PRIMARY_LINK,
             BUTTONS_CONFIG_SECONDARY_LINK,
-            -> View.VISIBLE
+                -> View.VISIBLE
+
             else -> View.GONE
         }
     }
@@ -245,7 +184,7 @@ class EmptyStateScreenView @JvmOverloads constructor(
 
     fun setImageSize(@ImageSize imageSize: Int) {
         val layoutParams = image.layoutParams as ConstraintLayout.LayoutParams
-        with (layoutParams) {
+        with(layoutParams) {
             when (imageSize) {
                 IMAGE_SIZE_ICON -> {
                     width = context.convertDpToPx(IMAGE_ICON_SIDE_PIXELS)
@@ -253,18 +192,21 @@ class EmptyStateScreenView @JvmOverloads constructor(
                     dimensionRatio = null
                     image.scaleType = ImageView.ScaleType.CENTER_INSIDE
                 }
+
                 IMAGE_SIZE_SMALL -> {
                     width = ViewGroup.LayoutParams.WRAP_CONTENT
                     height = context.convertDpToPx(IMAGE_SMALL_HEIGHT_PIXELS)
                     dimensionRatio = null
                     image.scaleType = ImageView.ScaleType.FIT_START
                 }
+
                 IMAGE_SIZE_FULL_WIDTH -> {
                     width = ViewGroup.LayoutParams.MATCH_PARENT
                     height = 0
                     dimensionRatio = "16:9"
                     image.scaleType = ImageView.ScaleType.CENTER_CROP
                 }
+
                 else -> {
                     width = ViewGroup.LayoutParams.MATCH_PARENT
                     height = ViewGroup.LayoutParams.WRAP_CONTENT
