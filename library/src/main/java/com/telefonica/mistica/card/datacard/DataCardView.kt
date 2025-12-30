@@ -89,15 +89,13 @@ class DataCardView @JvmOverloads constructor(
                 assetCircularImageView.visibility = View.VISIBLE
                 iconImageView.visibility = View.GONE
             }
-
             TYPE_ICON,
             TYPE_CIRCULAR_ICON,
-                -> {
+            -> {
                 iconImageView.setImageDrawable(icon)
                 iconImageView.visibility = View.VISIBLE
                 assetCircularImageView.visibility = View.GONE
             }
-
             TYPE_SQUARE_IMAGE -> {
                 iconImageView.setImageDrawable(icon)
                 iconImageView.visibility = View.VISIBLE
