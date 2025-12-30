@@ -144,8 +144,7 @@ class EmptyStateCardView @JvmOverloads constructor(
             BUTTONS_CONFIG_PRIMARY,
             BUTTONS_CONFIG_PRIMARY_LINK,
             BUTTONS_CONFIG_PRIMARY_SECONDARY,
-                -> View.VISIBLE
-
+            -> View.VISIBLE
             else -> View.GONE
         }
 
@@ -153,8 +152,7 @@ class EmptyStateCardView @JvmOverloads constructor(
             BUTTONS_CONFIG_PRIMARY_SECONDARY,
             BUTTONS_CONFIG_SECONDARY,
             BUTTONS_CONFIG_SECONDARY_LINK,
-                -> View.VISIBLE
-
+            -> View.VISIBLE
             else -> View.GONE
         }
 
@@ -162,8 +160,7 @@ class EmptyStateCardView @JvmOverloads constructor(
             BUTTONS_CONFIG_PRIMARY_LINK,
             BUTTONS_CONFIG_SECONDARY_LINK,
             LINK,
-                -> View.VISIBLE
-
+            -> View.VISIBLE
             else -> View.GONE
         }
         linkButton.layoutParams = (linkButton.layoutParams as LinearLayout.LayoutParams).apply {

@@ -124,17 +124,14 @@ class DataCardView @JvmOverloads constructor(
             TYPE_CIRCULAR_IMAGE -> {
                 imageLayout.setBackgroundResource(0)
             }
-
             TYPE_ICON -> {
                 imageLayout.setBackgroundResource(0)
                 iconImageView.setSize(24)
             }
-
             TYPE_CIRCULAR_ICON -> {
                 imageLayout.setBackgroundResource(R.drawable.bg_datacard_icon)
                 iconImageView.setSize(24)
             }
-
             TYPE_SQUARE_IMAGE -> {
                 imageLayout.setBackgroundResource(0)
                 iconImageView.setSize(40)

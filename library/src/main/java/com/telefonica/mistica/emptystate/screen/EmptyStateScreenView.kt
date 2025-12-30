@@ -134,22 +134,19 @@ class EmptyStateScreenView @JvmOverloads constructor(
         primaryButton.visibility = when (buttonsConfig) {
             BUTTONS_CONFIG_PRIMARY,
             BUTTONS_CONFIG_PRIMARY_LINK,
-                -> View.VISIBLE
-
+            -> View.VISIBLE
             else -> View.GONE
         }
         secondaryButton.visibility = when (buttonsConfig) {
             BUTTONS_CONFIG_SECONDARY,
             BUTTONS_CONFIG_SECONDARY_LINK,
-                -> View.VISIBLE
-
+            -> View.VISIBLE
             else -> View.GONE
         }
         linkButton.visibility = when (buttonsConfig) {
             BUTTONS_CONFIG_PRIMARY_LINK,
             BUTTONS_CONFIG_SECONDARY_LINK,
-                -> View.VISIBLE
-
+            -> View.VISIBLE
             else -> View.GONE
         }
     }
@@ -184,7 +181,7 @@ class EmptyStateScreenView @JvmOverloads constructor(
 
     fun setImageSize(@ImageSize imageSize: Int) {
         val layoutParams = image.layoutParams as ConstraintLayout.LayoutParams
-        with(layoutParams) {
+        with (layoutParams) {
             when (imageSize) {
                 IMAGE_SIZE_ICON -> {
                     width = context.convertDpToPx(IMAGE_ICON_SIDE_PIXELS)
@@ -192,21 +189,18 @@ class EmptyStateScreenView @JvmOverloads constructor(
                     dimensionRatio = null
                     image.scaleType = ImageView.ScaleType.CENTER_INSIDE
                 }
-
                 IMAGE_SIZE_SMALL -> {
                     width = ViewGroup.LayoutParams.WRAP_CONTENT
                     height = context.convertDpToPx(IMAGE_SMALL_HEIGHT_PIXELS)
                     dimensionRatio = null
                     image.scaleType = ImageView.ScaleType.FIT_START
                 }
-
                 IMAGE_SIZE_FULL_WIDTH -> {
                     width = ViewGroup.LayoutParams.MATCH_PARENT
                     height = 0
                     dimensionRatio = "16:9"
                     image.scaleType = ImageView.ScaleType.CENTER_CROP
                 }
-
                 else -> {
                     width = ViewGroup.LayoutParams.MATCH_PARENT
                     height = ViewGroup.LayoutParams.WRAP_CONTENT
