@@ -12,8 +12,6 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.IntDef
 import androidx.annotation.StringRes
 import androidx.appcompat.content.res.AppCompatResources
-import androidx.databinding.BindingMethod
-import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
 import com.telefonica.mistica.card.CardView
 import com.telefonica.mistica.card.datacard.DataCardView.IconType.Companion.TYPE_CIRCULAR_ICON
@@ -22,23 +20,6 @@ import com.telefonica.mistica.card.datacard.DataCardView.IconType.Companion.TYPE
 import com.telefonica.mistica.card.datacard.DataCardView.IconType.Companion.TYPE_SQUARE_IMAGE
 import com.telefonica.mistica.util.convertDpToPx
 
-@BindingMethods(
-    BindingMethod(
-        type = DataCardView::class,
-        attribute = "cardIcon",
-        method = "setIcon"
-    ),
-    BindingMethod(
-        type = DataCardView::class,
-        attribute = "cardIconType",
-        method = "setIconType"
-    ),
-    BindingMethod(
-        type = DataCardView::class,
-        attribute = "cardSubtitle",
-        method = "setSubtitle"
-    )
-)
 class DataCardView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
@@ -108,13 +89,15 @@ class DataCardView @JvmOverloads constructor(
                 assetCircularImageView.visibility = View.VISIBLE
                 iconImageView.visibility = View.GONE
             }
+
             TYPE_ICON,
             TYPE_CIRCULAR_ICON,
-            -> {
+                -> {
                 iconImageView.setImageDrawable(icon)
                 iconImageView.visibility = View.VISIBLE
                 assetCircularImageView.visibility = View.GONE
             }
+
             TYPE_SQUARE_IMAGE -> {
                 iconImageView.setImageDrawable(icon)
                 iconImageView.visibility = View.VISIBLE
@@ -141,14 +124,17 @@ class DataCardView @JvmOverloads constructor(
             TYPE_CIRCULAR_IMAGE -> {
                 imageLayout.setBackgroundResource(0)
             }
+
             TYPE_ICON -> {
                 imageLayout.setBackgroundResource(0)
                 iconImageView.setSize(24)
             }
+
             TYPE_CIRCULAR_ICON -> {
                 imageLayout.setBackgroundResource(R.drawable.bg_datacard_icon)
                 iconImageView.setSize(24)
             }
+
             TYPE_SQUARE_IMAGE -> {
                 imageLayout.setBackgroundResource(0)
                 iconImageView.setSize(40)

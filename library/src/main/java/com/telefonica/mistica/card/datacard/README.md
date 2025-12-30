@@ -7,7 +7,7 @@
 </p>
 
 Data cards require a minimum content of a **title, description and a link button.**
-Implemented as a custom view, `com.telefonica.mistica.card.datacard.DataCardView` can be used inside any layout like a regular view. It supports both **attribute configuration and databinding for all properties**.
+Implemented as a custom view, `com.telefonica.mistica.card.datacard.DataCardView` can be used inside any layout like a regular view. It supports **attribute-based configuration for all properties**.
 
 ```xml
     <declare-styleable name="CardView">
