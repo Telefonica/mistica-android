@@ -172,14 +172,12 @@ class CalloutView @JvmOverloads constructor(
                     image.visibility = GONE
                     circularImage.visibility = GONE
                 }
-
                 CalloutViewImageConfig.SQUARE_IMAGE -> {
                     image.setImageResource(assetRes)
                     image.visibility = VISIBLE
                     icon.visibility = GONE
                     circularImage.visibility = GONE
                 }
-
                 CalloutViewImageConfig.CIRCULAR_IMAGE -> {
                     circularImage.setImageResource(assetRes)
                     circularImage.visibility = VISIBLE
