@@ -14,9 +14,6 @@ import android.view.inputmethod.InputConnection
 import android.widget.TextView
 import androidx.annotation.IntDef
 import androidx.annotation.LayoutRes
-import androidx.databinding.BindingAdapter
-import androidx.databinding.InverseBindingListener
-import androidx.databinding.adapters.ListenerUtil
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.telefonica.mistica.R
