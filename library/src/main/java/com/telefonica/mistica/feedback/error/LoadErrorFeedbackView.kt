@@ -5,48 +5,13 @@ import android.util.AttributeSet
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
-import android.view.View.OnClickListener
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.annotation.StringRes
-import androidx.databinding.BindingMethod
-import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
 import com.telefonica.mistica.button.ProgressButton
 import com.telefonica.mistica.util.convertDpToPx
 
-@BindingMethods(
-    BindingMethod(
-        type = LoadErrorFeedbackView::class,
-        attribute = "loadErrorFeedbackTitle",
-        method = "setTitle"
-    ),
-    BindingMethod(
-        type = LoadErrorFeedbackView::class,
-        attribute = "loadErrorFeedbackDescription",
-        method = "setDescription"
-    ),
-    BindingMethod(
-        type = LoadErrorFeedbackView::class,
-        attribute = "loadErrorFeedbackIsLoading",
-        method = "setIsLoading"
-    ),
-    BindingMethod(
-        type = LoadErrorFeedbackView::class,
-        attribute = "loadErrorFeedbackButtonOnClick",
-        method = "setButtonOnClick"
-    ),
-    BindingMethod(
-        type = LoadErrorFeedbackView::class,
-        attribute = "loadErrorFeedbackButtonText",
-        method = "setButtonText"
-    ),
-    BindingMethod(
-        type = LoadErrorFeedbackView::class,
-        attribute = "loadErrorFeedbackIsButtonVisible",
-        method = "setIsButtonVisible"
-    )
-)
 class LoadErrorFeedbackView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
@@ -58,6 +23,7 @@ class LoadErrorFeedbackView @JvmOverloads constructor(
     private val button: ProgressButton
 
     init {
+        LayoutInflater.from(context).inflate(R.layout.load_error_feedback, this, true)
         LayoutInflater.from(context).inflate(R.layout.load_error_feedback, this, true)
 
         val padding = context.convertDpToPx(16)
