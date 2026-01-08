@@ -18,7 +18,7 @@ fun TextView.setTextPreset(@StyleRes textPreset: Int) {
 }
 
 /**
- * Applies padding a link text to ensure proper alignment at the start
+ * Applies padding to a link text to ensure proper alignment at the start
  * even when the text consists of few characters.
  */
 internal fun String.applyLinkTextFix(): String {
