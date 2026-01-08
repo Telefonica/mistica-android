@@ -41,11 +41,9 @@ public fun MediaCard(
     primaryButton: Action? = null,
     linkButton: Action? = null,
     imagePosition: MediaCardImagePosition = MediaCardImagePosition.Top,
-    imageContentScale: ContentScale? = null,
+    imageContentScale: ContentScale = ContentScale.Crop,
     customContent: @Composable () -> Unit = {},
 ) {
-    val effectiveContentScale = imageContentScale ?: ContentScale.Crop
-
     when (imagePosition) {
         MediaCardImagePosition.Top -> {
             Card(
@@ -54,7 +52,7 @@ public fun MediaCard(
                     CardImage(
                         mediaCardImage = image,
                         modifier = Modifier.fillMaxWidth(),
-                        contentScale = effectiveContentScale,
+                        contentScale = imageContentScale,
                     )
                 }
             ) {
@@ -78,7 +76,7 @@ public fun MediaCard(
                         modifier = Modifier
                             .width(150.dp)
                             .fillMaxHeight(),
-                        contentScale = effectiveContentScale
+                        contentScale = imageContentScale,
                     )
                     Column(
                         modifier = Modifier
@@ -116,7 +114,7 @@ public fun MediaCard(
                         modifier = Modifier
                             .width(150.dp)
                             .fillMaxHeight(),
-                        contentScale = effectiveContentScale
+                        contentScale = imageContentScale,
                     )
                 }
             }
