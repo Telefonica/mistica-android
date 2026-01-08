@@ -134,27 +134,27 @@ public enum class MediaCardImagePosition {
 }
 
 @Composable
-private fun CardImage(mediaCardImage: MediaCardImage, modifier: Modifier = Modifier, contentScale: ContentScale = ContentScale.FillHeight) {
+private fun CardImage(mediaCardImage: MediaCardImage, modifier: Modifier = Modifier, contentScale: ContentScale) {
     when (mediaCardImage) {
         is MediaCardImageBitmap -> Image(
             mediaCardImage.imageBitmap,
             contentDescription = mediaCardImage.contentDescription,
             contentScale = contentScale,
-            modifier = modifier
+            modifier = modifier,
         )
 
         is MediaCardImageResource -> Image(
             painterResource(id = mediaCardImage.imageRes),
             contentDescription = mediaCardImage.contentDescription,
             contentScale = contentScale,
-            modifier = modifier
+            modifier = modifier,
         )
     }
 }
 
 @Preview
 @Composable
-private fun CardPreview() {
+private fun PreviewMediaCardImageTop() {
     PreviewTheme {
         MediaCard(
             image = MediaCardImageResource(R.drawable.mistica_placeholder),
