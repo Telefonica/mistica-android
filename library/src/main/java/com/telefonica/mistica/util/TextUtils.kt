@@ -4,6 +4,8 @@ import android.view.View
 import android.widget.TextView
 import androidx.annotation.StyleRes
 
+private const val MIN_LINK_TEXT_LENGTH = 18
+
 fun TextView.setTextAndVisibility(newText: CharSequence?) {
     if (newText?.isNotBlank() == true) {
         text = newText
@@ -22,5 +24,5 @@ fun TextView.setTextPreset(@StyleRes textPreset: Int) {
  * even when the text consists of few characters.
  */
 internal fun String.applyLinkTextFix(): String {
-    return this.padEnd(18, ' ')
+    return this.padEnd(MIN_LINK_TEXT_LENGTH, ' ')
 }
