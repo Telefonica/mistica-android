@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
@@ -21,11 +20,13 @@ import com.telefonica.mistica.compose.button.Button
 import com.telefonica.mistica.compose.button.ButtonStyle
 import com.telefonica.mistica.compose.tag.Tag
 import com.telefonica.mistica.compose.theme.MisticaTheme
+import com.telefonica.mistica.util.applyLinkTextFix
 
 @Composable
-fun Card(
+public fun Card(
     modifier: Modifier = Modifier,
     header: @Composable () -> Unit = {},
+    invalidatePaddings: Boolean = false,
     content: @Composable () -> Unit = {},
 ) {
 
@@ -41,12 +42,16 @@ fun Card(
         Column {
             header()
             Column(
-                modifier = Modifier.padding(
-                    start = 16.dp,
-                    top = 16.dp,
-                    end = 16.dp,
-                    bottom = 24.dp,
-                ),
+                modifier = if (!invalidatePaddings)
+                    Modifier.padding(
+                        start = 16.dp,
+                        top = 16.dp,
+                        end = 16.dp,
+                        bottom = 24.dp,
+                    )
+                else {
+                    Modifier
+                },
             ) {
                 content()
             }
@@ -55,30 +60,32 @@ fun Card(
 }
 
 @Composable
-internal fun CardActions(primaryButton: Action?, linkButton: Action?) {
+internal fun CardActions(
+    primaryButton: Action?,
+    linkButton: Action?,
+    orientation: CardActionsOrientation = CardActionsOrientation.Horizontal,
+) {
     if (primaryButton != null || linkButton != null) {
-        Row(
-            modifier = Modifier
-                .padding(top = 16.dp)
-                .width(IntrinsicSize.Max),
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.Start,
-
-            ) {
-            primaryButton?.let {
-                Button(
-                    text = it.text,
-                    onClickListener = it.onTapped,
-                    buttonStyle = ButtonStyle.PRIMARY_SMALL,
-                )
+        when (orientation) {
+            CardActionsOrientation.Horizontal -> {
+                Row(
+                    modifier = Modifier
+                        .padding(top = 16.dp)
+                        .width(IntrinsicSize.Max),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.Start,
+                ) {
+                    CardActionButtons(primaryButton, linkButton, orientation)
+                }
             }
-            linkButton?.let {
-                Button(
-                    modifier = if (primaryButton == null) Modifier.offset(x = (-8).dp) else Modifier,
-                    text = it.text,
-                    onClickListener = it.onTapped,
-                    buttonStyle = ButtonStyle.LINK,
-                )
+            CardActionsOrientation.Vertical -> {
+                Column(
+                    modifier = Modifier.padding(top = 16.dp),
+                    verticalArrangement = Arrangement.spacedBy(8.dp),
+                    horizontalAlignment = Alignment.Start,
+                ) {
+                    CardActionButtons(primaryButton, linkButton, orientation)
+                }
             }
         }
     }
@@ -135,7 +142,42 @@ internal fun CardContent(
     }
 }
 
-data class Action(
+@Composable
+private fun CardActionButtons(
+    primaryButton: Action?,
+    linkButton: Action?,
+    orientation: CardActionsOrientation,
+) {
+    primaryButton?.let {
+        Button(
+            text = it.text,
+            onClickListener = it.onTapped,
+            buttonStyle = ButtonStyle.PRIMARY_SMALL,
+        )
+    }
+    linkButton?.let {
+        Button(
+            modifier = if (primaryButton != null && orientation == CardActionsOrientation.Horizontal) {
+                Modifier.padding(start = 16.dp)
+            } else {
+                Modifier
+            },
+            text = it.text.applyLinkTextFix(),
+            onClickListener = it.onTapped,
+            buttonStyle = ButtonStyle.LINK,
+            invalidatePaddings = true,
+            invalidateMinWidth = true,
+        )
+    }
+}
+
+
+public enum class CardActionsOrientation {
+    Horizontal,
+    Vertical,
+}
+
+public data class Action(
     val text: String,
     val onTapped: () -> Unit,
 )
