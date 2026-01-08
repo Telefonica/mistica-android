@@ -44,10 +44,7 @@ public fun MediaCard(
     imageContentScale: ContentScale? = null,
     customContent: @Composable () -> Unit = {},
 ) {
-    val effectiveContentScale = imageContentScale ?: when (imagePosition) {
-        MediaCardImagePosition.Top -> ContentScale.FillHeight
-        MediaCardImagePosition.Left, MediaCardImagePosition.Right -> ContentScale.Crop
-    }
+    val effectiveContentScale = imageContentScale ?: ContentScale.Crop
 
     when (imagePosition) {
         MediaCardImagePosition.Top -> {
@@ -162,7 +159,7 @@ private fun CardImage(mediaCardImage: MediaCardImage, modifier: Modifier = Modif
 private fun CardPreview() {
     PreviewTheme {
         MediaCard(
-            image = MediaCardImageResource(R.drawable.bg_list_image),
+            image = MediaCardImageResource(R.drawable.mistica_placeholder),
             tag = Tag("HEADLINE").withStyle(TagView.TYPE_PROMO),
             preTitle = "Pretitle",
             title = "Title",
@@ -170,6 +167,42 @@ private fun CardPreview() {
             description = "Description",
             primaryButton = Action("Primary") {},
             linkButton = Action("Link") {}
+        )
+    }
+}
+
+@Preview
+@Composable
+private fun PreviewMediaCardImageLeft() {
+    PreviewTheme {
+        MediaCard(
+            image = MediaCardImageResource(R.drawable.mistica_placeholder),
+            tag = Tag("HEADLINE").withStyle(TagView.TYPE_PROMO),
+            preTitle = "Pretitle",
+            title = "Title",
+            subtitle = "Subtitle",
+            description = "Description",
+            primaryButton = Action("Primary") {},
+            linkButton = Action("Link") {},
+            imagePosition = MediaCardImagePosition.Left,
+        )
+    }
+}
+
+@Preview
+@Composable
+private fun PreviewMediaCardImageRight() {
+    PreviewTheme {
+        MediaCard(
+            image = MediaCardImageResource(R.drawable.mistica_placeholder),
+            tag = Tag("HEADLINE").withStyle(TagView.TYPE_PROMO),
+            preTitle = "Pretitle",
+            title = "Title",
+            subtitle = "Subtitle",
+            description = "Description",
+            primaryButton = Action("Primary") {},
+            linkButton = Action("Link") {},
+            imagePosition = MediaCardImagePosition.Right,
         )
     }
 }
