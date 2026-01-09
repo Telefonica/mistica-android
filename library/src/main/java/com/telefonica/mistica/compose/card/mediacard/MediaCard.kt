@@ -29,6 +29,8 @@ import com.telefonica.mistica.compose.tag.Tag
 import com.telefonica.mistica.tag.TagView
 import com.telefonica.mistica.util.PreviewTheme
 
+private val SIDE_IMAGE_WIDTH = 150.dp
+
 @Composable
 public fun MediaCard(
     image: MediaCardImage,
@@ -74,7 +76,7 @@ public fun MediaCard(
                     CardImage(
                         mediaCardImage = image,
                         modifier = Modifier
-                            .width(150.dp)
+                            .width(SIDE_IMAGE_WIDTH)
                             .fillMaxHeight(),
                         contentScale = imageContentScale,
                     )
@@ -112,7 +114,7 @@ public fun MediaCard(
                     CardImage(
                         mediaCardImage = image,
                         modifier = Modifier
-                            .width(150.dp)
+                            .width(SIDE_IMAGE_WIDTH)
                             .fillMaxHeight(),
                         contentScale = imageContentScale,
                     )
