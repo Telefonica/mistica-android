@@ -4,12 +4,12 @@ Media cards combine an image with textual content and actions, providing a rich 
 
 ## Examples
 
-| Description                             | Preview |
-|-----------------------------------------|:-------:|
-| Image Position Top                      | ![MediaCard Top Light](https://user-images.githubusercontent.com/4595241/147476768-c7f29881-0200-45c6-94a0-80380d4ce4b3.png) |
-| Image Position Top with tag and buttons | ![MediaCard Top Dark](https://user-images.githubusercontent.com/4595241/147477120-92db4c0a-82c0-42db-9225-d5fc97fc8bd9.png) |
-| Image Position Left                     | ![MediaCard Left](https://github.com/user-attachments/assets/bff49713-53ed-49d9-9d01-0b6ee5c04ca4) |
-| Image Position Right                    | ![MediaCard Right](https://github.com/user-attachments/assets/17f48fff-743e-43bb-a026-37455d95084a) |
+| Description                             |                                               Preview                                                |
+|-----------------------------------------|:----------------------------------------------------------------------------------------------------:|
+| Image Position Top                      | ![MediaCard Top Light](../../../../../../../../../../doc/images/media_cards/media_card_compose1.png) |
+| Image Position Top with tag and buttons | ![MediaCard Top Dark](../../../../../../../../../../doc/images/media_cards/media_card_compose2.png)  |
+| Image Position Left                     |   ![MediaCard Left](../../../../../../../../../../doc/images/media_cards/media_card_compose3.png)    |
+| Image Position Right                    |   ![MediaCard Right](../../../../../../../../../../doc/images/media_cards/media_card_compose4.png)   |
 
 ## Usage
 
