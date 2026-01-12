@@ -3,11 +3,14 @@ package com.telefonica.mistica.catalog.ui.compose.components
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.Button as MaterialButton
 import androidx.compose.material.Checkbox
 import androidx.compose.material.DropdownMenu
 import androidx.compose.material.DropdownMenuItem
@@ -25,6 +28,7 @@ import com.telefonica.mistica.catalog.R
 import com.telefonica.mistica.compose.card.Action
 import com.telefonica.mistica.compose.card.mediacard.MediaCard
 import com.telefonica.mistica.compose.card.mediacard.MediaCardImage.MediaCardImageResource
+import com.telefonica.mistica.compose.card.mediacard.MediaCardImagePosition
 import com.telefonica.mistica.compose.tag.Tag
 import com.telefonica.mistica.tag.TagView.Companion.TYPE_PROMO
 
@@ -53,6 +57,9 @@ fun MediaCards() {
 
     var withAdditionalContent: Boolean by remember { mutableStateOf(false) }
 
+    var imagePosition: MediaCardImagePosition by remember { mutableStateOf(MediaCardImagePosition.Top) }
+    var imagePositionExpanded: Boolean by remember { mutableStateOf(false) }
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -63,6 +70,11 @@ fun MediaCards() {
     ) {
 
         OutlinedTextField(value = tag, onValueChange = { tag = it }, label = { Text("Tag") })
+        MaterialButton(
+            onClick = { tagTypeDropDownExpanded = true }
+        ) {
+            Text("Select Tag Type: ${tagTypeItems[tagType]}")
+        }
         DropdownMenu(expanded = tagTypeDropDownExpanded, onDismissRequest = { tagTypeDropDownExpanded = false }) {
             tagTypeItems.forEachIndexed { index, s ->
                 DropdownMenuItem(onClick = {
@@ -89,6 +101,23 @@ fun MediaCards() {
             Checkbox(checked = withAdditionalContent, onCheckedChange = { withAdditionalContent = !withAdditionalContent })
         }
 
+        MaterialButton(
+            onClick = { imagePositionExpanded = true }
+        ) {
+            Text("Image Position: ${imagePosition.name}")
+        }
+        DropdownMenu(expanded = imagePositionExpanded, onDismissRequest = { imagePositionExpanded = false }) {
+            MediaCardImagePosition.entries.forEach { position ->
+                DropdownMenuItem(onClick = {
+                    imagePosition = position
+                    imagePositionExpanded = false
+                }) {
+                    Text(position.name)
+                }
+            }
+        }
+        Spacer(Modifier.height(16.dp))
+
         MediaCard(
             modifier = Modifier
                 .padding(24.dp)
@@ -103,6 +132,7 @@ fun MediaCards() {
 
             primaryButton = if (primaryAction.isNotEmpty()) Action(primaryAction) { } else null,
             linkButton = if (secondaryAction.isNotEmpty()) Action(secondaryAction) { } else null,
+            imagePosition = imagePosition,
             customContent = if (withAdditionalContent) {
                 { Text("Additional content") }
             } else {

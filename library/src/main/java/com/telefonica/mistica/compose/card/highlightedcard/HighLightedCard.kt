@@ -37,6 +37,7 @@ import com.telefonica.mistica.compose.button.Button
 import com.telefonica.mistica.compose.button.ButtonStyle
 import com.telefonica.mistica.compose.theme.MisticaTheme
 import androidx.compose.ui.platform.LocalResources
+import com.telefonica.mistica.util.applyLinkTextFix
 
 @Composable
 fun HighLightedCard(
@@ -229,7 +230,7 @@ private fun HighLightCardButton(
             val isLink = buttonStyle == ButtonStyle.LINK || buttonStyle == ButtonStyle.LINK_INVERSE
             Button(
                 modifier = modifier,
-                text = if (isLink) applyLinkTextFix(buttonConfig.buttonText) else buttonConfig.buttonText,
+                text = if (isLink) buttonConfig.buttonText.applyLinkTextFix() else buttonConfig.buttonText,
                 buttonStyle = buttonStyle,
                 invalidatePaddings = isLink,
                 invalidateMinWidth = isLink,
@@ -241,9 +242,6 @@ private fun HighLightCardButton(
     }
 }
 
-private fun applyLinkTextFix(text: String): String {
-    return text.padEnd(18, ' ')
-}
 
 enum class HighLightCardImageConfig {
     FIT,
