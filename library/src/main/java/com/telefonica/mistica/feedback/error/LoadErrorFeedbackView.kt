@@ -24,7 +24,6 @@ class LoadErrorFeedbackView @JvmOverloads constructor(
 
     init {
         LayoutInflater.from(context).inflate(R.layout.load_error_feedback, this, true)
-        LayoutInflater.from(context).inflate(R.layout.load_error_feedback, this, true)
 
         val padding = context.convertDpToPx(16)
         setPadding(padding, padding, padding, padding)
