@@ -10,7 +10,7 @@ There are three input types. For each one, a component is provided:
 * Check Box Input --> `com.telefonica.mistica.input.CheckBoxInput`
 * Drop Down Input --> `com.telefonica.mistica.input.DropDownInput`
 
-All them can be placed directly on any layout, and can be configured with the following attributes (**All attributes are supported for all types**):
+All of them can be placed directly on any layout, and can be configured with the following attributes (**All attributes are supported for all types**):
 
 ```xml
 <declare-styleable name="Input">
