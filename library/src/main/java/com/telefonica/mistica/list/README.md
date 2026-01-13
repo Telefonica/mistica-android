@@ -7,7 +7,7 @@
    <img src="../../../../../../../../doc/images/lists/lists-dark.gif" />
 </p>
 
-Implemented as a custom view, `com.telefonica.mistica.ListRowView can be used inside any layout like a regular view, including recyclable lists. It supports **attribute-based configuration for all properties**.
+Implemented as a custom view, `com.telefonica.mistica.ListRowView` can be used inside any layout like a regular view, including recyclable lists. It supports **attribute-based configuration for all properties**.
 
 ```xml
 <declare-styleable name="ListRowView">
