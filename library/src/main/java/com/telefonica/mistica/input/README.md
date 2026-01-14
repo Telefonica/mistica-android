@@ -10,7 +10,7 @@ There are three input types. For each one, a component is provided:
 * Check Box Input --> `com.telefonica.mistica.input.CheckBoxInput`
 * Drop Down Input --> `com.telefonica.mistica.input.DropDownInput`
 
-All them can be placed directly on any layout, and can be configured with the following attributes (**All atributes for all types support databinding**):
+All of them can be placed directly on any layout, and can be configured with the following attributes (**All attributes are supported for all types**):
 
 ```xml
 <declare-styleable name="Input">
@@ -33,7 +33,7 @@ All them can be placed directly on any layout, and can be configured with the fo
         <enum name="textArea" value="3" />
         <enum name="phone" value="4" />
     </attr>
-    <attr name="inputText" format="string" /> <!-- Supports inverse databinding -->
+    <attr name="inputText" format="string" />
     <attr name="inputCounterEnabled" format="boolean" />
     <attr name="inputMaxLength" format="integer" />
     <attr name="inputAutofillEnabled" format="boolean" />
@@ -44,7 +44,7 @@ And `com.telefonica.mistica.input.CheckBoxInput` provides also:
 
 ```xml
 <declare-styleable name="CheckBoxInput">
-    <attr name="inputChecked" format="boolean" /> <!-- Supports inverse databinding -->
+    <attr name="inputChecked" format="boolean" />
     <attr name="inputCheckText" format="string" />
 </declare-styleable>
 ```
@@ -68,3 +68,7 @@ dropDownInput.dropDown.setOnItemClickListener { parent, view, position, id ->
 }
 dropDownInput.dropDown.setText("First option") // Select first option
 ```
+
+> [!NOTE]
+> Form input components are implemented as standard Android Views and do not provide Android DataBinding or inverse DataBinding support.
+> State changes can be handled through the exposed APIs and listeners.

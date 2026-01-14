@@ -23,84 +23,15 @@ import androidx.annotation.IntDef
 import androidx.annotation.StringRes
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.graphics.createBitmap
 import androidx.core.graphics.drawable.toDrawable
-import androidx.databinding.BindingMethod
-import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
 import com.telefonica.mistica.util.getDimension
 import com.telefonica.mistica.util.getMisticaThemeDrawableBuilder
 import com.telefonica.mistica.util.getThemeColor
 import com.telefonica.mistica.util.hide
 import com.telefonica.mistica.util.show
-import androidx.core.graphics.createBitmap
 
-@BindingMethods(
-    BindingMethod(
-        type = HighlightedCardView::class,
-        attribute = "highlightedCardBackground",
-        method = "setCustomBackground"
-    ),
-    BindingMethod(
-        type = HighlightedCardView::class,
-        attribute = "highlightedCardInverse",
-        method = "setInverse"
-    ),
-    BindingMethod(
-        type = HighlightedCardView::class,
-        attribute = "highlightedCardTitle",
-        method = "setTitle"
-    ),
-    BindingMethod(
-        type = HighlightedCardView::class,
-        attribute = "highlightedCardContent",
-        method = "setContent"
-    ),
-    BindingMethod(
-        type = HighlightedCardView::class,
-        attribute = "highlightedCardButtonStyle",
-        method = "setButtonStyle"
-    ),
-    BindingMethod(
-        type = HighlightedCardView::class,
-        attribute = "highlightedCardImageStyle",
-        method = "setImageStyle"
-    ),
-    BindingMethod(
-        type = HighlightedCardView::class,
-        attribute = "highlightedCardImage",
-        method = "setImage"
-    ),
-    BindingMethod(
-        type = HighlightedCardView::class,
-        attribute = "highlightedCardButton",
-        method = "setButtonText"
-    ),
-    BindingMethod(
-        type = HighlightedCardView::class,
-        attribute = "highlightedCardImageVisibility",
-        method = "setImageVisibility"
-    ),
-    BindingMethod(
-        type = HighlightedCardView::class,
-        attribute = "highlightedCardCloseButtonVisibility",
-        method = "setCloseVisibility"
-    ),
-    BindingMethod(
-        type = HighlightedCardView::class,
-        attribute = "highlightedCardButtonOnClick",
-        method = "setButtonOnClick"
-    ),
-    BindingMethod(
-        type = HighlightedCardView::class,
-        attribute = "highlightedCardCloseButton",
-        method = "setCloseButton"
-    ),
-    BindingMethod(
-        type = HighlightedCardView::class,
-        attribute = "highlightedCardCloseButtonOnClick",
-        method = "setCloseButtonOnClick"
-    )
-)
 class HighlightedCardView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
