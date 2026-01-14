@@ -7,17 +7,8 @@ import android.view.LayoutInflater
 import android.view.animation.DecelerateInterpolator
 import android.widget.LinearLayout
 import android.widget.ProgressBar
-import androidx.databinding.BindingMethod
-import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
 
-@BindingMethods(
-    BindingMethod(
-        type = IndeterminateStepperView::class,
-        attribute = "progress",
-        method = "setProgress"
-    )
-)
 class IndeterminateStepperView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
