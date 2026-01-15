@@ -62,7 +62,7 @@ private fun PreviewHighLightedCardTitleTextCloseButtonAndButtonPrimary() {
                 title = "Solve Technical issue",
                 content = "use our tools to solve technical issue",
                 showCloseButton = true,
-                button = HighLightCardButtonSettings("Start tests", ButtonStyle.PRIMARY)
+                button = HighLightCardButtonSettings("Start tests", ButtonStyle.PRIMARY_MAIN)
             )
         }
     }
@@ -83,7 +83,7 @@ private fun PreviewInverseHighLightedCardTitleTextCloseButtonAndButtonPrimary() 
                 content = "use our tools to solve technical issue",
                 showCloseButton = true,
                 inverseDisplay = true,
-                button = HighLightCardButtonSettings("Start tests", ButtonStyle.PRIMARY)
+                button = HighLightCardButtonSettings("Start tests", ButtonStyle.PRIMARY_MAIN)
             )
         }
     }
