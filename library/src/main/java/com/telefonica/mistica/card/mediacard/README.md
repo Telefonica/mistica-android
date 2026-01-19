@@ -38,3 +38,13 @@ fun setOtherMultimedia(view: View)
 ```
 
 A `VideoView` or any other kind of custom view can be added. 
+
+---
+
+## Compose Version Enhancements
+
+The Jetpack Compose version of MediaCard introduces new features not yet available in the classic View-based version:
+
+- **Image Position**: The Compose `MediaCard` supports an `imagePosition` parameter, allowing the image to be placed at the top (default), left, or right of the card. The classic version only supports the image at the top.
+
+For more details, see the [Compose MediaCard README](../../compose/card/mediacard/README.md).
