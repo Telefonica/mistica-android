@@ -181,14 +181,14 @@
             <enum name="phone" value="4" />
             <enum name="number" value="5" />
         </attr>
-        <attr name="inputText" format="string" /> <!-- Supports inverse databinding -->
+        <attr name="inputText" format="string" />
         <attr name="inputCounterEnabled" format="boolean" />
         <attr name="inputMaxLength" format="integer" />
         <attr name="inputAutofillEnabled" format="boolean" />
     </declare-styleable>
 
     <declare-styleable name="CheckBoxInput">
-        <attr name="inputChecked" format="boolean" /> <!-- Supports inverse databinding -->
+        <attr name="inputChecked" format="boolean" />
         <attr name="inputCheckText" format="string" />
     </declare-styleable>
 
@@ -329,6 +329,7 @@
     </declare-styleable>
 
     <declare-styleable name="Button">
+        <attr name="buttonOnClick" format="reference" />
         <attr name="isLoading" format="boolean" />
         <attr name="loadingText" format="string" />
         <attr name="invalidatePaddings" format="boolean"/>
