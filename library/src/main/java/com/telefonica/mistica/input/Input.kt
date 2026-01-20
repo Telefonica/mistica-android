@@ -7,40 +7,11 @@ import android.text.style.ForegroundColorSpan
 import android.util.AttributeSet
 import android.widget.FrameLayout
 import androidx.annotation.StringRes
-import androidx.databinding.BindingMethod
-import androidx.databinding.BindingMethods
 import com.google.android.material.textfield.TextInputLayout
 import com.telefonica.mistica.R
 import com.telefonica.mistica.util.getThemeColor
 import com.telefonica.mistica.util.setAlpha
 
-@BindingMethods(
-    BindingMethod(
-        type = Input::class,
-        attribute = "inputHint",
-        method = "setHint"
-    ),
-    BindingMethod(
-        type = Input::class,
-        attribute = "inputError",
-        method = "setError"
-    ),
-    BindingMethod(
-        type = Input::class,
-        attribute = "inputHelperText",
-        method = "setHelperText"
-    ),
-    BindingMethod(
-        type = Input::class,
-        attribute = "inputEnabled",
-        method = "setEnabled"
-    ),
-    BindingMethod(
-        type = Input::class,
-        attribute = "inputInverse",
-        method = "setInverse"
-    )
-)
 abstract class Input @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,

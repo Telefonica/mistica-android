@@ -14,13 +14,6 @@ import android.view.inputmethod.InputConnection
 import android.widget.TextView
 import androidx.annotation.IntDef
 import androidx.annotation.LayoutRes
-import androidx.databinding.BindingAdapter
-import androidx.databinding.BindingMethod
-import androidx.databinding.BindingMethods
-import androidx.databinding.InverseBindingListener
-import androidx.databinding.InverseBindingMethod
-import androidx.databinding.InverseBindingMethods
-import androidx.databinding.adapters.ListenerUtil
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.telefonica.mistica.R
@@ -29,35 +22,6 @@ import com.telefonica.mistica.input.validations.TextInputValidation
 import com.telefonica.mistica.input.validations.TextInputValidationResult
 import com.telefonica.mistica.util.padding
 
-@BindingMethods(
-    BindingMethod(
-        type = TextInput::class,
-        attribute = "inputCounterEnabled",
-        method = "setCounterEnabled"
-    ),
-    BindingMethod(
-        type = TextInput::class,
-        attribute = "inputMaxLength",
-        method = "setMaxLength"
-    ),
-    BindingMethod(
-        type = TextInput::class,
-        attribute = "inputAutofillEnabled",
-        method = "setAutofillEnabled"
-    ),
-    BindingMethod(
-        type = TextInput::class,
-        attribute = "inputText",
-        method = "setText"
-    )
-)
-@InverseBindingMethods(
-    InverseBindingMethod(
-        type = TextInput::class,
-        attribute = "inputText",
-        method = "getText"
-    )
-)
 class TextInput @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
@@ -200,6 +164,7 @@ class TextInput @JvmOverloads constructor(
         TextInputValidationResult.Success -> {
             setErrorEnabled(false)
         }
+
         is TextInputValidationResult.Invalid -> {
             error = result.invalidMessage
             setErrorEnabled(true)
@@ -269,32 +234,5 @@ class TextInput @JvmOverloads constructor(
         const val TYPE_NUMBER = 5
 
         const val NO_MAX_LENGTH = 0
-
-        @BindingAdapter(
-            value = ["inputTextAttrChanged"]
-        )
-        @JvmStatic
-        fun setTextWatcher(input: TextInput, listener: InverseBindingListener) {
-            val textWatcher: TextWatcher = object : TextWatcher {
-                override fun afterTextChanged(s: Editable?) {
-                    listener.onChange()
-                }
-
-                override fun beforeTextChanged(
-                    s: CharSequence?,
-                    start: Int,
-                    count: Int,
-                    after: Int
-                ) {
-                }
-
-                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
-            }
-            val oldTextWatcher = ListenerUtil.trackListener(input, textWatcher, R.id.textWatcher)
-            if (oldTextWatcher != null) {
-                input.removeTextChangedListener(oldTextWatcher)
-            }
-            input.addTextChangedListener(textWatcher)
-        }
     }
 }

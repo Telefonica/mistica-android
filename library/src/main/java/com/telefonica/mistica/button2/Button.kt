@@ -66,6 +66,10 @@ class Button @JvmOverloads constructor(
         onClick = { listener?.onClick(this) }
     }
 
+    fun setButtonOnClick(action: (() -> Unit)?) {
+        onClick = { action?.invoke() }
+    }
+
     fun updateLoadingText(text: String) {
         loadingText = text
     }

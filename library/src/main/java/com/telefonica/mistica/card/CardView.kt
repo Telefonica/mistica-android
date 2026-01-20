@@ -11,65 +11,11 @@ import androidx.annotation.StringRes
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.cardview.widget.CardView
 import androidx.core.content.res.ResourcesCompat
-import androidx.databinding.BindingMethod
-import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
 import com.telefonica.mistica.tag.TagStyle
 import com.telefonica.mistica.tag.TagView
 import com.telefonica.mistica.util.getDimension
 
-@BindingMethods(
-    BindingMethod(
-        type = CardView::class,
-        attribute = "cardTag",
-        method = "setTag"
-    ),
-    BindingMethod(
-        type = CardView::class,
-        attribute = "cardTagColor",
-        method = "setTagColor"
-    ),
-    BindingMethod(
-        type = CardView::class,
-        attribute = "cardTitle",
-        method = "setTitle"
-    ),
-    BindingMethod(
-        type = CardView::class,
-        attribute = "cardTitleMaxLines",
-        method = "setTitleMaxLines"
-    ),
-    BindingMethod(
-        type = CardView::class,
-        attribute = "cardDescription",
-        method = "setDescription"
-    ),
-    BindingMethod(
-        type = CardView::class,
-        attribute = "cardDescriptionMaxLines",
-        method = "setDescriptionMaxLines"
-    ),
-    BindingMethod(
-        type = CardView::class,
-        attribute = "cardPrimaryButtonText",
-        method = "setPrimaryButtonText"
-    ),
-    BindingMethod(
-        type = CardView::class,
-        attribute = "cardLinkButtonText",
-        method = "setLinkButtonText"
-    ),
-    BindingMethod(
-        type = CardView::class,
-        attribute = "cardPrimaryButtonOnClick",
-        method = "setPrimaryButtonOnClick"
-    ),
-    BindingMethod(
-        type = CardView::class,
-        attribute = "cardLinkButtonOnClick",
-        method = "setLinkButtonOnClick"
-    )
-)
 abstract class CardView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,

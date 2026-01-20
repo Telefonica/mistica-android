@@ -15,8 +15,6 @@ import androidx.annotation.ColorInt
 import androidx.annotation.LayoutRes
 import androidx.annotation.StringRes
 import androidx.core.graphics.drawable.toDrawable
-import androidx.databinding.BindingMethod
-import androidx.databinding.BindingMethods
 import com.telefonica.mistica.R
 import com.telefonica.mistica.util.children
 import com.telefonica.mistica.util.convertDpToPx
@@ -24,88 +22,6 @@ import com.telefonica.mistica.util.getMisticaThemeDrawable
 import com.telefonica.mistica.util.getThemeColor
 import com.telefonica.mistica.util.setTextAndVisibility
 
-@BindingMethods(
-    BindingMethod(
-        type = HeaderView::class,
-        attribute = "headerInverse",
-        method = "setInverse"
-    ),
-    BindingMethod(
-        type = HeaderView::class,
-        attribute = "headerHasTopPadding",
-        method = "setHasTopPadding"
-    ),
-    BindingMethod(
-        type = HeaderView::class,
-        attribute = "headerFirstPretitle",
-        method = "setFirstPretitle"
-    ),
-    BindingMethod(
-        type = HeaderView::class,
-        attribute = "headerFirstPretitleHasSecondaryColor",
-        method = "setFirstPretitleHasSecondaryColor"
-    ),
-    BindingMethod(
-        type = HeaderView::class,
-        attribute = "headerTitle",
-        method = "setTitle"
-    ),
-    BindingMethod(
-        type = HeaderView::class,
-        attribute = "headerSecondPretitle",
-        method = "setSecondPretitle"
-    ),
-    BindingMethod(
-        type = HeaderView::class,
-        attribute = "headerSecondPretitleHasSecondaryColor",
-        method = "setSecondPretitleHasSecondaryColor"
-    ),
-    BindingMethod(
-        type = HeaderView::class,
-        attribute = "headerNumeral",
-        method = "setNumeral"
-    ),
-    BindingMethod(
-        type = HeaderView::class,
-        attribute = "headerNumeralHasErrorColor",
-        method = "setNumeralHasDangerColor"
-    ),
-    BindingMethod(
-        type = HeaderView::class,
-        attribute = "headerActionButtonText",
-        method = "setActionButtonText"
-    ),
-    BindingMethod(
-        type = HeaderView::class,
-        attribute = "headerSecondaryActionButtonText",
-        method = "setSecondaryActionButtonText"
-    ),
-    BindingMethod(
-        type = HeaderView::class,
-        attribute = "headerActionButtonOnClick",
-        method = "setActionButtonOnClick"
-    ),
-    BindingMethod(
-        type = HeaderView::class,
-        attribute = "headerSecondaryActionButtonOnClick",
-        method = "setSecondaryActionButtonOnClick"
-    ),
-    BindingMethod(
-        type = HeaderView::class,
-        attribute = "headerSubtitle",
-        method = "setHeaderSubtitle"
-    ),
-    BindingMethod(
-        type = HeaderView::class,
-        attribute = "headerSubtitleHasSecondaryColor",
-        method = "setSubtitleHasSecondaryColor"
-    ),
-    BindingMethod(
-        type = HeaderView::class,
-        attribute = "bottomLayout",
-        method = "setBottomLayout"
-    ),
-)
 class HeaderView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
@@ -318,6 +234,36 @@ class HeaderView @JvmOverloads constructor(
         subtitleHasSecondaryColor = hasSecondaryColor
         configureTextsColors()
     }
+
+    fun setHeaderFirstPretitle(@StringRes textRes: Int?) = setFirstPretitle(textRes)
+    fun setHeaderTitle(text: CharSequence?) = setTitle(text)
+
+    fun setHeaderInverse(value: Boolean) = setInverse(value)
+    fun setHeaderHasTopPadding(value: Boolean) = setHasTopPadding(value)
+
+    fun setHeaderFirstPretitle(text: CharSequence?) = setFirstPretitle(text)
+    fun setHeaderFirstPretitleHasSecondaryColor(value: Boolean) =
+        setFirstPretitleHasSecondaryColor(value)
+
+    fun setHeaderSecondPretitle(text: CharSequence?) = setSecondPretitle(text)
+    fun setHeaderSecondPretitleHasSecondaryColor(value: Boolean) =
+        setSecondPretitleHasSecondaryColor(value)
+
+    fun setHeaderNumeral(text: CharSequence?) = setNumeral(text)
+    fun setHeaderNumeralHasErrorColor(value: Boolean) = setNumeralHasDangerColor(value)
+
+    fun setHeaderSubtitle(text: CharSequence?) = setSubtitle(text)
+    fun setHeaderSubtitleHasSecondaryColor(value: Boolean) = setSubtitleHasSecondaryColor(value)
+
+    fun setHeaderActionButtonText(text: CharSequence?) = setActionButtonText(text)
+    fun setHeaderSecondaryActionButtonText(text: CharSequence?) = setSecondaryActionButtonText(text)
+
+    fun setHeaderActionButtonOnClick(listener: OnClickListener?) = setActionButtonOnClick(listener)
+    fun setHeaderSecondaryActionButtonOnClick(listener: OnClickListener?) =
+        setSecondaryActionButtonOnClick(listener)
+
+    fun setHeaderBottomLayout(@LayoutRes layoutRes: Int) = setBottomLayout(layoutRes)
+
 
     private fun configureTextsColors() {
         val backgroundDrawable = if (isInverse) {
