@@ -329,7 +329,6 @@
     </declare-styleable>
 
     <declare-styleable name="Button">
-        <attr name="buttonOnClick" format="reference" />
         <attr name="isLoading" format="boolean" />
         <attr name="loadingText" format="string" />
         <attr name="invalidatePaddings" format="boolean"/>
